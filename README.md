@@ -32,7 +32,8 @@ GAIA 是一项针对通用人工智能助理的基准测试，其目的在于提
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
 
-#### FusionFrames: Efficient Architectural Aspects for Text-to-Video Generation Pipeline
+#### FusionFrames: Efficient Architectural Aspects for Text-to-Video
+  Generation Pipeline
 ![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-41-green)
 
 <details>
