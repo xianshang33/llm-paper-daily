@@ -178,43 +178,24 @@ ZipLoRA采用了最新发布的Stable Diffusion XL模型，并基于三个重要
 
 #### 背景
 - **背景**       
-    文章探究了现代大型语言模型（LLMs）在接受约束的环境中解决问题的创造性，特别是克服心理学中所称的“功能固定性”偏见，使用熟悉的物体以创新或非传统方式解决问题【6†source】。
+    文章探究了现代大型语言模型（LLMs）在接受约束的环境中解决问题的创造性，特别是克服心理学中所称的“功能固定性”偏见，使用熟悉的物体以创新或非传统方式解决问题。
 
 - **已有的工作**
-    现有的自动化评估技术不能准确衡量解决方案的有效性，所以研究者们招募了人类评估员来评价GPT-4在MACGYVER数据集上的表现【15†source】。
+    现有的自动化评估技术不能准确衡量解决方案的有效性，所以研究者们招募了人类评估员来评价GPT-4在MACGYVER数据集上的表现。
 
 #### 核心贡献
 - **提出了名为MACGYVER的数据集**
     - **挑战1：如何生成适合LLMs的创造性问题解决任务?**
-        创建这类问题需要突破思维常规。研究者们通过结合GPT-4的生成能力和人类评审员的验证能力，设计了一个高效的流程来创建MACGYVER数据集。这个数据集包含1600个旨在触发功能固定性，需要创新思考的实际问题【8†source】。
+        创建这类问题需要突破思维常规。研究者们通过结合GPT-4的生成能力和人类评审员的验证能力，设计了一个高效的流程来创建MACGYVER数据集。这个数据集包含1600个旨在触发功能固定性，需要创新思考的实际问题。
 
     - **挑战2：如何量化和评估LLMs在处理这些任务时的表现?**
-        自动化评估的局限性导致了需人类注释者基于的评估系统来评价GPT-4提出的解决方案的可行性和效率【15†source】。
+        自动化评估的局限性导致了需人类注释者基于的评估系统来评价GPT-4提出的解决方案的可行性和效率。
 
 #### 实现与部署
-研究者们从七个不同的LLMs收集了机器解决方案，并对GPT-4进行了额外的评估以准确地与人类表现进行比较。对于每个问题，平均提取了四个GPT-4解决方案，并采用核聚变采样策略从每个API调用中返回最高概率的答案序列。人类评估者们通过更细致的分类系统评价给出的答案，以判断答案的正确性和解决问题的效率。评估手段的调整使得标注变得更为准确，反映了答案的实际效能【32†source】【36†source】。
+研究者们从七个不同的LLMs收集了机器解决方案，并对GPT-4进行了额外的评估以准确地与人类表现进行比较。对于每个问题，平均提取了四个GPT-4解决方案，并采用核聚变采样策略从每个API调用中返回最高概率的答案序列。人类评估者们通过更细致的分类系统评价给出的答案，以判断答案的正确性和解决问题的效率。评估手段的调整使得标注变得更为准确，反映了答案的实际效能。
 
 #### 总结
 本研究通过创造MACGYVER数据集，探索了LLMs在解决非传统问题上的能力，并通过人类评估员对GPT-4的表现进行了评价。研究结果展示了LLMs在这类任务上的局限性，同时提出了提高其表现的新方法。研究强调了创造性问题解决能力在日常生活中的重要性，并尝试通过LLMs补充人类的创造性思维，以期提高解决问题的能力和效率。
-</details>
-
-<hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
-
-#### MacGyver: Are Large Language Models Creative Problem Solvers?
-![Date](https://img.shields.io/badge/Date-2023--11--16-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.09682v1) <details>
-<summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
-
-The analysis of the uploaded paper "MacGyver: Are Large Language Models Creative Problem Solvers?" indicates that the paper investigates the problem-solving capabilities of large language models (LLMs) in the context of creative tasks that require overcoming a cognitive bias known as "functional fixedness." The authors created a dataset called MACGYVER consisting of real-world problems designed to trigger functional fixedness and require out-of-the-box thinking.
-
-The researchers identified several key points:
-1. Existing automatic evaluation techniques are insufficient to assess the effectiveness of proposed solutions, so human annotators were recruited to assess the solutions.
-2. The authors conducted a detailed error analysis on GPT-4, revealing it often proposes physically infeasible or logically incorrect actions.
-3. The paper proposes two new prompting strategies to enhance the problem-solving abilities of LLMs: Iterative Step-Wise Reflection and Divergent-Convergent Thinking.
-4. Both prompting strategies helped to reduce the number of infeasible solutions proposed by GPT-4. Iterative Step-Wise Reflection was more effective at reducing infeasible solutions, while Divergent-Convergent Thinking helped generate more efficient solutions.
-5. The paper also points out that humans and LLMs like GPT-4 show different strengths in problem solving, suggesting a collaborative approach between humans and AI might yield the best results.
-6. The authors acknowledge limitations, including the challenge of measuring how well a model can solve creative problems due to the lack of standardized automated metrics. They suggest future work investigate other strategies to enhance LLMs' physical knowledge, spatial understanding, and reduce hallucination. Human-AI collaboration for eliciting the best answers across a wide spectrum of problems is also proposed as an exciting direction for future work.
-
-To conclude, the paper contributes to the understanding of the current limitations and potential enhancements for LLMs in creative problem-solving tasks and points towards a promising future for human-AI collaborative problem solving.
 </details>
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
@@ -233,17 +214,17 @@ To conclude, the paper contributes to the understanding of the current limitatio
 #### 核心贡献
 - **提出了一个上下文示例检索器**
     - **挑战1：选择最有效的上下文示例**
-        选择对LM来说“已知”与“未知”上下文示例的挑战在于，需要在提高LM输出精度的同时避免过拟合。通过度量示例候选与查询的平均相似性，并选择中值附近值的示例，研究表明"已知"示例能够提高LLM的表现【17†source】【18†source】【19†source】。
+        选择对LM来说“已知”与“未知”上下文示例的挑战在于，需要在提高LM输出精度的同时避免过拟合。通过度量示例候选与查询的平均相似性，并选择中值附近值的示例，研究表明"已知"示例能够提高LLM的表现。
 
     - **挑战2：优化上下文示例的排序**
-        在每个上下文示例内部答案排序对LM性能有显著影响，方法是探究基于LM参数知识的答案排序是否改善性能。文章通过计算答案的长度标准化困惑度（perplexity）来决定答案的顺序，并采用贪心解码方法进行排序【29†source】【30†source】。
+        在每个上下文示例内部答案排序对LM性能有显著影响，方法是探究基于LM参数知识的答案排序是否改善性能。文章通过计算答案的长度标准化困惑度（perplexity）来决定答案的顺序，并采用贪心解码方法进行排序。
 
 #### 实现与部署
-在AmbigQA、QAMPARI和QUEST数据集上进行了实验，通过比较已知示例与未知示例的性能来验证该方法。结果表明，使用“半已知”的示例（即模型对答案有一半的知识）比其他设置表现更好，这可能促使LM利用参数知识并进行有根据的推测【20†source】。
+在AmbigQA、QAMPARI和QUEST数据集上进行了实验，通过比较已知示例与未知示例的性能来验证该方法。结果表明，使用“半已知”的示例（即模型对答案有一半的知识）比其他设置表现更好，这可能促使LM利用参数知识并进行有根据的推测。
 
-对于答案排序策略，研究表明，基于模型知识排序答案的策略（即“知识感知”排序），能够真实地反映在上下文示例中的答案排序，并且随着模型对答案排序的忠实度（ϕ值）增加，模型生成的答案数量也随之增加【29†source】【30†source】。
+对于答案排序策略，研究表明，基于模型知识排序答案的策略（即“知识感知”排序），能够真实地反映在上下文示例中的答案排序，并且随着模型对答案排序的忠实度（ϕ值）增加，模型生成的答案数量也随之增加。
 
-答案排序研究结果显示，GREEDY排序（以参数知识降序排列答案）在模仿上下文示例答案排序方面，其生成的答案排序与上下文示例的答案排序匹配的比例达到了平均74.1%。而相反的GREEDY排序（即REVERSE GREEDY，答案顺序相反，以参数知识升序排列）只有平均43.5%的匹配率。而在RANDOM和ALPHABET排序策略下，GREEDY排序具有显著的优势，说明了排序策略对于模型复现上下文例示答案的准确顺序具有重要作用【29†source】【30†source】。
+答案排序研究结果显示，GREEDY排序（以参数知识降序排列答案）在模仿上下文示例答案排序方面，其生成的答案排序与上下文示例的答案排序匹配的比例达到了平均74.1%。而相反的GREEDY排序（即REVERSE GREEDY，答案顺序相反，以参数知识升序排列）只有平均43.5%的匹配率。而在RANDOM和ALPHABET排序策略下，GREEDY排序具有显著的优势，说明了排序策略对于模型复现上下文例示答案的准确顺序具有重要作用。
 
 #### 总结
 本文的重点研究是如何根据LM的参数知识有效地创建上下文示例：选择最优的示例（已知与未知的比较）以及在上下文示例中如何排序答案。实验结果支持了半已知示例的有效性以及基于参数知识的答案排序方法，这些发现为提高大型语言模型在多答案生成任务中的性能提供了可行的技术途径。
@@ -283,16 +264,7 @@ To conclude, the paper contributes to the understanding of the current limitatio
 论文的实验评估表明，和传统的链式思维相比，对比式链式思维在多个推理基准测试中展示了显著的优势。具体而言，在使用广泛应用的LLM GPT-3.5-Turbo时，对比式链式思维分别在GSM-8K和Bamboogle任务上实现了9.8和16.0个百分点的提升。通过进一步分析从对比式方法生成的推理链，也显示出在减少错误方面的显著效果。总之，该方法不仅结合了正面和负面示例来提升链式思维的有效性，而且提出了一个自动构建对比示例的方法，其实验结果证明了这种方法与传统链式思维相比具有显著的改进。
 
 #### 总结
-本论文提出了对比式链式思维方法，以解决传统链式思维中存在的问题，即缺乏对错误避免的指导以及实现推理效果的不确定性。通过提供有效和无效的推理示例，新方法旨在引导模型减少推理错误并一步步推理，同时该方法提供了自动化构建对比示例的技术以便泛化到各种任务。实验结果证实，该方法能够作为一种通用增强手段，显著提升链式思维的性能。【7†来源】【8†来源】【9†来源】
-</details>
-
-<hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
-
-#### KTRL+F: Knowledge-Augmented In-Document Search
-![Date](https://img.shields.io/badge/Date-2023--11--14-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.08329v3) <details>
-<summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
-
-无数据[超时]
+本论文提出了对比式链式思维方法，以解决传统链式思维中存在的问题，即缺乏对错误避免的指导以及实现推理效果的不确定性。通过提供有效和无效的推理示例，新方法旨在引导模型减少推理错误并一步步推理，同时该方法提供了自动化构建对比示例的技术以便泛化到各种任务。实验结果证实，该方法能够作为一种通用增强手段，显著提升链式思维的性能。
 </details>
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
@@ -317,10 +289,10 @@ To conclude, the paper contributes to the understanding of the current limitatio
         另一个挑战是准确判断和量化LLMs对指令的遵循情况。即便使用编程和简单启发式规则，依然存在误判，IFEval方法提供了严格的和宽松的两种评价准则来计算指令遵循的准确性，减少误判，解决这个挑战。
 
 #### 实现与部署
-评估了GPT-4和PaLM 2 Small (S)模型，并分别在四个准确性指标上计算得分。这四个准确性指标包括：严格的提示级准确性、指令级准确性，以及宽松的提示级和指令级准确性。宽松准则通过多种变换函数来变换响应，比如移除markdown语法中的字体修饰符号和响应的首尾行，以减少误判。但宽松准则可能同时引入误报，为此作为补充，它与原始标准一同使用。GPT-4和PaLM 2 Small (S)的评估结果显示，两种模型在指令遵循能力上的差异，例如严格的指令级准确性分别为83.57%和55.76%【13†source】。
+评估了GPT-4和PaLM 2 Small (S)模型，并分别在四个准确性指标上计算得分。这四个准确性指标包括：严格的提示级准确性、指令级准确性，以及宽松的提示级和指令级准确性。宽松准则通过多种变换函数来变换响应，比如移除markdown语法中的字体修饰符号和响应的首尾行，以减少误判。但宽松准则可能同时引入误报，为此作为补充，它与原始标准一同使用。GPT-4和PaLM 2 Small (S)的评估结果显示，两种模型在指令遵循能力上的差异，例如严格的指令级准确性分别为83.57%和55.76%。
 
 #### 总结
-本文提出了一种评估大型语言模型的指令遵循能力的新方法——IFEval，它通过合成逻辑一致的指令和计算指令遵循准确性的新准则来解决评估过程中的挑战。此方法为自动化且无偏见，它通过多步骤过程避免指令间的潜在冲突，并引入了严格和宽松的准确性评价标准来减少误判，同时认为未来可以通过增加多样化和使用多模态指令来改进该方法【14†source】。
+本文提出了一种评估大型语言模型的指令遵循能力的新方法——IFEval，它通过合成逻辑一致的指令和计算指令遵循准确性的新准则来解决评估过程中的挑战。此方法为自动化且无偏见，它通过多步骤过程避免指令间的潜在冲突，并引入了严格和宽松的准确性评价标准来减少误判，同时认为未来可以通过增加多样化和使用多模态指令来改进该方法。
 </details>
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
@@ -345,10 +317,40 @@ To conclude, the paper contributes to the understanding of the current limitatio
         在不知道正确答案的情况下过滤上下文是有挑战性的。FILCO训练了上下文过滤模型，使用在训练期间获得的有用上下文数据来训练，在测试时可以预测和提供有用的上下文，提升生成的结果。
 
 #### 实现与部署
-论文中，实验采用了FLAN-T5和LLAMA2作为主要模型架构。研究者对这些模型分别进行微调，以执行上下文过滤任务和最终生成任务。执行过滤和生成的配置，包括最大序列长度限制和贪婪解码策略。在对比实验中，提出的FILCO方法与两个基线方法（FULL和PSG）相比，在预处理和过滤上下文方面显著提高了所有数据集上的结果。特别地，与提供经过人工过滤上下文的SILVER设置相比，使用FILCO预测的上下文内容在六个任务上达到了可比的性能，表明上下文过滤流程的有效训练【15†source】。
+论文中，实验采用了FLAN-T5和LLAMA2作为主要模型架构。研究者对这些模型分别进行微调，以执行上下文过滤任务和最终生成任务。执行过滤和生成的配置，包括最大序列长度限制和贪婪解码策略。在对比实验中，提出的FILCO方法与两个基线方法（FULL和PSG）相比，在预处理和过滤上下文方面显著提高了所有数据集上的结果。特别地，与提供经过人工过滤上下文的SILVER设置相比，使用FILCO预测的上下文内容在六个任务上达到了可比的性能，表明上下文过滤流程的有效训练。
 
 #### 总结
 本文提出的FILCO方法针对开放领域问答和事实验证等知识密集型任务，通过改善提供给生成模型的上下文质量来解决生成输出时面临的问题。通过结合词汇和信息论方法来识别有用上下文，并训练模型以在测试时过滤检索上下文，很好地解决了以前方法的局限性。实验结果显示，相比传统方法，FILCO在多个知识密集型任务上都取得了显著的性能改进，并且在上下文过滤训练上显示出其有效性。
+</details>
+
+<hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
+
+#### KTRL+F: Knowledge-Augmented In-Document Search
+![Date](https://img.shields.io/badge/Date-2023--11--14-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.08329v3) <details>
+<summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
+
+#### 背景
+- **背景**       
+    文章介绍了KTRL+F问题，即在文献搜索任务中，不仅识别文档中所有的语义目标，而且要意识到通过一个自然语言查询实时引入外部知识源。这个任务旨在弥合查询和目标之间的语义鸿沟，同时在实时适用性和性能之间取得平衡。
+
+- **已有的工作**
+    据文中所述，现有工具如"查找"功能和正则表达式仅限于字面匹配，而机器阅读理解(MRC)模型虽然能理解文档上下文和回答问题，但仅限于处理文档的显式内容。当用户需要了解文档以外的更广泛上下文时，现有方法并不足够，例如引用外部数据库中的细节信息或利用知识来识别语义目标。
+
+#### 核心贡献
+- **提出了Knowledge-Augmented Phrase Retrieval模型**
+    - **挑战1：实现实时处理与高性能的平衡**
+        现有模型在生成响应的实时任务中速度太慢，并且往往忽略了整合外部知识。论文中提出的模型通过在短语嵌入中加入外部知识嵌入来保持快速响应和高性能。
+
+    - **挑战2：有效利用外部知识增强文献搜索**
+        现有的MRC模型面临着将外部知识纳入模型的挑战。论文通过提出的模型无需额外训练步骤，在保持实时性的同时，简单有效地集成外部知识。
+
+#### 实现与部署
+在评估模型在KTRL+F任务中的表现时，进行了各种基线分析，并发现了许多限制，如幻觉、慢速度和整合外部知识的挑战。论文为了克服这些限制，提供了新的量化指标，这些指标在保持鲁棒性和高性能的同时还能衡量处理速度。实验结果表明，简单地将知识嵌入和短语嵌入相结合，Knowledge-Augmented Phrase Retrieval模型在反映外部知识方面表现出了潜力，而不会牺牲延迟时间。
+
+此外，作者使用基于此模型构建的Chrome扩展插件，在真实的网络环境中进行了用户研究，结果表明即使是使用简易模型，用户也能减少搜索所需的时间，减少向其他来源查询以收集证据的额外访问。虽然具体的性能数据（如准确性、速度等指标）和与相关工作的对比在摘要中未给出，但这证实了解决KTRL+F可以增强用户的搜索体验。
+
+#### 总结
+文章提出了一个新的问题——KTRL+F，以解决文献搜索中的实时、准确性、引入外部知识的需求。通过分析现有基线，文章发现它们存在局限性，在此基础上提出了Knowledge-Augmented Phrase Retrieval模型。该模型有效地在短语检索中整合了外部知识，通过简单的扩展保持了快速响应，无需额外训练。通过用户研究，证明了该模型能够提升用户搜索体验，减少搜索时间和外部信息检索量。作者鼓励研究社区关注KTRL+F这一独特挑战，提高文献信息访问的效率和效果。
 </details>
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
