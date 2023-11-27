@@ -1,5 +1,5 @@
 #### GAIA: a benchmark for General AI Assistants
-![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-97-green)
+![Date](https://img.shields.io/badge/Date-2023--11--23-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.12983v1) ![Upvotes](https://img.shields.io/badge/upvotes-97-green)
 
 <details>
 <summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
@@ -32,9 +32,8 @@ GAIA 是一项针对通用人工智能助理的基准测试，其目的在于提
 
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
 
-#### FusionFrames: Efficient Architectural Aspects for Text-to-Video
-  Generation Pipeline
-![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-41-green)
+#### FusionFrames: Efficient Architectural Aspects for Text-to-Video Generation Pipeline
+![Date](https://img.shields.io/badge/Date-2023--11--23-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.13073v1) ![Upvotes](https://img.shields.io/badge/upvotes-41-green)
 
 <details>
 <summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
@@ -68,7 +67,7 @@ GAIA 是一项针对通用人工智能助理的基准测试，其目的在于提
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
 
 #### LucidDreamer: Domain-free Generation of 3D Gaussian Splatting Scenes
-![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-32-green)
+![Date](https://img.shields.io/badge/Date-2023--11--23-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.13384v2) ![Upvotes](https://img.shields.io/badge/upvotes-32-green)
 
 <details>
 <summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
@@ -106,7 +105,7 @@ LucidDreamer是一个能够用于生成逼真而且分辨率更高的3D场景的
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
 
 #### Diffusion Model Alignment Using Direct Preference Optimization
-![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-25-green)
+![Date](https://img.shields.io/badge/Date-2023--11--23-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.12908v1) ![Upvotes](https://img.shields.io/badge/upvotes-25-green)
 
 <details>
 <summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
@@ -140,7 +139,7 @@ LucidDreamer是一个能够用于生成逼真而且分辨率更高的3D场景的
 <hr style="border:0.5px solid #CCCCCC; margin-top: 20px; margin-bottom: 20px;"/>
 
 #### ZipLoRA: Any Subject in Any Style by Effectively Merging LoRAs
-![Date](https://img.shields.io/badge/Date-2023--11--23-blue) ![Upvotes](https://img.shields.io/badge/upvotes-20-green)
+![Date](https://img.shields.io/badge/Date-2023--11--23-blue) [![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2311.13600v1) ![Upvotes](https://img.shields.io/badge/upvotes-20-green)
 
 <details>
 <summary style="font-weight: bold; cursor: pointer;">展开论文总结</summary>
