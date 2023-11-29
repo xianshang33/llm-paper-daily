@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-update_11.28-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md)[![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-update_11.28-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -59,3 +59,4 @@
 | <span style='display: inline-block; width: 42px;'>03-31</span> | **A Survey of Large Language Models**<br><sub>总的来说，这篇综述文章介绍了LLMs领域的最新进展，特别是OpenAI推出的ChatGPT和GPT-4模型，并强调了这些产品对人工智能研究的重大影响，特别指出了它们在人机交流、多模态理解和生成、以及人工智能对齐和安全性方面的突破。同时，文章认识到尽管取得了巨大的技术进展，但在安全性、生成质量和多模态性功能方面仍面临挑战，并提出了一系列的技术和策略来缓解这些问题。通过这篇文章，我们可以更好地理解LLMs的发展方向以及对未来人工智能应用和研究的潜在影响。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2303.18223v13)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-03/2303.18223.md)  |
 
 ---
+
