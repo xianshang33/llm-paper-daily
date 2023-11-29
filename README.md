@@ -1,3 +1,16 @@
+<h2 align='center'>llm-paper-daily 日常论文精选</h2>
+<div align='center'>
+
+[![Status](https://img.shields.io/badge/status-update_11.28-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) 
+
+</div>
+
+**每篇论文会携带相关资料:**
+- arXiv 地址  ![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)
+- GitHub 地址     ![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)
+- GPT-4 的总结  ![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
+- 相关的精选博客  ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
+
 ## 11月
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |
