@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.30_16:54-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.30_17:14-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -12,7 +12,7 @@
 - 相关的精选博客 &nbsp; ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
 
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 11月30日 16:54</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 11月30日 17:14</sub></summary>
 <br>
 
 - Towards Top-Down Reasoning: An Explainable Multi-Agent Approach for Visual Question Answering 
@@ -20,8 +20,9 @@
 - RELIC: Investigating Large Language Model Responses using Self-Consistency 
 - RankingGPT: Empowering Large Language Models in Text Ranking with Progressive Enhancement 
 - LLaFS: When Large-Language Models Meet Few-Shot Segmentation 
-- OpsEval: A Comprehensive Task-Oriented AIOps Benchmark for Large Language Models 
-- Learning Representations on Logs for AIOps 
+- TimeBench: A Comprehensive Evaluation of Temporal Reasoning Abilities in Large Language Models 
+- Large Language Models for Networking: Applications, Enabling Techniques, and Challenges 
+- Are Large Language Models Good Fact Checkers: A Preliminary Study 
 </details>
 
 ## 11月
