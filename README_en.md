@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_12.04_17:35-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_12.04_23:03-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -12,7 +12,7 @@
 - Related blogs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
 
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 12-04 17:35</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 12-04 23:03</sub></summary>
 <br>
 
 - Beyond ChatBots: ExploreLLM for Structured Thoughts and Personalized Model Responses 
