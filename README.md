@@ -28,7 +28,7 @@
 
 ## 12月
 
-| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| &nbsp;Date&nbsp;&nbsp;| Paper | Links & Summary |
 | --- | --- | --- |
 | <span style='display: inline-block; width: 42px;'>12-04</span> | **Competition-Level Problems are Effective LLM Evaluators**<br><sub>机构: Microsoft Research Asia, Xiamen University, Microsoft Azure AI<br>本研究通过评估大型语言模型在处理竞赛级编程问题上的表现，揭示了GPT-4等模型在真实推理能力上的不足，并提出了一些提升表现的方法。这些发现突显了这类问题作为评估LLMs的有效工具的重要性，并促进了对于提高LLMs复杂推理能力的进一步研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.02143v2)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.02143.md)  |
 | <span style='display: inline-block; width: 42px;'>12-04</span> | **A Survey on Large Language Model (LLM) Security and Privacy: The Good, the Bad, and the Ugly**<br><sub>机构: Elsevier<br>这篇论文总结了大型语言模型（LLMs）在安全性和隐私保护中的应用及相关挑战，指出LLMs在这些领域的好处、坏处和丑陋之处，同时强调了其在数据保护方面的潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.02003v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.02003.md)  |
