@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_12.08_12:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_12.08_12:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -12,7 +12,7 @@
 - 相关的精选博客 &nbsp; ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
 
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月08日 12:11</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月08日 12:16</sub></summary>
 <br>
 
 - An LLM Compiler for Parallel Function Calling 
@@ -30,7 +30,7 @@
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
 | <span style='display: inline-block; width: 42px;'>12-07</span> | **Cost-Effective In-Context Learning for Entity Resolution: A Design Space Exploration**<br><sub>机构: Renmin University of China, Beijing Institute of Technology, HKUST (GZ)<br>这篇论文提供了一个全面的研究，旨在探索如何开发一种成本效益的批量提示方法来进行实体解析。主要贡献是介绍 BATCHER 框架并提出基于覆盖的演示选择策略。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.03987v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.03987.md)  |
-| <span style='display: inline-block; width: 42px;'>12-07</span> | **A Study on the Calibration of In-context Learning**<br><sub>机构: Hanlin Zhang1, Yi-Fan Zhang2, Yaodong Yu3, Dhruv Madeka4, Dean Foster4, Eric Xing56, Hima Lakkaraju4, Sham Kakade14<br>该论文深入研究了上下文内学习(ICL)在语言模型(LMs)中的校准准确性问题，并提出了评估和分析方法。它揭示了校准误差与模型大小和微调过程中的变化关系，以及校准在推理任务生成中的降低。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.04021v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.04021.md)  |
+| <span style='display: inline-block; width: 42px;'>12-07</span> | **A Study on the Calibration of In-context Learning**<br><sub>机构: Harvard University<br>该论文深入研究了上下文内学习(ICL)在语言模型(LMs)中的校准准确性问题，并提出了评估和分析方法。它揭示了校准误差与模型大小和微调过程中的变化关系，以及校准在推理任务生成中的降低。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.04021v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.04021.md)  |
 | <span style='display: inline-block; width: 42px;'>12-07</span> | **CLadder: A Benchmark to Assess Causal Reasoning Capabilities of Language Models**<br><sub>机构: Zhijing Jin12, Felix Leeb1, Luigi Gresele1*<br>此研究为测试和分析大型语言模型（LLMs）在正规因果推理上的能力提出了CLADDER数据集和CAUSALCOT思维路径提示策略，通过实验突显了LLMs的局限并为未来研究提出了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.04350v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.0435.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/causalNLP/cladder)</div> |
 | <span style='display: inline-block; width: 42px;'>12-07</span> | **Generating Illustrated Instructions**<br><sub>机构: GenAI Meta, Columbia University<br>本论文介绍了一种名为StackedDiffusion的新方法，用于生成插图说明，这是一种将文本和图像结合起来描述如何实现某一目标的任务。该方法通过结合大型语言模型和文本到图像扩散模型，并引入一些新颖的建模技巧，解决了现有T2I模型无法直接从用户查询中生成视觉效果的问题，并在人类评估中超越了现有技术水平。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.04552v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.04552.md)  |
 | <span style='display: inline-block; width: 42px;'>12-07</span> | **Fortify the Shortest Stave in Attention: Enhancing Context Awareness of Large Language Models for Effective Tool Use**<br><sub>机构: Gaoling School of Artificial Intelligence, Renmin University of China, Alibaba Group<br>该论文针对LLMs在工具使用时对上下文认知的不足提出了Attention Buckets方法，通过处理不同的RoPE角度基础来强化对上下文的关注，显著提升了LLMs在工具使用任务的性能。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](http://arxiv.org/pdf/2312.04455v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2023-12/2312.04455.md)  |
