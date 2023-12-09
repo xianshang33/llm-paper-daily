@@ -14,15 +14,8 @@
 <details>
   <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月08日 12:20</sub></summary>
 <br>
+周末无论文更新.....
 
-- An LLM Compiler for Parallel Function Calling 
-- Fortify the Shortest Stave in Attention: Enhancing Context Awareness of Large Language Models for Effective Tool Use 
-- Generating Illustrated Instructions 
-- CLadder: A Benchmark to Assess Causal Reasoning Capabilities of Language Models 
-- A Study on the Calibration of In-context Learning 
-- Cost-Effective In-Context Learning for Entity Resolution: A Design Space Exploration 
-- Efficient Large Language Models: A Survey 
-- Applying Large Language Models and Chain-of-Thought for Automatic Scoring 
 </details>
 
 ## 12月
