@@ -1,18 +1,21 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_12.13_14:04-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_12.13_16:59-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
-**每篇论文会携带相关资料:**
-- arXiv 地址 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)
-- GitHub 地址 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)
-- GPT-4 的总结 &nbsp;&nbsp;&nbsp;&nbsp;  ![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
-- 相关的精选博客 &nbsp; ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
+**关于仓库**
+每日更新的论文会带有arxiv地址、相关 git 仓库和基于 GPT-4 的简单总结&nbsp;&nbsp;![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
+
+**论文分类**
+这个姊妹仓库 [Awesome-LLM-Papers](https://github.com/xianshang33/Awesome-LLM-Papers) 对文章进行了分类，✨新仓库强烈欢迎大家做出贡献
+- 💐 提出宝贵的建议 **Adding Issues**
+- 🌈 将收集的好文和具有里程碑意义的文章提交 **Pull Requests**
+👉 [Visit Awesome-LLM-Papers](https://github.com/xianshang33/Awesome-LLM-Papers)
 
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月13日 14:04</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月13日 16:59</sub></summary>
 <br>
 
 - VILA: On Pre-training for Visual Language Models 
