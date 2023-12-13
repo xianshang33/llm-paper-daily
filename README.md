@@ -9,7 +9,7 @@
 每日更新的论文会带有arxiv地址、相关 git 仓库和基于 GPT-4 的简单总结&nbsp;&nbsp;![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
 
 **论文分类**
-这个姊妹仓库 [Awesome-LLM-Papers](https://github.com/xianshang33/Awesome-LLM-Papers) 对文章进行了分类，✨新仓库强烈欢迎大家做出贡献
+这个姊妹仓库 [Awesome-LLM-Papers](https://github.com/xianshang33/Awesome-LLM-Papers) 对文章进行了分类，✨新仓库强烈欢迎大家做出贡献  
 - 💐 提出宝贵的建议 **Adding Issues**
 - 🌈 将收集的好文和具有里程碑意义的文章提交 **Pull Requests**
 👉 [Visit Awesome-LLM-Papers](https://github.com/xianshang33/Awesome-LLM-Papers)
