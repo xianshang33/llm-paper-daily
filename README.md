@@ -1,15 +1,15 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_12.14_15:29-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_12.14_15:32-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
 欢迎来到 **llm-paper-daily**! 这是一个获取最新研究论文的每日更新和分类的平台。希望为爱好者提供 LLM 研究的前沿资讯，让您更轻松地了解该领域的最新发展。
 
-📚 **每日更新:** 仓库每天会带来最新的 LLM 研究，并附有arxiv地址、相关 git 仓库和基于 GPT-4 的简单总结&nbsp;&nbsp;![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
+📚 **每日更新:** 仓库每天会带来最新的 LLM 研究，并附有arxiv地址、相关 git 仓库和基于 GPT-4 的简单总结
 
-💐 **分类摘要:** 将每篇论文分类到如推理、代理、检索、应用、预训练与指令微调等不同部分，帮助您能轻松导航并发现相关的研究。
+💐 **分类摘要:** 将每篇论文分类到如推理、代理、检索、应用、预训练与指令微调等不同部分，帮助您能轻松导航并发现相关的研究
 
 🌈 **征集贡献:** 欢迎大家做出贡献！希望您可以 🙌 将收集的好文和具有里程碑意义的分类文章提交 **Pull Requests**
 
@@ -26,7 +26,7 @@
   - [🏆 Top Conferences](#Top-Conferences)
 
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月14日 15:29</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 12月14日 15:32</sub></summary>
 <br>
 
 - Efficient Toxic Content Detection by Bootstrapping and Distilling Large Language Models 
