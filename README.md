@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_04.10_11:34-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_04.10_17:03-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,7 +11,9 @@
 
 💐 **分类摘要:** 将每篇论文分类到如推理、代理、检索、应用、预训练与指令微调等不同部分，帮助您能轻松导航并发现相关的研究
 
-🌈 **征集贡献:** 欢迎大家做出贡献！希望您可以 🙌 将收集的好文和具有里程碑意义的分类文章提交 **Pull Requests**
+🌈 **交流学习:** 最近准备拉一个讨论小组方便大家交流和互相学习。欢迎对大模型落地、论文等等方面有兴趣的小伙伴加入🙌 
+
+<img src='./images/qrcode.JPG' width=13%  alt=/>
 
 ## 目录
 - [最新论文(含总结)](#最新论文)
@@ -24,7 +26,7 @@
   - [📐 Pre-training and Instruction Fine-tuning](#Pre-training-and-Instruction-Fine-tuning)
   - [📄 Survey](#Survey)
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 04月10日 11:34</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 04月10日 17:03</sub></summary>
 <br>
 
 - Jamba: A Hybrid Transformer-Mamba Language Model 
