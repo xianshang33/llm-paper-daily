@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_04.16_14:59-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_04.17_16:12-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -10,16 +10,6 @@
 - GitHub link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)
 - Summary of GPT-4  ![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)
 - Related blogs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Blog](https://img.shields.io/badge/Blog-Posts-yellow?logo=rss)
-
-<details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 04-16 14:59</sub></summary>
-<br>
-
-- Emerging Platforms Meet Emerging LLMs: A Year-Long Journey of Top-Down Development 
-- Intuition-aware Mixture-of-Rank-1-Experts for Parameter Efficient Finetuning 
-- Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length 
-- Compression Represents Intelligence Linearly 
-</details>
 
 ## 2024-04
 
