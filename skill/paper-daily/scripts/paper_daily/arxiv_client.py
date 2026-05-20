@@ -14,6 +14,7 @@ ATOM_NS = {
     "arxiv": "http://arxiv.org/schemas/atom",
     "opensearch": "http://a9.com/-/spec/opensearch/1.1/",
 }
+RATE_LIMIT_RETRY_DELAYS = [120.0, 300.0, 900.0]
 
 
 class ArxivClient:
@@ -126,13 +127,14 @@ class ArxivClient:
 
     def _retry_delay(self, exc: Exception, attempt: int) -> float:
         if isinstance(exc, urllib.error.HTTPError) and exc.code == 429:
+            default_delay = RATE_LIMIT_RETRY_DELAYS[min(attempt, len(RATE_LIMIT_RETRY_DELAYS) - 1)]
             retry_after = exc.headers.get("Retry-After")
             if retry_after:
                 try:
-                    return max(float(retry_after), self.delay_seconds)
+                    return max(float(retry_after), default_delay, self.delay_seconds)
                 except ValueError:
                     pass
-            return max(30.0 * (attempt + 1), self.delay_seconds)
+            return max(default_delay, self.delay_seconds)
         return max(min(2**attempt, 8), self.delay_seconds)
 
 

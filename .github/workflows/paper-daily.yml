@@ -3,6 +3,8 @@ name: Paper Daily Producer
 on:
   schedule:
     - cron: "30 1 * * *"
+    - cron: "30 5 * * *"
+    - cron: "30 9 * * *"
   workflow_dispatch:
     inputs:
       date:
@@ -24,6 +26,7 @@ jobs:
     env:
       DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
       RUN_DATE: ${{ github.event.inputs.date || '' }}
+      EVENT_NAME: ${{ github.event_name }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -43,19 +46,35 @@ jobs:
       - name: Run producer
         run: |
           set -euo pipefail
-          args=()
-          if [ -n "$RUN_DATE" ]; then
-            args+=(--date "$RUN_DATE")
+          effective_date="$RUN_DATE"
+          if [ -z "$effective_date" ]; then
+            effective_date="$(date -u -d 'yesterday' +%F)"
+          fi
+          if [ "$EVENT_NAME" = "schedule" ] && python3 - "$effective_date" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          target_date = sys.argv[1]
+          state_path = Path("data/state-feed.json")
+          if not state_path.exists():
+              raise SystemExit(1)
+          state = json.loads(state_path.read_text(encoding="utf-8"))
+          raise SystemExit(0 if target_date in set(state.get("analyzed_content_dates", [])) else 1)
+          PY
+          then
+            echo "content date $effective_date is already analyzed; skipping retry window."
+            exit 0
           fi
           python3 skill/paper-daily/scripts/run_daily.py \
             --repo-root . \
-            "${args[@]}" \
+            --date "$effective_date" \
             --select 5 \
             --min-select 3 \
             --max-results-per-keyword 20 \
             --delay-seconds 3.1 \
             --timeout-seconds 60 \
-            --retries 2 \
+            --retries 3 \
             --backfill-days 7 \
             --public-base-url "https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}" \
             --source-repo "${{ github.repository }}"
