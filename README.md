@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.16_17:12-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.20_13:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月16日 17:12</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月20日 13:18</sub></summary>
 <br>
 
-- Veritas: A Semantically Grounded Agentic Framework for Memory Corruption Vulnerability Detection in Binaries 
-- Orchard: An Open-Source Agentic Modeling Framework 
-- Self-Distilled Agentic Reinforcement Learning 
-- From Text to Voice: A Reproducible and Verifiable Framework for Evaluating Tool Calling LLM Agents 
-- Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces 
+- PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents 
+- EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design 
+- A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents 
+- Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction 
+- From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-19</span> | **PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents**<br><sub>机构: MIT CSAIL, Stanford University<br>PEEK 通过引入“上下文地图”这一概念，成功解决了 LLM 代理在重复处理相同长上下文时缺乏高效定向知识的问题。它通过蒸馏、映射和驱逐机制，以极低的成本和 token 消耗，显著提升了代理在长上下文任务中的准确性和效率，证明了维护可重用的上下文定向知识对于提升 LLM 代理性能至关重要。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.19932v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.19932.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](zhuohangu/peek)</div> |
+| <span style='display: inline-block; width: 42px;'>05-19</span> | **EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design**<br><sub>机构: ETH Zurich<br>本文介绍了 EngiAI，一个用于 LLM 驱动工程设计的多代理框架和基准套件。通过引入工作流、RAG 和 HPC 编排三个维度的评估，文章系统地分析了不同 LLM 在处理复杂工程设计任务时的能力边界。结果表明，虽然专有模型在标准任务上表现优异，但在条件分支和长程工作流编排上仍面临显著挑战。该研究为评估和优化面向工程领域的 LLM 代理系统提供了重要的基准和参考实现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.19743v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.19743.md)  |
+| <span style='display: inline-block; width: 42px;'>05-19</span> | **A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents**<br><sub>机构: Stanford School of Engineering<br>本文确立了“随机-确定性边界”（SDB）作为生产级 LLM 代理运行时的核心架构原语。通过定义 SDB 的四部分契约，作者整理了六种运行时架构模式，并提出了选择方法和故障诊断流程。研究指出，随着模型能力的提升，架构惯性（由模式选择和 SDB 强度决定）将成为影响长期可靠性的主导因素。该工作为构建高可靠性生产级代理提供了系统的工程方法论。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.20173v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.20173.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/vasundras/agent-runtime-patterns)</div> |
+| <span style='display: inline-block; width: 42px;'>05-19</span> | **Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction**<br><sub>机构: Institute for Software and Systems Engineering, Clausthal University of Technology<br>本文针对 ROS 2 系统中架构模型缺失和不一致的问题，提出了一种增强的 LLM 辅助架构恢复方法。通过优化提示词设计和引入多级中间表示的分阶段恢复策略，成功实现了跨抽象层级的层级结构重建。在真实复杂案例研究中的评估证明了该方法在提高架构恢复质量和处理复杂性方面的有效性，为分布式 cyber-physical 系统的自动化架构文档化提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.20055v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.20055.md)  |
+| <span style='display: inline-block; width: 42px;'>05-19</span> | **From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning**<br><sub>机构: German University in Cairo (GUC), C-DRiVeS Lab, Deggendorf Institute of Technology, IAV GmbH<br>本文探讨了在多智能体通信中进行时间 conditioning 是否能保持或增强推理的一致性。研究指出，虽然标准NLP指标未能反映提升，但定性分析证明了时间 grounding 对于实现预测性安全和稳定行为的重要性。该工作明确了基于提示的时间 grounding 的局限，并为未来的时间场景到规划推理研究建立了基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.19824v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.19824.md)  |
 | <span style='display: inline-block; width: 42px;'>05-14</span> | **Veritas: A Semantically Grounded Agentic Framework for Memory Corruption Vulnerability Detection in Binaries**<br><sub>机构: University College London<br>Veritas 证明了“语义接地”作为二进制漏洞检测操作设计原则的有效性。通过结合静态分析的精确性、LLM 的推理能力以及动态验证的可靠性，Veritas 能够在剥离二进制文件中高效、准确地检测内存破坏漏洞，并在实际场景中发现了高危未知漏洞，展现了其在实际安全审计中的应用潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.15097v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.15097.md)  |
 | <span style='display: inline-block; width: 42px;'>05-14</span> | **Orchard: An Open-Source Agentic Modeling Framework**<br><sub>机构: Microsoft Research, Columbia University, UIUC<br>Orchard 通过提供一个轻量级、开源且与 harness 无关的环境层（Orchard Env），解决了智能体研究中基础设施碎片化和训练不可扩展的问题。它不仅在代码生成、GUI 操作和个人助理三个截然不同的领域展示了卓越的性能，还证明了通过高效的数据蒸馏和针对性的训练策略（如信用分配 SFT 和平衡自适应 RL），小参数开源模型可以达到甚至超越专有系统的水平。该框架的发布有望加速开源社区在智能体建模方面的创新。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.15040v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.15040.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/microsoft/Orchard)</div> |
 | <span style='display: inline-block; width: 42px;'>05-14</span> | **Self-Distilled Agentic Reinforcement Learning**<br><sub>机构: Zhejiang University, Meituan, Tsinghua University<br>本文针对多轮 LLM 智能体训练中 RL 监督稀疏和 OPSD 不稳定的问题，提出了 SDAR 框架。通过引入门控机制，SDAR 有效地利用了 OPSD 的密集 token 级指导，同时通过不对称处理教师信号解决了多轮累积误差和特权上下文带来的噪声问题。实验证明，SDAR 在多个基准任务上均取得了显著的性能提升，且训练更加稳定，为 LLM 智能体的后训练提供了一种高效的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.15155v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.15155.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ZJU-REAL/SDAR)</div> |
