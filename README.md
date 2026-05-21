@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.20_13:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.21_05:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月20日 13:18</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月21日 05:42</sub></summary>
 <br>
 
-- PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents 
-- EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design 
-- A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents 
-- Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction 
-- From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning 
+- Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling 
+- Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs 
+- Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents 
+- APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents 
+- What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-20</span> | **Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling**<br><sub>机构: Stanford University<br>该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21470v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21470.md)  |
+| <span style='display: inline-block; width: 42px;'>05-20</span> | **Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs**<br><sub>机构: Dialpad Inc.<br>本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21027v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21027.md)  |
+| <span style='display: inline-block; width: 42px;'>05-20</span> | **Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents**<br><sub>机构: Scale AI<br>本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21347v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21347.md)  |
+| <span style='display: inline-block; width: 42px;'>05-20</span> | **APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents**<br><sub>机构: National University of Singapore<br>APEX通过构建显式的策略地图，有效解决了自进化LLM智能体中的探索崩溃问题。它结合了基于证据的分支发现和平衡探索利用的策略选择机制，使得智能体能够在不更新模型权重的情况下，持续发现更优策略并在复杂长程任务中保持高性能。该方法在文本冒险和网页交互任务中均展现了显著的优势和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21240v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21240.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/liushiliushi/APEX1)</div> |
+| <span style='display: inline-block; width: 42px;'>05-20</span> | **What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema**<br><sub>机构: University of Texas at Arlington; Texas Tech University<br>本文是一项关于 LLM Agent 基准测试透明度的试点审计研究。通过提出并应用一个包含五个维度的评分 schema，研究揭示了当前顶级 Agent 基准论文在实验细节披露上的严重不足，特别是环境规范和成本报告的缺失。该工作为社区提供了一套开源的审计工具，旨在推动更严格、透明的评估标准，尽管目前仅为单审核员初步结果，但为后续的多审核员审计和标准化奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21404v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21404.md)  |
 | <span style='display: inline-block; width: 42px;'>05-19</span> | **PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents**<br><sub>机构: MIT CSAIL, Stanford University<br>PEEK 通过引入“上下文地图”这一概念，成功解决了 LLM 代理在重复处理相同长上下文时缺乏高效定向知识的问题。它通过蒸馏、映射和驱逐机制，以极低的成本和 token 消耗，显著提升了代理在长上下文任务中的准确性和效率，证明了维护可重用的上下文定向知识对于提升 LLM 代理性能至关重要。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.19932v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.19932.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](zhuohangu/peek)</div> |
 | <span style='display: inline-block; width: 42px;'>05-19</span> | **EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design**<br><sub>机构: ETH Zurich<br>本文介绍了 EngiAI，一个用于 LLM 驱动工程设计的多代理框架和基准套件。通过引入工作流、RAG 和 HPC 编排三个维度的评估，文章系统地分析了不同 LLM 在处理复杂工程设计任务时的能力边界。结果表明，虽然专有模型在标准任务上表现优异，但在条件分支和长程工作流编排上仍面临显著挑战。该研究为评估和优化面向工程领域的 LLM 代理系统提供了重要的基准和参考实现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.19743v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.19743.md)  |
 | <span style='display: inline-block; width: 42px;'>05-19</span> | **A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents**<br><sub>机构: Stanford School of Engineering<br>本文确立了“随机-确定性边界”（SDB）作为生产级 LLM 代理运行时的核心架构原语。通过定义 SDB 的四部分契约，作者整理了六种运行时架构模式，并提出了选择方法和故障诊断流程。研究指出，随着模型能力的提升，架构惯性（由模式选择和 SDB 强度决定）将成为影响长期可靠性的主导因素。该工作为构建高可靠性生产级代理提供了系统的工程方法论。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.20173v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.20173.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/vasundras/agent-runtime-patterns)</div> |

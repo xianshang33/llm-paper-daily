@@ -1,96 +1,46 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-20T13:18:25.559681+00:00",
-  "run_date": "2026-05-19",
+  "generated_at": "2026-05-21T05:42:36.901599+00:00",
+  "run_date": "2026-05-20",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2605.19932",
-      "date": "2026-05-19",
-      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "paper_id": "2605.21470",
+      "date": "2026-05-20",
+      "title": "Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling",
       "authors": [
-        "Zhuohan Gu",
-        "Qizheng Zhang",
-        "Omar Khattab",
-        "Samuel Madden"
+        "Caleb Winston",
+        "Ron Yifeng Wang",
+        "Azalia Mirhoseini",
+        "Christos Kozyrakis"
       ],
-      "abstract": "Large language model (LLM) agents increasingly operate over long and recurring external contexts, like document corpora and code repositories. Across invocations, existing approaches preserve either the agent's trajectory, passive access to raw material, or task-level strategies. None of them preserves what we argue is most needed for repeated same-context workloads: reusable orientation knowledge (e.g., what the context contains, how it is organized, and which entities, constants, and schemas have historically been useful) about the recurring context itself. We introduce PEEK, a system that caches and maintains this orientation knowledge as a context map: a small, constant-sized artifact in the agent's prompt that gives it a persistent peek into the external context. The map is maintained by a programmable cache policy with three modules: a Distiller that extracts transferable knowledge from inference-time signals, a Cartographer that translates it into structured edits, and a priority-based Evictor that enforces a fixed token budget. On long-context reasoning and information aggregation, PEEK improves over strong baselines by 6.3-34.0% while using 93-145 fewer iterations and incurring 1.7-5.8x lower cost than the state-of-the-art prompt-learning framework, ACE. On context learning, PEEK improves solving rate and rubric accuracy by 6.0-14.0% and 7.8-12.1%, respectively, at 1.4x lower cost than ACE. These gains generalize across LMs and agent architectures, including OpenAI Codex, a production-grade coding agent. Together, these results show that a context map helps long-context LLM agents interact with recurring external contexts more accurately and efficiently.",
+      "abstract": "Computer-use agents (CUA) automate tasks specified with natural language such as \"order the cheapest item from Taco Bell\" by generating sequences of calls to tools such as click, type, and scroll on a browser. Current implementations follow a sequential fetch-screenshot-execute loop where each iteration requires an LLM call, resulting in high latency and frequent errors from incorrect tool use. We present agent just-in-time (JIT) compilation, an alternative that compiles task descriptions directly into executable code that is free to include LLM calls, tool calls, and parallelization. Our approach comprises three components: (1) JIT-Planner, which generates multiple code plans, validates each against tool specifications, and selects the minimum-cost candidate; (2) JIT-Scheduler, which explores parallelization strategies via Monte Carlo cost estimation from learned latency distributions; and (3) an invariant-enforcing tool protocol specifying precondition and postcondition state requirements that reduce the rate of generating plans with incorrect tool use. Across 5 web applications, JIT-Planner achieves $10.4\\times$ speedup and $+28\\%$ accuracy over Browser-Use, while JIT-Scheduler achieves $2.4\\times$ speedup and $+9\\%$ accuracy over OpenAI CUA.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19932v1",
-        "pdf": "https://arxiv.org/pdf/2605.19932v1",
-        "github": "zhuohangu/peek",
-        "blog": null
-      },
-      "institution": "MIT CSAIL, Stanford University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理越来越多地在长且重复的外部上下文（如文档语料库和代码仓库）上运行。在这些工作负载中，外部上下文基本保持不变，而任务不断变化。\n- **已有的工作为什么解决不了**：现有方法主要保留代理的执行轨迹、对原始材料的被动访问或任务级策略。共享聊天会积累噪声；历史压缩丢弃了关于外部上下文的可重用知识；检索增强生成（RAG）和上下文卸载仅保留被动访问权限，缺乏对上下文本身的 curated（精心策划的）认知；提示学习关注任务策略而非上下文知识。它们都未能保存对于重复相同上下文工作负载最关键的可重用“定向知识”（即上下文包含什么、如何组织、哪些实体 historically 有用）。\n\n## 文章的核心贡献点\n- **提出了一个 PEEK 系统**：该系统将定向知识缓存并维护为“上下文地图”（Context Map），这是代理提示中一个小型、固定大小的工件，使其能够持久地“窥视”外部上下文。\n- **挑战1：如何从推理信号中提取可转移的知识？**\n  - **难点**：原始上下文庞大且非结构化，直接处理成本高且难以识别关键结构。\n  - **解决**：PEEK 引入了“蒸馏器”（Distiller模块），从推理时的信号中提取可转移的知识，将其转化为结构化的编辑操作，从而捕捉上下文的本质特征。\n- **挑战2：如何在固定 token 预算下维持地图的有效性和相关性？**\n  - **难点**：随着交互增加，知识会不断累积，导致上下文溢出或包含过时信息，影响代理判断。\n  - **解决**：PEEK 设计了基于优先级的“驱逐器”（Evictor模块）和“制图器”（Cartographer模块），强制执行固定的 token 预算，通过优先级机制保留最有价值的定向知识，确保地图小而精。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：PEEK 包含三个核心模块：Distiller（提取知识）、Cartographer（转化为结构化编辑）、Evictor（基于优先级清理）。它作为一个可编程的缓存策略运行，适用于多种 LM 和代理架构，包括 OpenAI Codex。\n- **评估结果**：\n  - 在长上下文推理和信息聚合任务上，PEEK 比强基线提高了 6.3-34.0%，迭代次数减少 93-145 次。\n  - 与最先进的提示学习框架 ACE 相比，PEEK 的成本降低了 1.7-5.8 倍。\n  - 在上下文学习任务中，PEEK 的解决率提高了 6.0-14.0%，规则准确性提高了 7.8-12.1%，成本比 ACE 低 1.4 倍。\n- **对比**：显著优于 ACE 及其他基线方法，且在 GPT-5-mini 等不同基础模型上表现出良好的泛化能力。\n\n#### 总结\nPEEK 通过引入“上下文地图”这一概念，成功解决了 LLM 代理在重复处理相同长上下文时缺乏高效定向知识的问题。它通过蒸馏、映射和驱逐机制，以极低的成本和 token 消耗，显著提升了代理在长上下文任务中的准确性和效率，证明了维护可重用的上下文定向知识对于提升 LLM 代理性能至关重要。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language model (LLM) agents increasingly operate over long and recurring external contexts, such as document corpora and code repositories, where the context remains largely static while tasks vary.\n- **Why Existing Work Falls Short**: Current approaches preserve agent trajectories, passive access to raw material, or task-level strategies. Shared chats accumulate noise; history compaction discards reusable context knowledge; RAG and context offloading lack curated understanding of the context itself; and prompt learning focuses on task strategies rather than contextual orientation. None preserve the reusable \"orientation knowledge\" (what the context contains, its organization, and useful entities) critical for repeated same-context workloads.\n\n## Core Contributions\n- **Proposed PEEK**: A system that caches and maintains orientation knowledge as a \"Context Map,\" a small, constant-sized artifact in the agent's prompt that provides a persistent peek into the external context.\n- **Challenge 1: How to extract transferable knowledge from inference signals?**\n  - **Difficulty**: Raw contexts are large and unstructured, making direct processing costly and key structures hard to identify.\n  - **Solution**: PEEK introduces a \"Distiller\" module that extracts transferable knowledge from inference-time signals and translates it into structured edits, capturing the essence of the context.\n- **Challenge 2: How to maintain map effectiveness and relevance under a fixed token budget?**\n  - **Difficulty**: Knowledge accumulation leads to context overflow or inclusion of outdated information, degrading agent performance.\n  - **Solution**: PEEK employs a priority-based \"Evictor\" and a \"Cartographer\" module to enforce a fixed token budget, retaining only the most valuable orientation knowledge to keep the map compact and precise.\n\n## Implementation and Evaluation\n- **Implementation**: PEEK consists of three modules: Distiller (extracts knowledge), Cartographer (translates to structured edits), and Evictor (priority-based cleanup). It operates as a programmable cache policy compatible with various LMs and agent architectures, including OpenAI Codex.\n- **Evaluation Results**:\n  - On long-context reasoning and information aggregation, PEEK improves over strong baselines by 6.3-34.0%, using 93-145 fewer iterations.\n  - Compared to the state-of-the-art prompt-learning framework ACE, PEEK incurs 1.7-5.8x lower cost.\n  - In context learning tasks, PEEK improves solving rate by 6.0-14.0% and rubric accuracy by 7.8-12.1%, at 1.4x lower cost than ACE.\n- **Comparison**: Significantly outperforms ACE and other baselines, demonstrating strong generalization across different base models like GPT-5-mini.\n\n## 4. Conclusion\nPEEK successfully addresses the lack of efficient orientation knowledge for LLM agents handling recurring long contexts by introducing the \"Context Map.\" Through distillation, mapping, and eviction mechanisms, it significantly enhances agent accuracy and efficiency in long-context tasks at minimal cost and token usage, proving that maintaining reusable contextual orientation knowledge is crucial for improving LLM agent performance.",
-      "render_excerpt": "机构: MIT CSAIL, Stanford University<br>PEEK 通过引入“上下文地图”这一概念，成功解决了 LLM 代理在重复处理相同长上下文时缺乏高效定向知识的问题。它通过蒸馏、映射和驱逐机制，以极低的成本和 token 消耗，显著提升了代理在长上下文任务中的准确性和效率，证明了维护可重用的上下文定向知识对于提升 LLM 代理性能至关重要。",
-      "render_excerpt_en": "Institution: MIT CSAIL, Stanford University<br>## 1. What the Paper Did - **Background**: Large language model (LLM) agents increasingly operate over long and recurring external contexts, such as document corpora and code repositories, where the context remains largely static while tasks vary. - **Why Existing Work Falls Short**: Current approaches preserve agent trajectories, passive access to raw material, or task-level strategies.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-05-19T14:51:32Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-05-19"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2605.19743",
-      "date": "2026-05-19",
-      "title": "EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design",
-      "authors": [
-        "Gioele Molinari",
-        "Florian Felten",
-        "Soheyl Massoudi",
-        "Mark Fuge"
-      ],
-      "abstract": "Large Language Model (LLM) agents are increasingly applied to engineering design tasks, yet existing evaluation frameworks do not adequately address multi-agent systems that combine simulation, retrieval, and manufacturing preparation. We introduce a benchmark suite with three evaluation dimensions: (1) a workflow benchmark with seven prompt styles targeting distinct cognitive demands-including direct tool use, semantic disambiguation, conditional branching, and working-memory tasks; (2) a Retrieval-Augmented Generation (RAG) benchmark with gated scoring isolating retrieval contributions to parameter selection; and (3) an High Performance Computing (HPC) benchmark evaluating end-to-end ML training orchestration on a SLURM cluster. Alongside the benchmark we present EngiAI, a Multi-Agent System (MAS) reference implementation built on LangGraph that operationalizes the benchmark by coordinating seven specialized agents through a supervisor architecture, unifying topology optimization, document retrieval, HPC job orchestration, and 3D printer control. Across four LLM backends and two EngiBench problems, proprietary models achieve 96-97% average task completion on Beams2D, while open-source 4B-parameter models reach 55-78%, with clear generational improvement. Conditional branching proves most challenging, with task completion dropping to 20-53% for the conditional style on Photonics2D. RAG gating confirms near-perfect retrieval-augmented scores ($\\approx 1.0$) versus near-zero without retrieval, validating the evaluation design. On HPC orchestration, one model completes all pipeline steps in 100% of runs while another drops to 50%, revealing that multi-step instruction following degrades over long-running workflows.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.19743v1",
-        "pdf": "https://arxiv.org/pdf/2605.19743v1",
+        "abs": "http://arxiv.org/abs/2605.21470v1",
+        "pdf": "https://arxiv.org/pdf/2605.21470v1",
         "github": null,
         "blog": null
       },
-      "institution": "ETH Zurich",
+      "institution": "Stanford University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：工程设计具有高度复杂性，涵盖概念布局、仿真驱动优化和制造准备等环节，通常依赖专用软件和迭代优化。虽然机器学习模型（如逆向设计和代理模型）能生成高质量设计，但往往作为“黑盒”存在，缺乏灵活性且难以被非专家理解。大型语言模型（LLM）代理通过自然语言接口为工程师与专用设计工具之间搭建了桥梁。\n- **已有工作为什么解决不了**：现有的评估框架未能充分解决结合了仿真、检索和制造准备的多代理系统（Multi-Agent Systems, MAS）。缺乏针对此类复杂工程工作流的标准化基准，无法有效评估LLM在真实工程场景中的多步指令遵循、检索增强及高性能计算编排能力。\n\n## 文章的核心贡献点\n- **提出了一个 EngiAI 多代理框架及 EngiBench 基准套件**：包含一个基于 LangGraph 构建的参考实现，协调七个专用代理以统一拓扑优化、文档检索、HPC 作业编排和3D打印控制；同时引入了三个维度的评估基准。\n- **挑战1：复杂认知需求下的工作流执行稳定性**。难点在于LLM需处理直接工具使用、语义歧义消除、条件分支和工作记忆等多种认知任务，长链条中容易出错。论文通过设计包含七种提示风格的工作流基准，量化不同认知需求对任务完成率和设计质量的影响，发现条件分支是最具挑战性的环节。\n- **挑战2：检索增强生成（RAG）在参数选择中的真实贡献隔离**。难点在于难以区分模型自身知识与检索知识对最终结果的贡献。论文提出带有门控评分机制的 RAG 基准，通过对比有无检索时的得分，验证了检索对参数选择的决定性作用（有检索得分接近1.0，无检索接近0）。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EngiAI 基于 LangGraph 构建，采用监督者架构协调七个专用代理。系统提供基于 Web 的界面，支持模块化扩展。基准测试涵盖两个主要工程问题：Beams2D（梁结构优化）和 Photonics2D（光子学设计）。\n- **Evaluation 结果**：\n    - **模型性能对比**：在 Beams2D 任务中，专有模型平均任务完成率达到 96-97%，而开源的 4B 参数模型达到 55-78%，显示出明显的代际改进。\n    - **难点分析**：条件分支在 Photonics2D 任务中表现最差，任务完成率降至 20-53%。\n    - **RAG 验证**：门控评分证实了检索增强的有效性，隔离了检索对参数选择的贡献。\n    - **HPC 编排**：在 SLURM 集群上的端到端 ML 训练编排测试中，一个模型在所有运行中完成了所有管道步骤（100%），而另一个模型仅完成 50%，揭示了多步指令遵循在长运行工作流中的退化现象。\n- **对比**：相较于现有缺乏针对多代理系统工程应用评估的工作，本研究提供了细粒度的认知需求分析和具体的工程场景基准，填补了从单纯对话评估到复杂工程工具链编排评估的空白。\n\n#### 总结\n本文介绍了 EngiAI，一个用于 LLM 驱动工程设计的多代理框架和基准套件。通过引入工作流、RAG 和 HPC 编排三个维度的评估，文章系统地分析了不同 LLM 在处理复杂工程设计任务时的能力边界。结果表明，虽然专有模型在标准任务上表现优异，但在条件分支和长程工作流编排上仍面临显著挑战。该研究为评估和优化面向工程领域的 LLM 代理系统提供了重要的基准和参考实现。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Engineering design is inherently complex, involving conceptual layout, simulation-driven optimization, and manufacturing preparation, typically relying on specialized software and iterative refinement. While ML models can generate high-quality designs, they often act as inflexible \"black boxes.\" Large Language Model (LLM) agents offer a natural-language bridge between engineers and these specialized tools.\n- **Why Existing Work Falls Short**: Current evaluation frameworks do not adequately address multi-agent systems that combine simulation, retrieval, and manufacturing preparation. There is a lack of standardized benchmarks to evaluate LLMs in real-world engineering scenarios involving multi-step instruction following, retrieval-augmented generation (RAG), and High Performance Computing (HPC) orchestration.\n\n## Core Contributions\n- **Proposed EngiAI Framework and EngiBench Suite**: Introduced a reference implementation built on LangGraph that coordinates seven specialized agents via a supervisor architecture for topology optimization, document retrieval, HPC job orchestration, and 3D printer control. Alongside this, a three-dimensional benchmark suite was introduced.\n- **Challenge 1: Workflow Execution Stability under Complex Cognitive Demands**. The difficulty lies in handling diverse cognitive tasks such as direct tool use, semantic disambiguation, conditional branching, and working memory within long chains, where errors accumulate. The paper addresses this by designing a workflow benchmark with seven prompt styles to quantify the impact of different cognitive demands, identifying conditional branching as the most challenging aspect.\n- **Challenge 2: Isolating the True Contribution of RAG in Parameter Selection**. It is difficult to distinguish between the model's internal knowledge and retrieved knowledge. The paper proposes a RAG benchmark with gated scoring, validating the evaluation design by showing near-perfect scores with retrieval (~1.0) versus near-zero without it.\n\n## Implementation and Evaluation\n- **Implementation**: EngiAI is built on LangGraph with a supervisor architecture coordinating seven agents. It features a web-based interface and modular architecture. The benchmarks focus on two engineering problems: Beams2D and Photonics2D.\n- **Evaluation Results**:\n    - **Model Comparison**: On Beams2D, proprietary models achieved 96-97% average task completion, while open-source 4B-parameter models reached 55-78%, showing clear generational improvement.\n    - **Difficulty Analysis**: Conditional branching proved most challenging, with task completion dropping to 20-53% for the conditional style on Photonics2D.\n    - **RAG Validation**: Gated scoring confirmed the critical role of retrieval in parameter selection.\n    - **HPC Orchestration**: In end-to-end ML training orchestration on a SLURM cluster, one model completed all pipeline steps in 100% of runs, while another dropped to 50%, revealing degradation in multi-step instruction following over long-running workflows.\n- **Comparison**: Unlike existing works that lack specific evaluations for multi-agent engineering applications, this study provides fine-grained analysis of cognitive demands and concrete engineering scenario benchmarks, filling the gap between simple conversational evaluation and complex engineering toolchain orchestration.\n\n## 4. Conclusion\nThis paper presents EngiAI, a multi-agent framework and benchmark suite for LLM-driven engineering design. By introducing evaluations across workflow, RAG, and HPC orchestration dimensions, it systematically analyzes the capabilities and limitations of various LLMs in complex engineering tasks. Results indicate that while proprietary models perform well on standard tasks, significant challenges remain in conditional branching and long-horizon workflow orchestration. This work provides essential benchmarks and a reference implementation for evaluating and optimizing LLM agent systems in engineering domains.",
-      "render_excerpt": "机构: ETH Zurich<br>本文介绍了 EngiAI，一个用于 LLM 驱动工程设计的多代理框架和基准套件。通过引入工作流、RAG 和 HPC 编排三个维度的评估，文章系统地分析了不同 LLM 在处理复杂工程设计任务时的能力边界。结果表明，虽然专有模型在标准任务上表现优异，但在条件分支和长程工作流编排上仍面临显著挑战。该研究为评估和优化面向工程领域的 LLM 代理系统提供了重要的基准和参考实现。",
-      "render_excerpt_en": "Institution: ETH Zurich<br>## 1. What the Paper Did - **Background**: Engineering design is inherently complex, involving conceptual layout, simulation-driven optimization, and manufacturing preparation, typically relying on specialized software and iterative refinement. While ML models can generate high-quality designs, they often act as inflexible \"black boxes.\" Large Language Model (LLM) agents offer a natural-language bridge between engineers and these specialized tools.",
+      "summary_cn": "## 文章做了什么\n- **背景**：计算机使用代理（CUA）旨在通过自然语言指令自动化网页任务（如点击、输入）。当前主流实现采用“获取-截图-执行”的串行循环，每一步都需要调用大语言模型（LLM）。\n- **已有工作的局限**：现有方法受限于静态工具集和严格的串行执行模式。这种模式导致高延迟和高成本，且由于缺乏对执行调度的优化（如并行化或请求对冲），在面对复杂任务时容易因错误的工具使用而产生频繁错误，无法充分利用计算资源。\n\n## 文章的核心贡献点\n- **提出了一个代理即时编译（Agent JIT Compilation）框架**：将任务描述直接编译为可执行代码，支持LLM调用、工具调用及并行化，而非传统的单步动作生成。\n- **挑战1：如何生成高效且正确的执行计划？**\n  - **难点**：直接从自然语言生成代码容易产生语法错误或不符合工具规范的无效计划，且搜索空间巨大。\n  - **解决方案**：引入 **JIT-Planner**，它生成多个代码计划候选项，针对工具规范进行验证，并基于学习到的延迟分布选择最小成本的候选项，从而确保计划的可行性和效率。\n- **挑战2：如何优化执行过程中的延迟与并发？**\n  - **难点**：网页任务中存在大量可并行化的子任务（如同时查询多个商品），但传统串行代理无法探索并行调度或请求对冲（Hedging）策略。\n  - **解决方案**：引入 **JIT-Scheduler**，通过蒙特卡洛成本估算探索并行化策略（如串行、并行、对冲），动态选择最优执行调度以最小化整体延迟。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现组件**：系统包含三个核心部分：(1) JIT-Planner（计划生成与验证）；(2) JIT-Scheduler（基于延迟分布的并行策略探索）；(3) 不变量强制工具协议（指定前置和后置状态条件，减少错误工具使用）。\n- **评估结果**：在5个Web应用基准测试中：\n  - **JIT-Planner** 相比 Browser-Use 实现了 **10.4倍** 的速度提升，准确率提高 **28%**。\n  - **JIT-Scheduler** 相比 OpenAI CUA 实现了 **2.4倍** 的速度提升，准确率提高 **9%**。\n- **对比优势**：显著优于现有的串行CUA方法和静态RPA脚本，特别是在处理需要多步交互和并行查询的任务时，展现了更低的延迟和更高的鲁棒性。\n\n#### 总结\n该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Computer-use agents (CUAs) automate web tasks via natural language by generating sequences of tool calls (e.g., click, type). Current implementations rely on a sequential \"fetch-screenshot-execute\" loop, requiring an LLM call for each step.\n- **Limitations of Existing Work**: Prior approaches are constrained by static tool sets and strict sequential execution. This results in high latency, high costs, and frequent errors due to incorrect tool usage, as they fail to explore optimized execution schedules like parallelism or request hedging.\n\n## Core Contributions\n- **Proposed Agent Just-In-Time (JIT) Compilation**: A framework that compiles task descriptions directly into executable code, allowing for LLM calls, tool invocations, and parallelization, rather than generating single-step actions.\n- **Challenge 1: How to generate efficient and correct execution plans?**\n  - **Difficulty**: Directly generating code from natural language can lead to syntax errors or invalid plans that violate tool specifications, within a vast search space.\n  - **Solution**: Introduces **JIT-Planner**, which generates multiple code plan candidates, validates them against tool specifications, and selects the minimum-cost candidate based on learned latency distributions, ensuring feasibility and efficiency.\n- **Challenge 2: How to optimize latency and concurrency during execution?**\n  - **Difficulty**: Web tasks often contain parallelizable sub-tasks, but traditional serial agents cannot explore parallel scheduling or request hedging strategies.\n  - **Solution**: Introduces **JIT-Scheduler**, which uses Monte Carlo cost estimation to explore parallelization strategies (serial, parallel, hedging) and dynamically selects the optimal execution schedule to minimize overall latency.\n\n## Implementation and Evaluation\n- **Implementation Components**: The system consists of three parts: (1) JIT-Planner (plan generation and validation); (2) JIT-Scheduler (parallel strategy exploration based on latency distributions); (3) An invariant-enforcing tool protocol (specifying pre/post-conditions to reduce errors).\n- **Evaluation Results**: Across 5 web application benchmarks:\n  - **JIT-Planner** achieved a **10.4x** speedup and **+28%** accuracy improvement over Browser-Use.\n  - **JIT-Scheduler** achieved a **2.4x** speedup and **+9%** accuracy improvement over OpenAI CUA.\n- **Comparison**: The approach significantly outperforms existing serial CUA methods and static RPA scripts, demonstrating lower latency and higher robustness, especially for tasks requiring multi-step interactions and parallel queries.\n\n## 4. Conclusion\nThis paper proposes a novel Agent JIT compilation method that breaks the bottleneck of sequential execution in traditional Web Agents. By compiling tasks into parallelizable code and integrating intelligent planning and scheduling mechanisms, the method significantly reduces latency while improving task accuracy. This provides a new technical pathway for building low-latency, high-efficiency automated web agents.",
+      "render_excerpt": "机构: Stanford University<br>该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。",
+      "render_excerpt_en": "Institution: Stanford University<br>## 1. What the Paper Does - **Background**: Computer-use agents (CUAs) automate web tasks via natural language by generating sequences of tool calls (e.g., click, type). Current implementations rely on a sequential \"fetch-screenshot-execute\" loop, requiring an LLM call for each step.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T12:12:09Z"
+        "captured_at": "2026-05-20T17:54:27Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-05-19"
+        "captured_at": "2026-05-20"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -105,93 +55,46 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2605.20173",
-      "date": "2026-05-19",
-      "title": "A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents",
+      "paper_id": "2605.21027",
+      "date": "2026-05-20",
+      "title": "Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs",
       "authors": [
-        "Vasundra Srinivasan"
+        "Gundeep Singh",
+        "Parsa Kavehzadeh",
+        "Jing Xia",
+        "Xue-Yong Fu",
+        "Julien Bouvier Tremblay",
+        "Md Tahmid Rahman Laskar",
+        "Vincent Lum",
+        "Shashi Bhushan TN"
       ],
-      "abstract": "Production LLM agents combine stochastic model outputs with deterministic software systems, yet the boundary between the two is rarely treated as a first-class architectural object. This paper names that boundary the stochastic-deterministic boundary (SDB): a four-part contract among a proposer, verifier, commit step, and reject signal that specifies how an LLM output becomes a system action. We argue that the SDB is the load-bearing primitive of production agent runtimes. Around this primitive, we organize agent runtime design into three concerns: Coordination, State, and Control. We present a catalog of six runtime patterns that compose the SDB differently across conversational, autonomous, and long-horizon agents: hierarchical delegation, scatter-gather plus saga, event-driven sequencing, shared state machine, supervisor plus gate, and human in the loop. For each pattern, we trace its lineage to distributed-systems concepts and identify what changes when the worker is stochastic. The paper contributes a five-step methodology for selecting runtime patterns, a diagnostic procedure that maps production failures to pattern weaknesses, and a failure mode called replay divergence, in which LLM-based consumers of a deterministic event log produce different downstream outputs under model-version or prompt changes. A stylized reliability decomposition separates per-call model variance from architectural momentum, motivating the claim that as model variance decreases, pattern choice and SDB strength become increasingly important levers for long-run reliability. We apply the methodology to five workloads and provide one runnable reference implementation for a 90-day contract-renewal agent.",
+      "abstract": "Enterprise analytics aims to make organizational data accessible for decision-making, yet non-technical users still face barriers when using traditional business intelligence tools or Text-to-SQL systems. While recent Text-to-SQL approaches based on Large Language Models (LLMs) promise natural language access to structured data, they fall short in enterprise settings where analytics pipelines rely on governed APIs rather than raw databases. In practice, these APIs encapsulate complex business logic to ensure consistency, auditability, and security. However, delegating mathematical or aggregation logic to an LLM introduces reliability and compliance risks. To this end, we present Analytic Agent, an LLM-based agentic system that translates natural language intents into secure interactions with enterprise analytics APIs. Evaluated on 90 real enterprise use cases constructed by domain experts, it reliably interprets user goals, validates permissions, executes governed queries, and generates compliant visualizations through multi-step reasoning and policy-aware orchestration.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20173v1",
-        "pdf": "https://arxiv.org/pdf/2605.20173v1",
-        "github": "https://github.com/vasundras/agent-runtime-patterns",
-        "blog": null
-      },
-      "institution": "Stanford School of Engineering",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：生产级 LLM 代理结合了随机模型输出与确定性软件系统，但两者之间的边界（即 LLM 输出如何转化为系统动作）通常未被作为首要的架构对象处理。随着模型单次调用方差的降低，架构设计对长期可靠性的影响日益显著。\n- **已有工作为什么解决不了**：现有的开源框架虽然隐式实现了验证和提交逻辑，但缺乏统一的理论抽象来指导架构选择。大多数生产故障（71%）源于该边界的弱点，而现有文献多关注模型能力而非围绕模型的确定性架构模式，导致无法系统性解决状态管理、协调和控制问题。\n\n## 文章的核心贡献点\n- **提出了一个“随机-确定性边界”（SDB）**：定义为包含提议者（LLM）、验证者（确定性检查）、提交步骤（持久化写入）和拒绝信号的四部分契约，并围绕此原语构建了协调、状态和控制三个维度的六种运行时架构模式目录。\n- **挑战1：如何为不同场景选择合适的架构模式？**\n  - **难点**：代理场景多样（对话、自主、长程），且分布式系统概念在 stochastic worker 下发生变异，直接套用传统模式易失效。\n  - **解决**：提出五步选择方法论，将 SDB 的不同组合映射到具体模式（如分层委托、Scatter-Gather + Saga 等），并通过决策谓词和验证工件指导选择。\n- **挑战2：如何诊断和预防由架构缺陷导致的长期可靠性问题？**\n  - **难点**：难以区分模型方差导致的错误与架构惯性导致的系统性故障，特别是存在“重放发散”（replay divergence）等新型故障模式。\n  - **解决**：建立可靠性分解模型 $y(t) = \\\\mu t + \\\\sigma\\\\xi(t)$，分离模型方差 $\\\\sigma$ 和架构惯性 $\\\\mu$；提供诊断程序，将生产故障映射到特定模式弱点，并识别重放发散现象。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：提供了一个可运行的参考实现，针对 IBM Telco Customer Churn 数据集构建了一个 90 天合同续约代理。代码库公开在 GitHub 上。\n- **评估结果**：将该方法论应用于五种不同类型的工作负载（涵盖对话、自主和长程运行时），展示了如何通过模式选择解决具体问题。通过对 21 个已发表的代理故障事后分析进行分类，发现 81% 的修复措施加强了 SDB 的四个部分之一，验证了 SDB 作为核心原语的有效性。\n- **对比**：审计了五个广泛使用的开源框架，发现在 21 个 LLM 到动作的调用站点中，有 19 个显式实例化了验证者和提交逻辑，证明 SDB 是普遍存在但未命名的工程表面。与传统仅关注模型优化的方法相比，本文强调随着模型方差压缩，架构模式选择成为提升可靠性的主要杠杆。\n\n#### 总结\n本文确立了“随机-确定性边界”（SDB）作为生产级 LLM 代理运行时的核心架构原语。通过定义 SDB 的四部分契约，作者整理了六种运行时架构模式，并提出了选择方法和故障诊断流程。研究指出，随着模型能力的提升，架构惯性（由模式选择和 SDB 强度决定）将成为影响长期可靠性的主导因素。该工作为构建高可靠性生产级代理提供了系统的工程方法论。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Production LLM agents combine stochastic model outputs with deterministic systems, yet the boundary between them is rarely treated as a first-class architectural object. As per-call model variance decreases, the architecture surrounding the model becomes the primary driver of long-term reliability.\n- **Why Existing Work Falls Short**: Current open-source frameworks implicitly implement verification and commit logic but lack a unified theoretical abstraction for architectural selection. Most production failures (71%) stem from weaknesses at this boundary, yet existing literature focuses on model capabilities rather than the deterministic architecture around them, failing to systematically address coordination, state, and control issues.\n\n## Core Contributions\n- **Proposed the \"Stochastic-Deterministic Boundary\" (SDB)**: Defined as a four-part contract among a proposer (LLM), verifier (deterministic check), commit step (durable write), and reject signal. Organized agent runtime design into three concerns (Coordination, State, Control) and a catalog of six patterns around this primitive.\n- **Challenge 1: How to select appropriate architecture patterns for diverse scenarios?**\n  - **Difficulty**: Agent scenarios vary (conversational, autonomous, long-horizon), and distributed system concepts mutate when workers are stochastic, making direct application of traditional patterns error-prone.\n  - **Solution**: Presented a five-step selection methodology that maps different SDB compositions to specific patterns (e.g., Hierarchical Delegation, Scatter-Gather + Saga) using decision predicates and validation artifacts.\n- **Challenge 2: How to diagnose and prevent long-term reliability issues caused by architectural flaws?**\n  - **Difficulty**: It is difficult to distinguish errors caused by model variance from systemic failures caused by architectural momentum, especially with new failure modes like \"replay divergence.\"\n  - **Solution**: Developed a reliability decomposition model $y(t) = \\\\mu t + \\\\sigma\\\\xi(t)$ to separate model variance ($\\\\sigma$) from architectural momentum ($\\\\mu$). Provided a diagnostic procedure mapping production failures to pattern weaknesses and identified replay divergence.\n\n## Implementation and Evaluation\n- **Implementation**: Provided a runnable reference implementation for a 90-day contract-renewal agent using the IBM Telco Customer Churn dataset, available in a companion GitHub repository.\n- **Evaluation Results**: Applied the methodology to five workloads spanning conversational, autonomous, and long-horizon runtimes. Analyzed 21 published agent failure post-mortems, finding that 81% of documented fixes strengthened one of the four parts of the SDB, validating its centrality.\n- **Comparison**: Audited five widely-used open-source frameworks, finding that 19 out of 21 LLM-to-action call sites explicitly instantiated verifier-and-commit logic, proving SDB is a ubiquitous but unnamed engineering surface. Unlike approaches focusing solely on model optimization, this work argues that as model variance compresses, architectural pattern choice becomes the dominant lever for reliability.\n\n## 4. Conclusion\nThis paper establishes the Stochastic-Deterministic Boundary (SDB) as the load-bearing primitive of production LLM agent runtimes. By defining the SDB's four-part contract, the authors curated six runtime architecture patterns and proposed a selection methodology and failure diagnostic process. The study highlights that as model capabilities improve, architectural momentum (determined by pattern choice and SDB strength) becomes the dominant factor in long-term reliability, providing a systematic engineering methodology for building robust production agents.",
-      "render_excerpt": "机构: Stanford School of Engineering<br>本文确立了“随机-确定性边界”（SDB）作为生产级 LLM 代理运行时的核心架构原语。通过定义 SDB 的四部分契约，作者整理了六种运行时架构模式，并提出了选择方法和故障诊断流程。研究指出，随着模型能力的提升，架构惯性（由模式选择和 SDB 强度决定）将成为影响长期可靠性的主导因素。该工作为构建高可靠性生产级代理提供了系统的工程方法论。",
-      "render_excerpt_en": "Institution: Stanford School of Engineering<br>## 1. What the Paper Did - **Background**: Production LLM agents combine stochastic model outputs with deterministic systems, yet the boundary between them is rarely treated as a first-class architectural object. As per-call model variance decreases, the architecture surrounding the model becomes the primary driver of long-term reliability.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-05-19T17:54:21Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-05-19"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2605.20055",
-      "date": "2026-05-19",
-      "title": "Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction",
-      "authors": [
-        "Dominique Briechle",
-        "Raj Chanchad",
-        "Tobias Geger",
-        "Ruidi He",
-        "Dhruv Jajadiya",
-        "Dhruv Kapadiya",
-        "Andreas Rausch",
-        "Meng Zhang"
-      ],
-      "abstract": "Explicit software architecture models are essential artifacts for communicating, analyzing, and evolving complex software-intensive systems. In ROS~2-based robotic systems, however, structural (de-)composition and integration semantics are often only implicitly encoded across distributed artifacts such as source code and launch files, making recovery of hierarchical architecture particularly difficult. Existing approaches mainly focus on node-level entities and communication wiring, while providing limited support for recovering hierarchical structural (de-)composition across multiple abstraction levels. In this paper, we extend our previously proposed blueprint-guided LLM-assisted architecture recovery pipeline for ROS~2 systems through two major enhancements: (1) refined prompting to improve the consistency and controllability of architecture synthesis, and (2) a staged recovery strategy based on multi-level intermediate architectural representations that incorporate the atomic ROS node list and launch file dependencies, thereby enabling structurally constrained reconstruction across multiple abstraction levels. The approach is evaluated on a real-world automated product disassembly system based on cooperative robotic arms and heterogeneous ROS~2 artifacts. Compared to our previous work, the considered case study exhibits substantially higher integration complexity and richer functionality. The results demonstrate improved structural consistency, scalability, and robustness of architecture recovery, while also revealing remaining challenges related to dynamic integration semantics in large-scale ROS~2 systems.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.20055v1",
-        "pdf": "https://arxiv.org/pdf/2605.20055v1",
+        "abs": "http://arxiv.org/abs/2605.21027v1",
+        "pdf": "https://arxiv.org/pdf/2605.21027v1",
         "github": null,
         "blog": null
       },
-      "institution": "Institute for Software and Systems Engineering, Clausthal University of Technology",
+      "institution": "Dialpad Inc.",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：在基于 ROS 2 的机器人系统中，软件架构模型对于系统的沟通、分析和演进至关重要。然而，结构分解和集成语义通常隐式地分布在源代码、启动文件（launch files）和参数文件中，导致层级化架构的恢复极其困难。\n- **已有工作的不足**：现有的架构恢复方法主要关注节点级实体和通信连线，缺乏对跨多个抽象层级的层级结构分解的支持，难以处理复杂的集成语义和动态实例化过程。\n\n## 文章的核心贡献点\n- **提出了一个**：基于代理的多层级方法，用于分层结构架构重建的 LLM 辅助架构恢复管道。\n- **挑战1**：LLM 生成的架构合成结果往往缺乏一致性和可控性，容易产生幻觉或结构错误。**解决方法**：通过改进提示工程（refined prompting），增强了对架构合成过程的控制，提高了生成结果的结构一致性和准确性。\n- **挑战2**：从分散 artifacts 中恢复跨抽象层级的层级结构极为复杂，需处理命名空间传播、重映射和运行时节点实例化等语义。**解决方法**：采用基于多级中间架构表示的分阶段恢复策略，结合原子 ROS 节点列表和启动文件依赖关系，实现了受结构约束的多层级重建。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：该方法在一个基于协作机械臂的真实世界自动产品拆解系统上进行了评估，该系统具有比之前工作更高的集成复杂度和更丰富的功能。\n- **结果对比**：与作者之前的工作相比，新方法在结构一致性、可扩展性和鲁棒性方面均有显著提升。实验结果表明，该 approach 能够有效处理异构 ROS 2 artifacts，但在大规模系统中的动态集成语义方面仍存在挑战。\n\n#### 总结\n本文针对 ROS 2 系统中架构模型缺失和不一致的问题，提出了一种增强的 LLM 辅助架构恢复方法。通过优化提示词设计和引入多级中间表示的分阶段恢复策略，成功实现了跨抽象层级的层级结构重建。在真实复杂案例研究中的评估证明了该方法在提高架构恢复质量和处理复杂性方面的有效性，为分布式 cyber-physical 系统的自动化架构文档化提供了新思路。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Explicit software architecture models are crucial for complex systems, but in ROS 2-based robotic systems, structural decomposition and integration semantics are implicitly encoded across distributed artifacts (source code, launch files), making hierarchical architecture recovery difficult.\n- **Limitations of Existing Work**: Current approaches primarily focus on node-level entities and communication wiring, offering limited support for recovering hierarchical structural decomposition across multiple abstraction levels and handling complex integration semantics.\n\n## Core Contributions\n- **Proposed**: An agent-based multi-level approach for hierarchical structural architecture reconstruction using an enhanced LLM-assisted pipeline.\n- **Challenge 1**: LLM-generated architecture synthesis often suffers from inconsistency and lack of controllability. **Solution**: The paper introduces refined prompting strategies to improve the consistency and controllability of the architecture synthesis process.\n- **Challenge 2**: Recovering hierarchical structures across abstraction levels is complex due to implicit semantics like namespace propagation and runtime instantiation. **Solution**: A staged recovery strategy based on multi-level intermediate architectural representations, incorporating atomic ROS node lists and launch file dependencies, enables structurally constrained reconstruction.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The approach was evaluated on a real-world automated product disassembly system using cooperative robotic arms, which features significantly higher integration complexity than previous case studies.\n- **Results & Comparison**: Compared to the authors' previous work, the new method demonstrates improved structural consistency, scalability, and robustness. While effective, the study also highlights remaining challenges in handling dynamic integration semantics in large-scale ROS 2 systems.\n\n## 4. Conclusion\nThis paper addresses the lack of explicit architecture models in ROS 2 systems by proposing an enhanced LLM-assisted recovery pipeline. By optimizing prompting and employing a staged, multi-level recovery strategy, the method successfully reconstructs hierarchical structures across abstraction levels. Evaluations on a complex real-world system confirm its effectiveness in improving recovery quality and handling complexity, advancing automated architecture documentation for distributed cyber-physical systems.",
-      "render_excerpt": "机构: Institute for Software and Systems Engineering, Clausthal University of Technology<br>本文针对 ROS 2 系统中架构模型缺失和不一致的问题，提出了一种增强的 LLM 辅助架构恢复方法。通过优化提示词设计和引入多级中间表示的分阶段恢复策略，成功实现了跨抽象层级的层级结构重建。在真实复杂案例研究中的评估证明了该方法在提高架构恢复质量和处理复杂性方面的有效性，为分布式 cyber-physical 系统的自动化架构文档化提供了新思路。",
-      "render_excerpt_en": "Institution: Institute for Software and Systems Engineering, Clausthal University of Technology<br>## 1. What the Paper Did - **Background**: Explicit software architecture models are crucial for complex systems, but in ROS 2-based robotic systems, structural decomposition and integration semantics are implicitly encoded across distributed artifacts (source code, launch files), making hierarchical architecture recovery difficult. - **Limitations of Existing Work**: Current approaches primarily focus on node-level entities and communication wiring, offering limited support for recovering hierarchical structural decomposition across multiple abstraction levels and handling complex integration semantics.",
+      "summary_cn": "## 文章做了什么\n- **背景**：企业分析旨在通过收集、分析和可视化组织数据来支持数据驱动的决策。然而，非技术用户在使用传统商业智能（BI）工具或 Text-to-SQL 系统时仍面临障碍。现代企业分析依赖于受治理的 API（Governed APIs），这些 API 封装了复杂的业务逻辑以确保一致性、可审计性和安全性。\n- **已有工作的不足**：现有的基于 LLM 的 Text-to-SQL 方法主要关注直接访问原始数据库，无法适应依赖受治理 API 的企业环境。将数学或聚合逻辑委托给 LLM 会引入可靠性和合规性风险。此外，现有方法通常是单步管道，缺乏多步推理能力，无法与更广泛的分析生态系统集成，也难以强制执行数据治理策略。\n\n## 文章的核心贡献点\n- **提出了一个 Analytic Agent**：这是一个基于 LLM 的智能体系统，能够将自然语言意图转化为与企业分析 API 的安全交互。\n- **挑战1：复杂意图解析与目标消歧**。在企业环境中，用户查询往往模糊且涉及特定的业务语义，直接映射到 API 端点非常困难。论文通过引入 Target Search Agent（目标搜索智能体）和 Orchestrator Agent（编排智能体），利用多步推理解析用户目标，匹配实体并验证权限，从而准确识别所需的 API 端点和指标。\n- **挑战2：合规执行与安全可视化**。直接在 LLM 中生成查询结果可能导致数据泄露或违反业务规则。论文通过 Database Querying Agent（数据库查询智能体）进行端点选择和查询构建，并结合严格的验证循环确保业务规则得到遵守；同时，Visualization Agent（可视化智能体）根据策略生成合规的图表配置，确保最终输出的安全性和规范性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：系统由编排智能体、目标搜索智能体、数据库查询智能体和可视化智能体组成，形成端到端的工作流。它在真实工业环境中部署，处理从自然语言查询到安全 API 交互的全过程。\n- **评估结果**：在由领域专家构建的 90 个真实企业用例上进行评估，并由 GPT 和 Claude 进行评判。Analytic Agent 实现了 77.22% 的端到端准确率和 96.67% 的查询执行成功率。\n- **对比**：相较于传统的 Text-to-SQL 方法和单步 LLM 管道，该系统在处理受治理 API 场景下表现出更高的可靠性和合规性，证明了基于 API  grounding 的分析路径的可行性。\n\n#### 总结\n本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Enterprise analytics aims to support data-driven decision-making, but non-technical users face barriers with traditional BI tools or Text-to-SQL systems. Modern enterprise analytics rely on governed APIs that encapsulate complex business logic for consistency, auditability, and security.\n- **Limitations of Existing Work**: Current LLM-based Text-to-SQL approaches focus on direct raw database access and fail in enterprise settings relying on governed APIs. Delegating mathematical or aggregation logic to LLMs introduces reliability and compliance risks. Furthermore, existing methods often lack multi-step reasoning, integration with broader analytics ecosystems, and the ability to enforce data governance policies.\n\n## Core Contributions\n- **Proposed Analytic Agent**: An LLM-based agentic system that translates natural language intents into secure interactions with enterprise analytics APIs.\n- **Challenge 1: Complex Intent Parsing and Target Disambiguation**. User queries in enterprise settings are often ambiguous and involve specific business semantics, making direct mapping to API endpoints difficult. The paper addresses this by introducing a Target Search Agent and an Orchestrator Agent, which use multi-step reasoning to parse user goals, match entities, and validate permissions, thereby accurately identifying required API endpoints and metrics.\n- **Challenge 2: Compliant Execution and Secure Visualization**. Generating query results directly within an LLM can lead to data leaks or violations of business rules. The paper solves this by using a Database Querying Agent for endpoint selection and query construction, combined with a strict validation loop to enforce business rules. Additionally, a Visualization Agent generates policy-compliant chart configurations, ensuring the safety and规范性 of the final output.\n\n## Implementation and Evaluation\n- **Implementation and Deployment**: The system consists of an Orchestrator Agent, Target Search Agent, Database Querying Agent, and Visualization Agent, forming an end-to-end workflow. It is deployed in a real-world industrial setting, handling the entire process from natural language queries to secure API interactions.\n- **Evaluation Results**: Evaluated on 90 real enterprise use cases constructed by domain experts and judged by GPT and Claude, Analytic Agent achieved 77.22% end-to-end accuracy and a 96.67% query execution success rate.\n- **Comparison**: Compared to traditional Text-to-SQL methods and single-step LLM pipelines, this system demonstrates higher reliability and compliance in scenarios involving governed APIs, proving the feasibility of an API-grounded analytics path.\n\n## 4. Conclusion\nThis paper addresses the challenge of non-technical users accessing governed data in enterprise analytics by proposing Analytic Agent. The system overcomes the limitations of traditional Text-to-SQL methods in API environments and data governance. Through multi-agent collaboration, it achieves intent parsing, permission validation, secure query execution, and compliant visualization. Experimental results show high accuracy and execution success rates in real-world enterprise scenarios, providing a practical path for building trustworthy, API-based enterprise analytics systems.",
+      "render_excerpt": "机构: Dialpad Inc.<br>本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。",
+      "render_excerpt_en": "Institution: Dialpad Inc.<br>## 1. What the Paper Does - **Background**: Enterprise analytics aims to support data-driven decision-making, but non-technical users face barriers with traditional BI tools or Text-to-SQL systems. Modern enterprise analytics rely on governed APIs that encapsulate complex business logic for consistency, auditability, and security.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T16:14:33Z"
+        "captured_at": "2026-05-20T11:00:56Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-05-19"
+        "captured_at": "2026-05-20"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -206,43 +109,150 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2605.19824",
-      "date": "2026-05-19",
-      "title": "From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning",
+      "paper_id": "2605.21347",
+      "date": "2026-05-20",
+      "title": "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents",
       "authors": [
-        "Ahmed Y. Gado",
-        "Omar Y. Goba",
-        "Alaa Hassanein",
-        "Catherine M. Elias",
-        "Ahmed Hussein"
+        "Akshay Manglik",
+        "Apaar Shanker",
+        "Kaustubh Deshpande",
+        "Jason Qin",
+        "Yash Maurya",
+        "Veronica Chatrath",
+        "Vijay S. Kalmath",
+        "Levi Lentz",
+        "Yuan",
+        "Xue"
       ],
-      "abstract": "Recent attempts to support high-level scene interpretation and planning in Autonomous Vehicles (AVs) using ensembles of Large Language Models (LLMs) and Large Multimodal Models (LMMs) continue to treat time as a secondary property. This lack of temporal grounding leads to inconsistencies in reasoning about continuous actions, undermining both safety and interpretability. This work explores whether temporal conditioning within inter-agent communication can preserve or enhance coherence without introducing degradation in semantic or logical consistency. To investigate this, we introduce three planner architectures with progressively increasing temporal integration and evaluate them on curated subsets of the BDD-X dataset using semantic, syntactic, and logical metrics. Results show that while temporal conditioning reshapes reasoning style, it yields no statistically significant improvements in standard NLP-based correctness metrics. However, qualitative analysis reveals predictive hazard reasoning, stable corrective behavior, and strategic divergence in the Sentinel. These findings clarify the limits of prompt-based temporal grounding and establish the first empirical benchmark for temporal scene-to-plan reasoning.",
+      "abstract": "Diagnosing failures in LLM agents remains largely manual. Practitioners inspect a small subset of execution traces, form ad-hoc hypotheses, and iterate. This process misses patterns that only emerge across trace populations and does not scale to production corpora where individual traces span tens of thousands of tokens. We formalize the problem of corpus-level trace diagnostics. Given a corpus of execution traces, the goal is to produce grounded natural-language insights that characterize systematic behavioral patterns across trace groups, each linked to supporting evidence. We present the Insights Generator (IG), a multi-agent system that answers diagnostic questions by proposing and testing hypotheses across the trace corpus to produce an evidence-backed insights report. We evaluate IG across qualitative and objective dimensions, spanning rubric-based report assessment and downstream performance improvements achieved by implementing IG insights. Human experts using IG reports improve scaffold performance by 30.4pp over the unmodified baseline scaffold, and coding agents leveraging IG-derived insights show consistent and stable gains. Across benchmarks, IG's scout-investigator architecture produces findings comparable in detection coverage to competing approaches, while domain experts rated IG reports as leading depth and evidence quality.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19824v1",
-        "pdf": "https://arxiv.org/pdf/2605.19824v1",
+        "abs": "http://arxiv.org/abs/2605.21347v1",
+        "pdf": "https://arxiv.org/pdf/2605.21347v1",
         "github": null,
         "blog": null
       },
-      "institution": "German University in Cairo (GUC), C-DRiVeS Lab, Deggendorf Institute of Technology, IAV GmbH",
+      "institution": "Scale AI",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：自动驾驶（AV）正从L4向L5迈进，需要复杂的行为规划。近期研究利用大型语言模型（LLM）和大型多模态模型（LMM）组成的多智能体系统（MAS）来增强感知、决策和控制能力。\n- **已有工作为什么解决不了**：现有的基于LLM/LMM的AV规划方法通常将时间视为次要属性，缺乏时间 grounding（时间锚定）。这导致智能体只能对瞬时刺激做出反应，无法在连续动作间保持因果连续性，从而造成局部看似合理但长期不一致的决策，损害了安全性和可解释性。\n\n## 文章的核心贡献点\n- **提出了一个**：针对“Prompt-to-Pavement”框架的时间扩展版本，引入了多帧上下文推理，并建立了第一个用于时间场景到规划推理的经验基准。\n- **挑战1：如何在无需显式记忆机制的情况下，让多智能体系统在交互中保持对先前状态的上下文意识？**\n  - **难点**：传统方法依赖外部记忆模块或复杂的序列建模，增加了系统复杂性且容易出错。\n  - **解决方法**：论文通过将规划器与执行器之间的交互定义为“时间条件化的消息交换”，利用提示工程在智能体通信中嵌入时间信息，使LMM智能体 swarm 能够隐式地保留上下文意识。\n- **挑战2：如何评估规划在时间维度上的逻辑连贯性，而不仅仅是语义相似性？**\n  - **难点**：标准的NLP指标（如BLEU、ROUGE）主要衡量表面语义相似度，无法捕捉动作序列背后的因果逻辑和时间一致性。\n  - **解决方法**：提出了一种新的评估指标，专门用于衡量连续规划之间的逻辑连续性，从而捕捉超越表面语义的时间-因果连贯性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究了三种具有 progressively increasing temporal integration（逐步增加的时间集成）的规划器架构：静态架构、单步时间架构和多帧时间架构。在BDD-X数据集的 curated subsets 上进行评估。\n- **Evaluation 结果**：\n  - **定量结果**：时间 conditioning 改变了推理风格，但在标准的基于NLP的正确性指标上，并未产生统计学上显著的改进。\n  - **定性结果**：分析显示，引入时间 grounding 后，系统表现出预测性危险推理、稳定的纠正行为以及Sentinel智能体中的战略分歧。\n- **对比**：与未进行时间 grounding 的基线方法相比，虽然传统指标未见显著提升，但新方法在长 horizon 的逻辑一致性和安全性推理（如 hazard prediction）上展现出优势，揭示了仅靠 prompt-based 时间 grounding 的局限性。\n\n#### 总结\n本文探讨了在多智能体通信中进行时间 conditioning 是否能保持或增强推理的一致性。研究指出，虽然标准NLP指标未能反映提升，但定性分析证明了时间 grounding 对于实现预测性安全和稳定行为的重要性。该工作明确了基于提示的时间 grounding 的局限，并为未来的时间场景到规划推理研究建立了基准。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Autonomous Vehicles (AVs) are advancing from L4 to L5 autonomy, requiring sophisticated behavior planning. Recent efforts leverage Multi-Agent Systems (MAS) powered by Large Language Models (LLMs) and Large Multimodal Models (LMMs) to enhance perception, decision-making, and control.\n- **Why Existing Work Falls Short**: Current agentic planners treat time as a secondary property, lacking temporal grounding. This leads to reactions based only on instantaneous stimuli, failing to maintain causal continuity across consecutive actions. Consequently, decisions may appear locally coherent but become inconsistent over time, undermining safety and long-horizon interpretability.\n\n## Core Contributions\n- **Proposed**: A temporal extension to the \"Prompt-to-Pavement\" formulation introducing multi-frame contextual reasoning, along with the first empirical benchmark for temporal scene-to-plan reasoning.\n- **Challenge 1: How to maintain contextual awareness of prior states in multi-agent interactions without explicit memory mechanisms?**\n  - **Difficulty**: Traditional approaches rely on external memory modules or complex sequence modeling, adding complexity and potential error points.\n  - **Solution**: The paper defines planner-executor interactions as \"temporally conditioned message exchanges,\" embedding temporal information directly into inter-agent communication via prompting, allowing the LMM swarm to retain context implicitly.\n- **Challenge 2: How to evaluate logical coherence of plans over time, beyond mere semantic similarity?**\n  - **Difficulty**: Standard NLP metrics (e.g., BLEU, ROUGE) measure surface-level semantic similarity and fail to capture the underlying causal logic and temporal consistency of action sequences.\n  - **Solution**: Introduced a novel evaluation metric specifically designed to measure logical continuity between successive plans, capturing temporal-causal coherence.\n\n## Implementation and Evaluation\n- **Implementation**: Investigated three planner architectures with progressively increasing temporal integration: static, one-step temporal, and multi-frame temporal. Evaluated on curated subsets of the BDD-X dataset.\n- **Evaluation Results**:\n  - **Quantitative**: Temporal conditioning reshaped the reasoning style but yielded no statistically significant improvements in standard NLP-based correctness metrics.\n  - **Qualitative**: Analysis revealed predictive hazard reasoning, stable corrective behavior, and strategic divergence in the Sentinel agent.\n- **Comparison**: Compared against baselines without temporal grounding, the proposed method showed advantages in long-horizon logical consistency and safety-related reasoning (e.g., hazard prediction), despite the lack of improvement in traditional metrics, highlighting the limits of prompt-based temporal grounding.\n\n## 4. Conclusion\nThis work explores whether temporal conditioning in inter-agent communication preserves or enhances coherence. It finds that while standard NLP metrics do not reflect significant improvements, qualitative analysis demonstrates the importance of temporal grounding for predictive safety and stable behavior. The study clarifies the limitations of prompt-based temporal grounding and establishes a benchmark for future research in temporal scene-to-plan reasoning.",
-      "render_excerpt": "机构: German University in Cairo (GUC), C-DRiVeS Lab, Deggendorf Institute of Technology, IAV GmbH<br>本文探讨了在多智能体通信中进行时间 conditioning 是否能保持或增强推理的一致性。研究指出，虽然标准NLP指标未能反映提升，但定性分析证明了时间 grounding 对于实现预测性安全和稳定行为的重要性。该工作明确了基于提示的时间 grounding 的局限，并为未来的时间场景到规划推理研究建立了基准。",
-      "render_excerpt_en": "Institution: German University in Cairo (GUC), C-DRiVeS Lab, Deggendorf Institute of Technology, IAV GmbH<br>## 1. What the Paper Did - **Background**: Autonomous Vehicles (AVs) are advancing from L4 to L5 autonomy, requiring sophisticated behavior planning. Recent efforts leverage Multi-Agent Systems (MAS) powered by Large Language Models (LLMs) and Large Multimodal Models (LMMs) to enhance perception, decision-making, and control.",
+      "summary_cn": "## 文章做了什么\n- **背景**：LLM Agent 的故障诊断目前主要依赖人工。从业者通常仅检查少量执行轨迹（traces），形成临时假设并迭代。这种方法无法发现仅在轨迹群体层面显现的模式，且难以扩展到生产环境中包含数万 token 的大型语料库。\n- **已有工作为什么解决不了**：现有的评估方法通常基于最终任务结果提供聚合信号，无法揭示中间行为或特定子集（如特定输入、任务类型）中的局部失败模式。许多“静默失败”（silent failures）和不效率行为不会触发显式错误信号，因此无法通过标准评估仪表盘检测到，必须通过群体层面的分析才能发现。\n\n## 文章的核心贡献点\n- **提出了一个 Insights Generator (IG)**：这是一个多智能体系统，旨在解决语料库级别的轨迹诊断问题。它通过在整个轨迹语料库中提出和测试假设，生成有证据支持的自然语言洞察报告。\n- **挑战1：规模与复杂性**。轨迹语料库通常超出单个模型的上下文窗口限制，且单个轨迹交织着大量的推理、工具调用和环境状态，使得直接分析极其困难。IG 采用“侦察员-调查员”（scout-investigator）架构，通过分层处理和假设验证机制，在不需一次性加载所有数据的情况下，系统地探索大规模语料库以识别模式。\n- **挑战2：洞察的可信度与 groundedness**。生成的洞察必须有具体的轨迹证据支持，避免幻觉或空泛结论。IG 通过将每个自然语言洞察链接到具体的支持证据（即相关的轨迹片段），确保洞察是“有根基的”（grounded），从而提高了诊断报告的可操作性和可信度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估维度**：研究从定性和客观两个维度评估 IG，包括基于评分标准的报告质量评估，以及实施 IG 洞察后带来的下游性能提升。\n- **性能提升**：人类专家利用 IG 生成的报告改进 scaffold 后，性能比未修改的基线提高了 30.4 个百分点（pp）。利用 IG 衍生洞察的编码 Agent 也表现出一致且稳定的增益。\n- **与工作对比**：在多个基准测试中，IG 的“侦察员-调查员”架构在检测覆盖率方面与竞争方法相当。然而，领域专家评定 IG 生成的报告在深度和证据质量方面处于领先地位，优于其他方法。\n\n#### 总结\n本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Diagnosing failures in LLM agents is currently largely manual. Practitioners inspect small subsets of execution traces to form ad-hoc hypotheses. This approach misses patterns that only emerge across trace populations and does not scale to production corpora where individual traces can span tens of thousands of tokens.\n- **Why Existing Work Fails**: Current evaluation methods provide aggregate signals based on final task outcomes, failing to reveal intermediate behaviors or localized failure modes within specific input subsets. Many \"silent failures\" and inefficiencies do not trigger explicit error signals and remain invisible to standard dashboards, requiring population-level analysis for detection.\n\n## Core Contributions\n- **Proposed Insights Generator (IG)**: A multi-agent system designed for corpus-level trace diagnostics. It answers diagnostic questions by proposing and testing hypotheses across the entire trace corpus to produce evidence-backed natural-language insight reports.\n- **Challenge 1: Scale and Complexity**. Trace corpora often exceed single-model context windows, and individual traces contain interleaved reasoning, tool calls, and state data. IG addresses this via a \"scout-investigator\" architecture that systematically explores large corpora through layered processing and hypothesis verification without requiring full context loading.\n- **Challenge 2: Credibility and Groundedness of Insights**. Insights must be supported by concrete evidence to avoid hallucinations. IG ensures each natural-language insight is linked to specific supporting trace segments, making the insights \"grounded\" and enhancing the actionability and trustworthiness of the diagnostic reports.\n\n## Implementation and Evaluation\n- **Evaluation Metrics**: The study evaluates IG on both qualitative and objective dimensions, including rubric-based report assessment and downstream performance improvements resulting from implementing IG insights.\n- **Performance Gains**: Human experts using IG reports improved scaffold performance by 30.4 percentage points (pp) over the unmodified baseline. Coding agents leveraging IG-derived insights showed consistent and stable gains.\n- **Comparison with Related Work**: Across benchmarks, IG's scout-investigator architecture achieves detection coverage comparable to competing approaches. However, domain experts rated IG reports as superior in terms of depth and evidence quality.\n\n## 4. Conclusion\nThis paper formalizes the problem of corpus-level trace diagnostics and introduces the Insights Generator (IG). By leveraging multi-agent collaboration, IG automates the extraction of evidence-supported systematic behavioral patterns from large-scale LLM agent execution traces. Experiments demonstrate that IG not only provides high-quality diagnostic reports but also significantly enhances agent performance, effectively addressing deep and silent failures that traditional manual diagnosis and aggregate evaluations miss.",
+      "render_excerpt": "机构: Scale AI<br>本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。",
+      "render_excerpt_en": "Institution: Scale AI<br>## 1. What the Paper Does - **Background**: Diagnosing failures in LLM agents is currently largely manual. Practitioners inspect small subsets of execution traces to form ad-hoc hypotheses.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T13:18:35Z"
+        "captured_at": "2026-05-20T16:13:53Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-05-19"
+        "captured_at": "2026-05-20"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2605.21240",
+      "date": "2026-05-20",
+      "title": "APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents",
+      "authors": [
+        "Yibo Li",
+        "Jiashuo Yang",
+        "Zhi Zheng",
+        "Zhiyuan Hu",
+        "Yuan Sui",
+        "Shizun Wang",
+        "Yufei He",
+        "Bryan Hooi"
+      ],
+      "abstract": "LLM agents have shown strong performance across a wide range of complex tasks, including interactive environments that require long-horizon decision making. But these agents cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes rather than requiring model-weight updates. However, these agents often suffer from exploration collapse: as memory grows, behavior concentrates around familiar high-reward routines, reducing the chance of discovering better alternatives. To address this problem, we propose Autonomous Policy EXploration (APEX), which builds and maintains an explicit strategy space through a strategy map-a directed acyclic graph of milestones with prerequisite dependency edges. In APEX, Fork Discovery expands the map with evidence-grounded unexplored directions, while Policy Selection balances exploration and exploitation during planning. Evaluated on nine Jericho text-adventure games and WebArena, a realistic web interaction benchmark, APEX outperforms all baselines. Extensive ablations validate each component's contribution and demonstrate robustness across diverse settings, demonstrating APEX's effectiveness for sustained exploration in self-evolving agents.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.21240v1",
+        "pdf": "https://arxiv.org/pdf/2605.21240v1",
+        "github": "https://github.com/liushiliushi/APEX1",
+        "blog": null
+      },
+      "institution": "National University of Singapore",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在需要长程决策的复杂交互环境中表现出色，但传统智能体无法在测试时进行在线学习。自进化智能体通过跨episode积累记忆和反思来解决这一问题，无需更新模型权重。\n- **已有工作为什么解决不了**：现有的自进化智能体面临“探索崩溃”（exploration collapse）问题。随着记忆的增长，智能体的行为逐渐集中在熟悉的高回报常规路径上，导致发现更好替代策略的机会减少。由于LLM的策略空间是隐式且无界的，智能体缺乏对未尝试选择的自然视角，难以主动发现新的探索方向。\n\n## 文章的核心贡献点\n- **提出了一个**：自主策略探索框架 APEX (Autonomous Policy EXploration)，通过构建和维护一个显式的策略空间（即包含先决依赖边的里程碑有向无环图，称为“策略地图”）来解决探索崩溃问题。\n- **挑战1：如何显式地表示和扩展未知的策略空间？**\n  - **难点**：LLM的动作空间巨大且非结构化，智能体难以感知哪些策略尚未尝试，容易陷入局部最优。\n  - **解决方法**：引入“分支发现”（Fork Discovery）机制，基于证据将未探索的方向扩展到策略地图中，从而系统地记录已尝试和潜在的策略路径，使隐性空间显性化。\n- **挑战2：如何在规划过程中平衡探索与利用？**\n  - **难点**：在拥有历史记忆的情况下，智能体倾向于重复高回报的旧策略，而忽略可能带来更高回报但未经验证的新路径。\n  - **解决方法**：设计“策略选择”（Policy Selection）模块，在规划阶段动态平衡对已知高回报策略的利用和对策略地图中未充分探索节点的探索，确保持续的策略多样性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在9个Jericho文本冒险游戏和WebArena（一个真实的网页交互基准）上进行评估。\n- **对比结果**：APEX在所有基准测试中均优于所有基线方法（包括静态模型和Reflexion等自进化基线）。例如，在迷宫实验中，Reflexion虽然平均得分较高但陷入狭窄走廊（最大得分40），而APEX保持了广泛的覆盖范围并 consistently 达到高奖励区域（最大得分80，平均得分54.0）。\n- **消融实验**：广泛的消融研究验证了每个组件（分支发现、策略选择、策略地图）的贡献，并证明了APEX在不同设置下的鲁棒性。\n\n#### 总结\nAPEX通过构建显式的策略地图，有效解决了自进化LLM智能体中的探索崩溃问题。它结合了基于证据的分支发现和平衡探索利用的策略选择机制，使得智能体能够在不更新模型权重的情况下，持续发现更优策略并在复杂长程任务中保持高性能。该方法在文本冒险和网页交互任务中均展现了显著的优势和鲁棒性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents perform well in complex interactive environments requiring long-horizon decision-making but traditionally cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes without model-weight updates.\n- **Why Existing Work Fails**: Current self-evolving agents suffer from \"exploration collapse.\" As memory grows, behavior concentrates around familiar high-reward routines, reducing the discovery of better alternatives. Since the strategy space for LLMs is implicit and unbounded, agents lack a natural view of untried choices, making it difficult to actively discover new exploration directions.\n\n## Core Contributions\n- **Proposed**: APEX (Autonomous Policy EXploration), a framework that builds and maintains an explicit strategy space via a \"strategy map\"—a directed acyclic graph of milestones with prerequisite dependency edges.\n- **Challenge 1: How to explicitly represent and expand the unknown strategy space?**\n  - **Difficulty**: The action space is vast and unstructured; agents struggle to perceive untried strategies and easily get stuck in local optima.\n  - **Solution**: Introduces \"Fork Discovery\" to expand the map with evidence-grounded unexplored directions, systematically recording tried and potential paths to make the implicit space explicit.\n- **Challenge 2: How to balance exploration and exploitation during planning?**\n  - **Difficulty**: With historical memory, agents tend to repeat high-reward old strategies, ignoring unverified new paths that might yield higher rewards.\n  - **Solution**: Designs a \"Policy Selection\" module that dynamically balances exploiting known high-reward strategies and exploring under-explored nodes in the strategy map, ensuring sustained strategic diversity.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on nine Jericho text-adventure games and WebArena, a realistic web interaction benchmark.\n- **Results**: APEX outperforms all baselines (including static models and self-evolving baselines like Reflexion). In maze experiments, while Reflexion achieved higher average scores by sticking to a narrow corridor (max score 40), APEX maintained broad coverage and consistently reached high-reward areas (max score 80, avg score 54.0).\n- **Ablation Studies**: Extensive ablations validate the contribution of each component (Fork Discovery, Policy Selection, Strategy Map) and demonstrate robustness across diverse settings.\n\n## 4. Conclusion\nAPEX effectively addresses exploration collapse in self-evolving LLM agents by constructing an explicit strategy map. By combining evidence-based fork discovery and policy selection that balances exploration and exploitation, it enables agents to continuously discover superior strategies and maintain high performance in complex long-horizon tasks without updating model weights. The method demonstrates significant advantages and robustness in both text adventure and web interaction tasks.",
+      "render_excerpt": "机构: National University of Singapore<br>APEX通过构建显式的策略地图，有效解决了自进化LLM智能体中的探索崩溃问题。它结合了基于证据的分支发现和平衡探索利用的策略选择机制，使得智能体能够在不更新模型权重的情况下，持续发现更优策略并在复杂长程任务中保持高性能。该方法在文本冒险和网页交互任务中均展现了显著的优势和鲁棒性。",
+      "render_excerpt_en": "Institution: National University of Singapore<br>## 1. What the Paper Does - **Background**: LLM agents perform well in complex interactive environments requiring long-horizon decision-making but traditionally cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes without model-weight updates.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-20T14:29:27Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-05-20"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2605.21404",
+      "date": "2026-05-20",
+      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
+      "authors": [
+        "Mahdi Naser Moghadasi",
+        "Faezeh Ghaderi"
+      ],
+      "abstract": "We read twelve well-known LLM agent benchmark papers and recorded, dimension by dimension, what each paper actually says about how its evaluation was run. The motivation came from a familiar frustration: two papers will report results on the same benchmark with the same model name and disagree, and you cannot tell why -- the scaffold, the sampling settings, the subset, or the evaluator version. In many cases the published artifact does not let you answer. This paper is an implementation report on the attempt. We designed a small audit schema (five fields: benchmark identity, harness specification, inference settings, cost reporting, failure breakdown), wrote a scoring codebook with the boundary cases we hit during pilot scoring, applied it to twelve canonical papers (eight agent, four classical static), and recorded what we saw. We score the disclosure of an agent run, not its correctness, and make no claim that disclosure implies a trustworthy result. The mean audit score across the eight agent-benchmark papers is 0.38 (out of 1.0), and across the four classical static benchmarks 0.66; the largest gap is on cost (none of the eight agent benchmark papers disclose inference cost in any form) and on harness specification (none fully disclose a content-addressed container image of the evaluation environment). We release the schema as a JSON Schema file, the codebook as a Markdown document, and the raw scoring sheet as a CSV. The scoring was performed by a single auditor in one pass; a multi-rater audit is the natural next step, and we discuss what we think it would change.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.21404v1",
+        "pdf": "https://arxiv.org/pdf/2605.21404v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Texas at Arlington; Texas Tech University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：LLM Agent 基准测试中存在严重的复现性问题。不同论文在使用相同模型和基准时报告的结果往往不一致，且由于缺乏详细的实验配置信息（如脚手架、采样设置、子集选择或评估器版本），研究人员无法判断差异来源。\n- **已有工作为什么解决不了**：现有的可复现性研究主要集中在深度强化学习或静态 LLM 提示敏感性上，未能针对“Agent 运行”这一特定单元（即模型、脚手架、环境镜像、停止规则和评分器的组合）进行细致的披露度审计。现有文献缺乏一个标准化的框架来量化评估论文中关于实验执行细节的透明度。\n\n## 文章的核心贡献点\n- **提出了一个开放评分 schema（Open Scoring Schema）**：包含五个关键维度（基准身份、Harness 规范、推理设置、成本报告、失败分解）的审计框架及相应的评分代码本，用于系统性地评估 LLM Agent 基准论文的披露完整性。\n- **挑战1：评估环境的不透明性**。难点在于 Agent 的运行高度依赖具体的软件环境和脚手架版本，微小的差异会导致结果巨大波动。论文通过定义“Harness 规范”字段，强制检查是否提供了内容寻址的容器镜像或精确的版本控制信息，从而量化这一维度的缺失。\n- **挑战2：推理成本与失败模式的忽视**。难点在于大多数论文仅报告最终成功率，忽略计算成本和错误类型分析，导致无法评估效率与鲁棒性。论文通过引入“成本报告”和“失败分解”字段，揭示了当前文献在这些关键工程指标上的系统性空白。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作者设计了 JSON Schema 格式的审计模式、Markdown 格式的评分代码本，并发布了 CSV 格式的原始评分表。审计由单一审核员对 12 篇经典论文（8 篇 Agent 基准，4 篇经典静态基准）进行一次性评分。\n- **Evaluation 结果**：\n    - 8 篇 Agent 基准论文的平均审计得分为 0.38（满分 1.0）。\n    - 4 篇经典静态基准论文的平均审计得分为 0.66。\n    - 最大差距出现在“成本报告”（所有 8 篇 Agent 论文均未披露任何推理成本）和“Harness 规范”（无一完全披露内容寻址的容器镜像）。\n- **对比**：相较于传统静态基准，Agent 基准在实验细节披露上显著不足，表明随着系统复杂度的增加，可复现性的实践并未同步跟进，反而出现了倒退或缺失。\n\n#### 总结\n本文是一项关于 LLM Agent 基准测试透明度的试点审计研究。通过提出并应用一个包含五个维度的评分 schema，研究揭示了当前顶级 Agent 基准论文在实验细节披露上的严重不足，特别是环境规范和成本报告的缺失。该工作为社区提供了一套开源的审计工具，旨在推动更严格、透明的评估标准，尽管目前仅为单审核员初步结果，但为后续的多审核员审计和标准化奠定了基础。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: There is a severe reproducibility crisis in LLM Agent benchmarks. Different papers often report conflicting results for the same model and benchmark, yet fail to provide sufficient details (such as scaffolds, sampling settings, subsets, or evaluator versions) to explain these discrepancies.\n- **Why Existing Work Falls Short**: Prior reproducibility efforts in deep reinforcement learning or static LLM prompt sensitivity do not address the specific unit of analysis for agents: the \"agent run\" itself (the composition of model, scaffold, environment image, stopping rules, and grader). There lacks a standardized framework to quantify the transparency of experimental execution details in current literature.\n\n## Core Contributions\n- **Proposed an Open Scoring Schema**: A five-field audit framework (Benchmark Identity, Harness Specification, Inference Settings, Cost Reporting, Failure Breakdown) along with a scoring codebook to systematically evaluate the disclosure completeness of LLM Agent benchmark papers.\n- **Challenge 1: Opacity of Evaluation Environments**. The difficulty lies in the high sensitivity of agent performance to software environments and scaffold versions. The paper addresses this by defining the \"Harness Specification\" field, which checks for content-addressed container images or precise version control, thereby quantifying the lack of environmental transparency.\n- **Challenge 2: Neglect of Inference Costs and Failure Modes**. The challenge is that most papers only report final success rates, ignoring computational costs and error analysis, which hinders efficiency and robustness assessment. The paper introduces \"Cost Reporting\" and \"Failure Breakdown\" fields, exposing systematic gaps in these critical engineering metrics.\n\n## Implementation and Evaluation\n- **Implementation**: The authors released the audit schema as a JSON Schema file, the codebook as a Markdown document, and the raw scoring data as a CSV. The audit was conducted by a single auditor on 12 canonical papers (8 agent benchmarks, 4 classical static benchmarks).\n- **Evaluation Results**:\n    - The mean audit score for the 8 agent benchmark papers was 0.38 (out of 1.0).\n    - The mean audit score for the 4 classical static benchmark papers was 0.66.\n    - The largest gaps were found in \"Cost Reporting\" (none of the 8 agent papers disclosed inference costs) and \"Harness Specification\" (none fully disclosed content-addressed container images).\n- **Comparison**: Compared to classical static benchmarks, agent benchmarks show significantly poorer disclosure of experimental details, indicating that reproducibility practices have not kept pace with increasing system complexity.\n\n## 4. Conclusion\nThis paper presents a pilot audit of transparency in LLM Agent benchmarking. By applying a novel five-dimensional scoring schema, it reveals significant deficiencies in current top-tier agent benchmark papers, particularly regarding environment specifications and cost reporting. The work provides open-source auditing tools to the community, aiming to promote stricter and more transparent evaluation standards, serving as a foundation for future multi-rater audits and standardization.",
+      "render_excerpt": "机构: University of Texas at Arlington; Texas Tech University<br>本文是一项关于 LLM Agent 基准测试透明度的试点审计研究。通过提出并应用一个包含五个维度的评分 schema，研究揭示了当前顶级 Agent 基准论文在实验细节披露上的严重不足，特别是环境规范和成本报告的缺失。该工作为社区提供了一套开源的审计工具，旨在推动更严格、透明的评估标准，尽管目前仅为单审核员初步结果，但为后续的多审核员审计和标准化奠定了基础。",
+      "render_excerpt_en": "Institution: University of Texas at Arlington; Texas Tech University<br>## 1. What the Paper Did - **Background**: There is a severe reproducibility crisis in LLM Agent benchmarks. Different papers often report conflicting results for the same model and benchmark, yet fail to provide sufficient details (such as scaffolds, sampling settings, subsets, or evaluator versions) to explain these discrepancies.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-20T17:02:36Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-05-20"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

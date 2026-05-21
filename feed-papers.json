@@ -1,85 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-20T13:18:25.559681+00:00",
-  "run_date": "2026-05-19",
+  "generated_at": "2026-05-21T05:42:36.901599+00:00",
+  "run_date": "2026-05-20",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.19932",
-      "date": "2026-05-19",
-      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "id": "arxiv:2605.21470",
+      "date": "2026-05-20",
+      "title": "Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuohan Gu",
-        "Qizheng Zhang",
-        "Omar Khattab",
-        "Samuel Madden"
+        "Caleb Winston",
+        "Ron Yifeng Wang",
+        "Azalia Mirhoseini",
+        "Christos Kozyrakis"
       ],
-      "institution": "MIT CSAIL, Stanford University",
+      "institution": "Stanford University",
       "summary": {
-        "zh": "PEEK 通过引入“上下文地图”这一概念，成功解决了 LLM 代理在重复处理相同长上下文时缺乏高效定向知识的问题。它通过蒸馏、映射和驱逐机制，以极低的成本和 token 消耗，显著提升了代理在长上下文任务中的准确性和效率，证明了维护可重用的上下文定向知识对于提升 LLM 代理性能至关重要。",
-        "en": "- **Background**: Large language model (LLM) agents increasingly operate over long and recurring external contexts, such as document corpora and code repositories, where the context remains largely static while tasks..."
+        "zh": "该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。",
+        "en": "- **Background**: Computer-use agents (CUAs) automate web tasks via natural language by generating sequences of tool calls (e.g., click, type). Current implementations rely on a sequential \"fetch-screenshot-execute\"..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19932v1",
-        "pdf": "https://arxiv.org/pdf/2605.19932v1",
-        "github": "zhuohangu/peek"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.19932.md",
-        "summary_en_path": "summary_en/2026-05/2605.19932.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.19932.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.19932.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.19743",
-      "date": "2026-05-19",
-      "title": "EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Gioele Molinari",
-        "Florian Felten",
-        "Soheyl Massoudi",
-        "Mark Fuge"
-      ],
-      "institution": "ETH Zurich",
-      "summary": {
-        "zh": "本文介绍了 EngiAI，一个用于 LLM 驱动工程设计的多代理框架和基准套件。通过引入工作流、RAG 和 HPC 编排三个维度的评估，文章系统地分析了不同 LLM 在处理复杂工程设计任务时的能力边界。结果表明，虽然专有模型在标准任务上表现优异，但在条件分支和长程工作流编排上仍面临显著挑战。该研究为评估和优化面向工程领域的 LLM 代理系统提供了重要的基准和参考实现。",
-        "en": "- **Background**: Engineering design is inherently complex, involving conceptual layout, simulation-driven optimization, and manufacturing preparation, typically relying on specialized software and iterative refinement...."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.19743v1",
-        "pdf": "https://arxiv.org/pdf/2605.19743v1",
+        "abs": "http://arxiv.org/abs/2605.21470v1",
+        "pdf": "https://arxiv.org/pdf/2605.21470v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.19743.md",
-        "summary_en_path": "summary_en/2026-05/2605.19743.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.19743.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.19743.md"
+        "summary_zh_path": "summary/2026-05/2605.21470.md",
+        "summary_en_path": "summary_en/2026-05/2605.21470.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21470.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21470.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,81 +51,39 @@
       }
     },
     {
-      "id": "arxiv:2605.20173",
-      "date": "2026-05-19",
-      "title": "A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents",
+      "id": "arxiv:2605.21027",
+      "date": "2026-05-20",
+      "title": "Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Vasundra Srinivasan"
+        "Gundeep Singh",
+        "Parsa Kavehzadeh",
+        "Jing Xia",
+        "Xue-Yong Fu",
+        "Julien Bouvier Tremblay",
+        "Md Tahmid Rahman Laskar",
+        "Vincent Lum",
+        "Shashi Bhushan TN"
       ],
-      "institution": "Stanford School of Engineering",
+      "institution": "Dialpad Inc.",
       "summary": {
-        "zh": "本文确立了“随机-确定性边界”（SDB）作为生产级 LLM 代理运行时的核心架构原语。通过定义 SDB 的四部分契约，作者整理了六种运行时架构模式，并提出了选择方法和故障诊断流程。研究指出，随着模型能力的提升，架构惯性（由模式选择和 SDB 强度决定）将成为影响长期可靠性的主导因素。该工作为构建高可靠性生产级代理提供了系统的工程方法论。",
-        "en": "- **Background**: Production LLM agents combine stochastic model outputs with deterministic systems, yet the boundary between them is rarely treated as a first-class architectural object. As per-call model variance..."
+        "zh": "本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。",
+        "en": "- **Background**: Enterprise analytics aims to support data-driven decision-making, but non-technical users face barriers with traditional BI tools or Text-to-SQL systems. Modern enterprise analytics rely on governed..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20173v1",
-        "pdf": "https://arxiv.org/pdf/2605.20173v1",
-        "github": "https://github.com/vasundras/agent-runtime-patterns"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.20173.md",
-        "summary_en_path": "summary_en/2026-05/2605.20173.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.20173.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.20173.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.20055",
-      "date": "2026-05-19",
-      "title": "Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Dominique Briechle",
-        "Raj Chanchad",
-        "Tobias Geger",
-        "Ruidi He",
-        "Dhruv Jajadiya",
-        "Dhruv Kapadiya",
-        "Andreas Rausch",
-        "Meng Zhang"
-      ],
-      "institution": "Institute for Software and Systems Engineering, Clausthal University of Technology",
-      "summary": {
-        "zh": "本文针对 ROS 2 系统中架构模型缺失和不一致的问题，提出了一种增强的 LLM 辅助架构恢复方法。通过优化提示词设计和引入多级中间表示的分阶段恢复策略，成功实现了跨抽象层级的层级结构重建。在真实复杂案例研究中的评估证明了该方法在提高架构恢复质量和处理复杂性方面的有效性，为分布式 cyber-physical 系统的自动化架构文档化提供了新思路。",
-        "en": "- **Background**: Explicit software architecture models are crucial for complex systems, but in ROS 2-based robotic systems, structural decomposition and integration semantics are implicitly encoded across distributed..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.20055v1",
-        "pdf": "https://arxiv.org/pdf/2605.20055v1",
+        "abs": "http://arxiv.org/abs/2605.21027v1",
+        "pdf": "https://arxiv.org/pdf/2605.21027v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.20055.md",
-        "summary_en_path": "summary_en/2026-05/2605.20055.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.20055.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.20055.md"
+        "summary_zh_path": "summary/2026-05/2605.21027.md",
+        "summary_en_path": "summary_en/2026-05/2605.21027.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21027.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21027.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -187,36 +100,133 @@
       }
     },
     {
-      "id": "arxiv:2605.19824",
-      "date": "2026-05-19",
-      "title": "From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning",
+      "id": "arxiv:2605.21347",
+      "date": "2026-05-20",
+      "title": "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ahmed Y. Gado",
-        "Omar Y. Goba",
-        "Alaa Hassanein",
-        "Catherine M. Elias",
-        "Ahmed Hussein"
+        "Akshay Manglik",
+        "Apaar Shanker",
+        "Kaustubh Deshpande",
+        "Jason Qin",
+        "Yash Maurya",
+        "Veronica Chatrath",
+        "Vijay S. Kalmath",
+        "Levi Lentz",
+        "Yuan",
+        "Xue"
       ],
-      "institution": "German University in Cairo (GUC), C-DRiVeS Lab, Deggendorf Institute of Technology, IAV GmbH",
+      "institution": "Scale AI",
       "summary": {
-        "zh": "本文探讨了在多智能体通信中进行时间 conditioning 是否能保持或增强推理的一致性。研究指出，虽然标准NLP指标未能反映提升，但定性分析证明了时间 grounding 对于实现预测性安全和稳定行为的重要性。该工作明确了基于提示的时间 grounding 的局限，并为未来的时间场景到规划推理研究建立了基准。",
-        "en": "- **Background**: Autonomous Vehicles (AVs) are advancing from L4 to L5 autonomy, requiring sophisticated behavior planning. Recent efforts leverage Multi-Agent Systems (MAS) powered by Large Language Models (LLMs) and..."
+        "zh": "本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。",
+        "en": "- **Background**: Diagnosing failures in LLM agents is currently largely manual. Practitioners inspect small subsets of execution traces to form ad-hoc hypotheses."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19824v1",
-        "pdf": "https://arxiv.org/pdf/2605.19824v1",
+        "abs": "http://arxiv.org/abs/2605.21347v1",
+        "pdf": "https://arxiv.org/pdf/2605.21347v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.19824.md",
-        "summary_en_path": "summary_en/2026-05/2605.19824.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.19824.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.19824.md"
+        "summary_zh_path": "summary/2026-05/2605.21347.md",
+        "summary_en_path": "summary_en/2026-05/2605.21347.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21347.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21347.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.21240",
+      "date": "2026-05-20",
+      "title": "APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yibo Li",
+        "Jiashuo Yang",
+        "Zhi Zheng",
+        "Zhiyuan Hu",
+        "Yuan Sui",
+        "Shizun Wang",
+        "Yufei He",
+        "Bryan Hooi"
+      ],
+      "institution": "National University of Singapore",
+      "summary": {
+        "zh": "APEX通过构建显式的策略地图，有效解决了自进化LLM智能体中的探索崩溃问题。它结合了基于证据的分支发现和平衡探索利用的策略选择机制，使得智能体能够在不更新模型权重的情况下，持续发现更优策略并在复杂长程任务中保持高性能。该方法在文本冒险和网页交互任务中均展现了显著的优势和鲁棒性。",
+        "en": "- **Background**: LLM agents perform well in complex interactive environments requiring long-horizon decision-making but traditionally cannot learn on the fly at test time. Self-evolving agents address this by..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.21240v1",
+        "pdf": "https://arxiv.org/pdf/2605.21240v1",
+        "github": "https://github.com/liushiliushi/APEX1"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.21240.md",
+        "summary_en_path": "summary_en/2026-05/2605.21240.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21240.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21240.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.21404",
+      "date": "2026-05-20",
+      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Mahdi Naser Moghadasi",
+        "Faezeh Ghaderi"
+      ],
+      "institution": "University of Texas at Arlington; Texas Tech University",
+      "summary": {
+        "zh": "本文是一项关于 LLM Agent 基准测试透明度的试点审计研究。通过提出并应用一个包含五个维度的评分 schema，研究揭示了当前顶级 Agent 基准论文在实验细节披露上的严重不足，特别是环境规范和成本报告的缺失。该工作为社区提供了一套开源的审计工具，旨在推动更严格、透明的评估标准，尽管目前仅为单审核员初步结果，但为后续的多审核员审计和标准化奠定了基础。",
+        "en": "- **Background**: There is a severe reproducibility crisis in LLM Agent benchmarks. Different papers often report conflicting results for the same model and benchmark, yet fail to provide sufficient details (such as..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.21404v1",
+        "pdf": "https://arxiv.org/pdf/2605.21404v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.21404.md",
+        "summary_en_path": "summary_en/2026-05/2605.21404.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21404.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21404.md"
       },
       "signals": {
         "priority_keyword": "Agent"
