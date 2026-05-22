@@ -1,40 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-21T05:42:36.901599+00:00",
-  "run_date": "2026-05-20",
+  "generated_at": "2026-05-22T05:36:44.170489+00:00",
+  "run_date": "2026-05-21",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.21470",
-      "date": "2026-05-20",
-      "title": "Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling",
+      "id": "arxiv:2605.22502",
+      "date": "2026-05-21",
+      "title": "Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Caleb Winston",
-        "Ron Yifeng Wang",
-        "Azalia Mirhoseini",
-        "Christos Kozyrakis"
+        "Simon Dennis",
+        "Rivaan Patil",
+        "Kevin Shabahang",
+        "Hao Guo"
       ],
-      "institution": "Stanford University",
+      "institution": "University of Melbourne",
       "summary": {
-        "zh": "该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。",
-        "en": "- **Background**: Computer-use agents (CUAs) automate web tasks via natural language by generating sequences of tool calls (e.g., click, type). Current implementations rely on a sequential \"fetch-screenshot-execute\"..."
+        "zh": "本文通过实证研究打破了开发者对“编译式智能体”的三个主要误解。结果表明，将程序性知识编译进模型权重是处理持久性结构知识的自然解决方案：持久结构应存在于权重中，而瞬态状态应存在于 prompt 中。该方法以两个数量级的成本优势提供了接近前沿模型的质量，且具备敏捷的工程迭代能力，为替代昂贵且脆弱的外部编排框架提供了强有力的证据。",
+        "en": "- **Background**: Current agent development relies heavily on external orchestration frameworks (e.g., LangGraph, CrewAI), which manage workflows by injecting instructions and routing decisions at every turn. Recent..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.21470v1",
-        "pdf": "https://arxiv.org/pdf/2605.21470v1",
+        "abs": "http://arxiv.org/abs/2605.22502v1",
+        "pdf": "https://arxiv.org/pdf/2605.22502v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.21470.md",
-        "summary_en_path": "summary_en/2026-05/2605.21470.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21470.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21470.md"
+        "summary_zh_path": "summary/2026-05/2605.22502.md",
+        "summary_en_path": "summary_en/2026-05/2605.22502.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22502.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22502.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,39 +51,34 @@
       }
     },
     {
-      "id": "arxiv:2605.21027",
-      "date": "2026-05-20",
-      "title": "Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs",
+      "id": "arxiv:2605.22608",
+      "date": "2026-05-21",
+      "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Gundeep Singh",
-        "Parsa Kavehzadeh",
-        "Jing Xia",
-        "Xue-Yong Fu",
-        "Julien Bouvier Tremblay",
-        "Md Tahmid Rahman Laskar",
-        "Vincent Lum",
-        "Shashi Bhushan TN"
+        "Asaf Yehudai",
+        "Lilach Eden",
+        "Michal Shmueli-Scheuer"
       ],
-      "institution": "Dialpad Inc.",
+      "institution": "IBM Research",
       "summary": {
-        "zh": "本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。",
-        "en": "- **Background**: Enterprise analytics aims to support data-driven decision-making, but non-technical users face barriers with traditional BI tools or Text-to-SQL systems. Modern enterprise analytics rely on governed..."
+        "zh": "Agentic CLEAR 填补了当前 Agent 可观测性工具与动态评估需求之间的空白。通过自动化、多层级的文本洞察生成，它不仅降低了对人工标注和手工规则的依赖，还显著提升了开发者调试和优化复杂 Agent 系统的效率，特别是在处理细微故障模式和跨步骤错误传播方面表现优异。",
+        "en": "- **Background**: As agentic systems become more capable in defining strategies, executing actions, and interacting with environments, their autonomy poses significant challenges for oversight and evaluation. While..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.21027v1",
-        "pdf": "https://arxiv.org/pdf/2605.21027v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2605.22608v1",
+        "pdf": "https://arxiv.org/pdf/2605.22608v1",
+        "github": "https://ibm.biz/ACLEAR-Code"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.21027.md",
-        "summary_en_path": "summary_en/2026-05/2605.21027.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21027.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21027.md"
+        "summary_zh_path": "summary/2026-05/2605.22608.md",
+        "summary_en_path": "summary_en/2026-05/2605.22608.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22608.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22608.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,41 +95,43 @@
       }
     },
     {
-      "id": "arxiv:2605.21347",
-      "date": "2026-05-20",
-      "title": "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents",
+      "id": "arxiv:2605.22664",
+      "date": "2026-05-21",
+      "title": "WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Akshay Manglik",
-        "Apaar Shanker",
-        "Kaustubh Deshpande",
-        "Jason Qin",
-        "Yash Maurya",
-        "Veronica Chatrath",
-        "Vijay S. Kalmath",
-        "Levi Lentz",
-        "Yuan",
-        "Xue"
+        "Thomson Yen",
+        "Julian Poeltl",
+        "Harshith Srinivas Gear",
+        "Yilin Meng",
+        "Joshua Fan",
+        "Adam Shen",
+        "Yili Liu",
+        "Ali Bauyrzhan",
+        "Siri Du",
+        "Haoyang Liu",
+        "Daniel Guetta",
+        "Hongseok Namkoong"
       ],
-      "institution": "Scale AI",
+      "institution": "Columbia Business School",
       "summary": {
-        "zh": "本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。",
-        "en": "- **Background**: Diagnosing failures in LLM agents is currently largely manual. Practitioners inspect small subsets of execution traces to form ad-hoc hypotheses."
+        "zh": "本文介绍了WorkstreamBench，填补了端到端金融电子表格构建评估的空白。通过引入涵盖准确性、公式和格式的多维评估体系，研究发现尽管Claude等领先模型表现较好，但当前LLM智能体在处理复杂金融建模任务时仍显不足，特别是在可扩展性和专业性方面亟待提升。",
+        "en": "This paper introduces WorkstreamBench, filling the gap in evaluating end-to-end financial spreadsheet construction. By introducing a multidimensional evaluation system covering accuracy, formula, and format, the study..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.21347v1",
-        "pdf": "https://arxiv.org/pdf/2605.21347v1",
+        "abs": "http://arxiv.org/abs/2605.22664v1",
+        "pdf": "https://arxiv.org/pdf/2605.22664v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.21347.md",
-        "summary_en_path": "summary_en/2026-05/2605.21347.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21347.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21347.md"
+        "summary_zh_path": "summary/2026-05/2605.22664.md",
+        "summary_en_path": "summary_en/2026-05/2605.22664.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22664.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22664.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -151,39 +148,40 @@
       }
     },
     {
-      "id": "arxiv:2605.21240",
-      "date": "2026-05-20",
-      "title": "APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents",
+      "id": "arxiv:2605.22645",
+      "date": "2026-05-21",
+      "title": "AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yibo Li",
-        "Jiashuo Yang",
-        "Zhi Zheng",
-        "Zhiyuan Hu",
-        "Yuan Sui",
-        "Shizun Wang",
-        "Yufei He",
-        "Bryan Hooi"
+        "Hanjun Luo",
+        "Zhimu Huang",
+        "Sylvia Chung",
+        "Yiran Wang",
+        "Yingbin Jin",
+        "Jialin Li",
+        "Jiang Li",
+        "Xinfeng Li",
+        "Hanan Salam"
       ],
-      "institution": "National University of Singapore",
+      "institution": "New York University Abu Dhabi",
       "summary": {
-        "zh": "APEX通过构建显式的策略地图，有效解决了自进化LLM智能体中的探索崩溃问题。它结合了基于证据的分支发现和平衡探索利用的策略选择机制，使得智能体能够在不更新模型权重的情况下，持续发现更优策略并在复杂长程任务中保持高性能。该方法在文本冒险和网页交互任务中均展现了显著的优势和鲁棒性。",
-        "en": "- **Background**: LLM agents perform well in complex interactive environments requiring long-horizon decision-making but traditionally cannot learn on the fly at test time. Self-evolving agents address this by..."
+        "zh": "本文介绍了 AtelierEval，首个针对人类和 MLLM 提示能力的统一基准，解决了现有研究忽视上游提示构建过程的问题。通过提出 AtelierJudge 代理评估器，实现了高相关性、可扩展的自动化评估。大规模实验不仅验证了该基准的诊断价值，还揭示了当前 MLLM 提示策略中模仿优于规划的洞察，为未来图像增强型提示者的研究指明了方向。",
+        "en": "- **Background**: Text-to-image (T2I) systems increasingly rely on upstream prompters (humans or Multimodal Large Language Models, MLLMs) to translate user intent into detailed prompts. As generation quality improves,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.21240v1",
-        "pdf": "https://arxiv.org/pdf/2605.21240v1",
-        "github": "https://github.com/liushiliushi/APEX1"
+        "abs": "http://arxiv.org/abs/2605.22645v1",
+        "pdf": "https://arxiv.org/pdf/2605.22645v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.21240.md",
-        "summary_en_path": "summary_en/2026-05/2605.21240.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21240.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21240.md"
+        "summary_zh_path": "summary/2026-05/2605.22645.md",
+        "summary_en_path": "summary_en/2026-05/2605.22645.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22645.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22645.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -200,33 +198,43 @@
       }
     },
     {
-      "id": "arxiv:2605.21404",
-      "date": "2026-05-20",
-      "title": "What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema",
+      "id": "arxiv:2605.22642",
+      "date": "2026-05-21",
+      "title": "Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mahdi Naser Moghadasi",
-        "Faezeh Ghaderi"
+        "Banghao Chi",
+        "Yining Xie",
+        "Mingyuan Wu",
+        "Jingcheng Yang",
+        "Jize Jiang",
+        "Zhaoheng Li",
+        "Shengyi Qian",
+        "Minjia Zhang",
+        "Klara Nahrstedt",
+        "Rui Hou",
+        "Xiangjun Fan",
+        "Hanchao Yu"
       ],
-      "institution": "University of Texas at Arlington; Texas Tech University",
+      "institution": "University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "本文是一项关于 LLM Agent 基准测试透明度的试点审计研究。通过提出并应用一个包含五个维度的评分 schema，研究揭示了当前顶级 Agent 基准论文在实验细节披露上的严重不足，特别是环境规范和成本报告的缺失。该工作为社区提供了一套开源的审计工具，旨在推动更严格、透明的评估标准，尽管目前仅为单审核员初步结果，但为后续的多审核员审计和标准化奠定了基础。",
-        "en": "- **Background**: There is a severe reproducibility crisis in LLM Agent benchmarks. Different papers often report conflicting results for the same model and benchmark, yet fail to provide sufficient details (such as..."
+        "zh": "Spreadsheet-RL 通过引入强化学习微调和专用的训练环境，显著提升了 LLM Agent 在真实电子表格任务中的性能。它不仅解决了现有方法在处理复杂多步工作流时的局限性，还通过开源数据和环境促进了该领域的研究。结果显示，该方法在通用和领域特定任务上均取得了实质性进步，展现了在办公自动化和数据接口交互中的巨大应用潜力。",
+        "en": "- **Background**: Spreadsheet systems (e.g., Microsoft Excel) are central to modern data-centric workflows. As AI agents become more capable, building agents to automate spreadsheet tasks is a promising research..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.21404v1",
-        "pdf": "https://arxiv.org/pdf/2605.21404v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2605.22642v1",
+        "pdf": "https://arxiv.org/pdf/2605.22642v1",
+        "github": "https://github.com/Spreadsheet-RL/Spreadsheet-RL"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.21404.md",
-        "summary_en_path": "summary_en/2026-05/2605.21404.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.21404.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.21404.md"
+        "summary_zh_path": "summary/2026-05/2605.22642.md",
+        "summary_en_path": "summary_en/2026-05/2605.22642.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22642.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22642.md"
       },
       "signals": {
         "priority_keyword": "Agent"

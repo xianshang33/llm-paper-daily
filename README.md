@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.21_05:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.22_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月21日 05:42</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月22日 05:36</sub></summary>
 <br>
 
-- Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling 
-- Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs 
-- Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents 
-- APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents 
-- What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema 
+- Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost 
+- Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents 
+- WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance 
+- AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters 
+- Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-21</span> | **Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost**<br><sub>机构: University of Melbourne<br>本文通过实证研究打破了开发者对“编译式智能体”的三个主要误解。结果表明，将程序性知识编译进模型权重是处理持久性结构知识的自然解决方案：持久结构应存在于权重中，而瞬态状态应存在于 prompt 中。该方法以两个数量级的成本优势提供了接近前沿模型的质量，且具备敏捷的工程迭代能力，为替代昂贵且脆弱的外部编排框架提供了强有力的证据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22502v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22502.md)  |
+| <span style='display: inline-block; width: 42px;'>05-21</span> | **Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents**<br><sub>机构: IBM Research<br>Agentic CLEAR 填补了当前 Agent 可观测性工具与动态评估需求之间的空白。通过自动化、多层级的文本洞察生成，它不仅降低了对人工标注和手工规则的依赖，还显著提升了开发者调试和优化复杂 Agent 系统的效率，特别是在处理细微故障模式和跨步骤错误传播方面表现优异。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22608v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22608.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://ibm.biz/ACLEAR-Code)</div> |
+| <span style='display: inline-block; width: 42px;'>05-21</span> | **WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance**<br><sub>机构: Columbia Business School<br>本文介绍了WorkstreamBench，填补了端到端金融电子表格构建评估的空白。通过引入涵盖准确性、公式和格式的多维评估体系，研究发现尽管Claude等领先模型表现较好，但当前LLM智能体在处理复杂金融建模任务时仍显不足，特别是在可扩展性和专业性方面亟待提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22664v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22664.md)  |
+| <span style='display: inline-block; width: 42px;'>05-21</span> | **AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters**<br><sub>机构: New York University Abu Dhabi<br>本文介绍了 AtelierEval，首个针对人类和 MLLM 提示能力的统一基准，解决了现有研究忽视上游提示构建过程的问题。通过提出 AtelierJudge 代理评估器，实现了高相关性、可扩展的自动化评估。大规模实验不仅验证了该基准的诊断价值，还揭示了当前 MLLM 提示策略中模仿优于规划的洞察，为未来图像增强型提示者的研究指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22645v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22645.md)  |
+| <span style='display: inline-block; width: 42px;'>05-21</span> | **Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning**<br><sub>机构: University of Illinois Urbana-Champaign<br>Spreadsheet-RL 通过引入强化学习微调和专用的训练环境，显著提升了 LLM Agent 在真实电子表格任务中的性能。它不仅解决了现有方法在处理复杂多步工作流时的局限性，还通过开源数据和环境促进了该领域的研究。结果显示，该方法在通用和领域特定任务上均取得了实质性进步，展现了在办公自动化和数据接口交互中的巨大应用潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22642v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22642.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Spreadsheet-RL/Spreadsheet-RL)</div> |
 | <span style='display: inline-block; width: 42px;'>05-20</span> | **Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling**<br><sub>机构: Stanford University<br>该论文提出了一种创新的Agent JIT编译方法，突破了传统Web Agent串行执行的瓶颈。通过将任务编译为可并行执行的代码，并结合智能规划与调度机制，该方法在大幅降低延迟的同时提高了任务执行的准确性。这为构建低延迟、高效率的自动化Web代理提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21470v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21470.md)  |
 | <span style='display: inline-block; width: 42px;'>05-20</span> | **Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs**<br><sub>机构: Dialpad Inc.<br>本文针对企业分析中非技术用户访问受治理数据的难题，提出了 Analytic Agent。该系统克服了传统 Text-to-SQL 方法在 API 环境和数据治理方面的局限性，通过多智能体协作实现了意图解析、权限验证、安全查询执行和合规可视化。实验结果表明，该方法在真实企业场景中具有高准确性和执行成功率，为构建可信的、基于 API 的企业分析系统提供了实用路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21027v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21027.md)  |
 | <span style='display: inline-block; width: 42px;'>05-20</span> | **Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents**<br><sub>机构: Scale AI<br>本文形式化了语料库级别轨迹诊断的问题，并提出了 Insights Generator (IG) 系统。IG 通过多智能体协作，自动化地从大规模 LLM Agent 执行轨迹中提取有证据支持的系统性行为模式洞察。实验表明，IG 不仅能提供高质量的诊断报告，还能显著提升 Agent 的实际性能，有效解决了传统人工诊断和聚合评估无法发现的深层及静默失败问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.21347v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.21347.md)  |
