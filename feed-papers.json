@@ -1,40 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-22T05:36:44.170489+00:00",
-  "run_date": "2026-05-21",
+  "generated_at": "2026-05-23T04:58:33.288426+00:00",
+  "run_date": "2026-05-17",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.22502",
-      "date": "2026-05-21",
-      "title": "Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost",
+      "id": "arxiv:2605.17625",
+      "date": "2026-05-17",
+      "title": "Episodic-Semantic Memory Architecture for Long-Horizon Scientific Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Simon Dennis",
-        "Rivaan Patil",
-        "Kevin Shabahang",
-        "Hao Guo"
+        "Nikola Milosevic"
       ],
-      "institution": "University of Melbourne",
+      "institution": "Serbian Institute for Artificial Intelligence Research and Development; Bayer A.G.",
       "summary": {
-        "zh": "本文通过实证研究打破了开发者对“编译式智能体”的三个主要误解。结果表明，将程序性知识编译进模型权重是处理持久性结构知识的自然解决方案：持久结构应存在于权重中，而瞬态状态应存在于 prompt 中。该方法以两个数量级的成本优势提供了接近前沿模型的质量，且具备敏捷的工程迭代能力，为替代昂贵且脆弱的外部编排框架提供了强有力的证据。",
-        "en": "- **Background**: Current agent development relies heavily on external orchestration frameworks (e.g., LangGraph, CrewAI), which manage workflows by injecting instructions and routing decisions at every turn. Recent..."
+        "zh": "本文针对科学智能体在长程交互中面临的上下文饱和和认知退化问题，提出了一种双过程记忆架构。通过解耦短期情景记忆和长期语义记忆，并引入领域特定的巩固机制，有效解决了科学工作流中假设演化、矛盾参数处理和精确事实保留的挑战。实验表明，该架构在显著降低 token 成本和延迟的同时，在长程任务中保持了高准确率，优于传统的全上下文方法和单纯的 RAG 方案，为构建持久的科学 AI 合作者提供了可行的技术路径。",
+        "en": "- **Background**: As Large Language Models (LLMs) evolve into persistent scientific collaborators in high-stakes domains like drug discovery, context window saturation has become a critical bottleneck. Scientific..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.22502v1",
-        "pdf": "https://arxiv.org/pdf/2605.22502v1",
+        "abs": "http://arxiv.org/abs/2605.17625v1",
+        "pdf": "https://arxiv.org/pdf/2605.17625v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.22502.md",
-        "summary_en_path": "summary_en/2026-05/2605.22502.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22502.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22502.md"
+        "summary_zh_path": "summary/2026-05/2605.17625.md",
+        "summary_en_path": "summary_en/2026-05/2605.17625.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17625.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17625.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,87 +48,33 @@
       }
     },
     {
-      "id": "arxiv:2605.22608",
-      "date": "2026-05-21",
-      "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
+      "id": "arxiv:2605.17535",
+      "date": "2026-05-17",
+      "title": "AgentModernize: Preserving Business Logic in Legacy Modernization with Multi-Agent LLMs and Behavioral Specification Graphs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Asaf Yehudai",
-        "Lilach Eden",
-        "Michal Shmueli-Scheuer"
+        "Sheikh Nazib Ahmed",
+        "Marnim Galib"
       ],
-      "institution": "IBM Research",
+      "institution": "University of Texas at Arlington",
       "summary": {
-        "zh": "Agentic CLEAR 填补了当前 Agent 可观测性工具与动态评估需求之间的空白。通过自动化、多层级的文本洞察生成，它不仅降低了对人工标注和手工规则的依赖，还显著提升了开发者调试和优化复杂 Agent 系统的效率，特别是在处理细微故障模式和跨步骤错误传播方面表现优异。",
-        "en": "- **Background**: As agentic systems become more capable in defining strategies, executing actions, and interacting with environments, their autonomy poses significant challenges for oversight and evaluation. While..."
+        "zh": "AgentModernize 通过多智能体协作和行为规格图（BSG），成功解决了遗留系统现代化中业务逻辑丢失的核心痛点。实验表明，将现代化视为行为保持问题并引入严格的验证反馈机制，远优于传统的语法翻译方法。该框架不仅提高了代码生成的行为等价性，还为受监管行业提供了可审计的追踪记录（业务规则清单、BSG、等价性报告），具有重要的实际应用价值。",
+        "en": "- **Background**: Core systems in telecommunications, finance, and healthcare rely on legacy code (e.g., COBOL, PL/SQL) built decades ago. These systems contain implicit business rules, edge-case handling, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.22608v1",
-        "pdf": "https://arxiv.org/pdf/2605.22608v1",
-        "github": "https://ibm.biz/ACLEAR-Code"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.22608.md",
-        "summary_en_path": "summary_en/2026-05/2605.22608.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22608.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22608.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.22664",
-      "date": "2026-05-21",
-      "title": "WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Thomson Yen",
-        "Julian Poeltl",
-        "Harshith Srinivas Gear",
-        "Yilin Meng",
-        "Joshua Fan",
-        "Adam Shen",
-        "Yili Liu",
-        "Ali Bauyrzhan",
-        "Siri Du",
-        "Haoyang Liu",
-        "Daniel Guetta",
-        "Hongseok Namkoong"
-      ],
-      "institution": "Columbia Business School",
-      "summary": {
-        "zh": "本文介绍了WorkstreamBench，填补了端到端金融电子表格构建评估的空白。通过引入涵盖准确性、公式和格式的多维评估体系，研究发现尽管Claude等领先模型表现较好，但当前LLM智能体在处理复杂金融建模任务时仍显不足，特别是在可扩展性和专业性方面亟待提升。",
-        "en": "This paper introduces WorkstreamBench, filling the gap in evaluating end-to-end financial spreadsheet construction. By introducing a multidimensional evaluation system covering accuracy, formula, and format, the study..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.22664v1",
-        "pdf": "https://arxiv.org/pdf/2605.22664v1",
+        "abs": "http://arxiv.org/abs/2605.17535v1",
+        "pdf": "https://arxiv.org/pdf/2605.17535v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.22664.md",
-        "summary_en_path": "summary_en/2026-05/2605.22664.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22664.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22664.md"
+        "summary_zh_path": "summary/2026-05/2605.17535.md",
+        "summary_en_path": "summary_en/2026-05/2605.17535.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17535.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17535.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -148,40 +91,76 @@
       }
     },
     {
-      "id": "arxiv:2605.22645",
-      "date": "2026-05-21",
-      "title": "AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters",
+      "id": "arxiv:2605.17641",
+      "date": "2026-05-17",
+      "title": "Causal Intervention-Based Memory Selection for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hanjun Luo",
-        "Zhimu Huang",
-        "Sylvia Chung",
-        "Yiran Wang",
-        "Yingbin Jin",
-        "Jialin Li",
-        "Jiang Li",
-        "Xinfeng Li",
-        "Hanan Salam"
+        "Saksham Sahai Srivastava"
       ],
-      "institution": "New York University Abu Dhabi",
+      "institution": "University of Georgia",
       "summary": {
-        "zh": "本文介绍了 AtelierEval，首个针对人类和 MLLM 提示能力的统一基准，解决了现有研究忽视上游提示构建过程的问题。通过提出 AtelierJudge 代理评估器，实现了高相关性、可扩展的自动化评估。大规模实验不仅验证了该基准的诊断价值，还揭示了当前 MLLM 提示策略中模仿优于规划的洞察，为未来图像增强型提示者的研究指明了方向。",
-        "en": "- **Background**: Text-to-image (T2I) systems increasingly rely on upstream prompters (humans or Multimodal Large Language Models, MLLMs) to translate user intent into detailed prompts. As generation quality improves,..."
+        "zh": "本文指出了现有长周期 LLM 智能体记忆系统中基于语义相似度检索的局限性，提出了 Causal Memory Intervention (CMI) 方法，通过因果干预评估记忆的实际效用。同时构建了 Causal-LoCoMo 基准以评估系统在存在干扰和有害记忆时的表现。实验表明，基于因果有用性的记忆选择能显著提升智能体在复杂长周期任务中的鲁棒性和回答质量。",
+        "en": "- **Background**: Long-horizon LLM agents rely on persistent memory to support cross-session interactions. Existing memory systems typically retrieve context using semantic similarity or broad history inclusion,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.22645v1",
-        "pdf": "https://arxiv.org/pdf/2605.22645v1",
+        "abs": "http://arxiv.org/abs/2605.17641v1",
+        "pdf": "https://arxiv.org/pdf/2605.17641v1",
+        "github": "https://github.com/Saksham4796/causal-memory-intervention"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.17641.md",
+        "summary_en_path": "summary_en/2026-05/2605.17641.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17641.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17641.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.17554",
+      "date": "2026-05-17",
+      "title": "Evaluating Deep Research Agents on Expert Consulting Work: A Benchmark with Verifiers, Rubrics, and Cognitive Traps",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Tanmay Asthana",
+        "Aman Saksena",
+        "Divyansh Sahu"
+      ],
+      "institution": "Deccan AI Research",
+      "summary": {
+        "zh": "本文指出了当前深度研究智能体评估中的关键空白，即缺乏对多文档、决策级结构化交付物的严格评估。通过引入包含认知陷阱、确定性验证器和专家评分规则的新基准，揭示了当前最前沿智能体在高风险咨询任务中的局限性。结果显示，尽管智能体在某些方面表现出色，但在满足严格的质量和准确性联合标准方面仍有显著差距，且不同智能体表现出截然不同的失败模式。这强调了在将 DRAs 部署于关键企业决策之前，需要进行更严格、更贴近实际工作流的评估。",
+        "en": "- **Background**: Frontier Deep Research Agents (DRAs) are being rapidly deployed in enterprise workflows to plan research, synthesize across documents, and produce structured deliverables. However, evaluation methods..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.17554v1",
+        "pdf": "https://arxiv.org/pdf/2605.17554v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.22645.md",
-        "summary_en_path": "summary_en/2026-05/2605.22645.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22645.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22645.md"
+        "summary_zh_path": "summary/2026-05/2605.17554.md",
+        "summary_en_path": "summary_en/2026-05/2605.17554.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17554.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17554.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -198,43 +177,34 @@
       }
     },
     {
-      "id": "arxiv:2605.22642",
-      "date": "2026-05-21",
-      "title": "Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning",
+      "id": "arxiv:2605.17596",
+      "date": "2026-05-17",
+      "title": "NeuSymMS: A Hybrid Neuro-Symbolic Memory System for Persistent, Self-Curating LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Banghao Chi",
-        "Yining Xie",
-        "Mingyuan Wu",
-        "Jingcheng Yang",
-        "Jize Jiang",
-        "Zhaoheng Li",
-        "Shengyi Qian",
-        "Minjia Zhang",
-        "Klara Nahrstedt",
-        "Rui Hou",
-        "Xiangjun Fan",
-        "Hanchao Yu"
+        "Mujahid Sultan",
+        "Sri Thuraisamy",
+        "Daya Rajaratnam"
       ],
-      "institution": "University of Illinois Urbana-Champaign",
+      "institution": "iVedha Corporation, MLSoft Inc.",
       "summary": {
-        "zh": "Spreadsheet-RL 通过引入强化学习微调和专用的训练环境，显著提升了 LLM Agent 在真实电子表格任务中的性能。它不仅解决了现有方法在处理复杂多步工作流时的局限性，还通过开源数据和环境促进了该领域的研究。结果显示，该方法在通用和领域特定任务上均取得了实质性进步，展现了在办公自动化和数据接口交互中的巨大应用潜力。",
-        "en": "- **Background**: Spreadsheet systems (e.g., Microsoft Excel) are central to modern data-centric workflows. As AI agents become more capable, building agents to automate spreadsheet tasks is a promising research..."
+        "zh": "NeuSymMS通过融合神经网络的语义理解能力与符号系统的逻辑推理能力，为LLM代理提供了一种可信任、可审计且持久的记忆解决方案。它有效解决了现有方法在事实冲突处理、时间演化追踪及上下文管理上的缺陷，为生产环境中的智能代理系统提供了一条实用的技术路径。",
+        "en": "NeuSymMS provides a trustworthy, auditable, and persistent memory solution for LLM agents by synergizing the semantic understanding of neural networks with the logical rigor of symbolic systems. It effectively addresses..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.22642v1",
-        "pdf": "https://arxiv.org/pdf/2605.22642v1",
-        "github": "https://github.com/Spreadsheet-RL/Spreadsheet-RL"
+        "abs": "http://arxiv.org/abs/2605.17596v2",
+        "pdf": "https://arxiv.org/pdf/2605.17596v2",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.22642.md",
-        "summary_en_path": "summary_en/2026-05/2605.22642.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.22642.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.22642.md"
+        "summary_zh_path": "summary/2026-05/2605.17596.md",
+        "summary_en_path": "summary_en/2026-05/2605.17596.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17596.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17596.md"
       },
       "signals": {
         "priority_keyword": "Agent"
