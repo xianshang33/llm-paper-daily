@@ -1,37 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-23T07:55:33.311849+00:00",
-  "run_date": "2026-05-16",
+  "generated_at": "2026-05-25T05:56:30.373997+00:00",
+  "run_date": "2026-05-22",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.17076",
-      "date": "2026-05-16",
-      "title": "S-Bus: Automatic Read-Set Reconstruction for Multi-Agent LLM State Coordination",
+      "id": "arxiv:2605.23414",
+      "date": "2026-05-22",
+      "title": "When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sajjad Khan"
+        "Zehao Wang",
+        "Shilong Jin",
+        "Zhao Cao",
+        "Lanjun Wang"
       ],
-      "institution": "laborate via shared shards.",
+      "institution": "Tianjin University, Renmin University of China",
       "summary": {
-        "zh": "S-Bus 通过引入基于 HTTP 流量分析的 DeliveryLog 机制，解决了多智能体 LLM 系统中共享状态管理的结构性竞态条件问题。它在无需修改智能体代码的前提下，提供了形式化验证的可观察读隔离（ORI）一致性保证。实证结果表明，S-Bus 在防止结构性冲突方面能达到与成熟数据库串行化隔离级别相当的效果，特别适用于专用分片拓扑的多智能体协作场景，为构建可靠的多智能体系统提供了重要的基础设施支持。",
-        "en": "- **Background**: Concurrent LLM agents sharing mutable natural-language state produce Structural Race Conditions (SRCs), including write-write and cross-shard stale-read conflicts, which silently corrupt agent output...."
+        "zh": "本文揭示了 LLM 多智能体系统中一种常被忽视的失败模式——规划中的认知校准失误，即智能体高估了其知识对计划可行性的支持程度。针对该问题的潜伏性和动态性挑战，作者提出了 EPC-AW 框架，通过信息一致性选择计划和基于历史差异的认知状态精炼，有效提升了系统的整体成功率。这项工作为构建更可靠的智能体系统提供了新的视角，即从单纯纠正执行错误转向校准规划阶段的认知不确定性。",
+        "en": "- **Background**: LLM-based multi-agent systems are becoming dominant for complex decision-making and long-horizon tasks but remain fragile in practical deployments. - **Why Existing Work Falls Short**: Current failure..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.17076v1",
-        "pdf": "https://arxiv.org/pdf/2605.17076v1",
-        "github": "https://github.com/sajjadanwar0/sbus"
+        "abs": "http://arxiv.org/abs/2605.23414v1",
+        "pdf": "https://arxiv.org/pdf/2605.23414v1",
+        "github": "https://github.com/wzhSteve/EPC-AW"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.17076.md",
-        "summary_en_path": "summary_en/2026-05/2605.17076.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17076.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17076.md"
+        "summary_zh_path": "summary/2026-05/2605.23414.md",
+        "summary_en_path": "summary_en/2026-05/2605.23414.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23414.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23414.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,45 +51,46 @@
       }
     },
     {
-      "id": "arxiv:2605.16819",
-      "date": "2026-05-16",
-      "title": "AgentKernelArena: Generalization-Aware Benchmarking of GPU Kernel Optimization Agents",
+      "id": "arxiv:2605.23904",
+      "date": "2026-05-22",
+      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sharareh Younesian",
-        "Wenwen Ouyang",
-        "Sina Rafati",
-        "Mehdi Rezagholizadeh",
-        "Sharon Zhou",
-        "Ji Liu",
-        "Yue Liu",
-        "Yuchen Yang",
-        "Hao Li",
-        "Ziqiong Liu",
-        "Dong Li",
-        "Vikram Appia",
-        "Zhenyu Gu",
-        "Emad Barsoum"
+        "Yifan Yang",
+        "Ziyang Gong",
+        "Weiquan Huang",
+        "Qihao Yang",
+        "Ziwei Zhou",
+        "Zisu Huang",
+        "Yan Li",
+        "Xuemei Gao",
+        "Qi Dai",
+        "Bei Liu",
+        "Kai Qiu",
+        "Yuqing Yang",
+        "Dongdong Chen",
+        "Xue Yang",
+        "Chong Luo"
       ],
-      "institution": "AMD",
+      "institution": "Microsoft, Shanghai Jiao Tong University, Tongji University, Fudan University",
       "summary": {
-        "zh": "AgentKernelArena 填补了 AI 智能体在 GPU 内核优化领域评估的空白，不仅关注代码生成的即时性能，更强调完整工作流的效率和优化结果的泛化能力。研究结果表明，虽然当前智能体在特定任务上能实现显著加速，但在从零生成内核时的泛化鲁棒性仍有待提高，特别是在处理未见输入配置时容易陷入硬编码陷阱。该框架为未来开发更通用、更鲁棒的 AI 辅助内核优化工具提供了重要的评估标准。",
-        "en": "AgentKernelArena fills the gap in evaluating AI agents for GPU kernel optimization, emphasizing both workflow efficiency and generalization of optimization results. The study shows that while current agents achieve..."
+        "zh": "SkillOpt 开创性地将深度学习的优化纪律引入到文本空间的智能体技能训练中。通过将有界编辑、严格验证和稳定化机制相结合，它解决了传统技能演化方法中不可靠和不稳定的问题。该方法不仅在多项基准测试中显著超越了现有最先进方法，还证明了优化后的技能具有良好的跨模型和跨环境泛化能力，为冻结模型的持续领域适应提供了一种高效、可复现的新范式。",
+        "en": "- **Background**: As frontier language models are increasingly deployed as agents, domain adaptation requires improving procedural behaviors (evidence gathering, tool usage, etc.) rather than just model weights or..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.16819v1",
-        "pdf": "https://arxiv.org/pdf/2605.16819v1",
-        "github": "https://github.com/AMD-AGI/AgentKernelArena"
+        "abs": "http://arxiv.org/abs/2605.23904v1",
+        "pdf": "https://arxiv.org/pdf/2605.23904v1",
+        "github": "https://aka.ms/SkillOpt"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.16819.md",
-        "summary_en_path": "summary_en/2026-05/2605.16819.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.16819.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.16819.md"
+        "summary_zh_path": "summary/2026-05/2605.23904.md",
+        "summary_en_path": "summary_en/2026-05/2605.23904.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23904.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23904.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -103,82 +107,36 @@
       }
     },
     {
-      "id": "arxiv:2605.18882",
-      "date": "2026-05-16",
-      "title": "To Call or Not to Call: Diagnosing Intrinsic Over-Calling Bias in LLM Agents",
+      "id": "arxiv:2605.23657",
+      "date": "2026-05-22",
+      "title": "OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wei Shi",
-        "Ziheng Peng",
-        "Sihang Li",
-        "Xiting Wang",
-        "Xiang Wang",
-        "Mengnan Du",
-        "Na Zou"
+        "Jiahao Ying",
+        "Boxian Ai",
+        "Wei Tang",
+        "Siyuan Liu",
+        "Yixin Cao"
       ],
-      "institution": "Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory, Renmin University of China, The Chinese University of Hong Kong Shenzhen, University of Science and Technology of China",
+      "institution": "Singapore Management University, Fudan University, JD.com",
       "summary": {
-        "zh": "本文通过将过度调用从一种经验现象重构为可因果修正的机制对象，揭示了 LLM 代理中存在的内在调用偏差。通过结合稀疏自编码器进行机制诊断和自适应边际校准进行干预，该研究不仅解释了模型为何倾向于过度调用，还提供了一种高效、低损耗的纠正方案，为提升 LLM 代理的工具使用可靠性提供了新的视角和方法。",
-        "en": "- **Background**: LLM agents exhibit a consistent \"over-calling\" tendency, invoking tools even when unnecessary. On the When2Call benchmark, while call accuracy is high, no-call accuracy is significantly lower,..."
+        "zh": "本文针对快速扩张的 LLM 智能体技能生态系统，提出了 OpenSkillEval 自动化评估框架。通过构建动态真实的任务实例和统一对比社区技能，研究揭示了技能增强的效果高度依赖于模型和框架的组合，且许多流行技能并未带来预期提升。这项工作强调了动态、任务 grounded 评估的重要性，并为 LLM 智能体的技能设计、选择和部署提供了实用的见解和指导。",
+        "en": "- **Background**: \"Skills\" (structured workflow instructions distilled for LLMs) are increasingly crucial for enhancing agent performance in real-world downstream tasks. However, the rapid expansion of the open-source..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.18882v1",
-        "pdf": "https://arxiv.org/pdf/2605.18882v1",
-        "github": "https://github.com/SKURA502/agent-sae/"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.18882.md",
-        "summary_en_path": "summary_en/2026-05/2605.18882.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.18882.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.18882.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.17101",
-      "date": "2026-05-16",
-      "title": "SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yongfeng Huang",
-        "Ruiying Chen",
-        "James Cheng"
-      ],
-      "institution": "The Chinese University of Hong Kong, Wuhan University of Technology",
-      "summary": {
-        "zh": "SEMA-RAG 通过模仿临床医生的多阶段推理过程，将传统的单轮静态 RAG 重构为由三个专业智能体（解释器、探索者、仲裁者）协作的多轮动态框架。该方法有效解决了传统 RAG 在临床语义理解和证据充分性反馈方面的结构性缺陷，显著提升了医疗问答的准确性和可靠性。",
-        "en": "- **Background**: Retrieval-Augmented Generation (RAG) is widely used to mitigate hallucinations and knowledge obsolescence in medical question answering. However, existing RAG systems predominantly employ a..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.17101v1",
-        "pdf": "https://arxiv.org/pdf/2605.17101v1",
+        "abs": "http://arxiv.org/abs/2605.23657v1",
+        "pdf": "https://arxiv.org/pdf/2605.23657v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.17101.md",
-        "summary_en_path": "summary_en/2026-05/2605.17101.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17101.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17101.md"
+        "summary_zh_path": "summary/2026-05/2605.23657.md",
+        "summary_en_path": "summary_en/2026-05/2605.23657.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23657.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23657.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -195,33 +153,84 @@
       }
     },
     {
-      "id": "arxiv:2605.17072",
-      "date": "2026-05-16",
-      "title": "RAGA: Reading-And-Graph-building-Agent for Autonomous Knowledge Graph Construction and Retrieval-Augmented Generation",
+      "id": "arxiv:2605.23754",
+      "date": "2026-05-22",
+      "title": "LLM-driven design of physics-constrained constitutive models: two agents are better than one",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chengrui Han",
-        "Zesheng Cheng"
+        "Marius Tacke",
+        "Matthias Busch",
+        "Kian Abdolazizi",
+        "Jonas Eichinger",
+        "Kevin Linka",
+        "Roland Aydin",
+        "Christian Cyron"
       ],
-      "institution": "Qingdao University",
+      "institution": "Hamburg University of Technology",
       "summary": {
-        "zh": "RAGA通过引入自主Agent机制，解决了传统LLM驱动KG构建中存在的跨块语义丢失、实体歧义和缺乏可解释性的问题。其核心的“阅读-搜索-验证-构建”循环及证据锚定机制，不仅提升了KG构建的质量，还通过混合检索增强了RAG系统的可靠性，为高风险领域的可信AI应用提供了参考范式。",
-        "en": "- **Background**: Knowledge Graphs (KGs) provide structured, verifiable factual grounding for Large Language Models (LLMs), while LLMs assist in KG construction and completion. Existing LLM-driven KG construction..."
+        "zh": "本文提出了一种双 agent 协作框架，通过分离模型生成与物理检查，解决了 LLM 在本构模型设计中缺乏物理一致性的关键问题。实验证明，该方法不仅能自动生成符合物理定律的模型，还能保证高精度和强泛化能力，为自动化、物理感知的模型发现开辟了新路径，且该范式与技术无关，可随 LLM 能力提升自动扩展。",
+        "en": "This paper proposes a dual-agent collaborative framework that addresses the critical lack of physical consistency in LLM-based constitutive model design by separating model generation from physical inspection...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.17072v1",
-        "pdf": "https://arxiv.org/pdf/2605.17072v1",
+        "abs": "http://arxiv.org/abs/2605.23754v1",
+        "pdf": "https://arxiv.org/pdf/2605.23754v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.17072.md",
-        "summary_en_path": "summary_en/2026-05/2605.17072.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.17072.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.17072.md"
+        "summary_zh_path": "summary/2026-05/2605.23754.md",
+        "summary_en_path": "summary_en/2026-05/2605.23754.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23754.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23754.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.23574",
+      "date": "2026-05-22",
+      "title": "Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yuandao Cai",
+        "Yuzhang Zhu",
+        "Liyou Gao",
+        "Wensheng Tang",
+        "Shengchao Qin"
+      ],
+      "institution": "Xidian University",
+      "summary": {
+        "zh": "本文指出了长程 LLM 代理在“定量目标持久性”（QGP）上的显著缺陷，即代理难以在外部验证器确认完成足够数量的有效工作之前持续工作。通过提出 PushBench...",
+        "en": "- **Background**: Long-horizon language agents often possess local competence but fail to persist until explicit quantitative goals are met. Existing evaluations typically focus on final success flags, obscuring issues..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.23574v1",
+        "pdf": "https://arxiv.org/pdf/2605.23574v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.23574.md",
+        "summary_en_path": "summary_en/2026-05/2605.23574.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23574.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23574.md"
       },
       "signals": {
         "priority_keyword": "Agent"

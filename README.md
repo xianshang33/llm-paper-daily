@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.22_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.25_05:56-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月22日 05:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月25日 05:56</sub></summary>
 <br>
 
-- Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost 
-- Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents 
-- WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance 
-- AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters 
-- Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning 
+- When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems 
+- SkillOpt: Executive Strategy for Self-Evolving Agent Skills 
+- OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents 
+- LLM-driven design of physics-constrained constitutive models: two agents are better than one 
+- Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-22</span> | **When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems**<br><sub>机构: Tianjin University, Renmin University of China<br>本文揭示了 LLM 多智能体系统中一种常被忽视的失败模式——规划中的认知校准失误，即智能体高估了其知识对计划可行性的支持程度。针对该问题的潜伏性和动态性挑战，作者提出了 EPC-AW 框架，通过信息一致性选择计划和基于历史差异的认知状态精炼，有效提升了系统的整体成功率。这项工作为构建更可靠的智能体系统提供了新的视角，即从单纯纠正执行错误转向校准规划阶段的认知不确定性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23414v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23414.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/wzhSteve/EPC-AW)</div> |
+| <span style='display: inline-block; width: 42px;'>05-22</span> | **SkillOpt: Executive Strategy for Self-Evolving Agent Skills**<br><sub>机构: Microsoft, Shanghai Jiao Tong University, Tongji University, Fudan University<br>SkillOpt 开创性地将深度学习的优化纪律引入到文本空间的智能体技能训练中。通过将有界编辑、严格验证和稳定化机制相结合，它解决了传统技能演化方法中不可靠和不稳定的问题。该方法不仅在多项基准测试中显著超越了现有最先进方法，还证明了优化后的技能具有良好的跨模型和跨环境泛化能力，为冻结模型的持续领域适应提供了一种高效、可复现的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23904v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23904.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://aka.ms/SkillOpt)</div> |
+| <span style='display: inline-block; width: 42px;'>05-22</span> | **OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents**<br><sub>机构: Singapore Management University, Fudan University, JD.com<br>本文针对快速扩张的 LLM 智能体技能生态系统，提出了 OpenSkillEval 自动化评估框架。通过构建动态真实的任务实例和统一对比社区技能，研究揭示了技能增强的效果高度依赖于模型和框架的组合，且许多流行技能并未带来预期提升。这项工作强调了动态、任务 grounded 评估的重要性，并为 LLM 智能体的技能设计、选择和部署提供了实用的见解和指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23657v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23657.md)  |
+| <span style='display: inline-block; width: 42px;'>05-22</span> | **LLM-driven design of physics-constrained constitutive models: two agents are better than one**<br><sub>机构: Hamburg University of Technology<br>本文提出了一种双 agent 协作框架，通过分离模型生成与物理检查，解决了 LLM 在本构模型设计中缺乏物理一致性的关键问题。实验证明，该方法不仅能自动生成符合物理定律的模型，还能保证高精度和强泛化能力，为自动化、物理感知的模型发现开辟了新路径，且该范式与技术无关，可随 LLM 能力提升自动扩展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23754v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23754.md)  |
+| <span style='display: inline-block; width: 42px;'>05-22</span> | **Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents**<br><sub>机构: Xidian University<br>本文指出了长程 LLM 代理在“定量目标持久性”（QGP）上的显著缺陷，即代理难以在外部验证器确认完成足够数量的有效工作之前持续工作。通过提出 PushBench 基准，作者将重复工作、虚假完成和进度漂移从隐性失败转化为显性测量指标。实验表明，即使是顶尖的黑盒代理在面对高数量目标时也会大幅失效，而引入显式的状态跟踪和验证反馈机制能显著提升代理的持久性和可靠性。这强调了未来代理系统设计中，除了提升局部推理能力外，必须加强对外部验证进度的维护和全局目标的管理。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23574v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23574.md)  |
 | <span style='display: inline-block; width: 42px;'>05-21</span> | **Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost**<br><sub>机构: University of Melbourne<br>本文通过实证研究打破了开发者对“编译式智能体”的三个主要误解。结果表明，将程序性知识编译进模型权重是处理持久性结构知识的自然解决方案：持久结构应存在于权重中，而瞬态状态应存在于 prompt 中。该方法以两个数量级的成本优势提供了接近前沿模型的质量，且具备敏捷的工程迭代能力，为替代昂贵且脆弱的外部编排框架提供了强有力的证据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22502v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22502.md)  |
 | <span style='display: inline-block; width: 42px;'>05-21</span> | **Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents**<br><sub>机构: IBM Research<br>Agentic CLEAR 填补了当前 Agent 可观测性工具与动态评估需求之间的空白。通过自动化、多层级的文本洞察生成，它不仅降低了对人工标注和手工规则的依赖，还显著提升了开发者调试和优化复杂 Agent 系统的效率，特别是在处理细微故障模式和跨步骤错误传播方面表现优异。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22608v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22608.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://ibm.biz/ACLEAR-Code)</div> |
 | <span style='display: inline-block; width: 42px;'>05-21</span> | **WorkstreamBench: Evaluating LLM Agents on End-to-End Spreadsheet Tasks in Finance**<br><sub>机构: Columbia Business School<br>本文介绍了WorkstreamBench，填补了端到端金融电子表格构建评估的空白。通过引入涵盖准确性、公式和格式的多维评估体系，研究发现尽管Claude等领先模型表现较好，但当前LLM智能体在处理复杂金融建模任务时仍显不足，特别是在可扩展性和专业性方面亟待提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.22664v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.22664.md)  |
