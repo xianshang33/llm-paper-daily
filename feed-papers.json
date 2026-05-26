@@ -1,40 +1,47 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-25T05:56:30.373997+00:00",
-  "run_date": "2026-05-22",
+  "generated_at": "2026-05-26T05:36:04.072406+00:00",
+  "run_date": "2026-05-25",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.23414",
-      "date": "2026-05-22",
-      "title": "When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems",
+      "id": "arxiv:2605.25920",
+      "date": "2026-05-25",
+      "title": "Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zehao Wang",
-        "Shilong Jin",
-        "Zhao Cao",
-        "Lanjun Wang"
+        "Wei Fan",
+        "Yining Zhou",
+        "Mufan Zhang",
+        "Yanbing Weng",
+        "Yiran HU",
+        "Tianshi Zheng",
+        "Baixuan Xu",
+        "Chunyang Li",
+        "Jianhui Yang",
+        "Haoran Li",
+        "Yangqiu Song"
       ],
-      "institution": "Tianjin University, Renmin University of China",
+      "institution": "HKUST, Tsinghua University, University of Waterloo",
       "summary": {
-        "zh": "本文揭示了 LLM 多智能体系统中一种常被忽视的失败模式——规划中的认知校准失误，即智能体高估了其知识对计划可行性的支持程度。针对该问题的潜伏性和动态性挑战，作者提出了 EPC-AW 框架，通过信息一致性选择计划和基于历史差异的认知状态精炼，有效提升了系统的整体成功率。这项工作为构建更可靠的智能体系统提供了新的视角，即从单纯纠正执行错误转向校准规划阶段的认知不确定性。",
-        "en": "- **Background**: LLM-based multi-agent systems are becoming dominant for complex decision-making and long-horizon tasks but remain fragile in practical deployments. - **Why Existing Work Falls Short**: Current failure..."
+        "zh": "本文指出了当前法律 AI 代理在处理时间敏感性法律问题时的重大缺陷，即忽视法律修订的时间效力。通过提出 LegalSearch-R1，结合本地精确检索、在线广泛搜索以及基于时间索引数据的强化学习，有效解决了法律推理中的时间不一致问题，大幅提升了法律问答的准确性和可靠性，为法律领域的可信 AI 应用提供了重要参考。",
+        "en": "- **Background**: Large language models (LLMs) augmented with agentic search show promise in legal reasoning but often overlook a fundamental constraint: applicable laws must align with the temporal context of the case...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.23414v1",
-        "pdf": "https://arxiv.org/pdf/2605.23414v1",
-        "github": "https://github.com/wzhSteve/EPC-AW"
+        "abs": "http://arxiv.org/abs/2605.25920v1",
+        "pdf": "https://arxiv.org/pdf/2605.25920v1",
+        "github": "https://github.com/AlexFanw/LegalSearch-R1"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.23414.md",
-        "summary_en_path": "summary_en/2026-05/2605.23414.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23414.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23414.md"
+        "summary_zh_path": "summary/2026-05/2605.25920.md",
+        "summary_en_path": "summary_en/2026-05/2605.25920.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25920.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25920.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,46 +58,32 @@
       }
     },
     {
-      "id": "arxiv:2605.23904",
-      "date": "2026-05-22",
-      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "id": "arxiv:2605.26112",
+      "date": "2026-05-25",
+      "title": "From Model Scaling to System Scaling: Scaling the Harness in Agentic AI",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yifan Yang",
-        "Ziyang Gong",
-        "Weiquan Huang",
-        "Qihao Yang",
-        "Ziwei Zhou",
-        "Zisu Huang",
-        "Yan Li",
-        "Xuemei Gao",
-        "Qi Dai",
-        "Bei Liu",
-        "Kai Qiu",
-        "Yuqing Yang",
-        "Dongdong Chen",
-        "Xue Yang",
-        "Chong Luo"
+        "Shangding Gu"
       ],
-      "institution": "Microsoft, Shanghai Jiao Tong University, Tongji University, Fudan University",
+      "institution": "UC Berkeley",
       "summary": {
-        "zh": "SkillOpt 开创性地将深度学习的优化纪律引入到文本空间的智能体技能训练中。通过将有界编辑、严格验证和稳定化机制相结合，它解决了传统技能演化方法中不可靠和不稳定的问题。该方法不仅在多项基准测试中显著超越了现有最先进方法，还证明了优化后的技能具有良好的跨模型和跨环境泛化能力，为冻结模型的持续领域适应提供了一种高效、可复现的新范式。",
-        "en": "- **Background**: As frontier language models are increasingly deployed as agents, domain adaptation requires improving procedural behaviors (evidence gathering, tool usage, etc.) rather than just model weights or..."
+        "zh": "本文主张代理 AI 的未来进步不仅依赖于更强大的基础模型，更取决于系统设计的优化。通过提出“缩放 harness”的概念，论文指出了上下文治理、可信记忆和动态技能路由三大核心瓶颈，并提供了 CheetahClaws 作为参考实现。研究呼吁社区从单纯的模型中心评估转向系统级评估，关注代理在长期运行中的过程指标和安全演化能力。",
+        "en": "- **Background**: The dominant narrative in AI progress has been model scaling (larger models, more data). However, in Agentic AI, once foundation models are embedded into tools, terminals, browsers, and memory stores,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.23904v1",
-        "pdf": "https://arxiv.org/pdf/2605.23904v1",
-        "github": "https://aka.ms/SkillOpt"
+        "abs": "http://arxiv.org/abs/2605.26112v1",
+        "pdf": "https://arxiv.org/pdf/2605.26112v1",
+        "github": "https://github.com/SafeRL-Lab/cheetahclaws"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.23904.md",
-        "summary_en_path": "summary_en/2026-05/2605.23904.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23904.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23904.md"
+        "summary_zh_path": "summary/2026-05/2605.26112.md",
+        "summary_en_path": "summary_en/2026-05/2605.26112.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.26112.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.26112.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -107,36 +100,77 @@
       }
     },
     {
-      "id": "arxiv:2605.23657",
-      "date": "2026-05-22",
-      "title": "OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents",
+      "id": "arxiv:2605.25981",
+      "date": "2026-05-25",
+      "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiahao Ying",
-        "Boxian Ai",
-        "Wei Tang",
-        "Siyuan Liu",
-        "Yixin Cao"
+        "Liyun Zhang",
+        "Jiayi Guo"
       ],
-      "institution": "Singapore Management University, Fudan University, JD.com",
+      "institution": "School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego",
       "summary": {
-        "zh": "本文针对快速扩张的 LLM 智能体技能生态系统，提出了 OpenSkillEval 自动化评估框架。通过构建动态真实的任务实例和统一对比社区技能，研究揭示了技能增强的效果高度依赖于模型和框架的组合，且许多流行技能并未带来预期提升。这项工作强调了动态、任务 grounded 评估的重要性，并为 LLM 智能体的技能设计、选择和部署提供了实用的见解和指导。",
-        "en": "- **Background**: \"Skills\" (structured workflow instructions distilled for LLMs) are increasingly crucial for enhancing agent performance in real-world downstream tasks. However, the rapid expansion of the open-source..."
+        "zh": "本文是一项测量贡献，通过大规模实证研究证实了 LLM 代理对语义噪声比表层噪声更敏感。文章不仅通过严格的统计检验和持留样本验证了这一现象的鲁棒性，还通过轨迹级分析揭示了“隐性分歧”机制，即语义扰动在保持初始动作不变的情况下，逐步腐蚀后续推理过程。研究 retract 了部分先前未复现的机制主张，并为输入规范化策略提供了工程启示：应优先关注那些真正改变答案的扰动类型。",
+        "en": "This paper makes a measurement contribution by empirically demonstrating that LLM agents are more sensitive to semantic noise than surface noise. It validates this phenomenon through rigorous statistical testing and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.23657v1",
-        "pdf": "https://arxiv.org/pdf/2605.23657v1",
+        "abs": "http://arxiv.org/abs/2605.25981v1",
+        "pdf": "https://arxiv.org/pdf/2605.25981v1",
+        "github": "https://anonymous.4open.science/r/agentdiff-emnlp-0BB4/"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.25981.md",
+        "summary_en_path": "summary_en/2026-05/2605.25981.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25981.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25981.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.25958",
+      "date": "2026-05-25",
+      "title": "PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Daren Wang",
+        "Hong Xu",
+        "Jiawen Xian"
+      ],
+      "institution": "The Chinese University of Hong Kong",
+      "summary": {
+        "zh": "PolyGnosis 2.0 通过创新的“驾驭工程”方法，成功解决了在高噪声金融领域利用 LLM 进行专业级推理的难题。它不仅证明了通过精心设计的智能体架构（而非仅仅升级基础模型）可以显著提升推理能力，还具体指出了反思机制的局限性和共识偏见的普遍性。该研究为预测市场中的自主智能应用提供了一个稳健的蓝图，实现了在降低计算成本的同时保持专业分析精度的目标。",
+        "en": "- **Background**: Prediction markets like Polymarket offer publicly observable, consensus-driven forecasting data. However, this data is inherently complex and noisy."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.25958v1",
+        "pdf": "https://arxiv.org/pdf/2605.25958v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.23657.md",
-        "summary_en_path": "summary_en/2026-05/2605.23657.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23657.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23657.md"
+        "summary_zh_path": "summary/2026-05/2605.25958.md",
+        "summary_en_path": "summary_en/2026-05/2605.25958.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25958.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25958.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -153,84 +187,35 @@
       }
     },
     {
-      "id": "arxiv:2605.23754",
-      "date": "2026-05-22",
-      "title": "LLM-driven design of physics-constrained constitutive models: two agents are better than one",
+      "id": "arxiv:2605.26081",
+      "date": "2026-05-25",
+      "title": "VeriTrace: Evolving Mental Models for Deep Research Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Marius Tacke",
-        "Matthias Busch",
-        "Kian Abdolazizi",
-        "Jonas Eichinger",
-        "Kevin Linka",
-        "Roland Aydin",
-        "Christian Cyron"
+        "Haolang Zhao",
+        "Yunbo Long",
+        "Lukas Beckenbauer",
+        "Alexandra Brintrup"
       ],
-      "institution": "Hamburg University of Technology",
+      "institution": "University of Cambridge",
       "summary": {
-        "zh": "本文提出了一种双 agent 协作框架，通过分离模型生成与物理检查，解决了 LLM 在本构模型设计中缺乏物理一致性的关键问题。实验证明，该方法不仅能自动生成符合物理定律的模型，还能保证高精度和强泛化能力，为自动化、物理感知的模型发现开辟了新路径，且该范式与技术无关，可随 LLM 能力提升自动扩展。",
-        "en": "This paper proposes a dual-agent collaborative framework that addresses the critical lack of physical consistency in LLM-based constitutive model design by separating model generation from physical inspection...."
+        "zh": "VeriTrace 提出了一种新的范式，即通过显式的反馈循环（解释性更新、偏差反馈、模式修订）来演化和调节深度研究智能体的“心智模型”。该方法有效解决了现有系统中因缺乏监管而导致的信息污染和错误传播问题，在多个基准测试中取得了优于最强基线的性能，证明了在深度研究中引入显式认知调节机制的重要性。",
+        "en": "- **Background**: Deep research agents face vast, interdependent, and uncertain information in long-horizon tasks. To overcome LLM context window limits, existing systems externalize intermediate research artifacts..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.23754v1",
-        "pdf": "https://arxiv.org/pdf/2605.23754v1",
+        "abs": "http://arxiv.org/abs/2605.26081v1",
+        "pdf": "https://arxiv.org/pdf/2605.26081v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.23754.md",
-        "summary_en_path": "summary_en/2026-05/2605.23754.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23754.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23754.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.23574",
-      "date": "2026-05-22",
-      "title": "Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yuandao Cai",
-        "Yuzhang Zhu",
-        "Liyou Gao",
-        "Wensheng Tang",
-        "Shengchao Qin"
-      ],
-      "institution": "Xidian University",
-      "summary": {
-        "zh": "本文指出了长程 LLM 代理在“定量目标持久性”（QGP）上的显著缺陷，即代理难以在外部验证器确认完成足够数量的有效工作之前持续工作。通过提出 PushBench...",
-        "en": "- **Background**: Long-horizon language agents often possess local competence but fail to persist until explicit quantitative goals are met. Existing evaluations typically focus on final success flags, obscuring issues..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.23574v1",
-        "pdf": "https://arxiv.org/pdf/2605.23574v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.23574.md",
-        "summary_en_path": "summary_en/2026-05/2605.23574.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.23574.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.23574.md"
+        "summary_zh_path": "summary/2026-05/2605.26081.md",
+        "summary_en_path": "summary_en/2026-05/2605.26081.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.26081.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.26081.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.25_05:56-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.26_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月25日 05:56</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月26日 05:36</sub></summary>
 <br>
 
-- When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems 
-- SkillOpt: Executive Strategy for Self-Evolving Agent Skills 
-- OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents 
-- LLM-driven design of physics-constrained constitutive models: two agents are better than one 
-- Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents 
+- Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning 
+- From Model Scaling to System Scaling: Scaling the Harness in Agentic AI 
+- When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation 
+- PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction 
+- VeriTrace: Evolving Mental Models for Deep Research Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-25</span> | **Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning**<br><sub>机构: HKUST, Tsinghua University, University of Waterloo<br>本文指出了当前法律 AI 代理在处理时间敏感性法律问题时的重大缺陷，即忽视法律修订的时间效力。通过提出 LegalSearch-R1，结合本地精确检索、在线广泛搜索以及基于时间索引数据的强化学习，有效解决了法律推理中的时间不一致问题，大幅提升了法律问答的准确性和可靠性，为法律领域的可信 AI 应用提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.25920v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.25920.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AlexFanw/LegalSearch-R1)</div> |
+| <span style='display: inline-block; width: 42px;'>05-25</span> | **From Model Scaling to System Scaling: Scaling the Harness in Agentic AI**<br><sub>机构: UC Berkeley<br>本文主张代理 AI 的未来进步不仅依赖于更强大的基础模型，更取决于系统设计的优化。通过提出“缩放 harness”的概念，论文指出了上下文治理、可信记忆和动态技能路由三大核心瓶颈，并提供了 CheetahClaws 作为参考实现。研究呼吁社区从单纯的模型中心评估转向系统级评估，关注代理在长期运行中的过程指标和安全演化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.26112v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.26112.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/SafeRL-Lab/cheetahclaws)</div> |
+| <span style='display: inline-block; width: 42px;'>05-25</span> | **When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation**<br><sub>机构: School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego<br>本文是一项测量贡献，通过大规模实证研究证实了 LLM 代理对语义噪声比表层噪声更敏感。文章不仅通过严格的统计检验和持留样本验证了这一现象的鲁棒性，还通过轨迹级分析揭示了“隐性分歧”机制，即语义扰动在保持初始动作不变的情况下，逐步腐蚀后续推理过程。研究 retract 了部分先前未复现的机制主张，并为输入规范化策略提供了工程启示：应优先关注那些真正改变答案的扰动类型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.25981v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.25981.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/agentdiff-emnlp-0BB4/)</div> |
+| <span style='display: inline-block; width: 42px;'>05-25</span> | **PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction**<br><sub>机构: The Chinese University of Hong Kong<br>PolyGnosis 2.0 通过创新的“驾驭工程”方法，成功解决了在高噪声金融领域利用 LLM 进行专业级推理的难题。它不仅证明了通过精心设计的智能体架构（而非仅仅升级基础模型）可以显著提升推理能力，还具体指出了反思机制的局限性和共识偏见的普遍性。该研究为预测市场中的自主智能应用提供了一个稳健的蓝图，实现了在降低计算成本的同时保持专业分析精度的目标。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.25958v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.25958.md)  |
+| <span style='display: inline-block; width: 42px;'>05-25</span> | **VeriTrace: Evolving Mental Models for Deep Research Agents**<br><sub>机构: University of Cambridge<br>VeriTrace 提出了一种新的范式，即通过显式的反馈循环（解释性更新、偏差反馈、模式修订）来演化和调节深度研究智能体的“心智模型”。该方法有效解决了现有系统中因缺乏监管而导致的信息污染和错误传播问题，在多个基准测试中取得了优于最强基线的性能，证明了在深度研究中引入显式认知调节机制的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.26081v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.26081.md)  |
 | <span style='display: inline-block; width: 42px;'>05-22</span> | **When Planning Fails Despite Correct Execution: On Epistemic Calibration for LLM-Based Multi-Agent Systems**<br><sub>机构: Tianjin University, Renmin University of China<br>本文揭示了 LLM 多智能体系统中一种常被忽视的失败模式——规划中的认知校准失误，即智能体高估了其知识对计划可行性的支持程度。针对该问题的潜伏性和动态性挑战，作者提出了 EPC-AW 框架，通过信息一致性选择计划和基于历史差异的认知状态精炼，有效提升了系统的整体成功率。这项工作为构建更可靠的智能体系统提供了新的视角，即从单纯纠正执行错误转向校准规划阶段的认知不确定性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23414v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23414.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/wzhSteve/EPC-AW)</div> |
 | <span style='display: inline-block; width: 42px;'>05-22</span> | **SkillOpt: Executive Strategy for Self-Evolving Agent Skills**<br><sub>机构: Microsoft, Shanghai Jiao Tong University, Tongji University, Fudan University<br>SkillOpt 开创性地将深度学习的优化纪律引入到文本空间的智能体技能训练中。通过将有界编辑、严格验证和稳定化机制相结合，它解决了传统技能演化方法中不可靠和不稳定的问题。该方法不仅在多项基准测试中显著超越了现有最先进方法，还证明了优化后的技能具有良好的跨模型和跨环境泛化能力，为冻结模型的持续领域适应提供了一种高效、可复现的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23904v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23904.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://aka.ms/SkillOpt)</div> |
 | <span style='display: inline-block; width: 42px;'>05-22</span> | **OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents**<br><sub>机构: Singapore Management University, Fudan University, JD.com<br>本文针对快速扩张的 LLM 智能体技能生态系统，提出了 OpenSkillEval 自动化评估框架。通过构建动态真实的任务实例和统一对比社区技能，研究揭示了技能增强的效果高度依赖于模型和框架的组合，且许多流行技能并未带来预期提升。这项工作强调了动态、任务 grounded 评估的重要性，并为 LLM 智能体的技能设计、选择和部署提供了实用的见解和指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.23657v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.23657.md)  |
