@@ -9,7 +9,7 @@ from pathlib import Path
 from paper_learning.config import load_config
 from paper_learning.daily_pipeline import run_daily_pipeline
 from paper_learning.feishu_client import FeishuClient
-from paper_learning.huggingface_client import fetch_hf_daily_papers
+from paper_learning.huggingface_client import fetch_hf_daily_papers_safe
 from paper_learning.notion_client import NotionClient
 from paper_learning.paper_daily_adapter import (
     load_discovered_records,
@@ -17,6 +17,7 @@ from paper_learning.paper_daily_adapter import (
     run_paper_daily,
     run_paper_daily_discovery,
 )
+from paper_learning.source_merge import merge_supplemental_records
 
 
 def main() -> int:
@@ -49,8 +50,10 @@ def main() -> int:
             else:
                 records = load_paper_daily_records(canonical_path=canonical_path, discovered_path=discovered_path)
         limit_satisfied = bool(args.limit and len(records) >= args.limit)
+        warnings = []
         if cfg.huggingface.enabled and not limit_satisfied:
-            records.extend(fetch_hf_daily_papers(args.date, cfg.huggingface))
+            hf_records, warnings = fetch_hf_daily_papers_safe(args.date, cfg.huggingface)
+            records = merge_supplemental_records(records, hf_records)
         if args.limit:
             records = records[: args.limit]
 
@@ -61,7 +64,10 @@ def main() -> int:
             feishu=FeishuClient(cfg.feishu),
             artifact_dir=cfg.runtime.artifact_dir,
         )
-        print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2))
+        output = result.to_dict()
+        if warnings:
+            output.setdefault("data", {})["warnings"] = warnings
+        print(json.dumps(output, ensure_ascii=False, indent=2))
         return 0 if result.ok else 1
     except RuntimeError as exc:
         print(json.dumps({

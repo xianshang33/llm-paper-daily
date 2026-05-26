@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .manifest import record_stage
 from .models import DailyPaperRecord, OperationResult
 from .report import build_report
 
@@ -44,6 +45,19 @@ def run_daily_pipeline(
     }
     artifact_path = artifact_dir / f"{date}.json"
     artifact_path.write_text(json.dumps(artifact, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    record_stage(
+        artifact_dir=artifact_dir,
+        date=date,
+        stage="daily",
+        status="completed" if ok else "failed",
+        data={
+            "paper_count": len(records),
+            "artifact_path": str(artifact_path),
+            "notion_report_status": notion_report.status,
+            "feishu_report_status": feishu_report.status,
+        },
+        error="" if ok else "daily pipeline completed with failures",
+    )
     return OperationResult(
         ok=ok,
         status="completed" if ok else "failed",

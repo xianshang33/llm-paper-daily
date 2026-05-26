@@ -16,7 +16,7 @@ for value in (str(PAPER_DAILY_SCRIPTS), str(PAPER_LEARNING_SCRIPTS), str(ROOT)):
 from paper_daily.defaults import DEFAULT_SUMMARY_ARTIFACT_DIR
 from paper_daily.summary import validate_summary_artifacts
 from paper_learning.config import load_config
-from paper_learning.deep_reading import validate_org_artifacts
+from paper_learning.deep_reading_providers import get_deep_reading_provider
 from paper_learning.paper_daily_adapter import load_discovered_records
 from paper_learning.selected_papers_io import load_deep_reading_request, load_selected_papers
 
@@ -41,7 +41,8 @@ def main() -> int:
             selected = load_selected_papers(selected_path)
         if args.limit:
             selected = selected[: args.limit]
-        results = validate_org_artifacts(selected, cfg.deep_reading)
+        provider = get_deep_reading_provider(cfg.deep_reading)
+        results = provider.check_ready(selected)
 
     ok = all(item["ok"] for item in results)
     print(json.dumps({

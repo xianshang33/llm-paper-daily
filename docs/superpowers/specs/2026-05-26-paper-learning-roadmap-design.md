@@ -316,3 +316,12 @@ The first implementation plan is successful when:
 - The workflow can report what is missing before mutating Notion or Feishu.
 - Hugging Face recall risks are either fixed or explicitly downgraded with warnings.
 - Feishu robot notifications have a local documented design ready for a later module.
+
+## Implementation Status
+
+- Skill-first operation documented.
+- Deep reading provider interface implemented with `ljg-paper-org` as the default provider.
+- Queue and readiness paths route through the provider interface.
+- Stage manifests record daily and queue status.
+- Hugging Face recall is supplemental, deduped against arXiv, and non-blocking by default.
+- Feishu robot notification design is documented for a future module; notification sending is not implemented in this slice.

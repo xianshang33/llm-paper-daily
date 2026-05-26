@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SKILL = ROOT / "skill" / "paper-learning" / "SKILL.md"
 CONFIG = ROOT / "skill" / "paper-learning" / "templates" / "config.example.json"
 EVALS = ROOT / "skill" / "paper-learning" / "evals" / "evals.json"
+FEISHU_RESEARCH = ROOT / "skill" / "paper-learning" / "references" / "feishu_notification_research.md"
 
 
 class SkillContractTest(unittest.TestCase):
@@ -27,6 +28,19 @@ class SkillContractTest(unittest.TestCase):
     def test_config_and_evals_exist(self):
         self.assertTrue(CONFIG.exists())
         self.assertTrue(EVALS.exists())
+
+    def test_skill_doc_declares_skill_first_and_pluggable_deep_reading(self):
+        text = SKILL.read_text(encoding="utf-8")
+        self.assertIn("skill-first", text)
+        self.assertIn("DeepReadingProvider", text)
+        self.assertIn("ljg-paper", text)
+        self.assertTrue("replace" in text or "替换" in text)
+
+    def test_feishu_notification_research_doc_exists(self):
+        text = FEISHU_RESEARCH.read_text(encoding="utf-8")
+        self.assertIn("pipeline_failed", text)
+        self.assertIn("FEISHU_WEBHOOK_SECRET", text)
+        self.assertIn("Do not implement", text)
 
 
 if __name__ == "__main__":

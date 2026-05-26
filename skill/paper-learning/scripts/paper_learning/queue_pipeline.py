@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from collections.abc import Callable
+from pathlib import Path
 
 from .classifier import classify_note
+from .manifest import record_stage
 from .models import DeepNote, OperationResult, ResearchArea, SelectedPaper
 
 
@@ -17,6 +19,8 @@ def process_selected_papers(
     selected_papers: list[SelectedPaper] | None = None,
     limit: int = 0,
     force: bool = False,
+    artifact_dir: Path | None = None,
+    date: str = "",
 ) -> OperationResult:
     selected = list(selected_papers) if selected_papers is not None else notion.query_selected_papers()
     if limit:
@@ -64,6 +68,16 @@ def process_selected_papers(
                 },
             )
             processed.append({"paper_id": paper.record.paper_id, "status": "failed", "error": str(exc)})
+
+    if artifact_dir is not None and date:
+        record_stage(
+            artifact_dir=artifact_dir,
+            date=date,
+            stage="queue",
+            status="completed" if ok else "failed",
+            data={"processed": processed},
+            error="" if ok else "queue processing completed with failures",
+        )
 
     return OperationResult(
         ok=ok,

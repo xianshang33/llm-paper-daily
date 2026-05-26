@@ -10,6 +10,11 @@ SCRIPT = ROOT / "skill" / "paper-learning" / "scripts" / "process_notion_queue.p
 
 
 class ProcessNotionQueueScriptTest(unittest.TestCase):
+    def test_process_queue_uses_configured_deep_reading_provider(self):
+        text = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("get_deep_reading_provider", text)
+        self.assertIn("provider.read", text)
+
     def test_selected_papers_json_requires_dry_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

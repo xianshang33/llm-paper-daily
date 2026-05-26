@@ -7,7 +7,7 @@ from dataclasses import replace
 
 from paper_learning.classifier import load_research_areas
 from paper_learning.config import load_config
-from paper_learning.deep_reading import generate_deep_note, validate_org_artifacts
+from paper_learning.deep_reading_providers import get_deep_reading_provider
 from paper_learning.models import DeepReadingRequest, SelectedPaper
 from paper_learning.notion_client import NotionClient
 from paper_learning.queue_pipeline import process_selected_papers
@@ -41,8 +41,9 @@ def main() -> int:
     if args.limit:
         selected = selected[: args.limit]
 
+    provider = get_deep_reading_provider(cfg.deep_reading)
     readiness_targets = _readiness_targets(selected, force=args.force)
-    readiness = validate_org_artifacts(readiness_targets, cfg.deep_reading)
+    readiness = provider.check_ready(readiness_targets)
     missing = [item for item in readiness if not item["ok"]]
     if missing:
         payload = {
@@ -60,10 +61,12 @@ def main() -> int:
 
     result = process_selected_papers(
         notion=notion,
-        deep_reader=lambda paper: generate_deep_note(paper, cfg.deep_reading),
+        deep_reader=provider.read,
         active_areas=active_areas,
         selected_papers=selected,
         force=args.force,
+        artifact_dir=cfg.runtime.artifact_dir,
+        date=_queue_date(selected),
     )
     payload = result.to_dict()
     if local_mode:
@@ -145,6 +148,13 @@ def _readiness_targets(selected: list[SelectedPaper], *, force: bool) -> list[Se
     if force:
         return list(selected)
     return [paper for paper in selected if not paper.existing_deep_note_id]
+
+
+def _queue_date(selected: list[SelectedPaper]) -> str:
+    for paper in selected:
+        if paper.record.run_date:
+            return paper.record.run_date
+    return ""
 
 
 class _QueueInputError(Exception):

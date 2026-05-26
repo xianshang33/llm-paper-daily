@@ -31,6 +31,7 @@
     "webhook_url_env": "FEISHU_WEBHOOK_URL"
   },
   "deep_reading": {
+    "provider": "ljg-paper-org",
     "mode": "org_artifact",
     "org_artifact_dir": "data/paper-learning/deep-reading-org"
   },

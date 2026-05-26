@@ -14,15 +14,9 @@ def generate_deep_note(paper: SelectedPaper, cfg: DeepReadingConfig) -> DeepNote
             "deep_reading.mode='fallback' is no longer supported. "
             "Use the ljg-paper skill to write an Org artifact and configure deep_reading.mode='org_artifact'."
         )
-    if cfg.mode == "org_artifact":
-        path = org_artifact_path(cfg.org_artifact_dir, paper.record.paper_id)
-        if not path.exists():
-            raise FileNotFoundError(
-                f"Missing ljg-paper Org artifact for {paper.record.paper_id}: {path}. "
-                "Run the agent runtime with the ljg-paper skill and write the resulting Org document there."
-            )
-        return deep_note_from_ljg_org(paper, path.read_text(encoding="utf-8"))
-    raise ValueError(f"Unsupported deep_reading.mode: {cfg.mode}")
+    from .deep_reading_providers import get_deep_reading_provider
+
+    return get_deep_reading_provider(cfg).read(paper)
 
 
 def org_artifact_path(base_dir: str | Path, paper_id: str) -> Path:
@@ -31,16 +25,9 @@ def org_artifact_path(base_dir: str | Path, paper_id: str) -> Path:
 
 
 def validate_org_artifacts(papers: list[SelectedPaper], cfg: DeepReadingConfig) -> list[dict]:
-    results: list[dict] = []
-    for paper in papers:
-        path = org_artifact_path(cfg.org_artifact_dir, paper.record.paper_id)
-        try:
-            text = path.read_text(encoding="utf-8")
-            validate_ljg_paper_org(text, fallback_metadata=_metadata_from_paper(paper))
-            results.append({"paper_id": paper.record.paper_id, "ok": True, "path": str(path)})
-        except Exception as exc:
-            results.append({"paper_id": paper.record.paper_id, "ok": False, "path": str(path), "error": str(exc)})
-    return results
+    from .deep_reading_providers import get_deep_reading_provider
+
+    return get_deep_reading_provider(cfg).check_ready(papers)
 
 
 def build_ljg_paper_runtime_request(paper: SelectedPaper, cfg: DeepReadingConfig) -> dict:

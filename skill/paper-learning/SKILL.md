@@ -36,6 +36,14 @@ The intended layering is:
 - Python scripts are narrow execution primitives, rehearsal tools, or debugging tools.
 - Notion is the durable workflow state and review surface, but chat is the primary trigger surface for deep reading.
 
+## Skill-First Operation
+
+This skill is the product entrypoint. Prefer using the skill to resolve intent, date, stage, provider, confirmation, and recovery path before calling low-level scripts.
+
+Scripts are execution primitives. They should stay narrow and repeatable; they should not become the only way the user can operate the workflow.
+
+Deep reading is provider-based. The default provider is `ljg-paper`, but the queue must work through a `DeepReadingProvider` boundary so another deep-reading skill can replace it later without rewriting queue orchestration.
+
 ## Boundary
 
 - `paper-daily` discovers and summarizes candidate papers.
@@ -82,6 +90,24 @@ The skill should:
 4. make sure `ljg-paper` Org artifacts exist
 5. execute queue processing
 6. report the resulting `Deep Notes` and archive updates
+
+## Deep Reading Providers
+
+Use the configured `deep_reading.provider` when preparing, checking, or executing deep reading.
+
+Supported provider in this phase:
+
+- `ljg-paper-org`: uses the `ljg-paper` skill to write Org artifacts, validates those artifacts, and converts them into `Deep Notes`.
+
+Provider requirements:
+
+- expose readiness for selected papers
+- produce or locate provider artifacts
+- convert one selected paper into one `DeepNote`
+- surface provider errors without hiding the paper id
+- record enough provider metadata for later review
+
+Do not hard-code queue behavior to `ljg-paper`. Treat `ljg-paper-org` as the default provider, not the permanent architecture.
 
 ### Human-in-the-Loop Rules
 
@@ -275,5 +301,6 @@ The queue stage creates or updates:
 
 - Starter research areas: `references/research_areas.example.json`
 - Config template: `templates/config.example.json`
+- Feishu notification research: `references/feishu_notification_research.md`
 - ljg-paper Org adapter: configure `deep_reading.mode = "org_artifact"` after an agent runtime has used the `ljg-paper` skill and written the resulting Org document into `deep_reading.org_artifact_dir`.
 - Artifact naming helper: `arxiv:2605.00001` becomes `arxiv_2605.00001.org`.

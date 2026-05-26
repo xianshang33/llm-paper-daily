@@ -54,6 +54,7 @@ class FeishuConfig:
 
 @dataclass(frozen=True)
 class DeepReadingConfig:
+    provider: str = "ljg-paper-org"
     mode: str = "org_artifact"
     org_artifact_dir: Path = Path("data/paper-learning/deep-reading-org")
 
@@ -145,6 +146,7 @@ def _feishu(raw: dict[str, Any]) -> FeishuConfig:
 
 def _deep_reading(raw: dict[str, Any]) -> DeepReadingConfig:
     return DeepReadingConfig(
+        provider=raw.get("provider", "ljg-paper-org"),
         mode=raw.get("mode", "org_artifact"),
         org_artifact_dir=Path(raw.get("org_artifact_dir", "data/paper-learning/deep-reading-org")),
     )
