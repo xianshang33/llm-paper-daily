@@ -145,6 +145,11 @@ class ProcessNotionQueueScriptTest(unittest.TestCase):
         payload = json.loads(result.stdout)
         self.assertEqual(payload["data"]["processed"], [{"paper_id": "arxiv:2605.00001", "status": "skipped_existing_deep_note"}])
 
+    def test_deep_reading_request_date_is_used_when_live_record_lacks_run_date(self):
+        text = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("request.date", text)
+        self.assertIn("date=_queue_date(selected, fallback=request_date)", text)
+
 
 def _write_config(root: Path) -> Path:
     config_path = root / "config.json"

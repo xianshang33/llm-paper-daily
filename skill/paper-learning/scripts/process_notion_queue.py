@@ -34,7 +34,7 @@ def main() -> int:
 
     active_areas = load_research_areas(cfg.classification.default_research_areas_path)
     try:
-        selected, notion, local_mode = _load_queue_selection(args, cfg)
+        selected, notion, local_mode, request_date = _load_queue_selection(args, cfg)
     except _QueueInputError as exc:
         print(json.dumps(exc.payload, ensure_ascii=False, indent=2))
         return 1
@@ -66,7 +66,7 @@ def main() -> int:
         selected_papers=selected,
         force=args.force,
         artifact_dir=cfg.runtime.artifact_dir,
-        date=_queue_date(selected),
+        date=_queue_date(selected, fallback=request_date),
     )
     payload = result.to_dict()
     if local_mode:
@@ -76,22 +76,22 @@ def main() -> int:
     return 0 if result.ok else 1
 
 
-def _load_queue_selection(args: argparse.Namespace, cfg) -> tuple[list[SelectedPaper], object, bool]:
+def _load_queue_selection(args: argparse.Namespace, cfg) -> tuple[list[SelectedPaper], object, bool, str]:
     if args.deep_reading_request_json:
         request = load_deep_reading_request(args.deep_reading_request_json)
         _ensure_request_is_confirmed(request, request_path=args.deep_reading_request_json)
         if args.dry_run:
-            return request.selected_papers, LocalSelectedPapersNotion(request.selected_papers), True
+            return request.selected_papers, LocalSelectedPapersNotion(request.selected_papers), True, request.date
 
         notion = NotionClient(cfg.notion)
-        return _refresh_selected_from_notion(notion, request.selected_papers), notion, False
+        return _refresh_selected_from_notion(notion, request.selected_papers), notion, False, request.date
 
     if args.selected_papers_json:
         selected = load_selected_papers(args.selected_papers_json)
-        return selected, LocalSelectedPapersNotion(selected), True
+        return selected, LocalSelectedPapersNotion(selected), True, ""
 
     notion = NotionClient(cfg.notion)
-    return notion.query_selected_papers(), notion, False
+    return notion.query_selected_papers(), notion, False, ""
 
 
 def _ensure_request_is_confirmed(request: DeepReadingRequest, *, request_path: str) -> None:
@@ -150,11 +150,11 @@ def _readiness_targets(selected: list[SelectedPaper], *, force: bool) -> list[Se
     return [paper for paper in selected if not paper.existing_deep_note_id]
 
 
-def _queue_date(selected: list[SelectedPaper]) -> str:
+def _queue_date(selected: list[SelectedPaper], *, fallback: str = "") -> str:
     for paper in selected:
         if paper.record.run_date:
             return paper.record.run_date
-    return ""
+    return fallback
 
 
 class _QueueInputError(Exception):
