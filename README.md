@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.26_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.27_05:48-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月26日 05:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月27日 05:48</sub></summary>
 <br>
 
-- Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning 
-- From Model Scaling to System Scaling: Scaling the Harness in Agentic AI 
-- When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation 
-- PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction 
-- VeriTrace: Evolving Mental Models for Deep Research Agents 
+- MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation 
+- QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents 
+- FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents 
+- GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing 
+- Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-26</span> | **MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation**<br><sub>机构: ByteDance Inc., Rochester Institute of Technology<br>MUSE-Autoskill 通过将技能视为长期的、具备经验感知且可测试的资产，解决了现有方法中技能孤立、静态和缺乏验证的问题。其核心创新在于统一的技能生命周期管理和技能级记忆机制，显著提升了 LLM 智能体在复杂任务中的表现和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27366v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27366.md)  |
+| <span style='display: inline-block; width: 42px;'>05-26</span> | **QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents**<br><sub>机构: McGill University, Mila - Quebec AI Institute, University of Cambridge, MBZUAI, University of Toronto, Salesforce<br>QUACK 通过引入多模态环境和细粒度的陈述验证管道，解决了社交推理智能体评估中缺乏地面真实性和细粒度归因的问题。研究结果表明，当前最先进的 VLM 在保持语言与感知一致性方面仍存在显著缺陷，大量存在空间幻觉和无据指控。该工作为未来开发更可靠、更具解释性的多模态社交智能体提供了重要的基准和工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27068.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AAAAA-Academia-Attractions/QUACK)</div> |
+| <span style='display: inline-block; width: 42px;'>05-26</span> | **FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents**<br><sub>机构: Peking University, Tsinghua University, Nanyang Technological University, University of Science and Technology of China, etc.<br>FinHarness 通过将安全防护从“外部监督”转变为“内联生命周期管理”，解决了金融 LLM Agent 在复杂多步工作流中的安全难题。其核心创新在于结合了跨轮次意图监控和自适应的级联验证机制，既有效降低了攻击成功率，又显著控制了计算开销，为金融领域的高风险 Agent 部署提供了可行的安全框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27333v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27333.md)  |
+| <span style='display: inline-block; width: 42px;'>05-26</span> | **GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing**<br><sub>机构: Northeastern University<br>GENESIS 解决了 LLM 在电信领域应用中的核心痛点，即幻觉问题和仿真与现实脱节的问题。通过引入基于真实硬件测试反馈的代理循环和持久化知识层，GENESIS 实现了从意图到可部署代码的自动化闭环，显著加速了 6G RAN 的研发进程，并在真实 5G 系统上证明了其相对于传统 LLM 编码助手的优越性和可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27360.md)  |
+| <span style='display: inline-block; width: 42px;'>05-26</span> | **Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments**<br><sub>机构: National University of Singapore, Meituan<br>本文指出了当前 LLM 代理在理想化训练与现实部署之间的根本性错配，提出了 NoisyAgent 框架。通过引入用户噪声和工具噪声，并采用渐进式难度增加的训练策略，该方法显著增强了代理在 stochastic 和不完美环境中的鲁棒性。研究结果强调，对交互不完美性进行建模对于提升代理的实际应用能力至关重要，且噪声训练有助于提升代理的泛化推理能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27209v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27209.md)  |
 | <span style='display: inline-block; width: 42px;'>05-25</span> | **Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning**<br><sub>机构: HKUST, Tsinghua University, University of Waterloo<br>本文指出了当前法律 AI 代理在处理时间敏感性法律问题时的重大缺陷，即忽视法律修订的时间效力。通过提出 LegalSearch-R1，结合本地精确检索、在线广泛搜索以及基于时间索引数据的强化学习，有效解决了法律推理中的时间不一致问题，大幅提升了法律问答的准确性和可靠性，为法律领域的可信 AI 应用提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.25920v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.25920.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AlexFanw/LegalSearch-R1)</div> |
 | <span style='display: inline-block; width: 42px;'>05-25</span> | **From Model Scaling to System Scaling: Scaling the Harness in Agentic AI**<br><sub>机构: UC Berkeley<br>本文主张代理 AI 的未来进步不仅依赖于更强大的基础模型，更取决于系统设计的优化。通过提出“缩放 harness”的概念，论文指出了上下文治理、可信记忆和动态技能路由三大核心瓶颈，并提供了 CheetahClaws 作为参考实现。研究呼吁社区从单纯的模型中心评估转向系统级评估，关注代理在长期运行中的过程指标和安全演化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.26112v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.26112.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/SafeRL-Lab/cheetahclaws)</div> |
 | <span style='display: inline-block; width: 42px;'>05-25</span> | **When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation**<br><sub>机构: School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego<br>本文是一项测量贡献，通过大规模实证研究证实了 LLM 代理对语义噪声比表层噪声更敏感。文章不仅通过严格的统计检验和持留样本验证了这一现象的鲁棒性，还通过轨迹级分析揭示了“隐性分歧”机制，即语义扰动在保持初始动作不变的情况下，逐步腐蚀后续推理过程。研究 retract 了部分先前未复现的机制主张，并为输入规范化策略提供了工程启示：应优先关注那些真正改变答案的扰动类型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.25981v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.25981.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/agentdiff-emnlp-0BB4/)</div> |

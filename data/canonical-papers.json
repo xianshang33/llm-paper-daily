@@ -1,197 +1,47 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-26T05:36:04.072406+00:00",
-  "run_date": "2026-05-25",
+  "generated_at": "2026-05-27T05:48:52.332582+00:00",
+  "run_date": "2026-05-26",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2605.25920",
-      "date": "2026-05-25",
-      "title": "Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning",
+      "paper_id": "2605.27366",
+      "date": "2026-05-26",
+      "title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
       "authors": [
-        "Wei Fan",
-        "Yining Zhou",
-        "Mufan Zhang",
-        "Yanbing Weng",
-        "Yiran HU",
-        "Tianshi Zheng",
-        "Baixuan Xu",
-        "Chunyang Li",
-        "Jianhui Yang",
-        "Haoran Li",
-        "Yangqiu Song"
+        "Huawei Lin",
+        "Peng Li",
+        "Jie Song",
+        "Fuxin Jiang",
+        "Tieying Zhang"
       ],
-      "abstract": "While large language models (LLMs) augmented with agentic search capabilities show promise for legal reasoning, they overlook a fundamental constraint that applicable law must match the temporal context of each case, as retroactive application of statutes violates core legal principles and leads to erroneous conclusions. Our observations reveal that current legal LLMs suffer from temporal bias anchored to their training cutoff, while search agents rarely incorporate temporal constraints into queries, and that web search alone cannot provide the precise statute and precedent citations that legal reasoning demands. To address these challenges, we propose LegalSearch-R1, an end-to-end reinforcement learning framework that pairs local statute RAG for precise article matching with online web search for broader legal knowledge, trained on temporally-indexed data spanning multiple amendment periods to enforce temporal consistency. Extensive experiments on our benchmark covering 13 legal tasks demonstrate that our 7B-parameter agent outperforms state-of-the-art deep research frameworks and specialized legal LLMs by 12.9% to 29.8%, surpasses baselines by 57.7% to 80.3% on temporal consistency, and exhibits robust out-of-domain generalization. The code and data are available at https://github.com/AlexFanw/LegalSearch-R1.",
+      "abstract": "Large language model (LLM) agents rely on reusable skills to solve complex tasks. However, existing skill creation approaches treat skills as isolated and static artifacts, limiting their reusability, reliability, and long-term improvement. We propose MUSE-Autoskill Agent (Memory-Utilizing Skill Evolution), a skill-centric agent framework that lets agents continuously improve their task-solving capability by creating, reusing, and refining skills under a unified lifecycle (creation, memory, management, evaluation, and refinement). Our framework enables agents to create skills on demand, store and reuse them across tasks, organize and select them efficiently, and evaluate them through unit tests and runtime feedback for continuous refinement. We further introduce skill-level memory that accumulates experience for each skill across tasks, enabling more effective reuse and adaptation over time. Experiments on SkillsBench provide initial evidence that lifecycle-managed skills can improve task success, efficiency, reuse, and cross-agent transfer, highlighting the importance of treating skills as long-lived, experience-aware, and testable assets.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25920v1",
-        "pdf": "https://arxiv.org/pdf/2605.25920v1",
-        "github": "https://github.com/AlexFanw/LegalSearch-R1",
-        "blog": null
-      },
-      "institution": "HKUST, Tsinghua University, University of Waterloo",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）结合代理搜索能力在法律推理中展现出潜力，但法律推理有一个核心约束：适用的法律必须与案件的时间背景相匹配。追溯适用法律违反了核心法律原则，会导致错误结论。\n- **已有工作为什么解决不了**：现有的法律 LLM 存在基于训练截止日期的“时间偏差”；搜索代理很少在查询中纳入时间约束；且单纯的网页搜索无法提供法律推理所需要的精确法条和判例引用，导致在处理跨越不同法律修订期的案件时出现时间不一致性。\n\n## 文章的核心贡献点\n- **提出了一个**名为 LegalSearch-R1 的端到端强化学习框架，该框架将用于精确法条匹配的本地法规 RAG 与用于获取更广泛法律知识的在线网页搜索相结合，并在跨越多个修订期的时间索引数据上进行训练，以强制实现时间一致性。\n- **挑战1：时间偏差与检索不精确**。现有模型受限于训练数据截止时间，且通用搜索难以定位特定版本的法条。论文通过引入本地法规 RAG 进行精确的法条版本匹配，并结合时间索引数据进行强化学习训练，使模型能够感知并选择正确时间点的法律依据。\n- **挑战2：通用知识与专业引用的平衡**。单纯依赖网页搜索缺乏法律所需的严谨引用，而仅靠本地库又缺乏广度。论文通过混合架构，利用在线搜索补充背景知识，同时依靠本地 RAG 确保核心法条引用的准确性和时效性，并通过 RL 优化代理的搜索策略以协调两者。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：构建了一个包含 13 项法律任务的基准测试集，涵盖多个法律修订时期。使用 7B 参数量的模型作为基础代理。\n- **评估结果**：\n    - 在整体性能上，LegalSearch-R1 比最先进的深度研究框架和专业法律 LLM 高出 12.9% 到 29.8%。\n    - 在时间一致性指标上，比基线方法高出 57.7% 到 80.3%。\n    - 表现出强大的域外泛化能力。\n- **对比**：显著优于现有的通用搜索代理和未针对时间一致性优化的法律专用模型，证明了引入时间约束和强化学习在法律场景下的必要性。\n\n#### 总结\n本文指出了当前法律 AI 代理在处理时间敏感性法律问题时的重大缺陷，即忽视法律修订的时间效力。通过提出 LegalSearch-R1，结合本地精确检索、在线广泛搜索以及基于时间索引数据的强化学习，有效解决了法律推理中的时间不一致问题，大幅提升了法律问答的准确性和可靠性，为法律领域的可信 AI 应用提供了重要参考。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language models (LLMs) augmented with agentic search show promise in legal reasoning but often overlook a fundamental constraint: applicable laws must align with the temporal context of the case. Retroactive application of statutes violates core legal principles and leads to erroneous conclusions.\n- **Why Existing Work Fails**: Current legal LLMs suffer from temporal bias anchored to their training cutoff dates. Search agents rarely incorporate temporal constraints into queries, and web search alone cannot provide the precise statute and precedent citations required for rigorous legal reasoning, leading to temporal inconsistencies.\n\n## Core Contributions\n- **Proposed**: LegalSearch-R1, an end-to-end reinforcement learning framework that pairs local statute RAG for precise article matching with online web search for broader legal knowledge. It is trained on temporally-indexed data spanning multiple amendment periods to enforce temporal consistency.\n- **Challenge 1: Temporal Bias and Imprecise Retrieval**. Models struggle with time-dependent law versions due to training cutoffs and generic search limitations. The paper addresses this by integrating local statute RAG for exact version matching and using RL on time-indexed data to teach the agent to select legally valid temporal contexts.\n- **Challenge 2: Balancing General Knowledge and Precise Citations**. Web search lacks legal precision, while local databases lack breadth. The method combines online search for context with local RAG for authoritative citations, optimizing the agent's search strategy via RL to ensure both accuracy and comprehensiveness.\n\n## Implementation and Evaluation\n- **Implementation**: Evaluated on a custom benchmark covering 13 legal tasks with data spanning multiple legal amendment periods. Used a 7B-parameter model as the base agent.\n- **Results**:\n    - Outperforms state-of-the-art deep research frameworks and specialized legal LLMs by 12.9% to 29.8% in overall performance.\n    - Surpasses baselines by 57.7% to 80.3% on temporal consistency metrics.\n    - Demonstrates robust out-of-domain generalization.\n- **Comparison**: Significantly outperforms existing general search agents and legal-specific models that do not optimize for temporal consistency, highlighting the effectiveness of the proposed RL framework and hybrid retrieval approach.\n\n## 4. Conclusion\nThis paper identifies a critical flaw in current legal AI agents: the neglect of temporal validity in legal statutes. By proposing LegalSearch-R1, which combines local precise retrieval, online broad search, and reinforcement learning on time-indexed data, it effectively resolves temporal inconsistencies in legal reasoning. The approach significantly improves accuracy and reliability, offering a vital step forward for trustworthy AI applications in the legal domain.",
-      "render_excerpt": "机构: HKUST, Tsinghua University, University of Waterloo<br>本文指出了当前法律 AI 代理在处理时间敏感性法律问题时的重大缺陷，即忽视法律修订的时间效力。通过提出 LegalSearch-R1，结合本地精确检索、在线广泛搜索以及基于时间索引数据的强化学习，有效解决了法律推理中的时间不一致问题，大幅提升了法律问答的准确性和可靠性，为法律领域的可信 AI 应用提供了重要参考。",
-      "render_excerpt_en": "Institution: HKUST, Tsinghua University, University of Waterloo<br>## 1. What the Paper Did - **Background**: Large language models (LLMs) augmented with agentic search show promise in legal reasoning but often overlook a fundamental constraint: applicable laws must align with the temporal context of the case. Retroactive application of statutes violates core legal principles and leads to erroneous conclusions.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-05-25T14:57:13Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-05-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2605.26112",
-      "date": "2026-05-25",
-      "title": "From Model Scaling to System Scaling: Scaling the Harness in Agentic AI",
-      "authors": [
-        "Shangding Gu"
-      ],
-      "abstract": "This paper studies the next major bottleneck in agentic AI as system scaling, not only model scaling: the design of auditable, persistent, modular, and verifiable architectures around foundation models. We refer to this shift as scaling the harness: treating the structured execution layer around a foundation model as a first-class object of design, evaluation, and optimization. Although recent large language models enable agents to use tools, retrieve information, maintain memory, and execute long-horizon workflows, evaluation remains largely model-centric, often reducing agents to final-task success while treating memory, retrieval, tool use, orchestration, verification, and governance as secondary implementation details. This framing is increasingly inadequate because agent performance emerges from the interaction among the foundation model, memory substrate, context constructor, skill-routing layer, orchestration loop, and verification-and-governance layer. Together, these components form the agent harness, which translates model capability into long-horizon agent behavior. We study scaling the harness through three core bottlenecks: context governance, trustworthy memory, and dynamic skill routing, together with the orchestration and governance mechanisms that coordinate and constrain them. We further outline a research agenda for harness-level benchmarks that go beyond one-shot task success to measure trajectory quality, memory hygiene, context efficiency, communication fidelity, verification cost, and safe evolution over time. To make the discussion concrete, we develop CheetahClaws: https://github.com/SafeRL-Lab/cheetahclaws, a Python-native reference harness, and compare it with Claude Code and OpenClaw. Our main claim is that future progress in agentic AI will depend as much on system design as on stronger foundation models.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.26112v1",
-        "pdf": "https://arxiv.org/pdf/2605.26112v1",
-        "github": "https://github.com/SafeRL-Lab/cheetahclaws",
-        "blog": "https://cheetahclaws.github.io"
-      },
-      "institution": "UC Berkeley",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：当前 AI 进展的主导叙事是模型缩放（更大的模型、更多的数据），但在代理 AI（Agentic AI）领域，一旦基础模型嵌入到工具、终端、浏览器和记忆存储中，其行为不再仅由模型决定，而是由整个系统决定。\n- **已有工作为什么解决不了**：现有的评估和研究 largely 以模型为中心，往往将代理简化为最终任务的成功率，而将记忆、检索、工具使用、编排、验证和治理视为次要的实现细节。这种框架日益不足，因为代理性能涌现于基础模型、记忆基质、上下文构建器、技能路由层、编排循环以及验证与治理层之间的复杂交互。\n\n## 文章的核心贡献点\n- **提出了一个“代理 harness”（Agent Harness）的系统缩放框架**：将围绕基础模型的结构化执行层作为设计、评估和优化的首要对象，强调从模型缩放到系统缩放的范式转变。\n- **挑战1：上下文治理（Context Governance）**：随着代理执行长 horizon 任务，上下文窗口容易变得杂乱且低效，导致模型注意力分散。**解决方法**：论文提出将上下文构建视为一个独立的治理层，通过优化上下文效率和通信保真度，确保模型接收到的信息是经过筛选和结构化的高质量输入，而非原始数据的堆砌。\n- **挑战2：可信记忆与动态技能路由（Trustworthy Memory & Dynamic Skill Routing）**：代理需要在长期运行中维护一致的记忆状态，并根据当前情境动态选择正确的工具或子代理，这涉及状态的一致性和路由的准确性难题。**解决方法**：论文设计了可审计、持久化且模块化的记忆子系统，并结合验证机制来约束技能路由，确保记忆 hygiene（卫生/整洁度）和动作的可验证性，从而提升长期行为的可靠性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作者开发并开源了 **CheetahClaws**，这是一个 Python 原生的参考 harness 实现，旨在使 harness 级别的设计选择显式化。\n- **对比工作**：论文将 CheetahClaws 与 **Claude Code** 和 **OpenClaw** 进行了具体对比，分析了不同系统在 harness 设计上的差异。\n- **评估视角**：论文并未仅关注传统的单次任务成功率，而是提出了一套 harness 级别的基准测试议程，包括轨迹质量、记忆卫生、上下文效率、通信保真度、验证成本以及随时间安全演化的能力。通过对比分析，展示了系统架构设计对代理整体性能的显著影响，证明了系统设计与基础模型能力同等重要。\n\n#### 总结\n本文主张代理 AI 的未来进步不仅依赖于更强大的基础模型，更取决于系统设计的优化。通过提出“缩放 harness”的概念，论文指出了上下文治理、可信记忆和动态技能路由三大核心瓶颈，并提供了 CheetahClaws 作为参考实现。研究呼吁社区从单纯的模型中心评估转向系统级评估，关注代理在长期运行中的过程指标和安全演化能力。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: The dominant narrative in AI progress has been model scaling (larger models, more data). However, in Agentic AI, once foundation models are embedded into tools, terminals, browsers, and memory stores, their behavior is determined by the entire system, not just the model.\n- **Why Existing Work Falls Short**: Current evaluations remain largely model-centric, reducing agents to final-task success rates while treating memory, retrieval, tool use, orchestration, verification, and governance as secondary implementation details. This framing is inadequate because agent performance emerges from the complex interactions among the foundation model, memory substrate, context constructor, skill-routing layer, orchestration loop, and verification/governance layers.\n\n## Core Contributions\n- **Proposed a \"System Scaling\" Framework for Agent Harnesses**: The paper introduces the concept of \"scaling the harness,\" treating the structured execution layer around a foundation model as a first-class object for design, evaluation, and optimization, shifting focus from mere model scaling to system scaling.\n- **Challenge 1: Context Governance**: As agents execute long-horizon tasks, context windows become cluttered and inefficient, scattering model attention. **Solution**: The paper proposes treating context construction as a distinct governance layer, optimizing context efficiency and communication fidelity to ensure the model receives filtered, structured, high-quality inputs rather than raw data dumps.\n- **Challenge 2: Trustworthy Memory and Dynamic Skill Routing**: Agents must maintain consistent memory states over long periods and dynamically select the correct tools or sub-agents, posing challenges in state consistency and routing accuracy. **Solution**: The authors design an auditable, persistent, and modular memory subsystem combined with verification mechanisms to constrain skill routing, ensuring memory hygiene and action verifiability to enhance long-term behavioral reliability.\n\n## Implementation and Evaluation\n- **Implementation**: The authors developed and open-sourced **CheetahClaws**, a Python-native reference harness designed to make harness-level design choices explicit.\n- **Comparison**: CheetahClaws is compared against **Claude Code** and **OpenClaw**, analyzing differences in harness design across these systems.\n- **Evaluation Perspective**: Rather than focusing solely on traditional one-shot task success, the paper outlines a harness-level benchmarking agenda that includes trajectory quality, memory hygiene, context efficiency, communication fidelity, verification costs, and safe evolution over time. Comparative analysis demonstrates that system architecture design significantly impacts overall agent performance, proving that system design is as critical as foundation model capabilities.\n\n## 4. Conclusion\nThis paper argues that future progress in Agentic AI depends as much on system design as on stronger foundation models. By introducing the concept of \"scaling the harness,\" it identifies three core bottlenecks: context governance, trustworthy memory, and dynamic skill routing. It provides CheetahClaws as a reference implementation and calls for a community shift from model-centric evaluation to system-level evaluation, focusing on process metrics and safe evolution in long-term agent operations.",
-      "render_excerpt": "机构: UC Berkeley<br>本文主张代理 AI 的未来进步不仅依赖于更强大的基础模型，更取决于系统设计的优化。通过提出“缩放 harness”的概念，论文指出了上下文治理、可信记忆和动态技能路由三大核心瓶颈，并提供了 CheetahClaws 作为参考实现。研究呼吁社区从单纯的模型中心评估转向系统级评估，关注代理在长期运行中的过程指标和安全演化能力。",
-      "render_excerpt_en": "Institution: UC Berkeley<br>## 1. What the Paper Does - **Background**: The dominant narrative in AI progress has been model scaling (larger models, more data). However, in Agentic AI, once foundation models are embedded into tools, terminals, browsers, and memory stores, their behavior is determined by the entire system, not just the model.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-05-25T17:59:36Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-05-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2605.25981",
-      "date": "2026-05-25",
-      "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation",
-      "authors": [
-        "Liyun Zhang",
-        "Jiayi Guo"
-      ],
-      "abstract": "We document an empirical phenomenon in chain-of-thought and ReAct agents driven by ten large language models from seven architecture families: meaning-bearing perturbations (e.g., paraphrase, synonym) alter final answers more often than presentation perturbations (e.g., formatting, reordering) of comparable severity. Across 68 cells spanning GSM8K, MATH, and HotpotQA (1,530 originals and $\\sim$11,150 variants), the inconsistency gap averages +19.69 pp after severity matching (paired $t=9.58$, $p<0.0001$), with 64/68 cells positive. The gap survives four severity-proxy audits and remains significant when excluding qwen models (+11.10 pp, $p<0.0001$). Several stress tests fail honestly: cluster-bootstrap significance disappears under stricter assumptions, tractability contrasts do not replicate, cross-architecture generator swaps break per-cell rankings, and a second LLM judge yields only moderate agreement ($κ=0.50$). We then validate the headline effect on a fully held-out 11th model (qwen2.5-14B-Instruct; 1,800 trajectories) and re-test a pre-registered capability$\\times$tractability partition, observing a small but positive held-out effect (3/4 cells positive; pooled Welch $t=3.81$, $p=9.6\\times10^{-4}$). Using held-out trajectories, we probe four trace-level mechanism signals. Two prior mechanism claims fail to replicate and are explicitly retracted. Two new probes instead support a \\emph{stealth-divergence} picture: semantic perturbations often preserve the first action but induce divergence in intermediate reasoning from later steps onward, accompanied by slightly deeper trajectories. We position this as a measurement contribution with held-out replication and a partial trace-level account of how semantic perturbations propagate through agent reasoning. Code, perturbation corpus, raw trajectories, and analysis scripts are released anonymously for review.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.25981v1",
-        "pdf": "https://arxiv.org/pdf/2605.25981v1",
-        "github": "https://anonymous.4open.science/r/agentdiff-emnlp-0BB4/",
-        "blog": null
-      },
-      "institution": "School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理在复杂推理、数学和检索任务中的部署，输入提示常受到上游模型的重述、模板系统的重排或对抗性扰动的影响。从业者需要了解代理是否将表层噪声（如格式、词序）与语义噪声（如释义、同义词替换）同等对待，还是两者对最终答案的影响存在系统性差异。\n- **已有工作为什么解决不了**：现有的扰动鲁棒性研究主要集中在单步语言模型或分类器上（如 PromptBench, CheckList），未能区分“承载意义的扰动”与“呈现形式的扰动”之间的方向性差距，也未深入研究多步代理轨迹中的扰动传播机制。最近的代理基准测试（如 AgentBench）主要衡量原始成功率，而非扰动敏感性。\n\n## 文章的核心贡献点\n- **提出了一个**：针对链式思维（CoT）和 ReAct 代理的大规模实证测量研究，揭示了语义扰动比同等严重程度的表层扰动更频繁地改变最终答案的现象，并提供了持留样本（held-out）的轨迹级验证。\n- **挑战1：如何量化并验证不同扰动类型对代理稳定性的差异化影响？**\n  - **难点**：需要排除扰动严重程度本身的干扰，并在多种模型架构和数据集上证明该现象的普遍性与统计显著性。\n  - **解决方法**：构建了覆盖 10 个 LLM、3 个基准测试（GSM8K, MATH, HotpotQA）的 68 个单元格实验，包含 1,530 个原始样本和约 11,150 个变体。通过四种严重程度代理指标进行匹配，发现语义扰动导致的答案不一致率平均高出 19.69 个百分点，且在排除特定模型家族后依然显著。\n- **挑战2：如何揭示导致这种差异性影响的内部机制？**\n  - **难点**：传统的机制假设可能无法复现，且需要深入代理的内部推理步骤来观察扰动是如何传播的。\n  - **解决方法**：使用完全持留的第 11 个模型（Qwen2.5-14B-Instruct）的 1,800 条轨迹进行探针分析。 retract 了两个 prior 机制声明，提出了“隐性分歧”（stealth-divergence）图景：语义扰动通常保留代理的第一步动作，但从第二步开始腐蚀中间推理内容，并导致轨迹略微加深。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：发布了代码、扰动语料库、原始轨迹和分析脚本。实验涵盖 7 个架构家族的 10 个模型，并在第 11 个模型上进行持留验证。\n- **评估结果**：\n  - **主要发现**：在严重程度匹配后，语义扰动引起的一致性缺口平均为 +19.69 pp（p<0.0001），68 个单元格中有 64 个为正。\n  - **压力测试**：在更严格的假设下，某些聚类 bootstrap 显著性消失；跨架构生成器交换破坏了单元格排名；第二个 LLM 法官的一致性仅为中等（κ=0.50）。\n  - **持留验证**：在 Qwen2.5-14B 上观察到较小但正向的效应（+1.08 pp, p=9.6×10⁻⁴）。\n  - **机制探针**：语义扰动导致从第二步开始的每步相似度差距扩大（-5.6 至 -10.5 pp），轨迹深度增加 0.17 步。\n- **对比相关工作**：不同于 Zhu et al. (2024) 仅报告提示重写降低准确率，本研究明确分离了语义与表层扰动的差距；不同于 Ribeiro et al. (2020) 针对分类器的研究，本研究聚焦于具有工具使用的多步代理；不同于 Sclar et al. (2024) 关注格式对准确率的巨大影响，本研究进一步探讨了语义噪声的深层传播机制。\n\n#### 总结\n本文是一项测量贡献，通过大规模实证研究证实了 LLM 代理对语义噪声比表层噪声更敏感。文章不仅通过严格的统计检验和持留样本验证了这一现象的鲁棒性，还通过轨迹级分析揭示了“隐性分歧”机制，即语义扰动在保持初始动作不变的情况下，逐步腐蚀后续推理过程。研究 retract 了部分先前未复现的机制主张，并为输入规范化策略提供了工程启示：应优先关注那些真正改变答案的扰动类型。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: As LLM agents are deployed for multi-step reasoning, math, and retrieval tasks, input prompts are often perturbed by upstream models or templating systems. Practitioners need to know if agents treat surface noise (formatting, reordering) and semantic noise (paraphrasing, synonyms) equivalently or if they propagate to final answers at different rates.\n- **Why Existing Work Falls Short**: Prior robustness studies focused on single-step LMs or classifiers (e.g., PromptBench, CheckList), failing to distinguish the directional gap between meaning-bearing and presentation perturbations in multi-step agent trajectories. Recent agent benchmarks measure raw success rates rather than perturbation sensitivity.\n\n## Core Contributions\n- **Proposed**: A large-scale empirical measurement study on Chain-of-Thought and ReAct agents, revealing that semantic perturbations alter final answers more frequently than surface perturbations of comparable severity, validated with held-out trace-level analysis.\n- **Challenge 1: How to quantify and verify the differential impact of perturbation types on agent stability?**\n  - **Difficulty**: Isolating the effect of perturbation type from severity and proving statistical significance across diverse models and datasets.\n  - **Solution**: Conducted a 68-cell study across 10 LLMs and 3 benchmarks (1,530 originals, ~11,150 variants). After severity matching, semantic perturbations caused a +19.69 pp higher inconsistency rate (p<0.0001), remaining significant even when excluding specific model families.\n- **Challenge 2: How to uncover the internal mechanisms driving this differential impact?**\n  - **Difficulty**: Prior mechanism claims may not replicate, requiring deep inspection of intermediate reasoning steps.\n  - **Solution**: Used 1,800 held-out trajectories from Qwen2.5-14B to probe mechanisms. Retracted two prior claims and proposed a \"stealth-divergence\" picture: semantic perturbations preserve the first action but corrupt intermediate reasoning from step 2 onward, leading to slightly deeper trajectories.\n\n## Implementation and Evaluation\n- **Implementation & Data**: Released code, perturbation corpus, raw trajectories, and analysis scripts. Covered 10 models from 7 architectures, with held-out validation on an 11th model.\n- **Evaluation Results**:\n  - **Main Finding**: A consistent inconsistency gap of +19.69 pp favoring semantic sensitivity (64/68 cells positive).\n  - **Stress Tests**: Some cluster-bootstrap significance vanished under stricter assumptions; cross-architecture swaps broke rankings; second LLM judge agreement was moderate (κ=0.50).\n  - **Held-out Validation**: Observed a small but positive effect (+1.08 pp, p=9.6×10⁻⁴) on Qwen2.5-14B.\n  - **Mechanism Probes**: Semantic perturbations increased per-step similarity gaps (-5.6 to -10.5 pp) from step 2 and increased trajectory depth by 0.17 steps.\n- **Comparison**: Unlike Zhu et al. (2024) which only noted accuracy degradation, this work isolates the semantic vs. surface gap. Unlike Ribeiro et al. (2020) focusing on classifiers, this targets tool-using agents. Unlike Sclar et al. (2024) highlighting formatting fragility, this explores the propagation mechanism of semantic noise.\n\n#### Summary\nThis paper makes a measurement contribution by empirically demonstrating that LLM agents are more sensitive to semantic noise than surface noise. It validates this phenomenon through rigorous statistical testing and held-out samples, while revealing a \"stealth-divergence\" mechanism where semantic perturbations corrode intermediate reasoning after the initial step. The study retracts non-replicable prior claims and offers engineering insights for input normalization.",
-      "render_excerpt": "机构: School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego<br>本文是一项测量贡献，通过大规模实证研究证实了 LLM 代理对语义噪声比表层噪声更敏感。文章不仅通过严格的统计检验和持留样本验证了这一现象的鲁棒性，还通过轨迹级分析揭示了“隐性分歧”机制，即语义扰动在保持初始动作不变的情况下，逐步腐蚀后续推理过程。研究 retract 了部分先前未复现的机制主张，并为输入规范化策略提供了工程启示：应优先关注那些真正改变答案的扰动类型。",
-      "render_excerpt_en": "Institution: School of Information and Software Engineering, UESTC; Jacobs School of Engineering, UC San Diego<br>This paper makes a measurement contribution by empirically demonstrating that LLM agents are more sensitive to semantic noise than surface noise. It validates this phenomenon through rigorous statistical testing and held-out samples, while revealing a \"stealth-divergence\" mechanism where semantic perturbations corrode intermediate reasoning after the initial step. The study retracts non-replicable prior claims and offers engineering insights for input normalization.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-05-25T15:57:11Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-05-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2605.25958",
-      "date": "2026-05-25",
-      "title": "PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction",
-      "authors": [
-        "Daren Wang",
-        "Hong Xu",
-        "Jiawen Xian"
-      ],
-      "abstract": "This paper introduces PolyGnosis 2.0, a pioneering multi-agent architecture designed to extract predictive intelligence by synthesizing Polymarket anomaly signals with global Open Source Intelligence (OSINT) streams, specifically Global Database of Events, Language, and Tone (GDELT). We define and target \"Perspective Mismatches\", the narrative divergence between Polymarket sentiment and global media flows, as high-alpha trading signals. Moving beyond generic agentic superiority, we rigorously quantify the efficacy of \"Harness Engineering\" techniques, including reflection loops, tool-calling, divide-and-conquer partitioning (D&C), and chain-of-thought (CoT), within high-noise financial domains. Our empirical evaluation against human-expert benchmarks reveals that while structural partitioning is mandatory for multi-dimensional alignment, unconstrained terminal reflection actively induces logical drift. Furthermore, we identify a pervasive \"consensus bias\" across all agent configurations during narrative reasoning, necessitating deterministic validation. Ultimately, we isolate a Pareto-optimal configuration that achieves professional-grade analytical precision while minimizing latency and token overhead, providing a robust blueprint for autonomous intelligence in prediction markets.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.25958v1",
-        "pdf": "https://arxiv.org/pdf/2605.25958v1",
+        "abs": "http://arxiv.org/abs/2605.27366v1",
+        "pdf": "https://arxiv.org/pdf/2605.27366v1",
         "github": null,
         "blog": null
       },
-      "institution": "The Chinese University of Hong Kong",
+      "institution": "ByteDance Inc., Rochester Institute of Technology",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：预测市场（如 Polymarket）提供了基于共识的公开预测数据，但其数据具有高度复杂性和噪声。仅依靠市场内部数据缺乏外部语境，难以评估市场情绪的真实有效性。\n- **已有工作为什么解决不了**：现有的大型语言模型（LLM）若未经辅助，其内部推理难以捕捉专业交易洞察所需的复杂因果关系。单纯依赖模型扩展或通用的智能体优势无法有效解决高噪声金融领域中的结构化推理问题，且缺乏将局部市场信号与全球媒体动态进行系统性交叉验证的机制。\n\n## 文章的核心贡献点\n- **提出了一个 PolyGnosis 2.0 多智能体架构**：该架构通过“Harness Engineering”（驾驭工程）技术，合成 Polymarket 异常信号与全球开源情报（OSINT，特别是 GDELT 数据），以提取预测性智能。\n- **挑战1：如何从噪声中识别高 Alpha 交易信号？**\n  - **难点**：Polymarket 反映的是局部交易者的认知偏差，而全球媒体流（GDELT）代表宏观叙事，两者之间存在巨大的语义和语境鸿沟，直接对比容易产生误判。\n  - **解决方法**：定义并 targeting “视角错配”（Perspective Mismatches），即 Polymarket 情绪与全球媒体流之间的叙事分歧。通过多智能体系统专门捕捉这种分歧，将其作为高价值交易信号。\n- **挑战2：如何在提升推理能力的同时避免逻辑漂移和共识偏见？**\n  - **难点**：复杂的智能体交互（如反思循环）可能导致逻辑漂移，且所有智能体配置在叙事推理中普遍存在“共识偏见”，导致分析结果趋同且可能错误。\n  - **解决方法**：严格量化“驾驭工程”技术（反思、工具调用、分治法 D&C、思维链 CoT）的效果。研究发现结构性分治对多维对齐是必须的，但无约束的终端反思会引发逻辑漂移，因此引入确定性验证机制来消除共识偏见，最终隔离出帕累托最优配置。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：PolyGnosis 2.0 采用多智能体架构，整合了反射循环、工具调用、分治策略（D&C）和思维链（CoT）。系统重点利用 GDELT 数据库作为全球大众媒体动态的综合代理，与 Polymarket 数据进行交叉验证。\n- **评估结果**：通过与人类专家基准进行实证评估，结果表明该架构能够达到专业级的分析精度。研究确定了在最小化延迟和 Token 开销的同时实现高精度的帕累托最优配置。\n- **对比发现**：\n  1. **结构性分治 vs. 通用聚合**：证明结构性分治对于多维对齐是强制性的，优于简单的信息聚合。\n  2. **反思机制的双刃剑**：与通常认为反思总能提升性能的观点不同，本研究发现无约束的终端反思会主动诱导逻辑漂移。\n  3. **共识偏见**：揭示了在所有智能体配置中普遍存在的共识偏见，强调了确定性验证的必要性，这是许多现有通用智能体框架所忽视的。\n\n#### 总结\nPolyGnosis 2.0 通过创新的“驾驭工程”方法，成功解决了在高噪声金融领域利用 LLM 进行专业级推理的难题。它不仅证明了通过精心设计的智能体架构（而非仅仅升级基础模型）可以显著提升推理能力，还具体指出了反思机制的局限性和共识偏见的普遍性。该研究为预测市场中的自主智能应用提供了一个稳健的蓝图，实现了在降低计算成本的同时保持专业分析精度的目标。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Prediction markets like Polymarket offer publicly observable, consensus-driven forecasting data. However, this data is inherently complex and noisy. Relying solely on endogenous market data lacks the external context necessary to evaluate the true validity of market sentiment.\n- **Why Existing Work Falls Short**: Unaided Large Language Models (LLMs) struggle to capture the intricate causalities required for professional-grade trading insights. Simply scaling models or relying on generic agentic superiority fails to address the structured reasoning needs of high-noise financial domains. There is a lack of systematic mechanisms to cross-validate local market signals with global media dynamics.\n\n## Core Contributions\n- **Proposed PolyGnosis 2.0**: A pioneering multi-agent architecture that synthesizes Polymarket anomaly signals with global Open Source Intelligence (OSINT), specifically GDELT, using \"Harness Engineering\" techniques.\n- **Challenge 1: Identifying High-Alpha Signals from Noise**\n  - **Difficulty**: Polymarket reflects localized cognitive biases, while global media flows (GDELT) represent macro narratives. Bridging this semantic and contextual gap without generating false positives is difficult.\n  - **Solution**: The paper defines and targets \"Perspective Mismatches\"—the narrative divergence between Polymarket sentiment and global media flows—as high-alpha trading signals, using the multi-agent system to specifically capture these divergences.\n- **Challenge 2: Enhancing Reasoning Without Logical Drift or Consensus Bias**\n  - **Difficulty**: Complex agent interactions (e.g., reflection loops) can cause logical drift. Additionally, a pervasive \"consensus bias\" exists across agent configurations, leading to potentially erroneous convergent analysis.\n  - **Solution**: Rigorously quantifies the efficacy of Harness Engineering techniques (Reflection, Tool-calling, Divide-and-Conquer, CoT). It finds that structural partitioning is mandatory for alignment, but unconstrained terminal reflection induces drift. Thus, it introduces deterministic validation to mitigate consensus bias, isolating a Pareto-optimal configuration.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: PolyGnosis 2.0 employs a multi-agent architecture integrating reflection loops, tool-calling, Divide-and-Conquer (D&C), and Chain-of-Thought (CoT). It leverages GDELT as a proxy for global media dynamics to cross-validate against Polymarket data.\n- **Evaluation Results**: Empirical evaluation against human-expert benchmarks demonstrates that the architecture achieves professional-grade analytical precision. The study identifies a Pareto-optimal configuration that minimizes latency and token overhead while maintaining high accuracy.\n- **Comparative Insights**:\n  1. **Structural Partitioning vs. Generic Aggregation**: Proves that structural partitioning is mandatory for multi-dimensional alignment, outperforming simple information aggregation.\n  2. **The Double-Edged Sword of Reflection**: Contrary to the belief that reflection always improves performance, the study shows that unconstrained terminal reflection actively induces logical drift.\n  3. **Consensus Bias**: Reveals a pervasive consensus bias in all agent configurations during narrative reasoning, highlighting the necessity for deterministic validation, a aspect often overlooked in generic agentic frameworks.\n\n## 4. Conclusion\nPolyGnosis 2.0 successfully addresses the challenge of professional-grade reasoning in high-noise financial domains through innovative \"Harness Engineering.\" It demonstrates that carefully designed agent architectures, rather than just base model upgrades, significantly enhance reasoning capabilities. The paper critically identifies the limitations of reflection mechanisms and the prevalence of consensus bias, providing a robust blueprint for autonomous intelligence in prediction markets that balances precision with computational efficiency.",
-      "render_excerpt": "机构: The Chinese University of Hong Kong<br>PolyGnosis 2.0 通过创新的“驾驭工程”方法，成功解决了在高噪声金融领域利用 LLM 进行专业级推理的难题。它不仅证明了通过精心设计的智能体架构（而非仅仅升级基础模型）可以显著提升推理能力，还具体指出了反思机制的局限性和共识偏见的普遍性。该研究为预测市场中的自主智能应用提供了一个稳健的蓝图，实现了在降低计算成本的同时保持专业分析精度的目标。",
-      "render_excerpt_en": "Institution: The Chinese University of Hong Kong<br>## 1. What the Paper Did - **Background**: Prediction markets like Polymarket offer publicly observable, consensus-driven forecasting data. However, this data is inherently complex and noisy.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体依赖可复用的技能来解决复杂任务。随着任务范围的扩大，仅靠模型的原始推理能力已不足够，需要封装过程、可执行代码或领域特定指令的“技能”作为可扩展智能体系统的自然抽象。\n- **已有工作为什么解决不了**：现有的技能创建方法（如AutoSkill, Voyager等）通常将技能视为孤立且静态的产物，缺乏统一的生命周期管理。这导致了四个主要差距：(1) 创建与使用不匹配，技能生成时缺乏运行时上下文；(2) 缺乏结构化的单技能记忆，无法跨任务积累针对特定技能的经验；(3) 技能是静态且未经过单元测试验证的，缺乏持续改进机制；(4) 上下文处理能力差，扁平的对话历史导致信息截断或溢出。\n\n## 文章的核心贡献点\n- **提出了一个 MUSE-Autoskill Agent（记忆利用技能进化）框架**：这是一个以技能为中心的智能体框架，通过统一的生命周期（创建、记忆、管理、评估和细化）让智能体能够持续提高其任务解决能力。\n- **挑战1：技能的可靠性与持续改进难**。现有技能一旦生成为静态文件，难以保证其在不同场景下的正确性且无法自我进化。**解决方法**：引入基于单元测试和运行时反馈的评估与细化机制，使技能成为可测试、可验证的资产，并通过反馈循环自动修正错误。\n- **挑战2：技能复用的效率与适应性低**。传统方法缺乏对单个技能历史表现的追踪，导致在新任务中难以选择最合适的技能或进行适配。**解决方法**：引入技能级记忆（skill-level memory），为每个技能积累跨任务的自由形式经验，从而实现更有效的复用和随时间推移的自适应调整。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 SkillsBench 基准测试上进行评估，涵盖科学与工程、数据分析、文档处理、运营与规划四大领域共51个任务。\n- **对比基线**：与 Hermes 和 Codex 等主流智能体框架进行对比，分别测试了无技能辅助、有人工技能辅助以及使用 MUSE-Autoskill 自动生成技能的情况。\n- **结果**：\n    - MUSE-Autoskill 在总体准确率上达到 68.4%，优于 Codex (67.3%) 和 Hermes (61.2%)。\n    - 在四个子领域中，MUSE-Autoskill 在其中三个领域及总分上取得了最高分。\n    - 相比不使用技能的情况，MUSE-Autoskill 带来了 +15.2% 的性能提升，证明了生命周期管理的技能在提高任务成功率、效率、复用性和跨智能体迁移能力方面的有效性。\n\n#### 总结\nMUSE-Autoskill 通过将技能视为长期的、具备经验感知且可测试的资产，解决了现有方法中技能孤立、静态和缺乏验证的问题。其核心创新在于统一的技能生命周期管理和技能级记忆机制，显著提升了 LLM 智能体在复杂任务中的表现和鲁棒性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language model (LLM) agents rely on reusable skills to solve complex, real-world problems. As tasks grow in scope, raw model reasoning is insufficient; skills encapsulating procedures, code, or instructions are needed as natural abstractions for scalable agent systems.\n- **Why Existing Work Falls Short**: Current skill creation approaches (e.g., AutoSkill, Voyager) treat skills as isolated and static artifacts, lacking unified lifecycle management. This results in four gaps: (i) creation-usage mismatch due to lack of runtime context during generation; (ii) absence of structured per-skill memory for accumulating experience; (iii) static, unvalidated skills without unit-test-driven evaluation; and (iv) poor context handling in flat conversation histories.\n\n## Core Contributions\n- **Proposed MUSE-Autoskill Agent**: A skill-centric framework that enables continuous improvement of task-solving capabilities through a unified lifecycle: creation, memory, management, evaluation, and refinement.\n- **Challenge 1: Reliability and Continuous Improvement of Skills**. Existing static skills lack guarantees of correctness across scenarios and cannot self-evolve. **Solution**: Introduces evaluation and refinement via unit tests and runtime feedback, treating skills as testable assets that automatically correct errors through feedback loops.\n- **Challenge 2: Efficiency and Adaptability of Skill Reuse**. Traditional methods lack tracking of individual skill performance history, hindering optimal selection and adaptation. **Solution**: Introduces skill-level memory that accumulates free-form experience for each skill across tasks, enabling more effective reuse and adaptive adjustment over time.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on SkillsBench, covering 51 tasks across four domains: Science & Engineering, Data Analysis, Document Processing, and Ops & Planning.\n- **Baselines**: Compared against Hermes and Codex agents, testing configurations with no skills, human-authored skills, and MUSE-Autoskill generated skills.\n- **Results**:\n    - MUSE-Autoskill achieved the highest overall accuracy of 68.4%, outperforming Codex (67.3%) and Hermes (61.2%).\n    - It led in 3 out of 4 sub-domains and the total score.\n    - The framework provided a +15.2 percentage point lift compared to no-skill baselines, demonstrating improvements in task success, efficiency, reuse, and cross-agent transfer.\n\n## 4. Conclusion\nMUSE-Autoskill addresses the limitations of isolated and static skills by treating them as long-lived, experience-aware, and testable assets. Its core innovations in unified lifecycle management and skill-level memory significantly enhance the performance and robustness of LLM agents in complex tasks.",
+      "render_excerpt": "机构: ByteDance Inc., Rochester Institute of Technology<br>MUSE-Autoskill 通过将技能视为长期的、具备经验感知且可测试的资产，解决了现有方法中技能孤立、静态和缺乏验证的问题。其核心创新在于统一的技能生命周期管理和技能级记忆机制，显著提升了 LLM 智能体在复杂任务中的表现和鲁棒性。",
+      "render_excerpt_en": "Institution: ByteDance Inc., Rochester Institute of Technology<br>## 1. What the Paper Did - **Background**: Large language model (LLM) agents rely on reusable skills to solve complex, real-world problems. As tasks grow in scope, raw model reasoning is insufficient; skills encapsulating procedures, code, or instructions are needed as natural abstractions for scalable agent systems.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-25T15:30:54Z"
+        "captured_at": "2026-05-26T17:59:19Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-05-25"
+        "captured_at": "2026-05-26"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -206,42 +56,230 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2605.26081",
-      "date": "2026-05-25",
-      "title": "VeriTrace: Evolving Mental Models for Deep Research Agents",
+      "paper_id": "2605.27068",
+      "date": "2026-05-26",
+      "title": "QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents",
       "authors": [
-        "Haolang Zhao",
-        "Yunbo Long",
-        "Lukas Beckenbauer",
-        "Alexandra Brintrup"
+        "Ye Yuan",
+        "Rui Song",
+        "Weien Li",
+        "Zeyu Li",
+        "Haochen Liu",
+        "Xiangyu Kong",
+        "Changjiang Han",
+        "Yonghan Yang",
+        "Zichen Zhao",
+        "Zixuan Dong",
+        "Fuyuan Lyu",
+        "Bowei He",
+        "Haolun Wu",
+        "Jikun Kang",
+        "Xue Liu"
       ],
-      "abstract": "Deep research agents face vast, interdependent, and pervasively uncertain information. Existing systems explore what evolving intermediate representations should look like, but leave their evolution to the LLM's implicit reasoning. Without explicit regulation, the intermediate layer is easily contaminated by mixed-quality information and propagates errors along its dependencies, so model scale often ends up substituting for absent regulation. We argue that an agent's mental model should instead evolve through explicit feedback that continuously aligns task understanding with reality, and identify three regulatory loops: interpretive update, deviation feedback, and schema revision. We realise this in VeriTrace, a cognitive-graph framework that explicitly implements the three loops. Using matched Qwen3.5-27B backbones, VeriTrace improves over the strongest matched baseline by 4.22 pp on DeepResearch Bench (DRB) Insight (1.49 pp Overall) and by 5.9 pp Overall win rate on DeepConsult. With Config-DeepSeek, it achieves the strongest reproducible open-source result on DRB.",
+      "abstract": "Social deduction games have become a popular testbed for probing reasoning, deception, coordination, and belief modeling in Large Language Model (LLM) agents. However, most environments are scored only by game outcomes such as win rates and largely remain to text-only interaction, making it difficult to tell whether an agent's language is actually grounded in what it perceived and did, or to identify the failure modes underlying its behavior. To address this gap, we introduce QUACK, an open-source environment and evaluation framework for auditing the grounding of agent language in multimodal social reasoning. QUACK evaluates agents at three levels: game outcomes, behavioral trajectories, and utterance-level consistency. Its core Statement Verification Pipeline reconstructs each agent's ground-truth trajectory from engine logs and checks every discussion claim against it, automatically flagging spatial hallucination, unsupported accusation, deception collapse, and language-action inconsistency. Evaluating three frontier VLMs in both homogeneous and cross-model adversarial settings, we find that even the strongest agent hallucinates 15.1% of its verifiable spatial claims and makes over half of its accusations without grounded evidence. We release the full engine, evaluation framework, toolkit, and logs at https://github.com/AAAAA-Academia-Attractions/QUACK.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.26081v1",
-        "pdf": "https://arxiv.org/pdf/2605.26081v1",
-        "github": null,
+        "abs": "http://arxiv.org/abs/2605.27068v1",
+        "pdf": "https://arxiv.org/pdf/2605.27068v1",
+        "github": "https://github.com/AAAAA-Academia-Attractions/QUACK",
         "blog": null
       },
-      "institution": "University of Cambridge",
+      "institution": "McGill University, Mila - Quebec AI Institute, University of Cambridge, MBZUAI, University of Toronto, Salesforce",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：深度研究智能体（Deep Research Agents）在处理长周期、开放式的科研任务时，面临海量、相互依赖且充满不确定性的信息。为了超越LLM上下文窗口的限制，现有系统通常将中间研究产物（如大纲、证据库、概念池）外部化为一个持久的结构化中间层。\n- **已有工作为什么解决不了**：现有的系统（如WebWeaver, OmniThink等）主要关注中间层应该呈现何种形式，但将其演化过程完全留给LLM的隐式推理。由于缺乏显式的调节机制，中间层容易受到混合质量信息的污染，并沿依赖关系传播错误。因此，现有方法往往依赖扩大模型规模来弥补监管缺失，导致效率低下且鲁棒性不足。\n\n## 文章的核心贡献点\n- **提出了一个 VeriTrace框架**：这是一种认知图（cognitive-graph）框架，将智能体的中间层视为“心智模型”，并通过三个显式的反馈循环来调节其演化，确保持续对齐任务理解与现实。\n- **挑战1：信息噪声与被动积累导致的注意力分散**。难点在于如何从海量混合质量的发现中筛选出对当前任务真正有价值的信息，避免系统被噪声干扰而迷失研究方向。VeriTrace通过“解释性更新（Interpretive Update）”循环解决此问题，新发现不再被被动吸收，而是根据现有模型被分类为确认、矛盾、填补空白或意外惊喜，从而主动塑造可用观察结果。\n- **挑战2：错误沿依赖关系的传播与模型僵化**。难点在于当中间层出现偏差或结构不再适应新证据时，如何防止错误扩散并动态调整知识结构。VeriTrace通过“偏差反馈（Deviation Feedback）”和“模式修订（Schema Revision）”循环解决此问题，持续检测任务理解与现实的偏差，并动态重构知识图谱的模式，确保心智模型向健康方向演化。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：VeriTrace基于认知图架构实现，集成了上述三个调节循环。实验使用了匹配的 Qwen3.5-27B 作为骨干模型，并与 Config-DeepSeek 结合进行测试。\n- **Evaluation 结果**：\n  - 在 DeepResearch Bench (DRB) 上，使用匹配的 Qwen3.5-27B 骨干，VeriTrace 在 Insight 指标上比最强的匹配基线高出 4.22 个百分点，整体（Overall）高出 1.49 个百分点。\n  - 在 DeepConsult 基准测试中，整体胜率提高了 5.9 个百分点。\n  - 结合 Config-DeepSeek 时，VeriTrace 取得了 DRB 上最强的可复现开源结果。\n- **对比**：相较于 WebWeaver、OmniThink 和 FS-Researcher 等仅关注中间层形式而缺乏显式调节机制的工作，VeriTrace 通过显式反馈循环显著提升了在复杂、不确定性环境下的研究质量和鲁棒性，证明了显式调节优于单纯依赖模型规模的隐式推理。\n\n#### 总结\nVeriTrace 提出了一种新的范式，即通过显式的反馈循环（解释性更新、偏差反馈、模式修订）来演化和调节深度研究智能体的“心智模型”。该方法有效解决了现有系统中因缺乏监管而导致的信息污染和错误传播问题，在多个基准测试中取得了优于最强基线的性能，证明了在深度研究中引入显式认知调节机制的重要性。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Deep research agents face vast, interdependent, and uncertain information in long-horizon tasks. To overcome LLM context window limits, existing systems externalize intermediate research artifacts (e.g., outlines, evidence banks) into a persistent structured layer.\n- **Why Existing Work Falls Short**: Current systems (e.g., WebWeaver, OmniThink) focus on the form of the intermediate layer but leave its evolution to the LLM's implicit reasoning. Without explicit regulation, this layer is easily contaminated by mixed-quality information, propagating errors along dependencies. Consequently, these methods often rely on scaling up model size to compensate for the lack of regulation, leading to inefficiency and poor robustness.\n\n## Core Contributions\n- **Proposed VeriTrace**: A cognitive-graph framework that treats the intermediate layer as the agent's \"mental model\" and regulates its evolution through three explicit feedback loops to continuously align task understanding with reality.\n- **Challenge 1: Distraction from Noise and Passive Accumulation**. The difficulty lies in filtering valuable information from massive, mixed-quality findings to prevent the system from losing track of its research state. VeriTrace addresses this via the \"Interpretive Update\" loop, where new findings are actively classified (confirming, contradicting, gap-filling, or surprising) against the existing model, rather than being passively absorbed.\n- **Challenge 2: Error Propagation and Model Rigidity**. The challenge is preventing error spread along dependencies and adapting the knowledge structure when it no longer fits new evidence. VeriTrace solves this through \"Deviation Feedback\" and \"Schema Revision\" loops, which detect deviations between task understanding and reality and dynamically refactor the knowledge graph schema, ensuring healthy evolution of the mental model.\n\n## Implementation and Evaluation\n- **Implementation**: VeriTrace is implemented as a cognitive-graph architecture integrating the three regulatory loops. Experiments used matched Qwen3.5-27B backbones and were also tested with Config-DeepSeek.\n- **Evaluation Results**:\n  - On the DeepResearch Bench (DRB), using matched Qwen3.5-27B, VeriTrace outperformed the strongest matched baseline by 4.22 percentage points (pp) on Insight and 1.49 pp on Overall metrics.\n  - On DeepConsult, it achieved a 5.9 pp higher overall win rate.\n  - With Config-DeepSeek, it achieved the strongest reproducible open-source result on DRB.\n- **Comparison**: Unlike WebWeaver, OmniThink, and FS-Researcher, which lack explicit regulation mechanisms, VeriTrace significantly improves research quality and robustness in complex, uncertain environments through explicit feedback loops, demonstrating that explicit cognitive regulation is superior to relying solely on implicit reasoning via model scaling.\n\n## 4. Conclusion\nVeriTrace introduces a new paradigm for evolving and regulating the \"mental model\" of deep research agents through explicit feedback loops (Interpretive Update, Deviation Feedback, Schema Revision). This approach effectively mitigates information contamination and error propagation caused by the lack of regulation in existing systems. It achieves superior performance across multiple benchmarks, highlighting the importance of introducing explicit cognitive regulation mechanisms in deep research tasks.",
-      "render_excerpt": "机构: University of Cambridge<br>VeriTrace 提出了一种新的范式，即通过显式的反馈循环（解释性更新、偏差反馈、模式修订）来演化和调节深度研究智能体的“心智模型”。该方法有效解决了现有系统中因缺乏监管而导致的信息污染和错误传播问题，在多个基准测试中取得了优于最强基线的性能，证明了在深度研究中引入显式认知调节机制的重要性。",
-      "render_excerpt_en": "Institution: University of Cambridge<br>## 1. What the Paper Did - **Background**: Deep research agents face vast, interdependent, and uncertain information in long-horizon tasks. To overcome LLM context window limits, existing systems externalize intermediate research artifacts (e.g., outlines, evidence banks) into a persistent structured layer.",
+      "summary_cn": "## 文章做了什么\n- **背景**：社交推理游戏已成为测试大语言模型（LLM）和多模态大语言模型（VLM）在推理、欺骗、协作及信念建模能力的热门平台。这类环境结合了隐藏信息、对抗性激励和长程交互，是研究智能体行为的理想测试床。\n- **已有工作为什么解决不了**：现有的评估方法主要依赖游戏结果（如胜率、存活率），无法揭示智能体成功或失败的根本原因；且大多数环境仅支持纯文本交互，缺乏可恢复的视觉观测和轨迹真值，导致难以判断智能体的言论是否与其实际感知和行动一致，无法有效区分正确推理与幻觉证据。\n\n## 文章的核心贡献点\n- **提出了一个 QUACK**：这是一个开源的多模态社交推理环境与评估框架，旨在审计 VLM 智能体在社交推理中语言的地面真实性（grounding）。\n- **挑战1：缺乏细粒度的行为归因与一致性检查**。难点在于传统指标无法捕捉智能体在长程交互中的细微错误模式。QUACK 通过三层评估体系（游戏结果、行为轨迹、话语级一致性）解决了这一问题，特别是其核心的“陈述验证管道”能够重建智能体的真实轨迹并逐一核对讨论中的声明。\n- **挑战2：多模态感知与语言输出的脱节（幻觉与不一致）**。难点在于难以自动识别智能体是否基于视觉观察撒谎或产生空间幻觉。QUACK 自动标记空间幻觉、无证据指控、欺骗崩溃和语言-行动不一致，从而量化智能体在对抗环境下的可信度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作者发布了完整的引擎、评估框架、工具包及日志数据。该框架支持在同构和跨模型对抗设置下运行。\n- **评估结果**：对三种前沿 VLM 进行评估发现，即使是最强的智能体，在其可验证的空间声明中也有 15.1% 存在幻觉，且超过一半的指控没有地面证据支持。\n- **对比**：相较于以往仅关注胜率或纯文本交互的工作，QUACK 提供了多模态 grounding 的自动化审计能力，揭示了现有最强模型在社交推理中严重的不可靠性，填补了从结果导向到过程导向评估的空白。\n\n#### 总结\nQUACK 通过引入多模态环境和细粒度的陈述验证管道，解决了社交推理智能体评估中缺乏地面真实性和细粒度归因的问题。研究结果表明，当前最先进的 VLM 在保持语言与感知一致性方面仍存在显著缺陷，大量存在空间幻觉和无据指控。该工作为未来开发更可靠、更具解释性的多模态社交智能体提供了重要的基准和工具。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Social deduction games have become a popular testbed for probing reasoning, deception, coordination, and belief modeling in Large Language Model (LLM) and Vision-Language Model (VLM) agents. These environments combine hidden information, adversarial incentives, and long-horizon interactions.\n- **Why Existing Work Falls Short**: Current evaluations primarily rely on game outcomes (e.g., win rates), which fail to reveal the underlying reasons for success or failure. Furthermore, most environments are text-only, lacking recoverable visual observations and ground-truth trajectories, making it difficult to determine if an agent's dialogue is grounded in its actual perceptions and actions.\n\n## Core Contributions\n- **Proposed QUACK**: An open-source multimodal social deduction environment and evaluation framework designed to audit the grounding of agent language in social reasoning.\n- **Challenge 1: Lack of fine-grained behavioral attribution and consistency checks**. The difficulty lies in traditional metrics' inability to capture subtle error modes in long-horizon interactions. QUACK addresses this via a three-level evaluation system (outcomes, trajectories, utterance consistency), featuring a core \"Statement Verification Pipeline\" that reconstructs ground-truth trajectories to verify every claim.\n- **Challenge 2: Disconnection between multimodal perception and language output (hallucinations/inconsistencies)**. It is challenging to automatically detect if agents lie or hallucinate based on visual inputs. QUACK automatically flags spatial hallucinations, unsupported accusations, deception collapse, and language-action inconsistencies to quantify agent reliability in adversarial settings.\n\n## Implementation and Evaluation\n- **Implementation**: The authors released the full engine, evaluation framework, toolkit, and logs. The framework supports both homogeneous and cross-model adversarial settings.\n- **Results**: Evaluating three frontier VLMs revealed that even the strongest agents hallucinate 15.1% of their verifiable spatial claims and make over half of their accusations without grounded evidence.\n- **Comparison**: Unlike prior works focusing solely on win rates or text-only interactions, QUACK provides automated auditing of multimodal grounding, exposing significant unreliability in state-of-the-art models and filling the gap between outcome-based and process-oriented evaluation.\n\n## 4. Conclusion\nQUACK addresses the lack of ground truth and fine-grained attribution in social deduction agent evaluation by introducing a multimodal environment and a statement verification pipeline. The study demonstrates that current state-of-the-art VLMs suffer from significant deficiencies in maintaining consistency between language and perception, exhibiting frequent spatial hallucinations and unsupported accusations. This work provides essential benchmarks and tools for developing more reliable and interpretable multimodal social agents.",
+      "render_excerpt": "机构: McGill University, Mila - Quebec AI Institute, University of Cambridge, MBZUAI, University of Toronto, Salesforce<br>QUACK 通过引入多模态环境和细粒度的陈述验证管道，解决了社交推理智能体评估中缺乏地面真实性和细粒度归因的问题。研究结果表明，当前最先进的 VLM 在保持语言与感知一致性方面仍存在显著缺陷，大量存在空间幻觉和无据指控。该工作为未来开发更可靠、更具解释性的多模态社交智能体提供了重要的基准和工具。",
+      "render_excerpt_en": "Institution: McGill University, Mila - Quebec AI Institute, University of Cambridge, MBZUAI, University of Toronto, Salesforce<br>## 1. What the Paper Did - **Background**: Social deduction games have become a popular testbed for probing reasoning, deception, coordination, and belief modeling in Large Language Model (LLM) and Vision-Language Model (VLM) agents. These environments combine hidden information, adversarial incentives, and long-horizon interactions.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-25T17:46:57Z"
+        "captured_at": "2026-05-26T14:19:08Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-05-25"
+        "captured_at": "2026-05-26"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2605.27333",
+      "date": "2026-05-26",
+      "title": "FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents",
+      "authors": [
+        "Haoxuan Jia",
+        "Yang Liu",
+        "Bin Chong",
+        "Yingguang Yang",
+        "Yancheng Chen",
+        "Jiayu Liang",
+        "Qian Li",
+        "Hanning Lu",
+        "Kefu Xu",
+        "Hao Zheng",
+        "Chongyang Zhang",
+        "Hao Peng",
+        "Philip S. Yu"
+      ],
+      "abstract": "Finance LLM agents must simultaneously block prompt-induced unauthorized actions and approve legitimate multi-step business workflows. However, boundary filters often miss irreversible mid-trajectory tool calls, while post-hoc LLM judges perform auditing only after termination -- too late for intervention and at a computational cost that scales linearly with trace length. We present FinHarness, an inline safety harness that wraps a finance agent end-to-end with three components: a Query Monitor that fuses single-turn intent with cross-turn drift, a Tool Monitor that evaluates each prospective tool call, and a Cascade module that integrates per-step risk and adaptively routes verification between a lightweight and an advanced-tier LLM judge. Fired risk factors are re-injected into the agent input as ex-ante evidence, enabling the agent to refuse, re-plan, or approve on its own. On FinVault, routed FinHarness cuts ASR from 38.3% to 15.0% while largely preserving benign approval ($41.1\\% \\to 39.3\\%$), and uses $4.7\\times$ fewer advanced-judge calls than an always-advanced ablation.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.27333v1",
+        "pdf": "https://arxiv.org/pdf/2605.27333v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Peking University, Tsinghua University, Nanyang Technological University, University of Science and Technology of China, etc.",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：金融领域的 LLM Agent 需要同时阻止提示词注入导致的未授权操作，并批准合法的多步业务工作流。由于金融操作往往涉及不可逆的状态变更（如转账、泄露 KYC 信息），安全性至关重要。\n- **已有工作的局限性**：现有的边界过滤器（Boundary filters）通常是无状态的，无法检测到跨越多轮对话或隐藏在检索文档中的碎片化攻击载荷，容易遗漏轨迹中间的不可逆工具调用。而后置的 LLM 评判器（Post-hoc LLM judges）仅在 Agent 终止后进行审计，干预太晚且计算成本随轨迹长度线性增长，无法在运行时进行有效拦截。\n\n## 文章的核心贡献点\n- **提出了一个名为 FinHarness 的内联全生命周期安全 harness**，它端到端地包裹金融 Agent，包含查询监控、工具监控和级联模块三个核心组件。\n- **挑战1：如何检测跨轮次的隐蔽意图漂移和碎片化攻击？**\n  - **难点**：单轮对话看似正常，但攻击者将恶意意图分散在多轮交互中，传统单点检测无法识别累积风险。\n  - **解决方法**：提出 Query Monitor，融合单轮意图与跨轮次漂移分析，持续追踪上下文中的风险累积。\n- **挑战2：如何在保证低延迟和低计算成本的同时实现实时干预？**\n  - **难点**：使用高级 LLM 进行每一步验证成本过高，而轻量级模型可能漏报；后置审计又无法阻止已发生的错误操作。\n  - **解决方法**：提出 Cascade 模块，集成每步风险评分，自适应地在轻量级和高级 LLM 评判器之间路由验证请求。一旦触发风险因子，将其作为事前证据重新注入 Agent 输入，使 Agent 能够自主拒绝、重规划或升级处理。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集与基准**：在 FinVault 基准上进行评估。\n- **主要结果**：\n  - **安全性提升**：FinHarness 将攻击成功率（ASR）从 38.3% 降低至 15.0%。\n  - **可用性保持**：良性请求的批准率仅从 41.1% 轻微下降至 39.3%， largely preserving benign approval。\n  - **效率优化**：与始终使用高级评判器的消融实验相比，FinHarness 减少了 4.7 倍的高级评判器调用次数。\n- **对比优势**：相比于边界过滤器，它能捕捉中间轨迹风险；相比于后置审计，它能实现事中干预且成本更低。\n\n#### 总结\nFinHarness 通过将安全防护从“外部监督”转变为“内联生命周期管理”，解决了金融 LLM Agent 在复杂多步工作流中的安全难题。其核心创新在于结合了跨轮次意图监控和自适应的级联验证机制，既有效降低了攻击成功率，又显著控制了计算开销，为金融领域的高风险 Agent 部署提供了可行的安全框架。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Finance LLM agents must simultaneously block prompt-induced unauthorized actions and approve legitimate multi-step business workflows. Safety is critical as financial operations often involve irreversible state changes (e.g., transfers, KYC leaks).\n- **Limitations of Existing Work**: Boundary filters are typically stateless and fail to detect fragmented attack payloads spread across multiple turns or hidden in retrieved documents, missing irreversible mid-trajectory tool calls. Post-hoc LLM judges audit only after termination, which is too late for intervention and incurs computational costs scaling linearly with trace length.\n\n## Core Contributions\n- **Proposed FinHarness**: An inline lifecycle safety harness that wraps a finance agent end-to-end, comprising a Query Monitor, a Tool Monitor, and a Cascade module.\n- **Challenge 1: How to detect cross-turn intent drift and fragmented attacks?**\n  - **Difficulty**: Individual turns may appear benign, but malicious intent is dispersed across interactions, evading single-point detection.\n  - **Solution**: The Query Monitor fuses single-turn intent with cross-turn drift analysis to continuously track cumulative risk in the context.\n- **Challenge 2: How to achieve real-time intervention with low latency and cost?**\n  - **Difficulty**: Using advanced LLMs for every step is prohibitively expensive, while lightweight models may have high false-negative rates; post-hoc auditing cannot prevent executed errors.\n  - **Solution**: The Cascade module integrates per-step risk scores to adaptively route verification between lightweight and advanced LLM judges. Triggered risk factors are re-injected as ex-ante evidence, enabling the agent to autonomously refuse, re-plan, or escalate.\n\n## Implementation and Evaluation\n- **Benchmark**: Evaluated on the FinVault benchmark.\n- **Key Results**:\n  - **Safety Improvement**: FinHarness reduces the Attack Success Rate (ASR) from 38.3% to 15.0%.\n  - **Usability Preservation**: The approval rate for benign requests drops slightly from 41.1% to 39.3%, largely preserving utility.\n  - **Efficiency**: Uses 4.7x fewer advanced-judge calls compared to an always-advanced ablation baseline.\n- **Comparison**: Outperforms boundary filters by capturing mid-trajectory risks and surpasses post-hoc auditors by enabling in-process intervention at a lower computational cost.\n\n## 4. Conclusion\nFinHarness transforms safety protection from \"external supervision\" to \"inline lifecycle management,\" addressing security challenges in complex multi-step workflows for finance LLM agents. By combining cross-turn intent monitoring with adaptive cascaded verification, it effectively lowers ASR while significantly controlling computational overhead, offering a viable safety framework for high-risk financial agent deployment.",
+      "render_excerpt": "机构: Peking University, Tsinghua University, Nanyang Technological University, University of Science and Technology of China, etc.<br>FinHarness 通过将安全防护从“外部监督”转变为“内联生命周期管理”，解决了金融 LLM Agent 在复杂多步工作流中的安全难题。其核心创新在于结合了跨轮次意图监控和自适应的级联验证机制，既有效降低了攻击成功率，又显著控制了计算开销，为金融领域的高风险 Agent 部署提供了可行的安全框架。",
+      "render_excerpt_en": "Institution: Peking University, Tsinghua University, Nanyang Technological University, University of Science and Technology of China, etc.<br>## 1. What the Paper Does - **Background**: Finance LLM agents must simultaneously block prompt-induced unauthorized actions and approve legitimate multi-step business workflows. Safety is critical as financial operations often involve irreversible state changes (e.g., transfers, KYC leaks).",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-26T17:41:01Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-05-26"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2605.27360",
+      "date": "2026-05-26",
+      "title": "GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing",
+      "authors": [
+        "Tamerlan Aghayev",
+        "Maxime Elkael",
+        "Michele Polese",
+        "Minh Dat Nguyen",
+        "Gabriele Gemmi",
+        "Andrea Lacava",
+        "Ali Saeizadeh",
+        "Reshma Prasad",
+        "Paolo Testolina",
+        "Angelo Feraudo",
+        "Soumendra Nanda",
+        "Pedram Johari",
+        "Salvatore D'Oro",
+        "Tommaso Melodia"
+      ],
+      "abstract": "Cellular research and development (R&D) is throttled by six structural processes that each consume months of manual engineering work per iteration: (i) synthesizing new features from standards or research papers into production code; (ii) conformance and interoperability testing; (iii) hardening against field anomalies and diverse deployment environments; (iv) data-driven optimization of network functionalities; (v) discovering and prototyping novel waveforms, functionalities, and capabilities for future standards; and (vi) securing the stack against vulnerabilities. Although Large Language Models (LLMs) have compressed comparable R&D work in general software engineering from days to minutes, their known pitfalls worsen on Radio Access Network (RAN) use cases: they hallucinate Application Programming Interfaces (APIs) and mis-read specifications, which kills interoperability of RAN components at the first mistake, and they heavily rely on simulations for designing algorithms, which is notorious for breaking when transferred to real hardware. To address these challenges, we present GENESIS, an agentic Artificial Intelligence (AI) framework that converts intents (e.g., a specification clause, a telemetry anomaly, or a research hypothesis) into solutions validated with over-the-air experiments, fed back into a persistent knowledge base. GENESIS is built on three composable primitives (agents, skills, hooks) and a knowledge layer (SYNAPSE) that doubles as the source of ground truth and the recipient of every artifact the framework produces, making capabilities compound across runs.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.27360v1",
+        "pdf": "https://arxiv.org/pdf/2605.27360v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Northeastern University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：蜂窝网络的研究与开发（R&D）受限于六个结构性流程，包括从标准合成代码、一致性测试、现场异常加固、数据驱动优化、新波形发现以及安全加固。每个迭代周期通常需要数月的人工工程工作。\n- **已有工作为什么解决不了**：虽然大型语言模型（LLM）已将通用软件工程的研发时间从数天压缩至数分钟，但在无线接入网（RAN）场景下存在严重缺陷。LLM 容易幻觉应用程序接口（API）并误读规范，导致 RAN 组件互操作性在首次出错时即失效；此外，LLM 严重依赖仿真设计算法，而这些算法在迁移到真实硬件时往往会失败。\n\n## 文章的核心贡献点\n- **提出了一个 GENESIS 框架**：这是一个代理式人工智能（Agentic AI）框架，能够将意图（如规范条款、遥测异常或研究假设）转化为经过空中接口（Over-the-Air, OTA）实验验证的解决方案，并将结果反馈至持久化知识库中。\n- **挑战1：LLM 在 RAN 领域的幻觉与规范误读导致互操作性失败**。GENESIS 通过构建由代理（agents）、技能（skills）和钩子（hooks组成的可组合原语，并结合 SYNAPSE 知识层作为事实来源，确保每一步代理决策都基于自动执行的异构基础设施测试反馈，从而快速纠正错误策略。\n- **挑战2：仿真与真实硬件之间的性能差距导致算法落地失败**。GENESIS 独特地将每个代理步骤锚定在真实世界的观察和自动化测试上（涵盖从 RAN 模拟器到空中接口 O-RAN 和 5G 堆栈），提供关键反馈使代理能够收敛到在真实 5G 系统中实际可行的实现方案。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**原型化了6个代理驱动的管道，分别用于合成、测试、加固、优化、发现和保障网络安全。系统包含一个名为 SYNAPSE 的知识层，既作为真理来源，也接收框架产生的所有 artifacts，使得能力在不同运行间累积。\n- **评估结果**：通过三个案例研究全面演练了 R&D 生命周期：(1) 合成并测试 3GPP RRC.ConnMean 关键性能测量（KPM）的实现；(2) 通过闭环 xApp 在 E2SM-RC 上合成、测试并加固条件切换（CHO）；(3) 研究新的 RAN 调度变体，将研究假设转化为代码并与最先进技术进行比较。\n- **对比相关工作**：在多次统计独立的实验中，GENESIS 在实现新堆栈功能方面取得了 100% 的成功率。相比之下，基线方法（使用 Opus 4.7 的 Claude Code）在每次尝试中均一致失败。\n\n#### 总结\nGENESIS 解决了 LLM 在电信领域应用中的核心痛点，即幻觉问题和仿真与现实脱节的问题。通过引入基于真实硬件测试反馈的代理循环和持久化知识层，GENESIS 实现了从意图到可部署代码的自动化闭环，显著加速了 6G RAN 的研发进程，并在真实 5G 系统上证明了其相对于传统 LLM 编码助手的优越性和可靠性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Cellular network Research and Development (R&D) is bottlenecked by six structural processes, including synthesizing code from standards, conformance testing, hardening against field anomalies, data-driven optimization, discovering new waveforms, and security hardening. Each iteration typically consumes months of manual engineering effort.\n- **Why Existing Work Fails**: While Large Language Models (LLMs) have reduced R&D time in general software engineering from days to minutes, they suffer from critical pitfalls in Radio Access Network (RAN) contexts. LLMs hallucinate APIs and misinterpret specifications, causing immediate interoperability failures. Furthermore, they rely heavily on simulations for algorithm design, which notoriously fail when transferred to real hardware.\n\n## Core Contributions\n- **Proposed GENESIS**: An agentic AI framework that converts intents (e.g., specification clauses, telemetry anomalies, or research hypotheses) into solutions validated via over-the-air (OTA) experiments, with feedback looped into a persistent knowledge base.\n- **Challenge 1: LLM hallucinations and specification misreading leading to interoperability failure**. GENESIS addresses this by employing composable primitives (agents, skills, hooks) and a knowledge layer (SYNAPSE) that serves as the ground truth. This ensures every agentic step is anchored in observations and automated tests, allowing agents to quickly identify and correct strategic errors.\n- **Challenge 2: The simulation-to-reality gap causing algorithm failure on real hardware**. GENESIS uniquely anchors agentic decisions in automated tests executed on heterogeneous cellular infrastructure (from simulators to OTA O-RAN and 5G stacks). This provides critical feedback, enabling agents to converge on implementations that function correctly in real-world 5G systems.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The authors prototyped six agentic-driven pipelines for synthesizing, testing, hardening, optimizing, discovering, and securing network features. The system utilizes SYNAPSE, a knowledge layer that acts as both the source of truth and the repository for all generated artifacts, enabling compound capabilities across runs.\n- **Evaluation Results**: Three case studies exercised the full R&D lifecycle: (i) synthesizing and testing the 3GPP RRC.ConnMean Key Performance Measurement (KPM); (ii) synthesizing, testing, and hardening Conditional Handover (CHO) via a closed-loop xApp over E2SM-RC; and (iii) researching new RAN scheduling variants by translating hypotheses into code and comparing them with state-of-the-art methods.\n- **Comparison with Related Work**: Across multiple statistically independent experiments, GENESIS achieved a 100% success rate in implementing new stack features. In contrast, the baseline method (Claude Code with Opus 4.7) consistently failed in every attempt.\n\n## 4. Conclusion\nGENESIS addresses the core pain points of applying LLMs in telecommunications: hallucinations and the disconnect between simulation and reality. By introducing an agent loop based on real-hardware test feedback and a persistent knowledge layer, GENESIS achieves an automated closed loop from intent to deployable code. It significantly accelerates 6G RAN development and demonstrates superior reliability and effectiveness compared to traditional LLM coding assistants on real 5G systems.",
+      "render_excerpt": "机构: Northeastern University<br>GENESIS 解决了 LLM 在电信领域应用中的核心痛点，即幻觉问题和仿真与现实脱节的问题。通过引入基于真实硬件测试反馈的代理循环和持久化知识层，GENESIS 实现了从意图到可部署代码的自动化闭环，显著加速了 6G RAN 的研发进程，并在真实 5G 系统上证明了其相对于传统 LLM 编码助手的优越性和可靠性。",
+      "render_excerpt_en": "Institution: Northeastern University<br>## 1. What the Paper Did - **Background**: Cellular network Research and Development (R&D) is bottlenecked by six structural processes, including synthesizing code from standards, conformance testing, hardening against field anomalies, data-driven optimization, discovering new waveforms, and security hardening. Each iteration typically consumes months of manual engineering effort.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-26T17:58:43Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-05-26"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2605.27209",
+      "date": "2026-05-26",
+      "title": "Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments",
+      "authors": [
+        "Yuxin Chen",
+        "Xiaodong Cai",
+        "Junfeng Fang",
+        "Zhuowen Han",
+        "Yu Wang",
+        "Yaorui Shi",
+        "Yi Zhang",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Xiang Wang",
+        "An Zhang",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) have facilitated the widespread deployment of LLMs as interactive agents capable of reasoning, planning, and tool use. Despite strong performance on existing benchmarks, such agents often exhibit notable degradation when deployed in real-world settings, where environments are inherently stochastic and imperfect. We argue that this discrepancy arises from a fundamental mismatch between idealized training settings and real-world interaction dynamics, where current paradigms rely on carefully curated task instructions and stable, well-controlled environments. To address this gap, we propose NoisyAgent, an agentic training framework that explicitly incorporates environmental imperfections into the agent learning process. We identify two major sources of interaction noise in real-world scenarios: user noise, which captures ambiguity and variability in user interaction, and tool noise, which reflects failures and anomalies in tool execution. We introduce such perturbations into the training pipeline by modifying user interaction patterns and simulating tool execution results within the training environment. To stabilize training while encouraging agents to handle increasingly challenging imperfections, noise is applied to only a subset of rollouts and progressively increased in difficulty as the model adapts to the current noise level. Extensive experiments demonstrate that our approach consistently improves agent robustness under noisy and dynamic environments. Our analysis reveals that training under noise conditions also yields performance gains on idealized benchmarks, suggesting that controlled exposure to environmental noise promotes more generalizable reasoning and decision-making behaviors. Our findings highlight the importance of modeling interaction imperfections for bridging the gap between agent training and real-world deployment.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.27209v1",
+        "pdf": "https://arxiv.org/pdf/2605.27209v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "National University of Singapore, Meituan",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）作为交互式代理在推理、规划和工具使用方面取得了显著进展，并在现有基准测试中表现优异。然而，当部署到现实世界时，由于环境固有的随机性和不完美性，这些代理的性能往往显著下降。\n- **已有工作为什么解决不了**：当前的代理训练范式依赖于理想化的假设，即使用精心策划的任务指令和稳定、可控的环境进行训练。这种训练条件与现实世界中用户交互的模糊性、多样性以及工具执行中的失败和异常存在根本性的错配，导致代理在面对真实动态环境时鲁棒性不足。\n\n## 文章的核心贡献点\n- **提出了一个 NoisyAgent**：这是一种代理训练框架，通过将环境不完美性显式纳入代理学习过程，旨在缩小训练与部署之间的差距。\n- **挑战1：用户噪声（User Noise）**：现实世界中用户指令往往存在歧义和变异性，而传统训练数据过于清晰规范，导致代理难以处理模糊输入。NoisyAgent 通过在训练中修改用户交互模式，引入结构化扰动来模拟这种歧义，迫使代理学习从不完美的指令中提取意图。\n- **挑战2：工具噪声（Tool Noise）**：外部工具在执行过程中可能返回错误、不完整或异常的结果，而传统训练假设工具调用总是成功且准确的。NoisyAgent 在训练环境中模拟工具执行的故障和异常结果，并通过仅在部分 rollout 中应用噪声以及随着模型适应逐步增加噪声难度的课程学习策略，稳定训练并提升代理处理工具失败的能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：NoisyAgent 采用混合 rollout 策略，结合干净轨迹和噪声轨迹进行训练。引入自适应调度器，根据性能差距动态增加噪声难度。此外，使用组归一化（group-wise normalization）来稳定异构交互条件下的策略优化。\n- **评估结果**：大量实验表明，该方法在噪声和动态环境下 consistently 提高了代理的鲁棒性。与分析表明，在噪声条件下训练不仅提升了抗干扰能力，还在理想化基准测试中带来了性能增益，证明受控的环境噪声暴露能促进更通用的推理和决策行为。\n- **对比**：相较于依赖理想化环境的现有范式，NoisyAgent 通过显式建模交互不完美性，有效 bridging 了代理训练与现实部署之间的鸿沟，在真实场景下的稳定性显著优于未经过噪声训练的基线模型。\n\n#### 总结\n本文指出了当前 LLM 代理在理想化训练与现实部署之间的根本性错配，提出了 NoisyAgent 框架。通过引入用户噪声和工具噪声，并采用渐进式难度增加的训练策略，该方法显著增强了代理在 stochastic 和不完美环境中的鲁棒性。研究结果强调，对交互不完美性进行建模对于提升代理的实际应用能力至关重要，且噪声训练有助于提升代理的泛化推理能力。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) have advanced significantly as interactive agents capable of reasoning, planning, and tool use, achieving strong performance on existing benchmarks. However, these agents often suffer notable performance degradation when deployed in real-world settings characterized by inherent stochasticity and imperfections.\n- **Why Existing Work Falls Short**: Current agent training paradigms rely on idealized assumptions, utilizing carefully curated instructions and stable, well-controlled environments. This creates a fundamental mismatch with real-world interaction dynamics, where user inputs are ambiguous and variable, and tool executions are prone to failures and anomalies, limiting agent robustness in practical applications.\n\n## Core Contributions\n- **Proposed NoisyAgent**: An agentic training framework that explicitly incorporates environmental imperfections into the learning process to bridge the gap between training and deployment.\n- **Challenge 1: User Noise**: Real-world user interactions involve ambiguity and variability, whereas traditional training data is overly clean. NoisyAgent addresses this by modifying user interaction patterns during training to introduce structured perturbations, forcing the agent to learn to extract intent from imperfect instructions.\n- **Challenge 2: Tool Noise**: External tools often return noisy, incomplete, or failed outputs, contrary to the assumption of perfect tool execution in standard training. NoisyAgent simulates these tool execution failures and anomalies. It stabilizes training by applying noise to only a subset of rollouts and progressively increasing difficulty as the model adapts, enabling the agent to handle tool irregularities effectively.\n\n## Implementation and Evaluation\n- **Implementation**: NoisyAgent employs hybrid rollouts combining clean and noisy trajectories. An adaptive scheduler increases noise difficulty based on the performance gap, and group-wise normalization is used to stabilize policy optimization under heterogeneous interaction conditions.\n- **Evaluation Results**: Extensive experiments demonstrate that NoisyAgent consistently improves agent robustness in noisy and dynamic environments. Analysis reveals that training under noise conditions also yields performance gains on idealized benchmarks, suggesting that controlled exposure to noise promotes more generalizable reasoning and decision-making.\n- **Comparison**: Unlike existing paradigms that depend on idealized environments, NoisyAgent explicitly models interaction imperfections. It significantly outperforms baselines trained without noise in terms of stability and robustness in real-world scenarios, effectively bridging the training-deployment gap.\n\n## 4. Conclusion\nThis paper identifies the fundamental mismatch between idealized training conditions and real-world deployment for LLM agents. It proposes NoisyAgent, which enhances robustness by introducing user and tool noise through a progressive curriculum learning strategy. The findings highlight that modeling interaction imperfections is crucial for practical agent deployment and that noise training can enhance generalizable reasoning capabilities.",
+      "render_excerpt": "机构: National University of Singapore, Meituan<br>本文指出了当前 LLM 代理在理想化训练与现实部署之间的根本性错配，提出了 NoisyAgent 框架。通过引入用户噪声和工具噪声，并采用渐进式难度增加的训练策略，该方法显著增强了代理在 stochastic 和不完美环境中的鲁棒性。研究结果强调，对交互不完美性进行建模对于提升代理的实际应用能力至关重要，且噪声训练有助于提升代理的泛化推理能力。",
+      "render_excerpt_en": "Institution: National University of Singapore, Meituan<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) have advanced significantly as interactive agents capable of reasoning, planning, and tool use, achieving strong performance on existing benchmarks. However, these agents often suffer notable performance degradation when deployed in real-world settings characterized by inherent stochasticity and imperfections.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-26T16:02:00Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-05-26"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
