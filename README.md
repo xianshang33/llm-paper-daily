@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.27_05:48-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.28_05:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月27日 05:48</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月28日 05:44</sub></summary>
 <br>
 
-- MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation 
-- QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents 
-- FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents 
-- GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing 
-- Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments 
+- Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval 
+- Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News 
+- LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know? 
+- A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks 
+- Mobile-Aptus: Confidence-Driven Proactive and Robust Interaction in MLLM-based Mobile-Using Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-27</span> | **Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval**<br><sub>机构: Google<br>本文通过实证研究回答了“智能体是否需要语义元数据”这一关键问题。结果表明，尽管 LLM 增强了从非结构化网络中获取信息的能力，但在需要高精度和机器可操作性的数据检索任务中，基于 schema.org 等标准的结构化语义元数据依然具有不可替代的优势。语义元数据能显著提升智能体获取符合 FAIR 原则数据的准确性和效率，避免无效信息的干扰，是构建可靠自主数据工作流的基石。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28787v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28787.md)  |
+| <span style='display: inline-block; width: 42px;'>05-27</span> | **Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News**<br><sub>机构: University of Murcia<br>本文通过案例研究指出，LLM驱动的社会代理在模拟在线新闻反应时，现成模型往往过于“温和”且带有偏差，无法真实反映人类 discourse 中的仇恨言论和情感分布。虽然微调可以改善这一状况，但不同模型在不同维度上存在权衡。研究者在使用LLM进行社会模拟时，必须谨慎选择模型并验证其分布特性，以免扭曲对公众舆论的认知。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28598v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28598.md)  |
+| <span style='display: inline-block; width: 42px;'>05-27</span> | **LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?**<br><sub>机构: Harbin Institute of Technology, Xiaohongshu<br>本文揭示了当前 LLM 搜索代理评估中存在的严重缺陷，即静态基准往往测试的是模型的内存而非搜索能力。通过提出 LiveBrowseComp，作者提供了一个基于实时、非显著事实的深度搜索基准，迫使代理必须依赖外部证据而非内部知识。该基准不仅暴露了现有模型在真正搜索任务上的不足，也为未来开发更强大的证据驱动型搜索代理提供了更可靠的评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28721v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28721.md)  |
+| <span style='display: inline-block; width: 42px;'>05-27</span> | **A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks**<br><sub>机构: Technion; IBM Research<br>本文针对现有智能体基准测试饱和且构建成本高的问题，提出了 TASTE 方法。通过逆向任务构建流程，利用自适应对比 n-gram 模型生成有效且多样的工具序列，并通过聚类和迭代难度演化构建高质量任务。实验表明，基于 TASTE 构建的 $\tau^c$-Bench 能更有效地区分智能体能力，揭示了现有基准的不足，为未来智能体的持续、可扩展评估提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28556.md)  |
+| <span style='display: inline-block; width: 42px;'>05-27</span> | **Mobile-Aptus: Confidence-Driven Proactive and Robust Interaction in MLLM-based Mobile-Using Agents**<br><sub>机构: Shanghai Jiao Tong University, Meta<br>Mobile-Aptus 通过两阶段的置信度集成框架，成功解决了移动智能体中过度执行和过度求助的双重难题。该方法不仅大幅提升了任务成功率，还显著减少了不必要的人工干预，实现了更高效、鲁棒的人机协作体验，在多个基准测试中达到了最先进水平（SOTA）。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28629v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28629.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Wuzheng02/Mobile-Aptus)</div> |
 | <span style='display: inline-block; width: 42px;'>05-26</span> | **MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation**<br><sub>机构: ByteDance Inc., Rochester Institute of Technology<br>MUSE-Autoskill 通过将技能视为长期的、具备经验感知且可测试的资产，解决了现有方法中技能孤立、静态和缺乏验证的问题。其核心创新在于统一的技能生命周期管理和技能级记忆机制，显著提升了 LLM 智能体在复杂任务中的表现和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27366v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27366.md)  |
 | <span style='display: inline-block; width: 42px;'>05-26</span> | **QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents**<br><sub>机构: McGill University, Mila - Quebec AI Institute, University of Cambridge, MBZUAI, University of Toronto, Salesforce<br>QUACK 通过引入多模态环境和细粒度的陈述验证管道，解决了社交推理智能体评估中缺乏地面真实性和细粒度归因的问题。研究结果表明，当前最先进的 VLM 在保持语言与感知一致性方面仍存在显著缺陷，大量存在空间幻觉和无据指控。该工作为未来开发更可靠、更具解释性的多模态社交智能体提供了重要的基准和工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27068.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AAAAA-Academia-Attractions/QUACK)</div> |
 | <span style='display: inline-block; width: 42px;'>05-26</span> | **FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents**<br><sub>机构: Peking University, Tsinghua University, Nanyang Technological University, University of Science and Technology of China, etc.<br>FinHarness 通过将安全防护从“外部监督”转变为“内联生命周期管理”，解决了金融 LLM Agent 在复杂多步工作流中的安全难题。其核心创新在于结合了跨轮次意图监控和自适应的级联验证机制，既有效降低了攻击成功率，又显著控制了计算开销，为金融领域的高风险 Agent 部署提供了可行的安全框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.27333v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.27333.md)  |
