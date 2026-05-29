@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_05.28_05:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_05.29_05:46-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月28日 05:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年05月29日 05:46</sub></summary>
 <br>
 
-- Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval 
-- Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News 
-- LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know? 
-- A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks 
-- Mobile-Aptus: Confidence-Driven Proactive and Robust Interaction in MLLM-based Mobile-Using Agents 
+- Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents 
+- Do Proactive Agents Really Need an LLM to Decide When to Wake and What to Anchor? 
+- Loong: A Human-Like Long Document Translation Agent with Observe-and-Act Adaptive Context Selection 
+- Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms 
+- HEART-Bench: Do LLM Agents Exhibit Human-like Psychology? 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>05-28</span> | **Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents**<br><sub>机构: Princeton University<br>本文揭示了多组件 LLM 智能体中一个关键但被忽视的问题：局部一致的子代理组合后可能导致全局概率不一致。作者提出了组合残差 $\epsilon^*$ 作为运行时检测指标，并通过分层 Boyle-Dykstra 投影提供了确定性的修复方案。实验表明，这种不一致性在现有系统中广泛存在并导致显著的性能损失，而传统的 LLM 提示工程方法无法有效解决，必须采用基于数学规划的结构性修复手段。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.30335v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.30335.md)  |
+| <span style='display: inline-block; width: 42px;'>05-28</span> | **Do Proactive Agents Really Need an LLM to Decide When to Wake and What to Anchor?**<br><sub>机构: Purdue University, Microsoft, Michigan State University, Georgia Institute of Technology<br>本文质疑了主动式代理中“每个事件都调用 LLM 进行决策”的必要性，指出这是一种低效的架构设计。通过引入时序图学习（TGL）模型来处理结构化的用户活动流，作者提出了一种高效、轻量的触发与路由机制。该方法不仅显著降低了延迟和计算成本，使其能够部署在隐私敏感的端侧设备上，还通过结构化的实体路由提高了建议的准确性和 grounding 能力。实验证明，该方案在速度和准确性上均优于现有的基于 LLM 的触发架构，为构建实时、高效的主动式助手提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.30152v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.30152.md)  |
+| <span style='display: inline-block; width: 42px;'>05-28</span> | **Loong: A Human-Like Long Document Translation Agent with Observe-and-Act Adaptive Context Selection**<br><sub>机构: Harbin Institute of Technology, Shenzhen; University of Macau; Huawei Translation Services Center<br>Loong 通过模拟人类的“观察-行动”机制，解决了长文档翻译中上下文窗口限制与信息冗余之间的矛盾。其核心创新在于 3E 记忆模块的设计以及基于强化学习的自适应上下文选择策略。实验证明，Loong 不仅在翻译质量上显著优于现有最先进方法，还在超长文档处理的稳定性和鲁棒性方面表现出色，为文档级机器翻译提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.30274v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.30274.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/YutongWang1216/LoongDocMT)</div> |
+| <span style='display: inline-block; width: 42px;'>05-28</span> | **Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms**<br><sub>机构: University of Oxford<br>本文深刻指出了当前AI治理中一个被忽视的本体论危机：LLM代理的“解离性”本质使其无法承载传统声誉机制所要求的身份持久性和责任主体性。作者警告，盲目套用人类社会的KYC或信用评分体系不仅无效，还可能掩盖真正的安全风险。文章呼吁学术界和政策制定者放弃对“代理身份”的执念，转而开发基于协议约束和行为可观察性的新型治理框架，以适应代理网络的动态和多变的特性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.30169v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.30169.md)  |
+| <span style='display: inline-block; width: 42px;'>05-28</span> | **HEART-Bench: Do LLM Agents Exhibit Human-like Psychology?**<br><sub>机构: Shanghai Jiao Tong University, Imperial College London, Quwan Group, University of Washington, South China Normal University<br>HEART-Bench填补了当前LLM评估在类人心理学领域的空白。通过结合大五人格理论、自传体记忆和DIAMONDS情境分类法，它不仅仅测试代理的记忆或推理能力，而是深入评估代理是否具备连贯的“心理”和“人格”。这为推动更高级别的人工智能情感智能（EI）和实现真正类人化的长期身份一致性提供了重要的评估工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.30058v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.30058.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/peng-weihan/HEART-BENCH)</div> |
 | <span style='display: inline-block; width: 42px;'>05-27</span> | **Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval**<br><sub>机构: Google<br>本文通过实证研究回答了“智能体是否需要语义元数据”这一关键问题。结果表明，尽管 LLM 增强了从非结构化网络中获取信息的能力，但在需要高精度和机器可操作性的数据检索任务中，基于 schema.org 等标准的结构化语义元数据依然具有不可替代的优势。语义元数据能显著提升智能体获取符合 FAIR 原则数据的准确性和效率，避免无效信息的干扰，是构建可靠自主数据工作流的基石。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28787v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28787.md)  |
 | <span style='display: inline-block; width: 42px;'>05-27</span> | **Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News**<br><sub>机构: University of Murcia<br>本文通过案例研究指出，LLM驱动的社会代理在模拟在线新闻反应时，现成模型往往过于“温和”且带有偏差，无法真实反映人类 discourse 中的仇恨言论和情感分布。虽然微调可以改善这一状况，但不同模型在不同维度上存在权衡。研究者在使用LLM进行社会模拟时，必须谨慎选择模型并验证其分布特性，以免扭曲对公众舆论的认知。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28598v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28598.md)  |
 | <span style='display: inline-block; width: 42px;'>05-27</span> | **LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?**<br><sub>机构: Harbin Institute of Technology, Xiaohongshu<br>本文揭示了当前 LLM 搜索代理评估中存在的严重缺陷，即静态基准往往测试的是模型的内存而非搜索能力。通过提出 LiveBrowseComp，作者提供了一个基于实时、非显著事实的深度搜索基准，迫使代理必须依赖外部证据而非内部知识。该基准不仅暴露了现有模型在真正搜索任务上的不足，也为未来开发更强大的证据驱动型搜索代理提供了更可靠的评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2605.28721v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-05/2605.28721.md)  |

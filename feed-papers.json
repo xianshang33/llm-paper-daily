@@ -1,40 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-28T05:44:15.116849+00:00",
-  "run_date": "2026-05-27",
+  "generated_at": "2026-05-29T05:46:56.314414+00:00",
+  "run_date": "2026-05-28",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.28787",
-      "date": "2026-05-27",
-      "title": "Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval",
+      "id": "arxiv:2605.30335",
+      "date": "2026-05-28",
+      "title": "Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shiyu Chen",
-        "Tarfah Alrashed",
-        "Alon Halevy",
-        "Natasha Noy"
+        "Anany Kotawala"
       ],
-      "institution": "Google",
+      "institution": "Princeton University",
       "summary": {
-        "zh": "本文通过实证研究回答了“智能体是否需要语义元数据”这一关键问题。结果表明，尽管 LLM 增强了从非结构化网络中获取信息的能力，但在需要高精度和机器可操作性的数据检索任务中，基于 schema.org 等标准的结构化语义元数据依然具有不可替代的优势。语义元数据能显著提升智能体获取符合 FAIR 原则数据的准确性和效率，避免无效信息的干扰，是构建可靠自主数据工作流的基石。",
-        "en": "This paper empirically answers whether agents need semantic metadata. The results indicate that while LLMs enhance information retrieval from the unstructured web, structured semantic metadata (like schema.org) remains..."
+        "zh": "本文揭示了多组件 LLM 智能体中一个关键但被忽视的问题：局部一致的子代理组合后可能导致全局概率不一致。作者提出了组合残差 $\\epsilon^*$ 作为运行时检测指标，并通过分层 Boyle-Dykstra 投影提供了确定性的修复方案。实验表明，这种不一致性在现有系统中广泛存在并导致显著的性能损失，而传统的 LLM 提示工程方法无法有效解决，必须采用基于数学规划的结构性修复手段。",
+        "en": "- **Background**: Multi-component LLM agents assemble probabilistic claims by routing parts of a joint problem to specialist sub-agents. Even if each sub-agent is locally calibrated and coherent, the aggregated global..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.28787v1",
-        "pdf": "https://arxiv.org/pdf/2605.28787v1",
+        "abs": "http://arxiv.org/abs/2605.30335v1",
+        "pdf": "https://arxiv.org/pdf/2605.30335v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.28787.md",
-        "summary_en_path": "summary_en/2026-05/2605.28787.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.28787.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.28787.md"
+        "summary_zh_path": "summary/2026-05/2605.30335.md",
+        "summary_en_path": "summary_en/2026-05/2605.30335.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30335.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30335.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,35 +48,39 @@
       }
     },
     {
-      "id": "arxiv:2605.28598",
-      "date": "2026-05-27",
-      "title": "Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News",
+      "id": "arxiv:2605.30152",
+      "date": "2026-05-28",
+      "title": "Do Proactive Agents Really Need an LLM to Decide When to Wake and What to Anchor?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Alejandro Buitrago López",
-        "Alberto Ortega Pastor",
-        "Javier Pastor-Galindo",
-        "José A. Ruipérez-Valiente"
+        "Xiaoze Liu",
+        "Ruowang Zhang",
+        "Amir H. Abdi",
+        "Michel Galley",
+        "Zhikai Chen",
+        "Siheng Xiong",
+        "Xiaoqian Wang",
+        "Jing Gao"
       ],
-      "institution": "University of Murcia",
+      "institution": "Purdue University, Microsoft, Michigan State University, Georgia Institute of Technology",
       "summary": {
-        "zh": "本文通过案例研究指出，LLM驱动的社会代理在模拟在线新闻反应时，现成模型往往过于“温和”且带有偏差，无法真实反映人类 discourse 中的仇恨言论和情感分布。虽然微调可以改善这一状况，但不同模型在不同维度上存在权衡。研究者在使用LLM进行社会模拟时，必须谨慎选择模型并验证其分布特性，以免扭曲对公众舆论的认知。",
-        "en": "- **Background**: LLM-powered social agents are increasingly used to simulate online social behavior, but validating their realism remains difficult. Existing work largely relies on general-purpose benchmarks or..."
+        "zh": "本文质疑了主动式代理中“每个事件都调用 LLM 进行决策”的必要性，指出这是一种低效的架构设计。通过引入时序图学习（TGL）模型来处理结构化的用户活动流，作者提出了一种高效、轻量的触发与路由机制。该方法不仅显著降低了延迟和计算成本，使其能够部署在隐私敏感的端侧设备上，还通过结构化的实体路由提高了建议的准确性和 grounding 能力。实验证明，该方案在速度和准确性上均优于现有的基于 LLM...",
+        "en": "This paper challenges the necessity of invoking an LLM for every decision in proactive agents, identifying it as an inefficient architectural choice. By introducing Temporal Graph Learning (TGL) models to handle..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.28598v1",
-        "pdf": "https://arxiv.org/pdf/2605.28598v1",
+        "abs": "http://arxiv.org/abs/2605.30152v1",
+        "pdf": "https://arxiv.org/pdf/2605.30152v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.28598.md",
-        "summary_en_path": "summary_en/2026-05/2605.28598.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.28598.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.28598.md"
+        "summary_zh_path": "summary/2026-05/2605.30152.md",
+        "summary_en_path": "summary_en/2026-05/2605.30152.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30152.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30152.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,39 +97,40 @@
       }
     },
     {
-      "id": "arxiv:2605.28721",
-      "date": "2026-05-27",
-      "title": "LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?",
+      "id": "arxiv:2605.30274",
+      "date": "2026-05-28",
+      "title": "Loong: A Human-Like Long Document Translation Agent with Observe-and-Act Adaptive Context Selection",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "HuiMing Fan",
-        "Xiao Wang",
-        "Zheng Chu",
-        "Qianyu Wang",
-        "Zhuoyao Wang",
-        "Ming Liu",
-        "Bing Qin",
-        "XingYu"
+        "Yutong Wang",
+        "Xuebo Liu",
+        "Derek F. Wong",
+        "Zhilin Li",
+        "Rongqing Jiang",
+        "Min Zhang",
+        "Shimin Tao",
+        "Daimeng Wei",
+        "Min Zhang"
       ],
-      "institution": "Harbin Institute of Technology, Xiaohongshu",
+      "institution": "Harbin Institute of Technology, Shenzhen; University of Macau; Huawei Translation Services Center",
       "summary": {
-        "zh": "本文揭示了当前 LLM 搜索代理评估中存在的严重缺陷，即静态基准往往测试的是模型的内存而非搜索能力。通过提出 LiveBrowseComp，作者提供了一个基于实时、非显著事实的深度搜索基准，迫使代理必须依赖外部证据而非内部知识。该基准不仅暴露了现有模型在真正搜索任务上的不足，也为未来开发更强大的证据驱动型搜索代理提供了更可靠的评估标准。",
-        "en": "- **Background**: As Large Language Models (LLMs) evolve into autonomous search agents, scores on existing benchmarks like BrowseComp are rising. However, it remains unclear whether these high scores reflect genuine..."
+        "zh": "Loong 通过模拟人类的“观察-行动”机制，解决了长文档翻译中上下文窗口限制与信息冗余之间的矛盾。其核心创新在于 3E 记忆模块的设计以及基于强化学习的自适应上下文选择策略。实验证明，Loong 不仅在翻译质量上显著优于现有最先进方法，还在超长文档处理的稳定性和鲁棒性方面表现出色，为文档级机器翻译提供了新的解决方案。",
+        "en": "- **Background**: While Large Language Models (LLMs) excel in sentence and short-segment translation, they face significant challenges in long-document translation (e.g., transcripts, manuals, literature). Key issues..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.28721v1",
-        "pdf": "https://arxiv.org/pdf/2605.28721v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2605.30274v1",
+        "pdf": "https://arxiv.org/pdf/2605.30274v1",
+        "github": "https://github.com/YutongWang1216/LoongDocMT"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.28721.md",
-        "summary_en_path": "summary_en/2026-05/2605.28721.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.28721.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.28721.md"
+        "summary_zh_path": "summary/2026-05/2605.30274.md",
+        "summary_en_path": "summary_en/2026-05/2605.30274.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30274.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30274.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,37 +147,34 @@
       }
     },
     {
-      "id": "arxiv:2605.28556",
-      "date": "2026-05-27",
-      "title": "A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks",
+      "id": "arxiv:2605.30169",
+      "date": "2026-05-28",
+      "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tomer Keren",
-        "Nitay Calderon",
-        "Asaf Yehudai",
-        "Yotam Perlitz",
-        "Michal Shmueli-Scheuer",
-        "Roi Reichert"
+        "Botao Amber Hu",
+        "Helena Rong",
+        "Max Van Kleek"
       ],
-      "institution": "Technion; IBM Research",
+      "institution": "University of Oxford",
       "summary": {
-        "zh": "本文针对现有智能体基准测试饱和且构建成本高的问题，提出了 TASTE 方法。通过逆向任务构建流程，利用自适应对比 n-gram 模型生成有效且多样的工具序列，并通过聚类和迭代难度演化构建高质量任务。实验表明，基于 TASTE 构建的 $\\tau^c$-Bench 能更有效地区分智能体能力，揭示了现有基准的不足，为未来智能体的持续、可扩展评估提供了新途径。",
-        "en": "This paper addresses the saturation and high cost of constructing agent benchmarks by proposing TASTE. By reversing the task construction flow, it uses an adaptive contrastive n-gram model to generate valid and diverse..."
+        "zh": "本文深刻指出了当前AI治理中一个被忽视的本体论危机：LLM代理的“解离性”本质使其无法承载传统声誉机制所要求的身份持久性和责任主体性。作者警告，盲目套用人类社会的KYC或信用评分体系不仅无效，还可能掩盖真正的安全风险。文章呼吁学术界和政策制定者放弃对“代理身份”的执念，转而开发基于协议约束和行为可观察性的新型治理框架，以适应代理网络的动态和多变的特性。",
+        "en": "- **Background**: As Large Language Model (LLM) agents evolve from conversational interfaces to autonomous systems capable of complex tasks, tool usage, and inter-agent interaction, an \"agentic web\" with real-world..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.28556v1",
-        "pdf": "https://arxiv.org/pdf/2605.28556v1",
+        "abs": "http://arxiv.org/abs/2605.30169v1",
+        "pdf": "https://arxiv.org/pdf/2605.30169v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.28556.md",
-        "summary_en_path": "summary_en/2026-05/2605.28556.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.28556.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.28556.md"
+        "summary_zh_path": "summary/2026-05/2605.30169.md",
+        "summary_en_path": "summary_en/2026-05/2605.30169.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30169.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30169.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -192,39 +191,41 @@
       }
     },
     {
-      "id": "arxiv:2605.28629",
-      "date": "2026-05-27",
-      "title": "Mobile-Aptus: Confidence-Driven Proactive and Robust Interaction in MLLM-based Mobile-Using Agents",
+      "id": "arxiv:2605.30058",
+      "date": "2026-05-28",
+      "title": "HEART-Bench: Do LLM Agents Exhibit Human-like Psychology?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zheng Wu",
-        "Pengzhou Cheng",
-        "Zongru Wu",
-        "Yuan Guo",
-        "Tianjie Ju",
-        "Aston Zhang",
-        "Gongshen Liu",
-        "Zhuosheng Zhang"
+        "Weihan Peng",
+        "Chenxu Zhang",
+        "Qianao Wang",
+        "Yuling Shi",
+        "Heng Lian",
+        "Qihong Mao",
+        "Jiahao Pang",
+        "Chunliang Feng",
+        "Bowen Li",
+        "Xiaodong Gu"
       ],
-      "institution": "Shanghai Jiao Tong University, Meta",
+      "institution": "Shanghai Jiao Tong University, Imperial College London, Quwan Group, University of Washington, South China Normal University",
       "summary": {
-        "zh": "Mobile-Aptus 通过两阶段的置信度集成框架，成功解决了移动智能体中过度执行和过度求助的双重难题。该方法不仅大幅提升了任务成功率，还显著减少了不必要的人工干预，实现了更高效、鲁棒的人机协作体验，在多个基准测试中达到了最先进水平（SOTA）。",
-        "en": "- **Background**: Multimodal Large Language Models (MLLMs) show great potential for mobile agents to autonomously execute human instructions. However, fully automated agents often suffer from \"over-execution,\"..."
+        "zh": "HEART-Bench填补了当前LLM评估在类人心理学领域的空白。通过结合大五人格理论、自传体记忆和DIAMONDS情境分类法，它不仅仅测试代理的记忆或推理能力，而是深入评估代理是否具备连贯的“心理”和“人格”。这为推动更高级别的人工智能情感智能（EI）和实现真正类人化的长期身份一致性提供了重要的评估工具。",
+        "en": "- **Background**: While LLM agents have excelled in task-oriented abilities like planning and reasoning, user expectations in domains such as entertainment and companionship are shifting towards persistent,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.28629v1",
-        "pdf": "https://arxiv.org/pdf/2605.28629v1",
-        "github": "https://github.com/Wuzheng02/Mobile-Aptus"
+        "abs": "http://arxiv.org/abs/2605.30058v1",
+        "pdf": "https://arxiv.org/pdf/2605.30058v1",
+        "github": "https://github.com/peng-weihan/HEART-BENCH"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.28629.md",
-        "summary_en_path": "summary_en/2026-05/2605.28629.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.28629.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.28629.md"
+        "summary_zh_path": "summary/2026-05/2605.30058.md",
+        "summary_en_path": "summary_en/2026-05/2605.30058.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30058.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30058.md"
       },
       "signals": {
         "priority_keyword": "Agent"
