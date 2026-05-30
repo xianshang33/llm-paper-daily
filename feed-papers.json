@@ -1,42 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-30T05:07:13.949772+00:00",
-  "run_date": "2026-05-24",
+  "generated_at": "2026-05-30T08:26:07.815650+00:00",
+  "run_date": "2026-05-23",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.25297",
-      "date": "2026-05-24",
-      "title": "Eureka: Intelligent Feature Engineering for Enterprise AI Cloud Resource Demand Prediction",
+      "id": "arxiv:2605.24699",
+      "date": "2026-05-23",
+      "title": "MDIA: A Multi-Agent Diagnostic Intelligence Pipeline on HealthBench Professional",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hangxuan Li",
-        "Renjun Jia",
-        "Xuezhang Wu",
-        "Yunjie Qian",
-        "Zeqi Zheng",
-        "Xianling Zhang"
+        "Roberto Cruz",
+        "David Rey-Blanco"
       ],
-      "institution": "Alibaba Cloud Computing Co. Ltd, Fudan University, Tongji University",
+      "institution": "TietAI",
       "summary": {
-        "zh": "Eureka创新性地将特征工程重构为代理代码生成问题，通过结合领域知识微调、思维链代码生成和强化学习对齐，解决了传统方法在语义理解和动态适应上的局限。实验证明，该方法不仅在多个公开数据集上表现优异，更在阿里云大规模生产环境中显著提升了资源预测的准确性和效率，展示了LLM在企业级AI基础设施优化中的巨大潜力。",
-        "en": "- **Background**: Predictive model performance relies heavily on feature quality. However, creating effective features requires deep domain expertise, limiting scalability across applications."
+        "zh": "本文证明了在临床智能体基准测试中，系统编排架构（如专科路由、多轮上下文管理、安全门控）对性能的提升作用不亚于甚至超过底层基础模型本身的改进。MDIA 通过精心设计的多智能体 DAG 架构，在未微调模型上取得了超越当前最强临床专用系统的表现。同时，研究强调了评估过程中评分器模型选择带来的变异性，呼吁社区采用多评分器交叉验证以确保评估的鲁棒性。",
+        "en": "- **Background**: Large Language Models (LLMs) are rapidly entering clinical practice. OpenAI's HealthBench Professional benchmark (525 cases from real clinician conversations) provides a rigorous evaluation standard..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25297v2",
-        "pdf": "https://arxiv.org/pdf/2605.25297v2",
+        "abs": "http://arxiv.org/abs/2605.24699v1",
+        "pdf": "https://arxiv.org/pdf/2605.24699v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.25297.md",
-        "summary_en_path": "summary_en/2026-05/2605.25297.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25297.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25297.md"
+        "summary_zh_path": "summary/2026-05/2605.24699.md",
+        "summary_en_path": "summary_en/2026-05/2605.24699.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.24699.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.24699.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,39 +49,32 @@
       }
     },
     {
-      "id": "arxiv:2605.25250",
-      "date": "2026-05-24",
-      "title": "LipoAgent: Coordinating Fine-Tuned LLM Agents for Safer Lipid Design",
+      "id": "arxiv:2605.24764",
+      "date": "2026-05-23",
+      "title": "Spectral Retrieval: Multi-Scale Sinc Convolution over Token Embeddings for Localized Retrieval in LLM Multi-Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Leshu Li",
-        "An Lu",
-        "Haiyu Wang",
-        "Zhibin Feng",
-        "Conghui Duan",
-        "Qing Bao",
-        "Zongmin Zhao",
-        "Sai Qian Zhang"
+        "Andrea Morandi"
       ],
-      "institution": "New York University, University of Illinois Chicago",
+      "institution": "Cisco Systems, Inc.",
       "summary": {
-        "zh": "LipoAgent 通过将安全性内嵌为预测的先决条件，并利用多智能体协作与人类监督相结合的机制，有效解决了脂质设计中效率与安全性的平衡难题。其不仅在基准测试中显著优于现有模型，还通过了湿实验验证，为加速安全高效的 mRNA 疗法开发提供了有力工具。",
-        "en": "- **Background**: Lipid nanoparticles (LNPs) are crucial for nucleic acid delivery, but designing lipids that are both effective and biologically safe remains a major bottleneck. Traditional experimental screening is..."
+        "zh": "Spectral Retrieval 通过多尺度 sinc 卷积巧妙地结合了 per-token 匹配的精细度和均值池化的全局性，有效解决了密集检索中局部相关性信号丢失的问题。实验证明，该方法在无需重新训练编码器的情况下，显著提升了检索性能，尤其适合需要精准局部上下文的多智能体 LLM 系统。尽管它继承了晚期交互方法的索引大小限制，但其在处理窄位置局部匹配查询时的增益巨大，为高效高精度的 RAG 系统提供了一种新的中间层解决方案。",
+        "en": "- **Background**: In Retrieval-Augmented Generation (RAG) and multi-agent LLM systems, standard dense retrieval typically encodes documents into a single mean-pooled vector. This approach works well when relevance is..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25250v1",
-        "pdf": "https://arxiv.org/pdf/2605.25250v1",
-        "github": "https://github.com/SAI-Lab-NYU/LipoAgent.git"
+        "abs": "http://arxiv.org/abs/2605.24764v1",
+        "pdf": "https://arxiv.org/pdf/2605.24764v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.25250.md",
-        "summary_en_path": "summary_en/2026-05/2605.25250.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25250.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25250.md"
+        "summary_zh_path": "summary/2026-05/2605.24764.md",
+        "summary_en_path": "summary_en/2026-05/2605.24764.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.24764.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.24764.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -102,37 +91,35 @@
       }
     },
     {
-      "id": "arxiv:2605.25188",
-      "date": "2026-05-24",
-      "title": "DarkForest: Less Talk, Higher Accuracy for Multi-Agent LLMs",
+      "id": "arxiv:2605.24660",
+      "date": "2026-05-23",
+      "title": "How Many Tools Should an LLM Agent See? A Chance-Corrected Answer",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yi Li",
-        "Songtao Wei",
-        "Dongming Jiang",
-        "Zhichun Guo",
-        "Qiannan Li",
-        "Bingzhe Li"
+        "Vyzantinos Repantis",
+        "Ameya Gawde",
+        "Harshvardhan Singh",
+        "Joey Blackwell"
       ],
-      "institution": "University of Texas at Dallas",
+      "institution": "Meta Platforms",
       "summary": {
-        "zh": "DarkForest 提出了一种新颖的多智能体协调范式，核心在于“独立生成、结构化聚合、受控通信”。它解决了现有多智能体系统中错误传播和高通信开销两大痛点。通过引入信念分布估计和聚类机制，该方法不仅显著提升了推理准确率，还大幅降低了推理成本，为高效、可靠的多智能体 LLM 系统部署提供了新的思路。",
-        "en": "- **Background**: Multi-agent Large Language Model (LLM) systems enhance reasoning by aggregating outputs from multiple agents. Existing approaches often rely on heavy interactions, such as debates or workflow-based..."
+        "zh": "本文指出了 LLM Agent 工具检索中固定深度策略的局限性，并提出使用 Bits-over-Random (BoR) 这一机会校正指标来评估和优化搜索深度。通过将 BoR 转化为强化学习奖励，实现了无需复杂工程惩罚的自适应深度选择。实验证明，该方法在大幅减少平均展示工具数量的同时，保持了高覆盖率，并显著提升了 LLM 在复杂场景下的工具选择准确率，为工具检索评估提供了新的标准和方法论。",
+        "en": "This paper addresses the limitations of fixed-depth strategies in LLM agent tool retrieval by proposing Bits-over-Random (BoR), a chance-corrected metric, to evaluate and optimize search depth. By converting BoR into a..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25188v1",
-        "pdf": "https://arxiv.org/pdf/2605.25188v1",
+        "abs": "http://arxiv.org/abs/2605.24660v1",
+        "pdf": "https://arxiv.org/pdf/2605.24660v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.25188.md",
-        "summary_en_path": "summary_en/2026-05/2605.25188.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25188.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25188.md"
+        "summary_zh_path": "summary/2026-05/2605.24660.md",
+        "summary_en_path": "summary_en/2026-05/2605.24660.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.24660.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.24660.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -149,33 +136,35 @@
       }
     },
     {
-      "id": "arxiv:2605.25141",
-      "date": "2026-05-24",
-      "title": "LLM Agent Based Renewable Energy Forecasting Using Edge and IoT Data A Review of Solar Wind Weather and Grid Aware Decision Support",
+      "id": "arxiv:2605.24490",
+      "date": "2026-05-23",
+      "title": "Market Regime Council for Dynamic Credit Assignment in Multi-Agent LLM Decision Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pavan Manjunath",
-        "Thomas Pruefer"
+        "Yunhua Pei",
+        "Zerui Ge",
+        "Jin Zheng",
+        "John Cartlidge"
       ],
-      "institution": null,
+      "institution": "University of Bristol",
       "summary": {
-        "zh": "- 该综述确立了LLM代理在增强可再生能源预测中的潜力，特别是在将数据转化为可操作的自然语言决策支持方面。文章建议未来的研究议程应集中于建立开放基准、开发物理信息驱动的LLM基础模型以及探索联邦预测架构，以解决实时性、准确性和隐私保护等问题。",
-        "en": "- **Background**: The global shift towards renewable energy introduces stability challenges due to the intermittency of solar and wind resources. The proliferation of IoT and edge devices has generated massive volumes..."
+        "zh": "本文提出的 Market Regime Council (MRC) 通过将多智能体投资组合管理建模为在线合作博弈，解决了现有 LLM 金融决策系统中信用分配不明确、对市场体制转换适应性差以及缺乏可解释性的问题。通过引入精确的 Shapley 值计算、贝叶斯自适应混合机制以及体制感知的权重调整，MRC 在加密货币市场实验中展现了优越的风险调整后收益和完全的可审计性，为多智能体 LLM 在动态金融环境中的应用提供了新的范式。",
+        "en": "- **Background**: Cryptocurrency portfolio management is a sequential decision problem relying on heterogeneous signals (price trends, on-chain activity, macro conditions) whose effectiveness varies significantly across..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25141v1",
-        "pdf": "https://arxiv.org/pdf/2605.25141v1",
+        "abs": "http://arxiv.org/abs/2605.24490v1",
+        "pdf": "https://arxiv.org/pdf/2605.24490v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.25141.md",
-        "summary_en_path": "summary_en/2026-05/2605.25141.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25141.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25141.md"
+        "summary_zh_path": "summary/2026-05/2605.24490.md",
+        "summary_en_path": "summary_en/2026-05/2605.24490.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.24490.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.24490.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -192,37 +181,41 @@
       }
     },
     {
-      "id": "arxiv:2605.25200",
-      "date": "2026-05-24",
-      "title": "GroupTravelBench: Benchmarking LLM Agents on Multi-Person Travel Planning",
+      "id": "arxiv:2605.24755",
+      "date": "2026-05-23",
+      "title": "Automated Detection and Classification of Delusion-related Content in Naturalistic Audio Diaries Using Multi-Agent Language Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiang Cheng",
-        "Yulan Hu",
-        "Lulu Zheng",
-        "Zheng Pan",
-        "Xin Li",
-        "Yong Liu"
+        "Feng Chen",
+        "Justin Tauscher",
+        "Changye Li",
+        "Meliha Yetisgen",
+        "Alex Cohen",
+        "Adam Kuczynski",
+        "Angelina Pei-Tzu Tsai",
+        "Benjamin Buck",
+        "Dror Ben-Zeev",
+        "Trevor Cohen"
       ],
-      "institution": "Renmin University of China, Alibaba Group",
+      "institution": "University of Washington",
       "summary": {
-        "zh": "GroupTravelBench 为推进面向现实世界旅行规划的 LLM 智能体研究提供了一个实用且可复现的基准。它通过引入多用户、多轮交互的场景，强调了 elicitation、coordination 和 planning 三大关键能力，指出了当前最先进的 LLM 在处理群体偏好冲突和公平性方面的局限性，为未来研究指明了方向。",
-        "en": "- **Background**: Travel planning is a realistic task for evaluating the planning and tool-use abilities of LLM agents. However, existing benchmarks typically assume only a single user, thereby avoiding one of the most..."
+        "zh": "本文提出并验证了一种可扩展的多智能体 LLM 流水线，用于自动检测和表征自然语音中暗示妄想信念的内容。研究揭示了详细提示指令对减少假阳性的有效性，以及简单多数投票优于复杂智能体辩论在处理临床模糊文本时的优势。该工作为实时监控精神疾病症状波动提供了有力的技术工具。",
+        "en": "- **Background**: Delusions are significant symptoms in mental illness that fluctuate over time. Traditional clinical assessments rely on intermittent structured interviews, which miss episodic changes and suffer from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.25200v1",
-        "pdf": "https://arxiv.org/pdf/2605.25200v1",
+        "abs": "http://arxiv.org/abs/2605.24755v1",
+        "pdf": "https://arxiv.org/pdf/2605.24755v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.25200.md",
-        "summary_en_path": "summary_en/2026-05/2605.25200.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25200.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25200.md"
+        "summary_zh_path": "summary/2026-05/2605.24755.md",
+        "summary_en_path": "summary_en/2026-05/2605.24755.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.24755.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.24755.md"
       },
       "signals": {
         "priority_keyword": "Agent"
