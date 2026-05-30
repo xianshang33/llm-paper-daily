@@ -1,37 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-29T05:46:56.314414+00:00",
-  "run_date": "2026-05-28",
+  "generated_at": "2026-05-30T05:07:13.949772+00:00",
+  "run_date": "2026-05-24",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.30335",
-      "date": "2026-05-28",
-      "title": "Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents",
+      "id": "arxiv:2605.25297",
+      "date": "2026-05-24",
+      "title": "Eureka: Intelligent Feature Engineering for Enterprise AI Cloud Resource Demand Prediction",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anany Kotawala"
+        "Hangxuan Li",
+        "Renjun Jia",
+        "Xuezhang Wu",
+        "Yunjie Qian",
+        "Zeqi Zheng",
+        "Xianling Zhang"
       ],
-      "institution": "Princeton University",
+      "institution": "Alibaba Cloud Computing Co. Ltd, Fudan University, Tongji University",
       "summary": {
-        "zh": "本文揭示了多组件 LLM 智能体中一个关键但被忽视的问题：局部一致的子代理组合后可能导致全局概率不一致。作者提出了组合残差 $\\epsilon^*$ 作为运行时检测指标，并通过分层 Boyle-Dykstra 投影提供了确定性的修复方案。实验表明，这种不一致性在现有系统中广泛存在并导致显著的性能损失，而传统的 LLM 提示工程方法无法有效解决，必须采用基于数学规划的结构性修复手段。",
-        "en": "- **Background**: Multi-component LLM agents assemble probabilistic claims by routing parts of a joint problem to specialist sub-agents. Even if each sub-agent is locally calibrated and coherent, the aggregated global..."
+        "zh": "Eureka创新性地将特征工程重构为代理代码生成问题，通过结合领域知识微调、思维链代码生成和强化学习对齐，解决了传统方法在语义理解和动态适应上的局限。实验证明，该方法不仅在多个公开数据集上表现优异，更在阿里云大规模生产环境中显著提升了资源预测的准确性和效率，展示了LLM在企业级AI基础设施优化中的巨大潜力。",
+        "en": "- **Background**: Predictive model performance relies heavily on feature quality. However, creating effective features requires deep domain expertise, limiting scalability across applications."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.30335v1",
-        "pdf": "https://arxiv.org/pdf/2605.30335v1",
+        "abs": "http://arxiv.org/abs/2605.25297v2",
+        "pdf": "https://arxiv.org/pdf/2605.25297v2",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.30335.md",
-        "summary_en_path": "summary_en/2026-05/2605.30335.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30335.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30335.md"
+        "summary_zh_path": "summary/2026-05/2605.25297.md",
+        "summary_en_path": "summary_en/2026-05/2605.25297.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25297.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25297.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,39 +53,86 @@
       }
     },
     {
-      "id": "arxiv:2605.30152",
-      "date": "2026-05-28",
-      "title": "Do Proactive Agents Really Need an LLM to Decide When to Wake and What to Anchor?",
+      "id": "arxiv:2605.25250",
+      "date": "2026-05-24",
+      "title": "LipoAgent: Coordinating Fine-Tuned LLM Agents for Safer Lipid Design",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiaoze Liu",
-        "Ruowang Zhang",
-        "Amir H. Abdi",
-        "Michel Galley",
-        "Zhikai Chen",
-        "Siheng Xiong",
-        "Xiaoqian Wang",
-        "Jing Gao"
+        "Leshu Li",
+        "An Lu",
+        "Haiyu Wang",
+        "Zhibin Feng",
+        "Conghui Duan",
+        "Qing Bao",
+        "Zongmin Zhao",
+        "Sai Qian Zhang"
       ],
-      "institution": "Purdue University, Microsoft, Michigan State University, Georgia Institute of Technology",
+      "institution": "New York University, University of Illinois Chicago",
       "summary": {
-        "zh": "本文质疑了主动式代理中“每个事件都调用 LLM 进行决策”的必要性，指出这是一种低效的架构设计。通过引入时序图学习（TGL）模型来处理结构化的用户活动流，作者提出了一种高效、轻量的触发与路由机制。该方法不仅显著降低了延迟和计算成本，使其能够部署在隐私敏感的端侧设备上，还通过结构化的实体路由提高了建议的准确性和 grounding 能力。实验证明，该方案在速度和准确性上均优于现有的基于 LLM...",
-        "en": "This paper challenges the necessity of invoking an LLM for every decision in proactive agents, identifying it as an inefficient architectural choice. By introducing Temporal Graph Learning (TGL) models to handle..."
+        "zh": "LipoAgent 通过将安全性内嵌为预测的先决条件，并利用多智能体协作与人类监督相结合的机制，有效解决了脂质设计中效率与安全性的平衡难题。其不仅在基准测试中显著优于现有模型，还通过了湿实验验证，为加速安全高效的 mRNA 疗法开发提供了有力工具。",
+        "en": "- **Background**: Lipid nanoparticles (LNPs) are crucial for nucleic acid delivery, but designing lipids that are both effective and biologically safe remains a major bottleneck. Traditional experimental screening is..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.30152v1",
-        "pdf": "https://arxiv.org/pdf/2605.30152v1",
+        "abs": "http://arxiv.org/abs/2605.25250v1",
+        "pdf": "https://arxiv.org/pdf/2605.25250v1",
+        "github": "https://github.com/SAI-Lab-NYU/LipoAgent.git"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2605.25250.md",
+        "summary_en_path": "summary_en/2026-05/2605.25250.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25250.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25250.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2605.25188",
+      "date": "2026-05-24",
+      "title": "DarkForest: Less Talk, Higher Accuracy for Multi-Agent LLMs",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yi Li",
+        "Songtao Wei",
+        "Dongming Jiang",
+        "Zhichun Guo",
+        "Qiannan Li",
+        "Bingzhe Li"
+      ],
+      "institution": "University of Texas at Dallas",
+      "summary": {
+        "zh": "DarkForest 提出了一种新颖的多智能体协调范式，核心在于“独立生成、结构化聚合、受控通信”。它解决了现有多智能体系统中错误传播和高通信开销两大痛点。通过引入信念分布估计和聚类机制，该方法不仅显著提升了推理准确率，还大幅降低了推理成本，为高效、可靠的多智能体 LLM 系统部署提供了新的思路。",
+        "en": "- **Background**: Multi-agent Large Language Model (LLM) systems enhance reasoning by aggregating outputs from multiple agents. Existing approaches often rely on heavy interactions, such as debates or workflow-based..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2605.25188v1",
+        "pdf": "https://arxiv.org/pdf/2605.25188v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.30152.md",
-        "summary_en_path": "summary_en/2026-05/2605.30152.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30152.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30152.md"
+        "summary_zh_path": "summary/2026-05/2605.25188.md",
+        "summary_en_path": "summary_en/2026-05/2605.25188.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25188.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25188.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,84 +149,33 @@
       }
     },
     {
-      "id": "arxiv:2605.30274",
-      "date": "2026-05-28",
-      "title": "Loong: A Human-Like Long Document Translation Agent with Observe-and-Act Adaptive Context Selection",
+      "id": "arxiv:2605.25141",
+      "date": "2026-05-24",
+      "title": "LLM Agent Based Renewable Energy Forecasting Using Edge and IoT Data A Review of Solar Wind Weather and Grid Aware Decision Support",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yutong Wang",
-        "Xuebo Liu",
-        "Derek F. Wong",
-        "Zhilin Li",
-        "Rongqing Jiang",
-        "Min Zhang",
-        "Shimin Tao",
-        "Daimeng Wei",
-        "Min Zhang"
+        "Pavan Manjunath",
+        "Thomas Pruefer"
       ],
-      "institution": "Harbin Institute of Technology, Shenzhen; University of Macau; Huawei Translation Services Center",
+      "institution": null,
       "summary": {
-        "zh": "Loong 通过模拟人类的“观察-行动”机制，解决了长文档翻译中上下文窗口限制与信息冗余之间的矛盾。其核心创新在于 3E 记忆模块的设计以及基于强化学习的自适应上下文选择策略。实验证明，Loong 不仅在翻译质量上显著优于现有最先进方法，还在超长文档处理的稳定性和鲁棒性方面表现出色，为文档级机器翻译提供了新的解决方案。",
-        "en": "- **Background**: While Large Language Models (LLMs) excel in sentence and short-segment translation, they face significant challenges in long-document translation (e.g., transcripts, manuals, literature). Key issues..."
+        "zh": "- 该综述确立了LLM代理在增强可再生能源预测中的潜力，特别是在将数据转化为可操作的自然语言决策支持方面。文章建议未来的研究议程应集中于建立开放基准、开发物理信息驱动的LLM基础模型以及探索联邦预测架构，以解决实时性、准确性和隐私保护等问题。",
+        "en": "- **Background**: The global shift towards renewable energy introduces stability challenges due to the intermittency of solar and wind resources. The proliferation of IoT and edge devices has generated massive volumes..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.30274v1",
-        "pdf": "https://arxiv.org/pdf/2605.30274v1",
-        "github": "https://github.com/YutongWang1216/LoongDocMT"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.30274.md",
-        "summary_en_path": "summary_en/2026-05/2605.30274.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30274.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30274.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2605.30169",
-      "date": "2026-05-28",
-      "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Botao Amber Hu",
-        "Helena Rong",
-        "Max Van Kleek"
-      ],
-      "institution": "University of Oxford",
-      "summary": {
-        "zh": "本文深刻指出了当前AI治理中一个被忽视的本体论危机：LLM代理的“解离性”本质使其无法承载传统声誉机制所要求的身份持久性和责任主体性。作者警告，盲目套用人类社会的KYC或信用评分体系不仅无效，还可能掩盖真正的安全风险。文章呼吁学术界和政策制定者放弃对“代理身份”的执念，转而开发基于协议约束和行为可观察性的新型治理框架，以适应代理网络的动态和多变的特性。",
-        "en": "- **Background**: As Large Language Model (LLM) agents evolve from conversational interfaces to autonomous systems capable of complex tasks, tool usage, and inter-agent interaction, an \"agentic web\" with real-world..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2605.30169v1",
-        "pdf": "https://arxiv.org/pdf/2605.30169v1",
+        "abs": "http://arxiv.org/abs/2605.25141v1",
+        "pdf": "https://arxiv.org/pdf/2605.25141v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.30169.md",
-        "summary_en_path": "summary_en/2026-05/2605.30169.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30169.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30169.md"
+        "summary_zh_path": "summary/2026-05/2605.25141.md",
+        "summary_en_path": "summary_en/2026-05/2605.25141.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25141.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25141.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,41 +192,37 @@
       }
     },
     {
-      "id": "arxiv:2605.30058",
-      "date": "2026-05-28",
-      "title": "HEART-Bench: Do LLM Agents Exhibit Human-like Psychology?",
+      "id": "arxiv:2605.25200",
+      "date": "2026-05-24",
+      "title": "GroupTravelBench: Benchmarking LLM Agents on Multi-Person Travel Planning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Weihan Peng",
-        "Chenxu Zhang",
-        "Qianao Wang",
-        "Yuling Shi",
-        "Heng Lian",
-        "Qihong Mao",
-        "Jiahao Pang",
-        "Chunliang Feng",
-        "Bowen Li",
-        "Xiaodong Gu"
+        "Xiang Cheng",
+        "Yulan Hu",
+        "Lulu Zheng",
+        "Zheng Pan",
+        "Xin Li",
+        "Yong Liu"
       ],
-      "institution": "Shanghai Jiao Tong University, Imperial College London, Quwan Group, University of Washington, South China Normal University",
+      "institution": "Renmin University of China, Alibaba Group",
       "summary": {
-        "zh": "HEART-Bench填补了当前LLM评估在类人心理学领域的空白。通过结合大五人格理论、自传体记忆和DIAMONDS情境分类法，它不仅仅测试代理的记忆或推理能力，而是深入评估代理是否具备连贯的“心理”和“人格”。这为推动更高级别的人工智能情感智能（EI）和实现真正类人化的长期身份一致性提供了重要的评估工具。",
-        "en": "- **Background**: While LLM agents have excelled in task-oriented abilities like planning and reasoning, user expectations in domains such as entertainment and companionship are shifting towards persistent,..."
+        "zh": "GroupTravelBench 为推进面向现实世界旅行规划的 LLM 智能体研究提供了一个实用且可复现的基准。它通过引入多用户、多轮交互的场景，强调了 elicitation、coordination 和 planning 三大关键能力，指出了当前最先进的 LLM 在处理群体偏好冲突和公平性方面的局限性，为未来研究指明了方向。",
+        "en": "- **Background**: Travel planning is a realistic task for evaluating the planning and tool-use abilities of LLM agents. However, existing benchmarks typically assume only a single user, thereby avoiding one of the most..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.30058v1",
-        "pdf": "https://arxiv.org/pdf/2605.30058v1",
-        "github": "https://github.com/peng-weihan/HEART-BENCH"
+        "abs": "http://arxiv.org/abs/2605.25200v1",
+        "pdf": "https://arxiv.org/pdf/2605.25200v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.30058.md",
-        "summary_en_path": "summary_en/2026-05/2605.30058.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.30058.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.30058.md"
+        "summary_zh_path": "summary/2026-05/2605.25200.md",
+        "summary_en_path": "summary_en/2026-05/2605.25200.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.25200.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.25200.md"
       },
       "signals": {
         "priority_keyword": "Agent"
