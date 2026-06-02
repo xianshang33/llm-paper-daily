@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.01_10:57-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.02_06:32-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月01日 10:57</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月02日 06:32</sub></summary>
 <br>
 
-- Used Car Salesbots? Honesty and Credulity of LLMs as Bargaining Agents under Partial Information 
-- HypoAgent: An Agentic Framework for Interactive Abductive Hypothesis Generation over Knowledge Graphs 
-- Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation 
-- LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards 
-- AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle 
+- AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations 
+- COMAP: Co-Evolving World Models and Agent Policies for LLM Agents 
+- SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training 
+- ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents 
+- Bridging the Last Mile of Time Series Forecasting with LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年06月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations**<br><sub>机构: StackOne<br>本文指出了 LLM 代理在 SaaS 集成环境中面临的间接提示注入严峻威胁，并揭示了现有基准和防护措施的不足。通过提出动态红队基准 AgentRedBench 和专用防御模型 AgentRedGuard，作者不仅提供了更真实的安全评估标准，还展示了针对工具响应内容优化的防护模型能极大降低攻击成功率，为 LLM 代理在企业环境中的安全部署提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02240v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02240.md)  |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **COMAP: Co-Evolving World Models and Agent Policies for LLM Agents**<br><sub>机构: Central South University, Sichuan University, The Hong Kong Polytechnic University<br>COMAP 通过将世界建模和策略学习视为耦合的共进化过程，解决了传统方法中模型固定和依赖外部信号的局限性。通过闭环交互和自蒸馏，实现了世界模型与智能体策略的相互促进，显著提升了 LLM 智能体在复杂交互环境中的表现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02372v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02372.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/loyiv/CoMAP)</div> |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training**<br><sub>机构: Xiamen University, Meituan, Macao Polytechnic University<br>SIRI 提出了一种创新的自内化强化学习框架，解决了长期困扰 LLM 智能体的技能复用与部署效率之间的矛盾。通过自我挖掘、验证和蒸馏三个步骤，SIRI 成功将外部显式技能转化为模型内部的隐式能力，在显著提升 ALFWorld 和 WebShop 任务性能的同时，保持了推理阶段的简洁性和高效性，为轻量级、高性能 LLM 智能体的部署提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02355v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02355.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/kirito618/SIRI)</div> |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents**<br><sub>机构: Georgia Institute of Technology, Peking University, University of Texas Southwestern Medical Center, Tsinghua University<br>ClinEnv 填补了医疗 AI 评估中的一个关键空白，提供了一个基于真实 EHR 数据的、多阶段的、交互式的住院模拟环境。它不仅评估最终诊断的准确性，还严格量化了医生在信息收集过程中的效率和合理性。研究结果表明，当前最先进的 LLM 在模拟复杂临床决策过程方面仍面临巨大挑战，特别是在长期管理和主动信息获取策略上，这为未来医疗 Agent 的开发指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02568v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02568.md)  |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **Bridging the Last Mile of Time Series Forecasting with LLM Agents**<br><sub>机构: Trip.com Group<br>本文指出了当前时间序列预测研究中忽视的“最后一公里”问题，即如何将统计基线转化为符合业务上下文的决策级预测。作者提出了一种基于 LLM Agent 的框架，通过工具调用、显式动作转化、结构化安全约束以及记忆库反思机制，解决了上下文融合难和过程不可审计的挑战。该方法在保证预测质量的同时，极大地提升了预测过程的可控性、透明度和业务适应性，为实际部署提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02497v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02497.md)  |
+
+---
+
 ### 2026年05月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |

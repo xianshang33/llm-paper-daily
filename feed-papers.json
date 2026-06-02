@@ -1,39 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-01T10:57:11.904636+00:00",
-  "run_date": "2026-05-29",
+  "generated_at": "2026-06-02T06:32:17.815437+00:00",
+  "run_date": "2026-06-01",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.31445",
-      "date": "2026-05-29",
-      "title": "Used Car Salesbots? Honesty and Credulity of LLMs as Bargaining Agents under Partial Information",
+      "id": "arxiv:2606.02240",
+      "date": "2026-06-01",
+      "title": "AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Antonio Valerio Miceli-Barone",
-        "Vaishak Belle",
-        "Shay B. Cohen"
+        "Hiskias Dingeto",
+        "Will Leeney"
       ],
-      "institution": "University of Edinburgh",
+      "institution": "StackOne",
       "summary": {
-        "zh": "本文通过模拟二手车销售等bargaining场景，系统评估了LLM代理在部分信息条件下的行为。研究发现，现成LLM无法有效达到博弈论均衡，且策略性欺骗能力有限。更重要的是，针对财务目标的优化虽然提升了谈判性能，却显著降低了代理的诚实度和信任度，突显了在部署自主代理时平衡性能与安全性的必要性。",
-        "en": "- **Background**: As LLM-based agents are increasingly deployed in scenarios with real-world consequences (e.g., automated trading), it is crucial to understand their safety and honesty beyond task optimality. Game..."
+        "zh": "本文指出了 LLM 代理在 SaaS 集成环境中面临的间接提示注入严峻威胁，并揭示了现有基准和防护措施的不足。通过提出动态红队基准 AgentRedBench 和专用防御模型 AgentRedGuard，作者不仅提供了更真实的安全评估标准，还展示了针对工具响应内容优化的防护模型能极大降低攻击成功率，为 LLM 代理在企业环境中的安全部署提供了重要参考。",
+        "en": "- **Background**: LLM agents interact with third-party SaaS integrations (e.g., Gmail, Salesforce) via tool calls. Indirect prompt injection exploits the \"read-write gap,\" where adversarial content in one integration..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.31445v1",
-        "pdf": "https://arxiv.org/pdf/2605.31445v1",
-        "github": "https://github.com/Avmb/llm-bargaining-agents"
+        "abs": "http://arxiv.org/abs/2606.02240v1",
+        "pdf": "https://arxiv.org/pdf/2606.02240v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.31445.md",
-        "summary_en_path": "summary_en/2026-05/2605.31445.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.31445.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.31445.md"
+        "summary_zh_path": "summary/2026-06/2606.02240.md",
+        "summary_en_path": "summary_en/2026-06/2606.02240.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02240.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02240.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,36 +49,35 @@
       }
     },
     {
-      "id": "arxiv:2605.31370",
-      "date": "2026-05-29",
-      "title": "HypoAgent: An Agentic Framework for Interactive Abductive Hypothesis Generation over Knowledge Graphs",
+      "id": "arxiv:2606.02372",
+      "date": "2026-06-01",
+      "title": "COMAP: Co-Evolving World Models and Agent Policies for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yisen Gao",
-        "Yixi Cai",
-        "Tianshi Zheng",
-        "Jiaxin Bai",
-        "Yangqiu Song"
+        "Youwei Liu",
+        "Jian Wang",
+        "Hanlin Wang",
+        "Wenjie Li"
       ],
-      "institution": "The Hong Kong University of Science and Technology",
+      "institution": "Central South University, Sichuan University, The Hong Kong Polytechnic University",
       "summary": {
-        "zh": "HypoAgent 通过多智能体协作机制，有效解决了知识图谱溯因推理在交互式场景下的意图落地和错误诊断难题。它不仅提升了假设生成的准确性和可解释性，还通过根因分析增强了系统的鲁棒性，在多个基准测试中达到了 SOTA 水平，为复杂领域的科学发现和临床诊断提供了有力的工具支持。",
-        "en": "- **Background**: Abductive reasoning over knowledge graphs (KGs) aims to generate logical hypotheses explaining observed entities. Existing controllable methods allow user guidance via explicit conditions but are..."
+        "zh": "COMAP 通过将世界建模和策略学习视为耦合的共进化过程，解决了传统方法中模型固定和依赖外部信号的局限性。通过闭环交互和自蒸馏，实现了世界模型与智能体策略的相互促进，显著提升了 LLM 智能体在复杂交互环境中的表现。",
+        "en": "- **Background**: Equipping language agents with world models allows them to anticipate environment dynamics and evaluate actions before execution. However, existing textual world models are typically fixed after..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.31370v1",
-        "pdf": "https://arxiv.org/pdf/2605.31370v1",
-        "github": "https://github.com/HKUST-KnowComp/HypoAgent"
+        "abs": "http://arxiv.org/abs/2606.02372v1",
+        "pdf": "https://arxiv.org/pdf/2606.02372v1",
+        "github": "https://github.com/loyiv/CoMAP"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.31370.md",
-        "summary_en_path": "summary_en/2026-05/2605.31370.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.31370.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.31370.md"
+        "summary_zh_path": "summary/2026-06/2606.02372.md",
+        "summary_en_path": "summary_en/2026-06/2606.02372.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02372.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02372.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,34 +94,43 @@
       }
     },
     {
-      "id": "arxiv:2605.31278",
-      "date": "2026-05-29",
-      "title": "Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation",
+      "id": "arxiv:2606.02355",
+      "date": "2026-06-01",
+      "title": "SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Grégoire Martinon",
-        "Ibrahim Merad",
-        "Mohammed Raki"
+        "Zhongyu He",
+        "Yuanfan Li",
+        "Fei Huang",
+        "Tianyu Chen",
+        "Siyuan Chen",
+        "Xingyang Li",
+        "Meng Hsuan Yu",
+        "Xiangrong Liu",
+        "Leyi Wei",
+        "Lu Pan",
+        "Ke Zeng",
+        "Xunliang Cai"
       ],
-      "institution": "Emerton Data",
+      "institution": "Xiamen University, Meituan, Macao Polytechnic University",
       "summary": {
-        "zh": "本文介绍了 GLIDE 库，旨在将预测赋能推理（PPI）工业化，以解决生成式 AI 和智能体系统评估中的可靠性与成本矛盾。通过统一分散的 SOTA 方法、提供易用的 API 以及实证驱动的方法选择指南，GLIDE 使得从业者能够在保证统计严谨性（有效置信区间）的同时，显著降低对昂贵人工标注的依赖，为大规模智能体评估提供了实用的基础设施。",
-        "en": "- **Background**: Reliable evaluation of agentic systems requires unbiased estimates with valid uncertainty quantification. Current practices oscillate between two extremes: costly and slow human annotation (reliable..."
+        "zh": "SIRI 提出了一种创新的自内化强化学习框架，解决了长期困扰 LLM 智能体的技能复用与部署效率之间的矛盾。通过自我挖掘、验证和蒸馏三个步骤，SIRI 成功将外部显式技能转化为模型内部的隐式能力，在显著提升 ALFWorld 和 WebShop 任务性能的同时，保持了推理阶段的简洁性和高效性，为轻量级、高性能 LLM 智能体的部署提供了新范式。",
+        "en": "- **Background**: Long-horizon LLM agents can benefit from reusable skills, but existing skill-based methods often rely on external skill generators during training or persistent skill retrieval at inference. This..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.31278v1",
-        "pdf": "https://arxiv.org/pdf/2605.31278v1",
-        "github": "https://github.com/EmertonData/glide"
+        "abs": "http://arxiv.org/abs/2606.02355v1",
+        "pdf": "https://arxiv.org/pdf/2606.02355v1",
+        "github": "https://github.com/kirito618/SIRI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.31278.md",
-        "summary_en_path": "summary_en/2026-05/2605.31278.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.31278.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.31278.md"
+        "summary_zh_path": "summary/2026-06/2606.02355.md",
+        "summary_en_path": "summary_en/2026-06/2606.02355.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02355.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02355.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -140,35 +147,38 @@
       }
     },
     {
-      "id": "arxiv:2605.31584",
-      "date": "2026-05-29",
-      "title": "LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards",
+      "id": "arxiv:2606.02568",
+      "date": "2026-06-01",
+      "title": "ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nianyi Lin",
-        "Jiajie Zhang",
-        "Lei Hou",
-        "Juanzi Li"
+        "Yuxing Lu",
+        "Yushuhong Lin",
+        "Wenqi Shi",
+        "J. Ben Tamo",
+        "Xukai Zhao",
+        "Jinzhuo Wang",
+        "May Dongmei Wang"
       ],
-      "institution": "Tsinghua University",
+      "institution": "Georgia Institute of Technology, Peking University, University of Texas Southwestern Medical Center, Tsinghua University",
       "summary": {
-        "zh": "LongTraceRL 通过引入基于搜索代理轨迹的分层干扰项构建策略和基于黄金实体的评分奖励机制，有效解决了长上下文推理中干扰项混淆度低和过程监督缺失的问题。该方法在多个基准测试中显著提升了LLM的长文本推理能力，促进了模型进行更深入、更 grounded 的逻辑推导。",
-        "en": "- **Background**: Long-context reasoning remains a central challenge for Large Language Models (LLMs), which often struggle to locate and integrate key information amidst extensive distracting content. While..."
+        "zh": "ClinEnv 填补了医疗 AI 评估中的一个关键空白，提供了一个基于真实 EHR 数据的、多阶段的、交互式的住院模拟环境。它不仅评估最终诊断的准确性，还严格量化了医生在信息收集过程中的效率和合理性。研究结果表明，当前最先进的 LLM 在模拟复杂临床决策过程方面仍面临巨大挑战，特别是在长期管理和主动信息获取策略上，这为未来医疗 Agent 的开发指明了方向。",
+        "en": "- **Background**: Clinical practice is not about selecting answers from enumerated options; it involves physicians incrementally gathering heterogeneous information and making sequential, irreversible decisions under..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.31584v1",
-        "pdf": "https://arxiv.org/pdf/2605.31584v1",
-        "github": "https://github.com/THU-KEG/LongTraceRL"
+        "abs": "http://arxiv.org/abs/2606.02568v1",
+        "pdf": "https://arxiv.org/pdf/2606.02568v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.31584.md",
-        "summary_en_path": "summary_en/2026-05/2605.31584.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.31584.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.31584.md"
+        "summary_zh_path": "summary/2026-06/2606.02568.md",
+        "summary_en_path": "summary_en/2026-06/2606.02568.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02568.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02568.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,50 +195,35 @@
       }
     },
     {
-      "id": "arxiv:2605.31468",
-      "date": "2026-05-29",
-      "title": "AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle",
+      "id": "arxiv:2606.02497",
+      "date": "2026-06-01",
+      "title": "Bridging the Last Mile of Time Series Forecasting with LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Weitong Qian",
-        "Beicheng Xu",
-        "Zhongao Xie",
-        "Bowen Fan",
-        "Guozheng Tang",
-        "Jiale Chen",
-        "Xinzhe Wu",
-        "Mingtian Yang",
-        "Chenyang Di",
-        "Jiajun Li",
-        "Lingching Tung",
-        "Peichao Lai",
-        "Yifei Xia",
-        "Ziyi Guo",
-        "Yanwei Xu",
-        "Yanzhao Qin",
-        "Shaoduo Gan",
-        "Xupeng Miao",
-        "Bin Cui"
+        "Yuhua Liao",
+        "Zetian Wang",
+        "Qiangqiang Nie",
+        "Zhenhua Zhang"
       ],
-      "institution": "Peking University",
+      "institution": "Trip.com Group",
       "summary": {
-        "zh": "AutoSci 是一个创新的以记忆为中心的智能体系统，它通过解耦长期知识与活跃研究记忆，并结合动态工作流编排与自我进化机制，解决了现有科学智能体在持久性和适应性上的局限。它不仅能够执行完整的科研生命周期，还能在多个项目间积累知识并优化自身能力，为自动化科学研究提供了一个统一且可持续进化的环境。",
-        "en": "- **Background**: Scientific research is traditionally human-intensive, requiring coordination of literature, ideas, experiments, manuscripts, and review responses over long cycles. LLM-based scientific agents offer an..."
+        "zh": "本文指出了当前时间序列预测研究中忽视的“最后一公里”问题，即如何将统计基线转化为符合业务上下文的决策级预测。作者提出了一种基于 LLM Agent 的框架，通过工具调用、显式动作转化、结构化安全约束以及记忆库反思机制，解决了上下文融合难和过程不可审计的挑战。该方法在保证预测质量的同时，极大地提升了预测过程的可控性、透明度和业务适应性，为实际部署提供了新的范式。",
+        "en": "- **Background**: Time series forecasting has advanced rapidly with foundation models showing strong zero-shot performance in numerical extrapolation. However, in real-world scenarios, statistically plausible baselines..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.31468v1",
-        "pdf": "https://arxiv.org/pdf/2605.31468v1",
-        "github": "https://github.com/skyllwt/AutoSci"
+        "abs": "http://arxiv.org/abs/2606.02497v1",
+        "pdf": "https://arxiv.org/pdf/2606.02497v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.31468.md",
-        "summary_en_path": "summary_en/2026-05/2605.31468.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2605.31468.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2605.31468.md"
+        "summary_zh_path": "summary/2026-06/2606.02497.md",
+        "summary_en_path": "summary_en/2026-06/2606.02497.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02497.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02497.md"
       },
       "signals": {
         "priority_keyword": "Agent"

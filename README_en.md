@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.01_10:57-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.02_06:32-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-06-01 10:57</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-06-02 06:32</sub></summary>
 <br>
 
-- Used Car Salesbots? Honesty and Credulity of LLMs as Bargaining Agents under Partial Information 
-- HypoAgent: An Agentic Framework for Interactive Abductive Hypothesis Generation over Knowledge Graphs 
-- Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation 
-- LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards 
-- AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle 
+- AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations 
+- COMAP: Co-Evolving World Models and Agent Policies for LLM Agents 
+- SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training 
+- ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents 
+- Bridging the Last Mile of Time Series Forecasting with LLM Agents 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-06
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations**<br><sub>Institution: StackOne<br>## 1. What the Paper Did - **Background**: LLM agents interact with third-party SaaS integrations (e.g., Gmail, Salesforce) via tool calls. Indirect prompt injection exploits the "read-write gap," where adversarial content in one integration triggers unauthorized actions in another, posing a concrete production threat.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02240v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-06/2606.02240.md)  |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **COMAP: Co-Evolving World Models and Agent Policies for LLM Agents**<br><sub>Institution: Central South University, Sichuan University, The Hong Kong Polytechnic University<br>## 1. What the paper does - **Background**: Equipping language agents with world models allows them to anticipate environment dynamics and evaluate actions before execution. However, existing textual world models are typically fixed after training, failing to adapt to the on-policy state-action distributions induced by an evolving agent.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02372v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-06/2606.02372.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/loyiv/CoMAP)</div> |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training**<br><sub>Institution: Xiamen University, Meituan, Macao Polytechnic University<br>## 1. What the Paper Did - **Background**: Long-horizon LLM agents can benefit from reusable skills, but existing skill-based methods often rely on external skill generators during training or persistent skill retrieval at inference. This increases engineering complexity, context length, and deployment latency.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02355v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-06/2606.02355.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/kirito618/SIRI)</div> |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents**<br><sub>Institution: Georgia Institute of Technology, Peking University, University of Texas Southwestern Medical Center, Tsinghua University<br>## 1. What the Paper Did - **Background**: Clinical practice is not about selecting answers from enumerated options; it involves physicians incrementally gathering heterogeneous information and making sequential, irreversible decisions under uncertainty. Static benchmarks fail to probe these dynamics, and existing interactive medical benchmarks compromise on at least one aspect.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02568v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-06/2606.02568.md)  |
+| <span style='display: inline-block; width: 42px;'>06-01</span> | **Bridging the Last Mile of Time Series Forecasting with LLM Agents**<br><sub>Institution: Trip.com Group<br>## 1. What the Paper Does - **Background**: Time series forecasting has advanced rapidly with foundation models showing strong zero-shot performance in numerical extrapolation. However, in real-world scenarios, statistically plausible baselines are rarely the final forecasts used for decision-making.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02497v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-06/2606.02497.md)  |
+
+---
+
 ## 2026-05
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |
