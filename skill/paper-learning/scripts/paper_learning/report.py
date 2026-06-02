@@ -21,18 +21,19 @@ def render_markdown_report(report: ReportModel, inbox_links: dict[str, str] | No
     for index, record in enumerate(report.records, start=1):
         lines.extend([
             f"## {index}. {record.title}",
-            "",
-            f"- Paper ID: `{record.paper_id}`",
-            f"- Source: {record.source}",
-            f"- Authors: {', '.join(record.authors) if record.authors else 'Unknown'}",
-            f"- Institutions: {record.institutions or 'Unknown'}",
-            f"- Topic: {record.topic or 'Unknown'}",
-            f"- Score: {record.score:g}",
-            f"- Paper: {record.url}",
+            f"**Paper:** [{record.paper_id}]({record.url})",
         ])
         if record.pdf_url:
-            lines.append(f"- PDF: {record.pdf_url}")
+            lines.append(f"**PDF:** [View]({record.pdf_url})")
         if record.paper_id in inbox_links:
-            lines.append(f"- Notion Inbox: {inbox_links[record.paper_id]}")
-        lines.extend(["", record.digest_summary or record.summary_en or record.abstract, ""])
+            lines.append(f"**Inbox:** [{record.paper_id}]({inbox_links[record.paper_id]})")
+        lines.extend([
+            "",
+            f"**Authors:** {', '.join(record.authors) if record.authors else 'Unknown'}",
+            f"**Institutions:** {record.institutions or 'Unknown'}",
+            f"**Topic:** {record.topic or 'Unknown'} | **Score:** {record.score:g}",
+            "",
+            record.digest_summary or record.summary_en or record.abstract,
+            "",
+        ])
     return "\n".join(lines).strip() + "\n"

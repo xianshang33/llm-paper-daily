@@ -104,13 +104,33 @@ class NotionClient:
         if self.config.dry_run:
             return OperationResult(True, "dry_run", "daily report skipped in dry-run", {"markdown": markdown})
 
+        self._delete_existing_daily_report(report.date)
+
+        all_blocks = markdown_to_blocks(markdown)
+
         payload = {
             "parent": {"page_id": self.config.daily_report_parent_page_id},
             "properties": {"title": [{"text": {"content": report.title[:2000]}}]},
-            "children": markdown_to_blocks(markdown),
+            "children": all_blocks[:100],
         }
         data = self._request("POST", "/pages", payload)
+        page_id = data.get("id")
+
+        for i in range(100, len(all_blocks), 100):
+            if page_id:
+                self._request("PATCH", f"/blocks/{page_id}/children", {"children": all_blocks[i:i + 100]})
+
         return OperationResult(True, "created", "daily report created", data)
+
+    def _delete_existing_daily_report(self, date: str) -> None:
+        """删除该日期的所有旧 daily report"""
+        data = self._request("GET", f"/blocks/{self.config.daily_report_parent_page_id}/children")
+        for block in data.get("results", []):
+            if block.get("type") == "child_page":
+                page_id = block.get("id")
+                title = block.get("child_page", {}).get("title", "")
+                if date in title and "Daily Paper Report" in title:
+                    self._request("PATCH", f"/pages/{page_id}", {"archived": True})
 
     def query_selected_papers(self) -> list[SelectedPaper]:
         if self.config.dry_run:
@@ -283,7 +303,7 @@ def markdown_to_blocks(markdown: str) -> list[dict]:
             else:
                 blocks.extend(_paragraph_blocks(line))
         i += 1
-    return blocks[:100]
+    return blocks
 
 
 def selected_paper_from_page(page: dict) -> SelectedPaper:
