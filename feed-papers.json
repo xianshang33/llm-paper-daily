@@ -1,38 +1,35 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-05-21T12:28:24.030211+00:00",
-  "run_date": "2026-05-19",
+  "generated_at": "2026-06-02T08:13:07.455453+00:00",
+  "run_date": "2026-05-31",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2605.19932",
-      "date": "2026-05-19",
-      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "id": "arxiv:2606.01152",
+      "date": "2026-05-31",
+      "title": "ASE-26: a curriculum for agentic software engineering as a discipline",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuohan Gu",
-        "Qizheng Zhang",
-        "Omar Khattab",
-        "Samuel Madden"
+        "Mikael Gorsky"
       ],
-      "institution": "OpenAI, MIT",
+      "institution": "Stanford University",
       "summary": {
-        "zh": "PEEK 的价值在于把长期上下文 Agent 的记忆问题，从“多保留历史”转成“维护可复用上下文地图”，这让它在重复访问同一外部知识环境时更高效，也更接近真正可运维的 Agent 记忆机制。",
-        "en": "PEEK reframes long-context agent memory as maintaining a reusable map of the environment instead of merely preserving more history, which makes the proposal operationally compelling for repeated same-context workloads."
+        "zh": "本文提出ASE-26课程框架，面向Agent软件工程教学。研究发现，专业软件工程师的工作正从编写代码转向指挥Agent，这一转变已经有数年的实证支持（Claude Code自动化率79%）。论文设计了21模块的本科课程，强调实践纪律和Agent协作下的工作评估方法，认为行业缺乏的不是更好的模型，而是结构化的从业者能力。课程设计目标是培养能适应不同模型时代的通用能力。",
+        "en": "This paper introduces ASE-26, a comprehensive undergraduate curriculum for agentic software engineering. The work addresses the empirical shift toward AI-directed development: Anthropic data shows 79% automation in..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19932v1",
-        "pdf": "https://arxiv.org/pdf/2605.19932v1",
+        "abs": "http://arxiv.org/abs/2606.01152v1",
+        "pdf": "https://arxiv.org/pdf/2606.01152v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.19932.md",
-        "summary_en_path": "summary_en/2026-05/2605.19932.md",
+        "summary_zh_path": "summary/2026-05/2606.01152.md",
+        "summary_en_path": "summary_en/2026-05/2606.01152.md",
         "summary_zh_url": null,
         "summary_en_url": null
       },
@@ -49,31 +46,36 @@
       }
     },
     {
-      "id": "arxiv:2605.20530",
-      "date": "2026-05-19",
-      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
+      "id": "arxiv:2606.01311",
+      "date": "2026-05-31",
+      "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Parsa Mazaheri",
-        "Kasra Mazaheri"
+        "Zhuoyun Yu",
+        "Xin Xie",
+        "Wuguannan Yao",
+        "Chenxi Wang",
+        "Lei Liang",
+        "Xiang Qi",
+        "Shumin Deng"
       ],
       "institution": null,
       "summary": {
-        "zh": "AgentAtlas 的重点不是再造一个新榜单，而是把 Agent 评测从单值结果拓展成多维行为诊断框架。它的价值在于帮助理解模型是“真的会”，还是“被 prompt 扶着会”。",
-        "en": "AgentAtlas is valuable less as another benchmark and more as an evaluation diagnosis layer: it helps separate real control competence from prompt-induced measurement artifacts."
+        "zh": "SkillAdaptor提出一个训练无关的Step级Agent技能适配框架。针对现有方法无法精确定位失败责任的问题，该框架通过显式失败归因识别第一个可执行的错误步骤，在冻结骨干的前提下对候选技能进行有针对性的更新。在WebShop、PinchBench等多个基准上评测，相比无技能和技能适配基线有+1.5到+1.8的单指标改进。展示了Step级归因对可审计的Agent技能维护的重要性。",
+        "en": "SkillAdaptor presents a training-free step-level skill adaptation framework for LLM agents. Existing methods coarsely attribute failures to trajectories or sessions, producing unstable updates. This work identifies the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20530v1",
-        "pdf": "https://arxiv.org/pdf/2605.20530v1",
+        "abs": "http://arxiv.org/abs/2606.01311v1",
+        "pdf": "https://arxiv.org/pdf/2606.01311v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.20530.md",
-        "summary_en_path": "summary_en/2026-05/2605.20530.md",
+        "summary_zh_path": "summary/2026-05/2606.01311.md",
+        "summary_en_path": "summary_en/2026-05/2606.01311.md",
         "summary_zh_url": null,
         "summary_en_url": null
       },
@@ -90,34 +92,820 @@
       }
     },
     {
-      "id": "arxiv:2605.20563",
-      "date": "2026-05-19",
-      "title": "Multi-agent Collaboration with State Management",
+      "id": "arxiv:2606.01498",
+      "date": "2026-05-31",
+      "title": "TimeSage-MT: A Multi-Turn Benchmark for Evaluating Agentic Time Series Reasoning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mengyang Liu",
-        "Taozhi Chen",
-        "Zhenhua Xu",
-        "Xue Jiang",
-        "Yihong Dong"
+        "Yaxuan Kong",
+        "Qingren Yao",
+        "Yuqi Nie",
+        "Yichen Li",
+        "Yilei Shao",
+        "Stefan Zohren",
+        "Anna Vettoruzzo",
+        "Joaquin Vanschoren",
+        "Ming Jin",
+        "Qingsong Wen"
       ],
       "institution": null,
       "summary": {
-        "zh": "STORM 说明，多 Agent 编程协作的关键瓶颈不只是分工，而是共享状态管理。相比把冲突推迟到 merge 阶段，写时协调是一条更稳的工程路线。",
-        "en": "STORM makes a strong case that the central systems problem in multi-agent coding is shared state coordination, not just agent decomposition, and that write-time mediation is more effective than deferred merge-time..."
+        "zh": "TimeSage-MT引入首个多轮Agent时间序列推理基准，包含240个任务跨8个真实领域。现有基准只评测单步任务如预测和异常检测，而实际应用中Agent需要在多轮对话中逐步积累证据。基准从基础探索到决策导向的分析，揭示LLM在记忆、不确定性处理和域知识决策上的显著缺陷。为Agent系统提供严格的评估基础。",
+        "en": "TimeSage-MT introduces the first multi-turn benchmark for evaluating LLM agents on time series reasoning. With 240 tasks and 2,680 dialogue turns across 8 domains, it moves beyond single-step forecasting to multi-turn..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20563v1",
-        "pdf": "https://arxiv.org/pdf/2605.20563v1",
+        "abs": "http://arxiv.org/abs/2606.01498v1",
+        "pdf": "https://arxiv.org/pdf/2606.01498v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2605.20563.md",
-        "summary_en_path": "summary_en/2026-05/2605.20563.md",
+        "summary_zh_path": "summary/2026-05/2606.01498.md",
+        "summary_en_path": "summary_en/2026-05/2606.01498.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01441",
+      "date": "2026-05-31",
+      "title": "Dive into Ambiguity: A*-Inspired Multi-Agents Commonsense Obfuscation Attack on LLM Prompts",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Boxuan Wang",
+        "Zhuoyun Li",
+        "Xiaowei Huang",
+        "Yi Dong"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "本文提出A*启发的对抗攻击框架，用于生成语义保持但模糊化的prompt。通过动态语义离散度系数平衡保守编辑和激进混淆，采用反向模拟退火策略。论文还引入代理机制标注揭示对抗机制，提供可解释的反向优化。理论证明prompt重写遵循收缩递归，当系数减小时导致语义崩溃。在多个LLM上达到更高的攻击成功率。",
+        "en": "This work presents an A*-inspired Factual Error Induction Framework for generating semantically aligned yet obfuscated prompts. A hierarchical rewrite strategy uses dynamic semantic dispersion coefficient to balance..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01441v1",
+        "pdf": "https://arxiv.org/pdf/2606.01441v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01441.md",
+        "summary_en_path": "summary_en/2026-05/2606.01441.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01416",
+      "date": "2026-05-31",
+      "title": "Self-Healing Agentic Orchestrators for Reliable Tool-Augmented Large Language Model Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Rahul Suresh Babu",
+        "Adarsh Agrawal"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "自修复Agent编排器将可靠性视为有界运行时控制问题。在Tool-augmented LLM系统中，故障来自工具超时、参数畸形、上下文陈旧等编排层问题。该方法将可观测故障信号映射到推断故障类别，在显式预算约束下选择恢复行动。在100任务故障注入基准上，自修复达成98.8%成功率（对比仅重试94.5%）。验证器引导的恢复将无声故障从高频降至0%。",
+        "en": "Self-healing agentic orchestrators treat reliability as bounded runtime control. Tool-augmented LLM systems fail not just from model errors but orchestration-layer issues: tool timeouts, malformed arguments, stale..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01416v1",
+        "pdf": "https://arxiv.org/pdf/2606.01416v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01416.md",
+        "summary_en_path": "summary_en/2026-05/2606.01416.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01365",
+      "date": "2026-05-31",
+      "title": "Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xianyou Li",
+        "Weiran Yan",
+        "Yichao Wu",
+        "Penghao Liang",
+        "Mengwei Yuan",
+        "Jianan Liu",
+        "Jing Yang"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "本文提出故障感知可观测框架，诊断多Agent LLM系统中的计算浪费。Tool-using Agent系统通过模型令牌、工具调用、重试和代码执行消耗计算，但单纯的终点评估无法定位轨迹失败的具体点。框架映射故障模式到在线迹象：工具可靠性、执行恢复、编排循环等。在GAIA验证集上，分析揭示不同失败机制如证据不足、重复动作循环、最大步数终止。",
+        "en": "A failure-aware observability framework diagnoses wasted computation in multi-agent LLM traces. Tool-using systems spend tokens, tools calls, retries, and code execution before producing answers; endpoint evaluation..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01365v1",
+        "pdf": "https://arxiv.org/pdf/2606.01365v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01365.md",
+        "summary_en_path": "summary_en/2026-05/2606.01365.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01351",
+      "date": "2026-05-31",
+      "title": "Recognize Your Orchestrator: An Entropy Dynamics Perspective for LLM Multi-Agent Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Junze Zhu",
+        "Weihao Chen",
+        "Xuanwang Zhang",
+        "Zhen Wu",
+        "Xinyu Dai"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "从熵动力学角度分析LLM多Agent系统的中央编排器脆弱性。论文提出均值场熵动力学框架，将编排过程建模为任务分解和累积上下文负荷相互竞争的系统。引入逆向工作流生成(IWG)合成流程可验证的高复杂度基准。熵模型拟合经验轨迹，揭示系统稳定性和性能崩溃的物理可解释参数。核心发现\"推理陷阱\"：推理能力强的模型在编排任务中频繁失败。",
+        "en": "Analyzing LLM multi-agent systems through Mean-Field Entropy Dynamics reveals fragility of centralized orchestration. Task resolution and cumulative context loading compete as opposing forces. Inverse Workflow..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01351v1",
+        "pdf": "https://arxiv.org/pdf/2606.01351v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01351.md",
+        "summary_en_path": "summary_en/2026-05/2606.01351.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01199",
+      "date": "2026-05-31",
+      "title": "Can LLM Agents Sustain Long-Horizon Organizational Dynamics?",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xuancheng Zhu",
+        "Yang Yue",
+        "Shuaibing Wan",
+        "Zihan Dou",
+        "Xiaohan Zhang",
+        "Yongrui Liu",
+        "Guoshun Nan"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "TaskWeave框架支持LLM Agent进行年级别的长地平线组织模拟。传统多Agent框架难以维持结构化组织中的连贯行为，其中目标通过层级传播、任务依赖先前执行、工件跨轨迹积累。TaskWeave采用层级结构，通过Formulate-Partition-Diagnose-Align循环维护规划状态，通过依赖感知迹象记忆实现执行接地。在为期一年的IT公司模拟中展示了连贯的长地平线组织动态。",
+        "en": "TaskWeave enables LLM agents to sustain coherent behavior in structured organizations over long horizons (year-long simulations). Multi-agent frameworks struggle when goals propagate hierarchically, tasks depend on..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01199v1",
+        "pdf": "https://arxiv.org/pdf/2606.01199v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01199.md",
+        "summary_en_path": "summary_en/2026-05/2606.01199.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01139",
+      "date": "2026-05-31",
+      "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yuxuan Liu",
+        "Zhaochen Su",
+        "Lingyun Xie",
+        "Yuhao Zhang",
+        "Qing Zong",
+        "Jiahe Guo",
+        "Zhongwei Xie",
+        "Yiyan Ji",
+        "Yauwai Yim",
+        "Hongyu Luo",
+        "Xiyu Ren",
+        "Ruan Chenyu",
+        "Haoran Li",
+        "Yangqiu Song"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "SkillRevise通过执行接地的框架迭代改进初始Agent技能。冷启动设置下，现有自进化方法难以操作（只有一个初始不完美技能）。SkillRevise从执行证据诊断缺陷，从通用记忆检索修复原则，应用执行锚定的编辑。通过重新执行和测量实用性保留最优版本。跨三个基准五个LLM，基础Agent成功率从36.05%提升到61.63%。修订技能展示强跨模型转移性。",
+        "en": "SkillRevise improves LLM-authored agent skills via execution-grounded iterative refinement. Cold-start settings (single imperfect initial skill) challenge existing self-evolving methods. The framework diagnoses skill..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01139v1",
+        "pdf": "https://arxiv.org/pdf/2606.01139v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01139.md",
+        "summary_en_path": "summary_en/2026-05/2606.01139.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01046",
+      "date": "2026-05-31",
+      "title": "TravelEval: A Comprehensive Benchmarking Framework for Evaluating LLM-Powered Travel Planning Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Weiyi Chen",
+        "Shuaixiong Wang",
+        "Ziyun Gao",
+        "Kaichun Hu",
+        "Wangze Ni",
+        "Shimin Di",
+        "Chen Jason Zhang",
+        "Lei Chen"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "TravelEval提出旅行规划Agent的综合基准框架。现有基准过度强调约束符合性，忽视时空成本等多维质量。TravelEval引入六维评估框架（准确性、符合性、时间性、空间性、经济性、实用性），使用真实住宿定价和跨城交通数据，通过仿真模拟完整旅行计划。评测显示LLM在全局优化多维规划上力不从心，特别是时空推理和预算符合性。",
+        "en": "TravelEval introduces a comprehensive benchmark for LLM-powered travel planning agents. Existing benchmarks overemphasize constraint compliance, missing multi-dimensional qualities like spatio-temporal cost. TravelEval..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01046v1",
+        "pdf": "https://arxiv.org/pdf/2606.01046v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01046.md",
+        "summary_en_path": "summary_en/2026-05/2606.01046.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01065",
+      "date": "2026-05-31",
+      "title": "Leyline: KV Cache Directives for Agentic Inference",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Bole Ma",
+        "Jan Eitzinger",
+        "Harald Koestler"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "Leyline为Agent推理引入KV缓存指令原语。聊天机器人工作负载假设缓存单调增长，但Agent通过策略编辑打破这一假设：失败工具调用重试、陈旧输出丢弃、轨迹转向。Leyline分离编辑内容和位置正确性保留，声明式指令通过特定架构核心实现，通过闭形式RoPE旋转纠正恢复注意力数学。Splice核心提升11.2 pp缓存命中，延迟降低241ms。",
+        "en": "Leyline introduces serving-side KV cache directives for agentic inference. Chatbot workloads assume append-only cache growth, but agentic LLMs evolve via policy editing: retried tools, dropped outputs, pivoted..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01065v1",
+        "pdf": "https://arxiv.org/pdf/2606.01065v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01065.md",
+        "summary_en_path": "summary_en/2026-05/2606.01065.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01057",
+      "date": "2026-05-31",
+      "title": "3DCodeBench: Benchmarking Agentic Procedural 3D Modeling Via Code",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yipeng Gao",
+        "Lei Shu",
+        "Genzhi Ye",
+        "Xi Xiong",
+        "Ameesh Makadia",
+        "Meiqi Guo",
+        "Laurent Itti",
+        "Jindong Chen"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "3DCodeBench评估VLM Agent在3D建模软件中的程序生成能力。通过代码进行程序化3D建模提供确定性、引擎就绪的资产。该基准评测12个高级VLM将文本/图像参考转换为程序代码的能力。3DCodeArena基于人类偏好对的排名平台提供感知质量评估。发现主要失败来自API不匹配，成功渲染仍有几何组件断裂。发布包含多模态提示、程序代码、3D对象三元组的大规模数据集。",
+        "en": "3DCodeBench systematically evaluates VLM agents for procedural 3D generation via code in 3D modeling software. Procedural modeling offers deterministic, engine-ready assets lacking in neural generators. Tests 12..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01057v1",
+        "pdf": "https://arxiv.org/pdf/2606.01057v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01057.md",
+        "summary_en_path": "summary_en/2026-05/2606.01057.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01041",
+      "date": "2026-05-31",
+      "title": "ExpWeaver: LLM Agents Learn from Experience via Latent RAG",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Tao Feng",
+        "Tianyang Luo",
+        "Jingjun Xu",
+        "Zhigang Hua",
+        "Yan Xie",
+        "Shuang Yang",
+        "Ge Liu",
+        "Jiaxuan You"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "ExpWeaver通过隐空间RAG使LLM Agent从经验学习。现有方法限于显式文本空间，通过语义相似性检索导致大量令牌开销。ExpWeaver使用LLM自身隐状态编码经验，在解码每步直接在隐空间检索相关经验，通过交叉注意聚合和门控残差机制集成。端到端强化学习优化，支持生成和排名任务。在13项多样任务上达到最高性能，令牌效率显著优于文本检索。",
+        "en": "ExpWeaver enables LLM agents to learn from experience via latent retrieval-augmented generation. Existing text-based methods retrieve experiences semantically and concatenate to context, causing token overhead and..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01041v1",
+        "pdf": "https://arxiv.org/pdf/2606.01041v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01041.md",
+        "summary_en_path": "summary_en/2026-05/2606.01041.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01385",
+      "date": "2026-05-31",
+      "title": "Bridging Requirements and Architecture: Multi-Agent Orchestration with External Knowledge and Hierarchical Memory",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Ruiyin Li",
+        "Yiran Zhang",
+        "Xiyu Zhou",
+        "Yangxiao Cai",
+        "Peng Liang",
+        "Weisong Sun",
+        "Jifeng Xuan",
+        "Zhi Jin",
+        "Yang Liu"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "MAAD（多Agent架构设计）框架用知识驱动的Agent编排自动化软件架构设计。通过四个专化Agent（分析员、建模者、设计者、评估者）协作将需求转换为多视图架构蓝图。整合RAG注入架构标准和模式，采用层级记忆机制捕获设计历史。与MetaGPT对比在10个案例研究中，MAAD生成更完整、模块化、可追溯的架构，模型能力（GPT-5.2、Qwen3.5）对质量有重要影响。",
+        "en": "MAAD (Multi-Agent Architecture Design) uses knowledge-driven Agent orchestration to automate software architecture design. Four specialized agents (Analyst, Modeler, Designer, Evaluator) collaboratively transform..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01385v1",
+        "pdf": "https://arxiv.org/pdf/2606.01385v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01385.md",
+        "summary_en_path": "summary_en/2026-05/2606.01385.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01279",
+      "date": "2026-05-31",
+      "title": "ANDES: Agent Native Data Evolving Synthesis Tool for Autonomous Instruction Alignment",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zhengyang Zhao",
+        "Shengjie Ye",
+        "Lu Ma",
+        "Hao Liang",
+        "Hengyi Feng",
+        "Wentao Zhang"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "ANDES（Agent本地数据进化合成）将数据生成重新构想为Agent技能。Agent自动化AI研究中后训练阶段面临长地平线任务中的上下文溢出。ANDES提供智能抽象层，通过自进化World Tree路由机制和可执行诊断报告，使训练Agent动态指导数据合成。在严格计算约束下，装备ANDES的较弱Agent在PostTrainBench上取得最佳性能并展现跨任务泛化能力。",
+        "en": "ANDES (Agent Native Data Evolving Synthesis) reimagines data generation as a plug-and-play agent skill. AI agents automating post-training face context overflow in long-horizon web-gathering tasks. ANDES provides..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01279v1",
+        "pdf": "https://arxiv.org/pdf/2606.01279v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01279.md",
+        "summary_en_path": "summary_en/2026-05/2606.01279.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01230",
+      "date": "2026-05-31",
+      "title": "HomeFlow: A Data Flywheel for Smart Home Agent Training with Verifiable Simulation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yi Gu",
+        "Huacan Wang",
+        "Shuo Zhang",
+        "Yuqing Hou",
+        "Lei Xue",
+        "Weipeng Ming",
+        "Chen Liu",
+        "Fangzhou Yu",
+        "Kuan Li",
+        "Ronghao Chen",
+        "Sen Hu",
+        "Xiaofeng Mou",
+        "Yi Xu"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "HomeFlow为智能家居Agent提供可验证的数据飞轮。LLM Agent超越纯文本交互朝向物理世界控制。HomeEnv统一仿真环境，HomeMaker程序化生成多样家庭设置。Blueprint将开放式用户意图编译为可执行状态条件，MCTS-Flow通过环境引导树搜索合成多样可验证多轮轨迹。SmartHome-Bench评估Agent在多种智能家居任务上表现，HomeFlow-RL-8B达87.03%任务成功率，超GPT-5.5。",
+        "en": "HomeFlow provides a verifiable data flywheel for smart home agent training. LLM agents move beyond text-only interaction toward physical-world control. HomeEnv serves as unified simulation; HomeMaker procedurally..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01230v1",
+        "pdf": "https://arxiv.org/pdf/2606.01230v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01230.md",
+        "summary_en_path": "summary_en/2026-05/2606.01230.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01490",
+      "date": "2026-05-31",
+      "title": "LLM Consortium for Software Design Refinement: A Controlled Experiment on Multi-Agent Collaboration Topologies",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Nagarjuna Kanamarlapudi",
+        "Praveen K"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "在多Agent LLM软件架构设计中进行对照实验，评估12种协作拓扑。采用2×2×2因子设计（权威性×角色×动力学），8项设计任务各5次重复，共520次实验。结果显示结构化对抗型（提出重写而非补丁）排名第一，跨模型审查排名第二。并行合并拓扑全体排名底层。三个独立评估器展示评估多样性，同时确认最佳和最差选项。",
+        "en": "Controlled experiment evaluating 12 multi-agent LLM collaboration topologies for software architecture design. 2×2×2 factorial design (Authority × Roles × Dynamics) across 520 runs with 8 design tasks. Structural..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01490v1",
+        "pdf": "https://arxiv.org/pdf/2606.01490v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01490.md",
+        "summary_en_path": "summary_en/2026-05/2606.01490.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01434",
+      "date": "2026-05-31",
+      "title": "DrugClaw and DrugAudit: A Primary-Source-Grounded Agent and Authority-Aware Benchmark for Drug-Information Question Answering",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Qing Wang",
+        "Bo Li",
+        "Jialu Liang",
+        "Daling Shi",
+        "Bob Zhang",
+        "Qianqian Song"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "DrugClaw提供多Agent检索增强系统，查询药物和药物警戒技能库。DrugAudit基准包含3,772项权威感知样本，评估上游源匹配率、令牌级语义片段重叠和引用忠实度。在多个医学QA数据集上超越所有基线：初级源率91.8%（+10.1 pp）、忠实度88.7%（+5.9 pp）。在高风险医学决策场景中通过可追溯性强调提高可靠性。",
+        "en": "DrugClaw provides multi-agent retrieval-augmented system querying drug and pharmacovigilance skills, returning answers grounded in primary regulatory or peer-reviewed records. DrugAudit benchmark with 3,772..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01434v1",
+        "pdf": "https://arxiv.org/pdf/2606.01434v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01434.md",
+        "summary_en_path": "summary_en/2026-05/2606.01434.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01317",
+      "date": "2026-05-31",
+      "title": "SABER: Benchmarking Operational Safety of LLM Coding Agents in Stateful Project Workspaces",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Qi Hu",
+        "Yifeng Tang",
+        "Qinghua Wang",
+        "Lanyang Zhao",
+        "Pengji Zhang",
+        "Yuhao Qing",
+        "Xin Yao",
+        "Dong Huang",
+        "Lin Zhang",
+        "Zhuoran Ji"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "SABER评估LLM编码Agent在有状态项目工作空间中的操作安全性。现有基准评测模型拒绝不安全提示的能力，但忽视对有状态工作空间的影响。SABER将模型置于现实Agent风格项目中，从最终环境状态评估安全性。超过54%的模型有害违规率，表明当前对齐不足。基准按原因分类违规，实现模型特定安全档案分析。",
+        "en": "SABER benchmarks operational safety of LLM coding agents in stateful project workspaces. Existing benchmarks assess whether models refuse unsafe prompts; impacts on stateful workspaces remain unexamined. SABER places..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01317v1",
+        "pdf": "https://arxiv.org/pdf/2606.01317v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01317.md",
+        "summary_en_path": "summary_en/2026-05/2606.01317.md",
+        "summary_zh_url": null,
+        "summary_en_url": null
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "id": "arxiv:2606.01276",
+      "date": "2026-05-31",
+      "title": "Worlds Within Words: Translating Culture in Ancient Chinese Texts with Multi-Agent Coordination",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xiaoqi He",
+        "Kaixin Lan",
+        "Mu You",
+        "Tao Fang",
+        "Lidia S. Chao",
+        "Derek F. Wong"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "MACAT框架用多Agent方法处理古汉语文本中的文化词汇翻译。文化词汇超越词汇对齐，需决策何时及如何为读者阐释文化依赖知识。MACAT动态识别文化显著短语，必要时注入简明解释。包含质量感知重排模块和多轮评估Agent，评估术语精确性、可读性、保真度、文化保留和文化阐释。在中医古籍和论语上，MACAT超越主干和通用基线。",
+        "en": "MACAT addresses culture-loaded word (CLW) translation in ancient Chinese texts. Translation extends beyond lexical alignment to deciding when and how to explicate culture-dependent knowledge for readers lacking..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01276v1",
+        "pdf": "https://arxiv.org/pdf/2606.01276v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01276.md",
+        "summary_en_path": "summary_en/2026-05/2606.01276.md",
         "summary_zh_url": null,
         "summary_en_url": null
       },

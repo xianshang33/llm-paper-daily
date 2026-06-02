@@ -7,5 +7,24 @@ __pycache__/
 /docs/
 /skill/paper-daily/output/
 
+# Runtime data
+/data/paper-daily/
 /data/paper-learning/runs/
+/data/paper-learning/deep-reading-org/
 /.local/
+/data/canonical-papers.json
+/data/state-feed.json
+/feed-papers.json
+
+# Generated summaries
+summary/
+summary_en/
+
+# Temporary/session files
+/.agents/
+.tmp-*
+*.tmp
+skills-lock.json
+
+# IDE and local settings
+.claude/settings.local.json

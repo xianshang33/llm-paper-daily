@@ -23,6 +23,8 @@ class PaperCandidate:
     lab_matches: list[str] = field(default_factory=list)
     score: float = 0.0
     reasons: list[str] = field(default_factory=list)
+    metadata_source: str = ""
+    metadata_status: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)

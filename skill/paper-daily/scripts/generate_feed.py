@@ -6,10 +6,10 @@ import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from paper_daily.arxiv_client import ArxivClient
 from paper_daily.defaults import (
     DEFAULT_DAILY_SELECT,
     DEFAULT_MAX_RESULTS_PER_KEYWORD,
+    DEFAULT_METADATA_ARTIFACT_DIR,
     DEFAULT_MIN_SELECT,
     DEFAULT_SCORE_THRESHOLD,
     DEFAULT_SUMMARY_ARTIFACT_DIR,
@@ -17,6 +17,7 @@ from paper_daily.defaults import (
 from paper_daily.discovery import find_next_discovery, select_ranked_candidates
 from paper_daily.feed import read_feed_state, write_feed_outputs, write_feed_state
 from paper_daily.institutions import load_catalog
+from paper_daily.metadata import load_metadata_payload, merge_candidate_with_metadata, metadata_is_complete, resolve_metadata_artifact_dir
 from paper_daily.models import PaperCandidate
 from paper_daily.render import write_summary_files
 from paper_daily.summary import candidate_to_canonical
@@ -34,7 +35,14 @@ def main() -> int:
     else:
         skill_root = Path(__file__).resolve().parents[1]
         catalog = load_catalog(skill_root / "references" / "institutions.json")
-        client = ArxivClient(delay_seconds=args.delay_seconds, timeout_seconds=args.timeout_seconds, retries=args.retries)
+        from paper_daily.arxiv_client import ArxivClient
+        client = ArxivClient(
+            delay_seconds=args.delay_seconds,
+            timeout_seconds=args.timeout_seconds,
+            retries=args.retries,
+            budget_seconds=args.discovery_budget_seconds,
+            api_search_budget_seconds=args.api_search_budget_seconds,
+        )
         selection = find_next_discovery(
             client=client,
             catalog=catalog,
@@ -75,6 +83,8 @@ def main() -> int:
         score_threshold=args.score_threshold,
     )
     selected = [candidate.to_dict() for candidate in selected_candidates]
+    metadata_artifact_dir = resolve_metadata_artifact_dir(repo_root, args.metadata_artifact_dir)
+    selected = [merge_candidate_with_metadata(candidate, require_cached_metadata(metadata_artifact_dir, candidate["arxiv_id"])) for candidate in selected]
     canonical = [
         candidate_to_canonical(candidate, run_date=selected_date, summary_artifact_dir=args.summary_artifact_dir)
         for candidate in selected
@@ -105,6 +115,16 @@ def main() -> int:
     return 0
 
 
+def require_cached_metadata(metadata_artifact_dir: Path, paper_id: str) -> dict:
+    payload = load_metadata_payload(metadata_artifact_dir, paper_id)
+    if not metadata_is_complete(payload):
+        raise RuntimeError(
+            f"Metadata cache is incomplete for {paper_id}. "
+            "Run enrich_metadata.py with a bounded budget before generating feed outputs."
+        )
+    return payload
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate canonical and feed outputs for paper-daily from external summary artifacts.")
     parser.add_argument("--repo-root", default=".")
@@ -116,9 +136,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--delay-seconds", type=float, default=3.1)
     parser.add_argument("--timeout-seconds", type=float, default=60.0)
     parser.add_argument("--retries", type=int, default=1)
+    parser.add_argument("--discovery-budget-seconds", type=float, default=180.0, help="Global wall-clock budget for arXiv discovery. Use 0 to disable.")
+    parser.add_argument("--api-search-budget-seconds", type=float, default=30.0, help="Budget for the first arXiv API search before preserving time for listing fallback. Use 0 to disable.")
     parser.add_argument("--backfill-days", type=int, default=7)
     parser.add_argument("--discovered-json", help="Optional discovery JSON artifact to consume instead of re-running discovery.")
     parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing externally generated summary JSON artifacts keyed by arXiv ID.")
+    parser.add_argument("--metadata-artifact-dir", default=DEFAULT_METADATA_ARTIFACT_DIR, help="Directory containing cached standardized arXiv metadata keyed by arXiv ID.")
     parser.add_argument("--public-base-url", default="", help="Optional public base URL for summary asset links.")
     parser.add_argument("--source-repo", default="xianshang33/llm-paper-daily", help="Source repository identifier for feed metadata.")
     return parser.parse_args()

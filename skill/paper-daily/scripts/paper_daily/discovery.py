@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import json
+import re
 from datetime import datetime, timedelta
+from pathlib import Path
 
-from .arxiv_client import ArxivClient
+from .arxiv_client import ArxivClient, normalize_arxiv_id
 from .defaults import DEFAULT_DAILY_SELECT
 from .filters import DEFAULT_CATEGORIES, DEFAULT_KEYWORDS, dedupe_by_priority, keep_candidate
 from .institutions import InstitutionCatalog
+from .models import PaperCandidate
 from .ranker import rank_candidates
 
 
@@ -112,6 +116,49 @@ def find_next_discovery(
     }
 
 
+def load_discovery_artifact(path: str | Path) -> dict:
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    return {
+        "date": payload["date"],
+        "keywords": payload.get("keywords", list(DEFAULT_KEYWORDS)),
+        "categories": payload.get("categories", list(DEFAULT_CATEGORIES)),
+        "query_totals": payload.get("query_totals", {}),
+        "counts": payload.get("counts", {}),
+        "selected": [paper_candidate_from_dict(candidate) for candidate in payload.get("selected", [])],
+        "ranked": [paper_candidate_from_dict(candidate) for candidate in payload.get("ranked", [])],
+    }
+
+
+def load_cached_discovery_for_date(repo_root: str | Path, date: str) -> dict | None:
+    path = Path(repo_root) / "skill" / "paper-daily" / "output" / f"discovered-{date}.json"
+    if not path.exists():
+        return None
+    return load_discovery_artifact(path)
+
+
+def load_cached_candidate(repo_root: str | Path, arxiv_id: str) -> PaperCandidate | None:
+    output_dir = Path(repo_root) / "skill" / "paper-daily" / "output"
+    if not output_dir.exists():
+        return None
+
+    candidate_key = normalize_arxiv_id(arxiv_id)
+    latest_date = ""
+    latest_candidate = None
+    for path in sorted(output_dir.glob("discovered-*.json")):
+        match = re.match(r"discovered-(\d{4}-\d{2}-\d{2})\.json$", path.name)
+        if not match:
+            continue
+        discovered = load_discovery_artifact(path)
+        for candidate in discovered["ranked"]:
+            if candidate.arxiv_id != candidate_key:
+                continue
+            artifact_date = match.group(1)
+            if artifact_date >= latest_date:
+                latest_date = artifact_date
+                latest_candidate = candidate
+    return latest_candidate
+
+
 def select_ranked_candidates(
     ranked_candidates: list,
     *,
@@ -184,3 +231,28 @@ def scan_discovery_window(
         if discovered["ranked"]:
             return candidate_date, discovered
     return None
+
+
+def paper_candidate_from_dict(payload: dict) -> PaperCandidate:
+    return PaperCandidate(
+        arxiv_id=payload["arxiv_id"],
+        version_id=payload.get("version_id", payload["arxiv_id"]),
+        title=payload["title"],
+        abstract=payload.get("abstract", ""),
+        authors=payload.get("authors", []),
+        categories=payload.get("categories", []),
+        primary_category=payload.get("primary_category"),
+        published=payload.get("published", ""),
+        updated=payload.get("updated", ""),
+        abs_url=payload.get("abs_url", ""),
+        pdf_url=payload.get("pdf_url"),
+        priority_keyword=payload.get("priority_keyword", "Agent"),
+        keyword_rank=payload.get("keyword_rank", 0),
+        query_total=payload.get("query_total", 0),
+        institution_matches=payload.get("institution_matches", []),
+        lab_matches=payload.get("lab_matches", []),
+        score=payload.get("score", 0.0),
+        reasons=payload.get("reasons", []),
+        metadata_source=payload.get("metadata_source", ""),
+        metadata_status=payload.get("metadata_status", ""),
+    )

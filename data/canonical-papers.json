@@ -1,46 +1,43 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-05-21T12:28:24.030211+00:00",
-  "run_date": "2026-05-19",
+  "generated_at": "2026-06-02T08:13:07.455453+00:00",
+  "run_date": "2026-05-31",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2605.19932",
-      "date": "2026-05-19",
-      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "paper_id": "2606.01152",
+      "date": "2026-05-31",
+      "title": "ASE-26: a curriculum for agentic software engineering as a discipline",
       "authors": [
-        "Zhuohan Gu",
-        "Qizheng Zhang",
-        "Omar Khattab",
-        "Samuel Madden"
+        "Mikael Gorsky"
       ],
-      "abstract": "Large language model (LLM) agents increasingly operate over long and recurring external contexts, like document corpora and code repositories. Across invocations, existing approaches preserve either the agent's trajectory, passive access to raw material, or task-level strategies. None of them preserves what we argue is most needed for repeated same-context workloads: reusable orientation knowledge (e.g., what the context contains, how it is organized, and which entities, constants, and schemas have historically been useful) about the recurring context itself. We introduce PEEK, a system that caches and maintains this orientation knowledge as a context map: a small, constant-sized artifact in the agent's prompt that gives it a persistent peek into the external context. The map is maintained by a programmable cache policy with three modules: a Distiller that extracts transferable knowledge from inference-time signals, a Cartographer that translates it into structured edits, and a priority-based Evictor that enforces a fixed token budget. On long-context reasoning and information aggregation, PEEK improves over strong baselines by 6.3-34.0% while using 93-145 fewer iterations and incurring 1.7-5.8x lower cost than the state-of-the-art prompt-learning framework, ACE. On context learning, PEEK improves solving rate and rubric accuracy by 6.0-14.0% and 7.8-12.1%, respectively, at 1.4x lower cost than ACE. These gains generalize across LMs and agent architectures, including OpenAI Codex, a production-grade coding agent. Together, these results show that a context map helps long-context LLM agents interact with recurring external contexts more accurately and efficiently.",
+      "abstract": "The work of a professional software engineer has begun to consist, increasingly, of directing agents rather than writing code, and the empirical evidence for the shift is now several years deep. Anthropic's Economic Index puts automation at 79 per cent of Claude Code interactions [2]; Handa and colleagues at Anthropic find AI exposure for Computer Programmer tasks at approximately 75 per cent of the role's distinct activities [3]; Brynjolfsson and colleagues at Stanford's Digital Economy Lab report a 13 per cent relative decline in employment for workers aged 22 to 25 in occupations most exposed to AI [4]. The shift is also unfinished, and the academic literature on agentic software engineering converges on the finding that the missing capability is not better models but structured practitioner discipline. This paper presents ASE-26, a comprehensive undergraduate curriculum for agentic software engineering as a discipline, deposited as a citable reference on Zenodo under CC BY-ND 4.0 [12]. The paper sets out the discipline framing the curriculum rests on, the conceptual contributions it makes (most importantly, the evolutionary spiral as the operational form of the co-evolution of intent and build), the twenty-one-module structure that organises the discipline for teaching, the pedagogical commitments that follow from grading work co-produced with an agent, what graduates leave with, and how the discipline as taught is designed to outlast the specific capabilities of today's models. The position the paper takes is that the practitioner skills the industry currently lacks are precisely the skills the discipline names, and that structured undergraduate curricula in agentic software engineering are the principal mechanism by which the gap closes.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.19932v1",
-        "pdf": "https://arxiv.org/pdf/2605.19932v1",
+        "abs": "http://arxiv.org/abs/2606.01152v1",
+        "pdf": "https://arxiv.org/pdf/2606.01152v1",
         "github": null,
         "blog": null
       },
-      "institution": "OpenAI, MIT",
+      "institution": "Stanford University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n这篇论文研究长期上下文场景下的 LLM Agent 记忆问题。作者认为，现有方法要么保留轨迹，要么保留原始上下文，要么保留任务策略，但都没有稳定保留“关于上下文本身的可复用定向知识”。为此，论文提出 PEEK，用一个固定大小的 context map 作为缓存，把外部上下文中的结构、实体、常用常量和历史有效线索整理成可持续维护的提示工件，并通过 Distiller、Cartographer 和 Evictor 三个模块进行抽取、编辑和预算控制。\n\n## 文章的核心贡献点\n核心贡献是把长期上下文中的“定向知识”单独提升为一等对象，而不是把记忆等同于历史轨迹压缩。PEEK 的设计重点不在增加更多上下文，而在以可控缓存策略维护一个常量规模的知识地图，从而让 Agent 在反复访问同一代码库或文档集合时更快定位信息。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n论文在长上下文推理、信息聚合与 context learning 任务上验证了 PEEK，相比强基线有 6.3% 到 34.0% 的提升，同时比 ACE 使用更少迭代并带来更低成本。作者还报告其方法可泛化到不同模型和 Agent 架构，包括生产级 coding agent。\n\n#### 总结\nPEEK 的价值在于把长期上下文 Agent 的记忆问题，从“多保留历史”转成“维护可复用上下文地图”，这让它在重复访问同一外部知识环境时更高效，也更接近真正可运维的 Agent 记忆机制。",
-      "summary_en": "## What This Paper Does\nThis paper studies memory for LLM agents operating over recurring long-context environments such as code repositories and document corpora. The authors argue that prior approaches preserve trajectories, raw context access, or task-level strategies, but fail to preserve reusable orientation knowledge about the context itself. They propose PEEK, which maintains a constant-size context map that stores structured knowledge about what the context contains, how it is organized, and which entities or schemas are repeatedly useful.\n\n## Core Contributions\nThe main contribution is the treatment of orientation knowledge as a first-class memory object. PEEK uses a programmable cache policy with three components: a Distiller to extract transferable signals, a Cartographer to convert them into structured edits, and an Evictor to maintain a fixed token budget. This yields a reusable prompt artifact rather than a growing transcript.\n\n## Implementation and Evaluation\nThe paper reports gains of 6.3% to 34.0% on long-context reasoning and information aggregation tasks over strong baselines, while also reducing iteration count and cost versus ACE. It further reports improvements on context learning tasks and claims the approach transfers across multiple language models and agent architectures.\n\n#### Summary\nPEEK reframes long-context agent memory as maintaining a reusable map of the environment instead of merely preserving more history, which makes the proposal operationally compelling for repeated same-context workloads.",
-      "render_excerpt": "机构: OpenAI, MIT<br>PEEK 的价值在于把长期上下文 Agent 的记忆问题，从“多保留历史”转成“维护可复用上下文地图”，这让它在重复访问同一外部知识环境时更高效，也更接近真正可运维的 Agent 记忆机制。",
-      "render_excerpt_en": "Institution: OpenAI, MIT<br>PEEK reframes long-context agent memory as maintaining a reusable map of the environment instead of merely preserving more history, which makes the proposal operationally compelling for repeated same-context workloads.",
+      "summary_cn": "本文提出ASE-26课程框架，面向Agent软件工程教学。研究发现，专业软件工程师的工作正从编写代码转向指挥Agent，这一转变已经有数年的实证支持（Claude Code自动化率79%）。论文设计了21模块的本科课程，强调实践纪律和Agent协作下的工作评估方法，认为行业缺乏的不是更好的模型，而是结构化的从业者能力。课程设计目标是培养能适应不同模型时代的通用能力。",
+      "summary_en": "This paper introduces ASE-26, a comprehensive undergraduate curriculum for agentic software engineering. The work addresses the empirical shift toward AI-directed development: Anthropic data shows 79% automation in Claude Code interactions. The curriculum comprises 21 modules and introduces the evolutionary spiral as a conceptual model for co-evolving intent and implementation. Grading incorporates collaborative agent-produced work. The position is that industry lacks structured practitioner discipline, not better models; structured curricula provide the primary mechanism to close this gap.",
+      "render_excerpt": "机构: Stanford University<br>本文提出ASE-26课程框架，面向Agent软件工程教学。研究发现，专业软件工程师的工作正从编写代码转向指挥Agent，这一转变已经有数年的实证支持（Claude Code自动化率79%）。论文设计了21模块的本科课程，强调实践纪律和Agent协作下的工作评估方法，认为行业缺乏的不是更好的模型，而是结构化的从业者能力。课程设计目标是培养能适应不同模型时代的通用能力。",
+      "render_excerpt_en": "Institution: Stanford University<br>This paper introduces ASE-26, a comprehensive undergraduate curriculum for agentic software engineering. The work addresses the empirical shift toward AI-directed development: Anthropic data shows 79% automation in Claude Code interactions. The curriculum comprises 21 modules and introduces the evolutionary spiral as a conceptual model for co-evolving intent and implementation.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T14:51:32Z"
+        "captured_at": "2026-05-31T10:44:53Z"
       },
       "source_summary": {
-        "provider": "paper-daily-skill",
-        "model": "conversation-runtime",
-        "captured_at": "2026-05-19"
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
       },
       "provenance": {
         "institution": "summary-artifact",
@@ -53,17 +50,22 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2605.20530",
-      "date": "2026-05-19",
-      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents",
+      "paper_id": "2606.01311",
+      "date": "2026-05-31",
+      "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
       "authors": [
-        "Parsa Mazaheri",
-        "Kasra Mazaheri"
+        "Zhuoyun Yu",
+        "Xin Xie",
+        "Wuguannan Yao",
+        "Chenxi Wang",
+        "Lei Liang",
+        "Xiang Qi",
+        "Shumin Deng"
       ],
-      "abstract": "Large language model agents now act on codebases, browsers, operating systems, calendars, files, and tool ecosystems, but the benchmarks used to evaluate them are fragmented: each emphasizes a different unit of measurement (final task success, tool-call validity, repeated-pass consistency, trajectory safety, or attack robustness). A line of 2024-2025 work has converged on the diagnosis that a single accuracy column is no longer the right unit of comparison for deployable agents. AgentAtlas extends this line of work with four components: (i) a six-state control-decision taxonomy (Act / Ask / Refuse / Stop / Confirm / Recover); (ii) a nine-category trajectory-failure taxonomy with two orthogonal hierarchical labels (primary_error_source, impact); (iii) a taxonomy-aware vs. taxonomy-blind methodology that measures how much of a model's apparent capability comes from the supervision in the prompt; and (iv) a benchmark-coverage audit mapping fifteen agent benchmarks against six behavioral axes. To demonstrate the methodology we run a small fixed eight-model set (1,342 generated items, four frontier closed and four open-weight) under both prompt modes. Removing the explicit label menu drops every model's trajectory accuracy by 14-40 pp to a tight 0.54-0.62 floor regardless of family, and no single model wins on all three of control accuracy, trajectory diagnosis, and tool-context utility retention. We treat the synthetic run as a measurement-protocol demonstration, not a benchmark release.",
+      "abstract": "Large language model (LLM) agents increasingly rely on reusable external skills to solve long-horizon interactive tasks. Existing training-free skill adaptation pipelines usually update skills from full trajectories or session-level feedback, which makes failure attribution coarse and often produces unstable or overly broad revisions. We propose SkillAdaptor, a training-free step-level skill adaptation framework with explicit failure attribution, and it can plug into OpenClaw-class agent harnesses. Given a failed trajectory, SkillAdaptor identifies a first actionable fault step, links responsibility to candidate skills, and applies targeted updates under explicit acceptance checks while keeping the backbone frozen. We evaluate on WebShop, PinchBench, and Claw-Eval with Kimi-K2.5, GLM-5, and GPT-5.2. SkillAdaptor improves over no-skill and skill-adaptation baselines on all three suites, with the largest single-metric improvements of +1.5 points on PinchBench Avg Score%, +1.8 on Claw-Eval Avg Score, and +1.7 on WebShop success rate. These results indicate that step-level attribution supports more stable and auditable training-free skill maintenance\\footnote{The code will be released at https://github.com/zjunlp/SkillAdaptor.}.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20530v1",
-        "pdf": "https://arxiv.org/pdf/2605.20530v1",
+        "abs": "http://arxiv.org/abs/2606.01311v1",
+        "pdf": "https://arxiv.org/pdf/2606.01311v1",
         "github": null,
         "blog": null
       },
@@ -74,19 +76,19 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n这篇论文讨论 LLM Agent 评测为什么不能再只看单一成功率榜单。作者指出，不同 benchmark 分别强调最终成功、轨迹一致性、工具调用有效性、安全性或鲁棒性，导致“谁更强”常常取决于评价维度，而不是能力本身。论文提出 AgentAtlas，试图把 Agent 评测从结果排行榜扩展到控制决策、轨迹失败类型和 benchmark 覆盖面的更细粒度分析。\n\n## 文章的核心贡献点\n论文给出一个六类控制决策 taxonomy、一个九类轨迹失败 taxonomy，以及 taxonomy-aware 与 taxonomy-blind 两种评价设定，用来衡量模型能力到底有多少来自显式标签菜单本身。除此之外，作者还对 15 个 Agent benchmark 做了覆盖度审计，把已有 benchmark 映射到六个行为轴上。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n作者在一个固定的八模型集合上做方法展示，结果显示一旦移除显式标签菜单，所有模型的轨迹准确率都会下降 14 到 40 个百分点，并集中到较接近的低位区间。这说明很多表面能力其实依赖 prompt 中给出的监督结构，而不是模型天然具备的稳定控制能力。\n\n#### 总结\nAgentAtlas 的重点不是再造一个新榜单，而是把 Agent 评测从单值结果拓展成多维行为诊断框架。它的价值在于帮助理解模型是“真的会”，还是“被 prompt 扶着会”。",
-      "summary_en": "## What This Paper Does\nThis paper argues that LLM agent evaluation can no longer be reduced to a single outcome leaderboard. Existing benchmarks emphasize different units of analysis, including final success, trajectory consistency, tool-call validity, safety, and robustness. AgentAtlas proposes a broader evaluation framework that exposes these differences instead of collapsing them into one score.\n\n## Core Contributions\nThe paper introduces a six-state control-decision taxonomy, a nine-category trajectory-failure taxonomy, and a methodology that compares taxonomy-aware and taxonomy-blind prompting. It also audits benchmark coverage by mapping fifteen agent benchmarks onto six behavioral axes.\n\n## Implementation and Evaluation\nOn a fixed eight-model experimental set, the authors show that removing an explicit label menu reduces trajectory accuracy by 14 to 40 percentage points for every model and compresses performance into a much narrower range. This suggests that part of the apparent capability measured by current prompts comes from the supervision structure itself rather than stable agent competence.\n\n#### Summary\nAgentAtlas is valuable less as another benchmark and more as an evaluation diagnosis layer: it helps separate real control competence from prompt-induced measurement artifacts.",
-      "render_excerpt": "AgentAtlas 的重点不是再造一个新榜单，而是把 Agent 评测从单值结果拓展成多维行为诊断框架。它的价值在于帮助理解模型是“真的会”，还是“被 prompt 扶着会”。",
-      "render_excerpt_en": "AgentAtlas is valuable less as another benchmark and more as an evaluation diagnosis layer: it helps separate real control competence from prompt-induced measurement artifacts.",
+      "summary_cn": "SkillAdaptor提出一个训练无关的Step级Agent技能适配框架。针对现有方法无法精确定位失败责任的问题，该框架通过显式失败归因识别第一个可执行的错误步骤，在冻结骨干的前提下对候选技能进行有针对性的更新。在WebShop、PinchBench等多个基准上评测，相比无技能和技能适配基线有+1.5到+1.8的单指标改进。展示了Step级归因对可审计的Agent技能维护的重要性。",
+      "summary_en": "SkillAdaptor presents a training-free step-level skill adaptation framework for LLM agents. Existing methods coarsely attribute failures to trajectories or sessions, producing unstable updates. This work identifies the first actionable fault step and applies targeted repairs with acceptance checks. Evaluated on WebShop, PinchBench, and Claw-Eval with multiple LLMs, improvements range from +1.5 to +1.8 points. Step-level attribution enables stable and auditable training-free skill maintenance without gradient updates.",
+      "render_excerpt": "SkillAdaptor提出一个训练无关的Step级Agent技能适配框架。针对现有方法无法精确定位失败责任的问题，该框架通过显式失败归因识别第一个可执行的错误步骤，在冻结骨干的前提下对候选技能进行有针对性的更新。在WebShop、PinchBench等多个基准上评测，相比无技能和技能适配基线有+1.5到+1.8的单指标改进。展示了Step级归因对可审计的Agent技能维护的重要性。",
+      "render_excerpt_en": "SkillAdaptor presents a training-free step-level skill adaptation framework for LLM agents. Existing methods coarsely attribute failures to trajectories or sessions, producing unstable updates. This work identifies the first actionable fault step and applies targeted repairs with acceptance checks.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T22:05:12Z"
+        "captured_at": "2026-05-31T16:00:10Z"
       },
       "source_summary": {
-        "provider": "paper-daily-skill",
-        "model": "conversation-runtime",
-        "captured_at": "2026-05-19"
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
       },
       "provenance": {
         "institution": "summary-artifact",
@@ -99,20 +101,25 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2605.20563",
-      "date": "2026-05-19",
-      "title": "Multi-agent Collaboration with State Management",
+      "paper_id": "2606.01498",
+      "date": "2026-05-31",
+      "title": "TimeSage-MT: A Multi-Turn Benchmark for Evaluating Agentic Time Series Reasoning",
       "authors": [
-        "Mengyang Liu",
-        "Taozhi Chen",
-        "Zhenhua Xu",
-        "Xue Jiang",
-        "Yihong Dong"
+        "Yaxuan Kong",
+        "Qingren Yao",
+        "Yuqi Nie",
+        "Yichen Li",
+        "Yilei Shao",
+        "Stefan Zohren",
+        "Anna Vettoruzzo",
+        "Joaquin Vanschoren",
+        "Ming Jin",
+        "Qingsong Wen"
       ],
-      "abstract": "Recent advances in multi-agent systems have shown great potential for solving complex tasks. However, when multiple agents edit a shared codebase concurrently, their changes can silently conflict and inconsistent views lead to integration failures. Existing multi-agent systems address this through workspace isolation (e.g., one git worktree per agent), but this defers conflict resolution to a post-hoc merge step where recovery is expensive. In this paper, we propose STORM, i.e., STate-ORiented Management for multi-agent collaboration. Specifically, STORM manages agent states by mediating their interactions with the shared workspace, ensuring that each agent operates on a consistent view of the codebase and that conflicting edits are detected and resolved at write time. We evaluate STORM on Commit0 and PaperBench across multiple LLMs. STORM outperforms the git-worktree-based multi-agent baseline by +18.7 on Commit0-Lite and +1.4 on PaperBench, while achieving comparable or better cost efficiency. Combined with single-agent runs, STORM reaches highest scores of 87.6 and 78.2 on the two benchmarks respectively, suggesting that explicit state management is a more effective foundation for multi-agent collaboration than workspace isolation. STORM can also be plugged into any multi-agent system seamlessly.",
+      "abstract": "Time series data inform critical decisions across many real-world domains. While large language model (LLM) agents can analyze data through natural language and tools, it remains unclear whether they can conduct reliable time series analysis across multi-turn conversations. Existing benchmarks focus on single-step tasks such as forecasting and anomaly detection, overlooking practical workflows where user goals evolve, agents must build on prior analyses, and conclusions emerge from accumulated evidence. In this work, we introduce TimeSage-MT, a multi-turn benchmark for agentic time series reasoning with 240 tasks and 2,680 dialogue turns across 8 real-world domains, spanning basic exploration to decision-oriented analysis. TimeSage-MT is built through a reproducible pipeline that converts real-world time series data into multi-turn conversations with verifiable answers. It provides a unified evaluation protocol and public leaderboard for comparing time series agentic systems. To demonstrate the benchmark's utility, we evaluate frontier LLMs alongside TimeSage, a novel structured agent equipped with a comprehensive time series skill library. The results show sharp performance drops on decision-oriented tasks, driven by failures in memory, uncertainty handling, and domain-based decision making. TimeSage-MT exposes critical gaps in current agentic reasoning and provides a rigorous foundation for future development.",
       "links": {
-        "abs": "http://arxiv.org/abs/2605.20563v1",
-        "pdf": "https://arxiv.org/pdf/2605.20563v1",
+        "abs": "http://arxiv.org/abs/2606.01498v1",
+        "pdf": "https://arxiv.org/pdf/2606.01498v1",
         "github": null,
         "blog": null
       },
@@ -123,19 +130,885 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n这篇论文关注多 Agent 同时修改共享代码库时的协作问题。现有系统常通过给每个 Agent 分配独立 worktree 来隔离修改，但这会把冲突留到后期 merge 阶段，修复成本高。作者提出 STORM，把“状态管理”作为多 Agent 协作的核心机制，在写入时就协调 Agent 对共享工作区的访问，从而尽早发现和处理冲突。\n\n## 文章的核心贡献点\nSTORM 的核心思想是让 Agent 协作建立在一致视图和显式状态调度上，而不是只依赖工作空间隔离。它不是简单改进 merge 流程，而是把状态仲裁前移到协作执行期，这使多 Agent 在共享代码环境中更像一个受控系统，而不是多个独立分支事后拼接。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n论文在 Commit0 和 PaperBench 上评估 STORM，相比基于 git worktree 的多 Agent 基线，在 Commit0-Lite 上提升 18.7 分，在 PaperBench 上提升 1.4 分，并保持可比甚至更好的成本效率。结合 single-agent 结果后，作者报告总分可达到两个 benchmark 上的最好表现。\n\n#### 总结\nSTORM 说明，多 Agent 编程协作的关键瓶颈不只是分工，而是共享状态管理。相比把冲突推迟到 merge 阶段，写时协调是一条更稳的工程路线。",
-      "summary_en": "## What This Paper Does\nThis paper studies collaboration among multiple agents editing a shared codebase. Prior systems often isolate agents in separate git worktrees, which postpones conflict handling until merge time. The authors propose STORM, a state-oriented management layer that mediates agent interaction with the shared workspace and detects conflicting edits at write time.\n\n## Core Contributions\nThe main contribution is the shift from workspace isolation to explicit state management. STORM aims to guarantee a consistent view of the codebase for each agent and moves conflict detection earlier in the execution process rather than treating it as a downstream merge problem.\n\n## Implementation and Evaluation\nThe paper evaluates STORM on Commit0 and PaperBench. It reports a +18.7 improvement on Commit0-Lite and a +1.4 improvement on PaperBench over a git-worktree-based multi-agent baseline, while maintaining competitive cost efficiency. Combined with single-agent runs, the system reaches the highest reported scores in the paper on both benchmarks.\n\n#### Summary\nSTORM makes a strong case that the central systems problem in multi-agent coding is shared state coordination, not just agent decomposition, and that write-time mediation is more effective than deferred merge-time recovery.",
-      "render_excerpt": "STORM 说明，多 Agent 编程协作的关键瓶颈不只是分工，而是共享状态管理。相比把冲突推迟到 merge 阶段，写时协调是一条更稳的工程路线。",
-      "render_excerpt_en": "STORM makes a strong case that the central systems problem in multi-agent coding is shared state coordination, not just agent decomposition, and that write-time mediation is more effective than deferred merge-time recovery.",
+      "summary_cn": "TimeSage-MT引入首个多轮Agent时间序列推理基准，包含240个任务跨8个真实领域。现有基准只评测单步任务如预测和异常检测，而实际应用中Agent需要在多轮对话中逐步积累证据。基准从基础探索到决策导向的分析，揭示LLM在记忆、不确定性处理和域知识决策上的显著缺陷。为Agent系统提供严格的评估基础。",
+      "summary_en": "TimeSage-MT introduces the first multi-turn benchmark for evaluating LLM agents on time series reasoning. With 240 tasks and 2,680 dialogue turns across 8 domains, it moves beyond single-step forecasting to multi-turn interactive analysis where goals evolve and conclusions accumulate. Frontier LLMs show sharp performance drops on decision-oriented tasks due to failures in memory, uncertainty handling, and domain-based reasoning. Provides rigorous foundation for advancing agentic time series analysis.",
+      "render_excerpt": "TimeSage-MT引入首个多轮Agent时间序列推理基准，包含240个任务跨8个真实领域。现有基准只评测单步任务如预测和异常检测，而实际应用中Agent需要在多轮对话中逐步积累证据。基准从基础探索到决策导向的分析，揭示LLM在记忆、不确定性处理和域知识决策上的显著缺陷。为Agent系统提供严格的评估基础。",
+      "render_excerpt_en": "TimeSage-MT introduces the first multi-turn benchmark for evaluating LLM agents on time series reasoning. With 240 tasks and 2,680 dialogue turns across 8 domains, it moves beyond single-step forecasting to multi-turn interactive analysis where goals evolve and conclusions accumulate. Frontier LLMs show sharp performance drops on decision-oriented tasks due to failures in memory, uncertainty handling, and domain-based reasoning.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-05-19T23:45:33Z"
+        "captured_at": "2026-05-31T23:34:35Z"
       },
       "source_summary": {
-        "provider": "paper-daily-skill",
-        "model": "conversation-runtime",
-        "captured_at": "2026-05-19"
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01441",
+      "date": "2026-05-31",
+      "title": "Dive into Ambiguity: A*-Inspired Multi-Agents Commonsense Obfuscation Attack on LLM Prompts",
+      "authors": [
+        "Boxuan Wang",
+        "Zhuoyun Li",
+        "Xiaowei Huang",
+        "Yi Dong"
+      ],
+      "abstract": "Large language models (LLMs) excel in reasoning and knowledge-intensive tasks but remain vulnerable to prompt-level adversarial attacks that preserve intent while triggering commonsense hallucinations. This vulnerability is urgent, as LLMs are rapidly integrated into safety-critical domains where factual reliability is non-negotiable. Existing attack methods either lack efficiency or fail to capture the adaptive strategies of real-world adversaries. We propose an A*-inspired Factual Error Induction Framework, a framework for generating semantically aligned yet obfuscated prompts. At its core is a Hierarchical Rewrite Strategy guided by a dynamic semantic dispersion coefficient $γ$ that balances conservative edits early with aggressive obfuscations later, following a reverse simulated annealing schedule. To enhance interpretability, we further introduce Agentic Mechanism Labeling, which discovers and refines adversarial mechanisms, offering interpretable reverse optimization. Theoretically, we prove that prompt rewriting follows a contractive recurrence, leading to semantic collapse as $γ$ decreases. Empirically, across diverse LLMs, our method achieves higher attack success rates than exhaustive exploration while requiring fewer attempts, demonstrating both efficiency and effectiveness.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01441v1",
+        "pdf": "https://arxiv.org/pdf/2606.01441v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "本文提出A*启发的对抗攻击框架，用于生成语义保持但模糊化的prompt。通过动态语义离散度系数平衡保守编辑和激进混淆，采用反向模拟退火策略。论文还引入代理机制标注揭示对抗机制，提供可解释的反向优化。理论证明prompt重写遵循收缩递归，当系数减小时导致语义崩溃。在多个LLM上达到更高的攻击成功率。",
+      "summary_en": "This work presents an A*-inspired Factual Error Induction Framework for generating semantically aligned yet obfuscated prompts. A hierarchical rewrite strategy uses dynamic semantic dispersion coefficient to balance conservative early edits with aggressive later obfuscations via reverse simulated annealing. Agentic Mechanism Labeling discovers and refines adversarial mechanisms for interpretability. Theory proves prompt rewriting exhibits contractive recurrence leading to semantic collapse. Achieves higher attack success with fewer attempts across diverse LLMs.",
+      "render_excerpt": "本文提出A*启发的对抗攻击框架，用于生成语义保持但模糊化的prompt。通过动态语义离散度系数平衡保守编辑和激进混淆，采用反向模拟退火策略。论文还引入代理机制标注揭示对抗机制，提供可解释的反向优化。理论证明prompt重写遵循收缩递归，当系数减小时导致语义崩溃。在多个LLM上达到更高的攻击成功率。",
+      "render_excerpt_en": "This work presents an A*-inspired Factual Error Induction Framework for generating semantically aligned yet obfuscated prompts. A hierarchical rewrite strategy uses dynamic semantic dispersion coefficient to balance conservative early edits with aggressive later obfuscations via reverse simulated annealing. Agentic Mechanism Labeling discovers and refines adversarial mechanisms for interpretability.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T20:20:53Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01416",
+      "date": "2026-05-31",
+      "title": "Self-Healing Agentic Orchestrators for Reliable Tool-Augmented Large Language Model Systems",
+      "authors": [
+        "Rahul Suresh Babu",
+        "Adarsh Agrawal"
+      ],
+      "abstract": "Tool-augmented large language model (LLM) agents rely on orchestration layers that coordinate planning, retrieval, tool invocation, validation, memory, and recovery. In these systems, failures arise not only from model errors, but also from orchestration-level issues such as tool timeouts, malformed arguments, stale context, contradictory evidence, retry loops, and unverified intermediate outputs. This paper presents a self-healing agentic orchestrator that treats reliability as a bounded runtime control problem. The orchestrator maps observable failure signals to inferred failure classes, selects targeted recovery actions under explicit budgets, verifies recovered trajectories, and records observability traces. We evaluate the approach on a 100-task controlled fault-injection benchmark against static workflow, retry-only, ReAct-style, and full-replanning baselines. Self-healing achieves 98.8\\% task success, compared with 94.5\\% for retry-only and 93.8\\% for full replanning. A matched recovery-budget sweep shows that self-healing outperforms retry-only and full replanning at every tested budget, with the largest gap under a single recovery attempt: 94.0\\% versus 85.3\\% and 88.2\\%, respectively. Under a controlled semantic silent-failure setting, verifier-guided self-healing reduces silent failures to 0.0\\%, while non-verifying baselines return wrong-but-plausible outputs more often. A compact model-in-the-loop validation shows that the same recovery mechanism can operate when a live tool-calling model performs tool selection, argument generation, and answer synthesis over local fault-injected tools. These results provide controlled evidence that failure-aware, budgeted, and verification-guided orchestration improves reliability and diagnosability in tool-augmented LLM systems.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01416v1",
+        "pdf": "https://arxiv.org/pdf/2606.01416v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "自修复Agent编排器将可靠性视为有界运行时控制问题。在Tool-augmented LLM系统中，故障来自工具超时、参数畸形、上下文陈旧等编排层问题。该方法将可观测故障信号映射到推断故障类别，在显式预算约束下选择恢复行动。在100任务故障注入基准上，自修复达成98.8%成功率（对比仅重试94.5%）。验证器引导的恢复将无声故障从高频降至0%。",
+      "summary_en": "Self-healing agentic orchestrators treat reliability as bounded runtime control. Tool-augmented LLM systems fail not just from model errors but orchestration-layer issues: tool timeouts, malformed arguments, stale context, contradictory evidence. The approach maps observable failure signals to inferred fault classes and selects targeted recovery actions under explicit budgets, with trajectory verification. On a 100-task fault-injection benchmark, self-healing achieves 98.8% success vs. 94.5% for retry-only. Verifier-guided recovery reduces silent failures to 0%.",
+      "render_excerpt": "自修复Agent编排器将可靠性视为有界运行时控制问题。在Tool-augmented LLM系统中，故障来自工具超时、参数畸形、上下文陈旧等编排层问题。该方法将可观测故障信号映射到推断故障类别，在显式预算约束下选择恢复行动。在100任务故障注入基准上，自修复达成98.8%成功率（对比仅重试94.5%）。验证器引导的恢复将无声故障从高频降至0%。",
+      "render_excerpt_en": "Self-healing agentic orchestrators treat reliability as bounded runtime control. Tool-augmented LLM systems fail not just from model errors but orchestration-layer issues: tool timeouts, malformed arguments, stale context, contradictory evidence. The approach maps observable failure signals to inferred fault classes and selects targeted recovery actions under explicit budgets, with trajectory verification.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T19:27:22Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01365",
+      "date": "2026-05-31",
+      "title": "Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability",
+      "authors": [
+        "Xianyou Li",
+        "Weiran Yan",
+        "Yichao Wu",
+        "Penghao Liang",
+        "Mengwei Yuan",
+        "Jianan Liu",
+        "Jing Yang"
+      ],
+      "abstract": "Tool-using multi-agent large language model (LLM) systems spend computation through model tokens, tool calls, retries, and code execution before producing an answer. When a run fails, final-answer evaluation reveals the endpoint but usually not the point at which the trajectory stopped making recoverable progress. This paper introduces a failure-aware observability framework for diagnosing wasted computation in multi-agent LLM traces. The framework maps recurring failure modes to online trace signals, including tool reliability, execution recovery, orchestration loops, evidence availability, information change, and budget pressure. We instantiate the framework in a three- agent question-answering system and evaluate it on 165 GAIA validation traces under identical execution caps. Operational failures remain common: 22/53 level-1 runs, 33/86 level-2 runs, and 12/26 level-3 runs fail to produce a usable final answer. The traces expose different mechanisms behind these outcomes, including insufficient evidence, repeated-action loops, max-step termination, tool-failure streaks, and execution calls that succeed without useful output. Mean token use rises from 8,152 tokens at level 1 to 16,389 tokens at level 3, while evidence availability and sentence-level support diverge. A cached 10-trace LLM-judge grounding audit shows that cheap online signals and deeper semantic metrics capture complementary layers of failure. The results position failure-aware observability as a diagnostic layer between raw execution logs and final-answer accuracy.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01365v1",
+        "pdf": "https://arxiv.org/pdf/2606.01365v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "本文提出故障感知可观测框架，诊断多Agent LLM系统中的计算浪费。Tool-using Agent系统通过模型令牌、工具调用、重试和代码执行消耗计算，但单纯的终点评估无法定位轨迹失败的具体点。框架映射故障模式到在线迹象：工具可靠性、执行恢复、编排循环等。在GAIA验证集上，分析揭示不同失败机制如证据不足、重复动作循环、最大步数终止。",
+      "summary_en": "A failure-aware observability framework diagnoses wasted computation in multi-agent LLM traces. Tool-using systems spend tokens, tools calls, retries, and code execution before producing answers; endpoint evaluation reveals failure outcome but not where recoverable progress stops. The framework maps recurring failure modes to online trace signals: tool reliability, execution recovery, orchestration loops, evidence availability. Analysis on GAIA traces exposes mechanisms: insufficient evidence, repeated-action loops, max-step termination, tool-failure streaks.",
+      "render_excerpt": "本文提出故障感知可观测框架，诊断多Agent LLM系统中的计算浪费。Tool-using Agent系统通过模型令牌、工具调用、重试和代码执行消耗计算，但单纯的终点评估无法定位轨迹失败的具体点。框架映射故障模式到在线迹象：工具可靠性、执行恢复、编排循环等。在GAIA验证集上，分析揭示不同失败机制如证据不足、重复动作循环、最大步数终止。",
+      "render_excerpt_en": "A failure-aware observability framework diagnoses wasted computation in multi-agent LLM traces. Tool-using systems spend tokens, tools calls, retries, and code execution before producing answers; endpoint evaluation reveals failure outcome but not where recoverable progress stops. The framework maps recurring failure modes to online trace signals: tool reliability, execution recovery, orchestration loops, evidence availability.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T17:50:11Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01351",
+      "date": "2026-05-31",
+      "title": "Recognize Your Orchestrator: An Entropy Dynamics Perspective for LLM Multi-Agent Systems",
+      "authors": [
+        "Junze Zhu",
+        "Weihao Chen",
+        "Xuanwang Zhang",
+        "Zhen Wu",
+        "Xinyu Dai"
+      ],
+      "abstract": "The transition from single-turn models to Multi-Agent Systems (MAS) promises enhanced problem-solving capabilities, yet the centralized orchestration topology remains a critical point of fragility. To analyze this, we propose a Mean-Field Entropy Dynamics framework, modeling the orchestration process as a system governed by the competing forces of task resolution and cumulative context loading. To facilitate validation, we introduce Inverse Workflow Generation (IWG), a multi-agent pipeline that synthesizes process-verifiable, high-complexity benchmarks with dense intermediate checkpoints. We demonstrate that our entropy dynamics model fits empirical trajectories, providing physically interpretable parameters that quantify system stability and performance collapse. Crucially, our analysis uncovers a ``Reasoning Trap\": while reasoning-heavy models excel in isolated tasks, they frequently fail as orchestrators due to context squeezing. Elucidating the physical mechanisms underlying the Orchestrator and quantifying systemic uncertainty offers insights for the MASs' architectural design.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01351v1",
+        "pdf": "https://arxiv.org/pdf/2606.01351v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "从熵动力学角度分析LLM多Agent系统的中央编排器脆弱性。论文提出均值场熵动力学框架，将编排过程建模为任务分解和累积上下文负荷相互竞争的系统。引入逆向工作流生成(IWG)合成流程可验证的高复杂度基准。熵模型拟合经验轨迹，揭示系统稳定性和性能崩溃的物理可解释参数。核心发现\"推理陷阱\"：推理能力强的模型在编排任务中频繁失败。",
+      "summary_en": "Analyzing LLM multi-agent systems through Mean-Field Entropy Dynamics reveals fragility of centralized orchestration. Task resolution and cumulative context loading compete as opposing forces. Inverse Workflow Generation (IWG) synthesizes process-verifiable, high-complexity benchmarks. The entropy model fits empirical trajectories with physically interpretable parameters quantifying system stability and performance collapse. Key finding: the Reasoning Trap—high-reasoning models excel in isolation but fail as orchestrators due to context squeezing.",
+      "render_excerpt": "从熵动力学角度分析LLM多Agent系统的中央编排器脆弱性。论文提出均值场熵动力学框架，将编排过程建模为任务分解和累积上下文负荷相互竞争的系统。引入逆向工作流生成(IWG)合成流程可验证的高复杂度基准。熵模型拟合经验轨迹，揭示系统稳定性和性能崩溃的物理可解释参数。核心发现\"推理陷阱\"：推理能力强的模型在编排任务中频繁失败。",
+      "render_excerpt_en": "Analyzing LLM multi-agent systems through Mean-Field Entropy Dynamics reveals fragility of centralized orchestration. Task resolution and cumulative context loading compete as opposing forces. Inverse Workflow Generation (IWG) synthesizes process-verifiable, high-complexity benchmarks.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T17:06:01Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01199",
+      "date": "2026-05-31",
+      "title": "Can LLM Agents Sustain Long-Horizon Organizational Dynamics?",
+      "authors": [
+        "Xuancheng Zhu",
+        "Yang Yue",
+        "Shuaibing Wan",
+        "Zihan Dou",
+        "Xiaohan Zhang",
+        "Yongrui Liu",
+        "Guoshun Nan"
+      ],
+      "abstract": "Large language agents are increasingly used for social simulation, yet it remains unclear whether they can sustain coherent behavior in structured organizations, where goals must propagate through hierarchy, tasks depend on prior execution, and artifacts accumulate over long horizons. We formulate long-horizon organizational simulation as a memory-centered coordination problem and introduce TaskWeave, a hierarchical agentic framework that maintains planning states through a Formulate-Partition-Diagnose-Align cycle and grounds execution through dependency-aware trace memory. We evaluate TaskWeave in a year-long IT company simulation and compare it with other multi-agent frameworks on organizational coherence, execution grounding, and downstream enterprise NLP utility. Experiments show that TaskWeave supports coherent and long-horizon organizational dynamics while producing grounded artifacts and adapting to external environments. These findings suggest that structured simulation memory is a key mechanism for building reliable LLM-based organizational simulators.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01199v1",
+        "pdf": "https://arxiv.org/pdf/2606.01199v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "TaskWeave框架支持LLM Agent进行年级别的长地平线组织模拟。传统多Agent框架难以维持结构化组织中的连贯行为，其中目标通过层级传播、任务依赖先前执行、工件跨轨迹积累。TaskWeave采用层级结构，通过Formulate-Partition-Diagnose-Align循环维护规划状态，通过依赖感知迹象记忆实现执行接地。在为期一年的IT公司模拟中展示了连贯的长地平线组织动态。",
+      "summary_en": "TaskWeave enables LLM agents to sustain coherent behavior in structured organizations over long horizons (year-long simulations). Multi-agent frameworks struggle when goals propagate hierarchically, tasks depend on prior execution, and artifacts accumulate. TaskWeave maintains planning states through Formulate-Partition-Diagnose-Align cycles and grounds execution via dependency-aware trace memory. Demonstrates coherent long-horizon organizational dynamics with grounded artifacts and external environment adaptation.",
+      "render_excerpt": "TaskWeave框架支持LLM Agent进行年级别的长地平线组织模拟。传统多Agent框架难以维持结构化组织中的连贯行为，其中目标通过层级传播、任务依赖先前执行、工件跨轨迹积累。TaskWeave采用层级结构，通过Formulate-Partition-Diagnose-Align循环维护规划状态，通过依赖感知迹象记忆实现执行接地。在为期一年的IT公司模拟中展示了连贯的长地平线组织动态。",
+      "render_excerpt_en": "TaskWeave enables LLM agents to sustain coherent behavior in structured organizations over long horizons (year-long simulations). Multi-agent frameworks struggle when goals propagate hierarchically, tasks depend on prior execution, and artifacts accumulate. TaskWeave maintains planning states through Formulate-Partition-Diagnose-Align cycles and grounds execution via dependency-aware trace memory.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T12:28:42Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01139",
+      "date": "2026-05-31",
+      "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
+      "authors": [
+        "Yuxuan Liu",
+        "Zhaochen Su",
+        "Lingyun Xie",
+        "Yuhao Zhang",
+        "Qing Zong",
+        "Jiahe Guo",
+        "Zhongwei Xie",
+        "Yiyan Ji",
+        "Yauwai Yim",
+        "Hongyu Luo",
+        "Xiyu Ren",
+        "Ruan Chenyu",
+        "Haoran Li",
+        "Yangqiu Song"
+      ],
+      "abstract": "Agent skills are procedural artifacts that enable LLM agents to execute workflows, verify constraints, and recover from failures. Existing self-evolving methods refine skills using accumulated trajectories. However, they struggle in cold-start settings, where only an initial, imperfect skill is available. Consequently, skill construction defaults to expert authoring or one-shot LLM generation. Expert-authored skills are costly and may not align with how LLM agents actually execute tasks, while one-shot generated skills can be syntactically well formed yet behaviorally weak. To bridge this gap, we propose SkillRevise, an execution-grounded framework designed to iteratively refine these initial skills. SkillRevise diagnoses skill defects from execution evidence, retrieves relevant repair principles from a general memory, and applies execution-anchored edits. By re-executing candidates and measuring empirical utility, it systematically retains the optimal skill version. Evaluated across three benchmarks and five LLMs, SkillRevise substantially outperforms one-shot baselines, improving the base agent's success rate on SkillsBench from 36.05% to 61.63%. Furthermore, the revised skills exhibit strong cross-model transferability, capturing generalized procedural knowledge over model-specific artifacts.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01139v1",
+        "pdf": "https://arxiv.org/pdf/2606.01139v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "SkillRevise通过执行接地的框架迭代改进初始Agent技能。冷启动设置下，现有自进化方法难以操作（只有一个初始不完美技能）。SkillRevise从执行证据诊断缺陷，从通用记忆检索修复原则，应用执行锚定的编辑。通过重新执行和测量实用性保留最优版本。跨三个基准五个LLM，基础Agent成功率从36.05%提升到61.63%。修订技能展示强跨模型转移性。",
+      "summary_en": "SkillRevise improves LLM-authored agent skills via execution-grounded iterative refinement. Cold-start settings (single imperfect initial skill) challenge existing self-evolving methods. The framework diagnoses skill defects from execution evidence, retrieves relevant repair principles from general memory, and applies execution-anchored edits while re-measuring empirical utility. On SkillsBench, improves from 36.05% to 61.63%; revised skills exhibit strong cross-model transferability.",
+      "render_excerpt": "SkillRevise通过执行接地的框架迭代改进初始Agent技能。冷启动设置下，现有自进化方法难以操作（只有一个初始不完美技能）。SkillRevise从执行证据诊断缺陷，从通用记忆检索修复原则，应用执行锚定的编辑。通过重新执行和测量实用性保留最优版本。跨三个基准五个LLM，基础Agent成功率从36.05%提升到61.63%。修订技能展示强跨模型转移性。",
+      "render_excerpt_en": "SkillRevise improves LLM-authored agent skills via execution-grounded iterative refinement. Cold-start settings (single imperfect initial skill) challenge existing self-evolving methods. The framework diagnoses skill defects from execution evidence, retrieves relevant repair principles from general memory, and applies execution-anchored edits while re-measuring empirical utility.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T10:19:13Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01046",
+      "date": "2026-05-31",
+      "title": "TravelEval: A Comprehensive Benchmarking Framework for Evaluating LLM-Powered Travel Planning Agents",
+      "authors": [
+        "Weiyi Chen",
+        "Shuaixiong Wang",
+        "Ziyun Gao",
+        "Kaichun Hu",
+        "Wangze Ni",
+        "Shimin Di",
+        "Chen Jason Zhang",
+        "Lei Chen"
+      ],
+      "abstract": "The development of Large Language Models (LLMs) has significantly improved travel planning applications, yet evaluating such models is limited by existing benchmarks' limitations: 1) overemphasis on constraint compliance, neglecting multi-dimensional qualities like spatio-temporal cost; 2) datasets lacking real-world authenticity and coverage in key areas (e.g., lodging, transport); and 3) isolated daily plan assessments that miss critical details (e.g., the impact of daily accommodation and visit pacing) needed for entire plan's evaluation. To address this gap, we introduce TravelEval, a realistic and comprehensive benchmark. TravelEval features 1) a novel six-dimensional evaluation framework to holistically assess plans across accuracy, compliance, temporality, spatiality, economy, and utility dimensions; 2) a highly realistic data sandbox with precise accommodation pricing and authentic intercity transportation data; and 3) a simulation-based global evaluation method that emulates complete travel plans with API-integrated geographic information and fine-grained queuing time. Evaluating 12 mainstream approaches with TravelEval reveals several valuable insights, such that LLMs struggle with globally-optimized multi-dimensional planning (especially in spatio-temporal reasoning and budget compliance), and agentic reasoning strategies offer no consistent improvement. Concisely, TravelEval facilitates travel plan evaluation via grounded spatio-temporal emulation and comprehensive metrics, providing a robust foundation for advancing LLM-powered travel planning research and applications.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01046v1",
+        "pdf": "https://arxiv.org/pdf/2606.01046v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "TravelEval提出旅行规划Agent的综合基准框架。现有基准过度强调约束符合性，忽视时空成本等多维质量。TravelEval引入六维评估框架（准确性、符合性、时间性、空间性、经济性、实用性），使用真实住宿定价和跨城交通数据，通过仿真模拟完整旅行计划。评测显示LLM在全局优化多维规划上力不从心，特别是时空推理和预算符合性。",
+      "summary_en": "TravelEval introduces a comprehensive benchmark for LLM-powered travel planning agents. Existing benchmarks overemphasize constraint compliance, missing multi-dimensional qualities like spatio-temporal cost. TravelEval features a six-dimensional evaluation framework (accuracy, compliance, temporality, spatiality, economy, utility), realistic data sandbox with authentic accommodation pricing and intercity transport, simulation-based global evaluation. Shows LLMs struggle with globally-optimized multi-dimensional planning, particularly spatio-temporal reasoning and budget compliance.",
+      "render_excerpt": "TravelEval提出旅行规划Agent的综合基准框架。现有基准过度强调约束符合性，忽视时空成本等多维质量。TravelEval引入六维评估框架（准确性、符合性、时间性、空间性、经济性、实用性），使用真实住宿定价和跨城交通数据，通过仿真模拟完整旅行计划。评测显示LLM在全局优化多维规划上力不从心，特别是时空推理和预算符合性。",
+      "render_excerpt_en": "TravelEval introduces a comprehensive benchmark for LLM-powered travel planning agents. Existing benchmarks overemphasize constraint compliance, missing multi-dimensional qualities like spatio-temporal cost. TravelEval features a six-dimensional evaluation framework (accuracy, compliance, temporality, spatiality, economy, utility), realistic data sandbox with authentic accommodation pricing and intercity transport, simulation-based global evaluation.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T06:29:19Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01065",
+      "date": "2026-05-31",
+      "title": "Leyline: KV Cache Directives for Agentic Inference",
+      "authors": [
+        "Bole Ma",
+        "Jan Eitzinger",
+        "Harald Koestler"
+      ],
+      "abstract": "Modern KV cache management assumes the chatbot workload: prompts arrive once and the cache grows append-only, so prefix caching and forward-only eviction are correct by construction. Agentic LLMs break this assumption. Their conversations evolve through policy-driven editing: failed tool calls are retried, stale outputs dropped, trajectories pivoted. Two distinct cache problems result. First, identical content moves to new positions between turns, invalidating exact-prefix caches even though the underlying KV would still be valid; recent work on position-independent caching for MLA addresses this reuse problem. Second, and this paper's focus, a policy may need to direct the serving system to actively remove or replace a span of cached content and continue without re-prefilling everything that came after. No existing primitive offers this. Production agentic harnesses fall back to re-prefill on every edit, paying full prefix-recomputation cost; kernel-level eviction methods make their own decisions and cannot accept policy directives from outside the kernel. We introduce Leyline, a serving-side primitive that closes this gap. A declarative directive 4-tuple separates what to edit from how to preserve position correctness. The policy declares the edit and its mode (in-place splice or prefix-trimmed re-prefill for semantic forgetting); an architecture-agnostic interface routes to a per-architecture kernel that restores attention math via a closed-form RoPE-rotation correction. The splice kernel lifts replay cache-hit by +11.2 pp and cuts latency by up to 241 ms. A ten-line truncation rule routed through the same interface lifts agentic solve rate by +14.3 pp on debug-gym. The mechanism is open; the policy space it enables is the agenda.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01065v1",
+        "pdf": "https://arxiv.org/pdf/2606.01065v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "Leyline为Agent推理引入KV缓存指令原语。聊天机器人工作负载假设缓存单调增长，但Agent通过策略编辑打破这一假设：失败工具调用重试、陈旧输出丢弃、轨迹转向。Leyline分离编辑内容和位置正确性保留，声明式指令通过特定架构核心实现，通过闭形式RoPE旋转纠正恢复注意力数学。Splice核心提升11.2 pp缓存命中，延迟降低241ms。",
+      "summary_en": "Leyline introduces serving-side KV cache directives for agentic inference. Chatbot workloads assume append-only cache growth, but agentic LLMs evolve via policy editing: retried tools, dropped outputs, pivoted trajectories. Leyline's declarative directive separates what to edit from position-correctness preservation; architecture-agnostic interface routes to per-architecture kernels using closed-form RoPE-rotation corrections. Splice kernel lifts cache-hit by +11.2 pp and reduces latency by up to 241 ms.",
+      "render_excerpt": "Leyline为Agent推理引入KV缓存指令原语。聊天机器人工作负载假设缓存单调增长，但Agent通过策略编辑打破这一假设：失败工具调用重试、陈旧输出丢弃、轨迹转向。Leyline分离编辑内容和位置正确性保留，声明式指令通过特定架构核心实现，通过闭形式RoPE旋转纠正恢复注意力数学。Splice核心提升11.2 pp缓存命中，延迟降低241ms。",
+      "render_excerpt_en": "Leyline introduces serving-side KV cache directives for agentic inference. Chatbot workloads assume append-only cache growth, but agentic LLMs evolve via policy editing: retried tools, dropped outputs, pivoted trajectories. Leyline's declarative directive separates what to edit from position-correctness preservation; architecture-agnostic interface routes to per-architecture kernels using closed-form RoPE-rotation corrections.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T07:13:15Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01057",
+      "date": "2026-05-31",
+      "title": "3DCodeBench: Benchmarking Agentic Procedural 3D Modeling Via Code",
+      "authors": [
+        "Yipeng Gao",
+        "Lei Shu",
+        "Genzhi Ye",
+        "Xi Xiong",
+        "Ameesh Makadia",
+        "Meiqi Guo",
+        "Laurent Itti",
+        "Jindong Chen"
+      ],
+      "abstract": "Procedural 3D modeling through code is emerging as a versatile paradigm, offering deterministic, engine-ready, and precisely editable assets that neural 3D generators inherently lack. Authoring such procedural content, however, demands deep expertise in 3D software APIs, parametric design, and code-level geometric reasoning. In this paper, we propose 3DCodeBench, a systematic benchmark for evaluating vision-language model (VLM) agents for procedural 3D generation in 3D modeling software. Specifically, 3DCodeBench evaluates how effectively 12 advanced VLMs can serve as procedural 3D modelers by translating text and image references into procedural code for 3D modeling software. Recognizing that automated metrics may not fully capture the perceptual quality of 3D shapes, we build 3DCodeArena, a ranking platform based on pairwise human preferences over generated 3D outputs. From extensive evaluations and results, we observe that: (1) Failures mostly arise from API mismatches, while successful renders still suffer from disconnected or floating 3D geometric components. (2) Test-time scaling, such as higher thinking budgets and multi-turn refinement, improves performance overall. Our findings highlight a critical need for high-quality procedural coding data to advance commercial VLMs. Furthermore, effective procedural 3D modeling requires a robust execution environment that provides high-fidelity feedback for iterative refinement. We release 3DCodeBench, including the curated large-scale dataset of multimodal (text/image) prompts, procedural code, 3D object triplets, evaluation protocol, and the public 3DCodeArena platform as a foundational toolkit for exploring VLM-based procedural 3D modelers.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01057v1",
+        "pdf": "https://arxiv.org/pdf/2606.01057v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "3DCodeBench评估VLM Agent在3D建模软件中的程序生成能力。通过代码进行程序化3D建模提供确定性、引擎就绪的资产。该基准评测12个高级VLM将文本/图像参考转换为程序代码的能力。3DCodeArena基于人类偏好对的排名平台提供感知质量评估。发现主要失败来自API不匹配，成功渲染仍有几何组件断裂。发布包含多模态提示、程序代码、3D对象三元组的大规模数据集。",
+      "summary_en": "3DCodeBench systematically evaluates VLM agents for procedural 3D generation via code in 3D modeling software. Procedural modeling offers deterministic, engine-ready assets lacking in neural generators. Tests 12 advanced VLMs translating text and image references into procedural code. 3DCodeArena, a ranking platform using pairwise human preferences, captures perceptual quality. Failures arise from API mismatches; test-time scaling improves results. Releases curated dataset with multimodal prompts, procedural code, and 3D object triplets.",
+      "render_excerpt": "3DCodeBench评估VLM Agent在3D建模软件中的程序生成能力。通过代码进行程序化3D建模提供确定性、引擎就绪的资产。该基准评测12个高级VLM将文本/图像参考转换为程序代码的能力。3DCodeArena基于人类偏好对的排名平台提供感知质量评估。发现主要失败来自API不匹配，成功渲染仍有几何组件断裂。发布包含多模态提示、程序代码、3D对象三元组的大规模数据集。",
+      "render_excerpt_en": "3DCodeBench systematically evaluates VLM agents for procedural 3D generation via code in 3D modeling software. Procedural modeling offers deterministic, engine-ready assets lacking in neural generators. Tests 12 advanced VLMs translating text and image references into procedural code.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T06:59:49Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01041",
+      "date": "2026-05-31",
+      "title": "ExpWeaver: LLM Agents Learn from Experience via Latent RAG",
+      "authors": [
+        "Tao Feng",
+        "Tianyang Luo",
+        "Jingjun Xu",
+        "Zhigang Hua",
+        "Yan Xie",
+        "Shuang Yang",
+        "Ge Liu",
+        "Jiaxuan You"
+      ],
+      "abstract": "Experience learning has achieved promising results in enhancing LLM agent planning and reasoning by integrating past interactions as reusable knowledge. However, existing methods remain confined to explicit text space, retrieving experiences via semantic similarity and concatenating them into the context window, leading to substantial token overhead and a decoupled architecture that separates retrieval from generation. To address these limitations, we propose ExpWeaver, a framework that enables LLM agents to learn from experience via latent retrieval-augmented generation, without requiring a separate RAG module. ExpWeaver encodes experiences using the LLM's own hidden states, retrieves relevant experiences directly in latent space at each decoding step, and integrates them through cross-attention aggregation and gated residual mechanisms. The entire pipeline is optimized end-to-end with reinforcement learning, supporting both generative and ranking tasks. We evaluate ExpWeaver on 13 diverse tasks spanning question answering, reasoning, coding, scientific prediction, and recommendation. Results demonstrate that ExpWeaver achieves state-of-the-art performance on 12 out of 13 tasks, outperforming the strongest baseline by over 6.8%; maintains token efficiency comparable to non-retrieval baselines while text-based retrieval methods require 1.5 to 2 times more tokens; and exhibits superior cross-domain generalization, outperforming the strongest baseline by 16.32% under zero-shot transfer and 15.21% under few-shot transfer. Our code for ExpWeaver is released at https://github.com/ulab-uiuc/ExpWeaver.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01041v1",
+        "pdf": "https://arxiv.org/pdf/2606.01041v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "ExpWeaver通过隐空间RAG使LLM Agent从经验学习。现有方法限于显式文本空间，通过语义相似性检索导致大量令牌开销。ExpWeaver使用LLM自身隐状态编码经验，在解码每步直接在隐空间检索相关经验，通过交叉注意聚合和门控残差机制集成。端到端强化学习优化，支持生成和排名任务。在13项多样任务上达到最高性能，令牌效率显著优于文本检索。",
+      "summary_en": "ExpWeaver enables LLM agents to learn from experience via latent retrieval-augmented generation. Existing text-based methods retrieve experiences semantically and concatenate to context, causing token overhead and decoupled architecture. ExpWeaver encodes experiences in LLM hidden states, retrieves relevant experiences in latent space at each decoding step via cross-attention and gated residual mechanisms. End-to-end RL optimization supports generative and ranking tasks. SOTA on 12/13 diverse tasks with superior token efficiency and cross-domain generalization.",
+      "render_excerpt": "ExpWeaver通过隐空间RAG使LLM Agent从经验学习。现有方法限于显式文本空间，通过语义相似性检索导致大量令牌开销。ExpWeaver使用LLM自身隐状态编码经验，在解码每步直接在隐空间检索相关经验，通过交叉注意聚合和门控残差机制集成。端到端强化学习优化，支持生成和排名任务。在13项多样任务上达到最高性能，令牌效率显著优于文本检索。",
+      "render_excerpt_en": "ExpWeaver enables LLM agents to learn from experience via latent retrieval-augmented generation. Existing text-based methods retrieve experiences semantically and concatenate to context, causing token overhead and decoupled architecture. ExpWeaver encodes experiences in LLM hidden states, retrieves relevant experiences in latent space at each decoding step via cross-attention and gated residual mechanisms.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T06:11:07Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01385",
+      "date": "2026-05-31",
+      "title": "Bridging Requirements and Architecture: Multi-Agent Orchestration with External Knowledge and Hierarchical Memory",
+      "authors": [
+        "Ruiyin Li",
+        "Yiran Zhang",
+        "Xiyu Zhou",
+        "Yangxiao Cai",
+        "Peng Liang",
+        "Weisong Sun",
+        "Jifeng Xuan",
+        "Zhi Jin",
+        "Yang Liu"
+      ],
+      "abstract": "Software architecture design is a critical yet inherently complex and knowledge-intensive phase that requires balancing competing quality attributes and adapting to evolving requirements. Traditionally, this process has been time-consuming, labor-intensive, and heavily reliant on architects, often resulting in limited exploration of alternative architectural decompositions and styles, especially under the pressures of agile development. While LLM-based agents have shown promising performance across various software engineering tasks, their application to architecture design remains relatively scarce and requires systematic exploration. To address these challenges, we proposed MAAD (Multi-Agent Architecture Design), a knowledge-driven framework that orchestrates four specialized agents (i.e., Analyst, Modeler, Designer and Evaluator) to autonomously and collaboratively transform requirements specifications into comprehensive, multi-view architectural blueprints with quality attribute assessments. MAAD incorporates RAG to inject recognized architectural standards and patterns into the workflow and leverages a hierarchical memory mechanism that captures design history for iterative refinement. We evaluated MAAD through comparative experiments against MetaGPT, using quantitative architecture-level metrics across 10 case studies and qualitative feedback from industry architects on 10 real-world specifications. Results show that MAAD generates more complete, modular, and traceable architectures than the baseline, and its dedicated Evaluator agent autonomously produces structured quality evaluation reports that significantly reduce manual validation efforts. Furthermore, we found that the quality of the generated architecture heavily depends on the underlying LLM's reasoning capacity, with GPT-5.2 and Qwen3.5 outperforming other models across most evaluation settings.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01385v1",
+        "pdf": "https://arxiv.org/pdf/2606.01385v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "MAAD（多Agent架构设计）框架用知识驱动的Agent编排自动化软件架构设计。通过四个专化Agent（分析员、建模者、设计者、评估者）协作将需求转换为多视图架构蓝图。整合RAG注入架构标准和模式，采用层级记忆机制捕获设计历史。与MetaGPT对比在10个案例研究中，MAAD生成更完整、模块化、可追溯的架构，模型能力（GPT-5.2、Qwen3.5）对质量有重要影响。",
+      "summary_en": "MAAD (Multi-Agent Architecture Design) uses knowledge-driven Agent orchestration to automate software architecture design. Four specialized agents (Analyst, Modeler, Designer, Evaluator) collaboratively transform requirements into comprehensive multi-view architectural blueprints. Incorporates RAG to inject architectural standards and patterns; hierarchical memory captures design history for iterative refinement. Compared to MetaGPT across 10 case studies, generates more complete, modular, traceable architectures. Quality depends heavily on underlying LLM reasoning capacity.",
+      "render_excerpt": "MAAD（多Agent架构设计）框架用知识驱动的Agent编排自动化软件架构设计。通过四个专化Agent（分析员、建模者、设计者、评估者）协作将需求转换为多视图架构蓝图。整合RAG注入架构标准和模式，采用层级记忆机制捕获设计历史。与MetaGPT对比在10个案例研究中，MAAD生成更完整、模块化、可追溯的架构，模型能力（GPT-5.2、Qwen3.5）对质量有重要影响。",
+      "render_excerpt_en": "MAAD (Multi-Agent Architecture Design) uses knowledge-driven Agent orchestration to automate software architecture design. Four specialized agents (Analyst, Modeler, Designer, Evaluator) collaboratively transform requirements into comprehensive multi-view architectural blueprints. Incorporates RAG to inject architectural standards and patterns; hierarchical memory captures design history for iterative refinement.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T18:18:31Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01279",
+      "date": "2026-05-31",
+      "title": "ANDES: Agent Native Data Evolving Synthesis Tool for Autonomous Instruction Alignment",
+      "authors": [
+        "Zhengyang Zhao",
+        "Shengjie Ye",
+        "Lu Ma",
+        "Hao Liang",
+        "Hengyi Feng",
+        "Wentao Zhang"
+      ],
+      "abstract": "AI agents are increasingly being tasked with automating AI research itself, particularly the critical post-training phase that transforms base LLMs into aligned assistants. However, recent evaluations reveal that even frontier agents struggle to perform this task. While the success of post-training fundamentally relies on acquiring high-quality data, relying on agents to autonomously curate targeted training datasets from the open web introduces severe challenges. Executing the long-horizon tasks of searching, filtering, and balancing data within noisy web environments frequently overwhelms an agent's limited context, ultimately leading to degraded dataset quality and suboptimal downstream training performance. To bridge this gap, we introduce Andes (Agent Native Data Evolving Synthesis), a framework that reimagines data generation as a plug-and-play \\emph{agent skill}. Rather than forcing agents to devise complex data-gathering strategies from scratch, \\textsc{Andes} provides an intelligent abstraction layer. By leveraging a self-evolving World Tree routing mechanism and actionable diagnostic reports, it allows trainer agents to dynamically steer data synthesis through an interactive, closed-loop interface. We demonstrate that under strict compute constraints, equipping foundationally weaker agents with Andes improves automated alignment, securing state-of-the-art performance on PostTrainBench and robust cross-task generalization. Our project is available at https://github.com/zzy1127/ANDES.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01279v1",
+        "pdf": "https://arxiv.org/pdf/2606.01279v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "ANDES（Agent本地数据进化合成）将数据生成重新构想为Agent技能。Agent自动化AI研究中后训练阶段面临长地平线任务中的上下文溢出。ANDES提供智能抽象层，通过自进化World Tree路由机制和可执行诊断报告，使训练Agent动态指导数据合成。在严格计算约束下，装备ANDES的较弱Agent在PostTrainBench上取得最佳性能并展现跨任务泛化能力。",
+      "summary_en": "ANDES (Agent Native Data Evolving Synthesis) reimagines data generation as a plug-and-play agent skill. AI agents automating post-training face context overflow in long-horizon web-gathering tasks. ANDES provides intelligent abstraction via self-evolving World Tree routing and actionable diagnostic reports, enabling trainer agents to dynamically steer data synthesis. Under strict compute constraints, weaker agents equipped with ANDES achieve SOTA on PostTrainBench and robust cross-task generalization.",
+      "render_excerpt": "ANDES（Agent本地数据进化合成）将数据生成重新构想为Agent技能。Agent自动化AI研究中后训练阶段面临长地平线任务中的上下文溢出。ANDES提供智能抽象层，通过自进化World Tree路由机制和可执行诊断报告，使训练Agent动态指导数据合成。在严格计算约束下，装备ANDES的较弱Agent在PostTrainBench上取得最佳性能并展现跨任务泛化能力。",
+      "render_excerpt_en": "ANDES (Agent Native Data Evolving Synthesis) reimagines data generation as a plug-and-play agent skill. AI agents automating post-training face context overflow in long-horizon web-gathering tasks. ANDES provides intelligent abstraction via self-evolving World Tree routing and actionable diagnostic reports, enabling trainer agents to dynamically steer data synthesis.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T15:03:50Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01230",
+      "date": "2026-05-31",
+      "title": "HomeFlow: A Data Flywheel for Smart Home Agent Training with Verifiable Simulation",
+      "authors": [
+        "Yi Gu",
+        "Huacan Wang",
+        "Shuo Zhang",
+        "Yuqing Hou",
+        "Lei Xue",
+        "Weipeng Ming",
+        "Chen Liu",
+        "Fangzhou Yu",
+        "Kuan Li",
+        "Ronghao Chen",
+        "Sen Hu",
+        "Xiaofeng Mou",
+        "Yi Xu"
+      ],
+      "abstract": "Large language model agents are moving beyond text-only interaction toward physical-world control, with smart homes as a representative domain. Real domestic interaction requires understanding ambiguous intents, operating in dynamic environments, and performing multi-turn reasoning. However, existing methods struggle to generate high-quality training data for smart home agents. We propose HomeFlow, a verifiable data flywheel for this domain. HomeFlow uses HomeEnv as a unified simulation environment and HomeMaker to procedurally generate diverse home settings. Subsequently, Blueprint compiles open-ended user intents into executable state-based success conditions, while MCTS-Flow synthesizes diverse, verifiable multi-turn trajectories through environment-guided tree search. We then optimize the agents via supervised fine-tuning and step-wise RLVE, which facilitates iterative improvement through authentic physical feedback. We further construct SmartHome-Bench to evaluate the agent across various smart home tasks. On this benchmark, HomeFlow-RL-4B and HomeFlow-RL-8B achieve task success rates of 84.60% and 87.03%. It is worth noting that HomeFlow-RL-8B even surpasses the leading GPT-5.5 by 1.23 percentage points.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01230v1",
+        "pdf": "https://arxiv.org/pdf/2606.01230v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "HomeFlow为智能家居Agent提供可验证的数据飞轮。LLM Agent超越纯文本交互朝向物理世界控制。HomeEnv统一仿真环境，HomeMaker程序化生成多样家庭设置。Blueprint将开放式用户意图编译为可执行状态条件，MCTS-Flow通过环境引导树搜索合成多样可验证多轮轨迹。SmartHome-Bench评估Agent在多种智能家居任务上表现，HomeFlow-RL-8B达87.03%任务成功率，超GPT-5.5。",
+      "summary_en": "HomeFlow provides a verifiable data flywheel for smart home agent training. LLM agents move beyond text-only interaction toward physical-world control. HomeEnv serves as unified simulation; HomeMaker procedurally generates diverse home settings. Blueprint compiles open-ended user intents into executable state-based success conditions; MCTS-Flow synthesizes diverse multi-turn trajectories through environment-guided tree search. SmartHome-Bench evaluates agents across tasks. HomeFlow-RL-8B achieves 87.03% success rate, surpassing GPT-5.5 by 1.23 pp.",
+      "render_excerpt": "HomeFlow为智能家居Agent提供可验证的数据飞轮。LLM Agent超越纯文本交互朝向物理世界控制。HomeEnv统一仿真环境，HomeMaker程序化生成多样家庭设置。Blueprint将开放式用户意图编译为可执行状态条件，MCTS-Flow通过环境引导树搜索合成多样可验证多轮轨迹。SmartHome-Bench评估Agent在多种智能家居任务上表现，HomeFlow-RL-8B达87.03%任务成功率，超GPT-5.5。",
+      "render_excerpt_en": "HomeFlow provides a verifiable data flywheel for smart home agent training. LLM agents move beyond text-only interaction toward physical-world control. HomeEnv serves as unified simulation; HomeMaker procedurally generates diverse home settings.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T13:26:46Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01490",
+      "date": "2026-05-31",
+      "title": "LLM Consortium for Software Design Refinement: A Controlled Experiment on Multi-Agent Collaboration Topologies",
+      "authors": [
+        "Nagarjuna Kanamarlapudi",
+        "Praveen K"
+      ],
+      "abstract": "We present a controlled experiment evaluating 12 multi-agent LLM collaboration topologies for software architecture design. Using a $2\\times2\\times2$ factorial design (Authority $\\times$ Roles $\\times$ Dynamics), we conducted 520 experimental runs across 8 design tasks of varying complexity, with 5 repetitions each. Designs were evaluated on a 12-dimensional rubric by three independent automated evaluators (GPT-OSS 120B, Claude Opus 4.6, Claude Sonnet 4.6). We report four core findings. First, structural adversarial (v4b) ranks #1 by ensemble -- a prompt-engineered adversarial variant that demands rewrite mandates rather than patches (weighted ensemble: 4.637/5.0). Second, cross-model review wins unanimously at #2 -- generate with one model, review with another -- ranking #2 by all three evaluators (weighted ensemble: 4.606). Third, evaluator diversity is itself a finding -- all three evaluators agree v4b is best and v3 is worst, but disagree sharply on v2b (Claude d=1.44 vs. GPT-OSS d=0.45), revealing how different model families weight design qualities. Fourth, parallel merge is fundamentally broken -- all three evaluators place merge variants in the bottom tier (3.65-3.79), due to token starvation and the Frankenstein effect. The weighted ensemble ($2\\times$Opus + $2\\times$Sonnet + $1\\times$GPT-OSS) provides robust rankings across 520 runs, confirmed through independent cross-validation.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01490v1",
+        "pdf": "https://arxiv.org/pdf/2606.01490v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "在多Agent LLM软件架构设计中进行对照实验，评估12种协作拓扑。采用2×2×2因子设计（权威性×角色×动力学），8项设计任务各5次重复，共520次实验。结果显示结构化对抗型（提出重写而非补丁）排名第一，跨模型审查排名第二。并行合并拓扑全体排名底层。三个独立评估器展示评估多样性，同时确认最佳和最差选项。",
+      "summary_en": "Controlled experiment evaluating 12 multi-agent LLM collaboration topologies for software architecture design. 2×2×2 factorial design (Authority × Roles × Dynamics) across 520 runs with 8 design tasks. Structural adversarial (rewrite mandates over patches) ranks #1 by ensemble. Cross-model review wins #2 unanimously. Parallel merge fundamentally broken due to token starvation and Frankenstein effect. Three evaluators agree on top/bottom but diverge on middle rankings, revealing model-family differences in design evaluation.",
+      "render_excerpt": "在多Agent LLM软件架构设计中进行对照实验，评估12种协作拓扑。采用2×2×2因子设计（权威性×角色×动力学），8项设计任务各5次重复，共520次实验。结果显示结构化对抗型（提出重写而非补丁）排名第一，跨模型审查排名第二。并行合并拓扑全体排名底层。三个独立评估器展示评估多样性，同时确认最佳和最差选项。",
+      "render_excerpt_en": "Controlled experiment evaluating 12 multi-agent LLM collaboration topologies for software architecture design. 2×2×2 factorial design (Authority × Roles × Dynamics) across 520 runs with 8 design tasks. Structural adversarial (rewrite mandates over patches) ranks #1 by ensemble.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T23:15:40Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01434",
+      "date": "2026-05-31",
+      "title": "DrugClaw and DrugAudit: A Primary-Source-Grounded Agent and Authority-Aware Benchmark for Drug-Information Question Answering",
+      "authors": [
+        "Qing Wang",
+        "Bo Li",
+        "Jialu Liang",
+        "Daling Shi",
+        "Bob Zhang",
+        "Qianqian Song"
+      ],
+      "abstract": "Drug-information question answering is a high-stakes setting where hallucinated facts can mislead clinical decision-making and the provenance of each cited fact matters as much as the fact itself. We present DrugClaw, a multi-agent retrieval-augmented system that queries a registry of drug and pharmacovigilance skills via a reflection-driven state-machine workflow and returns answers grounded in primary regulatory or peer-reviewed records. We also contribute DrugAudit, a 3,772-item authority-aware benchmark with an evaluation panel that scores upstream-of-gold source match, token-level semantic snippet overlap, and citation faithfulness under a dual-judge LLM-as-judge protocol with inter-judge kappa = 0.88 (almost-perfect). Across DrugAudit plus drug-related subsets of MedQA (751) and PubMedQA (512), DrugClaw is top-1 on every column of the headline table: composite Evidence Index under both judges, judge-mediated answer correctness, primary-source rate (0.918, +10.1 pp over next-best), faithfulness (0.887, +5.9 pp), MedQA (0.920), and PubMedQA (0.693).",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01434v1",
+        "pdf": "https://arxiv.org/pdf/2606.01434v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "DrugClaw提供多Agent检索增强系统，查询药物和药物警戒技能库。DrugAudit基准包含3,772项权威感知样本，评估上游源匹配率、令牌级语义片段重叠和引用忠实度。在多个医学QA数据集上超越所有基线：初级源率91.8%（+10.1 pp）、忠实度88.7%（+5.9 pp）。在高风险医学决策场景中通过可追溯性强调提高可靠性。",
+      "summary_en": "DrugClaw provides multi-agent retrieval-augmented system querying drug and pharmacovigilance skills, returning answers grounded in primary regulatory or peer-reviewed records. DrugAudit benchmark with 3,772 authority-aware items scores upstream-of-gold source match, token-level semantic overlap, and citation faithfulness under dual-judge LLM protocol. Top-1 across all columns: primary-source rate 91.8%, faithfulness 88.7%, MedQA 92.0%, PubMedQA 69.3%.",
+      "render_excerpt": "DrugClaw提供多Agent检索增强系统，查询药物和药物警戒技能库。DrugAudit基准包含3,772项权威感知样本，评估上游源匹配率、令牌级语义片段重叠和引用忠实度。在多个医学QA数据集上超越所有基线：初级源率91.8%（+10.1 pp）、忠实度88.7%（+5.9 pp）。在高风险医学决策场景中通过可追溯性强调提高可靠性。",
+      "render_excerpt_en": "DrugClaw provides multi-agent retrieval-augmented system querying drug and pharmacovigilance skills, returning answers grounded in primary regulatory or peer-reviewed records. DrugAudit benchmark with 3,772 authority-aware items scores upstream-of-gold source match, token-level semantic overlap, and citation faithfulness under dual-judge LLM protocol. Top-1 across all columns: primary-source rate 91.8%, faithfulness 88.7%, MedQA 92.0%, PubMedQA 69.3%.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T20:11:05Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01317",
+      "date": "2026-05-31",
+      "title": "SABER: Benchmarking Operational Safety of LLM Coding Agents in Stateful Project Workspaces",
+      "authors": [
+        "Qi Hu",
+        "Yifeng Tang",
+        "Qinghua Wang",
+        "Lanyang Zhao",
+        "Pengji Zhang",
+        "Yuhao Qing",
+        "Xin Yao",
+        "Dong Huang",
+        "Lin Zhang",
+        "Zhuoran Ji"
+      ],
+      "abstract": "Large language models are increasingly deployed as coding agents, shifting safety from individual responses to action sequences. Existing benchmarks, however, primarily assess whether models refuse unsafe prompts, leaving impacts on stateful workspaces largely unexamined. We present SABER, a benchmark for environment-aware operational safety that places models in realistic agent-style projects and evaluates safety from the final environment state after a sequence of actions. Beyond binary safety-violation reports, SABER categorizes violations by cause, enabling analysis of model-specific safety profiles. Our evaluations show that even the best-performing model has more than a 54% harmful safety-violation rate (HSR), suggesting that current alignment remains insufficient for realistic project environments. SABER further reveals distinct safety profiles across models. Our benchmark is publicly available at https://github.com/sssr-lab/saber.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01317v1",
+        "pdf": "https://arxiv.org/pdf/2606.01317v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "SABER评估LLM编码Agent在有状态项目工作空间中的操作安全性。现有基准评测模型拒绝不安全提示的能力，但忽视对有状态工作空间的影响。SABER将模型置于现实Agent风格项目中，从最终环境状态评估安全性。超过54%的模型有害违规率，表明当前对齐不足。基准按原因分类违规，实现模型特定安全档案分析。",
+      "summary_en": "SABER benchmarks operational safety of LLM coding agents in stateful project workspaces. Existing benchmarks assess whether models refuse unsafe prompts; impacts on stateful workspaces remain unexamined. SABER places models in realistic agent-style projects, evaluates safety from final environment state after action sequences. Even top performers exceed 54% harmful violation rate, indicating current alignment insufficient for realistic projects. Categorizes violations by cause for safety-profile analysis.",
+      "render_excerpt": "SABER评估LLM编码Agent在有状态项目工作空间中的操作安全性。现有基准评测模型拒绝不安全提示的能力，但忽视对有状态工作空间的影响。SABER将模型置于现实Agent风格项目中，从最终环境状态评估安全性。超过54%的模型有害违规率，表明当前对齐不足。基准按原因分类违规，实现模型特定安全档案分析。",
+      "render_excerpt_en": "SABER benchmarks operational safety of LLM coding agents in stateful project workspaces. Existing benchmarks assess whether models refuse unsafe prompts; impacts on stateful workspaces remain unexamined. SABER places models in realistic agent-style projects, evaluates safety from final environment state after action sequences.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T16:06:02Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
+      },
+      "provenance": {
+        "institution": "summary-artifact",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "summary-artifact",
+        "summary_en": "summary-artifact",
+        "github": "summary-artifact|none",
+        "blog": "summary-artifact|none"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.01276",
+      "date": "2026-05-31",
+      "title": "Worlds Within Words: Translating Culture in Ancient Chinese Texts with Multi-Agent Coordination",
+      "authors": [
+        "Xiaoqi He",
+        "Kaixin Lan",
+        "Mu You",
+        "Tao Fang",
+        "Lidia S. Chao",
+        "Derek F. Wong"
+      ],
+      "abstract": "Large language model (LLM)-based machine translation has advanced cross-cultural communication, yet it still struggles with culture-loaded words (CLWs) in ancient Chinese texts. The challenge extends beyond lexical alignment to deciding when and how culture-dependent knowledge should be explicated for readers lacking relevant background. Literal translation often preserves surface forms while missing underlying concepts, whereas over-explicitation harms conciseness and readability. To address this problem, we formulate CLW translation as a selective explicitation task and propose \\textbf{MACAT}, a \\textbf{M}ulti-\\textbf{A}gent \\textbf{C}ulture-\\textbf{A}ware \\textbf{T}ranslation framework that dynamically identifies culturally salient phrases and injects concise explanatory knowledge when necessary. MACAT further incorporates a quality-aware reranking module for candidate selection and a multi-round evaluation agent that assesses translations across terminological precision, readability, fidelity, cultural preservation, and cultural explicitation. Experiments on traditional Chinese medicine (TCM) classics and the \\textit{Analects} show that, under a unified GPT-5.4 evaluation setting, MACAT consistently outperforms both the backbone model and general-purpose MT baselines on 100 TCM documents and a 20-chapter subset of the \\textit{Analects}.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01276v1",
+        "pdf": "https://arxiv.org/pdf/2606.01276v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "MACAT框架用多Agent方法处理古汉语文本中的文化词汇翻译。文化词汇超越词汇对齐，需决策何时及如何为读者阐释文化依赖知识。MACAT动态识别文化显著短语，必要时注入简明解释。包含质量感知重排模块和多轮评估Agent，评估术语精确性、可读性、保真度、文化保留和文化阐释。在中医古籍和论语上，MACAT超越主干和通用基线。",
+      "summary_en": "MACAT addresses culture-loaded word (CLW) translation in ancient Chinese texts. Translation extends beyond lexical alignment to deciding when and how to explicate culture-dependent knowledge for readers lacking background. Formulates as selective explicitation task; MACAT dynamically identifies culturally salient phrases and injects concise explanatory knowledge. Quality-aware reranking module and multi-round evaluation agent assess terminological precision, readability, fidelity, cultural preservation, and explicitation. Outperforms baselines on TCM classics and Analects.",
+      "render_excerpt": "MACAT框架用多Agent方法处理古汉语文本中的文化词汇翻译。文化词汇超越词汇对齐，需决策何时及如何为读者阐释文化依赖知识。MACAT动态识别文化显著短语，必要时注入简明解释。包含质量感知重排模块和多轮评估Agent，评估术语精确性、可读性、保真度、文化保留和文化阐释。在中医古籍和论语上，MACAT超越主干和通用基线。",
+      "render_excerpt_en": "MACAT addresses culture-loaded word (CLW) translation in ancient Chinese texts. Translation extends beyond lexical alignment to deciding when and how to explicate culture-dependent knowledge for readers lacking background. Formulates as selective explicitation task; MACAT dynamically identifies culturally salient phrases and injects concise explanatory knowledge.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-05-31T14:58:03Z"
+      },
+      "source_summary": {
+        "provider": "claude",
+        "model": "claude-opus-4-8",
+        "captured_at": "2026-05-31"
       },
       "provenance": {
         "institution": "summary-artifact",

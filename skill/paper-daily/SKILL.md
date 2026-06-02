@@ -19,6 +19,51 @@ When judging recalled papers, prioritize the user's taste over generic paper qua
 
 ## Workflow
 
+Use context-driven orchestration instead of treating one script as the whole workflow. The local scripts provide small deterministic actions; the skill decides which action to run from the current artifacts, previous failures, and user goal.
+
+### Orchestration Loop
+
+1. Assess the date first.
+   - Read the per-date run state, discovery artifact, metadata cache, summary artifacts, and pending metadata queue.
+   - Identify the smallest current gap: missing candidate pack, missing metadata, missing summary, or ready-to-finalize.
+2. Produce a candidate pack only when needed.
+   - Reuse an existing `discovered-YYYY-MM-DD.json` or run state when it is clearly for the requested date.
+   - Run discovery only when no usable candidate pack exists or the user explicitly asks for fresh recall.
+   - Give discovery a global `--budget-seconds` so arXiv API retries, listing fallback, and HTML hydration cannot consume the whole interactive context.
+   - Keep `--api-search-budget-seconds` smaller than the global budget, so a slow arXiv API attempt still leaves time for listing fallback.
+   - In listing fallback, accept `arxiv-listing` / `partial` records only into the recall `candidate_pool`; do not treat them as final selected papers.
+   - Final selection and summary requests require complete metadata, especially a non-empty abstract.
+   - When a fresh discovery artifact exists, pass it through `run_daily.py --discovered-json ...` so ranking context and source fields are preserved.
+3. Improve readiness in bounded steps.
+   - Metadata enrichment is API-first and non-blocking at the workflow level.
+   - Use `enrich_metadata.py` as a short worker with a time/paper budget.
+   - Do not switch to HTML fallback on the first API failure; allow fallback only after the retry threshold or when the current context shows continued transient API failure.
+   - Use `--force-due` only when the current conversation/run context makes progress more important than waiting for `next_retry_at`, for example after repeated 429s in an interactive repair session.
+   - Treat scripted HTML parsing as the normal webpage fallback. If that fails because the page shape changed or a specific paper is anomalous, use the runtime browser context as a manual rescue for that small set of papers, then write the standard metadata artifact.
+   - If summary artifacts are missing, run `prepare_missing_summary_requests.py` and generate only the missing artifacts instead of repeatedly enriching metadata or hand-writing ad hoc JSON.
+   - If summary preparation reports blocked metadata, run metadata enrichment first; do not summarize title-only or listing-only records.
+4. Finalize explicitly.
+   - Promote candidate output to official README/feed/state only when readiness checks pass.
+   - Do not let a background metadata task silently rewrite official publishing artifacts.
+
+### Status Semantics
+
+- `candidate_ready`: a selected candidate pack exists for the date, but official publishing may still be blocked.
+- `finalize_blocked`: candidate pack exists, but metadata or summary artifacts are incomplete.
+- `final_ready`: all selected papers meet the publishing gate; the date can be finalized.
+- `final_published`: official README/feed/state artifacts have been written.
+
+For metadata, prefer state over source:
+
+- `api_pending` / `api_retrying`: keep trying arXiv API in bounded worker steps.
+- `api_complete`: official structured metadata is cached.
+- `html_complete`: all required fields are present from arXiv HTML fallback.
+- `failed_exhausted`: API and fallback both failed; report this as an explicit blocker.
+
+Official publishing requires complete fields, not necessarily `api_complete`. Requiring API source would make arXiv API a hard dependency again.
+
+### Atomic Steps
+
 1. Discover candidates from arXiv by priority keywords: `Agent`, `Agents`, then `LLM`.
 2. Query target categories such as `cs.AI`, `cs.CL`, `cs.LG`, `stat.ML`, `cs.SE`, and `cs.MA`.
 3. Dedupe by normalized arXiv id without version suffix.
@@ -31,13 +76,19 @@ When judging recalled papers, prioritize the user's taste over generic paper qua
 6. Return a ranked candidate list, usually around `20` recommended papers for one day when arXiv supply allows.
 7. After recall, use the current conversation model to judge papers from `title + abstract` against the user's taste profile and narrow the list to the final daily set.
 8. After the final paper list is selected, prepare external summary requests and use the runtime skill context to generate the bilingual summary artifacts.
-9. Use `run_daily.py` only when the summary artifacts already exist and you explicitly want repo publishing artifacts such as feed updates and README patches.
+9. Use `run_daily.py` to create or inspect the candidate run. It writes run-state and pending metadata queue entries, and only publishes when the readiness gate is already satisfied.
+10. Use `finalize_daily.py` for explicit promotion to official repo artifacts when `check_daily_status.py` reports `final_ready`.
 
 ## Stage Boundaries
 
 - `discover.py` is recall-only. It queries arXiv metadata, ranks candidates, writes a lightweight discovery artifact, and does not require model credentials.
 - `prepare_summary_requests.py` prepares external summary-artifact requests for the runtime skill. The actual LLM work should happen outside the local scripts, using skill context instead of a fixed in-script model workflow.
-- `run_daily.py` and `generate_feed.py` are publishing/canonicalization workflows. They consume summary artifacts that were generated externally and adapt them into repo feed records.
+- `run_daily.py` is the compatibility entrypoint for candidate production and gated publishing. It must not wait on long metadata recovery.
+- `enrich_metadata.py` is a bounded metadata worker. It tries arXiv API first and only falls back to HTML after the configured threshold.
+- `check_daily_status.py` is the skill-facing readiness probe. Prefer it over reading logs.
+- `prepare_missing_summary_requests.py` is the skill-facing summary gap probe. It reads run state and emits requests only for missing summary artifacts.
+- `finalize_daily.py` is the explicit official publishing step. It consumes a ready candidate run and writes README/feed/state.
+- `generate_feed.py` is a lower-level legacy canonical/feed writer. Prefer `finalize_daily.py` for daily operation because it enforces readiness state.
 - `--view-only` prevents repository writes, but it still requires the summary artifacts because it validates the canonical publishing path.
 - If the goal is only to test arXiv recall or Notion orchestration without summaries, do not use `run_daily.py`; use `discover.py` or the `paper-learning --skip-summary` path.
 
@@ -114,6 +165,12 @@ Ask for deeper retrieval explicitly:
 python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 50 --select 20
 ```
 
+For interactive runs, keep discovery bounded:
+
+```bash
+python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 50 --select 20 --budget-seconds 180 --api-search-budget-seconds 30
+```
+
 For local testing with fewer requests or a narrower sample:
 
 ```bash
@@ -130,6 +187,36 @@ Run the local publishing pipeline after the summary artifacts have been written:
 
 ```bash
 python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date YYYY-MM-DD
+```
+
+Create a candidate run from a known discovery artifact:
+
+```bash
+python3 skill/paper-daily/scripts/run_daily.py --repo-root . --discovered-json /tmp/discovered-YYYY-MM-DD.json --view-only
+```
+
+Check whether a candidate run is ready to finalize:
+
+```bash
+python3 skill/paper-daily/scripts/check_daily_status.py --repo-root . --date YYYY-MM-DD
+```
+
+Run a bounded metadata worker slice:
+
+```bash
+python3 skill/paper-daily/scripts/enrich_metadata.py --repo-root . --date YYYY-MM-DD --budget-seconds 60 --max-papers 5
+```
+
+Prepare requests for only the missing summary artifacts:
+
+```bash
+python3 skill/paper-daily/scripts/prepare_missing_summary_requests.py --repo-root . --date YYYY-MM-DD --out /tmp/missing-summary-requests.json
+```
+
+Finalize a ready candidate run into official repo artifacts:
+
+```bash
+python3 skill/paper-daily/scripts/finalize_daily.py --repo-root . --date YYYY-MM-DD
 ```
 
 Manually publish specific arXiv IDs with an explicit display date:
