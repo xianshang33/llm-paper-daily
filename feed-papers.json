@@ -1,38 +1,86 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-02T06:32:17.815437+00:00",
-  "run_date": "2026-06-01",
+  "generated_at": "2026-06-03T06:31:45.324797+00:00",
+  "run_date": "2026-06-02",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.02240",
-      "date": "2026-06-01",
-      "title": "AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations",
+      "id": "arxiv:2606.03841",
+      "date": "2026-06-02",
+      "title": "EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hiskias Dingeto",
-        "Will Leeney"
+        "Zherui Yang",
+        "Fan Liu",
+        "Yansong Ning",
+        "Hao Liu"
       ],
-      "institution": "StackOne",
+      "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
       "summary": {
-        "zh": "本文指出了 LLM 代理在 SaaS 集成环境中面临的间接提示注入严峻威胁，并揭示了现有基准和防护措施的不足。通过提出动态红队基准 AgentRedBench 和专用防御模型 AgentRedGuard，作者不仅提供了更真实的安全评估标准，还展示了针对工具响应内容优化的防护模型能极大降低攻击成功率，为 LLM 代理在企业环境中的安全部署提供了重要参考。",
-        "en": "- **Background**: LLM agents interact with third-party SaaS integrations (e.g., Gmail, Salesforce) via tool calls. Indirect prompt injection exploits the \"read-write gap,\" where adversarial content in one integration..."
+        "zh": "EvoDS 通过引入自主技能获取和自适应上下文压缩两大核心机制，解决了现有数据科学代理在动作空间静态化和上下文管理被动化方面的根本缺陷。通过代理强化学习驱动的自进化能力，EvoDS 在多个基准测试中取得了显著的性能提升，为构建更灵活、可靠且具备长期记忆能力的自动化数据科学系统提供了新的范式。",
+        "en": "- **Background**: Automating data science workflows, from preprocessing to model evaluation, is a central goal in ML. Recent advances in Large Language Models (LLMs) have enabled autonomous agents capable of reasoning,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.02240v1",
-        "pdf": "https://arxiv.org/pdf/2606.02240v1",
+        "abs": "http://arxiv.org/abs/2606.03841v1",
+        "pdf": "https://arxiv.org/pdf/2606.03841v1",
+        "github": "https://github.com/usail-hkust/EvoDS"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.03841.md",
+        "summary_en_path": "summary_en/2026-06/2606.03841.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03841.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03841.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.03755",
+      "date": "2026-06-02",
+      "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Linwu Zhu",
+        "Liqiang Gao",
+        "Yan Chen",
+        "Dan Zhu",
+        "Jian Huang"
+      ],
+      "institution": "Shiyanjia Lab",
+      "summary": {
+        "zh": "本文提出了 LAP 协议，解决了自主科学基础设施中智能体与物理仪器交互的标准缺失问题。通过引入 InstrumentCard、独占预留、安全围栏握手和标准化测量结果四大物理世界原语，LAP 弥补了现有 A2A 和 MCP 协议在物理具身交互方面的不足。尽管目前仍处于设计规范阶段，但其分层架构和对现有标准的兼容性为未来构建开放、互联的自动驾驶实验室生态系统奠定了理论基础。",
+        "en": "- **Background**: Autonomous science is transitioning from demonstrations to infrastructure. Large Language Model (LLM) agents plan experiments, while self-driving laboratories execute them."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.03755v1",
+        "pdf": "https://arxiv.org/pdf/2606.03755v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.02240.md",
-        "summary_en_path": "summary_en/2026-06/2606.02240.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02240.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02240.md"
+        "summary_zh_path": "summary/2026-06/2606.03755.md",
+        "summary_en_path": "summary_en/2026-06/2606.03755.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03755.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03755.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,136 +97,36 @@
       }
     },
     {
-      "id": "arxiv:2606.02372",
-      "date": "2026-06-01",
-      "title": "COMAP: Co-Evolving World Models and Agent Policies for LLM Agents",
+      "id": "arxiv:2606.03867",
+      "date": "2026-06-02",
+      "title": "A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Youwei Liu",
-        "Jian Wang",
-        "Hanlin Wang",
-        "Wenjie Li"
+        "Cuong Vuong Tuan",
+        "Trang Mai Xuan",
+        "Tien-Cuong Nguyen",
+        "Vu-Duc Ngo",
+        "Thien Van Luong"
       ],
-      "institution": "Central South University, Sichuan University, The Hong Kong Polytechnic University",
+      "institution": "Phenikaa University, VNPT AI, MobiFone Corporation, National Economics University",
       "summary": {
-        "zh": "COMAP 通过将世界建模和策略学习视为耦合的共进化过程，解决了传统方法中模型固定和依赖外部信号的局限性。通过闭环交互和自蒸馏，实现了世界模型与智能体策略的相互促进，显著提升了 LLM 智能体在复杂交互环境中的表现。",
-        "en": "- **Background**: Equipping language agents with world models allows them to anticipate environment dynamics and evaluate actions before execution. However, existing textual world models are typically fixed after..."
+        "zh": "本文提出了一种创新的无需训练的MoA框架，通过结合LLM的语言能力和KG的结构化知识，有效解决了多文档摘要中数据依赖高、跨文档关系难捕捉以及小语种泛化差的问题。模块化设计和多视角一致性机制使其在不同语言和领域间具有良好的适应性和鲁棒性。",
+        "en": "- **Background**: Multi-Document Summarization (MDS) is critical for synthesizing knowledge from diverse textual sources amidst rapidly expanding digital information. - **Why Existing Work Falls Short**: Early..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.02372v1",
-        "pdf": "https://arxiv.org/pdf/2606.02372v1",
-        "github": "https://github.com/loyiv/CoMAP"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.02372.md",
-        "summary_en_path": "summary_en/2026-06/2606.02372.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02372.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02372.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.02355",
-      "date": "2026-06-01",
-      "title": "SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Zhongyu He",
-        "Yuanfan Li",
-        "Fei Huang",
-        "Tianyu Chen",
-        "Siyuan Chen",
-        "Xingyang Li",
-        "Meng Hsuan Yu",
-        "Xiangrong Liu",
-        "Leyi Wei",
-        "Lu Pan",
-        "Ke Zeng",
-        "Xunliang Cai"
-      ],
-      "institution": "Xiamen University, Meituan, Macao Polytechnic University",
-      "summary": {
-        "zh": "SIRI 提出了一种创新的自内化强化学习框架，解决了长期困扰 LLM 智能体的技能复用与部署效率之间的矛盾。通过自我挖掘、验证和蒸馏三个步骤，SIRI 成功将外部显式技能转化为模型内部的隐式能力，在显著提升 ALFWorld 和 WebShop 任务性能的同时，保持了推理阶段的简洁性和高效性，为轻量级、高性能 LLM 智能体的部署提供了新范式。",
-        "en": "- **Background**: Long-horizon LLM agents can benefit from reusable skills, but existing skill-based methods often rely on external skill generators during training or persistent skill retrieval at inference. This..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.02355v1",
-        "pdf": "https://arxiv.org/pdf/2606.02355v1",
-        "github": "https://github.com/kirito618/SIRI"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.02355.md",
-        "summary_en_path": "summary_en/2026-06/2606.02355.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02355.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02355.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.02568",
-      "date": "2026-06-01",
-      "title": "ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yuxing Lu",
-        "Yushuhong Lin",
-        "Wenqi Shi",
-        "J. Ben Tamo",
-        "Xukai Zhao",
-        "Jinzhuo Wang",
-        "May Dongmei Wang"
-      ],
-      "institution": "Georgia Institute of Technology, Peking University, University of Texas Southwestern Medical Center, Tsinghua University",
-      "summary": {
-        "zh": "ClinEnv 填补了医疗 AI 评估中的一个关键空白，提供了一个基于真实 EHR 数据的、多阶段的、交互式的住院模拟环境。它不仅评估最终诊断的准确性，还严格量化了医生在信息收集过程中的效率和合理性。研究结果表明，当前最先进的 LLM 在模拟复杂临床决策过程方面仍面临巨大挑战，特别是在长期管理和主动信息获取策略上，这为未来医疗 Agent 的开发指明了方向。",
-        "en": "- **Background**: Clinical practice is not about selecting answers from enumerated options; it involves physicians incrementally gathering heterogeneous information and making sequential, irreversible decisions under..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.02568v1",
-        "pdf": "https://arxiv.org/pdf/2606.02568v1",
+        "abs": "http://arxiv.org/abs/2606.03867v1",
+        "pdf": "https://arxiv.org/pdf/2606.03867v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.02568.md",
-        "summary_en_path": "summary_en/2026-06/2606.02568.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02568.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02568.md"
+        "summary_zh_path": "summary/2026-06/2606.03867.md",
+        "summary_en_path": "summary_en/2026-06/2606.03867.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03867.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03867.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -195,35 +143,78 @@
       }
     },
     {
-      "id": "arxiv:2606.02497",
-      "date": "2026-06-01",
-      "title": "Bridging the Last Mile of Time Series Forecasting with LLM Agents",
+      "id": "arxiv:2606.03907",
+      "date": "2026-06-02",
+      "title": "The Impact of Configuring Agentic AI Coding Tools on Build-vs-Buy Decisions: A Study Protocol",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuhua Liao",
-        "Zetian Wang",
-        "Qiangqiang Nie",
-        "Zhenhua Zhang"
+        "Jai Lal Lulla",
+        "Matthias Galster",
+        "Jie M. Zhang",
+        "Sebastian Baltes",
+        "Christoph Treude"
       ],
-      "institution": "Trip.com Group",
+      "institution": "Singapore Management University, University of Bamberg, King’s College London, Heidelberg University",
       "summary": {
-        "zh": "本文指出了当前时间序列预测研究中忽视的“最后一公里”问题，即如何将统计基线转化为符合业务上下文的决策级预测。作者提出了一种基于 LLM Agent 的框架，通过工具调用、显式动作转化、结构化安全约束以及记忆库反思机制，解决了上下文融合难和过程不可审计的挑战。该方法在保证预测质量的同时，极大地提升了预测过程的可控性、透明度和业务适应性，为实际部署提供了新的范式。",
-        "en": "- **Background**: Time series forecasting has advanced rapidly with foundation models showing strong zero-shot performance in numerical extrapolation. However, in real-world scenarios, statistically plausible baselines..."
+        "zh": "本文提出了一项严谨的预注册研究协议，旨在填补代理式 AI 编码工具在“构建 vs 购买”决策机制研究上的空白。通过系统性地操纵配置机制并在受控基准上测试 Claude Code 和 OpenAI Codex，该研究将为理解和管理 AI 自主引入依赖的风险提供实证依据。其产出的基准数据集和分析管道将成为社区评估未来 AI 编码工具行为的重要资源。",
+        "en": "- **Background**: Agentic AI coding tools increasingly autonomously decide whether to import external libraries (\"buy\") or implement functionality from scratch (\"build\"). These decisions have direct implications for..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.02497v1",
-        "pdf": "https://arxiv.org/pdf/2606.02497v1",
+        "abs": "http://arxiv.org/abs/2606.03907v1",
+        "pdf": "https://arxiv.org/pdf/2606.03907v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.02497.md",
-        "summary_en_path": "summary_en/2026-06/2606.02497.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.02497.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.02497.md"
+        "summary_zh_path": "summary/2026-06/2606.03907.md",
+        "summary_en_path": "summary_en/2026-06/2606.03907.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03907.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03907.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.03895",
+      "date": "2026-06-02",
+      "title": "Agent libOS: A Library-OS-Inspired Runtime for Long-Running, Capability-Controlled LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yingqi Zhang"
+      ],
+      "institution": "Tsinghua University",
+      "summary": {
+        "zh": "Agent libOS 提出了一种新的 LLM 代理运行时范式，通过借鉴操作系统的进程和能力模型，解决了长周期代理在安全性和状态管理上的核心痛点。它将代理从简单的聊天循环中解放出来，赋予其明确的身份、生命周期和细粒度的权限控制，为构建安全、可审计且具备复杂交互能力的长期运行 LLM 代理提供了坚实的底层基础。",
+        "en": "- **Background**: Large language model (LLM) agents are evolving from simple request-response assistants into long-running software actors. They require maintaining state across model calls, forking subtasks, waiting..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.03895v1",
+        "pdf": "https://arxiv.org/pdf/2606.03895v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.03895.md",
+        "summary_en_path": "summary_en/2026-06/2606.03895.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03895.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03895.md"
       },
       "signals": {
         "priority_keyword": "Agent"

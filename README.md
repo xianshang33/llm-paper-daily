@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.02_06:32-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.03_06:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月02日 06:32</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月03日 06:31</sub></summary>
 <br>
 
-- AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations 
-- COMAP: Co-Evolving World Models and Agent Policies for LLM Agents 
-- SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training 
-- ClinEnv: An Interactive Multi-Stage Long Horizon EHR Environment for Agents 
-- Bridging the Last Mile of Time Series Forecasting with LLM Agents 
+- EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management 
+- LAP: An Agent-to-Instrument Protocol for Autonomous Science 
+- A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs 
+- The Impact of Configuring Agentic AI Coding Tools on Build-vs-Buy Decisions: A Study Protocol 
+- Agent libOS: A Library-OS-Inspired Runtime for Long-Running, Capability-Controlled LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-02</span> | **EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management**<br><sub>机构: The Hong Kong University of Science and Technology (Guangzhou)<br>EvoDS 通过引入自主技能获取和自适应上下文压缩两大核心机制，解决了现有数据科学代理在动作空间静态化和上下文管理被动化方面的根本缺陷。通过代理强化学习驱动的自进化能力，EvoDS 在多个基准测试中取得了显著的性能提升，为构建更灵活、可靠且具备长期记忆能力的自动化数据科学系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03841v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03841.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/usail-hkust/EvoDS)</div> |
+| <span style='display: inline-block; width: 42px;'>06-02</span> | **LAP: An Agent-to-Instrument Protocol for Autonomous Science**<br><sub>机构: Shiyanjia Lab<br>本文提出了 LAP 协议，解决了自主科学基础设施中智能体与物理仪器交互的标准缺失问题。通过引入 InstrumentCard、独占预留、安全围栏握手和标准化测量结果四大物理世界原语，LAP 弥补了现有 A2A 和 MCP 协议在物理具身交互方面的不足。尽管目前仍处于设计规范阶段，但其分层架构和对现有标准的兼容性为未来构建开放、互联的自动驾驶实验室生态系统奠定了理论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03755v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03755.md)  |
+| <span style='display: inline-block; width: 42px;'>06-02</span> | **A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs**<br><sub>机构: Phenikaa University, VNPT AI, MobiFone Corporation, National Economics University<br>本文提出了一种创新的无需训练的MoA框架，通过结合LLM的语言能力和KG的结构化知识，有效解决了多文档摘要中数据依赖高、跨文档关系难捕捉以及小语种泛化差的问题。模块化设计和多视角一致性机制使其在不同语言和领域间具有良好的适应性和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03867v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03867.md)  |
+| <span style='display: inline-block; width: 42px;'>06-02</span> | **The Impact of Configuring Agentic AI Coding Tools on Build-vs-Buy Decisions: A Study Protocol**<br><sub>机构: Singapore Management University, University of Bamberg, King’s College London, Heidelberg University<br>本文提出了一项严谨的预注册研究协议，旨在填补代理式 AI 编码工具在“构建 vs 购买”决策机制研究上的空白。通过系统性地操纵配置机制并在受控基准上测试 Claude Code 和 OpenAI Codex，该研究将为理解和管理 AI 自主引入依赖的风险提供实证依据。其产出的基准数据集和分析管道将成为社区评估未来 AI 编码工具行为的重要资源。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03907v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03907.md)  |
+| <span style='display: inline-block; width: 42px;'>06-02</span> | **Agent libOS: A Library-OS-Inspired Runtime for Long-Running, Capability-Controlled LLM Agents**<br><sub>机构: Tsinghua University<br>Agent libOS 提出了一种新的 LLM 代理运行时范式，通过借鉴操作系统的进程和能力模型，解决了长周期代理在安全性和状态管理上的核心痛点。它将代理从简单的聊天循环中解放出来，赋予其明确的身份、生命周期和细粒度的权限控制，为构建安全、可审计且具备复杂交互能力的长期运行 LLM 代理提供了坚实的底层基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03895v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03895.md)  |
 | <span style='display: inline-block; width: 42px;'>06-01</span> | **AgentRedBench: Dynamic Redteaming and Integration-Aware Defense for LLM Agents over SaaS Integrations**<br><sub>机构: StackOne<br>本文指出了 LLM 代理在 SaaS 集成环境中面临的间接提示注入严峻威胁，并揭示了现有基准和防护措施的不足。通过提出动态红队基准 AgentRedBench 和专用防御模型 AgentRedGuard，作者不仅提供了更真实的安全评估标准，还展示了针对工具响应内容优化的防护模型能极大降低攻击成功率，为 LLM 代理在企业环境中的安全部署提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02240v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02240.md)  |
 | <span style='display: inline-block; width: 42px;'>06-01</span> | **COMAP: Co-Evolving World Models and Agent Policies for LLM Agents**<br><sub>机构: Central South University, Sichuan University, The Hong Kong Polytechnic University<br>COMAP 通过将世界建模和策略学习视为耦合的共进化过程，解决了传统方法中模型固定和依赖外部信号的局限性。通过闭环交互和自蒸馏，实现了世界模型与智能体策略的相互促进，显著提升了 LLM 智能体在复杂交互环境中的表现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02372v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02372.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/loyiv/CoMAP)</div> |
 | <span style='display: inline-block; width: 42px;'>06-01</span> | **SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training**<br><sub>机构: Xiamen University, Meituan, Macao Polytechnic University<br>SIRI 提出了一种创新的自内化强化学习框架，解决了长期困扰 LLM 智能体的技能复用与部署效率之间的矛盾。通过自我挖掘、验证和蒸馏三个步骤，SIRI 成功将外部显式技能转化为模型内部的隐式能力，在显著提升 ALFWorld 和 WebShop 任务性能的同时，保持了推理阶段的简洁性和高效性，为轻量级、高性能 LLM 智能体的部署提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.02355v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.02355.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/kirito618/SIRI)</div> |
