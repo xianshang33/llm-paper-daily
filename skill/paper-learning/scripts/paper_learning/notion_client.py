@@ -1,21 +1,17 @@
 from __future__ import annotations
 
 import json
-import re
 from urllib.error import HTTPError
-from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 from .config import NotionConfig
 from .models import DailyPaperRecord, DeepNote, OperationResult, ReportModel, SelectedPaper
 from .report import render_markdown_report
 
-
-_IMAGE_LINE_RE = re.compile(r"^!\[([^\]]*)\]\(([^)]+)\)$")
-_INLINE_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
-_INLINE_BOLD_RE = re.compile(r"\*\*([^*\n]+?)\*\*")
-_RICH_TEXT_LIMIT = 2000
-_PARAGRAPH_LIMIT = 1900  # leave headroom for safe segmentation
+# markdown→block rendering and page→model deserialization live in dedicated
+# modules; re-exported here so the historical import surface stays stable.
+from .notion_blocks import markdown_to_blocks  # noqa: F401
+from .notion_pages import selected_paper_from_page  # noqa: F401
 
 
 class NotionClient:
@@ -265,237 +261,12 @@ class NotionClient:
             raise RuntimeError(f"Notion API {exc.code} {exc.reason}: {details}") from exc
 
 
-def markdown_to_blocks(markdown: str) -> list[dict]:
-    blocks: list[dict] = []
-    lines = markdown.splitlines()
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        if line.startswith("```"):
-            language = line[3:].strip() or "plain text"
-            if language == "text":
-                language = "plain text"
-            buffer: list[str] = []
-            i += 1
-            while i < len(lines) and not lines[i].startswith("```"):
-                buffer.append(lines[i])
-                i += 1
-            if i < len(lines):
-                i += 1  # consume closing ```
-            blocks.append(_code_block("\n".join(buffer), language))
-            continue
-        if line.startswith("# "):
-            blocks.append(_block("heading_1", line[2:]))
-        elif line.startswith("## "):
-            blocks.append(_block("heading_2", line[3:]))
-        elif line.startswith("### "):
-            blocks.append(_block("heading_3", line[4:]))
-        elif line.startswith("- "):
-            blocks.append(_rich_block("bulleted_list_item", line[2:]))
-        else:
-            stripped = line.strip()
-            if not stripped:
-                i += 1
-                continue
-            image_match = _IMAGE_LINE_RE.match(stripped)
-            if image_match:
-                blocks.append(_image_block(image_match.group(2)))
-            else:
-                blocks.extend(_paragraph_blocks(line))
-        i += 1
-    return blocks
-
-
-def selected_paper_from_page(page: dict) -> SelectedPaper:
-    props = page.get("properties", {})
-    url = props.get("URL", {}).get("url") or ""
-    paper_id = _plain_rich_text(props.get("Paper ID", {})) or _paper_id_from_url(url)
-    record = DailyPaperRecord(
-        paper_id=paper_id,
-        source=_select_name(props.get("Source", {})),
-        title=_plain_title(props.get("Title", {})),
-        authors=[],
-        institutions=_plain_rich_text(props.get("Institutions", {})),
-        abstract="",
-        digest_summary=_plain_rich_text(props.get("Digest Summary", {})),
-        summary_cn="",
-        summary_en="",
-        published_date=_date_start(props.get("Published Date", {})),
-        run_date=_date_start(props.get("Run Date", {})),
-        url=url,
-        pdf_url=None,
-        topic="",
-        score=0,
-        signals={},
-        provenance={"source": "notion"},
-    )
-    return SelectedPaper(
-        notion_page_id=page["id"],
-        record=record,
-        human_instruction=_plain_rich_text(props.get("Human Instruction", {})),
-        existing_research_area_ids=[item["id"] for item in props.get("Research Areas", {}).get("relation", [])],
-        existing_deep_note_id=_first_relation_id(props.get("Deep Note", {})),
-    )
-
-
 def _title(value: str) -> dict:
     return {"title": [{"text": {"content": value[:2000]}}]}
 
 
 def _rich_text(value: str) -> dict:
     return {"rich_text": [{"text": {"content": value[:2000]}}]}
-
-
-def _block(block_type: str, content: str) -> dict:
-    return {
-        "object": "block",
-        "type": block_type,
-        block_type: {"rich_text": [{"type": "text", "text": {"content": content[:2000]}}]},
-    }
-
-
-def _rich_block(block_type: str, content: str) -> dict:
-    return {
-        "object": "block",
-        "type": block_type,
-        block_type: {"rich_text": _rich_text_runs(content)},
-    }
-
-
-def _code_block(content: str, language: str = "plain text") -> dict:
-    safe = content[:_RICH_TEXT_LIMIT]
-    return {
-        "object": "block",
-        "type": "code",
-        "code": {
-            "rich_text": [{"type": "text", "text": {"content": safe}}],
-            "language": language,
-        },
-    }
-
-
-def _image_block(url: str) -> dict:
-    return {
-        "object": "block",
-        "type": "image",
-        "image": {"type": "external", "external": {"url": url}},
-    }
-
-
-def _paragraph_blocks(line: str) -> list[dict]:
-    chunks = _split_long_text(line, _PARAGRAPH_LIMIT)
-    return [
-        {
-            "object": "block",
-            "type": "paragraph",
-            "paragraph": {"rich_text": _rich_text_runs(chunk)},
-        }
-        for chunk in chunks
-    ]
-
-
-def _split_long_text(text: str, limit: int) -> list[str]:
-    if len(text) <= limit:
-        return [text]
-    chunks: list[str] = []
-    remaining = text
-    while len(remaining) > limit:
-        cut = remaining.rfind("。", 0, limit)
-        if cut < limit // 2:
-            cut = remaining.rfind(". ", 0, limit)
-        if cut < limit // 2:
-            cut = limit
-        chunks.append(remaining[: cut + 1].rstrip())
-        remaining = remaining[cut + 1 :].lstrip()
-    if remaining:
-        chunks.append(remaining)
-    return chunks
-
-
-def _rich_text_runs(text: str) -> list[dict]:
-    """Tokenize markdown inline (links, **bold**) into Notion rich_text runs."""
-    runs: list[dict] = []
-    cursor = 0
-    matches: list[tuple[int, int, dict]] = []
-    for match in _INLINE_LINK_RE.finditer(text):
-        matches.append((match.start(), match.end(), {
-            "kind": "link",
-            "label": match.group(1),
-            "url": match.group(2),
-        }))
-    for match in _INLINE_BOLD_RE.finditer(text):
-        # Skip bold spans that fall inside a link span we already captured.
-        if any(start <= match.start() and match.end() <= end for start, end, _ in matches):
-            continue
-        matches.append((match.start(), match.end(), {
-            "kind": "bold",
-            "label": match.group(1),
-        }))
-    matches.sort(key=lambda item: item[0])
-
-    for start, end, payload in matches:
-        if start < cursor:
-            continue
-        if start > cursor:
-            runs.append(_text_run(text[cursor:start]))
-        if payload["kind"] == "link":
-            runs.append(_text_run(payload["label"], link=payload["url"]))
-        else:
-            runs.append(_text_run(payload["label"], bold=True))
-        cursor = end
-    if cursor < len(text):
-        runs.append(_text_run(text[cursor:]))
-    if not runs:
-        runs.append(_text_run(text))
-    return runs
-
-
-def _text_run(content: str, *, bold: bool = False, link: str | None = None) -> dict:
-    run: dict = {
-        "type": "text",
-        "text": {"content": content[:_RICH_TEXT_LIMIT]},
-    }
-    if link:
-        run["text"]["link"] = {"url": link}
-    if bold:
-        run["annotations"] = {"bold": True}
-    return run
-
-
-def _plain_title(prop: dict) -> str:
-    return "".join(part.get("plain_text", "") for part in prop.get("title", []))
-
-
-def _plain_rich_text(prop: dict) -> str:
-    return "".join(part.get("plain_text", "") for part in prop.get("rich_text", []))
-
-
-def _select_name(prop: dict) -> str:
-    select = prop.get("select")
-    return select.get("name", "") if select else ""
-
-
-def _date_start(prop: dict) -> str:
-    date = prop.get("date")
-    return date.get("start", "") if date else ""
-
-
-def _first_relation_id(prop: dict) -> str | None:
-    relation = prop.get("relation", [])
-    return relation[0]["id"] if relation else None
-
-
-def _paper_id_from_url(url: str) -> str:
-    if not url:
-        return ""
-    parsed = urlparse(url)
-    parts = [part for part in parsed.path.split("/") if part]
-    if parsed.netloc.endswith("arxiv.org") and len(parts) >= 2 and parts[0] in {"abs", "pdf"}:
-        arxiv_id = re.sub(r"v\d+$", "", parts[1].removesuffix(".pdf"))
-        return f"arxiv:{arxiv_id}"
-    if parsed.netloc == "huggingface.co" and len(parts) >= 2 and parts[0] == "papers":
-        return f"hf:{parts[1]}"
-    return url
 
 
 def _normalize_digest_summary(value: str) -> str:

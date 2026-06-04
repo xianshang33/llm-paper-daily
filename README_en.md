@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.02_16:13-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.02_16:52-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,7 +13,7 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-06-02 16:13</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-06-02 16:52</sub></summary>
 <br>
 
 - ASE-26: a curriculum for agentic software engineering as a discipline 
