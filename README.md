@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.03_06:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.04_12:52-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月03日 06:31</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月04日 12:52</sub></summary>
 <br>
 
-- EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management 
-- LAP: An Agent-to-Instrument Protocol for Autonomous Science 
-- A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs 
-- The Impact of Configuring Agentic AI Coding Tools on Build-vs-Buy Decisions: A Study Protocol 
-- Agent libOS: A Library-OS-Inspired Runtime for Long-Running, Capability-Controlled LLM Agents 
+- Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery 
+- UModel: An Agent-Ready Observability Data Modeling Method at Scale 
+- Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent 
+- Streaming Communication in Multi-Agent Reasoning 
+- From Agent Traces to Trust: Evidence Tracing and Execution Provenance in LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-03</span> | **Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery**<br><sub>机构: Siemens Digital Industries Software<br>本文证明了在 API 持有 LLM 未知的专有领域知识时，“结构化胜过冗长”。自反思 API 通过返回机器可读的修复建议，显著提升了 AI 代理在复杂验证场景下的恢复能力和效率。该方法不适用于 LLM 已知的通用验证场景，但在处理专有业务逻辑、外部状态和专用规则时具有巨大价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.05037v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.05037.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/arquicanedo/self-reflective-apis)</div> |
+| <span style='display: inline-block; width: 42px;'>06-03</span> | **UModel: An Agent-Ready Observability Data Modeling Method at Scale**<br><sub>机构: Institute for Advanced Study, UCAS; CNIC, CAS; Alibaba; Tsinghua University<br>UModel 通过引入统一的本体框架和面向对象的建模方法，解决了现有可观测性数据模型不适合 LLM 智能体的问题。它通过标准化异构数据并提供支持自主探索的查询接口（U-SPL），显著提升了根因分析的精度和系统的可扩展性，为下一代 AIOps 提供了坚实的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.04799v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.04799.md)  |
+| <span style='display: inline-block; width: 42px;'>06-03</span> | **Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent**<br><sub>机构: The University of Tokyo, Huazhong University of Science and Technology<br>AgentMob 成功地将移动性预测从静态、单次的推断转变为自适应、基于证据且迭代的推理过程。它通过区分常规和模糊案例，既解决了 LLM 推理效率低的问题，又克服了传统黑盒模型缺乏可解释性和静态 LLM 方法在处理弱信号时证据不足的缺陷，为高效且可信的移动性预测提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.05130v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.05130.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Unknown-zoo/AgentMob)</div> |
+| <span style='display: inline-block; width: 42px;'>06-03</span> | **Streaming Communication in Multi-Agent Reasoning**<br><sub>机构: HKUST(GZ), Alibaba Group, ZJU, HKUST<br>本文提出了 StreamMA，通过引入步骤级的流式通信协议，解决了多智能体推理中的延迟瓶颈和错误传播问题。研究不仅证明了流式通信在降低延迟方面的优势，还揭示了其通过利用早期高质量推理步骤来提升准确性的机制。实验结果表明，StreamMA 在多个基准和模型上均显著优于现有方法，并提出了新的步骤级缩放定律，为多智能体系统的设计提供了新的理论依据和实践方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.05158v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.05158.md)  |
+| <span style='display: inline-block; width: 42px;'>06-03</span> | **From Agent Traces to Trust: Evidence Tracing and Execution Provenance in LLM Agents**<br><sub>机构: Griffith University, Jiangsu University, University of Southern Queensland, Peking University, Great Bay University, Nanjing University, Macquarie University, Southern University of Science and Technology<br>本文填补了 LLM 智能体领域中关于证据追踪和执行谱系的系统性研究空白。通过提出一个全面的分类框架，文章将分散的研究领域（如检索 grounding、工具安全、记忆血缘）统一在谱系视角下。它不仅总结了当前的技术进展，还明确了未来的开放挑战，包括统一追踪 schema、声明级语义谱系、感知谱系的安全机制、真实的执行轨迹基准测试以及隐私感知的审计基础设施。这项工作为构建可信赖、可调试且可审计的 LLM 智能体奠定了理论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.04990v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.04990.md)  |
 | <span style='display: inline-block; width: 42px;'>06-02</span> | **EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management**<br><sub>机构: The Hong Kong University of Science and Technology (Guangzhou)<br>EvoDS 通过引入自主技能获取和自适应上下文压缩两大核心机制，解决了现有数据科学代理在动作空间静态化和上下文管理被动化方面的根本缺陷。通过代理强化学习驱动的自进化能力，EvoDS 在多个基准测试中取得了显著的性能提升，为构建更灵活、可靠且具备长期记忆能力的自动化数据科学系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03841v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03841.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/usail-hkust/EvoDS)</div> |
 | <span style='display: inline-block; width: 42px;'>06-02</span> | **LAP: An Agent-to-Instrument Protocol for Autonomous Science**<br><sub>机构: Shiyanjia Lab<br>本文提出了 LAP 协议，解决了自主科学基础设施中智能体与物理仪器交互的标准缺失问题。通过引入 InstrumentCard、独占预留、安全围栏握手和标准化测量结果四大物理世界原语，LAP 弥补了现有 A2A 和 MCP 协议在物理具身交互方面的不足。尽管目前仍处于设计规范阶段，但其分层架构和对现有标准的兼容性为未来构建开放、互联的自动驾驶实验室生态系统奠定了理论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03755v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03755.md)  |
 | <span style='display: inline-block; width: 42px;'>06-02</span> | **A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs**<br><sub>机构: Phenikaa University, VNPT AI, MobiFone Corporation, National Economics University<br>本文提出了一种创新的无需训练的MoA框架，通过结合LLM的语言能力和KG的结构化知识，有效解决了多文档摘要中数据依赖高、跨文档关系难捕捉以及小语种泛化差的问题。模块化设计和多视角一致性机制使其在不同语言和领域间具有良好的适应性和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.03867v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.03867.md)  |

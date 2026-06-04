@@ -1,40 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-03T06:31:45.324797+00:00",
-  "run_date": "2026-06-02",
+  "generated_at": "2026-06-04T12:52:48.348401+00:00",
+  "run_date": "2026-06-03",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.03841",
-      "date": "2026-06-02",
-      "title": "EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management",
+      "id": "arxiv:2606.05037",
+      "date": "2026-06-03",
+      "title": "Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zherui Yang",
-        "Fan Liu",
-        "Yansong Ning",
-        "Hao Liu"
+        "Arquimedes Canedo",
+        "Grama Chethan"
       ],
-      "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
+      "institution": "Siemens Digital Industries Software",
       "summary": {
-        "zh": "EvoDS 通过引入自主技能获取和自适应上下文压缩两大核心机制，解决了现有数据科学代理在动作空间静态化和上下文管理被动化方面的根本缺陷。通过代理强化学习驱动的自进化能力，EvoDS 在多个基准测试中取得了显著的性能提升，为构建更灵活、可靠且具备长期记忆能力的自动化数据科学系统提供了新的范式。",
-        "en": "- **Background**: Automating data science workflows, from preprocessing to model evaluation, is a central goal in ML. Recent advances in Large Language Models (LLMs) have enabled autonomous agents capable of reasoning,..."
+        "zh": "本文证明了在 API 持有 LLM 未知的专有领域知识时，“结构化胜过冗长”。自反思 API 通过返回机器可读的修复建议，显著提升了 AI 代理在复杂验证场景下的恢复能力和效率。该方法不适用于 LLM 已知的通用验证场景，但在处理专有业务逻辑、外部状态和专用规则时具有巨大价值。",
+        "en": "- **Background**: As Large Language Models (LLMs) act as autonomous agents calling APIs, they fail differently than humans. While developers can infer missing context to fix requests, agents often burn tokens guessing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.03841v1",
-        "pdf": "https://arxiv.org/pdf/2606.03841v1",
-        "github": "https://github.com/usail-hkust/EvoDS"
+        "abs": "http://arxiv.org/abs/2606.05037v1",
+        "pdf": "https://arxiv.org/pdf/2606.05037v1",
+        "github": "https://github.com/arquicanedo/self-reflective-apis"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.03841.md",
-        "summary_en_path": "summary_en/2026-06/2606.03841.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03841.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03841.md"
+        "summary_zh_path": "summary/2026-06/2606.05037.md",
+        "summary_en_path": "summary_en/2026-06/2606.05037.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.05037.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.05037.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,36 +49,44 @@
       }
     },
     {
-      "id": "arxiv:2606.03755",
-      "date": "2026-06-02",
-      "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
+      "id": "arxiv:2606.04799",
+      "date": "2026-06-03",
+      "title": "UModel: An Agent-Ready Observability Data Modeling Method at Scale",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Linwu Zhu",
-        "Liqiang Gao",
-        "Yan Chen",
-        "Dan Zhu",
-        "Jian Huang"
+        "Changhua Pei",
+        "Zheyuan Li",
+        "Zexin Wang",
+        "Hang Cui",
+        "Xiaohui Nie",
+        "Qi Zhou",
+        "Fang Situ",
+        "Cheng Zhang",
+        "Xin Zhang",
+        "Xidao Wen",
+        "Gaogang Xie",
+        "Jingjing Li",
+        "Dan Pei"
       ],
-      "institution": "Shiyanjia Lab",
+      "institution": "Institute for Advanced Study, UCAS; CNIC, CAS; Alibaba; Tsinghua University",
       "summary": {
-        "zh": "本文提出了 LAP 协议，解决了自主科学基础设施中智能体与物理仪器交互的标准缺失问题。通过引入 InstrumentCard、独占预留、安全围栏握手和标准化测量结果四大物理世界原语，LAP 弥补了现有 A2A 和 MCP 协议在物理具身交互方面的不足。尽管目前仍处于设计规范阶段，但其分层架构和对现有标准的兼容性为未来构建开放、互联的自动驾驶实验室生态系统奠定了理论基础。",
-        "en": "- **Background**: Autonomous science is transitioning from demonstrations to infrastructure. Large Language Model (LLM) agents plan experiments, while self-driving laboratories execute them."
+        "zh": "UModel 通过引入统一的本体框架和面向对象的建模方法，解决了现有可观测性数据模型不适合 LLM 智能体的问题。它通过标准化异构数据并提供支持自主探索的查询接口（U-SPL），显著提升了根因分析的精度和系统的可扩展性，为下一代 AIOps 提供了坚实的基础设施支持。",
+        "en": "- **Background**: With the rise of Large Language Models (LLMs) and multi-agent systems, automating Root Cause Analysis (RCA) using observability data is critical for network system reliability. However, Site..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.03755v1",
-        "pdf": "https://arxiv.org/pdf/2606.03755v1",
+        "abs": "http://arxiv.org/abs/2606.04799v1",
+        "pdf": "https://arxiv.org/pdf/2606.04799v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.03755.md",
-        "summary_en_path": "summary_en/2026-06/2606.03755.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03755.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03755.md"
+        "summary_zh_path": "summary/2026-06/2606.04799.md",
+        "summary_en_path": "summary_en/2026-06/2606.04799.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.04799.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.04799.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,36 +103,41 @@
       }
     },
     {
-      "id": "arxiv:2606.03867",
-      "date": "2026-06-02",
-      "title": "A Training-Free Mixture-of-Agents Framework for Multi-Document Summarization using LLMs and Knowledge Graphs",
+      "id": "arxiv:2606.05130",
+      "date": "2026-06-03",
+      "title": "Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Cuong Vuong Tuan",
-        "Trang Mai Xuan",
-        "Tien-Cuong Nguyen",
-        "Vu-Duc Ngo",
-        "Thien Van Luong"
+        "Linyao Chen",
+        "Qinlao Zhao",
+        "Zechen Li",
+        "Mingming Li",
+        "Likun Ni",
+        "Jinyu Chen",
+        "Yuhao Yao",
+        "Xuan Song",
+        "Noboru Koshizuka",
+        "Hiroki Kobayashi"
       ],
-      "institution": "Phenikaa University, VNPT AI, MobiFone Corporation, National Economics University",
+      "institution": "The University of Tokyo, Huazhong University of Science and Technology",
       "summary": {
-        "zh": "本文提出了一种创新的无需训练的MoA框架，通过结合LLM的语言能力和KG的结构化知识，有效解决了多文档摘要中数据依赖高、跨文档关系难捕捉以及小语种泛化差的问题。模块化设计和多视角一致性机制使其在不同语言和领域间具有良好的适应性和鲁棒性。",
-        "en": "- **Background**: Multi-Document Summarization (MDS) is critical for synthesizing knowledge from diverse textual sources amidst rapidly expanding digital information. - **Why Existing Work Falls Short**: Early..."
+        "zh": "AgentMob 成功地将移动性预测从静态、单次的推断转变为自适应、基于证据且迭代的推理过程。它通过区分常规和模糊案例，既解决了 LLM 推理效率低的问题，又克服了传统黑盒模型缺乏可解释性和静态 LLM 方法在处理弱信号时证据不足的缺陷，为高效且可信的移动性预测提供了新范式。",
+        "en": "- **Background**: Individual-level mobility prediction is central to urban simulation, transportation planning, and policy analysis. While supervised sequence models achieve high accuracy, they require task-specific..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.03867v1",
-        "pdf": "https://arxiv.org/pdf/2606.03867v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.05130v1",
+        "pdf": "https://arxiv.org/pdf/2606.05130v1",
+        "github": "https://github.com/Unknown-zoo/AgentMob"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.03867.md",
-        "summary_en_path": "summary_en/2026-06/2606.03867.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03867.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03867.md"
+        "summary_zh_path": "summary/2026-06/2606.05130.md",
+        "summary_en_path": "summary_en/2026-06/2606.05130.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.05130.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.05130.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -143,36 +154,37 @@
       }
     },
     {
-      "id": "arxiv:2606.03907",
-      "date": "2026-06-02",
-      "title": "The Impact of Configuring Agentic AI Coding Tools on Build-vs-Buy Decisions: A Study Protocol",
+      "id": "arxiv:2606.05158",
+      "date": "2026-06-03",
+      "title": "Streaming Communication in Multi-Agent Reasoning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jai Lal Lulla",
-        "Matthias Galster",
-        "Jie M. Zhang",
-        "Sebastian Baltes",
-        "Christoph Treude"
+        "Zhen Yang",
+        "Xiaogang Xu",
+        "Wen Wang",
+        "Cong Chen",
+        "Xander Xu",
+        "Ying-Cong Chen"
       ],
-      "institution": "Singapore Management University, University of Bamberg, King’s College London, Heidelberg University",
+      "institution": "HKUST(GZ), Alibaba Group, ZJU, HKUST",
       "summary": {
-        "zh": "本文提出了一项严谨的预注册研究协议，旨在填补代理式 AI 编码工具在“构建 vs 购买”决策机制研究上的空白。通过系统性地操纵配置机制并在受控基准上测试 Claude Code 和 OpenAI Codex，该研究将为理解和管理 AI 自主引入依赖的风险提供实证依据。其产出的基准数据集和分析管道将成为社区评估未来 AI 编码工具行为的重要资源。",
-        "en": "- **Background**: Agentic AI coding tools increasingly autonomously decide whether to import external libraries (\"buy\") or implement functionality from scratch (\"build\"). These decisions have direct implications for..."
+        "zh": "本文提出了 StreamMA，通过引入步骤级的流式通信协议，解决了多智能体推理中的延迟瓶颈和错误传播问题。研究不仅证明了流式通信在降低延迟方面的优势，还揭示了其通过利用早期高质量推理步骤来提升准确性的机制。实验结果表明，StreamMA 在多个基准和模型上均显著优于现有方法，并提出了新的步骤级缩放定律，为多智能体系统的设计提供了新的理论依据和实践方向。",
+        "en": "- **Background**: Multi-agent reasoning systems typically adopt a \"generate-then-transfer\" (Serial) paradigm, where upstream agents must complete their entire response before passing it downstream. This forces..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.03907v1",
-        "pdf": "https://arxiv.org/pdf/2606.03907v1",
+        "abs": "http://arxiv.org/abs/2606.05158v1",
+        "pdf": "https://arxiv.org/pdf/2606.05158v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.03907.md",
-        "summary_en_path": "summary_en/2026-06/2606.03907.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03907.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03907.md"
+        "summary_zh_path": "summary/2026-06/2606.05158.md",
+        "summary_en_path": "summary_en/2026-06/2606.05158.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.05158.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.05158.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,32 +201,40 @@
       }
     },
     {
-      "id": "arxiv:2606.03895",
-      "date": "2026-06-02",
-      "title": "Agent libOS: A Library-OS-Inspired Runtime for Long-Running, Capability-Controlled LLM Agents",
+      "id": "arxiv:2606.04990",
+      "date": "2026-06-03",
+      "title": "From Agent Traces to Trust: Evidence Tracing and Execution Provenance in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yingqi Zhang"
+        "Yiqi Wang",
+        "Jiaqi Zhang",
+        "Taotao Cai",
+        "Zirui Liu",
+        "Qingqiang Sun",
+        "Zequn Sun",
+        "Zhangkai Wu",
+        "Mingkai Zhang",
+        "Yanming Zhu"
       ],
-      "institution": "Tsinghua University",
+      "institution": "Griffith University, Jiangsu University, University of Southern Queensland, Peking University, Great Bay University, Nanjing University, Macquarie University, Southern University of Science and Technology",
       "summary": {
-        "zh": "Agent libOS 提出了一种新的 LLM 代理运行时范式，通过借鉴操作系统的进程和能力模型，解决了长周期代理在安全性和状态管理上的核心痛点。它将代理从简单的聊天循环中解放出来，赋予其明确的身份、生命周期和细粒度的权限控制，为构建安全、可审计且具备复杂交互能力的长期运行 LLM 代理提供了坚实的底层基础。",
-        "en": "- **Background**: Large language model (LLM) agents are evolving from simple request-response assistants into long-running software actors. They require maintaining state across model calls, forking subtasks, waiting..."
+        "zh": "本文填补了 LLM 智能体领域中关于证据追踪和执行谱系的系统性研究空白。通过提出一个全面的分类框架，文章将分散的研究领域（如检索 grounding、工具安全、记忆血缘）统一在谱系视角下。它不仅总结了当前的技术进展，还明确了未来的开放挑战，包括统一追踪 schema、声明级语义谱系、感知谱系的安全机制、真实的执行轨迹基准测试以及隐私感知的审计基础设施。这项工作为构建可信赖、可调试且可审计的 LLM 智能体奠定了理论基础。",
+        "en": "- **Background**: LLM-based agents are increasingly solving complex tasks by interacting with external tools, retrieval systems, memory modules, and environments. While this expands autonomy, it makes agent behavior..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.03895v1",
-        "pdf": "https://arxiv.org/pdf/2606.03895v1",
+        "abs": "http://arxiv.org/abs/2606.04990v1",
+        "pdf": "https://arxiv.org/pdf/2606.04990v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.03895.md",
-        "summary_en_path": "summary_en/2026-06/2606.03895.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.03895.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.03895.md"
+        "summary_zh_path": "summary/2026-06/2606.04990.md",
+        "summary_en_path": "summary_en/2026-06/2606.04990.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.04990.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.04990.md"
       },
       "signals": {
         "priority_keyword": "Agent"
