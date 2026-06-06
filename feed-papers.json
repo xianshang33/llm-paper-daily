@@ -1,37 +1,94 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-06T05:11:21.982215+00:00",
-  "run_date": "2026-06-04",
+  "generated_at": "2026-06-06T08:16:43.695712+00:00",
+  "run_date": "2026-05-31",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.06460",
-      "date": "2026-06-04",
-      "title": "Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals",
+      "id": "arxiv:2606.01311",
+      "date": "2026-05-31",
+      "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Thamilvendhan Munirathinam"
+        "Zhuoyun Yu",
+        "Xin Xie",
+        "Wuguannan Yao",
+        "Chenxi Wang",
+        "Lei Liang",
+        "Xiang Qi",
+        "Shumin Deng"
       ],
-      "institution": null,
+      "institution": "Zhejiang University, Ant Group",
       "summary": {
-        "zh": "本文提出了“回避信号”这一开放迷你标准，旨在解决自主 LLM 智能体在持有有效凭证时缺乏接收资源方“禁止访问”意图的问题。通过实现低开销的适配器并进行实证研究，证明了主流 LLM 智能体能够识别并遵守这一合作性信号。该工作填补了带内策略通信和智能体合规性测量的空白，为基础设施操作员提供了一种轻量级的治理工具，同时明确了其作为合作控制而非安全边界的定位。",
-        "en": "- **Background**: As autonomous LLM agents increasingly operate infrastructure with real credentials and without human-in-the-loop, operators lack a standard way to inform agents that certain resources are off-limits...."
+        "zh": "SkillAdaptor 通过将技能适应从轨迹级反思转变为步级归因，解决了长程 LLM 代理任务中失败归因粗糙的问题。通过精确定位首个故障步骤并针对性地更新相关技能，该方法在多个基准测试中显著优于现有免训练适应方法，证明了细粒度失败归因对于构建稳定、可审计的 LLM 代理技能系统的重要性。",
+        "en": "- **Background**: Large language model (LLM) agents increasingly rely on reusable external skills to solve long-horizon interactive tasks. To enable continual improvement without retraining the base model, many systems..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.06460v1",
-        "pdf": "https://arxiv.org/pdf/2606.06460v1",
+        "abs": "http://arxiv.org/abs/2606.01311v1",
+        "pdf": "https://arxiv.org/pdf/2606.01311v1",
+        "github": "https://github.com/zjunlp/SkillAdaptor"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-05/2606.01311.md",
+        "summary_en_path": "summary_en/2026-05/2606.01311.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01311.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01311.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.01498",
+      "date": "2026-05-31",
+      "title": "TimeSage-MT: A Multi-Turn Benchmark for Evaluating Agentic Time Series Reasoning",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yaxuan Kong",
+        "Qingren Yao",
+        "Yuqi Nie",
+        "Yichen Li",
+        "Yilei Shao",
+        "Stefan Zohren",
+        "Anna Vettoruzzo",
+        "Joaquin Vanschoren",
+        "Ming Jin",
+        "Qingsong Wen"
+      ],
+      "institution": "University of Oxford, VulpiVox Intelligence, Eindhoven University of Technology, Griffith University, Squirrel Ai Learning, East China Normal University",
+      "summary": {
+        "zh": "TimeSage-MT 填补了时间序列代理评估中的空白，通过模拟真实世界中多轮、演进的分析师工作流，严格评估了 LLM 代理在时间序列推理中的综合能力。研究结果表明，当前最先进的模型在需要长期记忆、不确定性校准和领域知识整合的决策型任务中表现不佳。该基准测试为未来开发更可靠的时间序列分析代理提供了 rigorous 的基础和明确的方向。",
+        "en": "- **Background**: Time series data drives critical decisions in high-stakes domains like finance and healthcare. While LLM agents can analyze data via natural language and tools, their ability to conduct reliable time..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.01498v1",
+        "pdf": "https://arxiv.org/pdf/2606.01498v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.06460.md",
-        "summary_en_path": "summary_en/2026-06/2606.06460.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.06460.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.06460.md"
+        "summary_zh_path": "summary/2026-05/2606.01498.md",
+        "summary_en_path": "summary_en/2026-05/2606.01498.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01498.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01498.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,93 +105,35 @@
       }
     },
     {
-      "id": "arxiv:2606.06453",
-      "date": "2026-06-04",
-      "title": "Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents",
+      "id": "arxiv:2606.01441",
+      "date": "2026-05-31",
+      "title": "Dive into Ambiguity: A*-Inspired Multi-Agents Commonsense Obfuscation Attack on LLM Prompts",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuoming Chen",
-        "Xinrui Zhong",
-        "Qilong Feng",
-        "Ranajoy Sadhukhan",
-        "Yang Zhou",
-        "Michael Qizhe Shieh",
-        "Zhihao Jia",
-        "Beidi Chen"
+        "Boxuan Wang",
+        "Zhuoyun Li",
+        "Xiaowei Huang",
+        "Yi Dong"
       ],
-      "institution": "Carnegie Mellon University, Rice University, National University of Singapore",
+      "institution": "University of Liverpool",
       "summary": {
-        "zh": "Vortex 通过提供可编程的前端语言和高效的后端集成，解决了稀疏注意力算法在大规模部署中的工程瓶颈。它不仅加速了人类研究人员的工作流程，还赋能 AI Agent 自动探索和优化稀疏注意力设计，在多个主流和大参数模型上实现了显著的吞吐量提升，是连接稀疏注意力研究与实际高效服务的重要桥梁。",
-        "en": "- **Background**: As generation lengths in Large Language Models (LLMs) increase, sparse attention has become critical for reducing inference costs. However, deploying and evaluating new sparse attention algorithms at..."
+        "zh": "本文针对 LLM 在安全关键应用中的脆弱性，提出了一种受 A* 搜索启发的黑盒对抗攻击框架。通过动态调整的重写策略和可解释的机制标签，该方法不仅提高了诱导常识性幻觉的成功率，还显著降低了搜索成本。理论分析与实证结果均表明，该方法在效率和效果上优于现有工作，为评估和提升 LLM 的鲁棒性提供了新的视角和工具。",
+        "en": "This paper addresses the vulnerability of LLMs in safety-critical applications by proposing an A*-inspired black-box adversarial attack framework. Through a dynamically adjusted rewrite strategy and interpretable..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.06453v1",
-        "pdf": "https://arxiv.org/pdf/2606.06453v1",
-        "github": "https://github.com/Infini-AI-Lab/vortex_torch"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.06453.md",
-        "summary_en_path": "summary_en/2026-06/2606.06453.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.06453.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.06453.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.06388",
-      "date": "2026-06-04",
-      "title": "Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Jiaju Chen",
-        "Yuxuan Lu",
-        "Jiayi Su",
-        "Chaoran Chen",
-        "Songlin Xiao",
-        "Zheng Zhang",
-        "Yun Wang",
-        "Yunyao Li",
-        "Jian Zhao",
-        "Tongshuang Wu",
-        "Toby Jia-Jun Li",
-        "Dakuo Wang",
-        "Bingsheng Yao"
-      ],
-      "institution": "Northeastern University",
-      "summary": {
-        "zh": "本文针对当前 LLM 代理在人类协作中缺乏心智模型对齐能力的问题，提出了 ALMANAC 数据集。该数据集填补了带有动作级心智模型标注的真实人类协作数据的空白。通过基于经典地图任务的收集和标注，ALMANAC 为评估和优化 LLM 代理的过程级协作能力提供了重要资源，有助于推动代理从单纯的任务执行者向具备真正协作智能的伙伴转变。",
-        "en": "- **Background**: Recent advances in Large Language Model (LLM) agents have equipped them with complex cognitive capabilities, positioning them as human collaborators. However, effective collaboration requires..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.06388v1",
-        "pdf": "https://arxiv.org/pdf/2606.06388v1",
+        "abs": "http://arxiv.org/abs/2606.01441v1",
+        "pdf": "https://arxiv.org/pdf/2606.01441v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.06388.md",
-        "summary_en_path": "summary_en/2026-06/2606.06388.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.06388.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.06388.md"
+        "summary_zh_path": "summary/2026-05/2606.01441.md",
+        "summary_en_path": "summary_en/2026-05/2606.01441.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01441.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01441.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -151,9 +150,9 @@
       }
     },
     {
-      "id": "arxiv:2606.06284",
-      "date": "2026-06-04",
-      "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents",
+      "id": "arxiv:2606.01416",
+      "date": "2026-05-31",
+      "title": "Self-Healing Agentic Orchestrators for Reliable Tool-Augmented Large Language Model Systems",
       "topic": "agent",
       "language": [
         "zh",
@@ -161,23 +160,23 @@
       ],
       "authors": [
         "Rahul Suresh Babu",
-        "Laxmipriya Ganesh Iyer"
+        "Adarsh Agrawal"
       ],
       "institution": null,
       "summary": {
-        "zh": "本文指出了LLM代理在大规模工具库面前存在的“工具选择混淆”问题，即语义相关性不足以指导可靠的多步工具使用。作者提出了CMTF方法，通过引入轻量级的因果契约和状态依赖分析，实现了训练免费的最小化工具过滤。实验表明，该方法在保持高任务成功率的同时，极大地降低了Token成本和决策复杂度，为构建高效、可靠的LLM代理系统提供了新的思路。",
-        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on external tools. However, larger tool menus reduce reliability and efficiency by increasing wrong-tool calls, premature actions, and token costs."
+        "zh": "本文证明了在工具增强的 LLM 系统中，采用故障感知、预算限制且由验证引导的编排策略，能显著提升系统的可靠性和可诊断性。通过将有界运行时控制应用于代理编排，自愈机制能够精准识别故障根源并执行针对性恢复，避免了传统方法的盲目性和低效性，为构建高可靠性的 LLM 代理系统提供了新的范式。",
+        "en": "- **Background**: Tool-augmented Large Language Model (LLM) agents rely on orchestration layers to coordinate planning, retrieval, tool invocation, validation, and recovery. Failures in these systems stem not only from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.06284v1",
-        "pdf": "https://arxiv.org/pdf/2606.06284v1",
+        "abs": "http://arxiv.org/abs/2606.01416v1",
+        "pdf": "https://arxiv.org/pdf/2606.01416v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.06284.md",
-        "summary_en_path": "summary_en/2026-06/2606.06284.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.06284.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.06284.md"
+        "summary_zh_path": "summary/2026-05/2606.01416.md",
+        "summary_en_path": "summary_en/2026-05/2606.01416.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01416.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01416.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,32 +193,38 @@
       }
     },
     {
-      "id": "arxiv:2606.06240",
-      "date": "2026-06-04",
-      "title": "TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory",
+      "id": "arxiv:2606.01365",
+      "date": "2026-05-31",
+      "title": "Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ziming Wang"
+        "Xianyou Li",
+        "Weiran Yan",
+        "Yichao Wu",
+        "Penghao Liang",
+        "Mengwei Yuan",
+        "Jianan Liu",
+        "Jing Yang"
       ],
-      "institution": "The Hong Kong University of Science and Technology",
+      "institution": "Northeastern University, New York University, Washington University in St. Louis",
       "summary": {
-        "zh": "TOKI 的核心贡献在于建立了一个写入时正确性规范（契约），该规范在隔离、模式和来源方面被证明是健全的。它明确了每个生产启发式方法所假设但未显式化的保证，解决了 LLM 智能体持久化记忆中因缺乏明确并发控制契约而导致的重放不一致、信念漂移和审计擦除问题。",
-        "en": "- **Background**: Persistent memory for LLM agents is a write-heavy substrate where every belief update is a versioned write, often leading to contradictions with stored claims. Production systems typically use four..."
+        "zh": "本文强调了在多智能体LLM系统中引入故障感知可观测性的必要性。通过构建一个将故障模式映射到在线信号的框架，研究者能够诊断出传统评估忽略的“浪费计算”。实验证明，该方法能有效识别证据缺失、循环和工具故障等问题，为优化多智能体系统的效率和可靠性提供了新的诊断视角，填补了底层日志与顶层准确率之间的空白。",
+        "en": "- **Background**: Tool-using multi-agent LLM systems consume significant computation (tokens, tool calls, retries, code execution) before producing an answer. When a run fails, final-answer evaluation reveals the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.06240v1",
-        "pdf": "https://arxiv.org/pdf/2606.06240v1",
+        "abs": "http://arxiv.org/abs/2606.01365v1",
+        "pdf": "https://arxiv.org/pdf/2606.01365v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.06240.md",
-        "summary_en_path": "summary_en/2026-06/2606.06240.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.06240.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.06240.md"
+        "summary_zh_path": "summary/2026-05/2606.01365.md",
+        "summary_en_path": "summary_en/2026-05/2606.01365.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01365.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01365.md"
       },
       "signals": {
         "priority_keyword": "Agent"
