@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.04_12:52-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.06_05:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月04日 12:52</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月06日 05:11</sub></summary>
 <br>
 
-- Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery 
-- UModel: An Agent-Ready Observability Data Modeling Method at Scale 
-- Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent 
-- Streaming Communication in Multi-Agent Reasoning 
-- From Agent Traces to Trust: Evidence Tracing and Execution Provenance in LLM Agents 
+- Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals 
+- Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents 
+- Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration 
+- ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents 
+- TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-04</span> | **Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals**<br><sub>本文提出了“回避信号”这一开放迷你标准，旨在解决自主 LLM 智能体在持有有效凭证时缺乏接收资源方“禁止访问”意图的问题。通过实现低开销的适配器并进行实证研究，证明了主流 LLM 智能体能够识别并遵守这一合作性信号。该工作填补了带内策略通信和智能体合规性测量的空白，为基础设施操作员提供了一种轻量级的治理工具，同时明确了其作为合作控制而非安全边界的定位。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06460v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06460.md)  |
+| <span style='display: inline-block; width: 42px;'>06-04</span> | **Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents**<br><sub>机构: Carnegie Mellon University, Rice University, National University of Singapore<br>Vortex 通过提供可编程的前端语言和高效的后端集成，解决了稀疏注意力算法在大规模部署中的工程瓶颈。它不仅加速了人类研究人员的工作流程，还赋能 AI Agent 自动探索和优化稀疏注意力设计，在多个主流和大参数模型上实现了显著的吞吐量提升，是连接稀疏注意力研究与实际高效服务的重要桥梁。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06453v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06453.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/vortex_torch)</div> |
+| <span style='display: inline-block; width: 42px;'>06-04</span> | **Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration**<br><sub>机构: Northeastern University<br>本文针对当前 LLM 代理在人类协作中缺乏心智模型对齐能力的问题，提出了 ALMANAC 数据集。该数据集填补了带有动作级心智模型标注的真实人类协作数据的空白。通过基于经典地图任务的收集和标注，ALMANAC 为评估和优化 LLM 代理的过程级协作能力提供了重要资源，有助于推动代理从单纯的任务执行者向具备真正协作智能的伙伴转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06388v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06388.md)  |
+| <span style='display: inline-block; width: 42px;'>06-04</span> | **ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents**<br><sub>本文指出了LLM代理在大规模工具库面前存在的“工具选择混淆”问题，即语义相关性不足以指导可靠的多步工具使用。作者提出了CMTF方法，通过引入轻量级的因果契约和状态依赖分析，实现了训练免费的最小化工具过滤。实验表明，该方法在保持高任务成功率的同时，极大地降低了Token成本和决策复杂度，为构建高效、可靠的LLM代理系统提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06284v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06284.md)  |
+| <span style='display: inline-block; width: 42px;'>06-04</span> | **TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory**<br><sub>机构: The Hong Kong University of Science and Technology<br>TOKI 的核心贡献在于建立了一个写入时正确性规范（契约），该规范在隔离、模式和来源方面被证明是健全的。它明确了每个生产启发式方法所假设但未显式化的保证，解决了 LLM 智能体持久化记忆中因缺乏明确并发控制契约而导致的重放不一致、信念漂移和审计擦除问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06240v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06240.md)  |
 | <span style='display: inline-block; width: 42px;'>06-03</span> | **Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery**<br><sub>机构: Siemens Digital Industries Software<br>本文证明了在 API 持有 LLM 未知的专有领域知识时，“结构化胜过冗长”。自反思 API 通过返回机器可读的修复建议，显著提升了 AI 代理在复杂验证场景下的恢复能力和效率。该方法不适用于 LLM 已知的通用验证场景，但在处理专有业务逻辑、外部状态和专用规则时具有巨大价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.05037v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.05037.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/arquicanedo/self-reflective-apis)</div> |
 | <span style='display: inline-block; width: 42px;'>06-03</span> | **UModel: An Agent-Ready Observability Data Modeling Method at Scale**<br><sub>机构: Institute for Advanced Study, UCAS; CNIC, CAS; Alibaba; Tsinghua University<br>UModel 通过引入统一的本体框架和面向对象的建模方法，解决了现有可观测性数据模型不适合 LLM 智能体的问题。它通过标准化异构数据并提供支持自主探索的查询接口（U-SPL），显著提升了根因分析的精度和系统的可扩展性，为下一代 AIOps 提供了坚实的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.04799v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.04799.md)  |
 | <span style='display: inline-block; width: 42px;'>06-03</span> | **Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent**<br><sub>机构: The University of Tokyo, Huazhong University of Science and Technology<br>AgentMob 成功地将移动性预测从静态、单次的推断转变为自适应、基于证据且迭代的推理过程。它通过区分常规和模糊案例，既解决了 LLM 推理效率低的问题，又克服了传统黑盒模型缺乏可解释性和静态 LLM 方法在处理弱信号时证据不足的缺陷，为高效且可信的移动性预测提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.05130v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.05130.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Unknown-zoo/AgentMob)</div> |
