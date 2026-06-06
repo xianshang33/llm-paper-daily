@@ -1,43 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-06T08:16:43.695712+00:00",
-  "run_date": "2026-05-31",
+  "generated_at": "2026-06-06T11:07:30.444938+00:00",
+  "run_date": "2026-05-30",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.01311",
-      "date": "2026-05-31",
-      "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
+      "id": "arxiv:2606.00765",
+      "date": "2026-05-30",
+      "title": "FALAT: Tracing Failures in LLM Agent Trajectories via Dependency-Guided Search",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuoyun Yu",
-        "Xin Xie",
-        "Wuguannan Yao",
-        "Chenxi Wang",
-        "Lei Liang",
-        "Xiang Qi",
-        "Shumin Deng"
+        "Md Nakhla Rafi",
+        "Md Ahasanuzzaman",
+        "Dong Jae Kim",
+        "Zhijie Wang",
+        "Tse-Hsun Chen"
       ],
-      "institution": "Zhejiang University, Ant Group",
+      "institution": "Concordia University",
       "summary": {
-        "zh": "SkillAdaptor 通过将技能适应从轨迹级反思转变为步级归因，解决了长程 LLM 代理任务中失败归因粗糙的问题。通过精确定位首个故障步骤并针对性地更新相关技能，该方法在多个基准测试中显著优于现有免训练适应方法，证明了细粒度失败归因对于构建稳定、可审计的 LLM 代理技能系统的重要性。",
-        "en": "- **Background**: Large language model (LLM) agents increasingly rely on reusable external skills to solve long-horizon interactive tasks. To enable continual improvement without retraining the base model, many systems..."
+        "zh": "FALAT 通过依赖引导的搜索策略，有效解决了 LLM 智能体长轨迹中因错误传播导致的故障归因难题。它不仅能定位具体的错误步骤，还能识别责任智能体，并通过反事实验证确保归因的可靠性。实验表明，该方法在处理复杂、相互依赖的智能体轨迹时，显著优于现有的基线方法，为提升智能体系统的可调试性和可靠性提供了重要工具。",
+        "en": "- **Background**: LLM-based agents solve complex tasks through long trajectories involving reasoning, tool use, and communication. However, when failures occur, it is often unclear which agent caused the failure and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.01311v1",
-        "pdf": "https://arxiv.org/pdf/2606.01311v1",
-        "github": "https://github.com/zjunlp/SkillAdaptor"
+        "abs": "http://arxiv.org/abs/2606.00765v1",
+        "pdf": "https://arxiv.org/pdf/2606.00765v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2606.01311.md",
-        "summary_en_path": "summary_en/2026-05/2606.01311.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01311.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01311.md"
+        "summary_zh_path": "summary/2026-05/2606.00765.md",
+        "summary_en_path": "summary_en/2026-05/2606.00765.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.00765.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.00765.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,41 +52,36 @@
       }
     },
     {
-      "id": "arxiv:2606.01498",
-      "date": "2026-05-31",
-      "title": "TimeSage-MT: A Multi-Turn Benchmark for Evaluating Agentic Time Series Reasoning",
+      "id": "arxiv:2606.00756",
+      "date": "2026-05-30",
+      "title": "CoMIC: Collaborative Memory and Insights Circulation for Long-Horizon LLM Agents in Cloud-Edge Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yaxuan Kong",
-        "Qingren Yao",
-        "Yuqi Nie",
-        "Yichen Li",
-        "Yilei Shao",
-        "Stefan Zohren",
-        "Anna Vettoruzzo",
-        "Joaquin Vanschoren",
-        "Ming Jin",
-        "Qingsong Wen"
+        "Yannan Wang",
+        "Longli Yang",
+        "Zhen Liu",
+        "Abhishek Kumar",
+        "Carsten Maple"
       ],
-      "institution": "University of Oxford, VulpiVox Intelligence, Eindhoven University of Technology, Griffith University, Squirrel Ai Learning, East China Normal University",
+      "institution": "Beijing Jiaotong University, University of Warwick, The Alan Turing Institute",
       "summary": {
-        "zh": "TimeSage-MT 填补了时间序列代理评估中的空白，通过模拟真实世界中多轮、演进的分析师工作流，严格评估了 LLM 代理在时间序列推理中的综合能力。研究结果表明，当前最先进的模型在需要长期记忆、不确定性校准和领域知识整合的决策型任务中表现不佳。该基准测试为未来开发更可靠的时间序列分析代理提供了 rigorous 的基础和明确的方向。",
-        "en": "- **Background**: Time series data drives critical decisions in high-stakes domains like finance and healthcare. While LLM agents can analyze data via natural language and tools, their ability to conduct reliable time..."
+        "zh": "CoMIC 提出了一种创新的云边协同机制，通过“集中反思、分布执行”策略，成功解决了资源受限边缘设备上长程 LLM 智能体的记忆管理和知识共享难题。该方法无需参数更新即可显著提升智能体性能，为边缘 AI 的高效部署提供了新的思路。",
+        "en": "- **Background**: Deploying lightweight Large Language Model (LLM) agents on edge servers reduces latency and brings services closer to users, but resource-constrained edge models struggle with long-horizon tasks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.01498v1",
-        "pdf": "https://arxiv.org/pdf/2606.01498v1",
+        "abs": "http://arxiv.org/abs/2606.00756v1",
+        "pdf": "https://arxiv.org/pdf/2606.00756v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2606.01498.md",
-        "summary_en_path": "summary_en/2026-05/2606.01498.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01498.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01498.md"
+        "summary_zh_path": "summary/2026-05/2606.00756.md",
+        "summary_en_path": "summary_en/2026-05/2606.00756.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.00756.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.00756.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -105,35 +98,35 @@
       }
     },
     {
-      "id": "arxiv:2606.01441",
-      "date": "2026-05-31",
-      "title": "Dive into Ambiguity: A*-Inspired Multi-Agents Commonsense Obfuscation Attack on LLM Prompts",
+      "id": "arxiv:2606.00655",
+      "date": "2026-05-30",
+      "title": "Scaling Behavior of Single LLM-Driven Multi-Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Boxuan Wang",
-        "Zhuoyun Li",
-        "Xiaowei Huang",
-        "Yi Dong"
+        "Jialing Li",
+        "Zhouhong Gu",
+        "Yin Cai",
+        "Hongwei Feng"
       ],
-      "institution": "University of Liverpool",
+      "institution": "Fudan University",
       "summary": {
-        "zh": "本文针对 LLM 在安全关键应用中的脆弱性，提出了一种受 A* 搜索启发的黑盒对抗攻击框架。通过动态调整的重写策略和可解释的机制标签，该方法不仅提高了诱导常识性幻觉的成功率，还显著降低了搜索成本。理论分析与实证结果均表明，该方法在效率和效果上优于现有工作，为评估和提升 LLM 的鲁棒性提供了新的视角和工具。",
-        "en": "This paper addresses the vulnerability of LLMs in safety-critical applications by proposing an A*-inspired black-box adversarial attack framework. Through a dynamically adjusted rewrite strategy and interpretable..."
+        "zh": "本文系统地研究了同质多智能体系统在智能体数量增加时的性能演变，提出了 SIMAS 框架以隔离协作变量。研究确立了 MAS 扩展定律：性能受协同增益与协调开销的权衡支配，呈现边际收益递减。集体智能并非智能体数量的必然产物，而是依赖于基础模型能力和战略交互设计。这项工作为理解 MAS 的集体行为提供了基础科学依据，并纠正了盲目增加智能体数量的误区。",
+        "en": "- **Background**: LLM-based Multi-Agent Systems (MAS) promise to solve complex tasks through collaborative intelligence. However, fundamental questions regarding their scaling behavior and intrinsic collective dynamics..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.01441v1",
-        "pdf": "https://arxiv.org/pdf/2606.01441v1",
+        "abs": "http://arxiv.org/abs/2606.00655v1",
+        "pdf": "https://arxiv.org/pdf/2606.00655v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2606.01441.md",
-        "summary_en_path": "summary_en/2026-05/2606.01441.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01441.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01441.md"
+        "summary_zh_path": "summary/2026-05/2606.00655.md",
+        "summary_en_path": "summary_en/2026-05/2606.00655.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.00655.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.00655.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -150,33 +143,36 @@
       }
     },
     {
-      "id": "arxiv:2606.01416",
-      "date": "2026-05-31",
-      "title": "Self-Healing Agentic Orchestrators for Reliable Tool-Augmented Large Language Model Systems",
+      "id": "arxiv:2606.00644",
+      "date": "2026-05-30",
+      "title": "ForeSci: Evaluating LLM Agents for Forward-Looking AI Research Judgment",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Rahul Suresh Babu",
-        "Adarsh Agrawal"
+        "Qiuyu Tian",
+        "Haojie Yin",
+        "Yingce Xia",
+        "Youyong Kong",
+        "Zequn Liu"
       ],
-      "institution": null,
+      "institution": "Southeast University, Beijing Zhongguancun Academy, Duke Kunshan University",
       "summary": {
-        "zh": "本文证明了在工具增强的 LLM 系统中，采用故障感知、预算限制且由验证引导的编排策略，能显著提升系统的可靠性和可诊断性。通过将有界运行时控制应用于代理编排，自愈机制能够精准识别故障根源并执行针对性恢复，避免了传统方法的盲目性和低效性，为构建高可靠性的 LLM 代理系统提供了新的范式。",
-        "en": "- **Background**: Tool-augmented Large Language Model (LLM) agents rely on orchestration layers to coordinate planning, retrieval, tool invocation, validation, and recovery. Failures in these systems stem not only from..."
+        "zh": "ForeSci 填补了评估 LLM 代理在缺乏未来证据情况下进行前瞻性科研决策能力的空白。通过严格的时间控制和历史可推断的任务设计，它揭示了当前代理在证据利用与最终决策之间存在脱节的问题，为开发更可靠的自主科研代理提供了重要的评估工具和洞察。",
+        "en": "- **Background**: AI research often requires decisions before future evidence exists, such as selecting bottlenecks to attack, pursuing specific directions, or positioning projects. As autonomous research agents are..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.01416v1",
-        "pdf": "https://arxiv.org/pdf/2606.01416v1",
+        "abs": "http://arxiv.org/abs/2606.00644v2",
+        "pdf": "https://arxiv.org/pdf/2606.00644v2",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2606.01416.md",
-        "summary_en_path": "summary_en/2026-05/2606.01416.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01416.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01416.md"
+        "summary_zh_path": "summary/2026-05/2606.00644.md",
+        "summary_en_path": "summary_en/2026-05/2606.00644.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.00644.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.00644.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,38 +189,32 @@
       }
     },
     {
-      "id": "arxiv:2606.01365",
-      "date": "2026-05-31",
-      "title": "Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability",
+      "id": "arxiv:2606.00914",
+      "date": "2026-05-30",
+      "title": "Adversarial Feeds Steer LLM Agent Decisions Against Their Defaults",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xianyou Li",
-        "Weiran Yan",
-        "Yichao Wu",
-        "Penghao Liang",
-        "Mengwei Yuan",
-        "Jianan Liu",
-        "Jing Yang"
+        "Rana Muhammad Usman"
       ],
-      "institution": "Northeastern University, New York University, Washington University in St. Louis",
+      "institution": "Independent Researcher",
       "summary": {
-        "zh": "本文强调了在多智能体LLM系统中引入故障感知可观测性的必要性。通过构建一个将故障模式映射到在线信号的框架，研究者能够诊断出传统评估忽略的“浪费计算”。实验证明，该方法能有效识别证据缺失、循环和工具故障等问题，为优化多智能体系统的效率和可靠性提供了新的诊断视角，填补了底层日志与顶层准确率之间的空白。",
-        "en": "- **Background**: Tool-using multi-agent LLM systems consume significant computation (tokens, tool calls, retries, code execution) before producing an answer. When a run fails, final-answer evaluation reveals the..."
+        "zh": "本文揭示了 LLM 智能体面临的一种新型安全威胁：上游推荐器/排序器可作为实际的控制面，通过策划 benign 信息流来 steer 智能体决策。研究指出，智能体评估必须超越对最终提示的孤立测试，转而审计信息流层。虽然前沿模型表现出一定的鲁棒性，但大多数模型在不确定状态下易受信息流操纵，这为构建更安全的智能体系统提供了重要的实证依据和改进方向。",
+        "en": "- **Background**: LLM agents increasingly make decisions after consuming ranked external information streams (e.g., social feeds, search results) selected by upstream rankers. However, safety evaluations typically test..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.01365v1",
-        "pdf": "https://arxiv.org/pdf/2606.01365v1",
+        "abs": "http://arxiv.org/abs/2606.00914v1",
+        "pdf": "https://arxiv.org/pdf/2606.00914v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-05/2606.01365.md",
-        "summary_en_path": "summary_en/2026-05/2606.01365.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.01365.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.01365.md"
+        "summary_zh_path": "summary/2026-05/2606.00914.md",
+        "summary_en_path": "summary_en/2026-05/2606.00914.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-05/2606.00914.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-05/2606.00914.md"
       },
       "signals": {
         "priority_keyword": "Agent"
