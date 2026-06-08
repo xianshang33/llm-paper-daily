@@ -141,6 +141,13 @@ For each selected paper, include:
 
 ## Commands
 
+## Scheduled Run Date Semantics
+
+- All `--date` values in `discover.py`, `run_daily.py`, `check_daily_status.py`, `prepare_summary_requests.py`, `prepare_missing_summary_requests.py`, `enrich_metadata.py`, and `finalize_daily.py` are UTC dates.
+- For scheduled production runs triggered in a non-UTC timezone, target the most recent fully completed UTC date instead of the local calendar date.
+- Example: if the automation starts at `2026-06-08 10:30 Asia/Shanghai`, use `--date 2026-06-07` because the UTC day `2026-06-08` is still in progress.
+- If an automation or agent is orchestrating this workflow, explicitly tell it to use the repository's `paper-daily` skill instead of treating the task as a generic script execution.
+
 Run a real arXiv dry-run for a UTC submitted date:
 
 ```bash
