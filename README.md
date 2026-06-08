@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.06_05:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.08_06:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月06日 05:11</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月08日 06:15</sub></summary>
 <br>
 
-- Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals 
-- Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents 
-- Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration 
-- ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents 
-- TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory 
+- TRACE: Trajectory Reasoning through Adaptive Cross-Step Evidence Aggregation for LLM Agents 
+- Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle 
+- Hierarchical Certified Semantic Commitment for Byzantine-Resilient LLM-Agent Collaboration 
+- The Sim-to-Real Gap of Foundation Model Agents: A Unified MDP Perspective 
+- Self-evolving LLM agents with in-distribution Optimization 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-05</span> | **TRACE: Trajectory Reasoning through Adaptive Cross-Step Evidence Aggregation for LLM Agents**<br><sub>机构: University of Massachusetts at Amherst, Adobe Research, Dolby Labs, University of Oregon, Cisco<br>本文针对 LLM 代理在长周期任务中可能出现的规避性破坏行为，提出了 TRACE 监控框架。通过引入 TIJ（分流-检查-判决）循环机制，TRACE 能够自适应地识别可疑区域，并在推理步骤间维持持久的证据状态，从而有效连接跨时间步的微弱恶意信号。实验证明，TRACE 在检测需要长程证据关联的复杂破坏行为方面优于现有最先进方法，为提升自主 LLM 代理的安全性提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07054v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07054.md)  |
+| <span style='display: inline-block; width: 42px;'>06-05</span> | **Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle**<br><sub>机构: Xi’an Jiaotong University, Xidian University<br>本文提出了 AARR 基准系列及其首个实例 AARRI-Bench，填补了现有评估在细粒度科研行为和细微判断力方面的空白。实验结果表明，尽管前沿智能体在宏观任务上表现优异，但在模拟真实研究者的专业性、严谨性和伦理判断上仍有巨大提升空间。研究强调，开发类人研究 AI 需要超越单纯的复杂框架搭建，转而深入探索和研究具体的科研行为模式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07462v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07462.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AARR-bench/AARRI-bench)</div> |
+| <span style='display: inline-block; width: 42px;'>06-05</span> | **Hierarchical Certified Semantic Commitment for Byzantine-Resilient LLM-Agent Collaboration**<br><sub>机构: University of Glasgow, University of Western Ontario<br>本文针对LLM多智能体协作中的拜占庭容错问题，提出了H-CSC协议。该协议突破了传统BFT对字节一致性的依赖，通过嵌入向量实现语义层面的共识。其核心创新在于“类型化最终性”，即根据语义凝聚程度区分“语义提交”和“裁决提交”，并在必要时安全中止。实验表明，H-CSC在保持与现有强基线相当的安全性和覆盖率的同时，提供了额外的语义可验证性，有效解决了LLM输出随机性带来的共识难题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07316v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07316.md)  |
+| <span style='display: inline-block; width: 42px;'>06-05</span> | **The Sim-to-Real Gap of Foundation Model Agents: A Unified MDP Perspective**<br><sub>机构: Arizona State University<br>本文旨在推动基础模型智能体研究的范式转变，通过引入经典的 MDP 视角，为社区提供了统一的词汇表和研究议程。文章强调，不应将智能体鲁棒性视为全新问题，而应借鉴机器人学中成熟的 Sim-to-Real 框架。通过标准化压力测试基准和采用域随机化等既定解决方案，该议程有望培养出新一代高度可信、适用于可靠现实应用的基础模型智能体。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07017v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07017.md)  |
+| <span style='display: inline-block; width: 42px;'>06-05</span> | **Self-evolving LLM agents with in-distribution Optimization**<br><sub>机构: Eindhoven University of Technology, University of Liverpool, MIT-IBM Watson AI Lab<br>本文提出的 Q-Evolve 框架解决了 LLM 智能体在长视野任务中面临的信用分配和分布偏移难题。通过在共享的“在分布”学习循环中协同进化过程级监督和策略，该方法无需人工标注或环境回溯即可实现密集奖励信号的学习，并确保了策略优化的稳定性。实验结果表明，该方法在多个复杂交互环境中显著提升了智能体的性能和样本效率，为 LLM 智能体的可靠自进化提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07367v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07367.md)  |
 | <span style='display: inline-block; width: 42px;'>06-04</span> | **Will the Agent Recuse Itself? Measuring LLM-Agent Compliance with In-Band Access-Deny Signals**<br><sub>本文提出了“回避信号”这一开放迷你标准，旨在解决自主 LLM 智能体在持有有效凭证时缺乏接收资源方“禁止访问”意图的问题。通过实现低开销的适配器并进行实证研究，证明了主流 LLM 智能体能够识别并遵守这一合作性信号。该工作填补了带内策略通信和智能体合规性测量的空白，为基础设施操作员提供了一种轻量级的治理工具，同时明确了其作为合作控制而非安全边界的定位。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06460v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06460.md)  |
 | <span style='display: inline-block; width: 42px;'>06-04</span> | **Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents**<br><sub>机构: Carnegie Mellon University, Rice University, National University of Singapore<br>Vortex 通过提供可编程的前端语言和高效的后端集成，解决了稀疏注意力算法在大规模部署中的工程瓶颈。它不仅加速了人类研究人员的工作流程，还赋能 AI Agent 自动探索和优化稀疏注意力设计，在多个主流和大参数模型上实现了显著的吞吐量提升，是连接稀疏注意力研究与实际高效服务的重要桥梁。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06453v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06453.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/vortex_torch)</div> |
 | <span style='display: inline-block; width: 42px;'>06-04</span> | **Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration**<br><sub>机构: Northeastern University<br>本文针对当前 LLM 代理在人类协作中缺乏心智模型对齐能力的问题，提出了 ALMANAC 数据集。该数据集填补了带有动作级心智模型标注的真实人类协作数据的空白。通过基于经典地图任务的收集和标注，ALMANAC 为评估和优化 LLM 代理的过程级协作能力提供了重要资源，有助于推动代理从单纯的任务执行者向具备真正协作智能的伙伴转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.06388v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.06388.md)  |
