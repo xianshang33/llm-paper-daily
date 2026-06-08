@@ -6,11 +6,19 @@ set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPO_ROOT="$SCRIPT_DIR"
 
+# Load local secrets if present so the finalize step can send the Feishu reminder
+# (FEISHU_WEBHOOK_URL / optional FEISHU_WEBHOOK_SECRET). Discovery/enrich need none.
+if [[ -f "$REPO_ROOT/.local/paper-learning.env" ]]; then
+    source "$REPO_ROOT/.local/paper-learning.env"
+fi
+
 # Default values
 DATE=""
 ACTION="discover"
 VIEW_ONLY=false
 DRY_RUN=false
+NO_NOTIFY=false
+NOTIFY_DRY_RUN=false
 
 # Print help
 show_help() {
@@ -62,6 +70,14 @@ while [[ $# -gt 0 ]]; do
             ;;
         --dry-run)
             DRY_RUN=true
+            shift
+            ;;
+        --no-notify)
+            NO_NOTIFY=true
+            shift
+            ;;
+        --notify-dry-run)
+            NOTIFY_DRY_RUN=true
             shift
             ;;
         --help)
@@ -201,7 +217,12 @@ case $ACTION in
         ;;
     finalize)
         echo "✅ Finalizing and publishing $DATE..."
-        python3 skill/paper-daily/scripts/finalize_daily.py --repo-root . --date "$DATE"
+        # A Feishu reminder is sent automatically when FEISHU_WEBHOOK_URL is set
+        # (optionally signed via FEISHU_WEBHOOK_SECRET). --no-notify disables it.
+        FINALIZE_FLAGS=()
+        if $NO_NOTIFY; then FINALIZE_FLAGS+=("--no-notify"); fi
+        if $NOTIFY_DRY_RUN; then FINALIZE_FLAGS+=("--notify-dry-run"); fi
+        python3 skill/paper-daily/scripts/finalize_daily.py --repo-root . --date "$DATE" "${FINALIZE_FLAGS[@]}"
         ;;
     *)
         echo "Unknown action: $ACTION"

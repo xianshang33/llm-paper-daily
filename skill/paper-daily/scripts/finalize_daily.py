@@ -12,6 +12,7 @@ from paper_daily.defaults import (
 )
 from paper_daily.feed import read_feed_state, write_feed_outputs, write_feed_state
 from paper_daily.metadata import load_metadata_payload, merge_candidate_with_metadata, resolve_metadata_artifact_dir
+from paper_daily.notify import FeishuNotifier
 from paper_daily.patch import (
     README_END,
     README_EN_END,
@@ -110,6 +111,13 @@ def main() -> int:
     print(f"canonical={canonical_path}")
     print(f"feed={feed_path}")
     print(f"state={state_path}")
+
+    if not args.no_notify:
+        notify = FeishuNotifier(dry_run=args.notify_dry_run).notify_finalized(args.date, canonical)
+        print(f"notify={notify.status}")
+        if notify.status == "failed":
+            # Non-fatal: the report is already published; surface but do not fail finalize.
+            print(f"notify_error={notify.message}")
     return 0
 
 
@@ -122,6 +130,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--run-state-dir", default=DEFAULT_RUN_STATE_DIR)
     parser.add_argument("--public-base-url", default="")
     parser.add_argument("--source-repo", default="xianshang33/llm-paper-daily")
+    parser.add_argument(
+        "--no-notify",
+        action="store_true",
+        help="Skip the Feishu reminder after publishing (default: send when FEISHU_WEBHOOK_URL is set).",
+    )
+    parser.add_argument(
+        "--notify-dry-run",
+        action="store_true",
+        help="Build the Feishu reminder payload but do not POST it (for testing).",
+    )
     return parser.parse_args()
 
 
