@@ -88,7 +88,14 @@ def resolve_metadata_artifact_dir(repo_root: Path, metadata_artifact_dir: str | 
 
 def merge_candidate_with_metadata(candidate: dict, metadata: dict) -> dict:
     merged = dict(candidate)
-    merged.update({key: value for key, value in metadata.items() if key in REQUIRED_METADATA_FIELDS or key.startswith("metadata_")})
+    for key, value in metadata.items():
+        if not (key in REQUIRED_METADATA_FIELDS or key.startswith("metadata_")):
+            continue
+        # Never let a blank/missing metadata field clobber a populated candidate
+        # value (e.g. an empty cached title wiping the discovered title).
+        if value in (None, "", []) and candidate.get(key):
+            continue
+        merged[key] = value
     return merged
 
 

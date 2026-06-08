@@ -102,6 +102,14 @@ def parse_listing_candidates(content: str, *, date: str, category: str) -> list[
     return candidates
 
 
+def parse_abs_title(content: str) -> str:
+    match = re.search(r'<h1[^>]*class="title[^"]*"[^>]*>(.*?)</h1>', content, re.S)
+    if not match:
+        return ""
+    inner = re.sub(r'<span[^>]*class="descriptor"[^>]*>.*?</span>', "", match.group(1), flags=re.S)
+    return clean_text(strip_html(html.unescape(inner)))
+
+
 def parse_abs_abstract(content: str) -> str:
     match = re.search(r"Abstract:</span>(.*?)</blockquote>", content, re.S)
     if not match:

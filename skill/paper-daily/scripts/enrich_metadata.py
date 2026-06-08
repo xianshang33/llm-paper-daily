@@ -101,12 +101,43 @@ def run_worker(
         and task.get("status") not in {"api_complete", "html_complete", "failed_exhausted"}
         and (force_due or parse_datetime(task.get("next_retry_at")) <= now)
     ]
+    # Prioritize the papers this run actually needs to finalize. The pending
+    # queue holds the full discovery candidate pool (often 100+ tasks/date),
+    # while only the selected pack gates finalize. Without this ordering the
+    # bounded worker takes eligible[:max_papers] from the front and burns its
+    # budget on unselected candidates, starving the selected pack across runs.
+    selected_rank = _selected_rank(repo_root, date, run_state_dir)
+    eligible.sort(key=lambda task: selected_rank.get(task.get("paper_id"), len(selected_rank)))
+    # Bound the work for this slice up front so the batch fetch and the per-task
+    # fallback operate on the same set.
+    slice_ = eligible[:max_papers] if max_papers else eligible
+
+    # Batch fast-path: resolve everything still uncached in ONE id_list request
+    # instead of one request per paper. This is the primary arXiv 429 mitigation —
+    # it keeps request volume an order of magnitude lower so we stay under the
+    # rate limit in the common case. On a network/HTTP error (429, timeout) the
+    # whole batch backs off together and we fall through to the per-task path,
+    # which carries the retry accounting and HTML fallback.
+    batched_ids = {
+        task["paper_id"]
+        for task in slice_
+        if load_cached_metadata_if_complete(metadata_artifact_dir, task["paper_id"]) is None
+    }
+    batch_found: dict = {}
+    if batched_ids:
+        try:
+            batch_found = client.fetch_metadata_batch(sorted(batched_ids))
+        except Exception:
+            batch_found = {}
+
     processed = []
-    for task in eligible:
-        if max_papers and len(processed) >= max_papers:
-            break
+    for task in slice_:
         if budget_seconds and time.monotonic() - started >= budget_seconds:
             break
+        candidate = batch_found.get(task["paper_id"])
+        if candidate is not None:
+            processed.append(_record_api_success(task, candidate, metadata_artifact_dir))
+            continue
         processed.append(process_task(
             task,
             client=client,
@@ -138,6 +169,31 @@ def run_worker(
     }
 
 
+def _selected_rank(repo_root: Path, date: str, run_state_dir: str) -> dict:
+    """Map each selected paper_id to its selection order so the bounded worker
+    services the finalize-gating pack before unselected candidates."""
+    try:
+        state = load_run_state(repo_root, date, run_state_dir)
+    except Exception:
+        return {}
+    return {paper_id: idx for idx, paper_id in enumerate(state.get("selected_ids") or [])}
+
+
+def _record_api_success(task: dict, candidate, metadata_artifact_dir: Path) -> dict:
+    """Persist an arXiv-API metadata payload and build the completed task record.
+    Shared by the batch fast-path and the per-task fallback so both write the
+    artifact identically."""
+    payload = normalize_metadata_payload(candidate.to_dict(), source="arxiv-api", status="complete")
+    write_metadata_payload(metadata_artifact_dir, payload)
+    return {
+        **task,
+        "status": "api_complete",
+        "retry_count": task.get("retry_count", 0),
+        "last_error": None,
+        "metadata_source": "arxiv-api",
+    }
+
+
 def process_task(
     task: dict,
     *,
@@ -157,15 +213,7 @@ def process_task(
         remote_candidates = client.get_by_arxiv_ids([paper_id])
         if not remote_candidates:
             raise RuntimeError("arXiv API returned no entry")
-        payload = normalize_metadata_payload(remote_candidates[0].to_dict(), source="arxiv-api", status="complete")
-        write_metadata_payload(metadata_artifact_dir, payload)
-        return {
-            **task,
-            "status": "api_complete",
-            "retry_count": task.get("retry_count", 0),
-            "last_error": None,
-            "metadata_source": "arxiv-api",
-        }
+        return _record_api_success(task, remote_candidates[0], metadata_artifact_dir)
     except Exception as exc:
         retry_count = int(task.get("retry_count", 0)) + 1
         last_error = str(exc)
@@ -212,10 +260,9 @@ def run_direct(
     fallback: str,
     api_retry_limit: int,
 ) -> dict:
-    processed = []
     now = datetime.now(timezone.utc).isoformat()
-    for candidate in candidates:
-        task = {
+    tasks = [
+        {
             "date": "",
             "paper_id": candidate["arxiv_id"],
             "candidate": candidate,
@@ -223,6 +270,27 @@ def run_direct(
             "retry_count": max(0, api_retry_limit - 1),
             "next_retry_at": now,
         }
+        for candidate in candidates
+    ]
+
+    batched_ids = {
+        task["paper_id"]
+        for task in tasks
+        if load_cached_metadata_if_complete(metadata_artifact_dir, task["paper_id"]) is None
+    }
+    batch_found: dict = {}
+    if batched_ids:
+        try:
+            batch_found = client.fetch_metadata_batch(sorted(batched_ids))
+        except Exception:
+            batch_found = {}
+
+    processed = []
+    for task in tasks:
+        candidate = batch_found.get(task["paper_id"])
+        if candidate is not None:
+            processed.append(_record_api_success(task, candidate, metadata_artifact_dir))
+            continue
         processed.append(process_task(
             task,
             client=client,
@@ -254,7 +322,10 @@ def load_candidates(args: argparse.Namespace, *, repo_root: Path) -> list[dict]:
             candidates.append({
                 "arxiv_id": paper_id,
                 "version_id": paper_id,
-                "title": paper_id,
+                # Empty placeholder: the real title is filled by the arXiv API or
+                # the abs-page parse. Never seed it with the id, which would
+                # otherwise survive into the metadata cache as a fake title.
+                "title": "",
                 "abstract": "",
                 "authors": [],
                 "categories": [],

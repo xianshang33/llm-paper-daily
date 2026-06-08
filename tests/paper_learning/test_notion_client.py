@@ -8,7 +8,25 @@ add_paper_learning_path()
 
 from paper_learning.config import NotionConfig
 from paper_learning.models import DeepNote, DailyPaperRecord, SelectedPaper
-from paper_learning.notion_client import NotionClient, markdown_to_blocks, selected_paper_from_page
+from paper_learning.notion_client import (
+    NotionClient,
+    _normalize_arxiv_url,
+    markdown_to_blocks,
+    selected_paper_from_page,
+)
+
+
+class NormalizeArxivUrlTest(unittest.TestCase):
+    def test_http_versioned_and_https_bare_collapse_to_same_key(self):
+        # The two producer paths historically emitted these two forms; dedup must
+        # treat them as the same paper to avoid duplicate Notion pages.
+        a = _normalize_arxiv_url("http://arxiv.org/abs/2606.05037v1")
+        b = _normalize_arxiv_url("https://arxiv.org/abs/2606.05037")
+        self.assertEqual(a, b)
+        self.assertEqual(a, "https://arxiv.org/abs/2606.05037")
+
+    def test_empty_url_passthrough(self):
+        self.assertEqual(_normalize_arxiv_url(""), "")
 
 
 def sample_record() -> DailyPaperRecord:
@@ -49,13 +67,15 @@ class NotionClientTest(unittest.TestCase):
         self.assertNotIn("Run Date", props)
         self.assertNotIn("Score", props)
 
-    def test_build_paper_properties_strips_institution_prefix_from_digest_summary(self):
+    def test_build_paper_properties_passes_digest_summary_verbatim(self):
+        # Institution-prefix stripping is done by the adapter (_bilingual_digest),
+        # not here. The notion client writes whatever digest_summary it receives.
         client = NotionClient(NotionConfig(dry_run=True, paper_inbox_database_id="db"))
-        record = replace(sample_record(), digest_summary="机构: Example AI Lab<br>纯摘要内容")
+        record = replace(sample_record(), digest_summary="中文摘要\n\nEnglish summary")
 
         props = client.build_paper_properties(record)
 
-        self.assertEqual(props["Digest Summary"]["rich_text"][0]["text"]["content"], "纯摘要内容")
+        self.assertEqual(props["Digest Summary"]["rich_text"][0]["text"]["content"], "中文摘要\n\nEnglish summary")
 
     def test_build_paper_properties_can_omit_workflow_defaults_for_existing_pages(self):
         client = NotionClient(NotionConfig(dry_run=True, paper_inbox_database_id="db"))

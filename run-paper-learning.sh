@@ -31,7 +31,7 @@ ACTIONS:
   status [DATE]          Check learning workflow status
 
 COMMON FLAGS:
-  --date DATE            Learning pipeline date (YYYY-MM-DD, default: today UTC)
+  --date DATE            Learning pipeline date (YYYY-MM-DD, default: previous UTC date)
   --dry-run              Dry run without writing to Notion/Feishu
   --config PATH          Custom config file (default: ~/.paper-learning/config.json)
   --skip-summary         Test discovery without generating summaries
@@ -91,9 +91,11 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# If no date provided, use today's UTC date
+# If no date provided, use the previous complete UTC date.
+# --date means arXiv submittedDate (UTC); "today" is usually still incomplete,
+# so the previous UTC day is the safe default — and consistent with run-paper-daily.sh.
 if [[ -z "$DATE" ]]; then
-    DATE=$(python3 -c "from datetime import datetime; print(datetime.utcnow().strftime('%Y-%m-%d'))")
+    DATE=$(python3 -c "from datetime import datetime, timedelta; print((datetime.utcnow() - timedelta(days=1)).strftime('%Y-%m-%d'))")
 fi
 
 # Check config file exists

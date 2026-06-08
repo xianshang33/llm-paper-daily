@@ -12,6 +12,7 @@ add_paper_learning_path()
 from paper_learning.config import PaperDailyConfig
 from paper_learning.paper_daily_adapter import (
     _assert_discovery_succeeded,
+    _bilingual_digest,
     _condense_subprocess_error,
     load_discovered_records,
     load_paper_daily_records,
@@ -36,6 +37,32 @@ class PaperDailyAdapterTest(unittest.TestCase):
         self.assertEqual(records[0].institutions, "Example AI Lab")
         self.assertEqual(records[0].score, 8.5)
         self.assertEqual(records[0].signals["priority_keyword"], "Agent")
+
+    def test_load_paper_daily_records_digest_summary_is_bilingual(self):
+        records = load_paper_daily_records(
+            canonical_path=ROOT / "tests/paper_learning/fixtures/canonical-papers.json",
+        )
+
+        digest = records[0].digest_summary
+        self.assertIn("这是一篇关于 Agent RL 的论文", digest)
+        self.assertIn("This paper studies Agent RL", digest)
+
+    def test_bilingual_digest_strips_institution_prefix_from_each_part(self):
+        cn = "机构: Example Lab<br>这是中文摘要。"
+        en = "Institution: Example Lab<br>This is the English summary."
+        result = _bilingual_digest(cn, en)
+        self.assertNotIn("机构:", result)
+        self.assertNotIn("Institution:", result)
+        self.assertIn("这是中文摘要", result)
+        self.assertIn("This is the English summary", result)
+
+    def test_bilingual_digest_handles_missing_en(self):
+        result = _bilingual_digest("只有中文。", "")
+        self.assertEqual(result, "只有中文。")
+
+    def test_bilingual_digest_handles_missing_cn(self):
+        result = _bilingual_digest("", "English only.")
+        self.assertEqual(result, "English only.")
 
     def test_load_discovered_records_supports_summary_free_pipeline(self):
         records = load_discovered_records(

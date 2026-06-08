@@ -86,6 +86,9 @@ class RunStateAndWorkerTest(unittest.TestCase):
             enqueue_metadata_tasks(repo_root, date="2026-05-26", candidates=[candidate])
 
             client = Mock()
+            # 429 hits the batch fast-path too, so the worker falls through to the
+            # per-task path under test.
+            client.fetch_metadata_batch.side_effect = RuntimeError("HTTP Error 429")
             client.get_by_arxiv_ids.side_effect = RuntimeError("HTTP Error 429")
             run_worker(
                 repo_root=repo_root,
@@ -131,6 +134,8 @@ class RunStateAndWorkerTest(unittest.TestCase):
             )
 
             client = Mock()
+            # Batch and single-id API both throttled -> per-task HTML fallback.
+            client.fetch_metadata_batch.side_effect = RuntimeError("HTTP Error 429")
             client.get_by_arxiv_ids.side_effect = RuntimeError("HTTP Error 429")
             client.hydrate_candidate_from_abs.return_value = PaperCandidate(
                 **candidate,
@@ -176,6 +181,9 @@ class RunStateAndWorkerTest(unittest.TestCase):
             (repo_root / "data" / "paper-daily" / "pending-metadata.json").write_text(json.dumps(queue), encoding="utf-8")
 
             client = Mock()
+            # Force the per-task path (batch unavailable) to assert force_due still
+            # services a task whose next_retry_at is in the future.
+            client.fetch_metadata_batch.side_effect = RuntimeError("HTTP Error 429")
             client.get_by_arxiv_ids.return_value = [PaperCandidate(**candidate)]
             result = run_worker(
                 repo_root=repo_root,
@@ -195,6 +203,97 @@ class RunStateAndWorkerTest(unittest.TestCase):
             self.assertEqual(result["processed_count"], 1)
             client.get_by_arxiv_ids.assert_called_once()
 
+    def test_worker_prioritizes_selected_over_unselected_pool(self):
+        # The pending queue holds the full discovery pool, sorted by paper_id.
+        # A bounded worker (max_papers=1) must still service the selected pack
+        # first, even when unselected candidates sort ahead of it by id.
+        with tempfile.TemporaryDirectory() as tmp:
+            repo_root = Path(tmp)
+            metadata_dir = repo_root / "data" / "paper-daily" / "metadata-cache"
+            selected = candidate_payload("2605.09999")  # sorts to the back by id
+            pool = [
+                candidate_payload("2605.00001"),  # unselected, sorts to front
+                candidate_payload("2605.00002"),  # unselected, sorts to front
+                selected,
+            ]
+            record_candidate_run(
+                repo_root,
+                date="2026-05-26",
+                selected=[selected],
+                preferred_date="2026-05-26",
+                attempted_dates=["2026-05-26"],
+            )
+            enqueue_metadata_tasks(repo_root, date="2026-05-26", candidates=pool)
+
+            client = Mock()
+            client.fetch_metadata_batch.side_effect = (
+                lambda ids: {i: PaperCandidate(**candidate_payload(i)) for i in ids}
+            )
+            run_worker(
+                repo_root=repo_root,
+                date="2026-05-26",
+                client=client,
+                metadata_artifact_dir=metadata_dir,
+                pending_path="data/paper-daily/pending-metadata.json",
+                budget_seconds=60,
+                max_papers=1,
+                api_retry_limit=3,
+                fallback="html",
+                fallback_backoff_seconds=3600,
+                force_due=False,
+                run_state_dir="data/paper-daily/runs",
+            )
+
+            # The single processed slot (and the only fetched id) must be the
+            # selected paper, not the lower-id unselected candidates.
+            self.assertTrue((metadata_dir / "2605.09999.json").exists())
+            self.assertFalse((metadata_dir / "2605.00001.json").exists())
+            client.fetch_metadata_batch.assert_called_once_with(["2605.09999"])
+
+    def test_worker_batches_metadata_in_single_request(self):
+        # The arXiv 429 mitigation: many eligible papers must be resolved in ONE
+        # id_list request, not one HTTP call per paper.
+        with tempfile.TemporaryDirectory() as tmp:
+            repo_root = Path(tmp)
+            metadata_dir = repo_root / "data" / "paper-daily" / "metadata-cache"
+            pool = [candidate_payload(f"2605.0000{n}") for n in range(1, 4)]
+            record_candidate_run(
+                repo_root,
+                date="2026-05-26",
+                selected=pool,
+                preferred_date="2026-05-26",
+                attempted_dates=["2026-05-26"],
+            )
+            enqueue_metadata_tasks(repo_root, date="2026-05-26", candidates=pool)
+
+            client = Mock()
+            client.fetch_metadata_batch.side_effect = (
+                lambda ids: {i: PaperCandidate(**candidate_payload(i)) for i in ids}
+            )
+            result = run_worker(
+                repo_root=repo_root,
+                date="2026-05-26",
+                client=client,
+                metadata_artifact_dir=metadata_dir,
+                pending_path="data/paper-daily/pending-metadata.json",
+                budget_seconds=60,
+                max_papers=20,
+                api_retry_limit=3,
+                fallback="html",
+                fallback_backoff_seconds=3600,
+                force_due=False,
+                run_state_dir="data/paper-daily/runs",
+            )
+
+            self.assertEqual(result["processed_count"], 3)
+            # One batch call for all three; no per-paper amplification.
+            client.fetch_metadata_batch.assert_called_once_with(
+                ["2605.00001", "2605.00002", "2605.00003"]
+            )
+            client.get_by_arxiv_ids.assert_not_called()
+            for n in range(1, 4):
+                self.assertTrue((metadata_dir / f"2605.0000{n}.json").exists())
+
     def test_status_becomes_final_ready_when_requirements_exist(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo_root = Path(tmp)
@@ -210,7 +309,7 @@ class RunStateAndWorkerTest(unittest.TestCase):
             write_summary_artifact(repo_root, "2605.00001")
             enqueue_metadata_tasks(repo_root, date="2026-05-26", candidates=[candidate])
             client = Mock()
-            client.get_by_arxiv_ids.return_value = [PaperCandidate(**candidate)]
+            client.fetch_metadata_batch.return_value = {"2605.00001": PaperCandidate(**candidate)}
             run_worker(
                 repo_root=repo_root,
                 date="2026-05-26",

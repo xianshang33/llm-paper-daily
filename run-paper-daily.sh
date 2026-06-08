@@ -135,7 +135,61 @@ case $ACTION in
         ;;
     enrich)
         echo "🔧 Enriching metadata for $DATE..."
-        python3 skill/paper-daily/scripts/enrich_metadata.py --repo-root . --date "$DATE" --budget-seconds 120 --max-papers 20 --force-due
+        # --retries 3 activates the client's 429 backoff (Retry-After / exponential),
+        # which is dead code at the default --retries 0.
+        MAX_PASSES=8
+        PREV_REMAINING=-1
+        STALL=0
+        ENRICH_ERR=$(mktemp)
+        for pass in $(seq 1 $MAX_PASSES); do
+            # Capture stdout (the JSON result) and stderr separately: a traceback
+            # on stderr must never corrupt the JSON channel. Tolerate a non-zero
+            # exit (|| ENRICH_RC=$?) so a transient hard error retries on the next
+            # pass instead of aborting the whole script under `set -e`.
+            ENRICH_OUT=$(python3 skill/paper-daily/scripts/enrich_metadata.py --repo-root . --date "$DATE" \
+                --budget-seconds 120 --max-papers 20 --retries 3 --force-due 2>"$ENRICH_ERR") && ENRICH_RC=0 || ENRICH_RC=$?
+            REMAINING=$(echo "$ENRICH_OUT" | python3 -c \
+                'import sys,json; d=json.load(sys.stdin); print(d.get("remaining_eligible", -1))' 2>/dev/null || echo "-1")
+            FINALIZE_READY=$(echo "$ENRICH_OUT" | python3 -c \
+                'import sys,json; print("yes" if json.load(sys.stdin).get("finalize_ready") else "no")' 2>/dev/null || echo "no")
+
+            if [ "$REMAINING" = "-1" ]; then
+                # enrich did not return parseable JSON — surface the real cause
+                # rather than letting the stall branch mislabel it as throttling.
+                echo "  pass $pass/$MAX_PASSES: enrich returned no JSON (exit=$ENRICH_RC)"
+                tail -n 3 "$ENRICH_ERR" | sed 's/^/    | /'
+            else
+                echo "  pass $pass/$MAX_PASSES: remaining_eligible=$REMAINING finalize_ready=$FINALIZE_READY"
+            fi
+
+            if [ "$FINALIZE_READY" = "yes" ]; then
+                echo "✅ All selected papers enriched"
+                break
+            fi
+            if [ "$REMAINING" = "0" ]; then
+                echo "✅ Metadata enrich complete (finalize blocked — run summary generation then finalize)"
+                break
+            fi
+            if [ "$REMAINING" = "$PREV_REMAINING" ]; then
+                STALL=$((STALL+1))
+            else
+                STALL=0
+            fi
+            if [ "$STALL" -ge 2 ]; then
+                if [ "$REMAINING" = "-1" ]; then
+                    echo "❌ enrich failed to return JSON for 2 passes (exit=$ENRICH_RC). See errors above."
+                else
+                    echo "⚠️  No progress for 2 passes ($REMAINING still remaining). Likely arXiv throttling."
+                    echo "    Retry 'enrich' later — the bounded worker resumes the same pending queue."
+                    echo "    (Do not hand-seed candidates with --arxiv-id; the metadata cache derives"
+                    echo "     titles/authors from the run-state pack and arXiv, not from manual stubs.)"
+                fi
+                break
+            fi
+            PREV_REMAINING="$REMAINING"
+            [ "$pass" -lt "$MAX_PASSES" ] && sleep 8
+        done
+        rm -f "$ENRICH_ERR"
         ;;
     run)
         echo "▶️  Running daily pipeline for $DATE..."

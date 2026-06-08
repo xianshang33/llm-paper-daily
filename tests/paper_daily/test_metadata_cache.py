@@ -11,11 +11,27 @@ add_paper_daily_path()
 
 from paper_daily.metadata import (
     complete_candidates_metadata,
+    merge_candidate_with_metadata,
     metadata_is_complete,
     metadata_missing_fields,
     normalize_metadata_payload,
 )
 from paper_daily.models import PaperCandidate
+
+
+class MetadataMergeTest(unittest.TestCase):
+    def test_metadata_overwrites_populated_candidate_field(self):
+        candidate = {"arxiv_id": "2605.00001", "title": "Discovered Title"}
+        metadata = {"title": "Canonical Title"}
+        merged = merge_candidate_with_metadata(candidate, metadata)
+        self.assertEqual(merged["title"], "Canonical Title")
+
+    def test_blank_metadata_field_does_not_clobber_candidate(self):
+        # An empty cached title must not wipe the discovered title.
+        candidate = {"arxiv_id": "2605.00001", "title": "Good Discovered Title"}
+        metadata = {"title": "", "authors": []}
+        merged = merge_candidate_with_metadata(candidate, metadata)
+        self.assertEqual(merged["title"], "Good Discovered Title")
 
 
 class MetadataCacheTest(unittest.TestCase):

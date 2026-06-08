@@ -133,7 +133,7 @@ def load_paper_daily_records(canonical_path: Path, discovered_path: Path | None 
             authors=list(item.get("authors", [])),
             institutions=item.get("institution") or "",
             abstract=item.get("abstract", ""),
-            digest_summary=item.get("render_excerpt", ""),
+            digest_summary=_bilingual_digest(item.get("render_excerpt", ""), item.get("render_excerpt_en", "")),
             summary_cn=item.get("summary_cn", ""),
             summary_en=item.get("summary_en", ""),
             published_date=item.get("date", canonical.get("run_date", "")),
@@ -182,6 +182,23 @@ def load_discovered_records(discovered_path: Path, *, run_date: str) -> list[Dai
             },
         ))
     return records
+
+
+def _bilingual_digest(cn: str, en: str) -> str:
+    """Combine CN and EN excerpts, stripping the institution-header prefix from each.
+    The institution is already stored in a dedicated Notion field, so the "机构:/Institution:"
+    line in render_excerpt is redundant there."""
+    parts = []
+    for text in (cn, en):
+        text = (text or "").strip()
+        for prefix in ("机构:", "机构：", "Institution:", "Institution："):
+            if text.startswith(prefix):
+                _, _, rest = text.partition("<br>")
+                text = rest.lstrip()
+                break
+        if text:
+            parts.append(text)
+    return "\n\n".join(parts)
 
 
 def _load_discovery_by_id(path: Path | None) -> dict[str, dict]:

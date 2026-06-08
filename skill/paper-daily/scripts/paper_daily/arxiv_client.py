@@ -21,6 +21,7 @@ from .arxiv_parse import (  # noqa: F401
     parse_abs_authors,
     parse_abs_categories,
     parse_abs_submission_dates,
+    parse_abs_title,
     parse_abs_version_id,
     parse_arxiv_datetime,
     parse_descriptor_block,
@@ -134,20 +135,33 @@ class ArxivClient:
 
     def get_by_arxiv_ids(self, arxiv_ids: list[str]) -> list[PaperCandidate]:
         normalized_ids = [normalize_arxiv_id(arxiv_id) for arxiv_id in arxiv_ids]
+        found = self.fetch_metadata_batch(normalized_ids)
+        missing = [arxiv_id for arxiv_id in normalized_ids if arxiv_id not in found]
+        if missing:
+            raise RuntimeError(f"arXiv id not found: {', '.join(missing)}")
+        return [found[arxiv_id] for arxiv_id in normalized_ids]
+
+    def fetch_metadata_batch(self, arxiv_ids: list[str]) -> dict[str, PaperCandidate]:
+        """Resolve many IDs in a single id_list request to avoid per-paper request
+        amplification (the main arXiv 429 trigger). Returns {arxiv_id: candidate}
+        for those found; missing IDs are simply absent rather than raising, so a
+        caller can still process whatever resolved. Network/HTTP errors (e.g. 429,
+        timeouts) propagate so the caller can back the whole batch off at once."""
+        if not arxiv_ids:
+            return {}
+        normalized_ids = [normalize_arxiv_id(arxiv_id) for arxiv_id in arxiv_ids]
         params = {
             "id_list": ",".join(normalized_ids),
             "max_results": len(normalized_ids),
         }
         root = self._fetch(params)
-        candidates = [
-            parse_entry(entry, keyword="manual-arxiv-id", keyword_rank=0, query_total=len(normalized_ids))
-            for entry in root.findall("atom:entry", ATOM_NS)
-        ]
-        by_id = {candidate.arxiv_id: candidate for candidate in candidates}
-        missing = [arxiv_id for arxiv_id in normalized_ids if arxiv_id not in by_id]
-        if missing:
-            raise RuntimeError(f"arXiv id not found: {', '.join(missing)}")
-        return [by_id[arxiv_id] for arxiv_id in normalized_ids]
+        requested = set(normalized_ids)
+        found: dict[str, PaperCandidate] = {}
+        for entry in root.findall("atom:entry", ATOM_NS):
+            candidate = parse_entry(entry, keyword="manual-arxiv-id", keyword_rank=0, query_total=len(normalized_ids))
+            if candidate.arxiv_id in requested:
+                found[candidate.arxiv_id] = candidate
+        return found
 
     def hydrate_candidate_from_abs(self, candidate: PaperCandidate) -> PaperCandidate:
         text = self._fetch_url(candidate.abs_url, min_delay=0.5).decode("utf-8", "ignore")
@@ -156,10 +170,14 @@ class ArxivClient:
         categories, primary_category = parse_abs_categories(text, fallback=candidate.categories)
         version_id = parse_abs_version_id(text) or candidate.version_id
         published, updated = parse_abs_submission_dates(text, fallback_published=candidate.published, fallback_updated=candidate.updated)
+        # Prefer the title parsed from the abs page. The incoming candidate.title
+        # may be a placeholder (e.g. the bare arXiv id from the --arxiv-id path),
+        # so trusting it blindly poisons the metadata cache with id-as-title.
+        title = parse_abs_title(text) or candidate.title
         enriched = PaperCandidate(
             arxiv_id=candidate.arxiv_id,
             version_id=version_id,
-            title=candidate.title,
+            title=title,
             abstract=abstract or candidate.abstract,
             authors=authors,
             categories=categories,

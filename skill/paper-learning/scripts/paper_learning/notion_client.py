@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -65,7 +66,7 @@ class NotionClient:
             "Digest Summary": _rich_text(_normalize_digest_summary(record.digest_summary)),
             "Institutions": _rich_text(record.institutions),
             "Published Date": {"date": {"start": record.published_date}},
-            "URL": {"url": record.url or None},
+            "URL": {"url": _normalize_arxiv_url(record.url) or None},
             "Source": {"select": {"name": record.source}},
         }
         if include_workflow_defaults:
@@ -82,7 +83,7 @@ class NotionClient:
                 data={"paper_id": record.paper_id, "properties": self.build_paper_properties(record)},
             )
 
-        existing_page_id = self._find_page_by_url(record.url)
+        existing_page_id = self._find_page_by_url(_normalize_arxiv_url(record.url))
         if existing_page_id:
             properties = self.build_paper_properties(record, include_workflow_defaults=False)
             data = self._request("PATCH", f"/pages/{existing_page_id}", {"properties": properties})
@@ -270,12 +271,17 @@ def _rich_text(value: str) -> dict:
 
 
 def _normalize_digest_summary(value: str) -> str:
-    text = (value or "").strip()
-    if not text:
-        return ""
-    for prefix in ("机构:", "机构：", "Institution:", "Institution："):
-        if text.startswith(prefix):
-            parts = text.split("<br>", 1)
-            if len(parts) == 2:
-                return parts[1].lstrip()
-    return text
+    return (value or "").strip()
+
+
+def _normalize_arxiv_url(url: str) -> str:
+    """Canonicalize an arXiv abs URL so dedup matches regardless of which
+    producer path built the record. Different paths emit http vs https and with
+    or without a version suffix; without this they create duplicate Notion pages."""
+    if not url:
+        return url
+    normalized = url.strip()
+    if normalized.startswith("http://"):
+        normalized = "https://" + normalized[len("http://"):]
+    match = re.match(r"(https://arxiv\.org/abs/\d{4}\.\d{4,5})(v\d+)?/?$", normalized)
+    return match.group(1) if match else normalized
