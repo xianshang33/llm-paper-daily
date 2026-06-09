@@ -120,9 +120,11 @@ nano ~/.paper-learning/config.json
 ```bash
 # .local/paper-learning.env
 export NOTION_TOKEN="your-token"
-export FEISHU_TOKEN="your-token"
-export DASHSCOPE_API_KEY="your-key"
+export FEISHU_WEBHOOK_URL="your-feishu-webhook"
+export FEISHU_WEBHOOK_SECRET="your-feishu-signing-secret-if-enabled"
 ```
+
+摘要生成由 Codex/runtime skill 写入 summary artifacts；本仓库脚本不调用固定模型 provider，也不需要模型凭据。
 
 ## 常见命令
 
@@ -141,7 +143,7 @@ export DASHSCOPE_API_KEY="your-key"
 
 - **论文发现不完整**: 检查arXiv API响应，可能需要增加 `--budget-seconds`
 - **缺少元数据**: 运行 `enrich` 步骤，需要poppler-utils来从PDF提取机构
-- **无法发布**: 检查 `status`，确保所有required fields都已填充
+- **无法发布**: 检查 `status`，确保元数据和由runtime skill生成的summary artifacts都已准备好
 
 ### Paper Learning
 

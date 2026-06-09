@@ -54,4 +54,4 @@ This repo currently relies on script-level verification rather than a formal tes
 ## Commit & Pull Request Guidelines
 Recent history uses short conventional-style subjects such as `fix: ...` and `chore: ...`. Keep commits focused and imperative, for example `fix: repair summary excerpt parsing`.
 
-PRs should state what changed, why it changed, and how it was verified. Mention any required environment variables such as `DASHSCOPE_API_KEY`, and call out whether a change affects generated artifacts, scheduled workflow behavior, or subscriber-facing output.
+PRs should state what changed, why it changed, and how it was verified. Mention any required environment variables such as `NOTION_TOKEN` or `FEISHU_WEBHOOK_URL`, and call out whether a change affects generated artifacts, scheduled workflow behavior, or subscriber-facing output.

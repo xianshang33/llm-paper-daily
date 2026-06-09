@@ -53,9 +53,9 @@ Deep reading is provider-based. The default provider is `ljg-paper`, but the que
 ## Dependency Rules
 
 - arXiv discovery does not require model credentials.
-- The full `paper-daily` path now requires externally generated summary artifacts rather than a fixed in-script model provider.
+- The full `paper-daily` path now requires runtime-generated summary artifacts rather than a fixed in-script model provider.
 - `--dry-run` disables Notion, Feishu, and runtime writes. It does not skip source calls by itself.
-- Use `--skip-summary` when you need to test arXiv discovery into the Notion/Feishu orchestration layer without DashScope summaries. This uses abstracts as temporary digest text and marks summary provenance as `not_generated`.
+- Use `--skip-summary` when you need to test arXiv discovery into the Notion/Feishu orchestration layer without generated summary artifacts. This uses abstracts as temporary digest text and marks summary provenance as `not_generated`.
 
 ## Workflow
 

@@ -126,7 +126,7 @@ def require_cached_metadata(metadata_artifact_dir: Path, paper_id: str) -> dict:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate canonical and feed outputs for paper-daily from external summary artifacts.")
+    parser = argparse.ArgumentParser(description="Generate canonical and feed outputs for paper-daily from runtime-generated summary artifacts.")
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--date", default=(datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d"))
     parser.add_argument("--select", type=int, default=DEFAULT_DAILY_SELECT, help="Maximum number of papers to publish.")
@@ -140,7 +140,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--api-search-budget-seconds", type=float, default=30.0, help="Budget for the first arXiv API search before preserving time for listing fallback. Use 0 to disable.")
     parser.add_argument("--backfill-days", type=int, default=7)
     parser.add_argument("--discovered-json", help="Optional discovery JSON artifact to consume instead of re-running discovery.")
-    parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing externally generated summary JSON artifacts keyed by arXiv ID.")
+    parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing runtime-generated summary JSON artifacts keyed by arXiv ID.")
     parser.add_argument("--metadata-artifact-dir", default=DEFAULT_METADATA_ARTIFACT_DIR, help="Directory containing cached standardized arXiv metadata keyed by arXiv ID.")
     parser.add_argument("--public-base-url", default="", help="Optional public base URL for summary asset links.")
     parser.add_argument("--source-repo", default="xianshang33/llm-paper-daily", help="Source repository identifier for feed metadata.")

@@ -251,7 +251,7 @@ def main() -> int:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the repo-local publishing pipeline. This path consumes external summary artifacts and patches repo artifacts; use discover.py for broad recall.")
+    parser = argparse.ArgumentParser(description="Run the repo-local publishing pipeline. This path consumes runtime-generated summary artifacts and patches repo artifacts; use discover.py for broad recall.")
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--date", default=default_utc_date())
     parser.add_argument("--discovered-json", help="Discovery JSON artifact to consume instead of re-running discovery or using manual IDs.")
@@ -268,7 +268,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--backfill-days", type=int, default=7)
     parser.add_argument("--view-only", action="store_true", help="Inspect the selected papers without updating README/feed/state/summary artifacts.")
     parser.add_argument("--debug-out", help="Optional directory for debug JSON artifacts.")
-    parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing externally generated summary JSON artifacts keyed by arXiv ID.")
+    parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing runtime-generated summary JSON artifacts keyed by arXiv ID.")
     parser.add_argument("--metadata-artifact-dir", default=DEFAULT_METADATA_ARTIFACT_DIR, help="Directory containing cached standardized arXiv metadata keyed by arXiv ID.")
     parser.add_argument("--run-state-dir", default=DEFAULT_RUN_STATE_DIR, help="Directory containing per-date paper-daily run state.")
     parser.add_argument("--pending-metadata", default=DEFAULT_PENDING_METADATA_PATH, help="Path to the pending metadata queue.")

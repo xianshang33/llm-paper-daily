@@ -145,9 +145,11 @@ node skill/paper-subscribe/scripts/prepare-digest.js --config ~/.paper-subscribe
 
 - `poppler-utils` (`pdftotext`) is needed for PDF first-page institution extraction (the
   CI workflow installs it).
-- `DASHSCOPE_API_KEY` is the production summary provider secret used by
-  `.github/workflows/paper-daily.yml` (scheduled daily, plus `workflow_dispatch` with an
-  optional `date` input). arXiv discovery itself needs no credentials.
+- `NOTION_TOKEN` is required for real paper-learning writes to Notion. Optional Feishu
+  delivery uses `FEISHU_WEBHOOK_URL` and, when signing is enabled, `FEISHU_WEBHOOK_SECRET`.
+- Summary generation is intentionally runtime-skill based: local scripts prepare summary
+  artifact requests and consume the resulting JSON artifacts, but do not call a fixed
+  model provider or require model credentials. arXiv discovery itself needs no credentials.
 
 ## Conventions
 

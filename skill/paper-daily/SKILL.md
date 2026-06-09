@@ -75,14 +75,14 @@ Official publishing requires complete fields, not necessarily `api_complete`. Re
    - institution signals from QS Top 50 universities and known AI labs/companies
 6. Return a ranked candidate list, usually around `20` recommended papers for one day when arXiv supply allows.
 7. After recall, use the current conversation model to judge papers from `title + abstract` against the user's taste profile and narrow the list to the final daily set.
-8. After the final paper list is selected, prepare external summary requests and use the runtime skill context to generate the bilingual summary artifacts.
+8. After the final paper list is selected, prepare runtime summary requests and use the runtime skill context to generate the bilingual summary artifacts.
 9. Use `run_daily.py` to create or inspect the candidate run. It writes run-state and pending metadata queue entries, and only publishes when the readiness gate is already satisfied.
 10. Use `finalize_daily.py` for explicit promotion to official repo artifacts when `check_daily_status.py` reports `final_ready`.
 
 ## Stage Boundaries
 
 - `discover.py` is recall-only. It queries arXiv metadata, ranks candidates, writes a lightweight discovery artifact, and does not require model credentials.
-- `prepare_summary_requests.py` prepares external summary-artifact requests for the runtime skill. The actual LLM work should happen outside the local scripts, using skill context instead of a fixed in-script model workflow.
+- `prepare_summary_requests.py` prepares runtime summary-artifact requests for the runtime skill. The actual LLM work should happen outside the local scripts, using skill context instead of a fixed in-script model workflow.
 - `run_daily.py` is the compatibility entrypoint for candidate production and gated publishing. It must not wait on long metadata recovery.
 - `enrich_metadata.py` is a bounded metadata worker. It tries arXiv API first and only falls back to HTML after the configured threshold.
 - `check_daily_status.py` is the skill-facing readiness probe. Prefer it over reading logs.
@@ -184,7 +184,7 @@ For local testing with fewer requests or a narrower sample:
 python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 10 --select 20
 ```
 
-Prepare external summary requests for the selected papers:
+Prepare runtime summary requests for the selected papers:
 
 ```bash
 python3 skill/paper-daily/scripts/prepare_summary_requests.py --repo-root . --date YYYY-MM-DD --out /tmp/paper-daily-summary-requests.json

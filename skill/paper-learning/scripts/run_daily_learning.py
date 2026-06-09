@@ -85,7 +85,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true", help="Force Notion and Feishu adapters into dry-run mode.")
     parser.add_argument("--limit", type=int, default=0, help="Limit records after source aggregation; 0 means no limit.")
     parser.add_argument("--skip-paper-daily", action="store_true", help="Read existing paper-daily artifacts instead of running discovery.")
-    parser.add_argument("--skip-summary", action="store_true", help="Use discovery results directly and skip external summary artifacts, canonical feed generation, and README updates.")
+    parser.add_argument("--skip-summary", action="store_true", help="Use discovery results directly and skip runtime-generated summary artifacts, canonical feed generation, and README updates.")
     return parser.parse_args()
 
 

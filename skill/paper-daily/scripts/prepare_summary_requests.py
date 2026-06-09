@@ -89,7 +89,7 @@ def main() -> int:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Prepare external paper-daily summary requests for agent skill execution.")
+    parser = argparse.ArgumentParser(description="Prepare runtime paper-daily summary requests for agent skill execution.")
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--date", default=(datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d"))
     parser.add_argument("--select", type=int, default=DEFAULT_DAILY_SELECT)
