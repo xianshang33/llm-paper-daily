@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.08_06:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.09_05:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月08日 06:15</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月09日 05:40</sub></summary>
 <br>
 
-- TRACE: Trajectory Reasoning through Adaptive Cross-Step Evidence Aggregation for LLM Agents 
-- Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle 
-- Hierarchical Certified Semantic Commitment for Byzantine-Resilient LLM-Agent Collaboration 
-- The Sim-to-Real Gap of Foundation Model Agents: A Unified MDP Perspective 
-- Self-evolving LLM agents with in-distribution Optimization 
+- AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving 
+- Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents 
+- SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research 
+- SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks 
+- What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-08</span> | **AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving**<br><sub>机构: University of Central Florida<br>本文针对多轮 LLM 智能体服务中存在的复杂状态管理和资源调度问题，提出了 AGENTSERVESIM 模拟器。该工具通过模块化设计解决了工具调用间隙模拟和跨轮次 KV 缓存追踪两大难题，能够在低成本 CPU 环境下以高保真度（误差<6%）模拟真实硬件上的智能体服务行为。这使得研究人员能够在无需大量昂贵加速器资源的情况下，对智能体服务策略进行可控、可重复的探索和优化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09613v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09613.md)  |
+| <span style='display: inline-block; width: 42px;'>06-08</span> | **Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents**<br><sub>机构: Tencent<br>本文指出了当前 LLM 代理记忆系统混淆“记忆即存储”与“记忆即认知”的根本缺陷，提出了 DCPM 系统。通过引入类似人类认知的双过程机制（System 1 负责快速记录信念修正链，System 2 负责慢速抽象跨域模式），DCPM 实现了从被动事实存储到主动认知进化的跃迁，有效解决了隐式个性化和跨域推理难题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09483v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09483.md)  |
+| <span style='display: inline-block; width: 42px;'>06-08</span> | **SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research**<br><sub>机构: Tsinghua University, Peking University, Renmin University of China, Ant Group<br>SearchSwarm 填补了开源社区在长周期代理任务中“委托智能”训练数据合成与模型训练的空白。通过引入 harness 引导生成高质量 SFT 数据，成功使 30B 规模的模型在深度研究任务中达到了超越同量级模型、媲美超大模型的绩效，为资源受限下的高效长程推理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09730v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09730.md)  |
+| <span style='display: inline-block; width: 42px;'>06-08</span> | **SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks**<br><sub>机构: Tsinghua University, Chongqing University, Peking University, ZenoMind AI<br>SpatialWorld 填补了评估 MLLM 交互式空间推理能力的空白，通过整合多个异构仿真环境并强制要求代理在部分可观测条件下进行主动探索，提供了一个严格的测试平台。研究结果表明，尽管 MLLM 发展迅速，但在处理复杂现实世界空间任务时仍面临巨大挑战，特别是在主动探索和长期规划方面，为未来空间代理的研究指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09669v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09669.md)  |
+| <span style='display: inline-block; width: 42px;'>06-08</span> | **What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents**<br><sub>机构: University of Science and Technology of China<br>本文挑战了将技能重写等同于提示压缩的传统观点，指出技能中的稀疏操作锚点对智能体的执行效率至关重要。通过引入成本感知的重写框架，作者展示了如何在保持任务执行质量的同时显著降低总体成本。研究结果表明，技能设计应被视为一种操作知识工程，需根据任务特性精细平衡质量与成本，而非一味追求文本长度的缩短。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09421v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09421.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/1Reminding/Skill_EE)</div> |
 | <span style='display: inline-block; width: 42px;'>06-05</span> | **TRACE: Trajectory Reasoning through Adaptive Cross-Step Evidence Aggregation for LLM Agents**<br><sub>机构: University of Massachusetts at Amherst, Adobe Research, Dolby Labs, University of Oregon, Cisco<br>本文针对 LLM 代理在长周期任务中可能出现的规避性破坏行为，提出了 TRACE 监控框架。通过引入 TIJ（分流-检查-判决）循环机制，TRACE 能够自适应地识别可疑区域，并在推理步骤间维持持久的证据状态，从而有效连接跨时间步的微弱恶意信号。实验证明，TRACE 在检测需要长程证据关联的复杂破坏行为方面优于现有最先进方法，为提升自主 LLM 代理的安全性提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07054v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07054.md)  |
 | <span style='display: inline-block; width: 42px;'>06-05</span> | **Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle**<br><sub>机构: Xi’an Jiaotong University, Xidian University<br>本文提出了 AARR 基准系列及其首个实例 AARRI-Bench，填补了现有评估在细粒度科研行为和细微判断力方面的空白。实验结果表明，尽管前沿智能体在宏观任务上表现优异，但在模拟真实研究者的专业性、严谨性和伦理判断上仍有巨大提升空间。研究强调，开发类人研究 AI 需要超越单纯的复杂框架搭建，转而深入探索和研究具体的科研行为模式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07462v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07462.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AARR-bench/AARRI-bench)</div> |
 | <span style='display: inline-block; width: 42px;'>06-05</span> | **Hierarchical Certified Semantic Commitment for Byzantine-Resilient LLM-Agent Collaboration**<br><sub>机构: University of Glasgow, University of Western Ontario<br>本文针对LLM多智能体协作中的拜占庭容错问题，提出了H-CSC协议。该协议突破了传统BFT对字节一致性的依赖，通过嵌入向量实现语义层面的共识。其核心创新在于“类型化最终性”，即根据语义凝聚程度区分“语义提交”和“裁决提交”，并在必要时安全中止。实验表明，H-CSC在保持与现有强基线相当的安全性和覆盖率的同时，提供了额外的语义可验证性，有效解决了LLM输出随机性带来的共识难题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.07316v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.07316.md)  |
