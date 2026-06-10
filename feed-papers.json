@@ -1,39 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-09T05:40:11.488824+00:00",
-  "run_date": "2026-06-08",
+  "generated_at": "2026-06-10T05:54:53.502048+00:00",
+  "run_date": "2026-06-09",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.09613",
-      "date": "2026-06-08",
-      "title": "AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving",
+      "id": "arxiv:2606.11150",
+      "date": "2026-06-09",
+      "title": "ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Rakibul Hasan Rajib",
-        "Mengxin Zheng",
-        "Qian Lou"
+        "Andrew Bo Liu",
+        "Samira Nedungadi",
+        "Bryce Cai",
+        "Alex Kleinman",
+        "Harmon Bhasin",
+        "Seth Donoughe"
       ],
-      "institution": "University of Central Florida",
+      "institution": "SecureBio, Active Site",
       "summary": {
-        "zh": "本文针对多轮 LLM 智能体服务中存在的复杂状态管理和资源调度问题，提出了 AGENTSERVESIM 模拟器。该工具通过模块化设计解决了工具调用间隙模拟和跨轮次 KV 缓存追踪两大难题，能够在低成本 CPU 环境下以高保真度（误差<6%）模拟真实硬件上的智能体服务行为。这使得研究人员能够在无需大量昂贵加速器资源的情况下，对智能体服务策略进行可控、可重复的探索和优化。",
-        "en": "- **Background**: Modern LLM deployments are shifting from isolated single-turn queries to multi-turn agentic systems. These systems execute as stateful programs, interleaving LLM calls with external tool invocations,..."
+        "zh": "本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。",
+        "en": "- **Background**: Large Language Models (LLMs) and their agents are rapidly acquiring capabilities in biological research, ranging from literature synthesis to executing complex in silico biology tasks previously..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09613v1",
-        "pdf": "https://arxiv.org/pdf/2606.09613v1",
+        "abs": "http://arxiv.org/abs/2606.11150v1",
+        "pdf": "https://arxiv.org/pdf/2606.11150v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.09613.md",
-        "summary_en_path": "summary_en/2026-06/2606.09613.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.09613.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.09613.md"
+        "summary_zh_path": "summary/2026-06/2606.11150.md",
+        "summary_en_path": "summary_en/2026-06/2606.11150.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11150.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11150.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,35 +53,43 @@
       }
     },
     {
-      "id": "arxiv:2606.09483",
-      "date": "2026-06-08",
-      "title": "Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents",
+      "id": "arxiv:2606.11119",
+      "date": "2026-06-09",
+      "title": "TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianxiang Fei",
-        "Mingyang Song",
-        "Mao Zheng",
-        "Xiang Yu"
+        "Heming Zou",
+        "Qi Wang",
+        "Yun Qu",
+        "Yuhang Jiang",
+        "Lizhou Cai",
+        "Yixiu Mao",
+        "Ru Peng",
+        "Xin Xu",
+        "Weijie Liu",
+        "Kai Yang",
+        "Saiyong Yang",
+        "Xiangyang Ji"
       ],
-      "institution": "Tencent",
+      "institution": "Tsinghua University, Tencent",
       "summary": {
-        "zh": "本文指出了当前 LLM 代理记忆系统混淆“记忆即存储”与“记忆即认知”的根本缺陷，提出了 DCPM 系统。通过引入类似人类认知的双过程机制（System 1 负责快速记录信念修正链，System 2 负责慢速抽象跨域模式），DCPM 实现了从被动事实存储到主动认知进化的跃迁，有效解决了隐式个性化和跨域推理难题。",
-        "en": "- **Background**: Long-term memory for LLM agents is currently treated primarily as a retrieval problem (e.g., vector stores, temporal knowledge graphs) aimed at surfacing relevant text chunks during queries after..."
+        "zh": "TRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。",
+        "en": "- **Background**: Reinforcement Learning with Verifiable Rewards (RLVR) is a key approach for enhancing reasoning and agentic behaviors in LLMs. However, rollout-intensive policy optimization is computationally..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09483v1",
-        "pdf": "https://arxiv.org/pdf/2606.09483v1",
+        "abs": "http://arxiv.org/abs/2606.11119v1",
+        "pdf": "https://arxiv.org/pdf/2606.11119v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.09483.md",
-        "summary_en_path": "summary_en/2026-06/2606.09483.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.09483.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.09483.md"
+        "summary_zh_path": "summary/2026-06/2606.11119.md",
+        "summary_en_path": "summary_en/2026-06/2606.11119.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11119.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11119.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -95,41 +106,46 @@
       }
     },
     {
-      "id": "arxiv:2606.09730",
-      "date": "2026-06-08",
-      "title": "SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research",
+      "id": "arxiv:2606.11070",
+      "date": "2026-06-09",
+      "title": "T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pu Ning",
-        "Quan Chen",
-        "Kun Tao",
-        "Xinyu Tang",
-        "Tianshu Wang",
-        "Qianggang Cao",
-        "Xinyu Kong",
-        "Zujie Wen",
-        "Zhiqiang Zhang",
-        "Jun Zhou"
+        "Genta Indra Winata",
+        "Amartya Chakraborty",
+        "Yuzhen Lin",
+        "Swasthi P Rao",
+        "Shikhhar Siingh",
+        "Houhan Lu",
+        "Nadia Bathaee",
+        "Sriharsha Hatwar",
+        "Paresh Dashore",
+        "Anmol Jain",
+        "Kshitij Tayal",
+        "Xiuzhu Lin",
+        "Anirban Das",
+        "Sambit Sahu",
+        "Shi-Xiong Zhang"
       ],
-      "institution": "Tsinghua University, Peking University, Renmin University of China, Ant Group",
+      "institution": "Capital One",
       "summary": {
-        "zh": "SearchSwarm 填补了开源社区在长周期代理任务中“委托智能”训练数据合成与模型训练的空白。通过引入 harness 引导生成高质量 SFT 数据，成功使 30B 规模的模型在深度研究任务中达到了超越同量级模型、媲美超大模型的绩效，为资源受限下的高效长程推理提供了新范式。",
-        "en": "- **Background**: Large Language Models (LLMs) face a fundamental tension between finite context windows and the unbounded context demands of complex, long-horizon real-world tasks. Passive context management methods..."
+        "zh": "T1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。",
+        "en": "- **Background**: Recent advances in LLM reasoning and tool-calling have enabled autonomous agents capable of multi-step task execution involving memory and cross-domain coordination. - **Limitations of Existing Work**:..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09730v1",
-        "pdf": "https://arxiv.org/pdf/2606.09730v1",
+        "abs": "http://arxiv.org/abs/2606.11070v1",
+        "pdf": "https://arxiv.org/pdf/2606.11070v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.09730.md",
-        "summary_en_path": "summary_en/2026-06/2606.09730.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.09730.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.09730.md"
+        "summary_zh_path": "summary/2026-06/2606.11070.md",
+        "summary_en_path": "summary_en/2026-06/2606.11070.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11070.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11070.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,52 +162,38 @@
       }
     },
     {
-      "id": "arxiv:2606.09669",
-      "date": "2026-06-08",
-      "title": "SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks",
+      "id": "arxiv:2606.10917",
+      "date": "2026-06-09",
+      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hongcheng Gao",
-        "Hailong Qu",
-        "Jingyi Tang",
-        "Jiahao Wang",
-        "Zihao Huang",
-        "Hengkang Qiao",
-        "Shihong Huang",
-        "Junming Yang",
-        "Yi Li",
-        "Hongyixuan Yuan",
-        "Wenjie Li",
-        "Bohan Zeng",
-        "Wenbo Li",
-        "Bo Wang",
-        "Jianhui Liu",
-        "Olive Huang",
-        "Haoyang Huang",
-        "Wentao Zhang",
-        "Guoqing Huang",
-        "Nan Duan",
-        "Yinpeng Dong"
+        "Xucong Wang",
+        "Ziyu Ma",
+        "Shidong Yang",
+        "Tongwen Huang",
+        "Pengkun Wang",
+        "Yong Wang",
+        "Xiangxiang Chu"
       ],
-      "institution": "Tsinghua University, Chongqing University, Peking University, ZenoMind AI",
+      "institution": "University of Science and Technology of China; AMAP, Alibaba Group",
       "summary": {
-        "zh": "SpatialWorld 填补了评估 MLLM 交互式空间推理能力的空白，通过整合多个异构仿真环境并强制要求代理在部分可观测条件下进行主动探索，提供了一个严格的测试平台。研究结果表明，尽管 MLLM 发展迅速，但在处理复杂现实世界空间任务时仍面临巨大挑战，特别是在主动探索和长期规划方面，为未来空间代理的研究指明了方向。",
-        "en": "- **Background**: Spatial reasoning is a foundational capability for Multimodal Large Language Models (MLLMs) to perceive and operate in the physical world. Existing benchmarks predominantly rely on passive evaluation..."
+        "zh": "Role-Agent 提出了一种新颖的 LLM 智能体训练范式，通过让单一模型在智能体和环境之间切换角色，解决了传统方法中反馈低效和环境静态的问题。其核心创新在于利用状态预测对齐作为过程奖励（WIA），以及基于失败模式分析的数据分布重塑（AIW）。实验结果证实该方法能显著提升智能体性能，为低成本、高效率的智能体自进化提供了新的思路。",
+        "en": "Role-Agent proposes a novel paradigm for training LLM agents by allowing a single model to switch roles between agent and environment, addressing the issues of inefficient feedback and static environments in traditional..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09669v1",
-        "pdf": "https://arxiv.org/pdf/2606.09669v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.10917v1",
+        "pdf": "https://arxiv.org/pdf/2606.10917v1",
+        "github": "https://github.com/AMAP-ML/roleagent"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.09669.md",
-        "summary_en_path": "summary_en/2026-06/2606.09669.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.09669.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.09669.md"
+        "summary_zh_path": "summary/2026-06/2606.10917.md",
+        "summary_en_path": "summary_en/2026-06/2606.10917.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.10917.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.10917.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -208,40 +210,35 @@
       }
     },
     {
-      "id": "arxiv:2606.09421",
-      "date": "2026-06-08",
-      "title": "What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents",
+      "id": "arxiv:2606.10749",
+      "date": "2026-06-09",
+      "title": "Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qinghua Xing",
-        "Yinda Chen",
-        "Yaping Jin",
-        "Zhenhe Wu",
-        "Bohan Lin",
-        "Hang Zhou",
-        "Xinghao Chen",
-        "Hanting Chen",
-        "Zhiwei Xiong"
+        "Yuchen Ling",
+        "Shengcheng Yu",
+        "Zhenyu Chen",
+        "Chunrong Fang"
       ],
-      "institution": "University of Science and Technology of China",
+      "institution": "State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich",
       "summary": {
-        "zh": "本文挑战了将技能重写等同于提示压缩的传统观点，指出技能中的稀疏操作锚点对智能体的执行效率至关重要。通过引入成本感知的重写框架，作者展示了如何在保持任务执行质量的同时显著降低总体成本。研究结果表明，技能设计应被视为一种操作知识工程，需根据任务特性精细平衡质量与成本，而非一味追求文本长度的缩短。",
-        "en": "- **Background**: Large language model (LLM) agents increasingly rely on \"Skills\"—reusable procedural documents encoding workflows, tool usage, implementation patterns, validation checks, and domain rules. To reduce..."
+        "zh": "本文系统地梳理了 LLM 智能体安全领域的现状，指出了从对话式 AI 向自主代理转变带来的新安全挑战。通过构建基于生命周期的系统框架，文章揭示了当前研究在威胁建模、防御组合性和评估真实性方面的不足，并呼吁建立明确的信任边界、严格的权限控制和更符合实际部署环境的评估标准，为未来构建安全的 LLM 智能体系统指明了方向。",
+        "en": "- **Background**: Large Language Model (LLM) agents are evolving from conversational interfaces into software components capable of planning, tool invocation, memory maintenance, and acting on external environments...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09421v1",
-        "pdf": "https://arxiv.org/pdf/2606.09421v1",
-        "github": "https://github.com/1Reminding/Skill_EE"
+        "abs": "http://arxiv.org/abs/2606.10749v1",
+        "pdf": "https://arxiv.org/pdf/2606.10749v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.09421.md",
-        "summary_en_path": "summary_en/2026-06/2606.09421.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.09421.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.09421.md"
+        "summary_zh_path": "summary/2026-06/2606.10749.md",
+        "summary_en_path": "summary_en/2026-06/2606.10749.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.10749.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.10749.md"
       },
       "signals": {
         "priority_keyword": "Agent"

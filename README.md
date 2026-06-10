@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.09_05:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.10_05:54-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月09日 05:40</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月10日 05:54</sub></summary>
 <br>
 
-- AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving 
-- Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents 
-- SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research 
-- SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks 
-- What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents 
+- ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity 
+- TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning 
+- T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains 
+- Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution 
+- Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-09</span> | **ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity**<br><sub>机构: SecureBio, Active Site<br>本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11150v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11150.md)  |
+| <span style='display: inline-block; width: 42px;'>06-09</span> | **TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning**<br><sub>机构: Tsinghua University, Tencent<br>TRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11119v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11119.md)  |
+| <span style='display: inline-block; width: 42px;'>06-09</span> | **T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains**<br><sub>机构: Capital One<br>T1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11070v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11070.md)  |
+| <span style='display: inline-block; width: 42px;'>06-09</span> | **Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution**<br><sub>机构: University of Science and Technology of China; AMAP, Alibaba Group<br>Role-Agent 提出了一种新颖的 LLM 智能体训练范式，通过让单一模型在智能体和环境之间切换角色，解决了传统方法中反馈低效和环境静态的问题。其核心创新在于利用状态预测对齐作为过程奖励（WIA），以及基于失败模式分析的数据分布重塑（AIW）。实验结果证实该方法能显著提升智能体性能，为低成本、高效率的智能体自进化提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.10917v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.10917.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AMAP-ML/roleagent)</div> |
+| <span style='display: inline-block; width: 42px;'>06-09</span> | **Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation**<br><sub>机构: State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich<br>本文系统地梳理了 LLM 智能体安全领域的现状，指出了从对话式 AI 向自主代理转变带来的新安全挑战。通过构建基于生命周期的系统框架，文章揭示了当前研究在威胁建模、防御组合性和评估真实性方面的不足，并呼吁建立明确的信任边界、严格的权限控制和更符合实际部署环境的评估标准，为未来构建安全的 LLM 智能体系统指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.10749v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.10749.md)  |
 | <span style='display: inline-block; width: 42px;'>06-08</span> | **AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving**<br><sub>机构: University of Central Florida<br>本文针对多轮 LLM 智能体服务中存在的复杂状态管理和资源调度问题，提出了 AGENTSERVESIM 模拟器。该工具通过模块化设计解决了工具调用间隙模拟和跨轮次 KV 缓存追踪两大难题，能够在低成本 CPU 环境下以高保真度（误差<6%）模拟真实硬件上的智能体服务行为。这使得研究人员能够在无需大量昂贵加速器资源的情况下，对智能体服务策略进行可控、可重复的探索和优化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09613v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09613.md)  |
 | <span style='display: inline-block; width: 42px;'>06-08</span> | **Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents**<br><sub>机构: Tencent<br>本文指出了当前 LLM 代理记忆系统混淆“记忆即存储”与“记忆即认知”的根本缺陷，提出了 DCPM 系统。通过引入类似人类认知的双过程机制（System 1 负责快速记录信念修正链，System 2 负责慢速抽象跨域模式），DCPM 实现了从被动事实存储到主动认知进化的跃迁，有效解决了隐式个性化和跨域推理难题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09483v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09483.md)  |
 | <span style='display: inline-block; width: 42px;'>06-08</span> | **SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research**<br><sub>机构: Tsinghua University, Peking University, Renmin University of China, Ant Group<br>SearchSwarm 填补了开源社区在长周期代理任务中“委托智能”训练数据合成与模型训练的空白。通过引入 harness 引导生成高质量 SFT 数据，成功使 30B 规模的模型在深度研究任务中达到了超越同量级模型、媲美超大模型的绩效，为资源受限下的高效长程推理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.09730v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.09730.md)  |

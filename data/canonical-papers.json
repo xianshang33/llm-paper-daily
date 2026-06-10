@@ -1,45 +1,48 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-09T05:40:11.488824+00:00",
-  "run_date": "2026-06-08",
+  "generated_at": "2026-06-10T05:54:53.502048+00:00",
+  "run_date": "2026-06-09",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.09613",
-      "date": "2026-06-08",
-      "title": "AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving",
+      "paper_id": "2606.11150",
+      "date": "2026-06-09",
+      "title": "ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity",
       "authors": [
-        "Rakibul Hasan Rajib",
-        "Mengxin Zheng",
-        "Qian Lou"
+        "Andrew Bo Liu",
+        "Samira Nedungadi",
+        "Bryce Cai",
+        "Alex Kleinman",
+        "Harmon Bhasin",
+        "Seth Donoughe"
       ],
-      "abstract": "Multi-turn LLM agents interleave model calls with external tool invocations, shifting serving from stateless request processing to stateful program execution. Serving these workloads requires scheduling, KV-cache management, and routing policies that use program-level context, including turn dependencies, tool-induced gaps, and reusable KV state. Evaluating such policies directly on real systems is costly, since each design point may require dedicated accelerator time across arrival rates, model scales, serving-instance counts, and memory hierarchies. Simulation offers a scalable alternative, but existing LLM serving simulators target stateless request-level workloads and therefore omit the core dynamics of agent serving: multi-turn program execution, cross-turn cache locality, and KV-cache residency during tool gaps. We present AGENTSERVESIM, a hardware-aware simulator for multi-turn LLM agent serving. AGENTSERVESIM evaluates serving policies at program granularity through composable modules: a Program Orchestrator preserves program identity and turn order, a Tool Simulator materializes tool-induced gaps, a Session-Aware Router maintains program-to-instance affinity for cache-aware dispatch, and a KV Residency Model tracks policy-defined KV placement across HBM, host DRAM/CXL, and eviction. Across real serving deployments and hardware configurations, AGENTSERVESIM reproduces real-system behavior within 6% error across key performance metrics while running entirely on commodity CPUs. These results show that AGENTSERVESIM enables controlled, repeatable exploration of agent-serving policies without requiring exhaustive deployment on costly accelerators.",
+      "abstract": "Large language models (LLMs) are rapidly acquiring capabilities relevant to biological research, from literature synthesis to interpretation of experimental data. Increasingly, LLM agents can also perform in silico biology tasks that previously required experienced human biologists. These emerging AI capabilities offer new opportunities for scientific discovery and biomedical advances, but they also shift the landscape of biosecurity risks. To address this, we introduce the Agentic Bio-Capabilities Benchmark (ABC-Bench), a suite of tasks to measure agentic biosecurity-relevant capabilities. ABC-Bench evaluates LLM agents on both benign and dual-use biology tasks: writing code to operate liquid handling robots, designing DNA fragments for in vitro assembly, and evading DNA synthesis screening. These tasks require a combination of biology and software expertise. All tested LLM agents outperformed the median expert human baseliner on all three tasks. Agents performed highly on tasks drawing on published knowledge and well-documented protocols, and more weakly on a task requiring novel bioinformatics reasoning. In three wet-lab validation experiments, we found that OpenAI's o4-mini-high produced scripts that, when run on an OpenTrons liquid handling robot, successfully assembled DNA with expected sequences.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09613v1",
-        "pdf": "https://arxiv.org/pdf/2606.09613v1",
+        "abs": "http://arxiv.org/abs/2606.11150v1",
+        "pdf": "https://arxiv.org/pdf/2606.11150v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Central Florida",
+      "institution": "SecureBio, Active Site",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：现代大语言模型（LLM）部署正从孤立的单轮对话转向多轮智能体系统。这些系统作为有状态的程序执行，将 LLM 调用与外部工具调用交错进行，导致服务重点从无状态请求处理转变为有状态程序执行。\n- **已有的工作为什么解决不了**：现有的 LLM 服务模拟器（如 Vidur, APEX, LLMServingSim）主要针对无状态的请求级工作负载设计，将每个请求视为独立的预填充-解码对。它们缺乏对智能体服务核心动态的抽象，包括程序身份、工具调用引起的间隙以及跨轮次的 KV 缓存重用，因此无法准确评估针对智能体优化的调度、路由和缓存管理策略。\n\n## 文章的核心贡献点\n- **提出了一个 AGENTSERVESIM**：这是一个面向多轮 LLM 智能体服务的硬件感知模拟器，能够在普通 CPU 上运行，以程序粒度评估服务策略。\n- **挑战1：如何模拟工具调用引起的中断和间隙？**\n  - **难点**：工具调用持续时间差异巨大（从毫秒到分钟），导致 LLM 推理过程中出现不可预测的空闲期，传统模拟器无法建模这种时间间隙对资源调度的影响。\n  - **解决方法**：引入了“工具模拟器（Tool Simulator模块）”，具体化由工具调用引起的间隙，允许模拟器在程序执行流中精确插入这些延迟，从而真实反映智能体执行的时间线。\n- **挑战2：如何追踪跨轮次和有状态上下文下的 KV 缓存驻留？**\n  - **难点**：智能体执行涉及跨轮次的缓存局部性和在工具间隙期间的 KV 缓存保留/驱逐策略，现有模拟器仅处理独立请求，无法追踪程序级别的缓存状态变化。\n  - **解决方法**：设计了“KV 驻留模型（KV Residency Model）”和“会话感知路由器（Session-Aware Router）”，前者跟踪策略定义的 KV 放置在 HBM、主机 DRAM/CXL 及驱逐过程中的状态，后者维持程序到实例的亲和性以实现缓存感知分发。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：AGENTSERVESIM 通过可组合模块实现，包括保持程序身份和轮次顺序的程序编排器、模拟工具间隙的工具模拟器、维持缓存感知分发的会话感知路由器，以及跟踪多级内存中 KV 放置的 KV 驻留模型。整个模拟器完全在普通 CPU 上运行，无需昂贵的加速器硬件。\n- **评估结果**：在真实的服务部署和多种硬件配置下，AGENTSERVESIM 在关键性能指标上重现真实系统行为的误差在 6% 以内。\n- **对比**：与 Vidur、APEX 等仅支持无状态请求的模拟器相比，AGENTSERVESIM 能够捕捉多轮程序执行、跨轮缓存局部性等智能体特有的动态，填补了现有仿真工具在智能体服务策略探索方面的空白。\n\n#### 总结\n本文针对多轮 LLM 智能体服务中存在的复杂状态管理和资源调度问题，提出了 AGENTSERVESIM 模拟器。该工具通过模块化设计解决了工具调用间隙模拟和跨轮次 KV 缓存追踪两大难题，能够在低成本 CPU 环境下以高保真度（误差<6%）模拟真实硬件上的智能体服务行为。这使得研究人员能够在无需大量昂贵加速器资源的情况下，对智能体服务策略进行可控、可重复的探索和优化。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Modern LLM deployments are shifting from isolated single-turn queries to multi-turn agentic systems. These systems execute as stateful programs, interleaving LLM calls with external tool invocations, shifting serving from stateless request processing to stateful program execution.\n- **Why Existing Work Fails**: Existing LLM serving simulators (e.g., Vidur, APEX, LLMServingSim) target stateless, request-level workloads, treating each request as an independent prefill-decode pair. They lack abstractions for core agent dynamics such as program identity, tool-induced gaps, and cross-turn KV cache reuse, making them unsuitable for evaluating agent-specific scheduling and caching policies.\n\n## Core Contributions\n- **Proposed AGENTSERVESIM**: A hardware-aware simulator for multi-turn LLM agent serving that evaluates policies at program granularity and runs entirely on commodity CPUs.\n- **Challenge 1: How to simulate interruptions and gaps caused by tool invocations?**\n  - **Difficulty**: Tool calls vary widely in duration (milliseconds to minutes), creating unpredictable idle periods during LLM inference that traditional simulators cannot model.\n  - **Solution**: Introduces a \"Tool Simulator\" module that materializes tool-induced gaps, allowing precise insertion of these delays into the program execution flow to realistically reflect agent timelines.\n- **Challenge 2: How to track KV cache residency across turns and stateful contexts?**\n  - **Difficulty**: Agent execution involves cross-turn cache locality and KV retention/eviction policies during tool gaps; existing simulators handle only independent requests and cannot track program-level cache state changes.\n  - **Solution**: Designs a \"KV Residency Model\" and a \"Session-Aware Router.\" The former tracks policy-defined KV placement across HBM, host DRAM/CXL, and eviction, while the latter maintains program-to-instance affinity for cache-aware dispatch.\n\n## Implementation and Evaluation\n- **Implementation**: AGENTSERVESIM is implemented via composable modules: a Program Orchestrator (preserves identity/order), a Tool Simulator (models gaps), a Session-Aware Router (cache-aware dispatch), and a KV Residency Model (tracks multi-level memory placement). It runs entirely on commodity CPUs without needing expensive accelerators.\n- **Evaluation Results**: Across real serving deployments and various hardware configurations, AGENTSERVESIM reproduces real-system behavior within a 6% error margin on key performance metrics.\n- **Comparison**: Unlike Vidur and APEX which support only stateless requests, AGENTSERVESIM captures agent-specific dynamics like multi-turn program execution and cross-turn cache locality, filling the gap in simulation tools for agent serving policy exploration.\n\n## 4. Conclusion\nThis paper addresses the complex state management and resource scheduling issues in multi-turn LLM agent serving by proposing AGENTSERVESIM. By solving the challenges of simulating tool invocation gaps and tracking cross-turn KV caches through modular design, the tool achieves high fidelity (<6% error) in simulating real hardware behavior on low-cost CPUs. This enables controlled, repeatable exploration of agent serving policies without requiring extensive expensive accelerator resources.",
-      "render_excerpt": "机构: University of Central Florida<br>本文针对多轮 LLM 智能体服务中存在的复杂状态管理和资源调度问题，提出了 AGENTSERVESIM 模拟器。该工具通过模块化设计解决了工具调用间隙模拟和跨轮次 KV 缓存追踪两大难题，能够在低成本 CPU 环境下以高保真度（误差<6%）模拟真实硬件上的智能体服务行为。这使得研究人员能够在无需大量昂贵加速器资源的情况下，对智能体服务策略进行可控、可重复的探索和优化。",
-      "render_excerpt_en": "Institution: University of Central Florida<br>## 1. What the Paper Does - **Background**: Modern LLM deployments are shifting from isolated single-turn queries to multi-turn agentic systems. These systems execute as stateful programs, interleaving LLM calls with external tool invocations, shifting serving from stateless request processing to stateful program execution.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）及其智能体（Agents）在生物研究中的能力迅速提升，从文献综合到实验数据解释，甚至能执行以前需要经验丰富的生物学家才能完成的计算机生物学任务。这些能力既推动了科学发现，也改变了生物安全风险格局。\n- **已有工作为什么解决不了**：现有的生物基准测试大多通过简答题或选择题来测试模型的知识储备，无法评估配备了软件工具和执行环境、能够端到端执行复杂任务的现代 AI 智能体的实际能力。缺乏针对智能体在生物安全相关任务（如双用途研究）中实际执行能力的衡量标准。\n\n## 文章的核心贡献点\n- **提出了一个 Agentic Bio-Capabilities Benchmark (ABC-Bench)**：这是一套用于衡量智能体生物安全相关能力的任务套件，涵盖良性和双用途生物任务。\n- **挑战1：如何评估智能体在真实生物实验操作中的代码生成与执行能力？**\n  - **难点**：这不仅需要生物学知识，还需要专业的软件工程技能来控制硬件（如液体处理机器人），传统文本基准无法覆盖这种跨学科的执行能力。\n  - **解决方法**：ABC-Bench 设计了编写操作液体处理机器人代码的任务，要求智能体生成可执行脚本，并通过湿实验验证其生成的代码能否在 OpenTrons 机器人上成功组装 DNA。\n- **挑战2：如何量化智能体在双用途风险场景下的潜在危害能力（如规避筛查）？**\n  - **难点**：评估模型是否具备绕过现有生物安全防护（如 DNA 合成筛查）的能力极具敏感性且难以标准化，需要模拟真实的对抗场景。\n  - **解决方法**：基准测试包含了设计 DNA 片段以体外组装以及规避 DNA 合成筛查的任务，直接测量智能体在结合生物学和软件专业知识时突破安全限制的能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：ABC-Bench 包含三个核心任务：编写液体处理机器人操作代码、设计用于体外组装的 DNA 片段、规避 DNA 合成筛查。研究进行了三次湿实验验证，使用 OpenAI 的 o4-mini-high 模型生成脚本，并在 OpenTrons 液体处理机器人上运行。\n- **评估结果**：\n  - 所有测试的 LLM 智能体在全部三项任务上的表现均优于中位数专家人类基线。\n  - 智能体在依赖已发表知识和良好记录协议的任务上表现优异，但在需要新颖生物信息学推理的任务上表现较弱。\n  - 湿实验验证显示，o4-mini-high 生成的脚本成功指导机器人组装出了具有预期序列的 DNA。\n- **对比**：相较于 Hendrycks 等人提出的传统知识型生物基准，ABC-Bench 专注于评估“智能体”而非单纯“模型”的端到端执行能力，填补了针对双用途风险和实际操作能力评估的空白。\n\n#### 总结\n本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) and their agents are rapidly acquiring capabilities in biological research, ranging from literature synthesis to executing complex in silico biology tasks previously requiring experienced human biologists. While these advances offer opportunities for scientific discovery, they also shift the landscape of biosecurity risks.\n- **Why Existing Work Falls Short**: Current biology benchmarks primarily test knowledge via short-answer or multiple-choice questions. They fail to evaluate modern AI agents augmented with software tools and execution environments that perform complex, end-to-end tasks. There is a lack of standards to measure the actual execution capabilities of agents in biosecurity-relevant and dual-use scenarios.\n\n## Core Contributions\n- **Proposed ABC-Bench (Agentic Bio-Capabilities Benchmark)**: A suite of tasks designed to measure agentic capabilities relevant to biosecurity, covering both benign and dual-use biology tasks.\n- **Challenge 1: How to evaluate an agent's ability to generate and execute code for real-world biological experiments?**\n  - **Difficulty**: This requires a combination of biological knowledge and specialized software engineering skills to control hardware (e.g., liquid handling robots), which traditional text-based benchmarks cannot capture.\n  - **Solution**: ABC-Bench includes a task for writing code to operate liquid handling robots, requiring agents to generate executable scripts. The study validates this through wet-lab experiments where generated scripts successfully directed an OpenTrons robot to assemble DNA.\n- **Challenge 2: How to quantify potential harm in dual-use risk scenarios, such as evading safety screenings?**\n  - **Difficulty**: Assessing whether models can bypass existing biosecurity safeguards (like DNA synthesis screening) is sensitive and difficult to standardize, requiring simulated adversarial scenarios.\n  - **Solution**: The benchmark includes tasks for designing DNA fragments for in vitro assembly and evading DNA synthesis screening, directly measuring the agent's ability to combine biology and software expertise to bypass security restrictions.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: ABC-Bench comprises three core tasks: writing robot operation code, designing DNA fragments, and evading synthesis screening. Three wet-lab validation experiments were conducted using OpenAI's o4-mini-high model to generate scripts executed on an OpenTrons liquid handling robot.\n- **Evaluation Results**:\n  - All tested LLM agents outperformed the median expert human baseliner on all three tasks.\n  - Agents performed highly on tasks relying on published knowledge and well-documented protocols but weaker on tasks requiring novel bioinformatics reasoning.\n  - Wet-lab validation confirmed that scripts generated by o4-mini-high successfully guided the robot to assemble DNA with the expected sequences.\n- **Comparison**: Unlike traditional knowledge-based biology benchmarks (e.g., Hendrycks et al.), ABC-Bench focuses on evaluating the end-to-end execution capabilities of \"agents\" rather than just \"models,\" filling the gap in assessing dual-use risks and practical operational abilities.\n\n## 4. Conclusion\nThis paper introduces ABC-Bench, the first benchmark for agentic capabilities in the field of biosecurity. By combining dry-run evaluations with wet-lab validation, it demonstrates that current advanced LLM agents have surpassed average human expert levels in biological operations and dual-use tasks. This benchmark provides critical tools and data for developing biosecurity safeguards, threat modeling, and assessing the effectiveness of protective measures (such as unlearning), highlighting the urgency of establishing targeted safety evaluation standards amidst the rapid development of AI biological capabilities.",
+      "render_excerpt": "机构: SecureBio, Active Site<br>本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。",
+      "render_excerpt_en": "Institution: SecureBio, Active Site<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) and their agents are rapidly acquiring capabilities in biological research, ranging from literature synthesis to executing complex in silico biology tasks previously requiring experienced human biologists. While these advances offer opportunities for scientific discovery, they also shift the landscape of biosecurity risks.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-08T15:20:23Z"
+        "captured_at": "2026-06-09T17:35:37Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-08"
+        "captured_at": "2026-06-09"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -54,42 +57,50 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.09483",
-      "date": "2026-06-08",
-      "title": "Memory Beyond Recall: A Dual-Process Cognitive Memory System for Self-Evolving LLM Agents",
+      "paper_id": "2606.11119",
+      "date": "2026-06-09",
+      "title": "TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning",
       "authors": [
-        "Tianxiang Fei",
-        "Mingyang Song",
-        "Mao Zheng",
-        "Xiang Yu"
+        "Heming Zou",
+        "Qi Wang",
+        "Yun Qu",
+        "Yuhang Jiang",
+        "Lizhou Cai",
+        "Yixiu Mao",
+        "Ru Peng",
+        "Xin Xu",
+        "Weijie Liu",
+        "Kai Yang",
+        "Saiyong Yang",
+        "Xiangyang Ji"
       ],
-      "abstract": "Long-term memory for an LLM agent is more than retrieving the right passage at the right time. Current memory systems collapse belief revision, causal coupling, and cross-domain abstraction into a single retrieval surface tuned for surface recall, and consequently struggle on implicit personalisation that requires reasoning over how a user has evolved. We propose DCPM, which reorganises agent memory along a cognitive capability hierarchy ascending from raw inputs and atomic facts, through diachronic belief trajectories and identity, to domain schemas, latent intentions and cross-domain patterns. The hierarchy is driven by two processes inheriting the architectural split of dual-process theory: a synchronous daytime writer (System1) that records belief revisions as doubly linked supersedes chains, and an asynchronous nighttime engine (System2) that induces schemas and intentions and sweeps for cross-domain collisions abstracted into higher-level core schemas. On LongMemEval, PersonaMem and PersonaMem-v2, enabling System2 contributes most where the benchmark rewards implicit cross-session inference (up to +5.20 on PersonaMem-v2) and least on span recall, matching the architectural prediction.",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) is a promising approach for enhancing reasoning and agentic behavior in large language models. However, rollout-intensive policy optimization is often limited by insufficient reward contrast, arising when overly simple or complex prompts generate low-variance feedback and when outcome-only rewards assign the same terminal assessment to every decision in a multi-turn rollout. Past efforts have focused on allocating available rollout resources to promising prompts, yet they only leverage sample informativeness at the prompt level and neglect variation in prefix-level informativeness across turns within the same rollout. This work targets multi-turn agentic RL by modeling each ReAct-style thought-action-observation turn as a semantically distinct node, allowing budget allocation to extend from prompt roots to turn-level prefixes with further continuations, which naturally forms tree-structured rollouts. We introduce Tree Rollout Allocation for Contrastive Exploration (TRACE), a unified rollout allocation framework that enhances reward contrast within a fixed sampling budget. Technically, TRACE allocates rollout budget to both prompt roots and intermediate prefixes that are most likely to yield mixed terminal rewards. A shared generalizable predictor estimates conditional success probability at these anchors from prefix histories to guide this allocation. The resulting adaptive tree structure enriches outcome-only feedback and amplifies the policy-update signal. Empirically, TRACE achieves competitive performance and efficiency gains on typical agentic benchmarks, e.g., improving Qwen3-14B Multi-Hop QA average accuracy by 2.8 points over competitive baselines at equal sampling cost.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09483v1",
-        "pdf": "https://arxiv.org/pdf/2606.09483v1",
+        "abs": "http://arxiv.org/abs/2606.11119v1",
+        "pdf": "https://arxiv.org/pdf/2606.11119v1",
         "github": null,
         "blog": null
       },
-      "institution": "Tencent",
+      "institution": "Tsinghua University, Tencent",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理在与用户长期交互后积累了大量数据，但现有的长期记忆系统主要被视作检索问题（如向量存储、时序知识图谱），旨在在查询时表面召回相关文本片段。\n- **已有工作的不足**：现有系统将信念修正、因果耦合和跨域抽象压缩到单一的检索表面，导致无法有效处理需要推理用户演变过程的隐式个性化任务。它们丢失了信念的中间状态、因果链接以及跨生活领域的高阶模式，难以像人类助手那样理解用户的深层意图和变化。\n\n## 文章的核心贡献点\n- **提出了一个双过程认知记忆系统（DCPM）**：基于双重过程理论，将代理记忆重组为从原始输入到跨域核心模式的认知能力层级。\n- **挑战1：信念的动态演变与历史追踪难**。难点在于传统系统仅存储当前事实，丢失了信念修正的路径和因果联系，导致无法回答涉及用户观点变化的问题。DCPM通过同步的“日间写入器”（System 1）将信念修正记录为双向链接的取代链，保留了信念演变的完整轨迹。\n- **挑战2：跨域隐式意图与高阶抽象难**。难点在于不同生活领域间的行为可能语义相似性低但行为模式相似，传统检索难以发现这种跨域碰撞和潜在意图。DCPM通过异步的“夜间引擎”（System 2）聚类事实、诱导模式并扫描跨域碰撞，将其抽象为高层核心模式，从而实现深层认知进化。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估基准**：在 LongMemEval、PersonaMem 和 PersonaMem-v2 上进行测试。\n- **结果对比**：实验结果显示，启用 System 2 在需要隐式跨会话推理的任务中贡献最大，在 PersonaMem-v2 上性能提升高达 +5.20 分；而在单纯的跨度召回（span recall）任务中贡献最小。这一结果验证了架构设计的预测，即 DCPM 的优势在于深层推理而非表面检索，显著优于仅关注被动基础层记忆的现有系统。\n\n#### 总结\n本文指出了当前 LLM 代理记忆系统混淆“记忆即存储”与“记忆即认知”的根本缺陷，提出了 DCPM 系统。通过引入类似人类认知的双过程机制（System 1 负责快速记录信念修正链，System 2 负责慢速抽象跨域模式），DCPM 实现了从被动事实存储到主动认知进化的跃迁，有效解决了隐式个性化和跨域推理难题。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Long-term memory for LLM agents is currently treated primarily as a retrieval problem (e.g., vector stores, temporal knowledge graphs) aimed at surfacing relevant text chunks during queries after long-term user interaction.\n- **Limitations of Existing Work**: Current systems collapse belief revision, causal coupling, and cross-domain abstraction into a single retrieval surface tuned for surface recall. Consequently, they fail at implicit personalization tasks that require reasoning about how a user has evolved, losing intermediate belief states, causal links, and higher-order patterns across domains.\n\n## Core Contributions\n- **Proposed DCPM (Dual-Process Cognitive Memory System)**: Reorganizes agent memory along a cognitive capability hierarchy, inspired by dual-process theory, ascending from raw inputs to cross-domain core schemas.\n- **Challenge 1: Tracking Dynamic Belief Evolution**. The difficulty lies in traditional systems storing only current facts, losing the path of belief revisions and causal connections. DCPM addresses this via a synchronous \"Daytime Writer\" (System 1) that records belief revisions as doubly linked supersedes chains, preserving the full trajectory of belief evolution.\n- **Challenge 2: Abstracting Cross-Domain Implicit Intentions**. The challenge is that behaviors across different life domains may have low semantic similarity but high behavioral pattern similarity, making them hard to detect via traditional retrieval. DCPM solves this with an asynchronous \"Nighttime Engine\" (System 2) that clusters facts, induces schemas, and sweeps for cross-domain collisions, abstracting them into higher-level core schemas for deep cognitive evolution.\n\n## Implementation and Evaluation\n- **Benchmarks**: Evaluated on LongMemEval, PersonaMem, and PersonaMem-v2.\n- **Results**: Enabling System 2 contributed most in benchmarks rewarding implicit cross-session inference, achieving up to +5.20 improvement on PersonaMem-v2, while contributing least to simple span recall tasks. This validates the architectural prediction that DCPM excels in deep reasoning rather than surface retrieval, outperforming existing systems confined to the passive foundation tier.\n\n## 4. Conclusion\nThe paper identifies the root flaw in current LLM agent memory systems: conflating \"memory-as-storage\" with \"memory-as-cognition.\" It proposes DCPM, which employs a dual-process mechanism (System 1 for fast recording of belief revision chains, System 2 for slow abstraction of cross-domain patterns). This enables a leap from passive fact storage to active cognitive evolution, effectively addressing challenges in implicit personalization and cross-domain reasoning.",
-      "render_excerpt": "机构: Tencent<br>本文指出了当前 LLM 代理记忆系统混淆“记忆即存储”与“记忆即认知”的根本缺陷，提出了 DCPM 系统。通过引入类似人类认知的双过程机制（System 1 负责快速记录信念修正链，System 2 负责慢速抽象跨域模式），DCPM 实现了从被动事实存储到主动认知进化的跃迁，有效解决了隐式个性化和跨域推理难题。",
-      "render_excerpt_en": "Institution: Tencent<br>## 1. What the Paper Did - **Background**: Long-term memory for LLM agents is currently treated primarily as a retrieval problem (e.g., vector stores, temporal knowledge graphs) aimed at surfacing relevant text chunks during queries after long-term user interaction. - **Limitations of Existing Work**: Current systems collapse belief revision, causal coupling, and cross-domain abstraction into a single retrieval surface tuned for surface recall.",
+      "summary_cn": "## 文章做了什么\n- **背景**：带有可验证奖励的强化学习（RLVR）是提升大语言模型推理和智能体行为的关键方法。然而，基于rollout的策略优化计算成本高昂，且常受限于奖励对比度不足的问题。\n- **已有工作为什么解决不了**：现有的资源分配方法主要集中在提示词（prompt）级别，即决定哪些提示词值得采样以及分配多少rollout预算。这些方法忽略了同一rollout内部不同轮次（turn）前缀的信息量差异。由于仅使用最终结果奖励，长序列中的每个决策步骤获得的信用分配信号稀疏且缺乏局部对比度，导致学习效率低下。\n\n## 文章的核心贡献点\n- **提出了一个**：Tree Rollout Allocation for Contrastive Exploration (TRACE)，这是一个统一的rollout预算分配框架，旨在固定采样预算下增强奖励对比度。\n- **挑战1：多轮交互中的细粒度信用分配难题**。在多轮智能体任务中，仅依靠最终结果奖励难以区分中间步骤的好坏，导致策略更新信号微弱。TRACE通过将ReAct风格的“思考-行动-观察”每一轮建模为语义 distinct 的节点，将预算分配从提示词根节点扩展到轮次级前缀，形成树状结构的rollout，从而捕捉中间状态的价值。\n- **挑战2：如何在有限预算下识别高信息量的探索路径**。盲目增加rollout数量效率低下，需要精准定位那些可能产生混合终端奖励（即既有成功也有失败可能性）的路径。TRACE引入一个共享的通用预测器，基于前缀历史估计条件成功概率，指导预算向最可能产生高方差反馈的根节点和中间前缀倾斜，从而放大策略更新信号。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：TRACE在典型的智能体基准测试上进行了评估，重点考察其在固定采样成本下的性能与效率。\n- **对比结果**：与现有的竞争性基线方法相比，TRACE展现了显著的性能提升。例如，在Qwen3-14B模型上进行多跳问答（Multi-Hop QA）任务时，TRACE在同等采样成本下将平均准确率提高了2.8个百分点。这证明了其通过树状结构丰富结果反馈、增强对比度的有效性。\n\n#### 总结\nTRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Reinforcement Learning with Verifiable Rewards (RLVR) is a key approach for enhancing reasoning and agentic behaviors in LLMs. However, rollout-intensive policy optimization is computationally expensive and often suffers from insufficient reward contrast.\n- **Why Existing Work Falls Short**: Prior resource allocation methods operate primarily at the prompt level, deciding which prompts to sample and how many rollouts to assign. They neglect the variation in informativeness across different turns within the same rollout. Relying solely on outcome rewards leads to sparse credit assignment and a lack of local contrast for intermediate decisions in long trajectories.\n\n## Core Contributions\n- **Proposed**: Tree Rollout Allocation for Contrastive Exploration (TRACE), a unified framework that enhances reward contrast within a fixed sampling budget.\n- **Challenge 1: Fine-grained credit assignment in multi-turn interactions**. In multi-turn agentic tasks, relying only on final outcomes makes it difficult to distinguish the quality of intermediate steps, resulting in weak policy update signals. TRACE models each ReAct-style \"thought-action-observation\" turn as a semantically distinct node, extending budget allocation from prompt roots to turn-level prefixes, naturally forming tree-structured rollouts to capture intermediate state values.\n- **Challenge 2: Identifying high-information exploration paths under limited budget**. Blindly increasing rollout counts is inefficient; it is crucial to pinpoint paths likely to yield mixed terminal rewards. TRACE employs a shared generalizable predictor to estimate conditional success probability based on prefix history, guiding budget allocation towards roots and intermediate prefixes most likely to produce high-variance feedback, thereby amplifying policy update signals.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: TRACE was evaluated on typical agentic benchmarks, focusing on performance and efficiency under fixed sampling costs.\n- **Comparison Results**: Compared to competitive baselines, TRACE demonstrated significant performance gains. For instance, on the Multi-Hop QA task using Qwen3-14B, TRACE improved average accuracy by 2.8 points over baselines at equal sampling cost. This validates its effectiveness in enriching outcome feedback and enhancing contrast through tree-structured rollouts.\n\n## 4. Conclusion\nTRACE addresses the inefficiency in RLVR caused by insufficient reward contrast. It breaks the limitation of traditional prompt-level budget allocation by innovatively refining allocation to prefix levels in multi-turn interactions. By leveraging tree-structured rollouts and success probability predictors, it achieves more efficient exploration and exploitation. Experiments show that TRACE significantly improves agent performance on complex reasoning tasks without increasing computational costs.",
+      "render_excerpt": "机构: Tsinghua University, Tencent<br>TRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。",
+      "render_excerpt_en": "Institution: Tsinghua University, Tencent<br>## 1. What the Paper Does - **Background**: Reinforcement Learning with Verifiable Rewards (RLVR) is a key approach for enhancing reasoning and agentic behaviors in LLMs. However, rollout-intensive policy optimization is computationally expensive and often suffers from insufficient reward contrast.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-08T13:39:24Z"
+        "captured_at": "2026-06-09T17:16:03Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-08"
+        "captured_at": "2026-06-09"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -104,170 +115,156 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.09730",
-      "date": "2026-06-08",
-      "title": "SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research",
+      "paper_id": "2606.11070",
+      "date": "2026-06-09",
+      "title": "T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains",
       "authors": [
-        "Pu Ning",
-        "Quan Chen",
-        "Kun Tao",
-        "Xinyu Tang",
-        "Tianshu Wang",
-        "Qianggang Cao",
-        "Xinyu Kong",
-        "Zujie Wen",
-        "Zhiqiang Zhang",
-        "Jun Zhou"
+        "Genta Indra Winata",
+        "Amartya Chakraborty",
+        "Yuzhen Lin",
+        "Swasthi P Rao",
+        "Shikhhar Siingh",
+        "Houhan Lu",
+        "Nadia Bathaee",
+        "Sriharsha Hatwar",
+        "Paresh Dashore",
+        "Anmol Jain",
+        "Kshitij Tayal",
+        "Xiuzhu Lin",
+        "Anirban Das",
+        "Sambit Sahu",
+        "Shi-Xiong Zhang"
       ],
-      "abstract": "Large language models are increasingly expected to handle complex, long-horizon real-world tasks whose context demands can grow without bound, yet model context windows remain inherently finite. Recent work explores a paradigm where a main agent decomposes tasks and dispatches subtasks to subagents, which execute and return only summarized results, conserving the main agent's context budget. However, performing this well requires delegation intelligence: the ability to decompose complex tasks, determine when and what to delegate, and integrate returned results into the ongoing workflow. Training data for this capability is scarce in naturally occurring text, and to our knowledge, how to synthesize such data and train models to acquire this capability remains largely unexplored in the open-source community. To bridge this gap, we present a preliminary exploration targeting deep research, a representative long-horizon agent task. Specifically, we design a harness that guides the model toward high-quality task decomposition and delegation, while constraining subagents to return results properly to support the main agent's workflow. The harness-guided trajectories naturally encode correct delegation decisions, which we use as supervised fine-tuning data to internalize delegation intelligence into model weights. Our resulting model, SearchSwarm-30B-A3B, achieves 68.1 on BrowseComp and 73.3 on BrowseComp-ZH, the best results among all models of comparable scale. We will release our harness, model weights, and training data to facilitate future research.",
+      "abstract": "Recent advances in reasoning and tool-calling capabilities of large language models (LLMs) have enabled increasingly capable agentic systems. However, existing benchmarks remain limited in task complexity, realism, and domain diversity, and often fail to capture interactions that span multiple domains, limiting their ability to evaluate agents in realistic multi-step settings that require sustained reasoning and coordination. To address these limitations, we introduce T1-Bench, a high-fidelity, comprehensive benchmark for evaluating agentic systems in realistic customer-facing, multi-domain environments, featuring interleaved scenarios that require structured reasoning across multi-turn user-assistant interactions and substantially increasing both compositional complexity and evaluative rigor across 25 domains of varying difficulty. We evaluate T1-Bench using 12 proprietary and open-weight models, providing a reproducible and standardized framework for assessing agent behavior, tool utilization, and conversational quality in complex, multi-step environments. We further complement automatic evaluation with human judgments to strengthen the assessment of qualitative performance. Overall, T1-Bench substantially advances prior benchmarks by increasing task complexity, interaction depth, and domain coverage in simulated multi-domain environments. To facilitate future research on agentic systems, we will publicly release data and evaluation code as open source.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.09730v1",
-        "pdf": "https://arxiv.org/pdf/2606.09730v1",
+        "abs": "http://arxiv.org/abs/2606.11070v1",
+        "pdf": "https://arxiv.org/pdf/2606.11070v1",
         "github": null,
-        "blog": "search-swarm.github.io"
-      },
-      "institution": "Tsinghua University, Peking University, Renmin University of China, Ant Group",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在处理复杂的长周期现实任务时，面临上下文窗口有限与无限增长的信息需求之间的根本矛盾。现有的被动式上下文管理方法（如摘要或截断）缺乏前瞻性规划。\n- **已有工作为什么解决不了**：当前的主代理分解任务并分派给子代理的范式虽然能节省上下文，但极度依赖“委托智能”（Delegation Intelligence），即高质量的任务分解、决定何时及如何委托、以及整合返回结果的能力。然而，自然界中缺乏此类能力的训练数据，开源社区在如何合成此类数据及训练模型方面尚属空白。\n\n## 文章的核心贡献点\n- **提出了一个 SearchSwarm 框架及 SearchSwarm-30B-A3B 模型**：针对深度研究这一代表性长周期任务，通过设计引导 harness 合成高质量训练数据，将委托智能内化到模型权重中。\n- **挑战1：缺乏高质量的委托智能训练数据**。难点在于自然文本中极少包含正确的任务分解和委托决策轨迹。论文通过设计一个约束子代理行为并引导主代理进行高质量分解的 harness，自动生成包含正确委托决策的轨迹，将其作为监督微调（SFT）数据。\n- **挑战2：子代理返回结果与主代理工作流的整合困难**。难点在于子代理若返回冗余或格式不当的信息，仍会消耗主代理上下文或导致逻辑断裂。论文在 harness 中严格约束子代理仅返回经过适当总结且符合工作流需求的结果，确保主代理能高效整合信息。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作者发布了 harness、模型权重（SearchSwarm-30B-A3B）及训练数据。该模型基于 30B 参数规模（A3B 激活）。\n- **评估结果**：\n    - 在 BrowseComp 基准测试中获得 68.1 分。\n    - 在 BrowseComp-ZH 基准测试中获得 73.3 分。\n- **对比相关工作**：\n    - SearchSwarm 在所有同等规模（comparable scale）的模型中取得了最佳结果。\n    - 与比其大 10 倍以上的闭源/开源模型（如 GPT-5, Claude Opus, Gemini 3 等）相比，SearchSwarm 保持了极强的竞争力，甚至在部分中文基准上表现更优。\n\n#### 总结\nSearchSwarm 填补了开源社区在长周期代理任务中“委托智能”训练数据合成与模型训练的空白。通过引入 harness 引导生成高质量 SFT 数据，成功使 30B 规模的模型在深度研究任务中达到了超越同量级模型、媲美超大模型的绩效，为资源受限下的高效长程推理提供了新范式。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) face a fundamental tension between finite context windows and the unbounded context demands of complex, long-horizon real-world tasks. Passive context management methods (e.g., summarization or truncation) lack proactive planning.\n- **Why Existing Work Falls Short**: While the paradigm of a main agent delegating subtasks to subagents saves context, it requires \"Delegation Intelligence\"—the ability to decompose tasks, decide when/how to delegate, and integrate results. Such training data is scarce in natural text, and methods for synthesizing this data and training models remain largely unexplored in the open-source community.\n\n## Core Contributions\n- **Proposed SearchSwarm Framework and SearchSwarm-30B-A3B Model**: Targeting deep research as a representative long-horizon task, the paper designs a harness to synthesize high-quality training data, internalizing delegation intelligence into model weights via supervised fine-tuning.\n- **Challenge 1: Scarcity of High-Quality Delegation Training Data**. The difficulty lies in the rarity of correct task decomposition and delegation decisions in natural text. The paper addresses this by designing a harness that guides the model toward high-quality decomposition and constrains sub-agents, automatically generating trajectories with correct delegation decisions for SFT.\n- **Challenge 2: Integration of Sub-agent Results into Main Workflow**. The difficulty is that improper or redundant returns from sub-agents can consume context or break logic. The paper solves this by strictly constraining sub-agents within the harness to return only properly summarized results that support the main agent's workflow.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The authors release the harness, model weights (SearchSwarm-30B-A3B), and training data. The model is based on a 30B parameter scale (A3B activated).\n- **Evaluation Results**:\n    - Achieved a score of 68.1 on BrowseComp.\n    - Achieved a score of 73.3 on BrowseComp-ZH.\n- **Comparison with Related Work**:\n    - SearchSwarm achieves the best results among all models of comparable scale.\n    - It remains highly competitive against closed-source/open-source models that are over 10× larger (e.g., GPT-5, Claude Opus, Gemini 3), outperforming them in certain Chinese benchmarks.\n\n## 4. Conclusion\nSearchSwarm bridges the gap in synthesizing training data and training models for \"Delegation Intelligence\" in long-horizon agentic tasks. By leveraging a harness-guided approach to generate high-quality SFT data, it enables a 30B-scale model to achieve performance surpassing same-scale models and rivaling much larger models, offering a new paradigm for efficient long-range reasoning under resource constraints.",
-      "render_excerpt": "机构: Tsinghua University, Peking University, Renmin University of China, Ant Group<br>SearchSwarm 填补了开源社区在长周期代理任务中“委托智能”训练数据合成与模型训练的空白。通过引入 harness 引导生成高质量 SFT 数据，成功使 30B 规模的模型在深度研究任务中达到了超越同量级模型、媲美超大模型的绩效，为资源受限下的高效长程推理提供了新范式。",
-      "render_excerpt_en": "Institution: Tsinghua University, Peking University, Renmin University of China, Ant Group<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) face a fundamental tension between finite context windows and the unbounded context demands of complex, long-horizon real-world tasks. Passive context management methods (e.g., summarization or truncation) lack proactive planning.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-08T16:52:26Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-08"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.09669",
-      "date": "2026-06-08",
-      "title": "SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks",
-      "authors": [
-        "Hongcheng Gao",
-        "Hailong Qu",
-        "Jingyi Tang",
-        "Jiahao Wang",
-        "Zihao Huang",
-        "Hengkang Qiao",
-        "Shihong Huang",
-        "Junming Yang",
-        "Yi Li",
-        "Hongyixuan Yuan",
-        "Wenjie Li",
-        "Bohan Zeng",
-        "Wenbo Li",
-        "Bo Wang",
-        "Jianhui Liu",
-        "Olive Huang",
-        "Haoyang Huang",
-        "Wentao Zhang",
-        "Guoqing Huang",
-        "Nan Duan",
-        "Yinpeng Dong"
-      ],
-      "abstract": "Spatial reasoning is a foundational capability for multimodal large language models (MLLMs) to perceive and operate within the physical world. However, existing benchmarks predominantly rely on passive evaluation (e.g., static VQA) or simulator-specific pipelines, failing to assess general interactive spatial understanding. We introduce SpatialWorld, a unified benchmark designed specifically for evaluating the interactive spatial understanding of multimodal agents in complex real-world tasks. Integrating eight heterogeneous simulation backends under a shared, simulator-agnostic protocol, SpatialWorld features 760 human-annotated tasks across diverse domains (e.g., household routines, travel, social collaboration). Agents must solve tasks under vision-only partial observability, actively gathering egocentric visual evidence and expressing decisions via a unified, text-based action interface native to MLLMs. For reliable evaluation, each task includes a human-validated initial state, a reference trajectory, and a terminal-state verifier. Evaluating 15 advanced agents reveals that robust spatial task solving remains challenging: the strongest model, GPT-5, achieves an average task success rate (TSR) of only 17.4%, while the leading open-source model, Qwen-3.5, reaches 14.1%. Further analysis exposes a clear mismatch between task success and execution efficiency, alongside substantial domain-specific performance variations. These bottlenecks in active exploration and long-horizon planning position SpatialWorld as a rigorous testbed for future spatial agents.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.09669v1",
-        "pdf": "https://arxiv.org/pdf/2606.09669v1",
-        "github": null,
-        "blog": "https://spatial-world.github.io"
-      },
-      "institution": "Tsinghua University, Chongqing University, Peking University, ZenoMind AI",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：空间推理是多模态大语言模型（MLLMs）在物理世界中感知和操作的基础能力。现有的基准测试主要依赖于被动评估（如静态视觉问答 VQA）或特定模拟器的流水线，无法评估通用的交互式空间理解能力。\n- **已有工作的不足**：现有基准要么仅评估静态场景识别，缺乏对动态探索和交互任务完成的评估；要么局限于特定的模拟器、传感器假设或动作接口，导致难以区分模型是具备通用的空间推理能力，还是仅仅适应了特定的仿真环境。\n\n## 文章的核心贡献点\n- **提出了一个 SpatialWorld 基准**：这是一个统一的基准，旨在评估多模态代理在复杂现实世界任务中的交互式空间理解能力。\n- **挑战1：异构模拟器环境的统一评估难**。不同仿真后端具有不同的接口和环境特性，难以进行公平对比。**解决方法**：SpatialWorld 整合了8个异构仿真后端，并在共享的、与模拟器无关的协议下运行，通过统一的基于文本的动作接口让 MLLM 原生表达决策，从而实现跨环境的通用评估。\n- **挑战2：部分可观测性下的主动探索与长程规划难**。物理空间是部分可观测的，代理不能从单一视图获取完整信息，需要主动导航收集证据并更新空间信念。**解决方法**：代理必须在仅视觉的部分可观测条件下工作，主动收集以自我为中心的视觉证据，并通过闭环交互完成任务，每个任务均包含人工验证的初始状态、参考轨迹和终端状态验证器以确保评估可靠性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：SpatialWorld 包含760个人工标注的任务，涵盖家庭日常、旅行、社会协作等多个领域。评估涉及15种先进的代理模型。\n- **评估结果**：实验表明 robust 的空间任务解决仍然极具挑战性。最强的模型 GPT-5 的平均任务成功率（TSR）仅为 17.4%，领先的开源模型 Qwen-3.5 达到 14.1%。\n- **对比与分析**：进一步分析揭示了任务成功率与执行效率之间的明显错配，以及不同领域间的显著性能差异。与以往仅关注静态识别或特定模拟器适应性的工作相比，SpatialWorld 暴露了当前模型在主动探索和长程规划方面的瓶颈。\n\n#### 总结\nSpatialWorld 填补了评估 MLLM 交互式空间推理能力的空白，通过整合多个异构仿真环境并强制要求代理在部分可观测条件下进行主动探索，提供了一个严格的测试平台。研究结果表明，尽管 MLLM 发展迅速，但在处理复杂现实世界空间任务时仍面临巨大挑战，特别是在主动探索和长期规划方面，为未来空间代理的研究指明了方向。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Spatial reasoning is a foundational capability for Multimodal Large Language Models (MLLMs) to perceive and operate in the physical world. Existing benchmarks predominantly rely on passive evaluation (e.g., static VQA) or simulator-specific pipelines, failing to assess general interactive spatial understanding.\n- **Limitations of Existing Work**: Current benchmarks either focus on static scene recognition without dynamic exploration or are confined to specific simulators, sensor assumptions, and action interfaces. This makes it difficult to determine if success stems from general spatial reasoning or mere adaptation to a specific simulation environment.\n\n## Core Contributions\n- **Proposed SpatialWorld**: A unified benchmark specifically designed to evaluate the interactive spatial understanding of multimodal agents in complex real-world tasks.\n- **Challenge 1: Difficulty in unified evaluation across heterogeneous simulators**. Different backends have distinct interfaces and characteristics, hindering fair comparison. **Solution**: SpatialWorld integrates eight heterogeneous simulation backends under a shared, simulator-agnostic protocol, using a unified text-based action interface native to MLLMs for decision-making.\n- **Challenge 2: Active exploration and long-horizon planning under partial observability**. Physical spaces are partially observable, requiring agents to actively navigate and update beliefs rather than relying on single-view information. **Solution**: Agents must operate under vision-only partial observability, actively gathering egocentric visual evidence through closed-loop interaction. Each task includes human-validated initial states, reference trajectories, and terminal-state verifiers for reliable evaluation.\n\n## Implementation and Evaluation\n- **Implementation**: The benchmark features 760 human-annotated tasks across diverse domains (household routines, travel, social collaboration). It evaluates 15 advanced agent models.\n- **Results**: Robust spatial task solving remains highly challenging. The strongest model, GPT-5, achieved an average Task Success Rate (TSR) of only 17.4%, while the leading open-source model, Qwen-3.5, reached 14.1%.\n- **Comparison & Analysis**: Unlike previous works focusing on static recognition or simulator-specific adaptation, SpatialWorld exposes a clear mismatch between task success and execution efficiency, along with significant domain-specific performance variations. It highlights bottlenecks in active exploration and long-horizon planning.\n\n## 4. Conclusion\nSpatialWorld fills the gap in evaluating interactive spatial reasoning for MLLMs by integrating multiple heterogeneous simulation environments and requiring active exploration under partial observability. The results demonstrate that despite rapid advancements, current models face significant challenges in complex real-world spatial tasks, particularly in active exploration and long-term planning, providing a rigorous testbed for future research.",
-      "render_excerpt": "机构: Tsinghua University, Chongqing University, Peking University, ZenoMind AI<br>SpatialWorld 填补了评估 MLLM 交互式空间推理能力的空白，通过整合多个异构仿真环境并强制要求代理在部分可观测条件下进行主动探索，提供了一个严格的测试平台。研究结果表明，尽管 MLLM 发展迅速，但在处理复杂现实世界空间任务时仍面临巨大挑战，特别是在主动探索和长期规划方面，为未来空间代理的研究指明了方向。",
-      "render_excerpt_en": "Institution: Tsinghua University, Chongqing University, Peking University, ZenoMind AI<br>## 1. What the Paper Did - **Background**: Spatial reasoning is a foundational capability for Multimodal Large Language Models (MLLMs) to perceive and operate in the physical world. Existing benchmarks predominantly rely on passive evaluation (e.g., static VQA) or simulator-specific pipelines, failing to assess general interactive spatial understanding.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-08T15:51:51Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-08"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.09421",
-      "date": "2026-06-08",
-      "title": "What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents",
-      "authors": [
-        "Qinghua Xing",
-        "Yinda Chen",
-        "Yaping Jin",
-        "Zhenhe Wu",
-        "Bohan Lin",
-        "Hang Zhou",
-        "Xinghao Chen",
-        "Hanting Chen",
-        "Zhiwei Xiong"
-      ],
-      "abstract": "Large language model agents increasingly rely on skills: reusable procedural documents encoding workflows, tool use, implementation patterns, validation checks, and domain rules. Skill rewriting is often treated as prompt compression, but shorter skills can make agents more expensive by removing sparse operational anchors that prevent exploration, debugging, and recovery. We study skill rewriting through this economic lens. Our controlled framework profiles skill structure, rewrites skills using information-preservation strategies, and evaluates the rewrites under fixed task instructions, environments, and verifiers. Experiments on SkillsBench reveal distinct quality--cost trade-offs across strategies: API/code anchoring, workflow guarding, and rule/formula anchoring benefit different task families, with no universally dominant template. In the main held-out evaluation, the learned policy reduces total cost by 7.0\\% and downstream agent-token cost by 6.0\\%; in frozen cross-model transfer, the corresponding reductions average 14.7\\% and 13.7\\%, while verifier quality is preserved. These results position skill design as cost-aware operational knowledge engineering rather than prompt compression. Resources: \\href{https://github.com/1Reminding/Skill_EE}{SkillEE}.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.09421v1",
-        "pdf": "https://arxiv.org/pdf/2606.09421v1",
-        "github": "https://github.com/1Reminding/Skill_EE",
         "blog": null
       },
-      "institution": "University of Science and Technology of China",
+      "institution": "Capital One",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体日益依赖“技能”（Skills），即编码工作流、工具使用、实现模式、验证检查和领域规则的可重用过程文档。为了降低推理成本，通常将技能重写视为提示压缩问题。\n- **已有工作的局限**：现有的方法往往采用均匀压缩策略，忽略了技能中稀疏但关键的“操作锚点”（如API构造函数、命令行标志、验证阈值等）。盲目缩短技能虽然减少了技能本身的Token消耗，但可能移除防止探索、调试和恢复的关键信息，导致下游执行成本（如额外的工具调用、错误恢复）增加，反而使总成本更高。\n\n## 文章的核心贡献点\n- **提出了一个**：基于经济视角的成本感知技能重写框架，将技能设计重新定义为成本感知的操作知识工程，而非简单的文本压缩。\n- **挑战1：如何平衡技能长度与执行稳定性？**\n  - **难点**：均匀压缩会移除稀疏的操作锚点，导致智能体在执行过程中需要更多的探索或陷入错误恢复循环，增加下游Token消耗。\n  - **解决方法**：通过分析技能结构，识别并保留关键的操作锚点（如API/代码锚点、工作流保护、规则/公式锚点），采用信息保留策略进行重写，确保在减少长度的同时维持执行路径的稳定性。\n- **挑战2：不同任务家族对技能结构的依赖性差异巨大，是否存在通用最优模板？**\n  - **难点**：不同类型的任务（如代码生成、数据查询等）对特定锚点的敏感度不同，单一的重写策略难以在所有场景下取得最佳的质量-成本权衡。\n  - **解决方法**：构建了一个受控框架来剖析技能结构，并在SkillsBench上评估不同重写策略。研究发现没有 universally dominant 的模板，而是通过学习到的策略根据任务特性动态选择最佳的重写方式（如API锚定、工作流守护等），以实现特定任务家族下的最优权衡。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估框架**：作者在SkillsBench上进行了实验，构建了包含技能结构剖析、基于信息保留策略的重写以及固定任务指令、环境和验证器下的评估流程。\n- **主要结果**：\n  - 在主要的保留测试集评估中，学习到的策略使总成本降低了7.0%，下游智能体Token成本降低了6.0%。\n  - 在冻结的跨模型迁移场景中，总成本和下游智能体Token成本平均分别降低了14.7%和13.7%，同时保持了验证器的质量（即任务成功率未下降）。\n- **对比分析**：与传统的均匀压缩方法相比，该方法证明了保留特定操作锚点的重要性。实验揭示了不同策略（API/代码锚定、工作流守护、规则/公式锚定）在不同任务家族中的独特优势，表明简单的全局压缩不如针对操作知识工程的精细化重写有效。\n\n#### 总结\n本文挑战了将技能重写等同于提示压缩的传统观点，指出技能中的稀疏操作锚点对智能体的执行效率至关重要。通过引入成本感知的重写框架，作者展示了如何在保持任务执行质量的同时显著降低总体成本。研究结果表明，技能设计应被视为一种操作知识工程，需根据任务特性精细平衡质量与成本，而非一味追求文本长度的缩短。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language model (LLM) agents increasingly rely on \"Skills\"—reusable procedural documents encoding workflows, tool usage, implementation patterns, validation checks, and domain rules. To reduce inference costs, skill rewriting is often treated as prompt compression.\n- **Limitations of Existing Work**: Current methods typically employ uniform compression strategies, ignoring sparse but critical \"operational anchors\" (e.g., API constructors, command-line flags, validation thresholds). Blindly shortening skills may reduce direct token costs but can remove key information needed for exploration, debugging, and recovery, thereby increasing downstream execution costs (e.g., extra tool calls, error recovery loops) and resulting in higher total costs.\n\n## Core Contributions\n- **Proposed a** cost-aware skill rewriting framework from an economic perspective, repositioning skill design as cost-aware operational knowledge engineering rather than simple text compression.\n- **Challenge 1: How to balance skill length with execution stability?**\n  - **Difficulty**: Uniform compression removes sparse operational anchors, causing agents to require more exploration or enter error recovery cycles, which increases downstream token consumption.\n  - **Solution**: By profiling skill structure, the method identifies and preserves key operational anchors (such as API/code anchors, workflow guards, and rule/formula anchors). It employs information-preservation strategies to rewrite skills, ensuring execution path stability while reducing length.\n- **Challenge 2: Significant variation in dependency on skill structure across different task families; is there a universally optimal template?**\n  - **Difficulty**: Different task types (e.g., code generation vs. data querying) have varying sensitivities to specific anchors, making it difficult for a single rewriting strategy to achieve the best quality-cost trade-off across all scenarios.\n  - **Solution**: The authors built a controlled framework to profile skill structures and evaluated different rewriting strategies on SkillsBench. The study found no universally dominant template; instead, a learned policy dynamically selects the best rewriting approach (e.g., API anchoring, workflow guarding) based on task characteristics to achieve optimal trade-offs for specific task families.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation Framework**: Experiments were conducted on SkillsBench, featuring a pipeline for skill structure profiling, rewriting via information-preservation strategies, and evaluation under fixed task instructions, environments, and verifiers.\n- **Key Results**:\n  - In the main held-out evaluation, the learned policy reduced total cost by 7.0% and downstream agent-token cost by 6.0%.\n  - In frozen cross-model transfer scenarios, total cost and downstream agent-token cost were reduced by an average of 14.7% and 13.7%, respectively, while maintaining verifier quality (i.e., task success rates did not drop).\n- **Comparison**: Compared to traditional uniform compression methods, this approach demonstrates the importance of retaining specific operational anchors. The experiments reveal that different strategies (API/code anchoring, workflow guarding, rule/formula anchoring) offer distinct advantages for different task families, indicating that fine-grained rewriting focused on operational knowledge engineering is more effective than simple global compression.\n\n## 4. Conclusion\nThis paper challenges the traditional view of equating skill rewriting with prompt compression, highlighting that sparse operational anchors in skills are crucial for agent execution efficiency. By introducing a cost-aware rewriting framework, the authors demonstrate how to significantly reduce total costs while maintaining task execution quality. The results suggest that skill design should be treated as operational knowledge engineering, requiring a careful balance between quality and cost based on task specifics, rather than blindly pursuing text length reduction.",
-      "render_excerpt": "机构: University of Science and Technology of China<br>本文挑战了将技能重写等同于提示压缩的传统观点，指出技能中的稀疏操作锚点对智能体的执行效率至关重要。通过引入成本感知的重写框架，作者展示了如何在保持任务执行质量的同时显著降低总体成本。研究结果表明，技能设计应被视为一种操作知识工程，需根据任务特性精细平衡质量与成本，而非一味追求文本长度的缩短。",
-      "render_excerpt_en": "Institution: University of Science and Technology of China<br>## 1. What the Paper Did - **Background**: Large language model (LLM) agents increasingly rely on \"Skills\"—reusable procedural documents encoding workflows, tool usage, implementation patterns, validation checks, and domain rules. To reduce inference costs, skill rewriting is often treated as prompt compression.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）在推理和工具调用能力上的进步，智能体系统已能执行涉及工具使用、记忆及跨异构领域协调的多步任务。\n- **已有工作的不足**：现有的基准测试通常局限于少量领域、静态交互设置或简化环境，无法捕捉现实世界中需要持续推理和协调的复杂多域工作流。它们往往强调孤立响应，而忽视了长上下文中的进度维持、中间结果整合以及对原始用户意图的一致性保持，导致无法充分评估智能体在真实部署中的端到端任务完成能力。\n\n## 文章的核心贡献点\n- **提出了一个 T1-Bench**：这是一个高保真、全面的基准测试框架，用于在逼真的面向客户的多域环境中评估智能体系统，涵盖25个不同难度的领域。\n- **挑战1：跨域交互的复杂性与持续性**。现实任务涉及多个服务间的依赖动作，早期错误会传播并影响后续步骤，且需在整个交互中保持意图一致。T1-Bench 通过引入时间依赖的交互和策略约束的工具使用，模拟了这种需要结构化推理的多轮对话场景，从而评估智能体在长程任务中的稳健性。\n- **挑战2：评估维度的单一性与缺乏真实性**。现有基准缺乏对组合复杂性和评估严谨性的深入考察。T1-Bench 通过交织的场景设计大幅增加了组合复杂性，并结合自动评估与人工判断，提供了对智能体行为、工具利用率和对话质量的标准化、可复现评估框架。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究团队使用12种专有和开源权重模型在 T1-Bench 上进行了评估。该基准模拟了多域环境，要求智能体处理 interleaved（交错）场景。\n- **结果与对比**：相较于 prior benchmarks（先前基准），T1-Bench 在任务复杂度、交互深度和领域覆盖面上均有显著提升。实验不仅提供了自动化的量化指标，还通过人工判断增强了定性性能的评估，揭示了当前模型在处理复杂多步、多域协调任务时的局限性，为未来研究提供了更严格的测试标准。\n\n#### 总结\nT1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Recent advances in LLM reasoning and tool-calling have enabled autonomous agents capable of multi-step task execution involving memory and cross-domain coordination.\n- **Limitations of Existing Work**: Current benchmarks are limited by low task complexity, lack of realism, and narrow domain diversity. They often fail to capture realistic multi-step workflows requiring sustained reasoning, ignoring challenges like maintaining context over long interactions, integrating intermediate outcomes, and handling error propagation in tool use.\n\n## Core Contributions\n- **Proposed T1-Bench**: A high-fidelity, comprehensive benchmark for evaluating agentic systems in realistic, customer-facing, multi-domain environments across 25 domains of varying difficulty.\n- **Challenge 1: Complexity of Cross-Domain Interactions**. Real-world tasks require coordinating interdependent actions across services where early errors propagate. T1-Bench addresses this by incorporating temporally dependent interactions and policy-constrained tool use, testing the agent's ability to maintain consistency and structured reasoning over multi-turn dialogues.\n- **Challenge 2: Insufficient Evaluation Rigor**. Existing benchmarks lack compositional complexity. T1-Bench increases evaluative rigor by featuring interleaved scenarios that demand complex reasoning, complemented by both automatic metrics and human judgments to assess behavior, tool utilization, and conversational quality comprehensively.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The authors evaluated 12 proprietary and open-weight models on T1-Bench. The framework provides a reproducible standard for assessing agent performance in complex, multi-step environments.\n- **Results & Comparison**: Compared to prior benchmarks, T1-Bench substantially increases task complexity, interaction depth, and domain coverage. The evaluation highlights the gap between current model capabilities and the demands of realistic deployments, offering a more robust assessment of end-to-end task completion than previous static or single-domain benchmarks.\n\n## 4. Conclusion\nT1-Bench advances the field by providing a realistic testbed for multi-scenario agents. By focusing on end-to-end task completion in simulated multi-domain environments and releasing data and code as open source, it facilitates future research into building more reliable and robust agentic systems capable of handling real-world complexity.",
+      "render_excerpt": "机构: Capital One<br>T1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。",
+      "render_excerpt_en": "Institution: Capital One<br>## 1. What the Paper Does - **Background**: Recent advances in LLM reasoning and tool-calling have enabled autonomous agents capable of multi-step task execution involving memory and cross-domain coordination. - **Limitations of Existing Work**: Current benchmarks are limited by low task complexity, lack of realism, and narrow domain diversity.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-08T12:36:51Z"
+        "captured_at": "2026-06-09T16:32:14Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-08"
+        "captured_at": "2026-06-09"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.10917",
+      "date": "2026-06-09",
+      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
+      "authors": [
+        "Xucong Wang",
+        "Ziyu Ma",
+        "Shidong Yang",
+        "Tongwen Huang",
+        "Pengkun Wang",
+        "Yong Wang",
+        "Xiangxiang Chu"
+      ],
+      "abstract": "Although Large Language Model (LLM) agents have demonstrated strong performance on complex tasks, their learning is often limited by inefficient interaction feedback and static training environments, which hinder broader generalization. To address these limitations, this paper introduces Role-Agent, \\textcolor{black}{a framework} that harnesses a single LLM to function concurrently as both the agent and the environment, enabling a bootstrapped co-evolution. Role-Agent comprises two synergistic components: World-In-Agent (WIA) and Agent-In-World (AIW). In WIA, the LLM acts as the agent and predicts future states after each action; the alignment between predicted and actual states is then used as a process reward, encouraging environment-aware reasoning. In AIW, the LLM analyzes failure modes from failed trajectories and retrieves tasks with similar failure patterns, thereby reshaping the training data distribution for targeted practice. Experiments on multiple benchmarks show that Role-Agent consistently improves performance, yielding an average gain of over 4\\% over strong baselines.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.10917v1",
+        "pdf": "https://arxiv.org/pdf/2606.10917v1",
+        "github": "https://github.com/AMAP-ML/roleagent",
+        "blog": null
+      },
+      "institution": "University of Science and Technology of China; AMAP, Alibaba Group",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n\n**背景**\n大型语言模型（LLM）智能体在复杂任务中表现出色，但其学习过程常受限于低效的交互反馈和静态的训练环境，这阻碍了更广泛的泛化能力。现有的代理强化学习（ARL）虽然通过环境反馈优化策略，但大多将环境视为固定的任务来源。\n\n**已有的工作为什么解决不了**\n现有方法主要存在两个局限：一是静态环境提供的反馈稀疏且非特异性，限制了智能体的探索效率；二是构建合成环境虽然能适配智能体，但需要高昂的人力和运行成本。此外，大多数自进化方法仅进化智能体本身，而未能让环境动态适应以诊断智能体的隐藏弱点或针对其失败模式提供反馈。\n\n## 文章的核心贡献点\n\n**提出了一个 Role-Agent 框架**\n该框架利用单个 LLM 同时充当智能体和环境，实现引导式的协同进化。它包含两个协同组件：Agent-In-World (AIW) 和 World-In-Agent (WIA)。\n\n**挑战1：如何在不依赖外部昂贵合成环境的情况下，提供密集且具有环境意识的过程奖励？**\n传统方法难以获得细粒度的过程监督信号。Role-Agent 通过 WIA 组件解决此问题：LLM 作为智能体在执行动作后预测未来状态，并将预测状态与实际状态的对齐程度作为过程奖励，从而鼓励具备环境意识的推理能力，无需额外标注或昂贵模拟。\n\n**挑战2：如何自动识别智能体的弱点并动态调整训练数据分布以进行针对性练习？**\n静态训练数据无法针对智能体的特定失败模式进行优化。Role-Agent 通过 AIW 组件解决此问题：LLM 分析失败轨迹中的失败模式，并检索具有相似失败模式的任务，从而重塑训练数据分布，使智能体能够针对其薄弱环节进行集中强化训练。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n\n**实现与部署**\nRole-Agent 是一个基于单一 LLM 的框架，通过角色切换机制实现智能体与环境的协同进化。代码已开源在 GitHub (AMAP-ML/roleagent)。\n\n**Evaluation 结果**\n在多个基准测试上的实验表明，Role-Agent 一致地提升了性能。与强大的基线模型相比，平均性能提升超过 4%。这证明了通过双角色进化机制，智能体能够在没有外部复杂环境支持的情况下，通过自我博弈和针对性训练获得更强的泛化和推理能力。\n\n**对比**\n相比于传统的静态环境训练和高成本的合成环境方法，Role-Agent 以更低的成本实现了更高效的反馈循环和更具针对性的能力进化。\n\n#### 总结\n\nRole-Agent 提出了一种新颖的 LLM 智能体训练范式，通过让单一模型在智能体和环境之间切换角色，解决了传统方法中反馈低效和环境静态的问题。其核心创新在于利用状态预测对齐作为过程奖励（WIA），以及基于失败模式分析的数据分布重塑（AIW）。实验结果证实该方法能显著提升智能体性能，为低成本、高效率的智能体自进化提供了新的思路。",
+      "summary_en": "## 1. What the Paper Does\n\n**Background**\nWhile Large Language Model (LLM) agents show strong performance on complex tasks, their learning is often constrained by inefficient interaction feedback and static training environments, hindering broader generalization. Existing Agentic Reinforcement Learning (ARL) methods optimize policies via environment feedback but typically treat the environment as a fixed source of tasks.\n\n**Why Existing Work Falls Short**\nCurrent approaches face two main limitations: static environments provide sparse, non-specific feedback that limits exploration efficiency, while constructing synthetic environments to adapt to agents incurs high labor and runtime costs. Furthermore, most self-evolving methods only evolve the agent itself, failing to dynamically adapt the environment to diagnose hidden weaknesses or provide feedback targeted at specific failure modes.\n\n## Core Contributions\n\n**Proposed Role-Agent Framework**\nThe paper introduces Role-Agent, a framework that leverages a single LLM to function concurrently as both the agent and the environment, enabling bootstrapped co-evolution. It consists of two synergistic components: Agent-In-World (AIW) and World-In-Agent (WIA).\n\n**Challenge 1: How to provide dense, environment-aware process rewards without relying on expensive external synthetic environments?**\nTraditional methods struggle to obtain fine-grained process supervision signals. Role-Agent addresses this via the WIA component: the LLM, acting as the agent, predicts future states after each action. The alignment between predicted and actual states serves as a process reward, encouraging environment-aware reasoning without requiring extra annotations or costly simulations.\n\n**Challenge 2: How to automatically identify agent weaknesses and dynamically adjust training data distribution for targeted practice?**\nStatic training data cannot optimize for specific agent failure modes. Role-Agent solves this through the AIW component: the LLM analyzes failure modes from failed trajectories and retrieves tasks with similar failure patterns. This reshapes the training data distribution, allowing the agent to focus on reinforcing its weak points.\n\n## Implementation and Evaluation\n\n**Implementation and Deployment**\nRole-Agent is a framework based on a single LLM that achieves co-evolution through a role-switching mechanism. The code is open-sourced on GitHub (AMAP-ML/roleagent).\n\n**Evaluation Results**\nExperiments across multiple benchmarks demonstrate that Role-Agent consistently improves performance, yielding an average gain of over 4% compared to strong baselines. This proves that the dual-role evolution mechanism enables agents to achieve stronger generalization and reasoning capabilities through self-play and targeted training, without the need for complex external environments.\n\n**Comparison**\nCompared to traditional static environment training and high-cost synthetic environment methods, Role-Agent achieves a more efficient feedback loop and more targeted capability evolution at a lower cost.\n\n#### Summary\n\nRole-Agent proposes a novel paradigm for training LLM agents by allowing a single model to switch roles between agent and environment, addressing the issues of inefficient feedback and static environments in traditional methods. Its core innovations lie in using state prediction alignment as process rewards (WIA) and reshaping data distribution based on failure mode analysis (AIW). Experimental results confirm that this method significantly enhances agent performance, offering a new direction for low-cost, high-efficiency agent self-evolution.",
+      "render_excerpt": "机构: University of Science and Technology of China; AMAP, Alibaba Group<br>Role-Agent 提出了一种新颖的 LLM 智能体训练范式，通过让单一模型在智能体和环境之间切换角色，解决了传统方法中反馈低效和环境静态的问题。其核心创新在于利用状态预测对齐作为过程奖励（WIA），以及基于失败模式分析的数据分布重塑（AIW）。实验结果证实该方法能显著提升智能体性能，为低成本、高效率的智能体自进化提供了新的思路。",
+      "render_excerpt_en": "Institution: University of Science and Technology of China; AMAP, Alibaba Group<br>Role-Agent proposes a novel paradigm for training LLM agents by allowing a single model to switch roles between agent and environment, addressing the issues of inefficient feedback and static environments in traditional methods. Its core innovations lie in using state prediction alignment as process rewards (WIA) and reshaping data distribution based on failure mode analysis (AIW). Experimental results confirm that this method significantly enhances agent performance, offering a new direction for low-cost, high-efficiency agent self-evolution.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-09T14:28:07Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-09"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.10749",
+      "date": "2026-06-09",
+      "title": "Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation",
+      "authors": [
+        "Yuchen Ling",
+        "Shengcheng Yu",
+        "Zhenyu Chen",
+        "Chunrong Fang"
+      ],
+      "abstract": "Large language model (LLM) agents are rapidly moving from conversational interfaces to software components that plan, invoke tools, maintain memory, and act on external environments. This transition changes the nature of security risk. In agentic settings, failures are no longer limited to unsafe text generation. Untrusted content may redirect control flow, misuse tool privileges, corrupt persistent state, leak sensitive information, or trigger harmful external actions. At the same time, research on LLM agent security is expanding quickly but remains fragmented across attack families, defense layers, application domains, and evaluation settings. This paper synthesizes 247 papers through a lifecycle-based, systems-oriented framework that models agent security around the interaction of information flow, delegated authority, and persistent state. We organize the literature around four questions: how LLM agent security should be modeled, which threat surfaces and attack families dominate, what defenses have been proposed and with what tradeoffs, and how security claims are evaluated. We find that prompt injection and tool-mediated control-flow hijacking still dominate the field, while persistent state corruption and multi-agent propagation are becoming central emerging concerns. We further find that current defenses provide useful building blocks but remain weakly compositional, and that existing benchmarks still underrepresent long-horizon, stateful, and deployment-sensitive risks. We argue that secure LLM agents require explicit trust boundaries, principled privilege control, provenance-aware state management, and evaluation practices aligned with realistic operational settings.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.10749v1",
+        "pdf": "https://arxiv.org/pdf/2606.10749v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体正从单纯的对话界面演变为能够规划、调用工具、维护记忆并作用于外部环境的软件组件。这种转变使得安全风险不再局限于不安全的文本生成，而是扩展到控制流重定向、工具权限滥用、持久状态破坏、敏感信息泄露以及触发有害外部行动等系统级风险。\n- **已有工作为什么解决不了**：当前关于 LLM 智能体安全的研究虽然迅速扩展，但在攻击家族、防御层、应用领域和评估设置方面仍然碎片化。现有的防御措施组合性弱，且现有基准测试未能充分代表长 horizon、有状态以及对部署敏感的风险，缺乏统一的系统化视角来建模信息流、委托权限和持久状态之间的交互。\n\n## 文章的核心贡献点\n- **提出了一个**基于生命周期和系统导向的框架，通过综合分析 247 篇论文，围绕信息流、委托权限和持久状态的交互来建模智能体安全。\n- **挑战1：威胁面与攻击家族的碎片化与演变**。难点在于攻击手段从简单的提示注入演变为复杂的工具介导控制流劫持及多智能体传播，难以全面覆盖。论文通过系统化分类，指出提示注入和控制流劫持仍占主导，但持久状态腐蚀和多智能体传播正成为核心新兴关注点，从而明确了防御重点。\n- **挑战2：防御措施的弱组合性与评估基准的不足**。难点在于现有防御往往是孤立的构建块，缺乏系统性整合，且基准测试脱离实际部署场景。论文论证了安全的 LLM 智能体需要明确的信任边界、原则性的权限控制、感知来源的状态管理，以及与现实操作环境对齐的评估实践，为构建组合式防御提供了理论依据。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- 本文为一篇综述性论文，未提出新的具体算法实现或单一部署系统，而是对现有文献进行了综合评估。\n- **评估结果**：通过对 247 篇相关论文的分析，发现当前研究领域在攻击层面主要集中在提示注入和工具介导的控制流劫持；在防御层面，现有方法虽有用但组合性差；在评估层面，现有基准测试低估了长周期、有状态和部署敏感的风险。\n- **对比**：相较于以往仅关注文本安全或孤立攻击面的研究，本文提供了更全面的系统视图，强调了从“文本安全”到“代理系统安全”的范式转变，并指出了未来研究在信任边界和权限控制上的缺口。\n\n#### 总结\n本文系统地梳理了 LLM 智能体安全领域的现状，指出了从对话式 AI 向自主代理转变带来的新安全挑战。通过构建基于生命周期的系统框架，文章揭示了当前研究在威胁建模、防御组合性和评估真实性方面的不足，并呼吁建立明确的信任边界、严格的权限控制和更符合实际部署环境的评估标准，为未来构建安全的 LLM 智能体系统指明了方向。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents are evolving from conversational interfaces into software components capable of planning, tool invocation, memory maintenance, and acting on external environments. This transition shifts security risks beyond unsafe text generation to include control flow redirection, tool privilege misuse, persistent state corruption, sensitive data leakage, and harmful external actions.\n- **Why Existing Work Falls Short**: Current research on LLM agent security is fragmented across attack families, defense layers, and evaluation settings. Existing defenses are weakly compositional, and benchmarks fail to adequately represent long-horizon, stateful, and deployment-sensitive risks, lacking a unified systems-oriented perspective on the interaction between information flow, delegated authority, and persistent state.\n\n## Core Contributions\n- **Proposed a** lifecycle-based, systems-oriented framework that synthesizes 247 papers to model agent security around the interaction of information flow, delegated authority, and persistent state.\n- **Challenge 1: Fragmentation and Evolution of Threat Surfaces**. The difficulty lies in the shift from simple prompt injections to complex tool-mediated control-flow hijacking and multi-agent propagation. The paper addresses this by systematically categorizing threats, identifying that while prompt injection remains dominant, persistent state corruption and multi-agent propagation are emerging as central concerns, thereby clarifying defense priorities.\n- **Challenge 2: Weak Composability of Defenses and Inadequate Benchmarks**. The challenge is that current defenses are isolated building blocks lacking systemic integration, and benchmarks are disconnected from real-world deployment. The paper argues that secure agents require explicit trust boundaries, principled privilege control, provenance-aware state management, and evaluation practices aligned with realistic operational settings, providing a theoretical basis for composable defenses.\n\n## Implementation and Evaluation\n- As a survey paper, it does not propose a new algorithm or single deployment system but provides a comprehensive evaluation of existing literature.\n- **Evaluation Results**: Analysis of 247 papers reveals that attacks are dominated by prompt injection and tool-mediated control-flow hijacking. Defenses are useful but lack composability. Benchmarks significantly underrepresent long-horizon, stateful, and deployment-sensitive risks.\n- **Comparison**: Unlike previous works focusing solely on text safety or isolated attack vectors, this paper offers a holistic system view, highlighting the paradigm shift from \"text safety\" to \"agent system security\" and identifying gaps in trust boundaries and privilege control.\n\n## 4. Conclusion\nThis paper systematically reviews the state of LLM agent security, highlighting new challenges arising from the transition to autonomous agents. By constructing a lifecycle-based systems framework, it exposes deficiencies in threat modeling, defense composability, and evaluation realism. It calls for explicit trust boundaries, strict privilege control, and evaluation standards aligned with real-world deployment, charting a course for future research in building secure LLM agent systems.",
+      "render_excerpt": "机构: State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich<br>本文系统地梳理了 LLM 智能体安全领域的现状，指出了从对话式 AI 向自主代理转变带来的新安全挑战。通过构建基于生命周期的系统框架，文章揭示了当前研究在威胁建模、防御组合性和评估真实性方面的不足，并呼吁建立明确的信任边界、严格的权限控制和更符合实际部署环境的评估标准，为未来构建安全的 LLM 智能体系统指明了方向。",
+      "render_excerpt_en": "Institution: State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich<br>## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents are evolving from conversational interfaces into software components capable of planning, tool invocation, memory maintenance, and acting on external environments. This transition shifts security risks beyond unsafe text generation to include control flow redirection, tool privilege misuse, persistent state corruption, sensitive data leakage, and harmful external actions.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-09T12:01:07Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-09"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
