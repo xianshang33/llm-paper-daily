@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.10_05:54-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.11_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月10日 05:54</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月11日 06:13</sub></summary>
 <br>
 
-- ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity 
-- TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning 
-- T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains 
-- Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution 
-- Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation 
+- Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks 
+- Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application 
+- Exploration Structure in LLM Agents for Multi-File Change Localization 
+- APPO: Agentic Procedural Policy Optimization 
+- A Lightweight Multi-Agent Framework for Automated Concrete Barrier Design 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-10</span> | **Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks**<br><sub>机构: University of Hong Kong<br>Claw-SWE-Bench 填补了通用智能体在仓库级编码任务评估上的空白，通过标准化适配器协议和严格的评估契约，实现了不同智能体 harness 之间的公平比较。研究结果表明，harness 的设计和适配器的质量对最终性能有决定性影响，且成本效率是评估中不可忽视的关键指标。该基准为未来开发高效、低成本的编码智能体提供了重要的参考标准和数据支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12344v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12344.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/opensquilla/claw-swe-bench)</div> |
+| <span style='display: inline-block; width: 42px;'>06-10</span> | **Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>本文填补了LLM智能体环境研究在系统性分类和深度分析方面的空白。通过构建涵盖建模、合成、评估和应用的全生命周期框架，文章不仅厘清了当前代表性环境的核心能力与发展路径，还深入探讨了自动化环境合成的两种主要范式及其评估方法。特别地，文章从智能体与环境协同进化的角度，详细阐述了智能体进化的四种路径和环境进化的三种范式，为未来构建更高效、更逼真的智能体训练环境提供了理论指导和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12191v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12191.md)  |
+| <span style='display: inline-block; width: 42px;'>06-10</span> | **Exploration Structure in LLM Agents for Multi-File Change Localization**<br><sub>机构: Singapore Management University<br>本文指出了当前 LLM 代理在代码库探索中采用的线性模式在处理多文件变更时的结构性缺陷。通过提出一种非线性的、领域范围的并行代理探索方法，证明了即使使用较小的模型，也能在覆盖率和准确性上超越传统的线性探索基线。研究还揭示了原始文件系统访问的风险以及多代理咨询的成本效益问题，为未来构建更高效的软件工程代理提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11976v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11976.md)  |
+| <span style='display: inline-block; width: 42px;'>06-10</span> | **APPO: Agentic Procedural Policy Optimization**<br><sub>机构: University of Science and Technology of China; AMAP, Alibaba Group; Southern University of Science and Technology<br>本文针对代理强化学习中信用分配粗糙的问题，提出了 APPO 框架。通过引入结合不确定性与似然增益的分支评分机制，以及过程级优势缩放，APPO 实现了从粗粒度单元到细粒度决策点的转变。实验证明，该方法在多个基准上显著提升了代理性能，同时保持了高效性和可解释性，为长 horizon 任务中的精细信用分配提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12384v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12384.md)  |
+| <span style='display: inline-block; width: 42px;'>06-10</span> | **A Lightweight Multi-Agent Framework for Automated Concrete Barrier Design**<br><sub>机构: Hunan University; University of Miami<br>本文针对钢筋混凝土护栏设计中的复杂约束和人工效率低下问题，提出了一种轻量级的多智能体自动化设计框架。通过“生成-评估-优化”的闭环机制，有效解决了 LLM 的幻觉和物理 grounding 不足问题。实验表明，该方法不仅准确率高达 98% 以上，还揭示了小参数模型在特定工程任务中超越大模型的潜力，为降低 AI 辅助工程工具的计算成本和提升可访问性提供了新路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12040v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12040.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/MXY820/barrier-design)</div> |
 | <span style='display: inline-block; width: 42px;'>06-09</span> | **ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity**<br><sub>机构: SecureBio, Active Site<br>本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11150v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11150.md)  |
 | <span style='display: inline-block; width: 42px;'>06-09</span> | **TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning**<br><sub>机构: Tsinghua University, Tencent<br>TRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11119v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11119.md)  |
 | <span style='display: inline-block; width: 42px;'>06-09</span> | **T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains**<br><sub>机构: Capital One<br>T1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11070v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11070.md)  |

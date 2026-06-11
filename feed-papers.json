@@ -1,42 +1,52 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-10T05:54:53.502048+00:00",
-  "run_date": "2026-06-09",
+  "generated_at": "2026-06-11T06:13:04.336146+00:00",
+  "run_date": "2026-06-10",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.11150",
-      "date": "2026-06-09",
-      "title": "ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity",
+      "id": "arxiv:2606.12344",
+      "date": "2026-06-10",
+      "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Andrew Bo Liu",
-        "Samira Nedungadi",
-        "Bryce Cai",
-        "Alex Kleinman",
-        "Harmon Bhasin",
-        "Seth Donoughe"
+        "Mengyu Zheng",
+        "Kai Han",
+        "Boxun Li",
+        "Haiyang Xu",
+        "Yuchuan Tian",
+        "Wei He",
+        "Hang Zhou",
+        "Jianyuan Guo",
+        "Hailin Hu",
+        "Lin Ma",
+        "Chao Xu",
+        "Guohao Dai",
+        "Lixue Xia",
+        "Yunchao Wei",
+        "Yunhe Wang",
+        "Yu Wang"
       ],
-      "institution": "SecureBio, Active Site",
+      "institution": "University of Hong Kong",
       "summary": {
-        "zh": "本文引入了 ABC-Bench，首个针对生物安全领域的智能体能力基准测试。通过结合干实验评估与湿实验验证，证明了当前先进的 LLM 智能体在生物操作和双用途任务上已超越普通人类专家水平。该基准为制定生物安全 safeguards、威胁建模以及评估防护措施（如机器遗忘）的有效性提供了关键的工具和数据支持，强调了在 AI 生物能力快速发展的背景下，建立针对性安全评估标准的紧迫性。",
-        "en": "- **Background**: Large Language Models (LLMs) and their agents are rapidly acquiring capabilities in biological research, ranging from literature synthesis to executing complex in silico biology tasks previously..."
+        "zh": "Claw-SWE-Bench 填补了通用智能体在仓库级编码任务评估上的空白，通过标准化适配器协议和严格的评估契约，实现了不同智能体 harness 之间的公平比较。研究结果表明，harness 的设计和适配器的质量对最终性能有决定性影响，且成本效率是评估中不可忽视的关键指标。该基准为未来开发高效、低成本的编码智能体提供了重要的参考标准和数据支持。",
+        "en": "- **Background**: General-purpose agents like OpenClaw are increasingly used as autonomous tool users, but their coding capabilities on real software engineering tasks are difficult to measure using existing SWE-bench..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.11150v1",
-        "pdf": "https://arxiv.org/pdf/2606.11150v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.12344v1",
+        "pdf": "https://arxiv.org/pdf/2606.12344v1",
+        "github": "https://github.com/opensquilla/claw-swe-bench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.11150.md",
-        "summary_en_path": "summary_en/2026-06/2606.11150.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11150.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11150.md"
+        "summary_zh_path": "summary/2026-06/2606.12344.md",
+        "summary_en_path": "summary_en/2026-06/2606.12344.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.12344.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.12344.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,43 +63,46 @@
       }
     },
     {
-      "id": "arxiv:2606.11119",
-      "date": "2026-06-09",
-      "title": "TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning",
+      "id": "arxiv:2606.12191",
+      "date": "2026-06-10",
+      "title": "Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Heming Zou",
-        "Qi Wang",
-        "Yun Qu",
-        "Yuhang Jiang",
-        "Lizhou Cai",
-        "Yixiu Mao",
-        "Ru Peng",
-        "Xin Xu",
-        "Weijie Liu",
-        "Kai Yang",
-        "Saiyong Yang",
-        "Xiangyang Ji"
+        "Jiachun Li",
+        "Zhuoran Jin",
+        "Tianyi Men",
+        "Yupu Hao",
+        "Kejian Zhu",
+        "Lingshuai Wang",
+        "Dongqi Huang",
+        "Longxiang Wang",
+        "Shengjia Hua",
+        "Lu Wang",
+        "Jinshan Gao",
+        "Hongbang Yuan",
+        "Ruilin Xu",
+        "Kang Liu",
+        "Jun Zhao"
       ],
-      "institution": "Tsinghua University, Tencent",
+      "institution": "Institute of Automation, Chinese Academy of Sciences",
       "summary": {
-        "zh": "TRACE解决了RLVR中因奖励对比度不足导致的低效问题。它突破了传统仅在提示词级别分配预算的局限，创新性地将预算分配细化到多轮交互的前缀级别，利用树状rollout结构和成功率预测器，实现了更高效的探索和利用。实验表明，该方法在不增加计算成本的前提下，显著提升了智能体在复杂推理任务上的表现。",
-        "en": "- **Background**: Reinforcement Learning with Verifiable Rewards (RLVR) is a key approach for enhancing reasoning and agentic behaviors in LLMs. However, rollout-intensive policy optimization is computationally..."
+        "zh": "本文填补了LLM智能体环境研究在系统性分类和深度分析方面的空白。通过构建涵盖建模、合成、评估和应用的全生命周期框架，文章不仅厘清了当前代表性环境的核心能力与发展路径，还深入探讨了自动化环境合成的两种主要范式及其评估方法。特别地，文章从智能体与环境协同进化的角度，详细阐述了智能体进化的四种路径和环境进化的三种范式，为未来构建更高效、更逼真的智能体训练环境提供了理论指导和研究方向。",
+        "en": "This paper fills the gap in systematic categorization and deep analysis within the field of LLM agentic environment research. By constructing a full-lifecycle framework covering modeling, synthesis, evaluation, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.11119v1",
-        "pdf": "https://arxiv.org/pdf/2606.11119v1",
+        "abs": "http://arxiv.org/abs/2606.12191v1",
+        "pdf": "https://arxiv.org/pdf/2606.12191v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.11119.md",
-        "summary_en_path": "summary_en/2026-06/2606.11119.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11119.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11119.md"
+        "summary_zh_path": "summary/2026-06/2606.12191.md",
+        "summary_en_path": "summary_en/2026-06/2606.12191.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.12191.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.12191.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -106,46 +119,35 @@
       }
     },
     {
-      "id": "arxiv:2606.11070",
-      "date": "2026-06-09",
-      "title": "T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains",
+      "id": "arxiv:2606.11976",
+      "date": "2026-06-10",
+      "title": "Exploration Structure in LLM Agents for Multi-File Change Localization",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Genta Indra Winata",
-        "Amartya Chakraborty",
-        "Yuzhen Lin",
-        "Swasthi P Rao",
-        "Shikhhar Siingh",
-        "Houhan Lu",
-        "Nadia Bathaee",
-        "Sriharsha Hatwar",
-        "Paresh Dashore",
-        "Anmol Jain",
-        "Kshitij Tayal",
-        "Xiuzhu Lin",
-        "Anirban Das",
-        "Sambit Sahu",
-        "Shi-Xiong Zhang"
+        "Akeela Darryl Fattha",
+        "Kia Ying Chua",
+        "Lingxiao Jiang",
+        "Laura Wynter"
       ],
-      "institution": "Capital One",
+      "institution": "Singapore Management University",
       "summary": {
-        "zh": "T1-Bench 填补了现有基准在 realism（真实性）和 multi-domain complexity（多域复杂性）方面的空白。通过模拟真实的客户服务场景，它强调了端到端任务完成的重要性，并为评估智能体在动态、约束环境下的推理和协调能力提供了开源的数据和代码支持，推动了智能体系统向更可靠、更实用的方向发展。",
-        "en": "- **Background**: Recent advances in LLM reasoning and tool-calling have enabled autonomous agents capable of multi-step task execution involving memory and cross-domain coordination. - **Limitations of Existing Work**:..."
+        "zh": "本文指出了当前 LLM 代理在代码库探索中采用的线性模式在处理多文件变更时的结构性缺陷。通过提出一种非线性的、领域范围的并行代理探索方法，证明了即使使用较小的模型，也能在覆盖率和准确性上超越传统的线性探索基线。研究还揭示了原始文件系统访问的风险以及多代理咨询的成本效益问题，为未来构建更高效的软件工程代理提供了重要见解。",
+        "en": "- **Background**: Software engineering tools increasingly rely on LLM-based agents to localize files for issue resolution. Most existing AI agents employ a linear exploration pattern, visiting one directory or file per..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.11070v1",
-        "pdf": "https://arxiv.org/pdf/2606.11070v1",
+        "abs": "http://arxiv.org/abs/2606.11976v1",
+        "pdf": "https://arxiv.org/pdf/2606.11976v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.11070.md",
-        "summary_en_path": "summary_en/2026-06/2606.11070.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11070.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11070.md"
+        "summary_zh_path": "summary/2026-06/2606.11976.md",
+        "summary_en_path": "summary_en/2026-06/2606.11976.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.11976.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.11976.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -162,9 +164,9 @@
       }
     },
     {
-      "id": "arxiv:2606.10917",
-      "date": "2026-06-09",
-      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
+      "id": "arxiv:2606.12384",
+      "date": "2026-06-10",
+      "title": "APPO: Agentic Procedural Policy Optimization",
       "topic": "agent",
       "language": [
         "zh",
@@ -173,27 +175,28 @@
       "authors": [
         "Xucong Wang",
         "Ziyu Ma",
-        "Shidong Yang",
-        "Tongwen Huang",
-        "Pengkun Wang",
         "Yong Wang",
+        "Yuxiang Ji",
+        "Shidong Yang",
+        "Guanhua Chen",
+        "Pengkun Wang",
         "Xiangxiang Chu"
       ],
-      "institution": "University of Science and Technology of China; AMAP, Alibaba Group",
+      "institution": "University of Science and Technology of China; AMAP, Alibaba Group; Southern University of Science and Technology",
       "summary": {
-        "zh": "Role-Agent 提出了一种新颖的 LLM 智能体训练范式，通过让单一模型在智能体和环境之间切换角色，解决了传统方法中反馈低效和环境静态的问题。其核心创新在于利用状态预测对齐作为过程奖励（WIA），以及基于失败模式分析的数据分布重塑（AIW）。实验结果证实该方法能显著提升智能体性能，为低成本、高效率的智能体自进化提供了新的思路。",
-        "en": "Role-Agent proposes a novel paradigm for training LLM agents by allowing a single model to switch roles between agent and environment, addressing the issues of inefficient feedback and static environments in traditional..."
+        "zh": "本文针对代理强化学习中信用分配粗糙的问题，提出了 APPO 框架。通过引入结合不确定性与似然增益的分支评分机制，以及过程级优势缩放，APPO 实现了从粗粒度单元到细粒度决策点的转变。实验证明，该方法在多个基准上显著提升了代理性能，同时保持了高效性和可解释性，为长 horizon 任务中的精细信用分配提供了新思路。",
+        "en": "- **Background**: Large Language Model (LLM) agents have significantly improved multi-turn tool-use capabilities driven by Reinforcement Learning (RL). However, existing Reinforcement Learning with Verifiable Rewards..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.10917v1",
-        "pdf": "https://arxiv.org/pdf/2606.10917v1",
-        "github": "https://github.com/AMAP-ML/roleagent"
+        "abs": "http://arxiv.org/abs/2606.12384v1",
+        "pdf": "https://arxiv.org/pdf/2606.12384v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.10917.md",
-        "summary_en_path": "summary_en/2026-06/2606.10917.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.10917.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.10917.md"
+        "summary_zh_path": "summary/2026-06/2606.12384.md",
+        "summary_en_path": "summary_en/2026-06/2606.12384.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.12384.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.12384.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -210,35 +213,36 @@
       }
     },
     {
-      "id": "arxiv:2606.10749",
-      "date": "2026-06-09",
-      "title": "Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation",
+      "id": "arxiv:2606.12040",
+      "date": "2026-06-10",
+      "title": "A Lightweight Multi-Agent Framework for Automated Concrete Barrier Design",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuchen Ling",
-        "Shengcheng Yu",
-        "Zhenyu Chen",
-        "Chunrong Fang"
+        "Wanting Wang",
+        "Xiye Ma",
+        "Yuyang He",
+        "Minghui Cheng",
+        "Ran Cao"
       ],
-      "institution": "State Key Laboratory for Novel Software Technology, Nanjing University; Technical University of Munich",
+      "institution": "Hunan University; University of Miami",
       "summary": {
-        "zh": "本文系统地梳理了 LLM 智能体安全领域的现状，指出了从对话式 AI 向自主代理转变带来的新安全挑战。通过构建基于生命周期的系统框架，文章揭示了当前研究在威胁建模、防御组合性和评估真实性方面的不足，并呼吁建立明确的信任边界、严格的权限控制和更符合实际部署环境的评估标准，为未来构建安全的 LLM 智能体系统指明了方向。",
-        "en": "- **Background**: Large Language Model (LLM) agents are evolving from conversational interfaces into software components capable of planning, tool invocation, memory maintenance, and acting on external environments...."
+        "zh": "本文针对钢筋混凝土护栏设计中的复杂约束和人工效率低下问题，提出了一种轻量级的多智能体自动化设计框架。通过“生成-评估-优化”的闭环机制，有效解决了 LLM 的幻觉和物理 grounding 不足问题。实验表明，该方法不仅准确率高达 98% 以上，还揭示了小参数模型在特定工程任务中超越大模型的潜力，为降低 AI 辅助工程工具的计算成本和提升可访问性提供了新路径。",
+        "en": "- **Background**: The design of reinforced concrete highway barriers is a safety-critical process requiring strict compliance with regulations like AASHTO-LRFD. Current practices rely heavily on manual, iterative, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.10749v1",
-        "pdf": "https://arxiv.org/pdf/2606.10749v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.12040v1",
+        "pdf": "https://arxiv.org/pdf/2606.12040v1",
+        "github": "https://github.com/MXY820/barrier-design"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.10749.md",
-        "summary_en_path": "summary_en/2026-06/2606.10749.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.10749.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.10749.md"
+        "summary_zh_path": "summary/2026-06/2606.12040.md",
+        "summary_en_path": "summary_en/2026-06/2606.12040.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.12040.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.12040.md"
       },
       "signals": {
         "priority_keyword": "Agent"
