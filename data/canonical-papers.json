@@ -1,119 +1,71 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-11T06:13:04.336146+00:00",
-  "run_date": "2026-06-10",
+  "generated_at": "2026-06-12T06:08:34.640664+00:00",
+  "run_date": "2026-06-11",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.12344",
-      "date": "2026-06-10",
-      "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+      "paper_id": "2606.13608",
+      "date": "2026-06-11",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
       "authors": [
-        "Mengyu Zheng",
-        "Kai Han",
-        "Boxun Li",
-        "Haiyang Xu",
-        "Yuchuan Tian",
-        "Wei He",
-        "Hang Zhou",
-        "Jianyuan Guo",
-        "Hailin Hu",
-        "Lin Ma",
-        "Chao Xu",
-        "Guohao Dai",
-        "Lixue Xia",
-        "Yunchao Wei",
-        "Yunhe Wang",
-        "Yu Wang"
+        "Xiaoyuan Liu",
+        "Jianhong Tu",
+        "Yuqi Chen",
+        "Siyuan Xie",
+        "Sihan Ren",
+        "Tianneng Shi",
+        "Gal Gantar",
+        "Evan Sandoval",
+        "Donghyun Lee",
+        "Daniel Miao",
+        "Peter J. Gilbert",
+        "Nick Hynes",
+        "Mauro Staver",
+        "Warren He",
+        "David Marn",
+        "Andrew Low",
+        "Xi Zhang",
+        "Elron Bandel",
+        "Michal Shmueli-Scheuer",
+        "Siva Reddy",
+        "Alexandre Drouin",
+        "Alexandre Lacoste",
+        "Ramayya Krishnan",
+        "Elham Tabassi",
+        "Yu Su",
+        "Victor Barres",
+        "Chenguang Wang",
+        "Wenbo Guo",
+        "Dawn Song"
       ],
-      "abstract": "General-purpose agents such as OpenClaw are increasingly used as autonomous tool users, but their coding ability is difficult to measure under SWE-bench: a generic agent does not by itself satisfy the clean Docker workspace, patch, and prediction contract required for scoring. We introduce Claw-SWE-Bench, a multilingual SWE-bench-style benchmark and adapter protocol that makes heterogeneous agent harnesses, or claws, comparable under fair settings including a fixed prompt, runtime budget, workspace contract, patch extraction procedure, and evaluator. The full benchmark contains 350 GitHub issue-resolution instances across 8 languages and 43 repositories, drawn from SWE-bench-Multilingual and SWE-bench-Verified-Mini after future-commit cleanup. We also release Claw-SWE-Bench Lite for faster validation, which is an 80-instance subset selected by a cost-aware, rank-aware procedure over 17 calibration columns. On the full benchmark, OpenClaw with a minimal direct-diff adapter scores only $19.1\\%$ Pass@1, whereas the full adapter reaches $73.4\\%$ with the same GLM 5.1 backbone, showing that adapter design is essential for enabling OpenClaw-style harnesses to perform coding tasks effectively. Across an OpenClaw $\\times$ nine-model sweep and a five-claw $\\times$ two-model sweep, model choice changes Pass@1 by $29.4$ pp and harness choice by $27.4$ pp under fixed models; systems with similar accuracy can differ substantially in total API cost. Claw-SWE-Bench therefore treats harness and cost accounting as first-class axes of SWE-style coding-agent evaluation, providing both a full benchmark and a low-cost reference set for reproducible comparison. The data is available at https://github.com/opensquilla/claw-swe-bench and https://huggingface.co/datasets/TokenRhythm/Claw-SWE-Bench.",
+      "abstract": "Agent systems are advancing quickly across domains, but their evaluation remains fragmented. Most benchmarks rely on fixed, LLM-centric harnesses that require heavy integration, create test-production mismatch, and limit fair comparison across diverse agent designs. The root problem is the lack of an open, agent-agnostic assessment interface. We advocate Agentified Agent Assessment (AAA), where evaluation is performed by judge agents and all participants interact through standardized protocols: A2A for task management and MCP for tool access. Conventional benchmarking defines two separate interfaces, one for the benchmark and one for the agent, while AAA only needs one; this yields a generic, unified framework that separates assessment logic from agent implementation and enables reproducible, interoperable, and multi-agent evaluation. We further introduce AgentBeats as a concrete realization of AAA: we identify five practical operation modes that make standardized assessment compatible with real-world constraints on openness, privacy, and reproducibility. To evaluate our design at scale, we conduct two studies: a five-month open competition that drew 298 judge agents across 12 categories together with 467 subject agents from independent participants, showing that AAA applies across a heterogeneous range of benchmarks; and a case study on coding agents that confirms agentified evaluation preserves fidelity with the public record while surfacing previously missing head-to-head results, yielding research insights about agent design. Combining a community-scale field study and a controlled coding case study, we verify that AAA delivers coverage, practicality, and fidelity across heterogeneous scenarios at scale. Together, AAA and AgentBeats offer a clear path toward open, standardized, and reproducible agent assessment.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.12344v1",
-        "pdf": "https://arxiv.org/pdf/2606.12344v1",
-        "github": "https://github.com/opensquilla/claw-swe-bench",
-        "blog": null
-      },
-      "institution": "University of Hong Kong",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：以 OpenClaw 为代表的通用智能体正被广泛用于自主工具使用，但其在真实软件工程任务中的编码能力难以通过现有的 SWE-bench 标准进行准确衡量。\n- **已有工作为什么解决不了**：现有的 SWE-bench 风格评估通常将提示模板、智能体循环、工具接口、超时设置等打包在一个特定系统中，导致评估结果混淆了大语言模型（LLM）、智能体 harness（即“claw”，指将 LLM 转化为智能体的框架）和任务实例这三个因果不同的因素。由于不同系统的 scaffolds、预算和终止策略各异，无法公平地跨系统比较 harness 的设计优劣，也难以归因性能差异来源。\n\n## 文章的核心贡献点\n- **提出了一个 Claw-SWE-Bench**：这是一个多语言的 SWE-bench 风格基准测试及适配器协议，旨在使异构的智能体 harness 在公平的设置下（包括固定的提示、运行时预算、工作空间契约、补丁提取程序和评估器）具有可比性。\n- **挑战1：通用智能体无法满足 SWE-bench 的严格评分契约**。难点在于通用智能体本身不满足干净的 Docker 工作空间、补丁格式和预测契约要求。论文通过设计专门的适配器协议（adapter protocol），标准化了从原始智能体输出到符合评分标准的补丁提取过程，使得 OpenClaw 等通用 harness 能够参与公平评测。\n- **挑战2：缺乏对 Harness 设计和成本效率的独立评估维度**。难点在于以往研究往往忽略 harness 选择对性能的巨大影响以及相似准确率下的巨大成本差异。论文将 harness 设计和成本核算作为一等公民进行评估，通过全量基准（350个实例）和轻量级基准（80个实例）揭示了 harness 选择对 Pass@1 的影响幅度（27.4个百分点）以及不同系统在 API 成本上的显著差异。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集构建**：全量基准包含来自 8 种编程语言和 43 个仓库的 350 个 GitHub 问题解决实例，源自 SWE-bench-Multilingual 和 SWE-bench-Verified-Mini，并进行了未来提交清理。同时发布了 Claw-SWE-Bench Lite，包含 80 个经过成本和排名感知程序筛选的实例，用于快速验证。\n- **评估结果**：\n    - **Adapter 的重要性**：在相同 GLM 5.1  backbone 下，OpenClaw 使用最小化 direct-diff 适配器的 Pass@1 仅为 19.1%，而使用完整适配器则达到 73.4%，证明适配器设计对编码任务至关重要。\n    - **模型与 Harness 的影响**：在 OpenClaw × 9 种模型的扫描中，模型选择导致 Pass@1 变化 29.4 个百分点；在 5 种 claw × 2 种模型的扫描中，固定模型下 harness 的选择导致 Pass@1 变化 27.4 个百分点。\n    - **成本差异**：准确率相近的系统在总 API 成本上可能存在巨大差异，突显了成本核算在评估中的重要性。\n- **对比**：不同于 SWE-agent、AutoCodeRover 等单一 harness 系统报告各自的整体数值，Claw-SWE-Bench 解耦了模型和 harness 的影响，提供了可复现的横向对比基准。\n\n#### 总结\nClaw-SWE-Bench 填补了通用智能体在仓库级编码任务评估上的空白，通过标准化适配器协议和严格的评估契约，实现了不同智能体 harness 之间的公平比较。研究结果表明，harness 的设计和适配器的质量对最终性能有决定性影响，且成本效率是评估中不可忽视的关键指标。该基准为未来开发高效、低成本的编码智能体提供了重要的参考标准和数据支持。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: General-purpose agents like OpenClaw are increasingly used as autonomous tool users, but their coding capabilities on real software engineering tasks are difficult to measure using existing SWE-bench standards.\n- **Why Existing Work Falls Short**: Current SWE-bench-style evaluations typically bundle prompt templates, agent loops, tool interfaces, and timeout settings into specific systems. This conflates three distinct factors: the LLM, the agent harness (the \"claw\"), and the task instances. Since different systems vary in scaffolds, budgets, and termination policies, it is impossible to fairly compare harness designs or attribute performance differences across systems.\n\n## Core Contributions\n- **Proposed Claw-SWE-Bench**: A multilingual SWE-bench-style benchmark and adapter protocol that enables fair comparison of heterogeneous agent harnesses under fixed conditions, including prompts, runtime budgets, workspace contracts, patch extraction procedures, and evaluators.\n- **Challenge 1: Generic agents fail to meet strict SWE-bench scoring contracts**. The difficulty lies in the fact that generic agents do not inherently satisfy requirements for clean Docker workspaces, patch formats, and prediction contracts. The paper addresses this by designing a specialized adapter protocol that standardizes the extraction of patches from raw agent outputs, allowing general harnesses like OpenClaw to participate in fair evaluations.\n- **Challenge 2: Lack of independent evaluation dimensions for harness design and cost efficiency**. Previous studies often overlook the significant impact of harness selection on performance and the substantial cost differences among systems with similar accuracy. The paper treats harness design and cost accounting as first-class citizens, revealing through full (350 instances) and lite (80 instances) benchmarks that harness choice impacts Pass@1 by 27.4 percentage points and highlights significant API cost disparities.\n\n## Implementation and Evaluation\n- **Dataset Construction**: The full benchmark comprises 350 GitHub issue-resolution instances across 8 languages and 43 repositories, derived from SWE-bench-Multilingual and SWE-bench-Verified-Mini with future-commit cleanup. Claw-SWE-Bench Lite, an 80-instance subset selected via cost-and-rank-aware procedures, is released for rapid validation.\n- **Evaluation Results**:\n    - **Importance of Adapters**: With the same GLM 5.1 backbone, OpenClaw achieved only 19.1% Pass@1 with a minimal direct-diff adapter, compared to 73.4% with the full adapter, demonstrating that adapter design is critical for effective coding tasks.\n    - **Impact of Model and Harness**: In a sweep of OpenClaw × 9 models, model choice changed Pass@1 by 29.4 percentage points. In a sweep of 5 claws × 2 models, harness choice changed Pass@1 by 27.4 percentage points under fixed models.\n    - **Cost Disparities**: Systems with similar accuracy exhibited substantial differences in total API costs, underscoring the importance of cost accounting in evaluation.\n- **Comparison**: Unlike single-harness systems (e.g., SWE-agent, AutoCodeRover) that report aggregated metrics, Claw-SWE-Bench decouples model and harness effects, providing a reproducible baseline for horizontal comparison.\n\n## 4. Conclusion\nClaw-SWE-Bench fills the gap in evaluating general-purpose agents on repository-level coding tasks. By standardizing adapter protocols and enforcing strict evaluation contracts, it enables fair comparisons across different agent harnesses. The results indicate that harness design and adapter quality are decisive for final performance, and cost efficiency is a key metric. This benchmark provides essential reference standards and data support for developing efficient, low-cost coding agents in the future.",
-      "render_excerpt": "机构: University of Hong Kong<br>Claw-SWE-Bench 填补了通用智能体在仓库级编码任务评估上的空白，通过标准化适配器协议和严格的评估契约，实现了不同智能体 harness 之间的公平比较。研究结果表明，harness 的设计和适配器的质量对最终性能有决定性影响，且成本效率是评估中不可忽视的关键指标。该基准为未来开发高效、低成本的编码智能体提供了重要的参考标准和数据支持。",
-      "render_excerpt_en": "Institution: University of Hong Kong<br>## 1. What the Paper Did - **Background**: General-purpose agents like OpenClaw are increasingly used as autonomous tool users, but their coding capabilities on real software engineering tasks are difficult to measure using existing SWE-bench standards. - **Why Existing Work Falls Short**: Current SWE-bench-style evaluations typically bundle prompt templates, agent loops, tool interfaces, and timeout settings into specific systems.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-10T17:16:23Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-10"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.12191",
-      "date": "2026-06-10",
-      "title": "Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application",
-      "authors": [
-        "Jiachun Li",
-        "Zhuoran Jin",
-        "Tianyi Men",
-        "Yupu Hao",
-        "Kejian Zhu",
-        "Lingshuai Wang",
-        "Dongqi Huang",
-        "Longxiang Wang",
-        "Shengjia Hua",
-        "Lu Wang",
-        "Jinshan Gao",
-        "Hongbang Yuan",
-        "Ruilin Xu",
-        "Kang Liu",
-        "Jun Zhao"
-      ],
-      "abstract": "Environments serve as interactive systems for large language model (LLM) based agents across diverse scenarios and play a crucial role in driving the continual evolution of model capabilities. Despite this importance, existing work lacks a systematic categorization and deep analysis. This paper systematically studies current researches on agentic environments from the perspective of the environment engineering lifecycle, covering their modeling, synthesis, evaluation and application. Specifically, the paper first introduces representative environments from the perspectives of eight attributes and eight domains, providing detailed analyses of their development paths and highlighting their core capabilities. Second, for automated environment synthesis, two paradigms are introduced, such as symbolic synthesis and neural synthesis. This paper also shows different environment evaluation methods in each paradigm. Thirdly, the corresponding environment applications from the perspective of agent-environment co-evolution are discussed. In specific, the paper characterizes the primary pathways for agent evolution in dynamic environments from four complementary perspectives: memory-centric experience evolution, orchestration-centric workflow evolution, trajectory-centric offline evolution, and exploration-centric online evolution. And three paradigms of environment evolution are identified, namely neural-driven, difficulty-driven, and scaling-driven approaches. At last, several promising future directions are discussed, including Environment-as-a-Service, Multi-agent Environments, and Neural-Symbolic Environments.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.12191v1",
-        "pdf": "https://arxiv.org/pdf/2606.12191v1",
+        "abs": "http://arxiv.org/abs/2606.13608v1",
+        "pdf": "https://arxiv.org/pdf/2606.13608v1",
         "github": null,
         "blog": null
       },
-      "institution": "Institute of Automation, Chinese Academy of Sciences",
+      "institution": "UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在复杂任务中展现出强大能力，而环境作为智能体交互的动态系统，对驱动模型能力的持续进化至关重要。由于真实世界交互存在高成本、安全风险、数据隐私及不可复现性等限制，构建模拟的“智能体环境”成为研究和基准测试的关键。\n- **已有工作为什么解决不了**：尽管智能体环境的重要性日益凸显，但现有研究缺乏系统性的分类和深入分析。以往工作多集中于特定领域的环境构建或单一评估指标，未能从环境工程全生命周期（建模、合成、评估、应用）的角度提供统一框架，导致领域内知识碎片化，难以指导自动化环境合成及智能体与环境的协同进化研究。\n\n## 文章的核心贡献点\n- **提出了一个智能体环境工程的系统性综述框架**：从环境工程生命周期的视角，全面涵盖了环境建模、合成、评估及应用四个核心环节。\n- **挑战1：如何系统化地描述和分类多样化的智能体环境？**\n  - **难点**：现有环境涵盖众多领域且属性各异，缺乏统一的描述维度，导致难以比较不同环境的核心能力及发展路径。\n  - **解决方法**：论文从8个属性和8个领域两个维度对代表性环境进行了详细介绍和分析，梳理了其发展路径并突出了核心能力，为理解环境特性提供了结构化视图。\n- **挑战2：如何实现环境的自动化合成及有效评估？**\n  - **难点**：手动构建环境资源密集且场景覆盖受限，而自动化合成面临符号逻辑与神经表示之间的范式差异，且不同范式下的评估标准不一。\n  - **解决方法**：引入了符号合成和神经合成两种自动化环境合成范式，并分别展示了每种范式下适用的环境评估方法，为自动化构建高质量训练/测试环境提供了技术路线。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作为一篇综述文章，本文未提出新的单一算法模型进行部署，而是对现有文献中的环境构建技术、合成范式（符号vs神经）以及评估方法进行了系统性梳理和归类。\n- **Evaluation 结果与对比**：\n  - **对比维度**：文章并未进行传统的实验性能对比（如准确率提升），而是通过理论分析和文献对比，指出了现有工作在系统分类上的缺失。\n  - **核心分析结果**：\n    1. **环境建模**：明确了8大属性（如动态性、部分可观测性等）和8大领域（如游戏、机器人、社交等）的分类体系。\n    2. **环境合成**：对比了符号合成（基于规则/逻辑）与神经合成（基于生成模型）的优劣及适用场景。\n    3. **智能体-环境协同进化**：从四个互补视角（以记忆为中心的经验进化、以编排为中心的工作流进化、以轨迹为中心的离线进化、以探索为中心的在线进化）刻画了智能体在动态环境中的进化路径；并识别了三种环境进化范式（神经驱动、难度驱动、规模驱动）。\n  - **未来方向**：提出了环境即服务（Environment-as-a-Service）、多智能体环境、神经符号环境等有前景的研究方向。\n\n#### 总结\n本文填补了LLM智能体环境研究在系统性分类和深度分析方面的空白。通过构建涵盖建模、合成、评估和应用的全生命周期框架，文章不仅厘清了当前代表性环境的核心能力与发展路径，还深入探讨了自动化环境合成的两种主要范式及其评估方法。特别地，文章从智能体与环境协同进化的角度，详细阐述了智能体进化的四种路径和环境进化的三种范式，为未来构建更高效、更逼真的智能体训练环境提供了理论指导和研究方向。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Model (LLM) agents demonstrate strong capabilities in complex tasks. Environments, as dynamic interactive systems, are crucial for driving the continuous evolution of these models. Due to high costs, safety risks, data privacy concerns, and irreproducibility in real-world interactions, constructing simulated \"agentic environments\" has become key for research and benchmarking.\n- **Why Existing Work Falls Short**: Despite the importance of agentic environments, existing research lacks systematic categorization and deep analysis. Previous works often focus on environment construction in specific domains or single evaluation metrics, failing to provide a unified framework from the perspective of the entire environment engineering lifecycle (modeling, synthesis, evaluation, application). This leads to fragmented knowledge, hindering progress in automated environment synthesis and agent-environment co-evolution.\n\n## Core Contributions\n- **Proposed a Systematic Survey Framework for Agentic Environment Engineering**: Comprehensively covers four core stages: environment modeling, synthesis, evaluation, and application, viewed through the lens of the environment engineering lifecycle.\n- **Challenge 1: How to systematically describe and categorize diverse agentic environments?**\n  - **Difficulty**: Existing environments span numerous domains with varying attributes, lacking unified descriptive dimensions, making it difficult to compare core capabilities and development paths.\n  - **Solution**: The paper introduces representative environments from the perspectives of eight attributes and eight domains, providing detailed analyses of their development paths and highlighting core capabilities, thus offering a structured view for understanding environment characteristics.\n- **Challenge 2: How to achieve automated environment synthesis and effective evaluation?**\n  - **Difficulty**: Manual environment construction is resource-intensive with limited scenario coverage. Automated synthesis faces paradigm differences between symbolic logic and neural representations, with inconsistent evaluation standards across paradigms.\n  - **Solution**: Two paradigms for automated environment synthesis are introduced: symbolic synthesis and neural synthesis. The paper also presents suitable environment evaluation methods for each paradigm, providing technical routes for automatically building high-quality training/testing environments.\n\n## Implementation and Evaluation\n- **Implementation and Deployment**: As a survey paper, this work does not propose a single new algorithmic model for deployment. Instead, it systematically reviews and categorizes existing literature on environment construction techniques, synthesis paradigms (symbolic vs. neural), and evaluation methods.\n- **Evaluation Results and Comparison**:\n  - **Comparison Dimension**: Rather than traditional experimental performance comparisons (e.g., accuracy improvements), the paper conducts theoretical analysis and literature comparison to highlight the lack of systematic classification in existing works.\n  - **Core Analysis Results**:\n    1. **Environment Modeling**: Clarifies a classification system based on 8 major attributes (e.g., dynamics, partial observability) and 8 major domains (e.g., games, robotics, social).\n    2. **Environment Synthesis**: Compares the advantages, disadvantages, and applicable scenarios of symbolic synthesis (rule/logic-based) versus neural synthesis (generative model-based).\n    3. **Agent-Environment Co-evolution**: Characterizes agent evolution paths in dynamic environments from four complementary perspectives: memory-centric experience evolution, orchestration-centric workflow evolution, trajectory-centric offline evolution, and exploration-centric online evolution. It also identifies three paradigms of environment evolution: neural-driven, difficulty-driven, and scaling-driven.\n  - **Future Directions**: Promising directions such as Environment-as-a-Service, Multi-agent Environments, and Neural-Symbolic Environments are discussed.\n\n#### Summary\nThis paper fills the gap in systematic categorization and deep analysis within the field of LLM agentic environment research. By constructing a full-lifecycle framework covering modeling, synthesis, evaluation, and application, the article not only clarifies the core capabilities and development paths of current representative environments but also deeply explores two main paradigms of automated environment synthesis and their evaluation methods. Notably, from the perspective of agent-environment co-evolution, it details four pathways for agent evolution and three paradigms for environment evolution, providing theoretical guidance and research directions for future construction of more efficient and realistic agentic training environments.",
-      "render_excerpt": "机构: Institute of Automation, Chinese Academy of Sciences<br>本文填补了LLM智能体环境研究在系统性分类和深度分析方面的空白。通过构建涵盖建模、合成、评估和应用的全生命周期框架，文章不仅厘清了当前代表性环境的核心能力与发展路径，还深入探讨了自动化环境合成的两种主要范式及其评估方法。特别地，文章从智能体与环境协同进化的角度，详细阐述了智能体进化的四种路径和环境进化的三种范式，为未来构建更高效、更逼真的智能体训练环境提供了理论指导和研究方向。",
-      "render_excerpt_en": "Institution: Institute of Automation, Chinese Academy of Sciences<br>This paper fills the gap in systematic categorization and deep analysis within the field of LLM agentic environment research. By constructing a full-lifecycle framework covering modeling, synthesis, evaluation, and application, the article not only clarifies the core capabilities and development paths of current representative environments but also deeply explores two main paradigms of automated environment synthesis and their evaluation methods. Notably, from the perspective of agent-environment co-evolution, it details four pathways for agent evolution and three paradigms for environment evolution, providing theoretical guidance and research directions for future construction of more efficient and realistic agentic training environments.",
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体系统发展迅速，但其评估体系仍然碎片化。现有的基准测试大多依赖于固定的、以LLM为中心的评估框架。\n- **已有工作的局限性**：传统方法需要繁重的集成工作，导致测试环境与生产环境不匹配（test-production mismatch），且难以在不同设计的智能体之间进行公平比较。根本问题在于缺乏一个开放的、与智能体无关的评估接口。\n\n## 文章的核心贡献点\n- **提出了代理化智能体评估（Agentified Agent Assessment, AAA）框架及其实例 AgentBeats**：倡导由“法官智能体”执行评估，所有参与者通过标准化协议（A2A用于任务管理，MCP用于工具访问）进行交互，将评估逻辑与智能体实现分离。\n- **挑战1：集成复杂度高与接口不统一**。传统基准测试为每个基准和每个智能体定义独立接口，导致N*M的集成复杂度。**解决方法**：AAA仅需要一个统一接口，通过A2A和MCP标准协议，将集成复杂度降低为N+M，实现了通用且统一的框架，支持可复现和互操作的多智能体评估。\n- **挑战2：现实约束下的标准化评估兼容性**。在实际应用中，开放性、隐私性和可复现性之间存在冲突，难以直接套用统一标准。**解决方法**：引入了五种实际操作模式，使标准化评估能够兼容现实世界对开放性和隐私的限制，并提供了最佳实践指南，让开发者和基准设计者能以最小成本采用AAA。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **大规模实地研究**：开展了一项为期五个月的公开竞赛，吸引了来自独立参与者的467个主体智能体和298个法官智能体（涵盖12个类别）。结果表明，AAA适用于异构的基准测试范围，验证了其覆盖范围和实用性。\n- **编码智能体案例研究**：针对编码智能体进行了对照研究，证实了代理化评估在与公共记录保持一致性的同时，能够揭示此前缺失的点对点（head-to-head）对比结果，提供了关于智能体设计的研究见解。\n- **对比优势**：与传统基准测试相比，AAA消除了测试与生产的差异，支持更公平的跨架构比较，并在大规模异构场景中保持了高保真度。\n\n#### 总结\n本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-based agent systems are advancing rapidly, but their evaluation remains fragmented. Most existing benchmarks rely on fixed, LLM-centric harnesses.\n- **Limitations of Existing Work**: Traditional methods require heavy integration, create a mismatch between test and production environments, and limit fair comparison across diverse agent designs. The root cause is the lack of an open, agent-agnostic assessment interface.\n\n## Core Contributions\n- **Proposed Agentified Agent Assessment (AAA) framework and its implementation, AgentBeats**: Advocates for evaluation performed by judge agents, where all participants interact via standardized protocols (A2A for task management, MCP for tool access), separating assessment logic from agent implementation.\n- **Challenge 1: High Integration Complexity and Fragmented Interfaces**. Traditional benchmarks define separate interfaces for each benchmark and agent, leading to N*M integration complexity. **Solution**: AAA requires only one unified interface using A2A and MCP standards, reducing complexity to N+M. This yields a generic framework that enables reproducible, interoperable, and multi-agent evaluation.\n- **Challenge 2: Compatibility of Standardized Assessment with Real-world Constraints**. Balancing openness, privacy, and reproducibility is difficult in practical scenarios. **Solution**: Introduced five practical operation modes to make standardized assessment compatible with real-world constraints, along with recommended practices for minimal-effort adoption by developers and benchmark designers.\n\n## Implementation and Evaluation\n- **Large-scale Field Study**: Conducted a five-month open competition involving 467 subject agents and 298 judge agents across 12 categories from independent participants. Results showed that AAA applies across a heterogeneous range of benchmarks, demonstrating coverage and practicality.\n- **Coding Agent Case Study**: A controlled study on coding agents confirmed that agentified evaluation preserves fidelity with public records while surfacing previously missing head-to-head results, yielding insights into agent design.\n- **Comparison**: Compared to traditional benchmarks, AAA eliminates test-production mismatch, supports fairer cross-architecture comparisons, and maintains high fidelity in large-scale heterogeneous scenarios.\n\n## 4. Conclusion\nThe paper presents the AAA framework and AgentBeats system, addressing fragmentation and integration challenges in agent evaluation through standardized protocols (A2A/MCP) and judge agents. Community-scale competitions and case studies verify the method's effectiveness in openness, standardization, and reproducibility, offering a clear path forward for agent assessment.",
+      "render_excerpt": "机构: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。",
+      "render_excerpt_en": "Institution: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>## 1. What the Paper Did - **Background**: LLM-based agent systems are advancing rapidly, but their evaluation remains fragmented. Most existing benchmarks rely on fixed, LLM-centric harnesses.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-10T15:15:01Z"
+        "captured_at": "2026-06-11T17:23:54Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-10"
+        "captured_at": "2026-06-11"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -128,42 +80,151 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.11976",
-      "date": "2026-06-10",
-      "title": "Exploration Structure in LLM Agents for Multi-File Change Localization",
+      "paper_id": "2606.13598",
+      "date": "2026-06-11",
+      "title": "Reward Modeling for Multi-Agent Orchestration",
       "authors": [
-        "Akeela Darryl Fattha",
-        "Kia Ying Chua",
-        "Lingxiao Jiang",
-        "Laura Wynter"
+        "King Yeung Tsang",
+        "Zihao Zhao",
+        "Vishal Venkataramani",
+        "Haizhou Shi",
+        "Zixuan Ke",
+        "Semih Yavuz",
+        "Shafiq Joty",
+        "Hao Wang"
       ],
-      "abstract": "Software engineering tools increasingly rely on LLM based agents to localize files to change to resolve a software issue. Most AI agents explore repositories linearly, that is, visiting one directory or file per step. We postulate that this is a structural mismatch for changes that span several subsystems. We compare linear sequential exploration against non-linear, domain-scoped parallel agentic exploration. Using SWE Bench Pro as initial benchmark, we focus on ansible as an exemplar. We construct an approach for persistent-session evaluation of GitHub issues anchored at a single base commit. We compare our non-linear domain-agent file traversal system against a base LLM without direct repository access, a single agent Recursive Language Model (RLM) baseline with a persistent Python REPL and an external CLI baseline using Codex 5.5 High. Domain scoped parallel agent spawning with a small Haiku-class model achieves the highest micro F1 among Haiku class models by a large margin. Domain-agents is the second highest behind only the much larger Codex 5.5 High on our own expanded benchmark including over more recent PRs from 2025 and 2026. On the original, curated, 2020 SWE-bench Pro benchmark, a larger Sonnet plain LLM baseline attains higher micro F1 by predicting few files, leading to higher precision, but at significantly lower all gold recall. We also present three additional findings. First, documentation evolution is a latent dependency unresolved by any approach. Second, naive file system access can degrade localization driven by test-file over prediction. Lastly, forced multi-agent consultation does not measurably help and raises token cost substantially.",
+      "abstract": "Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestration to coordinate specialized agents, yet training such orchestrators is hindered by limited supervision and high computational cost. We propose Orchestration Reward Modeling (OrchRM), a self-supervised framework for evaluating orchestration quality without human annotations. OrchRM leverages intermediate artifacts from multi-agent executions to construct win-lose pairs for Bradley-Terry reward model training. Unlike existing MAS test-time scaling and orchestrator training frameworks that rely on costly sub-agent rollouts, OrchRM operates directly at the orchestration level, enabling efficient and high-performing reward-guided orchestrator training and MAS test-time scaling. OrchRM improves training efficiency by up to 10x in token usage while improving MAS test-time scaling performance by up to 8% in accuracy. These gains consistently transfer across multiple domains, including mathematical reasoning, web-based question answering, and multi-hop reasoning, demonstrating orchestration-level reward modeling as a scalable direction for robust multi-agent orchestration. Code will be available at https://github.com/Wang-ML-Lab/OrchRM.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.11976v1",
-        "pdf": "https://arxiv.org/pdf/2606.11976v1",
+        "abs": "http://arxiv.org/abs/2606.13598v1",
+        "pdf": "https://arxiv.org/pdf/2606.13598v1",
+        "github": "https://github.com/Wang-ML-Lab/OrchRM",
+        "blog": null
+      },
+      "institution": "Rutgers University, Salesforce AI Research",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）需要有效的编排器来协调专用智能体，以处理复杂任务。当前的趋势是从手动设计的工作流转向由LLM控制的自动化编排。\n- **已有的工作为什么解决不了**：训练高质量的编排器面临两大障碍。首先，由于编排策略、任务类型和子智能体能力之间存在强依赖性，难以收集高质量的人工标注数据。其次，现有的训练框架（如MAS-Orchestra）依赖于昂贵的子智能体完整 rollout，导致极高的计算成本和时间消耗（例如仅100次更新步骤就消耗超过10亿 token），限制了其可扩展性。\n\n## 文章的核心贡献点\n- **提出了一个 Orch-RM (Orchestration Reward Modeling)**：一种自监督框架，用于在没有人工标注的情况下评估编排质量，直接作用于编排层面而非子智能体执行层面。\n- **挑战1：缺乏高质量的人工监督信号**。传统RLHF依赖大量人工偏好标注，但在多智能体编排中极难获取。Orch-RM通过利用多智能体执行过程中的中间产物（intermediate artifacts）自动构建“胜-负”对（win-lose pairs），并使用Bradley-Terry模型进行奖励模型训练，从而实现了完全自监督的学习。\n- **挑战2：训练效率低下且计算成本高昂**。现有方法需要对子智能体进行完整的 rollout 来计算奖励，方差大且耗时。Orch-RM直接在编排层面操作，避免了昂贵的子智能体 rollout，显著降低了训练所需的 token 用量，同时保持了高效的奖励引导训练和测试时扩展能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Orch-RM 作为一个自监督奖励建模框架，可集成到现有的 MAS 训练流程中，用于持续优化编排器或指导测试时扩展（Test-Time Scaling）。\n- **Evaluation 结果**：\n    - **效率提升**：相比基线方法，Orch-RM 在训练效率上提升了高达 10 倍（以 token 使用量衡量）。\n    - **性能提升**：在 MAS 测试时扩展场景中，准确率提升了高达 8%。\n    - **领域泛化性**：这些增益在多个领域保持一致，包括数学推理、基于网络的问答以及多跳推理任务。\n- **对比**：与依赖昂贵子智能体 rollout 的现有框架（如 MAS-Orchestra）相比，Orch-RM 在大幅降低资源消耗的同时，实现了更好的准确性-效率权衡。\n\n#### 总结\n本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestrators to coordinate specialized agents for complex tasks. The field is shifting from manually designed workflows to automated, LLM-controlled orchestration.\n- **Why Existing Work Falls Short**: Training capable orchestrators is hindered by two main issues. First, collecting high-quality human annotations is difficult due to strong interdependencies among orchestration strategies, task types, and sub-agent capabilities. Second, existing training frameworks (e.g., MAS-Orchestra) rely on costly full rollouts of sub-agents, leading to prohibitive computational costs and time (e.g., consuming over 1B tokens for just 100 update steps).\n\n## Core Contributions\n- **Proposed Orch-RM (Orchestration Reward Modeling)**: A self-supervised framework that evaluates orchestration quality without human annotations, operating directly at the orchestration level rather than the sub-agent execution level.\n- **Challenge 1: Scarcity of High-Quality Human Supervision**. Traditional RLHF relies heavily on large-scale human preference data, which is scarce for MAS orchestration. Orch-RM addresses this by leveraging intermediate artifacts from multi-agent executions to automatically construct win-lose pairs for Bradley-Terry reward model training, enabling fully self-supervised learning.\n- **Challenge 2: Low Training Efficiency and High Computational Cost**. Existing methods require expensive full rollouts of sub-agents to compute rewards, resulting in high variance and latency. Orch-RM operates directly at the orchestration level, avoiding costly sub-agent rollouts, thereby significantly reducing token usage while maintaining efficient reward-guided training and test-time scaling.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Orch-RM serves as a self-supervised reward modeling framework that can be integrated into existing MAS training pipelines for continued orchestrator optimization or to guide Test-Time Scaling.\n- **Evaluation Results**:\n    - **Efficiency Gain**: Achieves up to 10x improvement in training efficiency in terms of token usage compared to baselines.\n    - **Performance Gain**: Improves MAS test-time scaling performance by up to 8% in accuracy.\n    - **Generalizability**: Gains are consistent across multiple domains, including mathematical reasoning, web-based question answering, and multi-hop reasoning.\n- **Comparison**: Compared to existing frameworks like MAS-Orchestra that rely on expensive sub-agent rollouts, Orch-RM achieves a superior accuracy-efficiency trade-off, delivering better performance with substantially lower resource consumption.\n\n## 4. Conclusion\nThis paper introduces Orch-RM to address the challenges of scarce supervision and high computational costs in training MAS orchestrators. By utilizing intermediate execution artifacts to generate self-supervised reward signals, Orch-RM significantly enhances both training efficiency and final performance without relying on human annotations or expensive rollouts. The work demonstrates that orchestration-level reward modeling is a scalable and effective direction for robust multi-agent systems.",
+      "render_excerpt": "机构: Rutgers University, Salesforce AI Research<br>本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。",
+      "render_excerpt_en": "Institution: Rutgers University, Salesforce AI Research<br>## 1. What the Paper Does - **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestrators to coordinate specialized agents for complex tasks. The field is shifting from manually designed workflows to automated, LLM-controlled orchestration.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-11T17:16:24Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-11"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.13662",
+      "date": "2026-06-11",
+      "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
+      "authors": [
+        "Amy Xin",
+        "Jiening Siow",
+        "Junjie Wang",
+        "Zijun Yao",
+        "Fanjin Zhang",
+        "Jian Song",
+        "Lei Hou",
+        "Juanzi Li"
+      ],
+      "abstract": "LLM-based agents have shown increasing potential in automating scientific discovery. Given an optimizable metric and an execution environment, they can propose, validate, and iterate scientific solutions, and have produced results that outperform human-designed approaches. As model capabilities continue to improve, we argue that the bottleneck for autonomous scientific discovery is shifting from prescribing agent workflows to designing agent environments: the resources, constraints, and interfaces that shape agent behavior. We frame this as environment engineering: building environments that amplify productive behaviors, such as open-ended exploration, systematic artifact management, and inter-agent collaboration, while suppressing harmful behaviors, such as reward hacking and high-friction human oversight. We present EurekAgent, an environment-engineered agent system for metric-driven autonomous scientific discovery. EurekAgent engineers the environment along four dimensions: permissions engineering for bounded agent execution and isolated evaluation; artifact engineering for filesystem and Git-based collaboration; budget engineering for budget-aware exploration; and human-in-the-loop engineering for easy human supervision and intervention. EurekAgent sets new state-of-the-art results on multiple mathematics, kernel engineering, and machine learning tasks, including new state-of-the-art 26-circle packing results discovered with less than $11 in total API cost. We open-source our code and results, and call for environment engineering as a core research direction for developing reliable autonomous research agents.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.13662v1",
+        "pdf": "https://arxiv.org/pdf/2606.13662v1",
+        "github": "https://github.com/THU-Team-Eureka/EurekAgent",
+        "blog": null
+      },
+      "institution": "Tsinghua University, Zhipu AI",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的代理在自动化科学发现方面展现出巨大潜力，能够根据可优化指标和执行环境提出、验证并迭代科学解决方案。随着模型能力的提升，自主科学发现的瓶颈正从规定代理工作流转向设计代理环境（即塑造代理行为的资源、约束和接口）。\n- **已有工作的局限**：现有研究多集中于优化代理的工作流或提示工程，忽视了环境对代理行为的塑造作用。这导致代理容易出现奖励黑客（reward hacking）、缺乏系统性工件管理、难以进行开放式探索以及需要高摩擦的人工监督等问题，限制了其在复杂科学任务中的可靠性和效率。\n\n## 文章的核心贡献点\n- **提出了一个名为 EurekAgent 的环境工程化代理系统**，旨在通过环境设计来放大富有成效的行为（如开放式探索、系统性工件管理、代理间协作）并抑制有害行为。\n- **挑战1：如何确保代理执行的安全性与评估的独立性，防止奖励黑客？**\n  - **难点**：自主代理可能在不受控的环境中利用漏洞获取高分而非真正解决问题，且评估过程易受干扰。\n  - **解决方法**：通过**权限工程（Permissions Engineering）**实现有界代理执行和隔离评估，严格限制代理的操作范围，确保实验结果的真实性和安全性。\n- **挑战2：如何实现高效的长期探索、协作及成本控制？**\n  - **难点**：科学发现需要长期的迭代和版本管理，同时API调用成本高昂，且需要便捷的人工干预机制。\n  - **解决方法**：通过**工件工程（Artifact Engineering）**利用文件系统和Git进行协作管理；通过**预算工程（Budget Engineering）**实现感知预算的探索策略；通过**人机协同工程（Human-in-the-loop Engineering）**提供低摩擦的人工监督和干预接口。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EurekAgent 是一个开源系统，代码和结果已公开。它集成了权限控制、Git版本控制、预算监控和人机交互界面。\n- **评估结果**：\n  - **数学任务**：在26圆 packing 问题中发现了新的最先进（SOTA）结果（得分2.635999），超越了此前最佳人类结果（~2.634）和AI结果（2.635986），且总API成本低于11美元。\n  - **核工程任务**：在 Erdős 最小重叠问题和一阶自相关不等式问题上均取得了新的 SOTA 结果。\n  - **机器学习任务**：在 TriMul 内核优化中达到 2005.03 µs，优于此前最佳 AI 结果（2247.78 µs）；在 MLE-Bench 子集上取得 85.71% 的准确率，排名第一。\n- **对比**：在所有测试的数学和核工程任务中，EurekAgent 均设定了新的 SOTA；在机器学习基准测试中也表现优异，显著优于此前发布的最优人类和 AI 基线。\n\n#### 总结\nEurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-based agents show increasing potential in automating scientific discovery by proposing, validating, and iterating solutions based on optimizable metrics. As model capabilities improve, the bottleneck is shifting from prescribing agent workflows to designing agent environments (resources, constraints, and interfaces).\n- **Limitations of Existing Work**: Current research focuses heavily on workflow optimization or prompt engineering, neglecting how the environment shapes agent behavior. This leads to issues like reward hacking, lack of systematic artifact management, inefficient open-ended exploration, and high-friction human oversight, limiting reliability and efficiency in complex scientific tasks.\n\n## Core Contributions\n- **Proposed EurekAgent**, an environment-engineered agent system for metric-driven autonomous scientific discovery, designed to amplify productive behaviors and suppress harmful ones.\n- **Challenge 1: How to ensure execution safety and evaluation isolation to prevent reward hacking?**\n  - **Difficulty**: Uncontrolled agents may exploit loopholes for high scores without solving problems, and evaluations can be easily interfered with.\n  - **Solution**: **Permissions Engineering** implements bounded agent execution and isolated evaluation, strictly limiting operational scope to ensure result authenticity and security.\n- **Challenge 2: How to enable efficient long-term exploration, collaboration, and cost control?**\n  - **Difficulty**: Scientific discovery requires long-term iteration and versioning, while API costs are high, and convenient human intervention is needed.\n  - **Solution**: **Artifact Engineering** uses filesystems and Git for collaboration; **Budget Engineering** enables budget-aware exploration; **Human-in-the-loop Engineering** provides low-friction supervision and intervention interfaces.\n\n## Implementation and Evaluation\n- **Implementation**: EurekAgent is an open-source system integrating permission controls, Git versioning, budget monitoring, and human-in-the-loop interfaces.\n- **Evaluation Results**:\n  - **Mathematics**: Achieved a new State-of-the-Art (SOTA) in the 26-circle packing problem (score 2.635999), surpassing the best human (~2.634) and AI (2.635986) results, with total API costs under $11.\n  - **Kernel Engineering**: Set new SOTA results in Erdős’ Minimum Overlap and 1st Autocorrelation Inequality tasks.\n  - **Machine Learning**: Achieved 2005.03 µs in TriMul kernel optimization, outperforming the previous best AI result (2247.78 µs); ranked first on the evaluated MLE-Bench subset with 85.71% accuracy.\n- **Comparison**: EurekAgent set new SOTAs in all tested mathematics and kernel engineering tasks and performed competitively in machine learning benchmarks, significantly outperforming previously published best human and AI baselines.\n\n## 4. Conclusion\nEurekAgent demonstrates that \"environment engineering\" is a core direction for developing reliable autonomous research agents. By carefully designing four environmental dimensions (permissions, artifacts, budget, and human-in-the-loop), the system significantly lowers the barrier and cost of automated scientific discovery while surpassing human experts and existing AI systems in multiple hard scientific tasks. The work calls for a community shift from workflow design to comprehensive environment engineering.",
+      "render_excerpt": "机构: Tsinghua University, Zhipu AI<br>EurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。",
+      "render_excerpt_en": "Institution: Tsinghua University, Zhipu AI<br>## 1. What the Paper Did - **Background**: LLM-based agents show increasing potential in automating scientific discovery by proposing, validating, and iterating solutions based on optimizable metrics. As model capabilities improve, the bottleneck is shifting from prescribing agent workflows to designing agent environments (resources, constraints, and interfaces).",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-11T17:56:35Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-11"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.13602",
+      "date": "2026-06-11",
+      "title": "EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis",
+      "authors": [
+        "Harihara Muralidharan",
+        "Reema Baskar",
+        "Soo Hee Lee",
+        "Tim Proctor",
+        "Kenny Workman"
+      ],
+      "abstract": "We introduce EpiBench, a verifiable benchmark for short-horizon epigenomics analysis. EpiBench evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers. The benchmark includes 106 evaluations across CUT\\&Tag/CUT\\&RUN, ATAC-seq, ChIP-seq, and DNA methylation workflows. Across 5,088 valid trajectories from 16 model-harness pairs, no system passed a majority of attempts: GPT-5.5 / Pi led at 45.0\\% (143/318 attempts; 95\\% confidence interval (CI), 36.3--53.7), followed by GPT-5.5 / OpenAI Codex at 39.9\\% (127/318 attempts; 95\\% CI, 31.6--48.3). Claude Opus 4.8 Max / Pi and GPT-5.4 / Pi each passed 39.0\\% (124/318 attempts; 95\\% CI, 30.2--47.8 and 31.0--47.0, respectively). Performance varies across assay types, and many failed runs still contain parts of the correct answer. Agents often found the right files and computed useful intermediate results, but failed when the task required deeper, assay-specific scientific judgment.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.13602v1",
+        "pdf": "https://arxiv.org/pdf/2606.13602v1",
         "github": null,
         "blog": null
       },
-      "institution": "Singapore Management University",
+      "institution": "LatchBio",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：软件工程工具日益依赖基于大语言模型（LLM）的代理来定位需要修改的文件以解决软件问题。然而，大多数现有 AI 代理采用线性探索模式，即每一步只访问一个目录或文件。\n- **已有工作的局限性**：现有的线性顺序探索方法（如 Agentless, SWE-agent, RLMs 等）在处理跨越多个子系统的多文件变更时存在结构性错配。单线程代理必须猜测起始点，如果步数或 Token 预算在第一个子系统中耗尽，后续包含关键文件的子系统可能永远无法被检查。此外，直接暴露原始文件系统访问权限可能导致导航错误和过度预测，从而降低准确率。\n\n## 文章的核心贡献点\n- **提出了一个非线性的、领域范围的并行代理探索框架（Domain-scoped parallel agentic exploration）**\n- **挑战1：线性探索在多文件变更中的结构性限制**。难点在于当问题涉及多个子系统时，单一线程代理容易因预算耗尽而遗漏部分子系统。论文通过引入领域范围的并行代理生成机制，让小型模型（如 Haiku 类）同时探索不同领域，从而大幅提高了微 F1 分数，解决了单一视角的局限。\n- **挑战2：原始文件系统访问导致的导航噪声与过预测**。难点在于无约束的目录遍历会使代理陷入无关的测试层级或过时路径，增加假阳性并消耗上下文。论文通过结构化并行探索而非 naive 的文件系统访问，减少了因测试文件过度预测导致的定位退化，并在不显著增加 Token 成本的情况下提升了召回率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：以 Ansible 为例，使用 SWE-Bench Pro 作为初始基准，并构建了基于单个基础 commit 的 GitHub 问题持久会话评估方法。扩展基准包含了 2025 和 2026 年的最新 PR。\n- **对比基线**：\n    1. 无直接仓库访问的基础 LLM。\n    2. 带有持久 Python REPL 的单代理递归语言模型（RLM）基线。\n    3. 使用 Codex 5.5 High 的外部 CLI 基线。\n    4. 较大的 Sonnet 纯 LLM 基线。\n- **结果**：\n    - 在 Haiku 类模型中，领域范围并行代理生成的微 F1 分数最高，且优势明显。\n    - 在包含近期 PR 的扩展基准上，该方法仅次于庞大的 Codex 5.5 High，排名第二。\n    - 在原始的 2020 SWE-Bench Pro 基准上，较大的 Sonnet 纯 LLM 基线通过预测较少文件获得了更高的精确度和微 F1，但其全金标准召回率（all-gold recall）显著较低。\n    - **额外发现**：文档协同演化是一个未被任何方法解决的潜在依赖；强制的多代理咨询并未带来可衡量的帮助，反而大幅增加了 Token 成本。\n\n#### 总结\n本文指出了当前 LLM 代理在代码库探索中采用的线性模式在处理多文件变更时的结构性缺陷。通过提出一种非线性的、领域范围的并行代理探索方法，证明了即使使用较小的模型，也能在覆盖率和准确性上超越传统的线性探索基线。研究还揭示了原始文件系统访问的风险以及多代理咨询的成本效益问题，为未来构建更高效的软件工程代理提供了重要见解。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Software engineering tools increasingly rely on LLM-based agents to localize files for issue resolution. Most existing AI agents employ a linear exploration pattern, visiting one directory or file per step.\n- **Limitations of Existing Work**: Current linear sequential exploration methods (e.g., Agentless, SWE-agent, RLMs) suffer from a structural mismatch when handling multi-file changes spanning multiple subsystems. A single-threaded agent may exhaust its step or token budget in the first subsystem it explores, missing critical files in others. Additionally, exposing raw file-system access can introduce navigation errors and over-prediction, degrading accuracy.\n\n## Core Contributions\n- **Proposed a non-linear, domain-scoped parallel agentic exploration framework**\n- **Challenge 1: Structural limitations of linear exploration in multi-file changes**. The difficulty lies in single-threaded agents missing subsystems due to budget constraints. The paper addresses this by introducing domain-scoped parallel agent spawning, allowing small models (e.g., Haiku-class) to explore different domains simultaneously, significantly improving micro-F1 scores.\n- **Challenge 2: Navigation noise and over-prediction from raw file-system access**. Unconstrained directory traversal can lead agents into irrelevant test hierarchies, inflating false positives. The paper mitigates this by using structured parallel exploration instead of naive file-system access, reducing localization degradation caused by test-file over-prediction without substantially increasing token costs.\n\n## Implementation and Evaluation\n- **Setup**: Using Ansible as an exemplar and SWE-Bench Pro as the initial benchmark, the authors constructed a persistent-session evaluation approach anchored at a single base commit. An expanded benchmark included recent PRs from 2025 and 2026.\n- **Baselines**:\n    1. Base LLM without direct repository access.\n    2. Single-agent Recursive Language Model (RLM) with a persistent Python REPL.\n    3. External CLI baseline using Codex 5.5 High.\n    4. Larger Sonnet plain LLM baseline.\n- **Results**:\n    - Domain-scoped parallel agent spawning achieved the highest micro-F1 among Haiku-class models by a large margin.\n    - On the expanded benchmark, it ranked second, behind only the much larger Codex 5.5 High.\n    - On the original 2020 SWE-Bench Pro, the larger Sonnet plain LLM baseline achieved higher micro-F1 via higher precision (predicting fewer files) but suffered from significantly lower all-gold recall.\n    - **Additional Findings**: Documentation co-evolution remains an unresolved latent dependency; forced multi-agent consultation provided no measurable benefit and substantially increased token costs.\n\n## 4. Conclusion\nThis paper highlights the structural defects of linear exploration patterns in current LLM agents for multi-file change localization. By proposing a non-linear, domain-scoped parallel exploration method, it demonstrates that even smaller models can outperform traditional linear baselines in coverage and accuracy. The study also reveals the risks of raw file-system access and the poor cost-benefit ratio of forced multi-agent consultation, offering key insights for building more efficient software engineering agents.",
-      "render_excerpt": "机构: Singapore Management University<br>本文指出了当前 LLM 代理在代码库探索中采用的线性模式在处理多文件变更时的结构性缺陷。通过提出一种非线性的、领域范围的并行代理探索方法，证明了即使使用较小的模型，也能在覆盖率和准确性上超越传统的线性探索基线。研究还揭示了原始文件系统访问的风险以及多代理咨询的成本效益问题，为未来构建更高效的软件工程代理提供了重要见解。",
-      "render_excerpt_en": "Institution: Singapore Management University<br>## 1. What the Paper Did - **Background**: Software engineering tools increasingly rely on LLM-based agents to localize files for issue resolution. Most existing AI agents employ a linear exploration pattern, visiting one directory or file per step.",
+      "summary_cn": "## 文章做了什么\n- **背景**：表观基因组学分析（如染色质可及性、组蛋白修饰、DNA甲基化等）对于理解基因调控至关重要，但原始数据不可直接解读，需要经过比对、峰值调用、注释等一系列复杂的分析决策。AI智能体在生物数据分析中展现出潜力，但缺乏针对该领域专业决策能力的标准化评估。\n- **已有工作为什么解决不了**：现有的基准测试往往缺乏可验证性，或者无法模拟真实工作流中的具体决策点。许多任务的答案难以通过确定性标准进行评分，导致无法准确衡量智能体在需要深层科学判断的任务上的表现。\n\n## 文章的核心贡献点\n- **提出了一个 EpiBench**：这是一个用于短 horizon 表观基因组学分析的可验证基准测试，旨在评估智能体能否从真实的工作流状态中做出明确定义的分析决策，并返回可确定性评分的答案。\n- **挑战1：如何构建具有确定性评分标准的复杂生物信息学任务？**\n  - **难点**：生物分析流程长且分支多，最终结论往往受多种主观或参数选择影响，难以设定唯一的“正确”答案进行自动化评分。\n  - **解决方法**：将完整的分析工作流分解为短的、可评分的决策步骤（如质量控制、峰值调用、注释等），并将每个步骤的经验性决策形式化为确定性可评分的结构化答案。\n- **挑战2：如何评估智能体在特定实验类型下的深层科学判断能力？**\n  - **难点**：智能体可能擅长执行代码或查找文件，但在需要结合特定实验原理（如CUT&Tag与ChIP-seq的区别）进行科学推断时容易失败。\n  - **解决方法**：基准涵盖CUT&Tag/CUT&RUN、ATAC-seq、ChIP-seq和DNA甲基化四种主要工作流的106项评估，通过对比不同模型在各类任务（如QC、下游分析、可视化）的表现，揭示其在特定科学语境下的能力边界。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EpiBench包含106个评估项，覆盖四种主要表观基因组学工作流。研究团队在16个“模型- harness ”组合上运行了基准测试，每个组合在每个评估项上运行3次，共生成5,088条有效轨迹。Pi表示Pi终端编码harness。\n- **Evaluation结果**：\n  - 没有系统通过大多数尝试。表现最好的是 GPT-5.5 / Pi，通过率为45.0%（143/318次尝试）。\n  - 其次是 GPT-5.5 / OpenAI Codex (39.9%)，Claude Opus 4.8 Max / Pi 和 GPT-5.4 / Pi 均为39.0%。\n  - 性能随实验类型和任务家族变化显著。例如，在质量控制（QC）任务上表现较好，而在需要深层科学判断的下游分析或特定峰值调用任务上表现较差。\n  - 许多失败的运行仍然包含部分正确答案，智能体通常能找到正确的文件并计算有用的中间结果，但在需要更深层次的、特定于实验的科学判断时失败。\n- **对比**：相比其他通用代码或推理基准，EpiBench专门针对表观基因组学的专业领域知识进行了设计，揭示了当前最强模型在该垂直领域的局限性，即虽然能处理工具调用，但缺乏专业的科学直觉。\n\n#### 总结\nEpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Epigenomic assays (e.g., chromatin accessibility, histone modifications, DNA methylation) are crucial for understanding gene regulation but require complex analysis pipelines including alignment, peak calling, and annotation. AI agents show promise in biological data analysis, but there is a lack of standardized benchmarks to evaluate their decision-making capabilities in this domain.\n- **Why Existing Work Falls Short**: Current benchmarks often lack verifiability or fail to simulate specific decision points in real-world workflows. Many tasks lack deterministic grading criteria, making it difficult to accurately measure an agent's performance on tasks requiring deep scientific judgment.\n\n## Core Contributions\n- **Proposed EpiBench**: A verifiable benchmark for short-horizon epigenomics analysis that evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers.\n- **Challenge 1: How to construct complex bioinformatics tasks with deterministic grading criteria?**\n  - **Difficulty**: Biological analysis pipelines are long and branching, with final conclusions often influenced by subjective or parameter choices, making it hard to define a single \"correct\" answer for automated scoring.\n  - **Solution**: The paper decomposes full analysis workflows into short, gradeable decision steps (e.g., QC, peak calling, annotation) and formalizes each empirical decision into a deterministically gradable structured answer.\n- **Challenge 2: How to evaluate an agent's deep scientific judgment capabilities across specific assay types?**\n  - **Difficulty**: Agents may excel at code execution or file retrieval but fail when inferring scientific conclusions that require understanding specific experimental principles (e.g., differences between CUT&Tag and ChIP-seq).\n  - **Solution**: The benchmark includes 106 evaluations across four major workflows (CUT&Tag/CUT&RUN, ATAC-seq, ChIP-seq, DNA methylation), comparing model performance across various task families (QC, downstream analysis, visualization) to reveal capability boundaries in specific scientific contexts.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: EpiBench comprises 106 evaluations covering four major epigenomic workflows. The study ran the benchmark on 16 model-harness pairs, with three runs per evaluation per pair, resulting in 5,088 valid trajectories. \"Pi\" denotes the Pi terminal coding harness.\n- **Evaluation Results**:\n  - No system passed a majority of attempts. The top performer was GPT-5.5 / Pi with a 45.0% pass rate (143/318 attempts).\n  - Followed by GPT-5.5 / OpenAI Codex (39.9%), and Claude Opus 4.8 Max / Pi and GPT-5.4 / Pi both at 39.0%.\n  - Performance varied significantly by assay type and task family. Agents performed better on Quality Control (QC) tasks but struggled with downstream analyses or specific peak calling tasks requiring deeper scientific judgment.\n  - Many failed runs contained parts of the correct answer; agents often found the right files and computed useful intermediate results but failed when deeper, assay-specific scientific judgment was required.\n- **Comparison**: Unlike general coding or reasoning benchmarks, EpiBench is tailored to the specialized knowledge of epigenomics, revealing the limitations of current SOTA LLMs in this vertical domain—specifically, their ability to handle tool usage versus their lack of professional scientific intuition.\n\n## 4. Conclusion\nEpiBench fills a gap in the evaluation of AI agents for epigenomics by providing verifiable, deterministic grading criteria that quantify the performance of current state-of-the-art LLM agents in real-world bioinformatics workflows. The results indicate that while top models approach a 50% pass rate in some tasks, they generally fall short in scientific decision-making requiring deep domain knowledge. This benchmark provides a clear direction and evaluation standard for developing more specialized biological AI agents in the future.",
+      "render_excerpt": "机构: LatchBio<br>EpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。",
+      "render_excerpt_en": "Institution: LatchBio<br>## 1. What the Paper Did - **Background**: Epigenomic assays (e.g., chromatin accessibility, histone modifications, DNA methylation) are crucial for understanding gene regulation but require complex analysis pipelines including alignment, peak calling, and annotation. AI agents show promise in biological data analysis, but there is a lack of standardized benchmarks to evaluate their decision-making capabilities in this domain.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-10T11:54:14Z"
+        "captured_at": "2026-06-11T17:20:29Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-10"
+        "captured_at": "2026-06-11"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -178,97 +239,43 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.12384",
-      "date": "2026-06-10",
-      "title": "APPO: Agentic Procedural Policy Optimization",
+      "paper_id": "2606.13572",
+      "date": "2026-06-11",
+      "title": "ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages",
       "authors": [
-        "Xucong Wang",
-        "Ziyu Ma",
-        "Yong Wang",
-        "Yuxiang Ji",
-        "Shidong Yang",
-        "Guanhua Chen",
-        "Pengkun Wang",
-        "Xiangxiang Chu"
+        "Tanmoy Kanti Halder",
+        "Akash Ghosh",
+        "Subhadip Baidya",
+        "Arijit Roy",
+        "Sriparna Saha"
       ],
-      "abstract": "Recent advances in agentic Reinforcement Learning (RL) have substantially improved the multi-turn tool-use capabilities of large language model agents. However, most existing methods assign credit over coarse heuristic units, such as tool-call boundaries or fixed workflows, making it difficult to identify which intermediate decisions influence downstream outcomes. In this work, we study agentic RL from two perspectives: \\textit{where to branch and how to assign credit after branching}. Our pilot analysis shows that influential decision points are broadly distributed throughout the generated sequence rather than concentrated at tool calls, while token entropy alone does not reliably reflect their impact on final outcomes. Motivated by these observations, we propose \\textbf{Agentic Procedural Policy Optimization (APPO)}, which shifts branching and credit assignment from coarse interaction units to fine-grained decision points in the sequence. APPO selects branching locations using a Branching Score that combines token uncertainty with policy-induced likelihood gains of subsequent continuations, enabling more targeted exploration while filtering out spurious high-entropy positions. It further introduces procedure-level advantage scaling to better distribute credit across branched rollouts. Experiments on 13 benchmarks show that APPO consistently improves strong agentic RL baselines by nearly 4 points, while keeping efficient tool-calls and maintaining behavior interpretability.",
+      "abstract": "Multimodal Large Language Models (MLLMs) have shown promising reasoning capabilities in general domains, yet their performance remains limited in specialized settings such as healthcare, especially in multilingual and low-resource scenarios. This gap is critical in regions like rural India, where patients often express complex medical queries in native Indic languages and rely on multimodal inputs such as medical images. Existing English-centric MLLMs struggle to support such use cases, limiting equitable access to AI-driven healthcare assistance. To address this challenge, we introduce ArogyaBodha, a large-scale multilingual multimodal medical question-answer dataset constructed from eight heterogeneous sources, covering 31 body systems, six imaging modalities, and 21 clinical domains across English and seven major Indian languages. We further propose ArogyaSutra, an actor-critic-based multi-agent framework that integrates tool grounding with dual-memory mechanisms for step-wise, reasoning-aware decision making, and uses stored actor-critic simulation trajectories for distillation. Experiments show that our dataset and framework improve multilingual medical reasoning accuracy across all Indic languages, with ablations validating the contribution of each component. The source code and dataset are available at: https://iitp-cse.github.io/ ArogyaSutra/",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.12384v1",
-        "pdf": "https://arxiv.org/pdf/2606.12384v1",
-        "github": null,
+        "abs": "http://arxiv.org/abs/2606.13572v1",
+        "pdf": "https://arxiv.org/pdf/2606.13572v1",
+        "github": "https://iitp-cse.github.io/ArogyaSutra/",
         "blog": null
       },
-      "institution": "University of Science and Technology of China; AMAP, Alibaba Group; Southern University of Science and Technology",
+      "institution": "Indian Institute of Technology Patna",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理在强化学习（RL）的推动下，多轮工具使用能力显著提升。然而，现有的基于结果验证的强化学习（RLVR）仅在轨迹级别提供稀疏反馈，导致难以将成功或失败归因于具体的中间决策，造成信用分配效率低下和策略改进不稳定。\n- **已有工作为什么解决不了**：现有方法通常基于粗粒度的启发式单元（如工具调用边界或固定工作流）进行分支和信用分配。初步分析表明，关键决策点广泛分布在生成序列中，而非仅集中在工具调用处；且单纯的令牌熵（token entropy）并不能可靠地反映其对最终结果的影响，导致现有方法无法精准定位高价值探索点。\n\n## 文章的核心贡献点\n- **提出了一个 Agentic Procedural Policy Optimization (APPO)**：一种将分支和信用分配从粗粒度交互单元转移到序列中细粒度决策点的代理强化学习优化框架。\n- **挑战1：如何精准定位具有高影响力的分支点？**\n  - **难点**：关键决策点分布广泛，且高熵位置往往包含大量对结果无实质影响的噪声，单纯依赖不确定性指标会导致无效探索。\n  - **解决方法**：APPO 引入了一种“分支评分”（Branching Score），结合令牌不确定性与策略诱导的后续延续似然增益。该方法能更针对性地进行探索，同时过滤掉虚假的高熵位置，从而精准锁定真正影响结果的决策点。\n- **挑战2：如何在分支后有效分配信用以指导策略更新？**\n  - **难点**：传统方法在粗粒度单元上分配信用，难以区分同一单元内不同细粒度决策对最终结果的差异化贡献。\n  - **解决方法**：APPO 引入了过程级优势缩放（procedure-level advantage scaling），在分支 rollout 之间更好地分布信用，确保细粒度决策能够获得与其实际贡献相匹配的学习信号。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 13 个基准测试上进行评估，对比了现有的强代理 RL 基线方法。\n- **主要结果**：APPO  consistently 将强基线的性能提高了近 4 个百分点。\n- **对比优势**：与依赖工具调用边界或固定工作流的现有方法相比，APPO 不仅提升了准确率，还保持了高效的工具调用能力和行为的可解释性。图示结果显示，基于 APPO 分支评分重采样的 rollout 在 Pass@k 指标上显著优于基于熵或 Oracle 的方法。\n\n#### 总结\n本文针对代理强化学习中信用分配粗糙的问题，提出了 APPO 框架。通过引入结合不确定性与似然增益的分支评分机制，以及过程级优势缩放，APPO 实现了从粗粒度单元到细粒度决策点的转变。实验证明，该方法在多个基准上显著提升了代理性能，同时保持了高效性和可解释性，为长 horizon 任务中的精细信用分配提供了新思路。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Model (LLM) agents have significantly improved multi-turn tool-use capabilities driven by Reinforcement Learning (RL). However, existing Reinforcement Learning with Verifiable Rewards (RLVR) provides only sparse trajectory-level feedback, making it difficult to attribute success or failure to specific intermediate decisions, leading to inefficient credit assignment.\n- **Why Existing Work Fails**: Most current methods assign credit over coarse heuristic units, such as tool-call boundaries or fixed workflows. Pilot analysis reveals that influential decision points are broadly distributed throughout the sequence, not just at tool calls, and token entropy alone is an unreliable indicator of impact, causing existing methods to miss key decision points or explore noise.\n\n## Core Contributions\n- **Proposed Agentic Procedural Policy Optimization (APPO)**: A framework that shifts branching and credit assignment from coarse interaction units to fine-grained decision points within the generated sequence.\n- **Challenge 1: How to accurately identify high-impact branching points?**\n  - **Difficulty**: Key decision points are widely distributed, and high-entropy positions often contain noise that does not affect outcomes, leading to ineffective exploration if relying solely on uncertainty.\n  - **Solution**: APPO introduces a \"Branching Score\" that combines token uncertainty with policy-induced likelihood gains of subsequent continuations. This enables targeted exploration while filtering out spurious high-entropy positions, precisely locating decisions that truly influence results.\n- **Challenge 2: How to effectively assign credit after branching to guide policy updates?**\n  - **Difficulty**: Traditional methods assign credit at coarse granularity, failing to distinguish the differential contributions of fine-grained decisions within the same unit.\n  - **Solution**: APPO introduces procedure-level advantage scaling to better distribute credit across branched rollouts, ensuring fine-grained decisions receive learning signals proportional to their actual contribution.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on 13 benchmarks against strong agentic RL baselines.\n- **Key Results**: APPO consistently improves performance by nearly 4 percentage points over strong baselines.\n- **Comparison**: Compared to methods relying on tool-call boundaries or fixed workflows, APPO not only enhances accuracy but also maintains efficient tool usage and behavioral interpretability. Visualizations show that rollouts resampled using APPO's Branching Score significantly outperform those based on entropy or Oracle criteria in Pass@k metrics.\n\n## 4. Conclusion\nThis paper addresses the issue of coarse credit assignment in agentic RL by proposing APPO. By introducing a branching score that integrates uncertainty and likelihood gains, along with procedure-level advantage scaling, APPO transitions from coarse-unit to fine-grained decision-point optimization. Experiments demonstrate significant performance improvements across multiple benchmarks while preserving efficiency and interpretability, offering new insights for fine-grained credit assignment in long-horizon tasks.",
-      "render_excerpt": "机构: University of Science and Technology of China; AMAP, Alibaba Group; Southern University of Science and Technology<br>本文针对代理强化学习中信用分配粗糙的问题，提出了 APPO 框架。通过引入结合不确定性与似然增益的分支评分机制，以及过程级优势缩放，APPO 实现了从粗粒度单元到细粒度决策点的转变。实验证明，该方法在多个基准上显著提升了代理性能，同时保持了高效性和可解释性，为长 horizon 任务中的精细信用分配提供了新思路。",
-      "render_excerpt_en": "Institution: University of Science and Technology of China; AMAP, Alibaba Group; Southern University of Science and Technology<br>## 1. What the Paper Does - **Background**: Large Language Model (LLM) agents have significantly improved multi-turn tool-use capabilities driven by Reinforcement Learning (RL). However, existing Reinforcement Learning with Verifiable Rewards (RLVR) provides only sparse trajectory-level feedback, making it difficult to attribute success or failure to specific intermediate decisions, leading to inefficient credit assignment.",
+      "summary_cn": "## 文章做了什么\n- **背景**：多模态大语言模型（MLLMs）在通用领域表现出色，但在医疗等专业领域，尤其是多语言和低资源场景下性能受限。在印度农村等地区，患者常使用本地印度语言（Indic Languages）结合医学图像提出复杂医疗查询，而现有的以英语为中心的 MLLMs 难以支持此类用例，限制了 AI 驱动医疗服务的公平性。\n- **已有工作为什么解决不了**：现有医疗 MLLMs 多采用直接预测范式，缺乏临床所需的图文交错推理能力；强化学习方法受限于基座模型，未引入新的推理范式；且高质量医疗思维链（CoT）数据构建成本高。此外，现有研究主要集中在英语和中文，印度语言严重代表性不足，存在逻辑保真度下降和语言行为不稳定的问题，且缺乏针对多语言多模态推理的系统性评估基准。\n\n## 文章的核心贡献点\n- **提出了一个名为 ArogyaSutra 的多智能体框架及 ArogyaBodha 数据集**：ArogyaBodha 是一个大规模多语言多模态医疗问答数据集，涵盖英语和七种主要印度语言，涉及31个身体系统、6种成像模态和21个临床领域；ArogyaSutra 是基于 Actor-Critic 的多智能体框架，集成了工具 grounding 和双重记忆机制。\n- **挑战1：低资源印度语言中的多模态医疗推理逻辑保真度低且语言行为不稳定**。难点在于跨语言迁移难以保持复杂的医学逻辑一致性，且缺乏高质量的步骤化推理数据。论文通过 Actor-Critic 多智能体框架，利用双重记忆机制进行逐步的、感知推理的决策，并通过存储的模拟轨迹进行蒸馏，从而增强推理的逻辑性和语言稳定性。\n- **挑战2：缺乏针对多语言、多模态医疗推理的高质量评估基准和数据**。难点在于现有基准多为单语、纯文本或封闭式问题，无法反映真实临床中的开放式多模态推理需求。论文构建了 ArogyaBodha 数据集，从8个异构来源收集专家验证的多模态查询和唯一真实答案，覆盖广泛的临床领域和语言，为评估逻辑推理准确性和语言忠实度提供了可靠基准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：ArogyaSutra 框架结合了工具接地（tool grounding）和双重记忆机制，利用 Actor-Critic 模拟轨迹进行知识蒸馏。代码和数据集已开源。\n- **Evaluation 结果**：实验表明，ArogyaBodha 数据集和 ArogyaSutra 框架显著提高了所有印度语言的多语言医疗推理准确性。消融实验验证了框架中每个组件（如双重记忆、工具接地等）的贡献。\n- **对比**：相较于现有的英语中心 MLLMs 和直接预测范式模型，该方法在处理印度语言的复杂医疗查询时表现出更高的逻辑保真度和推理能力，解决了现有工作在多语言多模态场景下的局限性。\n\n#### 总结\n本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Multimodal Large Language Models (MLLMs) show promise in general domains but struggle in specialized healthcare settings, particularly in multilingual and low-resource scenarios. In regions like rural India, patients use native Indic languages and medical images for complex queries, a use case poorly supported by existing English-centric MLLMs, limiting equitable AI healthcare access.\n- **Why Existing Work Fails**: Current medical MLLMs often use direct prediction paradigms lacking interleaved image-text reasoning required in clinical settings. Reinforcement learning approaches are constrained by base models and do not introduce new reasoning paradigms. High-quality medical Chain-of-Thought (CoT) data is costly to curate. Furthermore, research is predominantly English/Chinese-centric, leaving Indic languages underrepresented with issues of degraded logical fidelity and unstable language behavior, lacking systematic benchmarks for multilingual multimodal reasoning.\n\n## Core Contributions\n- **Proposed ArogyaSutra Framework and ArogyaBodha Dataset**: ArogyaBodha is a large-scale multilingual multimodal medical QA dataset covering English and seven major Indian languages, 31 body systems, 6 imaging modalities, and 21 clinical domains. ArogyaSutra is an Actor-Critic-based multi-agent framework integrating tool grounding and dual-memory mechanisms for step-wise reasoning-aware decision making.\n- **Challenge 1: Low logical fidelity and unstable language behavior in multimodal medical reasoning for low-resource Indic languages**. The difficulty lies in maintaining complex medical logical consistency across languages and the scarcity of high-quality step-by-step reasoning data. The paper addresses this by using an Actor-Critic multi-agent framework with dual-memory mechanisms for step-wise decision making and distilling knowledge from stored simulation trajectories, enhancing logical coherence and language stability.\n- **Challenge 2: Lack of high-quality benchmarks and data for multilingual, multimodal medical reasoning**. Existing benchmarks are mostly monolingual, text-centric, or closed-form, failing to capture real-world open-ended multimodal reasoning needs. The paper constructs ArogyaBodha from eight heterogeneous sources with expert-verified multimodal queries and unambiguous ground-truth answers, providing a reliable benchmark for evaluating logical reasoning accuracy and language fidelity across diverse clinical domains and languages.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: ArogyaSutra integrates tool grounding and dual-memory mechanisms, utilizing Actor-Critic simulation trajectories for distillation. Source code and datasets are publicly available.\n- **Evaluation Results**: Experiments demonstrate that the ArogyaBodha dataset and ArogyaSutra framework significantly improve multilingual medical reasoning accuracy across all tested Indic languages. Ablation studies validate the contribution of each component.\n- **Comparison**: Compared to existing English-centric MLLMs and direct prediction models, this approach achieves higher logical fidelity and reasoning capabilities for complex medical queries in Indic languages, addressing the limitations of prior work in multilingual multimodal scenarios.\n\n## 4. Conclusion\nThis paper addresses the limitations of MLLMs in Indic language healthcare scenarios by introducing the ArogyaBodha dataset and the ArogyaSutra Actor-Critic multi-agent framework. By incorporating dual-memory mechanisms, tool grounding, and simulation trajectory distillation, it effectively enhances medical reasoning accuracy and logical consistency in low-resource Indic language environments, providing essential resources and solutions for promoting fairness and reliability in AI-driven healthcare services.",
+      "render_excerpt": "机构: Indian Institute of Technology Patna<br>本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。",
+      "render_excerpt_en": "Institution: Indian Institute of Technology Patna<br>## 1. What the Paper Did - **Background**: Multimodal Large Language Models (MLLMs) show promise in general domains but struggle in specialized healthcare settings, particularly in multilingual and low-resource scenarios. In regions like rural India, patients use native Indic languages and medical images for complex queries, a use case poorly supported by existing English-centric MLLMs, limiting equitable AI healthcare access.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-10T17:47:07Z"
+        "captured_at": "2026-06-11T16:59:42Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-10"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.12040",
-      "date": "2026-06-10",
-      "title": "A Lightweight Multi-Agent Framework for Automated Concrete Barrier Design",
-      "authors": [
-        "Wanting Wang",
-        "Xiye Ma",
-        "Yuyang He",
-        "Minghui Cheng",
-        "Ran Cao"
-      ],
-      "abstract": "The design of reinforced concrete highway barriers is a safety-critical process that requires strict compliance with regulatory provisions such as the AASHTO-LRFD bridge design guidelines. Current engineering practice relies heavily on manual, iterative, and heuristic calculations to satisfy complex nonlinear material and mechanics constraints. Although Large Language Models (LLMs) demonstrate strong generative capabilities, their direct application to structural engineering remains limited by hallucination risks and insufficient physical grounding. To address these challenges, this study proposes a novel \"generation-evaluation-optimization\" closed-loop framework for automated concrete barrier design using the multi-agent orchestration capabilities of AutoGen. Experimental results demonstrate that the proposed agentic framework achieves over 98% design accuracy, significantly outperforming standalone general-purpose LLMs. More importantly, the study reveals that design performance is not necessarily correlated with model scale, where an 8B-parameter lightweight model could outperform unconstrained 631B-parameter flagship models. This finding highlights the potential to substantially reduce computational costs while improving the accessibility of AI-assisted engineering tools for industry applications. The source code for the proposed multi-agent design framework is available at the project GitHub repository: https://github.com/MXY820/barrier-design. Keywords: Structural Engineering; Multi-Agent Systems; Large Language Models; Concrete Barrier Design; AutoGen; Design Automation.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.12040v1",
-        "pdf": "https://arxiv.org/pdf/2606.12040v1",
-        "github": "https://github.com/MXY820/barrier-design",
-        "blog": null
-      },
-      "institution": "Hunan University; University of Miami",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：钢筋混凝土公路护栏的设计是一个安全关键过程，必须严格遵守 AASHTO-LRFD 等监管规定。当前的工程实践严重依赖人工、迭代和启发式计算来满足复杂的非线性材料和力学约束。\n- **已有工作为什么解决不了**：虽然大型语言模型（LLM）表现出强大的生成能力，但直接应用于结构工程仍受限于幻觉风险和缺乏物理基础。通用 LLM 难以独立处理严格的工程规范和非线性力学约束，导致设计结果不可靠。\n\n## 文章的核心贡献点\n- **提出了一个**基于 AutoGen 多智能体编排的“生成-评估-优化”闭环框架，用于自动化混凝土护栏设计。\n- **挑战1**：LLM 在专业工程领域存在幻觉且缺乏物理一致性，难以保证设计符合严格的力学规范。**解决方法**：通过多智能体协作机制，将设计任务分解为生成、评估和优化三个独立但交互的环节，引入专门的评估代理来验证物理约束，形成闭环反馈以纠正错误。\n- **挑战2**：高性能工程辅助工具通常依赖超大参数模型，计算成本高且难以普及。**解决方法**：研究发现设计性能与模型规模非正相关，该框架使得轻量级模型（如 8B 参数）在无约束条件下能超越旗舰级大模型（如 631B 参数），显著降低了计算成本并提高了行业应用的可行性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：利用 AutoGen 框架构建多智能体系统，源代码已开源。框架模拟了工程师的手动迭代过程，但实现了自动化和智能化。\n- **评估结果**：提出的智能体框架实现了超过 98% 的设计准确率。\n- **对比**：显著优于独立的通用 LLM。特别值得注意的是，8B 参数的轻量级模型在该框架下的表现优于未加约束的 631B 参数旗舰模型，证明了特定领域框架设计比单纯增加模型规模更有效。\n\n#### 总结\n本文针对钢筋混凝土护栏设计中的复杂约束和人工效率低下问题，提出了一种轻量级的多智能体自动化设计框架。通过“生成-评估-优化”的闭环机制，有效解决了 LLM 的幻觉和物理 grounding 不足问题。实验表明，该方法不仅准确率高达 98% 以上，还揭示了小参数模型在特定工程任务中超越大模型的潜力，为降低 AI 辅助工程工具的计算成本和提升可访问性提供了新路径。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: The design of reinforced concrete highway barriers is a safety-critical process requiring strict compliance with regulations like AASHTO-LRFD. Current practices rely heavily on manual, iterative, and heuristic calculations to satisfy complex nonlinear material and mechanical constraints.\n- **Why Existing Work Falls Short**: While Large Language Models (LLMs) show strong generative capabilities, their direct application to structural engineering is limited by hallucination risks and insufficient physical grounding. General-purpose LLMs struggle to independently handle rigorous engineering specifications and nonlinear mechanical constraints, leading to unreliable design outcomes.\n\n## Core Contributions\n- **Proposed a** novel \"generation-evaluation-optimization\" closed-loop framework for automated concrete barrier design using AutoGen's multi-agent orchestration capabilities.\n- **Challenge 1**: LLMs suffer from hallucinations and lack physical consistency in specialized engineering domains, making it difficult to ensure designs meet strict mechanical codes. **Solution**: The paper employs a multi-agent collaboration mechanism that decomposes the task into generation, evaluation, and optimization stages. Specialized evaluation agents verify physical constraints, creating a closed-loop feedback system to correct errors.\n- **Challenge 2**: High-performance engineering tools often rely on massive models, resulting in high computational costs and limited accessibility. **Solution**: The study reveals that design performance is not necessarily correlated with model scale. The framework enables lightweight models (e.g., 8B parameters) to outperform unconstrained flagship models (e.g., 631B parameters), significantly reducing computational costs and enhancing feasibility for industry applications.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The multi-agent system is built using the AutoGen framework, with source code available on GitHub. It automates the manual iterative process typically performed by engineers.\n- **Evaluation Results**: The proposed agentic framework achieved over 98% design accuracy.\n- **Comparison**: It significantly outperforms standalone general-purpose LLMs. Notably, an 8B-parameter lightweight model within this framework outperformed an unconstrained 631B-parameter flagship model, demonstrating that specialized framework design is more effective than simply increasing model size for this task.\n\n## 4. Conclusion\nThis paper addresses the complex constraints and inefficiencies in reinforced concrete barrier design by proposing a lightweight multi-agent automated design framework. By implementing a \"generation-evaluation-optimization\" closed-loop mechanism, it effectively mitigates LLM hallucinations and the lack of physical grounding. Experiments show that the method achieves over 98% accuracy and highlights the potential of small-parameter models to surpass larger ones in specific engineering tasks, offering a new path for reducing computational costs and improving the accessibility of AI-assisted engineering tools.",
-      "render_excerpt": "机构: Hunan University; University of Miami<br>本文针对钢筋混凝土护栏设计中的复杂约束和人工效率低下问题，提出了一种轻量级的多智能体自动化设计框架。通过“生成-评估-优化”的闭环机制，有效解决了 LLM 的幻觉和物理 grounding 不足问题。实验表明，该方法不仅准确率高达 98% 以上，还揭示了小参数模型在特定工程任务中超越大模型的潜力，为降低 AI 辅助工程工具的计算成本和提升可访问性提供了新路径。",
-      "render_excerpt_en": "Institution: Hunan University; University of Miami<br>## 1. What the Paper Did - **Background**: The design of reinforced concrete highway barriers is a safety-critical process requiring strict compliance with regulations like AASHTO-LRFD. Current practices rely heavily on manual, iterative, and heuristic calculations to satisfy complex nonlinear material and mechanical constraints.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-10T13:06:11Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-10"
+        "captured_at": "2026-06-11"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

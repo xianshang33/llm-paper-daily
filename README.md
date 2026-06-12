@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.11_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.12_06:08-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月11日 06:13</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月12日 06:08</sub></summary>
 <br>
 
-- Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks 
-- Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application 
-- Exploration Structure in LLM Agents for Multi-File Change Localization 
-- APPO: Agentic Procedural Policy Optimization 
-- A Lightweight Multi-Agent Framework for Automated Concrete Barrier Design 
+- AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility 
+- Reward Modeling for Multi-Agent Orchestration 
+- EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery 
+- EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis 
+- ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-11</span> | **AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility**<br><sub>机构: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13608v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13608.md)  |
+| <span style='display: inline-block; width: 42px;'>06-11</span> | **Reward Modeling for Multi-Agent Orchestration**<br><sub>机构: Rutgers University, Salesforce AI Research<br>本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13598v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13598.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Wang-ML-Lab/OrchRM)</div> |
+| <span style='display: inline-block; width: 42px;'>06-11</span> | **EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery**<br><sub>机构: Tsinghua University, Zhipu AI<br>EurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13662v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13662.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/THU-Team-Eureka/EurekAgent)</div> |
+| <span style='display: inline-block; width: 42px;'>06-11</span> | **EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis**<br><sub>机构: LatchBio<br>EpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13602v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13602.md)  |
+| <span style='display: inline-block; width: 42px;'>06-11</span> | **ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages**<br><sub>机构: Indian Institute of Technology Patna<br>本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13572v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13572.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://iitp-cse.github.io/ArogyaSutra/)</div> |
 | <span style='display: inline-block; width: 42px;'>06-10</span> | **Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks**<br><sub>机构: University of Hong Kong<br>Claw-SWE-Bench 填补了通用智能体在仓库级编码任务评估上的空白，通过标准化适配器协议和严格的评估契约，实现了不同智能体 harness 之间的公平比较。研究结果表明，harness 的设计和适配器的质量对最终性能有决定性影响，且成本效率是评估中不可忽视的关键指标。该基准为未来开发高效、低成本的编码智能体提供了重要的参考标准和数据支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12344v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12344.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/opensquilla/claw-swe-bench)</div> |
 | <span style='display: inline-block; width: 42px;'>06-10</span> | **Agentic Environment Engineering for Large Language Models: A Survey of Environment Modeling, Synthesis, Evaluation, and Application**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>本文填补了LLM智能体环境研究在系统性分类和深度分析方面的空白。通过构建涵盖建模、合成、评估和应用的全生命周期框架，文章不仅厘清了当前代表性环境的核心能力与发展路径，还深入探讨了自动化环境合成的两种主要范式及其评估方法。特别地，文章从智能体与环境协同进化的角度，详细阐述了智能体进化的四种路径和环境进化的三种范式，为未来构建更高效、更逼真的智能体训练环境提供了理论指导和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.12191v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.12191.md)  |
 | <span style='display: inline-block; width: 42px;'>06-10</span> | **Exploration Structure in LLM Agents for Multi-File Change Localization**<br><sub>机构: Singapore Management University<br>本文指出了当前 LLM 代理在代码库探索中采用的线性模式在处理多文件变更时的结构性缺陷。通过提出一种非线性的、领域范围的并行代理探索方法，证明了即使使用较小的模型，也能在覆盖率和准确性上超越传统的线性探索基线。研究还揭示了原始文件系统访问的风险以及多代理咨询的成本效益问题，为未来构建更高效的软件工程代理提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.11976v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.11976.md)  |
