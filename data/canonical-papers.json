@@ -1,71 +1,43 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-12T06:08:34.640664+00:00",
-  "run_date": "2026-06-11",
+  "generated_at": "2026-06-13T05:52:45.199644+00:00",
+  "run_date": "2026-06-07",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.13608",
-      "date": "2026-06-11",
-      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "paper_id": "2606.08696",
+      "date": "2026-06-07",
+      "title": "Agentic Search for Counterfactual Recourse under Fixed LLM Budgets",
       "authors": [
-        "Xiaoyuan Liu",
-        "Jianhong Tu",
-        "Yuqi Chen",
-        "Siyuan Xie",
-        "Sihan Ren",
-        "Tianneng Shi",
-        "Gal Gantar",
-        "Evan Sandoval",
-        "Donghyun Lee",
-        "Daniel Miao",
-        "Peter J. Gilbert",
-        "Nick Hynes",
-        "Mauro Staver",
-        "Warren He",
-        "David Marn",
-        "Andrew Low",
-        "Xi Zhang",
-        "Elron Bandel",
-        "Michal Shmueli-Scheuer",
-        "Siva Reddy",
-        "Alexandre Drouin",
-        "Alexandre Lacoste",
-        "Ramayya Krishnan",
-        "Elham Tabassi",
-        "Yu Su",
-        "Victor Barres",
-        "Chenguang Wang",
-        "Wenbo Guo",
-        "Dawn Song"
+        "Yasuo Tabei"
       ],
-      "abstract": "Agent systems are advancing quickly across domains, but their evaluation remains fragmented. Most benchmarks rely on fixed, LLM-centric harnesses that require heavy integration, create test-production mismatch, and limit fair comparison across diverse agent designs. The root problem is the lack of an open, agent-agnostic assessment interface. We advocate Agentified Agent Assessment (AAA), where evaluation is performed by judge agents and all participants interact through standardized protocols: A2A for task management and MCP for tool access. Conventional benchmarking defines two separate interfaces, one for the benchmark and one for the agent, while AAA only needs one; this yields a generic, unified framework that separates assessment logic from agent implementation and enables reproducible, interoperable, and multi-agent evaluation. We further introduce AgentBeats as a concrete realization of AAA: we identify five practical operation modes that make standardized assessment compatible with real-world constraints on openness, privacy, and reproducibility. To evaluate our design at scale, we conduct two studies: a five-month open competition that drew 298 judge agents across 12 categories together with 467 subject agents from independent participants, showing that AAA applies across a heterogeneous range of benchmarks; and a case study on coding agents that confirms agentified evaluation preserves fidelity with the public record while surfacing previously missing head-to-head results, yielding research insights about agent design. Combining a community-scale field study and a controlled coding case study, we verify that AAA delivers coverage, practicality, and fidelity across heterogeneous scenarios at scale. Together, AAA and AgentBeats offer a clear path toward open, standardized, and reproducible agent assessment.",
+      "abstract": "Counterfactual recourse aims to provide actionable feature changes that would alter an unfavorable decision made by a predictive model. In practice, affected individuals often benefit from multiple feasible alternatives rather than a single optimal explanation. A natural way to produce such alternatives is to prompt large language models (LLMs). However, prompting incurs a practical constraint: the number of LLM calls is often the dominant computational and economic cost. Together, the need for multiple alternatives and this cost constraint shift the problem from finding a single high-quality counterfactual to efficiently generating a set of oracle-validated counterfactuals under a fixed LLM-call budget. In this work, we study counterfactual recourse generation in the LLM-agentic setting as a fixed-budget search problem and propose Comp-MCTS, an agentic tree-search framework that maximizes the yield of unique, oracle-validated counterfactuals under this budget while maintaining favorable quantity--quality trade-offs. Comp-MCTS allocates the budget toward novel intervention directions via LLM-based proposal generation, oracle validation, and compression-guided pruning, in a training-free, oracle-only setting. Experiments on four real-world tabular datasets show that Comp-MCTS substantially outperforms single-candidate LATS-style baselines in the yield of unique, oracle-validated counterfactuals, and offers favorable quantity--quality--efficiency trade-offs against stronger multi-candidate variants: comparable or higher yield at similar or lower oracle-evaluation cost on three of four datasets, plus competitive proximity, sparsity, and novelty.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13608v1",
-        "pdf": "https://arxiv.org/pdf/2606.13608v1",
+        "abs": "http://arxiv.org/abs/2606.08696v1",
+        "pdf": "https://arxiv.org/pdf/2606.08696v1",
         "github": null,
         "blog": null
       },
-      "institution": "UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara",
+      "institution": "RIKEN Center for Advanced Intelligence Project",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体系统发展迅速，但其评估体系仍然碎片化。现有的基准测试大多依赖于固定的、以LLM为中心的评估框架。\n- **已有工作的局限性**：传统方法需要繁重的集成工作，导致测试环境与生产环境不匹配（test-production mismatch），且难以在不同设计的智能体之间进行公平比较。根本问题在于缺乏一个开放的、与智能体无关的评估接口。\n\n## 文章的核心贡献点\n- **提出了代理化智能体评估（Agentified Agent Assessment, AAA）框架及其实例 AgentBeats**：倡导由“法官智能体”执行评估，所有参与者通过标准化协议（A2A用于任务管理，MCP用于工具访问）进行交互，将评估逻辑与智能体实现分离。\n- **挑战1：集成复杂度高与接口不统一**。传统基准测试为每个基准和每个智能体定义独立接口，导致N*M的集成复杂度。**解决方法**：AAA仅需要一个统一接口，通过A2A和MCP标准协议，将集成复杂度降低为N+M，实现了通用且统一的框架，支持可复现和互操作的多智能体评估。\n- **挑战2：现实约束下的标准化评估兼容性**。在实际应用中，开放性、隐私性和可复现性之间存在冲突，难以直接套用统一标准。**解决方法**：引入了五种实际操作模式，使标准化评估能够兼容现实世界对开放性和隐私的限制，并提供了最佳实践指南，让开发者和基准设计者能以最小成本采用AAA。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **大规模实地研究**：开展了一项为期五个月的公开竞赛，吸引了来自独立参与者的467个主体智能体和298个法官智能体（涵盖12个类别）。结果表明，AAA适用于异构的基准测试范围，验证了其覆盖范围和实用性。\n- **编码智能体案例研究**：针对编码智能体进行了对照研究，证实了代理化评估在与公共记录保持一致性的同时，能够揭示此前缺失的点对点（head-to-head）对比结果，提供了关于智能体设计的研究见解。\n- **对比优势**：与传统基准测试相比，AAA消除了测试与生产的差异，支持更公平的跨架构比较，并在大规模异构场景中保持了高保真度。\n\n#### 总结\n本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-based agent systems are advancing rapidly, but their evaluation remains fragmented. Most existing benchmarks rely on fixed, LLM-centric harnesses.\n- **Limitations of Existing Work**: Traditional methods require heavy integration, create a mismatch between test and production environments, and limit fair comparison across diverse agent designs. The root cause is the lack of an open, agent-agnostic assessment interface.\n\n## Core Contributions\n- **Proposed Agentified Agent Assessment (AAA) framework and its implementation, AgentBeats**: Advocates for evaluation performed by judge agents, where all participants interact via standardized protocols (A2A for task management, MCP for tool access), separating assessment logic from agent implementation.\n- **Challenge 1: High Integration Complexity and Fragmented Interfaces**. Traditional benchmarks define separate interfaces for each benchmark and agent, leading to N*M integration complexity. **Solution**: AAA requires only one unified interface using A2A and MCP standards, reducing complexity to N+M. This yields a generic framework that enables reproducible, interoperable, and multi-agent evaluation.\n- **Challenge 2: Compatibility of Standardized Assessment with Real-world Constraints**. Balancing openness, privacy, and reproducibility is difficult in practical scenarios. **Solution**: Introduced five practical operation modes to make standardized assessment compatible with real-world constraints, along with recommended practices for minimal-effort adoption by developers and benchmark designers.\n\n## Implementation and Evaluation\n- **Large-scale Field Study**: Conducted a five-month open competition involving 467 subject agents and 298 judge agents across 12 categories from independent participants. Results showed that AAA applies across a heterogeneous range of benchmarks, demonstrating coverage and practicality.\n- **Coding Agent Case Study**: A controlled study on coding agents confirmed that agentified evaluation preserves fidelity with public records while surfacing previously missing head-to-head results, yielding insights into agent design.\n- **Comparison**: Compared to traditional benchmarks, AAA eliminates test-production mismatch, supports fairer cross-architecture comparisons, and maintains high fidelity in large-scale heterogeneous scenarios.\n\n## 4. Conclusion\nThe paper presents the AAA framework and AgentBeats system, addressing fragmentation and integration challenges in agent evaluation through standardized protocols (A2A/MCP) and judge agents. Community-scale competitions and case studies verify the method's effectiveness in openness, standardization, and reproducibility, offering a clear path forward for agent assessment.",
-      "render_excerpt": "机构: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。",
-      "render_excerpt_en": "Institution: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>## 1. What the Paper Did - **Background**: LLM-based agent systems are advancing rapidly, but their evaluation remains fragmented. Most existing benchmarks rely on fixed, LLM-centric harnesses.",
+      "summary_cn": "## 文章做了什么\n- **背景**：反事实解释（Counterfactual Recourse）旨在为被预测模型拒绝的用户提供可操作的特征修改建议，以改变不利决策。在实际应用中，用户往往受益于多个可行的替代方案，而不仅仅是单一的最优解。\n- **已有工作为什么解决不了**：传统的反事实方法通常只返回单一或少数几个基于距离最小化的解，缺乏多样性。虽然利用大语言模型（LLM）可以生成多种替代方案，但 LLM 的调用次数是主要的计算和经济成本瓶颈。现有的基于 LLM 的搜索框架（如 LATS）主要针对单一路径优化，无法在固定的 LLM 调用预算下高效地生成大量独特且经预言机（Oracle）验证的有效反事实解释。\n\n## 文章的核心贡献点\n- **提出了一个 Comp-MCTS 框架**：一种用于固定预算下反事实解释生成的代理树搜索框架，旨在最大化独特且有效的反事实解释数量。\n- **挑战1：如何在有限的 LLM 调用预算下探索多样化的干预方向？**\n  - **难点**：盲目生成会导致大量冗余或无效的建议，迅速耗尽预算。\n  - **解决方法**：Comp-MCTS 通过 LLM 基于当前节点提出多个特征编辑建议，并结合黑盒预言机进行实时验证，将预算集中分配给有潜力的新颖干预方向，而非重复探索已知区域。\n- **挑战2：如何避免生成冗余的解释并维持质量与数量的平衡？**\n  - **难点**：简单的多候选生成容易产生语义相似或重复的结果，降低用户获得的实际价值。\n  - **解决方法**：引入压缩引导的剪枝机制（compression-guided pruning），在搜索过程中动态剔除冗余节点，确保最终输出的集合具有高独特性、稀疏性和邻近性，从而在固定预算下实现更优的数量-质量权衡。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在四个真实的表格数据集上进行评估，采用无需训练、仅依赖预言机的设置。\n- **对比基线**：与单候选的 LATS 风格基线以及更强的多候选变体进行对比。\n- **主要结果**：\n  - **产量优势**：Comp-MCTS 在独特且经预言机验证的反事实解释产量上显著优于单候选 LATS 基线。\n  - **效率与质量权衡**：与更强的多候选变体相比，Comp-MCTS 在四个数据集中的三个上，以相同或更低的预言机评估成本实现了相当或更高的产量。\n  - **指标表现**：在邻近性（proximity）、稀疏性（sparsity）和新颖性（novelty）方面表现出竞争力，证明了其在数量、质量和效率之间的良好平衡。\n\n#### 总结\n本文针对固定 LLM 预算下的反事实解释生成问题，提出了 Comp-MCTS 框架。通过将问题重构为固定预算的搜索问题，并结合 LLM 提议、预言机验证和压缩引导剪枝，该方法有效地解决了多样性和成本之间的矛盾。实验表明，Comp-MCTS 能在严格控制成本的前提下，为用户提供更多样化、高质量的可操作建议，优于现有的基于 LLM 的搜索基线。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Counterfactual recourse aims to provide actionable feature changes to help individuals alter unfavorable decisions made by predictive models. In practice, users benefit more from multiple feasible alternatives than a single optimal explanation.\n- **Why Existing Work Falls Short**: Traditional methods often return only one or a few proximity-driven solutions, lacking diversity. While Large Language Models (LLMs) can generate diverse alternatives, LLM calls are computationally and economically expensive. Existing LLM-based search frameworks (e.g., LATS) are optimized for single-path reasoning and fail to efficiently generate a large set of unique, oracle-validated counterfactuals under a fixed budget of LLM calls.\n\n## Core Contributions\n- **Proposed Comp-MCTS**: An agentic tree-search framework designed to maximize the yield of unique, oracle-validated counterfactuals under a fixed LLM-call budget.\n- **Challenge 1: How to explore diverse intervention directions within a limited LLM budget?**\n  - **Difficulty**: Blind generation leads to redundant or invalid suggestions, quickly exhausting the budget.\n  - **Solution**: Comp-MCTS uses LLMs to propose multiple feature edits at each node and validates them via a black-box oracle. It allocates the budget toward novel, promising intervention directions rather than re-exploring known areas.\n- **Challenge 2: How to avoid redundancy and maintain a balance between quantity and quality?**\n  - **Difficulty**: Simple multi-candidate generation often produces semantically similar or duplicate results, reducing practical value.\n  - **Solution**: Introduces compression-guided pruning to dynamically eliminate redundant nodes during the search. This ensures the final set has high uniqueness, sparsity, and proximity, achieving a better quantity-quality trade-off within the fixed budget.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on four real-world tabular datasets in a training-free, oracle-only setting.\n- **Baselines**: Compared against single-candidate LATS-style baselines and stronger multi-candidate variants.\n- **Key Results**:\n  - **Yield Superiority**: Comp-MCTS substantially outperforms single-candidate LATS baselines in the yield of unique, oracle-validated counterfactuals.\n  - **Efficiency and Quality Trade-off**: Against stronger multi-candidate variants, Comp-MCTS achieves comparable or higher yield at similar or lower oracle-evaluation costs on three out of four datasets.\n  - **Metric Performance**: Demonstrates competitive performance in proximity, sparsity, and novelty, highlighting its balanced trade-offs among quantity, quality, and efficiency.\n\n## 4. Conclusion\nThis paper addresses the problem of generating counterfactual explanations under a fixed LLM budget by proposing the Comp-MCTS framework. By reframing the task as a fixed-budget search problem and integrating LLM-based proposal generation, oracle validation, and compression-guided pruning, the method effectively resolves the tension between diversity and cost. Experiments show that Comp-MCTS provides more diverse and high-quality actionable recommendations than existing LLM-based search baselines while strictly controlling costs.",
+      "render_excerpt": "机构: RIKEN Center for Advanced Intelligence Project<br>本文针对固定 LLM 预算下的反事实解释生成问题，提出了 Comp-MCTS 框架。通过将问题重构为固定预算的搜索问题，并结合 LLM 提议、预言机验证和压缩引导剪枝，该方法有效地解决了多样性和成本之间的矛盾。实验表明，Comp-MCTS 能在严格控制成本的前提下，为用户提供更多样化、高质量的可操作建议，优于现有的基于 LLM 的搜索基线。",
+      "render_excerpt_en": "Institution: RIKEN Center for Advanced Intelligence Project<br>## 1. What the Paper Does - **Background**: Counterfactual recourse aims to provide actionable feature changes to help individuals alter unfavorable decisions made by predictive models. In practice, users benefit more from multiple feasible alternatives than a single optimal explanation.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-11T17:23:54Z"
+        "captured_at": "2026-06-07T15:53:10Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-11"
+        "captured_at": "2026-06-07"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -80,151 +52,45 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.13598",
-      "date": "2026-06-11",
-      "title": "Reward Modeling for Multi-Agent Orchestration",
+      "paper_id": "2606.08661",
+      "date": "2026-06-07",
+      "title": "Data Agents Under Attack: Vulnerabilities in LLM-Driven Analytical Systems",
       "authors": [
-        "King Yeung Tsang",
-        "Zihao Zhao",
-        "Vishal Venkataramani",
-        "Haizhou Shi",
-        "Zixuan Ke",
-        "Semih Yavuz",
-        "Shafiq Joty",
-        "Hao Wang"
+        "Kuncan Wang",
+        "Ziting Wang",
+        "Peizhuo Lv",
+        "Haoyang Li",
+        "Guoliang Li",
+        "Gao Cong",
+        "Wei Dong"
       ],
-      "abstract": "Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestration to coordinate specialized agents, yet training such orchestrators is hindered by limited supervision and high computational cost. We propose Orchestration Reward Modeling (OrchRM), a self-supervised framework for evaluating orchestration quality without human annotations. OrchRM leverages intermediate artifacts from multi-agent executions to construct win-lose pairs for Bradley-Terry reward model training. Unlike existing MAS test-time scaling and orchestrator training frameworks that rely on costly sub-agent rollouts, OrchRM operates directly at the orchestration level, enabling efficient and high-performing reward-guided orchestrator training and MAS test-time scaling. OrchRM improves training efficiency by up to 10x in token usage while improving MAS test-time scaling performance by up to 8% in accuracy. These gains consistently transfer across multiple domains, including mathematical reasoning, web-based question answering, and multi-hop reasoning, demonstrating orchestration-level reward modeling as a scalable direction for robust multi-agent orchestration. Code will be available at https://github.com/Wang-ML-Lab/OrchRM.",
+      "abstract": "Data agents integrate LLM-driven reasoning with relational data access, executable analytical tools, and multi-step workflow orchestration, making them increasingly central to enterprise analytics. This integration introduces new security vulnerabilities across data resources, database execution, and agent reasoning, recombining concerns from database security and general-purpose LLM-agent security into failure modes that neither line of work captures on its own. To address this gap, we present a systematic security study of data agents. Our contributions are threefold. First, we develop a layered vulnerability framework that identifies eight data agent-specific risks across interpretation, execution, and policy layers. Second, we introduce an attack taxonomy organized by adversary goal, tactic, and technique, covering three goals, seven tactics, and fourteen techniques, and pair it with an LLM-driven payload generation pipeline grounded in real database schemas. Third, we evaluate these attacks on six systems, including four open-source data agents and two production cloud analytics services. Our experiments reveal substantial security vulnerabilities across current systems and yield four key takeaways.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13598v1",
-        "pdf": "https://arxiv.org/pdf/2606.13598v1",
-        "github": "https://github.com/Wang-ML-Lab/OrchRM",
-        "blog": null
-      },
-      "institution": "Rutgers University, Salesforce AI Research",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）需要有效的编排器来协调专用智能体，以处理复杂任务。当前的趋势是从手动设计的工作流转向由LLM控制的自动化编排。\n- **已有的工作为什么解决不了**：训练高质量的编排器面临两大障碍。首先，由于编排策略、任务类型和子智能体能力之间存在强依赖性，难以收集高质量的人工标注数据。其次，现有的训练框架（如MAS-Orchestra）依赖于昂贵的子智能体完整 rollout，导致极高的计算成本和时间消耗（例如仅100次更新步骤就消耗超过10亿 token），限制了其可扩展性。\n\n## 文章的核心贡献点\n- **提出了一个 Orch-RM (Orchestration Reward Modeling)**：一种自监督框架，用于在没有人工标注的情况下评估编排质量，直接作用于编排层面而非子智能体执行层面。\n- **挑战1：缺乏高质量的人工监督信号**。传统RLHF依赖大量人工偏好标注，但在多智能体编排中极难获取。Orch-RM通过利用多智能体执行过程中的中间产物（intermediate artifacts）自动构建“胜-负”对（win-lose pairs），并使用Bradley-Terry模型进行奖励模型训练，从而实现了完全自监督的学习。\n- **挑战2：训练效率低下且计算成本高昂**。现有方法需要对子智能体进行完整的 rollout 来计算奖励，方差大且耗时。Orch-RM直接在编排层面操作，避免了昂贵的子智能体 rollout，显著降低了训练所需的 token 用量，同时保持了高效的奖励引导训练和测试时扩展能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Orch-RM 作为一个自监督奖励建模框架，可集成到现有的 MAS 训练流程中，用于持续优化编排器或指导测试时扩展（Test-Time Scaling）。\n- **Evaluation 结果**：\n    - **效率提升**：相比基线方法，Orch-RM 在训练效率上提升了高达 10 倍（以 token 使用量衡量）。\n    - **性能提升**：在 MAS 测试时扩展场景中，准确率提升了高达 8%。\n    - **领域泛化性**：这些增益在多个领域保持一致，包括数学推理、基于网络的问答以及多跳推理任务。\n- **对比**：与依赖昂贵子智能体 rollout 的现有框架（如 MAS-Orchestra）相比，Orch-RM 在大幅降低资源消耗的同时，实现了更好的准确性-效率权衡。\n\n#### 总结\n本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestrators to coordinate specialized agents for complex tasks. The field is shifting from manually designed workflows to automated, LLM-controlled orchestration.\n- **Why Existing Work Falls Short**: Training capable orchestrators is hindered by two main issues. First, collecting high-quality human annotations is difficult due to strong interdependencies among orchestration strategies, task types, and sub-agent capabilities. Second, existing training frameworks (e.g., MAS-Orchestra) rely on costly full rollouts of sub-agents, leading to prohibitive computational costs and time (e.g., consuming over 1B tokens for just 100 update steps).\n\n## Core Contributions\n- **Proposed Orch-RM (Orchestration Reward Modeling)**: A self-supervised framework that evaluates orchestration quality without human annotations, operating directly at the orchestration level rather than the sub-agent execution level.\n- **Challenge 1: Scarcity of High-Quality Human Supervision**. Traditional RLHF relies heavily on large-scale human preference data, which is scarce for MAS orchestration. Orch-RM addresses this by leveraging intermediate artifacts from multi-agent executions to automatically construct win-lose pairs for Bradley-Terry reward model training, enabling fully self-supervised learning.\n- **Challenge 2: Low Training Efficiency and High Computational Cost**. Existing methods require expensive full rollouts of sub-agents to compute rewards, resulting in high variance and latency. Orch-RM operates directly at the orchestration level, avoiding costly sub-agent rollouts, thereby significantly reducing token usage while maintaining efficient reward-guided training and test-time scaling.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Orch-RM serves as a self-supervised reward modeling framework that can be integrated into existing MAS training pipelines for continued orchestrator optimization or to guide Test-Time Scaling.\n- **Evaluation Results**:\n    - **Efficiency Gain**: Achieves up to 10x improvement in training efficiency in terms of token usage compared to baselines.\n    - **Performance Gain**: Improves MAS test-time scaling performance by up to 8% in accuracy.\n    - **Generalizability**: Gains are consistent across multiple domains, including mathematical reasoning, web-based question answering, and multi-hop reasoning.\n- **Comparison**: Compared to existing frameworks like MAS-Orchestra that rely on expensive sub-agent rollouts, Orch-RM achieves a superior accuracy-efficiency trade-off, delivering better performance with substantially lower resource consumption.\n\n## 4. Conclusion\nThis paper introduces Orch-RM to address the challenges of scarce supervision and high computational costs in training MAS orchestrators. By utilizing intermediate execution artifacts to generate self-supervised reward signals, Orch-RM significantly enhances both training efficiency and final performance without relying on human annotations or expensive rollouts. The work demonstrates that orchestration-level reward modeling is a scalable and effective direction for robust multi-agent systems.",
-      "render_excerpt": "机构: Rutgers University, Salesforce AI Research<br>本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。",
-      "render_excerpt_en": "Institution: Rutgers University, Salesforce AI Research<br>## 1. What the Paper Does - **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestrators to coordinate specialized agents for complex tasks. The field is shifting from manually designed workflows to automated, LLM-controlled orchestration.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-11T17:16:24Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-11"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.13662",
-      "date": "2026-06-11",
-      "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
-      "authors": [
-        "Amy Xin",
-        "Jiening Siow",
-        "Junjie Wang",
-        "Zijun Yao",
-        "Fanjin Zhang",
-        "Jian Song",
-        "Lei Hou",
-        "Juanzi Li"
-      ],
-      "abstract": "LLM-based agents have shown increasing potential in automating scientific discovery. Given an optimizable metric and an execution environment, they can propose, validate, and iterate scientific solutions, and have produced results that outperform human-designed approaches. As model capabilities continue to improve, we argue that the bottleneck for autonomous scientific discovery is shifting from prescribing agent workflows to designing agent environments: the resources, constraints, and interfaces that shape agent behavior. We frame this as environment engineering: building environments that amplify productive behaviors, such as open-ended exploration, systematic artifact management, and inter-agent collaboration, while suppressing harmful behaviors, such as reward hacking and high-friction human oversight. We present EurekAgent, an environment-engineered agent system for metric-driven autonomous scientific discovery. EurekAgent engineers the environment along four dimensions: permissions engineering for bounded agent execution and isolated evaluation; artifact engineering for filesystem and Git-based collaboration; budget engineering for budget-aware exploration; and human-in-the-loop engineering for easy human supervision and intervention. EurekAgent sets new state-of-the-art results on multiple mathematics, kernel engineering, and machine learning tasks, including new state-of-the-art 26-circle packing results discovered with less than $11 in total API cost. We open-source our code and results, and call for environment engineering as a core research direction for developing reliable autonomous research agents.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.13662v1",
-        "pdf": "https://arxiv.org/pdf/2606.13662v1",
-        "github": "https://github.com/THU-Team-Eureka/EurekAgent",
-        "blog": null
-      },
-      "institution": "Tsinghua University, Zhipu AI",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的代理在自动化科学发现方面展现出巨大潜力，能够根据可优化指标和执行环境提出、验证并迭代科学解决方案。随着模型能力的提升，自主科学发现的瓶颈正从规定代理工作流转向设计代理环境（即塑造代理行为的资源、约束和接口）。\n- **已有工作的局限**：现有研究多集中于优化代理的工作流或提示工程，忽视了环境对代理行为的塑造作用。这导致代理容易出现奖励黑客（reward hacking）、缺乏系统性工件管理、难以进行开放式探索以及需要高摩擦的人工监督等问题，限制了其在复杂科学任务中的可靠性和效率。\n\n## 文章的核心贡献点\n- **提出了一个名为 EurekAgent 的环境工程化代理系统**，旨在通过环境设计来放大富有成效的行为（如开放式探索、系统性工件管理、代理间协作）并抑制有害行为。\n- **挑战1：如何确保代理执行的安全性与评估的独立性，防止奖励黑客？**\n  - **难点**：自主代理可能在不受控的环境中利用漏洞获取高分而非真正解决问题，且评估过程易受干扰。\n  - **解决方法**：通过**权限工程（Permissions Engineering）**实现有界代理执行和隔离评估，严格限制代理的操作范围，确保实验结果的真实性和安全性。\n- **挑战2：如何实现高效的长期探索、协作及成本控制？**\n  - **难点**：科学发现需要长期的迭代和版本管理，同时API调用成本高昂，且需要便捷的人工干预机制。\n  - **解决方法**：通过**工件工程（Artifact Engineering）**利用文件系统和Git进行协作管理；通过**预算工程（Budget Engineering）**实现感知预算的探索策略；通过**人机协同工程（Human-in-the-loop Engineering）**提供低摩擦的人工监督和干预接口。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EurekAgent 是一个开源系统，代码和结果已公开。它集成了权限控制、Git版本控制、预算监控和人机交互界面。\n- **评估结果**：\n  - **数学任务**：在26圆 packing 问题中发现了新的最先进（SOTA）结果（得分2.635999），超越了此前最佳人类结果（~2.634）和AI结果（2.635986），且总API成本低于11美元。\n  - **核工程任务**：在 Erdős 最小重叠问题和一阶自相关不等式问题上均取得了新的 SOTA 结果。\n  - **机器学习任务**：在 TriMul 内核优化中达到 2005.03 µs，优于此前最佳 AI 结果（2247.78 µs）；在 MLE-Bench 子集上取得 85.71% 的准确率，排名第一。\n- **对比**：在所有测试的数学和核工程任务中，EurekAgent 均设定了新的 SOTA；在机器学习基准测试中也表现优异，显著优于此前发布的最优人类和 AI 基线。\n\n#### 总结\nEurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-based agents show increasing potential in automating scientific discovery by proposing, validating, and iterating solutions based on optimizable metrics. As model capabilities improve, the bottleneck is shifting from prescribing agent workflows to designing agent environments (resources, constraints, and interfaces).\n- **Limitations of Existing Work**: Current research focuses heavily on workflow optimization or prompt engineering, neglecting how the environment shapes agent behavior. This leads to issues like reward hacking, lack of systematic artifact management, inefficient open-ended exploration, and high-friction human oversight, limiting reliability and efficiency in complex scientific tasks.\n\n## Core Contributions\n- **Proposed EurekAgent**, an environment-engineered agent system for metric-driven autonomous scientific discovery, designed to amplify productive behaviors and suppress harmful ones.\n- **Challenge 1: How to ensure execution safety and evaluation isolation to prevent reward hacking?**\n  - **Difficulty**: Uncontrolled agents may exploit loopholes for high scores without solving problems, and evaluations can be easily interfered with.\n  - **Solution**: **Permissions Engineering** implements bounded agent execution and isolated evaluation, strictly limiting operational scope to ensure result authenticity and security.\n- **Challenge 2: How to enable efficient long-term exploration, collaboration, and cost control?**\n  - **Difficulty**: Scientific discovery requires long-term iteration and versioning, while API costs are high, and convenient human intervention is needed.\n  - **Solution**: **Artifact Engineering** uses filesystems and Git for collaboration; **Budget Engineering** enables budget-aware exploration; **Human-in-the-loop Engineering** provides low-friction supervision and intervention interfaces.\n\n## Implementation and Evaluation\n- **Implementation**: EurekAgent is an open-source system integrating permission controls, Git versioning, budget monitoring, and human-in-the-loop interfaces.\n- **Evaluation Results**:\n  - **Mathematics**: Achieved a new State-of-the-Art (SOTA) in the 26-circle packing problem (score 2.635999), surpassing the best human (~2.634) and AI (2.635986) results, with total API costs under $11.\n  - **Kernel Engineering**: Set new SOTA results in Erdős’ Minimum Overlap and 1st Autocorrelation Inequality tasks.\n  - **Machine Learning**: Achieved 2005.03 µs in TriMul kernel optimization, outperforming the previous best AI result (2247.78 µs); ranked first on the evaluated MLE-Bench subset with 85.71% accuracy.\n- **Comparison**: EurekAgent set new SOTAs in all tested mathematics and kernel engineering tasks and performed competitively in machine learning benchmarks, significantly outperforming previously published best human and AI baselines.\n\n## 4. Conclusion\nEurekAgent demonstrates that \"environment engineering\" is a core direction for developing reliable autonomous research agents. By carefully designing four environmental dimensions (permissions, artifacts, budget, and human-in-the-loop), the system significantly lowers the barrier and cost of automated scientific discovery while surpassing human experts and existing AI systems in multiple hard scientific tasks. The work calls for a community shift from workflow design to comprehensive environment engineering.",
-      "render_excerpt": "机构: Tsinghua University, Zhipu AI<br>EurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。",
-      "render_excerpt_en": "Institution: Tsinghua University, Zhipu AI<br>## 1. What the Paper Did - **Background**: LLM-based agents show increasing potential in automating scientific discovery by proposing, validating, and iterating solutions based on optimizable metrics. As model capabilities improve, the bottleneck is shifting from prescribing agent workflows to designing agent environments (resources, constraints, and interfaces).",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-11T17:56:35Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-11"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.13602",
-      "date": "2026-06-11",
-      "title": "EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis",
-      "authors": [
-        "Harihara Muralidharan",
-        "Reema Baskar",
-        "Soo Hee Lee",
-        "Tim Proctor",
-        "Kenny Workman"
-      ],
-      "abstract": "We introduce EpiBench, a verifiable benchmark for short-horizon epigenomics analysis. EpiBench evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers. The benchmark includes 106 evaluations across CUT\\&Tag/CUT\\&RUN, ATAC-seq, ChIP-seq, and DNA methylation workflows. Across 5,088 valid trajectories from 16 model-harness pairs, no system passed a majority of attempts: GPT-5.5 / Pi led at 45.0\\% (143/318 attempts; 95\\% confidence interval (CI), 36.3--53.7), followed by GPT-5.5 / OpenAI Codex at 39.9\\% (127/318 attempts; 95\\% CI, 31.6--48.3). Claude Opus 4.8 Max / Pi and GPT-5.4 / Pi each passed 39.0\\% (124/318 attempts; 95\\% CI, 30.2--47.8 and 31.0--47.0, respectively). Performance varies across assay types, and many failed runs still contain parts of the correct answer. Agents often found the right files and computed useful intermediate results, but failed when the task required deeper, assay-specific scientific judgment.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.13602v1",
-        "pdf": "https://arxiv.org/pdf/2606.13602v1",
+        "abs": "http://arxiv.org/abs/2606.08661v1",
+        "pdf": "https://arxiv.org/pdf/2606.08661v1",
         "github": null,
         "blog": null
       },
-      "institution": "LatchBio",
+      "institution": "Nanyang Technological University, The Hong Kong Polytechnic University, Tsinghua University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：表观基因组学分析（如染色质可及性、组蛋白修饰、DNA甲基化等）对于理解基因调控至关重要，但原始数据不可直接解读，需要经过比对、峰值调用、注释等一系列复杂的分析决策。AI智能体在生物数据分析中展现出潜力，但缺乏针对该领域专业决策能力的标准化评估。\n- **已有工作为什么解决不了**：现有的基准测试往往缺乏可验证性，或者无法模拟真实工作流中的具体决策点。许多任务的答案难以通过确定性标准进行评分，导致无法准确衡量智能体在需要深层科学判断的任务上的表现。\n\n## 文章的核心贡献点\n- **提出了一个 EpiBench**：这是一个用于短 horizon 表观基因组学分析的可验证基准测试，旨在评估智能体能否从真实的工作流状态中做出明确定义的分析决策，并返回可确定性评分的答案。\n- **挑战1：如何构建具有确定性评分标准的复杂生物信息学任务？**\n  - **难点**：生物分析流程长且分支多，最终结论往往受多种主观或参数选择影响，难以设定唯一的“正确”答案进行自动化评分。\n  - **解决方法**：将完整的分析工作流分解为短的、可评分的决策步骤（如质量控制、峰值调用、注释等），并将每个步骤的经验性决策形式化为确定性可评分的结构化答案。\n- **挑战2：如何评估智能体在特定实验类型下的深层科学判断能力？**\n  - **难点**：智能体可能擅长执行代码或查找文件，但在需要结合特定实验原理（如CUT&Tag与ChIP-seq的区别）进行科学推断时容易失败。\n  - **解决方法**：基准涵盖CUT&Tag/CUT&RUN、ATAC-seq、ChIP-seq和DNA甲基化四种主要工作流的106项评估，通过对比不同模型在各类任务（如QC、下游分析、可视化）的表现，揭示其在特定科学语境下的能力边界。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EpiBench包含106个评估项，覆盖四种主要表观基因组学工作流。研究团队在16个“模型- harness ”组合上运行了基准测试，每个组合在每个评估项上运行3次，共生成5,088条有效轨迹。Pi表示Pi终端编码harness。\n- **Evaluation结果**：\n  - 没有系统通过大多数尝试。表现最好的是 GPT-5.5 / Pi，通过率为45.0%（143/318次尝试）。\n  - 其次是 GPT-5.5 / OpenAI Codex (39.9%)，Claude Opus 4.8 Max / Pi 和 GPT-5.4 / Pi 均为39.0%。\n  - 性能随实验类型和任务家族变化显著。例如，在质量控制（QC）任务上表现较好，而在需要深层科学判断的下游分析或特定峰值调用任务上表现较差。\n  - 许多失败的运行仍然包含部分正确答案，智能体通常能找到正确的文件并计算有用的中间结果，但在需要更深层次的、特定于实验的科学判断时失败。\n- **对比**：相比其他通用代码或推理基准，EpiBench专门针对表观基因组学的专业领域知识进行了设计，揭示了当前最强模型在该垂直领域的局限性，即虽然能处理工具调用，但缺乏专业的科学直觉。\n\n#### 总结\nEpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Epigenomic assays (e.g., chromatin accessibility, histone modifications, DNA methylation) are crucial for understanding gene regulation but require complex analysis pipelines including alignment, peak calling, and annotation. AI agents show promise in biological data analysis, but there is a lack of standardized benchmarks to evaluate their decision-making capabilities in this domain.\n- **Why Existing Work Falls Short**: Current benchmarks often lack verifiability or fail to simulate specific decision points in real-world workflows. Many tasks lack deterministic grading criteria, making it difficult to accurately measure an agent's performance on tasks requiring deep scientific judgment.\n\n## Core Contributions\n- **Proposed EpiBench**: A verifiable benchmark for short-horizon epigenomics analysis that evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers.\n- **Challenge 1: How to construct complex bioinformatics tasks with deterministic grading criteria?**\n  - **Difficulty**: Biological analysis pipelines are long and branching, with final conclusions often influenced by subjective or parameter choices, making it hard to define a single \"correct\" answer for automated scoring.\n  - **Solution**: The paper decomposes full analysis workflows into short, gradeable decision steps (e.g., QC, peak calling, annotation) and formalizes each empirical decision into a deterministically gradable structured answer.\n- **Challenge 2: How to evaluate an agent's deep scientific judgment capabilities across specific assay types?**\n  - **Difficulty**: Agents may excel at code execution or file retrieval but fail when inferring scientific conclusions that require understanding specific experimental principles (e.g., differences between CUT&Tag and ChIP-seq).\n  - **Solution**: The benchmark includes 106 evaluations across four major workflows (CUT&Tag/CUT&RUN, ATAC-seq, ChIP-seq, DNA methylation), comparing model performance across various task families (QC, downstream analysis, visualization) to reveal capability boundaries in specific scientific contexts.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: EpiBench comprises 106 evaluations covering four major epigenomic workflows. The study ran the benchmark on 16 model-harness pairs, with three runs per evaluation per pair, resulting in 5,088 valid trajectories. \"Pi\" denotes the Pi terminal coding harness.\n- **Evaluation Results**:\n  - No system passed a majority of attempts. The top performer was GPT-5.5 / Pi with a 45.0% pass rate (143/318 attempts).\n  - Followed by GPT-5.5 / OpenAI Codex (39.9%), and Claude Opus 4.8 Max / Pi and GPT-5.4 / Pi both at 39.0%.\n  - Performance varied significantly by assay type and task family. Agents performed better on Quality Control (QC) tasks but struggled with downstream analyses or specific peak calling tasks requiring deeper scientific judgment.\n  - Many failed runs contained parts of the correct answer; agents often found the right files and computed useful intermediate results but failed when deeper, assay-specific scientific judgment was required.\n- **Comparison**: Unlike general coding or reasoning benchmarks, EpiBench is tailored to the specialized knowledge of epigenomics, revealing the limitations of current SOTA LLMs in this vertical domain—specifically, their ability to handle tool usage versus their lack of professional scientific intuition.\n\n## 4. Conclusion\nEpiBench fills a gap in the evaluation of AI agents for epigenomics by providing verifiable, deterministic grading criteria that quantify the performance of current state-of-the-art LLM agents in real-world bioinformatics workflows. The results indicate that while top models approach a 50% pass rate in some tasks, they generally fall short in scientific decision-making requiring deep domain knowledge. This benchmark provides a clear direction and evaluation standard for developing more specialized biological AI agents in the future.",
-      "render_excerpt": "机构: LatchBio<br>EpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。",
-      "render_excerpt_en": "Institution: LatchBio<br>## 1. What the Paper Did - **Background**: Epigenomic assays (e.g., chromatin accessibility, histone modifications, DNA methylation) are crucial for understanding gene regulation but require complex analysis pipelines including alignment, peak calling, and annotation. AI agents show promise in biological data analysis, but there is a lack of standardized benchmarks to evaluate their decision-making capabilities in this domain.",
+      "summary_cn": "## 文章做了什么\n- **背景**：数据智能体（Data Agents）将大语言模型（LLM）驱动的推理与关系型数据访问、可执行分析工具及多步工作流编排相结合，已成为企业数据分析的核心组件。这种集成赋予了系统高度的自主性和灵活性，使其能够基于大规模数据集提取精确的、有证据支持的知识。\n- **已有的工作为什么解决不了**：现有的安全研究要么孤立地关注传统关系数据库系统的安全漏洞，要么关注通用 LLM 智能体的安全问题。然而，数据智能体将 LLM 推理与迭代式数据库执行紧密耦合，产生了两者单独存在时都不会出现的新型交互性安全风险（例如，通过多个看似合法的查询累积泄露敏感信息），现有单一领域的防御机制无法有效捕捉或防御这些复合故障模式。\n\n## 文章的核心贡献点\n- **提出了一个**针对数据智能体的系统性安全研究框架，包括分层漏洞框架、攻击分类学以及基于真实数据库模式的 LLM 驱动载荷生成管道。\n- **挑战1：数据智能体特有的多层级交互漏洞难以界定。**\n  - **难点**：风险横跨解释层、执行层和策略层，传统数据库安全忽略 LLM 的解释偏差，而通用 LLM 安全忽略数据库执行的副作用。\n  - **解决方法**：论文开发了一个分层漏洞框架，明确识别出跨越解释、执行和策略三个层面的八种数据智能体特有风险，从而系统化地梳理了攻击面。\n- **挑战2：缺乏针对数据智能体复杂攻击路径的系统化分类与自动化测试手段。**\n  - **难点**：攻击者可以利用分析过程本身作为攻击向量，攻击目标、战术和技术组合复杂，且需要结合真实数据库 schema 生成有效的恶意载荷。\n  - **解决方法**：论文引入了按对手目标、战术和技术组织的攻击分类学（涵盖3个目标、7个战术、14个技术），并配套提出了一个基于真实数据库模式的 LLM 驱动载荷生成管道，实现了自动化的攻击模拟。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估设置**：研究在六个系统上评估了提出的攻击方法，包括四个开源数据智能体（如 DataInterpreter, DBGPT, DeepAnalyze, LAMBDA）和两个生产级云分析服务（如 Databricks Genie, Snowflake Cortex）。\n- **评估结果**：实验揭示了当前系统中存在大量的安全漏洞。研究表明，现有的数据智能体在面对精心设计的攻击时表现出显著的脆弱性，特别是在数据资源访问、数据库执行和智能体推理方面。\n- **对比与启示**：与传统数据库或通用 LLM 代理相比，数据智能体暴露出了独特的“累积泄露”等风险。研究得出了四个关键结论，强调了现有防御机制在应对这种新型耦合架构时的不足，证明了专门针对数据智能体的安全研究的必要性。\n\n#### 总结\n本文填补了数据库安全与通用 LLM 智能体安全之间的研究空白，首次对数据智能体进行了系统性的安全研究。通过提出分层漏洞框架和详细的攻击分类学，并结合自动化载荷生成技术在主流开源及商业系统上进行实证评估，文章有力地证明了数据智能体面临严峻的安全威胁。这项工作为未来构建更安全的数据智能体系统提供了重要的理论基础和实践指导。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Data agents integrate LLM-driven reasoning with relational data access, executable analytical tools, and multi-step workflow orchestration, becoming central to enterprise analytics. This integration enables autonomous and flexible data access, allowing agents to extract precise, evidence-grounded knowledge from large-scale datasets.\n- **Why Existing Work Falls Short**: Current security research isolates vulnerabilities in either traditional relational databases or general-purpose LLM agents. However, data agents couple LLM reasoning with iterative database execution, creating new interactive security risks (e.g., cumulative information leakage through multiple legitimate queries) that neither domain captures individually. Existing defenses fail to address these composite failure modes arising from the interaction between components.\n\n## Core Contributions\n- **Proposed**: A systematic security study framework for data agents, including a layered vulnerability framework, an attack taxonomy, and an LLM-driven payload generation pipeline grounded in real database schemas.\n- **Challenge 1: Defining multi-layered interaction vulnerabilities specific to data agents.**\n  - **Difficulty**: Risks span interpretation, execution, and policy layers. Traditional DB security ignores LLM interpretation biases, while general LLM security overlooks side effects of database execution.\n  - **Solution**: The paper develops a layered vulnerability framework that identifies eight data-agent-specific risks across interpretation, execution, and policy layers, systematically mapping the attack surface.\n- **Challenge 2: Lack of systematic classification and automated testing for complex attack paths in data agents.**\n  - **Difficulty**: Attackers can exploit the analysis process itself, with complex combinations of goals, tactics, and techniques requiring valid payloads based on real database schemas.\n  - **Solution**: The paper introduces an attack taxonomy organized by adversary goal, tactic, and technique (covering 3 goals, 7 tactics, and 14 techniques) and pairs it with an LLM-driven payload generation pipeline grounded in real database schemas for automated attack simulation.\n\n## Implementation and Evaluation\n- **Evaluation Setup**: The attacks were evaluated on six systems, including four open-source data agents (e.g., DataInterpreter, DBGPT, DeepAnalyze, LAMBDA) and two production cloud analytics services (e.g., Databricks Genie, Snowflake Cortex).\n- **Results**: Experiments revealed substantial security vulnerabilities across current systems. The study demonstrates that existing data agents are significantly vulnerable to crafted attacks, particularly in areas of data resource access, database execution, and agent reasoning.\n- **Comparison & Insights**: Compared to traditional databases or general LLM agents, data agents expose unique risks like \"cumulative leakage.\" The study yields four key takeaways, highlighting the inadequacy of existing defense mechanisms for this new coupled architecture and underscoring the need for specialized security research for data agents.\n\n## 4. Conclusion\nThis paper bridges the gap between database security and general LLM agent security by presenting the first systematic security study of data agents. By proposing a layered vulnerability framework and a detailed attack taxonomy, and empirically evaluating them on major open-source and commercial systems via automated payload generation, the paper convincingly demonstrates the severe security threats facing data agents. This work provides a crucial theoretical foundation and practical guidance for building more secure data agent systems in the future.",
+      "render_excerpt": "机构: Nanyang Technological University, The Hong Kong Polytechnic University, Tsinghua University<br>本文填补了数据库安全与通用 LLM 智能体安全之间的研究空白，首次对数据智能体进行了系统性的安全研究。通过提出分层漏洞框架和详细的攻击分类学，并结合自动化载荷生成技术在主流开源及商业系统上进行实证评估，文章有力地证明了数据智能体面临严峻的安全威胁。这项工作为未来构建更安全的数据智能体系统提供了重要的理论基础和实践指导。",
+      "render_excerpt_en": "Institution: Nanyang Technological University, The Hong Kong Polytechnic University, Tsinghua University<br>## 1. What the Paper Does - **Background**: Data agents integrate LLM-driven reasoning with relational data access, executable analytical tools, and multi-step workflow orchestration, becoming central to enterprise analytics. This integration enables autonomous and flexible data access, allowing agents to extract precise, evidence-grounded knowledge from large-scale datasets.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-11T17:20:29Z"
+        "captured_at": "2026-06-07T15:05:22Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-11"
+        "captured_at": "2026-06-07"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -239,43 +105,144 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.13572",
-      "date": "2026-06-11",
-      "title": "ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages",
+      "paper_id": "2606.08875",
+      "date": "2026-06-07",
+      "title": "Can the Environment Speak for Itself? $T^{2}$-GRPO: A Turn-Trajectory Group Relative Policy Optimization for Caregiver Agents",
       "authors": [
-        "Tanmoy Kanti Halder",
-        "Akash Ghosh",
-        "Subhadip Baidya",
-        "Arijit Roy",
-        "Sriparna Saha"
+        "Yutong Song",
+        "Jiang Wu",
+        "Pengfei Zhang",
+        "Wenjun Huang",
+        "Honghui Xu",
+        "Nikil Dutt",
+        "Amir M. Rahmani"
       ],
-      "abstract": "Multimodal Large Language Models (MLLMs) have shown promising reasoning capabilities in general domains, yet their performance remains limited in specialized settings such as healthcare, especially in multilingual and low-resource scenarios. This gap is critical in regions like rural India, where patients often express complex medical queries in native Indic languages and rely on multimodal inputs such as medical images. Existing English-centric MLLMs struggle to support such use cases, limiting equitable access to AI-driven healthcare assistance. To address this challenge, we introduce ArogyaBodha, a large-scale multilingual multimodal medical question-answer dataset constructed from eight heterogeneous sources, covering 31 body systems, six imaging modalities, and 21 clinical domains across English and seven major Indian languages. We further propose ArogyaSutra, an actor-critic-based multi-agent framework that integrates tool grounding with dual-memory mechanisms for step-wise, reasoning-aware decision making, and uses stored actor-critic simulation trajectories for distillation. Experiments show that our dataset and framework improve multilingual medical reasoning accuracy across all Indic languages, with ablations validating the contribution of each component. The source code and dataset are available at: https://iitp-cse.github.io/ ArogyaSutra/",
+      "abstract": "Optimizing large language models (LLMs) for long-horizon caregiver agents requires balancing delayed task objectives with immediate environment dynamics, such as patient distress and resistance. In dementia care, this balance is especially difficult: trajectory level rewards are too sparse for turn level credit assignment, while external LLM-based evaluators are costly and can misread fragmented or indirect patient responses. To address this issue, we propose \\textbf{T}urn-\\textbf{T}rajectory \\textbf{G}roup \\textbf{R}elative \\textbf{P}olicy \\textbf{O}ptimization (\\textbf{T$^{2}$-GRPO}), a framework that decouples caregiver RL into two normalized reward horizons and enforces safety through a binary hard veto. $T^2$-GRPO derives dense turn-level rewards directly from environment state transitions, measuring changes in patient distress and resistance from a frozen dementia patient simulator. These environment-grounded rewards are combined with trajectory-level evaluations through independent centered-rank normalization, which preserves heterogeneous reward signals and mitigates reward collapse. Extensive experiments on dementia caregivers show that T $^{2}$-GRPO outperforms competitive baselines, indicating a substantial improvement for emotionally sensitive caregiver scenarios that effectively handles immediate patient feedback, long-term care outcomes, and safety constraints.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13572v1",
-        "pdf": "https://arxiv.org/pdf/2606.13572v1",
-        "github": "https://iitp-cse.github.io/ArogyaSutra/",
+        "abs": "http://arxiv.org/abs/2606.08875v1",
+        "pdf": "https://arxiv.org/pdf/2606.08875v1",
+        "github": null,
         "blog": null
       },
-      "institution": "Indian Institute of Technology Patna",
+      "institution": "University of California, Irvine",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：多模态大语言模型（MLLMs）在通用领域表现出色，但在医疗等专业领域，尤其是多语言和低资源场景下性能受限。在印度农村等地区，患者常使用本地印度语言（Indic Languages）结合医学图像提出复杂医疗查询，而现有的以英语为中心的 MLLMs 难以支持此类用例，限制了 AI 驱动医疗服务的公平性。\n- **已有工作为什么解决不了**：现有医疗 MLLMs 多采用直接预测范式，缺乏临床所需的图文交错推理能力；强化学习方法受限于基座模型，未引入新的推理范式；且高质量医疗思维链（CoT）数据构建成本高。此外，现有研究主要集中在英语和中文，印度语言严重代表性不足，存在逻辑保真度下降和语言行为不稳定的问题，且缺乏针对多语言多模态推理的系统性评估基准。\n\n## 文章的核心贡献点\n- **提出了一个名为 ArogyaSutra 的多智能体框架及 ArogyaBodha 数据集**：ArogyaBodha 是一个大规模多语言多模态医疗问答数据集，涵盖英语和七种主要印度语言，涉及31个身体系统、6种成像模态和21个临床领域；ArogyaSutra 是基于 Actor-Critic 的多智能体框架，集成了工具 grounding 和双重记忆机制。\n- **挑战1：低资源印度语言中的多模态医疗推理逻辑保真度低且语言行为不稳定**。难点在于跨语言迁移难以保持复杂的医学逻辑一致性，且缺乏高质量的步骤化推理数据。论文通过 Actor-Critic 多智能体框架，利用双重记忆机制进行逐步的、感知推理的决策，并通过存储的模拟轨迹进行蒸馏，从而增强推理的逻辑性和语言稳定性。\n- **挑战2：缺乏针对多语言、多模态医疗推理的高质量评估基准和数据**。难点在于现有基准多为单语、纯文本或封闭式问题，无法反映真实临床中的开放式多模态推理需求。论文构建了 ArogyaBodha 数据集，从8个异构来源收集专家验证的多模态查询和唯一真实答案，覆盖广泛的临床领域和语言，为评估逻辑推理准确性和语言忠实度提供了可靠基准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：ArogyaSutra 框架结合了工具接地（tool grounding）和双重记忆机制，利用 Actor-Critic 模拟轨迹进行知识蒸馏。代码和数据集已开源。\n- **Evaluation 结果**：实验表明，ArogyaBodha 数据集和 ArogyaSutra 框架显著提高了所有印度语言的多语言医疗推理准确性。消融实验验证了框架中每个组件（如双重记忆、工具接地等）的贡献。\n- **对比**：相较于现有的英语中心 MLLMs 和直接预测范式模型，该方法在处理印度语言的复杂医疗查询时表现出更高的逻辑保真度和推理能力，解决了现有工作在多语言多模态场景下的局限性。\n\n#### 总结\n本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Multimodal Large Language Models (MLLMs) show promise in general domains but struggle in specialized healthcare settings, particularly in multilingual and low-resource scenarios. In regions like rural India, patients use native Indic languages and medical images for complex queries, a use case poorly supported by existing English-centric MLLMs, limiting equitable AI healthcare access.\n- **Why Existing Work Fails**: Current medical MLLMs often use direct prediction paradigms lacking interleaved image-text reasoning required in clinical settings. Reinforcement learning approaches are constrained by base models and do not introduce new reasoning paradigms. High-quality medical Chain-of-Thought (CoT) data is costly to curate. Furthermore, research is predominantly English/Chinese-centric, leaving Indic languages underrepresented with issues of degraded logical fidelity and unstable language behavior, lacking systematic benchmarks for multilingual multimodal reasoning.\n\n## Core Contributions\n- **Proposed ArogyaSutra Framework and ArogyaBodha Dataset**: ArogyaBodha is a large-scale multilingual multimodal medical QA dataset covering English and seven major Indian languages, 31 body systems, 6 imaging modalities, and 21 clinical domains. ArogyaSutra is an Actor-Critic-based multi-agent framework integrating tool grounding and dual-memory mechanisms for step-wise reasoning-aware decision making.\n- **Challenge 1: Low logical fidelity and unstable language behavior in multimodal medical reasoning for low-resource Indic languages**. The difficulty lies in maintaining complex medical logical consistency across languages and the scarcity of high-quality step-by-step reasoning data. The paper addresses this by using an Actor-Critic multi-agent framework with dual-memory mechanisms for step-wise decision making and distilling knowledge from stored simulation trajectories, enhancing logical coherence and language stability.\n- **Challenge 2: Lack of high-quality benchmarks and data for multilingual, multimodal medical reasoning**. Existing benchmarks are mostly monolingual, text-centric, or closed-form, failing to capture real-world open-ended multimodal reasoning needs. The paper constructs ArogyaBodha from eight heterogeneous sources with expert-verified multimodal queries and unambiguous ground-truth answers, providing a reliable benchmark for evaluating logical reasoning accuracy and language fidelity across diverse clinical domains and languages.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: ArogyaSutra integrates tool grounding and dual-memory mechanisms, utilizing Actor-Critic simulation trajectories for distillation. Source code and datasets are publicly available.\n- **Evaluation Results**: Experiments demonstrate that the ArogyaBodha dataset and ArogyaSutra framework significantly improve multilingual medical reasoning accuracy across all tested Indic languages. Ablation studies validate the contribution of each component.\n- **Comparison**: Compared to existing English-centric MLLMs and direct prediction models, this approach achieves higher logical fidelity and reasoning capabilities for complex medical queries in Indic languages, addressing the limitations of prior work in multilingual multimodal scenarios.\n\n## 4. Conclusion\nThis paper addresses the limitations of MLLMs in Indic language healthcare scenarios by introducing the ArogyaBodha dataset and the ArogyaSutra Actor-Critic multi-agent framework. By incorporating dual-memory mechanisms, tool grounding, and simulation trajectory distillation, it effectively enhances medical reasoning accuracy and logical consistency in low-resource Indic language environments, providing essential resources and solutions for promoting fairness and reliability in AI-driven healthcare services.",
-      "render_excerpt": "机构: Indian Institute of Technology Patna<br>本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。",
-      "render_excerpt_en": "Institution: Indian Institute of Technology Patna<br>## 1. What the Paper Did - **Background**: Multimodal Large Language Models (MLLMs) show promise in general domains but struggle in specialized healthcare settings, particularly in multilingual and low-resource scenarios. In regions like rural India, patients use native Indic languages and medical images for complex queries, a use case poorly supported by existing English-centric MLLMs, limiting equitable AI healthcare access.",
+      "summary_cn": "## 文章做了什么\n- **背景**：优化用于长期护理的大型语言模型（LLM）代理，特别是在痴呆症护理场景中，需要平衡延迟的任务目标（如长期护理结果）与即时的环境动态（如患者的痛苦和抗拒）。\n- **已有工作的局限性**：现有的方法难以解决奖励稀疏与评估成本高昂之间的矛盾。轨迹级奖励对于单轮对话的信用分配过于稀疏，而基于外部LLM的评估器不仅计算成本高，还容易误读患者碎片化或间接的反应，导致训练不稳定或效果不佳。\n\n## 文章的核心贡献点\n- **提出了一个 T²-GRPO 框架**：即“轮次-轨迹组相对策略优化”（Turn-Trajectory Group Relative Policy Optimization），该框架将护理强化学习解耦为两个归一化的奖励视野，并通过二元硬否决机制强制执行安全性。\n- **挑战1：即时反馈与长期目标的信用分配难题**。在长 horizon 任务中，单轮对话的即时影响难以从稀疏的最终结果中分离出来，且传统方法难以量化患者情绪状态的细微变化。T²-GRPO 通过直接从冻结的痴呆症患者模拟器的环境状态转移中推导密集的轮次级奖励（测量患者痛苦和抗拒的变化），解决了这一细粒度信用分配问题。\n- **挑战2：异构奖励信号的融合与奖励崩溃**。轮次级奖励（密集、即时）与轨迹级奖励（稀疏、全局）具有不同的分布和量纲，直接相加容易导致奖励主导或崩溃。T²-GRPO 采用独立的中心秩归一化（independent centered-rank normalization）来结合这两种奖励，保留了异构奖励信号的特性，有效缓解了奖励崩溃问题。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：该方法利用一个冻结的痴呆症患者模拟器作为环境，从中提取患者痛苦和抗拒的状态变化作为轮次级奖励。同时引入二元硬否决机制以确保交互安全。\n- **评估结果**：在痴呆症护理代理的广泛实验中，T²-GRPO 优于竞争性基线方法。\n- **对比优势**：相较于依赖外部LLM评估或仅使用稀疏轨迹奖励的方法，T²-GRPO 在处理情感敏感的护理场景方面表现出实质性改进，能够更有效地处理即时患者反馈、长期护理结果以及安全约束。\n\n#### 总结\n本文针对痴呆症护理代理训练中的长视界优化难题，提出了 T²-GRPO 框架。通过解耦轮次级和轨迹级奖励，并利用环境状态转移生成密集的即时奖励，结合中心秩归一化技术，成功平衡了即时患者情绪反馈与长期护理目标。实验证明该方法在提升护理质量、确保安全性和处理复杂情感交互方面显著优于现有基线，为情感敏感型 LLM 代理的训练提供了新的思路。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Optimizing Large Language Models (LLMs) for long-horizon caregiver agents, particularly in dementia care, requires balancing delayed task objectives with immediate environmental dynamics, such as patient distress and resistance.\n- **Limitations of Existing Work**: Current methods struggle with the trade-off between reward sparsity and evaluation costs. Trajectory-level rewards are too sparse for turn-level credit assignment, while external LLM-based evaluators are computationally expensive and prone to misinterpreting fragmented or indirect patient responses, leading to unstable training.\n\n## Core Contributions\n- **Proposed T²-GRPO Framework**: Introduces Turn-Trajectory Group Relative Policy Optimization, a framework that decouples caregiver reinforcement learning into two normalized reward horizons and enforces safety via a binary hard veto.\n- **Challenge 1: Credit Assignment for Immediate vs. Long-term Goals**. In long-horizon tasks, isolating the immediate impact of a single turn from sparse final outcomes is difficult, and quantifying subtle emotional changes is challenging. T²-GRPO addresses this by deriving dense turn-level rewards directly from environment state transitions in a frozen dementia patient simulator, measuring changes in patient distress and resistance.\n- **Challenge 2: Fusion of Heterogeneous Reward Signals and Reward Collapse**. Turn-level (dense, immediate) and trajectory-level (sparse, global) rewards have different distributions and scales; direct summation can lead to reward dominance or collapse. T²-GRPO employs independent centered-rank normalization to combine these rewards, preserving the characteristics of heterogeneous signals and mitigating reward collapse.\n\n## Implementation and Evaluation\n- **Implementation**: The method utilizes a frozen dementia patient simulator to extract state changes (distress and resistance) as turn-level rewards. A binary hard veto mechanism is integrated to ensure interaction safety.\n- **Evaluation Results**: Extensive experiments on dementia caregiver agents demonstrate that T²-GRPO outperforms competitive baselines.\n- **Comparison**: Compared to methods relying on external LLM evaluators or solely sparse trajectory rewards, T²-GRPO shows substantial improvements in emotionally sensitive care scenarios, effectively handling immediate patient feedback, long-term care outcomes, and safety constraints.\n\n## 4. Conclusion\nThis paper addresses the long-horizon optimization challenge in dementia caregiver agent training by proposing the T²-GRPO framework. By decoupling turn-level and trajectory-level rewards and generating dense immediate rewards from environment state transitions, combined with centered-rank normalization, it successfully balances immediate patient emotional feedback with long-term care goals. Experiments prove that this method significantly outperforms existing baselines in improving care quality, ensuring safety, and handling complex emotional interactions, offering new insights for training emotionally sensitive LLM agents.",
+      "render_excerpt": "机构: University of California, Irvine<br>本文针对痴呆症护理代理训练中的长视界优化难题，提出了 T²-GRPO 框架。通过解耦轮次级和轨迹级奖励，并利用环境状态转移生成密集的即时奖励，结合中心秩归一化技术，成功平衡了即时患者情绪反馈与长期护理目标。实验证明该方法在提升护理质量、确保安全性和处理复杂情感交互方面显著优于现有基线，为情感敏感型 LLM 代理的训练提供了新的思路。",
+      "render_excerpt_en": "Institution: University of California, Irvine<br>## 1. What the Paper Does - **Background**: Optimizing Large Language Models (LLMs) for long-horizon caregiver agents, particularly in dementia care, requires balancing delayed task objectives with immediate environmental dynamics, such as patient distress and resistance. - **Limitations of Existing Work**: Current methods struggle with the trade-off between reward sparsity and evaluation costs.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-11T16:59:42Z"
+        "captured_at": "2026-06-07T23:04:55Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-11"
+        "captured_at": "2026-06-07"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.08790",
+      "date": "2026-06-07",
+      "title": "RAILS: Verification-Native Clearing For Agentic Commerce",
+      "authors": [
+        "Adrian de Valois-Franklin",
+        "Alex Bogdan"
+      ],
+      "abstract": "Autonomous agents negotiate, purchase, deploy code, and move funds, but no neutral mechanism determines whether they met their delegated obligation, who is responsible when they did not, or which settlement action follows. This is the agentic clearing problem. Tool protocols (MCP), inter-agent communication (A2A), payment rails (x402), mandate and network agent protocols (AP2, Visa, Mastercard), and settlement-risk standards each assume that determination and none produce it. Clearing is the missing primitive. Payment is not clearing. Authorization is not clearing. LLM-as-judge evaluation is not clearing. Settlement-risk escrow is not clearing: it consumes clearing decisions. RAILS (Real-Time Agent Integrity & Ledger Settlement) is the integrity and clearing layer for agentic commerce, spanning a per-output reliability score, a published reliability record, and a clearing function that consumes them. The clearing protocol at its core closes that gap. Seven primitives (Obligation Object, Evidence Envelope, Verification Mesh, Clearing Decision, Settlement Instruction, Clearing Passport, Finality Rules), bound by a formal model of admissibility-graded verification, together yield a soundness property: no financially material settlement is supported by evidence below the obligation's admissibility floor. The property is falsifiable against the spec. We are not aware of a prior agent-commerce verification mechanism that states a property of this kind. The approaches nearest to it emit a pass, a delivery guarantee, a bare score, or an equilibrium. This paper specifies that clearing protocol.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.08790v1",
+        "pdf": "https://arxiv.org/pdf/2606.08790v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Evolutionairy AI",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着自主智能体（Autonomous Agents）开始独立进行谈判、采购、代码部署和资金转移，代理商务（Agentic Commerce）迅速发展。然而，目前缺乏一种中立的机制来确定智能体是否履行了其受托义务、在未履行时谁应承担责任，以及后续应采取何种结算行动。\n- **已有工作为什么解决不了**：现有的工具协议（如 MCP）、智能体间通信协议（如 A2A）、支付轨道（如 x402）以及传统支付网络（如 Visa、Mastercard）的代理层，主要关注身份验证、授权和执行。它们都假设“判定”这一环节已经存在或由外部提供，但没有任何一个协议能产生这种判定。支付不等于清算，授权不等于清算，LLM 作为法官的评估也不等于清算。现有的结算风险标准（如托管）只是消耗清算决策，而非产生决策。\n\n## 文章的核心贡献点\n- **提出了一个 RAILS（实时智能体完整性与账本结算）协议**：这是一个专为代理商务设计的完整性和清算层，填补了从“执行”到“结算”之间的验证空白。\n- **挑战1：缺乏对智能体行为是否满足义务的客观判定机制**。难点在于智能体的行动后果往往在验证之前就已经结算，且传统支付系统无法捕捉“性能失败”（即 agent 做了授权的事但做错了）。RAILS 通过引入七个原语（义务对象、证据信封、验证网格等）和形式化的“可接纳性分级验证”模型，确保只有达到义务可接纳性底线的证据才能支持具有财务意义的结算。\n- **挑战2：现有验证方法缺乏可证伪的声音性（Soundness）保证**。难点在于邻近的方法仅输出通过/失败、交付保证或单一分数，无法提供严格的逻辑约束。RAILS 定义了一个可针对规范进行证伪的声音性属性：没有任何低于义务可接纳性底线的证据可以支持财务结算，从而在协议层面保证了清算的严谨性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：论文主要侧重于协议规范的定义，提出了 RAILS 的核心架构，包括每个输出的可靠性评分、发布的可靠性记录以及消耗这些记录的清算函数。它定义了七个关键原语：义务对象（Obligation Object）、证据信封（Evidence Envelope）、验证网格（Verification Mesh）、清算决策（Clearing Decision）、结算指令（Settlement Instruction）、清算护照（Clearing Passport）和终局规则（Finality Rules）。\n- **相关工作对比**：\n    - **MCP/A2A**：仅记录调用或协调通信，不判断是否满足义务。\n    - **x402/AP2/Visa/Mastercard**：处理价值转移和授权 attest，但不验证服务交付质量或意图匹配度。\n    - **LLM-as-judge**：仅提供评估分数，不具备清算所需的法律或财务终局性。\n    - **RAILS**：是唯一明确声明并实现“声音性属性”的机制，将验证原生地嵌入清算流程，而非事后审计。\n- **Evaluation 结果**：由于这是一篇协议规范论文，主要通过理论推导证明其声音性属性的可证伪性，并未提供传统的基准测试数据集上的量化实验结果，而是强调其形式化模型相对于现有方法的逻辑完备性。\n\n#### 总结\nRAILS 解决了代理商务中缺失的关键原语——清算（Clearing）。它指出当前的 AI 基础设施堆栈中，从工具调用到支付执行之间存在验证真空。通过引入基于可接纳性分级验证的形式化模型和七个核心原语，RAILS 确保了智能体交易的完整性和责任归属。该协议不仅区分了支付与清算，还提供了一个可证伪的声音性保证，即防止基于不足证据的财务结算，为未来大规模自主智能体经济的安全运行奠定了理论基础和协议标准。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: As autonomous agents increasingly negotiate, purchase, deploy code, and transfer funds, Agentic Commerce is emerging. However, there is no neutral mechanism to determine if an agent fulfilled its delegated obligation, assign responsibility for failures, or dictate subsequent settlement actions.\n- **Why Existing Work Fails**: Current infrastructure, including tool protocols (MCP), inter-agent communication (A2A), payment rails (x402), and traditional payment networks (Visa, Mastercard), focuses on identity, authorization, and execution. They all assume that the \"determination\" of obligation fulfillment exists externally but do not produce it themselves. Payment is not clearing; authorization is not clearing; and LLM-as-judge evaluations lack the finality required for financial settlement.\n\n## Core Contributions\n- **Proposed RAILS (Real-Time Agent Integrity & Ledger Settlement)**: A verification-native clearing layer for agentic commerce that bridges the gap between action execution and financial settlement.\n- **Challenge 1: Lack of objective determination for obligation fulfillment**. The difficulty lies in the fact that consequences often settle before verification occurs, and traditional systems cannot catch \"performance failures\" (where an agent acts within authorization but fails the intent). RAILS addresses this by introducing seven primitives and a formal model of admissibility-graded verification, ensuring that no financially material settlement is supported by evidence below the obligation's admissibility floor.\n- **Challenge 2: Absence of falsifiable soundness guarantees in existing verification**. Nearby approaches output simple pass/fail states or scores without rigorous logical constraints. RAILS defines a soundness property that is falsifiable against its specification, providing a strict logical bound that prevents settlements based on insufficient evidence, unlike prior mechanisms that offer only equilibrium or bare scores.\n\n## Implementation and Evaluation\n- **Implementation**: The paper specifies the RAILS protocol rather than a software library. It defines the architecture comprising per-output reliability scores, published reliability records, and a clearing function. The core consists of seven primitives: Obligation Object, Evidence Envelope, Verification Mesh, Clearing Decision, Settlement Instruction, Clearing Passport, and Finality Rules.\n- **Comparison with Related Work**:\n    - **MCP/A2A**: Record calls or coordinate communication but do not judge obligation satisfaction.\n    - **x402/AP2/Visa/Mastercard**: Handle value transfer and authorization attestation but do not verify service delivery quality or intent alignment.\n    - **LLM-as-judge**: Provides evaluation scores but lacks the legal/financial finality required for clearing.\n    - **RAILS**: Uniquely states and enforces a soundness property, embedding verification natively into the clearing process.\n- **Evaluation Results**: As a protocol specification paper, it primarily demonstrates the falsifiability of its soundness property through theoretical derivation. It does not provide quantitative benchmarks but argues for the logical completeness and necessity of its formal model compared to existing fragmented solutions.\n\n## 4. Conclusion\nRAILS addresses the missing primitive of Clearing in agentic commerce. It identifies a verification vacuum in the current AI infrastructure stack between tool invocation and payment execution. By introducing a formal model of admissibility-graded verification and seven core primitives, RAILS ensures the integrity and accountability of agent transactions. It distinguishes payment from clearing and provides a falsifiable soundness guarantee, preventing financial settlements based on inadequate evidence, thereby laying the theoretical and protocol foundation for the safe operation of a large-scale autonomous agent economy.",
+      "render_excerpt": "机构: Evolutionairy AI<br>RAILS 解决了代理商务中缺失的关键原语——清算（Clearing）。它指出当前的 AI 基础设施堆栈中，从工具调用到支付执行之间存在验证真空。通过引入基于可接纳性分级验证的形式化模型和七个核心原语，RAILS 确保了智能体交易的完整性和责任归属。该协议不仅区分了支付与清算，还提供了一个可证伪的声音性保证，即防止基于不足证据的财务结算，为未来大规模自主智能体经济的安全运行奠定了理论基础和协议标准。",
+      "render_excerpt_en": "Institution: Evolutionairy AI<br>## 1. What the Paper Does - **Background**: As autonomous agents increasingly negotiate, purchase, deploy code, and transfer funds, Agentic Commerce is emerging. However, there is no neutral mechanism to determine if an agent fulfilled its delegated obligation, assign responsibility for failures, or dictate subsequent settlement actions.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-07T19:12:55Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-07"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.08702",
+      "date": "2026-06-07",
+      "title": "ConMem: Structured Memory-Guided Adaptation in Training-Free Multi-Agent Systems",
+      "authors": [
+        "Zhixun Tan",
+        "Qiang Chen",
+        "Tairan Huang",
+        "Xiu Su",
+        "Yi Chen"
+      ],
+      "abstract": "Recent advances have improved the adaptive capabilities of LLM-based multi-agent systems (MAS) through memory-, skill-, and learning-based approaches, yet these approaches remain challenged by noisy trajectories, insufficient modeling of memory-skill relations, and reliance on additional training or high-quality supervision. To address these limitations, we propose ConMem, a relation-aware and training-free framework that enables efficient multi-agent adaptation through cross-experience coordination. Specifically, ConMem distills historical interaction trajectories into structured memory cards to capture reusable strategies and cues, organizing them into a relation-aware memory graph. At runtime, ConMem retrieves cards according to task needs and coordinates them through the card graph to resolve strategy conflicts and recover their dependencies. Combined, these modules yield structured and relation-aware guidance, enabling robust, lightweight adaptation in multi-agent systems without additional training. Extensive experiments across multiple benchmarks and mainstream MAS architectures show consistent gains over existing memory architectures, with improved inference-time efficiency through pruning more than 50% of expanded candidates and reducing planning overhead by over 80%. Our codes are available at https://anonymous.4open.science/r/ConMemCode",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.08702v1",
+        "pdf": "https://arxiv.org/pdf/2606.08702v1",
+        "github": "https://anonymous.4open.science/r/ConMemCode",
+        "blog": null
+      },
+      "institution": "Central South University; The Hong Kong University of Science and Technology",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）在复杂持续任务中表现优异，其核心能力在于多智能体适应（MAA），即从交互中积累、保留和重用经验。现有的方法主要包括记忆驱动型（保留历史交互）和技能/过程驱动型（抽象可重用过程）。\n- **已有工作为什么解决不了**：\n    1. **噪声与纠缠**：记忆驱动方法保留的原始轨迹长且充满噪声（如局部工具结果、中间分歧），导致决策信号失真，检索精度低。\n    2. **关系建模不足**：技能驱动方法虽然提高了复用效率，但往往缺乏对记忆与技能之间复杂关系的充分建模，控制力较弱。\n    3. **训练依赖**：许多高效方法依赖于额外的训练或高质量监督，限制了其在无需训练场景下的灵活性和部署便利性。\n\n## 文章的核心贡献点\n- **提出了一个名为 ConMem 的关系感知且无需训练的框架**，通过跨经验协调实现高效的多智能体适应。\n- **挑战1：如何从 noisy 的历史轨迹中提取结构化且可重用的知识？**\n    - **难点**：原始交互轨迹冗长、混杂且非结构化，直接检索容易引入噪声干扰决策。\n    - **解决方法**：ConMem 将历史交互轨迹蒸馏为结构化的“记忆卡片”（Memory Cards），捕捉可重用的策略和线索，并将其组织成关系感知的记忆图，从而消除噪声并明确知识结构。\n- **挑战2：如何在运行时有效协调多个记忆片段以解决策略冲突并恢复依赖关系？**\n    - **难点**：简单的检索可能返回相互冲突或上下文缺失的策略，导致智能体执行错误。\n    - **解决方法**：在运行时，ConMem 根据任务需求检索卡片，并通过卡片图进行协调，解析策略间的依赖关系并解决冲突，提供结构化且关系感知的指导，实现鲁棒的轻量级适应。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：ConMem 是一个无需训练（Training-Free）的框架，保持宿主智能体架构固定。它通过在推理时协调预算化的提示前缀来工作，无需梯度更新或额外监督。\n- **评估结果**：\n    - 在多个基准测试和主流 MAS 架构上进行了广泛实验。\n    - **性能提升**：相比现有的记忆架构，ConMem 表现出一致的性能增益。\n    - **效率优化**：通过剪枝减少了超过 50% 的扩展候选项，并将规划开销降低了 80% 以上，显著提升了推理时的效率。\n- **对比**：优于传统的记忆驱动方法（如仅保留历史）和技能驱动方法（如静态技能库），特别是在处理长轨迹噪声和策略协调方面表现更佳。\n\n#### 总结\nConMem 通过引入结构化记忆卡片和关系感知图，解决了多智能体系统中历史轨迹噪声大、记忆-技能关系建模不足以及依赖训练的问题。该框架无需额外训练，即可在运行时通过跨经验协调提供 robust 的指导，显著提升了多智能体系统的适应能力和推理效率，为无需训练的 MAS 优化提供了新范式。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-based Multi-Agent Systems (MAS) excel in complex continual tasks through Multi-Agent Adaptation (MAA), which involves accumulating and reusing experience. Existing approaches include memory-driven methods (retaining history) and skill/procedural-driven methods (abstracting reusable procedures).\n- **Why Existing Work Falls Short**:\n    1. **Noise and Entanglement**: Memory-driven methods retain long, noisy trajectories (e.g., tool results, disagreements), distorting decision signals and reducing retrieval precision.\n    2. **Insufficient Relation Modeling**: Skill-driven methods improve reuse efficiency but often lack adequate modeling of the complex relationships between memories and skills, resulting in weak control.\n    3. **Training Dependency**: Many effective methods rely on additional training or high-quality supervision, limiting flexibility and ease of deployment in training-free scenarios.\n\n## Core Contributions\n- **Proposed ConMem**: A relation-aware, training-free framework that enables efficient multi-agent adaptation through cross-experience coordination.\n- **Challenge 1: How to extract structured, reusable knowledge from noisy historical trajectories?**\n    - **Difficulty**: Raw interaction trajectories are long, mixed, and unstructured, leading to noise interference if retrieved directly.\n    - **Solution**: ConMem distills historical trajectories into structured \"Memory Cards\" that capture reusable strategies and cues, organizing them into a relation-aware memory graph to eliminate noise and clarify structure.\n- **Challenge 2: How to effectively coordinate multiple memory fragments at runtime to resolve strategy conflicts and recover dependencies?**\n    - **Difficulty**: Simple retrieval may return conflicting strategies or those lacking context, leading to execution errors.\n    - **Solution**: At runtime, ConMem retrieves cards based on task needs and coordinates them via the card graph to resolve conflicts and recover dependencies, providing structured, relation-aware guidance for robust, lightweight adaptation.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: ConMem is a training-free framework that keeps the host agent architecture fixed. It works by coordinating a budgeted prompt prefix at inference time, requiring no gradient updates or extra supervision.\n- **Evaluation Results**:\n    - Extensive experiments across multiple benchmarks and mainstream MAS architectures.\n    - **Performance Gains**: Consistent improvements over existing memory architectures.\n    - **Efficiency Improvements**: Pruned more than 50% of expanded candidates and reduced planning overhead by over 80%, significantly enhancing inference-time efficiency.\n- **Comparison**: Outperforms traditional memory-driven methods (e.g., raw history retention) and skill-driven methods (e.g., static skill libraries), particularly in handling long-trajectory noise and strategy coordination.\n\n#### Summary\nConMem addresses the issues of noisy historical trajectories, insufficient memory-skill relation modeling, and training dependency in MAS by introducing structured memory cards and a relation-aware graph. Without additional training, it provides robust guidance through cross-experience coordination at runtime, significantly improving adaptation capabilities and inference efficiency, offering a new paradigm for training-free MAS optimization.",
+      "render_excerpt": "机构: Central South University; The Hong Kong University of Science and Technology<br>ConMem 通过引入结构化记忆卡片和关系感知图，解决了多智能体系统中历史轨迹噪声大、记忆-技能关系建模不足以及依赖训练的问题。该框架无需额外训练，即可在运行时通过跨经验协调提供 robust 的指导，显著提升了多智能体系统的适应能力和推理效率，为无需训练的 MAS 优化提供了新范式。",
+      "render_excerpt_en": "Institution: Central South University; The Hong Kong University of Science and Technology<br>ConMem addresses the issues of noisy historical trajectories, insufficient memory-skill relation modeling, and training dependency in MAS by introducing structured memory cards and a relation-aware graph. Without additional training, it provides robust guidance through cross-experience coordination at runtime, significantly improving adaptation capabilities and inference efficiency, offering a new paradigm for training-free MAS optimization.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-07T15:59:15Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-07"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

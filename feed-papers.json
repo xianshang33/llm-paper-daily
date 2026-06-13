@@ -1,65 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-12T06:08:34.640664+00:00",
-  "run_date": "2026-06-11",
+  "generated_at": "2026-06-13T05:52:45.199644+00:00",
+  "run_date": "2026-06-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.13608",
-      "date": "2026-06-11",
-      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "id": "arxiv:2606.08696",
+      "date": "2026-06-07",
+      "title": "Agentic Search for Counterfactual Recourse under Fixed LLM Budgets",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiaoyuan Liu",
-        "Jianhong Tu",
-        "Yuqi Chen",
-        "Siyuan Xie",
-        "Sihan Ren",
-        "Tianneng Shi",
-        "Gal Gantar",
-        "Evan Sandoval",
-        "Donghyun Lee",
-        "Daniel Miao",
-        "Peter J. Gilbert",
-        "Nick Hynes",
-        "Mauro Staver",
-        "Warren He",
-        "David Marn",
-        "Andrew Low",
-        "Xi Zhang",
-        "Elron Bandel",
-        "Michal Shmueli-Scheuer",
-        "Siva Reddy",
-        "Alexandre Drouin",
-        "Alexandre Lacoste",
-        "Ramayya Krishnan",
-        "Elham Tabassi",
-        "Yu Su",
-        "Victor Barres",
-        "Chenguang Wang",
-        "Wenbo Guo",
-        "Dawn Song"
+        "Yasuo Tabei"
       ],
-      "institution": "UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara",
+      "institution": "RIKEN Center for Advanced Intelligence Project",
       "summary": {
-        "zh": "本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。",
-        "en": "- **Background**: LLM-based agent systems are advancing rapidly, but their evaluation remains fragmented. Most existing benchmarks rely on fixed, LLM-centric harnesses."
+        "zh": "本文针对固定 LLM 预算下的反事实解释生成问题，提出了 Comp-MCTS 框架。通过将问题重构为固定预算的搜索问题，并结合 LLM 提议、预言机验证和压缩引导剪枝，该方法有效地解决了多样性和成本之间的矛盾。实验表明，Comp-MCTS 能在严格控制成本的前提下，为用户提供更多样化、高质量的可操作建议，优于现有的基于 LLM 的搜索基线。",
+        "en": "- **Background**: Counterfactual recourse aims to provide actionable feature changes to help individuals alter unfavorable decisions made by predictive models. In practice, users benefit more from multiple feasible..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13608v1",
-        "pdf": "https://arxiv.org/pdf/2606.13608v1",
+        "abs": "http://arxiv.org/abs/2606.08696v1",
+        "pdf": "https://arxiv.org/pdf/2606.08696v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.13608.md",
-        "summary_en_path": "summary_en/2026-06/2606.13608.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.13608.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.13608.md"
+        "summary_zh_path": "summary/2026-06/2606.08696.md",
+        "summary_en_path": "summary_en/2026-06/2606.08696.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08696.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08696.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -76,134 +48,38 @@
       }
     },
     {
-      "id": "arxiv:2606.13598",
-      "date": "2026-06-11",
-      "title": "Reward Modeling for Multi-Agent Orchestration",
+      "id": "arxiv:2606.08661",
+      "date": "2026-06-07",
+      "title": "Data Agents Under Attack: Vulnerabilities in LLM-Driven Analytical Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "King Yeung Tsang",
-        "Zihao Zhao",
-        "Vishal Venkataramani",
-        "Haizhou Shi",
-        "Zixuan Ke",
-        "Semih Yavuz",
-        "Shafiq Joty",
-        "Hao Wang"
+        "Kuncan Wang",
+        "Ziting Wang",
+        "Peizhuo Lv",
+        "Haoyang Li",
+        "Guoliang Li",
+        "Gao Cong",
+        "Wei Dong"
       ],
-      "institution": "Rutgers University, Salesforce AI Research",
+      "institution": "Nanyang Technological University, The Hong Kong Polytechnic University, Tsinghua University",
       "summary": {
-        "zh": "本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。",
-        "en": "- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) require effective orchestrators to coordinate specialized agents for complex tasks. The field is shifting from manually designed..."
+        "zh": "本文填补了数据库安全与通用 LLM 智能体安全之间的研究空白，首次对数据智能体进行了系统性的安全研究。通过提出分层漏洞框架和详细的攻击分类学，并结合自动化载荷生成技术在主流开源及商业系统上进行实证评估，文章有力地证明了数据智能体面临严峻的安全威胁。这项工作为未来构建更安全的数据智能体系统提供了重要的理论基础和实践指导。",
+        "en": "- **Background**: Data agents integrate LLM-driven reasoning with relational data access, executable analytical tools, and multi-step workflow orchestration, becoming central to enterprise analytics. This integration..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13598v1",
-        "pdf": "https://arxiv.org/pdf/2606.13598v1",
-        "github": "https://github.com/Wang-ML-Lab/OrchRM"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.13598.md",
-        "summary_en_path": "summary_en/2026-06/2606.13598.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.13598.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.13598.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.13662",
-      "date": "2026-06-11",
-      "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Amy Xin",
-        "Jiening Siow",
-        "Junjie Wang",
-        "Zijun Yao",
-        "Fanjin Zhang",
-        "Jian Song",
-        "Lei Hou",
-        "Juanzi Li"
-      ],
-      "institution": "Tsinghua University, Zhipu AI",
-      "summary": {
-        "zh": "EurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。",
-        "en": "- **Background**: LLM-based agents show increasing potential in automating scientific discovery by proposing, validating, and iterating solutions based on optimizable metrics. As model capabilities improve, the..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.13662v1",
-        "pdf": "https://arxiv.org/pdf/2606.13662v1",
-        "github": "https://github.com/THU-Team-Eureka/EurekAgent"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.13662.md",
-        "summary_en_path": "summary_en/2026-06/2606.13662.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.13662.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.13662.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.13602",
-      "date": "2026-06-11",
-      "title": "EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Harihara Muralidharan",
-        "Reema Baskar",
-        "Soo Hee Lee",
-        "Tim Proctor",
-        "Kenny Workman"
-      ],
-      "institution": "LatchBio",
-      "summary": {
-        "zh": "EpiBench填补了表观基因组学AI智能体评估的空白，通过提供可验证、确定性的评分标准，量化了当前最先进的LLM智能体在真实生物信息学工作流中的表现。结果显示，尽管顶级模型在部分任务上接近50%的通过率，但整体而言，它们在需要深层领域知识的科学决策上仍显不足。该基准为未来开发更专业的生物AI代理提供了明确的改进方向和评估标准。",
-        "en": "- **Background**: Epigenomic assays (e.g., chromatin accessibility, histone modifications, DNA methylation) are crucial for understanding gene regulation but require complex analysis pipelines including alignment, peak..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.13602v1",
-        "pdf": "https://arxiv.org/pdf/2606.13602v1",
+        "abs": "http://arxiv.org/abs/2606.08661v1",
+        "pdf": "https://arxiv.org/pdf/2606.08661v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.13602.md",
-        "summary_en_path": "summary_en/2026-06/2606.13602.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.13602.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.13602.md"
+        "summary_zh_path": "summary/2026-06/2606.08661.md",
+        "summary_en_path": "summary_en/2026-06/2606.08661.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08661.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08661.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -220,36 +96,127 @@
       }
     },
     {
-      "id": "arxiv:2606.13572",
-      "date": "2026-06-11",
-      "title": "ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages",
+      "id": "arxiv:2606.08875",
+      "date": "2026-06-07",
+      "title": "Can the Environment Speak for Itself? $T^{2}$-GRPO: A Turn-Trajectory Group Relative Policy Optimization for Caregiver Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tanmoy Kanti Halder",
-        "Akash Ghosh",
-        "Subhadip Baidya",
-        "Arijit Roy",
-        "Sriparna Saha"
+        "Yutong Song",
+        "Jiang Wu",
+        "Pengfei Zhang",
+        "Wenjun Huang",
+        "Honghui Xu",
+        "Nikil Dutt",
+        "Amir M. Rahmani"
       ],
-      "institution": "Indian Institute of Technology Patna",
+      "institution": "University of California, Irvine",
       "summary": {
-        "zh": "本文针对多模态大语言模型在印度语言医疗场景下的局限性，提出了大规模多语言多模态医疗数据集 ArogyaBodha 和基于 Actor-Critic 的多智能体推理框架 ArogyaSutra。通过引入双重记忆机制和工具接地，并结合模拟轨迹蒸馏，有效提升了低资源印度语言环境下的医疗推理准确性和逻辑一致性，为促进 AI 医疗服务的公平性和可靠性提供了重要资源和解决方案。",
-        "en": "- **Background**: Multimodal Large Language Models (MLLMs) show promise in general domains but struggle in specialized healthcare settings, particularly in multilingual and low-resource scenarios. In regions like rural..."
+        "zh": "本文针对痴呆症护理代理训练中的长视界优化难题，提出了 T²-GRPO 框架。通过解耦轮次级和轨迹级奖励，并利用环境状态转移生成密集的即时奖励，结合中心秩归一化技术，成功平衡了即时患者情绪反馈与长期护理目标。实验证明该方法在提升护理质量、确保安全性和处理复杂情感交互方面显著优于现有基线，为情感敏感型 LLM 代理的训练提供了新的思路。",
+        "en": "- **Background**: Optimizing Large Language Models (LLMs) for long-horizon caregiver agents, particularly in dementia care, requires balancing delayed task objectives with immediate environmental dynamics, such as..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.13572v1",
-        "pdf": "https://arxiv.org/pdf/2606.13572v1",
-        "github": "https://iitp-cse.github.io/ArogyaSutra/"
+        "abs": "http://arxiv.org/abs/2606.08875v1",
+        "pdf": "https://arxiv.org/pdf/2606.08875v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.13572.md",
-        "summary_en_path": "summary_en/2026-06/2606.13572.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.13572.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.13572.md"
+        "summary_zh_path": "summary/2026-06/2606.08875.md",
+        "summary_en_path": "summary_en/2026-06/2606.08875.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08875.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08875.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.08790",
+      "date": "2026-06-07",
+      "title": "RAILS: Verification-Native Clearing For Agentic Commerce",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Adrian de Valois-Franklin",
+        "Alex Bogdan"
+      ],
+      "institution": "Evolutionairy AI",
+      "summary": {
+        "zh": "RAILS 解决了代理商务中缺失的关键原语——清算（Clearing）。它指出当前的 AI 基础设施堆栈中，从工具调用到支付执行之间存在验证真空。通过引入基于可接纳性分级验证的形式化模型和七个核心原语，RAILS 确保了智能体交易的完整性和责任归属。该协议不仅区分了支付与清算，还提供了一个可证伪的声音性保证，即防止基于不足证据的财务结算，为未来大规模自主智能体经济的安全运行奠定了理论基础和协议标准。",
+        "en": "- **Background**: As autonomous agents increasingly negotiate, purchase, deploy code, and transfer funds, Agentic Commerce is emerging. However, there is no neutral mechanism to determine if an agent fulfilled its..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.08790v1",
+        "pdf": "https://arxiv.org/pdf/2606.08790v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.08790.md",
+        "summary_en_path": "summary_en/2026-06/2606.08790.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08790.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08790.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.08702",
+      "date": "2026-06-07",
+      "title": "ConMem: Structured Memory-Guided Adaptation in Training-Free Multi-Agent Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zhixun Tan",
+        "Qiang Chen",
+        "Tairan Huang",
+        "Xiu Su",
+        "Yi Chen"
+      ],
+      "institution": "Central South University; The Hong Kong University of Science and Technology",
+      "summary": {
+        "zh": "ConMem 通过引入结构化记忆卡片和关系感知图，解决了多智能体系统中历史轨迹噪声大、记忆-技能关系建模不足以及依赖训练的问题。该框架无需额外训练，即可在运行时通过跨经验协调提供 robust 的指导，显著提升了多智能体系统的适应能力和推理效率，为无需训练的 MAS 优化提供了新范式。",
+        "en": "ConMem addresses the issues of noisy historical trajectories, insufficient memory-skill relation modeling, and training dependency in MAS by introducing structured memory cards and a relation-aware graph. Without..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.08702v1",
+        "pdf": "https://arxiv.org/pdf/2606.08702v1",
+        "github": "https://anonymous.4open.science/r/ConMemCode"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.08702.md",
+        "summary_en_path": "summary_en/2026-06/2606.08702.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08702.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08702.md"
       },
       "signals": {
         "priority_keyword": "Agent"
