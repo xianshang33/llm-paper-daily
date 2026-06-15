@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.12_06:08-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.15_06:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月12日 06:08</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月15日 06:44</sub></summary>
 <br>
 
-- AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility 
-- Reward Modeling for Multi-Agent Orchestration 
-- EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery 
-- EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis 
-- ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages 
+- tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration 
+- Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows 
+- GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge 
+- Graph-based Target Back-Propagation for Context Adaptation in Multi-LLM Agentic Systems 
+- When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-12</span> | **tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration**<br><sub>机构: HUA Labs<br>本文提出了tap，一种轻量级的基于文件的协作协议，解决了异构LLM智能体在无共享运行时环境下的直接通信问题。通过文件优先的设计和实时通知的结合，tap实现了Claude和Codex等不同厂商智能体的高效协作。实证研究表明，异构智能体协作能显著提高代码审查中发现缺陷的概率，证明了该协议在实际生产环境中的有效性和价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14445v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14445.md)  |
+| <span style='display: inline-block; width: 42px;'>06-12</span> | **Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows**<br><sub>机构: Georgia Institute of Technology, Meta<br>本文针对LLM代理工作流中并行结构与顺序文本接口之间的错配问题，提出了 Parallel-Synthesis 框架。通过直接利用并行分支的 KV 缓存而非拼接文本，该方法解决了冗余计算和结构信息丢失的问题。实验结果表明，该框架在多个复杂任务上保持了高水平的准确性，并大幅降低了延迟，为构建更高效的原生并行代理系统提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14672v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14672.md)  |
+| <span style='display: inline-block; width: 42px;'>06-12</span> | **GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge**<br><sub>机构: QpiAI, Bengaluru, India<br>本文引入了 GitOfThoughts，旨在解决 LLM 推理过程缺乏版本控制的问题，实现了推理的可重放性和可审计性。更重要的是，通过严格的预注册实验，文章反驳了“通用记忆能提升新颖问题求解能力”的普遍假设，指出记忆仅在极高相似度的“可复制”场景下有效，且本质是答案检索而非方法迁移。该研究倡导以更高的评估标准（包括记录撤回的结果和被驳斥的假设）来审视代理记忆领域，强调 Git 在工程运维价值上的优势而非单纯的精度提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14470v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14470.md)  |
+| <span style='display: inline-block; width: 42px;'>06-12</span> | **Graph-based Target Back-Propagation for Context Adaptation in Multi-LLM Agentic Systems**<br><sub>机构: Walmart Global Tech<br>本文针对多LLM智能体系统中的上下文适应问题，提出了GTBP框架。通过引入基于图的目标反向传播机制，GTBP解决了现有方法中信用分配不准确和缺乏收敛保证的问题。理论分析和实证结果均表明，GTBP能够稳定地优化提示词，并在多个基准测试中超越现有最先进方法，为自动化提示工程提供了一种高效且理论可靠的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14155v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14155.md)  |
+| <span style='display: inline-block; width: 42px;'>06-12</span> | **When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime**<br><sub>本文通过对生产环境中LLM代理运行时静默故障的纵向研究，揭示了LLM系统特有的“似真故障”风险。研究指出，传统测试和监控在面对LLM生成的流畅错误叙述时存在巨大盲区，大部分故障依靠用户发现。作者提出了五类静默故障分类法，并强调故障多发生于组件接缝处。最终，文章提供了一套防御框架和设计原则，旨在构建故障可观测性强、易于归因的LLM代理系统，所有事故复盘和工件均已公开。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14589v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14589.md)  |
 | <span style='display: inline-block; width: 42px;'>06-11</span> | **AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility**<br><sub>机构: UC Berkeley, UC Santa Cruz, EPFL, IBM Research, Mila, McGill University, ServiceNow Research, Carnegie Mellon University, The Brookings Institution, NeoCognition, The Ohio State University, Mercor, UC Santa Barbara<br>本文提出了AAA框架和AgentBeats系统，通过标准化协议（A2A/MCP）和法官智能体机制，解决了智能体评估中的碎片化和集成难题。通过社区规模的竞赛和具体案例研究，证明了该方法在开放性、标准化和可复现性方面的有效性，为智能体评估提供了一条清晰的发展路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13608v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13608.md)  |
 | <span style='display: inline-block; width: 42px;'>06-11</span> | **Reward Modeling for Multi-Agent Orchestration**<br><sub>机构: Rutgers University, Salesforce AI Research<br>本文提出了 Orch-RM，解决了多智能体系统编排器训练中监督数据稀缺和计算成本高昂的问题。通过利用中间执行产物构建自监督奖励信号，Orch-RM 在不依赖人工标注和昂贵 rollout 的情况下，显著提升了训练效率和最终性能。该方法证明了编排层面的奖励建模是实现鲁棒、可扩展多智能体编排的有效方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13598v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13598.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Wang-ML-Lab/OrchRM)</div> |
 | <span style='display: inline-block; width: 42px;'>06-11</span> | **EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery**<br><sub>机构: Tsinghua University, Zhipu AI<br>EurekAgent 证明了“环境工程”是开发可靠自主研究代理的核心方向。通过精心设计环境的四个维度（权限、工件、预算、人机协同），该系统不仅大幅降低了自动化科学发现的门槛和成本，还在多个硬核科学任务中超越了人类专家和现有AI系统的最优结果。该工作呼吁社区将研究重点从单纯的工作流设计转向更全面的环境工程设计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.13662v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.13662.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/THU-Team-Eureka/EurekAgent)</div> |

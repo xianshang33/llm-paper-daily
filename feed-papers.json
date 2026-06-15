@@ -1,216 +1,220 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-13T08:38:06.784171+00:00",
-  "run_date": "2026-06-06",
+  "generated_at": "2026-06-15T06:44:22.077828+00:00",
+  "run_date": "2026-06-12",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.08275",
-      "date": "2026-06-06",
-      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "id": "arxiv:2606.14445",
+      "date": "2026-06-12",
+      "title": "tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jaineet Shah"
+        "Minseo Kim"
+      ],
+      "institution": "HUA Labs",
+      "summary": {
+        "zh": "本文提出了tap，一种轻量级的基于文件的协作协议，解决了异构LLM智能体在无共享运行时环境下的直接通信问题。通过文件优先的设计和实时通知的结合，tap实现了Claude和Codex等不同厂商智能体的高效协作。实证研究表明，异构智能体协作能显著提高代码审查中发现缺陷的概率，证明了该协议在实际生产环境中的有效性和价值。",
+        "en": "This paper presents tap, a lightweight file-based protocol addressing direct communication between heterogeneous LLM agents without shared runtimes. By combining file-first storage with real-time notifications, tap..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.14445v1",
+        "pdf": "https://arxiv.org/pdf/2606.14445v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.14445.md",
+        "summary_en_path": "summary_en/2026-06/2606.14445.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14445.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14445.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.14672",
+      "date": "2026-06-12",
+      "title": "Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Shikun Liu",
+        "Mufei Li",
+        "Dongqi Fu",
+        "Haoyu Wang",
+        "Yinglong Xia",
+        "Hong Li",
+        "Hong Yan",
+        "Pan Li"
+      ],
+      "institution": "Georgia Institute of Technology, Meta",
+      "summary": {
+        "zh": "本文针对LLM代理工作流中并行结构与顺序文本接口之间的错配问题，提出了 Parallel-Synthesis 框架。通过直接利用并行分支的 KV 缓存而非拼接文本，该方法解决了冗余计算和结构信息丢失的问题。实验结果表明，该框架在多个复杂任务上保持了高水平的准确性，并大幅降低了延迟，为构建更高效的原生并行代理系统提供了新的技术路径。",
+        "en": "This paper addresses the mismatch between parallel structures in LLM agent workflows and the sequential nature of LLM context interfaces by proposing Parallel-Synthesis. By directly leveraging KV caches from parallel..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.14672v1",
+        "pdf": "https://arxiv.org/pdf/2606.14672v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.14672.md",
+        "summary_en_path": "summary_en/2026-06/2606.14672.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14672.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14672.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.14470",
+      "date": "2026-06-12",
+      "title": "GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Pavan C Shekar",
+        "Abhishek H S",
+        "Aswanth Krishnan"
+      ],
+      "institution": "QpiAI, Bengaluru, India",
+      "summary": {
+        "zh": "本文引入了 GitOfThoughts，旨在解决 LLM 推理过程缺乏版本控制的问题，实现了推理的可重放性和可审计性。更重要的是，通过严格的预注册实验，文章反驳了“通用记忆能提升新颖问题求解能力”的普遍假设，指出记忆仅在极高相似度的“可复制”场景下有效，且本质是答案检索而非方法迁移。该研究倡导以更高的评估标准（包括记录撤回的结果和被驳斥的假设）来审视代理记忆领域，强调 Git 在工程运维价值上的优势而非单纯的精度提升。",
+        "en": "This paper introduces GitOfThoughts to address the lack of version control in LLM reasoning, enabling replayability and auditability. Crucially, through strict pre-registered experiments, it refutes the common..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.14470v1",
+        "pdf": "https://arxiv.org/pdf/2606.14470v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.14470.md",
+        "summary_en_path": "summary_en/2026-06/2606.14470.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14470.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14470.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.14155",
+      "date": "2026-06-12",
+      "title": "Graph-based Target Back-Propagation for Context Adaptation in Multi-LLM Agentic Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Tan Zhu",
+        "Tong Yao",
+        "Kananart Kuwaranancharoen",
+        "Amit Singh",
+        "Yushang Lai",
+        "Deepa Mohan",
+        "Shankara Bhargava"
+      ],
+      "institution": "Walmart Global Tech",
+      "summary": {
+        "zh": "本文针对多LLM智能体系统中的上下文适应问题，提出了GTBP框架。通过引入基于图的目标反向传播机制，GTBP解决了现有方法中信用分配不准确和缺乏收敛保证的问题。理论分析和实证结果均表明，GTBP能够稳定地优化提示词，并在多个基准测试中超越现有最先进方法，为自动化提示工程提供了一种高效且理论可靠的解决方案。",
+        "en": "- **Background**: With larger context windows and lower latency in LLMs, Context Adaptation—automating prompt engineering by iteratively revising tunable prompts from task feedback without modifying model weights—has..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.14155v1",
+        "pdf": "https://arxiv.org/pdf/2606.14155v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.14155.md",
+        "summary_en_path": "summary_en/2026-06/2606.14155.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14155.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14155.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.14589",
+      "date": "2026-06-12",
+      "title": "When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Wei Wu"
       ],
       "institution": null,
       "summary": {
-        "zh": "本文提出了Causal Agent Replay (CAR)，一种用于LLM智能体失败的反事实归因方法。通过将智能体轨迹建模为结构因果模型，并利用干预实验和Shapley值估计，CAR能够准确识别导致失败的具体步骤及其交互作用，解决了现有可观测性和评估工具无法提供因果解释的痛点，为智能体调试提供了 principled 的解决方案。",
-        "en": "This paper presents Causal Agent Replay (CAR), a counterfactual attribution method for LLM agent failures. By modeling agent trajectories as Structural Causal Models and utilizing intervention experiments combined with..."
+        "zh": "本文通过对生产环境中LLM代理运行时静默故障的纵向研究，揭示了LLM系统特有的“似真故障”风险。研究指出，传统测试和监控在面对LLM生成的流畅错误叙述时存在巨大盲区，大部分故障依靠用户发现。作者提出了五类静默故障分类法，并强调故障多发生于组件接缝处。最终，文章提供了一套防御框架和设计原则，旨在构建故障可观测性强、易于归因的LLM代理系统，所有事故复盘和工件均已公开。",
+        "en": "- **Background**: Large Language Model (LLM) agent systems are increasingly deployed as long-lived autonomous runtimes that schedule jobs, call tools, maintain memory, and push results to humans. As these systems grow..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.08275v1",
-        "pdf": "https://arxiv.org/pdf/2606.08275v1",
+        "abs": "http://arxiv.org/abs/2606.14589v1",
+        "pdf": "https://arxiv.org/pdf/2606.14589v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.08275.md",
-        "summary_en_path": "summary_en/2026-06/2606.08275.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08275.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08275.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.08323",
-      "date": "2026-06-06",
-      "title": "\"So There's a Catch-22 Here\": How Early Adopters Who Build Multi-Agent LLM Systems Conceptualize Transparency",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Suchismita Naik",
-        "Samir Passi",
-        "Mihaela Vorvoreanu",
-        "Scott Saponas",
-        "Amanda Hall"
-      ],
-      "institution": "Purdue University, Cornell University, Microsoft Research",
-      "summary": {
-        "zh": "本文是首批探讨多智能体LLM系统早期采用者如何理解和实践透明度的实证研究之一。文章指出，由于智能体间的协作与编排带来了新的复杂性，传统针对单一模型的透明度定义已失效。通过访谈分析，作者构建了一个多维框架，强调透明度应被视为一种情境化的社会技术实践。该框架为未来的人机交互（HCI）和AI设计提供了指导，旨在更好地对齐不同利益相关者的期望与能力，从而在复杂的分布式系统中实现负责任的AI部署。",
-        "en": "- **Background**: Multi-agent Large Language Model (LLM) systems are rapidly emerging, orchestrating multiple agents to collaborate on complex tasks. However, \"transparency,\" a cornerstone of Responsible AI (RAI),..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.08323v1",
-        "pdf": "https://arxiv.org/pdf/2606.08323v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.08323.md",
-        "summary_en_path": "summary_en/2026-06/2606.08323.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08323.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08323.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.08285",
-      "date": "2026-06-06",
-      "title": "Beyond Agent Architecture: Execution Assumptions and Reproducibility in LLM-Based Trading Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Junyi Yao",
-        "Zihao Zheng"
-      ],
-      "institution": null,
-      "summary": {
-        "zh": "本文指出，LLM 交易研究的下一步关键不在于单纯追求更复杂的智能体架构，而在于建立更清晰的执行现实性、可复现性和评估可比性的报告标准。通过审计和示例证明，忽略执行细节会导致结果误导，呼吁社区重视评估纪律，以确保研究成果的经济意义和科学严谨性。",
-        "en": "- **Background**: Large Language Models (LLMs) and agentic systems are increasingly applied in financial trading, evolving from simple sentiment analysis to complex autonomous workflows and multi-agent collaboration. -..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.08285v1",
-        "pdf": "https://arxiv.org/pdf/2606.08285v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.08285.md",
-        "summary_en_path": "summary_en/2026-06/2606.08285.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08285.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08285.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.08151",
-      "date": "2026-06-06",
-      "title": "Decision-Aware Memory Cards: Counterfactual-Inspired Context Selection and Compression for Tool-Using LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Xinyu Guan",
-        "Qianyang Zhao",
-        "Yuming Deng"
-      ],
-      "institution": "Alibaba Group",
-      "summary": {
-        "zh": "本文提出了 CICL，一种针对工具使用型 LLM 智能体的决策感知上下文选择与压缩框架。通过引入反事实启发的效用评估和结构化的记忆卡片，CICL 有效解决了关键证据在行动时刻缺失的问题。实验表明，该方法显著提升了代码检索任务的准确率，并提供了一种解耦评判模型与决策信号的通用协议，为后续研究提供了可审计的基础设施。尽管在极端压缩下仍面临挑战，但其模块化设计和显著的性能增益展示了其在构建高效智能体上下文管理层面的潜力。",
-        "en": "- **Background**: Tool-using LLM agents (e.g., coding agents) often fail not due to a lack of relevant text, but because decisive evidence is not selected, compressed, or surfaced at the moment of action. As context..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.08151v1",
-        "pdf": "https://arxiv.org/pdf/2606.08151v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.08151.md",
-        "summary_en_path": "summary_en/2026-06/2606.08151.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08151.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08151.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.08146",
-      "date": "2026-06-06",
-      "title": "SAGE: An LLM-driven Self Reflective Agentic Framework for Fraud Detection",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yichen Chen",
-        "Siying Li",
-        "Yuhang Liang",
-        "Lijun Wang",
-        "Renyang Liu"
-      ],
-      "institution": "National University of Singapore",
-      "summary": {
-        "zh": "- **背景**：在支付、电子商务和电信系统中，欺诈检测需要在个体层面保持高精度，在严重类别不平衡下保持鲁棒性，并为风险管理人员提供易于理解的决策依据。随着大语言模型（LLM）的发展，欺诈检测正从后端数据挖掘转向自动化工程流程。 -...",
-        "en": "- **Background**: Fraud detection in payment, e-commerce, and telecommunications systems requires high accuracy at the individual level, robustness under severe class imbalance, and interpretability for risk managers...."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.08146v1",
-        "pdf": "https://arxiv.org/pdf/2606.08146v1",
-        "github": "https://github.com/yichenC1c/SAGE"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.08146.md",
-        "summary_en_path": "summary_en/2026-06/2606.08146.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.08146.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.08146.md"
+        "summary_zh_path": "summary/2026-06/2606.14589.md",
+        "summary_en_path": "summary_en/2026-06/2606.14589.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14589.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14589.md"
       },
       "signals": {
         "priority_keyword": "Agent"
