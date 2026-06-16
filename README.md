@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.15_06:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.16_06:56-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月15日 06:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月16日 06:56</sub></summary>
 <br>
 
-- tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration 
-- Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows 
-- GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge 
-- Graph-based Target Back-Propagation for Context Adaptation in Multi-LLM Agentic Systems 
-- When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime 
+- TokenPilot: Cache-Efficient Context Management for LLM Agents 
+- Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification 
+- OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models 
+- AgentFairBench: Do LLM Agents Discriminate When They Act? 
+- CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-15</span> | **TokenPilot: Cache-Efficient Context Management for LLM Agents**<br><sub>机构: Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI<br>TokenPilot 针对 LLM 智能体长会话中的上下文管理难题，提出了一种兼顾文本稀疏性与缓存连续性的双粒度解决方案。通过全局的摄入感知压缩稳定前缀，以及局部的生命周期感知驱逐优化资源释放，该方法有效解决了传统剪枝方法导致的 KV Cache 失效问题。实验表明，TokenPilot 能在保持性能的前提下显著降低推理成本，特别是在连续交互场景中表现优异，为 LLM 智能体的可持续部署提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.17016v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.17016.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/zjunlp/LightMem2)</div> |
+| <span style='display: inline-block; width: 42px;'>06-15</span> | **Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification**<br><sub>机构: University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam<br>本文提出了一种创新的基于共识的智能体LLM框架，旨在解决海运物流中加拿大10位HTS代码分类的难题。通过整合多智能体检索、证据 grounding、共识验证和人机协同机制，该框架显著提升了分类的可解释性和问责制。研究证实，在处理高度专业和法律敏感的关税分类任务时，结合外部知识检索与人类专家介入的混合工作流优于纯粹的端到端深度学习或LLM预测方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16987v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16987.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Analytics-Everywhere-Lab/hts)</div> |
+| <span style='display: inline-block; width: 42px;'>06-15</span> | **OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models**<br><sub>机构: The Hong Kong Polytechnic University<br>本文针对现有 LLM 智能体技能构建中存在的碎片化、低多样性和弱迁移性问题，提出了集体技能树搜索（CSTS）框架。通过利用多模型的集体智能进行技能生成与评估，CSTS 能够自动构建结构化、多样化且高泛化性的技能树。结合集体技能强化学习，最终得到的 OpenClaw-Skill 模型在复杂任务处理、工具使用及跨模型泛化方面均取得了显著优于现有工作的性能，为自动化构建高效 LLM 智能体技能提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16774v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16774.md)  |
+| <span style='display: inline-block; width: 42px;'>06-15</span> | **AgentFairBench: Do LLM Agents Discriminate When They Act?**<br><sub>机构: Florida International University, Boston University, Indian Institute of Technology Patna<br>本文指出了 LLM 公平性评估中“回答”与“行动”之间的关键差距，并提出了 AgentFairBench 作为解决方案。通过引入偏见传导框架和元数匹配零假设方法，该基准测试能够准确、敏感地检测 LLM 代理在招聘、借贷和医疗等关键领域行动中的 demographic disparity。研究结果表明，当前先进的代理模型（如 Claude Haiku 4.5）在严格统计控制下未表现出显著的歧视行为，但该方法论为未来监控和缓解代理偏差提供了重要工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16723v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16723.md)  |
+| <span style='display: inline-block; width: 42px;'>06-15</span> | **CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies**<br><sub>机构: Sakana AI, KPMG AZSA LLC<br>CoffeeBench 填补了长 horizon 多智能体经济系统评估的空白，通过模拟异质 firms 间的复杂互动，揭示了 LLM 代理在长期商业场景中的能力差异及特定故障模式（如空闲漂移）。该基准为未来研究提供了重要的代码和数据支持，推动了 LLM 代理在金融、制造等复杂行业应用中的评估标准发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16613v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16613.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/SakanaAI/CoffeeBench)</div> |
 | <span style='display: inline-block; width: 42px;'>06-12</span> | **tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration**<br><sub>机构: HUA Labs<br>本文提出了tap，一种轻量级的基于文件的协作协议，解决了异构LLM智能体在无共享运行时环境下的直接通信问题。通过文件优先的设计和实时通知的结合，tap实现了Claude和Codex等不同厂商智能体的高效协作。实证研究表明，异构智能体协作能显著提高代码审查中发现缺陷的概率，证明了该协议在实际生产环境中的有效性和价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14445v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14445.md)  |
 | <span style='display: inline-block; width: 42px;'>06-12</span> | **Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows**<br><sub>机构: Georgia Institute of Technology, Meta<br>本文针对LLM代理工作流中并行结构与顺序文本接口之间的错配问题，提出了 Parallel-Synthesis 框架。通过直接利用并行分支的 KV 缓存而非拼接文本，该方法解决了冗余计算和结构信息丢失的问题。实验结果表明，该框架在多个复杂任务上保持了高水平的准确性，并大幅降低了延迟，为构建更高效的原生并行代理系统提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14672v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14672.md)  |
 | <span style='display: inline-block; width: 42px;'>06-12</span> | **GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge**<br><sub>机构: QpiAI, Bengaluru, India<br>本文引入了 GitOfThoughts，旨在解决 LLM 推理过程缺乏版本控制的问题，实现了推理的可重放性和可审计性。更重要的是，通过严格的预注册实验，文章反驳了“通用记忆能提升新颖问题求解能力”的普遍假设，指出记忆仅在极高相似度的“可复制”场景下有效，且本质是答案检索而非方法迁移。该研究倡导以更高的评估标准（包括记录撤回的结果和被驳斥的假设）来审视代理记忆领域，强调 Git 在工程运维价值上的优势而非单纯的精度提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.14470v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.14470.md)  |

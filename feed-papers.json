@@ -1,37 +1,51 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-15T06:44:22.077828+00:00",
-  "run_date": "2026-06-12",
+  "generated_at": "2026-06-16T06:56:37.089784+00:00",
+  "run_date": "2026-06-15",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.14445",
-      "date": "2026-06-12",
-      "title": "tap: A File-Based Protocol for Heterogeneous LLM Agent Collaboration",
+      "id": "arxiv:2606.17016",
+      "date": "2026-06-15",
+      "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Minseo Kim"
+        "Buqiang Xu",
+        "Zirui Xue",
+        "Dianmou Chen",
+        "Chenyang Fu",
+        "Chiyu Wu",
+        "Caiying Huang",
+        "Chen Jiang",
+        "Jizhan Fang",
+        "Xinle Deng",
+        "Yijun Chen",
+        "Yunzhi Yao",
+        "Xuehai Wang",
+        "Jin Shang",
+        "Gong Yu",
+        "Ningyu Zhang"
       ],
-      "institution": "HUA Labs",
+      "institution": "Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI",
       "summary": {
-        "zh": "本文提出了tap，一种轻量级的基于文件的协作协议，解决了异构LLM智能体在无共享运行时环境下的直接通信问题。通过文件优先的设计和实时通知的结合，tap实现了Claude和Codex等不同厂商智能体的高效协作。实证研究表明，异构智能体协作能显著提高代码审查中发现缺陷的概率，证明了该协议在实际生产环境中的有效性和价值。",
-        "en": "This paper presents tap, a lightweight file-based protocol addressing direct communication between heterogeneous LLM agents without shared runtimes. By combining file-first storage with real-time notifications, tap..."
+        "zh": "TokenPilot 针对 LLM 智能体长会话中的上下文管理难题，提出了一种兼顾文本稀疏性与缓存连续性的双粒度解决方案。通过全局的摄入感知压缩稳定前缀，以及局部的生命周期感知驱逐优化资源释放，该方法有效解决了传统剪枝方法导致的 KV Cache 失效问题。实验表明，TokenPilot 能在保持性能的前提下显著降低推理成本，特别是在连续交互场景中表现优异，为 LLM 智能体的可持续部署提供了高效的基础设施支持。",
+        "en": "- **Background**: As LLM agents are deployed in long-horizon sessions, context accumulation significantly drives up inference costs. Existing approaches typically use text pruning or dynamic memory eviction to minimize..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.14445v1",
-        "pdf": "https://arxiv.org/pdf/2606.14445v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.17016v1",
+        "pdf": "https://arxiv.org/pdf/2606.17016v1",
+        "github": "https://github.com/zjunlp/LightMem2"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.14445.md",
-        "summary_en_path": "summary_en/2026-06/2606.14445.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14445.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14445.md"
+        "summary_zh_path": "summary/2026-06/2606.17016.md",
+        "summary_en_path": "summary_en/2026-06/2606.17016.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.17016.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.17016.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,39 +62,39 @@
       }
     },
     {
-      "id": "arxiv:2606.14672",
-      "date": "2026-06-12",
-      "title": "Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows",
+      "id": "arxiv:2606.16987",
+      "date": "2026-06-15",
+      "title": "Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shikun Liu",
-        "Mufei Li",
-        "Dongqi Fu",
-        "Haoyu Wang",
-        "Yinglong Xia",
-        "Hong Li",
-        "Hong Yan",
-        "Pan Li"
+        "Truong Thanh Hung Nguyen",
+        "Khanh Van Quynh Nguyen",
+        "Hoang-Loc Cao",
+        "Tri Duong",
+        "Phuc Ho",
+        "Van Pham",
+        "Loc Nguyen",
+        "Hung Cao"
       ],
-      "institution": "Georgia Institute of Technology, Meta",
+      "institution": "University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam",
       "summary": {
-        "zh": "本文针对LLM代理工作流中并行结构与顺序文本接口之间的错配问题，提出了 Parallel-Synthesis 框架。通过直接利用并行分支的 KV 缓存而非拼接文本，该方法解决了冗余计算和结构信息丢失的问题。实验结果表明，该框架在多个复杂任务上保持了高水平的准确性，并大幅降低了延迟，为构建更高效的原生并行代理系统提供了新的技术路径。",
-        "en": "This paper addresses the mismatch between parallel structures in LLM agent workflows and the sequential nature of LLM context interfaces by proposing Parallel-Synthesis. By directly leveraging KV caches from parallel..."
+        "zh": "本文提出了一种创新的基于共识的智能体LLM框架，旨在解决海运物流中加拿大10位HTS代码分类的难题。通过整合多智能体检索、证据 grounding、共识验证和人机协同机制，该框架显著提升了分类的可解释性和问责制。研究证实，在处理高度专业和法律敏感的关税分类任务时，结合外部知识检索与人类专家介入的混合工作流优于纯粹的端到端深度学习或LLM预测方法。",
+        "en": "This paper presents a novel consensus-based Agentic LLM framework to address the challenges of classifying Canadian 10-digit HTS codes in maritime logistics. By integrating multi-agent retrieval, evidence grounding,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.14672v1",
-        "pdf": "https://arxiv.org/pdf/2606.14672v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.16987v1",
+        "pdf": "https://arxiv.org/pdf/2606.16987v1",
+        "github": "https://github.com/Analytics-Everywhere-Lab/hts"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.14672.md",
-        "summary_en_path": "summary_en/2026-06/2606.14672.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14672.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14672.md"
+        "summary_zh_path": "summary/2026-06/2606.16987.md",
+        "summary_en_path": "summary_en/2026-06/2606.16987.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.16987.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.16987.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,34 +111,40 @@
       }
     },
     {
-      "id": "arxiv:2606.14470",
-      "date": "2026-06-12",
-      "title": "GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge",
+      "id": "arxiv:2606.16774",
+      "date": "2026-06-15",
+      "title": "OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pavan C Shekar",
-        "Abhishek H S",
-        "Aswanth Krishnan"
+        "Tianyi Lin",
+        "Chuanyu Sun",
+        "Jingyi Zhang",
+        "Changxu Wei",
+        "Huanjin Yao",
+        "Shunyu Liu",
+        "Xikun Zhang",
+        "Liu Liu",
+        "Jiaxing Huang"
       ],
-      "institution": "QpiAI, Bengaluru, India",
+      "institution": "The Hong Kong Polytechnic University",
       "summary": {
-        "zh": "本文引入了 GitOfThoughts，旨在解决 LLM 推理过程缺乏版本控制的问题，实现了推理的可重放性和可审计性。更重要的是，通过严格的预注册实验，文章反驳了“通用记忆能提升新颖问题求解能力”的普遍假设，指出记忆仅在极高相似度的“可复制”场景下有效，且本质是答案检索而非方法迁移。该研究倡导以更高的评估标准（包括记录撤回的结果和被驳斥的假设）来审视代理记忆领域，强调 Git 在工程运维价值上的优势而非单纯的精度提升。",
-        "en": "This paper introduces GitOfThoughts to address the lack of version control in LLM reasoning, enabling replayability and auditability. Crucially, through strict pre-registered experiments, it refutes the common..."
+        "zh": "本文针对现有 LLM 智能体技能构建中存在的碎片化、低多样性和弱迁移性问题，提出了集体技能树搜索（CSTS）框架。通过利用多模型的集体智能进行技能生成与评估，CSTS 能够自动构建结构化、多样化且高泛化性的技能树。结合集体技能强化学习，最终得到的 OpenClaw-Skill 模型在复杂任务处理、工具使用及跨模型泛化方面均取得了显著优于现有工作的性能，为自动化构建高效 LLM 智能体技能提供了新的范式。",
+        "en": "- **Background**: In complex real-world systems like OpenClaw, Large Language Model (LLM) agents must solve tasks through tool use, multi-step reasoning, and dynamic environment interaction. Introducing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.14470v1",
-        "pdf": "https://arxiv.org/pdf/2606.14470v1",
+        "abs": "http://arxiv.org/abs/2606.16774v1",
+        "pdf": "https://arxiv.org/pdf/2606.16774v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.14470.md",
-        "summary_en_path": "summary_en/2026-06/2606.14470.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14470.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14470.md"
+        "summary_zh_path": "summary/2026-06/2606.16774.md",
+        "summary_en_path": "summary_en/2026-06/2606.16774.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.16774.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.16774.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,38 +161,35 @@
       }
     },
     {
-      "id": "arxiv:2606.14155",
-      "date": "2026-06-12",
-      "title": "Graph-based Target Back-Propagation for Context Adaptation in Multi-LLM Agentic Systems",
+      "id": "arxiv:2606.16723",
+      "date": "2026-06-15",
+      "title": "AgentFairBench: Do LLM Agents Discriminate When They Act?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tan Zhu",
-        "Tong Yao",
-        "Kananart Kuwaranancharoen",
-        "Amit Singh",
-        "Yushang Lai",
-        "Deepa Mohan",
-        "Shankara Bhargava"
+        "Triveni Morla",
+        "Rohith Reddy Bellibaltu",
+        "Manpreet Singh",
+        "Manmeet Singh Kapoor"
       ],
-      "institution": "Walmart Global Tech",
+      "institution": "Florida International University, Boston University, Indian Institute of Technology Patna",
       "summary": {
-        "zh": "本文针对多LLM智能体系统中的上下文适应问题，提出了GTBP框架。通过引入基于图的目标反向传播机制，GTBP解决了现有方法中信用分配不准确和缺乏收敛保证的问题。理论分析和实证结果均表明，GTBP能够稳定地优化提示词，并在多个基准测试中超越现有最先进方法，为自动化提示工程提供了一种高效且理论可靠的解决方案。",
-        "en": "- **Background**: With larger context windows and lower latency in LLMs, Context Adaptation—automating prompt engineering by iteratively revising tunable prompts from task feedback without modifying model weights—has..."
+        "zh": "本文指出了 LLM 公平性评估中“回答”与“行动”之间的关键差距，并提出了 AgentFairBench 作为解决方案。通过引入偏见传导框架和元数匹配零假设方法，该基准测试能够准确、敏感地检测 LLM 代理在招聘、借贷和医疗等关键领域行动中的 demographic disparity。研究结果表明，当前先进的代理模型（如 Claude Haiku...",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly taking real-world actions such as screening job applicants, recommending credit, and triaging patients. However, fairness in LLMs is still..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.14155v1",
-        "pdf": "https://arxiv.org/pdf/2606.14155v1",
+        "abs": "http://arxiv.org/abs/2606.16723v1",
+        "pdf": "https://arxiv.org/pdf/2606.16723v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.14155.md",
-        "summary_en_path": "summary_en/2026-06/2606.14155.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14155.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14155.md"
+        "summary_zh_path": "summary/2026-06/2606.16723.md",
+        "summary_en_path": "summary_en/2026-06/2606.16723.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.16723.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.16723.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,32 +206,39 @@
       }
     },
     {
-      "id": "arxiv:2606.14589",
-      "date": "2026-06-12",
-      "title": "When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime",
+      "id": "arxiv:2606.16613",
+      "date": "2026-06-15",
+      "title": "CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wei Wu"
+        "Issa Sugiura",
+        "Daichi Hattori",
+        "Kazuo Araragi",
+        "Keita Ogawa",
+        "Shota Onose",
+        "Taro Makino",
+        "Teppei Usuki",
+        "Takashi Ishida"
       ],
-      "institution": null,
+      "institution": "Sakana AI, KPMG AZSA LLC",
       "summary": {
-        "zh": "本文通过对生产环境中LLM代理运行时静默故障的纵向研究，揭示了LLM系统特有的“似真故障”风险。研究指出，传统测试和监控在面对LLM生成的流畅错误叙述时存在巨大盲区，大部分故障依靠用户发现。作者提出了五类静默故障分类法，并强调故障多发生于组件接缝处。最终，文章提供了一套防御框架和设计原则，旨在构建故障可观测性强、易于归因的LLM代理系统，所有事故复盘和工件均已公开。",
-        "en": "- **Background**: Large Language Model (LLM) agent systems are increasingly deployed as long-lived autonomous runtimes that schedule jobs, call tools, maintain memory, and push results to humans. As these systems grow..."
+        "zh": "CoffeeBench 填补了长 horizon 多智能体经济系统评估的空白，通过模拟异质 firms 间的复杂互动，揭示了 LLM 代理在长期商业场景中的能力差异及特定故障模式（如空闲漂移）。该基准为未来研究提供了重要的代码和数据支持，推动了 LLM 代理在金融、制造等复杂行业应用中的评估标准发展。",
+        "en": "- **Background**: As LLM agents become capable of increasingly long-horizon tasks, evaluating their performance in economic systems is becoming crucial. Economic systems are inherently multi-agent, requiring autonomous..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.14589v1",
-        "pdf": "https://arxiv.org/pdf/2606.14589v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.16613v1",
+        "pdf": "https://arxiv.org/pdf/2606.16613v1",
+        "github": "https://github.com/SakanaAI/CoffeeBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.14589.md",
-        "summary_en_path": "summary_en/2026-06/2606.14589.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.14589.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.14589.md"
+        "summary_zh_path": "summary/2026-06/2606.16613.md",
+        "summary_en_path": "summary_en/2026-06/2606.16613.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.16613.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.16613.md"
       },
       "signals": {
         "priority_keyword": "Agent"
