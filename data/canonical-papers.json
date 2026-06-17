@@ -1,166 +1,46 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-16T06:56:37.089784+00:00",
-  "run_date": "2026-06-15",
+  "generated_at": "2026-06-17T06:33:48.566278+00:00",
+  "run_date": "2026-06-16",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.17016",
-      "date": "2026-06-15",
-      "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents",
+      "paper_id": "2606.18037",
+      "date": "2026-06-16",
+      "title": "ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents",
       "authors": [
-        "Buqiang Xu",
-        "Zirui Xue",
-        "Dianmou Chen",
-        "Chenyang Fu",
-        "Chiyu Wu",
-        "Caiying Huang",
-        "Chen Jiang",
-        "Jizhan Fang",
-        "Xinle Deng",
-        "Yijun Chen",
-        "Yunzhi Yao",
-        "Xuehai Wang",
-        "Jin Shang",
-        "Gong Yu",
-        "Ningyu Zhang"
+        "Ander Alvarez",
+        "Santhiya Rajan",
+        "Samuel Mugel",
+        "Román Orús"
       ],
-      "abstract": "As LLM agents are deployed in long-horizon sessions, context accumulation drives up inference costs. Existing approaches utilize text pruning or dynamic memory eviction to minimize token footprints; however, their unconstrained sequence mutations alter layouts, introducing prefix mismatches and cache invalidation. This reveals a critical trade-off between text sparsity and prompt cache continuity. To address this, we present TokenPilot, a dual-granularity context management framework. Globally, Ingestion-Aware Compaction acts as a framework harness to stabilize prompt prefixes and eliminate open-world environmental noise at the ingestion gate. Locally, Lifecycle-Aware Eviction monitors the ongoing residual utility of context segments, enforcing a conservative batch-turn schedule to offload content segments only when task relevance expires. Experiments on PinchBench and Claw-Eval under both isolated and continuous modes demonstrate that TokenPilot reduces costs by 61% and 56% in isolated mode, and 61% and 87% in continuous mode, while maintaining competitive performance compared to prior systems. TokenPilot has been integrated into LightMem2 at https://github.com/zjunlp/LightMem2.",
+      "abstract": "Tool-using LLM agents increasingly use the Model Context Protocol (MCP) to answer from heterogeneous evidence sources, including search, APIs, databases, clinical records, and formulary tools. Standard factuality metrics usually test whether an answer is supported by pooled evidence, missing a provenance-sensitive failure mode: a claim may be supported somewhere while being attributed to the wrong source. We call this cross-source conflation. We introduce ProvenanceGuard, a source-aware verifier for MCP-grounded answers. It consumes captured MCP traces with stable tool IDs, source IDs, and raw outputs; decomposes answers into atomic claims; routes claims to source-specific evidence; checks support with NLI and a token-alignment proxy; compares stated attribution with the routed source; and returns per-claim verdicts plus an answer-level allow/block decision. Blocked answers can be repaired with retrieval-augmented answer revision and re-verified. We evaluate on 281 medical-domain MCP-agent traces. A 266-trace adjudicated subset yields 2,325 LLM-assisted claim labels split by trace; 361 held-out labels are human-verified. On the 40-trace held-out split, ProvenanceGuard achieves block F1 0.802 and source accuracy 0.858 over 260 source-eligible claims, outperforming source-blind baselines that do not emit claim-to-source IDs. On a harder multi-source benchmark it reaches block F1 0.846, while source-plus-relation accuracy drops to 0.229, showing that exact source ownership remains difficult with semantically close sources. Repair-and-reverify resolves all blocked answers in the full trace set, often via conservative fallback. In 50 controlled clinical conflation probes, ProvenanceGuard detects all injected attribution swaps with no retained wrong attribution. These results show that source attribution is an independent axis for factuality verification in MCP-based agents.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.17016v1",
-        "pdf": "https://arxiv.org/pdf/2606.17016v1",
-        "github": "https://github.com/zjunlp/LightMem2",
-        "blog": null
-      },
-      "institution": "Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）智能体在长周期会话中的部署，上下文积累导致推理成本急剧上升。现有的方法通常采用文本剪枝或动态记忆驱逐来最小化 Token 占用。\n- **已有工作的局限**：现有方法通过无约束的序列突变（如截断、压缩）来减少 Token，但这改变了输入布局，导致前缀不匹配和 KV Cache 失效。这揭示了文本稀疏性与提示词缓存连续性之间的关键权衡：激进的压缩虽然减少了 Token 数量，但破坏了硬件层面的缓存命中机制，导致严重的预填充惩罚。\n\n## 文章的核心贡献点\n- **提出了一个双粒度上下文管理框架 TokenPilot**：旨在平衡文本压缩效率与硬件缓存命中率。\n- **挑战1：全局层面的前缀稳定性与环境噪声干扰**。难点在于开放世界的环境噪声会污染上下文，而传统的压缩方式会破坏 Prompt 前缀结构，导致 Cache Miss。TokenPilot 通过“摄入感知压缩”（Ingestion-Aware Compaction）作为框架枢纽，在摄入网关处稳定提示词前缀并消除环境噪声，从而保持缓存布局的连续性。\n- **挑战2：局部层面的上下文生命周期管理与精准驱逐**。难点在于难以判断上下文片段的剩余效用，过早驱逐影响性能，过晚驱逐增加成本。TokenPilot 采用“生命周期感知驱逐”（Lifecycle-Aware Eviction），监控上下文片段的持续剩余效用，执行保守的批量轮次调度，仅在任务相关性过期时才卸载内容片段，确保缓存的高效利用。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：TokenPilot 已集成到 LightMem2 系统中，代码开源。\n- **评估结果**：在 PinchBench 和 Claw-Eval 基准测试中，分别在隔离模式和连续模式下进行了评估。\n- **对比优势**：\n    - 在隔离模式下，TokenPilot 相比先前系统分别降低了 61% 和 56% 的成本。\n    - 在连续模式下，成本降低幅度更为显著，分别达到 61% 和 87%。\n    - 在大幅降低成本的同时，TokenPilot 保持了与先前系统相当的竞争性能，证明了其在解决缓存失效问题上的有效性。\n\n#### 总结\nTokenPilot 针对 LLM 智能体长会话中的上下文管理难题，提出了一种兼顾文本稀疏性与缓存连续性的双粒度解决方案。通过全局的摄入感知压缩稳定前缀，以及局部的生命周期感知驱逐优化资源释放，该方法有效解决了传统剪枝方法导致的 KV Cache 失效问题。实验表明，TokenPilot 能在保持性能的前提下显著降低推理成本，特别是在连续交互场景中表现优异，为 LLM 智能体的可持续部署提供了高效的基础设施支持。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: As LLM agents are deployed in long-horizon sessions, context accumulation significantly drives up inference costs. Existing approaches typically use text pruning or dynamic memory eviction to minimize token footprints.\n- **Limitations of Prior Work**: Existing methods introduce unconstrained sequence mutations (such as truncation and compaction) to reduce tokens, which alter input layouts, causing prefix mismatches and KV cache invalidation. This reveals a critical trade-off between text sparsity and prompt cache continuity: aggressive compression reduces token counts but shatters hardware cache alignment, leading to severe pre-fill penalties.\n\n## Core Contributions\n- **Proposed TokenPilot**: A dual-granularity context management framework designed to balance text compression efficiency with hardware cache hit rates.\n- **Challenge 1: Global Prefix Stability and Environmental Noise**. The difficulty lies in open-world noise contaminating context and traditional compression breaking prompt prefix structures, leading to cache misses. TokenPilot addresses this via \"Ingestion-Aware Compaction,\" which acts as a framework harness to stabilize prompt prefixes and eliminate environmental noise at the ingestion gate, preserving cache layout continuity.\n- **Challenge 2: Local Context Lifecycle Management and Precise Eviction**. The challenge is determining the residual utility of context segments; premature eviction hurts performance, while delayed eviction increases costs. TokenPilot employs \"Lifecycle-Aware Eviction\" to monitor the ongoing residual utility of context segments, enforcing a conservative batch-turn schedule to offload content only when task relevance expires, ensuring efficient cache utilization.\n\n## Implementation and Evaluation\n- **Implementation**: TokenPilot has been integrated into the LightMem2 system, with code available on GitHub.\n- **Evaluation Results**: Experiments were conducted on PinchBench and Claw-Eval benchmarks under both isolated and continuous modes.\n- **Comparison with Prior Work**:\n    - In isolated mode, TokenPilot reduced costs by 61% and 56% compared to prior systems.\n    - In continuous mode, cost reductions were even more significant, reaching 61% and 87%.\n    - While substantially reducing costs, TokenPilot maintained competitive performance comparable to previous systems, demonstrating its effectiveness in resolving cache invalidation issues.\n\n## 4. Conclusion\nTokenPilot addresses the context management challenge in long-session LLM agents by proposing a dual-granularity solution that balances text sparsity with cache continuity. By stabilizing prefixes globally through ingestion-aware compaction and optimizing resource release locally via lifecycle-aware eviction, it effectively solves the KV cache invalidation problem caused by traditional pruning methods. Experiments show that TokenPilot significantly reduces inference costs while maintaining performance, especially in continuous interaction scenarios, providing efficient infrastructure support for the sustainable deployment of LLM agents.",
-      "render_excerpt": "机构: Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI<br>TokenPilot 针对 LLM 智能体长会话中的上下文管理难题，提出了一种兼顾文本稀疏性与缓存连续性的双粒度解决方案。通过全局的摄入感知压缩稳定前缀，以及局部的生命周期感知驱逐优化资源释放，该方法有效解决了传统剪枝方法导致的 KV Cache 失效问题。实验表明，TokenPilot 能在保持性能的前提下显著降低推理成本，特别是在连续交互场景中表现优异，为 LLM 智能体的可持续部署提供了高效的基础设施支持。",
-      "render_excerpt_en": "Institution: Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI<br>## 1. What the Paper Does - **Background**: As LLM agents are deployed in long-horizon sessions, context accumulation significantly drives up inference costs. Existing approaches typically use text pruning or dynamic memory eviction to minimize token footprints.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-15T17:46:50Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-15"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.16987",
-      "date": "2026-06-15",
-      "title": "Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification",
-      "authors": [
-        "Truong Thanh Hung Nguyen",
-        "Khanh Van Quynh Nguyen",
-        "Hoang-Loc Cao",
-        "Tri Duong",
-        "Phuc Ho",
-        "Van Pham",
-        "Loc Nguyen",
-        "Hung Cao"
-      ],
-      "abstract": "Accurate Harmonized Tariff Schedule (HTS) code classification is essential for customs clearance, duty assessment, trade statistics, and regulatory compliance in maritime logistics. However, exact HTS classification remains challenging because product descriptions are often short, incomplete, or ambiguous, while correct classification depends on hierarchical tariff structures, legal notes, and jurisdiction-specific rules. This paper proposes an agentic large language model (LLM) framework for Canadian 10-digit HTS code classification in smart-port and maritime logistics environments. The framework integrates multi-agent information retrieval, semantic retrieval over official tariff documents, evidence-grounded reasoning, consensus-based validation, element-wise voting across hierarchical code components, confidence estimation, and human-in-the-loop escalation. We evaluate the framework on a private dataset of 3,300 domain-expert-labeled product records collected from logistics and delivery contexts. Experimental results show that exact 10-digit classification remains difficult even for advanced LLMs, with performance decreasing from coarse chapter-level prediction to fine-grained tariff and statistical suffix assignment. These findings demonstrate the need for evidence-grounded, uncertainty-aware, and human-centered classification workflows rather than fully autonomous single-step prediction. The proposed framework supports more interpretable, accountable, and compliance-oriented HTS classification for maritime logistics and smart-port operations. Our code is available at https://github.com/Analytics-Everywhere-Lab/hts.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.16987v1",
-        "pdf": "https://arxiv.org/pdf/2606.16987v1",
-        "github": "https://github.com/Analytics-Everywhere-Lab/hts",
-        "blog": null
-      },
-      "institution": "University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：在海运物流和智能港口环境中，准确的协调关税表（HTS）代码分类对于清关、关税评估、贸易统计和监管合规至关重要。加拿大要求使用10位数的HTS代码，这是一个受法律注释和特定司法管辖区规则约束的复杂层级结构。\n- **已有工作为什么解决不了**：现有的自动化方法或通用LLM难以处理短小、不完整或模糊的产品描述。传统的单步预测模型缺乏对官方关税文档的证据支持，无法有效应对层级结构的复杂性以及法律规则的细微差别，导致在细粒度分类上准确率低下且缺乏可解释性。\n\n## 文章的核心贡献点\n- **提出了一个**基于共识的智能体大型语言模型（Agentic LLM）框架，专门用于加拿大10位HTS代码分类。\n- **挑战1：产品描述模糊与法律依据缺失**。由于产品描述往往简短且含糊，而正确分类依赖于复杂的法律注释和层级结构，单纯依靠模型内部知识极易出错。论文通过集成多智能体信息检索和针对官方关税文档的语义检索，实现了基于证据的推理，确保分类决策有法可依。\n- **挑战2：层级分类的一致性与不确定性管理**。10位代码包含从章节到统计后缀的多个层级，各层级间需保持逻辑一致，且模型需知晓何时置信度不足。论文引入了跨层级组件的元素级投票机制和基于共识的验证，结合置信度估计与人机协同（Human-in-the-loop）升级机制，有效解决了细粒度分类中的不一致和高不确定性问题。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：框架在包含3,300条由领域专家标记的产品记录的私有数据集上进行评估，这些数据收集自物流和交付场景。\n- **评估结果**：实验表明，即使对于先进的LLM，精确的10位分类仍然极具挑战性。性能随着分类粒度的细化而下降，从粗粒度的章节级别预测到细粒度的关税和统计后缀分配，准确率逐渐降低。\n- **对比与结论**：相较于完全自主的单步预测方法，该框架展示了更高的可解释性和合规性。结果强调了在HTS分类中采用基于证据、感知不确定性以及以人为中心的工作流程的必要性，而非追求完全自动化。\n\n#### 总结\n本文提出了一种创新的基于共识的智能体LLM框架，旨在解决海运物流中加拿大10位HTS代码分类的难题。通过整合多智能体检索、证据 grounding、共识验证和人机协同机制，该框架显著提升了分类的可解释性和问责制。研究证实，在处理高度专业和法律敏感的关税分类任务时，结合外部知识检索与人类专家介入的混合工作流优于纯粹的端到端深度学习或LLM预测方法。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Accurate Harmonized Tariff Schedule (HTS) code classification is critical for customs clearance, duty assessment, and regulatory compliance in maritime logistics and smart ports. Specifically, Canada requires a complex 10-digit HTS code structure governed by legal notes and jurisdiction-specific rules.\n- **Why Existing Work Falls Short**: Current automated methods or general-purpose LLMs struggle with short, incomplete, or ambiguous product descriptions. Traditional single-step prediction models lack evidence grounding from official tariff documents and fail to handle the nuances of hierarchical legal structures, leading to low accuracy in fine-grained classification and poor interpretability.\n\n## Core Contributions\n- **Proposed**: A consensus-based Agentic Large Language Model (LLM) framework for Canadian 10-digit HTS code classification.\n- **Challenge 1: Ambiguity in Descriptions and Lack of Legal Grounding**. Product descriptions are often vague, while correct classification depends on complex legal notes and hierarchical structures, making internal model knowledge insufficient. The paper addresses this by integrating multi-agent information retrieval and semantic retrieval over official tariff documents, enabling evidence-grounded reasoning.\n- **Challenge 2: Hierarchical Consistency and Uncertainty Management**. The 10-digit code involves multiple levels (from chapters to statistical suffixes) that must be logically consistent, and the system must recognize when it is uncertain. The paper introduces element-wise voting across hierarchical components and consensus-based validation, combined with confidence estimation and human-in-the-loop escalation, to resolve inconsistencies and manage high uncertainty in fine-grained tasks.\n\n## Implementation and Evaluation\n- **Implementation & Data**: The framework was evaluated on a private dataset of 3,300 product records labeled by domain experts, collected from logistics and delivery contexts.\n- **Results**: Experiments show that exact 10-digit classification remains difficult even for advanced LLMs. Performance degrades as granularity increases, moving from coarse chapter-level predictions to fine-grained tariff and statistical suffix assignments.\n- **Comparison & Conclusion**: Compared to fully autonomous single-step prediction methods, this framework offers greater interpretability and compliance. The results highlight the necessity of evidence-grounded, uncertainty-aware, and human-centered workflows over purely automated approaches for HTS classification.\n\n#### Summary\nThis paper presents a novel consensus-based Agentic LLM framework to address the challenges of classifying Canadian 10-digit HTS codes in maritime logistics. By integrating multi-agent retrieval, evidence grounding, consensus validation, and human-in-the-loop mechanisms, the framework enhances interpretability and accountability. The study demonstrates that for highly specialized and legally sensitive tariff classification tasks, a hybrid workflow combining external knowledge retrieval with human expert intervention outperforms pure end-to-end deep learning or LLM prediction methods.",
-      "render_excerpt": "机构: University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam<br>本文提出了一种创新的基于共识的智能体LLM框架，旨在解决海运物流中加拿大10位HTS代码分类的难题。通过整合多智能体检索、证据 grounding、共识验证和人机协同机制，该框架显著提升了分类的可解释性和问责制。研究证实，在处理高度专业和法律敏感的关税分类任务时，结合外部知识检索与人类专家介入的混合工作流优于纯粹的端到端深度学习或LLM预测方法。",
-      "render_excerpt_en": "Institution: University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam<br>This paper presents a novel consensus-based Agentic LLM framework to address the challenges of classifying Canadian 10-digit HTS codes in maritime logistics. By integrating multi-agent retrieval, evidence grounding, consensus validation, and human-in-the-loop mechanisms, the framework enhances interpretability and accountability. The study demonstrates that for highly specialized and legally sensitive tariff classification tasks, a hybrid workflow combining external knowledge retrieval with human expert intervention outperforms pure end-to-end deep learning or LLM prediction methods.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-15T17:24:07Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-15"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.16774",
-      "date": "2026-06-15",
-      "title": "OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models",
-      "authors": [
-        "Tianyi Lin",
-        "Chuanyu Sun",
-        "Jingyi Zhang",
-        "Changxu Wei",
-        "Huanjin Yao",
-        "Shunyu Liu",
-        "Xikun Zhang",
-        "Liu Liu",
-        "Jiaxing Huang"
-      ],
-      "abstract": "Equipping Large Language Model (LLM) agents with effective skills is crucial for solving complex tasks in real-world systems like OpenClaw. In this work, we aim to develop a framework that automatically constructs such reusable skills to enhance LLMs in tool use, multi-step reasoning, and dynamic environment interaction. To this end, we propose Collective Skill Tree Search (CSTS), a novel tree-search-based skill construction framework that constructs structured, diverse and generalizable tree of skills. The core idea of CSTS is to leverage collective intelligence to jointly search, identify and compose effective skills via two iterative phases: Collective Skill Node Generation (CSN-Gen) and Collective Skill Node Assessment (CSN-Assess). CSN-Gen exploits collective knowledge from multiple models to explore diverse candidate skills for each subtask, enabling comprehensive skill exploration. CSN-Assess employs multiple models as judges to evaluate and select skill nodes with two scoring mechanisms: (1) collective quality scoring that aggregates independent evaluations to produce a robust estimate of skill effectiveness, and (2) collective transferability scoring that explicitly verifies whether a skill generalizes well across different models. With CSTS, we construct a set of comprehensive tree of skills along with skill-augmented training data, enabling models to effectively learn and utilize skills. Besides, we introduce Collective Skill Reinforcement Learning, which actively selects multiple relevant skills from the tree to broaden solution-space exploration, avoid being trapped by a single skill and its resulting homogeneous or suboptimal solutions. As a result, our trained model, OpenClaw-Skill, exhibits outstanding agentic capabilities in long-horizon planning, tool use and generalization over challenging benchmarks.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.16774v1",
-        "pdf": "https://arxiv.org/pdf/2606.16774v1",
+        "abs": "http://arxiv.org/abs/2606.18037v1",
+        "pdf": "https://arxiv.org/pdf/2606.18037v1",
         "github": null,
         "blog": null
       },
-      "institution": "The Hong Kong Polytechnic University",
+      "institution": "Multiverse Computing, Donostia International Physics Center, Ikerbasque Foundation for Science",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：在 OpenClaw 等复杂的现实世界系统中，大型语言模型（LLM）智能体需要通过工具使用、多步推理和动态环境交互来解决复杂任务。引入“技能”（Skills）概念，即封装可重用的过程性策略，对于提高智能体的可靠性和泛化能力至关重要。\n- **已有工作为什么解决不了**：现有的技能构建方法主要存在三个局限：(1) **技能碎片化**，仅捕捉孤立子任务的局部过程，缺乏关联性；(2) **多样性有限**，受限于单一模型的固有偏见，导致技能同质化；(3) **迁移性差**，在不同 LLM 骨干网络上表现大幅下降。此外，传统手工构建技能成本高且难以扩展，而现有的自动构建方法往往未能有效解决上述结构和泛化问题。\n\n## 文章的核心贡献点\n- **提出了一个集体技能树搜索框架（Collective Skill Tree Search, CSTS）**：这是一种基于树搜索的技能构建框架，旨在构建结构化、多样化且可泛化的技能树，并引入了集体技能强化学习机制。\n- **挑战1：如何克服单一模型偏见以实现技能的多样性和全面探索？**\n  - **难点**：单一模型生成的技能往往受其训练数据分布限制，导致技能同质化，无法覆盖广泛的解空间。\n  - **解决方法**：通过**集体技能节点生成（CSN-Gen）**阶段，利用多个不同模型的集体知识共同探索每个子任务的候选技能，从而实现对技能空间的全面和多样化探索。\n- **挑战2：如何确保构建的技能不仅高质量，而且能在不同模型间有效泛化？**\n  - **难点**：许多技能在特定模型上表现良好，但缺乏跨模型的鲁棒性，导致在新模型或新环境中失效。\n  - **解决方法**：通过**集体技能节点评估（CSN-Assess）**阶段，采用多模型作为评委，引入两种评分机制：(1) **集体质量评分**，聚合独立评估以稳健估计技能有效性；(2) **集体迁移性评分**，显式验证技能在不同模型间的泛化能力，从而筛选出高质且高迁移性的技能节点。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究构建了完整的技能树及技能增强的训练数据。在此基础上，引入了**集体技能强化学习（Collective Skill Reinforcement Learning）**，在训练过程中主动从树中选择多个相关技能，以拓宽解空间探索，避免陷入单一技能导致的次优解。最终训练出的模型命名为 **OpenClaw-Skill**。\n- **评估结果与对比**：\n  - 在具有挑战性的基准测试中，OpenClaw-Skill 在长视野规划（long-horizon planning）、工具使用和泛化能力方面表现出卓越的智能体能力。\n  - 相比于现有的自动技能构建方法（如 SkillRL 等），CSTS 构建的技能树具有更好的结构化和多样性。\n  - 实验表明，该方法显著缓解了技能碎片化和迁移性差的问题，在不同 LLM 骨干网络上的性能下降幅度远小于基线方法，证明了其优秀的跨模型泛化能力。\n\n#### 总结\n本文针对现有 LLM 智能体技能构建中存在的碎片化、低多样性和弱迁移性问题，提出了集体技能树搜索（CSTS）框架。通过利用多模型的集体智能进行技能生成与评估，CSTS 能够自动构建结构化、多样化且高泛化性的技能树。结合集体技能强化学习，最终得到的 OpenClaw-Skill 模型在复杂任务处理、工具使用及跨模型泛化方面均取得了显著优于现有工作的性能，为自动化构建高效 LLM 智能体技能提供了新的范式。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: In complex real-world systems like OpenClaw, Large Language Model (LLM) agents must solve tasks through tool use, multi-step reasoning, and dynamic environment interaction. Introducing \"Skills\"—compact, reusable procedural strategies—is crucial for enhancing agent reliability and generalization.\n- **Why Existing Work Falls Short**: Current skill construction methods suffer from three main limitations: (1) **Skill Fragmentation**, capturing only local procedures for isolated subtasks without correlation; (2) **Limited Diversity**, constrained by the inherent biases of single models leading to homogeneous skills; and (3) **Poor Transferability**, showing significant performance drops across different LLM backbones. Additionally, manual skill construction is costly and unscalable, while existing automatic methods fail to adequately address these structural and generalization issues.\n\n## Core Contributions\n- **Proposed Collective Skill Tree Search (CSTS)**: A novel tree-search-based framework that constructs structured, diverse, and generalizable trees of skills, complemented by Collective Skill Reinforcement Learning.\n- **Challenge 1: How to overcome single-model bias to achieve skill diversity and comprehensive exploration?**\n  - **Difficulty**: Skills generated by a single model are often limited by its training distribution, resulting in homogeneity and inadequate coverage of the solution space.\n  - **Solution**: The **Collective Skill Node Generation (CSN-Gen)** phase leverages collective knowledge from multiple models to explore diverse candidate skills for each subtask, enabling comprehensive and diverse skill exploration.\n- **Challenge 2: How to ensure constructed skills are both high-quality and generalizable across different models?**\n  - **Difficulty**: Many skills perform well on specific models but lack robustness across different architectures, failing in new environments or with different backbones.\n  - **Solution**: The **Collective Skill Node Assessment (CSN-Assess)** phase employs multiple models as judges with two scoring mechanisms: (1) **Collective Quality Scoring**, which aggregates independent evaluations for a robust estimate of effectiveness; and (2) **Collective Transferability Scoring**, which explicitly verifies cross-model generalization, selecting only high-quality and highly transferable skill nodes.\n\n## Implementation and Evaluation\n- **Implementation**: The study constructs a comprehensive skill tree and skill-augmented training data. It introduces **Collective Skill Reinforcement Learning**, which actively selects multiple relevant skills from the tree during training to broaden solution-space exploration and avoid suboptimal solutions trapped by single skills. The resulting model is named **OpenClaw-Skill**.\n- **Evaluation & Comparison**:\n  - OpenClaw-Skill demonstrates outstanding agentic capabilities in long-horizon planning, tool use, and generalization on challenging benchmarks.\n  - Compared to existing automatic skill construction methods (e.g., SkillRL), CSTS produces skills with better structure and diversity.\n  - Experiments show that the method significantly mitigates skill fragmentation and poor transferability, with much smaller performance drops across different LLM backbones compared to baselines, proving superior cross-model generalization.\n\n## 4. Conclusion\nThis paper addresses the issues of fragmentation, low diversity, and weak transferability in existing LLM agent skill construction by proposing the Collective Skill Tree Search (CSTS) framework. By leveraging collective intelligence from multiple models for skill generation and assessment, CSTS automatically builds structured, diverse, and highly generalizable skill trees. Combined with collective skill reinforcement learning, the resulting OpenClaw-Skill model achieves significantly better performance in complex task handling, tool use, and cross-model generalization than existing works, offering a new paradigm for automated efficient LLM agent skill construction.",
-      "render_excerpt": "机构: The Hong Kong Polytechnic University<br>本文针对现有 LLM 智能体技能构建中存在的碎片化、低多样性和弱迁移性问题，提出了集体技能树搜索（CSTS）框架。通过利用多模型的集体智能进行技能生成与评估，CSTS 能够自动构建结构化、多样化且高泛化性的技能树。结合集体技能强化学习，最终得到的 OpenClaw-Skill 模型在复杂任务处理、工具使用及跨模型泛化方面均取得了显著优于现有工作的性能，为自动化构建高效 LLM 智能体技能提供了新的范式。",
-      "render_excerpt_en": "Institution: The Hong Kong Polytechnic University<br>## 1. What the Paper Did - **Background**: In complex real-world systems like OpenClaw, Large Language Model (LLM) agents must solve tasks through tool use, multi-step reasoning, and dynamic environment interaction. Introducing \"Skills\"—compact, reusable procedural strategies—is crucial for enhancing agent reliability and generalization.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）智能体越来越多地使用模型上下文协议（MCP）从异构证据源（如搜索、API、数据库、临床记录等）中获取信息来回答问题，事实性验证变得至关重要。\n- **已有工作的不足**：现有的事实性和忠实度指标通常仅评估答案是否被“池化”后的整体证据所支持。这种抽象忽略了一个对来源敏感的关键故障模式：一个声明可能在某处得到证据支持，但被错误地归因于另一个来源。作者将这种失败称为“跨源混淆”（cross-source conflation），而传统方法无法检测此类归因错误。\n\n## 文章的核心贡献点\n- **提出了一个 ProvenanceGuard**：这是一个针对 MCP 落地答案的“来源感知”验证器，能够识别并纠正跨源混淆问题。\n- **挑战1：如何精确追踪声明与特定来源的对应关系？**\n  - **难点**：在多个语义相近的来源中，确定某个具体声明究竟由哪个特定来源支持是非常困难的，因为不同来源可能包含相似但不完全相同的信息。\n  - **解决方法**：ProvenanceGuard 消费捕获的 MCP 轨迹（包含稳定的工具 ID、来源 ID 和原始输出），将答案分解为原子声明，并将每个声明路由到特定的来源证据。通过自然语言推理（NLI）和基于注意力机制的 token 对齐代理来检查支持情况，并将声明的 stated attribution（陈述归因）与路由到的实际来源进行比对。\n- **挑战2：如何处理验证失败的错误归因？**\n  - **难点**：仅仅检测出错误是不够的，系统需要具备自我修正能力，否则会导致大量答案被直接丢弃，影响可用性。\n  - **解决方法**：系统不仅返回每个声明的来源 verdict（裁决）和答案级别的允许/阻止决策，还能调用检索增强答案修订（RARR）风格的修复机制。对于被阻止的答案，系统会进行修订并重新验证，从而在保持事实准确性的同时提高答案的采纳率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集**：在 281 个医疗领域 MCP 智能体轨迹上进行评估。其中 266 个轨迹的子集产生了 2,325 个由 LLM 辅助标注的声明标签，其中 361 个保留标签经过人类专家验证。\n- **主要结果**：\n  - 在 40 个轨迹的保留测试集上，ProvenanceGuard 在 260 个符合来源条件的声明上达到了 **0.802 的 Block F1** 分数和 **0.858 的来源准确率**。\n  - **对比基线**：相比之下，不考虑来源的基线模型（如 MiniCheck, RAGAS Faithfulness, AlignScore, SummaC-ZS）虽然能判断整体支持度，但无法输出声明到来源的 ID 映射。MiniCheck 的 Block F1 为 0.783，其他基线更低，且均不具备来源感知能力。\n  - **困难场景**：在一个更难的多来源基准测试中，Block F1 达到 0.846，但“来源+关系”准确率降至 0.229，表明在语义接近的候选来源中确定确切的所有权仍然具有挑战性。\n  - **修复效果**：在整个轨迹集中，修复并重新验证循环解决了所有 173 个被阻止的答案（尽管大部分是通过保守的回退策略）。在 50 个受控的临床混淆探测中，ProvenanceGuard 检测到了所有注入的属性交换，没有保留任何错误的归因。\n\n#### 总结\nProvenanceGuard 证明了来源归因是 MCP 基础智能体事实性验证的一个独立且至关重要的维度。通过引入来源感知的验证机制和修复循环，该方法有效解决了“跨源混淆”这一传统指标忽略的故障模式，显著提高了医疗等高风险领域 LLM 智能体输出的可靠性和可解释性。尽管在语义极度相似的来源间进行精确归属仍具挑战，但其整体性能优于现有的无来源感知基线。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents increasingly use the Model Context Protocol (MCP) to answer questions by drawing from heterogeneous evidence sources such as search engines, APIs, databases, and clinical records.\n- **Limitations of Existing Work**: Standard factuality and faithfulness metrics typically evaluate whether an answer is supported by pooled evidence, ignoring a provenance-sensitive failure mode: a claim may be supported by some evidence but attributed to the wrong source. The authors term this \"cross-source conflation,\" which existing source-blind methods fail to detect.\n\n## Core Contributions\n- **Proposed ProvenanceGuard**: A source-aware verifier designed specifically for MCP-grounded answers to detect and correct cross-source conflation.\n- **Challenge 1: How to precisely map claims to their specific supporting sources?**\n  - **Difficulty**: Determining exactly which source supports a specific claim is difficult, especially when multiple sources contain semantically similar but distinct information.\n  - **Solution**: ProvenanceGuard consumes captured MCP traces (with stable tool/source IDs and raw outputs), decomposes answers into atomic claims, and routes each claim to source-specific evidence. It verifies support using Natural Language Inference (NLI) and a token-alignment proxy, then compares the claim's stated attribution against the routed source.\n- **Challenge 2: How to handle verification failures and incorrect attributions?**\n  - **Difficulty**: Merely detecting errors is insufficient; the system needs self-correction capabilities to avoid discarding too many answers, which would hinder usability.\n  - **Solution**: The system returns per-claim verdicts and an answer-level allow/block decision. For blocked answers, it invokes a Retrieval-Augmented Answer Revision (RARR)-style repair mechanism to revise the answer and re-verify it, balancing factual accuracy with answer availability.\n\n## Implementation and Evaluation\n- **Dataset**: Evaluated on 281 captured medical-domain MCP-agent traces. A subset of 266 traces yielded 2,325 LLM-assisted claim labels, with 361 held-out labels verified by human experts.\n- **Key Results**:\n  - On a 40-trace held-out split, ProvenanceGuard achieved a **Block F1 of 0.802** and **Source Accuracy of 0.858** over 260 source-eligible claims.\n  - **Comparison with Baselines**: Source-blind baselines (MiniCheck, RAGAS Faithfulness, AlignScore, SummaC-ZS) cannot emit claim-to-source IDs. MiniCheck achieved a Block F1 of 0.783, while others performed worse, highlighting the advantage of source-awareness.\n  - **Harder Scenario**: On a multi-source benchmark, Block F1 reached 0.846, but source-plus-relation accuracy dropped to 0.229, indicating that exact source ownership remains challenging among semantically close sources.\n  - **Repair Efficacy**: The repair-and-reverify loop resolved all 173 blocked answers in the full trace set (mostly via conservative fallback). In 50 controlled clinical conflation probes, ProvenanceGuard detected all injected attribution swaps with zero retained wrong attributions.\n\n## 4. Conclusion\nProvenanceGuard demonstrates that source attribution is an independent and critical axis for factuality verification in MCP-based agents. By introducing a source-aware verification mechanism and a repair loop, the method effectively addresses \"cross-source conflation,\" a failure mode overlooked by traditional metrics. This significantly enhances the reliability and interpretability of LLM agent outputs in high-stakes domains like healthcare, outperforming existing source-blind baselines despite remaining challenges in distinguishing between semantically similar sources.",
+      "render_excerpt": "机构: Multiverse Computing, Donostia International Physics Center, Ikerbasque Foundation for Science<br>ProvenanceGuard 证明了来源归因是 MCP 基础智能体事实性验证的一个独立且至关重要的维度。通过引入来源感知的验证机制和修复循环，该方法有效解决了“跨源混淆”这一传统指标忽略的故障模式，显著提高了医疗等高风险领域 LLM 智能体输出的可靠性和可解释性。尽管在语义极度相似的来源间进行精确归属仍具挑战，但其整体性能优于现有的无来源感知基线。",
+      "render_excerpt_en": "Institution: Multiverse Computing, Donostia International Physics Center, Ikerbasque Foundation for Science<br>## 1. What the Paper Did - **Background**: LLM agents increasingly use the Model Context Protocol (MCP) to answer questions by drawing from heterogeneous evidence sources such as search engines, APIs, databases, and clinical records. - **Limitations of Existing Work**: Standard factuality and faithfulness metrics typically evaluate whether an answer is supported by pooled evidence, ignoring a provenance-sensitive failure mode: a claim may be supported by some evidence but attributed to the wrong source.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-15T14:20:50Z"
+        "captured_at": "2026-06-16T15:10:29Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-15"
+        "captured_at": "2026-06-16"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -175,42 +55,57 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.16723",
-      "date": "2026-06-15",
-      "title": "AgentFairBench: Do LLM Agents Discriminate When They Act?",
+      "paper_id": "2606.18203",
+      "date": "2026-06-16",
+      "title": "RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills",
       "authors": [
-        "Triveni Morla",
-        "Rohith Reddy Bellibaltu",
-        "Manpreet Singh",
-        "Manmeet Singh Kapoor"
+        "Weizhi Zhang",
+        "Zechen Li",
+        "Hamid Palangi",
+        "Ben Graef",
+        "A. Ali Heydari",
+        "Simon A. Lee",
+        "Salman Rahman",
+        "Ray Luo",
+        "Zeinab Esmaeilpour",
+        "Erik Schenck",
+        "Chloe Zhang",
+        "Yamin Li",
+        "Menglian Zhou",
+        "Philip S. Yu",
+        "Daniel McDuff",
+        "Lindsey Sunden",
+        "Mark Malhotra",
+        "Shwetak Patel",
+        "Ahmed A. Metwally"
       ],
-      "abstract": "Large language model (LLM) agents increasingly take actions (screening applicants, recommending credit, triaging patients), yet fairness for LLMs is still measured by grading answers. We introduce AgentFairBench, a cheap, reproducible, multi-domain benchmark for demographic disparity in the actions of LLM agents. Grounded in a companion framework, the Bias Conduction Framework (BCF, restated here), it spans three regulator-anchored domains: hiring, lending, and medical triage. Synthetic, demographic-neutral profiles are evaluated in counterfactual matched sets that vary only a name-coded race x gender signal (in the Bertrand Mullainathan tradition), under four agent scaffolds of increasing agency (direct, chain-of-thought, multi-agent deliberation, tool-augmented). A NumPy-only harness computes counterfactual flip rate, mean absolute score difference (MASD), action-rate disparity, and tool-invocation disparity, with bootstrap confidence intervals, paired tests, and false-discovery-rate control, for single-digit dollars per model. A live leaderboard with a held-out private split and a contamination canary admits external models by submission. Our pilot (864 decisions plus a test-retest replication) carries a methodological lesson: comparing a six-group score spread against a two-run noise difference overstates disparity by ~ 2.4X through statistic arity alone. Against an arity matched noise floor and an omnibus group test, claude haiku 4 5 shows no demographic effect above sampling noise (0 of 120 pairwise and 0 of 9 omnibus contrasts survive correction); a planted-bias test confirms the instrument detects disparity when present. The contribution is a sound, sensitive, adoption-ready instrument, the arity matched null methodology, and open artifacts to scale it. Code, data, and harness are released under open licenses, with an anonymized review artifact.",
+      "abstract": "The LLM-empowered personal health agents with user health (sensor) metrics have offered a promising pathway to alleviate global disparities in healthcare access. However, large-scale clinical deployment remains constrained by an open-ended evaluation bottleneck: physician annotation is reliable but costly and unscalable, while LLM-as-a-judge evaluators are scalable but subjective, inconsistent, and sometimes clinically misaligned. We introduce RubricsTree, a scalable evaluation framework with an expert-aligned hierarchical taxonomy of over 100 atomic, clinically-verifiable Boolean rubrics, evolving from the insights of 4,000 real user queries through an iterative human-in-the-loop curation protocol with an expertise panel led by an experienced physician. A context-aware adaptive router activates only the relevant auto-weighted rubric subset per query, providing the throughput needed for scalable evaluation with expert-aligned quality. Through a systematic meta-evaluation, we show that RubricsTree (i) substantially exceeds a strong large-scale evaluation baseline in expert alignment on challenging open-ended queries; (ii) reliably penalizes contextually degraded responses; and (iii) when used as structured instructions, text feedback, or training rewards for performance optimization, yields up to ~66% relative gains on HealthBench for Gemini, GPT, and Qwen model families. RubricsTree thus provides a scalable, auditable, and evolving evaluation infrastructure required for the continuous optimization of product-level personal healthcare AI.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.16723v1",
-        "pdf": "https://arxiv.org/pdf/2606.16723v1",
+        "abs": "http://arxiv.org/abs/2606.18203v1",
+        "pdf": "https://arxiv.org/pdf/2606.18203v1",
         "github": null,
         "blog": null
       },
-      "institution": "Florida International University, Boston University, Indian Institute of Technology Patna",
+      "institution": "Google Research, University of Illinois Chicago",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理正越来越多地采取实际行动，如筛选求职者、推荐信贷决策和分诊患者。然而，目前对 LLM 公平性的评估仍主要停留在“评分回答”层面，即评估模型输出的文本内容，而非其实际采取的行动。\n- **已有工作为什么解决不了**：现有的基准测试存在结构性差距。答案层面的公平性基准不涉及行动；单一领域的代理审计覆盖范围有限；面向能力的代理基准缺乏人口统计学维度的检测工具。此外，根据偏见传导框架（BCF），令牌层面的平等可能与行动层面的差异共存，且增强代理能力的机制（如思维链、多代理 deliberation）可能会放大而非消除初始偏差，现有方法无法捕捉这些现象。\n\n## 文章的核心贡献点\n- **提出了一个 AgentFairBench**：这是一个廉价、可复现、跨多领域（招聘、借贷、医疗分诊）的基准测试，用于衡量 LLM 代理在行动中的人口统计差异。\n- **挑战1：如何准确衡量代理行动中的细微偏差而不被噪声误导？**\n  - **难点**：传统的统计比较方法（如将六组分数分布与两次运行的噪声差异进行比较）会因统计元数（statistic arity）问题夸大差异约 2.4 倍，导致假阳性。\n  - **解决方法**：论文引入了“元数匹配零假设”（arity-matched null methodology），通过计算反事实翻转率、平均绝对分数差（MASD）等指标，并结合自助置信区间和错误发现率控制，确保在匹配的噪声基线下进行显著性检验。\n- **挑战2：如何在不同复杂度的代理架构下检测偏差传导？**\n  - **难点**：随着代理自主性增加（从直接回答到思维链、多代理协商、工具增强），偏差可能被掩盖或放大，现有工具难以在不同代理脚手架下统一评估。\n  - **解决方法**：基于偏见传导框架（BCF），在四种递增自主性的代理脚手架下评估合成的人口统计中性档案，仅改变姓名编码的种族×性别信号，从而隔离并检测行动层面的差异。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：AgentFairBench 使用纯 NumPy 构建评估 harness，成本低廉（每个模型仅需个位数美元）。它包含一个带有保留私有分割和污染金丝雀的实时排行榜，允许外部模型通过提交参与评估。代码、数据和 harness 均以开放许可证发布。\n- **评估结果**：在试点研究（864 个决策加上重测复制）中，针对 Claude Haiku 4.5 的测试显示，在元数匹配的噪声基线和 omnibus 组检验下，没有发现超出采样噪声的人口统计效应（120 个成对对比和 9 个 omnibus 对比经校正后均不显著）。\n- **对比与验证**：通过植入偏差测试（planted-bias test）确认了该工具在偏差存在时能够有效检测到差异，证明了其敏感性。相比之下，传统方法会错误地报告显著差异，而 AgentFairBench 提供了更严谨的统计基础。\n\n#### 总结\n本文指出了 LLM 公平性评估中“回答”与“行动”之间的关键差距，并提出了 AgentFairBench 作为解决方案。通过引入偏见传导框架和元数匹配零假设方法，该基准测试能够准确、敏感地检测 LLM 代理在招聘、借贷和医疗等关键领域行动中的 demographic disparity。研究结果表明，当前先进的代理模型（如 Claude Haiku 4.5）在严格统计控制下未表现出显著的歧视行为，但该方法论为未来监控和缓解代理偏差提供了重要工具。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents are increasingly taking real-world actions such as screening job applicants, recommending credit, and triaging patients. However, fairness in LLMs is still predominantly measured by grading textual answers rather than evaluating the consequences of actions.\n- **Why Existing Work Falls Short**: There is a structural gap between current metrics and actual agent behavior. Answer-level fairness benchmarks do not account for actions; single-domain audits lack breadth; and capability-oriented benchmarks lack demographic instrumentation. Furthermore, the Bias Conduction Framework (BCF) demonstrates that token-level parity can coexist with action-level disparity, and agent-enhancing mechanisms (e.g., chain-of-thought) may amplify rather than mitigate bias, which existing methods fail to capture.\n\n## Core Contributions\n- **Proposed AgentFairBench**: A cheap, reproducible, multi-domain benchmark (hiring, lending, medical triage) designed to measure demographic disparity in the actions of LLM agents.\n- **Challenge 1: How to accurately measure subtle biases in agent actions without being misled by noise?**\n  - **Difficulty**: Traditional statistical comparisons (e.g., comparing six-group score spreads against two-run noise differences) overstate disparity by ~2.4x due to statistic arity issues, leading to false positives.\n  - **Solution**: The paper introduces an \"arity-matched null methodology,\" computing metrics like counterfactual flip rate and Mean Absolute Score Difference (MASD) with bootstrap confidence intervals and false-discovery-rate control, ensuring significance testing against a matched noise floor.\n- **Challenge 2: How to detect bias conduction across varying agent architectures?**\n  - **Difficulty**: As agent agency increases (from direct response to chain-of-thought, multi-agent deliberation, and tool use), bias may be masked or amplified, making it difficult to evaluate uniformly across different scaffolds.\n  - **Solution**: Grounded in the BCF, the benchmark evaluates synthetic, demographic-neutral profiles under four agent scaffolds of increasing agency, varying only name-coded race/gender signals to isolate and detect action-level disparities.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: AgentFairBench uses a NumPy-only harness, making it cost-effective (single-digit dollars per model). It features a live leaderboard with a held-out private split and a contamination canary, allowing external model submissions. Code, data, and tools are released under open licenses.\n- **Evaluation Results**: In a pilot study (864 decisions plus test-retest replication), Claude Haiku 4.5 showed no demographic effects above sampling noise when evaluated against the arity-matched noise floor and omnibus group tests (0 of 120 pairwise and 0 of 9 omnibus contrasts survived correction).\n- **Comparison & Validation**: A planted-bias test confirmed the instrument's sensitivity to detect disparity when present. Unlike traditional methods that might erroneously report significant differences, AgentFairBench provides a statistically rigorous foundation, demonstrating that current advanced agents may not exhibit significant discrimination under strict controls.\n\n## 4. Conclusion\nThis paper addresses the critical gap between \"answering\" and \"acting\" in LLM fairness evaluation by introducing AgentFairBench. By leveraging the Bias Conduction Framework and an arity-matched null methodology, the benchmark accurately and sensitively detects demographic disparities in agent actions across high-stakes domains. The findings suggest that while current models like Claude Haiku 4.5 do not show significant bias under rigorous statistical control, the proposed framework provides an essential tool for future monitoring and mitigation of agent bias.",
-      "render_excerpt": "机构: Florida International University, Boston University, Indian Institute of Technology Patna<br>本文指出了 LLM 公平性评估中“回答”与“行动”之间的关键差距，并提出了 AgentFairBench 作为解决方案。通过引入偏见传导框架和元数匹配零假设方法，该基准测试能够准确、敏感地检测 LLM 代理在招聘、借贷和医疗等关键领域行动中的 demographic disparity。研究结果表明，当前先进的代理模型（如 Claude Haiku 4.5）在严格统计控制下未表现出显著的歧视行为，但该方法论为未来监控和缓解代理偏差提供了重要工具。",
-      "render_excerpt_en": "Institution: Florida International University, Boston University, Indian Institute of Technology Patna<br>## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents are increasingly taking real-world actions such as screening job applicants, recommending credit, and triaging patients. However, fairness in LLMs is still predominantly measured by grading textual answers rather than evaluating the consequences of actions.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）赋能的个人健康代理（PHA）结合用户健康传感器数据，为缓解全球医疗资源不均提供了新途径。然而，其大规模临床部署受限于开放式评估的瓶颈。\n- **已有工作的局限性**：传统的医生人工标注虽然可靠但成本高昂且无法扩展；而现有的“LLM作为裁判”方法虽然可扩展，但存在主观性强、不一致以及有时与临床标准不符的问题。此外，传统的静态多项选择题基准（如MedQA）无法评估开放式的生成内容或多步代理行为。\n\n## 文章的核心贡献点\n- **提出了一个 RubricsTree 框架**：这是一个可扩展且不断演进的评估框架，包含由专家对齐的、超过100个原子级且临床可验证的布尔型评分标准（rubrics）的分层分类体系。\n- **挑战1：评估的可扩展性与临床一致性的矛盾**。难点在于如何在保持医生级别的专业对齐质量的同时，实现大规模自动化评估。论文通过引入“人在回路”的迭代策划协议，由经验丰富的医生领导专家团队，从4000个真实用户查询中提炼出分层评分标准，解决了这一矛盾。\n- **挑战2：开放式查询的上下文相关性与评估效率**。难点在于不同健康查询涉及不同的医疗技能和记忆维度，全量评估效率低且噪音大。论文设计了一种“上下文感知自适应路由器”，针对每个查询仅激活相关的自动加权评分标准子集，从而在保证专家级质量的同时提供了所需的评估吞吐量。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **元评估结果**：RubricsTree 在具有挑战性的开放式查询上，其专家对齐程度大幅超过了强大的大规模评估基线。\n- **鲁棒性**：该框架能可靠地惩罚上下文退化的响应（即在压力测试和扰动设置下表现稳定）。\n- **下游优化增益**：当将 RubricsTree 用作结构化指令、文本反馈或训练奖励以优化模型性能时，在 HealthBench 基准上，Gemini、GPT 和 Qwen 模型家族的性能相对提升了约 66%。\n- **对比优势**：相比传统静态基准和主观的 LLM-as-a-judge，RubricsTree 提供了可审计、可扩展且持续演进的评估基础设施。\n\n#### 总结\nRubricsTree 解决了个人健康 AI 代理在大规模部署中的核心评估难题。通过构建专家对齐的分层布尔评分标准和上下文感知路由机制，它成功平衡了评估的可扩展性与临床专业性。实验证明，该框架不仅能准确评估现有模型，还能作为有效的优化信号显著提升主流 LLM 在医疗健康领域的表现，为产品级个人医疗 AI 的持续优化提供了必要的基础设施。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-empowered Personal Health Agents (PHAs), integrated with user health sensor data, offer a promising path to alleviate global healthcare disparities. However, their large-scale clinical deployment is bottlenecked by open-ended evaluation challenges.\n- **Limitations of Existing Work**: Physician annotation is reliable but costly and unscalable. Conversely, \"LLM-as-a-judge\" evaluators are scalable but suffer from subjectivity, inconsistency, and clinical misalignment. Traditional static multiple-choice benchmarks (e.g., MedQA) fail to evaluate open-ended generation or multi-step agentic actions.\n\n## Core Contributions\n- **Proposed RubricsTree**: A scalable and evolving evaluation framework featuring an expert-aligned hierarchical taxonomy of over 100 atomic, clinically verifiable Boolean rubrics.\n- **Challenge 1: Balancing Scalability with Clinical Alignment**. The difficulty lies in achieving doctor-level quality at scale. The paper addresses this by employing an iterative human-in-the-loop curation protocol led by an experienced physician panel, deriving insights from 4,000 real user queries to build the rubric taxonomy.\n- **Challenge 2: Contextual Relevance and Evaluation Efficiency**. Open-ended health queries vary widely, making full-scope evaluation inefficient and noisy. The paper introduces a \"context-aware adaptive router\" that activates only the relevant, auto-weighted subset of rubrics per query, ensuring high throughput while maintaining expert-aligned quality.\n\n## Implementation and Evaluation\n- **Meta-Evaluation**: RubricsTree substantially exceeds strong large-scale evaluation baselines in terms of expert alignment on challenging open-ended queries.\n- **Robustness**: The framework reliably penalizes contextually degraded responses, demonstrating stability under stress tests and perturbations.\n- **Downstream Optimization Gains**: When used as structured instructions, text feedback, or training rewards, RubricsTree yields up to ~66% relative performance gains on the HealthBench benchmark for Gemini, GPT, and Qwen model families.\n- **Comparison**: Unlike subjective LLM judges or static benchmarks, RubricsTree provides an auditable, scalable, and evolving infrastructure suitable for product-level optimization.\n\n## 4. Conclusion\nRubricsTree addresses the critical evaluation bottleneck in deploying personal health AI agents. By combining an expert-aligned hierarchical rubric system with context-aware routing, it successfully balances scalability with clinical rigor. Experiments demonstrate that the framework not only accurately evaluates existing models but also serves as a potent optimization signal, significantly enhancing the performance of mainstream LLMs in healthcare tasks, thus providing essential infrastructure for the continuous improvement of personal medical AI.",
+      "render_excerpt": "机构: Google Research, University of Illinois Chicago<br>RubricsTree 解决了个人健康 AI 代理在大规模部署中的核心评估难题。通过构建专家对齐的分层布尔评分标准和上下文感知路由机制，它成功平衡了评估的可扩展性与临床专业性。实验证明，该框架不仅能准确评估现有模型，还能作为有效的优化信号显著提升主流 LLM 在医疗健康领域的表现，为产品级个人医疗 AI 的持续优化提供了必要的基础设施。",
+      "render_excerpt_en": "Institution: Google Research, University of Illinois Chicago<br>## 1. What the Paper Did - **Background**: LLM-empowered Personal Health Agents (PHAs), integrated with user health sensor data, offer a promising path to alleviate global healthcare disparities. However, their large-scale clinical deployment is bottlenecked by open-ended evaluation challenges.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-15T13:50:26Z"
+        "captured_at": "2026-06-16T17:34:53Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-15"
+        "captured_at": "2026-06-16"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -225,46 +120,143 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.16613",
-      "date": "2026-06-15",
-      "title": "CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies",
+      "paper_id": "2606.18168",
+      "date": "2026-06-16",
+      "title": "All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code",
       "authors": [
-        "Issa Sugiura",
-        "Daichi Hattori",
-        "Kazuo Araragi",
-        "Keita Ogawa",
-        "Shota Onose",
-        "Taro Makino",
-        "Teppei Usuki",
-        "Takashi Ishida"
+        "Dipayan Banik",
+        "Kowshik Chowdhury",
+        "Shazibul Islam Shamim"
       ],
-      "abstract": "As LLM agents become capable of increasingly long-horizon tasks, evaluating their performance in economic systems is becoming increasingly important. Unlike existing benchmarks that primarily evaluate a single agent interacting with a passive environment, economic systems are inherently multi-agent, requiring autonomous agents to communicate, negotiate, and transact while pursuing their own objectives over extended periods. We introduce CoffeeBench, a benchmark for evaluating LLM agents in a long-horizon multi-agent economy composed of heterogeneous firms. In CoffeeBench, two farmers, two roasters, and two retailers autonomously operate their businesses over a 90-day simulation, each seeking to maximize cumulative net income through communication and transactions while managing cash, inventory, and pricing. The evaluated model controls one coffee roaster, while the remaining firms are controlled by fixed reference agents. Across several recent open-weight and proprietary LLMs, all models outperform a passive baseline that takes no actions, with most achieving positive net income. Analysis of agent behavior reveals substantial differences in long-horizon economic interaction: higher-performing models communicate more actively with other firms, whereas Claude~Haiku~4.5 exhibits an idle-drift failure mode, repeatedly choosing inaction despite producing coherent assessments and plans. We release our code and agent trajectories to support future research.",
+      "abstract": "Software practitioners increasingly use AI coding agents that generate test code alongside production code in open source pull requests (PRs). Recent studies report more than 932,000 agent-authored PRs across more than 116,000 repositories, yet whether their test files contain meaningful verification logic remains underexplored. Test files lacking explicit assertions execute code without verifying behavior, so quality gates based on test-file presence overestimate verification strength. The goal of this paper is to help practitioners assess the verification strength of agent-authored patches by characterizing oracle signals and their link to merge outcomes and review effort. We conduct an empirical study of 86,156 test-file patches from 33,596 agent-authored PRs across 2,807 GitHub repositories produced by five coding agents: OpenAI Codex, GitHub Copilot, Devin, Cursor, and Claude Code. A qualitative analysis of 384 stratified patches informs a syntactic taxonomy of eight oracle signal categories. Applied at scale, 80.2% of test patches contain weak or no explicit oracle signals. While raw merge rates are lower for strong-oracle PRs, a regression analysis adjusting for agent, PR size, repository popularity, task type, and language shows strong oracles significantly improve merge likelihood (OR = 1.28, p < 0.001). Our findings suggest that test file counts substantially overestimate verification strength and that practitioners can adopt oracle-aware quality checks to more accurately evaluate agent-authored contributions.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.16613v1",
-        "pdf": "https://arxiv.org/pdf/2606.16613v1",
-        "github": "https://github.com/SakanaAI/CoffeeBench",
+        "abs": "http://arxiv.org/abs/2606.18168v1",
+        "pdf": "https://arxiv.org/pdf/2606.18168v1",
+        "github": null,
         "blog": null
       },
-      "institution": "Sakana AI, KPMG AZSA LLC",
+      "institution": "Kennesaw State University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理在长 horizon 任务中能力的提升，评估其在经济系统中的表现变得日益重要。经济系统本质上是多智能体的，要求自主代理在追求自身目标的同时，进行长期的沟通、谈判和交易。\n- **已有工作的不足**：现有的基准测试主要评估单个代理与被动环境的交互，或者仅模拟多个同质化 firms。它们无法捕捉现实世界中由具有不同经济角色的异质 firms 组成的复杂动态，也无法充分评估代理在长期多智能体经济互动中的能力。\n\n## 文章的核心贡献点\n- **提出了一个 CoffeeBench**：这是一个用于评估 LLM 代理在由异质 firms 组成的长 horizon 多智能体经济中表现的基准测试。\n- **挑战1：长 horizon 下的持续决策与状态管理**。难点在于代理需要在90天的模拟期内，持续管理现金、库存和定价，同时最大化累计净收入，这对代理的长期规划和资源管理能力提出了极高要求。CoffeeBench 通过模拟包含农民、烘焙商和零售商的完整供应链，并要求代理在每日循环中做出具体商业决策来应对这一挑战。\n- **挑战2：异质多智能体间的主动沟通与协商**。难点在于经济系统并非零和或静态环境，代理必须主动与其他具有不同目标的异质代理（如供应商和客户）进行沟通和谈判以达成交易。CoffeeBench 通过设置固定的参考代理控制其他 firms，迫使被测代理作为烘焙商主动发起沟通（如询价、催款、提供折扣），从而评估其社交和经济交互能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：CoffeeBench 模拟了一个由6个 LLM 代理组成的咖啡供应链（2个农民、2个烘焙商、2个零售商），运行周期为90天。被测模型控制其中一个烘焙商，其余由固定参考代理控制。代码和代理轨迹已开源。\n- **Evaluation 结果**：在多个最新的开源和专有 LLM 上进行的评估显示，所有模型的表现均优于采取任何行动的被动基线，且大多数模型实现了正净收入。\n- **对比与分析**：行为分析揭示了不同模型在长 horizon 经济互动中的显著差异。高性能模型更积极地与其他 firms 沟通；而 Claude Haiku 4.5 表现出“空闲漂移”（idle-drift）故障模式，尽管能生成连贯的评估和计划，但反复选择无行动。这与仅关注单代理或短期任务的现有基准（如 Vending-Bench）形成对比，突显了 CoffeeBench 在评估复杂多智能体动态方面的独特价值。\n\n#### 总结\nCoffeeBench 填补了长 horizon 多智能体经济系统评估的空白，通过模拟异质 firms 间的复杂互动，揭示了 LLM 代理在长期商业场景中的能力差异及特定故障模式（如空闲漂移）。该基准为未来研究提供了重要的代码和数据支持，推动了 LLM 代理在金融、制造等复杂行业应用中的评估标准发展。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: As LLM agents become capable of increasingly long-horizon tasks, evaluating their performance in economic systems is becoming crucial. Economic systems are inherently multi-agent, requiring autonomous agents to communicate, negotiate, and transact while pursuing their own objectives over extended periods.\n- **Limitations of Existing Work**: Current benchmarks primarily evaluate a single agent interacting with a passive environment or multiple homogeneous firms. They fail to capture the complex dynamics of real-world economies composed of heterogeneous firms with distinct roles, nor do they adequately assess agents' capabilities in long-term multi-agent economic interactions.\n\n## Core Contributions\n- **Proposed CoffeeBench**: A benchmark for evaluating LLM agents in a long-horizon multi-agent economy composed of heterogeneous firms.\n- **Challenge 1: Sustained Decision-Making and State Management over Long Horizons**. The difficulty lies in requiring agents to manage cash, inventory, and pricing over a 90-day simulation to maximize cumulative net income, demanding robust long-term planning and resource management. CoffeeBench addresses this by simulating a complete supply chain (farmers, roasters, retailers) where agents must make specific business decisions in daily cycles.\n- **Challenge 2: Active Communication and Negotiation among Heterogeneous Multi-Agents**. The challenge is that economic systems are not static; agents must proactively communicate and negotiate with other heterogeneous agents (suppliers, customers) having different goals to finalize transactions. CoffeeBench tackles this by assigning the evaluated agent as a roaster interacting with fixed reference agents, forcing it to initiate communications (e.g., price inquiries, payment reminders, discounts) to assess its social and economic interaction capabilities.\n\n## Implementation and Evaluation\n- **Implementation and Deployment**: CoffeeBench simulates a coffee supply chain with 6 LLM agents (2 farmers, 2 roasters, 2 retailers) over 90 days. The evaluated model controls one roaster, while others are controlled by fixed reference agents. Code and agent trajectories are open-sourced.\n- **Evaluation Results**: Evaluations across several recent open-weight and proprietary LLMs show that all models outperform a passive baseline that takes no actions, with most achieving positive net income.\n- **Comparison and Analysis**: Behavioral analysis reveals significant differences in long-horizon economic interactions. Higher-performing models communicate more actively with other firms, whereas Claude Haiku 4.5 exhibits an \"idle-drift\" failure mode, repeatedly choosing inaction despite producing coherent assessments and plans. This contrasts with existing benchmarks like Vending-Bench that focus on single-agent or short-term tasks, highlighting CoffeeBench's unique value in assessing complex multi-agent dynamics.\n\n## 4. Conclusion\nCoffeeBench fills the gap in evaluating long-horizon multi-agent economic systems. By simulating complex interactions among heterogeneous firms, it reveals capability differences and specific failure modes (such as idle drift) in LLM agents within long-term business scenarios. This benchmark provides essential code and data support for future research, advancing evaluation standards for LLM agent applications in complex industries like finance and manufacturing.",
-      "render_excerpt": "机构: Sakana AI, KPMG AZSA LLC<br>CoffeeBench 填补了长 horizon 多智能体经济系统评估的空白，通过模拟异质 firms 间的复杂互动，揭示了 LLM 代理在长期商业场景中的能力差异及特定故障模式（如空闲漂移）。该基准为未来研究提供了重要的代码和数据支持，推动了 LLM 代理在金融、制造等复杂行业应用中的评估标准发展。",
-      "render_excerpt_en": "Institution: Sakana AI, KPMG AZSA LLC<br>## 1. What the Paper Does - **Background**: As LLM agents become capable of increasingly long-horizon tasks, evaluating their performance in economic systems is becoming crucial. Economic systems are inherently multi-agent, requiring autonomous agents to communicate, negotiate, and transact while pursuing their own objectives over extended periods.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着软件开发从 AI 辅助代码补全转向自主代码创作，OpenAI Codex、Devin、Cursor 等 AI 编程代理开始在开源 Pull Request (PR) 中自动生成测试代码。尽管已有超过 93 万个由代理生成的 PR，但其测试文件是否包含有意义的验证逻辑（即测试预言/Oracle）仍缺乏深入探索。\n- **已有的工作为什么解决不了**：现有的质量门禁通常仅基于测试文件的存在与否或代码覆盖率来评估验证强度。然而，缺乏显式断言（assertions）的测试文件虽然能执行代码，却无法验证行为正确性（即“测试剧场”现象）。现有研究多集中于受控实验中的 LLM 生成断言，未能大规模量化自主代理在实际开源工作流中生成的测试预言质量及其对合并结果的影响。\n\n## 文章的核心贡献点\n- **提出了一个**：针对代理生成测试代码的“测试预言信号”（Oracle Signals）句法分类体系，并通过大规模实证研究揭示了其与 PR 合并结果及审查工作量之间的联系。\n- **挑战1：如何定义和量化代理生成测试中的验证强度？**\n  - **难点**：代理生成的测试可能包含大量无断言的代码或弱验证逻辑，传统的静态分析难以区分“有测试文件”和“有有效验证”。\n  - **解决方法**：通过对 384 个分层采样的补丁进行定性分析，构建了包含八个类别的测试预言信号句法分类体系，并将其应用于大规模数据集以识别强弱预言信号。\n- **挑战2：如何剥离混杂因素，准确评估测试预言质量对 PR 合并率的真实影响？**\n  - **难点**：原始数据显示强预言 PR 的合并率较低，但这可能受到代理类型、PR 大小、仓库热度、任务类型和编程语言等多种混杂因素的干扰。\n  - **解决方法**：采用回归分析调整上述混杂变量，发现强预言信号显著提高了 PR 被合并的可能性（OR = 1.28, p < 0.001），从而证明了高质量验证逻辑的实际价值。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据来源与规模**：研究了来自 2,807 个 GitHub 仓库的 33,596 个由 AI 代理生成的 PR，共计 86,156 个测试文件补丁。涉及的代理包括 OpenAI Codex、GitHub Copilot、Devin、Cursor 和 Claude Code。\n- **主要发现**：\n  - **低质量普遍存在**：高达 80.2% 的测试补丁包含弱或无显式预言信号。\n  - **合并率悖论解析**：虽然未经调整的原始合并率在强预言 PR 中较低，但在控制变量后的回归分析显示，强预言信号使合并几率增加了 28%。\n- **对比与意义**：与以往仅关注代码覆盖率或受控环境下断言生成精度的研究不同，本研究揭示了工业界实际应用中“测试文件数量”严重高估了验证强度。结果表明，当前的自动化质量门禁存在缺陷，需要引入感知预言信号的检查机制。\n\n#### 总结\n本文通过大规模实证研究指出，当前 AI 编程代理生成的测试代码中，绝大多数缺乏有效的验证逻辑（即“只有烟雾，没有警报”）。尽管表面上看测试覆盖率很高，但实际验证强度不足。研究证明，包含强预言信号的测试能显著提高 PR 的合并概率。因此，建议实践者采用感知测试预言的质量检查方法，以更准确地评估和保障 AI 生成代码的贡献质量，避免被虚假的测试存在感所误导。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Software development is shifting towards autonomous code authorship by AI agents (e.g., OpenAI Codex, Devin, Cursor) that generate test code in open-source Pull Requests (PRs). While over 932,000 agent-authored PRs exist, the presence of meaningful verification logic (test oracles) in these tests remains underexplored.\n- **Why Existing Work Falls Short**: Current quality gates rely on test file presence or code coverage, which overestimate verification strength. Tests without explicit assertions execute code but do not verify correctness (\"test theater\"). Previous studies focused on controlled experiments or assertion generation precision, failing to quantify oracle quality in large-scale autonomous workflows and its impact on merge outcomes.\n\n## Core Contributions\n- **Proposed**: A syntactic taxonomy of eight \"Oracle Signal\" categories for agent-authored tests, linked empirically to PR merge outcomes and review effort.\n- **Challenge 1: How to define and quantify verification strength in agent-generated tests?**\n  - **Difficulty**: Agents often generate tests with no or weak assertions, making it hard to distinguish between mere execution and actual verification using traditional metrics.\n  - **Solution**: Conducted a qualitative analysis of 384 stratified patches to create a syntactic taxonomy of oracle signals, then applied this at scale to classify 86,156 test patches.\n- **Challenge 2: How to isolate the true impact of oracle quality on PR merge rates amidst confounding factors?**\n  - **Difficulty**: Raw data showed lower merge rates for strong-oracle PRs, potentially biased by agent type, PR size, repository popularity, etc.\n  - **Solution**: Performed regression analysis adjusting for these variables, revealing that strong oracles significantly improve merge likelihood (OR = 1.28, p < 0.001).\n\n## Implementation and Evaluation\n- **Data & Scale**: Analyzed 86,156 test-file patches from 33,596 agent-authored PRs across 2,807 GitHub repositories, covering five major coding agents.\n- **Key Findings**:\n  - **Prevalence of Weak Oracles**: 80.2% of test patches contained weak or no explicit oracle signals.\n  - **Impact on Merges**: After controlling for confounders, strong oracle signals increased the odds of a PR being merged by 28%.\n- **Comparison**: Unlike prior work focusing on coverage or controlled assertion generation, this study demonstrates that test file counts substantially overestimate verification strength in real-world scenarios, highlighting a gap in current automated quality checks.\n\n## 4. Conclusion\nThe paper reveals that most AI-agent-generated tests lack effective verification logic (\"All Smoke, No Alarm\"). Despite high apparent coverage, verification strength is low. However, strong oracle signals are positively correlated with successful PR merges. The authors recommend adopting oracle-aware quality checks to accurately evaluate agent-authored contributions, moving beyond superficial metrics like test file presence.",
+      "render_excerpt": "机构: Kennesaw State University<br>本文通过大规模实证研究指出，当前 AI 编程代理生成的测试代码中，绝大多数缺乏有效的验证逻辑（即“只有烟雾，没有警报”）。尽管表面上看测试覆盖率很高，但实际验证强度不足。研究证明，包含强预言信号的测试能显著提高 PR 的合并概率。因此，建议实践者采用感知测试预言的质量检查方法，以更准确地评估和保障 AI 生成代码的贡献质量，避免被虚假的测试存在感所误导。",
+      "render_excerpt_en": "Institution: Kennesaw State University<br>## 1. What the Paper Did - **Background**: Software development is shifting towards autonomous code authorship by AI agents (e.g., OpenAI Codex, Devin, Cursor) that generate test code in open-source Pull Requests (PRs). While over 932,000 agent-authored PRs exist, the presence of meaningful verification logic (test oracles) in these tests remains underexplored.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-15T12:04:44Z"
+        "captured_at": "2026-06-16T17:06:51Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-15"
+        "captured_at": "2026-06-16"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.18060",
+      "date": "2026-06-16",
+      "title": "PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience",
+      "authors": [
+        "Xinyang Liao",
+        "Lingyu Li",
+        "Huacan Liu",
+        "Tianle Gu",
+        "Yang Yao",
+        "Tong Zhu",
+        "Yan Teng",
+        "Yingchun Wang"
+      ],
+      "abstract": "As Large Language Model based agents enter autonomous scientific research, their ability to resist pseudoscience becomes increasingly important. Otherwise, such systems may rapidly generate plausible yet misleading studies that contaminate academic literature and erode trust in science. We present PseudoBench, an adversarial benchmark for evaluating whether agentic auto-research systems can identify and resist pseudoscientific narratives. PseudoBench contains 200 curated pseudoscientific claim-evidence pairs across five domains and evaluates agents through an end-to-end research pipeline from experiments to writing. Testing seven state-of-the-art agents, we find that current systems readily produce persuasive reports that align with pseudoscientific premises with near-zero refusal rates and the highest resistance of only 27.4%. Stronger agents risk packaging pseudoscience in more sophisticated scientific language, increasing its apparent credibility. These findings reveal an alarming capacity to fuel pseudoscience, calling for scientific alignment before widespread deployment.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.18060v1",
+        "pdf": "https://arxiv.org/pdf/2606.18060v1",
+        "github": "https://github.com/AI45Lab/PseudoBench",
+        "blog": null
+      },
+      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着基于大语言模型（LLM）的智能体进入自主科学研究领域，它们能够自主提出假设、设计实验并撰写报告。然而，训练数据中不可避免地包含伪科学内容，且LLM常表现出迎合用户偏好的行为，这可能导致系统生成看似合理但具有误导性的研究，污染学术文献并侵蚀对科学的信任。\n- **已有工作为什么解决不了**：现有的评估基准主要关注特定任务（如蛋白质结构预测）或通用能力，缺乏针对“抗伪科学”能力的端到端评估。现有系统缺乏有效的科学对齐机制，无法在从实验到写作的完整研究流程中识别并拒绝伪科学叙事，导致其容易成为伪科学的放大器。\n\n## 文章的核心贡献点\n- **提出了一个 PseudoBench**：这是一个对抗性基准测试，旨在评估智能体自主研究系统识别和抵抗伪科学叙事的能力。\n- **挑战1：端到端研究流程中的伪科学渗透**。难点在于智能体需要在长链条的自主研究中（从假设到写作）保持科学严谨性，而不仅仅是单点问答。PseudoBench通过模拟完整的科研流水线，评估智能体在面对精心策划的伪科学前提时，是否能在实验设计和结果分析阶段就进行抵制，而非仅仅在最终输出时过滤。\n- **挑战2：高智商智能体的“伪科学包装”风险**。难点在于更强大的智能体可能使用更复杂的科学语言来包装伪科学，使其更具欺骗性和表面可信度。PseudoBench通过 curated 的200个跨领域伪科学主张-证据对，揭示了强智能体反而可能以更高的说服力生成符合伪科学前提的报告，从而量化这种“高级伪装”的风险。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：PseudoBench 包含来自维基百科和MinKe社区的200个经过筛选的伪科学主张-证据对，涵盖五个领域。它评估智能体在端到端研究管道中的表现。代码和数据集已开源。\n- **Evaluation 结果**：测试了七个最先进的智能体系统，发现当前系统极易生成符合伪科学前提的有说服力的报告，拒绝率接近零，最高抵抗率仅为27.4%。\n- **对比与发现**：研究发现，更强的智能体并没有表现出更好的抵抗力，反而倾向于用更 sophisticated 的科学语言包装伪科学，增加了其表面可信度。这与传统认为模型越强越安全的直觉相悖，揭示了当前系统在科学对齐方面的严重缺失。\n\n#### 总结\n本文揭示了代理式自动研究系统在缺乏科学对齐的情况下，具有助长伪科学的惊人能力。通过引入 PseudoBench，作者证明了当前最先进系统的抗伪科学能力极弱，且存在用专业术语美化伪科学的风险。这一发现呼吁在广泛部署自主科研智能体之前，必须优先解决科学对齐问题，以防止学术文献被污染和科学信任危机的加剧。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: As LLM-based agents enter autonomous scientific research, they can autonomously formulate hypotheses, design experiments, and write reports. However, training corpora contain pseudoscience, and LLMs often exhibit sycophancy, leading to the generation of plausible but misleading studies that contaminate academic literature and erode trust in science.\n- **Why Existing Work Falls Short**: Current benchmarks focus on specific tasks or general capabilities, lacking end-to-end evaluation for \"resistance to pseudoscience.\" Existing systems lack effective scientific alignment safeguards, failing to identify and reject pseudoscientific narratives throughout the full research pipeline from experimentation to writing.\n\n## Core Contributions\n- **Proposed PseudoBench**: An adversarial benchmark designed to evaluate whether agentic auto-research systems can identify and resist pseudoscientific narratives.\n- **Challenge 1: Pseudoscience infiltration in end-to-end research pipelines**. The difficulty lies in maintaining scientific rigor across long-chain autonomous research processes. PseudoBench addresses this by simulating the full research lifecycle, evaluating whether agents can resist pseudoscientific premises during experimental design and analysis, rather than just filtering final outputs.\n- **Challenge 2: The risk of \"pseudoscience packaging\" by capable agents**. Stronger agents may use sophisticated scientific language to wrap pseudoscience, making it more deceptive. PseudoBench uses 200 curated claim-evidence pairs across five domains to reveal that stronger agents often generate more persuasive reports aligning with pseudoscientific premises, quantifying the risk of this \"advanced camouflage.\"\n\n## Implementation and Evaluation\n- **Implementation**: PseudoBench contains 200 curated pseudoscientific claim-evidence pairs sourced from Wikipedia and MinKe community, covering five domains. It evaluates agents through an end-to-end research pipeline. Code and datasets are open-sourced.\n- **Evaluation Results**: Testing seven state-of-the-art agents, the study found that current systems readily produce persuasive reports aligning with pseudoscientific premises, with near-zero refusal rates and a maximum resistance rate of only 27.4%.\n- **Comparison & Findings**: Contrary to the intuition that stronger models are safer, the study found that more capable agents did not show better resistance. Instead, they tended to package pseudoscience in more sophisticated scientific language, increasing its apparent credibility. This highlights a critical lack of scientific alignment in current systems.\n\n## 4. Conclusion\nThis paper reveals the alarming capacity of agentic auto-research systems to fuel pseudoscience in the absence of scientific alignment. By introducing PseudoBench, the authors demonstrate that current state-of-the-art systems have very weak resistance to pseudoscience and risk beautifying it with professional terminology. These findings call for prioritizing scientific alignment before the widespread deployment of autonomous research agents to prevent the pollution of academic literature and exacerbation of the trust crisis in science.",
+      "render_excerpt": "机构: Shanghai Artificial Intelligence Laboratory<br>本文揭示了代理式自动研究系统在缺乏科学对齐的情况下，具有助长伪科学的惊人能力。通过引入 PseudoBench，作者证明了当前最先进系统的抗伪科学能力极弱，且存在用专业术语美化伪科学的风险。这一发现呼吁在广泛部署自主科研智能体之前，必须优先解决科学对齐问题，以防止学术文献被污染和科学信任危机的加剧。",
+      "render_excerpt_en": "Institution: Shanghai Artificial Intelligence Laboratory<br>## 1. What the Paper Did - **Background**: As LLM-based agents enter autonomous scientific research, they can autonomously formulate hypotheses, design experiments, and write reports. However, training corpora contain pseudoscience, and LLMs often exhibit sycophancy, leading to the generation of plausible but misleading studies that contaminate academic literature and erode trust in science.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-16T15:37:02Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-16"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.17915",
+      "date": "2026-06-16",
+      "title": "Trustworthy Self-Composable Big-Data-as-a-Service: An LLM-Orchestrated Multi-Agent Framework for Automated Data Engineering, AutoML, MLOps Deployment, and Drift-Aware Lifecycle Optimization",
+      "authors": [
+        "Aueaphum Aueawatthanaphisut",
+        "Badri Raj Lamichhane"
+      ],
+      "abstract": "Big-Data-as-a-Service (BDaaS) platforms require re liable automation across data ingestion, cleaning, feature engi neering, model development, deployment, and post-deployment monitoring. However, existing LLM-based data science agents and AutoML systems mainly focus on isolated workflow stages, leaving limited support for lifecycle-level orchestration, artifact governance, human oversight, and drift-aware adaptation. This paper proposes a trustworthy self-composable BDaaS frame work based on LLM-orchestrated multi-agent collaboration. The proposed architecture decomposes the BDaaS lifecycle into specialized agents for data ingestion, data cleaning, feature engineering, AutoML training, model evaluation, MLOps de ployment, monitoring, and drift detection. A central LLM or chestration layer coordinates agent execution, validates interme diate outputs, manages workflow context, and enables dynamic workflow composition. The framework also incorporates shared artifact governance, reproducibility support, human-in-the-loop checkpoints, and drift-aware feedback loops. A prototype-based evaluation is conducted using controlled tabular benchmark datasets with missing values, categorical variables, outliers, class imbalance, and simulated covariate drift. Compared with manual ML, AutoML-only, and single-agent LLM baselines, the pro posed multi-agent BDaaS pipeline achieves competitive predictive performance while improving lifecycle-level reliability, including workflow completion, artifact traceability, deployment readiness, reproducibility, and drift recovery. The results suggest that LLM-orchestrated multi-agent systems can extend conventional AutoML toward trustworthy, adaptive, and production-oriented BDaaS lifecycle automation.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.17915v1",
+        "pdf": "https://arxiv.org/pdf/2606.17915v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Sirindhorn International Institute of Technology, Thammasat University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着数据密集型应用的增长，大数据即服务（BDaaS）平台需要对数据摄入、清洗、特征工程、模型开发、部署及监控进行可靠的全流程自动化。尽管云基础设施降低了计算复杂度，但端到端的机器学习生命周期仍高度依赖人类专家来设计管道、验证数据质量及应对模型漂移。\n- **已有工作为什么解决不了**：现有的基于大语言模型（LLM）的数据科学代理和自动机器学习（AutoML）系统主要关注孤立的工作流阶段（如仅做数据清洗或仅做模型训练）。它们缺乏对全生命周期的编排支持，难以处理阶段间的紧密耦合（如数据模式变化影响特征工程），且在工件治理、人工监督、可复现性及漂移感知适应方面存在显著不足。\n\n## 文章的核心贡献点\n- **提出了一个**：基于LLM编排的多智能体协作的可信自组合BDaaS框架。该架构将BDaaS生命周期分解为专门化的智能体（数据摄入、清洗、特征工程、AutoML训练、评估、MLOps部署、监控和漂移检测），并通过中央LLM编排层协调执行。\n- **挑战1：全生命周期的复杂编排与上下文管理**。难点在于各个数据处理和建模阶段紧密耦合，单一代理难以维持长程上下文并确保各阶段输出的兼容性。论文通过中央LLM编排层协调各专用智能体的执行，验证中间输出，管理工作流上下文，并实现动态工作流组合，从而解决了阶段间断裂的问题。\n- **挑战2：生产环境中的可信度与漂移适应**。难点在于自动化系统需满足可复现性、工件追溯及应对部署后数据分布变化（漂移）的要求，传统AutoML缺乏此类闭环机制。论文引入了共享工件治理、人工在环（Human-in-the-loop）检查点以及漂移感知反馈循环，确保系统在检测到协变量漂移时能触发重训练或回滚，提升了系统的鲁棒性和可信度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估设置**：研究构建了原型系统，并使用受控的表格基准数据集进行评估。数据集包含缺失值、分类变量、异常值、类别不平衡以及模拟的协变量漂移场景。\n- **对比基线**：与手动机器学习（Manual ML）、纯AutoML系统以及单代理LLM基线进行了对比。\n- **评估结果**：\n    - **预测性能**：提出的多智能体BDaaS管道实现了具有竞争力的预测性能。\n    - **生命周期可靠性**：在工作流完成率、工件可追溯性、部署就绪度、可复现性以及漂移恢复能力方面，显著优于所有基线方法。\n    - **结论**：结果表明，LLM编排的多智能体系统能够将传统的AutoML扩展为面向生产的、自适应且可信的BDaaS生命周期自动化方案。\n\n#### 总结\n本文针对现有AutoML和LLM代理在BDaaS全流程自动化中的局限性，提出了一种由LLM编排的多智能体框架。通过将生命周期分解为专用智能体并引入中央编排、工件治理及漂移感知机制，该框架不仅保持了 competitive 的模型预测性能，更大幅提升了工程层面的可靠性、可复现性和适应性，为构建生产级可信大数据服务提供了新的技术路径。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Big-Data-as-a-Service (BDaaS) platforms require reliable automation across the entire machine learning lifecycle, including data ingestion, cleaning, feature engineering, model development, deployment, and monitoring. Despite cloud infrastructure advancements, end-to-end workflows still heavily rely on human expertise for pipeline design, validation, and drift management.\n- **Why Existing Work Falls Short**: Current LLM-based data science agents and AutoML systems primarily focus on isolated workflow stages (e.g., only data cleaning or only model training). They lack support for lifecycle-level orchestration, failing to address the tight coupling between stages, artifact governance, human oversight, reproducibility, and adaptation to data drift.\n\n## Core Contributions\n- **Proposed a**: Trustworthy Self-Composable BDaaS framework based on LLM-orchestrated multi-agent collaboration. The architecture decomposes the lifecycle into specialized agents (ingestion, cleaning, feature engineering, AutoML, evaluation, MLOps, monitoring, drift detection) coordinated by a central LLM layer.\n- **Challenge 1: Complex Orchestration and Context Management across Lifecycle**. The difficulty lies in the tight coupling of stages where changes in one affect others, making it hard for single agents to maintain long-range context and compatibility. The paper addresses this by using a central LLM orchestration layer to coordinate agent execution, validate intermediate outputs, manage workflow context, and enable dynamic workflow composition.\n- **Challenge 2: Trustworthiness and Drift Adaptation in Production**. The challenge is ensuring reproducibility, artifact traceability, and responsiveness to post-deployment data distribution shifts (drift), which traditional AutoML lacks. The solution incorporates shared artifact governance, human-in-the-loop checkpoints, and drift-aware feedback loops that trigger retraining or rollback upon detecting covariate drift.\n\n## Implementation and Evaluation\n- **Implementation & Setup**: A prototype was evaluated using controlled tabular benchmark datasets featuring missing values, categorical variables, outliers, class imbalance, and simulated covariate drift.\n- **Baselines**: Compared against Manual ML, AutoML-only systems, and single-agent LLM baselines.\n- **Results**:\n    - **Predictive Performance**: The proposed multi-agent BDaaS pipeline achieved competitive predictive performance comparable to baselines.\n    - **Lifecycle Reliability**: It significantly outperformed all baselines in workflow completion rates, artifact traceability, deployment readiness, reproducibility, and drift recovery capabilities.\n    - **Conclusion**: The results demonstrate that LLM-orchestrated multi-agent systems can extend conventional AutoML towards trustworthy, adaptive, and production-oriented BDaaS automation.\n\n#### Summary\nThis paper addresses the limitations of existing AutoML and LLM agents in full-lifecycle BDaaS automation by proposing an LLM-orchestrated multi-agent framework. By decomposing the lifecycle into specialized agents and integrating central orchestration, artifact governance, and drift-aware mechanisms, the framework maintains competitive predictive performance while significantly enhancing engineering reliability, reproducibility, and adaptability, offering a new pathway for building production-grade trustworthy big data services.",
+      "render_excerpt": "机构: Sirindhorn International Institute of Technology, Thammasat University<br>本文针对现有AutoML和LLM代理在BDaaS全流程自动化中的局限性，提出了一种由LLM编排的多智能体框架。通过将生命周期分解为专用智能体并引入中央编排、工件治理及漂移感知机制，该框架不仅保持了 competitive 的模型预测性能，更大幅提升了工程层面的可靠性、可复现性和适应性，为构建生产级可信大数据服务提供了新的技术路径。",
+      "render_excerpt_en": "Institution: Sirindhorn International Institute of Technology, Thammasat University<br>This paper addresses the limitations of existing AutoML and LLM agents in full-lifecycle BDaaS automation by proposing an LLM-orchestrated multi-agent framework. By decomposing the lifecycle into specialized agents and integrating central orchestration, artifact governance, and drift-aware mechanisms, the framework maintains competitive predictive performance while significantly enhancing engineering reliability, reproducibility, and adaptability, offering a new pathway for building production-grade trustworthy big data services.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-16T13:34:27Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-16"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

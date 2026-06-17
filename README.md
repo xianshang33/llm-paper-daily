@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.16_06:56-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.17_06:33-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月16日 06:56</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月17日 06:33</sub></summary>
 <br>
 
-- TokenPilot: Cache-Efficient Context Management for LLM Agents 
-- Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification 
-- OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models 
-- AgentFairBench: Do LLM Agents Discriminate When They Act? 
-- CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies 
+- ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents 
+- RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills 
+- All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code 
+- PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience 
+- Trustworthy Self-Composable Big-Data-as-a-Service: An LLM-Orchestrated Multi-Agent Framework for Automated Data Engineering, AutoML, MLOps Deployment, and Drift-Aware Lifecycle Optimization 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-16</span> | **ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents**<br><sub>机构: Multiverse Computing, Donostia International Physics Center, Ikerbasque Foundation for Science<br>ProvenanceGuard 证明了来源归因是 MCP 基础智能体事实性验证的一个独立且至关重要的维度。通过引入来源感知的验证机制和修复循环，该方法有效解决了“跨源混淆”这一传统指标忽略的故障模式，显著提高了医疗等高风险领域 LLM 智能体输出的可靠性和可解释性。尽管在语义极度相似的来源间进行精确归属仍具挑战，但其整体性能优于现有的无来源感知基线。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18037v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18037.md)  |
+| <span style='display: inline-block; width: 42px;'>06-16</span> | **RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills**<br><sub>机构: Google Research, University of Illinois Chicago<br>RubricsTree 解决了个人健康 AI 代理在大规模部署中的核心评估难题。通过构建专家对齐的分层布尔评分标准和上下文感知路由机制，它成功平衡了评估的可扩展性与临床专业性。实验证明，该框架不仅能准确评估现有模型，还能作为有效的优化信号显著提升主流 LLM 在医疗健康领域的表现，为产品级个人医疗 AI 的持续优化提供了必要的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18203v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18203.md)  |
+| <span style='display: inline-block; width: 42px;'>06-16</span> | **All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code**<br><sub>机构: Kennesaw State University<br>本文通过大规模实证研究指出，当前 AI 编程代理生成的测试代码中，绝大多数缺乏有效的验证逻辑（即“只有烟雾，没有警报”）。尽管表面上看测试覆盖率很高，但实际验证强度不足。研究证明，包含强预言信号的测试能显著提高 PR 的合并概率。因此，建议实践者采用感知测试预言的质量检查方法，以更准确地评估和保障 AI 生成代码的贡献质量，避免被虚假的测试存在感所误导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18168v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18168.md)  |
+| <span style='display: inline-block; width: 42px;'>06-16</span> | **PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>本文揭示了代理式自动研究系统在缺乏科学对齐的情况下，具有助长伪科学的惊人能力。通过引入 PseudoBench，作者证明了当前最先进系统的抗伪科学能力极弱，且存在用专业术语美化伪科学的风险。这一发现呼吁在广泛部署自主科研智能体之前，必须优先解决科学对齐问题，以防止学术文献被污染和科学信任危机的加剧。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18060v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18060.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AI45Lab/PseudoBench)</div> |
+| <span style='display: inline-block; width: 42px;'>06-16</span> | **Trustworthy Self-Composable Big-Data-as-a-Service: An LLM-Orchestrated Multi-Agent Framework for Automated Data Engineering, AutoML, MLOps Deployment, and Drift-Aware Lifecycle Optimization**<br><sub>机构: Sirindhorn International Institute of Technology, Thammasat University<br>本文针对现有AutoML和LLM代理在BDaaS全流程自动化中的局限性，提出了一种由LLM编排的多智能体框架。通过将生命周期分解为专用智能体并引入中央编排、工件治理及漂移感知机制，该框架不仅保持了 competitive 的模型预测性能，更大幅提升了工程层面的可靠性、可复现性和适应性，为构建生产级可信大数据服务提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.17915v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.17915.md)  |
 | <span style='display: inline-block; width: 42px;'>06-15</span> | **TokenPilot: Cache-Efficient Context Management for LLM Agents**<br><sub>机构: Zhejiang University, University of Electronic Science and Technology of China, Xi’an Jiaotong University, HomologyAI<br>TokenPilot 针对 LLM 智能体长会话中的上下文管理难题，提出了一种兼顾文本稀疏性与缓存连续性的双粒度解决方案。通过全局的摄入感知压缩稳定前缀，以及局部的生命周期感知驱逐优化资源释放，该方法有效解决了传统剪枝方法导致的 KV Cache 失效问题。实验表明，TokenPilot 能在保持性能的前提下显著降低推理成本，特别是在连续交互场景中表现优异，为 LLM 智能体的可持续部署提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.17016v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.17016.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/zjunlp/LightMem2)</div> |
 | <span style='display: inline-block; width: 42px;'>06-15</span> | **Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification**<br><sub>机构: University of New Brunswick, Canada; University of Economics Ho Chi Minh City, Vietnam<br>本文提出了一种创新的基于共识的智能体LLM框架，旨在解决海运物流中加拿大10位HTS代码分类的难题。通过整合多智能体检索、证据 grounding、共识验证和人机协同机制，该框架显著提升了分类的可解释性和问责制。研究证实，在处理高度专业和法律敏感的关税分类任务时，结合外部知识检索与人类专家介入的混合工作流优于纯粹的端到端深度学习或LLM预测方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16987v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16987.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Analytics-Everywhere-Lab/hts)</div> |
 | <span style='display: inline-block; width: 42px;'>06-15</span> | **OpenClaw-Skill: Collective Skill Tree Search for Agentic Large Language Models**<br><sub>机构: The Hong Kong Polytechnic University<br>本文针对现有 LLM 智能体技能构建中存在的碎片化、低多样性和弱迁移性问题，提出了集体技能树搜索（CSTS）框架。通过利用多模型的集体智能进行技能生成与评估，CSTS 能够自动构建结构化、多样化且高泛化性的技能树。结合集体技能强化学习，最终得到的 OpenClaw-Skill 模型在复杂任务处理、工具使用及跨模型泛化方面均取得了显著优于现有工作的性能，为自动化构建高效 LLM 智能体技能提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.16774v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.16774.md)  |
