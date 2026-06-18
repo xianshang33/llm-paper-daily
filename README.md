@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.17_06:33-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.18_06:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月17日 06:33</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月18日 06:16</sub></summary>
 <br>
 
-- ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents 
-- RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills 
-- All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code 
-- PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience 
-- Trustworthy Self-Composable Big-Data-as-a-Service: An LLM-Orchestrated Multi-Agent Framework for Automated Data Engineering, AutoML, MLOps Deployment, and Drift-Aware Lifecycle Optimization 
+- A Technical Taxonomy of LLM Agent Communication Protocols 
+- CAPRA: Scaling Feedback on Software Architecture Deliverables with a Multi-Agent LLM System 
+- Leadership as Coordination Control: Behavioral Signatures and the Recovery-Advantage Boundary in Multi-Agent LLM Teams 
+- Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents 
+- GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-17</span> | **A Technical Taxonomy of LLM Agent Communication Protocols**<br><sub>机构: Technische Universität München<br>本文针对 LLM 多智能体系统中通信协议碎片化和互操作性差的问题，开发了一个技术分类法。通过对九个主流开源协议的五轮迭代分析，确立了五个关键分类维度。研究揭示了当前协议在负载处理和状态管理上的共性，以及向模式灵活性发展的趋势。文章预测未来将形成联邦式分层协议栈，而非单一垄断协议，并为协议选择和研究方向（如隐私保护）提供了指导框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.19135v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.19135.md)  |
+| <span style='display: inline-block; width: 42px;'>06-17</span> | **CAPRA: Scaling Feedback on Software Architecture Deliverables with a Multi-Agent LLM System**<br><sub>机构: University of Florence<br>CAPRA 证明了多智能体 LLM 系统在软件架构教育反馈中的可行性。通过结合多模态提取、确定性证据验证和一致性管理，它能够有效扩展形成性反馈的规模，减轻教师负担。然而，目前系统在处理高度主观的评估维度时仍需人类专家的介入，未来可进一步优化以提升完全自动化的可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18976v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18976.md)  |
+| <span style='display: inline-block; width: 42px;'>06-17</span> | **Leadership as Coordination Control: Behavioral Signatures and the Recovery-Advantage Boundary in Multi-Agent LLM Teams**<br><sub>机构: Indiana University Bloomington<br>本文通过将团队科学中的权变领导理论应用于多智能体LLM团队，揭示了过程级协调控制的价值是有条件的。研究指出，不应将协调控制视为旨在刷榜的工具，而应将其视为一种需要测量并与理论映射的权变因素。只有在团队初始共识不可靠且具备恢复潜力时，基于理论的协调控制才能带来显著的性能提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.19111v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.19111.md)  |
+| <span style='display: inline-block; width: 42px;'>06-17</span> | **Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents**<br><sub>机构: DoorDash, Inc.<br>本文论证了实时接地应被视为一个可优化的接口边界，而非固定的模型特性。DSG 架构成功解耦了搜索与推理，在几乎不牺牲准确率的前提下，显著降低了成本和延迟，并解决了原生搜索导致的输出格式不可控问题，为构建高效、可移植的生产级 LLM Agent 提供了新的架构范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18947v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18947.md)  |
+| <span style='display: inline-block; width: 42px;'>06-17</span> | **GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents**<br><sub>机构: Jilin University, Shanghai Jiao Tong University, King Abdullah University of Science and Technology (KAUST), Tsinghua University, National University of Singapore<br>GateMem 填补了多主体共享内存智能体评估领域的空白，强调了在共享环境中“治理”与“召回”同等重要。研究结果表明，当前主流的记忆架构（无论是长上下文还是检索增强）在平衡效用、安全性和隐私遗忘方面均存在显著缺陷。该基准为未来开发更安全、更符合伦理规范的共享智能体提供了重要的评估标准和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18829v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18829.md)  |
 | <span style='display: inline-block; width: 42px;'>06-16</span> | **ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents**<br><sub>机构: Multiverse Computing, Donostia International Physics Center, Ikerbasque Foundation for Science<br>ProvenanceGuard 证明了来源归因是 MCP 基础智能体事实性验证的一个独立且至关重要的维度。通过引入来源感知的验证机制和修复循环，该方法有效解决了“跨源混淆”这一传统指标忽略的故障模式，显著提高了医疗等高风险领域 LLM 智能体输出的可靠性和可解释性。尽管在语义极度相似的来源间进行精确归属仍具挑战，但其整体性能优于现有的无来源感知基线。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18037v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18037.md)  |
 | <span style='display: inline-block; width: 42px;'>06-16</span> | **RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills**<br><sub>机构: Google Research, University of Illinois Chicago<br>RubricsTree 解决了个人健康 AI 代理在大规模部署中的核心评估难题。通过构建专家对齐的分层布尔评分标准和上下文感知路由机制，它成功平衡了评估的可扩展性与临床专业性。实验证明，该框架不仅能准确评估现有模型，还能作为有效的优化信号显著提升主流 LLM 在医疗健康领域的表现，为产品级个人医疗 AI 的持续优化提供了必要的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18203v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18203.md)  |
 | <span style='display: inline-block; width: 42px;'>06-16</span> | **All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code**<br><sub>机构: Kennesaw State University<br>本文通过大规模实证研究指出，当前 AI 编程代理生成的测试代码中，绝大多数缺乏有效的验证逻辑（即“只有烟雾，没有警报”）。尽管表面上看测试覆盖率很高，但实际验证强度不足。研究证明，包含强预言信号的测试能显著提高 PR 的合并概率。因此，建议实践者采用感知测试预言的质量检查方法，以更准确地评估和保障 AI 生成代码的贡献质量，避免被虚假的测试存在感所误导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18168v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18168.md)  |
