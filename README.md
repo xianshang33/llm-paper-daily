@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.18_06:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.19_06:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月18日 06:16</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月19日 06:37</sub></summary>
 <br>
 
-- A Technical Taxonomy of LLM Agent Communication Protocols 
-- CAPRA: Scaling Feedback on Software Architecture Deliverables with a Multi-Agent LLM System 
-- Leadership as Coordination Control: Behavioral Signatures and the Recovery-Advantage Boundary in Multi-Agent LLM Teams 
-- Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents 
-- GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents 
+- Probe-and-Refine Tuning of Repository Guidance for Coding Agents 
+- Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems 
+- Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution 
+- LLM agent safety, multi-turn red-teaming, jailbreak benchmarks, adversarial robustness, safety-critical systems 
+- AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-18</span> | **Probe-and-Refine Tuning of Repository Guidance for Coding Agents**<br><sub>机构: Williams College<br>本文揭示了仓库指导文件（如 `AGENTS.md`）对编码智能体性能的关键作用，并指出其效果取决于生成方式。通过提出“探测与精炼调优”方法，作者证明了迭代式、基于失败诊断的指导文件生成能显著提升智能体在 SWE-bench 上的解决率。核心发现是，优化的指导文件主要通过提高智能体定位正确文件的能力（覆盖率）来提升性能，而非提高代码补丁本身的精度。这为解决当前关于 AI 辅助编程中上下文指导有效性的争议提供了 principled 的方法论依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20512v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20512.md)  |
+| <span style='display: inline-block; width: 42px;'>06-18</span> | **Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems**<br><sub>机构: Qilu Institute of Technology<br>本文引入了“传染网络”框架，首次形式化并量化了多智能体LLM系统中评估者偏见的传播现象。通过理论推导和实证研究，文章揭示了由谱半径控制的三种传播机制，并指出同构模型智能体网络通常处于偏见抑制状态。更重要的是，文章提出了通过增加评估者多样性（委员会规模）来显著降低偏见传播的有效策略，为构建更稳健、多样化的多智能体系统提供了理论依据和实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20493v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20493.md)  |
+| <span style='display: inline-block; width: 42px;'>06-18</span> | **Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution**<br><sub>机构: Electronic Arts (EA); KTH Royal Institute of Technology<br>本文提出了一种结合预训练LLM推理能力与预训练RL执行能力的混合分层架构，用于解决复杂多智能体游戏中的协调与控制问题。该方法无需手动编写规则，即可达到与手工行为树相当的竞技水平，同时在行为 believability（可信度/类人程度）上显著优于传统方法，证明了LLM作为高层战略控制器 orchestrate 底层RL技能的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20014v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20014.md)  |
+| <span style='display: inline-block; width: 42px;'>06-18</span> | **LLM agent safety, multi-turn red-teaming, jailbreak benchmarks, adversarial robustness, safety-critical systems**<br><sub>机构: AIM Intelligence; KAERI<br>本文提出了 NRT-Bench，填补了 LLM 智能体在安全关键系统中多轮红队测试的空白。通过模拟核电站控制室，研究证明了自适应多轮攻击能有效突破当前前沿模型的安全防线，且不同模型的漏洞具有显著差异性。此外，防御措施的效果高度依赖于具体模型，暗示了通用防御策略的局限性。该工作为 LLM 智能体在高风险环境中的安全性评估提供了重要的基准和数据支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20408v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20408.md)  |
+| <span style='display: inline-block; width: 42px;'>06-18</span> | **AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning**<br><sub>机构: Shaanxi Normal University, Northwest University, University of Leeds<br>AutoPass 展示了一种新颖的编译器调优范式，通过让 LLM 直接访问编译器内部证据（IR和优化状态）并结合运行时反馈，有效解决了传统黑盒调优方法的局限性。该方法无需训练即可在不同硬件平台上实现显著的性能提升，证明了证据引导的 LLM 智能体在复杂系统软件调优中的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20373v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20373.md)  |
 | <span style='display: inline-block; width: 42px;'>06-17</span> | **A Technical Taxonomy of LLM Agent Communication Protocols**<br><sub>机构: Technische Universität München<br>本文针对 LLM 多智能体系统中通信协议碎片化和互操作性差的问题，开发了一个技术分类法。通过对九个主流开源协议的五轮迭代分析，确立了五个关键分类维度。研究揭示了当前协议在负载处理和状态管理上的共性，以及向模式灵活性发展的趋势。文章预测未来将形成联邦式分层协议栈，而非单一垄断协议，并为协议选择和研究方向（如隐私保护）提供了指导框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.19135v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.19135.md)  |
 | <span style='display: inline-block; width: 42px;'>06-17</span> | **CAPRA: Scaling Feedback on Software Architecture Deliverables with a Multi-Agent LLM System**<br><sub>机构: University of Florence<br>CAPRA 证明了多智能体 LLM 系统在软件架构教育反馈中的可行性。通过结合多模态提取、确定性证据验证和一致性管理，它能够有效扩展形成性反馈的规模，减轻教师负担。然而，目前系统在处理高度主观的评估维度时仍需人类专家的介入，未来可进一步优化以提升完全自动化的可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.18976v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.18976.md)  |
 | <span style='display: inline-block; width: 42px;'>06-17</span> | **Leadership as Coordination Control: Behavioral Signatures and the Recovery-Advantage Boundary in Multi-Agent LLM Teams**<br><sub>机构: Indiana University Bloomington<br>本文通过将团队科学中的权变领导理论应用于多智能体LLM团队，揭示了过程级协调控制的价值是有条件的。研究指出，不应将协调控制视为旨在刷榜的工具，而应将其视为一种需要测量并与理论映射的权变因素。只有在团队初始共识不可靠且具备恢复潜力时，基于理论的协调控制才能带来显著的性能提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.19111v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.19111.md)  |

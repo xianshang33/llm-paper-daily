@@ -1,40 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-18T06:16:40.307522+00:00",
-  "run_date": "2026-06-17",
+  "generated_at": "2026-06-19T06:37:25.158816+00:00",
+  "run_date": "2026-06-18",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.19135",
-      "date": "2026-06-17",
-      "title": "A Technical Taxonomy of LLM Agent Communication Protocols",
+      "id": "arxiv:2606.20512",
+      "date": "2026-06-18",
+      "title": "Probe-and-Refine Tuning of Repository Guidance for Coding Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Linus Sander",
-        "Habtom Kahsay Gidey",
-        "Alexander Lenz",
-        "Alois Knoll"
+        "Asa Shepard",
+        "Jeannie Albrecht"
       ],
-      "institution": "Technische Universität München",
+      "institution": "Williams College",
       "summary": {
-        "zh": "本文针对 LLM 多智能体系统中通信协议碎片化和互操作性差的问题，开发了一个技术分类法。通过对九个主流开源协议的五轮迭代分析，确立了五个关键分类维度。研究揭示了当前协议在负载处理和状态管理上的共性，以及向模式灵活性发展的趋势。文章预测未来将形成联邦式分层协议栈，而非单一垄断协议，并为协议选择和研究方向（如隐私保护）提供了指导框架。",
-        "en": "This paper addresses the fragmentation and interoperability issues in LLM multi-agent system communication protocols by developing a technical taxonomy. Through five rounds of iterative analysis of nine mainstream..."
+        "zh": "本文揭示了仓库指导文件（如 `AGENTS.md`）对编码智能体性能的关键作用，并指出其效果取决于生成方式。通过提出“探测与精炼调优”方法，作者证明了迭代式、基于失败诊断的指导文件生成能显著提升智能体在 SWE-bench 上的解决率。核心发现是，优化的指导文件主要通过提高智能体定位正确文件的能力（覆盖率）来提升性能，而非提高代码补丁本身的精度。这为解决当前关于 AI 辅助编程中上下文指导有效性的争议提供了 principled...",
+        "en": "This paper highlights the critical role of repository guidance files (like `AGENTS.md`) for coding agents and argues that their effectiveness hinges on the generation method. By introducing \"Probe-and-Refine Tuning,\"..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.19135v1",
-        "pdf": "https://arxiv.org/pdf/2606.19135v1",
+        "abs": "http://arxiv.org/abs/2606.20512v1",
+        "pdf": "https://arxiv.org/pdf/2606.20512v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.19135.md",
-        "summary_en_path": "summary_en/2026-06/2606.19135.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.19135.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.19135.md"
+        "summary_zh_path": "summary/2026-06/2606.20512.md",
+        "summary_en_path": "summary_en/2026-06/2606.20512.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.20512.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.20512.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,36 +49,32 @@
       }
     },
     {
-      "id": "arxiv:2606.18976",
-      "date": "2026-06-17",
-      "title": "CAPRA: Scaling Feedback on Software Architecture Deliverables with a Multi-Agent LLM System",
+      "id": "arxiv:2606.20493",
+      "date": "2026-06-18",
+      "title": "Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Marco Becattini",
-        "Niccolò Caselli",
-        "Matteo Minin",
-        "Roberto Verdecchia",
-        "Enrico Vicario"
+        "Zewen Liu"
       ],
-      "institution": "University of Florence",
+      "institution": "Qilu Institute of Technology",
       "summary": {
-        "zh": "CAPRA 证明了多智能体 LLM 系统在软件架构教育反馈中的可行性。通过结合多模态提取、确定性证据验证和一致性管理，它能够有效扩展形成性反馈的规模，减轻教师负担。然而，目前系统在处理高度主观的评估维度时仍需人类专家的介入，未来可进一步优化以提升完全自动化的可靠性。",
-        "en": "- **Background**: Software engineering education relies heavily on project-based learning where students produce complex documentation like requirements specs, UML diagrams, and architectural designs. As class sizes..."
+        "zh": "本文引入了“传染网络”框架，首次形式化并量化了多智能体LLM系统中评估者偏见的传播现象。通过理论推导和实证研究，文章揭示了由谱半径控制的三种传播机制，并指出同构模型智能体网络通常处于偏见抑制状态。更重要的是，文章提出了通过增加评估者多样性（委员会规模）来显著降低偏见传播的有效策略，为构建更稳健、多样化的多智能体系统提供了理论依据和实践指导。",
+        "en": "- **Background**: In multi-agent Large Language Model (LLM) systems, agents evaluate each other's outputs to guide collaboration, task allocation, and response selection, forming a closed feedback loop. - **Why Existing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.18976v1",
-        "pdf": "https://arxiv.org/pdf/2606.18976v1",
+        "abs": "http://arxiv.org/abs/2606.20493v1",
+        "pdf": "https://arxiv.org/pdf/2606.20493v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.18976.md",
-        "summary_en_path": "summary_en/2026-06/2606.18976.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.18976.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.18976.md"
+        "summary_zh_path": "summary/2026-06/2606.20493.md",
+        "summary_en_path": "summary_en/2026-06/2606.20493.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.20493.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.20493.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,32 +91,39 @@
       }
     },
     {
-      "id": "arxiv:2606.19111",
-      "date": "2026-06-17",
-      "title": "Leadership as Coordination Control: Behavioral Signatures and the Recovery-Advantage Boundary in Multi-Agent LLM Teams",
+      "id": "arxiv:2606.20014",
+      "date": "2026-06-18",
+      "title": "Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haewoon Kwak"
+        "Jannik Hösch",
+        "Alessandro Sestini",
+        "Florian Fuchs",
+        "Amir Baghi",
+        "Joakim Bergdahl",
+        "Konrad Tollmar",
+        "Jean-Philippe Barrette-LaPierre",
+        "Linus Gisslén"
       ],
-      "institution": "Indiana University Bloomington",
+      "institution": "Electronic Arts (EA); KTH Royal Institute of Technology",
       "summary": {
-        "zh": "本文通过将团队科学中的权变领导理论应用于多智能体LLM团队，揭示了过程级协调控制的价值是有条件的。研究指出，不应将协调控制视为旨在刷榜的工具，而应将其视为一种需要测量并与理论映射的权变因素。只有在团队初始共识不可靠且具备恢复潜力时，基于理论的协调控制才能带来显著的性能提升。",
-        "en": "This paper applies contingency leadership theory from team science to multi-agent LLM teams, revealing that the value of process-level coordination is conditional. It argues that coordination control should not be..."
+        "zh": "本文提出了一种结合预训练LLM推理能力与预训练RL执行能力的混合分层架构，用于解决复杂多智能体游戏中的协调与控制问题。该方法无需手动编写规则，即可达到与手工行为树相当的竞技水平，同时在行为 believability（可信度/类人程度）上显著优于传统方法，证明了LLM作为高层战略控制器 orchestrate 底层RL技能的有效性。",
+        "en": "- **Background**: While Reinforcement Learning (RL) excels in sequential decision-making, scaling it to complex multi-agent environments is hindered by sparse rewards, large state-action spaces, and difficulties in..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.19111v1",
-        "pdf": "https://arxiv.org/pdf/2606.19111v1",
+        "abs": "http://arxiv.org/abs/2606.20014v1",
+        "pdf": "https://arxiv.org/pdf/2606.20014v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.19111.md",
-        "summary_en_path": "summary_en/2026-06/2606.19111.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.19111.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.19111.md"
+        "summary_zh_path": "summary/2026-06/2606.20014.md",
+        "summary_en_path": "summary_en/2026-06/2606.20014.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.20014.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.20014.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -139,36 +140,36 @@
       }
     },
     {
-      "id": "arxiv:2606.18947",
-      "date": "2026-06-17",
-      "title": "Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents",
+      "id": "arxiv:2606.20408",
+      "date": "2026-06-18",
+      "title": "LLM agent safety, multi-turn red-teaming, jailbreak benchmarks, adversarial robustness, safety-critical systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Emmanuel Aboah Boateng",
-        "Kyle MacDonald",
-        "Amardeep Kumar",
-        "Siddharth Kodwani",
-        "Sudeep Das"
+        "Hanwool Lee",
+        "Dasol Choi",
+        "Bokyeong Kim",
+        "Seung Geun Kim",
+        "Haon Park"
       ],
-      "institution": "DoorDash, Inc.",
+      "institution": "AIM Intelligence; KAERI",
       "summary": {
-        "zh": "本文论证了实时接地应被视为一个可优化的接口边界，而非固定的模型特性。DSG 架构成功解耦了搜索与推理，在几乎不牺牲准确率的前提下，显著降低了成本和延迟，并解决了原生搜索导致的输出格式不可控问题，为构建高效、可移植的生产级 LLM Agent 提供了新的架构范式。",
-        "en": "- **Background**: Production LLM agents increasingly rely on real-time search for factual grounding. The prevailing approach is \"Native Search Grounding,\" where model providers bundle retrieval policies, evidence..."
+        "zh": "本文提出了 NRT-Bench，填补了 LLM 智能体在安全关键系统中多轮红队测试的空白。通过模拟核电站控制室，研究证明了自适应多轮攻击能有效突破当前前沿模型的安全防线，且不同模型的漏洞具有显著差异性。此外，防御措施的效果高度依赖于具体模型，暗示了通用防御策略的局限性。该工作为 LLM 智能体在高风险环境中的安全性评估提供了重要的基准和数据支持。",
+        "en": "- **Background**: Large language model (LLM) agents are increasingly proposed as supervisory components in safety-critical systems (e.g., industrial processes, energy systems). However, their robustness under sustained,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.18947v1",
-        "pdf": "https://arxiv.org/pdf/2606.18947v1",
+        "abs": "http://arxiv.org/abs/2606.20408v1",
+        "pdf": "https://arxiv.org/pdf/2606.20408v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.18947.md",
-        "summary_en_path": "summary_en/2026-06/2606.18947.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.18947.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.18947.md"
+        "summary_zh_path": "summary/2026-06/2606.20408.md",
+        "summary_en_path": "summary_en/2026-06/2606.20408.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.20408.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.20408.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,41 +186,36 @@
       }
     },
     {
-      "id": "arxiv:2606.18829",
-      "date": "2026-06-17",
-      "title": "GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents",
+      "id": "arxiv:2606.20373",
+      "date": "2026-06-18",
+      "title": "AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhe Ren",
-        "Yibo Yang",
-        "Yimeng Chen",
-        "Zijun Zhao",
-        "Benshuo Fu",
-        "Zhihao Shu",
-        "Bingjie Zhang",
-        "Yangyang Xu",
-        "Dandan Guo",
-        "Shuicheng Yan"
+        "Zepeng Li",
+        "Jie Ren",
+        "Zhanyong Tang",
+        "Jie Zheng",
+        "Zheng Wang"
       ],
-      "institution": "Jilin University, Shanghai Jiao Tong University, King Abdullah University of Science and Technology (KAUST), Tsinghua University, National University of Singapore",
+      "institution": "Shaanxi Normal University, Northwest University, University of Leeds",
       "summary": {
-        "zh": "GateMem 填补了多主体共享内存智能体评估领域的空白，强调了在共享环境中“治理”与“召回”同等重要。研究结果表明，当前主流的记忆架构（无论是长上下文还是检索增强）在平衡效用、安全性和隐私遗忘方面均存在显著缺陷。该基准为未来开发更安全、更符合伦理规范的共享智能体提供了重要的评估标准和研究方向。",
-        "en": "GateMem fills the gap in evaluating multi-principal shared-memory agents, emphasizing that \"governance\" is as critical as \"recall\" in shared environments. The results demonstrate that current mainstream memory..."
+        "zh": "AutoPass 展示了一种新颖的编译器调优范式，通过让 LLM 直接访问编译器内部证据（IR和优化状态）并结合运行时反馈，有效解决了传统黑盒调优方法的局限性。该方法无需训练即可在不同硬件平台上实现显著的性能提升，证明了证据引导的 LLM 智能体在复杂系统软件调优中的巨大潜力。",
+        "en": "- **Background**: Compiler optimization is critical for software performance, but predefined levels (e.g., LLVM -O3) are suboptimal for specific programs. The tuning space is vast due to the phase ordering problem and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.18829v1",
-        "pdf": "https://arxiv.org/pdf/2606.18829v1",
+        "abs": "http://arxiv.org/abs/2606.20373v1",
+        "pdf": "https://arxiv.org/pdf/2606.20373v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.18829.md",
-        "summary_en_path": "summary_en/2026-06/2606.18829.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.18829.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.18829.md"
+        "summary_zh_path": "summary/2026-06/2606.20373.md",
+        "summary_en_path": "summary_en/2026-06/2606.20373.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.20373.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.20373.md"
       },
       "signals": {
         "priority_keyword": "Agent"
