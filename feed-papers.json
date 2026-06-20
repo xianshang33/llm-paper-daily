@@ -1,41 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-20T05:50:54.975335+00:00",
-  "run_date": "2026-06-14",
+  "generated_at": "2026-06-20T08:34:20.535605+00:00",
+  "run_date": "2026-06-13",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.15899",
-      "date": "2026-06-14",
-      "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
+      "id": "arxiv:2606.15363",
+      "date": "2026-06-13",
+      "title": "APEX: Adaptive Principle EXtraction A Three-Layer Self-Evolution Framework for Production AI Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ismail Hossain",
-        "Sai Puppala",
-        "Md Jahangir Alam",
-        "Tanzim Ahad",
-        "Sajedul Talukder"
+        "Ya-Chuan Chen",
+        "Tien-Jen Lai",
+        "Hsiang-Wei Hu"
       ],
-      "institution": "University of Texas at El Paso",
+      "institution": "Grace AI Technology",
       "summary": {
-        "zh": "本文针对开源 LLM Agent 技能生态系统中日益严峻的安全问题，指出了现有基于代码层的静态扫描工具在应对指令层攻击时的结构性缺陷。作者提出了 SkillVetBench，利用 LLM-as-Judge 技术构建了首个针对 Agent 技能的多维度安全评估基准和实时排行榜。通过引入 SARS 评分体系和 CVSS v4.0...",
-        "en": "- **Background**: The open-source LLM agent ecosystem (e.g., LangChain, Auto-GPT) is expanding rapidly, with a vast number of community-contributed \"Skills\" (modular tool definitions). However, the security of these..."
+        "zh": "APEX 证明了在生产环境中，AI Agent 的自我改进不应局限于单一的提示词或工作流优化，而应采用 Harness、行为原则和工作流拓扑的多维度协同进化。通过在真实生产轨迹上的验证，APEX 展示了以极低的计算成本实现大幅性能提升的能力，为生产级 AI Agent 的自动化持续优化提供了新的范式。",
+        "en": "- **Background**: AI agents deployed in production face the challenge of stale initial configurations (system prompts, workflow structures, decision rules) as environments and task distributions evolve. Traditional..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.15899v1",
-        "pdf": "https://arxiv.org/pdf/2606.15899v1",
+        "abs": "http://arxiv.org/abs/2606.15363v1",
+        "pdf": "https://arxiv.org/pdf/2606.15363v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.15899.md",
-        "summary_en_path": "summary_en/2026-06/2606.15899.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15899.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15899.md"
+        "summary_zh_path": "summary/2026-06/2606.15363.md",
+        "summary_en_path": "summary_en/2026-06/2606.15363.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15363.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15363.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,173 +50,171 @@
       }
     },
     {
-      "id": "arxiv:2606.15903",
-      "date": "2026-06-14",
-      "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "id": "arxiv:2606.15419",
+      "date": "2026-06-13",
+      "title": "Let LLMs Judge Each Other: Multi-Agent Peer-Reviewed Reasoning for Medical Question Answering",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dongxu Yang"
+        "Zaifu Zhan",
+        "Shuang Zhou",
+        "Rui Zhang"
+      ],
+      "institution": "University of Minnesota",
+      "summary": {
+        "zh": "本文提出了一种创新的多智能体同行评审推理方法，旨在解决医疗问答中准确性和可解释性的关键问题。通过让LLM相互评判推理过程而非仅仅比较答案，该方法显著超越了传统的单模型思维和多数投票基线。实验结果表明，强调推理质量而非单纯的答案一致性，能有效提升医疗AI系统的可信度、鲁棒性和准确性，为构建值得信赖的生物医学AI系统提供了新的方向。",
+        "en": "- **Background**: Large Language Models (LLMs) have advanced biomedical NLP, particularly in Medical Question Answering (MedQA). However, high stakes in clinical decisions require extreme factual accuracy and logical..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15419v1",
+        "pdf": "https://arxiv.org/pdf/2606.15419v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.15419.md",
+        "summary_en_path": "summary_en/2026-06/2606.15419.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15419.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15419.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.15077",
+      "date": "2026-06-13",
+      "title": "Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Kyle Gao",
+        "Joel Cumming",
+        "Jonathan Li",
+        "Linlin Xu",
+        "David A. Clausi"
+      ],
+      "institution": "University of Waterloo, SkyWatch, University of Calgary",
+      "summary": {
+        "zh": "本文提出了一种用于地理空间数据检索的风险感知 LLM 代理框架。通过集成安全防护、意图理解和 API 生成三个专用代理，该系统实现了从自然语言到结构化 API 调用的安全、可靠转换。初步评估证实了系统级防护（Guardrail）在应对对抗性攻击方面的价值，为环境监测、灾害响应等领域的自动化地球观测工作流提供了可扩展的解决方案。",
+        "en": "- **Background**: Leveraging advances in Large Language Models (LLMs), this paper presents a framework for automating geospatial workflows. It enables intelligent retrieval of remote sensing data from cloud-based..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15077v1",
+        "pdf": "https://arxiv.org/pdf/2606.15077v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.15077.md",
+        "summary_en_path": "summary_en/2026-06/2606.15077.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15077.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15077.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.15390",
+      "date": "2026-06-13",
+      "title": "Not All Skills Help: Measuring and Repairing Agent Knowledge",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yixuan Wang",
+        "Yiyang Zhou",
+        "Yiming Liang",
+        "Congyu Zhang",
+        "Fuxiao Liu",
+        "Jiawei Zhou",
+        "Huaxiu Yao"
+      ],
+      "institution": "UNC Chapel Hill, Purdue University, NVIDIA",
+      "summary": {
+        "zh": "本文指出了当前 LLM 智能体技能积累中 unchecked accumulation 的系统性缺陷，即 LLM 自身判断无法有效区分技能的因果效用。通过提出 ASSAY 框架，利用因果归因和按任务动态掩码技术，成功解决了技能异质性和匹配难题。该方法在不修改模型权重的情况下，显著提升了多个主流模型在复杂交互基准上的表现，证明了分离技能生成与基于实证证据的策展的重要性。",
+        "en": "- **Background**: LLM agents can improve without weight updates by accumulating natural-language skills (rules, heuristics) from experience. Current systems delegate all decisions regarding skill retention and..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15390v1",
+        "pdf": "https://arxiv.org/pdf/2606.15390v1",
+        "github": "https://github.com/aiming-lab/assay"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.15390.md",
+        "summary_en_path": "summary_en/2026-06/2606.15390.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15390.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15390.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.15508",
+      "date": "2026-06-13",
+      "title": "ToolMenuBench: Benchmarking Tool-Menu Filtering Strategies for Reliable and Efficient LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Rahul Suresh Babu",
+        "Laxmipriya Ganesh Iyer"
       ],
       "institution": null,
       "summary": {
-        "zh": "本文揭示了LLM在智能体记忆管道中的位置（写入时 vs 突变时）决定了系统能从哪种遗忘失败模式中恢复。通过ForgetEval基准测试，作者证明了现有的纯召回优化不足以应对生产环境中的隐私和数据一致性需求。最佳实践是采用“突变时LLM挂钩”或结合写入时标准化的混合架构，以在可控的成本和延迟下实现高效的受控遗忘。",
-        "en": "- **Background**: Agent memory systems consist of a \"recall plane\" for retrieving facts and a \"control plane\" for mutating them (supersede, release, purge). In production, the primary failure mode is \"forgetting..."
+        "zh": "本文提出了 ToolMenuBench，填补了 LLM 代理评估中关于工具菜单构建研究的空白。研究指出，可靠的代理不仅需要正确的工具调用语法，更需要系统的界面评估来决定在何种成本和风险约束下、何时向模型展示哪些工具。实验表明，基于因果逻辑的最小化工具过滤（CMTF）是提升代理可靠性、效率和安全性的有效途径，为未来的代理接口设计提供了可重用的评估框架和指导原则。",
+        "en": "This paper introduces ToolMenuBench, filling a gap in LLM agent evaluation regarding tool-menu construction. It highlights that reliable agents require more than correct tool-call syntax; they need systematic interface..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.15903v2",
-        "pdf": "https://arxiv.org/pdf/2606.15903v2",
+        "abs": "http://arxiv.org/abs/2606.15508v1",
+        "pdf": "https://arxiv.org/pdf/2606.15508v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.15903.md",
-        "summary_en_path": "summary_en/2026-06/2606.15903.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15903.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15903.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.15874",
-      "date": "2026-06-14",
-      "title": "LLM-as-Code Agentic Programming for Agent Harness",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Junjia Qi",
-        "Zichuan Fu",
-        "Jingtong Gao",
-        "Wenlin Zhang",
-        "Hanyu Yan",
-        "Xian Wu",
-        "Xiangyu Zhao"
-      ],
-      "institution": "City University of Hong Kong",
-      "summary": {
-        "zh": "本文批判了当前 LLM Agent 框架中将概率模型用于确定性控制流的架构缺陷，提出了 Agentic Programming 范式。通过引入 LLM-as-Code 概念，将控制流完全交由程序管理，LLM 仅作为执行节点嵌入 DAG 结构中。这种方法从根本上解决了 Token 爆炸和控制流幻觉问题，为构建可靠、可扩展的长程 Agent 系统提供了新的架构思路。",
-        "en": "- **Background**: Most mainstream LLM agent frameworks (e.g., AutoGen, OpenHands) position the LLM as the central \"orchestrator,\" responsible for deciding next steps, tool calls, and termination. While effective for..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15874v1",
-        "pdf": "https://arxiv.org/pdf/2606.15874v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.15874.md",
-        "summary_en_path": "summary_en/2026-06/2606.15874.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15874.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15874.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.15862",
-      "date": "2026-06-14",
-      "title": "RetailBench: Benchmarking long horizon reasoning and coherent decision making of LLM agents in realistic retail environments",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Linghua Zhang",
-        "Jun Wang",
-        "Jingtong Wu",
-        "Zhisong Zhang"
-      ],
-      "institution": null,
-      "summary": {
-        "zh": "RetailBench 提供了一个受控的测试平台，用于研究在经济基础的长周期决策中可靠的自主性。研究结果表明，尽管 LLM 在短期任务上表现优异，但在面对需要长期连贯性、复杂资源管理和部分可观测信息的真实零售环境时，现有智能体仍存在显著局限，特别是在长期策略一致性和深度推理方面。",
-        "en": "- **Background**: Large language model (LLM) agents have made rapid progress on short-horizon, well-scoped tasks, yet their ability to sustain coherent decisions in dynamic long-horizon environments remains uncertain. -..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15862v2",
-        "pdf": "https://arxiv.org/pdf/2606.15862v2",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.15862.md",
-        "summary_en_path": "summary_en/2026-06/2606.15862.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15862.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15862.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.15994",
-      "date": "2026-06-14",
-      "title": "Agentic Framework for Deep Learning workload migration via In-Context Learning",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Qiyue Liang",
-        "Steven Ingram",
-        "George Vanica",
-        "Andi Gavrilescu",
-        "Newfel Harrat",
-        "Hassan Sipra",
-        "Sethuraman Sankaran"
-      ],
-      "institution": "Google",
-      "summary": {
-        "zh": "本文提出了一种创新的智能体框架，通过将上下文学习与基于实际执行结果的预言机机制相结合，解决了 LLM 在深度学习框架迁移中面临的语义和数值准确性难题。该方法通过提供语法锚点和动态执行锚点，实现了高度可靠且可扩展的跨框架迁移蓝图，在保持低计算开销的同时，大幅提升了 PyTorch 到 JAX 迁移的数值等价性，为利用 TPU 等硬件优势提供了自动化工具支持。",
-        "en": "- **Background**: Migrating deep learning models from PyTorch (flexible, object-oriented) to JAX (functional, stateless) is typically a manual and error-prone task. This migration is critical for leveraging the cost..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15994v1",
-        "pdf": "https://arxiv.org/pdf/2606.15994v1",
-        "github": "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/MaxCode"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.15994.md",
-        "summary_en_path": "summary_en/2026-06/2606.15994.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15994.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15994.md"
+        "summary_zh_path": "summary/2026-06/2606.15508.md",
+        "summary_en_path": "summary_en/2026-06/2606.15508.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.15508.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.15508.md"
       },
       "signals": {
         "priority_keyword": "Agent"

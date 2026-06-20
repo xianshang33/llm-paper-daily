@@ -1,47 +1,45 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-20T05:50:54.975335+00:00",
-  "run_date": "2026-06-14",
+  "generated_at": "2026-06-20T08:34:20.535605+00:00",
+  "run_date": "2026-06-13",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.15899",
-      "date": "2026-06-14",
-      "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
+      "paper_id": "2606.15363",
+      "date": "2026-06-13",
+      "title": "APEX: Adaptive Principle EXtraction A Three-Layer Self-Evolution Framework for Production AI Agents",
       "authors": [
-        "Ismail Hossain",
-        "Sai Puppala",
-        "Md Jahangir Alam",
-        "Tanzim Ahad",
-        "Sajedul Talukder"
+        "Ya-Chuan Chen",
+        "Tien-Jen Lai",
+        "Hsiang-Wei Hu"
       ],
-      "abstract": "Open-source LLM agent ecosystems are growing rapidly, yet the security of community-contributed skills - modular tool definitions that extend agent capabilities - remains largely unvetted. The gap we fill: existing scanners operate at the code layer and are structurally blind to instruction-layer and multi-agent risk - natural-language directives that hijack an agent, exfiltrate data through encoded side channels, or chain harm across pipelines - so what is needed is a semantic, multi-dimensional vetting system rather than another signature matcher. We present SKILLVETBENCH, a live public leaderboard on Hugging Face that uses an LLM-as-Judge to vet agent skills. What is new: SARS (Skill Agentic Risk Score), a five-dimensional agentic-risk metric with a principled weighted formula for instruction-following systems. What is integrated: full CVSS v4.0 vector decomposition and a ClawHub dual-view that places our LLM-generated review beside the official marketplace verdict. What is demonstrated: drawing on our companion benchmark paper [ 1], the LLM-as-Judge stage achieves zero false negatives across 78 confirmed-malicious skills and zero false positives across 22 benign controls, while the best static baseline (SKILLSIEVE) still misses 15%; for instruction-layer categories such as Prompt Injection and Memory Poisoning, conventional tools miss between 89% and 100% of threats (e.g., CODEBERT detects none of nine memory-poisoning skills). Detection rates vary from 35% to 95% across four LLM evaluators, motivating ensemble scoring in production deployments.",
+      "abstract": "Self-improvement in AI agents has emerged as a key research frontier: systems that modify their own prompts, workflows, and decision rules based on accumulated operational experience. The state-of-the-art Self-Harness framework [1] achieves 14--21% improvement on Terminal-Bench-2.0 by mining failure clusters and patching the agent harness. However, Self-Harness optimises only one dimension -- the prompt harness -- leaving behavioural principles and workflow topology unchanged. We propose APEX (Adaptive Principle EXtraction), a three-layer co-evolution framework that simultaneously evolves: (L1) the harness via failure-mode patching, (L2) behavioural principles via success-trace distillation [2], and (L3) the agent workflow topology via structural fitness-based selection [6]. We implement APEX on Joe [13], a production-grade super AI Agent built on NVIDIA Nemotron and designed as an Edge AI Agent Factory for the NVIDIA Agent Challenge 2026, managing a 15-node compute fleet using 114 real task traces collected over 18 days. APEX achieves an APEX Health Score of 0.570 (+90% vs. baseline 0.300) in a single evolutionary run, distilling 6 novel reusable principles and selecting a research-first workflow topology scoring 0.900 (+20%). Our results demonstrate that multi-dimensional co-evolution substantially outperforms single-axis harness optimisation, at a cost of only 4 LLM calls (~270 s) on a local qwen2.5-coder:32b instance.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.15899v1",
-        "pdf": "https://arxiv.org/pdf/2606.15899v1",
+        "abs": "http://arxiv.org/abs/2606.15363v1",
+        "pdf": "https://arxiv.org/pdf/2606.15363v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Texas at El Paso",
+      "institution": "Grace AI Technology",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：开源 LLM Agent 生态系统（如 LangChain、Auto-GPT）迅速增长，社区贡献的“技能”（Skills，即扩展 Agent 能力的模块化工具定义）数量庞大。然而，这些技能的安全性 largely unvetted（未经审查）。恶意贡献者可以将有害行为嵌入看似 benign（良性）的技能中，形成新的供应链攻击面。\n- **已有工作为什么解决不了**：现有的安全扫描器主要工作在代码层（code layer），基于签名匹配或静态分析。它们在结构上对“指令层”（instruction-layer）和“多 Agent 风险”盲目。例如，通过自然语言指令劫持 Agent、通过编码侧信道泄露数据或在管道中连锁危害的行为，不包含可检测的代码级签名。此外，人工审查无法规模化，而静态方法无法确认风险在运行时是否被触发及其具体影响。\n\n## 文章的核心贡献点\n- **提出了一个 SkillVetBench**：这是一个基于 Hugging Face 的实时公共排行榜，利用 LLM-as-Judge（LLM 作为裁判）机制对 Agent 技能进行多维度安全风险评估。\n- **挑战 1：指令层风险的语义理解与检测难**。传统工具无法理解自然语言指令中的恶意意图（如提示注入、记忆投毒）。\n  - **解决方法**：引入 SARS（Skill Agentic Risk Score，技能代理风险评分），这是一个包含五个维度的代理风险指标，采用原则性的加权公式，专门针对指令遵循系统进行语义层面的风险量化。\n- **挑战 2：缺乏标准化且可公开比较的多维度评估体系**。现有工具要么漏报率高，要么无法提供细粒度的风险分解。\n  - **解决方法**：集成完整的 CVSS v4.0 向量分解，并提供 ClawHub 双视图（Dual-view），将 LLM 生成的审查结果与官方市场判决并列展示，实现了从静态代码到动态语义的全方位 vetting。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：SkillVetBench 作为一个实时公共排行榜部署在 Hugging Face 上。系统架构包括从 ClawHub/OpenClaw 市场获取技能，通过 LLM-as-Judge 提取意图和能力并进行漏洞分类，最后生成 SARS 评分和 CVSS v4.0 分解。\n- **Evaluation 结果**：\n  - 在 78 个已确认的恶意技能上实现了 **0 假阴性**（Zero False Negatives）。\n  - 在 22 个良性控制样本上实现了 **0 假阳性**（Zero False Positives）。\n  - 不同的 LLM 评估器的检测率在 35% 到 95% 之间波动，表明在生产部署中采用集成评分（ensemble scoring）的必要性。\n- **相关工作对比**：\n  - 最好的静态基线工具 SKILLSIEVE 仍然遗漏了 15% 的威胁。\n  - 对于指令层类别（如提示注入和记忆投毒），传统工具的漏报率在 89% 到 100% 之间。例如，CODEBERT 未能检测到 9 个记忆投毒技能中的任何一个。\n\n#### 总结\n本文针对开源 LLM Agent 技能生态系统中日益严峻的安全问题，指出了现有基于代码层的静态扫描工具在应对指令层攻击时的结构性缺陷。作者提出了 SkillVetBench，利用 LLM-as-Judge 技术构建了首个针对 Agent 技能的多维度安全评估基准和实时排行榜。通过引入 SARS 评分体系和 CVSS v4.0 分解，该方法在检测提示注入、记忆投毒等复杂语义攻击方面显著优于传统静态分析工具，实现了零假阴性和零假阳性的优异表现，为开源 Agent 生态的安全治理提供了标准化的自动化解决方案。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: The open-source LLM agent ecosystem (e.g., LangChain, Auto-GPT) is expanding rapidly, with a vast number of community-contributed \"Skills\" (modular tool definitions). However, the security of these skills remains largely unvetted, creating a new supply-chain attack surface where malicious behaviors can be embedded in seemingly benign skills.\n- **Why Existing Work Fails**: Current security scanners operate at the code layer using signature matching or static analysis. They are structurally blind to \"instruction-layer\" and multi-agent risks, such as hijacking agents via natural language directives, exfiltrating data through encoded side channels, or chaining harm across pipelines. These threats lack code-level signatures, making them invisible to traditional tools, while human review does not scale.\n\n## Core Contributions\n- **Proposed SkillVetBench**: A live public leaderboard on Hugging Face that utilizes an LLM-as-Judge mechanism to vet agent skills across multiple security dimensions.\n- **Challenge 1: Difficulty in Semantic Understanding and Detection of Instruction-Layer Risks**. Traditional tools fail to interpret malicious intent hidden in natural language instructions (e.g., prompt injection, memory poisoning).\n  - **Solution**: Introduced SARS (Skill Agentic Risk Score), a five-dimensional agentic-risk metric with a principled weighted formula designed specifically for instruction-following systems to quantify semantic risk.\n- **Challenge 2: Lack of a Standardized, Publicly Comparable Multi-Dimensional Evaluation System**. Existing tools suffer from high false-negative rates or lack granular risk decomposition.\n  - **Solution**: Integrated full CVSS v4.0 vector decomposition and a ClawHub dual-view that places LLM-generated reviews alongside official marketplace verdicts, enabling comprehensive vetting from static code to dynamic semantics.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: SkillVetBench is deployed as a real-time public leaderboard on Hugging Face. The architecture involves fetching skills from ClawHub/OpenClaw, analyzing them with an LLM-as-Judge to extract intent and classify vulnerabilities, and generating SARS scores and CVSS v4.0 decompositions.\n- **Evaluation Results**:\n  - Achieved **Zero False Negatives** across 78 confirmed-malicious skills.\n  - Achieved **Zero False Positives** across 22 benign control samples.\n  - Detection rates varied from 35% to 95% across four different LLM evaluators, highlighting the need for ensemble scoring in production.\n- **Comparison with Related Work**:\n  - The best static baseline, SKILLSIEVE, still missed 15% of threats.\n  - For instruction-layer categories like Prompt Injection and Memory Poisoning, conventional tools missed between 89% and 100% of threats. For instance, CODEBERT detected none of the nine memory-poisoning skills.\n\n## 4. Conclusion\nThis paper addresses the critical security gaps in the open-source LLM agent skill ecosystem, highlighting the structural inability of code-layer static scanners to handle instruction-layer attacks. The authors propose SkillVetBench, leveraging LLM-as-Judge technology to create the first multi-dimensional security evaluation benchmark and live leaderboard for agent skills. By introducing the SARS scoring system and CVSS v4.0 decomposition, the method significantly outperforms traditional static analysis tools in detecting complex semantic attacks like prompt injection and memory poisoning, achieving zero false negatives and zero false positives. This provides a standardized, automated solution for securing the open-source agent ecosystem.",
-      "render_excerpt": "机构: University of Texas at El Paso<br>本文针对开源 LLM Agent 技能生态系统中日益严峻的安全问题，指出了现有基于代码层的静态扫描工具在应对指令层攻击时的结构性缺陷。作者提出了 SkillVetBench，利用 LLM-as-Judge 技术构建了首个针对 Agent 技能的多维度安全评估基准和实时排行榜。通过引入 SARS 评分体系和 CVSS v4.0 分解，该方法在检测提示注入、记忆投毒等复杂语义攻击方面显著优于传统静态分析工具，实现了零假阴性和零假阳性的优异表现，为开源 Agent 生态的安全治理提供了标准化的自动化解决方案。",
-      "render_excerpt_en": "Institution: University of Texas at El Paso<br>## 1. What the Paper Did - **Background**: The open-source LLM agent ecosystem (e.g., LangChain, Auto-GPT) is expanding rapidly, with a vast number of community-contributed \"Skills\" (modular tool definitions). However, the security of these skills remains largely unvetted, creating a new supply-chain attack surface where malicious behaviors can be embedded in seemingly benign skills.",
+      "summary_cn": "## 文章做了什么\n- **背景**：生产环境中的 AI Agent 面临初始配置（系统提示词、工作流结构、决策规则）随环境和任务分布变化而过时的问题。传统的解决方法依赖缓慢且昂贵的人工提示工程，与生产现实脱节。\n- **已有工作的局限**：现有的自改进方法（如 Self-Harness、EvolveR、EvoAgentX 等）通常只针对单一维度进行优化。例如，Self-Harness 仅通过挖掘失败集群来修补提示词 Harness，而忽略了行为原则和工作流拓扑的演变；其他方法也各自局限于单一轴线的改进，导致其他未优化的部分成为瓶颈，无法实现整体性能的最大化。\n\n## 文章的核心贡献点\n- **提出了一个 APEX (Adaptive Principle EXtraction) 框架**：这是一个三层协同进化框架，能够同时进化 Harness、行为原则和工作流拓扑。\n- **挑战1：单一维度优化的局限性导致系统性失败**。完美的 Harness 若配合次优的工作流仍会失败，而良好的原则若缺乏对关键失败模式的覆盖会在分布偏移下退化。**解决方法**：APEX 采用三层协同进化机制，L1 层通过失败模式修补优化 Harness，L2 层通过成功轨迹蒸馏提取行为原则，L3 层基于结构适应度选择优化工作流拓扑，三者共享生产轨迹池并同步更新。\n- **挑战2：缺乏适用于多维度进化的综合评估指标**。传统指标难以同时衡量 Harness 覆盖率、原则丰富度和工作流结构质量。**解决方法**：提出了 APEX Health Score，这是一个复合指标，能够分离并量化 Harness 覆盖、原则丰富性和结构工作流质量，从而全面评估 Agent 的多维进化进度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：APEX 被实现在名为 Joe 的生产级超级 AI Agent 上，该 Agent 基于 NVIDIA Nemotron 构建，用于管理一个包含 15 个节点的计算集群。系统使用了在 18 天内收集的 114 个真实任务轨迹。代码开源为三个可组合的 Python 模块，可部署在任何拥有轨迹数据库和本地 Ollama 实例的 Agent 上。\n- **评估结果**：在单次进化运行中，APEX 将 APEX Health Score 从基线的 0.300 提升至 0.570（提升 90%）。它提炼出了 6 个新的可重用原则，并选择了一个得分 0.900（提升 20%）的“研究优先”工作流拓扑。\n- **对比与效率**：与仅优化单一轴线（如 Self-Harness）的方法相比，APEX 的多维协同进化表现出显著优势。此外，其计算成本极低，在本地 qwen2.5-coder:32b 实例上仅需 4 次 LLM 调用（约 270 秒）即可完成进化步骤。\n\n#### 总结\nAPEX 证明了在生产环境中，AI Agent 的自我改进不应局限于单一的提示词或工作流优化，而应采用 Harness、行为原则和工作流拓扑的多维度协同进化。通过在真实生产轨迹上的验证，APEX 展示了以极低的计算成本实现大幅性能提升的能力，为生产级 AI Agent 的自动化持续优化提供了新的范式。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: AI agents deployed in production face the challenge of stale initial configurations (system prompts, workflow structures, decision rules) as environments and task distributions evolve. Traditional solutions rely on slow, expensive manual prompt engineering disconnected from production realities.\n- **Limitations of Existing Work**: Current self-improvement methods (e.g., Self-Harness, EvolveR, EvoAgentX) typically optimize only a single dimension. For instance, Self-Harness improves performance by mining failure clusters to patch the prompt harness but leaves behavioral principles and workflow topology unchanged. This single-axis optimization leaves other components as bottlenecks, preventing maximal overall performance.\n\n## Core Contributions\n- **Proposed APEX (Adaptive Principle EXtraction)**: A three-layer co-evolution framework that simultaneously evolves the harness, behavioral principles, and workflow topology.\n- **Challenge 1: Limitations of single-dimension optimization leading to systematic failures**. A perfect harness with a suboptimal workflow still fails, and well-evolved principles degrade under distribution shift if the harness misses critical failure modes. **Solution**: APEX employs a three-layer co-evolution mechanism: L1 optimizes the harness via failure-mode patching, L2 distills behavioral principles from success traces, and L3 evolves workflow topology based on structural fitness. All three layers share a production trace pool and update synchronously.\n- **Challenge 2: Lack of comprehensive metrics for multi-dimensional evolution**. Traditional metrics struggle to simultaneously measure harness coverage, principle richness, and workflow structure quality. **Solution**: Introduced the APEX Health Score, a composite metric that separates and quantifies harness coverage, principle richness, and structural workflow quality to comprehensively assess multi-dimensional agent evolution.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: APEX was implemented on 'Joe', a production-grade super AI Agent built on NVIDIA Nemotron, managing a 15-node compute fleet. It utilized 114 real task traces collected over 18 days. The code is open-sourced as three composable Python modules, deployable on any agent with a trace database and a local Ollama instance.\n- **Evaluation Results**: In a single evolutionary run, APEX improved the APEX Health Score from a baseline of 0.300 to 0.570 (+90%). It distilled 6 novel reusable principles and selected a 'research-first' workflow topology with a score of 0.900 (+20%).\n- **Comparison & Efficiency**: Compared to single-axis optimization methods like Self-Harness, APEX's multi-dimensional co-evolution demonstrated substantial performance gains. Furthermore, it achieved this with minimal computational cost, requiring only 4 LLM calls (~270 seconds) on a local qwen2.5-coder:32b instance.\n\n## 4. Conclusion\nAPEX demonstrates that self-improvement for production AI agents should not be limited to single-axis prompt or workflow optimization. Instead, it requires multi-dimensional co-evolution of the harness, behavioral principles, and workflow topology. Validated on real-world production traces, APEX shows significant performance improvements at a low computational cost, offering a new paradigm for the automated continuous optimization of production-grade AI agents.",
+      "render_excerpt": "机构: Grace AI Technology<br>APEX 证明了在生产环境中，AI Agent 的自我改进不应局限于单一的提示词或工作流优化，而应采用 Harness、行为原则和工作流拓扑的多维度协同进化。通过在真实生产轨迹上的验证，APEX 展示了以极低的计算成本实现大幅性能提升的能力，为生产级 AI Agent 的自动化持续优化提供了新的范式。",
+      "render_excerpt_en": "Institution: Grace AI Technology<br>## 1. What the Paper Did - **Background**: AI agents deployed in production face the challenge of stale initial configurations (system prompts, workflow structures, decision rules) as environments and task distributions evolve. Traditional solutions rely on slow, expensive manual prompt engineering disconnected from production realities.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-14T16:30:33Z"
+        "captured_at": "2026-06-13T15:47:27Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-14"
+        "captured_at": "2026-06-13"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -56,16 +54,170 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2606.15903",
-      "date": "2026-06-14",
-      "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "paper_id": "2606.15419",
+      "date": "2026-06-13",
+      "title": "Let LLMs Judge Each Other: Multi-Agent Peer-Reviewed Reasoning for Medical Question Answering",
       "authors": [
-        "Dongxu Yang"
+        "Zaifu Zhan",
+        "Shuang Zhou",
+        "Rui Zhang"
       ],
-      "abstract": "Where an LLM sits in an agent memory pipeline -- between the recall plane that retrieves stored facts (extensively benchmarked) and the control plane that mutates them via supersede, release, purge (largely untested) -- shapes which forgetting failure modes the system recovers. Comparing thirteen system configurations on a 385-case adversarial surface, we observe three placement regimes with partly complementary coverage: deterministic primitives suffice for lexical/temporal categories but fail canonicalization (5% on identifier-obfuscation, 0% on cross-lingual); inscribe-time LLM recovers canonicalization (100%) but cannot help intent-aware deletion (0% on prefix-collision and compound-fact); a mutation-time hook recovers intent-aware deletion (78-85%) and brightens nearly all categories simultaneously (91.7-93.2% overall, $0.17 per 385-case run, 2.3s/case mutation latency vs. 64-191ms/case deterministic, recall path unchanged). We expose the trade-off via ForgetEval, a 1000-case templated suite plus a 385-case adversarial layer (132 hand-crafted + 253 LLM-drafted oracle-validated) scored by deterministic substring match, paired with a six-method Adapter Protocol with honest N/A scoring that lets heterogeneous memory stores enter in 130 lines. Admission is corroborated by 10-annotator IAA (Fleiss' kappa = 0.958) and a 77-case external-authored subset (four blind contributors) that replicates the canonicalization asymmetry and amplifies the joint-placement lift (+27.8 pt). Production failures are predominantly forgetting failures rather than recall failures, yet existing benchmarks measure only recall. ForgetEval and all adapters are released under MIT.",
+      "abstract": "Objective: To enhance the accuracy, interpretability, and robustness of large language models (LLMs) in medical question answering (MedQA). Method: We designed a multi-agent peer-reviewed reasoning method in which multiple LLM agents independently generate chain-of-thought reasoning with candidate answers, then act as peer reviewers to evaluate each other's reasoning for factual correctness and logical soundness. The highest-rated reasoning chain is selected to produce the final answer. Experiments were conducted with five state-of-the-art LLMs (Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B) on three benchmark datasets: HeadQA, MedQA-USMLE, and PubMedQA. Performance was compared against single-model chain-of-thought reasoning and chain-of-thought-based majority voting. Results: Peer-reviewed reasoning consistently outperformed both baselines. The best model combination achieved an average accuracy of 0.820 across datasets, exceeding the strongest single model (0.777) and majority voting ensembles (up to 0.789). The method also scaled effectively with more participating models, while peer assessments reliably distinguished high- from low-quality reasoning chains. Conclusion: The proposed multi-agent peer-reviewed reasoning method enables LLMs to act as both solvers and evaluators, yielding superior performance in MedQA. By emphasizing reasoning quality rather than answer agreement alone, this approach improves accuracy, interpretability, and robustness, offering a promising direction for trustworthy biomedical AI systems.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.15903v2",
-        "pdf": "https://arxiv.org/pdf/2606.15903v2",
+        "abs": "http://arxiv.org/abs/2606.15419v1",
+        "pdf": "https://arxiv.org/pdf/2606.15419v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Minnesota",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在生物医学自然语言处理任务中取得了显著进展，特别是在医疗问答（MedQA）领域。然而，由于医疗决策对事实准确性和逻辑严密性要求极高，模型产生的幻觉或逻辑错误可能导致严重的临床误导。\n- **已有工作为什么解决不了**：现有的方法主要依赖单模型的思维链（Chain-of-Thought, CoT）或基于多数投票的集成方法。单模型CoT缺乏自我纠错机制，而多数投票仅关注答案的一致性，忽略了推理过程的质量。如果多个模型都因相同的错误逻辑得出相同错误答案，投票机制无法识别并纠正这种系统性错误，且现有工作多在生成答案后才评估推理，未能将推理质量评估融入决策闭环。\n\n## 文章的核心贡献点\n- **提出了一个多智能体同行评审推理框架（Multi-Agent Peer-Reviewed Reasoning）**：该框架让多个LLM智能体不仅作为解题者生成带有候选答案的思维链，还作为同行评审员相互评估彼此推理的事实正确性和逻辑健全性，最终选择评分最高的推理链生成答案。\n- **挑战1：如何超越单纯的答案一致性，实现基于推理质量的决策？**\n  - **难点**：传统集成方法（如多数投票）假设“多数即真理”，但在复杂医疗问题中，错误的推理也可能导致一致的错误答案，且难以区分高质量与低质量的推理路径。\n  - **解决方法**：引入互评机制，让LLM充当评审员，直接对推理链的逻辑连贯性和事实准确性进行打分，从而选出逻辑最严密的推理路径，而非仅仅统计答案出现的频率。\n- **挑战2：如何在无需额外训练数据的情况下提升模型的鲁棒性和可解释性？**\n  - **难点**：微调模型需要大量标注数据，且黑盒模型缺乏透明度；单一模型容易受提示词偏差影响，稳定性不足。\n  - **解决方法**：利用现成的SOTA LLMs构建多智能体系统，通过角色分工（解题者与评审者）激发模型的 emergent reasoning 能力。评审过程本身提供了可解释的依据，且多模型协作降低了单个模型出错的风险，提升了整体鲁棒性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究使用了五种最先进的LLM（Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B）。系统在三个基准数据集上进行测试：HeadQA、MedQA-USMLE 和 PubMedQA。架构上，每个智能体独立生成“推理-答案”对，然后交换进行同行评审，最后聚合评审分数选择最佳推理。\n- **Evaluation 结果**：\n  - 同行评审推理方法在所有数据集上均一致优于基线方法。\n  - 最佳模型组合的平均准确率达到 **0.820**。\n  - 相比之下，最强的单模型准确率为 **0.777**，基于思维链的多数投票集成方法最高仅为 **0.789**。\n  - 该方法表现出良好的可扩展性，随着参与模型数量的增加，性能稳步提升。\n  - 同行评估能够有效区分高质量和低质量的推理链，证明了其作为质量过滤器的可靠性。\n\n#### 总结\n本文提出了一种创新的多智能体同行评审推理方法，旨在解决医疗问答中准确性和可解释性的关键问题。通过让LLM相互评判推理过程而非仅仅比较答案，该方法显著超越了传统的单模型思维和多数投票基线。实验结果表明，强调推理质量而非单纯的答案一致性，能有效提升医疗AI系统的可信度、鲁棒性和准确性，为构建值得信赖的生物医学AI系统提供了新的方向。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) have advanced biomedical NLP, particularly in Medical Question Answering (MedQA). However, high stakes in clinical decisions require extreme factual accuracy and logical soundness, where hallucinations or logical flaws can be misleading.\n- **Why Existing Work Falls Short**: Current methods rely on single-model Chain-of-Thought (CoT) or majority voting ensembles. Single-model CoT lacks self-correction, while majority voting focuses only on answer agreement, ignoring reasoning quality. If multiple models share the same flawed logic, voting fails to correct systemic errors, and existing evaluations often assess reasoning post-hoc rather than integrating it into the decision loop.\n\n## Core Contributions\n- **Proposed a Multi-Agent Peer-Reviewed Reasoning Framework**: This framework enables multiple LLM agents to act as both solvers (generating CoT with candidate answers) and peer reviewers (evaluating each other's reasoning for factual correctness and logical soundness), selecting the highest-rated reasoning chain for the final answer.\n- **Challenge 1: How to prioritize reasoning quality over simple answer consensus?**\n  - **Difficulty**: Traditional ensembles assume \"majority is truth,\" but consistent wrong answers from flawed logic are common in complex medical tasks, making it hard to distinguish high-quality from low-quality reasoning paths.\n  - **Solution**: Introduces a mutual evaluation mechanism where LLMs score the logical coherence and factual accuracy of peer reasoning chains, selecting the most logically sound path rather than just the most frequent answer.\n- **Challenge 2: How to enhance robustness and interpretability without additional training data?**\n  - **Difficulty**: Fine-tuning requires extensive labeled data, and black-box models lack transparency; single models are prone to prompt biases and instability.\n  - **Solution**: Leverages off-the-shelf SOTA LLMs in a multi-agent setup. Role differentiation (solver vs. reviewer) stimulates emergent reasoning capabilities. The review process provides interpretability, and multi-model collaboration mitigates individual model errors, enhancing overall robustness.\n\n## Implementation and Evaluation\n- **Implementation**: The study utilized five state-of-the-art LLMs (Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B). Tested on three benchmarks: HeadQA, MedQA-USMLE, and PubMedQA. Agents independently generate \"reasoning-answer\" pairs, cross-evaluate them, and aggregate scores to select the best output.\n- **Evaluation Results**:\n  - Peer-reviewed reasoning consistently outperformed baselines across all datasets.\n  - The best model combination achieved an average accuracy of **0.820**.\n  - In comparison, the strongest single model achieved **0.777**, and CoT-based majority voting ensembles reached up to **0.789**.\n  - The method scales effectively with more participating models.\n  - Peer assessments reliably distinguished between high- and low-quality reasoning chains, validating its efficacy as a quality filter.\n\n## 4. Conclusion\nThis paper introduces a novel multi-agent peer-reviewed reasoning method to address accuracy and interpretability in MedQA. By enabling LLMs to critique reasoning processes rather than just comparing answers, the method significantly surpasses traditional single-model CoT and majority voting baselines. Results demonstrate that emphasizing reasoning quality enhances the trustworthiness, robustness, and accuracy of medical AI systems, offering a promising direction for reliable biomedical AI.",
+      "render_excerpt": "机构: University of Minnesota<br>本文提出了一种创新的多智能体同行评审推理方法，旨在解决医疗问答中准确性和可解释性的关键问题。通过让LLM相互评判推理过程而非仅仅比较答案，该方法显著超越了传统的单模型思维和多数投票基线。实验结果表明，强调推理质量而非单纯的答案一致性，能有效提升医疗AI系统的可信度、鲁棒性和准确性，为构建值得信赖的生物医学AI系统提供了新的方向。",
+      "render_excerpt_en": "Institution: University of Minnesota<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) have advanced biomedical NLP, particularly in Medical Question Answering (MedQA). However, high stakes in clinical decisions require extreme factual accuracy and logical soundness, where hallucinations or logical flaws can be misleading.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-13T18:09:44Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-13"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.15077",
+      "date": "2026-06-13",
+      "title": "Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation",
+      "authors": [
+        "Kyle Gao",
+        "Joel Cumming",
+        "Jonathan Li",
+        "Linlin Xu",
+        "David A. Clausi"
+      ],
+      "abstract": "We present an LLM-driven framework for retrieving remote sensing data from cloud-based geospatial catalogues using natural language queries. The system converts user intent into structured API calls, enabling efficient access to satellite imagery and environmental datasets. The architecture integrates three agents: Guardrail for safety and policy enforcement, General-QA for intent interpretation, and Recommender-Analyst for schema-aware API call generation. This coordinated design ensures reliable, semantically aligned interaction with external data services. The modular framework is portable across platforms through API schema substitution and supports applications in environmental monitoring, disaster response, and climate analysis. It establishes a scalable interface between user intent and geospatial infrastructure, enabling streamlined and automated Earth observation workflows. Preliminary experiments under adversarial multi-turn settings show that prompt-level safety instructions improve robustness, although rare high-impact failures persist in API manipulation scenarios and highlight the need for adaptive, system-level defenses that balance safety, usability, and cost efficiency, which motivates the use of our intercept-level Guardrail agent.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15077v1",
+        "pdf": "https://arxiv.org/pdf/2606.15077v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Waterloo, SkyWatch, University of Calgary",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）的发展，自动化复杂的地理空间工作流成为可能。本文旨在构建一个由 LLM 驱动的框架，通过自然语言查询从基于云的地理空间目录中检索遥感数据，将用户意图转化为结构化的 API 调用，以高效访问卫星图像和环境数据集。\n- **已有工作的不足**：现有的方法在直接 interfacing 大规模卫星和航空影像库时，往往缺乏足够的安全性和策略执行机制。单纯的提示词级安全指令在面对对抗性多轮对话时，仍会出现罕见但高影响的 API 操纵失败，缺乏系统级的自适应防御来平衡安全性、可用性和成本效率。\n\n## 文章的核心贡献点\n- **提出了一个风险感知的 LLM 代理框架**：该框架集成了三个协调的代理（Guardrail、General-QA、Recommender-Analyst），用于安全地解释用户意图并生成精确的 API 调用。\n- **挑战1：如何确保与外部数据服务交互的安全性与策略合规性？**\n  - **难点**：LLM 容易受到提示词注入或恶意操纵，导致生成不安全或不符合政策的 API 请求，且仅靠提示词工程难以完全抵御复杂的对抗性攻击。\n  - **解决方法**：引入基于 NeMo Guardrails 构建的“Guardrail”代理，作为拦截级的风险识别和预防机制，在系统层面强制执行安全策略，弥补提示词级防御的不足。\n- **挑战2：如何实现跨不同地理空间平台的通用性与语义对齐？**\n  - **难点**：不同的地理空间平台（如 SkyWatch, Google Earth Engine）拥有各异的 API 模式，硬编码特定平台逻辑会导致系统缺乏可移植性，且难以保证用户自然语言意图与底层 API 参数的精确映射。\n  - **解决方法**：采用模块化设计，其中“Recommender-Analyst”代理专门负责 schema 感知的 API 调用生成。通过替换 API 模式和调用规范，框架可轻松移植到其他平台，同时保持用户意图与数据检索之间的语义对齐。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：系统包含三个核心代理：Guardrail（安全防护）、General-QA（意图理解与问答）、Recommender-Analyst（API 调用生成）。该架构专为 SkyWatch 平台设计，但具有模块化特性，可通过替换 API schema 适配 Google Earth Engine 等其他平台。\n- **评估结果**：在对抗性多轮设置下的初步实验表明，虽然提示词级的安全指令能提高一定的鲁棒性，但在 API 操纵场景中仍存在罕见的高影响失败。这证明了引入拦截级 Guardrail 代理的必要性，该系统级防御能更有效地平衡安全性与可用性。\n- **对比**：相较于仅依赖 LLM 原生能力或简单提示词工程的方法，本文提出的多代理协同架构通过显式的风险拦截模块，显著提升了在敏感地理空间数据检索任务中的可靠性和政策合规性。\n\n#### 总结\n本文提出了一种用于地理空间数据检索的风险感知 LLM 代理框架。通过集成安全防护、意图理解和 API 生成三个专用代理，该系统实现了从自然语言到结构化 API 调用的安全、可靠转换。初步评估证实了系统级防护（Guardrail）在应对对抗性攻击方面的价值，为环境监测、灾害响应等领域的自动化地球观测工作流提供了可扩展的解决方案。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Leveraging advances in Large Language Models (LLMs), this paper presents a framework for automating geospatial workflows. It enables intelligent retrieval of remote sensing data from cloud-based catalogs using natural language queries, converting user intent into structured API calls.\n- **Limitations of Existing Work**: Current methods often lack robust safety and policy enforcement mechanisms when interfacing directly with large-scale satellite imagery repositories. Prompt-level safety instructions are insufficient against adversarial multi-turn attacks, leading to rare but high-impact API manipulation failures, highlighting the need for system-level defenses.\n\n## Core Contributions\n- **Proposed a Risk-Aware LLM Agent Framework**: The architecture integrates three coordinated agents: Guardrail, General-QA, and Recommender-Analyst, to safely interpret intent and generate precise API calls.\n- **Challenge 1: How to ensure safety and policy compliance in interactions with external data services?**\n  - **Difficulty**: LLMs are vulnerable to prompt injection or malicious manipulation, generating unsafe API requests. Prompt engineering alone cannot fully mitigate complex adversarial attacks.\n  - **Solution**: Introduces a \"Guardrail\" agent built on NeMo Guardrails as an intercept-level risk identification and prevention mechanism, enforcing security policies at the system level to complement prompt-level defenses.\n- **Challenge 2: How to achieve portability across different geospatial platforms and maintain semantic alignment?**\n  - **Difficulty**: Diverse geospatial platforms have unique API schemas. Hard-coding logic reduces portability, and mapping natural language intent to specific API parameters is complex.\n  - **Solution**: Adopts a modular design where the \"Recommender-Analyst\" agent handles schema-aware API generation. The framework supports portability by simply substituting API schemas, ensuring semantic alignment between user intent and data retrieval.\n\n## Implementation and Evaluation\n- **Implementation**: The system comprises three agents: Guardrail (safety), General-QA (intent understanding), and Recommender-Analyst (API generation). Designed for SkyWatch, its modular nature allows adaptation to other platforms like Google Earth Engine by swapping API specifications.\n- **Evaluation Results**: Preliminary experiments in adversarial multi-turn settings show that while prompt-level instructions improve robustness, high-impact failures persist in API manipulation scenarios. This validates the necessity of the intercept-level Guardrail agent for balancing safety, usability, and cost.\n- **Comparison**: Compared to methods relying solely on LLM capabilities or simple prompt engineering, this multi-agent collaborative architecture significantly enhances reliability and policy compliance in sensitive geospatial data retrieval tasks through explicit risk interception.\n\n## 4. Conclusion\nThis paper proposes a risk-aware LLM agent framework for geospatial data retrieval. By integrating safety, intent understanding, and API generation agents, it achieves safe and reliable conversion from natural language to structured API calls. Preliminary evaluations confirm the value of system-level protection (Guardrail) against adversarial attacks, offering a scalable solution for automated Earth observation workflows in environmental monitoring and disaster response.",
+      "render_excerpt": "机构: University of Waterloo, SkyWatch, University of Calgary<br>本文提出了一种用于地理空间数据检索的风险感知 LLM 代理框架。通过集成安全防护、意图理解和 API 生成三个专用代理，该系统实现了从自然语言到结构化 API 调用的安全、可靠转换。初步评估证实了系统级防护（Guardrail）在应对对抗性攻击方面的价值，为环境监测、灾害响应等领域的自动化地球观测工作流提供了可扩展的解决方案。",
+      "render_excerpt_en": "Institution: University of Waterloo, SkyWatch, University of Calgary<br>## 1. What the Paper Does - **Background**: Leveraging advances in Large Language Models (LLMs), this paper presents a framework for automating geospatial workflows. It enables intelligent retrieval of remote sensing data from cloud-based catalogs using natural language queries, converting user intent into structured API calls.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-13T03:15:53Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-13"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.15390",
+      "date": "2026-06-13",
+      "title": "Not All Skills Help: Measuring and Repairing Agent Knowledge",
+      "authors": [
+        "Yixuan Wang",
+        "Yiyang Zhou",
+        "Yiming Liang",
+        "Congyu Zhang",
+        "Fuxiao Liu",
+        "Jiawei Zhou",
+        "Huaxiu Yao"
+      ],
+      "abstract": "LLM agents can improve without weight updates by accumulating natural-language skills from experience, but current systems entrust every decision about which skills to keep and how to apply them to LLM judgment alone. We argue that this conflates two distinct roles: generating a skill from experience is a creative act that judgment handles well, while deciding whether that skill actually helps requires empirical evidence across many tasks. Measuring per-skill causal contributions via randomized masking, we find that skill libraries exhibit pervasive causal heterogeneity: individual skills routinely help on some task types while hurting on others, yet their opposing effects cancel in aggregate, making them invisible to global curation methods. We propose ASSAY, a framework that separates generation from curation: it computes a per-skill causal attribution on a small development set, restructures the library offline, and suppresses skills with negative predicted effect for each test task. Across seven base models spanning four providers and two benchmarks (AppWorld and tau-bench), ASSAY consistently improves over prior skill-curation approaches. On AppWorld's hardest split, DeepSeek-V3 achieves 69.3% task-goal completion (47.4% relative improvement), a new state of the art among all published methods including weight-tuned approaches. On tau-bench retail, GPT-4.1 improves by 8.7% relative, advancing past o4-mini, o1, and GPT-4.5 on the public leaderboard without any weight modification. Ablation traces the dominant gain to per-task masking, confirming that the bottleneck is matching skills to tasks at inference time, not removing bad skills globally. Code is available at https://github.com/aiming-lab/assay.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15390v1",
+        "pdf": "https://arxiv.org/pdf/2606.15390v1",
+        "github": "https://github.com/aiming-lab/assay",
+        "blog": null
+      },
+      "institution": "UNC Chapel Hill, Purdue University, NVIDIA",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体可以通过从经验中积累自然语言技能（如规则、启发式方法）来提升性能，而无需更新模型权重。当前系统通常将技能的生成、保留和检索全部委托给 LLM 自身的判断力。\n- **已有工作的局限**：现有方法假设 LLM 的判断足以监督整个技能生命周期，缺乏对技能实际效用的实证检验。这导致技能库中存在普遍的“因果异质性”：某些技能在特定任务上有益，但在其他任务上有害，且这种正负抵消使得全局筛选方法无法识别并移除有害技能，从而造成性能瓶颈。\n\n## 文章的核心贡献点\n- **提出了一个 ASSAY 框架**：该框架将技能的“生成”与“策展（curation）”分离，通过计算每个技能在小规模开发集上的因果归因，离线重构技能库，并在推理时抑制对当前测试任务有负面预测影响的技能。\n- **挑战1：技能效用的因果异质性难以通过全局指标捕捉**。单个技能可能在不同任务类型中产生相反的效果， aggregate 指标会掩盖其负面影响。**解决方法**：通过随机掩码（randomized masking）技术测量每个技能在开发集上的每技能因果贡献，精准识别出那些在特定语境下有害的技能。\n- **挑战2：推理时的技能匹配瓶颈**。仅仅在全局移除坏技能是不够的，关键在于如何在推理时将正确的技能匹配到具体的任务上。**解决方法**：引入按任务掩码（per-task masking）机制，针对每个测试任务动态抑制具有负面预测效果的技能，从而避免无关或有害技能干扰代理决策。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 AppWorld 和 tau-bench 两个基准测试上，跨越四个提供商的七个基础模型进行评估。\n- **主要结果**：\n    - 在 AppWorld 最难的分片上，DeepSeek-V3 使用 ASSAY 后任务目标完成率达到 69.3%（相对提升 47.4%），超越了包括权重微调方法在内的所有已发布方法，创下新的最先进水平（SOTA）。\n    - 在 tau-bench retail 任务上，GPT-4.1 相对提升了 8.7%，在公共排行榜上超越了 o4-mini、o1 和 GPT-4.5，且无需任何权重修改。\n- **对比分析**：ASSAY  consistently 优于之前的技能策展方法。消融实验表明，主要增益来自按任务掩码，证实了推理时的技能-任务匹配是主要瓶颈，而非单纯的全局坏技能移除。\n\n#### 总结\n本文指出了当前 LLM 智能体技能积累中 unchecked accumulation 的系统性缺陷，即 LLM 自身判断无法有效区分技能的因果效用。通过提出 ASSAY 框架，利用因果归因和按任务动态掩码技术，成功解决了技能异质性和匹配难题。该方法在不修改模型权重的情况下，显著提升了多个主流模型在复杂交互基准上的表现，证明了分离技能生成与基于实证证据的策展的重要性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents can improve without weight updates by accumulating natural-language skills (rules, heuristics) from experience. Current systems delegate all decisions regarding skill retention and application solely to LLM judgment.\n- **Limitations of Existing Work**: Prior methods assume LLM judgment is sufficient for the entire skill lifecycle, lacking empirical verification of a skill's actual utility. This leads to \"causal heterogeneity\" in skill libraries: skills that help in some contexts harm others, with opposing effects canceling out in aggregate metrics, making them invisible to global curation methods.\n\n## Core Contributions\n- **Proposed ASSAY Framework**: A framework that separates skill generation from curation. It computes per-skill causal attribution on a small development set, restructures the library offline, and suppresses skills with negative predicted effects for each specific test task.\n- **Challenge 1: Causal Heterogeneity of Skill Utility**. Individual skills often help in some task types while hurting in others, making their net negative impact invisible to global metrics. **Solution**: The paper uses randomized masking to measure per-skill causal contributions on held-out tasks, precisely identifying skills that are harmful in specific contexts.\n- **Challenge 2: Inference-time Skill-Task Matching Bottleneck**. Simply removing bad skills globally is insufficient; the key challenge is matching the right skills to the right tasks during inference. **Solution**: Introduces per-task masking to dynamically suppress skills with negative predicted effects for each test instance, preventing interference from irrelevant or harmful skills.\n\n## Implementation and Evaluation\n- **Setup**: Evaluated on two benchmarks (AppWorld and tau-bench) across seven base models from four providers.\n- **Key Results**:\n    - On the hardest split of AppWorld, DeepSeek-V3 with ASSAY achieved 69.3% task-goal completion (a 47.4% relative improvement), setting a new state-of-the-art among all published methods, including weight-tuned approaches.\n    - On tau-bench retail, GPT-4.1 improved by 8.7% relatively, surpassing o4-mini, o1, and GPT-4.5 on the public leaderboard without any weight modification.\n- **Comparison**: ASSAY consistently outperforms prior skill-curation approaches. Ablation studies confirm that the dominant gain comes from per-task masking, highlighting that inference-time matching is the primary bottleneck rather than just global removal of bad skills.\n\n## 4. Conclusion\nThe paper identifies a systematic downside in current LLM agent skill accumulation: unchecked reliance on LLM judgment fails to account for the causal utility of skills. By proposing ASSAY, which leverages causal attribution and dynamic per-task masking, the authors effectively address skill heterogeneity and matching issues. The method significantly boosts performance across multiple mainstream models on complex interactive benchmarks without weight updates, demonstrating the importance of separating skill generation from evidence-based curation.",
+      "render_excerpt": "机构: UNC Chapel Hill, Purdue University, NVIDIA<br>本文指出了当前 LLM 智能体技能积累中 unchecked accumulation 的系统性缺陷，即 LLM 自身判断无法有效区分技能的因果效用。通过提出 ASSAY 框架，利用因果归因和按任务动态掩码技术，成功解决了技能异质性和匹配难题。该方法在不修改模型权重的情况下，显著提升了多个主流模型在复杂交互基准上的表现，证明了分离技能生成与基于实证证据的策展的重要性。",
+      "render_excerpt_en": "Institution: UNC Chapel Hill, Purdue University, NVIDIA<br>## 1. What the Paper Does - **Background**: LLM agents can improve without weight updates by accumulating natural-language skills (rules, heuristics) from experience. Current systems delegate all decisions regarding skill retention and application solely to LLM judgment.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-13T16:37:38Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-13"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.15508",
+      "date": "2026-06-13",
+      "title": "ToolMenuBench: Benchmarking Tool-Menu Filtering Strategies for Reliable and Efficient LLM Agents",
+      "authors": [
+        "Rahul Suresh Babu",
+        "Laxmipriya Ganesh Iyer"
+      ],
+      "abstract": "Tool-augmented large language model agents increasingly operate over large tool libraries, but existing evaluations often focus on whether a model can call a tool correctly rather than how the visible tool menu shapes reliability, efficiency, and safety-relevant risk exposure. We introduce ToolMenuBench, a benchmark for evaluating tool-menu construction in multi-step LLM agents. ToolMenuBench varies tool-menu size, distractor type, state-dependent task structure, and risk exposure, and reports both filter-level and downstream agent metrics, including visible-tool count, risky-tool exposure, task success, wrong-tool calls, premature actions, and token usage. In a controlled evaluation across seven model backends, three tool-menu sizes, six filtering methods, and seven evaluation settings, CMTF improves task success from 32.1% under all-tools exposure to 85.7%, while reducing average token usage by roughly 98%. Causal minimal tool filtering achieves the strongest overall tradeoff, reducing visible tools, wrong-tool calls, premature actions, and risky-tool exposure relative to unfiltered exposure, lexical filtering, state-aware filtering, and broader causal-path baselines. ToolMenuBench provides a reusable evaluation framework for studying the agent-interface problem: which tools should be visible, when they should be visible, and under what cost or risk constraints.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.15508v1",
+        "pdf": "https://arxiv.org/pdf/2606.15508v1",
         "github": null,
         "blog": null
       },
@@ -76,175 +228,19 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：智能体（Agent）的记忆系统包含两个控制面：负责检索存储事实的“召回面”（recall plane）和负责通过覆盖、释放、清除来修改事实的“控制面”（control plane）。在生产环境中，主要的失败模式是“遗忘失败”（如已轮换的密码仍被推荐、已删除的GDPR记录仍出现），而非检索失败。\n- **已有工作为什么解决不了**：现有的记忆框架和基准测试（如LongMemEval, MTEB, BEIR）过度专注于优化召回率（R@k等），完全忽略了对“受控遗忘”能力的测试。研究表明，高召回准确率并不能保证系统能正确执行遗忘指令，导致现有系统在需要删除或更新信息时表现糟糕。\n\n## 文章的核心贡献点\n- **提出了一个名为 ForgetEval 的评估套件及控制面放置架构研究**：包含1000个模板化案例和385个对抗性案例，以及一个允许异构记忆存储接入的适配器协议。\n- **挑战1：标准化与跨语言/标识符混淆导致的遗忘失效**。难点在于确定性原语无法处理语义层面的等价性（如不同语言或混淆ID指向同一实体）。论文方法发现，在“写入时”（inscribe-time）引入LLM进行标准化处理，可以将此类场景的遗忘成功率从≤5%提升至100%。\n- **挑战2：意图感知的删除失效（如前缀冲突和复合事实）**。难点在于简单的写入时处理无法理解复杂的删除意图或上下文依赖。论文方法提出在“突变时”（mutation-time）挂钩LLM，能够恢复意图感知删除能力（成功率78-85%），并显著提升整体各类别的表现（整体达到91.7-93.2%）。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：ForgetEval 包含132个人工构建的核心案例和253个LLM生成并经Oracle验证的案例，采用确定性子串匹配评分。提供了六方法适配器协议，仅需约130行代码即可接入不同的记忆存储后端。所有代码和适配器以MIT协议开源。\n- **Evaluation 结果**：\n    - **确定性原语**：仅适用于词汇/时间类别，在标识符混淆和跨语言场景下失败率极高（0-5%）。\n    - **写入时LLM**：解决了标准化问题（100%成功），但在意图感知删除上完全失败（0%）。\n    - **突变时LLM挂钩**：在保持召回路径不变的情况下，整体成功率达到91.7-93.2%，每次运行成本约0.17美元，突变延迟约2.3秒/例（相比确定性的64-191毫秒有所增加，但可接受）。\n- **对比相关工作**：以 MemPalace 为例，其在 Memora 基准上的召回得分为60/150，但在本文的385个对抗性遗忘测试中得分为0/385，证明了现有高召回模型在控制面上的严重缺失。外部盲测复现了标准化不对称性，并证实联合放置带来了+27.8分的提升。\n\n#### 总结\n本文揭示了LLM在智能体记忆管道中的位置（写入时 vs 突变时）决定了系统能从哪种遗忘失败模式中恢复。通过ForgetEval基准测试，作者证明了现有的纯召回优化不足以应对生产环境中的隐私和数据一致性需求。最佳实践是采用“突变时LLM挂钩”或结合写入时标准化的混合架构，以在可控的成本和延迟下实现高效的受控遗忘。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Agent memory systems consist of a \"recall plane\" for retrieving facts and a \"control plane\" for mutating them (supersede, release, purge). In production, the primary failure mode is \"forgetting failure\" (e.g., rotated credentials still being recommended, GDPR-deleted records resurfacing), not retrieval failure.\n- **Why Existing Work Fails**: Current memory frameworks and benchmarks (e.g., LongMemEval, MTEB, BEIR) are saturated with optimizing recall metrics (R@k) and completely neglect testing the \"controlled forgetting\" capability. High recall accuracy does not guarantee the system can correctly execute forget commands, leading to poor performance when data deletion or update is required.\n\n## Core Contributions\n- **Proposed ForgetEval benchmark and an architectural study on control-plane LLM placement**: Includes a 1000-case templated suite, a 385-case adversarial layer, and an adapter protocol for heterogeneous memory stores.\n- **Challenge 1: Forgetting failures due to canonicalization issues (cross-lingual/identifier obfuscation)**. The difficulty lies in deterministic primitives failing to handle semantic equivalence. The paper shows that introducing an LLM at \"inscribe-time\" for canonicalization recovers success rates from ≤5% to 100% in these scenarios.\n- **Challenge 2: Intent-aware deletion failures (e.g., prefix collisions, compound facts)**. The difficulty is that inscribe-time processing cannot grasp complex deletion intents or context dependencies. The paper proposes hooking an LLM at \"mutation-time,\" which recovers intent-aware deletion capabilities (78-85% success) and boosts overall performance across nearly all categories to 91.7-93.2%.\n\n## Implementation and Evaluation\n- **Implementation**: ForgetEval comprises 132 hand-crafted and 253 LLM-drafted/oracle-validated cases, scored via deterministic substring matching. A six-method Adapter Protocol allows integration of diverse memory backends in ~130 lines of code. All assets are released under MIT license.\n- **Evaluation Results**:\n    - **Deterministic Primitives**: Suffice for lexical/temporal tasks but fail significantly in identifier obfuscation and cross-lingual settings (0-5% success).\n    - **Inscribe-time LLM**: Solves canonicalization (100% success) but fails completely in intent-aware deletion (0%).\n    - **Mutation-time LLM Hook**: Achieves 91.7-93.2% overall success rate with unchanged recall paths. Cost is ~$0.17 per 385-case run, with mutation latency of ~2.3s/case (vs. 64-191ms for deterministic).\n- **Comparison with Related Work**: For instance, MemPalace scores 60/150 on the Memora recall benchmark but scores 0/385 on the adversarial forgetting tests, demonstrating the disconnect between recall optimization and control-plane efficacy. External blind validation replicated the findings, showing a +27.8 point lift from joint placement.\n\n## 4. Conclusion\nThe paper reveals that the placement of the LLM within the agent memory pipeline (inscribe-time vs. mutation-time) dictates which forgetting failure modes the system can recover from. Using the ForgetEval benchmark, the authors demonstrate that existing recall-centric optimizations are insufficient for production privacy and consistency needs. The optimal approach involves a \"mutation-time LLM hook\" or a hybrid architecture combining inscribe-time canonicalization, achieving efficient controlled forgetting with manageable cost and latency.",
-      "render_excerpt": "本文揭示了LLM在智能体记忆管道中的位置（写入时 vs 突变时）决定了系统能从哪种遗忘失败模式中恢复。通过ForgetEval基准测试，作者证明了现有的纯召回优化不足以应对生产环境中的隐私和数据一致性需求。最佳实践是采用“突变时LLM挂钩”或结合写入时标准化的混合架构，以在可控的成本和延迟下实现高效的受控遗忘。",
-      "render_excerpt_en": "## 1. What the Paper Did - **Background**: Agent memory systems consist of a \"recall plane\" for retrieving facts and a \"control plane\" for mutating them (supersede, release, purge). In production, the primary failure mode is \"forgetting failure\" (e.g., rotated credentials still being recommended, GDPR-deleted records resurfacing), not retrieval failure.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着工具增强型大型语言模型（LLM）代理在大型工具库上运行，可见的“工具菜单”成为代理接口的核心部分。现有的评估主要关注模型是否能正确调用单个工具，而忽视了工具菜单的构建方式如何影响代理的可靠性、效率和安全性风险暴露。\n- **已有工作为什么解决不了**：现有基准测试通常将可用工具集视为固定或给定的，未能隔离“工具菜单设计”这一关键问题。它们无法有效评估在每一步决策中应向代理展示哪些工具、菜单大小如何影响可靠性、干扰项的影响，以及过滤策略如何在任务成功率、Token成本和安全风险之间进行权衡。仅靠语义相关性检索往往不够，因为语义相关的工具在当前任务状态下未必是因果上合适的下一步行动。\n\n## 文章的核心贡献点\n- **提出了一个 ToolMenuBench**：这是一个用于评估多步 LLM 代理中工具菜单构建的基准测试框架。它通过变化工具菜单大小、干扰项类型、状态依赖的任务结构和风险暴露程度，报告过滤层级和下游代理指标（如可见工具数量、风险工具暴露、任务成功率、错误工具调用、过早行动和 Token 使用量）。\n- **挑战1：如何在减少可见工具数量的同时保持高任务成功率？**\n    - **难点**：暴露所有工具会增加错误调用和 Token 消耗，但过度过滤可能导致遗漏必要工具。语义过滤可能包含无关但语义相似的干扰项。\n    - **解决方法**：论文引入并评估了因果最小工具过滤（CMTF），该方法基于前置条件、效果和任务状态进度来塑造工具菜单，而非仅依赖语义相关性，从而在大幅减少可见工具的同时显著提升成功率。\n- **挑战2：如何量化和降低代理的安全风险暴露？**\n    - **难点**：传统评估缺乏对“风险工具暴露”的细粒度衡量，难以区分安全与危险的工具选择场景。\n    - **解决方法**：ToolMenuBench 专门设计了包含风险暴露变量的评估设置，通过对比不同过滤方法（如无过滤、词汇过滤、状态感知过滤等），证明 CMTF 能有效减少 risky-tool exposure（风险工具暴露）和 premature actions（过早行动）。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在7种模型后端、3种工具菜单大小、6种过滤方法和7种评估设置下进行了受控评估。\n- **主要结果**：\n    - **CMTF 性能**：因果最小工具过滤（CMTF）将任务成功率从全工具暴露下的 32.1% 提升至 85.7%。\n    - **效率提升**：平均 Token 使用量减少了约 98%。\n    - **综合权衡**：相较于无过滤、词汇过滤、状态感知过滤和更广泛的因果路径基线，CMTF 在减少可见工具、错误工具调用、过早行动和风险工具暴露方面实现了最强的整体权衡。\n- **对比结论**：现有方法（如仅基于语义检索）在处理复杂状态依赖任务和干扰项时表现不佳，而基于因果关系的过滤策略被证明能更有效地解决代理接口问题。\n\n#### 总结\n本文提出了 ToolMenuBench，填补了 LLM 代理评估中关于工具菜单构建研究的空白。研究指出，可靠的代理不仅需要正确的工具调用语法，更需要系统的界面评估来决定在何种成本和风险约束下、何时向模型展示哪些工具。实验表明，基于因果逻辑的最小化工具过滤（CMTF）是提升代理可靠性、效率和安全性的有效途径，为未来的代理接口设计提供了可重用的评估框架和指导原则。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Tool-augmented Large Language Model (LLM) agents increasingly operate over large tool libraries, making the visible \"tool menu\" a central part of the agent interface. Existing evaluations primarily focus on whether a model can correctly call an individual tool, neglecting how tool-menu construction impacts reliability, efficiency, and safety-relevant risk exposure.\n- **Why Existing Work Falls Short**: Current benchmarks often treat the available tool set as fixed or given, failing to isolate the \"tool-menu design\" problem. They do not adequately evaluate which tools should be visible at each decision step, how menu size affects reliability, the impact of distractors, or how filtering strategies trade off task success, token cost, and safety risks. Semantic relevance alone is insufficient, as semantically related tools may not be causally appropriate for the current task state.\n\n## Core Contributions\n- **Proposed ToolMenuBench**: A benchmark for evaluating tool-menu construction in multi-step LLM agents. It varies tool-menu size, distractor types, state-dependent task structures, and risk exposure, reporting both filter-level and downstream agent metrics (e.g., visible tool count, risky-tool exposure, task success, wrong-tool calls, premature actions, and token usage).\n- **Challenge 1: How to maintain high task success while reducing the number of visible tools?**\n    - **Difficulty**: Exposing all tools increases wrong calls and token consumption, but aggressive filtering may omit necessary tools. Semantic filtering often includes irrelevant but semantically similar distractors.\n    - **Solution**: The paper introduces and evaluates Causal Minimal Tool Filtering (CMTF), which shapes the tool menu based on preconditions, effects, and task-state progress rather than just semantic relevance, significantly improving success rates while drastically reducing visible tools.\n- **Challenge 2: How to quantify and reduce safety risk exposure for agents?**\n    - **Difficulty**: Traditional evaluations lack fine-grained metrics for \"risky-tool exposure,\" making it hard to distinguish between safe and dangerous tool selection scenarios.\n    - **Solution**: ToolMenuBench specifically designs evaluation settings with risk exposure variables. By comparing different filtering methods (e.g., unfiltered, lexical, state-aware), it demonstrates that CMTF effectively reduces risky-tool exposure and premature actions.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Controlled evaluation across 7 model backends, 3 tool-menu sizes, 6 filtering methods, and 7 evaluation settings.\n- **Key Results**:\n    - **CMTF Performance**: Causal Minimal Tool Filtering (CMTF) improved task success from 32.1% (under all-tools exposure) to 85.7%.\n    - **Efficiency Gain**: Average token usage was reduced by approximately 98%.\n    - **Overall Trade-off**: Compared to unfiltered exposure, lexical filtering, state-aware filtering, and broader causal-path baselines, CMTF achieved the strongest overall trade-off by reducing visible tools, wrong-tool calls, premature actions, and risky-tool exposure.\n- **Comparison Conclusion**: Existing methods (such as those relying solely on semantic retrieval) perform poorly when handling complex state-dependent tasks and distractors. Causality-based filtering strategies are proven to be more effective in addressing the agent-interface problem.\n\n#### Summary\nThis paper introduces ToolMenuBench, filling a gap in LLM agent evaluation regarding tool-menu construction. It highlights that reliable agents require more than correct tool-call syntax; they need systematic interface evaluation to determine which tools to show, when, and under what cost or risk constraints. Experiments demonstrate that Causal Minimal Tool Filtering (CMTF) is an effective approach to enhancing agent reliability, efficiency, and safety, providing a reusable evaluation framework and guiding principles for future agent interface design.",
+      "render_excerpt": "本文提出了 ToolMenuBench，填补了 LLM 代理评估中关于工具菜单构建研究的空白。研究指出，可靠的代理不仅需要正确的工具调用语法，更需要系统的界面评估来决定在何种成本和风险约束下、何时向模型展示哪些工具。实验表明，基于因果逻辑的最小化工具过滤（CMTF）是提升代理可靠性、效率和安全性的有效途径，为未来的代理接口设计提供了可重用的评估框架和指导原则。",
+      "render_excerpt_en": "This paper introduces ToolMenuBench, filling a gap in LLM agent evaluation regarding tool-menu construction. It highlights that reliable agents require more than correct tool-call syntax; they need systematic interface evaluation to determine which tools to show, when, and under what cost or risk constraints. Experiments demonstrate that Causal Minimal Tool Filtering (CMTF) is an effective approach to enhancing agent reliability, efficiency, and safety, providing a reusable evaluation framework and guiding principles for future agent interface design.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-14T16:32:15Z"
+        "captured_at": "2026-06-13T23:27:51Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-14"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15874",
-      "date": "2026-06-14",
-      "title": "LLM-as-Code Agentic Programming for Agent Harness",
-      "authors": [
-        "Junjia Qi",
-        "Zichuan Fu",
-        "Jingtong Gao",
-        "Wenlin Zhang",
-        "Hanyu Yan",
-        "Xian Wu",
-        "Xiangyu Zhao"
-      ],
-      "abstract": "Every major LLM agent framework gives the LLM the role of orchestrator; the model decides what to do next, when to call tools, and when to stop. We argue that token explosion, control-flow hallucination, and unreliable completion are not implementation bugs but architectural consequences of assigning the deterministic work of looping, branching, and sequencing to a probabilistic system. A better prompt or a stronger model cannot guarantee the reliability of the LLM agent. We therefore propose Agentic Programming, in which the program governs all control flow, and the LLM is itself part of it, an adaptive component we call LLM-as-Code and invoke only where a task calls for reasoning or generation. Within each call the model keeps full flexibility, but it cannot alter the program's execution path. With control in the program, the LLM's context is built from the execution history's call tree and forms a directed acyclic graph (DAG). Each call's context length is then determined by its call depth rather than by accumulation over steps. A case study of computer-use agents shows that the design is practical, not just a theoretical stance, substantially improving the stability of long visual operation sequences.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15874v1",
-        "pdf": "https://arxiv.org/pdf/2606.15874v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "City University of Hong Kong",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：当前主流的 LLM Agent 框架（如 AutoGen, OpenHands）都将 LLM 置于“编排者”的核心地位，由模型决定下一步操作、工具调用及终止条件。这种设计在短任务中表现良好，但在长程任务（如多文件重构）中暴露出严重问题。\n- **已有工作为什么解决不了**：现有方法将 Token 爆炸、控制流幻觉和完成不可靠视为实现层面的 Bug，试图通过更好的提示词、更长的上下文窗口或重试逻辑来缓解。然而，这些方法未能触及根本架构缺陷：将循环、分支和序列等确定性控制流工作分配给概率性系统。无论模型多强或提示词多好，都无法从架构上保证长程任务的可靠性，错误会在长序列中累积且无法被边界约束。\n\n## 文章的核心贡献点\n- **提出了一个 Agentic Programming（代理编程范式）**：该范式主张由程序 govern 所有控制流，LLM 仅作为其中的一部分（称为 LLM-as-Code），仅在需要推理或生成时被调用。\n- **挑战1：控制流幻觉与执行路径不稳定**。难点在于 LLM 作为概率模型，在长序列中容易偏离预定逻辑或过早报告完成。论文方法通过将控制权收归程序代码，LLM 在每次调用中保持灵活性但无法改变程序的执行路径，从而从架构上杜绝了控制流幻觉。\n- **挑战2：Token 爆炸与上下文冗余**。难点在于传统 ReAct 模式下上下文随步骤线性累积，导致关键早期信息丢失或窗口溢出。论文方法基于执行历史的调用树构建有向无环图（DAG），使得每次调用的上下文长度由调用深度决定而非步骤累积，有效控制了上下文规模并保留了必要的结构信息。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与案例研究**：文章通过计算机使用代理（Computer-use agents）的案例研究验证了设计的实用性。在该设计中，LLM 被封装为代码中的自适应组件，程序负责处理视觉操作序列的逻辑流转。\n- **评估结果**：实验表明，Agentic Programming 显著提高了长视觉操作序列的稳定性。与传统让 LLM 自主决定每一步的框架相比，新方法在处理长程、多步骤任务时表现出更强的鲁棒性，避免了因上下文截断或逻辑跳跃导致的任务失败。\n- **对比**：相较于 AutoGen 等主流框架依赖 LLM 进行全权编排，该方法在长 horizon 任务中展现了架构级的优势，证明了将确定性逻辑交给代码、概率性推理交给 LLM 的混合模式优于纯 LLM 驱动模式。\n\n#### 总结\n本文批判了当前 LLM Agent 框架中将概率模型用于确定性控制流的架构缺陷，提出了 Agentic Programming 范式。通过引入 LLM-as-Code 概念，将控制流完全交由程序管理，LLM 仅作为执行节点嵌入 DAG 结构中。这种方法从根本上解决了 Token 爆炸和控制流幻觉问题，为构建可靠、可扩展的长程 Agent 系统提供了新的架构思路。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Most mainstream LLM agent frameworks (e.g., AutoGen, OpenHands) position the LLM as the central \"orchestrator,\" responsible for deciding next steps, tool calls, and termination. While effective for short tasks, this design fails in long-horizon tasks like multi-file refactoring.\n- **Why Existing Work Fails**: Current approaches treat symptoms like token explosion, control-flow hallucinations, and unreliable completion as implementation bugs, attempting fixes via better prompts, larger context windows, or retry logic. However, these fail to address the root architectural flaw: assigning deterministic control flow (looping, branching) to a probabilistic system. No matter how strong the model, errors compound over long sequences without architectural guarantees.\n\n## Core Contributions\n- **Proposed Agentic Programming**: A new paradigm where the program governs all control flow, and the LLM serves as an adaptive component within it, termed \"LLM-as-Code,\" invoked only for reasoning or generation.\n- **Challenge 1: Control-flow Hallucinations and Unstable Execution Paths**. The difficulty lies in probabilistic models deviating from logic or prematurely reporting completion in long sequences. The paper solves this by retaining control flow in the code; the LLM retains flexibility within calls but cannot alter the program's execution path, architecturally eliminating control-flow hallucinations.\n- **Challenge 2: Token Explosion and Context Redundancy**. The difficulty is that traditional ReAct patterns accumulate context linearly, causing loss of early information or window overflow. The paper constructs a Directed Acyclic Graph (DAG) from the execution history's call tree, ensuring context length is determined by call depth rather than step accumulation, effectively managing context size.\n\n## Implementation and Evaluation\n- **Implementation & Case Study**: The design is validated through a case study on computer-use agents. The LLM is encapsulated as an adaptive component in code, with the program handling the logic of visual operation sequences.\n- **Evaluation Results**: Experiments show that Agentic Programming substantially improves the stability of long visual operation sequences. Compared to frameworks where the LLM autonomously decides every step, the new method demonstrates greater robustness in long-horizon, multi-step tasks, avoiding failures caused by context truncation or logical jumps.\n- **Comparison**: Unlike mainstream frameworks like AutoGen that rely on full LLM orchestration, this approach demonstrates architectural superiority in long-horizon tasks, proving that a hybrid mode (deterministic logic in code, probabilistic reasoning in LLM) outperforms pure LLM-driven modes.\n\n## 4. Conclusion\nThis paper critiques the architectural flaw of using probabilistic models for deterministic control flow in current LLM agent frameworks. It proposes Agentic Programming and the LLM-as-Code concept, where control flow is managed entirely by the program, and the LLM is embedded as a node in a DAG structure. This approach fundamentally resolves token explosion and control-flow hallucinations, offering a new architectural perspective for building reliable, scalable long-horizon agent systems.",
-      "render_excerpt": "机构: City University of Hong Kong<br>本文批判了当前 LLM Agent 框架中将概率模型用于确定性控制流的架构缺陷，提出了 Agentic Programming 范式。通过引入 LLM-as-Code 概念，将控制流完全交由程序管理，LLM 仅作为执行节点嵌入 DAG 结构中。这种方法从根本上解决了 Token 爆炸和控制流幻觉问题，为构建可靠、可扩展的长程 Agent 系统提供了新的架构思路。",
-      "render_excerpt_en": "Institution: City University of Hong Kong<br>## 1. What the Paper Does - **Background**: Most mainstream LLM agent frameworks (e.g., AutoGen, OpenHands) position the LLM as the central \"orchestrator,\" responsible for deciding next steps, tool calls, and termination. While effective for short tasks, this design fails in long-horizon tasks like multi-file refactoring.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-14T15:47:27Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-14"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15862",
-      "date": "2026-06-14",
-      "title": "RetailBench: Benchmarking long horizon reasoning and coherent decision making of LLM agents in realistic retail environments",
-      "authors": [
-        "Linghua Zhang",
-        "Jun Wang",
-        "Jingtong Wu",
-        "Zhisong Zhang"
-      ],
-      "abstract": "Large language model (LLM) agents have made rapid progress on short-horizon, well-scoped tasks, yet their ability to sustain coherent decisions in dynamic long-horizon environments remains uncertain. We introduce RetailBench, a data-grounded simulation benchmark for evaluating tool-using LLM agents in single-store supermarket operation. RetailBench models retail management as a partially observable decision process and is designed to support thousand-day-scale simulations. In this environment, agents must manage pricing, replenishment, supplier selection, shelf assortment, inventory aging, customer feedback, external events, and cash-flow constraints. We evaluate seven contemporary LLMs under representative agent frameworks over a 180-day evaluation horizon and compare them with a privileged oracle policy. Results show substantial variation across models: only a small subset survives the full evaluation horizon, and even the strongest LLM runs remain substantially behind the oracle policy in final net worth and sales outcomes. Behavioral analysis attributes these gaps to incomplete evidence acquisition, surface-level decision making, and the lack of a consistent long-horizon policy. RetailBench provides a controlled testbed for studying reliable autonomy in economically grounded long-horizon decision-making.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15862v2",
-        "pdf": "https://arxiv.org/pdf/2606.15862v2",
-        "github": null,
-        "blog": null
-      },
-      "institution": null,
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在短期、范围明确的任务上取得了快速进展，但其在动态长周期环境中维持连贯决策的能力仍不确定。\n- **已有工作为什么解决不了**：现有的基准测试大多关注短视距任务或静态环境，缺乏对经济 grounded 的、部分可观测的、长周期（如千天级别）复杂决策过程的模拟，无法有效评估智能体在真实零售场景下的长期生存能力和连贯性。\n\n## 文章的核心贡献点\n- **提出了一个 RetailBench**：这是一个基于数据驱动的仿真基准，用于评估在单店超市运营中使用工具的 LLM 智能体。它将零售管理建模为部分可观测决策过程，支持千天规模的模拟。\n- **挑战1：长周期决策中的连贯性与生存能力**。难点在于智能体需要在长达数百天的时间跨度内，处理库存老化、现金流约束等动态变化，避免中途破产或决策崩溃。论文通过构建包含定价、补货、供应商选择等多维任务的复杂仿真环境，并设置180天的评估周期，强制智能体展示长期策略的一致性而非短期优化。\n- **挑战2：部分可观测环境下的证据获取与深度决策**。难点在于智能体无法直接获取所有状态信息，必须主动收集证据并做出深层推理，而非表面反应。论文通过行为分析揭示了当前模型在证据获取不完整和决策表面化上的缺陷，并通过与特权 Oracle 策略的对比，量化了这种差距。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：RetailBench 模拟了单店超市运营，涵盖定价、补货、供应商选择、货架组合、库存老化、客户反馈、外部事件和现金流约束。实验评估了7种当代 LLM 在代表性智能体框架下的表现。\n- **Evaluation 结果**：在180天的评估期内，模型间存在巨大差异。只有一小部分模型能存活至评估结束。即使是最强的 LLM，其最终净资产和销售结果也远远落后于特权 Oracle 策略。\n- **对比分析**：行为分析表明，LLM 与 Oracle 的差距主要归因于证据获取不完整、决策表面化以及缺乏一致的长周期策略。这突显了当前 LLM 智能体在经济驱动的长周期决策中可靠自主性的不足。\n\n#### 总结\nRetailBench 提供了一个受控的测试平台，用于研究在经济基础的长周期决策中可靠的自主性。研究结果表明，尽管 LLM 在短期任务上表现优异，但在面对需要长期连贯性、复杂资源管理和部分可观测信息的真实零售环境时，现有智能体仍存在显著局限，特别是在长期策略一致性和深度推理方面。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language model (LLM) agents have made rapid progress on short-horizon, well-scoped tasks, yet their ability to sustain coherent decisions in dynamic long-horizon environments remains uncertain.\n- **Why Existing Work Falls Short**: Current benchmarks mostly focus on short-horizon tasks or static environments. They lack simulations of economically grounded, partially observable, long-horizon (e.g., thousand-day scale) complex decision processes, failing to effectively evaluate agent survivability and coherence in realistic retail scenarios.\n\n## Core Contributions\n- **Proposed RetailBench**: A data-grounded simulation benchmark for evaluating tool-using LLM agents in single-store supermarket operations. It models retail management as a partially observable decision process supporting thousand-day-scale simulations.\n- **Challenge 1: Coherence and Survivability in Long-Horizon Decision Making**. The difficulty lies in requiring agents to handle dynamic changes like inventory aging and cash-flow constraints over hundreds of days without going bankrupt or collapsing. The paper addresses this by constructing a complex simulation environment with multi-dimensional tasks (pricing, replenishment, etc.) and a 180-day evaluation horizon, forcing agents to demonstrate long-term strategic consistency rather than short-term optimization.\n- **Challenge 2: Evidence Acquisition and Deep Decision Making in Partially Observable Environments**. The challenge is that agents cannot access all state information directly and must actively gather evidence for deep reasoning rather than superficial reactions. The paper reveals current models' deficiencies in incomplete evidence acquisition and surface-level decision-making through behavioral analysis, quantifying the gap against a privileged Oracle policy.\n\n## Implementation and Evaluation\n- **Implementation**: RetailBench simulates single-store supermarket operations, covering pricing, replenishment, supplier selection, shelf assortment, inventory aging, customer feedback, external events, and cash-flow constraints. Seven contemporary LLMs were evaluated under representative agent frameworks.\n- **Evaluation Results**: Over a 180-day horizon, there was substantial variation across models. Only a small subset survived the full evaluation period. Even the strongest LLMs lagged significantly behind the privileged Oracle policy in final net worth and sales outcomes.\n- **Comparison**: Behavioral analysis attributed the gap between LLMs and the Oracle to incomplete evidence acquisition, surface-level decision making, and the lack of a consistent long-horizon policy. This highlights the insufficiency of current LLM agents in achieving reliable autonomy in economically driven long-horizon decision-making.\n\n## 4. Conclusion\nRetailBench provides a controlled testbed for studying reliable autonomy in economically grounded long-horizon decision-making. The results indicate that while LLMs excel in short-term tasks, existing agents exhibit significant limitations in realistic retail environments requiring long-term coherence, complex resource management, and partial observability, particularly in long-term strategic consistency and deep reasoning.",
-      "render_excerpt": "RetailBench 提供了一个受控的测试平台，用于研究在经济基础的长周期决策中可靠的自主性。研究结果表明，尽管 LLM 在短期任务上表现优异，但在面对需要长期连贯性、复杂资源管理和部分可观测信息的真实零售环境时，现有智能体仍存在显著局限，特别是在长期策略一致性和深度推理方面。",
-      "render_excerpt_en": "## 1. What the Paper Did - **Background**: Large language model (LLM) agents have made rapid progress on short-horizon, well-scoped tasks, yet their ability to sustain coherent decisions in dynamic long-horizon environments remains uncertain. - **Why Existing Work Falls Short**: Current benchmarks mostly focus on short-horizon tasks or static environments.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-14T15:30:30Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-14"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15994",
-      "date": "2026-06-14",
-      "title": "Agentic Framework for Deep Learning workload migration via In-Context Learning",
-      "authors": [
-        "Qiyue Liang",
-        "Steven Ingram",
-        "George Vanica",
-        "Andi Gavrilescu",
-        "Newfel Harrat",
-        "Hassan Sipra",
-        "Sethuraman Sankaran"
-      ],
-      "abstract": "Translating deep learning models from PyTorch's flexible, object-oriented design to JAX's functional, stateless setup is usually a manual and error-prone task. Automated migration is challenging because Large Language Models (LLMs) struggle with strict and dynamic API alignment and are prone to mistakes for exacting operations. We propose a fully autonomous system that combines In-Context Learning (ICL) with oracle-driven self-debugging. First, we curated an ICL context that serves as a strict reference for idiomatic JAX styling and test case generation. Second, instead of depending on the LLM to deduce mathematical outputs, we run the source PyTorch modules to get their actual dynamic tensor states. This creates an unchangeable execution oracle. We then use an autonomous agentic loop to synthesize tests based on the oracle data. The test cases are executed repeatedly, and the traceback is sent back to the LLM for self-correction. Ablations show that combining ICL references with oracle grounding and self-debugging greatly outperforms pure instructional and basic agentic baselines. This improvement does not add an excessive computational overhead. Our lightweight pipeline achieves 91% numerical equivalence (compared to baseline: 9%, instruction + self-debugging: 27%) on neural modules, providing a highly reliable, scalable blueprint for cross-framework migration. This has been validated across several state-of-the-art models including SAM (segment anything), T5, Code Whisper amongst others showing high numerical equivalency. Code: https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/MaxCode",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15994v1",
-        "pdf": "https://arxiv.org/pdf/2606.15994v1",
-        "github": "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/MaxCode",
-        "blog": null
-      },
-      "institution": "Google",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：深度学习模型从 PyTorch（灵活、面向对象）迁移到 JAX（函数式、无状态）通常是一项手动且容易出错的任务。这种迁移对于利用 Google TPU 等加速器的成本优势和计算性能至关重要，但两者在执行模式（即时执行 vs JIT 编译）、张量布局、默认精度和控制流结构上存在根本差异。\n- **已有工作为什么解决不了**：现有的大型语言模型（LLM）即使结合了思维链等技术，在处理严格的框架 API 对齐和精确的数学运算时仍然表现不佳。LLM 难以原生处理复杂的高维张量算术，且缺乏可靠的基于执行的验证循环，导致其容易产生幻觉，做出错误的数学和语义判断，无法保证数值等价性。\n\n## 文章的核心贡献点\n- **提出了一个**：结合上下文学习（ICL）与预言机驱动自调试的全自动智能体框架，用于 PyTorch 到 JAX 的代码迁移。\n- **挑战1：LLM 难以掌握地道的 JAX 编程风格和严格的 API 规范。**\n  - **难点**：JAX 要求函数式、无状态的设计以及特定的编译器友好结构，LLM 仅凭通用知识难以生成符合 idiomatic JAX 风格的代码。\n  - **解决方法**：构建了精心策划的 ICL 上下文，作为地道 JAX 风格和测试用例生成的严格参考，为 LLM 提供语法锚点。\n- **挑战2：LLM 无法准确推断动态张量状态和复杂的数学输出，导致数值不等价。**\n  - **难点**：高维张量运算复杂，LLM 容易在数学推导上出错，且无法感知运行时的动态状态。\n  - **解决方法**：引入“执行预言机”机制，运行源 PyTorch 模块获取实际的动态张量状态作为不可变的数学真值基准；通过智能体循环合成基于预言机数据的测试用例，并将执行回溯反馈给 LLM 进行自我修正。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：该框架是一个轻量级的流水线，包含设置、生成预言机、核心翻译和最终自调试四个阶段。它不依赖 LLM 进行数学推导，而是依赖实际执行结果。已在多个最先进模型（如 SAM、T5、Code Whisper 等）上进行了验证。\n- **评估结果**：\n  - **数值等价性**：该方法在神经模块上实现了 **91%** 的数值等价率。\n  - **对比基线**：显著优于纯指令基线（9%）和“指令+自调试”基线（27%）。\n  - **开销**：消融实验表明，结合 ICL 参考、预言机接地和自调试的方法在大幅提升性能的同时，并未增加过多的计算开销。\n\n#### 总结\n本文提出了一种创新的智能体框架，通过将上下文学习与基于实际执行结果的预言机机制相结合，解决了 LLM 在深度学习框架迁移中面临的语义和数值准确性难题。该方法通过提供语法锚点和动态执行锚点，实现了高度可靠且可扩展的跨框架迁移蓝图，在保持低计算开销的同时，大幅提升了 PyTorch 到 JAX 迁移的数值等价性，为利用 TPU 等硬件优势提供了自动化工具支持。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Migrating deep learning models from PyTorch (flexible, object-oriented) to JAX (functional, stateless) is typically a manual and error-prone task. This migration is critical for leveraging the cost efficiency and computational performance of accelerators like Google TPUs, but is hindered by fundamental differences in execution modes (eager vs. JIT), tensor layouts, default precisions, and control flow structures.\n- **Why Existing Work Fails**: Current Large Language Models (LLMs), even with techniques like Chain-of-Thought, struggle with strict framework API alignment and precise mathematical operations. LLMs cannot natively handle complex high-dimensional tensor arithmetic and lack a reliable execution-based verification loop, leading to hallucinations and incorrect mathematical or semantic judgments.\n\n## Core Contributions\n- **Proposed**: A fully autonomous agentic framework combining In-Context Learning (ICL) with oracle-driven self-debugging for PyTorch-to-JAX migration.\n- **Challenge 1: LLMs struggle to master idiomatic JAX programming styles and strict API specifications.**\n  - **Difficulty**: JAX requires functional, stateless designs and compiler-friendly structures, which are difficult for LLMs to generate correctly using only general knowledge.\n  - **Solution**: Curated an ICL context that serves as a strict reference for idiomatic JAX styling and test case generation, providing syntactic anchors for the LLM.\n- **Challenge 2: LLMs cannot accurately infer dynamic tensor states and complex mathematical outputs, leading to numerical inequivalence.**\n  - **Difficulty**: High-dimensional tensor operations are complex, and LLMs are prone to errors in mathematical deduction without awareness of runtime dynamic states.\n  - **Solution**: Introduced an \"execution oracle\" mechanism that runs source PyTorch modules to capture actual dynamic tensor states as an immutable ground truth. An agentic loop synthesizes tests based on this oracle data and feeds execution tracebacks back to the LLM for self-correction.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The framework is a lightweight pipeline consisting of four phases: setup, oracle generation, core translation, and final self-debugging. It relies on actual execution results rather than LLM mathematical deduction. It has been validated on several state-of-the-art models, including SAM, T5, and Code Whisper.\n- **Evaluation Results**:\n  - **Numerical Equivalence**: The method achieved **91%** numerical equivalence on neural modules.\n  - **Comparison with Baselines**: Significantly outperformed the pure instruction baseline (9%) and the \"instruction + self-debugging\" baseline (27%).\n  - **Overhead**: Ablation studies showed that combining ICL references, oracle grounding, and self-debugging greatly improved performance without adding excessive computational overhead.\n\n## 4. Conclusion\nThis paper presents an innovative agentic framework that addresses the semantic and numerical accuracy challenges LLMs face in deep learning framework migration. By combining In-Context Learning with an oracle mechanism based on actual execution results, the method provides syntactic and dynamic execution anchors. This results in a highly reliable and scalable blueprint for cross-framework migration, significantly improving numerical equivalence in PyTorch-to-JAX translation while maintaining low computational overhead, thereby facilitating the utilization of hardware advantages like TPUs.",
-      "render_excerpt": "机构: Google<br>本文提出了一种创新的智能体框架，通过将上下文学习与基于实际执行结果的预言机机制相结合，解决了 LLM 在深度学习框架迁移中面临的语义和数值准确性难题。该方法通过提供语法锚点和动态执行锚点，实现了高度可靠且可扩展的跨框架迁移蓝图，在保持低计算开销的同时，大幅提升了 PyTorch 到 JAX 迁移的数值等价性，为利用 TPU 等硬件优势提供了自动化工具支持。",
-      "render_excerpt_en": "Institution: Google<br>## 1. What the Paper Did - **Background**: Migrating deep learning models from PyTorch (flexible, object-oriented) to JAX (functional, stateless) is typically a manual and error-prone task. This migration is critical for leveraging the cost efficiency and computational performance of accelerators like Google TPUs, but is hindered by fundamental differences in execution modes (eager vs.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-14T19:41:57Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-14"
+        "captured_at": "2026-06-13"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
