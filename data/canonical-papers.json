@@ -1,223 +1,26 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-06-20T08:34:20.535605+00:00",
-  "run_date": "2026-06-13",
+  "generated_at": "2026-06-23T05:36:47.292155+00:00",
+  "run_date": "2026-06-22",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2606.15363",
-      "date": "2026-06-13",
-      "title": "APEX: Adaptive Principle EXtraction A Three-Layer Self-Evolution Framework for Production AI Agents",
+      "paper_id": "2606.23127",
+      "date": "2026-06-22",
+      "title": "Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation",
       "authors": [
-        "Ya-Chuan Chen",
-        "Tien-Jen Lai",
-        "Hsiang-Wei Hu"
+        "Julia Belikova",
+        "Rauf Parchiev",
+        "Evgeny Egorov",
+        "Grigorii Davydenko",
+        "Gleb Gusev",
+        "Andrey Savchenko",
+        "Maksim Makarenko"
       ],
-      "abstract": "Self-improvement in AI agents has emerged as a key research frontier: systems that modify their own prompts, workflows, and decision rules based on accumulated operational experience. The state-of-the-art Self-Harness framework [1] achieves 14--21% improvement on Terminal-Bench-2.0 by mining failure clusters and patching the agent harness. However, Self-Harness optimises only one dimension -- the prompt harness -- leaving behavioural principles and workflow topology unchanged. We propose APEX (Adaptive Principle EXtraction), a three-layer co-evolution framework that simultaneously evolves: (L1) the harness via failure-mode patching, (L2) behavioural principles via success-trace distillation [2], and (L3) the agent workflow topology via structural fitness-based selection [6]. We implement APEX on Joe [13], a production-grade super AI Agent built on NVIDIA Nemotron and designed as an Edge AI Agent Factory for the NVIDIA Agent Challenge 2026, managing a 15-node compute fleet using 114 real task traces collected over 18 days. APEX achieves an APEX Health Score of 0.570 (+90% vs. baseline 0.300) in a single evolutionary run, distilling 6 novel reusable principles and selecting a research-first workflow topology scoring 0.900 (+20%). Our results demonstrate that multi-dimensional co-evolution substantially outperforms single-axis harness optimisation, at a cost of only 4 LLM calls (~270 s) on a local qwen2.5-coder:32b instance.",
+      "abstract": "Procedural memory is increasingly used to improve LLM agents on recurring workplace tasks, yet its ability to produce reusable skills remains poorly understood. We introduce AFTER, a benchmark of 382 realistic enterprise tasks spanning six professional roles and 22 procedural skills, designed to evaluate how skills transfer across tasks, roles, and model backbones. The benchmark includes controlled evaluation settings for local improvement, cross-task transfer, cross-role transfer, and cross-model generalization. Experiments show that procedural memory delivers consistent gains in industrial workflows: a single refinement round improves aggregate performance by 3.7-6.7 points, while skills evolved from diverse multi-model execution traces achieve 73.1% cross-model test accuracy, outperforming all single-model trace sources. We further find that some skills generalize broadly across tasks and models, whereas others become specialized to role-specific workflows and lose effectiveness under transfer. These results provide practical guidance for building, evaluating, and deploying procedural memory systems in production agent platforms.",
       "links": {
-        "abs": "http://arxiv.org/abs/2606.15363v1",
-        "pdf": "https://arxiv.org/pdf/2606.15363v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "Grace AI Technology",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：生产环境中的 AI Agent 面临初始配置（系统提示词、工作流结构、决策规则）随环境和任务分布变化而过时的问题。传统的解决方法依赖缓慢且昂贵的人工提示工程，与生产现实脱节。\n- **已有工作的局限**：现有的自改进方法（如 Self-Harness、EvolveR、EvoAgentX 等）通常只针对单一维度进行优化。例如，Self-Harness 仅通过挖掘失败集群来修补提示词 Harness，而忽略了行为原则和工作流拓扑的演变；其他方法也各自局限于单一轴线的改进，导致其他未优化的部分成为瓶颈，无法实现整体性能的最大化。\n\n## 文章的核心贡献点\n- **提出了一个 APEX (Adaptive Principle EXtraction) 框架**：这是一个三层协同进化框架，能够同时进化 Harness、行为原则和工作流拓扑。\n- **挑战1：单一维度优化的局限性导致系统性失败**。完美的 Harness 若配合次优的工作流仍会失败，而良好的原则若缺乏对关键失败模式的覆盖会在分布偏移下退化。**解决方法**：APEX 采用三层协同进化机制，L1 层通过失败模式修补优化 Harness，L2 层通过成功轨迹蒸馏提取行为原则，L3 层基于结构适应度选择优化工作流拓扑，三者共享生产轨迹池并同步更新。\n- **挑战2：缺乏适用于多维度进化的综合评估指标**。传统指标难以同时衡量 Harness 覆盖率、原则丰富度和工作流结构质量。**解决方法**：提出了 APEX Health Score，这是一个复合指标，能够分离并量化 Harness 覆盖、原则丰富性和结构工作流质量，从而全面评估 Agent 的多维进化进度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：APEX 被实现在名为 Joe 的生产级超级 AI Agent 上，该 Agent 基于 NVIDIA Nemotron 构建，用于管理一个包含 15 个节点的计算集群。系统使用了在 18 天内收集的 114 个真实任务轨迹。代码开源为三个可组合的 Python 模块，可部署在任何拥有轨迹数据库和本地 Ollama 实例的 Agent 上。\n- **评估结果**：在单次进化运行中，APEX 将 APEX Health Score 从基线的 0.300 提升至 0.570（提升 90%）。它提炼出了 6 个新的可重用原则，并选择了一个得分 0.900（提升 20%）的“研究优先”工作流拓扑。\n- **对比与效率**：与仅优化单一轴线（如 Self-Harness）的方法相比，APEX 的多维协同进化表现出显著优势。此外，其计算成本极低，在本地 qwen2.5-coder:32b 实例上仅需 4 次 LLM 调用（约 270 秒）即可完成进化步骤。\n\n#### 总结\nAPEX 证明了在生产环境中，AI Agent 的自我改进不应局限于单一的提示词或工作流优化，而应采用 Harness、行为原则和工作流拓扑的多维度协同进化。通过在真实生产轨迹上的验证，APEX 展示了以极低的计算成本实现大幅性能提升的能力，为生产级 AI Agent 的自动化持续优化提供了新的范式。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: AI agents deployed in production face the challenge of stale initial configurations (system prompts, workflow structures, decision rules) as environments and task distributions evolve. Traditional solutions rely on slow, expensive manual prompt engineering disconnected from production realities.\n- **Limitations of Existing Work**: Current self-improvement methods (e.g., Self-Harness, EvolveR, EvoAgentX) typically optimize only a single dimension. For instance, Self-Harness improves performance by mining failure clusters to patch the prompt harness but leaves behavioral principles and workflow topology unchanged. This single-axis optimization leaves other components as bottlenecks, preventing maximal overall performance.\n\n## Core Contributions\n- **Proposed APEX (Adaptive Principle EXtraction)**: A three-layer co-evolution framework that simultaneously evolves the harness, behavioral principles, and workflow topology.\n- **Challenge 1: Limitations of single-dimension optimization leading to systematic failures**. A perfect harness with a suboptimal workflow still fails, and well-evolved principles degrade under distribution shift if the harness misses critical failure modes. **Solution**: APEX employs a three-layer co-evolution mechanism: L1 optimizes the harness via failure-mode patching, L2 distills behavioral principles from success traces, and L3 evolves workflow topology based on structural fitness. All three layers share a production trace pool and update synchronously.\n- **Challenge 2: Lack of comprehensive metrics for multi-dimensional evolution**. Traditional metrics struggle to simultaneously measure harness coverage, principle richness, and workflow structure quality. **Solution**: Introduced the APEX Health Score, a composite metric that separates and quantifies harness coverage, principle richness, and structural workflow quality to comprehensively assess multi-dimensional agent evolution.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: APEX was implemented on 'Joe', a production-grade super AI Agent built on NVIDIA Nemotron, managing a 15-node compute fleet. It utilized 114 real task traces collected over 18 days. The code is open-sourced as three composable Python modules, deployable on any agent with a trace database and a local Ollama instance.\n- **Evaluation Results**: In a single evolutionary run, APEX improved the APEX Health Score from a baseline of 0.300 to 0.570 (+90%). It distilled 6 novel reusable principles and selected a 'research-first' workflow topology with a score of 0.900 (+20%).\n- **Comparison & Efficiency**: Compared to single-axis optimization methods like Self-Harness, APEX's multi-dimensional co-evolution demonstrated substantial performance gains. Furthermore, it achieved this with minimal computational cost, requiring only 4 LLM calls (~270 seconds) on a local qwen2.5-coder:32b instance.\n\n## 4. Conclusion\nAPEX demonstrates that self-improvement for production AI agents should not be limited to single-axis prompt or workflow optimization. Instead, it requires multi-dimensional co-evolution of the harness, behavioral principles, and workflow topology. Validated on real-world production traces, APEX shows significant performance improvements at a low computational cost, offering a new paradigm for the automated continuous optimization of production-grade AI agents.",
-      "render_excerpt": "机构: Grace AI Technology<br>APEX 证明了在生产环境中，AI Agent 的自我改进不应局限于单一的提示词或工作流优化，而应采用 Harness、行为原则和工作流拓扑的多维度协同进化。通过在真实生产轨迹上的验证，APEX 展示了以极低的计算成本实现大幅性能提升的能力，为生产级 AI Agent 的自动化持续优化提供了新的范式。",
-      "render_excerpt_en": "Institution: Grace AI Technology<br>## 1. What the Paper Did - **Background**: AI agents deployed in production face the challenge of stale initial configurations (system prompts, workflow structures, decision rules) as environments and task distributions evolve. Traditional solutions rely on slow, expensive manual prompt engineering disconnected from production realities.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-13T15:47:27Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-13"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15419",
-      "date": "2026-06-13",
-      "title": "Let LLMs Judge Each Other: Multi-Agent Peer-Reviewed Reasoning for Medical Question Answering",
-      "authors": [
-        "Zaifu Zhan",
-        "Shuang Zhou",
-        "Rui Zhang"
-      ],
-      "abstract": "Objective: To enhance the accuracy, interpretability, and robustness of large language models (LLMs) in medical question answering (MedQA). Method: We designed a multi-agent peer-reviewed reasoning method in which multiple LLM agents independently generate chain-of-thought reasoning with candidate answers, then act as peer reviewers to evaluate each other's reasoning for factual correctness and logical soundness. The highest-rated reasoning chain is selected to produce the final answer. Experiments were conducted with five state-of-the-art LLMs (Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B) on three benchmark datasets: HeadQA, MedQA-USMLE, and PubMedQA. Performance was compared against single-model chain-of-thought reasoning and chain-of-thought-based majority voting. Results: Peer-reviewed reasoning consistently outperformed both baselines. The best model combination achieved an average accuracy of 0.820 across datasets, exceeding the strongest single model (0.777) and majority voting ensembles (up to 0.789). The method also scaled effectively with more participating models, while peer assessments reliably distinguished high- from low-quality reasoning chains. Conclusion: The proposed multi-agent peer-reviewed reasoning method enables LLMs to act as both solvers and evaluators, yielding superior performance in MedQA. By emphasizing reasoning quality rather than answer agreement alone, this approach improves accuracy, interpretability, and robustness, offering a promising direction for trustworthy biomedical AI systems.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15419v1",
-        "pdf": "https://arxiv.org/pdf/2606.15419v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "University of Minnesota",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在生物医学自然语言处理任务中取得了显著进展，特别是在医疗问答（MedQA）领域。然而，由于医疗决策对事实准确性和逻辑严密性要求极高，模型产生的幻觉或逻辑错误可能导致严重的临床误导。\n- **已有工作为什么解决不了**：现有的方法主要依赖单模型的思维链（Chain-of-Thought, CoT）或基于多数投票的集成方法。单模型CoT缺乏自我纠错机制，而多数投票仅关注答案的一致性，忽略了推理过程的质量。如果多个模型都因相同的错误逻辑得出相同错误答案，投票机制无法识别并纠正这种系统性错误，且现有工作多在生成答案后才评估推理，未能将推理质量评估融入决策闭环。\n\n## 文章的核心贡献点\n- **提出了一个多智能体同行评审推理框架（Multi-Agent Peer-Reviewed Reasoning）**：该框架让多个LLM智能体不仅作为解题者生成带有候选答案的思维链，还作为同行评审员相互评估彼此推理的事实正确性和逻辑健全性，最终选择评分最高的推理链生成答案。\n- **挑战1：如何超越单纯的答案一致性，实现基于推理质量的决策？**\n  - **难点**：传统集成方法（如多数投票）假设“多数即真理”，但在复杂医疗问题中，错误的推理也可能导致一致的错误答案，且难以区分高质量与低质量的推理路径。\n  - **解决方法**：引入互评机制，让LLM充当评审员，直接对推理链的逻辑连贯性和事实准确性进行打分，从而选出逻辑最严密的推理路径，而非仅仅统计答案出现的频率。\n- **挑战2：如何在无需额外训练数据的情况下提升模型的鲁棒性和可解释性？**\n  - **难点**：微调模型需要大量标注数据，且黑盒模型缺乏透明度；单一模型容易受提示词偏差影响，稳定性不足。\n  - **解决方法**：利用现成的SOTA LLMs构建多智能体系统，通过角色分工（解题者与评审者）激发模型的 emergent reasoning 能力。评审过程本身提供了可解释的依据，且多模型协作降低了单个模型出错的风险，提升了整体鲁棒性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究使用了五种最先进的LLM（Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B）。系统在三个基准数据集上进行测试：HeadQA、MedQA-USMLE 和 PubMedQA。架构上，每个智能体独立生成“推理-答案”对，然后交换进行同行评审，最后聚合评审分数选择最佳推理。\n- **Evaluation 结果**：\n  - 同行评审推理方法在所有数据集上均一致优于基线方法。\n  - 最佳模型组合的平均准确率达到 **0.820**。\n  - 相比之下，最强的单模型准确率为 **0.777**，基于思维链的多数投票集成方法最高仅为 **0.789**。\n  - 该方法表现出良好的可扩展性，随着参与模型数量的增加，性能稳步提升。\n  - 同行评估能够有效区分高质量和低质量的推理链，证明了其作为质量过滤器的可靠性。\n\n#### 总结\n本文提出了一种创新的多智能体同行评审推理方法，旨在解决医疗问答中准确性和可解释性的关键问题。通过让LLM相互评判推理过程而非仅仅比较答案，该方法显著超越了传统的单模型思维和多数投票基线。实验结果表明，强调推理质量而非单纯的答案一致性，能有效提升医疗AI系统的可信度、鲁棒性和准确性，为构建值得信赖的生物医学AI系统提供了新的方向。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) have advanced biomedical NLP, particularly in Medical Question Answering (MedQA). However, high stakes in clinical decisions require extreme factual accuracy and logical soundness, where hallucinations or logical flaws can be misleading.\n- **Why Existing Work Falls Short**: Current methods rely on single-model Chain-of-Thought (CoT) or majority voting ensembles. Single-model CoT lacks self-correction, while majority voting focuses only on answer agreement, ignoring reasoning quality. If multiple models share the same flawed logic, voting fails to correct systemic errors, and existing evaluations often assess reasoning post-hoc rather than integrating it into the decision loop.\n\n## Core Contributions\n- **Proposed a Multi-Agent Peer-Reviewed Reasoning Framework**: This framework enables multiple LLM agents to act as both solvers (generating CoT with candidate answers) and peer reviewers (evaluating each other's reasoning for factual correctness and logical soundness), selecting the highest-rated reasoning chain for the final answer.\n- **Challenge 1: How to prioritize reasoning quality over simple answer consensus?**\n  - **Difficulty**: Traditional ensembles assume \"majority is truth,\" but consistent wrong answers from flawed logic are common in complex medical tasks, making it hard to distinguish high-quality from low-quality reasoning paths.\n  - **Solution**: Introduces a mutual evaluation mechanism where LLMs score the logical coherence and factual accuracy of peer reasoning chains, selecting the most logically sound path rather than just the most frequent answer.\n- **Challenge 2: How to enhance robustness and interpretability without additional training data?**\n  - **Difficulty**: Fine-tuning requires extensive labeled data, and black-box models lack transparency; single models are prone to prompt biases and instability.\n  - **Solution**: Leverages off-the-shelf SOTA LLMs in a multi-agent setup. Role differentiation (solver vs. reviewer) stimulates emergent reasoning capabilities. The review process provides interpretability, and multi-model collaboration mitigates individual model errors, enhancing overall robustness.\n\n## Implementation and Evaluation\n- **Implementation**: The study utilized five state-of-the-art LLMs (Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B). Tested on three benchmarks: HeadQA, MedQA-USMLE, and PubMedQA. Agents independently generate \"reasoning-answer\" pairs, cross-evaluate them, and aggregate scores to select the best output.\n- **Evaluation Results**:\n  - Peer-reviewed reasoning consistently outperformed baselines across all datasets.\n  - The best model combination achieved an average accuracy of **0.820**.\n  - In comparison, the strongest single model achieved **0.777**, and CoT-based majority voting ensembles reached up to **0.789**.\n  - The method scales effectively with more participating models.\n  - Peer assessments reliably distinguished between high- and low-quality reasoning chains, validating its efficacy as a quality filter.\n\n## 4. Conclusion\nThis paper introduces a novel multi-agent peer-reviewed reasoning method to address accuracy and interpretability in MedQA. By enabling LLMs to critique reasoning processes rather than just comparing answers, the method significantly surpasses traditional single-model CoT and majority voting baselines. Results demonstrate that emphasizing reasoning quality enhances the trustworthiness, robustness, and accuracy of medical AI systems, offering a promising direction for reliable biomedical AI.",
-      "render_excerpt": "机构: University of Minnesota<br>本文提出了一种创新的多智能体同行评审推理方法，旨在解决医疗问答中准确性和可解释性的关键问题。通过让LLM相互评判推理过程而非仅仅比较答案，该方法显著超越了传统的单模型思维和多数投票基线。实验结果表明，强调推理质量而非单纯的答案一致性，能有效提升医疗AI系统的可信度、鲁棒性和准确性，为构建值得信赖的生物医学AI系统提供了新的方向。",
-      "render_excerpt_en": "Institution: University of Minnesota<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) have advanced biomedical NLP, particularly in Medical Question Answering (MedQA). However, high stakes in clinical decisions require extreme factual accuracy and logical soundness, where hallucinations or logical flaws can be misleading.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-13T18:09:44Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-13"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15077",
-      "date": "2026-06-13",
-      "title": "Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation",
-      "authors": [
-        "Kyle Gao",
-        "Joel Cumming",
-        "Jonathan Li",
-        "Linlin Xu",
-        "David A. Clausi"
-      ],
-      "abstract": "We present an LLM-driven framework for retrieving remote sensing data from cloud-based geospatial catalogues using natural language queries. The system converts user intent into structured API calls, enabling efficient access to satellite imagery and environmental datasets. The architecture integrates three agents: Guardrail for safety and policy enforcement, General-QA for intent interpretation, and Recommender-Analyst for schema-aware API call generation. This coordinated design ensures reliable, semantically aligned interaction with external data services. The modular framework is portable across platforms through API schema substitution and supports applications in environmental monitoring, disaster response, and climate analysis. It establishes a scalable interface between user intent and geospatial infrastructure, enabling streamlined and automated Earth observation workflows. Preliminary experiments under adversarial multi-turn settings show that prompt-level safety instructions improve robustness, although rare high-impact failures persist in API manipulation scenarios and highlight the need for adaptive, system-level defenses that balance safety, usability, and cost efficiency, which motivates the use of our intercept-level Guardrail agent.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15077v1",
-        "pdf": "https://arxiv.org/pdf/2606.15077v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "University of Waterloo, SkyWatch, University of Calgary",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）的发展，自动化复杂的地理空间工作流成为可能。本文旨在构建一个由 LLM 驱动的框架，通过自然语言查询从基于云的地理空间目录中检索遥感数据，将用户意图转化为结构化的 API 调用，以高效访问卫星图像和环境数据集。\n- **已有工作的不足**：现有的方法在直接 interfacing 大规模卫星和航空影像库时，往往缺乏足够的安全性和策略执行机制。单纯的提示词级安全指令在面对对抗性多轮对话时，仍会出现罕见但高影响的 API 操纵失败，缺乏系统级的自适应防御来平衡安全性、可用性和成本效率。\n\n## 文章的核心贡献点\n- **提出了一个风险感知的 LLM 代理框架**：该框架集成了三个协调的代理（Guardrail、General-QA、Recommender-Analyst），用于安全地解释用户意图并生成精确的 API 调用。\n- **挑战1：如何确保与外部数据服务交互的安全性与策略合规性？**\n  - **难点**：LLM 容易受到提示词注入或恶意操纵，导致生成不安全或不符合政策的 API 请求，且仅靠提示词工程难以完全抵御复杂的对抗性攻击。\n  - **解决方法**：引入基于 NeMo Guardrails 构建的“Guardrail”代理，作为拦截级的风险识别和预防机制，在系统层面强制执行安全策略，弥补提示词级防御的不足。\n- **挑战2：如何实现跨不同地理空间平台的通用性与语义对齐？**\n  - **难点**：不同的地理空间平台（如 SkyWatch, Google Earth Engine）拥有各异的 API 模式，硬编码特定平台逻辑会导致系统缺乏可移植性，且难以保证用户自然语言意图与底层 API 参数的精确映射。\n  - **解决方法**：采用模块化设计，其中“Recommender-Analyst”代理专门负责 schema 感知的 API 调用生成。通过替换 API 模式和调用规范，框架可轻松移植到其他平台，同时保持用户意图与数据检索之间的语义对齐。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：系统包含三个核心代理：Guardrail（安全防护）、General-QA（意图理解与问答）、Recommender-Analyst（API 调用生成）。该架构专为 SkyWatch 平台设计，但具有模块化特性，可通过替换 API schema 适配 Google Earth Engine 等其他平台。\n- **评估结果**：在对抗性多轮设置下的初步实验表明，虽然提示词级的安全指令能提高一定的鲁棒性，但在 API 操纵场景中仍存在罕见的高影响失败。这证明了引入拦截级 Guardrail 代理的必要性，该系统级防御能更有效地平衡安全性与可用性。\n- **对比**：相较于仅依赖 LLM 原生能力或简单提示词工程的方法，本文提出的多代理协同架构通过显式的风险拦截模块，显著提升了在敏感地理空间数据检索任务中的可靠性和政策合规性。\n\n#### 总结\n本文提出了一种用于地理空间数据检索的风险感知 LLM 代理框架。通过集成安全防护、意图理解和 API 生成三个专用代理，该系统实现了从自然语言到结构化 API 调用的安全、可靠转换。初步评估证实了系统级防护（Guardrail）在应对对抗性攻击方面的价值，为环境监测、灾害响应等领域的自动化地球观测工作流提供了可扩展的解决方案。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Leveraging advances in Large Language Models (LLMs), this paper presents a framework for automating geospatial workflows. It enables intelligent retrieval of remote sensing data from cloud-based catalogs using natural language queries, converting user intent into structured API calls.\n- **Limitations of Existing Work**: Current methods often lack robust safety and policy enforcement mechanisms when interfacing directly with large-scale satellite imagery repositories. Prompt-level safety instructions are insufficient against adversarial multi-turn attacks, leading to rare but high-impact API manipulation failures, highlighting the need for system-level defenses.\n\n## Core Contributions\n- **Proposed a Risk-Aware LLM Agent Framework**: The architecture integrates three coordinated agents: Guardrail, General-QA, and Recommender-Analyst, to safely interpret intent and generate precise API calls.\n- **Challenge 1: How to ensure safety and policy compliance in interactions with external data services?**\n  - **Difficulty**: LLMs are vulnerable to prompt injection or malicious manipulation, generating unsafe API requests. Prompt engineering alone cannot fully mitigate complex adversarial attacks.\n  - **Solution**: Introduces a \"Guardrail\" agent built on NeMo Guardrails as an intercept-level risk identification and prevention mechanism, enforcing security policies at the system level to complement prompt-level defenses.\n- **Challenge 2: How to achieve portability across different geospatial platforms and maintain semantic alignment?**\n  - **Difficulty**: Diverse geospatial platforms have unique API schemas. Hard-coding logic reduces portability, and mapping natural language intent to specific API parameters is complex.\n  - **Solution**: Adopts a modular design where the \"Recommender-Analyst\" agent handles schema-aware API generation. The framework supports portability by simply substituting API schemas, ensuring semantic alignment between user intent and data retrieval.\n\n## Implementation and Evaluation\n- **Implementation**: The system comprises three agents: Guardrail (safety), General-QA (intent understanding), and Recommender-Analyst (API generation). Designed for SkyWatch, its modular nature allows adaptation to other platforms like Google Earth Engine by swapping API specifications.\n- **Evaluation Results**: Preliminary experiments in adversarial multi-turn settings show that while prompt-level instructions improve robustness, high-impact failures persist in API manipulation scenarios. This validates the necessity of the intercept-level Guardrail agent for balancing safety, usability, and cost.\n- **Comparison**: Compared to methods relying solely on LLM capabilities or simple prompt engineering, this multi-agent collaborative architecture significantly enhances reliability and policy compliance in sensitive geospatial data retrieval tasks through explicit risk interception.\n\n## 4. Conclusion\nThis paper proposes a risk-aware LLM agent framework for geospatial data retrieval. By integrating safety, intent understanding, and API generation agents, it achieves safe and reliable conversion from natural language to structured API calls. Preliminary evaluations confirm the value of system-level protection (Guardrail) against adversarial attacks, offering a scalable solution for automated Earth observation workflows in environmental monitoring and disaster response.",
-      "render_excerpt": "机构: University of Waterloo, SkyWatch, University of Calgary<br>本文提出了一种用于地理空间数据检索的风险感知 LLM 代理框架。通过集成安全防护、意图理解和 API 生成三个专用代理，该系统实现了从自然语言到结构化 API 调用的安全、可靠转换。初步评估证实了系统级防护（Guardrail）在应对对抗性攻击方面的价值，为环境监测、灾害响应等领域的自动化地球观测工作流提供了可扩展的解决方案。",
-      "render_excerpt_en": "Institution: University of Waterloo, SkyWatch, University of Calgary<br>## 1. What the Paper Does - **Background**: Leveraging advances in Large Language Models (LLMs), this paper presents a framework for automating geospatial workflows. It enables intelligent retrieval of remote sensing data from cloud-based catalogs using natural language queries, converting user intent into structured API calls.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-13T03:15:53Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-13"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15390",
-      "date": "2026-06-13",
-      "title": "Not All Skills Help: Measuring and Repairing Agent Knowledge",
-      "authors": [
-        "Yixuan Wang",
-        "Yiyang Zhou",
-        "Yiming Liang",
-        "Congyu Zhang",
-        "Fuxiao Liu",
-        "Jiawei Zhou",
-        "Huaxiu Yao"
-      ],
-      "abstract": "LLM agents can improve without weight updates by accumulating natural-language skills from experience, but current systems entrust every decision about which skills to keep and how to apply them to LLM judgment alone. We argue that this conflates two distinct roles: generating a skill from experience is a creative act that judgment handles well, while deciding whether that skill actually helps requires empirical evidence across many tasks. Measuring per-skill causal contributions via randomized masking, we find that skill libraries exhibit pervasive causal heterogeneity: individual skills routinely help on some task types while hurting on others, yet their opposing effects cancel in aggregate, making them invisible to global curation methods. We propose ASSAY, a framework that separates generation from curation: it computes a per-skill causal attribution on a small development set, restructures the library offline, and suppresses skills with negative predicted effect for each test task. Across seven base models spanning four providers and two benchmarks (AppWorld and tau-bench), ASSAY consistently improves over prior skill-curation approaches. On AppWorld's hardest split, DeepSeek-V3 achieves 69.3% task-goal completion (47.4% relative improvement), a new state of the art among all published methods including weight-tuned approaches. On tau-bench retail, GPT-4.1 improves by 8.7% relative, advancing past o4-mini, o1, and GPT-4.5 on the public leaderboard without any weight modification. Ablation traces the dominant gain to per-task masking, confirming that the bottleneck is matching skills to tasks at inference time, not removing bad skills globally. Code is available at https://github.com/aiming-lab/assay.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15390v1",
-        "pdf": "https://arxiv.org/pdf/2606.15390v1",
-        "github": "https://github.com/aiming-lab/assay",
-        "blog": null
-      },
-      "institution": "UNC Chapel Hill, Purdue University, NVIDIA",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体可以通过从经验中积累自然语言技能（如规则、启发式方法）来提升性能，而无需更新模型权重。当前系统通常将技能的生成、保留和检索全部委托给 LLM 自身的判断力。\n- **已有工作的局限**：现有方法假设 LLM 的判断足以监督整个技能生命周期，缺乏对技能实际效用的实证检验。这导致技能库中存在普遍的“因果异质性”：某些技能在特定任务上有益，但在其他任务上有害，且这种正负抵消使得全局筛选方法无法识别并移除有害技能，从而造成性能瓶颈。\n\n## 文章的核心贡献点\n- **提出了一个 ASSAY 框架**：该框架将技能的“生成”与“策展（curation）”分离，通过计算每个技能在小规模开发集上的因果归因，离线重构技能库，并在推理时抑制对当前测试任务有负面预测影响的技能。\n- **挑战1：技能效用的因果异质性难以通过全局指标捕捉**。单个技能可能在不同任务类型中产生相反的效果， aggregate 指标会掩盖其负面影响。**解决方法**：通过随机掩码（randomized masking）技术测量每个技能在开发集上的每技能因果贡献，精准识别出那些在特定语境下有害的技能。\n- **挑战2：推理时的技能匹配瓶颈**。仅仅在全局移除坏技能是不够的，关键在于如何在推理时将正确的技能匹配到具体的任务上。**解决方法**：引入按任务掩码（per-task masking）机制，针对每个测试任务动态抑制具有负面预测效果的技能，从而避免无关或有害技能干扰代理决策。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 AppWorld 和 tau-bench 两个基准测试上，跨越四个提供商的七个基础模型进行评估。\n- **主要结果**：\n    - 在 AppWorld 最难的分片上，DeepSeek-V3 使用 ASSAY 后任务目标完成率达到 69.3%（相对提升 47.4%），超越了包括权重微调方法在内的所有已发布方法，创下新的最先进水平（SOTA）。\n    - 在 tau-bench retail 任务上，GPT-4.1 相对提升了 8.7%，在公共排行榜上超越了 o4-mini、o1 和 GPT-4.5，且无需任何权重修改。\n- **对比分析**：ASSAY  consistently 优于之前的技能策展方法。消融实验表明，主要增益来自按任务掩码，证实了推理时的技能-任务匹配是主要瓶颈，而非单纯的全局坏技能移除。\n\n#### 总结\n本文指出了当前 LLM 智能体技能积累中 unchecked accumulation 的系统性缺陷，即 LLM 自身判断无法有效区分技能的因果效用。通过提出 ASSAY 框架，利用因果归因和按任务动态掩码技术，成功解决了技能异质性和匹配难题。该方法在不修改模型权重的情况下，显著提升了多个主流模型在复杂交互基准上的表现，证明了分离技能生成与基于实证证据的策展的重要性。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents can improve without weight updates by accumulating natural-language skills (rules, heuristics) from experience. Current systems delegate all decisions regarding skill retention and application solely to LLM judgment.\n- **Limitations of Existing Work**: Prior methods assume LLM judgment is sufficient for the entire skill lifecycle, lacking empirical verification of a skill's actual utility. This leads to \"causal heterogeneity\" in skill libraries: skills that help in some contexts harm others, with opposing effects canceling out in aggregate metrics, making them invisible to global curation methods.\n\n## Core Contributions\n- **Proposed ASSAY Framework**: A framework that separates skill generation from curation. It computes per-skill causal attribution on a small development set, restructures the library offline, and suppresses skills with negative predicted effects for each specific test task.\n- **Challenge 1: Causal Heterogeneity of Skill Utility**. Individual skills often help in some task types while hurting in others, making their net negative impact invisible to global metrics. **Solution**: The paper uses randomized masking to measure per-skill causal contributions on held-out tasks, precisely identifying skills that are harmful in specific contexts.\n- **Challenge 2: Inference-time Skill-Task Matching Bottleneck**. Simply removing bad skills globally is insufficient; the key challenge is matching the right skills to the right tasks during inference. **Solution**: Introduces per-task masking to dynamically suppress skills with negative predicted effects for each test instance, preventing interference from irrelevant or harmful skills.\n\n## Implementation and Evaluation\n- **Setup**: Evaluated on two benchmarks (AppWorld and tau-bench) across seven base models from four providers.\n- **Key Results**:\n    - On the hardest split of AppWorld, DeepSeek-V3 with ASSAY achieved 69.3% task-goal completion (a 47.4% relative improvement), setting a new state-of-the-art among all published methods, including weight-tuned approaches.\n    - On tau-bench retail, GPT-4.1 improved by 8.7% relatively, surpassing o4-mini, o1, and GPT-4.5 on the public leaderboard without any weight modification.\n- **Comparison**: ASSAY consistently outperforms prior skill-curation approaches. Ablation studies confirm that the dominant gain comes from per-task masking, highlighting that inference-time matching is the primary bottleneck rather than just global removal of bad skills.\n\n## 4. Conclusion\nThe paper identifies a systematic downside in current LLM agent skill accumulation: unchecked reliance on LLM judgment fails to account for the causal utility of skills. By proposing ASSAY, which leverages causal attribution and dynamic per-task masking, the authors effectively address skill heterogeneity and matching issues. The method significantly boosts performance across multiple mainstream models on complex interactive benchmarks without weight updates, demonstrating the importance of separating skill generation from evidence-based curation.",
-      "render_excerpt": "机构: UNC Chapel Hill, Purdue University, NVIDIA<br>本文指出了当前 LLM 智能体技能积累中 unchecked accumulation 的系统性缺陷，即 LLM 自身判断无法有效区分技能的因果效用。通过提出 ASSAY 框架，利用因果归因和按任务动态掩码技术，成功解决了技能异质性和匹配难题。该方法在不修改模型权重的情况下，显著提升了多个主流模型在复杂交互基准上的表现，证明了分离技能生成与基于实证证据的策展的重要性。",
-      "render_excerpt_en": "Institution: UNC Chapel Hill, Purdue University, NVIDIA<br>## 1. What the Paper Does - **Background**: LLM agents can improve without weight updates by accumulating natural-language skills (rules, heuristics) from experience. Current systems delegate all decisions regarding skill retention and application solely to LLM judgment.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-06-13T16:37:38Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-06-13"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2606.15508",
-      "date": "2026-06-13",
-      "title": "ToolMenuBench: Benchmarking Tool-Menu Filtering Strategies for Reliable and Efficient LLM Agents",
-      "authors": [
-        "Rahul Suresh Babu",
-        "Laxmipriya Ganesh Iyer"
-      ],
-      "abstract": "Tool-augmented large language model agents increasingly operate over large tool libraries, but existing evaluations often focus on whether a model can call a tool correctly rather than how the visible tool menu shapes reliability, efficiency, and safety-relevant risk exposure. We introduce ToolMenuBench, a benchmark for evaluating tool-menu construction in multi-step LLM agents. ToolMenuBench varies tool-menu size, distractor type, state-dependent task structure, and risk exposure, and reports both filter-level and downstream agent metrics, including visible-tool count, risky-tool exposure, task success, wrong-tool calls, premature actions, and token usage. In a controlled evaluation across seven model backends, three tool-menu sizes, six filtering methods, and seven evaluation settings, CMTF improves task success from 32.1% under all-tools exposure to 85.7%, while reducing average token usage by roughly 98%. Causal minimal tool filtering achieves the strongest overall tradeoff, reducing visible tools, wrong-tool calls, premature actions, and risky-tool exposure relative to unfiltered exposure, lexical filtering, state-aware filtering, and broader causal-path baselines. ToolMenuBench provides a reusable evaluation framework for studying the agent-interface problem: which tools should be visible, when they should be visible, and under what cost or risk constraints.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.15508v1",
-        "pdf": "https://arxiv.org/pdf/2606.15508v1",
+        "abs": "http://arxiv.org/abs/2606.23127v1",
+        "pdf": "https://arxiv.org/pdf/2606.23127v1",
         "github": null,
         "blog": null
       },
@@ -228,19 +31,217 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着工具增强型大型语言模型（LLM）代理在大型工具库上运行，可见的“工具菜单”成为代理接口的核心部分。现有的评估主要关注模型是否能正确调用单个工具，而忽视了工具菜单的构建方式如何影响代理的可靠性、效率和安全性风险暴露。\n- **已有工作为什么解决不了**：现有基准测试通常将可用工具集视为固定或给定的，未能隔离“工具菜单设计”这一关键问题。它们无法有效评估在每一步决策中应向代理展示哪些工具、菜单大小如何影响可靠性、干扰项的影响，以及过滤策略如何在任务成功率、Token成本和安全风险之间进行权衡。仅靠语义相关性检索往往不够，因为语义相关的工具在当前任务状态下未必是因果上合适的下一步行动。\n\n## 文章的核心贡献点\n- **提出了一个 ToolMenuBench**：这是一个用于评估多步 LLM 代理中工具菜单构建的基准测试框架。它通过变化工具菜单大小、干扰项类型、状态依赖的任务结构和风险暴露程度，报告过滤层级和下游代理指标（如可见工具数量、风险工具暴露、任务成功率、错误工具调用、过早行动和 Token 使用量）。\n- **挑战1：如何在减少可见工具数量的同时保持高任务成功率？**\n    - **难点**：暴露所有工具会增加错误调用和 Token 消耗，但过度过滤可能导致遗漏必要工具。语义过滤可能包含无关但语义相似的干扰项。\n    - **解决方法**：论文引入并评估了因果最小工具过滤（CMTF），该方法基于前置条件、效果和任务状态进度来塑造工具菜单，而非仅依赖语义相关性，从而在大幅减少可见工具的同时显著提升成功率。\n- **挑战2：如何量化和降低代理的安全风险暴露？**\n    - **难点**：传统评估缺乏对“风险工具暴露”的细粒度衡量，难以区分安全与危险的工具选择场景。\n    - **解决方法**：ToolMenuBench 专门设计了包含风险暴露变量的评估设置，通过对比不同过滤方法（如无过滤、词汇过滤、状态感知过滤等），证明 CMTF 能有效减少 risky-tool exposure（风险工具暴露）和 premature actions（过早行动）。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在7种模型后端、3种工具菜单大小、6种过滤方法和7种评估设置下进行了受控评估。\n- **主要结果**：\n    - **CMTF 性能**：因果最小工具过滤（CMTF）将任务成功率从全工具暴露下的 32.1% 提升至 85.7%。\n    - **效率提升**：平均 Token 使用量减少了约 98%。\n    - **综合权衡**：相较于无过滤、词汇过滤、状态感知过滤和更广泛的因果路径基线，CMTF 在减少可见工具、错误工具调用、过早行动和风险工具暴露方面实现了最强的整体权衡。\n- **对比结论**：现有方法（如仅基于语义检索）在处理复杂状态依赖任务和干扰项时表现不佳，而基于因果关系的过滤策略被证明能更有效地解决代理接口问题。\n\n#### 总结\n本文提出了 ToolMenuBench，填补了 LLM 代理评估中关于工具菜单构建研究的空白。研究指出，可靠的代理不仅需要正确的工具调用语法，更需要系统的界面评估来决定在何种成本和风险约束下、何时向模型展示哪些工具。实验表明，基于因果逻辑的最小化工具过滤（CMTF）是提升代理可靠性、效率和安全性的有效途径，为未来的代理接口设计提供了可重用的评估框架和指导原则。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Tool-augmented Large Language Model (LLM) agents increasingly operate over large tool libraries, making the visible \"tool menu\" a central part of the agent interface. Existing evaluations primarily focus on whether a model can correctly call an individual tool, neglecting how tool-menu construction impacts reliability, efficiency, and safety-relevant risk exposure.\n- **Why Existing Work Falls Short**: Current benchmarks often treat the available tool set as fixed or given, failing to isolate the \"tool-menu design\" problem. They do not adequately evaluate which tools should be visible at each decision step, how menu size affects reliability, the impact of distractors, or how filtering strategies trade off task success, token cost, and safety risks. Semantic relevance alone is insufficient, as semantically related tools may not be causally appropriate for the current task state.\n\n## Core Contributions\n- **Proposed ToolMenuBench**: A benchmark for evaluating tool-menu construction in multi-step LLM agents. It varies tool-menu size, distractor types, state-dependent task structures, and risk exposure, reporting both filter-level and downstream agent metrics (e.g., visible tool count, risky-tool exposure, task success, wrong-tool calls, premature actions, and token usage).\n- **Challenge 1: How to maintain high task success while reducing the number of visible tools?**\n    - **Difficulty**: Exposing all tools increases wrong calls and token consumption, but aggressive filtering may omit necessary tools. Semantic filtering often includes irrelevant but semantically similar distractors.\n    - **Solution**: The paper introduces and evaluates Causal Minimal Tool Filtering (CMTF), which shapes the tool menu based on preconditions, effects, and task-state progress rather than just semantic relevance, significantly improving success rates while drastically reducing visible tools.\n- **Challenge 2: How to quantify and reduce safety risk exposure for agents?**\n    - **Difficulty**: Traditional evaluations lack fine-grained metrics for \"risky-tool exposure,\" making it hard to distinguish between safe and dangerous tool selection scenarios.\n    - **Solution**: ToolMenuBench specifically designs evaluation settings with risk exposure variables. By comparing different filtering methods (e.g., unfiltered, lexical, state-aware), it demonstrates that CMTF effectively reduces risky-tool exposure and premature actions.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Controlled evaluation across 7 model backends, 3 tool-menu sizes, 6 filtering methods, and 7 evaluation settings.\n- **Key Results**:\n    - **CMTF Performance**: Causal Minimal Tool Filtering (CMTF) improved task success from 32.1% (under all-tools exposure) to 85.7%.\n    - **Efficiency Gain**: Average token usage was reduced by approximately 98%.\n    - **Overall Trade-off**: Compared to unfiltered exposure, lexical filtering, state-aware filtering, and broader causal-path baselines, CMTF achieved the strongest overall trade-off by reducing visible tools, wrong-tool calls, premature actions, and risky-tool exposure.\n- **Comparison Conclusion**: Existing methods (such as those relying solely on semantic retrieval) perform poorly when handling complex state-dependent tasks and distractors. Causality-based filtering strategies are proven to be more effective in addressing the agent-interface problem.\n\n#### Summary\nThis paper introduces ToolMenuBench, filling a gap in LLM agent evaluation regarding tool-menu construction. It highlights that reliable agents require more than correct tool-call syntax; they need systematic interface evaluation to determine which tools to show, when, and under what cost or risk constraints. Experiments demonstrate that Causal Minimal Tool Filtering (CMTF) is an effective approach to enhancing agent reliability, efficiency, and safety, providing a reusable evaluation framework and guiding principles for future agent interface design.",
-      "render_excerpt": "本文提出了 ToolMenuBench，填补了 LLM 代理评估中关于工具菜单构建研究的空白。研究指出，可靠的代理不仅需要正确的工具调用语法，更需要系统的界面评估来决定在何种成本和风险约束下、何时向模型展示哪些工具。实验表明，基于因果逻辑的最小化工具过滤（CMTF）是提升代理可靠性、效率和安全性的有效途径，为未来的代理接口设计提供了可重用的评估框架和指导原则。",
-      "render_excerpt_en": "This paper introduces ToolMenuBench, filling a gap in LLM agent evaluation regarding tool-menu construction. It highlights that reliable agents require more than correct tool-call syntax; they need systematic interface evaluation to determine which tools to show, when, and under what cost or risk constraints. Experiments demonstrate that Causal Minimal Tool Filtering (CMTF) is an effective approach to enhancing agent reliability, efficiency, and safety, providing a reusable evaluation framework and guiding principles for future agent interface design.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理在工业工作流中的广泛应用，处理重复性任务（如文档处理、数据库查询等）的需求日益增长。程序性记忆（Procedural Memory）作为一种从过往轨迹中提取可复用指令和策略的机制，被用于提升代理的效率和可靠性。\n- **已有工作的不足**：现有研究对程序性记忆产生可复用技能的能力理解不足。从狭窄经验中提取的技能往往过度拟合源上下文，导致在任务、角色或模型 backbone 发生变化时失效。缺乏系统性的基准来评估技能在不同维度（任务、角色、模型）上的泛化与特化权衡。\n\n## 文章的核心贡献点\n- **提出了一个名为 AFTER 的基准测试**：包含382个真实的企业级任务，涵盖6种专业角色和22种程序性技能，旨在评估技能在跨任务、跨角色和跨模型 backbone 之间的迁移能力。\n- **挑战1：技能的特化与泛化权衡难以量化**。难点在于技能可能仅对特定工作流有效而失去通用性，或者过于通用而缺乏针对性。论文通过AFTER基准中的控制变量实验（局部改进、跨任务/角色/模型迁移），量化了“特异性增益”与“通用性增益”，揭示了多样化经验有助于实现高特异性和高通用性的平衡。\n- **挑战2：跨模型和跨域的技能迁移效果不明**。难点在于不同模型生成的轨迹差异巨大，难以确定何种来源的技能最具鲁棒性。论文发现，源自多样化多模型执行轨迹演化出的技能，在跨模型测试中达到了73.1%的准确率，优于任何单一模型来源，证明了多样性对迁移学习的重要性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：使用AFTER基准进行受控评估，包括局部改进、跨任务迁移、跨角色迁移和跨模型泛化四个场景。\n- **主要结果**：\n    - 程序性记忆在工业工作流中带来一致的性能提升：单次精炼回合使综合性能提高3.7-6.7分。\n    - 源自多样化多模型轨迹的技能在跨模型测试中准确率达到73.1%，显著优于所有单一模型轨迹来源。\n    - 发现部分技能具有广泛的通用性，而另一些技能则高度特化于特定角色，在迁移时效果下降。\n- **对比分析**：相较于仅依赖单一模型或狭窄经验的方法，本文提出的基于多样化经验的技能演化方法在泛化能力上表现更佳，避免了源上下文过拟合的问题。\n\n#### 总结\n本文引入了AFTER基准，系统地研究了LLM代理中程序性记忆的控制、适应与评估。研究结果表明，虽然程序性记忆能显著提升性能，但技能的来源至关重要。源自多样化多模型经验的技能更能平衡特化与泛化，从而实现有效的跨域迁移。这些发现为在生产环境中构建和部署程序性记忆系统提供了实践指导。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: As LLM agents are increasingly deployed in industrial workflows for recurring tasks (e.g., document processing, database queries), there is a growing need for mechanisms to improve reuse, reliability, and efficiency. Procedural memory, which distills reusable instructions and strategies from past trajectories, is a promising solution.\n- **Limitations of Existing Work**: Current understanding of procedural memory's ability to produce reusable skills is limited. Skills extracted from narrow experiences often overfit to the source context, failing when tasks, roles, or model backbones change. There is a lack of systematic benchmarks to evaluate the trade-off between specialization and generalization across these dimensions.\n\n## Core Contributions\n- **Proposed AFTER Benchmark**: A benchmark comprising 382 realistic enterprise tasks spanning six professional roles and 22 procedural skills, designed to evaluate skill transfer across tasks, roles, and model backbones.\n- **Challenge 1: Quantifying the Specialization-Generalization Trade-off**. It is difficult to balance skills that are specific to a workflow versus those that are broadly applicable. The paper addresses this by using controlled evaluation settings in AFTER to measure \"Specificity Gain\" and \"Generality Gain,\" demonstrating that diverse experience helps achieve both high specificity and high generality.\n- **Challenge 2: Uncertainty in Cross-Model and Cross-Domain Transfer**. Determining which skill sources are robust across different models is challenging due to trajectory variations. The paper shows that skills evolved from diverse multi-model execution traces achieve 73.1% accuracy in cross-model tests, outperforming all single-model sources, highlighting the importance of diversity for transfer learning.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Controlled evaluations using the AFTER benchmark across four scenarios: local improvement, cross-task transfer, cross-role transfer, and cross-model generalization.\n- **Key Results**:\n    - Procedural memory delivers consistent gains: a single refinement round improves aggregate performance by 3.7-6.7 points.\n    - Skills evolved from diverse multi-model traces achieve 73.1% cross-model test accuracy, significantly outperforming single-model sources.\n    - Some skills generalize broadly, while others become specialized to role-specific workflows and lose effectiveness under transfer.\n- **Comparison**: Compared to methods relying on single models or narrow experiences, the proposed approach using diverse experiences demonstrates superior generalization capabilities and avoids source-context overfitting.\n\n## 4. Conclusion\nThis paper introduces the AFTER benchmark to systematically study the control, adaptation, and evaluation of procedural memory in LLM agents. The results indicate that while procedural memory significantly boosts performance, the source of skills is critical. Skills derived from diverse multi-model experiences better balance specialization and generalization, enabling effective cross-domain transfer. These findings provide practical guidance for building and deploying procedural memory systems in production environments.",
+      "render_excerpt": "本文引入了AFTER基准，系统地研究了LLM代理中程序性记忆的控制、适应与评估。研究结果表明，虽然程序性记忆能显著提升性能，但技能的来源至关重要。源自多样化多模型经验的技能更能平衡特化与泛化，从而实现有效的跨域迁移。这些发现为在生产环境中构建和部署程序性记忆系统提供了实践指导。",
+      "render_excerpt_en": "## 1. What the Paper Did - **Background**: As LLM agents are increasingly deployed in industrial workflows for recurring tasks (e.g., document processing, database queries), there is a growing need for mechanisms to improve reuse, reliability, and efficiency. Procedural memory, which distills reusable instructions and strategies from past trajectories, is a promising solution.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-06-13T23:27:51Z"
+        "captured_at": "2026-06-22T10:14:11Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-06-13"
+        "captured_at": "2026-06-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.23525",
+      "date": "2026-06-22",
+      "title": "Self-Compacting Language Model Agents",
+      "authors": [
+        "Tianjian Li",
+        "Jingyu Zhang",
+        "William Jurayj",
+        "Xi Wang",
+        "Chuanyang Jin",
+        "Mehrdad Farajtabar",
+        "Eric Nalisnick",
+        "Daniel Khashabi"
+      ],
+      "abstract": "Long agent traces composed of chains of thought and tool calls accumulate stale content that anchor subsequent generations, and eventually outgrow the context window. Existing scaffolds mitigate it with fixed-interval compaction triggered at a token threshold. Such triggers pay no heed to trajectory structure, risking discard of partial results mid-derivation or mid-search. We propose SelfCompact, a scaffold that allows the model itself to decide when and how to compact. Specifically, it pairs two inference-time elements: (i) a compaction tool the model invokes to summarize the accumulated context, and (ii) a lightweight rubric specifying when to fire (a sub-task has resolved, or the trajectory is converging) and when to suppress (mid-derivation, or when stuck). Both are needed. The tool alone is unevenly used across open-weight models, often invoked at unhelpful moments or not at all; the rubric alone cannot act. Together, they elicit effective adaptive compaction without any fine-tuning or external supervision. We present empirical results on six benchmarks (competitive math and agentic search) and seven models. Our results show that SelfCompact matches or exceeds fixed-interval summarization at a fraction of the token cost, improving over a no-summarization baseline by up to 18.1 points on math and 5-9 points on agentic search at 30-70% lower per-question cost. Our results expose a meta-cognitive gap: although unprompted models cannot reliably tell when their own context is rotting, a lightweight rubric closes this gap, reframing when to compact as a capability that scaffolds can supply without training.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.23525v1",
+        "pdf": "https://arxiv.org/pdf/2606.23525v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Johns Hopkins University, Apple",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理解决更复杂的问题，其生成的思维链和工具调用轨迹变得极长。这些长轨迹会积累过时或错误的内容（即“上下文腐烂”），不仅占用上下文窗口，还会锚定后续生成，导致模型性能下降。\n- **已有工作为什么解决不了**：现有的缓解方法通常采用基于固定令牌阈值的固定间隔压缩策略。这种刚性触发机制忽视了推理轨迹的结构，容易在推导或搜索的中间阶段丢弃部分结果，或者在不需要时进行压缩，导致关键信息丢失或计算浪费。\n\n## 文章的核心贡献点\n- **提出了一个 SelfCompact 框架**：这是一种允许模型在推理时自行决定何时以及如何压缩上下文的代理脚手架，无需微调或外部监督。\n- **挑战1：模型缺乏自我感知上下文腐烂的元认知能力**。未经提示的模型无法可靠地判断自身上下文何时失效。SelfCompact 通过引入一个轻量级的规则（rubric）来解决此问题，该规则明确指定了何时触发压缩（如子任务解决、轨迹收敛）以及何时抑制压缩（如推导中途、陷入僵局），从而弥补了这一元认知差距。\n- **挑战2：单纯的压缩工具使用不均且时机不当**。仅仅提供压缩工具会导致模型在不合适的时刻调用或完全不调用。SelfCompact 将压缩工具与上述规则相结合，确保模型仅在逻辑断点处进行自适应压缩，既保留了关键中间结果，又有效清除了冗余信息。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：SelfCompact 包含两个推理时元素：(i) 模型可调用的压缩工具，用于总结累积的上下文；(ii) 轻量级规则，指导触发和抑制条件。该方法无需训练，直接应用于现有开源模型。\n- **评估结果**：在六个基准测试（竞争性数学和代理搜索）和七个模型上进行了评估。\n- **对比相关工作**：\n    - 相比无压缩基线：在数学任务上提升高达 18.1 分，在代理搜索任务上提升 5-9 分。\n    - 相比固定间隔摘要方法：SelfCompact 以 fraction 的令牌成本达到了相当或更好的性能。\n    - 成本效率：每个问题的令牌成本降低了 30-70%。\n\n#### 总结\nSelfCompact 揭示了 LLM 代理中的元认知差距，并通过简单的推理时规则成功解决了长轨迹中的上下文腐烂问题。它证明了“何时压缩”可以作为一种由脚手架提供的能力，而无需额外的模型训练。该方法在显著降低计算成本的同时，提升了代理在复杂推理和搜索任务中的表现，为长上下文代理的高效运行提供了新的范式。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: As Large Language Model (LLM) agents tackle increasingly complex problems, their generated chains of thought and tool call traces become excessively long. These long traces accumulate stale or erroneous content (known as \"context rot\"), which not only consumes the context window but also anchors subsequent generations, degrading model performance.\n- **Why Existing Work Falls Short**: Current mitigation strategies typically rely on fixed-interval compaction triggered by token thresholds. These rigid triggers ignore the structure of the reasoning trajectory, risking the discard of partial results mid-derivation or mid-search, leading to loss of critical information or inefficient computation.\n\n## Core Contributions\n- **Proposed SelfCompact Framework**: A scaffold that allows the model to decide when and how to compact its context during inference, without requiring fine-tuning or external supervision.\n- **Challenge 1: Models lack meta-cognitive awareness of context rot**. Unprompted models cannot reliably detect when their context is becoming ineffective. SelfCompact addresses this by introducing a lightweight rubric that specifies when to trigger compaction (e.g., sub-task resolved, trajectory converging) and when to suppress it (e.g., mid-derivation, stuck), thereby closing this meta-cognitive gap.\n- **Challenge 2: Inconsistent and ill-timed use of compaction tools**. Providing a compaction tool alone leads to uneven usage, with models invoking it at unhelpful moments or not at all. SelfCompact pairs the tool with the rubric, ensuring adaptive compaction occurs only at logical breakpoints, preserving key intermediate results while clearing redundancy.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: SelfCompact consists of two inference-time elements: (i) a compaction tool invoked by the model to summarize accumulated context, and (ii) a lightweight rubric guiding trigger and suppression conditions. It requires no training and is applied directly to existing open-weight models.\n- **Evaluation Results**: Empirical results are presented across six benchmarks (competitive math and agentic search) and seven models.\n- **Comparison with Related Work**:\n    - vs. No-compression baseline: Improves scores by up to 18.1 points on math and 5–9 points on agentic search.\n    - vs. Fixed-interval summarization: Matches or exceeds performance at a fraction of the token cost.\n    - Cost Efficiency: Reduces per-question token cost by 30–70%.\n\n## 4. Conclusion\nSelfCompact exposes the meta-cognitive gap in LLM agents and successfully addresses context rot in long trajectories through simple inference-time rules. It demonstrates that \"when to compact\" can be a capability supplied by scaffolds without additional model training. The method significantly reduces computational costs while improving agent performance in complex reasoning and search tasks, offering a new paradigm for efficient long-context agent operation.",
+      "render_excerpt": "机构: Johns Hopkins University, Apple<br>SelfCompact 揭示了 LLM 代理中的元认知差距，并通过简单的推理时规则成功解决了长轨迹中的上下文腐烂问题。它证明了“何时压缩”可以作为一种由脚手架提供的能力，而无需额外的模型训练。该方法在显著降低计算成本的同时，提升了代理在复杂推理和搜索任务中的表现，为长上下文代理的高效运行提供了新的范式。",
+      "render_excerpt_en": "Institution: Johns Hopkins University, Apple<br>## 1. What the Paper Did - **Background**: As Large Language Model (LLM) agents tackle increasingly complex problems, their generated chains of thought and tool call traces become excessively long. These long traces accumulate stale or erroneous content (known as \"context rot\"), which not only consumes the context window but also anchors subsequent generations, degrading model performance.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-22T16:08:34Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.23195",
+      "date": "2026-06-22",
+      "title": "Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory",
+      "authors": [
+        "Zewen Liu"
+      ],
+      "abstract": "Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term coherence. Recent work shows that agent memories degrade during continuous consolidation. However, existing research assumes memories are derived from unbiased experiences. In this work, we identify and formalize a novel phenomenon: Memory Contagion -- the cross-temporal propagation of evaluator bias through agent memory. We show that when agents are trained or guided by biased evaluators, their experiences become biased; when these trajectories are stored and consolidated into memory, the bias propagates to future agents retrieving from the same memory store, even when consolidation is perfect (oracle). Across two bias types (length preference, authority bias) and four experimental phases, we demonstrate: (1) Memory Contagion occurs even with perfect consolidation (oracle condition), proving that biased input is a sufficient cause of contagion; (2) Consolidation has opposite effects depending on bias type -- robustly attenuating length bias while preliminarily amplifying authority bias (single-run estimate), suggesting a bias-type-dependent interaction; (3) No observed safe threshold: bias propagation is detected at contamination rates as low as p=0.2. Our findings expose a critical vulnerability in current agent memory designs and provide formal tools for measuring cross-temporal bias propagation.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.23195v1",
+        "pdf": "https://arxiv.org/pdf/2606.23195v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体越来越依赖记忆系统来维持长期的连贯性。现有的研究主要关注记忆在持续整合（consolidation）过程中的退化问题，即有用记忆变得 faulty。\n- **已有工作的局限性**：现有研究假设输入的记忆经验是无偏的。然而，现实中智能体往往由带有系统性偏好（如长度偏好或权威偏见）的评估器引导或训练，导致产生的经验本身带有偏见。现有工作未能解决这种通过记忆系统在时间维度上传播的评估器偏见问题。\n\n## 文章的核心贡献点\n- **提出了一个概念与度量框架**：正式定义并量化了“记忆传染”（Memory Contagion），即评估器偏见通过智能体记忆进行的跨时间传播现象，并引入了 $\\Gamma_{temporal}$ 作为衡量指标。\n- **挑战1：证明偏见传播的根本原因并非仅源于记忆整合机制的缺陷**。难点在于区分是整合过程本身导致了偏见放大，还是 biased input 本身就足以导致传播。论文通过设置“完美整合”（oracle condition）实验，证明了即使整合过程完美无缺，只要输入经验有偏，记忆传染依然发生（$\\Gamma_A$ 显著大于0），确立了 biased input 是传染的充分条件。\n- **挑战2：揭示不同偏见类型与记忆整合机制的复杂交互效应**。难点在于理解整合过程对不同类型偏见的影响是否一致。论文发现整合对“长度偏好”偏见有显著的衰减作用，但对“权威偏见初步显示有放大作用，揭示了偏见类型依赖的未知交互机制，打破了以往认为整合仅导致退化的单一认知。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：进行了四个阶段的实证研究，涵盖两种偏见类型（长度偏好、权威偏见）。\n- **主要结果**：\n    1. **存在性验证**：在完美整合条件下，长度偏见的 $\\Gamma_A = 13.18$，权威偏见的 $\\Gamma_A = 11.45$，证实了记忆传染的存在。\n    2. **整合的双重效应**：整合过程稳健地 attenuating（减弱）长度偏见（$\\Gamma_B = 2.03$），但初步显示 amplifying（放大）权威偏见（$\\Gamma_B = 16.80$）。\n    3. **无安全阈值**：即使在污染率低至 $p=0.2$ 时也能检测到偏见传播，表明不存在安全的污染阈值。\n    4. **机制分解**：内容污染（content contamination）是主要传播途径，而非检索机制。\n- **对比**：与先前关注单智能体强化学习中偏见或仅关注记忆退化的工作不同，本文揭示了跨智能体、跨时间的记忆外部化机制带来的新脆弱性。\n\n#### 总结\n本文揭示了 LLM 智能体记忆系统设计中的一个关键漏洞：记忆传染。研究表明，来自有偏评估器的经验一旦存入记忆，即便经过完美的整合，也会将偏见传播给未来的智能体。此外，记忆整合对不同偏见具有截然不同的影响（减弱长度偏见但可能放大权威偏见）。这一发现挑战了现有对记忆整合作用的认知，并为衡量和缓解跨时间偏见传播提供了形式化工具。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents increasingly rely on memory systems for long-term coherence. Recent studies highlight memory degradation during continuous consolidation.\n- **Limitations of Existing Work**: Prior research assumes that input experiences are unbiased. However, agents are often guided by biased evaluators (e.g., reward models with systematic preferences), leading to biased experiences. Existing works fail to address how these biases propagate across time through memory systems.\n\n## Core Contributions\n- **Proposed a Concept and Metric**: Formally defined \"Memory Contagion\"—the cross-temporal propagation of evaluator bias via agent memory—and introduced $\\Gamma_{temporal}$ as a metric to measure this phenomenon.\n- **Challenge 1: Isolating the root cause of bias propagation**. It is difficult to distinguish whether bias amplification stems from flawed consolidation mechanisms or biased inputs. The paper demonstrates that Memory Contagion occurs even under \"perfect consolidation\" (oracle condition), proving that biased input is a sufficient cause for contagion ($\\Gamma_A > 0$).\n- **Challenge 2: Understanding the interaction between consolidation and bias types**. It is challenging to predict how consolidation affects different biases. The paper reveals a bias-type-dependent interaction: consolidation robustly attenuates length bias but preliminarily amplifies authority bias, uncovering a previously unknown dynamic.\n\n## Implementation and Evaluation\n- **Experimental Setup**: A four-phase empirical study covering two bias types: length preference and authority bias.\n- **Key Results**:\n    1. **Existence**: Memory Contagion is confirmed with $\\Gamma_A = 13.18$ for length bias and $\\Gamma_A = 11.45$ for authority bias under oracle conditions.\n    2. **Dual Effect of Consolidation**: Consolidation attenuates length bias ($\\Gamma_B = 2.03$) but potentially amplifies authority bias ($\\Gamma_B = 16.80$).\n    3. **No Safe Threshold**: Bias propagation is detected at contamination rates as low as $p=0.2$.\n    4. **Mechanism**: Content contamination is the dominant propagation channel, not the retrieval mechanism.\n- **Comparison**: Unlike prior work focusing on single-agent RL bias or simple memory degradation, this work exposes a critical vulnerability in cross-agent, cross-temporal memory externalization.\n\n## 4. Conclusion\nThis paper identifies \"Memory Contagion\" as a critical vulnerability in LLM agent memory designs. It shows that biased experiences, when stored, propagate bias to future agents even with perfect consolidation. Furthermore, consolidation has divergent effects on different bias types (attenuating length bias vs. amplifying authority bias). These findings challenge existing assumptions about memory consolidation and provide formal tools for measuring and mitigating cross-temporal bias propagation.",
+      "render_excerpt": "本文揭示了 LLM 智能体记忆系统设计中的一个关键漏洞：记忆传染。研究表明，来自有偏评估器的经验一旦存入记忆，即便经过完美的整合，也会将偏见传播给未来的智能体。此外，记忆整合对不同偏见具有截然不同的影响（减弱长度偏见但可能放大权威偏见）。这一发现挑战了现有对记忆整合作用的认知，并为衡量和缓解跨时间偏见传播提供了形式化工具。",
+      "render_excerpt_en": "## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents increasingly rely on memory systems for long-term coherence. Recent studies highlight memory degradation during continuous consolidation.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-22T11:43:37Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.23664",
+      "date": "2026-06-22",
+      "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
+      "authors": [
+        "Juyang Bai",
+        "Laixi Shi"
+      ],
+      "abstract": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and accessible optimization surface: they specify agents' roles and behaviors, enabling system-level improvements without model finetuning. Although prompt optimization has shown substantial potential for single LLMs, extending it to MAS poses distinct challenges, notably an exponentially growing search space. It remains unclear whether, when, and by how much prompt optimization improves MAS performance, and how sensitive such gains are to system configuration. In this work, we systematically study system-prompt optimization across a broad range of MAS setups varying in task, workflow, communication protocol, and team size, benchmarking two prompt optimizers that naturally extend state-of-the-art single-agent methods. The results reveal its potential to unlock significant gains while exposing open challenges, characterizing when and how much prompt optimization helps across diverse MAS settings.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.23664v1",
+        "pdf": "https://arxiv.org/pdf/2606.23664v1",
+        "github": "https://github.com/juyangbai/MAS-PromptBench",
+        "blog": "https://juyangbai.github.io/MAS-PromptBench/"
+      },
+      "institution": "Johns Hopkins University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：多智能体系统（MAS）通过多个基于大语言模型（LLM）的智能体协作，为解决复杂任务提供了可扩展的路径。系统提示词（System Prompts）定义了智能体的角色和行为，是无需微调模型即可优化系统性能的关键且易用的切入点。\n- **已有工作为什么解决不了**：虽然提示词优化在单智能体场景中已显示出巨大潜力，但将其扩展到多智能体系统面临独特挑战，主要是搜索空间呈指数级增长。目前尚不清楚提示词优化是否、何时以及能在多大程度上提升 MAS 的性能，也不清楚这些增益对系统配置的敏感性。\n\n## 文章的核心贡献点\n- **提出了一个 MAS-PromptBench 基准框架**：系统地研究了在不同任务、工作流、通信协议和团队规模下的多智能体系统提示词优化问题，并评估了两种自然扩展自最先进单智能体方法的提示词优化器。\n- **挑战1：多智能体场景下提示词优化的效果不确定性与不稳定性**。由于智能体间的交互复杂性，直接应用单智能体优化方法可能导致性能大幅下降而非提升。**解决方法**：通过构建涵盖多种 MAS 设置（如独立式、集中式工作流）的基准测试，量化分析优化器在不同拓扑结构下的表现，揭示了优化增益的高度可变性。\n- **挑战2：搜索空间爆炸与配置敏感性**。随着智能体数量增加，联合优化所有智能体提示词的组合空间急剧扩大，且增益对系统配置高度敏感。**解决方法**：通过广泛实验表征了提示词优化在不同 MAS 配置下的有效性边界，明确了在何种条件下优化能带来显著增益，从而为实践者提供指导。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究使用了两个从最先进单智能体方法自然扩展而来的提示词优化器（如 GEPA），在多种 MAS 设置下进行基准测试。评估涵盖了不同的任务（如 MATH, APPS, BFCL, HotpotQA 等）、工作流拓扑（独立式、集中式）和团队规模。\n- **结果与对比**：\n    - **单智能体 vs 多智能体**：实验显示，最先进的优化器 GEPA 在所有五个多样化任务中均能一致地提升单智能体性能（增益约 +4% 到 +14%）。然而，其向多智能体的自然扩展却产生了高度可变的效果， ranging from large gains to severe performance drops (e.g., -9%, -16%)。\n    - **关键发现**：提示词优化在 MAS 中并非总是有效，其效果严重依赖于任务类型和工作流拓扑。例如，在某些集中式工作流中，优化可能导致严重的性能倒退，而在其他设置中则能解锁显著增益。\n    - **对比意义**：该研究填补了单智能体提示词优化成功与多智能体系统实际应用之间的认知空白，指出了直接迁移单智能体优化策略的风险。\n\n#### 总结\n本文通过 MAS-PromptBench 系统地研究了多智能体系统中的提示词优化问题。研究发现，尽管提示词优化在单智能体场景中表现稳健，但在多智能体环境中，其效果具有高度的不确定性和配置依赖性，甚至可能导致性能显著下降。这项工作揭示了将单智能体优化方法直接扩展到多智能体系统的局限性，并强调了需要针对 MAS 特性开发更鲁棒的优化策略，同时为从业者提供了关于何时以及如何应用提示词优化的重要见解。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Multi-Agent Systems (MAS) offer a scalable path for agentic AI by coordinating multiple LLM-based agents. System prompts, which define agent roles and behaviors, represent a critical and accessible optimization surface for improving system performance without model fine-tuning.\n- **Why Existing Work Falls Short**: While prompt optimization has shown substantial potential in single-agent settings, extending it to MAS poses distinct challenges, notably an exponentially growing search space. It remains unclear whether, when, and by how much prompt optimization improves MAS performance, and how sensitive these gains are to system configurations.\n\n## Core Contributions\n- **Proposed MAS-PromptBench**: A systematic benchmark framework to study system-prompt optimization across a broad range of MAS setups, varying in tasks, workflows, communication protocols, and team sizes. It benchmarks two prompt optimizers that naturally extend state-of-the-art single-agent methods.\n- **Challenge 1: Uncertainty and Instability of Optimization Gains in MAS**. Due to complex inter-agent interactions, directly applying single-agent optimization methods can lead to significant performance degradation rather than improvement. **Solution**: The paper quantifies this variability by evaluating optimizers across diverse MAS topologies (e.g., independent vs. centralized), revealing that gains are highly dependent on the specific workflow structure.\n- **Challenge 2: Exploding Search Space and Configuration Sensitivity**. Jointly optimizing prompts for multiple agents creates a vast combinatorial search space, with gains being highly sensitive to system settings. **Solution**: Through extensive experiments, the study characterizes the boundaries of effectiveness for prompt optimization in MAS, identifying conditions under which it yields significant benefits versus when it fails.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The study employs two prompt optimizers extended from state-of-the-art single-agent methods (e.g., GEPA) and evaluates them across various MAS configurations. Tasks include MATH, APPS, BFCL, and HotpotQA, with workflows ranging from independent to centralized architectures.\n- **Results & Comparison**:\n    - **Single-Agent vs. Multi-Agent**: Results show that while GEPA consistently improves single-agent performance across all five tasks (gains of +4% to +14%), its natural extension to MAS yields highly variable outcomes, ranging from large gains to severe performance drops (e.g., -9%, -16%).\n    - **Key Findings**: Prompt optimization in MAS is not universally beneficial; its effectiveness is heavily dependent on task type and workflow topology. For instance, optimization caused significant regressions in certain centralized workflows.\n    - **Significance**: This work bridges the gap between the success of single-agent prompt optimization and its application in MAS, highlighting the risks of direct transfer and providing empirical evidence on the sensitivity of MAS performance to prompt changes.\n\n## 4. Conclusion\nThis paper systematically investigates prompt optimization in multi-agent systems via MAS-PromptBench. It reveals that while prompt optimization is robust in single-agent scenarios, its effects in MAS are highly uncertain and configuration-dependent, sometimes leading to significant performance degradation. The work highlights the limitations of directly extending single-agent optimization strategies to MAS and emphasizes the need for more robust, MAS-specific optimization techniques, offering crucial insights for practitioners on when and how to apply prompt optimization effectively.",
+      "render_excerpt": "机构: Johns Hopkins University<br>本文通过 MAS-PromptBench 系统地研究了多智能体系统中的提示词优化问题。研究发现，尽管提示词优化在单智能体场景中表现稳健，但在多智能体环境中，其效果具有高度的不确定性和配置依赖性，甚至可能导致性能显著下降。这项工作揭示了将单智能体优化方法直接扩展到多智能体系统的局限性，并强调了需要针对 MAS 特性开发更鲁棒的优化策略，同时为从业者提供了关于何时以及如何应用提示词优化的重要见解。",
+      "render_excerpt_en": "Institution: Johns Hopkins University<br>## 1. What the Paper Did - **Background**: Multi-Agent Systems (MAS) offer a scalable path for agentic AI by coordinating multiple LLM-based agents. System prompts, which define agent roles and behaviors, represent a critical and accessible optimization surface for improving system performance without model fine-tuning.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-22T17:48:40Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2606.23416",
+      "date": "2026-06-22",
+      "title": "Detecting Malicious Agent Skills in the Wild using Attention",
+      "authors": [
+        "Bacem Etteib",
+        "Daniele Lunghi",
+        "Tégawendé F. Bissyandé"
+      ],
+      "abstract": "LLM agents increasingly load skills, file-based packages of natural-language instructions written by third parties and distributed through marketplaces, that execute with the user's privileges. A single malicious skill can exfiltrate data, hijack the agent, or persist as a supply-chain foothold, which turns the skill marketplace into a new attack surface for agentic systems. Prompt-injection defenses do not carry over to this setting. They rely on a boundary between trusted instructions and untrusted data, whereas a skill is itself a body of instructions, so an injected command sits among many legitimate ones and inherits their authority. We present Locate-and-Judge, a two-stage detector designed for this regime. A lightweight locator scores the structural spans of a skill by the instruction-following attention each span draws and retains only the top-K. A judge then examines the retained spans in detail. Concentrating the costly judgment on a few high-attention spans lets the detector audit an entire marketplace instead of a sample. Compared to direct LLM-based scanning, this approach offers an order-of-magnitude cost reduction, dramatically increasing its scalability at a small cost to recall, and it dominates keyword and regex baselines at comparable expense. Deployed at marketplace scale and at negligible cost, Locate-and-Judge flags skills with high precision, the majority of which we manually confirmed as malicious, surfacing dozens of live malicious skills, including several disguised as benign functionality and many that SkillSpector and Cisco Skill Scanner fail to detect. We release the resulting labeled dataset.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.23416v1",
+        "pdf": "https://arxiv.org/pdf/2606.23416v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Luxembourg",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体越来越多地加载由第三方编写并通过市场分发的“技能”（Skills）。这些技能是基于文件的自然语言指令包，以用户权限执行。单个恶意技能可能导致数据泄露、劫持智能体或作为供应链攻击的立足点，使技能市场成为新的攻击面。\n- **已有工作为什么解决不了**：传统的提示注入防御依赖于“受信任指令”与“不受信任数据”之间的界限，但技能本身全是指令，恶意命令混杂在合法指令中并继承其权威，导致传统防御失效。此外，直接使用大模型扫描所有技能成本过高，难以扩展；而现有的基于注意力的检测器假设指令与数据分离，在纯指令环境中信号会崩溃。\n\n## 文章的核心贡献点\n- **提出了一个名为 Locate-and-Judge 的两阶段检测器**，专门用于在技能市场中检测恶意技能。\n- **挑战1：如何在纯指令环境中区分恶意注入与合法指令？**\n  - 难点在于技能全是指令，恶意内容没有明确的数据边界，且注意力信号在合法指令中普遍存在，容易淹没恶意信号。\n  - 解决方法：利用“有效攻击必须捕获模型指令跟随注意力”的假设，通过轻量级定位器（Locator）根据注意力得分对技能的结构片段进行排序，仅保留注意力最高的 Top-K 片段，从而从噪声中提取潜在恶意信号。\n- **挑战2：如何实现大规模市场的全量审计而非抽样检查？**\n  - 难点在于直接让大模型判断整个技能成本极高，无法应对海量技能。\n  - 解决方法：将昂贵的详细判断（Judge）仅集中在定位器筛选出的少量高注意力片段上。这种集中策略相比直接全量扫描降低了一个数量级的成本，使得以可忽略的成本审计整个市场成为可能。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Locate-and-Judge 已部署在实际市场规模下，成本极低。第一阶段使用小型 LLM 作为定位器，第二阶段对选定片段进行详细审查。\n- **评估结果**：该方法以高精度标记技能，人工确认大部分为恶意。它发现了数十个现存的恶意技能，包括那些伪装成良性功能的技能。\n- **对比相关工作**：\n  - **成本与可扩展性**：相比直接的基于 LLM 的扫描，成本降低了一个数量级，极大地提高了可扩展性，同时仅牺牲了少量的召回率。\n  - **基线对比**：在相当的费用下，其性能优于关键词和正则表达式基线。\n  - **现有工具对比**：检测出了许多 SkillSpector 和 Cisco Skill Scanner 未能发现的恶意技能，证明了其在复杂混淆场景下的优越性。\n\n#### 总结\n本文针对 LLM 智能体技能市场的新兴安全威胁，提出了 Locate-and-Judge 检测框架。通过解耦定位与判断，利用注意力机制高效筛选高风险片段，解决了传统防御在纯指令环境失效及全量扫描成本高昂的问题。实验表明，该方法在保证高精度的同时实现了低成本的大规模部署，并发布了标注数据集以支持后续研究。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents increasingly load \"Skills\"—file-based packages of natural-language instructions written by third parties and distributed via marketplaces. These execute with user privileges, creating a new attack surface where a single malicious skill can exfiltrate data or hijack the agent.\n- **Why Existing Work Fails**: Traditional prompt-injection defenses rely on a boundary between trusted instructions and untrusted data. However, skills consist entirely of instructions, so malicious commands blend in with legitimate ones and inherit their authority. Direct LLM scanning is too expensive for marketplace-scale deployment, and existing attention-based detectors fail because the attention signal collapses when there is no clear instruction-data separation.\n\n## Core Contributions\n- **Proposed Locate-and-Judge**, a two-stage detector designed specifically for the regime of mixed legitimate and malicious instructions.\n- **Challenge 1: Distinguishing malicious injections within a body of pure instructions.**\n  - Difficulty: Malicious content lacks clear boundaries, and attention signals are ubiquitous in legitimate instructions, causing signal collapse.\n  - Solution: Leveraging the hypothesis that effective attacks must capture instruction-following attention, a lightweight \"Locator\" scores structural spans by attention intensity and retains only the top-K high-attention spans to isolate potential threats from noise.\n- **Challenge 2: Achieving scalable, full-marketplace auditing instead of sampling.**\n  - Difficulty: Running powerful LLM judgments on entire skills is prohibitively expensive at scale.\n  - Solution: Concentrating the costly \"Judge\" phase only on the few high-attention spans identified by the Locator. This reduces costs by an order of magnitude compared to direct scanning, enabling comprehensive audits at negligible expense.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Locate-and-Judge is deployed at marketplace scale with negligible cost. It uses a small LLM for localization and a detailed judge for the selected spans.\n- **Evaluation Results**: The system flags skills with high precision, with manual confirmation verifying the majority as malicious. It surfaced dozens of live malicious skills, including those disguised as benign functionality.\n- **Comparison with Related Work**:\n  - **Cost & Scalability**: Offers an order-of-magnitude cost reduction compared to direct LLM-based scanning, dramatically increasing scalability with minimal loss in recall.\n  - **Baselines**: Dominates keyword and regex baselines at comparable expense.\n  - **Existing Tools**: Detected many malicious skills that state-of-the-art tools like SkillSpector and Cisco Skill Scanner failed to identify, demonstrating superior capability against obfuscation.\n\n## 4. Conclusion\nThis paper addresses the emerging security threat of malicious skills in LLM agent marketplaces by introducing Locate-and-Judge. By decoupling localization from judgment and leveraging attention mechanisms to efficiently filter high-risk segments, it overcomes the limitations of traditional defenses and the high costs of full scanning. The method achieves high-precision detection at scale and releases a labeled dataset to support future research.",
+      "render_excerpt": "机构: University of Luxembourg<br>本文针对 LLM 智能体技能市场的新兴安全威胁，提出了 Locate-and-Judge 检测框架。通过解耦定位与判断，利用注意力机制高效筛选高风险片段，解决了传统防御在纯指令环境失效及全量扫描成本高昂的问题。实验表明，该方法在保证高精度的同时实现了低成本的大规模部署，并发布了标注数据集以支持后续研究。",
+      "render_excerpt_en": "Institution: University of Luxembourg<br>## 1. What the Paper Did - **Background**: LLM agents increasingly load \"Skills\"—file-based packages of natural-language instructions written by third parties and distributed via marketplaces. These execute with user privileges, creating a new attack surface where a single malicious skill can exfiltrate data or hijack the agent.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-06-22T14:41:06Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-06-22"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

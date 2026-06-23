@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.19_06:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.23_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月19日 06:37</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月23日 05:36</sub></summary>
 <br>
 
-- Probe-and-Refine Tuning of Repository Guidance for Coding Agents 
-- Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems 
-- Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution 
-- LLM agent safety, multi-turn red-teaming, jailbreak benchmarks, adversarial robustness, safety-critical systems 
-- AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning 
+- Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation 
+- Self-Compacting Language Model Agents 
+- Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory 
+- MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems? 
+- Detecting Malicious Agent Skills in the Wild using Attention 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-22</span> | **Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation**<br><sub>本文引入了AFTER基准，系统地研究了LLM代理中程序性记忆的控制、适应与评估。研究结果表明，虽然程序性记忆能显著提升性能，但技能的来源至关重要。源自多样化多模型经验的技能更能平衡特化与泛化，从而实现有效的跨域迁移。这些发现为在生产环境中构建和部署程序性记忆系统提供了实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23127v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23127.md)  |
+| <span style='display: inline-block; width: 42px;'>06-22</span> | **Self-Compacting Language Model Agents**<br><sub>机构: Johns Hopkins University, Apple<br>SelfCompact 揭示了 LLM 代理中的元认知差距，并通过简单的推理时规则成功解决了长轨迹中的上下文腐烂问题。它证明了“何时压缩”可以作为一种由脚手架提供的能力，而无需额外的模型训练。该方法在显著降低计算成本的同时，提升了代理在复杂推理和搜索任务中的表现，为长上下文代理的高效运行提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23525v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23525.md)  |
+| <span style='display: inline-block; width: 42px;'>06-22</span> | **Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory**<br><sub>本文揭示了 LLM 智能体记忆系统设计中的一个关键漏洞：记忆传染。研究表明，来自有偏评估器的经验一旦存入记忆，即便经过完美的整合，也会将偏见传播给未来的智能体。此外，记忆整合对不同偏见具有截然不同的影响（减弱长度偏见但可能放大权威偏见）。这一发现挑战了现有对记忆整合作用的认知，并为衡量和缓解跨时间偏见传播提供了形式化工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23195v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23195.md)  |
+| <span style='display: inline-block; width: 42px;'>06-22</span> | **MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?**<br><sub>机构: Johns Hopkins University<br>本文通过 MAS-PromptBench 系统地研究了多智能体系统中的提示词优化问题。研究发现，尽管提示词优化在单智能体场景中表现稳健，但在多智能体环境中，其效果具有高度的不确定性和配置依赖性，甚至可能导致性能显著下降。这项工作揭示了将单智能体优化方法直接扩展到多智能体系统的局限性，并强调了需要针对 MAS 特性开发更鲁棒的优化策略，同时为从业者提供了关于何时以及如何应用提示词优化的重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23664v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23664.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/juyangbai/MAS-PromptBench)</div> |
+| <span style='display: inline-block; width: 42px;'>06-22</span> | **Detecting Malicious Agent Skills in the Wild using Attention**<br><sub>机构: University of Luxembourg<br>本文针对 LLM 智能体技能市场的新兴安全威胁，提出了 Locate-and-Judge 检测框架。通过解耦定位与判断，利用注意力机制高效筛选高风险片段，解决了传统防御在纯指令环境失效及全量扫描成本高昂的问题。实验表明，该方法在保证高精度的同时实现了低成本的大规模部署，并发布了标注数据集以支持后续研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23416v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23416.md)  |
 | <span style='display: inline-block; width: 42px;'>06-18</span> | **Probe-and-Refine Tuning of Repository Guidance for Coding Agents**<br><sub>机构: Williams College<br>本文揭示了仓库指导文件（如 `AGENTS.md`）对编码智能体性能的关键作用，并指出其效果取决于生成方式。通过提出“探测与精炼调优”方法，作者证明了迭代式、基于失败诊断的指导文件生成能显著提升智能体在 SWE-bench 上的解决率。核心发现是，优化的指导文件主要通过提高智能体定位正确文件的能力（覆盖率）来提升性能，而非提高代码补丁本身的精度。这为解决当前关于 AI 辅助编程中上下文指导有效性的争议提供了 principled 的方法论依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20512v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20512.md)  |
 | <span style='display: inline-block; width: 42px;'>06-18</span> | **Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems**<br><sub>机构: Qilu Institute of Technology<br>本文引入了“传染网络”框架，首次形式化并量化了多智能体LLM系统中评估者偏见的传播现象。通过理论推导和实证研究，文章揭示了由谱半径控制的三种传播机制，并指出同构模型智能体网络通常处于偏见抑制状态。更重要的是，文章提出了通过增加评估者多样性（委员会规模）来显著降低偏见传播的有效策略，为构建更稳健、多样化的多智能体系统提供了理论依据和实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20493v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20493.md)  |
 | <span style='display: inline-block; width: 42px;'>06-18</span> | **Hierarchical Control in Multi-Agent Games: LLM-based Planning and RL Execution**<br><sub>机构: Electronic Arts (EA); KTH Royal Institute of Technology<br>本文提出了一种结合预训练LLM推理能力与预训练RL执行能力的混合分层架构，用于解决复杂多智能体游戏中的协调与控制问题。该方法无需手动编写规则，即可达到与手工行为树相当的竞技水平，同时在行为 believability（可信度/类人程度）上显著优于传统方法，证明了LLM作为高层战略控制器 orchestrate 底层RL技能的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.20014v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.20014.md)  |
