@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.23_05:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.24_05:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月23日 05:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月24日 05:16</sub></summary>
 <br>
 
-- Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation 
-- Self-Compacting Language Model Agents 
-- Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory 
-- MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems? 
-- Detecting Malicious Agent Skills in the Wild using Attention 
+- Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity 
+- Governed Shared Memory for Multi-Agent LLM Systems 
+- Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System 
+- DeepBD: A Grounded Agentic Workflow for Variant Prioritization and Diagnosis of Genetic Birth Defects 
+- SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-23</span> | **Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity**<br><sub>机构: North China Electric Power University<br>本文提出了一种创新的多智能体语义重写框架，有效解决了 RAG 系统中的隐私泄露问题。通过离线预处理机制，该方法在几乎完全消除针对性隐私泄露风险的同时，保持了优于现有方法的语义 fidelity，且不影响在线服务性能，为敏感领域的 RAG 应用提供了可行的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24623v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24623.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/foursoils/Privacy-Preserving-RAG)</div> |
+| <span style='display: inline-block; width: 42px;'>06-23</span> | **Governed Shared Memory for Multi-Agent LLM Systems**<br><sub>机构: University of the Negev<br>本文论证了生产级多智能体记忆不能仅依赖长上下文检索，而必须视为受治理的分布式系统问题。通过引入显式的系统级抽象（如作用域、时序、血缘和策略传播），MemClaw 展示了如何在大规模集群中管理共享状态。更重要的是，通过对生产环境的实时评估，揭示了诸如作用域执行漏洞和管道竞争条件等关键架构问题，强调了在实际部署中进行实证评估对于暴露设计阶段遗漏故障的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24535v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24535.md)  |
+| <span style='display: inline-block; width: 42px;'>06-23</span> | **Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System**<br><sub>机构: Columbia University<br>本文系统地研究了自动化评分器评估代理数据分析输出的可靠性，并提出了改进策略。通过结合非生成式 AI（正则）和生成式 AI（LLM 宽松评分）以及人工校准，构建了高精度的评分级联。研究强调了从复杂代理输出中提取答案的挑战，并通过迭代 nudging 机制显著提升了评估管道的鲁棒性和成功率，为未来可验证数据科学中的代理工作流评估提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24839v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24839.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TZstats-Columbia/STAI-X-Grade-The-Grader)</div> |
+| <span style='display: inline-block; width: 42px;'>06-23</span> | **DeepBD: A Grounded Agentic Workflow for Variant Prioritization and Diagnosis of Genetic Birth Defects**<br><sub>机构: Zhejiang University<br>DeepBD展示了一种将数据驱动的证据集成、基于工具的细化和LLM辅助的诊断审查分配不同角色的接地智能体方法。该方法有效解决了遗传性出生缺陷回顾性变异优先级排序中的复杂性问题，通过模块化设计提升了诊断的准确性和鲁棒性，为临床基因组学解释提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24779v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24779.md)  |
+| <span style='display: inline-block; width: 42px;'>06-23</span> | **SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation**<br><sub>机构: Capital One, General Intelligence Company of New York, Northwestern University<br>SAFARI 提出了一种创新的故障归因范式，通过“主动调查”机制解决了长轨迹智能体系统中的诊断难题。它利用专用工具读取轨迹片段并结合持久短期记忆，成功突破了 LLM 上下文窗口的物理限制和注意力稀释问题。实验表明，该方法不仅在常规基准测试中大幅超越现有 SOTA，更在极端长程依赖场景下保持了可靠的诊断能力，为大规模多智能体系统的可观测性和可靠性提供了重要技术支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24626v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24626.md)  |
 | <span style='display: inline-block; width: 42px;'>06-22</span> | **Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation**<br><sub>本文引入了AFTER基准，系统地研究了LLM代理中程序性记忆的控制、适应与评估。研究结果表明，虽然程序性记忆能显著提升性能，但技能的来源至关重要。源自多样化多模型经验的技能更能平衡特化与泛化，从而实现有效的跨域迁移。这些发现为在生产环境中构建和部署程序性记忆系统提供了实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23127v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23127.md)  |
 | <span style='display: inline-block; width: 42px;'>06-22</span> | **Self-Compacting Language Model Agents**<br><sub>机构: Johns Hopkins University, Apple<br>SelfCompact 揭示了 LLM 代理中的元认知差距，并通过简单的推理时规则成功解决了长轨迹中的上下文腐烂问题。它证明了“何时压缩”可以作为一种由脚手架提供的能力，而无需额外的模型训练。该方法在显著降低计算成本的同时，提升了代理在复杂推理和搜索任务中的表现，为长上下文代理的高效运行提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23525v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23525.md)  |
 | <span style='display: inline-block; width: 42px;'>06-22</span> | **Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory**<br><sub>本文揭示了 LLM 智能体记忆系统设计中的一个关键漏洞：记忆传染。研究表明，来自有偏评估器的经验一旦存入记忆，即便经过完美的整合，也会将偏见传播给未来的智能体。此外，记忆整合对不同偏见具有截然不同的影响（减弱长度偏见但可能放大权威偏见）。这一发现挑战了现有对记忆整合作用的认知，并为衡量和缓解跨时间偏见传播提供了形式化工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.23195v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.23195.md)  |

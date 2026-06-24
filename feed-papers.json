@@ -1,43 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-23T05:36:47.292155+00:00",
-  "run_date": "2026-06-22",
+  "generated_at": "2026-06-24T05:16:51.868975+00:00",
+  "run_date": "2026-06-23",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.23127",
-      "date": "2026-06-22",
-      "title": "Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation",
+      "id": "arxiv:2606.24623",
+      "date": "2026-06-23",
+      "title": "Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Julia Belikova",
-        "Rauf Parchiev",
-        "Evgeny Egorov",
-        "Grigorii Davydenko",
-        "Gleb Gusev",
-        "Andrey Savchenko",
-        "Maksim Makarenko"
+        "Yuanhe Zhao",
+        "Tianyu Zhang",
+        "Huafei Xing",
+        "Derek F. Wong",
+        "Jianbin Li",
+        "Tao Fang"
       ],
-      "institution": null,
+      "institution": "North China Electric Power University",
       "summary": {
-        "zh": "本文引入了AFTER基准，系统地研究了LLM代理中程序性记忆的控制、适应与评估。研究结果表明，虽然程序性记忆能显著提升性能，但技能的来源至关重要。源自多样化多模型经验的技能更能平衡特化与泛化，从而实现有效的跨域迁移。这些发现为在生产环境中构建和部署程序性记忆系统提供了实践指导。",
-        "en": "- **Background**: As LLM agents are increasingly deployed in industrial workflows for recurring tasks (e.g., document processing, database queries), there is a growing need for mechanisms to improve reuse, reliability,..."
+        "zh": "本文提出了一种创新的多智能体语义重写框架，有效解决了 RAG 系统中的隐私泄露问题。通过离线预处理机制，该方法在几乎完全消除针对性隐私泄露风险的同时，保持了优于现有方法的语义 fidelity，且不影响在线服务性能，为敏感领域的 RAG 应用提供了可行的解决方案。",
+        "en": "- **Background**: Retrieval-Augmented Generation (RAG) enhances LLMs with external knowledge but poses privacy risks in sensitive scenarios (e.g., healthcare) where malicious prompts can extract private data from the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.23127v1",
-        "pdf": "https://arxiv.org/pdf/2606.23127v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.24623v1",
+        "pdf": "https://arxiv.org/pdf/2606.24623v1",
+        "github": "https://github.com/foursoils/Privacy-Preserving-RAG"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.23127.md",
-        "summary_en_path": "summary_en/2026-06/2606.23127.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.23127.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.23127.md"
+        "summary_zh_path": "summary/2026-06/2606.24623.md",
+        "summary_en_path": "summary_en/2026-06/2606.24623.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24623.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24623.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,39 +53,36 @@
       }
     },
     {
-      "id": "arxiv:2606.23525",
-      "date": "2026-06-22",
-      "title": "Self-Compacting Language Model Agents",
+      "id": "arxiv:2606.24535",
+      "date": "2026-06-23",
+      "title": "Governed Shared Memory for Multi-Agent LLM Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianjian Li",
-        "Jingyu Zhang",
-        "William Jurayj",
-        "Xi Wang",
-        "Chuanyang Jin",
-        "Mehrdad Farajtabar",
-        "Eric Nalisnick",
-        "Daniel Khashabi"
+        "Yanki Margalit",
+        "Nurit Cohen-Inger",
+        "Erni Avram",
+        "Ran Taig",
+        "Oded Margalit"
       ],
-      "institution": "Johns Hopkins University, Apple",
+      "institution": "University of the Negev",
       "summary": {
-        "zh": "SelfCompact 揭示了 LLM 代理中的元认知差距，并通过简单的推理时规则成功解决了长轨迹中的上下文腐烂问题。它证明了“何时压缩”可以作为一种由脚手架提供的能力，而无需额外的模型训练。该方法在显著降低计算成本的同时，提升了代理在复杂推理和搜索任务中的表现，为长上下文代理的高效运行提供了新的范式。",
-        "en": "- **Background**: As Large Language Model (LLM) agents tackle increasingly complex problems, their generated chains of thought and tool call traces become excessively long. These long traces accumulate stale or..."
+        "zh": "本文论证了生产级多智能体记忆不能仅依赖长上下文检索，而必须视为受治理的分布式系统问题。通过引入显式的系统级抽象（如作用域、时序、血缘和策略传播），MemClaw 展示了如何在大规模集群中管理共享状态。更重要的是，通过对生产环境的实时评估，揭示了诸如作用域执行漏洞和管道竞争条件等关键架构问题，强调了在实际部署中进行实证评估对于暴露设计阶段遗漏故障的重要性。",
+        "en": "- **Background**: As LLM systems evolve from isolated assistants to fleets of interacting agents, memory management transitions from a simple retrieval problem to a governed distributed-systems challenge involving..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.23525v1",
-        "pdf": "https://arxiv.org/pdf/2606.23525v1",
+        "abs": "http://arxiv.org/abs/2606.24535v1",
+        "pdf": "https://arxiv.org/pdf/2606.24535v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.23525.md",
-        "summary_en_path": "summary_en/2026-06/2606.23525.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.23525.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.23525.md"
+        "summary_zh_path": "summary/2026-06/2606.24535.md",
+        "summary_en_path": "summary_en/2026-06/2606.24535.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24535.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24535.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -103,32 +99,33 @@
       }
     },
     {
-      "id": "arxiv:2606.23195",
-      "date": "2026-06-22",
-      "title": "Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory",
+      "id": "arxiv:2606.24839",
+      "date": "2026-06-23",
+      "title": "Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zewen Liu"
+        "Tian Zheng",
+        "Kai-Tai Hsu"
       ],
-      "institution": null,
+      "institution": "Columbia University",
       "summary": {
-        "zh": "本文揭示了 LLM 智能体记忆系统设计中的一个关键漏洞：记忆传染。研究表明，来自有偏评估器的经验一旦存入记忆，即便经过完美的整合，也会将偏见传播给未来的智能体。此外，记忆整合对不同偏见具有截然不同的影响（减弱长度偏见但可能放大权威偏见）。这一发现挑战了现有对记忆整合作用的认知，并为衡量和缓解跨时间偏见传播提供了形式化工具。",
-        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on memory systems for long-term coherence. Recent studies highlight memory degradation during continuous consolidation."
+        "zh": "本文系统地研究了自动化评分器评估代理数据分析输出的可靠性，并提出了改进策略。通过结合非生成式 AI（正则）和生成式 AI（LLM 宽松评分）以及人工校准，构建了高精度的评分级联。研究强调了从复杂代理输出中提取答案的挑战，并通过迭代 nudging 机制显著提升了评估管道的鲁棒性和成功率，为未来可验证数据科学中的代理工作流评估提供了重要见解。",
+        "en": "- **Background**: Multi-agent LLM systems (e.g., LAMBDA) are increasingly used for automated data analysis, producing rich, multi-step outputs including code, numerical results, and diagnostics. - **Limitations of..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.23195v1",
-        "pdf": "https://arxiv.org/pdf/2606.23195v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.24839v1",
+        "pdf": "https://arxiv.org/pdf/2606.24839v1",
+        "github": "https://github.com/TZstats-Columbia/STAI-X-Grade-The-Grader"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.23195.md",
-        "summary_en_path": "summary_en/2026-06/2606.23195.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.23195.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.23195.md"
+        "summary_zh_path": "summary/2026-06/2606.24839.md",
+        "summary_en_path": "summary_en/2026-06/2606.24839.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24839.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24839.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,33 +142,41 @@
       }
     },
     {
-      "id": "arxiv:2606.23664",
-      "date": "2026-06-22",
-      "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
+      "id": "arxiv:2606.24779",
+      "date": "2026-06-23",
+      "title": "DeepBD: A Grounded Agentic Workflow for Variant Prioritization and Diagnosis of Genetic Birth Defects",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Juyang Bai",
-        "Laixi Shi"
+        "Shiyu Li",
+        "Ziqi Yan",
+        "Zhihao Wu",
+        "Jielong Lu",
+        "Weiran Liao",
+        "Jiajun Yu",
+        "Genjie Li",
+        "Zeyu Chu",
+        "Jiajun Bu",
+        "Haishuai Wang"
       ],
-      "institution": "Johns Hopkins University",
+      "institution": "Zhejiang University",
       "summary": {
-        "zh": "本文通过 MAS-PromptBench 系统地研究了多智能体系统中的提示词优化问题。研究发现，尽管提示词优化在单智能体场景中表现稳健，但在多智能体环境中，其效果具有高度的不确定性和配置依赖性，甚至可能导致性能显著下降。这项工作揭示了将单智能体优化方法直接扩展到多智能体系统的局限性，并强调了需要针对 MAS 特性开发更鲁棒的优化策略，同时为从业者提供了关于何时以及如何应用提示词优化的重要见解。",
-        "en": "- **Background**: Multi-Agent Systems (MAS) offer a scalable path for agentic AI by coordinating multiple LLM-based agents. System prompts, which define agent roles and behaviors, represent a critical and accessible..."
+        "zh": "DeepBD展示了一种将数据驱动的证据集成、基于工具的细化和LLM辅助的诊断审查分配不同角色的接地智能体方法。该方法有效解决了遗传性出生缺陷回顾性变异优先级排序中的复杂性问题，通过模块化设计提升了诊断的准确性和鲁棒性，为临床基因组学解释提供了新的范式。",
+        "en": "- **Background**: Birth defects are a major cause of fetal loss and long-term disability. For cases with suspected genetic etiologies, the diagnostic bottleneck has shifted from variant detection to post-sequencing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.23664v1",
-        "pdf": "https://arxiv.org/pdf/2606.23664v1",
-        "github": "https://github.com/juyangbai/MAS-PromptBench"
+        "abs": "http://arxiv.org/abs/2606.24779v1",
+        "pdf": "https://arxiv.org/pdf/2606.24779v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.23664.md",
-        "summary_en_path": "summary_en/2026-06/2606.23664.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.23664.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.23664.md"
+        "summary_zh_path": "summary/2026-06/2606.24779.md",
+        "summary_en_path": "summary_en/2026-06/2606.24779.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24779.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24779.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -188,34 +193,44 @@
       }
     },
     {
-      "id": "arxiv:2606.23416",
-      "date": "2026-06-22",
-      "title": "Detecting Malicious Agent Skills in the Wild using Attention",
+      "id": "arxiv:2606.24626",
+      "date": "2026-06-23",
+      "title": "SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bacem Etteib",
-        "Daniele Lunghi",
-        "Tégawendé F. Bissyandé"
+        "Chenyang Zhu",
+        "Jiayu Yao",
+        "Kushal Chawla",
+        "Youbing Yin",
+        "Nathan Wolfe",
+        "Pengshan Cai",
+        "Jingyu Wu",
+        "Spencer Hong",
+        "Sangwoo Cho",
+        "Shi-Xiong Zhang",
+        "Daben Liu",
+        "Sambit Sahu",
+        "Erin Babinsky"
       ],
-      "institution": "University of Luxembourg",
+      "institution": "Capital One, General Intelligence Company of New York, Northwestern University",
       "summary": {
-        "zh": "本文针对 LLM 智能体技能市场的新兴安全威胁，提出了 Locate-and-Judge 检测框架。通过解耦定位与判断，利用注意力机制高效筛选高风险片段，解决了传统防御在纯指令环境失效及全量扫描成本高昂的问题。实验表明，该方法在保证高精度的同时实现了低成本的大规模部署，并发布了标注数据集以支持后续研究。",
-        "en": "- **Background**: LLM agents increasingly load \"Skills\"—file-based packages of natural-language instructions written by third parties and distributed via marketplaces. These execute with user privileges, creating a new..."
+        "zh": "SAFARI 提出了一种创新的故障归因范式，通过“主动调查”机制解决了长轨迹智能体系统中的诊断难题。它利用专用工具读取轨迹片段并结合持久短期记忆，成功突破了 LLM 上下文窗口的物理限制和注意力稀释问题。实验表明，该方法不仅在常规基准测试中大幅超越现有 SOTA，更在极端长程依赖场景下保持了可靠的诊断能力，为大规模多智能体系统的可观测性和可靠性提供了重要技术支持。",
+        "en": "- **Background**: As autonomous agents handle increasingly complex multi-step and multi-agent tasks, their execution trajectories have grown beyond the limits of even the largest context windows. Fault attribution,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.23416v1",
-        "pdf": "https://arxiv.org/pdf/2606.23416v1",
+        "abs": "http://arxiv.org/abs/2606.24626v1",
+        "pdf": "https://arxiv.org/pdf/2606.24626v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.23416.md",
-        "summary_en_path": "summary_en/2026-06/2606.23416.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.23416.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.23416.md"
+        "summary_zh_path": "summary/2026-06/2606.24626.md",
+        "summary_en_path": "summary_en/2026-06/2606.24626.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24626.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24626.md"
       },
       "signals": {
         "priority_keyword": "Agent"
