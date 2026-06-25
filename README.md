@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.24_05:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.25_05:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月24日 05:16</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月25日 05:37</sub></summary>
 <br>
 
-- Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity 
-- Governed Shared Memory for Multi-Agent LLM Systems 
-- Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System 
-- DeepBD: A Grounded Agentic Workflow for Variant Prioritization and Diagnosis of Genetic Birth Defects 
-- SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation 
+- BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents 
+- Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents 
+- Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets 
+- Explainable Control Framework (XCF) based on Fuzzy Model-Agnostic Explanation and LLM Agent-Supported Interface 
+- Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-24</span> | **BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents**<br><sub>机构: University of Chicago, The Hong Kong University of Science and Technology (Guangzhou), Stanford University, University of Science and Technology of China, Meituan<br>BiPACE 解决了长视界 LLM 智能体训练中基于组的 RL 方法存在的状态-动作信用不匹配问题。通过引入基于隐藏状态聚类的 BiGPO 和基于动作条件基线的 PACE，它在不增加 Critic 网络或额外采样成本的前提下，显著提高了信用分配的准确性。实验表明，该方法在多个基准测试中均大幅超越了现有的 SOTA 方法（如 GiGPO 和 GRPO），且计算开销可控，为无 Critic 的 LLM 智能体训练提供了更优的优势估计方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25556.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TianxiangZhao/BiPACE)</div> |
+| <span style='display: inline-block; width: 42px;'>06-24</span> | **Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents**<br><sub>机构: University of Wisconsin–Madison, Argonne National Laboratory<br>本文揭示了RL后训练中一个被忽视的“免费午餐”——进展优势。通过理论推导证明，RL训练策略与参考策略的对数概率比率可以作为最优的优势函数，为LLM智能体提供高质量、无标注的步骤级评估信号。该方法解决了智能体场景中过程奖励建模难、成本高、泛化差的核心痛点，并在多个应用中展现出超越现有最先进方法的性能，为现实世界智能体系统的监控和优化提供了实用的指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.26080v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.26080.md)  |
+| <span style='display: inline-block; width: 42px;'>06-24</span> | **Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets**<br><sub>机构: University of Illinois Chicago<br>本文提出了 Argus 基准，系统地评估了计算机使用代理中的不确定性量化方法。研究揭示了 UQ 方法排名的“选择性转移”特性：在同一模型不同数据集间高度稳定，但在跨模型架构和接口（特别是开源到闭源）时显著失效。文章指出隐藏状态和密度方法在开源场景下最稳健，而闭源场景需独立重新排名。此外，研究强调了在实际部署中，结合共形预测的空间安全区域比单纯的分数排序更关键，但需注意分布偏移对覆盖率的影响。该工作为 GUI 代理中感知机制环境的 UQ 选择提供了可复现的基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25760v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25760.md)  |
+| <span style='display: inline-block; width: 42px;'>06-24</span> | **Explainable Control Framework (XCF) based on Fuzzy Model-Agnostic Explanation and LLM Agent-Supported Interface**<br><sub>机构: King's College London<br>本文提出了一种基于模糊模型无关解释和LLM代理支持界面的可解释控制框架（XCF）。通过引入HFMAE-C方法，利用模糊逻辑系统近似控制器行为，生成分层级的IF-THEN规则和显著性值，解决了黑盒控制器和复杂数学模型的可解释性问题。同时，结合LLM代理实现了自然语言报告和交互式咨询，显著提升了用户对控制系统的理解和信任。在倒立摆和机器人避障任务中的实验验证了该框架的有效性和优越性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25941v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25941.md)  |
+| <span style='display: inline-block; width: 42px;'>06-24</span> | **Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents**<br><sub>机构: University of Sydney, UNSW Sydney, Chang’an University, RAIDS Lab, Tongyi Lab (Alibaba Group)<br>本文针对长叙事角色扮演中的事实越界和风格单调问题，提出了 REVERIEMEM 三层记忆架构。通过情景层、语义层和个性层的协同工作，实现了视角受限的记忆管理和动态风格适应。在自建基准 KBF-QA 和现有基准 BOOKWORLD 上的广泛评估证实，该方法在保持角色知识边界忠实度和提升叙事生动性方面均显著优于现有技术，为构建高保真度的小说角色代理提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25632v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25632.md)  |
 | <span style='display: inline-block; width: 42px;'>06-23</span> | **Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity**<br><sub>机构: North China Electric Power University<br>本文提出了一种创新的多智能体语义重写框架，有效解决了 RAG 系统中的隐私泄露问题。通过离线预处理机制，该方法在几乎完全消除针对性隐私泄露风险的同时，保持了优于现有方法的语义 fidelity，且不影响在线服务性能，为敏感领域的 RAG 应用提供了可行的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24623v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24623.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/foursoils/Privacy-Preserving-RAG)</div> |
 | <span style='display: inline-block; width: 42px;'>06-23</span> | **Governed Shared Memory for Multi-Agent LLM Systems**<br><sub>机构: University of the Negev<br>本文论证了生产级多智能体记忆不能仅依赖长上下文检索，而必须视为受治理的分布式系统问题。通过引入显式的系统级抽象（如作用域、时序、血缘和策略传播），MemClaw 展示了如何在大规模集群中管理共享状态。更重要的是，通过对生产环境的实时评估，揭示了诸如作用域执行漏洞和管道竞争条件等关键架构问题，强调了在实际部署中进行实证评估对于暴露设计阶段遗漏故障的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24535v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24535.md)  |
 | <span style='display: inline-block; width: 42px;'>06-23</span> | **Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System**<br><sub>机构: Columbia University<br>本文系统地研究了自动化评分器评估代理数据分析输出的可靠性，并提出了改进策略。通过结合非生成式 AI（正则）和生成式 AI（LLM 宽松评分）以及人工校准，构建了高精度的评分级联。研究强调了从复杂代理输出中提取答案的挑战，并通过迭代 nudging 机制显著提升了评估管道的鲁棒性和成功率，为未来可验证数据科学中的代理工作流评估提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.24839v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.24839.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TZstats-Columbia/STAI-X-Grade-The-Grader)</div> |

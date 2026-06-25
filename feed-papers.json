@@ -1,42 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-24T05:16:51.868975+00:00",
-  "run_date": "2026-06-23",
+  "generated_at": "2026-06-25T05:37:28.255582+00:00",
+  "run_date": "2026-06-24",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.24623",
-      "date": "2026-06-23",
-      "title": "Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity",
+      "id": "arxiv:2606.25556",
+      "date": "2026-06-24",
+      "title": "BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuanhe Zhao",
-        "Tianyu Zhang",
-        "Huafei Xing",
-        "Derek F. Wong",
-        "Jianbin Li",
-        "Tao Fang"
+        "Hanyang Wang",
+        "Weijieying Ren",
+        "Yuxiang Zhang",
+        "Ding Cao",
+        "Zhizhao Zeng",
+        "Ke Zeng",
+        "Tianxiang Zhao"
       ],
-      "institution": "North China Electric Power University",
+      "institution": "University of Chicago, The Hong Kong University of Science and Technology (Guangzhou), Stanford University, University of Science and Technology of China, Meituan",
       "summary": {
-        "zh": "本文提出了一种创新的多智能体语义重写框架，有效解决了 RAG 系统中的隐私泄露问题。通过离线预处理机制，该方法在几乎完全消除针对性隐私泄露风险的同时，保持了优于现有方法的语义 fidelity，且不影响在线服务性能，为敏感领域的 RAG 应用提供了可行的解决方案。",
-        "en": "- **Background**: Retrieval-Augmented Generation (RAG) enhances LLMs with external knowledge but poses privacy risks in sensitive scenarios (e.g., healthcare) where malicious prompts can extract private data from the..."
+        "zh": "BiPACE 解决了长视界 LLM 智能体训练中基于组的 RL 方法存在的状态-动作信用不匹配问题。通过引入基于隐藏状态聚类的 BiGPO 和基于动作条件基线的 PACE，它在不增加 Critic 网络或额外采样成本的前提下，显著提高了信用分配的准确性。实验表明，该方法在多个基准测试中均大幅超越了现有的 SOTA 方法（如 GiGPO 和 GRPO），且计算开销可控，为无 Critic 的 LLM 智能体训练提供了更优的优势估计方案。",
+        "en": "BiPACE addresses the state-action credit mismatch in group-based RL for long-horizon LLM agents. By introducing BiGPO for hidden-state clustering and PACE for action-conditioned baselines, it significantly improves..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.24623v1",
-        "pdf": "https://arxiv.org/pdf/2606.24623v1",
-        "github": "https://github.com/foursoils/Privacy-Preserving-RAG"
+        "abs": "http://arxiv.org/abs/2606.25556v1",
+        "pdf": "https://arxiv.org/pdf/2606.25556v1",
+        "github": "https://github.com/TianxiangZhao/BiPACE"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.24623.md",
-        "summary_en_path": "summary_en/2026-06/2606.24623.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24623.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24623.md"
+        "summary_zh_path": "summary/2026-06/2606.25556.md",
+        "summary_en_path": "summary_en/2026-06/2606.25556.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.25556.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.25556.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,36 +54,37 @@
       }
     },
     {
-      "id": "arxiv:2606.24535",
-      "date": "2026-06-23",
-      "title": "Governed Shared Memory for Multi-Agent LLM Systems",
+      "id": "arxiv:2606.26080",
+      "date": "2026-06-24",
+      "title": "Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yanki Margalit",
-        "Nurit Cohen-Inger",
-        "Erni Avram",
-        "Ran Taig",
-        "Oded Margalit"
+        "Changdae Oh",
+        "Wendi Li",
+        "Seongheon Park",
+        "Samuel Yeh",
+        "Tanwi Mallick",
+        "Sharon Li"
       ],
-      "institution": "University of the Negev",
+      "institution": "University of Wisconsin–Madison, Argonne National Laboratory",
       "summary": {
-        "zh": "本文论证了生产级多智能体记忆不能仅依赖长上下文检索，而必须视为受治理的分布式系统问题。通过引入显式的系统级抽象（如作用域、时序、血缘和策略传播），MemClaw 展示了如何在大规模集群中管理共享状态。更重要的是，通过对生产环境的实时评估，揭示了诸如作用域执行漏洞和管道竞争条件等关键架构问题，强调了在实际部署中进行实证评估对于暴露设计阶段遗漏故障的重要性。",
-        "en": "- **Background**: As LLM systems evolve from isolated assistants to fleets of interacting agents, memory management transitions from a simple retrieval problem to a governed distributed-systems challenge involving..."
+        "zh": "本文揭示了RL后训练中一个被忽视的“免费午餐”——进展优势。通过理论推导证明，RL训练策略与参考策略的对数概率比率可以作为最优的优势函数，为LLM智能体提供高质量、无标注的步骤级评估信号。该方法解决了智能体场景中过程奖励建模难、成本高、泛化差的核心痛点，并在多个应用中展现出超越现有最先进方法的性能，为现实世界智能体系统的监控和优化提供了实用的指导。",
+        "en": "This paper uncovers a neglected \"free lunch\" in RL post-training: Progress Advantage. By theoretically proving that the log-probability ratio between the trained and reference policies serves as the optimal advantage..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.24535v1",
-        "pdf": "https://arxiv.org/pdf/2606.24535v1",
+        "abs": "http://arxiv.org/abs/2606.26080v1",
+        "pdf": "https://arxiv.org/pdf/2606.26080v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.24535.md",
-        "summary_en_path": "summary_en/2026-06/2606.24535.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24535.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24535.md"
+        "summary_zh_path": "summary/2026-06/2606.26080.md",
+        "summary_en_path": "summary_en/2026-06/2606.26080.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.26080.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.26080.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,84 +101,39 @@
       }
     },
     {
-      "id": "arxiv:2606.24839",
-      "date": "2026-06-23",
-      "title": "Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System",
+      "id": "arxiv:2606.25760",
+      "date": "2026-06-24",
+      "title": "Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tian Zheng",
-        "Kai-Tai Hsu"
+        "Divake Kumar",
+        "Sina Tayebati",
+        "Devashri Naik",
+        "Amanda Sofie Rios",
+        "Nilesh Ahuja",
+        "Omesh Tickoo",
+        "Ranganath Krishnan",
+        "Amit Ranjan Trivedi"
       ],
-      "institution": "Columbia University",
+      "institution": "University of Illinois Chicago",
       "summary": {
-        "zh": "本文系统地研究了自动化评分器评估代理数据分析输出的可靠性，并提出了改进策略。通过结合非生成式 AI（正则）和生成式 AI（LLM 宽松评分）以及人工校准，构建了高精度的评分级联。研究强调了从复杂代理输出中提取答案的挑战，并通过迭代 nudging 机制显著提升了评估管道的鲁棒性和成功率，为未来可验证数据科学中的代理工作流评估提供了重要见解。",
-        "en": "- **Background**: Multi-agent LLM systems (e.g., LAMBDA) are increasingly used for automated data analysis, producing rich, multi-step outputs including code, numerical results, and diagnostics. - **Limitations of..."
+        "zh": "本文提出了 Argus 基准，系统地评估了计算机使用代理中的不确定性量化方法。研究揭示了 UQ 方法排名的“选择性转移”特性：在同一模型不同数据集间高度稳定，但在跨模型架构和接口（特别是开源到闭源）时显著失效。文章指出隐藏状态和密度方法在开源场景下最稳健，而闭源场景需独立重新排名。此外，研究强调了在实际部署中，结合共形预测的空间安全区域比单纯的分数排序更关键，但需注意分布偏移对覆盖率的影响。该工作为 GUI 代理中感知机制环境的 UQ...",
+        "en": "- **Background**: Computer-use agents translate Vision-Language Model (VLM) predictions into executable GUI clicks. Reliable Uncertainty Quantification (UQ) is critical for rejection, calibration, miss-severity ranking,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.24839v1",
-        "pdf": "https://arxiv.org/pdf/2606.24839v1",
-        "github": "https://github.com/TZstats-Columbia/STAI-X-Grade-The-Grader"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.24839.md",
-        "summary_en_path": "summary_en/2026-06/2606.24839.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24839.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24839.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.24779",
-      "date": "2026-06-23",
-      "title": "DeepBD: A Grounded Agentic Workflow for Variant Prioritization and Diagnosis of Genetic Birth Defects",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Shiyu Li",
-        "Ziqi Yan",
-        "Zhihao Wu",
-        "Jielong Lu",
-        "Weiran Liao",
-        "Jiajun Yu",
-        "Genjie Li",
-        "Zeyu Chu",
-        "Jiajun Bu",
-        "Haishuai Wang"
-      ],
-      "institution": "Zhejiang University",
-      "summary": {
-        "zh": "DeepBD展示了一种将数据驱动的证据集成、基于工具的细化和LLM辅助的诊断审查分配不同角色的接地智能体方法。该方法有效解决了遗传性出生缺陷回顾性变异优先级排序中的复杂性问题，通过模块化设计提升了诊断的准确性和鲁棒性，为临床基因组学解释提供了新的范式。",
-        "en": "- **Background**: Birth defects are a major cause of fetal loss and long-term disability. For cases with suspected genetic etiologies, the diagnostic bottleneck has shifted from variant detection to post-sequencing..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.24779v1",
-        "pdf": "https://arxiv.org/pdf/2606.24779v1",
+        "abs": "http://arxiv.org/abs/2606.25760v1",
+        "pdf": "https://arxiv.org/pdf/2606.25760v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.24779.md",
-        "summary_en_path": "summary_en/2026-06/2606.24779.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24779.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24779.md"
+        "summary_zh_path": "summary/2026-06/2606.25760.md",
+        "summary_en_path": "summary_en/2026-06/2606.25760.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.25760.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.25760.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,44 +150,82 @@
       }
     },
     {
-      "id": "arxiv:2606.24626",
-      "date": "2026-06-23",
-      "title": "SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation",
+      "id": "arxiv:2606.25941",
+      "date": "2026-06-24",
+      "title": "Explainable Control Framework (XCF) based on Fuzzy Model-Agnostic Explanation and LLM Agent-Supported Interface",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chenyang Zhu",
-        "Jiayu Yao",
-        "Kushal Chawla",
-        "Youbing Yin",
-        "Nathan Wolfe",
-        "Pengshan Cai",
-        "Jingyu Wu",
-        "Spencer Hong",
-        "Sangwoo Cho",
-        "Shi-Xiong Zhang",
-        "Daben Liu",
-        "Sambit Sahu",
-        "Erin Babinsky"
+        "Faliang Yin",
+        "Hak-Keung Lam",
+        "David Watson"
       ],
-      "institution": "Capital One, General Intelligence Company of New York, Northwestern University",
+      "institution": "King's College London",
       "summary": {
-        "zh": "SAFARI 提出了一种创新的故障归因范式，通过“主动调查”机制解决了长轨迹智能体系统中的诊断难题。它利用专用工具读取轨迹片段并结合持久短期记忆，成功突破了 LLM 上下文窗口的物理限制和注意力稀释问题。实验表明，该方法不仅在常规基准测试中大幅超越现有 SOTA，更在极端长程依赖场景下保持了可靠的诊断能力，为大规模多智能体系统的可观测性和可靠性提供了重要技术支持。",
-        "en": "- **Background**: As autonomous agents handle increasingly complex multi-step and multi-agent tasks, their execution trajectories have grown beyond the limits of even the largest context windows. Fault attribution,..."
+        "zh": "本文提出了一种基于模糊模型无关解释和LLM代理支持界面的可解释控制框架（XCF）。通过引入HFMAE-C方法，利用模糊逻辑系统近似控制器行为，生成分层级的IF-THEN规则和显著性值，解决了黑盒控制器和复杂数学模型的可解释性问题。同时，结合LLM代理实现了自然语言报告和交互式咨询，显著提升了用户对控制系统的理解和信任。在倒立摆和机器人避障任务中的实验验证了该框架的有效性和优越性。",
+        "en": "This paper presents an Explainable Control Framework (XCF) based on fuzzy model-agnostic explanation and an LLM agent-supported interface. By introducing the HFMAE-C method, it approximates controller behavior using..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.24626v1",
-        "pdf": "https://arxiv.org/pdf/2606.24626v1",
+        "abs": "http://arxiv.org/abs/2606.25941v1",
+        "pdf": "https://arxiv.org/pdf/2606.25941v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.24626.md",
-        "summary_en_path": "summary_en/2026-06/2606.24626.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.24626.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.24626.md"
+        "summary_zh_path": "summary/2026-06/2606.25941.md",
+        "summary_en_path": "summary_en/2026-06/2606.25941.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.25941.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.25941.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.25632",
+      "date": "2026-06-24",
+      "title": "Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xushuo Tang",
+        "Junhe Zhang",
+        "Zihan Yang",
+        "Yifu Tang",
+        "Sichao Li",
+        "Longbin Lai",
+        "Zhengyi Yang"
+      ],
+      "institution": "University of Sydney, UNSW Sydney, Chang’an University, RAIDS Lab, Tongyi Lab (Alibaba Group)",
+      "summary": {
+        "zh": "本文针对长叙事角色扮演中的事实越界和风格单调问题，提出了 REVERIEMEM 三层记忆架构。通过情景层、语义层和个性层的协同工作，实现了视角受限的记忆管理和动态风格适应。在自建基准 KBF-QA 和现有基准 BOOKWORLD 上的广泛评估证实，该方法在保持角色知识边界忠实度和提升叙事生动性方面均显著优于现有技术，为构建高保真度的小说角色代理提供了新的解决方案。",
+        "en": "This paper addresses factual overreach and stylistic monotony in long-narrative role-playing by proposing REVERIEMEM, a three-layer memory architecture. By coordinating episodic, semantic, and personality layers, it..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.25632v1",
+        "pdf": "https://arxiv.org/pdf/2606.25632v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.25632.md",
+        "summary_en_path": "summary_en/2026-06/2606.25632.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.25632.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.25632.md"
       },
       "signals": {
         "priority_keyword": "Agent"
