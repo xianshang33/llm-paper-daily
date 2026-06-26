@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.25_05:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.26_05:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月25日 05:37</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月26日 05:44</sub></summary>
 <br>
 
-- BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents 
-- Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents 
-- Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets 
-- Explainable Control Framework (XCF) based on Fuzzy Model-Agnostic Explanation and LLM Agent-Supported Interface 
-- Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents 
+- Semantic Early-Stopping for Iterative LLM Agent Loops 
+- How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring 
+- A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO 
+- Joint Learning of Experiential Rules and Policies for Large Language Model Agents 
+- Where Do CoT Training Gains Land in LLM based Agents? 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-25</span> | **Semantic Early-Stopping for Iterative LLM Agent Loops**<br><sub>本文针对LLM智能体循环中的低效终止问题，提出了一种基于语义收敛的早停机制。通过摒弃不切实际的数学假设，建立机器可验证的理论基础，并设计了一种高效的回放式评估协议，论文证明了在无额外评判成本的情况下，语义早停能大幅降低Token消耗而不牺牲质量。研究还指出，未来的核心挑战在于如何低成本地识别“最佳迭代轮次”，而非仅仅决定“何时停止”。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27009v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27009.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/SahilShrivastava-Dev/semantic-halting-problem)</div> |
+| <span style='display: inline-block; width: 42px;'>06-25</span> | **How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring**<br><sub>机构: Beihang University<br>本文揭示了“确定性锚定效应”：静态结构的主要作用不在于提升代理的智能程度，而在于通过提供稳定的结构事实来规范代理的导航行为，使其更具纪律性和可复现性。研究提供了实用的指导原则：在中等项目中默认使用轻量级拓扑，在大型仓库中修剪前向边，并仅在必要时使用密集标签。这项工作为平衡静态分析的确定性与 LLM 的概率性探索提供了新的视角。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.26979v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.26979.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/mathieu0905/Code-Anchor)</div> |
+| <span style='display: inline-block; width: 42px;'>06-25</span> | **A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO**<br><sub>机构: University of Haifa<br>本文提出了一种名为 Process Harness 的创新机制，旨在通过非侵入式的方式将遗留工作流系统升级为代理式 BPM。通过开发 Task-Decision-Flow (TDF) 模型并在 CUGA FLO 中实现，作者成功地在确定性工作流引擎之上构建了一个策略治理的智能体层。该方法有效解决了传统 BPM 在处理动态环境和非结构化任务时的僵化问题，同时避免了完全替换核心引擎的风险，实现了结构合规性与智能适应性的平衡，为组织在保留现有 IT 投资的同时利用 LLM 能力提供了可行路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27188v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27188.md)  |
+| <span style='display: inline-block; width: 42px;'>06-25</span> | **Joint Learning of Experiential Rules and Policies for Large Language Model Agents**<br><sub>机构: Sun Yat-sen University<br>本文针对 LLM 智能体在交互学习中经验利用不足的问题，提出了 JERP 框架。该框架创新性地联合学习了经验规则和政策，通过动态维护规则池并使其与模型参数更新同步，有效克服了规则过时和稀疏奖励下局部修正困难的挑战。在 AlfWorld 和 WebShop 上的实验证实了该方法在复杂交互任务中的有效性和优越性，为提升 LLM 智能体的长期学习能力提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27136v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27136.md)  |
+| <span style='display: inline-block; width: 42px;'>06-25</span> | **Where Do CoT Training Gains Land in LLM based Agents?**<br><sub>机构: Renmin University of China<br>本文深入探讨了 LLM 智能体中 CoT 训练的实际作用机制，指出 CoT 训练的主要增益在于提升模型直接从提示中预测行动的能力，而非显著增强基于推理的行动修正能力。针对模型后期过度依赖提示的问题，作者提出了一种简单的选择性掩码监督策略，有效提升了模型的分布外泛化性能。这一发现对理解 CoT 的本质及优化智能体训练策略具有重要意义。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.26935v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.26935.md)  |
 | <span style='display: inline-block; width: 42px;'>06-24</span> | **BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents**<br><sub>机构: University of Chicago, The Hong Kong University of Science and Technology (Guangzhou), Stanford University, University of Science and Technology of China, Meituan<br>BiPACE 解决了长视界 LLM 智能体训练中基于组的 RL 方法存在的状态-动作信用不匹配问题。通过引入基于隐藏状态聚类的 BiGPO 和基于动作条件基线的 PACE，它在不增加 Critic 网络或额外采样成本的前提下，显著提高了信用分配的准确性。实验表明，该方法在多个基准测试中均大幅超越了现有的 SOTA 方法（如 GiGPO 和 GRPO），且计算开销可控，为无 Critic 的 LLM 智能体训练提供了更优的优势估计方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25556.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TianxiangZhao/BiPACE)</div> |
 | <span style='display: inline-block; width: 42px;'>06-24</span> | **Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents**<br><sub>机构: University of Wisconsin–Madison, Argonne National Laboratory<br>本文揭示了RL后训练中一个被忽视的“免费午餐”——进展优势。通过理论推导证明，RL训练策略与参考策略的对数概率比率可以作为最优的优势函数，为LLM智能体提供高质量、无标注的步骤级评估信号。该方法解决了智能体场景中过程奖励建模难、成本高、泛化差的核心痛点，并在多个应用中展现出超越现有最先进方法的性能，为现实世界智能体系统的监控和优化提供了实用的指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.26080v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.26080.md)  |
 | <span style='display: inline-block; width: 42px;'>06-24</span> | **Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets**<br><sub>机构: University of Illinois Chicago<br>本文提出了 Argus 基准，系统地评估了计算机使用代理中的不确定性量化方法。研究揭示了 UQ 方法排名的“选择性转移”特性：在同一模型不同数据集间高度稳定，但在跨模型架构和接口（特别是开源到闭源）时显著失效。文章指出隐藏状态和密度方法在开源场景下最稳健，而闭源场景需独立重新排名。此外，研究强调了在实际部署中，结合共形预测的空间安全区域比单纯的分数排序更关键，但需注意分布偏移对覆盖率的影响。该工作为 GUI 代理中感知机制环境的 UQ 选择提供了可复现的基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.25760v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.25760.md)  |
