@@ -1,125 +1,47 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-26T05:44:05.866548+00:00",
-  "run_date": "2026-06-25",
+  "generated_at": "2026-06-27T05:10:05.482651+00:00",
+  "run_date": "2026-06-21",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.27009",
-      "date": "2026-06-25",
-      "title": "Semantic Early-Stopping for Iterative LLM Agent Loops",
+      "id": "arxiv:2606.22388",
+      "date": "2026-06-21",
+      "title": "PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sahil Shrivastava"
+        "Jiayu Liu",
+        "Qihan Lin",
+        "Cheng Qian",
+        "Rui Wang",
+        "Emre Can Acikgoz",
+        "Xiaocheng Yang",
+        "Jiateng Liu",
+        "Zhenhailong Wang",
+        "Xiusi Chen",
+        "Heng Ji",
+        "Dilek Hakkani-Tür"
       ],
-      "institution": null,
+      "institution": "University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "本文针对LLM智能体循环中的低效终止问题，提出了一种基于语义收敛的早停机制。通过摒弃不切实际的数学假设，建立机器可验证的理论基础，并设计了一种高效的回放式评估协议，论文证明了在无额外评判成本的情况下，语义早停能大幅降低Token消耗而不牺牲质量。研究还指出，未来的核心挑战在于如何低成本地识别“最佳迭代轮次”，而非仅仅决定“何时停止”。",
-        "en": "This paper addresses inefficient termination in LLM agent loops by proposing a semantic early-stopping mechanism. By discarding unrealistic mathematical assumptions and establishing a machine-verifiable theoretical..."
+        "zh": "PlanBench-XL 填补了评估 LLM 智能体在大规模、不完美工具环境中长周期规划能力的空白。通过引入部分工具可见性和动态阻塞机制，该基准真实地模拟了现实世界的不确定性。研究结果表明，尽管顶级模型在理想条件下表现尚可，但在面对工具故障和检索噪声时鲁棒性极差，突显了开发更具适应性和鲁棒性的长周期规划算法的迫切需求。",
+        "en": "- **Background**: LLM agents increasingly operate in large-scale tool ecosystems where real-world tasks require discovering relevant tools, inferring implicit sub-goals, and adapting over long horizons. Due to context..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.27009v1",
-        "pdf": "https://arxiv.org/pdf/2606.27009v1",
-        "github": "https://github.com/SahilShrivastava-Dev/semantic-halting-problem"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.27009.md",
-        "summary_en_path": "summary_en/2026-06/2606.27009.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.27009.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.27009.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.26979",
-      "date": "2026-06-25",
-      "title": "How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Zhihao Lin",
-        "Mingyi Zhou",
-        "Yizhuo Yang",
-        "Li Li"
-      ],
-      "institution": "Beihang University",
-      "summary": {
-        "zh": "本文揭示了“确定性锚定效应”：静态结构的主要作用不在于提升代理的智能程度，而在于通过提供稳定的结构事实来规范代理的导航行为，使其更具纪律性和可复现性。研究提供了实用的指导原则：在中等项目中默认使用轻量级拓扑，在大型仓库中修剪前向边，并仅在必要时使用密集标签。这项工作为平衡静态分析的确定性与 LLM 的概率性探索提供了新的视角。",
-        "en": "- **Background**: LLM-based code agents typically employ a \"grep-first\" retrieval strategy, navigating repositories via keyword searches. While fast and infrastructure-light, this approach ignores structural..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.26979v1",
-        "pdf": "https://arxiv.org/pdf/2606.26979v1",
-        "github": "https://github.com/mathieu0905/Code-Anchor"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.26979.md",
-        "summary_en_path": "summary_en/2026-06/2606.26979.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.26979.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.26979.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.27188",
-      "date": "2026-06-25",
-      "title": "A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Fabiana Fournier",
-        "Lior Limonad"
-      ],
-      "institution": "University of Haifa",
-      "summary": {
-        "zh": "本文提出了一种名为 Process Harness 的创新机制，旨在通过非侵入式的方式将遗留工作流系统升级为代理式 BPM。通过开发 Task-Decision-Flow (TDF) 模型并在 CUGA FLO 中实现，作者成功地在确定性工作流引擎之上构建了一个策略治理的智能体层。该方法有效解决了传统 BPM...",
-        "en": "- **Background**: The rapid advancement of Large Language Models (LLMs) and agentic frameworks is prompting a re-examination of Business Process Management (BPM). Traditional BPM systems (e.g., based on BPMN 2.0) offer..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.27188v1",
-        "pdf": "https://arxiv.org/pdf/2606.27188v1",
+        "abs": "http://arxiv.org/abs/2606.22388v1",
+        "pdf": "https://arxiv.org/pdf/2606.22388v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.27188.md",
-        "summary_en_path": "summary_en/2026-06/2606.27188.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.27188.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.27188.md"
+        "summary_zh_path": "summary/2026-06/2606.22388.md",
+        "summary_en_path": "summary_en/2026-06/2606.22388.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.22388.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.22388.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -136,33 +58,32 @@
       }
     },
     {
-      "id": "arxiv:2606.27136",
-      "date": "2026-06-25",
-      "title": "Joint Learning of Experiential Rules and Policies for Large Language Model Agents",
+      "id": "arxiv:2606.22329",
+      "date": "2026-06-21",
+      "title": "BabelJudge: Measuring LLM-as-a-Judge Reliability Across Languages and Agent Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shicheng Ye",
-        "Chao Yu"
+        "Shreyas KC"
       ],
-      "institution": "Sun Yat-sen University",
+      "institution": "lable evaluation in NLP pipelines",
       "summary": {
-        "zh": "本文针对 LLM 智能体在交互学习中经验利用不足的问题，提出了 JERP 框架。该框架创新性地联合学习了经验规则和政策，通过动态维护规则池并使其与模型参数更新同步，有效克服了规则过时和稀疏奖励下局部修正困难的挑战。在 AlfWorld 和 WebShop 上的实验证实了该方法在复杂交互任务中的有效性和优越性，为提升 LLM 智能体的长期学习能力提供了新的思路。",
-        "en": "- **Background**: For LLM agents in multi-step interactive environments, a key challenge is effectively utilizing accumulated interaction experience. Existing approaches typically separate this into two paths: storing..."
+        "zh": "BabelJudge 通过创新的“退化标注”方法解决了 LLM 裁判评估中的人工标注瓶颈，并提供了一套全面的框架来审计位置偏差、冗长偏差及跨语言性能退化。研究揭示了在低资源语言中裁判可靠性的严重下降及其被原始准确率掩盖的事实，同时扩展了对 Agent 轨迹的评估能力。该工具为开发更鲁棒、公平的 LLM 裁判系统提供了重要的基础设施和度量标准。",
+        "en": "- **Background**: LLM-as-a-judge has become the dominant approach for scalable evaluation in NLP pipelines, used in benchmarks, RLHF data collection, and production quality gates. - **Why Existing Work Falls Short**:..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.27136v1",
-        "pdf": "https://arxiv.org/pdf/2606.27136v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2606.22329v1",
+        "pdf": "https://arxiv.org/pdf/2606.22329v1",
+        "github": "https://github.com/Shreyaskc/BabelJudge"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.27136.md",
-        "summary_en_path": "summary_en/2026-06/2606.27136.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.27136.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.27136.md"
+        "summary_zh_path": "summary/2026-06/2606.22329.md",
+        "summary_en_path": "summary_en/2026-06/2606.22329.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.22329.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.22329.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -179,36 +100,125 @@
       }
     },
     {
-      "id": "arxiv:2606.26935",
-      "date": "2026-06-25",
-      "title": "Where Do CoT Training Gains Land in LLM based Agents?",
+      "id": "arxiv:2606.22708",
+      "date": "2026-06-21",
+      "title": "Libretto: Giving LLM Agents a Sense of Musical Structure",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jingyu Liu",
-        "Zhiwen Wang",
-        "Yuxin Jing",
-        "Huanyu Zhou",
-        "Yong Liu"
+        "Yichen Xu"
       ],
-      "institution": "Renmin University of China",
+      "institution": "University of California, Berkeley",
       "summary": {
-        "zh": "本文深入探讨了 LLM 智能体中 CoT 训练的实际作用机制，指出 CoT 训练的主要增益在于提升模型直接从提示中预测行动的能力，而非显著增强基于推理的行动修正能力。针对模型后期过度依赖提示的问题，作者提出了一种简单的选择性掩码监督策略，有效提升了模型的分布外泛化性能。这一发现对理解 CoT 的本质及优化智能体训练策略具有重要意义。",
-        "en": "- **Background**: Chain-of-thought (CoT) reasoning is widely used in LLM-based agents. However, prior work indicates that verbalized CoT is not always faithful and may reflect post-hoc rationalization, where the model..."
+        "zh": "Libretto 解决了 LLM 代理在音乐生成中面临的“结构盲区”问题。通过引入显式结构的 LLM 原生语法和基于多维结构轴的统计评估空间，它将符号音乐转化为可测量和可编辑的对象。这不仅提升了生成音乐的结构合理性，还赋予了代理诊断错误和迭代修订的能力，为可控的音乐创作提供了新的范式。",
+        "en": "- **Background**: Current generative music systems (e.g., Suno, MusicGen) produce high-quality audio from text prompts, but these outputs are difficult to inspect, edit, or diagnose as musical structures. Waveforms do..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.26935v1",
-        "pdf": "https://arxiv.org/pdf/2606.26935v1",
+        "abs": "http://arxiv.org/abs/2606.22708v1",
+        "pdf": "https://arxiv.org/pdf/2606.22708v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.26935.md",
-        "summary_en_path": "summary_en/2026-06/2606.26935.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.26935.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.26935.md"
+        "summary_zh_path": "summary/2026-06/2606.22708.md",
+        "summary_en_path": "summary_en/2026-06/2606.22708.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.22708.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.22708.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.22692",
+      "date": "2026-06-21",
+      "title": "VISTA Architect: A graph database-oriented health AI system demonstrated in multidisciplinary tumor boards",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Tuomo Kiiskinen",
+        "Jason Fries",
+        "Philip Adamson",
+        "David Wu",
+        "Timothy John Ellis-Caleo",
+        "Aaron Fanous",
+        "Balasubramanian Narasimhan",
+        "Joel Neal",
+        "Sylvia Plevritis",
+        "Manuel A. Rivas"
+      ],
+      "institution": "Stanford University School of Medicine",
+      "summary": {
+        "zh": "VISTA Architect 通过引入面向图数据库的架构，成功解决了纵向EHR数据处理中的时序一致性、来源可追溯性及计算效率问题。它通过将耗时的临床综合过程前置到数据摄入阶段，实现了高效、准确的 patient history 重建，显著减轻了临床医生的负担，并在胸部肿瘤学的实际临床场景中展现了超越传统RAG方法的卓越性能。其模块化设计也为未来扩展到其他医疗专科奠定了基础。",
+        "en": "VISTA Architect successfully addresses issues of temporal consistency, source provenance, and computational efficiency in longitudinal EHR processing by introducing a graph-database-oriented architecture. By shifting..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.22692v1",
+        "pdf": "https://arxiv.org/pdf/2606.22692v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.22692.md",
+        "summary_en_path": "summary_en/2026-06/2606.22692.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.22692.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.22692.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.22528",
+      "date": "2026-06-21",
+      "title": "Governance Decay: How Context Compaction Silently Erases Safety Constraints in Long-Horizon LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Shiyang Chen"
+      ],
+      "institution": "Beijing Institute of Technology",
+      "summary": {
+        "zh": "本文揭示了LLM智能体中上下文压缩机制作为关键安全故障面的问题，定义了“治理衰减”现象。通过 ConstraintRot 基准量化了压缩导致的安全违规风险，并展示了针对性的对抗攻击威力。最终提出的 Constraint Pinning 提供了一种高效、无需训练的防御方案，强调了在部署长周期LLM智能体时，必须将上下文管理纳入核心治理考量。",
+        "en": "- **Background**: Modern LLM agents increasingly rely on context compaction (summarization or eviction) to manage long-running sessions within token budgets. - **Why Existing Work Falls Short**: Current compaction..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.22528v1",
+        "pdf": "https://arxiv.org/pdf/2606.22528v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.22528.md",
+        "summary_en_path": "summary_en/2026-06/2606.22528.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.22528.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.22528.md"
       },
       "signals": {
         "priority_keyword": "Agent"
