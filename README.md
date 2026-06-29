@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.26_05:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.29_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月26日 05:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月29日 06:13</sub></summary>
 <br>
 
-- Semantic Early-Stopping for Iterative LLM Agent Loops 
-- How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring 
-- A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO 
-- Joint Learning of Experiential Rules and Policies for Large Language Model Agents 
-- Where Do CoT Training Gains Land in LLM based Agents? 
+- ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents 
+- LLawCo: Learning Laws of Cooperation for Modeling Embodied Multi-Agent Behavior 
+- From Detection to Action: Using LLM Agents for Fault-Tolerant Control 
+- Agentic AI-Powered Re-Identification: An Emerging, Scalable Threat to Mobility Microdata Privacy 
+- Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-26</span> | **ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents**<br><sub>机构: Beijing University of Posts and Telecommunications<br>ToolPrivacyBench 解决了LLM Agent在多工具协作场景下的隐私评估缺失问题。通过引入策略知识库和轨迹级审计机制，它形式化并量化了“目的绑定隐私”风险。研究证实，当前Agent普遍存在隐私过度披露现象，即使任务成功完成也可能泄露敏感数据。该基准为开发更符合隐私规范的Agent系统提供了重要的评估标准和改进方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28061v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28061.md)  |
+| <span style='display: inline-block; width: 42px;'>06-26</span> | **LLawCo: Learning Laws of Cooperation for Modeling Embodied Multi-Agent Behavior**<br><sub>机构: University of Massachusetts Amherst; Mitsubishi Electric Research Laboratories (MERL)<br>LLawCo 通过模拟阿西莫夫机器人定律的理念，提出了一种让具身多智能体从失败中学习高层协作法则的方法。该方法解决了现有LLM智能体在部分可观测环境中协作对齐难和缺乏自我进化能力的问题。通过引入行为法则并进行监督微调，智能体能够更好地理解任务需求和伙伴行为。实验证明，该方法在多个基准测试中均优于现有的最先进方法，显著提升了多智能体协作的成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28182v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28182.md)  |
+| <span style='display: inline-block; width: 42px;'>06-26</span> | **From Detection to Action: Using LLM Agents for Fault-Tolerant Control**<br><sub>机构: Imperial College London, Helmut Schmidt University<br>本文提出了一种创新的LLM代理框架，通过结合多代理工作流、数字孪生仿真验证和基于知识图谱的RAG，解决了流程工业中主动容错控制的难题。该方法不仅利用了LLM的推理能力，还通过严格的物理约束检查和仿真预验证确保了工业级的安全性，为实现高度自主且安全的工业过程控制提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28011v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28011.md)  |
+| <span style='display: inline-block; width: 42px;'>06-26</span> | **Agentic AI-Powered Re-Identification: An Emerging, Scalable Threat to Mobility Microdata Privacy**<br><sub>机构: University of Applied Sciences and Arts Northwestern Switzerland (FHNW)<br>本文揭示了代理AI对移动微数据隐私构成的新兴且可扩展的威胁。研究表明，LLM智能体能够以极低的成本自动化执行复杂的重识别任务，打破了传统SDC实践中关于匿名性的隐含假设。这一发现要求数据保管人和监管机构重新评估隐私风险，特别是在GDPR框架下，重识别现在被视为一种“合理可能”且成本低廉的攻击手段。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27936v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27936.md)  |
+| <span style='display: inline-block; width: 42px;'>06-26</span> | **Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents**<br><sub>机构: Emory University, The University of Tokyo, LocationMind<br>本文针对 LLM 智能体在世界建模中的幻觉传播问题，提出了 GILP 框架。通过结合小型参数化世界模型的精确状态预测能力与 LLM API 的强大语义推理能力，并利用一致性门控机制进行迭代修正，GILP 在显著降低幻觉状态率的同时大幅提升了规划成功率。该方法以较低的额外计算成本实现了更可靠、更准确的自主代理规划，为混合式世界模型的设计提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27806v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27806.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Hik289/Environment-reduce-error.git)</div> |
 | <span style='display: inline-block; width: 42px;'>06-25</span> | **Semantic Early-Stopping for Iterative LLM Agent Loops**<br><sub>本文针对LLM智能体循环中的低效终止问题，提出了一种基于语义收敛的早停机制。通过摒弃不切实际的数学假设，建立机器可验证的理论基础，并设计了一种高效的回放式评估协议，论文证明了在无额外评判成本的情况下，语义早停能大幅降低Token消耗而不牺牲质量。研究还指出，未来的核心挑战在于如何低成本地识别“最佳迭代轮次”，而非仅仅决定“何时停止”。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27009v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27009.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/SahilShrivastava-Dev/semantic-halting-problem)</div> |
 | <span style='display: inline-block; width: 42px;'>06-25</span> | **How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring**<br><sub>机构: Beihang University<br>本文揭示了“确定性锚定效应”：静态结构的主要作用不在于提升代理的智能程度，而在于通过提供稳定的结构事实来规范代理的导航行为，使其更具纪律性和可复现性。研究提供了实用的指导原则：在中等项目中默认使用轻量级拓扑，在大型仓库中修剪前向边，并仅在必要时使用密集标签。这项工作为平衡静态分析的确定性与 LLM 的概率性探索提供了新的视角。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.26979v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.26979.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/mathieu0905/Code-Anchor)</div> |
 | <span style='display: inline-block; width: 42px;'>06-25</span> | **A Process Harness for Uplifting Legacy Workflows to Agentic BPM: Design and Realization in CUGA FLO**<br><sub>机构: University of Haifa<br>本文提出了一种名为 Process Harness 的创新机制，旨在通过非侵入式的方式将遗留工作流系统升级为代理式 BPM。通过开发 Task-Decision-Flow (TDF) 模型并在 CUGA FLO 中实现，作者成功地在确定性工作流引擎之上构建了一个策略治理的智能体层。该方法有效解决了传统 BPM 在处理动态环境和非结构化任务时的僵化问题，同时避免了完全替换核心引擎的风险，实现了结构合规性与智能适应性的平衡，为组织在保留现有 IT 投资的同时利用 LLM 能力提供了可行路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.27188v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.27188.md)  |
