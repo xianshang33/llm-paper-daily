@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.29_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_06.30_05:39-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月29日 06:13</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月30日 05:39</sub></summary>
 <br>
 
-- ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents 
-- LLawCo: Learning Laws of Cooperation for Modeling Embodied Multi-Agent Behavior 
-- From Detection to Action: Using LLM Agents for Fault-Tolerant Control 
-- Agentic AI-Powered Re-Identification: An Emerging, Scalable Threat to Mobility Microdata Privacy 
-- Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents 
+- Self-Evolving World Models for LLM Agent Planning 
+- TraceLab: Characterizing Coding Agent Workloads for LLM Serving 
+- Collective cooperation without individual fidelity in LLM agents 
+- Whose Side Is Your Agent On? Multi-Party Principal Loyalty in LLM Agents 
+- Towards Continual Motion-Language Agents: LoRA Variants for Incremental Motion Understanding and Generation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-29</span> | **Self-Evolving World Models for LLM Agent Planning**<br><sub>机构: National University of Singapore, Singapore University of Technology and Design, Singapore Management University<br>本文提出的 WorldEvolver 框架通过解耦模型参数更新与上下文修订，成功解决了 LLM 智能体在长视界任务中世界模型预测不可靠的问题。通过情景记忆、语义记忆和选择性前瞻三个模块的协同工作，该方法能够在不增加训练成本的前提下，利用测试时的交互反馈持续优化前瞻能力，从而显著提升智能体的规划效率和成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30639v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30639.md)  |
+| <span style='display: inline-block; width: 42px;'>06-29</span> | **TraceLab: Characterizing Coding Agent Workloads for LLM Serving**<br><sub>机构: University of Washington<br>本文填补了编程智能体真实工作负载数据的空白，发布了 TraceLab 数据集。通过分析发现，编程智能体工作负载具有长自主循环、长上下文短输出、多样化且重尾的工具调用以及高但不完美的前缀缓存命中率等特征。这些发现为优化 LLM 服务系统提供了具体方向，包括优化工具调用开销、改进预填充策略、预测工具延迟以及增强 KV 缓存管理。该研究为未来高效服务编程智能体奠定了数据基础和理论指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30560v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30560.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/uw-syfi/TraceLab.git)</div> |
+| <span style='display: inline-block; width: 42px;'>06-29</span> | **Collective cooperation without individual fidelity in LLM agents**<br><sub>机构: Institute for Biocomputation and Physics of Complex Systems, University of Zaragoza<br>本文揭示了基于 LLM 的社会代理中存在显著的“宏观-微观解离”现象：即使集体结果看起来像人类，其底层的行為分布和决策机制也可能完全不同。研究结果表明，要将 LLM 代理验证为人类的可靠替代品，不能仅依赖于结果层面的一致性，必须跨越聚合动态、个体异质性以及上下文依赖的决策规则进行多维度的比较和验证。这对未来使用 LLM 进行社会模拟和政策推演提出了重要的警示和方法论建议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30454v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30454.md)  |
+| <span style='display: inline-block; width: 42px;'>06-29</span> | **Whose Side Is Your Agent On? Multi-Party Principal Loyalty in LLM Agents**<br><sub>机构: University of Washington<br>本文深入研究了 LLM Agent 在多方交互中的“委托人忠诚度”问题，指出了传统“帮助当前说话者”目标的局限性。通过构建 PrincipalBench 基准，文章量化了现有模型在忠诚度上的缺陷，并提出了基于系统提示的忠诚度支架和基于 KL 散度的蒸馏方法两种解决方案。尽管这些方法在特定指标上取得了进展，但研究揭示了一个结构性难题：泄漏风险与过度拒绝之间存在固有的权衡关系，未来的研究需致力于打破这一权衡，以实现既安全又高效的代理人格。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30383v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30383.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/19PINE-AI/principal-loyalty)</div> |
+| <span style='display: inline-block; width: 42px;'>06-29</span> | **Towards Continual Motion-Language Agents: LoRA Variants for Incremental Motion Understanding and Generation**<br><sub>机构: International University of Applied Sciences<br>本文针对运动-语言代理在动态环境中的持续学习问题，提出了一种基于LoRA变体和混合专家架构的解决方案。通过引入基于自编码器的无标签路由器，成功解决了任务间干扰和灾难性遗忘的挑战。实验证明，硬专家选择机制能有效维持双向任务的性能稳定性。该工作不仅提供了高效的持续学习框架，还揭示了当前评估指标的不足，为未来终身运动-语言代理的研究奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30266v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30266.md)  |
 | <span style='display: inline-block; width: 42px;'>06-26</span> | **ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents**<br><sub>机构: Beijing University of Posts and Telecommunications<br>ToolPrivacyBench 解决了LLM Agent在多工具协作场景下的隐私评估缺失问题。通过引入策略知识库和轨迹级审计机制，它形式化并量化了“目的绑定隐私”风险。研究证实，当前Agent普遍存在隐私过度披露现象，即使任务成功完成也可能泄露敏感数据。该基准为开发更符合隐私规范的Agent系统提供了重要的评估标准和改进方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28061v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28061.md)  |
 | <span style='display: inline-block; width: 42px;'>06-26</span> | **LLawCo: Learning Laws of Cooperation for Modeling Embodied Multi-Agent Behavior**<br><sub>机构: University of Massachusetts Amherst; Mitsubishi Electric Research Laboratories (MERL)<br>LLawCo 通过模拟阿西莫夫机器人定律的理念，提出了一种让具身多智能体从失败中学习高层协作法则的方法。该方法解决了现有LLM智能体在部分可观测环境中协作对齐难和缺乏自我进化能力的问题。通过引入行为法则并进行监督微调，智能体能够更好地理解任务需求和伙伴行为。实验证明，该方法在多个基准测试中均优于现有的最先进方法，显著提升了多智能体协作的成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28182v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28182.md)  |
 | <span style='display: inline-block; width: 42px;'>06-26</span> | **From Detection to Action: Using LLM Agents for Fault-Tolerant Control**<br><sub>机构: Imperial College London, Helmut Schmidt University<br>本文提出了一种创新的LLM代理框架，通过结合多代理工作流、数字孪生仿真验证和基于知识图谱的RAG，解决了流程工业中主动容错控制的难题。该方法不仅利用了LLM的推理能力，还通过严格的物理约束检查和仿真预验证确保了工业级的安全性，为实现高度自主且安全的工业过程控制提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.28011v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.28011.md)  |
