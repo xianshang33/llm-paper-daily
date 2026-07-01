@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_06.30_05:39-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.01_06:00-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年06月30日 05:39</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月01日 06:00</sub></summary>
 <br>
 
-- Self-Evolving World Models for LLM Agent Planning 
-- TraceLab: Characterizing Coding Agent Workloads for LLM Serving 
-- Collective cooperation without individual fidelity in LLM agents 
-- Whose Side Is Your Agent On? Multi-Party Principal Loyalty in LLM Agents 
-- Towards Continual Motion-Language Agents: LoRA Variants for Incremental Motion Understanding and Generation 
+- QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents 
+- MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments 
+- ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping 
+- A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents 
+- FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>06-30</span> | **QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents**<br><sub>机构: University of Tübingen<br>QVal 为长视野 LLM 智能体的密集监督信号提供了一个高效、低成本且公平的评估框架。通过引入“Q-对齐”指标，它成功解耦了信号质量与训练工程因素，使得研究人员能够在进行昂贵的强化学习训练之前迭代和优化监督方法。研究结果挑战了当前复杂监督方法的优越性假设，强调了简单基线的有效性，并为未来研究提供了可扩展的基准工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.32034v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.32034.md)  |
+| <span style='display: inline-block; width: 42px;'>06-30</span> | **MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments**<br><sub>机构: Fudan University, Shanghai Innovation Institute, The Chinese University of Hong Kong<br>MECoBench 填补了多模态具身智能体协作研究的空白，提供了一个系统性的测试床。研究结果表明，虽然协作能提升性能和鲁棒性，但必须仔细设计通信机制和协作模式以应对协调复杂性。该工作为理解多模态具身协作的机制和极限提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.31966v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.31966.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/q-i-n-g/MECoBench)</div> |
+| <span style='display: inline-block; width: 42px;'>06-30</span> | **ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping**<br><sub>机构: Alibaba Taobao & Tmall Group<br>ShopX 通过将意图理解、规划执行和商品空间操作统一到一个基础模型中，解决了代理购物中语言理解与商品检索之间的断层问题。其核心创新在于设计了LLM可操作的语义ID（SIDs）及相应的训练策略，实现了模型原生的商品履行。实验证明，该方法在处理复杂购物意图时优于传统的工具介导型代理系统，为下一代AI原生购物体验提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.31693v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.31693.md)  |
+| <span style='display: inline-block; width: 42px;'>06-30</span> | **A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents**<br><sub>机构: Imperial College London; Helmut Schmidt University<br>本文提出了一种结合大型语言模型与传统容错控制的新型框架，旨在解决过程工业中未预期故障的自动恢复问题。通过将LLM定位为受约束的监督规划器，并辅以严格的外部验证和知识图谱支持，该研究在利用LLM推理能力的同时确保了工业级的安全性。提供的开源环境和详细的设计维度分析为该领域的进一步研究和实际应用奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.31635v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.31635.md)  |
+| <span style='display: inline-block; width: 42px;'>06-30</span> | **FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents**<br><sub>机构: MBZUAI, The University of Tokyo, McGill University, The Fin AI, Kyoto University<br>本文指出了自主金融代理在长期部署中面临的“指令显著性衰减”问题，即随着上下文积累，初始行为指令的影响力逐渐减弱。通过引入 FinPersona-Bench 基准测试，作者量化了这一现象，并发现简单的定期指令刷新并不总是有效，甚至可能对激进型代理产生负面影响。研究建议，为了实现可靠的长期部署，必须根据代理的具体行为画像和当前市场状态，采取选择性的、感知指令的重 grounding 策略。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.31522v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.31522.md)  |
 | <span style='display: inline-block; width: 42px;'>06-29</span> | **Self-Evolving World Models for LLM Agent Planning**<br><sub>机构: National University of Singapore, Singapore University of Technology and Design, Singapore Management University<br>本文提出的 WorldEvolver 框架通过解耦模型参数更新与上下文修订，成功解决了 LLM 智能体在长视界任务中世界模型预测不可靠的问题。通过情景记忆、语义记忆和选择性前瞻三个模块的协同工作，该方法能够在不增加训练成本的前提下，利用测试时的交互反馈持续优化前瞻能力，从而显著提升智能体的规划效率和成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30639v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30639.md)  |
 | <span style='display: inline-block; width: 42px;'>06-29</span> | **TraceLab: Characterizing Coding Agent Workloads for LLM Serving**<br><sub>机构: University of Washington<br>本文填补了编程智能体真实工作负载数据的空白，发布了 TraceLab 数据集。通过分析发现，编程智能体工作负载具有长自主循环、长上下文短输出、多样化且重尾的工具调用以及高但不完美的前缀缓存命中率等特征。这些发现为优化 LLM 服务系统提供了具体方向，包括优化工具调用开销、改进预填充策略、预测工具延迟以及增强 KV 缓存管理。该研究为未来高效服务编程智能体奠定了数据基础和理论指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30560v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30560.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/uw-syfi/TraceLab.git)</div> |
 | <span style='display: inline-block; width: 42px;'>06-29</span> | **Collective cooperation without individual fidelity in LLM agents**<br><sub>机构: Institute for Biocomputation and Physics of Complex Systems, University of Zaragoza<br>本文揭示了基于 LLM 的社会代理中存在显著的“宏观-微观解离”现象：即使集体结果看起来像人类，其底层的行為分布和决策机制也可能完全不同。研究结果表明，要将 LLM 代理验证为人类的可靠替代品，不能仅依赖于结果层面的一致性，必须跨越聚合动态、个体异质性以及上下文依赖的决策规则进行多维度的比较和验证。这对未来使用 LLM 进行社会模拟和政策推演提出了重要的警示和方法论建议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2606.30454v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-06/2606.30454.md)  |

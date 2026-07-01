@@ -1,40 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-06-30T05:39:52.905825+00:00",
-  "run_date": "2026-06-29",
+  "generated_at": "2026-07-01T06:00:11.710853+00:00",
+  "run_date": "2026-06-30",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.30639",
-      "date": "2026-06-29",
-      "title": "Self-Evolving World Models for LLM Agent Planning",
+      "id": "arxiv:2606.32034",
+      "date": "2026-06-30",
+      "title": "QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xuan Zhang",
-        "Wenxuan Zhang",
-        "See-Kiong Ng",
-        "Yang Deng"
+        "Sergio Hernández-Gutiérrez",
+        "Matteo Merler",
+        "Ilze Amanda Auzina",
+        "Joschka Strüber",
+        "Ameya Prabhu",
+        "Matthias Bethge"
       ],
-      "institution": "National University of Singapore, Singapore University of Technology and Design, Singapore Management University",
+      "institution": "University of Tübingen",
       "summary": {
-        "zh": "本文提出的 WorldEvolver 框架通过解耦模型参数更新与上下文修订，成功解决了 LLM 智能体在长视界任务中世界模型预测不可靠的问题。通过情景记忆、语义记忆和选择性前瞻三个模块的协同工作，该方法能够在不增加训练成本的前提下，利用测试时的交互反馈持续优化前瞻能力，从而显著提升智能体的规划效率和成功率。",
-        "en": "- **Background**: World models provide LLM agents with foresight by predicting action consequences before execution, which is crucial for long-horizon planning. However, existing approaches often rely on static,..."
+        "zh": "QVal 为长视野 LLM 智能体的密集监督信号提供了一个高效、低成本且公平的评估框架。通过引入“Q-对齐”指标，它成功解耦了信号质量与训练工程因素，使得研究人员能够在进行昂贵的强化学习训练之前迭代和优化监督方法。研究结果挑战了当前复杂监督方法的优越性假设，强调了简单基线的有效性，并为未来研究提供了可扩展的基准工具。",
+        "en": "- **Background**: LLM agents are increasingly operating in long-horizon tasks where single trajectories can involve hundreds or thousands of actions. In such settings, outcome-only rewards are too sparse to provide..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.30639v1",
-        "pdf": "https://arxiv.org/pdf/2606.30639v1",
+        "abs": "http://arxiv.org/abs/2606.32034v1",
+        "pdf": "https://arxiv.org/pdf/2606.32034v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.30639.md",
-        "summary_en_path": "summary_en/2026-06/2606.30639.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.30639.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.30639.md"
+        "summary_zh_path": "summary/2026-06/2606.32034.md",
+        "summary_en_path": "summary_en/2026-06/2606.32034.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.32034.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.32034.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,38 +53,36 @@
       }
     },
     {
-      "id": "arxiv:2606.30560",
-      "date": "2026-06-29",
-      "title": "TraceLab: Characterizing Coding Agent Workloads for LLM Serving",
+      "id": "arxiv:2606.31966",
+      "date": "2026-06-30",
+      "title": "MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kan Zhu",
-        "Mathew Jacob",
-        "Chenxi Ma",
-        "Yi Pan",
-        "Stephanie Wang",
-        "Arvind Krishnamurthy",
-        "Baris Kasikci"
+        "Qingyun Liu",
+        "Jiwen Zhang",
+        "Jingyi Hu",
+        "Siyuan Wang",
+        "Zhongyu Wei"
       ],
-      "institution": "University of Washington",
+      "institution": "Fudan University, Shanghai Innovation Institute, The Chinese University of Hong Kong",
       "summary": {
-        "zh": "本文填补了编程智能体真实工作负载数据的空白，发布了 TraceLab 数据集。通过分析发现，编程智能体工作负载具有长自主循环、长上下文短输出、多样化且重尾的工具调用以及高但不完美的前缀缓存命中率等特征。这些发现为优化 LLM 服务系统提供了具体方向，包括优化工具调用开销、改进预填充策略、预测工具延迟以及增强 KV 缓存管理。该研究为未来高效服务编程智能体奠定了数据基础和理论指导。",
-        "en": "- **Background**: Coding agents are rapidly becoming a major application of agentic LLMs, but efficient serving remains challenging. Progress requires understanding real workload patterns."
+        "zh": "MECoBench 填补了多模态具身智能体协作研究的空白，提供了一个系统性的测试床。研究结果表明，虽然协作能提升性能和鲁棒性，但必须仔细设计通信机制和协作模式以应对协调复杂性。该工作为理解多模态具身协作的机制和极限提供了重要参考。",
+        "en": "- **Background**: Multimodal Large Language Models (MLLMs) show great potential as embodied agents, but most existing research focuses on single-agent tasks. Many real-world scenarios, such as household assistance,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.30560v1",
-        "pdf": "https://arxiv.org/pdf/2606.30560v1",
-        "github": "https://github.com/uw-syfi/TraceLab.git"
+        "abs": "http://arxiv.org/abs/2606.31966v1",
+        "pdf": "https://arxiv.org/pdf/2606.31966v1",
+        "github": "https://github.com/q-i-n-g/MECoBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.30560.md",
-        "summary_en_path": "summary_en/2026-06/2606.30560.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.30560.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.30560.md"
+        "summary_zh_path": "summary/2026-06/2606.31966.md",
+        "summary_en_path": "summary_en/2026-06/2606.31966.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31966.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31966.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,35 +99,57 @@
       }
     },
     {
-      "id": "arxiv:2606.30454",
-      "date": "2026-06-29",
-      "title": "Collective cooperation without individual fidelity in LLM agents",
+      "id": "arxiv:2606.31693",
+      "date": "2026-06-30",
+      "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Henrique Ferraz de Arruda",
-        "Carlos Gracia Lázaro",
-        "Alberto Aleta",
-        "Yamir Moreno"
+        "Jiacheng Chen",
+        "Tao Zhang",
+        "Manxi Lin",
+        "Dunxian Huang",
+        "Teng Shi",
+        "Honghao Fu",
+        "Mengyan Li",
+        "Xinming Zhang",
+        "Chenchi Zhang",
+        "Xuan Lu",
+        "Xiaoxiong Du",
+        "Haibin Chen",
+        "Shaolin Ye",
+        "Hao Chang",
+        "Xiaoqi Li",
+        "Shuwen Xiao",
+        "Yujin Yuan",
+        "Jingxuan Feng",
+        "Shaopan Xiong",
+        "Huimin Yi",
+        "Ju Huang",
+        "Qiu Shen",
+        "Ying Chen",
+        "Junjun Zheng",
+        "Xiangheng Kong",
+        "Yuning Jiang"
       ],
-      "institution": "Institute for Biocomputation and Physics of Complex Systems, University of Zaragoza",
+      "institution": "Alibaba Taobao & Tmall Group",
       "summary": {
-        "zh": "本文揭示了基于 LLM 的社会代理中存在显著的“宏观-微观解离”现象：即使集体结果看起来像人类，其底层的行為分布和决策机制也可能完全不同。研究结果表明，要将 LLM 代理验证为人类的可靠替代品，不能仅依赖于结果层面的一致性，必须跨越聚合动态、个体异质性以及上下文依赖的决策规则进行多维度的比较和验证。这对未来使用 LLM 进行社会模拟和政策推演提出了重要的警示和方法论建议。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly used as proxies for human agents in social system simulations, computational social science, and behavioral experiments. However, it remains unclear when..."
+        "zh": "ShopX 通过将意图理解、规划执行和商品空间操作统一到一个基础模型中，解决了代理购物中语言理解与商品检索之间的断层问题。其核心创新在于设计了LLM可操作的语义ID（SIDs）及相应的训练策略，实现了模型原生的商品履行。实验证明，该方法在处理复杂购物意图时优于传统的工具介导型代理系统，为下一代AI原生购物体验提供了新的技术路径。",
+        "en": "- **Background**: AI-native applications are shifting shopping from page-based browsing to intent-driven experiences orchestrated by LLM agents. - **Limitations of Existing Work**: Common designs wrap LLMs around..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.30454v1",
-        "pdf": "https://arxiv.org/pdf/2606.30454v1",
+        "abs": "http://arxiv.org/abs/2606.31693v1",
+        "pdf": "https://arxiv.org/pdf/2606.31693v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.30454.md",
-        "summary_en_path": "summary_en/2026-06/2606.30454.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.30454.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.30454.md"
+        "summary_zh_path": "summary/2026-06/2606.31693.md",
+        "summary_en_path": "summary_en/2026-06/2606.31693.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31693.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31693.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,77 +166,87 @@
       }
     },
     {
-      "id": "arxiv:2606.30383",
-      "date": "2026-06-29",
-      "title": "Whose Side Is Your Agent On? Multi-Party Principal Loyalty in LLM Agents",
+      "id": "arxiv:2606.31635",
+      "date": "2026-06-30",
+      "title": "A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bojie Li",
-        "Noah Shi"
+        "Javal Vyas",
+        "Milapji Singh Gill",
+        "Artan Markaj",
+        "Felix Gehlhoff",
+        "Mehmet Mercangöz"
       ],
-      "institution": "University of Washington",
+      "institution": "Imperial College London; Helmut Schmidt University",
       "summary": {
-        "zh": "本文深入研究了 LLM Agent 在多方交互中的“委托人忠诚度”问题，指出了传统“帮助当前说话者”目标的局限性。通过构建 PrincipalBench 基准，文章量化了现有模型在忠诚度上的缺陷，并提出了基于系统提示的忠诚度支架和基于 KL 散度的蒸馏方法两种解决方案。尽管这些方法在特定指标上取得了进展，但研究揭示了一个结构性难题：泄漏风险与过度拒绝之间存在固有的权衡关系，未来的研究需致力于打破这一权衡，以实现既安全又高效的代理人格。",
-        "en": "-party settings: the agent acts on behalf of a principal (who briefs it and receives results) while conversing in a separate channel with a counterparty whose interests may diverge (e.g., negotiating with vendors,..."
+        "zh": "本文提出了一种结合大型语言模型与传统容错控制的新型框架，旨在解决过程工业中未预期故障的自动恢复问题。通过将LLM定位为受约束的监督规划器，并辅以严格的外部验证和知识图谱支持，该研究在利用LLM推理能力的同时确保了工业级的安全性。提供的开源环境和详细的设计维度分析为该领域的进一步研究和实际应用奠定了基础。",
+        "en": "This paper presents a novel framework combining LLMs with traditional fault-tolerant control to automate recovery from unanticipated faults in process industries. By positioning the LLM as a constrained supervisory..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.30383v1",
-        "pdf": "https://arxiv.org/pdf/2606.30383v1",
-        "github": "https://github.com/19PINE-AI/principal-loyalty"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.30383.md",
-        "summary_en_path": "summary_en/2026-06/2606.30383.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.30383.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.30383.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2606.30266",
-      "date": "2026-06-29",
-      "title": "Towards Continual Motion-Language Agents: LoRA Variants for Incremental Motion Understanding and Generation",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Bertram Taetz",
-        "Hugo Albuquerque Cosme da Silva",
-        "Gabriele Bleser-Taetz"
-      ],
-      "institution": "International University of Applied Sciences",
-      "summary": {
-        "zh": "本文针对运动-语言代理在动态环境中的持续学习问题，提出了一种基于LoRA变体和混合专家架构的解决方案。通过引入基于自编码器的无标签路由器，成功解决了任务间干扰和灾难性遗忘的挑战。实验证明，硬专家选择机制能有效维持双向任务的性能稳定性。该工作不仅提供了高效的持续学习框架，还揭示了当前评估指标的不足，为未来终身运动-语言代理的研究奠定了基础。",
-        "en": "This paper addresses the continual learning challenge for motion-language agents in dynamic environments by proposing a solution based on LoRA variants and a Mixture-of-Experts architecture. By introducing a label-free..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2606.30266v1",
-        "pdf": "https://arxiv.org/pdf/2606.30266v1",
+        "abs": "http://arxiv.org/abs/2606.31635v1",
+        "pdf": "https://arxiv.org/pdf/2606.31635v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.30266.md",
-        "summary_en_path": "summary_en/2026-06/2606.30266.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.30266.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.30266.md"
+        "summary_zh_path": "summary/2026-06/2606.31635.md",
+        "summary_en_path": "summary_en/2026-06/2606.31635.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31635.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31635.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.31522",
+      "date": "2026-06-30",
+      "title": "FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Muhammad Usman Safder",
+        "Ayesha Gull",
+        "Rania Elbadry",
+        "Fan Zhang",
+        "Yankai Chen",
+        "Xueqing Peng",
+        "Xue",
+        "Liu",
+        "Preslav Nakov",
+        "Zhuohan Xie"
+      ],
+      "institution": "MBZUAI, The University of Tokyo, McGill University, The Fin AI, Kyoto University",
+      "summary": {
+        "zh": "本文指出了自主金融代理在长期部署中面临的“指令显著性衰减”问题，即随着上下文积累，初始行为指令的影响力逐渐减弱。通过引入 FinPersona-Bench 基准测试，作者量化了这一现象，并发现简单的定期指令刷新并不总是有效，甚至可能对激进型代理产生负面影响。研究建议，为了实现可靠的长期部署，必须根据代理的具体行为画像和当前市场状态，采取选择性的、感知指令的重 grounding 策略。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as autonomous financial agents initialized with explicit behavioral mandates (e.g., \"preserve capital\") intended to govern decisions throughout..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.31522v1",
+        "pdf": "https://arxiv.org/pdf/2606.31522v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.31522.md",
+        "summary_en_path": "summary_en/2026-06/2606.31522.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31522.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31522.md"
       },
       "signals": {
         "priority_keyword": "Agent"
