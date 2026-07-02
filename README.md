@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.01_06:00-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.02_05:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月01日 06:00</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月02日 05:15</sub></summary>
 <br>
 
-- QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents 
-- MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments 
-- ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping 
-- A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents 
-- FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents 
+- Agentic generation of verifiable rules for deterministic, self-expanding reaction classification 
+- Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework 
+- From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives 
+- Self-GC: Self-Governing Context for Long-Horizon LLM Agents 
+- Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年07月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Agentic generation of verifiable rules for deterministic, self-expanding reaction classification**<br><sub>机构: École Polytechnique Fédérale de Lausanne (EPFL), Laboratory for Chemical Technology, Ghent University<br>本文提出了一种将生成式模型转化为可靠、自扩展符号系统的通用路径。通过多智能体LLM框架，实现了反应规则的自动化生成与验证，构建了一个“活着”的反应性数据库。这不仅解决了长尾化学反应手动编码的难题，还为计算机辅助合成规划提供了更具适应性和细粒度的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01061v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.01061.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework**<br><sub>机构: Northeastern University<br>本文针对当前LLM对话代理角色和风格固定导致的语境错位问题，提出了“流体个性框架”。该框架通过动态调整隐喻角色（如从导师切换到工具）和个性表达强度（低/中/高），以适应任务语境、用户目标和情境紧急度。这一方法旨在结合上下文相关的隐喻优势和适度的个性表达，从而在信任、享受度和采用意图之间取得最佳平衡，为AI介导的行为改变提供了新的设计范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01034v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.01034.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives**<br><sub>本文证明了通过显式的世界状态跟踪和目标驱动的多代理交互，可以涌现出高质量的长篇叙事。MAGNET 和 ATLAS 的结合为可控且结构连贯的长篇叙事生成奠定了基础，有效解决了现有方法在长期一致性和幻觉检测方面的不足。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.00918v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.00918.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Self-GC: Self-Governing Context for Long-Horizon LLM Agents**<br><sub>机构: Xiaohongshu<br>Self-GC 证明了长程 Agent 的上下文管理应被视为对索引化、可恢复对象的运行时生命周期控制，而非事后的文本清理。通过将上下文视为具有不同生命周期需求的对象集合，并利用侧信道规划器进行智能治理，Self-GC 在显著降低令牌消耗的同时，有效保留了对未来任务至关重要的结构化信息，优于传统的启发式剪枝和摘要方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.00692v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.00692.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains**<br><sub>机构: Peking University, Zhongguancun Laboratory<br>本文揭示了 LLM 智能体技能生态中依赖管理的严重缺失，提出了 ASSCs 概念和 SkillDepAnalyzer 工具来解决隐式依赖带来的不透明性和安全风险。通过大规模实证研究，文章证明了依赖链分析对于发现隐藏安全风险的重要性，并为技能基础设施维护者（如注册表管理者）和技能开发者提供了具体建议，包括类型化依赖清单、一级依赖簇管理、风险警告审计命令以及类似 lockfile 的记录机制，以提升整个技能供应链的安全性和可治理性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01136v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.01136.md)  |
+
+---
+
 ### 2026年06月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |

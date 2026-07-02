@@ -1,42 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-01T06:00:11.710853+00:00",
-  "run_date": "2026-06-30",
+  "generated_at": "2026-07-02T05:15:29.857961+00:00",
+  "run_date": "2026-07-01",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.32034",
-      "date": "2026-06-30",
-      "title": "QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents",
+      "id": "arxiv:2607.01061",
+      "date": "2026-07-01",
+      "title": "Agentic generation of verifiable rules for deterministic, self-expanding reaction classification",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sergio Hernández-Gutiérrez",
-        "Matteo Merler",
-        "Ilze Amanda Auzina",
-        "Joschka Strüber",
-        "Ameya Prabhu",
-        "Matthias Bethge"
+        "Daniel Armstrong",
+        "Maarten Dobbelaere",
+        "Valentas Olikauskas",
+        "Helena Avila",
+        "Octavian Susanu",
+        "Jérôme Waser",
+        "Philippe Schwaller"
       ],
-      "institution": "University of Tübingen",
+      "institution": "École Polytechnique Fédérale de Lausanne (EPFL), Laboratory for Chemical Technology, Ghent University",
       "summary": {
-        "zh": "QVal 为长视野 LLM 智能体的密集监督信号提供了一个高效、低成本且公平的评估框架。通过引入“Q-对齐”指标，它成功解耦了信号质量与训练工程因素，使得研究人员能够在进行昂贵的强化学习训练之前迭代和优化监督方法。研究结果挑战了当前复杂监督方法的优越性假设，强调了简单基线的有效性，并为未来研究提供了可扩展的基准工具。",
-        "en": "- **Background**: LLM agents are increasingly operating in long-horizon tasks where single trajectories can involve hundreds or thousands of actions. In such settings, outcome-only rewards are too sparse to provide..."
+        "zh": "本文提出了一种将生成式模型转化为可靠、自扩展符号系统的通用路径。通过多智能体LLM框架，实现了反应规则的自动化生成与验证，构建了一个“活着”的反应性数据库。这不仅解决了长尾化学反应手动编码的难题，还为计算机辅助合成规划提供了更具适应性和细粒度的解决方案。",
+        "en": "This paper presents a general pathway to turning generative models into reliable, self-expanding symbolic systems. By leveraging a multi-agent LLM framework for automated rule generation and verification, it constructs..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.32034v1",
-        "pdf": "https://arxiv.org/pdf/2606.32034v1",
+        "abs": "http://arxiv.org/abs/2607.01061v1",
+        "pdf": "https://arxiv.org/pdf/2607.01061v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.32034.md",
-        "summary_en_path": "summary_en/2026-06/2606.32034.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.32034.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.32034.md"
+        "summary_zh_path": "summary/2026-07/2607.01061.md",
+        "summary_en_path": "summary_en/2026-07/2607.01061.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.01061.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.01061.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,36 +54,33 @@
       }
     },
     {
-      "id": "arxiv:2606.31966",
-      "date": "2026-06-30",
-      "title": "MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments",
+      "id": "arxiv:2607.01034",
+      "date": "2026-07-01",
+      "title": "Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qingyun Liu",
-        "Jiwen Zhang",
-        "Jingyi Hu",
-        "Siyuan Wang",
-        "Zhongyu Wei"
+        "Hasibur Rahman",
+        "Smit Desai"
       ],
-      "institution": "Fudan University, Shanghai Innovation Institute, The Chinese University of Hong Kong",
+      "institution": "Northeastern University",
       "summary": {
-        "zh": "MECoBench 填补了多模态具身智能体协作研究的空白，提供了一个系统性的测试床。研究结果表明，虽然协作能提升性能和鲁棒性，但必须仔细设计通信机制和协作模式以应对协调复杂性。该工作为理解多模态具身协作的机制和极限提供了重要参考。",
-        "en": "- **Background**: Multimodal Large Language Models (MLLMs) show great potential as embodied agents, but most existing research focuses on single-agent tasks. Many real-world scenarios, such as household assistance,..."
+        "zh": "本文针对当前LLM对话代理角色和风格固定导致的语境错位问题，提出了“流体个性框架”。该框架通过动态调整隐喻角色（如从导师切换到工具）和个性表达强度（低/中/高），以适应任务语境、用户目标和情境紧急度。这一方法旨在结合上下文相关的隐喻优势和适度的个性表达，从而在信任、享受度和采用意图之间取得最佳平衡，为AI介导的行为改变提供了新的设计范式。",
+        "en": "This paper addresses the context misalignment caused by fixed roles and styles in current LLM conversational agents by proposing a \"Fluid Personality Framework.\" By dynamically adjusting metaphorical personas (e.g.,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.31966v1",
-        "pdf": "https://arxiv.org/pdf/2606.31966v1",
-        "github": "https://github.com/q-i-n-g/MECoBench"
+        "abs": "http://arxiv.org/abs/2607.01034v1",
+        "pdf": "https://arxiv.org/pdf/2607.01034v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.31966.md",
-        "summary_en_path": "summary_en/2026-06/2606.31966.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31966.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31966.md"
+        "summary_zh_path": "summary/2026-07/2607.01034.md",
+        "summary_en_path": "summary_en/2026-07/2607.01034.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.01034.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.01034.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,57 +97,39 @@
       }
     },
     {
-      "id": "arxiv:2606.31693",
-      "date": "2026-06-30",
-      "title": "ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping",
+      "id": "arxiv:2607.00918",
+      "date": "2026-07-01",
+      "title": "From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiacheng Chen",
-        "Tao Zhang",
-        "Manxi Lin",
-        "Dunxian Huang",
-        "Teng Shi",
-        "Honghao Fu",
-        "Mengyan Li",
-        "Xinming Zhang",
-        "Chenchi Zhang",
-        "Xuan Lu",
-        "Xiaoxiong Du",
-        "Haibin Chen",
-        "Shaolin Ye",
-        "Hao Chang",
-        "Xiaoqi Li",
-        "Shuwen Xiao",
-        "Yujin Yuan",
-        "Jingxuan Feng",
-        "Shaopan Xiong",
-        "Huimin Yi",
-        "Ju Huang",
-        "Qiu Shen",
-        "Ying Chen",
-        "Junjun Zheng",
-        "Xiangheng Kong",
-        "Yuning Jiang"
+        "Aayush Aluru",
+        "Chloe Ho",
+        "Muhammad Hammouri",
+        "Kerry Luo",
+        "Myra Malik",
+        "Ryan Lagasse",
+        "Arjun Bahuguna",
+        "Vasu Sharma"
       ],
-      "institution": "Alibaba Taobao & Tmall Group",
+      "institution": null,
       "summary": {
-        "zh": "ShopX 通过将意图理解、规划执行和商品空间操作统一到一个基础模型中，解决了代理购物中语言理解与商品检索之间的断层问题。其核心创新在于设计了LLM可操作的语义ID（SIDs）及相应的训练策略，实现了模型原生的商品履行。实验证明，该方法在处理复杂购物意图时优于传统的工具介导型代理系统，为下一代AI原生购物体验提供了新的技术路径。",
-        "en": "- **Background**: AI-native applications are shifting shopping from page-based browsing to intent-driven experiences orchestrated by LLM agents. - **Limitations of Existing Work**: Common designs wrap LLMs around..."
+        "zh": "本文证明了通过显式的世界状态跟踪和目标驱动的多代理交互，可以涌现出高质量的长篇叙事。MAGNET 和 ATLAS 的结合为可控且结构连贯的长篇叙事生成奠定了基础，有效解决了现有方法在长期一致性和幻觉检测方面的不足。",
+        "en": "- **Background**: While Large Language Models (LLMs) excel at creative fiction, they struggle to maintain narrative consistency and coherent plotlines in long-form stories, especially in multi-character environments..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.31693v1",
-        "pdf": "https://arxiv.org/pdf/2606.31693v1",
+        "abs": "http://arxiv.org/abs/2607.00918v1",
+        "pdf": "https://arxiv.org/pdf/2607.00918v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.31693.md",
-        "summary_en_path": "summary_en/2026-06/2606.31693.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31693.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31693.md"
+        "summary_zh_path": "summary/2026-07/2607.00918.md",
+        "summary_en_path": "summary_en/2026-07/2607.00918.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.00918.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.00918.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -166,36 +146,36 @@
       }
     },
     {
-      "id": "arxiv:2606.31635",
-      "date": "2026-06-30",
-      "title": "A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents",
+      "id": "arxiv:2607.00692",
+      "date": "2026-07-01",
+      "title": "Self-GC: Self-Governing Context for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Javal Vyas",
-        "Milapji Singh Gill",
-        "Artan Markaj",
-        "Felix Gehlhoff",
-        "Mehmet Mercangöz"
+        "Xubin Hao",
+        "Hongjin Meng",
+        "Xin Yin",
+        "Jiawei Zhu",
+        "Chenpeng Cao"
       ],
-      "institution": "Imperial College London; Helmut Schmidt University",
+      "institution": "Xiaohongshu",
       "summary": {
-        "zh": "本文提出了一种结合大型语言模型与传统容错控制的新型框架，旨在解决过程工业中未预期故障的自动恢复问题。通过将LLM定位为受约束的监督规划器，并辅以严格的外部验证和知识图谱支持，该研究在利用LLM推理能力的同时确保了工业级的安全性。提供的开源环境和详细的设计维度分析为该领域的进一步研究和实际应用奠定了基础。",
-        "en": "This paper presents a novel framework combining LLMs with traditional fault-tolerant control to automate recovery from unanticipated faults in process industries. By positioning the LLM as a constrained supervisory..."
+        "zh": "Self-GC 证明了长程 Agent 的上下文管理应被视为对索引化、可恢复对象的运行时生命周期控制，而非事后的文本清理。通过将上下文视为具有不同生命周期需求的对象集合，并利用侧信道规划器进行智能治理，Self-GC 在显著降低令牌消耗的同时，有效保留了对未来任务至关重要的结构化信息，优于传统的启发式剪枝和摘要方法。",
+        "en": "- **Background**: Long-horizon LLM agents accumulate structured tool results, files, plans, and user constraints. As interactions grow, this context becomes a critical runtime resource affecting cost, latency, and task..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.31635v1",
-        "pdf": "https://arxiv.org/pdf/2606.31635v1",
+        "abs": "http://arxiv.org/abs/2607.00692v1",
+        "pdf": "https://arxiv.org/pdf/2607.00692v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.31635.md",
-        "summary_en_path": "summary_en/2026-06/2606.31635.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31635.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31635.md"
+        "summary_zh_path": "summary/2026-07/2607.00692.md",
+        "summary_en_path": "summary_en/2026-07/2607.00692.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.00692.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.00692.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -212,41 +192,35 @@
       }
     },
     {
-      "id": "arxiv:2606.31522",
-      "date": "2026-06-30",
-      "title": "FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents",
+      "id": "arxiv:2607.01136",
+      "date": "2026-07-01",
+      "title": "Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Muhammad Usman Safder",
-        "Ayesha Gull",
-        "Rania Elbadry",
-        "Fan Zhang",
-        "Yankai Chen",
-        "Xueqing Peng",
-        "Xue",
-        "Liu",
-        "Preslav Nakov",
-        "Zhuohan Xie"
+        "Changguo Jia",
+        "Tianqi Zhao",
+        "Runzhi He",
+        "Minghui Zhou"
       ],
-      "institution": "MBZUAI, The University of Tokyo, McGill University, The Fin AI, Kyoto University",
+      "institution": "Peking University, Zhongguancun Laboratory",
       "summary": {
-        "zh": "本文指出了自主金融代理在长期部署中面临的“指令显著性衰减”问题，即随着上下文积累，初始行为指令的影响力逐渐减弱。通过引入 FinPersona-Bench 基准测试，作者量化了这一现象，并发现简单的定期指令刷新并不总是有效，甚至可能对激进型代理产生负面影响。研究建议，为了实现可靠的长期部署，必须根据代理的具体行为画像和当前市场状态，采取选择性的、感知指令的重 grounding 策略。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as autonomous financial agents initialized with explicit behavioral mandates (e.g., \"preserve capital\") intended to govern decisions throughout..."
+        "zh": "本文揭示了 LLM 智能体技能生态中依赖管理的严重缺失，提出了 ASSCs 概念和 SkillDepAnalyzer 工具来解决隐式依赖带来的不透明性和安全风险。通过大规模实证研究，文章证明了依赖链分析对于发现隐藏安全风险的重要性，并为技能基础设施维护者（如注册表管理者）和技能开发者提供了具体建议，包括类型化依赖清单、一级依赖簇管理、风险警告审计命令以及类似 lockfile 的记录机制，以提升整个技能供应链的安全性和可治理性。",
+        "en": "- **Background**: As Large Language Model (LLM) agent skills rapidly grow (reaching 1.43 million), they evolve from isolated files into artifacts with complex dependencies. Developers build new skills by reusing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.31522v1",
-        "pdf": "https://arxiv.org/pdf/2606.31522v1",
+        "abs": "http://arxiv.org/abs/2607.01136v1",
+        "pdf": "https://arxiv.org/pdf/2607.01136v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.31522.md",
-        "summary_en_path": "summary_en/2026-06/2606.31522.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.31522.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.31522.md"
+        "summary_zh_path": "summary/2026-07/2607.01136.md",
+        "summary_en_path": "summary_en/2026-07/2607.01136.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.01136.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.01136.md"
       },
       "signals": {
         "priority_keyword": "Agent"

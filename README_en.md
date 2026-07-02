@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.01_06:00-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.02_05:15-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-07-01 06:00</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-07-02 05:15</sub></summary>
 <br>
 
-- QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents 
-- MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments 
-- ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping 
-- A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents 
-- FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents 
+- Agentic generation of verifiable rules for deterministic, self-expanding reaction classification 
+- Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework 
+- From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives 
+- Self-GC: Self-Governing Context for Long-Horizon LLM Agents 
+- Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-07
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Agentic generation of verifiable rules for deterministic, self-expanding reaction classification**<br><sub>Institution: École Polytechnique Fédérale de Lausanne (EPFL), Laboratory for Chemical Technology, Ghent University<br>This paper presents a general pathway to turning generative models into reliable, self-expanding symbolic systems. By leveraging a multi-agent LLM framework for automated rule generation and verification, it constructs a "living" reactivity database. This approach addresses the intractability of manual encoding for long-tail reactions, offering a more adaptive and granular solution for computer-assisted synthesis planning.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01061v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-07/2607.01061.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework**<br><sub>Institution: Northeastern University<br>This paper addresses the context misalignment caused by fixed roles and styles in current LLM conversational agents by proposing a "Fluid Personality Framework." By dynamically adjusting metaphorical personas (e.g., switching from tutor to tool) and personality expression intensity (low/medium/high) according to task context, user goals, and urgency, the framework seeks to combine the benefits of context-relevant metaphors with moderate personality expression. This approach aims to balance trust, enjoyment, and adoption intention, offering a new design paradigm for AI-mediated behavior change.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01034v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-07/2607.01034.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives**<br><sub>## 1. What the Paper Did - **Background**: While Large Language Models (LLMs) excel at creative fiction, they struggle to maintain narrative consistency and coherent plotlines in long-form stories, especially in multi-character environments where balancing goals, actions, and relationships is complex. - **Why Existing Work Falls Short**: Current multi-agent narrative systems (e.g., StoryVerse, IBSEN) rely heavily on textual memory, which limits their ability to generate coherent long-range stories.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.00918v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-07/2607.00918.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Self-GC: Self-Governing Context for Long-Horizon LLM Agents**<br><sub>Institution: Xiaohongshu<br>## 1. What the Paper Does - **Background**: Long-horizon LLM agents accumulate structured tool results, files, plans, and user constraints. As interactions grow, this context becomes a critical runtime resource affecting cost, latency, and task quality.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.00692v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-07/2607.00692.md)  |
+| <span style='display: inline-block; width: 42px;'>07-01</span> | **Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains**<br><sub>Institution: Peking University, Zhongguancun Laboratory<br>## 1. What the Paper Did - **Background**: As Large Language Model (LLM) agent skills rapidly grow (reaching 1.43 million), they evolve from isolated files into artifacts with complex dependencies. Developers build new skills by reusing existing skills, software packages, and external services, creating layered dependency structures.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01136v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-07/2607.01136.md)  |
+
+---
+
 ## 2026-06
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |
