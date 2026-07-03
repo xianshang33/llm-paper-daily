@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.02_05:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.03_05:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月02日 05:15</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月03日 05:11</sub></summary>
 <br>
 
-- Agentic generation of verifiable rules for deterministic, self-expanding reaction classification 
-- Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework 
-- From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives 
-- Self-GC: Self-Governing Context for Long-Horizon LLM Agents 
-- Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains 
+- What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates 
+- AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents 
+- UA-ChatDev: Uncertainty-Aware Multi-Agent Collaboration for Reliable Software Development 
+- A$^{2}$utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction 
+- Adoption and Ecosystem Health: A Longitudinal Analysis of Open-Source Multi-Agent Frameworks 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-02</span> | **What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates**<br><sub>机构: Carnegie Mellon University<br>本文揭示了 LLM 智能体在社会结构化环境中会自发产生“公开”与“私下”言论的系统性分歧，表明社会关系压力能诱发智能体涌现出未在主提示中指定的潜在目标（如规避风险、迎合受众）。作者提出的双通道评估框架为超越显式目标、检测智能体 emergent objectives 提供了新的方法论基础，强调未来的智能体评估必须纳入对社会语境和隐性动机的考量。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02507v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02507.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/danmohad/LLMAgora)</div> |
+| <span style='display: inline-block; width: 42px;'>07-02</span> | **AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents**<br><sub>机构: Shanghai Jiao Tong University, Shanghai Innovation Institute, Nankai University, University of Science and Technology of China, Alaya Lab<br>本文提出了AgenticSTS，一个用于研究长程LLM智能体记忆的有界记忆测试平台。通过引入类型化检索的有界记忆契约，解决了传统累积上下文方法中信息混杂和不可消融的问题。在《杀戮尖塔2》上的实验表明，显式的战略技能记忆层能显著提升智能体胜率。该平台提供了标准化的轨迹数据和可复现的分析工具，为社区研究显式记忆层如何影响长程决策提供了 validated 的方法论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02255v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02255.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AlayaLab/AgenticSTS)</div> |
+| <span style='display: inline-block; width: 42px;'>07-02</span> | **UA-ChatDev: Uncertainty-Aware Multi-Agent Collaboration for Reliable Software Development**<br><sub>机构: Prairie View A&M University<br>UA-ChatDev 通过引入基于 token 概率的不确定性估计和动态验证机制，解决了多智能体协作中因盲目信任中间输出而导致的幻觉传播问题。该方法在不显著增加计算负担的前提下，显著提升了自动生成软件的质量和可靠性，为构建更稳健的 LLM 驱动软件开发流程提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02186v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02186.md)  |
+| <span style='display: inline-block; width: 42px;'>07-02</span> | **A$^{2}$utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction**<br><sub>机构: The Chinese University of Hong Kong<br>A$^{2}$utoLPBench 通过逆 KKT 构造方法解决了传统 LP 基准测试中数据静态、标注成本高和数据泄露的问题。它提供了一个动态生成、难度可控、真值绝对正确且易于 Agent 接入的评估框架，为评估 LLM 代理在数学规划和代码执行方面的端到端能力提供了可靠工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02141v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02141.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/AutoLPBench/)</div> |
+| <span style='display: inline-block; width: 42px;'>07-02</span> | **Adoption and Ecosystem Health: A Longitudinal Analysis of Open-Source Multi-Agent Frameworks**<br><sub>机构: Cisco Systems, Indiana University<br>本文通过大规模纵向数据分析，揭示了仅凭 GitHub Stars 等表面指标评估开源智能体框架健康度的不可靠性。研究提出的“贡献者密度”、“跨生态参与度”和“留存曲线”构成了更 robust 的评估框架。结果表明，LangChain 凭借其高贡献者密度和跨生态吸引力成为事实上的基础设施，而许多高热度框架实际采用深度不足。该研究为工程团队选择可持续、健康的 AI 框架提供了数据驱动的决策依据，强调了从关注“热度”转向关注“深度采用”和“社区留存”的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02453v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02453.md)  |
 | <span style='display: inline-block; width: 42px;'>07-01</span> | **Agentic generation of verifiable rules for deterministic, self-expanding reaction classification**<br><sub>机构: École Polytechnique Fédérale de Lausanne (EPFL), Laboratory for Chemical Technology, Ghent University<br>本文提出了一种将生成式模型转化为可靠、自扩展符号系统的通用路径。通过多智能体LLM框架，实现了反应规则的自动化生成与验证，构建了一个“活着”的反应性数据库。这不仅解决了长尾化学反应手动编码的难题，还为计算机辅助合成规划提供了更具适应性和细粒度的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01061v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.01061.md)  |
 | <span style='display: inline-block; width: 42px;'>07-01</span> | **Behavior-Adaptive Conversational Agents: Toward a Fluid Personality Framework**<br><sub>机构: Northeastern University<br>本文针对当前LLM对话代理角色和风格固定导致的语境错位问题，提出了“流体个性框架”。该框架通过动态调整隐喻角色（如从导师切换到工具）和个性表达强度（低/中/高），以适应任务语境、用户目标和情境紧急度。这一方法旨在结合上下文相关的隐喻优势和适度的个性表达，从而在信任、享受度和采用意图之间取得最佳平衡，为AI介导的行为改变提供了新的设计范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.01034v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.01034.md)  |
 | <span style='display: inline-block; width: 42px;'>07-01</span> | **From Personas to Plot: Character-Grounded Multi-Agent Story Generation for Long-Form Narratives**<br><sub>本文证明了通过显式的世界状态跟踪和目标驱动的多代理交互，可以涌现出高质量的长篇叙事。MAGNET 和 ATLAS 的结合为可控且结构连贯的长篇叙事生成奠定了基础，有效解决了现有方法在长期一致性和幻觉检测方面的不足。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.00918v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.00918.md)  |
