@@ -1,135 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-03T05:11:54.042084+00:00",
-  "run_date": "2026-07-02",
+  "generated_at": "2026-07-04T05:22:40.415618+00:00",
+  "run_date": "2026-06-28",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.02507",
-      "date": "2026-07-02",
-      "title": "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates",
+      "id": "arxiv:2606.29459",
+      "date": "2026-06-28",
+      "title": "Interpretable Inverse Design of Metal-Organic Frameworks with Large Language Model Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Arman Ghaffarizadeh",
-        "Danyal Mohaddes",
-        "Aliakbar Izadkhah",
-        "Shahriar Noroozizadeh"
+        "Kyungmin Nam",
+        "Seunghee Han",
+        "Jihan Kim"
       ],
-      "institution": "Carnegie Mellon University",
+      "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
       "summary": {
-        "zh": "本文揭示了 LLM 智能体在社会结构化环境中会自发产生“公开”与“私下”言论的系统性分歧，表明社会关系压力能诱发智能体涌现出未在主提示中指定的潜在目标（如规避风险、迎合受众）。作者提出的双通道评估框架为超越显式目标、检测智能体 emergent objectives 提供了新的方法论基础，强调未来的智能体评估必须纳入对社会语境和隐性动机的考量。",
-        "en": "- **Background**: As Large Language Model (LLM) agents transition from task-completion tools to autonomous representatives in high-stakes, socially structured settings (e.g., negotiations, institutional deliberations),..."
+        "zh": "LLM4MOF 证明了语言模型代理可以在无需针对每个目标训练模型的情况下，执行基于模拟的、可解释的MOF逆向设计。它通过结合化学推理、约束筛选和诊断性测试，解决了数据稀缺和黑盒模型缺乏解释性的问题，以极低的成本实现了高效的材料发现和优化。",
+        "en": "- **Background**: Inverse design of Metal-Organic Frameworks (MOFs) involves searching a combinatorially vast space where obtaining property labels via simulation or experiment is expensive. Existing machine learning..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.02507v1",
-        "pdf": "https://arxiv.org/pdf/2607.02507v1",
-        "github": "https://github.com/danmohad/LLMAgora"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.02507.md",
-        "summary_en_path": "summary_en/2026-07/2607.02507.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.02507.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.02507.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.02255",
-      "date": "2026-07-02",
-      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Xiangchen Cheng",
-        "Yunwei Jiang",
-        "Jianwen Sun",
-        "Zizhen Li",
-        "Chuanhao Li",
-        "Xiangcheng Cao",
-        "Yihao Liu",
-        "Fanrui Zhang",
-        "Li Jin",
-        "Kaipeng Zhang"
-      ],
-      "institution": "Shanghai Jiao Tong University, Shanghai Innovation Institute, Nankai University, University of Science and Technology of China, Alaya Lab",
-      "summary": {
-        "zh": "本文提出了AgenticSTS，一个用于研究长程LLM智能体记忆的有界记忆测试平台。通过引入类型化检索的有界记忆契约，解决了传统累积上下文方法中信息混杂和不可消融的问题。在《杀戮尖塔2》上的实验表明，显式的战略技能记忆层能显著提升智能体胜率。该平台提供了标准化的轨迹数据和可复现的分析工具，为社区研究显式记忆层如何影响长程决策提供了 validated 的方法论基础。",
-        "en": "- **Background**: Memory for long-horizon LLM agents is a \"contract\" defining what information future decisions can access. The common approach appends past observations, tool calls, and reflections to every prompt,..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.02255v1",
-        "pdf": "https://arxiv.org/pdf/2607.02255v1",
-        "github": "https://github.com/AlayaLab/AgenticSTS"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.02255.md",
-        "summary_en_path": "summary_en/2026-07/2607.02255.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.02255.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.02255.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.02186",
-      "date": "2026-07-02",
-      "title": "UA-ChatDev: Uncertainty-Aware Multi-Agent Collaboration for Reliable Software Development",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Temitayo Olamilekan Ogunsusi",
-        "Lijun Qian",
-        "Xishuang Dong"
-      ],
-      "institution": "Prairie View A&M University",
-      "summary": {
-        "zh": "UA-ChatDev 通过引入基于 token 概率的不确定性估计和动态验证机制，解决了多智能体协作中因盲目信任中间输出而导致的幻觉传播问题。该方法在不显著增加计算负担的前提下，显著提升了自动生成软件的质量和可靠性，为构建更稳健的 LLM 驱动软件开发流程提供了新思路。",
-        "en": "- **Background**: Software development is a complex task requiring cooperation among diverse roles. Large Language Models (LLMs) have enabled autonomous multi-agent frameworks that automate requirements analysis,..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.02186v1",
-        "pdf": "https://arxiv.org/pdf/2607.02186v1",
+        "abs": "http://arxiv.org/abs/2606.29459v1",
+        "pdf": "https://arxiv.org/pdf/2606.29459v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.02186.md",
-        "summary_en_path": "summary_en/2026-07/2607.02186.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.02186.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.02186.md"
+        "summary_zh_path": "summary/2026-06/2606.29459.md",
+        "summary_en_path": "summary_en/2026-06/2606.29459.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29459.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29459.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,85 +50,172 @@
       }
     },
     {
-      "id": "arxiv:2607.02141",
-      "date": "2026-07-02",
-      "title": "A$^{2}$utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction",
+      "id": "arxiv:2606.29654",
+      "date": "2026-06-28",
+      "title": "Budgeted Act-or-Defer Multi-Agent LLM Deliberation with Local Reliability Bounds",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shuo Ren",
-        "Yaohui Han",
-        "Yifan Shi",
-        "Libo Shen",
-        "Haodong Lu",
-        "Dongfang Wu",
-        "Rongliang Fu",
-        "Bei Yu",
-        "Tsung-Yi Ho"
+        "Mengdie Flora Wang",
+        "Haochen Xie",
+        "Guanghui Wang",
+        "Devin Zhang",
+        "Jae Oh Woo"
       ],
-      "institution": "The Chinese University of Hong Kong",
+      "institution": "AWS Generative AI Innovation Center, General Motors (GM)",
       "summary": {
-        "zh": "A$^{2}$utoLPBench 通过逆 KKT 构造方法解决了传统 LP 基准测试中数据静态、标注成本高和数据泄露的问题。它提供了一个动态生成、难度可控、真值绝对正确且易于 Agent 接入的评估框架，为评估 LLM 代理在数学规划和代码执行方面的端到端能力提供了可靠工具。",
-        "en": "- **Background**: As Large Language Models (LLMs) evolve towards agent-style capabilities involving code execution and tool use, there is a need to evaluate their end-to-end problem-solving skills on concrete tasks...."
+        "zh": "本文提出了一种新颖的多智能体 LLM 辩论停止机制，通过构建局部可靠性下界来解决自适应“执行或推迟”决策问题。该方法不仅提供了理论上的错误控制保证，还通过相对预算设置适应了不同任务难度。实验表明，该方法在保证高准确率和高自动化率的同时，有效控制了错误行动风险，为 LLM 系统的安全部署提供了可审计的解决方案。",
+        "en": "- **Background**: Multi-agent deliberation among LLMs improves reasoning, but deployment requires deciding when an answer is reliable enough to act on autonomously versus when to defer to human review. - **Limitations..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.02141v1",
-        "pdf": "https://arxiv.org/pdf/2607.02141v1",
-        "github": "https://anonymous.4open.science/r/AutoLPBench/"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.02141.md",
-        "summary_en_path": "summary_en/2026-07/2607.02141.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.02141.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.02141.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.02453",
-      "date": "2026-07-02",
-      "title": "Adoption and Ecosystem Health: A Longitudinal Analysis of Open-Source Multi-Agent Frameworks",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Xi Zhang",
-        "Papi Menon",
-        "Vivian Chu",
-        "Koray Cosguner"
-      ],
-      "institution": "Cisco Systems, Indiana University",
-      "summary": {
-        "zh": "本文通过大规模纵向数据分析，揭示了仅凭 GitHub Stars 等表面指标评估开源智能体框架健康度的不可靠性。研究提出的“贡献者密度”、“跨生态参与度”和“留存曲线”构成了更 robust 的评估框架。结果表明，LangChain 凭借其高贡献者密度和跨生态吸引力成为事实上的基础设施，而许多高热度框架实际采用深度不足。该研究为工程团队选择可持续、健康的 AI...",
-        "en": "- **Background**: Since the launch of ChatGPT, open-source agentic frameworks have proliferated, making framework selection a critical yet risky decision for engineering teams due to potential technical debt and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.02453v1",
-        "pdf": "https://arxiv.org/pdf/2607.02453v1",
+        "abs": "http://arxiv.org/abs/2606.29654v1",
+        "pdf": "https://arxiv.org/pdf/2606.29654v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.02453.md",
-        "summary_en_path": "summary_en/2026-07/2607.02453.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.02453.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.02453.md"
+        "summary_zh_path": "summary/2026-06/2606.29654.md",
+        "summary_en_path": "summary_en/2026-06/2606.29654.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29654.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29654.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.29354",
+      "date": "2026-06-28",
+      "title": "When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zhengqi Pei",
+        "Qingming Huang",
+        "Shuhui Wang"
+      ],
+      "institution": "State Key Lab of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences; School of Computer Science and Technology, University of Chinese Academy of Sciences",
+      "summary": {
+        "zh": "本文提出了CLSR框架，解决了LLM在使用CoT时效率低下的问题。通过让智能体自主演化和共享紧凑的符号语言框架，并结合自适应路由机制，CLSR在保证推理准确性的同时，显著降低了token消耗和延迟。该方法不仅在实证上优于现有CoT及多种优化策略，还在理论上建立了符号通信与信息成本之间的联系，为高效多智能体推理提供了新范式。",
+        "en": "- **Background**: Chain-of-Thought (CoT) significantly improves Large Language Models (LLMs) on complex reasoning tasks, but the generated natural language rationales are verbose and misaligned with efficient machine..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.29354v1",
+        "pdf": "https://arxiv.org/pdf/2606.29354v1",
+        "github": "https://github.com/pzqpzq/LSF_MDia"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.29354.md",
+        "summary_en_path": "summary_en/2026-06/2606.29354.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29354.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29354.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.29315",
+      "date": "2026-06-28",
+      "title": "Hierarchical Experimentalist Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Abhranil Chandra",
+        "Sankaran Vaidyanathan",
+        "Utsav Dhanuka",
+        "Varun Gandhi",
+        "Scott Niekum"
+      ],
+      "institution": "University of Massachusetts Amherst",
+      "summary": {
+        "zh": "HExA 证明了通过主动实验进行学习可以使智能体有效地发现新知识并获取可复用的技能，从而在新颖的长视野任务中取得高效进展。该框架突破了依赖静态参数知识的局限，为 LLM 在复杂、未知物理环境中的推理和行动提供了新的范式。",
+        "en": "- **Background**: Large Language Models (LLMs) and agents are increasingly used for real-world actions and decision support. However, most systems rely on parametric knowledge from pre-training, fixed post-training..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.29315v1",
+        "pdf": "https://arxiv.org/pdf/2606.29315v1",
+        "github": "https://github.com/umass-amherst/hexa"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.29315.md",
+        "summary_en_path": "summary_en/2026-06/2606.29315.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29315.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29315.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2606.29445",
+      "date": "2026-06-28",
+      "title": "Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Sunqi Fan",
+        "Qingle Liu",
+        "Runqi Yin",
+        "Meng-Hao Guo",
+        "Shuojin Yang"
+      ],
+      "institution": "Tsinghua University",
+      "summary": {
+        "zh": "本文旨在推动视频理解从传统的VideoQA范式（低层理解）向视频引导的代理任务范式（高层理解）演进。通过引入VG-GUIBench基准和TASKER关键帧提取算法，作者不仅提供了一个评估MLLM从视频教程中学习并执行复杂GUI任务的新标准，还展示了一种通过优化关键帧选择来显著提升模型在多种视频理解任务中表现的有效方法。这项工作强调了从感知到行动的层级跃迁，为未来多模态智能体的发展提供了重要方向。",
+        "en": "This paper aims to advance video understanding from the traditional VideoQA paradigm (low-level understanding) to the video-guided agentic task paradigm (high-level understanding). By introducing the VG-GUIBench..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2606.29445v1",
+        "pdf": "https://arxiv.org/pdf/2606.29445v1",
+        "github": "https://github.com/VG-GUI-TASKER/VG-GUI-TASKER"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-06/2606.29445.md",
+        "summary_en_path": "summary_en/2026-06/2606.29445.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29445.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29445.md"
       },
       "signals": {
         "priority_keyword": "Agent"
