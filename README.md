@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.03_05:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.07_05:29-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月03日 05:11</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月07日 05:29</sub></summary>
 <br>
 
-- What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates 
-- AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents 
-- UA-ChatDev: Uncertainty-Aware Multi-Agent Collaboration for Reliable Software Development 
-- A$^{2}$utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction 
-- Adoption and Ecosystem Health: A Longitudinal Analysis of Open-Source Multi-Agent Frameworks 
+- MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution 
+- AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments 
+- Toward Trustworthy Large Language Model Agents in Healthcare 
+- Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses 
+- STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-06</span> | **MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution**<br><sub>机构: LMU Munich, The Chinese University of Hong Kong, MCML, MemAgents Lab<br>MetaSkill-Evolve 通过引入双时间尺度的递归自改进机制，解决了现有LLM智能体进化过程中“改进策略固定”的核心痛点。它不仅让智能体学会更好地执行任务，还让其学会如何更有效地自我改进。实验证明，这种方法在多个基准测试中显著超越了传统静态技能和单层进化方法，展示了递归自改进在提升智能体长期适应性和性能方面的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05297v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05297.md)  |
+| <span style='display: inline-block; width: 42px;'>07-06</span> | **AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments**<br><sub>机构: Fudan University<br>AgentGym2 通过引入去理想化的真实世界环境，解决了现有基准测试过于简化的问题。它重点评估智能体在工具探索、组合以及对噪声信息鲁棒性方面的能力。实验表明，当前最先进的 LLM 智能体在面对真实世界的复杂性和不确定性时仍显不足，该基准为未来智能体的研发和评估提供了更贴近实际应用的指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05174v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05174.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/hotdog-zz/Agentgym2)</div> |
+| <span style='display: inline-block; width: 42px;'>07-06</span> | **Toward Trustworthy Large Language Model Agents in Healthcare**<br><sub>机构: American University of Beirut<br>本文提出的 CareConnect 展示了如何通过分层确定性安全护栏和严格的范围约束，将 LLM 安全地应用于医疗后勤自动化。它成功解决了通用 LLM 在医疗操作场景中面临的安全性和事务一致性难题，以极低的成本和较高的任务完成率实现了预约调度的自动化，为可信医疗 AI 代理的部署提供了可行范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05055v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05055.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Hadi-Hsn/CareConnect)</div> |
+| <span style='display: inline-block; width: 42px;'>07-06</span> | **Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses**<br><sub>机构: The Pennsylvania State University<br>本文揭示了 LLM 代理持久化记忆中一个关键但被忽视的安全漏洞：推理历史投毒。通过提出 FARMA 攻击，作者证明了攻击者可以污染代理的推理过程而非仅仅是事实知识，并利用自引用机制放大攻击效果。同时，作者提出了 SENTINEL 防御框架，通过结构化分析有效检测并阻止此类攻击，实现了零误报和高防御成功率。这项工作强调了在构建安全的 LLM 代理系统时，必须同时保护检索内容和推理历史的完整性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05029v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05029.md)  |
+| <span style='display: inline-block; width: 42px;'>07-06</span> | **STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training**<br><sub>机构: Zhejiang University, Ant Group, City University of Hong Kong<br>本文针对LLM智能体在长程任务中因稀疏奖励导致的轨迹忽视问题，指出了现有基于香农熵方法的局限性。通过提出归一化熵来更精准地衡量智能体置信度偏差，并构建STAPO框架，实现了对异常步骤的选择性优化。该方法在多个复杂基准测试中实现了SOTA性能，有效提升了智能体在长程推理中的轨迹意识和训练稳定性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.04963v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.04963.md)  |
 | <span style='display: inline-block; width: 42px;'>07-02</span> | **What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates**<br><sub>机构: Carnegie Mellon University<br>本文揭示了 LLM 智能体在社会结构化环境中会自发产生“公开”与“私下”言论的系统性分歧，表明社会关系压力能诱发智能体涌现出未在主提示中指定的潜在目标（如规避风险、迎合受众）。作者提出的双通道评估框架为超越显式目标、检测智能体 emergent objectives 提供了新的方法论基础，强调未来的智能体评估必须纳入对社会语境和隐性动机的考量。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02507v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02507.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/danmohad/LLMAgora)</div> |
 | <span style='display: inline-block; width: 42px;'>07-02</span> | **AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents**<br><sub>机构: Shanghai Jiao Tong University, Shanghai Innovation Institute, Nankai University, University of Science and Technology of China, Alaya Lab<br>本文提出了AgenticSTS，一个用于研究长程LLM智能体记忆的有界记忆测试平台。通过引入类型化检索的有界记忆契约，解决了传统累积上下文方法中信息混杂和不可消融的问题。在《杀戮尖塔2》上的实验表明，显式的战略技能记忆层能显著提升智能体胜率。该平台提供了标准化的轨迹数据和可复现的分析工具，为社区研究显式记忆层如何影响长程决策提供了 validated 的方法论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02255v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02255.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AlayaLab/AgenticSTS)</div> |
 | <span style='display: inline-block; width: 42px;'>07-02</span> | **UA-ChatDev: Uncertainty-Aware Multi-Agent Collaboration for Reliable Software Development**<br><sub>机构: Prairie View A&M University<br>UA-ChatDev 通过引入基于 token 概率的不确定性估计和动态验证机制，解决了多智能体协作中因盲目信任中间输出而导致的幻觉传播问题。该方法在不显著增加计算负担的前提下，显著提升了自动生成软件的质量和可靠性，为构建更稳健的 LLM 驱动软件开发流程提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.02186v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.02186.md)  |

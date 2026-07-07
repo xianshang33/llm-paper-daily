@@ -1,39 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-04T08:12:01.302842+00:00",
-  "run_date": "2026-06-27",
+  "generated_at": "2026-07-07T05:29:44.579528+00:00",
+  "run_date": "2026-07-06",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2606.29116",
-      "date": "2026-06-27",
-      "title": "Characterizing Large Language Model Agentic Workflows: A Study on N8n Ecosystem",
+      "id": "arxiv:2607.05297",
+      "date": "2026-07-06",
+      "title": "MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yutian Tang",
-        "Yuming Zhou",
-        "Huaming Chen"
+        "Zefeng Wang",
+        "Minxi Yan",
+        "Jinhe Bi",
+        "Sikuan Yan",
+        "Volker Tresp",
+        "Yunpu Ma"
       ],
-      "institution": "University of Glasgow, Nanjing University, The University of Sydney",
+      "institution": "LMU Munich, The Chinese University of Hong Kong, MCML, MemAgents Lab",
       "summary": {
-        "zh": "本文通过对 n8n 平台上大量 LLM 代理工作流的实证分析，揭示了当前 LLM 在实际自动化应用中的集成模式与可靠性短板。研究指出，当前的 LLM 代理工作流已超越简单的问答模式，成为复杂的系统集成体，但在可靠性、安全性和治理方面的工程支持仍显不足。该研究为研究人员、平台开发者和从业者理解及改进现实世界中的 LLM 代理工作流提供了重要的数据支持和方向指引。",
-        "en": "- **Background**: Large Language Models (LLMs) are rapidly being adopted in low-code and no-code automation platforms (e.g., n8n), where non-expert users design workflows combining natural language understanding with..."
+        "zh": "MetaSkill-Evolve 通过引入双时间尺度的递归自改进机制，解决了现有LLM智能体进化过程中“改进策略固定”的核心痛点。它不仅让智能体学会更好地执行任务，还让其学会如何更有效地自我改进。实验证明，这种方法在多个基准测试中显著超越了传统静态技能和单层进化方法，展示了递归自改进在提升智能体长期适应性和性能方面的巨大潜力。",
+        "en": "- **Background**: LLM agents tackling long-horizon, open-ended tasks often rely on external reusable procedural knowledge (\"skills\"). However, fixed, hand-authored skills are rarely optimal and cannot adapt to task..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.29116v1",
-        "pdf": "https://arxiv.org/pdf/2606.29116v1",
+        "abs": "http://arxiv.org/abs/2607.05297v1",
+        "pdf": "https://arxiv.org/pdf/2607.05297v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.29116.md",
-        "summary_en_path": "summary_en/2026-06/2606.29116.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.29116.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.29116.md"
+        "summary_zh_path": "summary/2026-07/2607.05297.md",
+        "summary_en_path": "summary_en/2026-07/2607.05297.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05297.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05297.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,33 +53,56 @@
       }
     },
     {
-      "id": "arxiv:2606.28841",
-      "date": "2026-06-27",
-      "title": "LAMP: Lean-based Agentic framework with MCP and Proof Repair",
+      "id": "arxiv:2607.05174",
+      "date": "2026-07-06",
+      "title": "AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Santhana Srinivasan R",
-        "Maithilee Patawar"
+        "Zhiheng Xi",
+        "Dingwen Yang",
+        "Jiaqi Liu",
+        "Jixuan Huang",
+        "Honglin Guo",
+        "Baodai Huang",
+        "Tinggang Chen",
+        "Qi Zhang",
+        "Zhonghang Lu",
+        "Chenyu Liu",
+        "Jiajun Sun",
+        "Jiazheng Zhang",
+        "Dingwei Zhu",
+        "Xin Guo",
+        "Junzhe Wang",
+        "Zhihao Zhang",
+        "Yuming Yang",
+        "Junjie Ye",
+        "Minghe Gao",
+        "Dongrui Liu",
+        "Jiaming Ji",
+        "Guohao Li",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
       ],
-      "institution": "Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram",
+      "institution": "Fudan University",
       "summary": {
-        "zh": "本文针对 Lean 4 生态中词组合学（CoW）领域形式化知识缺失的问题，首先构建了该领域的基础形式化库，随后提出了 LAMP 多智能体框架。LAMP 通过在推理阶段注入结构化领域知识而非依赖微调，有效解决了现有证明器在陌生领域泛化能力差的问题。实验表明，LAMP 在 CoW 定理证明上取得了 96.7% 的高成功率，显著超越了当前最先进水平，为扩展形式化数学到新领域提供了有效的范式。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly capable in mathematical reasoning, but their generated proofs are often unreliable. Interactive theorem provers like Lean 4 ensure correctness via kernel..."
+        "zh": "AgentGym2 通过引入去理想化的真实世界环境，解决了现有基准测试过于简化的问题。它重点评估智能体在工具探索、组合以及对噪声信息鲁棒性方面的能力。实验表明，当前最先进的 LLM 智能体在面对真实世界的复杂性和不确定性时仍显不足，该基准为未来智能体的研发和评估提供了更贴近实际应用的指导方向。",
+        "en": "- **Background**: As Large Language Model (LLM) agents rapidly evolve from simple chatbots to autonomous systems handling complex tasks like deep research, their deployment in production environments is increasing. This..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.28841v1",
-        "pdf": "https://arxiv.org/pdf/2606.28841v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.05174v1",
+        "pdf": "https://arxiv.org/pdf/2607.05174v1",
+        "github": "https://github.com/hotdog-zz/Agentgym2"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.28841.md",
-        "summary_en_path": "summary_en/2026-06/2606.28841.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.28841.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.28841.md"
+        "summary_zh_path": "summary/2026-07/2607.05174.md",
+        "summary_en_path": "summary_en/2026-07/2607.05174.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05174.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05174.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -93,33 +119,36 @@
       }
     },
     {
-      "id": "arxiv:2606.28925",
-      "date": "2026-06-27",
-      "title": "Multi-Agent Routing as Set-Valued Prediction: A WildChat Benchmark and Cost-Aware Evaluation",
+      "id": "arxiv:2607.05055",
+      "date": "2026-07-06",
+      "title": "Toward Trustworthy Large Language Model Agents in Healthcare",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ananto Nayan Bala",
-        "Faisal Muhammad Shah"
+        "Hadi Hasan",
+        "Safaa Salman",
+        "Adam Tai Abou Dargham",
+        "Ammar Mohanna",
+        "Ali Chehab"
       ],
-      "institution": "Ahsanullah University of Science and Technology",
+      "institution": "American University of Beirut",
       "summary": {
-        "zh": "本文通过将多代理路由形式化为集合值预测问题，填补了现有研究在多标签路由和成本感知评估方面的空白。作者构建了一个基于真实用户数据的基准测试，并系统性地评估了多种路由策略。研究发现，结合微调编码器和加权代理路由（WAR）的方法能在保证高准确率的同时有效管理执行成本，为构建高效、经济的多代理 AI 系统提供了重要的实证依据和方法论支持。",
-        "en": "This paper addresses the gap in multi-label routing and cost-aware evaluation by formulating multi-agent routing as a set-valued prediction problem. By constructing a benchmark based on real user data and systematically..."
+        "zh": "本文提出的 CareConnect 展示了如何通过分层确定性安全护栏和严格的范围约束，将 LLM 安全地应用于医疗后勤自动化。它成功解决了通用 LLM 在医疗操作场景中面临的安全性和事务一致性难题，以极低的成本和较高的任务完成率实现了预约调度的自动化，为可信医疗 AI 代理的部署提供了可行范式。",
+        "en": "- **Background**: Healthcare appointment scheduling remains a persistent operational bottleneck due to manual coordination, fragmented legacy systems, and high administrative overhead, which constrains provider..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.28925v1",
-        "pdf": "https://arxiv.org/pdf/2606.28925v1",
-        "github": "https://anonymous.4open.science/r/multi-agent-routing-D655/"
+        "abs": "http://arxiv.org/abs/2607.05055v1",
+        "pdf": "https://arxiv.org/pdf/2607.05055v1",
+        "github": "https://github.com/Hadi-Hsn/CareConnect"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.28925.md",
-        "summary_en_path": "summary_en/2026-06/2606.28925.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.28925.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.28925.md"
+        "summary_zh_path": "summary/2026-07/2607.05055.md",
+        "summary_en_path": "summary_en/2026-07/2607.05055.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05055.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05055.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -136,37 +165,35 @@
       }
     },
     {
-      "id": "arxiv:2606.28896",
-      "date": "2026-06-27",
-      "title": "A Task-Driven and Quality-Assured Agent Framework for SAR Data Generation",
+      "id": "arxiv:2607.05029",
+      "date": "2026-07-06",
+      "title": "Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xuanting Wu",
-        "Fan Zhanga",
-        "Fei Ma",
-        "Ling Guan",
-        "Guochun Ma",
-        "Yongsheng Zhou"
+        "Neeraj Karamchandani",
+        "Piyush Nagasubramaniam",
+        "Sencun Zhu",
+        "Dinghao Wu"
       ],
-      "institution": "Beijing University of Chemical Technology; Beijing Institute of Environmental Features",
+      "institution": "The Pennsylvania State University",
       "summary": {
-        "zh": "本文针对SAR数据增强中存在的异构性、验证弱和决策不可靠问题，提出了SAGA智能体框架。通过将语义提议与确定性验证执行分离，并引入多维度的质量与效用评估机制，SAGA实现了任务驱动且质量保证的SAR数据生成。实验表明，该方法在模式理解、策略规划及下游任务增益上均优于现有基线，为SAR数据增强提供了可靠、可复现的自动化解决方案。",
-        "en": "- **Background**: Synthetic Aperture Radar (SAR) data augmentation is critical for improving the generalization of data-driven SAR interpretation models. However, SAR images are governed by complex radar imaging..."
+        "zh": "本文揭示了 LLM 代理持久化记忆中一个关键但被忽视的安全漏洞：推理历史投毒。通过提出 FARMA 攻击，作者证明了攻击者可以污染代理的推理过程而非仅仅是事实知识，并利用自引用机制放大攻击效果。同时，作者提出了 SENTINEL 防御框架，通过结构化分析有效检测并阻止此类攻击，实现了零误报和高防御成功率。这项工作强调了在构建安全的 LLM 代理系统时，必须同时保护检索内容和推理历史的完整性。",
+        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on persistent memory to store factual knowledge, prior decisions, reasoning histories, tool usage, and context, enhancing functionality and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.28896v1",
-        "pdf": "https://arxiv.org/pdf/2606.28896v1",
+        "abs": "http://arxiv.org/abs/2607.05029v1",
+        "pdf": "https://arxiv.org/pdf/2607.05029v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.28896.md",
-        "summary_en_path": "summary_en/2026-06/2606.28896.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.28896.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.28896.md"
+        "summary_zh_path": "summary/2026-07/2607.05029.md",
+        "summary_en_path": "summary_en/2026-07/2607.05029.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05029.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05029.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -183,32 +210,42 @@
       }
     },
     {
-      "id": "arxiv:2606.28839",
-      "date": "2026-06-27",
-      "title": "The Contagion Tensor: A Framework for Measuring Output-Distribution Coupling in Multi-Agent LLM Systems -- and Auditing the Claims It Enables",
+      "id": "arxiv:2607.04963",
+      "date": "2026-07-06",
+      "title": "STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zewen Liu"
+        "Qiuyi Qi",
+        "Tian Liang",
+        "Mutian Bao",
+        "Jinjian Zhang",
+        "Dongnan Liu",
+        "Wei Zhou",
+        "Linjian Mo",
+        "Ming Kong",
+        "Jie Liu",
+        "Feng Zhang",
+        "Qiang Zhu"
       ],
-      "institution": null,
+      "institution": "Zhejiang University, Ant Group, City University of Hong Kong",
       "summary": {
-        "zh": "本文引入了传染张量和耦合放大因子（CAF），填补了多智能体 LLM 系统中输出分布耦合定量测量的空白。通过结合严格的模拟消融分析和真实 API 实验，文章不仅提供了一套可证伪的测量工具，还建立了一种区分真实耦合效应与系统设计假象的方法论标准。研究结果表明，视觉模态在特定条件下确实能显著放大耦合效应，但需谨慎排除模拟器引入的偏差。该框架为未来多智能体系统的安全审计和性能评估提供了基础工具。",
-        "en": "- **Background**: In multi-agent Large Language Model (LLM) systems, output distributions evolve through repeated interactions. Bias from one agent can propagate across the network, coupling outputs in ways that..."
+        "zh": "本文针对LLM智能体在长程任务中因稀疏奖励导致的轨迹忽视问题，指出了现有基于香农熵方法的局限性。通过提出归一化熵来更精准地衡量智能体置信度偏差，并构建STAPO框架，实现了对异常步骤的选择性优化。该方法在多个复杂基准测试中实现了SOTA性能，有效提升了智能体在长程推理中的轨迹意识和训练稳定性。",
+        "en": "- **Background**: Reinforcement Learning (RL) is the dominant paradigm for training Large Language Model (LLM) agents on long-horizon tasks. However, sparse and delayed rewards often lead to \"trajectory neglect,\" where..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2606.28839v1",
-        "pdf": "https://arxiv.org/pdf/2606.28839v1",
+        "abs": "http://arxiv.org/abs/2607.04963v1",
+        "pdf": "https://arxiv.org/pdf/2607.04963v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-06/2606.28839.md",
-        "summary_en_path": "summary_en/2026-06/2606.28839.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-06/2606.28839.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-06/2606.28839.md"
+        "summary_zh_path": "summary/2026-07/2607.04963.md",
+        "summary_en_path": "summary_en/2026-07/2607.04963.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04963.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04963.md"
       },
       "signals": {
         "priority_keyword": "Agent"
