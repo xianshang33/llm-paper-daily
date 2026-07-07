@@ -42,6 +42,8 @@ def main() -> int:
             retries=args.retries,
             budget_seconds=args.discovery_budget_seconds,
             api_search_budget_seconds=args.api_search_budget_seconds,
+            enable_agent_reach_fallback=not args.disable_agent_reach_fallback,
+            agent_reach_timeout_seconds=args.agent_reach_timeout_seconds,
         )
         selection = find_next_discovery(
             client=client,
@@ -138,6 +140,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--retries", type=int, default=1)
     parser.add_argument("--discovery-budget-seconds", type=float, default=180.0, help="Global wall-clock budget for arXiv discovery. Use 0 to disable.")
     parser.add_argument("--api-search-budget-seconds", type=float, default=30.0, help="Budget for the first arXiv API search before preserving time for listing fallback. Use 0 to disable.")
+    parser.add_argument("--disable-agent-reach-fallback", action="store_true", help="Disable optional Agent Reach / Exa fallback when arXiv discovery is unavailable or suspiciously empty.")
+    parser.add_argument("--agent-reach-timeout-seconds", type=float, default=30.0, help="Timeout for the optional Agent Reach / Exa fallback call.")
     parser.add_argument("--backfill-days", type=int, default=7)
     parser.add_argument("--discovered-json", help="Optional discovery JSON artifact to consume instead of re-running discovery.")
     parser.add_argument("--summary-artifact-dir", default=DEFAULT_SUMMARY_ARTIFACT_DIR, help="Directory containing runtime-generated summary JSON artifacts keyed by arXiv ID.")

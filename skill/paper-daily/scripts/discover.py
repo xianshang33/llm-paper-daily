@@ -25,6 +25,8 @@ def main() -> int:
         retries=args.retries,
         budget_seconds=args.budget_seconds,
         api_search_budget_seconds=args.api_search_budget_seconds,
+        enable_agent_reach_fallback=not args.disable_agent_reach_fallback,
+        agent_reach_timeout_seconds=args.agent_reach_timeout_seconds,
     )
     discovered = discover_ranked(
         client=client,
@@ -79,6 +81,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument("--budget-seconds", type=float, default=180.0, help="Global wall-clock budget for arXiv discovery. Use 0 to disable.")
     parser.add_argument("--api-search-budget-seconds", type=float, default=30.0, help="Budget for the first arXiv API search before preserving time for listing fallback. Use 0 to disable.")
+    parser.add_argument("--disable-agent-reach-fallback", action="store_true", help="Disable optional Agent Reach / Exa fallback when arXiv discovery is unavailable or suspiciously empty.")
+    parser.add_argument("--agent-reach-timeout-seconds", type=float, default=30.0, help="Timeout for the optional Agent Reach / Exa fallback call.")
     parser.add_argument("--json", action="store_true", help="Emit JSON.")
     parser.add_argument("--out", help="Write JSON output to a specific file. Defaults to skill/paper-daily/output/discovered-YYYY-MM-DD.json.")
     return parser.parse_args()

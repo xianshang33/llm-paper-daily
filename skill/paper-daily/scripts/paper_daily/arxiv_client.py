@@ -6,6 +6,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
+from .agent_reach_fallback import AgentReachFallback
 from .models import PaperCandidate
 
 # Parsing and query helpers live in dedicated modules; re-exported here so the
@@ -51,6 +52,8 @@ class ArxivClient:
         retries: int = 2,
         budget_seconds: float | None = None,
         api_search_budget_seconds: float | None = 30.0,
+        enable_agent_reach_fallback: bool = True,
+        agent_reach_timeout_seconds: float = 30.0,
     ) -> None:
         self.base_url = base_url
         self.user_agent = user_agent
@@ -59,6 +62,8 @@ class ArxivClient:
         self.retries = retries
         self.deadline_monotonic = time.monotonic() + budget_seconds if budget_seconds and budget_seconds > 0 else None
         self.api_search_budget_seconds = api_search_budget_seconds if api_search_budget_seconds and api_search_budget_seconds > 0 else None
+        self.enable_agent_reach_fallback = enable_agent_reach_fallback
+        self.agent_reach_timeout_seconds = agent_reach_timeout_seconds
         self._last_request = 0.0
 
     def search_keyword(
@@ -114,16 +119,44 @@ class ArxivClient:
 
         if api_error is not None:
             try:
-                return self._search_keywords_combined_from_listing(
+                candidates, total = self._search_keywords_combined_from_listing(
                     keywords=keywords,
                     date=date,
                     categories=categories,
                     max_results=max_results,
                 )
+                if candidates:
+                    return candidates, total
             except RuntimeError as fallback_error:
+                candidates, total = self._search_keywords_combined_from_agent_reach(
+                    keywords=keywords,
+                    date=date,
+                    categories=categories,
+                    max_results=max_results,
+                )
+                if candidates:
+                    return candidates, total
                 raise RuntimeError(f"arXiv API failed ({api_error}); listing fallback failed ({fallback_error})") from fallback_error
+            candidates, total = self._search_keywords_combined_from_agent_reach(
+                keywords=keywords,
+                date=date,
+                categories=categories,
+                max_results=max_results,
+            )
+            if candidates:
+                return candidates, total
+            return candidates, total
 
         total = int(root.findtext("opensearch:totalResults", default="0", namespaces=ATOM_NS))
+        if total == 0:
+            candidates, agent_total = self._search_keywords_combined_from_agent_reach(
+                keywords=keywords,
+                date=date,
+                categories=categories,
+                max_results=max_results,
+            )
+            if candidates:
+                return candidates, agent_total
         candidates = []
         for entry in root.findall("atom:entry", ATOM_NS):
             candidate = parse_entry(entry, keyword=keywords[0], keyword_rank=1, query_total=total)
@@ -256,6 +289,36 @@ class ArxivClient:
                 if len(enriched) >= target_count:
                     break
         return enriched, len(listing_candidates)
+
+    def _search_keywords_combined_from_agent_reach(
+        self,
+        *,
+        keywords: list[str],
+        date: str,
+        categories: list[str],
+        max_results: int,
+    ) -> tuple[list[PaperCandidate], int]:
+        if not self.enable_agent_reach_fallback:
+            return [], 0
+        fallback = AgentReachFallback(timeout_seconds=self.agent_reach_timeout_seconds)
+        candidates = fallback.search(
+            keywords=keywords,
+            date=date,
+            categories=categories,
+            max_results=max_results,
+        )
+        enriched = []
+        for candidate in candidates:
+            try:
+                enriched_candidate = self.hydrate_candidate_from_abs(candidate)
+                if not candidate_submitted_on(enriched_candidate, date):
+                    continue
+                enriched_candidate.metadata_source = "agent-reach-exa+abs-html"
+                enriched_candidate.metadata_status = "complete" if enriched_candidate.abstract else "partial"
+                enriched.append(enriched_candidate)
+            except RuntimeError:
+                continue
+        return enriched, len(enriched)
 
     def _fetch_listing_candidates(self, *, date: str, category: str) -> list[PaperCandidate]:
         url = f"https://arxiv.org/list/{category}/pastweek?show=2000"

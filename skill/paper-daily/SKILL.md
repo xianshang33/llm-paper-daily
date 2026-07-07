@@ -1,6 +1,6 @@
 ---
 name: paper-daily
-description: Recall daily arXiv papers for LLM/Agent topics, rank candidates with keyword and institution filters, and prepare a broad candidate list for downstream review or publishing workflows.
+description: Paper Daily recall: use for daily arXiv LLM/Agent paper discovery, candidate ranking, metadata readiness, summary-request preparation, and README/feed publishing.
 ---
 
 # Paper Daily
@@ -19,21 +19,25 @@ When judging recalled papers, prioritize the user's taste over generic paper qua
 
 ## Workflow
 
-Use context-driven orchestration instead of treating one script as the whole workflow. The local scripts provide small deterministic actions; the skill decides which action to run from the current artifacts, previous failures, and user goal.
+Use context-driven orchestration instead of treating one script as the whole workflow. The local scripts are deterministic primitives; the skill decides the next primitive from current artifacts, failures, and user intent.
 
 ### Orchestration Loop
 
 1. Assess the date first.
    - Read the per-date run state, discovery artifact, metadata cache, summary artifacts, and pending metadata queue.
    - Identify the smallest current gap: missing candidate pack, missing metadata, missing summary, or ready-to-finalize.
+   - Done when you can name exactly one current stage: `missing_candidates`, `candidate_ready`, `finalize_blocked`, `final_ready`, or `final_published`.
 2. Produce a candidate pack only when needed.
    - Reuse an existing `discovered-YYYY-MM-DD.json` or run state when it is clearly for the requested date.
    - Run discovery only when no usable candidate pack exists or the user explicitly asks for fresh recall.
    - Give discovery a global `--budget-seconds` so arXiv API retries, listing fallback, and HTML hydration cannot consume the whole interactive context.
    - Keep `--api-search-budget-seconds` smaller than the global budget, so a slow arXiv API attempt still leaves time for listing fallback.
+   - Keep Agent Reach / Exa enabled as a tertiary recall fallback when the arXiv API is unavailable or suspiciously returns zero results. It only contributes candidates after the arXiv abs page confirms the target UTC submitted date.
+   - Disable that tertiary fallback with `--disable-agent-reach-fallback` when debugging Agent Reach or mcporter itself.
    - In listing fallback, accept `arxiv-listing` / `partial` records only into the recall `candidate_pool`; do not treat them as final selected papers.
    - Final selection and summary requests require complete metadata, especially a non-empty abstract.
    - When a fresh discovery artifact exists, pass it through `run_daily.py --discovered-json ...` so ranking context and source fields are preserved.
+   - Done when the date has a candidate pool and every selected candidate is metadata-complete or explicitly listed as a blocker.
 3. Improve readiness in bounded steps.
    - Metadata enrichment is API-first and non-blocking at the workflow level.
    - Use `enrich_metadata.py` as a short worker with a time/paper budget.
@@ -42,9 +46,11 @@ Use context-driven orchestration instead of treating one script as the whole wor
    - Treat scripted HTML parsing as the normal webpage fallback. If that fails because the page shape changed or a specific paper is anomalous, use the runtime browser context as a manual rescue for that small set of papers, then write the standard metadata artifact.
    - If summary artifacts are missing, run `prepare_missing_summary_requests.py` and generate only the missing artifacts instead of repeatedly enriching metadata or hand-writing ad hoc JSON.
    - If summary preparation reports blocked metadata, run metadata enrichment first; do not summarize title-only or listing-only records.
+   - Done when `check_daily_status.py` reports `final_ready`, or the remaining blockers are printed with paper ids and next command.
 4. Finalize explicitly.
    - Promote candidate output to official README/feed/state only when readiness checks pass.
    - Do not let a background metadata task silently rewrite official publishing artifacts.
+   - Done when `finalize_daily.py` succeeds and the status is `final_published`.
 
 ### Status Semantics
 
@@ -62,22 +68,15 @@ For metadata, prefer state over source:
 
 Official publishing requires complete fields, not necessarily `api_complete`. Requiring API source would make arXiv API a hard dependency again.
 
-### Atomic Steps
+### Recall Ladder
 
-1. Discover candidates from arXiv by priority keywords: `Agent`, `Agents`, then `LLM`.
-2. Query target categories such as `cs.AI`, `cs.CL`, `cs.LG`, `stat.ML`, `cs.SE`, and `cs.MA`.
-3. Dedupe by normalized arXiv id without version suffix.
-4. Filter obvious noise such as chemical/biological/contrast agents.
-5. Rank candidates with:
-   - keyword priority
-   - title/abstract Agent or LLM signals
-   - category signals
-   - institution signals from QS Top 50 universities and known AI labs/companies
-6. Return a ranked candidate list, usually around `20` recommended papers for one day when arXiv supply allows.
-7. After recall, use the current conversation model to judge papers from `title + abstract` against the user's taste profile and narrow the list to the final daily set.
-8. After the final paper list is selected, prepare runtime summary requests and use the runtime skill context to generate the bilingual summary artifacts.
-9. Use `run_daily.py` to create or inspect the candidate run. It writes run-state and pending metadata queue entries, and only publishes when the readiness gate is already satisfied.
-10. Use `finalize_daily.py` for explicit promotion to official repo artifacts when `check_daily_status.py` reports `final_ready`.
+Discovery climbs this ladder only as needed:
+
+1. arXiv API search over priority keywords `Agent`, `Agents`, `LLM` and categories `cs.AI`, `cs.CL`, `cs.LG`, `stat.ML`, `cs.SE`, `cs.MA`.
+2. arXiv listing + abs HTML fallback when the API fails or exhausts its budget.
+3. Agent Reach / Exa recall when arXiv discovery is unavailable or suspiciously empty; arXiv abs HTML must confirm the target UTC submitted date before a candidate is accepted.
+
+After recall, dedupe by normalized arXiv id, filter obvious non-LLM/Agent noise, rank by keyword/category/institution signals, and keep about `20` papers when supply allows.
 
 ## Stage Boundaries
 
@@ -141,119 +140,26 @@ For each selected paper, include:
 
 ## Commands
 
+Read `references/commands.md` when you need exact CLI syntax.
+
 ## Scheduled Run Date Semantics
 
 - All `--date` values in `discover.py`, `run_daily.py`, `check_daily_status.py`, `prepare_summary_requests.py`, `prepare_missing_summary_requests.py`, `enrich_metadata.py`, and `finalize_daily.py` are UTC dates.
 - For scheduled production runs triggered in a non-UTC timezone, target the most recent fully completed UTC date instead of the local calendar date.
 - Example: if the automation starts at `2026-06-08 10:30 Asia/Shanghai`, use `--date 2026-06-07` because the UTC day `2026-06-08` is still in progress.
-- If an automation or agent is orchestrating this workflow, explicitly tell it to use the repository's `paper-daily` skill instead of treating the task as a generic script execution.
+- If an automation or agent is orchestrating this workflow, explicitly tell it to use the repository's `paper-daily` skill instead of treating the task as generic script execution.
 
-Run a real arXiv dry-run for a UTC submitted date:
+## Judging Stage
 
-```bash
-python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD
-```
+After recall:
 
-Write JSON output:
-
-```bash
-python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --json --out /tmp/papers.json
-```
-
-By default, discovery results are also saved to:
-
-```text
-skill/paper-daily/output/discovered-YYYY-MM-DD.json
-```
-
-Ask for deeper retrieval explicitly:
-
-```bash
-python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 50 --select 20
-```
-
-For interactive runs, keep discovery bounded:
-
-```bash
-python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 50 --select 20 --budget-seconds 180 --api-search-budget-seconds 30
-```
-
-For local testing with fewer requests or a narrower sample:
-
-```bash
-python3 skill/paper-daily/scripts/discover.py --date YYYY-MM-DD --max-results-per-keyword 10 --select 20
-```
-
-Prepare runtime summary requests for the selected papers:
-
-```bash
-python3 skill/paper-daily/scripts/prepare_summary_requests.py --repo-root . --date YYYY-MM-DD --out /tmp/paper-daily-summary-requests.json
-```
-
-Run the local publishing pipeline after the summary artifacts have been written:
-
-```bash
-python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date YYYY-MM-DD
-```
-
-Create a candidate run from a known discovery artifact:
-
-```bash
-python3 skill/paper-daily/scripts/run_daily.py --repo-root . --discovered-json /tmp/discovered-YYYY-MM-DD.json --view-only
-```
-
-Check whether a candidate run is ready to finalize:
-
-```bash
-python3 skill/paper-daily/scripts/check_daily_status.py --repo-root . --date YYYY-MM-DD
-```
-
-Run a bounded metadata worker slice:
-
-```bash
-python3 skill/paper-daily/scripts/enrich_metadata.py --repo-root . --date YYYY-MM-DD --budget-seconds 60 --max-papers 5
-```
-
-Prepare requests for only the missing summary artifacts:
-
-```bash
-python3 skill/paper-daily/scripts/prepare_missing_summary_requests.py --repo-root . --date YYYY-MM-DD --out /tmp/missing-summary-requests.json
-```
-
-Finalize a ready candidate run into official repo artifacts:
-
-```bash
-python3 skill/paper-daily/scripts/finalize_daily.py --repo-root . --date YYYY-MM-DD
-```
-
-Manually publish specific arXiv IDs with an explicit display date:
-
-```bash
-python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date YYYY-MM-DD --arxiv-id 2505.14359v6 --arxiv-id 2512.06746
-```
-
-Inspect a specific date without changing README/feed/state/summary artifacts:
-
-```bash
-python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date YYYY-MM-DD --view-only
-```
-
-Generate only the canonical/feed outputs:
-
-```bash
-python3 skill/paper-daily/scripts/generate_feed.py --repo-root . --date YYYY-MM-DD
-```
-
-- Judge stage guidance after recall:
-  - read the top recalled papers from `selected` or `ranked`
-  - judge only from `title`, `abstract`, categories, and lightweight institution hints
-  - prefer papers aligned with the user's stated interests
-  - keep the final list around `20` papers unless the user asks for a different size
-  - after the final list is fixed, write the report immediately instead of stopping at the list
-  - generate bilingual summaries for each selected paper using the report format above
-  - replace raw arXiv categories with inferred topic keywords in user-facing metadata
-  - summarize what the paper does; do not invent weaknesses from title/abstract-only evidence
-  - keep judging rationale internal; the user-facing report should focus on the papers
+- Read the top recalled papers from `selected` or `ranked`.
+- Judge only from `title`, `abstract`, categories, and lightweight institution hints.
+- Prefer papers aligned with the preference profile.
+- Keep the final list around `20` papers unless the user asks for a different size.
+- After the final list is fixed, write the report immediately instead of stopping at the list.
+- Replace raw arXiv categories with inferred topic keywords in user-facing metadata.
+- Keep judging rationale internal; the user-facing report should focus on the papers.
 
 ## Notes
 
@@ -270,5 +176,6 @@ python3 skill/paper-daily/scripts/generate_feed.py --repo-root . --date YYYY-MM-
 
 ## References
 
+- Commands: `references/commands.md`
 - Institution whitelist: `references/institutions.json`
 - Discovery implementation: `scripts/paper_daily/`

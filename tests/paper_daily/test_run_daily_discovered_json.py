@@ -101,6 +101,49 @@ class RunDailyDiscoveredJsonTest(unittest.TestCase):
             queue = json.loads((repo_root / "data" / "paper-daily" / "pending-metadata.json").read_text(encoding="utf-8"))
             self.assertEqual(queue["tasks"][0]["paper_id"], "2605.00002")
 
+    def test_complete_discovered_json_candidates_seed_metadata_cache(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo_root = Path(tmp)
+            metadata_dir = repo_root / "fresh-metadata"
+            discovered_path = repo_root / "discovered.json"
+            discovered_path.write_text(json.dumps({
+                "date": "2026-05-26",
+                "ranked": [{
+                    "arxiv_id": "2605.00003",
+                    "version_id": "2605.00003v1",
+                    "title": "Fresh Agent Paper",
+                    "abstract": "A complete LLM agent paper.",
+                    "authors": ["A"],
+                    "categories": ["cs.AI"],
+                    "primary_category": "cs.AI",
+                    "published": "2026-05-26T00:00:00Z",
+                    "updated": "2026-05-26T00:00:00Z",
+                    "abs_url": "https://arxiv.org/abs/2605.00003v1",
+                    "pdf_url": "https://arxiv.org/pdf/2605.00003v1",
+                    "priority_keyword": "Agent",
+                    "keyword_rank": 1,
+                    "query_total": 10,
+                    "score": 10.0,
+                    "reasons": ["keyword:Agent"],
+                }],
+            }), encoding="utf-8")
+
+            argv = [
+                "run_daily.py",
+                "--repo-root", str(repo_root),
+                "--date", "2026-05-26",
+                "--discovered-json", str(discovered_path),
+                "--metadata-artifact-dir", str(metadata_dir),
+                "--view-only",
+            ]
+            stdout = io.StringIO()
+            with patch.object(sys, "argv", argv), contextlib.redirect_stdout(stdout):
+                exit_code = run_daily_main()
+
+            self.assertEqual(exit_code, 0)
+            self.assertTrue((metadata_dir / "2605.00003.json").exists())
+            self.assertNotIn("blocking_metadata=2605.00003", stdout.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()

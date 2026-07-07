@@ -1,21 +1,11 @@
 ---
 name: paper-learning
-description: Use this skill whenever the user wants to run, debug, extend, or reason about the paper-learning workflow built on top of paper-daily, especially when the task involves daily paper publishing, Notion as a HITL control plane, chat-triggered deep reading, queue execution, or AI-assisted archive classification.
+description: Paper Learning workflow: use for Notion/Feishu daily paper publishing, chat-triggered deep reading, Notion Selected queue execution, ljg-paper Org artifacts, and archive classification.
 ---
 
 # Paper Learning
 
 Use this skill for the personal paper learning workflow built on top of `paper-daily`.
-
-## When to Use
-
-Use this skill when the user wants to:
-
-- publish a daily paper batch into Notion or Feishu
-- review, triage, or process a Notion `Paper Inbox`
-- trigger deep reading from chat, from a Notion-selected set, or from a daily report
-- generate or consume `ljg-paper` Org artifacts
-- reason about queue execution, archive classification, or HITL design in this workflow
 
 ## When NOT to Use
 
@@ -71,6 +61,7 @@ Do not model this as “one workflow that users rerun twice.” The daily stage 
 1. Run the daily stage with `run_daily_learning.py`.
 2. If summaries are missing, first run `prepare_daily_learning_requests.py`, execute the returned summary requests through the runtime skill, then rerun `run_daily_learning.py`.
 3. Review candidates in the Notion `Paper Inbox`.
+4. Done when the daily report exists, the inbox rows are written or the exact blocker is reported, and the local run artifact is inspectable.
 
 ### Deep Reading Stage
 
@@ -90,6 +81,7 @@ The skill should:
 4. make sure `ljg-paper` Org artifacts exist
 5. execute queue processing
 6. report the resulting `Deep Notes` and archive updates
+7. finish only after every requested paper is either processed or listed with a paper id, failed stage, and next recovery command
 
 ## Deep Reading Providers
 
@@ -124,8 +116,11 @@ Notion `Selected` means “human-marked candidate set.” It is not, by itself, 
 Scripts support the skill. They are not the primary user experience.
 
 - `run_daily_learning.py` is the daily-stage executor.
+- `prepare_daily_learning_requests.py` prepares missing daily summary requests.
 - `process_notion_queue.py` is the queue executor once the paper set is already known.
 - `request_deep_reading.py` and `confirm_deep_reading_request.py` are transition/debugging tools while the chat-facing deep-reading flow is being formalized.
+- `prepare_selected_papers.py` and `prepare_queue_stage_requests.py` support local queue rehearsal.
+- `check_pipeline_readiness.py` and `rehearse_pipeline.py` are readiness/rehearsal probes.
 
 For local queue-stage testing without live Notion selections:
 
@@ -143,119 +138,11 @@ For local queue-stage testing without live Notion selections:
 
 ## Commands
 
-Daily stage executor:
-
-```bash
-python3 skill/paper-learning/scripts/run_daily_learning.py --config ~/.paper-learning/config.json --date YYYY-MM-DD
-```
-
-Daily-stage summary request preparation:
-
-```bash
-python3 skill/paper-learning/scripts/prepare_daily_learning_requests.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --limit 3
-```
-
-Queue executor:
-
-```bash
-python3 skill/paper-learning/scripts/process_notion_queue.py --config ~/.paper-learning/config.json
-```
-
-Deep-reading request resolution helper:
-
-```bash
-python3 skill/paper-learning/scripts/request_deep_reading.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --use-notion-selected
-python3 skill/paper-learning/scripts/request_deep_reading.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --all-from-report
-python3 skill/paper-learning/scripts/request_deep_reading.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --paper-id arxiv:2605.19932
-```
-
-Deep-reading request confirmation helper:
-
-```bash
-python3 skill/paper-learning/scripts/confirm_deep_reading_request.py --request data/paper-learning/runs/YYYY-MM-DD/deep-reading-request.json
-```
-
-Local selected-papers rehearsal helper:
-
-```bash
-python3 skill/paper-learning/scripts/prepare_selected_papers.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --limit 1
-```
-
-Local queue-stage rehearsal helper:
-
-```bash
-python3 skill/paper-learning/scripts/prepare_queue_stage_requests.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --limit 1
-```
-
-`ljg-paper` request preparation:
-
-```bash
-python3 skill/paper-learning/scripts/prepare_ljg_paper_requests.py --config ~/.paper-learning/config.json --limit 1
-```
-
-`ljg-paper` request preparation from a resolved deep-reading request:
-
-```bash
-python3 skill/paper-learning/scripts/prepare_ljg_paper_requests.py --config ~/.paper-learning/config.json --deep-reading-request-json data/paper-learning/runs/YYYY-MM-DD/deep-reading-request.json
-```
-
-Daily-stage dry-run:
-
-```bash
-python3 skill/paper-learning/scripts/run_daily_learning.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --dry-run
-```
-
-Summary-free daily-stage dry-run:
-
-```bash
-python3 skill/paper-learning/scripts/run_daily_learning.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --dry-run --skip-summary
-```
-
-Queue dry-run:
-
-```bash
-python3 skill/paper-learning/scripts/process_notion_queue.py --config skill/paper-learning/templates/config.example.json --dry-run --limit 1
-```
-
-Queue dry-run from local `selected-papers.json`:
-
-```bash
-python3 skill/paper-learning/scripts/process_notion_queue.py --config skill/paper-learning/templates/config.example.json --selected-papers-json data/paper-learning/runs/YYYY-MM-DD/selected-papers.json --dry-run --limit 1
-```
-
-Queue dry-run from a resolved deep-reading request:
-
-```bash
-python3 skill/paper-learning/scripts/process_notion_queue.py --config skill/paper-learning/templates/config.example.json --deep-reading-request-json data/paper-learning/runs/YYYY-MM-DD/deep-reading-request.json --dry-run
-```
-
-Readiness checks:
-
-```bash
-python3 skill/paper-learning/scripts/check_pipeline_readiness.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --stage daily --limit 3
-python3 skill/paper-learning/scripts/check_pipeline_readiness.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --stage queue --selected-papers-json data/paper-learning/runs/YYYY-MM-DD/selected-papers.json --limit 1
-```
-
-Full local rehearsal:
-
-```bash
-python3 skill/paper-learning/scripts/rehearse_pipeline.py --config ~/.paper-learning/config.json --date YYYY-MM-DD --daily-limit 3 --queue-limit 1 --include-queue
-```
-
-Notion bootstrap:
-
-```bash
-python3 skill/paper-learning/scripts/bootstrap_notion.py --config skill/paper-learning/templates/config.example.json --parent-page <NOTION_PAGE_URL> --write-config
-```
+Read `references/commands.md` when you need exact CLI syntax.
 
 ## Testing Checklist
 
-- For real Notion or Feishu calls, load local secrets first:
-
-```bash
-. skill/paper-learning/scripts/load_env.sh .local/paper-learning.env
-```
-
+- For real Notion or Feishu calls, load local secrets first; see `references/commands.md`.
 - Full paper-daily runs also need the summary artifacts prepared ahead of time; summary-free dry runs can use `--skip-summary`.
 - `--dry-run` disables Notion, Feishu, and runtime writes, but source aggregation can still call external paper sources such as arXiv and Hugging Face.
 - For schema or payload changes, first run the daily dry-run and inspect `data/paper-learning/runs/<date>.json`.
@@ -299,6 +186,7 @@ The queue stage creates or updates:
 
 ## References
 
+- Commands: `references/commands.md`
 - Starter research areas: `references/research_areas.example.json`
 - Config template: `templates/config.example.json`
 - Feishu notification research: `references/feishu_notification_research.md`

@@ -19,6 +19,8 @@ VIEW_ONLY=false
 DRY_RUN=false
 NO_NOTIFY=false
 NOTIFY_DRY_RUN=false
+DISABLE_AGENT_REACH_FALLBACK=false
+AGENT_REACH_TIMEOUT_SECONDS=""
 
 # Print help
 show_help() {
@@ -38,6 +40,10 @@ COMMON FLAGS:
   --date DATE            Paper discovery date (YYYY-MM-DD, default: yesterday UTC)
   --view-only            Preview without writing to repo
   --dry-run              Dry run without external calls
+  --disable-agent-reach-fallback
+                         Disable optional Agent Reach / Exa discovery fallback
+  --agent-reach-timeout-seconds SECONDS
+                         Timeout for optional Agent Reach / Exa fallback
   --help                 Show this help message
 
 EXAMPLES:
@@ -80,6 +86,14 @@ while [[ $# -gt 0 ]]; do
             NOTIFY_DRY_RUN=true
             shift
             ;;
+        --disable-agent-reach-fallback)
+            DISABLE_AGENT_REACH_FALLBACK=true
+            shift
+            ;;
+        --agent-reach-timeout-seconds)
+            AGENT_REACH_TIMEOUT_SECONDS="$2"
+            shift 2
+            ;;
         --help)
             show_help
             exit 0
@@ -101,7 +115,10 @@ fi
 case $ACTION in
     discover)
         echo "🔍 Discovering papers for $DATE..."
-        python3 skill/paper-daily/scripts/discover.py --date "$DATE" --max-results-per-keyword 50 --select 20 --budget-seconds 180
+        DISCOVER_FLAGS=()
+        if $DISABLE_AGENT_REACH_FALLBACK; then DISCOVER_FLAGS+=("--disable-agent-reach-fallback"); fi
+        if [[ -n "$AGENT_REACH_TIMEOUT_SECONDS" ]]; then DISCOVER_FLAGS+=("--agent-reach-timeout-seconds" "$AGENT_REACH_TIMEOUT_SECONDS"); fi
+        python3 skill/paper-daily/scripts/discover.py --date "$DATE" --max-results-per-keyword 50 --select 20 --budget-seconds 180 "${DISCOVER_FLAGS[@]}"
         EXIT_CODE=$?
 
         if [ $EXIT_CODE -ne 0 ]; then
@@ -209,10 +226,13 @@ case $ACTION in
         ;;
     run)
         echo "▶️  Running daily pipeline for $DATE..."
+        RUN_FLAGS=()
+        if $DISABLE_AGENT_REACH_FALLBACK; then RUN_FLAGS+=("--disable-agent-reach-fallback"); fi
+        if [[ -n "$AGENT_REACH_TIMEOUT_SECONDS" ]]; then RUN_FLAGS+=("--agent-reach-timeout-seconds" "$AGENT_REACH_TIMEOUT_SECONDS"); fi
         if $VIEW_ONLY; then
-            python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date "$DATE" --view-only
+            python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date "$DATE" --view-only "${RUN_FLAGS[@]}"
         else
-            python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date "$DATE"
+            python3 skill/paper-daily/scripts/run_daily.py --repo-root . --date "$DATE" "${RUN_FLAGS[@]}"
         fi
         ;;
     finalize)

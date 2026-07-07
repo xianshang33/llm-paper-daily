@@ -26,7 +26,7 @@ from paper_daily.discovery import (
 from paper_daily.feed import read_feed_state, write_feed_outputs, write_feed_state
 from paper_daily.institutions import load_catalog
 from paper_daily.local_metadata import load_local_candidate_payload
-from paper_daily.metadata import load_metadata_payload, merge_candidate_with_metadata, resolve_metadata_artifact_dir
+from paper_daily.metadata import load_metadata_payload, merge_candidate_with_metadata, normalize_metadata_payload, resolve_metadata_artifact_dir, write_metadata_payload
 from paper_daily.metadata import metadata_is_complete
 from paper_daily.patch import (
     README_END,
@@ -66,6 +66,8 @@ def main() -> int:
         retries=args.retries,
         budget_seconds=args.discovery_budget_seconds,
         api_search_budget_seconds=args.api_search_budget_seconds,
+        enable_agent_reach_fallback=not args.disable_agent_reach_fallback,
+        agent_reach_timeout_seconds=args.agent_reach_timeout_seconds,
     )
     previous_state = read_feed_state(repo_root)
     analyzed_dates = set(previous_state.get("analyzed_content_dates", []))
@@ -141,6 +143,7 @@ def main() -> int:
         )
     selected = [candidate.to_dict() for candidate in selected_candidates]
     metadata_artifact_dir = resolve_metadata_artifact_dir(repo_root, args.metadata_artifact_dir)
+    seed_metadata_cache_from_candidates(selected, metadata_artifact_dir=metadata_artifact_dir)
     record_candidate_run(
         repo_root,
         date=selected_date,
@@ -265,6 +268,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--retries", type=int, default=1)
     parser.add_argument("--discovery-budget-seconds", type=float, default=180.0, help="Global wall-clock budget for arXiv discovery/manual metadata lookups. Use 0 to disable.")
     parser.add_argument("--api-search-budget-seconds", type=float, default=30.0, help="Budget for the first arXiv API search before preserving time for listing fallback. Use 0 to disable.")
+    parser.add_argument("--disable-agent-reach-fallback", action="store_true", help="Disable optional Agent Reach / Exa fallback when arXiv discovery is unavailable or suspiciously empty.")
+    parser.add_argument("--agent-reach-timeout-seconds", type=float, default=30.0, help="Timeout for the optional Agent Reach / Exa fallback call.")
     parser.add_argument("--backfill-days", type=int, default=7)
     parser.add_argument("--view-only", action="store_true", help="Inspect the selected papers without updating README/feed/state/summary artifacts.")
     parser.add_argument("--debug-out", help="Optional directory for debug JSON artifacts.")
@@ -317,6 +322,17 @@ def select_complete_candidates_from_pool(*, candidate_pool: list[dict], metadata
         if metadata_is_complete(merged):
             complete_candidates.append(paper_candidate_from_dict(merged))
     return rank_candidates(complete_candidates, catalog)
+
+
+def seed_metadata_cache_from_candidates(candidates: list[dict], *, metadata_artifact_dir: Path) -> None:
+    for candidate in candidates:
+        if not metadata_is_complete(candidate):
+            continue
+        source = candidate.get("metadata_source") or "arxiv-api"
+        status = candidate.get("metadata_status") or "complete"
+        payload = normalize_metadata_payload(candidate, source=source, status=status)
+        if metadata_is_complete(payload):
+            write_metadata_payload(metadata_artifact_dir, payload)
 
 
 def resolve_manual_candidates(*, client: ArxivClient, repo_root: Path, arxiv_ids: list[str]) -> list:
