@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.07_05:29-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.08_04:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月07日 05:29</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月08日 04:42</sub></summary>
 <br>
 
-- MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution 
-- AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments 
-- Toward Trustworthy Large Language Model Agents in Healthcare 
-- Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses 
-- STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training 
+- From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b 
+- LLM Agents for Deliberative Collaboration: A Study on Joint Decision Making Under Partial Observability 
+- From Blueprint to Reality: Modeling and Applying Putnam's Social Capital Theory with LLM-based Multi-agent Simulations 
+- PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents 
+- Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-07</span> | **From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b**<br><sub>机构: Korea University, Myongji University, AIGEN Sciences<br>本文针对生物医学问答中证据分散和推理复杂的问题，提出了一种答案类型感知的 LLM 框架。通过为 Yes/No、Factoid 和 List 问题设计专用的推理管道（如片段洗牌、CoT 上下文学习、多智能体协作），有效解决了单一策略无法适配多样化推理需求的痛点。实验表明，该方法在 BioASQ 14b 挑战赛中取得了优异成绩，特别是在 Factoid 任务中获得第一，验证了精细化、模块化推理流程在专业领域 QA 中的价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06452v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06452.md)  |
+| <span style='display: inline-block; width: 42px;'>07-07</span> | **LLM Agents for Deliberative Collaboration: A Study on Joint Decision Making Under Partial Observability**<br><sub>机构: Tsinghua University, Fuzhou University<br>本文建立了评估和改进 LLM 智能体在审议协作中表现的基础。通过形式化部分可观察下的联合决策问题并引入可扩展基准，文章系统地揭示了当前 LLM 在处理信息不对称和复杂联合推理时的局限性，同时也肯定了审议机制在促进反思和提升决策质量方面的潜力，为未来多智能体系统的改进提供了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06157v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06157.md)  |
+| <span style='display: inline-block; width: 42px;'>07-07</span> | **From Blueprint to Reality: Modeling and Applying Putnam's Social Capital Theory with LLM-based Multi-agent Simulations**<br><sub>机构: State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China<br>本文提出了SocaSim框架，填补了社会学理论与LLM多智能体模拟之间的空白。通过构建理论对齐的环境，该框架不仅复现了社会资本理论的宏观规律，还提供了微观层面的因果解释和人机对齐验证，为连接社会科学与计算机科学建立了新的研究范式，特别是在智慧养老等具体应用场景中展示了其潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06080v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06080.md)  |
+| <span style='display: inline-block; width: 42px;'>07-07</span> | **PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents**<br><sub>机构: Beijing Jiaotong University, Weixin AI, Tencent Inc<br>本文指出了当前LLM智能体基准测试中忽视多语言交互动态的空白，发布了PolyWorkBench基准。该基准通过真实的多语言长程工作流任务，揭示了现有SOTA智能体在处理多语言上下文时的性能瓶颈。提出的混合评估框架为未来研究多语言智能体的鲁棒性和一致性提供了重要工具，强调了在开发通用智能体时需同时考虑语言能力与执行逻辑的耦合。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06008v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06008.md)  |
+| <span style='display: inline-block; width: 42px;'>07-07</span> | **Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory**<br><sub>机构: Peking University<br>Danus 提出了一种基于事实图记忆机制的智能体编排框架，有效解决了研究级数学推理中并行搜索协调和长程状态管理的难题。通过主智能体规划、工作智能体并行探索及验证器严格把关的协同工作，Danus 在多个高难度数学领域展示了构建复杂证明的能力，为扩展 LLM 数学推理智能体至更长程、更复杂的研究任务提供了有效途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06447v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06447.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/frenzymath/Danus)</div> |
 | <span style='display: inline-block; width: 42px;'>07-06</span> | **MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution**<br><sub>机构: LMU Munich, The Chinese University of Hong Kong, MCML, MemAgents Lab<br>MetaSkill-Evolve 通过引入双时间尺度的递归自改进机制，解决了现有LLM智能体进化过程中“改进策略固定”的核心痛点。它不仅让智能体学会更好地执行任务，还让其学会如何更有效地自我改进。实验证明，这种方法在多个基准测试中显著超越了传统静态技能和单层进化方法，展示了递归自改进在提升智能体长期适应性和性能方面的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05297v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05297.md)  |
 | <span style='display: inline-block; width: 42px;'>07-06</span> | **AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments**<br><sub>机构: Fudan University<br>AgentGym2 通过引入去理想化的真实世界环境，解决了现有基准测试过于简化的问题。它重点评估智能体在工具探索、组合以及对噪声信息鲁棒性方面的能力。实验表明，当前最先进的 LLM 智能体在面对真实世界的复杂性和不确定性时仍显不足，该基准为未来智能体的研发和评估提供了更贴近实际应用的指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05174v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05174.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/hotdog-zz/Agentgym2)</div> |
 | <span style='display: inline-block; width: 42px;'>07-06</span> | **Toward Trustworthy Large Language Model Agents in Healthcare**<br><sub>机构: American University of Beirut<br>本文提出的 CareConnect 展示了如何通过分层确定性安全护栏和严格的范围约束，将 LLM 安全地应用于医疗后勤自动化。它成功解决了通用 LLM 在医疗操作场景中面临的安全性和事务一致性难题，以极低的成本和较高的任务完成率实现了预约调度的自动化，为可信医疗 AI 代理的部署提供了可行范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.05055v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.05055.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Hadi-Hsn/CareConnect)</div> |

@@ -1,42 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-07T05:29:44.579528+00:00",
-  "run_date": "2026-07-06",
+  "generated_at": "2026-07-08T04:42:35.416154+00:00",
+  "run_date": "2026-07-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.05297",
-      "date": "2026-07-06",
-      "title": "MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution",
+      "id": "arxiv:2607.06452",
+      "date": "2026-07-07",
+      "title": "From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zefeng Wang",
-        "Minxi Yan",
-        "Jinhe Bi",
-        "Sikuan Yan",
-        "Volker Tresp",
-        "Yunpu Ma"
+        "Taeyun Roh",
+        "Eunha Lee",
+        "Wonjune Jang",
+        "Sohyun Chung",
+        "Junha Jung",
+        "Jaewoo Kang"
       ],
-      "institution": "LMU Munich, The Chinese University of Hong Kong, MCML, MemAgents Lab",
+      "institution": "Korea University, Myongji University, AIGEN Sciences",
       "summary": {
-        "zh": "MetaSkill-Evolve 通过引入双时间尺度的递归自改进机制，解决了现有LLM智能体进化过程中“改进策略固定”的核心痛点。它不仅让智能体学会更好地执行任务，还让其学会如何更有效地自我改进。实验证明，这种方法在多个基准测试中显著超越了传统静态技能和单层进化方法，展示了递归自改进在提升智能体长期适应性和性能方面的巨大潜力。",
-        "en": "- **Background**: LLM agents tackling long-horizon, open-ended tasks often rely on external reusable procedural knowledge (\"skills\"). However, fixed, hand-authored skills are rarely optimal and cannot adapt to task..."
+        "zh": "本文针对生物医学问答中证据分散和推理复杂的问题，提出了一种答案类型感知的 LLM 框架。通过为 Yes/No、Factoid 和 List 问题设计专用的推理管道（如片段洗牌、CoT 上下文学习、多智能体协作），有效解决了单一策略无法适配多样化推理需求的痛点。实验表明，该方法在 BioASQ 14b 挑战赛中取得了优异成绩，特别是在 Factoid 任务中获得第一，验证了精细化、模块化推理流程在专业领域 QA 中的价值。",
+        "en": "- **Background**: The rapid expansion of biomedical literature makes it difficult to extract precise and reliable answers from dispersed, heterogeneous, and sometimes conflicting documents. BioASQ Task B serves as a key..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.05297v1",
-        "pdf": "https://arxiv.org/pdf/2607.05297v1",
+        "abs": "http://arxiv.org/abs/2607.06452v1",
+        "pdf": "https://arxiv.org/pdf/2607.06452v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.05297.md",
-        "summary_en_path": "summary_en/2026-07/2607.05297.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05297.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05297.md"
+        "summary_zh_path": "summary/2026-07/2607.06452.md",
+        "summary_en_path": "summary_en/2026-07/2607.06452.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.06452.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.06452.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,147 +53,36 @@
       }
     },
     {
-      "id": "arxiv:2607.05174",
-      "date": "2026-07-06",
-      "title": "AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments",
+      "id": "arxiv:2607.06157",
+      "date": "2026-07-07",
+      "title": "LLM Agents for Deliberative Collaboration: A Study on Joint Decision Making Under Partial Observability",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhiheng Xi",
-        "Dingwen Yang",
-        "Jiaqi Liu",
-        "Jixuan Huang",
-        "Honglin Guo",
-        "Baodai Huang",
-        "Tinggang Chen",
-        "Qi Zhang",
-        "Zhonghang Lu",
-        "Chenyu Liu",
-        "Jiajun Sun",
-        "Jiazheng Zhang",
-        "Dingwei Zhu",
-        "Xin Guo",
-        "Junzhe Wang",
-        "Zhihao Zhang",
-        "Yuming Yang",
-        "Junjie Ye",
-        "Minghe Gao",
-        "Dongrui Liu",
-        "Jiaming Ji",
-        "Guohao Li",
-        "Tao Gui",
-        "Qi Zhang",
-        "Xuanjing Huang"
+        "Chenxu Wang",
+        "Yongkun Yang",
+        "Boyuan Du",
+        "Shiwei Lin",
+        "Huaping Liu"
       ],
-      "institution": "Fudan University",
+      "institution": "Tsinghua University, Fuzhou University",
       "summary": {
-        "zh": "AgentGym2 通过引入去理想化的真实世界环境，解决了现有基准测试过于简化的问题。它重点评估智能体在工具探索、组合以及对噪声信息鲁棒性方面的能力。实验表明，当前最先进的 LLM 智能体在面对真实世界的复杂性和不确定性时仍显不足，该基准为未来智能体的研发和评估提供了更贴近实际应用的指导方向。",
-        "en": "- **Background**: As Large Language Model (LLM) agents rapidly evolve from simple chatbots to autonomous systems handling complex tasks like deep research, their deployment in production environments is increasing. This..."
+        "zh": "本文建立了评估和改进 LLM 智能体在审议协作中表现的基础。通过形式化部分可观察下的联合决策问题并引入可扩展基准，文章系统地揭示了当前 LLM 在处理信息不对称和复杂联合推理时的局限性，同时也肯定了审议机制在促进反思和提升决策质量方面的潜力，为未来多智能体系统的改进提供了方向。",
+        "en": "- **Background**: Deliberation is crucial in human collaboration for aligning information and reaching consensus. While LLMs have advanced in multi-agent collaboration and decision-making, research often overlooks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.05174v1",
-        "pdf": "https://arxiv.org/pdf/2607.05174v1",
-        "github": "https://github.com/hotdog-zz/Agentgym2"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.05174.md",
-        "summary_en_path": "summary_en/2026-07/2607.05174.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05174.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05174.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.05055",
-      "date": "2026-07-06",
-      "title": "Toward Trustworthy Large Language Model Agents in Healthcare",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Hadi Hasan",
-        "Safaa Salman",
-        "Adam Tai Abou Dargham",
-        "Ammar Mohanna",
-        "Ali Chehab"
-      ],
-      "institution": "American University of Beirut",
-      "summary": {
-        "zh": "本文提出的 CareConnect 展示了如何通过分层确定性安全护栏和严格的范围约束，将 LLM 安全地应用于医疗后勤自动化。它成功解决了通用 LLM 在医疗操作场景中面临的安全性和事务一致性难题，以极低的成本和较高的任务完成率实现了预约调度的自动化，为可信医疗 AI 代理的部署提供了可行范式。",
-        "en": "- **Background**: Healthcare appointment scheduling remains a persistent operational bottleneck due to manual coordination, fragmented legacy systems, and high administrative overhead, which constrains provider..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.05055v1",
-        "pdf": "https://arxiv.org/pdf/2607.05055v1",
-        "github": "https://github.com/Hadi-Hsn/CareConnect"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.05055.md",
-        "summary_en_path": "summary_en/2026-07/2607.05055.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05055.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05055.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.05029",
-      "date": "2026-07-06",
-      "title": "Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Neeraj Karamchandani",
-        "Piyush Nagasubramaniam",
-        "Sencun Zhu",
-        "Dinghao Wu"
-      ],
-      "institution": "The Pennsylvania State University",
-      "summary": {
-        "zh": "本文揭示了 LLM 代理持久化记忆中一个关键但被忽视的安全漏洞：推理历史投毒。通过提出 FARMA 攻击，作者证明了攻击者可以污染代理的推理过程而非仅仅是事实知识，并利用自引用机制放大攻击效果。同时，作者提出了 SENTINEL 防御框架，通过结构化分析有效检测并阻止此类攻击，实现了零误报和高防御成功率。这项工作强调了在构建安全的 LLM 代理系统时，必须同时保护检索内容和推理历史的完整性。",
-        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on persistent memory to store factual knowledge, prior decisions, reasoning histories, tool usage, and context, enhancing functionality and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.05029v1",
-        "pdf": "https://arxiv.org/pdf/2607.05029v1",
+        "abs": "http://arxiv.org/abs/2607.06157v1",
+        "pdf": "https://arxiv.org/pdf/2607.06157v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.05029.md",
-        "summary_en_path": "summary_en/2026-07/2607.05029.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05029.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05029.md"
+        "summary_zh_path": "summary/2026-07/2607.06157.md",
+        "summary_en_path": "summary_en/2026-07/2607.06157.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.06157.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.06157.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -210,42 +99,138 @@
       }
     },
     {
-      "id": "arxiv:2607.04963",
-      "date": "2026-07-06",
-      "title": "STAPO: Selective Trajectory-Aware Policy Optimization for LLM Agent Training",
+      "id": "arxiv:2607.06080",
+      "date": "2026-07-07",
+      "title": "From Blueprint to Reality: Modeling and Applying Putnam's Social Capital Theory with LLM-based Multi-agent Simulations",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qiuyi Qi",
-        "Tian Liang",
-        "Mutian Bao",
-        "Jinjian Zhang",
-        "Dongnan Liu",
-        "Wei Zhou",
-        "Linjian Mo",
-        "Ming Kong",
-        "Jie Liu",
-        "Feng Zhang",
-        "Qiang Zhu"
+        "Shiyi Ling",
+        "Zhi Zheng",
+        "Hui Zheng",
+        "Wenjun Xue",
+        "Feng Ye",
+        "Tong Xu"
       ],
-      "institution": "Zhejiang University, Ant Group, City University of Hong Kong",
+      "institution": "State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China",
       "summary": {
-        "zh": "本文针对LLM智能体在长程任务中因稀疏奖励导致的轨迹忽视问题，指出了现有基于香农熵方法的局限性。通过提出归一化熵来更精准地衡量智能体置信度偏差，并构建STAPO框架，实现了对异常步骤的选择性优化。该方法在多个复杂基准测试中实现了SOTA性能，有效提升了智能体在长程推理中的轨迹意识和训练稳定性。",
-        "en": "- **Background**: Reinforcement Learning (RL) is the dominant paradigm for training Large Language Model (LLM) agents on long-horizon tasks. However, sparse and delayed rewards often lead to \"trajectory neglect,\" where..."
+        "zh": "本文提出了SocaSim框架，填补了社会学理论与LLM多智能体模拟之间的空白。通过构建理论对齐的环境，该框架不仅复现了社会资本理论的宏观规律，还提供了微观层面的因果解释和人机对齐验证，为连接社会科学与计算机科学建立了新的研究范式，特别是在智慧养老等具体应用场景中展示了其潜力。",
+        "en": "- **Background**: Putnam's Social Capital Theory is a foundational framework for understanding collective action and community prosperity, centered on social networks, trust, and norms. Traditional empirical methods..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.04963v1",
-        "pdf": "https://arxiv.org/pdf/2607.04963v1",
+        "abs": "http://arxiv.org/abs/2607.06080v1",
+        "pdf": "https://arxiv.org/pdf/2607.06080v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.04963.md",
-        "summary_en_path": "summary_en/2026-07/2607.04963.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04963.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04963.md"
+        "summary_zh_path": "summary/2026-07/2607.06080.md",
+        "summary_en_path": "summary_en/2026-07/2607.06080.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.06080.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.06080.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.06008",
+      "date": "2026-07-07",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Hongliang Li",
+        "Yijin Liu",
+        "Zhiwei Zhang",
+        "Zihe Liu",
+        "Xinyue Lou",
+        "Jinan Xu",
+        "Fandong Meng",
+        "Kaiyu Huang"
+      ],
+      "institution": "Beijing Jiaotong University, Weixin AI, Tencent Inc",
+      "summary": {
+        "zh": "本文指出了当前LLM智能体基准测试中忽视多语言交互动态的空白，发布了PolyWorkBench基准。该基准通过真实的多语言长程工作流任务，揭示了现有SOTA智能体在处理多语言上下文时的性能瓶颈。提出的混合评估框架为未来研究多语言智能体的鲁棒性和一致性提供了重要工具，强调了在开发通用智能体时需同时考虑语言能力与执行逻辑的耦合。",
+        "en": "- **Background**: Large language model (LLM) agents have demonstrated strong capabilities in long-horizon tasks requiring planning, tool use, and environmental interaction. However, most existing benchmarks implicitly..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.06008v1",
+        "pdf": "https://arxiv.org/pdf/2607.06008v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.06008.md",
+        "summary_en_path": "summary_en/2026-07/2607.06008.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.06008.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.06008.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.06447",
+      "date": "2026-07-07",
+      "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jihao Liu",
+        "Guoxiong Gao",
+        "Zeming Sun",
+        "Bin Wu",
+        "Shurui Liu",
+        "Jiedong Jiang",
+        "Haocheng Ju",
+        "Leheng Chen",
+        "Ronnie Cheng",
+        "Xiping Zhang",
+        "Bin Dong"
+      ],
+      "institution": "Peking University",
+      "summary": {
+        "zh": "Danus 提出了一种基于事实图记忆机制的智能体编排框架，有效解决了研究级数学推理中并行搜索协调和长程状态管理的难题。通过主智能体规划、工作智能体并行探索及验证器严格把关的协同工作，Danus 在多个高难度数学领域展示了构建复杂证明的能力，为扩展 LLM 数学推理智能体至更长程、更复杂的研究任务提供了有效途径。",
+        "en": "- **Background**: LLM-based mathematical reasoning agents have started tackling research-level problems and contributing to resolving open questions. However, effectively scaling and orchestrating these agents remains a..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.06447v1",
+        "pdf": "https://arxiv.org/pdf/2607.06447v1",
+        "github": "https://github.com/frenzymath/Danus"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.06447.md",
+        "summary_en_path": "summary_en/2026-07/2607.06447.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.06447.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.06447.md"
       },
       "signals": {
         "priority_keyword": "Agent"
