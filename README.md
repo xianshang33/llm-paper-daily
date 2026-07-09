@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.08_04:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.09_05:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月08日 04:42</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月09日 05:31</sub></summary>
 <br>
 
-- From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b 
-- LLM Agents for Deliberative Collaboration: A Study on Joint Decision Making Under Partial Observability 
-- From Blueprint to Reality: Modeling and Applying Putnam's Social Capital Theory with LLM-based Multi-agent Simulations 
-- PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents 
-- Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory 
+- From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents 
+- SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis 
+- Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents 
+- Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning 
+- Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-08</span> | **From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents**<br><sub>机构: Renmin University of China, Alibaba Group<br>本文指出了当前 LLM 代理在依赖静态原子动作工具集时面临的推理效率低下和错误级联风险。通过提出 EvoSOP 框架，作者实现了从原子动作到标准操作程序（SOPs）的转变，并通过构建、合并、评估和剪枝的迭代循环优化工具集。这种方法模拟了人类利用高阶例行程序解决问题的高效方式，显著提升了代理在复杂任务中的成功率和效率，为自进化智能体的发展提供了重要方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07321v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07321.md)  |
+| <span style='display: inline-block; width: 42px;'>07-08</span> | **SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis**<br><sub>机构: University of Shanghai for Science and Technology<br>SpaCellAgent 通过结合 LLM 的多智能体协作、动态工具编排和自进化机制，有效解决了传统轨迹推断中人工成本高、工具使用复杂的问题。它在多个异构数据集上证明了其高效性和准确性，为计算生物学领域提供了一个自动化、低门槛且高性能的分析解决方案，显著推动了时空转录组分析的普及和标准化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07467v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07467.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/LittleXH-shw/SpaCellAgent)</div> |
+| <span style='display: inline-block; width: 42px;'>07-08</span> | **Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents**<br><sub>机构: Massachusetts Institute of Technology; Indian Institute of Technology Kharagpur<br>本文揭示并量化了工具使用型 LLM Agent 中一种严重但常被忽视的“静默策略违规”故障模式。作者证明，依赖模型推理来执行策略是不可靠的，尤其是在工具本身不强制执行策略约束的情况下。通过引入确定性的预执行门控，可以在不改变模型本身的情况下，以低成本显著恢复系统的可靠性。这一贡献强调了在 Agent 系统中，“少推理，多验证”（Reason Less, Verify More）的重要性，即在动作边界通过确定性代码而非概率性生成来保障策略合规性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07405v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07405.md)  |
+| <span style='display: inline-block; width: 42px;'>07-08</span> | **Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning**<br><sub>机构: Tsinghua University<br>本文提出的 SAO 框架通过单 rollout 采样和严格的 token 级裁剪策略，有效解决了异步 RL 中的离线策略效应和训练不稳定问题。实验表明，SAO 不仅在推理和编码基准上全面超越 GRPO，还具备优秀的在线适应能力，并成功应用于超大规模模型 GLM-5.2 的训练，为高效、稳定的智能体 RL 后训练提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07508v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07508.md)  |
+| <span style='display: inline-block; width: 42px;'>07-08</span> | **Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass**<br><sub>机构: Cornell University<br>Jailbreak 提出了一种新颖且通用的方法论，利用 LLM 理解数据库源码和文档来合成高性能存储读取器，从而绕过数据库引擎直接访问底层存储文件。该方法成功解决了传统数据访问路径中的序列化和格式转换瓶颈，显著提升了分析型工作负载的性能（最高 27x 加速），并保证了数据正确性。这不仅适用于 PostgreSQL 和 MySQL，也为任何文件格式可通过文档或源码获取的数据库系统提供了打破数据锁定的可行方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07696v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07696.md)  |
 | <span style='display: inline-block; width: 42px;'>07-07</span> | **From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b**<br><sub>机构: Korea University, Myongji University, AIGEN Sciences<br>本文针对生物医学问答中证据分散和推理复杂的问题，提出了一种答案类型感知的 LLM 框架。通过为 Yes/No、Factoid 和 List 问题设计专用的推理管道（如片段洗牌、CoT 上下文学习、多智能体协作），有效解决了单一策略无法适配多样化推理需求的痛点。实验表明，该方法在 BioASQ 14b 挑战赛中取得了优异成绩，特别是在 Factoid 任务中获得第一，验证了精细化、模块化推理流程在专业领域 QA 中的价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06452v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06452.md)  |
 | <span style='display: inline-block; width: 42px;'>07-07</span> | **LLM Agents for Deliberative Collaboration: A Study on Joint Decision Making Under Partial Observability**<br><sub>机构: Tsinghua University, Fuzhou University<br>本文建立了评估和改进 LLM 智能体在审议协作中表现的基础。通过形式化部分可观察下的联合决策问题并引入可扩展基准，文章系统地揭示了当前 LLM 在处理信息不对称和复杂联合推理时的局限性，同时也肯定了审议机制在促进反思和提升决策质量方面的潜力，为未来多智能体系统的改进提供了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06157v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06157.md)  |
 | <span style='display: inline-block; width: 42px;'>07-07</span> | **From Blueprint to Reality: Modeling and Applying Putnam's Social Capital Theory with LLM-based Multi-agent Simulations**<br><sub>机构: State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China<br>本文提出了SocaSim框架，填补了社会学理论与LLM多智能体模拟之间的空白。通过构建理论对齐的环境，该框架不仅复现了社会资本理论的宏观规律，还提供了微观层面的因果解释和人机对齐验证，为连接社会科学与计算机科学建立了新的研究范式，特别是在智慧养老等具体应用场景中展示了其潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.06080v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.06080.md)  |
