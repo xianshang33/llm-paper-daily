@@ -1,41 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-09T05:31:31.195654+00:00",
-  "run_date": "2026-07-08",
+  "generated_at": "2026-07-10T05:30:44.338867+00:00",
+  "run_date": "2026-07-09",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.07321",
-      "date": "2026-07-08",
-      "title": "From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents",
+      "id": "arxiv:2607.08768",
+      "date": "2026-07-09",
+      "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haipeng Ding",
-        "Yuexiang Xie",
-        "Zhewei Wei",
-        "Yaliang Li",
-        "Bolin Ding"
+        "Zhekai Chen",
+        "Chengqi Duan",
+        "Kaiyue Sun",
+        "Bohao Li",
+        "Yuqing Wang",
+        "Manyuan Zhang",
+        "Xihui Liu"
       ],
-      "institution": "Renmin University of China, Alibaba Group",
+      "institution": "HKU MMLab, Meituan",
       "summary": {
-        "zh": "本文指出了当前 LLM 代理在依赖静态原子动作工具集时面临的推理效率低下和错误级联风险。通过提出 EvoSOP 框架，作者实现了从原子动作到标准操作程序（SOPs）的转变，并通过构建、合并、评估和剪枝的迭代循环优化工具集。这种方法模拟了人类利用高阶例行程序解决问题的高效方式，显著提升了代理在复杂任务中的成功率和效率，为自进化智能体的发展提供了重要方向。",
-        "en": "- **Background**: Large Language Model (LLM) agents interact with the real world to solve complex tasks by leveraging external tools. However, existing agent frameworks predominantly rely on static toolsets composed of..."
+        "zh": "UniClawBench 填补了主动式智能体在真实世界动态环境中评估的空白。通过引入以能力为中心的任务设计和创新的三轮闭环评估机制，它不仅提供了更真实的性能度量，还揭示了框架设计在智能体性能中的决定性作用以及多模态和长上下文处理的主要短板。该基准及其代码已公开，旨在推动下一代鲁棒、高效主动式智能体的研发。",
+        "en": "- **Background**: The rapid advancement of Large Language Models (LLMs) and Multimodal LLMs has spurred the development of \"proactive agents\" capable of operating tools and assisting users in real-world environments. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.07321v1",
-        "pdf": "https://arxiv.org/pdf/2607.07321v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.08768v1",
+        "pdf": "https://arxiv.org/pdf/2607.08768v1",
+        "github": "https://github.com/HKU-MMLab/UniClawBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.07321.md",
-        "summary_en_path": "summary_en/2026-07/2607.07321.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07321.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07321.md"
+        "summary_zh_path": "summary/2026-07/2607.08768.md",
+        "summary_en_path": "summary_en/2026-07/2607.08768.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.08768.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.08768.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,40 +54,37 @@
       }
     },
     {
-      "id": "arxiv:2607.07467",
-      "date": "2026-07-08",
-      "title": "SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis",
+      "id": "arxiv:2607.08497",
+      "date": "2026-07-09",
+      "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Songhan Wang",
-        "Haoang Chi",
-        "He Li",
-        "Zhiheng Zhang",
-        "Jiayan Yuan",
-        "Cheems Wang",
-        "Hao Peng",
-        "Xinwang Liu",
-        "Wenjing Yang"
+        "Feng Wang",
+        "Canmiao Fu",
+        "Zhipeng Huang",
+        "Chen Li",
+        "Jing Lyu",
+        "Ge Li"
       ],
-      "institution": "University of Shanghai for Science and Technology",
+      "institution": "Peking University, WeChat Vision (Tencent Inc.)",
       "summary": {
-        "zh": "SpaCellAgent 通过结合 LLM 的多智能体协作、动态工具编排和自进化机制，有效解决了传统轨迹推断中人工成本高、工具使用复杂的问题。它在多个异构数据集上证明了其高效性和准确性，为计算生物学领域提供了一个自动化、低门槛且高性能的分析解决方案，显著推动了时空转录组分析的普及和标准化。",
-        "en": "- **Background**: Spatial and single-cell transcriptomics are transformative for deciphering cellular dynamics, with Trajectory Inference (TI) being critical for reconstructing cell developmental paths. - **Why Existing..."
+        "zh": "本文针对统一多模态模型在长程对话中的上下文瓶颈和引用不可靠问题，提出了一种基于认知结构的智能体架构。通过外化视觉记忆、结构化抽象以及基于合成数据的强化学习优化，该方法在显著降低计算成本的同时，大幅提升了长程多轮对话中的视觉检索准确性和任务执行效率，为多模态智能体的可扩展性提供了新范式。",
+        "en": "This paper addresses the context bottlenecks and unreliable referencing in unified multimodal models during long-horizon dialogues by proposing a cognitive-structured agent architecture. By externalizing visual memory,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.07467v1",
-        "pdf": "https://arxiv.org/pdf/2607.07467v1",
-        "github": "https://github.com/LittleXH-shw/SpaCellAgent"
+        "abs": "http://arxiv.org/abs/2607.08497v1",
+        "pdf": "https://arxiv.org/pdf/2607.08497v1",
+        "github": "https://github.com/caseclose/cma-harness"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.07467.md",
-        "summary_en_path": "summary_en/2026-07/2607.07467.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07467.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07467.md"
+        "summary_zh_path": "summary/2026-07/2607.08497.md",
+        "summary_en_path": "summary_en/2026-07/2607.08497.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.08497.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.08497.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -102,34 +101,39 @@
       }
     },
     {
-      "id": "arxiv:2607.07405",
-      "date": "2026-07-08",
-      "title": "Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents",
+      "id": "arxiv:2607.08400",
+      "date": "2026-07-09",
+      "title": "TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Vikas Reddy",
-        "Sumanth Reddy Challaram",
-        "Abhishek Basu"
+        "Zheng Gao",
+        "Xiaoyu Li",
+        "Xiaoyan Feng",
+        "Jiaojiao Jiang",
+        "Yang Song",
+        "Yulei Sui",
+        "Zhenchang Xing",
+        "Liming Zhu"
       ],
-      "institution": "Massachusetts Institute of Technology; Indian Institute of Technology Kharagpur",
+      "institution": "University of New South Wales",
       "summary": {
-        "zh": "本文揭示并量化了工具使用型 LLM Agent 中一种严重但常被忽视的“静默策略违规”故障模式。作者证明，依赖模型推理来执行策略是不可靠的，尤其是在工具本身不强制执行策略约束的情况下。通过引入确定性的预执行门控，可以在不改变模型本身的情况下，以低成本显著恢复系统的可靠性。这一贡献强调了在 Agent 系统中，“少推理，多验证”（Reason Less, Verify...",
-        "en": "- **Background**: Tool-using LLM agents exhibit a \"silent wrong-state\" failure mode. In policy-permissive environments, tools execute any well-formed call even if it violates domain policies (e.g., cancelling a..."
+        "zh": "TRACE 通过创新的双通道设计解决了 LLM Agent 轨迹水印中的核心难题。它利用基于内容的选择通道抵抗删除攻击，利用基于结构的计数通道抵抗重写攻击，理论上证明了水印信号以决策熵为代价，且迫使攻击者若要消除水印必须破坏轨迹本身。该方法在保证 Agent 性能的同时，提供了极强的归因鲁棒性。",
+        "en": "- **Background**: LLM agents reach users via resellers who may rebrand or substitute models. Attribution relies on trajectory logs (tool calls, observations, actions) stored and processed by resellers."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.07405v1",
-        "pdf": "https://arxiv.org/pdf/2607.07405v1",
+        "abs": "http://arxiv.org/abs/2607.08400v1",
+        "pdf": "https://arxiv.org/pdf/2607.08400v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.07405.md",
-        "summary_en_path": "summary_en/2026-07/2607.07405.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07405.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07405.md"
+        "summary_zh_path": "summary/2026-07/2607.08400.md",
+        "summary_en_path": "summary_en/2026-07/2607.08400.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.08400.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.08400.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,35 +150,42 @@
       }
     },
     {
-      "id": "arxiv:2607.07508",
-      "date": "2026-07-08",
-      "title": "Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning",
+      "id": "arxiv:2607.08662",
+      "date": "2026-07-09",
+      "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhenyu Hou",
-        "Yujiang Li",
-        "Jie Tang",
-        "Yuxiao Dong"
+        "Xiaoshuai Song",
+        "Liancheng Zhang",
+        "Kangzhi Zhao",
+        "Yutao Zhu",
+        "Zhongyuan Wang",
+        "Guanting Dong",
+        "Jinghan Yang",
+        "Han Li",
+        "Kun Gai",
+        "Ji-Rong Wen",
+        "Zhicheng Dou"
       ],
-      "institution": "Tsinghua University",
+      "institution": "Renmin University of China, Kuaishou Technology",
       "summary": {
-        "zh": "本文提出的 SAO 框架通过单 rollout 采样和严格的 token 级裁剪策略，有效解决了异步 RL 中的离线策略效应和训练不稳定问题。实验表明，SAO 不仅在推理和编码基准上全面超越 GRPO，还具备优秀的在线适应能力，并成功应用于超大规模模型 GLM-5.2 的训练，为高效、稳定的智能体 RL 后训练提供了新的范式。",
-        "en": "- **Background**: As Large Language Models (LLMs) shift towards post-training with Reinforcement Learning (RL), traditional synchronous batch-interleaved RL pipelines prove inefficient for long-horizon agentic tasks due..."
+        "zh": "WebSwarm 通过引入渐进式递归委托机制，有效解决了现有搜索代理在处理深度与广度并重的复杂任务时的局限性。其核心创新在于动态的节点实例化、基于Web结构的搜索引导以及兄弟节点间的经验复用。实验结果证明，该方法在多个基准测试中显著超越了现有的单代理和多代理系统，为构建更高效、自适应的多代理搜索系统提供了新的范式。",
+        "en": "- **Background**: LLM-based web search agents are evolving from simple factoid QA to complex, research-oriented tasks requiring both deep (multi-hop) and wide (broad coverage) search capabilities. - **Limitations of..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.07508v1",
-        "pdf": "https://arxiv.org/pdf/2607.07508v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.08662v1",
+        "pdf": "https://arxiv.org/pdf/2607.08662v1",
+        "github": "https://github.com/songxiaoshuai/WebSwarm"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.07508.md",
-        "summary_en_path": "summary_en/2026-07/2607.07508.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07508.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07508.md"
+        "summary_zh_path": "summary/2026-07/2607.08662.md",
+        "summary_en_path": "summary_en/2026-07/2607.08662.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.08662.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.08662.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,33 +202,41 @@
       }
     },
     {
-      "id": "arxiv:2607.07696",
-      "date": "2026-07-08",
-      "title": "Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass",
+      "id": "arxiv:2607.08403",
+      "date": "2026-07-09",
+      "title": "Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Victor Giannakouris",
-        "Immanuel Trummer"
+        "Runzhe Liu",
+        "Biquan Bie",
+        "Zihao Wang",
+        "Yuchao Ma",
+        "Yexin Liu",
+        "Xinghai Li",
+        "Harry Yang",
+        "Wenbo Yang",
+        "Jinzhe Cao",
+        "Shengyang Tao"
       ],
-      "institution": "Cornell University",
+      "institution": "Dalian University of Technology; The Hong Kong University of Science and Technology",
       "summary": {
-        "zh": "Jailbreak 提出了一种新颖且通用的方法论，利用 LLM 理解数据库源码和文档来合成高性能存储读取器，从而绕过数据库引擎直接访问底层存储文件。该方法成功解决了传统数据访问路径中的序列化和格式转换瓶颈，显著提升了分析型工作负载的性能（最高 27x 加速），并保证了数据正确性。这不仅适用于 PostgreSQL 和 MySQL，也为任何文件格式可通过文档或源码获取的数据库系统提供了打破数据锁定的可行方案。",
-        "en": "- **Background**: Analytical workloads in modern data stacks (e.g., DuckDB, Spark, GPU-accelerated frameworks) often need to read data from external relational databases (e.g., PostgreSQL, MySQL). However, traditional..."
+        "zh": "本文针对轻量级LLM在科学领域因缺乏公理化推理而产生的幻觉问题，提出了基于博弈论的多智能体框架G-Frame。通过微观团队博弈和宏观贝叶斯博弈的结合，实现了高质量专业数据的自动化合成与模型自适应训练。生成的OmniChem模型在保持轻量级优势的同时，大幅降低幻觉并达到顶尖模型性能，为专业科学领域的可靠AI应用提供了可扩展的新范式。",
+        "en": "- **Background**: The application of lightweight Large Language Models (LLMs) in rule-based scientific domains (e.g., chemistry) is severely limited by their tendency to mimic linguistic patterns rather than reproduce..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.07696v1",
-        "pdf": "https://arxiv.org/pdf/2607.07696v1",
+        "abs": "http://arxiv.org/abs/2607.08403v1",
+        "pdf": "https://arxiv.org/pdf/2607.08403v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.07696.md",
-        "summary_en_path": "summary_en/2026-07/2607.07696.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07696.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07696.md"
+        "summary_zh_path": "summary/2026-07/2607.08403.md",
+        "summary_en_path": "summary_en/2026-07/2607.08403.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.08403.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.08403.md"
       },
       "signals": {
         "priority_keyword": "Agent"

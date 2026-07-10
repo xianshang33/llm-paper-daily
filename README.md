@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.09_05:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.10_05:30-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月09日 05:31</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月10日 05:30</sub></summary>
 <br>
 
-- From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents 
-- SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis 
-- Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents 
-- Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning 
-- Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass 
+- UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks 
+- Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing 
+- TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories 
+- WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search 
+- Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-09</span> | **UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks**<br><sub>机构: HKU MMLab, Meituan<br>UniClawBench 填补了主动式智能体在真实世界动态环境中评估的空白。通过引入以能力为中心的任务设计和创新的三轮闭环评估机制，它不仅提供了更真实的性能度量，还揭示了框架设计在智能体性能中的决定性作用以及多模态和长上下文处理的主要短板。该基准及其代码已公开，旨在推动下一代鲁棒、高效主动式智能体的研发。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08768v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08768.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/HKU-MMLab/UniClawBench)</div> |
+| <span style='display: inline-block; width: 42px;'>07-09</span> | **Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing**<br><sub>机构: Peking University, WeChat Vision (Tencent Inc.)<br>本文针对统一多模态模型在长程对话中的上下文瓶颈和引用不可靠问题，提出了一种基于认知结构的智能体架构。通过外化视觉记忆、结构化抽象以及基于合成数据的强化学习优化，该方法在显著降低计算成本的同时，大幅提升了长程多轮对话中的视觉检索准确性和任务执行效率，为多模态智能体的可扩展性提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08497v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08497.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/caseclose/cma-harness)</div> |
+| <span style='display: inline-block; width: 42px;'>07-09</span> | **TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories**<br><sub>机构: University of New South Wales<br>TRACE 通过创新的双通道设计解决了 LLM Agent 轨迹水印中的核心难题。它利用基于内容的选择通道抵抗删除攻击，利用基于结构的计数通道抵抗重写攻击，理论上证明了水印信号以决策熵为代价，且迫使攻击者若要消除水印必须破坏轨迹本身。该方法在保证 Agent 性能的同时，提供了极强的归因鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08400v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08400.md)  |
+| <span style='display: inline-block; width: 42px;'>07-09</span> | **WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search**<br><sub>机构: Renmin University of China, Kuaishou Technology<br>WebSwarm 通过引入渐进式递归委托机制，有效解决了现有搜索代理在处理深度与广度并重的复杂任务时的局限性。其核心创新在于动态的节点实例化、基于Web结构的搜索引导以及兄弟节点间的经验复用。实验结果证明，该方法在多个基准测试中显著超越了现有的单代理和多代理系统，为构建更高效、自适应的多代理搜索系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08662v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08662.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/songxiaoshuai/WebSwarm)</div> |
+| <span style='display: inline-block; width: 42px;'>07-09</span> | **Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination**<br><sub>机构: Dalian University of Technology; The Hong Kong University of Science and Technology<br>本文针对轻量级LLM在科学领域因缺乏公理化推理而产生的幻觉问题，提出了基于博弈论的多智能体框架G-Frame。通过微观团队博弈和宏观贝叶斯博弈的结合，实现了高质量专业数据的自动化合成与模型自适应训练。生成的OmniChem模型在保持轻量级优势的同时，大幅降低幻觉并达到顶尖模型性能，为专业科学领域的可靠AI应用提供了可扩展的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08403v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08403.md)  |
 | <span style='display: inline-block; width: 42px;'>07-08</span> | **From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents**<br><sub>机构: Renmin University of China, Alibaba Group<br>本文指出了当前 LLM 代理在依赖静态原子动作工具集时面临的推理效率低下和错误级联风险。通过提出 EvoSOP 框架，作者实现了从原子动作到标准操作程序（SOPs）的转变，并通过构建、合并、评估和剪枝的迭代循环优化工具集。这种方法模拟了人类利用高阶例行程序解决问题的高效方式，显著提升了代理在复杂任务中的成功率和效率，为自进化智能体的发展提供了重要方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07321v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07321.md)  |
 | <span style='display: inline-block; width: 42px;'>07-08</span> | **SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Analysis**<br><sub>机构: University of Shanghai for Science and Technology<br>SpaCellAgent 通过结合 LLM 的多智能体协作、动态工具编排和自进化机制，有效解决了传统轨迹推断中人工成本高、工具使用复杂的问题。它在多个异构数据集上证明了其高效性和准确性，为计算生物学领域提供了一个自动化、低门槛且高性能的分析解决方案，显著推动了时空转录组分析的普及和标准化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07467v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07467.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/LittleXH-shw/SpaCellAgent)</div> |
 | <span style='display: inline-block; width: 42px;'>07-08</span> | **Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents**<br><sub>机构: Massachusetts Institute of Technology; Indian Institute of Technology Kharagpur<br>本文揭示并量化了工具使用型 LLM Agent 中一种严重但常被忽视的“静默策略违规”故障模式。作者证明，依赖模型推理来执行策略是不可靠的，尤其是在工具本身不强制执行策略约束的情况下。通过引入确定性的预执行门控，可以在不改变模型本身的情况下，以低成本显著恢复系统的可靠性。这一贡献强调了在 Agent 系统中，“少推理，多验证”（Reason Less, Verify More）的重要性，即在动作边界通过确定性代码而非概率性生成来保障策略合规性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.07405v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.07405.md)  |
