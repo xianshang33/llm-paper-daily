@@ -1,39 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-11T04:39:12.456539+00:00",
-  "run_date": "2026-07-05",
+  "generated_at": "2026-07-11T07:26:02.858328+00:00",
+  "run_date": "2026-07-04",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.04290",
-      "date": "2026-07-05",
-      "title": "Agentic-V2X: Small Language Model Agents for Deadline-Aware V2X Scheduling in 5G/6G Networks",
+      "id": "arxiv:2607.07721",
+      "date": "2026-07-04",
+      "title": "Context Graphs for Proactive Enterprise Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Gerasimos Papanikolaou-Ntais",
-        "Alexandros Kaloxylos",
-        "Athanasios Kanavos"
+        "Avinash Kumar"
       ],
-      "institution": "University of Piraeus",
+      "institution": null,
       "summary": {
-        "zh": "Agentic-V2X 提出了一种务实的架构，通过分离非实时策略生成和近实时执行，解决了 LLM 在 V2X 调度中应用的延迟和安全性难题。虽然其在整体性能上未超越最优静态策略，但在动态适应性和关键可靠性方面展现了竞争力，证明了小型 LLM 作为安全策略生成助手的可行性，为未来 6G 网络中 AI 原生控制提供了参考路径。",
-        "en": "- **Background**: 5G/6G networks are evolving towards AI-native architectures, specifically O-RAN, which separates control logic into non-real-time (rApp) and near-real-time (xApp) applications. Vehicle-to-Everything..."
+        "zh": "本文针对企业AI智能体被动响应的架构缺陷，提出了基于“上下文图”的主动式信息表面系统。通过构建动态图结构、差异检测引擎和基于多维度的主动性评分机制，该系统能够在用户提问前主动推送高价值、高紧迫性的洞察。实验证明，该方法在保持低误报率的同时，极大地缩短了关键信息触达用户的时间，为企业生产力提升提供了新的技术路径。",
+        "en": "- **Background**: Current Retrieval-Augmented Generation (RAG) and agentic frameworks are fundamentally reactive, acting only upon human query. This leads to significant productivity costs as knowledge workers spend..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.04290v1",
-        "pdf": "https://arxiv.org/pdf/2607.04290v1",
+        "abs": "http://arxiv.org/abs/2607.07721v1",
+        "pdf": "https://arxiv.org/pdf/2607.07721v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.04290.md",
-        "summary_en_path": "summary_en/2026-07/2607.04290.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04290.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04290.md"
+        "summary_zh_path": "summary/2026-07/2607.07721.md",
+        "summary_en_path": "summary_en/2026-07/2607.07721.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.07721.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.07721.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,36 +48,35 @@
       }
     },
     {
-      "id": "arxiv:2607.04395",
-      "date": "2026-07-05",
-      "title": "NKI-Agent: Domain-Specific Fine-Tuning and Agentic Tool Use for Neuron Kernel Generation",
+      "id": "arxiv:2607.03691",
+      "date": "2026-07-04",
+      "title": "Don't Blame the Large Language Model: How Scaffolding Evolution Shapes Coding Agent Quality",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junjie Tang",
-        "Jun Huan",
-        "Hao Zhou",
-        "Yuhao Zhang",
-        "Lin Wang"
+        "Oussama Ben Sghaier",
+        "Hao Li",
+        "Bram Adams",
+        "Ahmed E. Hassan"
       ],
-      "institution": "Amazon Web Services",
+      "institution": "Queen’s University",
       "summary": {
-        "zh": "本文针对 AWS Neuron 硬件内核生成的空白，提出了 NKI-Agent 系统。通过构建专用的训练数据集和基准测试，并结合领域特定的 SFT 与代理工具循环，有效解决了 NKI 编程中多引擎架构和复杂内存管理的难题。实验表明，该方法在真实硬件上取得了显著的通过率提升，并证明了开源小模型在经过适当微调后能在低成本下超越部分闭源大模型的表现，同时指出了当前 RL 奖励设计在该领域的局限性。",
-        "en": "This paper addresses the gap in kernel generation for AWS Neuron hardware by proposing NKI-Agent. By constructing specialized datasets and benchmarks, and combining domain-specific SFT with an agentic tool loop, it..."
+        "zh": "本文通过严格的控制变量实验证明，编码智能体的质量瓶颈往往不在于底层LLM，而在于快速演化的脚手架层。研究发现当前的脚手架开发存在“高投入低回报”的现象，即计算成本大幅增加但任务解决率未显著提升。文章呼吁在智能体脚手架的开发中引入新的“智能体质量保证”（Agentic QA）实践，强调对架构组件和开发模式的精细化监控，以避免无效迭代和资源浪费。",
+        "en": "- **Background**: Coding agents rely on \"agentic scaffolding\" as middleware to orchestrate system prompts, tool execution, context management, and iterative reasoning. These scaffoldings evolve at extreme velocities..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.04395v1",
-        "pdf": "https://arxiv.org/pdf/2607.04395v1",
+        "abs": "http://arxiv.org/abs/2607.03691v1",
+        "pdf": "https://arxiv.org/pdf/2607.03691v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.04395.md",
-        "summary_en_path": "summary_en/2026-07/2607.04395.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04395.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04395.md"
+        "summary_zh_path": "summary/2026-07/2607.03691.md",
+        "summary_en_path": "summary_en/2026-07/2607.03691.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.03691.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.03691.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,41 +93,34 @@
       }
     },
     {
-      "id": "arxiv:2607.04293",
-      "date": "2026-07-05",
-      "title": "CausalGame: Benchmarking Causal Thinking of LLM Agents in Games",
+      "id": "arxiv:2607.03953",
+      "date": "2026-07-04",
+      "title": "The Remarkable Effectiveness of Providing AI Agents with Natural Language Tools: A Replication Study Validating NLT Performance Across 14 Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhenhao Chen",
-        "Yongqiang Chen",
-        "Chenxi Liu",
-        "Junchi Yu",
-        "Xiangchen Song",
-        "Zijian Li",
-        "Jialin Li",
-        "Philip Torr",
-        "Bo Han",
-        "Kun Zhang"
+        "Alexander Somma",
+        "Isabelle Plante",
+        "Fred Premji"
       ],
-      "institution": "MBZUAI, Carnegie Mellon University, Hong Kong Baptist University, University of Oxford, New York University",
+      "institution": null,
       "summary": {
-        "zh": "CausalGame 填补了当前 AI 科学家基准测试在因果思维评估方面的空白。通过引入选择偏差、测量误差和隐藏混淆变量等现实挑战，该基准揭示了当前最先进的 LLM 智能体在因果推理方面的严重不足。研究结果表明，尽管 LLM 在某些任务上表现出色，但在需要严格因果推断的科学发现场景中，它们仍倾向于依赖相关性而非因果性，亟需进一步提升其因果认知能力。",
-        "en": "- **Background**: With Large Language Models (LLMs) demonstrating enhanced reasoning capabilities, there is growing interest in building \"AI Scientist\" agents. Since scientific discovery fundamentally relies on..."
+        "zh": "本研究证实，对于重视可靠性而非单纯可解析性的生产系统，自然语言工具（NLT）是结构化工具调用的实用替代方案。它通过消除格式约束释放了模型的认知资源，显著降低了错误率并提高了效率，尤其适合非原生支持工具调用或中小规模的模型场景。",
+        "en": "- **Background**: As generative AI evolves, LLM-based agentic systems increasingly rely on tool calling to execute external actions. The current standard implementation uses structured formats like JSON schemas, favored..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.04293v1",
-        "pdf": "https://arxiv.org/pdf/2607.04293v1",
+        "abs": "http://arxiv.org/abs/2607.03953v1",
+        "pdf": "https://arxiv.org/pdf/2607.03953v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.04293.md",
-        "summary_en_path": "summary_en/2026-07/2607.04293.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04293.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04293.md"
+        "summary_zh_path": "summary/2026-07/2607.03953.md",
+        "summary_en_path": "summary_en/2026-07/2607.03953.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.03953.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.03953.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -147,33 +137,35 @@
       }
     },
     {
-      "id": "arxiv:2607.05458",
-      "date": "2026-07-05",
-      "title": "Learning to Control LLM Agent Harnesses with Offline Reinforcement Learning",
+      "id": "arxiv:2607.03695",
+      "date": "2026-07-04",
+      "title": "Social Networks of LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haiwen Yi",
-        "Xinyuan Song"
+        "Kaixuan Liu",
+        "Guojun Xiong",
+        "Weinan Zhang",
+        "Shengpu Tang"
       ],
-      "institution": "University of Toronto, Emory University",
+      "institution": "Emory University, Shanghai Jiao Tong University",
       "summary": {
-        "zh": "本文论证了 LLM 智能体的执行 Harness 不应被视为固定基础设施，而是一个可学习的控制层。通过将其建模为 MDP 并使用离线强化学习训练轻量级控制器，该方法在不更新 LLM 参数的情况下，显著优化了智能体的执行流程（如验证、检索、提交决策）。提出的 Harness 成熟度分数进一步解耦了过程质量与结果质量，揭示了离线数据分布对最终性能提升的限制。这项工作为提升冻结 LLM 智能体的效率和质量提供了新的视角和方法。",
-        "en": "- **Background**: Large Language Model (LLM) agents are typically improved by modifying prompts, models, or hand-crafted workflows, while the execution \"harness\" (the control layer deciding when to observe, retrieve,..."
+        "zh": "本文指出了经典社会网络模型在应用于 LLM 智能体群体时的根本缺陷，即忽视了有限注意力对信息汇聚的限制。通过提出 SNLA 框架，作者从理论和实证两方面证明了注意力宽度是决定群体表现为“智慧”还是“盲从”的关键因素。该研究为设计和评估可信的多智能体 LLM 系统提供了重要的理论依据，强调了在优化网络结构的同时，必须考虑智能体的注意力机制。",
+        "en": "- **Background**: Large language model (LLM) agents are increasingly deployed in interacting populations for debate, advice, and social simulation. The critical question is whether these populations aggregate genuine..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.05458v1",
-        "pdf": "https://arxiv.org/pdf/2607.05458v1",
-        "github": "https://github.com/Hik289/Agentic-RL-harness.git"
+        "abs": "http://arxiv.org/abs/2607.03695v1",
+        "pdf": "https://arxiv.org/pdf/2607.03695v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.05458.md",
-        "summary_en_path": "summary_en/2026-07/2607.05458.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.05458.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.05458.md"
+        "summary_zh_path": "summary/2026-07/2607.03695.md",
+        "summary_en_path": "summary_en/2026-07/2607.03695.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.03695.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.03695.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -190,33 +182,35 @@
       }
     },
     {
-      "id": "arxiv:2607.04528",
-      "date": "2026-07-05",
-      "title": "Measuring Harness-Induced Belief Divergence in Multi-Step LLM Agents",
+      "id": "arxiv:2607.04034",
+      "date": "2026-07-04",
+      "title": "The \"I Don't Know\" Filter: Enhancing Agentic Reliability in Function Calling",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haiwen Yi",
-        "Xinyuan Song"
+        "Stefan Broecker",
+        "Mason del Rosario",
+        "Boris Selitser",
+        "Thomas Strohmer"
       ],
-      "institution": "University of Toronto",
+      "institution": "University of California, Davis; Okareo, Inc.",
       "summary": {
-        "zh": "本文揭示了 LLM 智能体评估中被忽视的关键问题：Harness 的设计会诱导智能体产生信念分歧，进而影响其决策过程，即使最终任务结果相同。通过提出信念展开诊断和 BIWM 协议，作者不仅量化了这种偏差，还提供了一种无需训练的解决方案来规范观测和对齐信念。这项工作强调了在智能体评估中将 Harness 设计视为核心实验变量的重要性，为构建更鲁棒、更公平的智能体评估体系提供了新的视角和方法。",
-        "en": "- **Background**: Evaluations of Large Language Model (LLM) agents in software tasks typically focus solely on outcome metrics (whether the task is solved), ignoring the mediating role of the \"Harness\" (execution..."
+        "zh": "本文指出了当前LLM智能体在函数调用中因评估指标偏差导致的过度自信和幻觉问题。通过提出一种惩罚错误调用的新评估指标和一个轻量级的“我不知道”过滤器，作者展示了一条实用的路径，使智能体能够识别自身的不确定性并主动 abstain（弃权）。这种方法在不改变底层模型的前提下，显著提升了生产环境中智能体的安全性和可靠性，强调了“知道何时说不知道”对于可信AI的重要性。",
+        "en": "- **Background**: As Large Language Models (LLMs) improve in function calling benchmarks, agents are increasingly deployed in high-stakes production environments like digital infrastructure and healthcare. However,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.04528v1",
-        "pdf": "https://arxiv.org/pdf/2607.04528v1",
-        "github": "https://github.com/Hik289/Harness-induce-bias.git"
+        "abs": "http://arxiv.org/abs/2607.04034v1",
+        "pdf": "https://arxiv.org/pdf/2607.04034v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.04528.md",
-        "summary_en_path": "summary_en/2026-07/2607.04528.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04528.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04528.md"
+        "summary_zh_path": "summary/2026-07/2607.04034.md",
+        "summary_en_path": "summary_en/2026-07/2607.04034.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.04034.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.04034.md"
       },
       "signals": {
         "priority_keyword": "Agent"
