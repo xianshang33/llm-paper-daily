@@ -1,155 +1,45 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-07-10T05:30:44.338867+00:00",
-  "run_date": "2026-07-09",
+  "generated_at": "2026-07-11T04:39:12.456539+00:00",
+  "run_date": "2026-07-05",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2607.08768",
-      "date": "2026-07-09",
-      "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+      "paper_id": "2607.04290",
+      "date": "2026-07-05",
+      "title": "Agentic-V2X: Small Language Model Agents for Deadline-Aware V2X Scheduling in 5G/6G Networks",
       "authors": [
-        "Zhekai Chen",
-        "Chengqi Duan",
-        "Kaiyue Sun",
-        "Bohao Li",
-        "Yuqing Wang",
-        "Manyuan Zhang",
-        "Xihui Liu"
+        "Gerasimos Papanikolaou-Ntais",
+        "Alexandros Kaloxylos",
+        "Athanasios Kanavos"
       ],
-      "abstract": "The rapid development of large language models and multimodal large language models has accelerated the emergence of proactive agents capable of operating everyday tools and assisting users in real-world environments. However, existing benchmarks struggle to evaluate such agents effectively, as they often rely on sandboxed environments and single-turn evaluation paradigms. Moreover, their scenario-based task taxonomies mix multiple model capabilities within the same task category, making it difficult to identify the root causes of agent failures. To address these limitations, we introduce UniClawBench, the first capability-driven benchmark designed to evaluate proactive agents in dynamic, real-world settings. UniClawBench is built around five foundational model capabilities: Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, and Cross-Platform Coordination. Based on these capabilities, we design 400 bilingual real-world tasks. Unlike previous benchmarks that rely on static, pre-recorded answers, our benchmark evaluates agents in live Docker containers using fine-grained, step-by-step completion checkpoints. Furthermore, we design a closed-loop evaluation strategy comprising an executor agent, a hidden supervisor agent, and a user agent to simulate realistic multi-turn human feedback without leaking grading criteria. To disentangle base model capabilities from framework-level design choices, we evaluate state-of-the-art models under multiple agent frameworks. Through comprehensive comparisons across both models and frameworks, we show how base model capabilities and agent framework designs jointly shape performance in real-world environments. To facilitate future research, we make our benchmark and code publicly available at https://github.com/HKU-MMLab/UniClawBench.",
+      "abstract": "Large Language Models (LLMs) are proposed as control interfaces for next-generation networks, but their latency, hallucinations, and lack of control guarantees make them unsuitable for near-real-time packet schedulers, especially in dynamic V2X environments. This paper introduces Agentic-V2X, an architecture where a small, locally deployed language model acts as a periodic non-real-time rApp-inspired policy creator, while a lightweight xApp-like controller executes validated policies at intervals suitable for scheduling. The framework targets deadline-aware 5G NR V2X scheduling with heterogeneous services (teleoperated driving, cooperative awareness, HD map sharing, and sensor sharing). Given a scenario summary, service objective, and telemetry, the LLM generates a structured policy containing service priorities, weight bounds, and safety constraints. A validator checks and repairs the policy before the controller enforces it via scheduler-weight adaptation in ns-3/ns3-ai. The evaluation compares proportional fair scheduling, static expert policies, a heuristic xApp, static LLM policies, and adaptive LLM-rApp policies over 126 completed runs. Metrics include deadline-constrained packet reception ratio, tail latency, deadline violations, throughput, fairness, policy validity, and safety interventions. Results show that the adaptive LLM-rApp/xApp design generates valid and executable policies and remains competitive at several operating points, including improved mean critical reliability over PF at the highest density. However, paired statistical analysis shows that the adaptive method is not the best aggregate method and remains below the strongest static policies overall. These results support Agentic-V2X as a safe, executable small-LLM policy-generation architecture rather than a universally dominant scheduler.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.08768v1",
-        "pdf": "https://arxiv.org/pdf/2607.08768v1",
-        "github": "https://github.com/HKU-MMLab/UniClawBench",
-        "blog": null
-      },
-      "institution": "HKU MMLab, Meituan",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型和多模态大语言模型的快速发展，能够操作日常工具并在真实环境中协助用户的“主动式智能体”（Proactive Agents）应运而生。\n- **已有工作的局限**：现有的基准测试难以有效评估此类智能体，主要存在两个问题：一是依赖沙盒环境和单轮评估范式，无法反映动态的真实世界交互；二是基于场景的任务分类法将多种模型能力混合在同一任务类别中，导致难以识别智能体失败的根本原因。\n\n## 文章的核心贡献点\n- **提出了一个 UniClawBench**：这是首个面向真实世界动态环境、以能力为导向的主动式智能体通用基准测试。\n- **挑战1：现有基准无法解耦基础模型能力与框架设计的影响，且任务分类混乱导致归因困难。**\n  - **难点**：传统基准将多模态、长上下文等能力混杂在单一场景任务中，且通常只评估最终结果，无法区分是模型本身能力不足还是代理框架设计缺陷导致的失败。\n  - **解决方法**：UniClawBench 围绕五项基础模型能力（技能使用、探索、长上下文推理、多模态理解、跨平台协调）设计了400个双语真实世界任务，并通过在多个主流代理框架下评估同一模型，明确分离并量化了基础模型能力与框架设计对性能的具体贡献。\n- **挑战2：静态评估无法模拟真实世界中复杂的多轮人机交互和动态环境反馈。**\n  - **难点**：真实任务往往需要多轮迭代、用户反馈以及在不确定的环境中进行探索，静态预录制答案无法衡量智能体在动态环境中的适应性和纠错能力。\n  - **解决方法**：设计了包含执行者智能体、隐藏监督者智能体和用户智能体的三轮闭环评估策略。在实时 Docker 容器中运行，利用细粒度的逐步完成检查点进行动态评估，并由用户智能体根据执行情况和监督信号提供自然的多轮反馈，从而模拟逼真的交互过程而不泄露评分标准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：基准包含400个涵盖五大核心能力的双语任务。评估在实时 Docker 容器中进行，而非静态沙盒。采用三步闭环策略：执行者智能体在真实环境中生成轨迹和产物；隐藏监督者智能体根据隐藏的标准评估轨迹；用户智能体模拟真实用户提供多轮反馈。\n- **评估结果与对比**：\n  - **模型与框架对比**：实验对比了多种最先进模型（如 GPT-5.4, Claude Opus-4.8, Kimi-2.6）在不同代理框架（如 OpenClaw, EDICT, Nanobot）下的表现。\n  - **关键发现**：框架的选择对能力表现的影响一致性地大于模型本身的选择。这表明当前的性能瓶颈更多在于代理系统的架构设计而非基础模型的智力上限。\n  - **能力瓶颈**：长上下文理解和多模态任务被确定为当前智能体的主要性能瓶颈。\n  - **细粒度分析**：通过逐步检查点，能够识别出哪些失败是可恢复的，哪些是致命的，提供了比传统 Pass/Fail 更丰富的诊断信息。\n\n#### 总结\nUniClawBench 填补了主动式智能体在真实世界动态环境中评估的空白。通过引入以能力为中心的任务设计和创新的三轮闭环评估机制，它不仅提供了更真实的性能度量，还揭示了框架设计在智能体性能中的决定性作用以及多模态和长上下文处理的主要短板。该基准及其代码已公开，旨在推动下一代鲁棒、高效主动式智能体的研发。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: The rapid advancement of Large Language Models (LLMs) and Multimodal LLMs has spurred the development of \"proactive agents\" capable of operating tools and assisting users in real-world environments.\n- **Limitations of Existing Work**: Current benchmarks fail to effectively evaluate these agents because they rely on sandboxed environments and single-turn evaluation paradigms. Furthermore, their scenario-based task taxonomies conflate multiple model capabilities within single categories, making it difficult to pinpoint the root causes of agent failures.\n\n## Core Contributions\n- **Proposed UniClawBench**: The first capability-driven benchmark designed to evaluate proactive agents in dynamic, real-world settings.\n- **Challenge 1: Difficulty in disentangling base model capabilities from framework-level design choices due to mixed task taxonomies.**\n  - **Why it's hard**: Traditional benchmarks mix capabilities (e.g., multimodal, reasoning) in complex scenarios and only evaluate final outcomes, obscuring whether failures stem from the model or the agent framework.\n  - **Solution**: UniClawBench structures 400 bilingual tasks around five foundational capabilities (Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, Cross-Platform Coordination). By evaluating state-of-the-art models across multiple agent frameworks, it isolates and quantifies the specific impact of model capabilities versus framework design.\n- **Challenge 2: Static evaluations cannot simulate complex multi-turn human interactions and dynamic environmental feedback.**\n  - **Why it's hard**: Real-world tasks require iterative refinement, user feedback, and exploration in uncertain environments, which static pre-recorded answers cannot capture.\n  - **Solution**: Introduces a three-role closed-loop evaluation strategy (Executor, Hidden Supervisor, User Agent) running in live Docker containers. It uses fine-grained, step-by-step checkpoints and simulates realistic multi-turn human feedback without leaking grading criteria, enabling dynamic assessment of agent adaptability.\n\n## Implementation and Evaluation\n- **Implementation**: The benchmark comprises 400 tasks covering five core capabilities. Evaluation occurs in live Docker containers using a closed-loop system where the Executor performs tasks, the Supervisor evaluates against hidden rubrics, and the User Simulator provides natural feedback.\n- **Results & Comparison**:\n  - **Model vs. Framework**: Experiments compared top models (GPT-5.4, Claude Opus-4.8, Kimi-2.6) across various frameworks (OpenClaw, EDICT, Nanobot).\n  - **Key Finding**: Framework choice consistently impacts performance more significantly than model choice, indicating that architectural design is a current bottleneck.\n  - **Capability Bottlenecks**: Long-context reasoning and multimodal understanding emerged as the primary weaknesses for current agents.\n  - **Granular Analysis**: The step-by-step checkpoint system allows for distinguishing between recoverable and fatal errors, offering deeper diagnostic insights than traditional binary pass/fail metrics.\n\n## 4. Conclusion\nUniClawBench addresses the gap in evaluating proactive agents in realistic, dynamic environments. By introducing a capability-centric task design and a novel three-role closed-loop evaluation mechanism, it provides more accurate performance metrics and reveals that framework design plays a decisive role in agent performance, alongside identifying multimodal and long-context processing as key areas for improvement. The benchmark and code are publicly available to facilitate future research.",
-      "render_excerpt": "机构: HKU MMLab, Meituan<br>UniClawBench 填补了主动式智能体在真实世界动态环境中评估的空白。通过引入以能力为中心的任务设计和创新的三轮闭环评估机制，它不仅提供了更真实的性能度量，还揭示了框架设计在智能体性能中的决定性作用以及多模态和长上下文处理的主要短板。该基准及其代码已公开，旨在推动下一代鲁棒、高效主动式智能体的研发。",
-      "render_excerpt_en": "Institution: HKU MMLab, Meituan<br>## 1. What the Paper Does - **Background**: The rapid advancement of Large Language Models (LLMs) and Multimodal LLMs has spurred the development of \"proactive agents\" capable of operating tools and assisting users in real-world environments. - **Limitations of Existing Work**: Current benchmarks fail to effectively evaluate these agents because they rely on sandboxed environments and single-turn evaluation paradigms.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-09T17:59:32Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-09"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.08497",
-      "date": "2026-07-09",
-      "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
-      "authors": [
-        "Feng Wang",
-        "Canmiao Fu",
-        "Zhipeng Huang",
-        "Chen Li",
-        "Jing Lyu",
-        "Ge Li"
-      ],
-      "abstract": "Recent unified multimodal models show a single architecture can jointly perform vision/language understanding and image generation/editing. However, they repeatedly feed all historical visual and textual inputs into a shared context window, limiting long-horizon multimodal dialogue due to visual token explosion and unreliable cross-turn referencing. We propose a Cognitive-structured Multimodal Agent that externalizes visual information into an Episodic Visual Memory and selectively reactivates relevant episodes during reasoning. The agent consists of a Perceptual Abstraction Engine for structured visual abstraction, a Cognitive Retrieval Engine for cross-turn memory retrieval, and a Multimodal Executive Controller for autonomous task inference and action planning. To address the lack of turn-level retrieval supervision in existing datasets, we develop a Unified Scenario Engine that programmatically generates structured multi-turn conversations with fine-grained retrieval annotations, enabling reinforcement learning to optimize abstraction and retrieval policies. We also construct a long-horizon visual-dialogue benchmark stratified by difficulty to evaluate episodic visual recall. Our 8B agent achieves 91.4% retrieval accuracy over 20-turn sessions, surpassing 32B baselines by +8.2% while nearly halving per-turn inference time (23.1s -> 12.7s). We further present the Cognitive-structured Multimodal Agent Harness (CMA-Harness), a tool-augmented deployment of the same cognitive structure integrating persistent multimodal memory, web access, image generation/editing/composition tools, and OpenAI-compatible serving. Structured memory and modular decision-making offer a more scalable, efficient paradigm for long-horizon multimodal agents than monolithic parameter scaling. Code: https://github.com/caseclose/cma-harness ; Project page: https://caseclose.github.io/cma-harness/",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.08497v1",
-        "pdf": "https://arxiv.org/pdf/2607.08497v1",
-        "github": "https://github.com/caseclose/cma-harness",
-        "blog": "https://caseclose.github.io/cma-harness/"
-      },
-      "institution": "Peking University, WeChat Vision (Tencent Inc.)",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：近期统一多模态模型展示了单一架构可联合执行视觉/语言理解及图像生成/编辑。然而，这些单体设计通常将所有历史视觉和文本输入重复馈送到共享上下文窗口中。\n- **已有工作的局限**：这种机制导致长程多模态对话中面临两大瓶颈：一是视觉令牌爆炸，迅速挤占用于推理的上下文预算；二是依赖隐式注意力机制进行跨轮次视觉引用不可靠，导致检索错误和语义漂移。现有的记忆增强视频代理或多代理生成系统要么仅处理单一流（如视频），要么仅针对单一任务家族，无法同时解决跨轮次视觉检索、混合任务编排和长程上下文管理的问题。\n\n## 文章的核心贡献点\n- **提出了一个认知结构化多模态智能体（Cognitive-structured Multimodal Agent, CMA）**：该智能体将视觉信息外化为情景视觉记忆，并在推理过程中选择性激活相关片段，包含感知抽象引擎、认知检索引擎和多模态执行控制器。\n- **挑战1：长程对话中的视觉令牌爆炸与上下文效率低下**。难点在于视觉令牌成本远高于文本，随对话长度增加，全量输入导致计算资源耗尽且推理受限。解决方法是通过“感知抽象引擎”对视觉信息进行结构化抽象，并引入“情景视觉记忆”外部存储，仅在选择性检索时激活相关片段，从而大幅降低每轮推理的令牌消耗。\n- **挑战2：缺乏细粒度的跨轮次检索监督数据，导致模型难以学习准确的视觉引用**。难点在于现有数据集缺乏轮次级别的检索标注，难以优化检索策略。解决方法是开发“统一场景引擎”，以编程方式生成具有细粒度检索注释的结构化多轮对话数据，并利用强化学习优化感知抽象和检索策略。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：作者构建了CMA-Harness，这是一个工具增强的部署框架，集成了持久多模态记忆、Web访问、图像生成/编辑/组合工具以及兼容OpenAI的服务接口。\n- **评估结果**：在构建的长程视觉对话基准测试中，8B参数的CMA智能体在20轮会话中实现了91.4%的检索准确率。\n- **对比优势**：相比32B参数的基线模型，CMA的检索准确率高出8.2%，同时将每轮推理时间几乎减半（从23.1秒降至12.7秒）。这表明结构化记忆和模块化决策比单纯的参数缩放提供了更具可扩展性和效率的多模态智能体范式。\n\n#### 总结\n本文针对统一多模态模型在长程对话中的上下文瓶颈和引用不可靠问题，提出了一种基于认知结构的智能体架构。通过外化视觉记忆、结构化抽象以及基于合成数据的强化学习优化，该方法在显著降低计算成本的同时，大幅提升了长程多轮对话中的视觉检索准确性和任务执行效率，为多模态智能体的可扩展性提供了新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Recent unified multimodal models demonstrate that a single architecture can jointly perform vision/language understanding and image generation/editing. However, these monolithic designs typically feed all historical visual and textual inputs repeatedly into a shared context window.\n- **Limitations of Existing Work**: This approach limits scalability in long-horizon multimodal dialogue due to two main issues: visual token explosion, which crowds out the context budget for reasoning, and unreliable cross-turn visual referencing caused by reliance on implicit attention over extended contexts. Existing memory-augmented or multi-agent systems fail to simultaneously address cross-turn visual retrieval, mixed-task orchestration, and long-horizon context management.\n\n## Core Contributions\n- **Proposed a Cognitive-structured Multimodal Agent (CMA)**: This agent externalizes visual information into an Episodic Visual Memory and selectively reactivates relevant episodes during reasoning. It comprises a Perceptual Abstraction Engine, a Cognitive Retrieval Engine, and a Multimodal Executive Controller.\n- **Challenge 1: Visual token explosion and inefficiency in long-context dialogues**. The difficulty lies in the high cost of visual tokens compared to text, where full historical input rapidly exhausts computational resources. The method solves this by using a \"Perceptual Abstraction Engine\" to structure visual data and an \"Episodic Visual Memory\" to store it externally, activating only relevant fragments via selective retrieval, thus drastically reducing per-turn token usage.\n- **Challenge 2: Lack of fine-grained supervision for cross-turn retrieval**. The difficulty is that existing datasets lack turn-level retrieval annotations, making it hard to optimize retrieval policies. The method addresses this by developing a \"Unified Scenario Engine\" that programmatically generates structured multi-turn conversations with fine-grained retrieval annotations, enabling reinforcement learning to optimize abstraction and retrieval policies.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The authors present CMA-Harness, a tool-augmented deployment integrating persistent multimodal memory, web access, image generation/editing/composition tools, and OpenAI-compatible serving.\n- **Evaluation Results**: On a constructed long-horizon visual-dialogue benchmark, the 8B-parameter CMA agent achieved 91.4% retrieval accuracy over 20-turn sessions.\n- **Comparison with Baselines**: The CMA agent surpassed 32B-parameter baselines by +8.2% in retrieval accuracy while nearly halving the per-turn inference time (from 23.1s to 12.7s). This demonstrates that structured memory and modular decision-making offer a more scalable and efficient paradigm than monolithic parameter scaling.\n\n#### Summary\nThis paper addresses the context bottlenecks and unreliable referencing in unified multimodal models during long-horizon dialogues by proposing a cognitive-structured agent architecture. By externalizing visual memory, employing structured abstraction, and optimizing via reinforcement learning on synthetically generated data, the method significantly reduces computational costs while substantially improving visual retrieval accuracy and task execution efficiency in long multi-turn conversations, offering a new paradigm for scalable multimodal agents.",
-      "render_excerpt": "机构: Peking University, WeChat Vision (Tencent Inc.)<br>本文针对统一多模态模型在长程对话中的上下文瓶颈和引用不可靠问题，提出了一种基于认知结构的智能体架构。通过外化视觉记忆、结构化抽象以及基于合成数据的强化学习优化，该方法在显著降低计算成本的同时，大幅提升了长程多轮对话中的视觉检索准确性和任务执行效率，为多模态智能体的可扩展性提供了新范式。",
-      "render_excerpt_en": "Institution: Peking University, WeChat Vision (Tencent Inc.)<br>This paper addresses the context bottlenecks and unreliable referencing in unified multimodal models during long-horizon dialogues by proposing a cognitive-structured agent architecture. By externalizing visual memory, employing structured abstraction, and optimizing via reinforcement learning on synthetically generated data, the method significantly reduces computational costs while substantially improving visual retrieval accuracy and task execution efficiency in long multi-turn conversations, offering a new paradigm for scalable multimodal agents.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-09T13:55:55Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-09"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.08400",
-      "date": "2026-07-09",
-      "title": "TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories",
-      "authors": [
-        "Zheng Gao",
-        "Xiaoyu Li",
-        "Xiaoyan Feng",
-        "Jiaojiao Jiang",
-        "Yang Song",
-        "Yulei Sui",
-        "Zhenchang Xing",
-        "Liming Zhu"
-      ],
-      "abstract": "LLM agents reach users through resellers, who may rebrand a developer's agent or substitute a cheaper model. When provenance is disputed, attribution rests on the trajectory log (the record of tool calls, observations, and executed actions, not the model's reasoning), which the reseller stores and processes to meter usage. A watermark must therefore survive an adversary with full read/write access to the very evidence it is detected from; existing agent watermarks do not, as their attribution is read straight off that log. We present TRACE, to our knowledge the first agent watermark that is distortion-free in its action choices, self-synchronizing under deletion, and unconditionally invariant under rewriting. Deletion desynchronizes a position-derived key and rewriting alters content, so a deletion-robust key must come from content and a rewrite-robust key from position, and no single key serves both. A trajectory, however, has room for two watermarks. TRACE superposes a selection channel that sets which action is chosen, keyed on local content with a distortion-free sampler, so the agent's distribution is provably unchanged and detection resynchronizes after deletions, and a tally channel that sets how many records each decision group holds, keyed on the log's skeleton alone, which no rewriting can touch. We prove this behavioral watermark's signal is bought with decision entropy, each decision paying at least half its entropy and deterministic decisions nothing, and that erasing both channels forces the reseller to corrupt the trajectories it resells. On ToolBench and ALFWorld, TRACE matches the unwatermarked agent's success rate while its selection channel reaches detection scores near z = 100 on long-horizon trajectories, stays detectable under 70% step deletion, and keeps a tally channel exactly unchanged under LLM rewriting of any strength.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.08400v1",
-        "pdf": "https://arxiv.org/pdf/2607.08400v1",
+        "abs": "http://arxiv.org/abs/2607.04290v1",
+        "pdf": "https://arxiv.org/pdf/2607.04290v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of New South Wales",
+      "institution": "University of Piraeus",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：LLM Agent 通过分销商触达用户，分销商可能重新品牌化或替换模型。当出现归属权争议时，归因依赖于轨迹日志（工具调用、观察和执行动作的记录），而该日志由分销商存储和处理。水印必须能够抵御拥有完全读写权限的 adversaries。\n- **已有工作的不足**：现有的 Agent 水印直接从日志中读取归因信息，无法抵抗对日志进行删除或重写攻击的 adversaries，因为删除会导致基于位置的关键字不同步，而重写会改变内容，单一关键字无法同时解决这两个问题。\n\n## 文章的核心贡献点\n- **提出了一个 TRACE**：一种双通道鲁棒归因水印，通过互补嵌入实现无失真、删除自同步和重写不变性。\n- **挑战1：删除攻击导致同步丢失**。删除步骤会使基于位置的水印密钥失效，难以检测。**解决方法**：TRACE 引入了“选择通道”（Selection Channel），基于局部内容生成密钥并使用无失真采样器决定动作选择，使得代理分布保持不变，且在删除后检测能自动重新同步。\n- **挑战2：重写攻击改变内容语义**。LLM 重写会改变日志的具体文本内容，破坏基于内容的水印。**解决方法**：TRACE 引入了“计数通道”（Tally Channel），仅基于日志的骨架（结构/位置）设置每个决策组的记录数量，这种结构信息不受任何强度的 LLM 重写影响，从而保持绝对不变。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 ToolBench 和 ALFWorld 数据集上进行评估。\n- **性能表现**：TRACE 在水印嵌入后，Agent 的成功率与未加水印的 Agent 持平，证明了其无失真特性。\n- **鲁棒性结果**：\n    - **选择通道**：在长视野轨迹上检测得分接近 z = 100，且在 70% 的步骤被删除的情况下仍可检测。\n    - **计数通道**：在任何强度的 LLM 重写下保持完全不变。\n- **对比优势**：相比现有直接读取日志的水印方法，TRACE 是首个同时实现动作选择无失真、删除自同步和重写无条件不变性的 Agent 水印方案。\n\n#### 总结\nTRACE 通过创新的双通道设计解决了 LLM Agent 轨迹水印中的核心难题。它利用基于内容的选择通道抵抗删除攻击，利用基于结构的计数通道抵抗重写攻击，理论上证明了水印信号以决策熵为代价，且迫使攻击者若要消除水印必须破坏轨迹本身。该方法在保证 Agent 性能的同时，提供了极强的归因鲁棒性。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents reach users via resellers who may rebrand or substitute models. Attribution relies on trajectory logs (tool calls, observations, actions) stored and processed by resellers. Watermarks must survive adversaries with full read/write access to this evidence.\n- **Limitations of Existing Work**: Existing agent watermarks read attribution directly from the log, failing against adversaries who delete or rewrite logs. Deletion desynchronizes position-based keys, while rewriting alters content; no single key handles both threats.\n\n## Core Contributions\n- **Proposed TRACE**: A two-channel robust attribution watermark using complementary embeddings to achieve distortion-free action choices, self-synchronization under deletion, and unconditional invariance under rewriting.\n- **Challenge 1: Desynchronization due to deletion**. Deleting steps breaks position-based keys, making detection difficult. **Solution**: TRACE introduces a \"Selection Channel\" keyed on local content with a distortion-free sampler. This keeps the agent's distribution provably unchanged and allows detection to resynchronize after deletions.\n- **Challenge 2: Content alteration due to rewriting**. LLM rewriting changes text content, breaking content-based watermarks. **Solution**: TRACE introduces a \"Tally Channel\" that sets record counts per decision group, keyed solely on the log's skeleton (structure). This structural information remains untouched by any strength of LLM rewriting.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on ToolBench and ALFWorld datasets.\n- **Performance**: TRACE matches the success rate of unwatermarked agents, demonstrating its distortion-free nature.\n- **Robustness Results**:\n    - **Selection Channel**: Achieves detection scores near z = 100 on long-horizon trajectories and remains detectable under 70% step deletion.\n    - **Tally Channel**: Remains exactly unchanged under LLM rewriting of any strength.\n- **Comparison**: Unlike existing methods that fail under log manipulation, TRACE is the first to simultaneously achieve distortion-free behavior, deletion self-synchronization, and rewriting invariance.\n\n## 4. Conclusion\nTRACE addresses core challenges in LLM agent trajectory watermarking through a novel two-channel design. It uses a content-based selection channel to resist deletion and a structure-based tally channel to resist rewriting. Theoretically, it proves that the watermark signal is bought with decision entropy, forcing adversaries to corrupt trajectories to remove the watermark. The method provides strong attribution robustness without compromising agent performance.",
-      "render_excerpt": "机构: University of New South Wales<br>TRACE 通过创新的双通道设计解决了 LLM Agent 轨迹水印中的核心难题。它利用基于内容的选择通道抵抗删除攻击，利用基于结构的计数通道抵抗重写攻击，理论上证明了水印信号以决策熵为代价，且迫使攻击者若要消除水印必须破坏轨迹本身。该方法在保证 Agent 性能的同时，提供了极强的归因鲁棒性。",
-      "render_excerpt_en": "Institution: University of New South Wales<br>## 1. What the Paper Does - **Background**: LLM agents reach users via resellers who may rebrand or substitute models. Attribution relies on trajectory logs (tool calls, observations, actions) stored and processed by resellers.",
+      "summary_cn": "## 文章做了什么\n- **背景**：5G/6G 网络正朝着 AI 原生架构演进，特别是 O-RAN 架构将控制逻辑分离为非实时应用（rApp）和近实时应用（xApp）。车联网（V2X）通信环境高度动态，需同时服务远程驾驶、协同感知、高清地图共享等具有不同延迟和可靠性需求的服务。\n- **已有工作为什么解决不了**：虽然大型语言模型（LLM）被提议作为网络控制接口，但其高推理延迟、幻觉问题以及缺乏控制保证，使其无法直接用于对时间敏感的近实时数据包调度。现有的强化学习方法虽能优化权衡，但缺乏 LLM 的自然语言理解和灵活策略生成能力，而直接使用 LLM 进行实时调度则无法满足 V2X 的严格截止时间要求。\n\n## 文章的核心贡献点\n- **提出了一个 Agentic-V2X 架构**：一种基于小型本地部署语言模型的代理架构，将策略生成（非实时 rApp 角色）与策略执行（近实时 xApp 角色）分离，用于截止期感知的 5G NR V2X 调度。\n- **挑战1：LLM 的高延迟与实时调度需求的矛盾**。LLM 推理速度慢且不稳定，难以满足毫秒级调度要求。论文通过让小型 LLM 充当周期性非实时策略创建者，生成包含服务优先级、权重边界和安全约束的结构化策略，而由轻量级控制器以更快的间隔执行验证后的策略，从而解耦了推理与执行。\n- **挑战2：LLM 幻觉导致的策略无效或安全隐患**。LLM 可能生成不可执行或违反安全规定的配置。论文引入一个验证器模块，在策略下发前进行检查和修复，确保生成的策略有效且符合安全约束，随后通过 ns-3/ns3-ai 中的调度器权重自适应机制强制执行。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架在 ns-3 网络模拟器结合 ns3-ai 环境中实现。LLM 根据场景摘要、服务目标和遥测数据生成策略，经验证后由类 xApp 控制器调整调度器权重。\n- **评估结果**：在 126 次运行中，对比了比例公平调度（PF）、静态专家策略、启发式 xApp、静态 LLM 策略和自适应 LLM-rApp/xApp 策略。指标包括截止期约束下的包接收率、尾延迟、截止期违规、吞吐量、公平性、策略有效性和安全干预。\n- **对比分析**：结果显示，自适应 LLM-rApp/xApp 设计能持续生成有效且可执行的策略。在高密度场景下，其平均关键可靠性优于 PF 调度，并在中等密度下表现出良好的延迟/吞吐量权衡。然而，配对统计分析表明，该方法在整体聚合关键可靠性上并非最佳，仍低于最强的静态策略。这证明 Agentic-V2X 是一个安全、可执行的小型 LLM 辅助策略生成架构，而非 universally dominant 的调度器。\n\n#### 总结\nAgentic-V2X 提出了一种务实的架构，通过分离非实时策略生成和近实时执行，解决了 LLM 在 V2X 调度中应用的延迟和安全性难题。虽然其在整体性能上未超越最优静态策略，但在动态适应性和关键可靠性方面展现了竞争力，证明了小型 LLM 作为安全策略生成助手的可行性，为未来 6G 网络中 AI 原生控制提供了参考路径。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: 5G/6G networks are evolving towards AI-native architectures, specifically O-RAN, which separates control logic into non-real-time (rApp) and near-real-time (xApp) applications. Vehicle-to-Everything (V2X) communication is highly dynamic, requiring simultaneous support for services with diverse latency and reliability needs, such as teleoperated driving and HD map sharing.\n- **Why Existing Work Falls Short**: While Large Language Models (LLMs) are proposed for network control, their high inference latency, hallucinations, and lack of control guarantees make them unsuitable for direct near-real-time packet scheduling. Existing Reinforcement Learning methods optimize trade-offs but lack the natural language understanding and flexible policy generation of LLMs, while direct LLM integration fails to meet strict V2X deadline requirements.\n\n## Core Contributions\n- **Proposed Agentic-V2X Architecture**: An architecture leveraging a small, locally deployed language model where policy creation (non-real-time rApp role) is decoupled from policy execution (near-real-time xApp role) for deadline-aware 5G NR V2X scheduling.\n- **Challenge 1: Conflict between LLM latency and real-time scheduling**. LLMs are too slow and unstable for millisecond-level scheduling. The paper addresses this by using the small LLM as a periodic non-real-time policy creator that generates structured policies (priorities, weights, constraints), while a lightweight controller executes validated policies at faster intervals suitable for scheduling.\n- **Challenge 2: Policy invalidity or safety risks due to LLM hallucinations**. LLMs may generate unexecutable or unsafe configurations. The paper introduces a validator module to check and repair policies before enforcement, ensuring validity and safety constraints are met, followed by execution via scheduler-weight adaptation in ns-3/ns3-ai.\n\n## Implementation and Evaluation\n- **Implementation**: The framework is implemented in the ns-3 network simulator with ns3-ai. The LLM generates policies based on scenario summaries and telemetry, which are validated and then enforced by an xApp-like controller adjusting scheduler weights.\n- **Evaluation Results**: Evaluated over 126 runs against Proportional Fair (PF), static expert policies, heuristic xApp, static LLM policies, and adaptive LLM-rApp/xApp policies. Metrics included deadline-constrained packet reception ratio, tail latency, violations, throughput, fairness, and safety.\n- **Comparison**: The adaptive LLM-rApp/xApp design consistently generated valid, executable policies. It outperformed PF in mean critical reliability at high densities and showed favorable latency/throughput trade-offs at medium densities. However, statistical analysis revealed it was not the best aggregate method for critical reliability, remaining below the strongest static policies. This positions Agentic-V2X as a safe, executable small-LLM-assisted policy generation architecture rather than a universally dominant scheduler.\n\n## 4. Conclusion\nAgentic-V2X proposes a practical architecture that addresses LLM latency and safety issues in V2X scheduling by decoupling non-real-time policy generation from near-real-time execution. While it does not surpass the best static policies in overall performance, it demonstrates competitiveness in dynamic adaptability and critical reliability, validating the feasibility of small LLMs as safe policy-generation assistants for future 6G AI-native control.",
+      "render_excerpt": "机构: University of Piraeus<br>Agentic-V2X 提出了一种务实的架构，通过分离非实时策略生成和近实时执行，解决了 LLM 在 V2X 调度中应用的延迟和安全性难题。虽然其在整体性能上未超越最优静态策略，但在动态适应性和关键可靠性方面展现了竞争力，证明了小型 LLM 作为安全策略生成助手的可行性，为未来 6G 网络中 AI 原生控制提供了参考路径。",
+      "render_excerpt_en": "Institution: University of Piraeus<br>## 1. What the Paper Did - **Background**: 5G/6G networks are evolving towards AI-native architectures, specifically O-RAN, which separates control logic into non-real-time (rApp) and near-real-time (xApp) applications. Vehicle-to-Everything (V2X) communication is highly dynamic, requiring simultaneous support for services with diverse latency and reliability needs, such as teleoperated driving and HD map sharing.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-09T12:25:22Z"
+        "captured_at": "2026-07-05T13:05:48Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-09"
+        "captured_at": "2026-07-05"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -164,105 +54,195 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.08662",
-      "date": "2026-07-09",
-      "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
+      "paper_id": "2607.04395",
+      "date": "2026-07-05",
+      "title": "NKI-Agent: Domain-Specific Fine-Tuning and Agentic Tool Use for Neuron Kernel Generation",
       "authors": [
-        "Xiaoshuai Song",
-        "Liancheng Zhang",
-        "Kangzhi Zhao",
-        "Yutao Zhu",
-        "Zhongyuan Wang",
-        "Guanting Dong",
-        "Jinghan Yang",
-        "Han Li",
-        "Kun Gai",
-        "Ji-Rong Wen",
-        "Zhicheng Dou"
+        "Junjie Tang",
+        "Jun Huan",
+        "Hao Zhou",
+        "Yuhao Zhang",
+        "Lin Wang"
       ],
-      "abstract": "Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ReAct-style agent is constrained by one long trajectory and limited context, making it difficult to handle depth and coverage simultaneously. Existing multi-agent systems improve search coverage through parallel execution and aggregation, but still exhibit clear limitations in recursive depth, collaboration adaptability, and evidence-grounded expansion. We propose WebSwarm, a progressive recursive delegation framework that jointly constructs task decomposition, recursive expansion, and agent collaboration during inference. WebSwarm dynamically instantiates agentic search nodes, each coupling a local objective with a search mode that specifies how the node should organize search and collaboration. Each node can either solve its objective itself or further delegate child nodes; after solving, it returns evidence and results upward, enabling parent nodes to further expand, revise, or aggregate the search process. To guide this process, WebSwarm first probes how task-relevant information is organized on the web to ground subsequent node expansion, and reuses process-level experience across homogeneous sibling nodes. Experiments on BrowseComp-Plus, WideSearch, DeepWideSearch, and GISA show that WebSwarm consistently outperforms single-agent and multi-agent baselines on deep, wide, and interleaved deep-and-wide tasks. Further analyses of ablation, task difficulty, web tool efficiency, and model generalization explain WebSwarm's effectiveness and provide insights for multi-agent search systems.",
+      "abstract": "Recent agentic approaches to LLM-based kernel generation have achieved impressive results on CUDA. For emerging AI accelerators such as AWS Trainium and Inferentia, automated kernel generation and optimization remain largely unaddressed. Writing kernels for these chips via the Neuron Kernel Interface (NKI) is particularly challenging: developers must navigate a multi-engine architecture, tile-based programming, and explicit data movement across multi-level memory hierarchy. Moreover, no publicly-available training data, benchmarks, or tool-augmented agents exist for this domain. We introduce NKI-Agent, the first system combining domain-specific supervised fine-tuning (SFT) with a compile-verify-fix agent loop for NKI kernel generation. We adapt the existing CUDA-Agent framework to Neuron hardware, curate 6,000 NKI kernel generation tasks for training, and construct NKIBench, a 250-task benchmark across three difficulty levels. Evaluated on real Trn1 hardware, NKI-Agent with Claude Opus 4.8 and a rank-aware system prompt achieves a 77.3% pass rate on the 150-task NKIBench. We show that tool use is critical: Opus 4.8 scores 6% in single-shot mode without agent tools. On a 60-task subset, we show that an SFT-trained Qwen3-Coder-30B-A3B achieves 25.0% pass rate at 1/100th the cost, outperforming Claude Sonnet 4 (15.0%). We also report that Group Relative Policy Optimization (GRPO) with binary compilation reward fails to improve over SFT, providing guidance on reward design for RL-based kernel generation.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.08662v1",
-        "pdf": "https://arxiv.org/pdf/2607.08662v1",
-        "github": "https://github.com/songxiaoshuai/WebSwarm",
-        "blog": null
-      },
-      "institution": "Renmin University of China, Kuaishou Technology",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）的发展，基于代理的网络搜索正从简单的事实问答转向复杂的、面向研究的深度与广度并重的搜索任务。这类任务要求代理既能解决多跳依赖的深度问题，又能保持对候选实体和信息源的广泛覆盖。\n- **已有工作为什么解决不了**：单代理（如ReAct风格）受限于长轨迹和有限上下文，难以同时兼顾深度和广度。现有的多代理系统虽然通过并行执行和聚合提高了搜索覆盖率，但在递归深度、协作适应性以及基于证据的扩展方面仍存在明显局限，往往受限于初始计划的静态分解或固定的协作模式，无法动态适应Web信息的组织结构。\n\n## 文章的核心贡献点\n- **提出了一个**名为 WebSwarm 的渐进式递归委托框架，该框架在推理过程中联合构建任务分解、递归扩展和代理协作。\n- **挑战1：如何动态平衡搜索的深度与广度，避免静态计划的局限性？**\n  - **难点**：传统方法通常在搜索前制定固定计划，无法根据实际获取的证据动态调整搜索方向，导致在面对复杂Web结构时效率低下或遗漏关键信息。\n  - **解决方法**：WebSwarm 动态实例化代理搜索节点，每个节点耦合局部目标与搜索模式。节点可自行解决问题或进一步委托子节点，并在解决后向上返回证据和结果，使父节点能够基于新证据进一步扩展、修订或聚合搜索过程，实现真正的递归自适应。\n- **挑战2：如何提高多代理协作的效率并减少冗余探索？**\n  - **难点**：在大规模并行或递归搜索中，不同代理可能重复探索相似路径，且缺乏对Web信息组织结构的感知，导致资源浪费和协作低效。\n  - **解决方法**：WebSwarm 首先探测任务相关信息在Web上的组织方式以指导后续节点扩展，并在同构兄弟节点间复用过程级经验，从而 grounded（基于事实地）引导搜索扩展并提升协作效率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 BrowseComp-Plus, WideSearch, DeepWideSearch 和 GISA 等多个基准数据集上进行评估，涵盖深度、广度及深浅交织的任务类型。\n- **对比结果**：WebSwarm 在深度、广度和交织任务上均一致优于单代理基线（如 ReAct）和多代理基线（如 Vanilla Multi-Agent, Plan-then-Orchestrate 等）。具体表现为在复杂查询下的准确率更高，搜索路径更有效。\n- **消融分析与洞察**：通过消融实验验证了递归委托、Web探测和经验复用模块的有效性。分析还表明，WebSwarm 在不同任务难度和Web工具效率下均表现出良好的鲁棒性，且具备较强的模型泛化能力。\n\n#### 总结\nWebSwarm 通过引入渐进式递归委托机制，有效解决了现有搜索代理在处理深度与广度并重的复杂任务时的局限性。其核心创新在于动态的节点实例化、基于Web结构的搜索引导以及兄弟节点间的经验复用。实验结果证明，该方法在多个基准测试中显著超越了现有的单代理和多代理系统，为构建更高效、自适应的多代理搜索系统提供了新的范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-based web search agents are evolving from simple factoid QA to complex, research-oriented tasks requiring both deep (multi-hop) and wide (broad coverage) search capabilities.\n- **Limitations of Existing Work**: Single-agent systems (e.g., ReAct) struggle with long trajectories and limited context, failing to balance depth and width. Existing multi-agent systems improve coverage via parallelism but suffer from limitations in recursive depth, adaptive collaboration, and evidence-grounded expansion, often relying on static initial plans or fixed collaboration modes that misalign with dynamic Web structures.\n\n## Core Contributions\n- **Proposed WebSwarm**: A progressive recursive delegation framework that jointly constructs task decomposition, recursive expansion, and agent collaboration during inference.\n- **Challenge 1: How to dynamically balance search depth and width, avoiding the limitations of static planning?**\n  - **Difficulty**: Traditional methods rely on fixed pre-search plans, unable to adapt to emerging evidence, leading to inefficiency or missed information in complex Web environments.\n  - **Solution**: WebSwarm dynamically instantiates agentic search nodes, each coupling a local objective with a search mode. Nodes can solve objectives or delegate to child nodes, returning evidence upward to allow parent nodes to expand, revise, or aggregate the search process recursively based on real-time findings.\n- **Challenge 2: How to improve multi-agent collaboration efficiency and reduce redundant exploration?**\n  - **Difficulty**: Parallel or recursive searches often lead to redundant paths and lack awareness of Web information organization, wasting resources.\n  - **Solution**: WebSwarm probes how task-relevant information is organized on the Web to ground node expansion and reuses process-level experience across homogeneous sibling nodes, guiding efficient and grounded search expansion.\n\n## Implementation and Evaluation\n- **Experiments**: Evaluated on BrowseComp-Plus, WideSearch, DeepWideSearch, and GISA benchmarks, covering deep, wide, and interleaved tasks.\n- **Results**: WebSwarm consistently outperforms single-agent (e.g., ReAct) and multi-agent baselines (e.g., Vanilla Multi-Agent, Plan-then-Orchestrate) across all task types, demonstrating higher accuracy and more effective search paths.\n- **Analysis**: Ablation studies confirm the effectiveness of recursive delegation, Web probing, and experience reuse. The system shows robustness across varying task difficulties and Web tool efficiencies, with strong model generalization.\n\n## 4. Conclusion\nWebSwarm addresses the limitations of existing search agents in handling complex deep-and-wide tasks through a progressive recursive delegation mechanism. Its key innovations include dynamic node instantiation, Web-structure-guided search, and experience reuse among sibling nodes. Experiments demonstrate significant improvements over state-of-the-art baselines, offering a new paradigm for building efficient, adaptive multi-agent search systems.",
-      "render_excerpt": "机构: Renmin University of China, Kuaishou Technology<br>WebSwarm 通过引入渐进式递归委托机制，有效解决了现有搜索代理在处理深度与广度并重的复杂任务时的局限性。其核心创新在于动态的节点实例化、基于Web结构的搜索引导以及兄弟节点间的经验复用。实验结果证明，该方法在多个基准测试中显著超越了现有的单代理和多代理系统，为构建更高效、自适应的多代理搜索系统提供了新的范式。",
-      "render_excerpt_en": "Institution: Renmin University of China, Kuaishou Technology<br>## 1. What the Paper Does - **Background**: LLM-based web search agents are evolving from simple factoid QA to complex, research-oriented tasks requiring both deep (multi-hop) and wide (broad coverage) search capabilities. - **Limitations of Existing Work**: Single-agent systems (e.g., ReAct) struggle with long trajectories and limited context, failing to balance depth and width.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-09T16:28:49Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-09"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.08403",
-      "date": "2026-07-09",
-      "title": "Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination",
-      "authors": [
-        "Runzhe Liu",
-        "Biquan Bie",
-        "Zihao Wang",
-        "Yuchao Ma",
-        "Yexin Liu",
-        "Xinghai Li",
-        "Harry Yang",
-        "Wenbo Yang",
-        "Jinzhe Cao",
-        "Shengyang Tao"
-      ],
-      "abstract": "The application of lightweight Large Language Models in rule-based scientific domains remains severely limited by their tendency to mimic linguistic patterns rather than reproduce axiomatic reasoning, causing frequent hallucinations. Here, we show that G-Frame, an adaptive multi-agent framework integrating Bayesian and team game principles, establishes an automated closed-loop for high-quality data synthesis and model training. By forcing the internalization of domain constraints through structured reasoning, we synthesized a specialized corpus of 363,045 chains-of-thought and 199,589 question-answer pairs. The resulting 7B model OmniChem achieves performance parity with GPT 4o mini on custom benchmarks and ChemBench while exhibiting a 79.46% reduction in hallucinations relative to its base architecture. We further demonstrate the advanced capabilities of OmniChem in molecular design and synthesis planning. This work establishes a scalable paradigm utilizing adaptive multi-agents to overcome inherent reasoning deficiencies, offering a feasible pathway for accelerating knowledge discovery in specialized scientific fields.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.08403v1",
-        "pdf": "https://arxiv.org/pdf/2607.08403v1",
+        "abs": "http://arxiv.org/abs/2607.04395v1",
+        "pdf": "https://arxiv.org/pdf/2607.04395v1",
         "github": null,
         "blog": null
       },
-      "institution": "Dalian University of Technology; The Hong Kong University of Science and Technology",
+      "institution": "Amazon Web Services",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：轻量级大型语言模型（LLM）在基于规则的科学领域（如化学）应用中，受限于其概率自回归特性，倾向于模仿语言模式而非复现公理化推理，导致频繁产生幻觉。这使得它们在药物发现或材料设计等需要高可靠性的任务中难以应用。\n- **已有工作为什么解决不了**：现有的方法如工具集成或监督微调存在局限性。依赖闭源API损害了数据主权，而离线模型微调则受限于高质量专业领域数据的稀缺性。通用LLM无法内化物理约束，导致生成看似合理但事实错误的文本，且现有方法未能有效解决轻量级模型在结构化因果推理上的根本缺陷。\n\n## 文章的核心贡献点\n- **提出了一个 G-Frame**：一种自适应多智能体框架，整合了贝叶斯博弈和团队博弈原则，建立了高质量数据合成和模型训练的自动化闭环。\n- **挑战1：自回归生成中的熵累积导致推理结构松散**。难点在于轻量级模型难以维持长链条的逻辑一致性。论文通过微观层面的“团队博弈”机制，强制智能体协作以结构化地抑制熵累积，确保推理步骤的严谨性。\n- **挑战2：不确定性下的动态决策优化**。难点在于如何在缺乏完美信息的情况下优化训练策略。论文通过宏观层面的“贝叶斯博弈”机制，动态优化决策策略，实现数据合成与适应性训练的双层动态策略迭代。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：利用G-Frame合成了包含363,045条思维链和199,589个问答对的专业语料库。在此基础上训练了7B参数量的模型OmniChem。\n- **评估结果**：OmniChem在自定义基准测试和ChemBench上达到了与GPT-4o mini相当的性能水平。相较于其基础架构，OmniChem的幻觉率降低了79.46%。\n- **相关工作对比**：相比依赖闭源API或传统微调的方法，该方法不仅实现了性能parity，还显著提升了事实准确性，并展示了在分子设计和合成规划中的高级能力，证明了其在专业科学领域加速知识发现的可行性。\n\n#### 总结\n本文针对轻量级LLM在科学领域因缺乏公理化推理而产生的幻觉问题，提出了基于博弈论的多智能体框架G-Frame。通过微观团队博弈和宏观贝叶斯博弈的结合，实现了高质量专业数据的自动化合成与模型自适应训练。生成的OmniChem模型在保持轻量级优势的同时，大幅降低幻觉并达到顶尖模型性能，为专业科学领域的可靠AI应用提供了可扩展的新范式。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: The application of lightweight Large Language Models (LLMs) in rule-based scientific domains (e.g., chemistry) is severely limited by their tendency to mimic linguistic patterns rather than reproduce axiomatic reasoning, leading to frequent hallucinations. This hinders their reliable use in high-stakes tasks like drug discovery.\n- **Why Existing Work Falls Short**: Current approaches, such as tool integration or supervised fine-tuning, have inherent limitations. Reliance on closed-source APIs compromises data sovereignty, while offline fine-tuning is constrained by the scarcity of high-quality specialized data. General-purpose LLMs fail to internalize physical constraints, resulting in plausible but factually incorrect outputs, and existing methods do not adequately address the fundamental reasoning deficiencies of lightweight models.\n\n## Core Contributions\n- **Proposed G-Frame**: An adaptive multi-agent framework integrating Bayesian and team game principles to establish an automated closed-loop for high-quality data synthesis and model training.\n- **Challenge 1: Entropy accumulation in autoregressive generation leads to loose reasoning structures**. The difficulty lies in maintaining logical consistency over long chains in lightweight models. The paper addresses this by employing a \"Team Game\" at the micro-level, forcing agent collaboration to structurally suppress entropy accumulation and ensure rigorous reasoning steps.\n- **Challenge 2: Dynamic decision optimization under uncertainty**. The challenge is optimizing training strategies without perfect information. The paper solves this using a \"Bayesian Game\" at the macro-level to dynamically optimize decision-making strategies, enabling dual-layer dynamic policy iteration for data synthesis and adaptive training.\n\n## Implementation and Evaluation\n- **Implementation & Data**: G-Frame was used to synthesize a specialized corpus comprising 363,045 chains-of-thought and 199,589 question-answer pairs. A 7B parameter model, OmniChem, was trained on this data.\n- **Evaluation Results**: OmniChem achieved performance parity with GPT-4o mini on custom benchmarks and ChemBench. It exhibited a 79.46% reduction in hallucinations compared to its base architecture.\n- **Comparison with Related Work**: Unlike methods relying on closed-source APIs or traditional fine-tuning, this approach achieves comparable performance to top-tier models while significantly improving factual accuracy. It further demonstrates advanced capabilities in molecular design and synthesis planning, proving its feasibility for accelerating knowledge discovery in specialized scientific fields.\n\n## 4. Conclusion\nThis paper addresses the hallucination problem in lightweight LLMs within scientific domains, caused by a lack of axiomatic reasoning. It proposes G-Frame, a game-theory-driven multi-agent framework that combines micro-level Team Games and macro-level Bayesian Games to automate high-quality data synthesis and adaptive model training. The resulting OmniChem model significantly reduces hallucinations while achieving performance parity with leading models, offering a scalable paradigm for reliable AI applications in specialized scientific research.",
-      "render_excerpt": "机构: Dalian University of Technology; The Hong Kong University of Science and Technology<br>本文针对轻量级LLM在科学领域因缺乏公理化推理而产生的幻觉问题，提出了基于博弈论的多智能体框架G-Frame。通过微观团队博弈和宏观贝叶斯博弈的结合，实现了高质量专业数据的自动化合成与模型自适应训练。生成的OmniChem模型在保持轻量级优势的同时，大幅降低幻觉并达到顶尖模型性能，为专业科学领域的可靠AI应用提供了可扩展的新范式。",
-      "render_excerpt_en": "Institution: Dalian University of Technology; The Hong Kong University of Science and Technology<br>## 1. What the Paper Did - **Background**: The application of lightweight Large Language Models (LLMs) in rule-based scientific domains (e.g., chemistry) is severely limited by their tendency to mimic linguistic patterns rather than reproduce axiomatic reasoning, leading to frequent hallucinations. This hinders their reliable use in high-stakes tasks like drug discovery.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着深度学习模型的快速扩展，对特定硬件内核优化的需求日益增加。虽然 NVIDIA GPU 拥有成熟的 CUDA 生态，但新兴的 AI 加速器（如 AWS Trainium 和 Inferentia）缺乏自动化的内核生成和优化方案。\n- **已有的工作为什么解决不了**：现有的基于 LLM 的代理方法（如 CUDA-Agent）主要针对 CUDA 架构，无法直接应用于 Neuron 硬件。Neuron Kernel Interface (NKI) 编程具有独特的挑战性，包括多引擎架构、基于 tile 的编程模型以及跨多级存储层次的手动数据移动。此外，该领域缺乏公开的训练数据、基准测试或工具增强型代理。\n\n## 文章的核心贡献点\n- **提出了一个 NKI-Agent**：这是第一个将领域特定的监督微调（SFT）与编译-验证-修复代理循环相结合的系统，用于 NKI 内核生成。\n- **挑战1：NKI 编程复杂性高，缺乏高质量训练数据**。NKI 需要处理四种专用计算引擎和显式内存管理，且无现成数据集。论文通过整理 6,000 个 NKI 内核生成任务（NKI-Agent-Ops-6K）进行 SFT，并构建了包含 250 个任务的三级难度基准测试 NKIBench，为模型提供了必要的领域知识和评估标准。\n- **挑战2：单纯依靠大模型单次生成成功率极低，且高昂的推理成本限制了应用**。实验显示 Claude Opus 4.8 在无工具辅助的单次模式下通过率仅为 6%。论文设计了带有编译和验证工具的多轮代理循环，并结合等级感知系统提示词，使 Opus 4.8 的通过率提升至 77.3%；同时证明了经过 SFT 的 Qwen3-Coder-30B-A3B 能以百分之一的成本达到 25.0% 的通过率，优于 Claude Sonnet 4。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：NKI-Agent 适配了现有的 CUDA-Agent 框架以支持 Neuron 硬件，集成了编译和验证工具。模型方面，支持使用 SFT 和组相对策略优化（GRPO）训练的 Qwen3-Coder-30B-A3B，同时也兼容 Claude Opus 4.8 等闭源模型。\n- **评估结果**：在真实的 Trn1 硬件上评估，NKI-Agent 配合 Claude Opus 4.8 在 150 任务的 NKIBench 子集上取得了 77.3% 的通过率。相比之下，不使用代理工具的单次模式通过率仅为 6%，突显了工具使用的关键性。\n- **相关工作对比**：在 60 个任务的子集上，SFT 训练的 Qwen3-Coder-30B-A3B 实现了 25.0% 的通过率，显著高于 Claude Sonnet 4 的 15.0%，且成本仅为后者的 1/100。此外，研究发现使用二进制编译奖励的 GRPO 相比 SFT 并未带来性能提升，这为基于 RL 的内核生成中的奖励设计提供了重要参考。\n\n#### 总结\n本文针对 AWS Neuron 硬件内核生成的空白，提出了 NKI-Agent 系统。通过构建专用的训练数据集和基准测试，并结合领域特定的 SFT 与代理工具循环，有效解决了 NKI 编程中多引擎架构和复杂内存管理的难题。实验表明，该方法在真实硬件上取得了显著的通过率提升，并证明了开源小模型在经过适当微调后能在低成本下超越部分闭源大模型的表现，同时指出了当前 RL 奖励设计在该领域的局限性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: The rapid scaling of deep learning models has increased demand for hardware-specific kernel optimization. While NVIDIA GPUs benefit from a mature CUDA ecosystem, emerging AI accelerators like AWS Trainium and Inferentia lack automated kernel generation and optimization solutions.\n- **Why Existing Work Falls Short**: Current LLM-based agentic approaches (e.g., CUDA-Agent) are tailored to CUDA and do not address the unique challenges of Neuron hardware. Programming via the Neuron Kernel Interface (NKI) involves complex multi-engine architectures, tile-based programming, and explicit data movement across memory hierarchies. Furthermore, there is a lack of public training data, benchmarks, or tool-augmented agents for this domain.\n\n## Core Contributions\n- **Proposed NKI-Agent**: The first system combining domain-specific Supervised Fine-Tuning (SFT) with a compile-verify-fix agent loop for NKI kernel generation.\n- **Challenge 1: High complexity of NKI programming and lack of quality training data**. NKI requires managing four specialized compute engines and explicit memory transfers, with no existing datasets. The paper curates 6,000 NKI kernel generation tasks (NKI-Agent-Ops-6K) for SFT and constructs NKIBench, a 250-task benchmark with three difficulty levels, providing essential domain knowledge and evaluation standards.\n- **Challenge 2: Low success rate of single-shot generation and high inference costs**. Claude Opus 4.8 achieved only a 6% pass rate in single-shot mode without tools. The paper introduces a multi-turn agent loop with compile/verify tools and rank-aware system prompts, boosting Opus 4.8's pass rate to 77.3%. It also demonstrates that an SFT-trained Qwen3-Coder-30B-A3B achieves a 25.0% pass rate at 1/100th the cost, outperforming Claude Sonnet 4.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: NKI-Agent adapts the CUDA-Agent framework for Neuron hardware, integrating compilation and verification tools. It supports models like Qwen3-Coder-30B-A3B (trained with SFT and GRPO) and closed-source models like Claude Opus 4.8.\n- **Evaluation Results**: Evaluated on real Trn1 hardware, NKI-Agent with Claude Opus 4.8 achieved a 77.3% pass rate on a 150-task subset of NKIBench. In contrast, the single-shot mode without agent tools scored only 6%, highlighting the critical role of tool use.\n- **Comparison with Related Work**: On a 60-task subset, the SFT-trained Qwen3-Coder-30B-A3B achieved a 25.0% pass rate, significantly outperforming Claude Sonnet 4 (15.0%) at 1/100th the cost. Additionally, the study found that Group Relative Policy Optimization (GRPO) with binary compilation rewards did not improve over SFT, offering insights into reward design for RL-based kernel generation.\n\n#### Summary\nThis paper addresses the gap in kernel generation for AWS Neuron hardware by proposing NKI-Agent. By constructing specialized datasets and benchmarks, and combining domain-specific SFT with an agentic tool loop, it effectively tackles the challenges of NKI's multi-engine architecture and complex memory management. Experiments show significant improvements in pass rates on real hardware, demonstrating that properly fine-tuned open-source models can outperform some closed-source counterparts at a fraction of the cost, while also identifying limitations in current RL reward designs for this domain.",
+      "render_excerpt": "机构: Amazon Web Services<br>本文针对 AWS Neuron 硬件内核生成的空白，提出了 NKI-Agent 系统。通过构建专用的训练数据集和基准测试，并结合领域特定的 SFT 与代理工具循环，有效解决了 NKI 编程中多引擎架构和复杂内存管理的难题。实验表明，该方法在真实硬件上取得了显著的通过率提升，并证明了开源小模型在经过适当微调后能在低成本下超越部分闭源大模型的表现，同时指出了当前 RL 奖励设计在该领域的局限性。",
+      "render_excerpt_en": "Institution: Amazon Web Services<br>This paper addresses the gap in kernel generation for AWS Neuron hardware by proposing NKI-Agent. By constructing specialized datasets and benchmarks, and combining domain-specific SFT with an agentic tool loop, it effectively tackles the challenges of NKI's multi-engine architecture and complex memory management. Experiments show significant improvements in pass rates on real hardware, demonstrating that properly fine-tuned open-source models can outperform some closed-source counterparts at a fraction of the cost, while also identifying limitations in current RL reward designs for this domain.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-09T12:28:39Z"
+        "captured_at": "2026-07-05T16:37:41Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-09"
+        "captured_at": "2026-07-05"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.04293",
+      "date": "2026-07-05",
+      "title": "CausalGame: Benchmarking Causal Thinking of LLM Agents in Games",
+      "authors": [
+        "Zhenhao Chen",
+        "Yongqiang Chen",
+        "Chenxi Liu",
+        "Junchi Yu",
+        "Xiangchen Song",
+        "Zijian Li",
+        "Jialin Li",
+        "Philip Torr",
+        "Bo Han",
+        "Kun Zhang"
+      ],
+      "abstract": "Building AI Scientist agents with Large Language Models (LLMs) has recently attracted growing attention. Since scientific discovery fundamentally relies on uncovering causal relationships from observations, the capability of causal thinking, i.e., distinguishing causation from correlation and recognizing hidden biases, is essential to LLM agents. Although a number of benchmarks exist for AI Scientists, none explicitly incorporate challenges from selection bias, measurement error, and hidden confounders that widely exist in real-world scientific discovery. To this end, we present CausalGame, a benchmark that evaluates the causal thinking capabilities of LLM agents through interactive games. CausalGame asks LLM agents to actively design experimental protocols, collect observation data, and derive a final solution with an explanation report. To emulate realistic scientific discovery challenges, we design 14 scenarios that incorporate selection bias, measurement error, and hidden confounders. Across 30 LLM agents, none demonstrates reliable causal thinking: the best model reaches only 68.0% survival against analytical optima of 78-85%, and merely 5-7% of sessions receive credits on the causal-reasoning rubrics. CausalGame provides a scalable and controlled testbed for evaluating the causal thinking of AI Scientist agents.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.04293v1",
+        "pdf": "https://arxiv.org/pdf/2607.04293v1",
+        "github": null,
+        "blog": "causalgame.github.io"
+      },
+      "institution": "MBZUAI, Carnegie Mellon University, Hong Kong Baptist University, University of Oxford, New York University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）在推理和解决复杂任务方面能力的提升，构建基于 LLM 的“AI 科学家”智能体成为研究热点。科学发现的核心在于从观察中揭示因果关系，因此区分因果与相关、识别隐藏偏差的“因果思维”能力对 LLM 智能体至关重要。\n- **已有工作为什么解决不了**：尽管目前存在多个针对 AI 科学家的基准测试，但它们均未明确纳入现实世界科学发现中广泛存在的挑战，如选择偏差（selection bias）、测量误差（measurement error）和隐藏混淆变量（hidden confounders）。现有基准无法有效评估智能体在复杂因果环境下的真实推理能力。\n\n## 文章的核心贡献点\n- **提出了一个 CausalGame 基准**：这是一个通过交互式游戏评估 LLM 智能体因果思维能力的可扩展且可控的测试平台。\n- **挑战1：模拟真实科学发现中的因果陷阱**。难点在于智能体不仅要找到正确答案，还要在面对选择偏差、测量误差和隐藏混淆变量时，能够设计实验来区分因果与相关。CausalGame 设计了 14 个包含这些特定偏差的场景，要求智能体主动设计实验协议、收集数据并生成解释报告，从而强制其展示因果推理过程而非仅靠统计相关性猜测。\n- **挑战2：全面评估因果推理的质量而非仅看结果**。难点在于许多模型可能通过运气或模式匹配得到正确结果，但缺乏真正的因果理解。该基准引入了详细的评分标准（rubrics），涵盖因果推理、实验设计、反思质量和数据使用四个维度，确保只有真正理解底层因果机制的智能体才能获得高分。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：CausalGame 包含 14 个精心设计的场景，模拟了现实科学探索中的因果挑战。评估涉及 30 种不同的 LLM 智能体，要求它们在交互环境中完成从实验设计到最终报告生成的全流程。\n- **Evaluation 结果**：\n    - **整体表现不佳**：在所有测试的 30 个 LLM 智能体中，没有一个表现出可靠的因果思维能力。\n    - **生存率差距**：表现最好的模型（Claude-Opus-4.5）的生存率仅为 68.0%，远低于理论最优值（78%-85%）。\n    - **推理质量低**：仅有 5%-7% 的会话在因果推理评分标准上获得认可，表明大多数模型即使得出正确结论，也未能正确识别和利用潜在的因果机制。\n    - **成本与性能权衡**：分析显示，高性能往往伴随着高昂的 Token 成本，且存在明显的 Pareto 前沿，如 Grok-4.1-Fast 和 MiniMax-M2 等在成本效益上表现各异，但均未突破因果推理的根本瓶颈。\n\n#### 总结\nCausalGame 填补了当前 AI 科学家基准测试在因果思维评估方面的空白。通过引入选择偏差、测量误差和隐藏混淆变量等现实挑战，该基准揭示了当前最先进的 LLM 智能体在因果推理方面的严重不足。研究结果表明，尽管 LLM 在某些任务上表现出色，但在需要严格因果推断的科学发现场景中，它们仍倾向于依赖相关性而非因果性，亟需进一步提升其因果认知能力。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: With Large Language Models (LLMs) demonstrating enhanced reasoning capabilities, there is growing interest in building \"AI Scientist\" agents. Since scientific discovery fundamentally relies on uncovering causal relationships, \"causal thinking\"—distinguishing causation from correlation and recognizing hidden biases—is essential for these agents.\n- **Why Existing Work Falls Short**: Although several benchmarks for AI Scientists exist, none explicitly incorporate challenges prevalent in real-world scientific discovery, such as selection bias, measurement error, and hidden confounders. Consequently, current benchmarks fail to adequately evaluate an agent's true causal reasoning capabilities in complex environments.\n\n## Core Contributions\n- **Proposed CausalGame**: A scalable and controlled benchmark that evaluates the causal thinking capabilities of LLM agents through interactive games.\n- **Challenge 1: Simulating Realistic Causal Pitfalls**. The difficulty lies in requiring agents to not only find correct answers but also to design experiments that distinguish causation from correlation amidst selection bias, measurement errors, and hidden confounders. CausalGame addresses this by designing 14 scenarios incorporating these specific biases, forcing agents to actively design experimental protocols, collect data, and generate explanatory reports, thereby compelling them to demonstrate causal reasoning rather than relying on statistical correlations.\n- **Challenge 2: Comprehensive Evaluation of Reasoning Quality**. The challenge is that many models may arrive at correct answers by luck or pattern matching without genuine causal understanding. The benchmark introduces detailed rubrics covering Causal Reasoning, Experimental Design, Reflection Quality, and Data Usage, ensuring that high scores are awarded only to agents that truly identify and exploit underlying causal mechanisms.\n\n## Implementation and Evaluation\n- **Implementation**: CausalGame consists of 14 carefully designed scenarios simulating causal challenges in scientific exploration. The evaluation involves 30 different LLM agents, requiring them to complete the full pipeline from experimental design to final report generation in an interactive environment.\n- **Evaluation Results**:\n    - **Poor Overall Performance**: None of the 30 tested LLM agents demonstrated reliable causal thinking.\n    - **Survival Rate Gap**: The best-performing model (Claude-Opus-4.5) achieved a survival rate of only 68.0%, significantly below the analytical optima of 78–85%.\n    - **Low Reasoning Quality**: Only 5–7% of sessions received credit on the causal-reasoning rubrics, indicating that most models, even when reaching correct conclusions, failed to correctly identify and utilize underlying causal mechanisms.\n    - **Cost-Performance Trade-off**: Analysis reveals that high performance often comes with high token costs, with distinct Pareto frontiers observed among models like Grok-4.1-Fast and MiniMax-M2, yet none overcame the fundamental bottleneck in causal reasoning.\n\n## 4. Conclusion\nCausalGame fills the gap in current AI Scientist benchmarks regarding the evaluation of causal thinking. By introducing realistic challenges such as selection bias, measurement error, and hidden confounders, the benchmark reveals significant deficiencies in the causal reasoning capabilities of state-of-the-art LLM agents. The results indicate that while LLMs excel in certain tasks, they still tend to rely on correlation rather than causation in scientific discovery scenarios requiring strict causal inference, highlighting an urgent need for improved causal cognitive abilities.",
+      "render_excerpt": "机构: MBZUAI, Carnegie Mellon University, Hong Kong Baptist University, University of Oxford, New York University<br>CausalGame 填补了当前 AI 科学家基准测试在因果思维评估方面的空白。通过引入选择偏差、测量误差和隐藏混淆变量等现实挑战，该基准揭示了当前最先进的 LLM 智能体在因果推理方面的严重不足。研究结果表明，尽管 LLM 在某些任务上表现出色，但在需要严格因果推断的科学发现场景中，它们仍倾向于依赖相关性而非因果性，亟需进一步提升其因果认知能力。",
+      "render_excerpt_en": "Institution: MBZUAI, Carnegie Mellon University, Hong Kong Baptist University, University of Oxford, New York University<br>## 1. What the Paper Did - **Background**: With Large Language Models (LLMs) demonstrating enhanced reasoning capabilities, there is growing interest in building \"AI Scientist\" agents. Since scientific discovery fundamentally relies on uncovering causal relationships, \"causal thinking\"—distinguishing causation from correlation and recognizing hidden biases—is essential for these agents.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-05T13:08:51Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-05"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.05458",
+      "date": "2026-07-05",
+      "title": "Learning to Control LLM Agent Harnesses with Offline Reinforcement Learning",
+      "authors": [
+        "Haiwen Yi",
+        "Xinyuan Song"
+      ],
+      "abstract": "Large language model (LLM) agents are usually improved by changing prompts, models, or hand-written workflows, while the execution harness around the model is treated as fixed infrastructure. We argue that this harness is itself a learnable control layer. We formalize harness operation as a finite-horizon Harness MDP, where a lightweight controller selects structural execution actions while the LLM executor remains frozen. The controller is trained from offline rollouts using advantage-weighted regression with only terminal task-rubric rewards. We also separate final task quality from a post-hoc Harness Maturity Score, which measures whether the harness follows reliable execution patterns rather than only whether the final answer is correct. This separation gives a finite-buffer view of harness learning: final-quality gains require high-return support in the offline buffer, while process behavior can shift whenever it aligns with advantage-weighted actions. Across six controlled domains and two public-benchmark adapters, the learned controller consistently improves verification behavior and selectively improves final task quality, with the largest gains on adapted tau-bench retail, adapted AgentBench DB-Bench, and coding with a calibrated structural verifier. Ablations against behavior cloning and Forced CHECK show that the gains are not explained by imitation or by simply adding checks. These results identify harness control as a learnable layer for frozen LLM agents, while showing that offline support limits when better process control becomes better final answers.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.05458v1",
+        "pdf": "https://arxiv.org/pdf/2607.05458v1",
+        "github": "https://github.com/Hik289/Agentic-RL-harness.git",
+        "blog": null
+      },
+      "institution": "University of Toronto, Emory University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体通常通过修改提示词、模型参数或手工设计的工作流来提升性能，而围绕模型执行的“控制层”（Harness，如决定何时观察、检索、调用工具、检查、修订等）通常被视为固定的基础设施。\n- **已有工作的局限**：现有的控制层多由手写规则、固定模板或静态执行图构成。这种静态设计无法根据任务难度、轨迹状态或中间尝试的成功与否动态调整控制逻辑。例如，“总是检查”会在解决方案已完整时浪费预算，而“起草后即提交”则在草稿未经验证时导致失败。主要问题在于控制序列的僵化，而非模型知识的缺失。\n\n## 文章的核心贡献点\n- **提出了一个基于离线强化学习的可学习 Harness 控制框架**：将 Harness 的操作形式化为有限 horizon 的 Harness MDP，使用轻量级控制器选择结构化的执行动作，同时保持 LLM 执行器冻结。\n- **挑战1：在线探索成本高且易产生低质量轨迹**。在智能体环境中进行在线强化学习探索昂贵且容易生成无效轨迹。**解决方法**：采用离线强化学习方法，利用有限的离线 rollout 缓冲区，通过优势加权回归（Advantage-Weighted Regression, AW）仅使用终端任务评分奖励来训练控制器，避免了在线探索的风险。\n- **挑战2：难以区分最终任务质量与控制过程的可靠性**。传统评估仅关注最终答案是否正确，无法衡量控制策略本身的成熟度。**解决方法**：引入了事后“Harness 成熟度分数”（Harness Maturity Score），将最终任务质量与控制过程是否遵循可靠的执行模式分离开来。这种分离提供了有限缓冲区的视图：最终质量的提升需要离线缓冲区中的高回报支持，而过程行为的改变只要与优势权重对齐即可发生。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在六个受控领域和两个公共基准适配器上进行了评估。\n- **主要结果**：学习到的控制器一致地改进了验证行为，并有选择地提高了最终任务质量。在适配的 tau-bench retail、适配的 AgentBench DB-Bench 以及带有校准结构验证器的编码任务中取得了最大增益。\n- **对比分析**：\n    - 与**行为克隆（Behavior Cloning）**对比：消融实验表明，性能提升不能仅由模仿学习解释，证明了 RL 优势加权的有效性。\n    - 与**强制检查（Forced CHECK）**对比：增益并非仅仅来自于增加检查步骤，而是来自于智能地决定何时检查。\n    - 结果证实，Harness 控制是冻结 LLM 智能体的一个可学习层，但离线支持限制了过程控制转化为最终答案提升的上限。\n\n#### 总结\n本文论证了 LLM 智能体的执行 Harness 不应被视为固定基础设施，而是一个可学习的控制层。通过将其建模为 MDP 并使用离线强化学习训练轻量级控制器，该方法在不更新 LLM 参数的情况下，显著优化了智能体的执行流程（如验证、检索、提交决策）。提出的 Harness 成熟度分数进一步解耦了过程质量与结果质量，揭示了离线数据分布对最终性能提升的限制。这项工作为提升冻结 LLM 智能体的效率和质量提供了新的视角和方法。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents are typically improved by modifying prompts, models, or hand-crafted workflows, while the execution \"harness\" (the control layer deciding when to observe, retrieve, call tools, check, revise, etc.) is treated as fixed infrastructure.\n- **Limitations of Existing Work**: Current harnesses are often static artifacts composed of handwritten rules, fixed templates, or static execution graphs. These designs fail to adapt control logic based on task difficulty, trajectory state, or intermediate success/failure. For instance, \"always check\" wastes budget on complete solutions, while \"submit after draft\" fails on unverified drafts. The core issue is rigid control sequences rather than a lack of model knowledge.\n\n## Core Contributions\n- **Proposed a Learnable Harness Control Framework via Offline RL**: Formalized harness operation as a finite-horizon Harness MDP where a lightweight controller selects structural execution actions while keeping the LLM executor frozen.\n- **Challenge 1: High cost and low quality of online exploration**. Online RL in agent environments is expensive and prone to generating invalid trajectories. **Solution**: Employed offline reinforcement learning using a finite offline rollout buffer. The controller is trained via Advantage-Weighted Regression (AW) using only terminal task-rubric rewards, avoiding the pitfalls of online exploration.\n- **Challenge 2: Difficulty in distinguishing final task quality from control process reliability**. Traditional metrics only measure final answer correctness, ignoring the robustness of the control policy. **Solution**: Introduced a post-hoc \"Harness Maturity Score\" to separate final task quality from whether the harness follows reliable execution patterns. This separation provides a finite-buffer view: final quality gains require high-return support in the offline buffer, while process behavior shifts when aligned with advantage weights.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated across six controlled domains and two public benchmark adapters.\n- **Key Results**: The learned controller consistently improved verification behavior and selectively enhanced final task quality. The largest gains were observed in adapted tau-bench retail, adapted AgentBench DB-Bench, and coding tasks with a calibrated structural verifier.\n- **Comparisons**:\n    - **vs. Behavior Cloning**: Ablation studies showed that gains are not merely due to imitation, validating the effectiveness of RL advantage weighting.\n    - **vs. Forced CHECK**: Improvements were not simply due to adding more checks, but from intelligently deciding when to check.\n    - The results confirm that harness control is a learnable layer for frozen LLM agents, though offline support limits the extent to which better process control translates to better final answers.\n\n## 4. Conclusion\nThis paper argues that the execution harness of LLM agents should not be viewed as fixed infrastructure but as a learnable control layer. By modeling it as an MDP and training a lightweight controller with offline RL, the method significantly optimizes execution flows (e.g., verification, retrieval, submission decisions) without updating LLM parameters. The proposed Harness Maturity Score further decouples process quality from outcome quality, revealing the limitations imposed by offline data distributions on performance gains. This work offers a new perspective and method for enhancing the efficiency and quality of frozen LLM agents.",
+      "render_excerpt": "机构: University of Toronto, Emory University<br>本文论证了 LLM 智能体的执行 Harness 不应被视为固定基础设施，而是一个可学习的控制层。通过将其建模为 MDP 并使用离线强化学习训练轻量级控制器，该方法在不更新 LLM 参数的情况下，显著优化了智能体的执行流程（如验证、检索、提交决策）。提出的 Harness 成熟度分数进一步解耦了过程质量与结果质量，揭示了离线数据分布对最终性能提升的限制。这项工作为提升冻结 LLM 智能体的效率和质量提供了新的视角和方法。",
+      "render_excerpt_en": "Institution: University of Toronto, Emory University<br>## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents are typically improved by modifying prompts, models, or hand-crafted workflows, while the execution \"harness\" (the control layer deciding when to observe, retrieve, call tools, check, revise, etc.) is treated as fixed infrastructure. - **Limitations of Existing Work**: Current harnesses are often static artifacts composed of handwritten rules, fixed templates, or static execution graphs.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-05T22:11:18Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-05"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.04528",
+      "date": "2026-07-05",
+      "title": "Measuring Harness-Induced Belief Divergence in Multi-Step LLM Agents",
+      "authors": [
+        "Haiwen Yi",
+        "Xinyuan Song"
+      ],
+      "abstract": "Software-agent benchmarks usually report whether an agent solves a task, but the agent reaches that outcome through a harness that controls what it sees, which actions it can take, which failures are repaired, which states are verified, and which evidence is logged. We show that this harness can change the agent's multi-step beliefs even when the task, environment, and base LLM are fixed. We introduce a belief-rollout diagnostic that elicits structured K-step trajectories over progress, risk, recoverability, constraints, failure mode, uncertainty, future success, repair cost, and next action under alternative harnesses. We define a cross-harness belief divergence and decompose it into an arrival term for immediate interface shifts and a growth term for horizon-dependent belief changes. On controlled coding tasks and public-benchmark stress tests, blocked actions, compressed repairs, selective verification, and cost-aware evidence pruning often preserve terminal success while changing the beliefs that drive later decisions. We further introduce BIWM, a no-training protocol that canonicalizes observations, logs censored branches, expands repair traces, records verification masks, executes risky branches in shadow, and aligns belief trajectories across harness views. The results suggest that harness design is an experimental variable in agent evaluation, not an implementation detail. Our code is available at https://github.com/Hik289/Harness-induce-bias.git.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.04528v1",
+        "pdf": "https://arxiv.org/pdf/2607.04528v1",
+        "github": "https://github.com/Hik289/Harness-induce-bias.git",
+        "blog": null
+      },
+      "institution": "University of Toronto",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在软件任务中的评估通常仅关注最终结果（是否解决任务），而忽略了执行过程中“Harness”（测试 harness/执行框架）的中介作用。Harness 控制着智能体看到的观测、可采取的动作、失败的修复方式以及日志记录。\n- **已有工作为什么解决不了**：现有研究将执行系统视为中性基础设施，假设只要任务和基础 LLM 固定，智能体的行为逻辑就是一致的。然而，这种观点忽视了 Harness 对信息流的操控会改变智能体的多步信念（Beliefs），进而影响其后续决策路径，即使最终任务成功率保持不变，这种隐性的信念偏差也未被量化或纠正。\n\n## 文章的核心贡献点\n- **提出了一个信念展开诊断方法（Belief-Rollout Diagnostic）和跨 Harness 信念发散度量**：该方法通过 eliciting 结构化的 K 步轨迹（涵盖进度、风险、可恢复性等维度）来量化不同 Harness 设置下智能体信念的差异，并将其分解为“到达项”（即时接口变化）和“增长项”（依赖 horizon 的信念变化）。\n    - **挑战1：如何量化 Harness 对智能体内部状态的非显性影响？**\n        - **难点**：传统的评估只看最终输出，无法捕捉中间推理过程中的信念偏移；且信念是隐式的，难以直接测量。\n        - **解决方法**：论文设计了信念展开诊断，强制智能体在不同 Harness 视图下生成结构化的多步信念轨迹，从而直接观测并量化由 Harness 干预（如阻塞动作、压缩修复）引起的信念发散。\n    - **挑战2：如何在无需重新训练的情况下消除 Harness 引起的信念偏差？**\n        - **难点**：不同的 Harness 导致观测空间不一致，直接对齐困难；且重新训练成本高，缺乏通用的去偏协议。\n        - **解决方法**：提出了 BIWM（Belief-Invariant World-Modeling），一种无需训练的协议。它通过规范化观测、记录被审查的分支、扩展修复痕迹、记录验证掩码以及在影子模式下执行高风险分支，来对齐不同 Harness 视图下的信念轨迹。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在受控的编码任务和公共基准压力测试上进行评估。\n- **主要发现**：研究表明，阻塞动作、压缩修复、选择性验证和成本感知的证据剪枝等操作，虽然往往能保持终端任务的成功率，但会显著改变驱动后续决策的信念。这证明 Harness 设计是智能体评估中的一个关键实验变量，而非单纯的实现细节。\n- **对比与效果**：与传统仅关注结果的评估方法相比，本文提出的诊断方法揭示了隐藏的信念分歧。引入 BIWM 协议后，能够有效对齐不同 Harness 下的信念轨迹，减少了因界面差异导致的决策偏差，证明了其在保持性能一致性的同时提升了评估的公平性和可解释性。\n\n#### 总结\n本文揭示了 LLM 智能体评估中被忽视的关键问题：Harness 的设计会诱导智能体产生信念分歧，进而影响其决策过程，即使最终任务结果相同。通过提出信念展开诊断和 BIWM 协议，作者不仅量化了这种偏差，还提供了一种无需训练的解决方案来规范观测和对齐信念。这项工作强调了在智能体评估中将 Harness 设计视为核心实验变量的重要性，为构建更鲁棒、更公平的智能体评估体系提供了新的视角和方法。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Evaluations of Large Language Model (LLM) agents in software tasks typically focus solely on outcome metrics (whether the task is solved), ignoring the mediating role of the \"Harness\" (execution framework). The Harness controls observations, available actions, failure repairs, and logging.\n- **Why Existing Work Falls Short**: Prior research treats the execution system as neutral infrastructure, assuming that with a fixed task and base LLM, the agent's reasoning remains consistent. This overlooks how Harness manipulations of information flow alter the agent's multi-step beliefs, affecting subsequent decision paths. These implicit belief biases remain unquantified and uncorrected, even when final success rates are unchanged.\n\n## Core Contributions\n- **Proposed a Belief-Rollout Diagnostic and Cross-Harness Belief Divergence Metric**: This method elicits structured K-step belief trajectories (covering progress, risk, recoverability, etc.) to quantify belief differences under different Harness settings, decomposing divergence into an \"arrival term\" (immediate interface shifts) and a \"growth term\" (horizon-dependent changes).\n    - **Challenge 1: How to quantify the non-explicit impact of the Harness on the agent's internal state?**\n        - **Difficulty**: Traditional evaluations only look at final outputs, missing intermediate belief shifts; beliefs are implicit and hard to measure directly.\n        - **Solution**: The paper designs a belief-rollout diagnostic that forces the agent to generate structured multi-step belief trajectories under different Harness views, allowing direct observation and quantification of belief divergence caused by Harness interventions (e.g., blocked actions, compressed repairs).\n    - **Challenge 2: How to eliminate Harness-induced belief bias without retraining?**\n        - **Difficulty**: Different Harnesses create inconsistent observation spaces, making direct alignment difficult; retraining is costly, and there is a lack of general debiasing protocols.\n        - **Solution**: Introduced BIWM (Belief-Invariant World-Modeling), a training-free protocol. It canonicalizes observations, logs censored branches, expands repair traces, records verification masks, and executes risky branches in shadow mode to align belief trajectories across different Harness views.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on controlled coding tasks and public benchmark stress tests.\n- **Key Findings**: The study shows that operations like blocking actions, compressed repairs, selective verification, and cost-aware evidence pruning often preserve terminal success but significantly alter the beliefs driving later decisions. This proves that Harness design is a critical experimental variable in agent evaluation, not just an implementation detail.\n- **Comparison and Effectiveness**: Compared to traditional outcome-only evaluations, the proposed diagnostic reveals hidden belief divergences. The BIWM protocol effectively aligns belief trajectories across different Harnesses, reducing decision bias caused by interface discrepancies, thereby improving evaluation fairness and interpretability while maintaining performance consistency.\n\n## 4. Conclusion\nThis paper highlights a critical overlooked issue in LLM agent evaluation: Harness design induces belief divergence in agents, influencing their decision-making processes even when final task outcomes are identical. By proposing the belief-rollout diagnostic and the BIWM protocol, the authors not only quantify this bias but also provide a training-free solution to normalize observations and align beliefs. This work emphasizes the importance of treating Harness design as a core experimental variable in agent evaluation, offering new perspectives and methods for building more robust and fair agent assessment systems.",
+      "render_excerpt": "机构: University of Toronto<br>本文揭示了 LLM 智能体评估中被忽视的关键问题：Harness 的设计会诱导智能体产生信念分歧，进而影响其决策过程，即使最终任务结果相同。通过提出信念展开诊断和 BIWM 协议，作者不仅量化了这种偏差，还提供了一种无需训练的解决方案来规范观测和对齐信念。这项工作强调了在智能体评估中将 Harness 设计视为核心实验变量的重要性，为构建更鲁棒、更公平的智能体评估体系提供了新的视角和方法。",
+      "render_excerpt_en": "Institution: University of Toronto<br>## 1. What the Paper Does - **Background**: Evaluations of Large Language Model (LLM) agents in software tasks typically focus solely on outcome metrics (whether the task is solved), ignoring the mediating role of the \"Harness\" (execution framework). The Harness controls observations, available actions, failure repairs, and logging.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-05T22:22:39Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-05"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
