@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.10_05:30-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.13_04:55-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月10日 05:30</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月13日 04:55</sub></summary>
 <br>
 
-- UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks 
-- Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing 
-- TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories 
-- WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search 
-- Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination 
+- Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation 
+- Fictional Worldbuilding: Multi-Agent LLM Collaboration with Hierarchical Context Compression and Iterative Review 
+- Communication-Efficient Digital-Twin Coordination for Heterogeneous LLM Embodied Agents over Computing Power Networks 
+- Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents 
+- Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-10</span> | **Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation**<br><sub>机构: University of Birmingham<br>Agora 通过引入拍卖机制解决了 LLM 智能体推理中的动态任务分配难题。它克服了粗粒度路由的结构限制和代理过度自信的估值难题，通过分层校准策略确保基于真实能力进行任务分发。实证结果表明，Agora 在多种复杂任务上显著提升了推理性能，并提供了灵活的成本控制能力，为构建高效、可靠的协作式 LLM 智能体系统提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09600v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09600.md)  |
+| <span style='display: inline-block; width: 42px;'>07-10</span> | **Fictional Worldbuilding: Multi-Agent LLM Collaboration with Hierarchical Context Compression and Iterative Review**<br><sub>机构: National University of Defense Technology<br>本文提出的 AutoWorldBuilder 通过分层上下文压缩、语义局部性调度和生成与审查分离等架构模式，成功解决了LLM在世界构建中的上下文爆炸和一致性难题。该系统不仅在游戏和文学创作领域展示了高效、高质量的自动化构建能力，其核心架构也可迁移至其他知识密集型的复杂多智能体LLM应用中。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09403v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09403.md)  |
+| <span style='display: inline-block; width: 42px;'>07-10</span> | **Communication-Efficient Digital-Twin Coordination for Heterogeneous LLM Embodied Agents over Computing Power Networks**<br><sub>机构: Beijing University of Posts and Telecommunications; Singapore University of Technology and Design<br>本文针对异构 LLM 具身智能体团队在资源受限网络下的协作难题，提出了 LDT-Coord 框架。通过引入轻量级数字孪生和结构化约束报告，成功将协调机制从昂贵的自然语言对话中解耦出来。结合基于规则的冲突解决器和基于强化学习的通信控制策略，该方法在保证任务成功率的同时，极大地降低了通信开销，为大规模异构具身智能体的高效协同提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09330v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09330.md)  |
+| <span style='display: inline-block; width: 42px;'>07-10</span> | **Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents**<br><sub>机构: Institute of Industrial Science, The University of Tokyo<br>本文提出了假设演化协议（HEP），旨在解决LLM科学代理中推理过程不透明和信念更新不可审计的问题。通过将科学发现过程结构化为显式的假设、测试、证据和信念循环，HEP使得AI科学家的推理过程可被人类检查、验证和继承。这在材料科学任务中的初步应用表明，该方法能促进更可靠、更具解释性的自主科学研究，是迈向可审计AI科学家的重要一步。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09195v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09195.md)  |
+| <span style='display: inline-block; width: 42px;'>07-10</span> | **Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift**<br><sub>机构: RedMind Research; National Taiwan University<br>本文指出了可靠长期上下文演化的两个关键要求：一是使验证局部化的结构基础，二是保持积累指令内容可用的整合机制。GRACE 通过图正则化的方法有效解决了长周期演化中的验证难题和一致性问题，显著提升了智能体在分布偏移下的可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09175v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09175.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/RedMind-Research/GRACE)</div> |
 | <span style='display: inline-block; width: 42px;'>07-09</span> | **UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks**<br><sub>机构: HKU MMLab, Meituan<br>UniClawBench 填补了主动式智能体在真实世界动态环境中评估的空白。通过引入以能力为中心的任务设计和创新的三轮闭环评估机制，它不仅提供了更真实的性能度量，还揭示了框架设计在智能体性能中的决定性作用以及多模态和长上下文处理的主要短板。该基准及其代码已公开，旨在推动下一代鲁棒、高效主动式智能体的研发。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08768v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08768.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/HKU-MMLab/UniClawBench)</div> |
 | <span style='display: inline-block; width: 42px;'>07-09</span> | **Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing**<br><sub>机构: Peking University, WeChat Vision (Tencent Inc.)<br>本文针对统一多模态模型在长程对话中的上下文瓶颈和引用不可靠问题，提出了一种基于认知结构的智能体架构。通过外化视觉记忆、结构化抽象以及基于合成数据的强化学习优化，该方法在显著降低计算成本的同时，大幅提升了长程多轮对话中的视觉检索准确性和任务执行效率，为多模态智能体的可扩展性提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08497v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08497.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/caseclose/cma-harness)</div> |
 | <span style='display: inline-block; width: 42px;'>07-09</span> | **TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories**<br><sub>机构: University of New South Wales<br>TRACE 通过创新的双通道设计解决了 LLM Agent 轨迹水印中的核心难题。它利用基于内容的选择通道抵抗删除攻击，利用基于结构的计数通道抵抗重写攻击，理论上证明了水印信号以决策熵为代价，且迫使攻击者若要消除水印必须破坏轨迹本身。该方法在保证 Agent 性能的同时，提供了极强的归因鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.08400v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.08400.md)  |
