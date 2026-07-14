@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.13_04:55-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.14_04:24-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月13日 04:55</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月14日 04:24</sub></summary>
 <br>
 
-- Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation 
-- Fictional Worldbuilding: Multi-Agent LLM Collaboration with Hierarchical Context Compression and Iterative Review 
-- Communication-Efficient Digital-Twin Coordination for Heterogeneous LLM Embodied Agents over Computing Power Networks 
-- Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents 
-- Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift 
+- TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair 
+- StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure 
+- MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents 
+- Agentic Skill Optimization over Lie Algebroids 
+- PaperRouter-Agent: A Content-Grounded LLM Agent for Personalized Hierarchical Paper Routing 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-13</span> | **TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair**<br><sub>机构: University of L’Aquila<br>TerraRepair 证明了工具接地（tool grounding）可以显著提高基于 LLM 的 IaC 修复在扫描器验证下的成功率。通过结合 Provider Schema 查询、依赖上下文检索和结构化升级机制，它有效解决了 LLM 幻觉和上下文缺失问题。然而，研究也指出，缺失的部署特定上下文仍然是实现完全自主修复的主要知识边界。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11390v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11390.md)  |
+| <span style='display: inline-block; width: 42px;'>07-13</span> | **StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure**<br><sub>机构: University of California, San Diego; Aether AI Lab<br>StructAgent 通过引入统一因果结构来解决长周期数字代理中的状态管理和工作流控制问题。它摒弃了传统的基于原始交互历史的方法，转而采用以验证为核心的统一状态和结构化工作流。这种方法不仅提高了任务进度的可解释性和可验证性，还实现了高效的错误恢复和精确规划。实验结果表明，StructAgent 在多个基准测试上大幅超越了现有方法，并为开源数字代理设立了新的性能标杆，展示了其在复杂、长周期自动化任务中的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11388v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11388.md)  |
+| <span style='display: inline-block; width: 42px;'>07-13</span> | **MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents**<br><sub>机构: Apple<br>MM-ToolSandBox 填补了多模态智能体在复杂、动态、大规模工具空间下进行视觉工具调用评估的空白。研究结果表明，当前最先进的模型在处理视觉 grounding 的工具调用任务时仍面临巨大挑战，尤其是视觉信息提取的精度问题。该框架为未来研究提供了重要的基准和洞察，强调了针对不同规模模型需采取不同的优化策略。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11818v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11818.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/apple/ml-mmtoolsandbox)</div> |
+| <span style='display: inline-block; width: 42px;'>07-13</span> | **Agentic Skill Optimization over Lie Algebroids**<br><sub>机构: University of Massachusetts, Amherst<br>本文提出了 LASKO 框架，首次将李代数胚几何引入智能体技能优化领域。通过建模编辑的非交换性和隐藏结构，LASKO 解决了传统方法中编辑顺序敏感和验证成本高昂的问题。实验表明，该方法在保持优化效果的同时，相比基于超大参数模型的暴力验证方法取得了显著的效率提升，为智能体自我改进提供了几何化的理论基础和高效实践路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11493v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11493.md)  |
+| <span style='display: inline-block; width: 42px;'>07-13</span> | **PaperRouter-Agent: A Content-Grounded LLM Agent for Personalized Hierarchical Paper Routing**<br><sub>机构: University of Sydney<br>PaperRouter-Agent 通过引入“基于内容 grounding”的机制，成功解决了个性化文献管理中层级路由的难题。它突破了传统方法仅依赖文件夹名称的局限，通过深入分析文件夹内已有论文的语义内容来理解用户私有的分类逻辑。实验证明，该方法在真实场景和公共基准上均显著提升了路由准确性，特别是在处理非主题性（如按会议、年份分类）文件夹时优势明显，为个人知识管理提供了高效、低成本的自动化解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11564v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11564.md)  |
 | <span style='display: inline-block; width: 42px;'>07-10</span> | **Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation**<br><sub>机构: University of Birmingham<br>Agora 通过引入拍卖机制解决了 LLM 智能体推理中的动态任务分配难题。它克服了粗粒度路由的结构限制和代理过度自信的估值难题，通过分层校准策略确保基于真实能力进行任务分发。实证结果表明，Agora 在多种复杂任务上显著提升了推理性能，并提供了灵活的成本控制能力，为构建高效、可靠的协作式 LLM 智能体系统提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09600v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09600.md)  |
 | <span style='display: inline-block; width: 42px;'>07-10</span> | **Fictional Worldbuilding: Multi-Agent LLM Collaboration with Hierarchical Context Compression and Iterative Review**<br><sub>机构: National University of Defense Technology<br>本文提出的 AutoWorldBuilder 通过分层上下文压缩、语义局部性调度和生成与审查分离等架构模式，成功解决了LLM在世界构建中的上下文爆炸和一致性难题。该系统不仅在游戏和文学创作领域展示了高效、高质量的自动化构建能力，其核心架构也可迁移至其他知识密集型的复杂多智能体LLM应用中。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09403v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09403.md)  |
 | <span style='display: inline-block; width: 42px;'>07-10</span> | **Communication-Efficient Digital-Twin Coordination for Heterogeneous LLM Embodied Agents over Computing Power Networks**<br><sub>机构: Beijing University of Posts and Telecommunications; Singapore University of Technology and Design<br>本文针对异构 LLM 具身智能体团队在资源受限网络下的协作难题，提出了 LDT-Coord 框架。通过引入轻量级数字孪生和结构化约束报告，成功将协调机制从昂贵的自然语言对话中解耦出来。结合基于规则的冲突解决器和基于强化学习的通信控制策略，该方法在保证任务成功率的同时，极大地降低了通信开销，为大规模异构具身智能体的高效协同提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.09330v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.09330.md)  |

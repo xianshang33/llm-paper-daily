@@ -1,39 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-13T04:55:53.582104+00:00",
-  "run_date": "2026-07-10",
+  "generated_at": "2026-07-14T04:24:39.284608+00:00",
+  "run_date": "2026-07-13",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.09600",
-      "date": "2026-07-10",
-      "title": "Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation",
+      "id": "arxiv:2607.11390",
+      "date": "2026-07-13",
+      "title": "TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kaiji Zhou",
-        "Ales Leonardis",
-        "Yue Feng"
+        "Minase Mekete Mengistu",
+        "Juri Di Rocco",
+        "Phuong T. Nguyen",
+        "Davide Di Ruscio"
       ],
-      "institution": "University of Birmingham",
+      "institution": "University of L’Aquila",
       "summary": {
-        "zh": "Agora 通过引入拍卖机制解决了 LLM 智能体推理中的动态任务分配难题。它克服了粗粒度路由的结构限制和代理过度自信的估值难题，通过分层校准策略确保基于真实能力进行任务分发。实证结果表明，Agora 在多种复杂任务上显著提升了推理性能，并提供了灵活的成本控制能力，为构建高效、可靠的协作式 LLM 智能体系统提供了新范式。",
-        "en": "- **Background**: Enhancing the reasoning capabilities of Large Language Model (LLM) agents requires effective orchestration of diverse expert models and tools. Current systems often rely on static assignment or..."
+        "zh": "TerraRepair 证明了工具接地（tool grounding）可以显著提高基于 LLM 的 IaC 修复在扫描器验证下的成功率。通过结合 Provider Schema 查询、依赖上下文检索和结构化升级机制，它有效解决了 LLM 幻觉和上下文缺失问题。然而，研究也指出，缺失的部署特定上下文仍然是实现完全自主修复的主要知识边界。",
+        "en": "- **Background**: Infrastructure-as-Code (IaC) scanners detect cloud misconfigurations in Terraform before deployment, but repairing these issues remains largely manual. While recent Large Language Model (LLM)-based..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.09600v1",
-        "pdf": "https://arxiv.org/pdf/2607.09600v1",
+        "abs": "http://arxiv.org/abs/2607.11390v1",
+        "pdf": "https://arxiv.org/pdf/2607.11390v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.09600.md",
-        "summary_en_path": "summary_en/2026-07/2607.09600.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.09600.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.09600.md"
+        "summary_zh_path": "summary/2026-07/2607.11390.md",
+        "summary_en_path": "summary_en/2026-07/2607.11390.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.11390.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.11390.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,36 +51,37 @@
       }
     },
     {
-      "id": "arxiv:2607.09403",
-      "date": "2026-07-10",
-      "title": "Fictional Worldbuilding: Multi-Agent LLM Collaboration with Hierarchical Context Compression and Iterative Review",
+      "id": "arxiv:2607.11388",
+      "date": "2026-07-13",
+      "title": "StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jingbo Chen",
-        "He Wang",
-        "Wei Yuan",
-        "Yuqiao Lai",
-        "Zhenyan Lu"
+        "Wenyi Wu",
+        "Sibo Zhu",
+        "Kun Zhou",
+        "Aayush Salvi",
+        "Zixuan Song",
+        "Biwei Huang"
       ],
-      "institution": "National University of Defense Technology",
+      "institution": "University of California, San Diego; Aether AI Lab",
       "summary": {
-        "zh": "本文提出的 AutoWorldBuilder 通过分层上下文压缩、语义局部性调度和生成与审查分离等架构模式，成功解决了LLM在世界构建中的上下文爆炸和一致性难题。该系统不仅在游戏和文学创作领域展示了高效、高质量的自动化构建能力，其核心架构也可迁移至其他知识密集型的复杂多智能体LLM应用中。",
-        "en": "- **Background**: Worldbuilding is a foundational task in game design and literary creation, involving dozens to hundreds of interconnected concepts such as geography, races, and history. Traditional manual construction..."
+        "zh": "StructAgent 通过引入统一因果结构来解决长周期数字代理中的状态管理和工作流控制问题。它摒弃了传统的基于原始交互历史的方法，转而采用以验证为核心的统一状态和结构化工作流。这种方法不仅提高了任务进度的可解释性和可验证性，还实现了高效的错误恢复和精确规划。实验结果表明，StructAgent 在多个基准测试上大幅超越了现有方法，并为开源数字代理设立了新的性能标杆，展示了其在复杂、长周期自动化任务中的巨大潜力。",
+        "en": "- **Background**: Recent advances in Large Language Models (LLMs) and Vision-Language Models (VLMs) have empowered digital agents for computer use. However, real-world tasks are often long-horizon, involving evolving..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.09403v1",
-        "pdf": "https://arxiv.org/pdf/2607.09403v1",
+        "abs": "http://arxiv.org/abs/2607.11388v1",
+        "pdf": "https://arxiv.org/pdf/2607.11388v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.09403.md",
-        "summary_en_path": "summary_en/2026-07/2607.09403.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.09403.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.09403.md"
+        "summary_zh_path": "summary/2026-07/2607.11388.md",
+        "summary_en_path": "summary_en/2026-07/2607.11388.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.11388.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.11388.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,36 +98,37 @@
       }
     },
     {
-      "id": "arxiv:2607.09330",
-      "date": "2026-07-10",
-      "title": "Communication-Efficient Digital-Twin Coordination for Heterogeneous LLM Embodied Agents over Computing Power Networks",
+      "id": "arxiv:2607.11818",
+      "date": "2026-07-13",
+      "title": "MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nuocheng Yang",
-        "Sihua Wang",
-        "Zihan Chen",
-        "Tony Q. S. Quek",
-        "Changchuan Yin"
+        "Kaixin Ma",
+        "Di Feng",
+        "Alexander Metz",
+        "Jiarui Lu",
+        "Eshan Verma",
+        "Afshin Dehghan"
       ],
-      "institution": "Beijing University of Posts and Telecommunications; Singapore University of Technology and Design",
+      "institution": "Apple",
       "summary": {
-        "zh": "本文针对异构 LLM 具身智能体团队在资源受限网络下的协作难题，提出了 LDT-Coord 框架。通过引入轻量级数字孪生和结构化约束报告，成功将协调机制从昂贵的自然语言对话中解耦出来。结合基于规则的冲突解决器和基于强化学习的通信控制策略，该方法在保证任务成功率的同时，极大地降低了通信开销，为大规模异构具身智能体的高效协同提供了新的解决方案。",
-        "en": "This paper addresses the collaboration challenges of heterogeneous LLM embodied agent teams under resource-constrained networks by proposing LDT-Coord. By introducing a lightweight Digital Twin and structured constraint..."
+        "zh": "MM-ToolSandBox 填补了多模态智能体在复杂、动态、大规模工具空间下进行视觉工具调用评估的空白。研究结果表明，当前最先进的模型在处理视觉 grounding 的工具调用任务时仍面临巨大挑战，尤其是视觉信息提取的精度问题。该框架为未来研究提供了重要的基准和洞察，强调了针对不同规模模型需采取不同的优化策略。",
+        "en": "- **Background**: Evaluating LLM-based agents on tool-augmented tasks is an active research area, but existing benchmarks are predominantly text-centric and fail to evaluate realistic assistant tasks involving visual..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.09330v1",
-        "pdf": "https://arxiv.org/pdf/2607.09330v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.11818v1",
+        "pdf": "https://arxiv.org/pdf/2607.11818v1",
+        "github": "https://github.com/apple/ml-mmtoolsandbox"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.09330.md",
-        "summary_en_path": "summary_en/2026-07/2607.09330.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.09330.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.09330.md"
+        "summary_zh_path": "summary/2026-07/2607.11818.md",
+        "summary_en_path": "summary_en/2026-07/2607.11818.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.11818.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.11818.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -142,33 +145,32 @@
       }
     },
     {
-      "id": "arxiv:2607.09195",
-      "date": "2026-07-10",
-      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "id": "arxiv:2607.11493",
+      "date": "2026-07-13",
+      "title": "Agentic Skill Optimization over Lie Algebroids",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Izumi Takahara",
-        "Teruyasu Mizoguchi"
+        "Sridhar Mahadevan"
       ],
-      "institution": "Institute of Industrial Science, The University of Tokyo",
+      "institution": "University of Massachusetts, Amherst",
       "summary": {
-        "zh": "本文提出了假设演化协议（HEP），旨在解决LLM科学代理中推理过程不透明和信念更新不可审计的问题。通过将科学发现过程结构化为显式的假设、测试、证据和信念循环，HEP使得AI科学家的推理过程可被人类检查、验证和继承。这在材料科学任务中的初步应用表明，该方法能促进更可靠、更具解释性的自主科学研究，是迈向可审计AI科学家的重要一步。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly central to AI-driven scientific discovery, with the potential to autonomously propose hypotheses, test them, and revise beliefs based on evidence. -..."
+        "zh": "本文提出了 LASKO 框架，首次将李代数胚几何引入智能体技能优化领域。通过建模编辑的非交换性和隐藏结构，LASKO 解决了传统方法中编辑顺序敏感和验证成本高昂的问题。实验表明，该方法在保持优化效果的同时，相比基于超大参数模型的暴力验证方法取得了显著的效率提升，为智能体自我改进提供了几何化的理论基础和高效实践路径。",
+        "en": "- **Background**: Agentic systems are increasingly improving themselves by editing skills such as prompts, rubrics, plans, and tool contracts. Existing approaches like SKILL OPT treat skill optimization as an..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.09195v1",
-        "pdf": "https://arxiv.org/pdf/2607.09195v1",
+        "abs": "http://arxiv.org/abs/2607.11493v1",
+        "pdf": "https://arxiv.org/pdf/2607.11493v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.09195.md",
-        "summary_en_path": "summary_en/2026-07/2607.09195.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.09195.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.09195.md"
+        "summary_zh_path": "summary/2026-07/2607.11493.md",
+        "summary_en_path": "summary_en/2026-07/2607.11493.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.11493.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.11493.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,33 +187,37 @@
       }
     },
     {
-      "id": "arxiv:2607.09175",
-      "date": "2026-07-10",
-      "title": "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift",
+      "id": "arxiv:2607.11564",
+      "date": "2026-07-13",
+      "title": "PaperRouter-Agent: A Content-Grounded LLM Agent for Personalized Hierarchical Paper Routing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dan C. Hsu",
-        "Luke Lu"
+        "Keshen Zhou",
+        "Lintao Wang",
+        "Suqin Yuan",
+        "Zhuqiang Lu",
+        "Yu Luo",
+        "Zhiyong Wang"
       ],
-      "institution": "RedMind Research; National Taiwan University",
+      "institution": "University of Sydney",
       "summary": {
-        "zh": "本文指出了可靠长期上下文演化的两个关键要求：一是使验证局部化的结构基础，二是保持积累指令内容可用的整合机制。GRACE 通过图正则化的方法有效解决了长周期演化中的验证难题和一致性问题，显著提升了智能体在分布偏移下的可靠性。",
-        "en": "- **Background**: Deployed LLM agents rely on \"agentic context,\" specifically mutable persistent system-level instructions updated from operational experience while the model and tools remain fixed. - **Why Existing..."
+        "zh": "PaperRouter-Agent 通过引入“基于内容 grounding”的机制，成功解决了个性化文献管理中层级路由的难题。它突破了传统方法仅依赖文件夹名称的局限，通过深入分析文件夹内已有论文的语义内容来理解用户私有的分类逻辑。实验证明，该方法在真实场景和公共基准上均显著提升了路由准确性，特别是在处理非主题性（如按会议、年份分类）文件夹时优势明显，为个人知识管理提供了高效、低成本的自动化解决方案。",
+        "en": "- **Background**: Researchers organize collected papers into personal folder hierarchies in reference managers (e.g., Zotero). Routing new papers to the correct folder is a recurring task, formalized here as..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.09175v1",
-        "pdf": "https://arxiv.org/pdf/2607.09175v1",
-        "github": "https://github.com/RedMind-Research/GRACE"
+        "abs": "http://arxiv.org/abs/2607.11564v1",
+        "pdf": "https://arxiv.org/pdf/2607.11564v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.09175.md",
-        "summary_en_path": "summary_en/2026-07/2607.09175.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.09175.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.09175.md"
+        "summary_zh_path": "summary/2026-07/2607.11564.md",
+        "summary_en_path": "summary_en/2026-07/2607.11564.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.11564.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.11564.md"
       },
       "signals": {
         "priority_keyword": "Agent"
