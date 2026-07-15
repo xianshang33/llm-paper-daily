@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.14_04:24-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.15_04:23-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月14日 04:24</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月15日 04:23</sub></summary>
 <br>
 
-- TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair 
-- StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure 
-- MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents 
-- Agentic Skill Optimization over Lie Algebroids 
-- PaperRouter-Agent: A Content-Grounded LLM Agent for Personalized Hierarchical Paper Routing 
+- Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents 
+- A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism 
+- Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs 
+- Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution 
+- PalmClaw: A Native On-Device Agent Framework for Mobile Phones 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-14</span> | **Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents**<br><sub>本文指出了自进化智能体系统中对可靠评价指标的隐性依赖问题，并提出了 Double Ratchet 框架来解决在无可靠自动验证器场景下的自我提升难题。通过协同进化评价指标和技能，并结合严格的锚定审计机制，该方法不仅在多个复杂任务上达到了接近有监督学习的性能水平，还有效防止了指标博弈，为缺乏地面真值的实际应用提供了一种默认的安全且高效的架构选择。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12790v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12790.md)  |
+| <span style='display: inline-block; width: 42px;'>07-14</span> | **A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism**<br><sub>## 文章做了什么 - **背景**：目前，基于可验证奖励的强化学习（RLVR），特别是组相对策略优化（GRPO），常被应用于监督微调（SFT）后的检查点，以期获得更强大的智能体。 - **已有工作为什么解决不了**：现有研究通常假设在已具备一定能力的模型上应用GRPO能进一步提升性能，但缺乏对小规模（4B-8B）语言和视觉语言模型Web智能体在任务已 largely mastered（基本掌握）情况下，GRPO究竟是增加了新技能还是仅重塑了既有行为的深入理解。此前未明确界定GRPO生效的边界条件及其失效机制。 ## 文章的核心贡献点 - **提出了一个受控的零结果（Controlled Null）及其机制解释**：通过大规模控制实验证明，在智能体已高度掌握的任务上，GRPO无法提升成功率，甚至可能有害，并揭示了其背后的模型内部机制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12640v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12640.md)  |
+| <span style='display: inline-block; width: 42px;'>07-14</span> | **Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs**<br><sub>EG-VAR 通过引入基于 Lean 4 的形式化验证机制，解决了 LLM 在经验推理中的幻觉问题。它不仅在数值推理和压力测试中展现了优于现有方法的准确性和源忠实度，还提供了一种技术治理接口，使得高风险的 AI 决策过程完全可审计。随着类型化侧车在数据集和 API 中的普及，这种形式化负担有望被摊销到可复用的基础设施中，从而从根本上提升 LLM 推理的可信度。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12650.md)  |
+| <span style='display: inline-block; width: 42px;'>07-14</span> | **Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution**<br><sub>本文指出了当前 LLM 智能体在任务执行中存在的严重认知冗余问题，提出了任务感知执行范围估计的重要性。通过引入 E3 框架，实现了“估计-执行-扩展”的闭环控制，在保证任务成功率的前提下极大提升了执行效率。这项工作被视为迈向“工程 grounded AI”（EGAI）的重要一步，即让智能体的努力程度与任务的工程现实相匹配。作者已公开相关框架和基准测试。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13034v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13034.md)  |
+| <span style='display: inline-block; width: 42px;'>07-14</span> | **PalmClaw: A Native On-Device Agent Framework for Mobile Phones**<br><sub>PalmClaw解决了移动智能体长期依赖低效GUI操作的问题，通过原生设备端框架将设备能力工具化，实现了更高效、可控且边界清晰的移动任务自动化，在性能和速度上均取得了显著突破。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13027v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13027.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ModalityDance/PalmClaw)</div> |
 | <span style='display: inline-block; width: 42px;'>07-13</span> | **TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair**<br><sub>机构: University of L’Aquila<br>TerraRepair 证明了工具接地（tool grounding）可以显著提高基于 LLM 的 IaC 修复在扫描器验证下的成功率。通过结合 Provider Schema 查询、依赖上下文检索和结构化升级机制，它有效解决了 LLM 幻觉和上下文缺失问题。然而，研究也指出，缺失的部署特定上下文仍然是实现完全自主修复的主要知识边界。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11390v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11390.md)  |
 | <span style='display: inline-block; width: 42px;'>07-13</span> | **StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure**<br><sub>机构: University of California, San Diego; Aether AI Lab<br>StructAgent 通过引入统一因果结构来解决长周期数字代理中的状态管理和工作流控制问题。它摒弃了传统的基于原始交互历史的方法，转而采用以验证为核心的统一状态和结构化工作流。这种方法不仅提高了任务进度的可解释性和可验证性，还实现了高效的错误恢复和精确规划。实验结果表明，StructAgent 在多个基准测试上大幅超越了现有方法，并为开源数字代理设立了新的性能标杆，展示了其在复杂、长周期自动化任务中的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11388v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11388.md)  |
 | <span style='display: inline-block; width: 42px;'>07-13</span> | **MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents**<br><sub>机构: Apple<br>MM-ToolSandBox 填补了多模态智能体在复杂、动态、大规模工具空间下进行视觉工具调用评估的空白。研究结果表明，当前最先进的模型在处理视觉 grounding 的工具调用任务时仍面临巨大挑战，尤其是视觉信息提取的精度问题。该框架为未来研究提供了重要的基准和洞察，强调了针对不同规模模型需采取不同的优化策略。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.11818v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.11818.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/apple/ml-mmtoolsandbox)</div> |
