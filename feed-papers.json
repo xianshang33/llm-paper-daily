@@ -1,43 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-15T04:23:35.330149+00:00",
-  "run_date": "2026-07-14",
+  "generated_at": "2026-07-16T04:33:32.432920+00:00",
+  "run_date": "2026-07-15",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.12790",
-      "date": "2026-07-14",
-      "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
+      "id": "arxiv:2607.13618",
+      "date": "2026-07-15",
+      "title": "STOCKTAKE: Measuring the Gap Between Perception and Action in LLM Agents with a Fair Oracle",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xing Zhang",
-        "Guanghui Wang",
-        "Yanwei Cui",
-        "Ziyuan Li",
-        "Wei Qiu",
-        "Bing Zhu",
-        "Peiyang He"
+        "Sagar Deb",
+        "Ashwanth Krishnan"
       ],
-      "institution": null,
+      "institution": "QpiAI",
       "summary": {
-        "zh": "本文指出了自进化智能体系统中对可靠评价指标的隐性依赖问题，并提出了 Double Ratchet 框架来解决在无可靠自动验证器场景下的自我提升难题。通过协同进化评价指标和技能，并结合严格的锚定审计机制，该方法不仅在多个复杂任务上达到了接近有监督学习的性能水平，还有效防止了指标博弈，为缺乏地面真值的实际应用提供了一种默认的安全且高效的架构选择。",
-        "en": "- **Background**: Self-evolving agent systems improve by creating, revising, and retiring their own skills, but this loop relies on a hidden assumption: the existence of a reliable evaluation metric. - **Why Existing..."
+        "zh": "STOCKTAKE 通过引入基于精确贝叶斯滤波的公平 Oracle，成功解决了 LLM 智能体在部分可观测环境中评估难的问题。它明确区分了感知失败和控制失败，并揭示了当前顶级模型的主要瓶颈不在于无法发现隐藏状态，而在于难以将正确的认知转化为经济高效的行动。该基准为未来改进智能体的推理脚手架和策略提取提供了明确的度量方向。",
+        "en": "- **Background**: LLM agents are increasingly evaluated on long-horizon decision tasks (e.g., supply chain management) where the state driving cost is hidden and unobservable. Final costs do not reveal whether failure..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.12790v1",
-        "pdf": "https://arxiv.org/pdf/2607.12790v1",
+        "abs": "http://arxiv.org/abs/2607.13618v1",
+        "pdf": "https://arxiv.org/pdf/2607.13618v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.12790.md",
-        "summary_en_path": "summary_en/2026-07/2607.12790.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.12790.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.12790.md"
+        "summary_zh_path": "summary/2026-07/2607.13618.md",
+        "summary_en_path": "summary_en/2026-07/2607.13618.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13618.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13618.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,42 +44,50 @@
         "summary_en": "dashscope",
         "github": "dashscope|none",
         "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
+        "pdf_download": "ok",
         "pdf_extract": "ok"
       }
     },
     {
-      "id": "arxiv:2607.12640",
-      "date": "2026-07-14",
-      "title": "A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism",
+      "id": "arxiv:2607.13591",
+      "date": "2026-07-15",
+      "title": "Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chengguang Gan",
-        "Zhixi Cai",
-        "Yunhao Liang",
-        "Hanjun Wei",
-        "Shiwen Ni",
-        "Qinghao Zhang"
+        "Eric Hanchen Jiang",
+        "Zhi Zhang",
+        "Yuchen Wu",
+        "Levina Li",
+        "Dong Liu",
+        "Xiao Liang",
+        "Rui Sun",
+        "Yubei Li",
+        "Edward Sun",
+        "Haozheng Luo",
+        "Zhaolu Kang",
+        "Aylin Caliskan",
+        "Kai-Wei Chang",
+        "Ying Nian Wu"
       ],
-      "institution": null,
+      "institution": "University of California Los Angeles",
       "summary": {
-        "zh": "- **背景**：目前，基于可验证奖励的强化学习（RLVR），特别是组相对策略优化（GRPO），常被应用于监督微调（SFT）后的检查点，以期获得更强大的智能体。 - **已有工作为什么解决不了**：现有研究通常假设在已具备一定能力的模型上应用GRPO能进一步提升性能，但缺乏对小规模（4B-8B）语言和视觉语言模型Web智能体在任务已 largely...",
-        "en": "- **Background**: Reinforcement learning with verifiable rewards (RLVR), particularly Group Relative Policy Optimization (GRPO), is routinely applied to supervised fine-tuned checkpoints to create stronger agents. -..."
+        "zh": "- **背景**：大型语言模型（LLM）智能体越来越依赖外部记忆系统来跨任务积累经验，以避免重复错误并复用策略。然而，现有的记忆系统（从图结构记忆到反思性洞察存储）大多通过固定的、手工设计的启发式规则来访问记忆。 -...",
+        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on external memory systems to accumulate experience across tasks, avoiding repeated mistakes and reusing strategies. However, existing memory..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.12640v1",
-        "pdf": "https://arxiv.org/pdf/2607.12640v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.13591v1",
+        "pdf": "https://arxiv.org/pdf/2607.13591v1",
+        "github": "https://github.com/ericjiang18/MemCon/"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.12640.md",
-        "summary_en_path": "summary_en/2026-07/2607.12640.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.12640.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.12640.md"
+        "summary_zh_path": "summary/2026-07/2607.13591.md",
+        "summary_en_path": "summary_en/2026-07/2607.13591.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13591.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13591.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,37 +99,40 @@
         "summary_en": "dashscope",
         "github": "dashscope|none",
         "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
+        "pdf_download": "ok",
         "pdf_extract": "ok"
       }
     },
     {
-      "id": "arxiv:2607.12650",
-      "date": "2026-07-14",
-      "title": "Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs",
+      "id": "arxiv:2607.13655",
+      "date": "2026-07-15",
+      "title": "Explaining Reinforcement Learning Agents via Inductive Logic Programming",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junyu Ren"
+        "Celeste Veronese",
+        "Edoardo Zorzi",
+        "Daniele Meli",
+        "Alessandro Farinelli"
       ],
-      "institution": null,
+      "institution": "University of Verona",
       "summary": {
-        "zh": "EG-VAR 通过引入基于 Lean 4 的形式化验证机制，解决了 LLM 在经验推理中的幻觉问题。它不仅在数值推理和压力测试中展现了优于现有方法的准确性和源忠实度，还提供了一种技术治理接口，使得高风险的 AI 决策过程完全可审计。随着类型化侧车在数据集和 API 中的普及，这种形式化负担有望被摊销到可复用的基础设施中，从而从根本上提升 LLM 推理的可信度。",
-        "en": "EG-VAR addresses LLM hallucinations in empirical reasoning by introducing a Lean 4-based formal verification mechanism. It demonstrates superior accuracy and source faithfulness compared to existing methods in both..."
+        "zh": "本文通过引入归纳逻辑编程（ILP）来提取 RL 策略的符号表示，并定义了一套全新的、面向规划和客观的可解释性度量指标（如激活率、特征覆盖率、句法和语义距离）。这项工作不仅推进了 XRL 的发展，使其摆脱了对主观用户研究的过度依赖，还为逻辑 XAI 领域提供了量化逻辑规则可解释性的原则性方法。实验证明，这些指标能深入揭示单智能体及多智能体系统中的学习动态、特征作用及协作模式，为构建更稳健、可信的安全关键型 RL 应用奠定了基础。",
+        "en": "- **Background**: Explainable Reinforcement Learning (XRL) aims to enhance the transparency and interpretability of Reinforcement Learning (RL) policies, which is crucial for safety-critical and human-centric scenarios...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.12650v1",
-        "pdf": "https://arxiv.org/pdf/2607.12650v1",
+        "abs": "http://arxiv.org/abs/2607.13655v1",
+        "pdf": "https://arxiv.org/pdf/2607.13655v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.12650.md",
-        "summary_en_path": "summary_en/2026-07/2607.12650.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.12650.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.12650.md"
+        "summary_zh_path": "summary/2026-07/2607.13655.md",
+        "summary_en_path": "summary_en/2026-07/2607.13655.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13655.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13655.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -138,38 +144,40 @@
         "summary_en": "dashscope",
         "github": "dashscope|none",
         "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
+        "pdf_download": "ok",
         "pdf_extract": "ok"
       }
     },
     {
-      "id": "arxiv:2607.13034",
-      "date": "2026-07-14",
-      "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+      "id": "arxiv:2607.13608",
+      "date": "2026-07-15",
+      "title": "Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junjie Yin",
-        "Xinyu Feng"
+        "David Krongauz",
+        "Arad Zulti",
+        "Eran Segal",
+        "Teddy Lazebnik"
       ],
-      "institution": null,
+      "institution": "Weizmann Institute of Science",
       "summary": {
-        "zh": "本文指出了当前 LLM 智能体在任务执行中存在的严重认知冗余问题，提出了任务感知执行范围估计的重要性。通过引入 E3 框架，实现了“估计-执行-扩展”的闭环控制，在保证任务成功率的前提下极大提升了执行效率。这项工作被视为迈向“工程 grounded AI”（EGAI）的重要一步，即让智能体的努力程度与任务的工程现实相匹配。作者已公开相关框架和基准测试。",
-        "en": "This paper highlights the severe cognitive redundancy in current LLM agent task execution and emphasizes the importance of task-aware execution scope estimation. By introducing the E3 framework, it implements an..."
+        "zh": "本文介绍了 MEDA 系统，这是一种结合 LLM 和符号回归的智能体框架，旨在解决生物系统中常微分方程自动发现的问题。通过整合背景知识检索、机理约束生成和严格的评估流程，MEDA 克服了传统数据拟合方法在生物学合理性上的缺陷。实验证明，该方法不仅在经典模型检索中表现优异，还能在未见场景中进行有效外推和开放式发现，强调了将领域知识融入自动化科学发现工作流的重要性。",
+        "en": "- **Background**: Automatic Scientific Discovery (ASD) aims to enable machines to autonomously uncover natural laws, shifting from mere data-fitting tools to the generation and refinement of mechanistic models. Advances..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.13034v1",
-        "pdf": "https://arxiv.org/pdf/2607.13034v1",
+        "abs": "http://arxiv.org/abs/2607.13608v1",
+        "pdf": "https://arxiv.org/pdf/2607.13608v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.13034.md",
-        "summary_en_path": "summary_en/2026-07/2607.13034.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13034.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13034.md"
+        "summary_zh_path": "summary/2026-07/2607.13608.md",
+        "summary_en_path": "summary_en/2026-07/2607.13608.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13608.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13608.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -181,40 +189,48 @@
         "summary_en": "dashscope",
         "github": "dashscope|none",
         "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
+        "pdf_download": "ok",
         "pdf_extract": "ok"
       }
     },
     {
-      "id": "arxiv:2607.13027",
-      "date": "2026-07-14",
-      "title": "PalmClaw: A Native On-Device Agent Framework for Mobile Phones",
+      "id": "arxiv:2607.13465",
+      "date": "2026-07-15",
+      "title": "DevicesWorld: Benchmarking Cross-Device Agents in Heterogeneous Environments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hongru Cai",
-        "Yongqi Li",
-        "Ran Wei",
-        "Wenjie Li"
+        "Huatao Li",
+        "Xinwei Geng",
+        "Yuheng Wang",
+        "Yutong Li",
+        "Runde Yang",
+        "Hantao Chen",
+        "Shu Yao",
+        "Jingru Fan",
+        "Xuhui Ren",
+        "Yuanyuan Zhao",
+        "Fei Huang",
+        "Chen Qian"
       ],
-      "institution": null,
+      "institution": "Shanghai Jiao Tong University, Honor Device Co., Ltd",
       "summary": {
-        "zh": "PalmClaw解决了移动智能体长期依赖低效GUI操作的问题，通过原生设备端框架将设备能力工具化，实现了更高效、可控且边界清晰的移动任务自动化，在性能和速度上均取得了显著突破。",
-        "en": "- **Background**: Large Language Model (LLM) agents have evolved from generating responses to executing multi-step tasks via tool use and iterative decision-making. While most systems run on desktops or servers, mobile..."
+        "zh": "DevicesWorld 填补了跨设备代理评估的空白，通过大规模、可执行的基准测试，系统地评估了 LLM 代理在异构环境中的协作能力。研究结果表明，尽管单设备操作能力有所提升，但当前的 LLM 代理在处理复杂的跨设备依赖任务时仍面临巨大挑战，成功率极低。该基准为开发更可靠的跨设备代理提供了重要的评估工具和诊断依据。",
+        "en": "- **Background**: LLM-based agents have rapidly improved at operating individual digital environments such as mobile applications, desktop systems, and smart homes. However, real-world user goals often span multiple..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.13027v1",
-        "pdf": "https://arxiv.org/pdf/2607.13027v1",
-        "github": "https://github.com/ModalityDance/PalmClaw"
+        "abs": "http://arxiv.org/abs/2607.13465v1",
+        "pdf": "https://arxiv.org/pdf/2607.13465v1",
+        "github": "https://github.com/AgenticOrgLab/DevicesWorld"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.13027.md",
-        "summary_en_path": "summary_en/2026-07/2607.13027.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13027.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13027.md"
+        "summary_zh_path": "summary/2026-07/2607.13465.md",
+        "summary_en_path": "summary_en/2026-07/2607.13465.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13465.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13465.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -226,7 +242,7 @@
         "summary_en": "dashscope",
         "github": "dashscope|none",
         "blog": "dashscope|none",
-        "pdf_download": "HTTPError: HTTP Error 404: Not Found",
+        "pdf_download": "ok",
         "pdf_extract": "ok"
       }
     }

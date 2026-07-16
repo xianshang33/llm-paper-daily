@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.15_04:23-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.16_04:33-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月15日 04:23</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月16日 04:33</sub></summary>
 <br>
 
-- Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents 
-- A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism 
-- Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs 
-- Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution 
-- PalmClaw: A Native On-Device Agent Framework for Mobile Phones 
+- STOCKTAKE: Measuring the Gap Between Perception and Action in LLM Agents with a Fair Oracle 
+- Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents 
+- Explaining Reinforcement Learning Agents via Inductive Logic Programming 
+- Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System 
+- DevicesWorld: Benchmarking Cross-Device Agents in Heterogeneous Environments 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-15</span> | **STOCKTAKE: Measuring the Gap Between Perception and Action in LLM Agents with a Fair Oracle**<br><sub>机构: QpiAI<br>STOCKTAKE 通过引入基于精确贝叶斯滤波的公平 Oracle，成功解决了 LLM 智能体在部分可观测环境中评估难的问题。它明确区分了感知失败和控制失败，并揭示了当前顶级模型的主要瓶颈不在于无法发现隐藏状态，而在于难以将正确的认知转化为经济高效的行动。该基准为未来改进智能体的推理脚手架和策略提取提供了明确的度量方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13618v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13618.md)  |
+| <span style='display: inline-block; width: 42px;'>07-15</span> | **Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents**<br><sub>机构: University of California Los Angeles<br>## 文章做了什么 - **背景**：大型语言模型（LLM）智能体越来越依赖外部记忆系统来跨任务积累经验，以避免重复错误并复用策略。然而，现有的记忆系统（从图结构记忆到反思性洞察存储）大多通过固定的、手工设计的启发式规则来访问记忆。 - **已有工作的局限性**：这种静态的记忆视图是智能体学习的核心瓶颈，因为最优的记忆行为本质上是依赖于上下文的。例如，在任务早期记忆稀疏时应减少检索，而在面对重复目标类型时应重用计划而非简单的最近邻查找。现有方法要么检索过于激进（增加上下文长度和成本，降低简单查询的准确性），要么过于保守（错过关键的可重用计划），无法适应不同的任务阶段和状态。 ## 文章的核心贡献点 - **提出了一个名为 MemCon (Memory as a Controlled Process) 的框架**：该框架将记忆操作建模为马尔可夫决策过程（MDP），并学习一个在线策略，自适应地决定何时、检索什么、检索多少，以及何时注入提炼后的计划或进行记忆 consolidation/遗忘。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13591v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13591.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ericjiang18/MemCon/)</div> |
+| <span style='display: inline-block; width: 42px;'>07-15</span> | **Explaining Reinforcement Learning Agents via Inductive Logic Programming**<br><sub>机构: University of Verona<br>本文通过引入归纳逻辑编程（ILP）来提取 RL 策略的符号表示，并定义了一套全新的、面向规划和客观的可解释性度量指标（如激活率、特征覆盖率、句法和语义距离）。这项工作不仅推进了 XRL 的发展，使其摆脱了对主观用户研究的过度依赖，还为逻辑 XAI 领域提供了量化逻辑规则可解释性的原则性方法。实验证明，这些指标能深入揭示单智能体及多智能体系统中的学习动态、特征作用及协作模式，为构建更稳健、可信的安全关键型 RL 应用奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13655v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13655.md)  |
+| <span style='display: inline-block; width: 42px;'>07-15</span> | **Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System**<br><sub>机构: Weizmann Institute of Science<br>本文介绍了 MEDA 系统，这是一种结合 LLM 和符号回归的智能体框架，旨在解决生物系统中常微分方程自动发现的问题。通过整合背景知识检索、机理约束生成和严格的评估流程，MEDA 克服了传统数据拟合方法在生物学合理性上的缺陷。实验证明，该方法不仅在经典模型检索中表现优异，还能在未见场景中进行有效外推和开放式发现，强调了将领域知识融入自动化科学发现工作流的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13608v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13608.md)  |
+| <span style='display: inline-block; width: 42px;'>07-15</span> | **DevicesWorld: Benchmarking Cross-Device Agents in Heterogeneous Environments**<br><sub>机构: Shanghai Jiao Tong University, Honor Device Co., Ltd<br>DevicesWorld 填补了跨设备代理评估的空白，通过大规模、可执行的基准测试，系统地评估了 LLM 代理在异构环境中的协作能力。研究结果表明，尽管单设备操作能力有所提升，但当前的 LLM 代理在处理复杂的跨设备依赖任务时仍面临巨大挑战，成功率极低。该基准为开发更可靠的跨设备代理提供了重要的评估工具和诊断依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.13465v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.13465.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgenticOrgLab/DevicesWorld)</div> |
 | <span style='display: inline-block; width: 42px;'>07-14</span> | **Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents**<br><sub>本文指出了自进化智能体系统中对可靠评价指标的隐性依赖问题，并提出了 Double Ratchet 框架来解决在无可靠自动验证器场景下的自我提升难题。通过协同进化评价指标和技能，并结合严格的锚定审计机制，该方法不仅在多个复杂任务上达到了接近有监督学习的性能水平，还有效防止了指标博弈，为缺乏地面真值的实际应用提供了一种默认的安全且高效的架构选择。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12790v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12790.md)  |
 | <span style='display: inline-block; width: 42px;'>07-14</span> | **A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism**<br><sub>## 文章做了什么 - **背景**：目前，基于可验证奖励的强化学习（RLVR），特别是组相对策略优化（GRPO），常被应用于监督微调（SFT）后的检查点，以期获得更强大的智能体。 - **已有工作为什么解决不了**：现有研究通常假设在已具备一定能力的模型上应用GRPO能进一步提升性能，但缺乏对小规模（4B-8B）语言和视觉语言模型Web智能体在任务已 largely mastered（基本掌握）情况下，GRPO究竟是增加了新技能还是仅重塑了既有行为的深入理解。此前未明确界定GRPO生效的边界条件及其失效机制。 ## 文章的核心贡献点 - **提出了一个受控的零结果（Controlled Null）及其机制解释**：通过大规模控制实验证明，在智能体已高度掌握的任务上，GRPO无法提升成功率，甚至可能有害，并揭示了其背后的模型内部机制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12640v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12640.md)  |
 | <span style='display: inline-block; width: 42px;'>07-14</span> | **Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs**<br><sub>EG-VAR 通过引入基于 Lean 4 的形式化验证机制，解决了 LLM 在经验推理中的幻觉问题。它不仅在数值推理和压力测试中展现了优于现有方法的准确性和源忠实度，还提供了一种技术治理接口，使得高风险的 AI 决策过程完全可审计。随着类型化侧车在数据集和 API 中的普及，这种形式化负担有望被摊销到可复用的基础设施中，从而从根本上提升 LLM 推理的可信度。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.12650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.12650.md)  |
