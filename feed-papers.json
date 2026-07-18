@@ -1,153 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-17T04:36:28.107692+00:00",
-  "run_date": "2026-07-16",
+  "generated_at": "2026-07-18T04:22:20.719149+00:00",
+  "run_date": "2026-07-12",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.15095",
-      "date": "2026-07-16",
-      "title": "Digital Pantheon: Simulating and Auditing Coalition Formation with LLM Agents",
+      "id": "arxiv:2607.10582",
+      "date": "2026-07-12",
+      "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dylan Van Mulders",
-        "Matthias Bogaert",
-        "Dirk Van den Poel"
-      ],
-      "institution": "Ghent University",
-      "summary": {
-        "zh": "本文提出了Digital Pantheon框架，通过结合DPO角色注入和RAG事实 grounding，解决了LLM在政治模拟中缺乏坚定党派立场和可解释性的问题。实验证明，该方法不仅能重现2019年佛兰德选举的联盟结果，还能通过MILT和CIS指标提供透明的谈判审计，为计算政治科学提供了一个可靠的事前模拟工具。",
-        "en": "- **Background**: Coalition formation is central to parliamentary democracy, involving complex negotiations over policy objectives and ideological compromises. Large Language Models (LLMs) offer new avenues for..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.15095v1",
-        "pdf": "https://arxiv.org/pdf/2607.15095v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.15095.md",
-        "summary_en_path": "summary_en/2026-07/2607.15095.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.15095.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.15095.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.14989",
-      "date": "2026-07-16",
-      "title": "OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Chengyu Shen",
-        "Yujie Fu",
-        "Gangtao Xin",
-        "Yanheng Hou",
-        "Wenlong Fei",
-        "Guojie Zhu",
-        "Jiawei Li",
-        "Hongcheng Gao",
-        "Runming He",
-        "Zhen Hao Wong",
-        "Meiyi Qiang",
-        "Hao Liang",
-        "Zhao Cao",
-        "Hao Jiang",
-        "Chong Chen",
-        "Wentao Zhang"
-      ],
-      "institution": "Huawei Cloud Post-Training Team, PKU DCAI Team",
-      "summary": {
-        "zh": "OmniaBench 提供了一个广泛且具有诊断性的基准，用于刻画通用智能体的能力边界。通过构建涵盖广泛行业领域的分层分类法和多样化的任务合成机制，它弥补了现有基准在场景多样性和评估细粒度上的不足。实验结果表明，尽管前沿模型取得了一定进展，但在处理复杂、多步骤的真实世界代理任务时仍面临严峻挑战，特别是在长期规划和状态维护方面。",
-        "en": "- **Background**: Large Language Models (LLMs) are evolving from static text generators into general agents capable of understanding user intents, invoking external tools, and completing complex tasks through..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.14989v1",
-        "pdf": "https://arxiv.org/pdf/2607.14989v1",
-        "github": "https://github.com/scuuy/OmniaBench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.14989.md",
-        "summary_en_path": "summary_en/2026-07/2607.14989.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.14989.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.14989.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.14896",
-      "date": "2026-07-16",
-      "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Sizhong Qin",
-        "Yi Gu",
-        "Yao Jiang",
-        "Ao Cai",
-        "Changjian Zhou",
-        "Shaoxuan Shuai",
-        "Jiachang Wang",
-        "Tianhao Shen",
-        "Yueqiang Li",
-        "Xinhao Li",
-        "Li Zeng",
-        "Yueshi Chen",
-        "Dachen Gao",
-        "Genrong Xu",
-        "Wenjie Liao",
-        "Xinzheng Lu"
+        "Venkatesha Matam",
+        "Keon Kim"
       ],
       "institution": null,
       "summary": {
-        "zh": "StructureClaw 通过引入以工件为中心的评估范式，解决了结构工程 LLM 代理评估中缺乏完整证据链验证的问题。其提出的可执行基准测试 StructureClaw-Bench 能够更严格地评估代理在工作流执行、交互鲁棒性和多模态重建方面的能力，显著提升了评估的严谨性，并为未来工程代理的开发提供了可追溯、可执行的改进基础。",
-        "en": "- **Background**: Addressing structural engineering requests requires a chain of interdependent artifacts, including interpreted requirements, computable models, validation records, solver outputs, code-check records,..."
+        "zh": "MemDecay 通过引入区域感知的 KV 缓存驱逐机制，有效解决了 LLM 智能体在长程推理中的内存瓶颈问题。它利用智能体上下文的语义结构，为不同功能的令牌区域设定差异化的优先级和衰减策略。实验表明，该方法在保护关键系统指令方面显著优于现有基线，且在长上下文场景中比基于最近性的方法更具鲁棒性。尽管在非固定内容的注意力分数归一化上仍有改进空间，但该工作确立了结合语义结构与注意力信号进行高效缓存管理的新方向。",
+        "en": "MemDecay addresses the memory bottleneck in LLM agent long-horizon reasoning by introducing a region-aware KV cache eviction mechanism. By leveraging the semantic structure of agent contexts, it sets differentiated..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.14896v1",
-        "pdf": "https://arxiv.org/pdf/2607.14896v1",
-        "github": "https://github.com/structureclaw/structureclaw"
+        "abs": "http://arxiv.org/abs/2607.10582v1",
+        "pdf": "https://arxiv.org/pdf/2607.10582v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.14896.md",
-        "summary_en_path": "summary_en/2026-07/2607.14896.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.14896.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.14896.md"
+        "summary_zh_path": "summary/2026-07/2607.10582.md",
+        "summary_en_path": "summary_en/2026-07/2607.10582.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10582.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10582.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -164,39 +49,34 @@
       }
     },
     {
-      "id": "arxiv:2607.14651",
-      "date": "2026-07-16",
-      "title": "MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents",
+      "id": "arxiv:2607.10569",
+      "date": "2026-07-12",
+      "title": "When Does Restricting a Coding Agent to execute_code Help? A Regime $\\times$ Agent-Design Ablation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jifeng Gao",
-        "Kang Xia",
-        "Yi Zhang",
-        "Xiaobin Hong",
-        "Mingkai Lin",
-        "Xingshen Wei",
-        "Wenzhong Li",
-        "Sanglu Lu"
+        "Hong Yang",
+        "Qi Yu",
+        "Travis Desell"
       ],
-      "institution": "Nanjing University",
+      "institution": "Rochester Institute of Technology",
       "summary": {
-        "zh": "本文提出了 MemPoison，首个针对 LLM Agent 持久化记忆威胁的综合基准和分析框架。通过建立 L1-L3 三级攻击分类法，研究揭示了当前主流的写入时防御策略在处理组合式和上下文触发式攻击时的结构性盲点。研究结果强烈建议将防御策略从静态过滤转向自适应、上下文敏感的记忆防御机制，以应对日益复杂的持久化记忆安全风险。",
-        "en": "- **Background**: Persistent external memory enhances LLM agent continuity but introduces durable security vulnerabilities. Adversarial content injected via standard interaction channels can be retained across turns and..."
+        "zh": "- **背景**：现代编码智能体（Coding Agents）暴露了多种工具接口，包括 IDE 原语（如 Read/Edit）、Bash 命令行以及模型上下文协议（MCP）的代码执行工具。业界关于哪种工具接口最关键存在三种相互矛盾的观点：有的认为专用 IDE 原语至关重要，有的认为仅 Bash 就足够，还有的主张用代码执行工具替代所有原生工具以大幅降低 Token 消耗。 - **已有工作为什么解决不了**：现有的研究从未在同一个测试...",
+        "en": "- **Background**: Modern coding agents expose multiple tool surfaces, including IDE primitives (e.g., Read/Edit), Bash, and Model Context Protocol (MCP) code-execution tools. The field has produced three contradictory..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.14651v1",
-        "pdf": "https://arxiv.org/pdf/2607.14651v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.10569v1",
+        "pdf": "https://arxiv.org/pdf/2607.10569v1",
+        "github": "https://github.com/hyang0129/onlycodes"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.14651.md",
-        "summary_en_path": "summary_en/2026-07/2607.14651.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.14651.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.14651.md"
+        "summary_zh_path": "summary/2026-07/2607.10569.md",
+        "summary_en_path": "summary_en/2026-07/2607.10569.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10569.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10569.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -213,40 +93,136 @@
       }
     },
     {
-      "id": "arxiv:2607.14642",
-      "date": "2026-07-16",
-      "title": "MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers",
+      "id": "arxiv:2607.10814",
+      "date": "2026-07-12",
+      "title": "Auditing Belief-Conditioned LLM Agents in Hidden-Information Social Deduction Games",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Huanxi Liu",
-        "Kun Hu",
-        "Jiaqi Liao",
-        "Qiang Wang",
-        "Pengfei Qian",
-        "YuanZhao Zhai",
-        "Dawei Feng",
-        "Bo Ding",
-        "Huaimin Wang"
+        "Yuan Gao",
+        "Jiangyi Yang",
+        "Yao Zhao",
+        "Yichi Zhang"
       ],
-      "institution": "National University of Defense Technology",
+      "institution": "University of Melbourne",
       "summary": {
-        "zh": "本文指出了当前 LLM Agent 基准测试在评估工具适应性方面的空白，提出了 MCPEvol-Bench。通过实证研究指导的变异算子和 LLM 驱动的演变模拟，该基准测试有效评估了 Agent 在动态工具环境下的表现。研究发现主流 LLM 在应对工具接口和功能变化时存在显著的性能下降和错误率上升，强调了提升 Agent 适应动态工具环境能力的重要性，并将 MCPEvol-Bench 确立为评估此类适应性的新标准。",
-        "en": "- **Background**: As Model Context Protocol (MCP) servers become core infrastructure for connecting LLMs with external tools, evaluating LLM agents' tool-use capabilities is critical. Existing benchmarks primarily use..."
+        "zh": "本文主要贡献在于提出了一套可审计的框架，而非单纯追求性能提升。该框架使得隐藏信息游戏中的LLM智能体行为变得可测量和可解释。通过将外部信念定位为一种可审计的认知基线，该研究将不透明的代理行为转化为可重放的证据，支持更安全、可控的智能体迭代。尽管主动信念与更好的结果相关，但其具体作用机制仍未完全解决，框架的价值在于能够暴露这些问题并提供实证依据。",
+        "en": "- **Background**: Evaluating LLM agents in hidden-information multi-agent environments (e.g., Werewolf) is challenging. Final outcomes are high-variance and rarely reveal why an agent made a specific decision, making it..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.14642v1",
-        "pdf": "https://arxiv.org/pdf/2607.14642v1",
+        "abs": "http://arxiv.org/abs/2607.10814v1",
+        "pdf": "https://arxiv.org/pdf/2607.10814v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.14642.md",
-        "summary_en_path": "summary_en/2026-07/2607.14642.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.14642.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.14642.md"
+        "summary_zh_path": "summary/2026-07/2607.10814.md",
+        "summary_en_path": "summary_en/2026-07/2607.10814.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10814.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10814.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.10789",
+      "date": "2026-07-12",
+      "title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Siyi Chen",
+        "Jiahe Ying",
+        "Yixuan Jia",
+        "Yuxuan Gu",
+        "Enze Ye",
+        "Weimin Bai",
+        "Zhijun Zeng",
+        "Shaochi Ren",
+        "Binhong Gao",
+        "Yubing Li",
+        "Tianhan Zhang",
+        "He Sun"
+      ],
+      "institution": "Peking University",
+      "summary": {
+        "zh": "Imaging-101填补了科学计算成像领域缺乏标准化LLM评估基准的空白。通过系统性地评估LLM在真实科学任务中的表现，文章揭示了当前AI代理在算法选择、物理建模和流水线集成方面的具体短板。研究结果表明，要实现可靠的计算成像辅助，未来的方向应是开发具备技能增强和领域专用知识的AI代理，而非仅依赖通用大语言模型。",
+        "en": "- **Background**: Computational imaging is crucial for recovering hidden signals from indirect, noisy measurements in fields ranging from black hole imaging to medical CT/MRI. However, constructing correct..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.10789v1",
+        "pdf": "https://arxiv.org/pdf/2607.10789v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.10789.md",
+        "summary_en_path": "summary_en/2026-07/2607.10789.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10789.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10789.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.10559",
+      "date": "2026-07-12",
+      "title": "Large language model agents accelerate inverse design of metal-organic frameworks for gas separation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zhaolin Hu",
+        "Hehe Fan",
+        "Wangyihan Guo",
+        "Meng Xu",
+        "Chenhao Rao",
+        "Qiwei Yang",
+        "Yi Yang"
+      ],
+      "institution": "Zhejiang University",
+      "summary": {
+        "zh": "本文展示了 LLM 智能体可以作为可解释且可扩展的设计引擎，加速 MOF 的发现过程，突破了传统固定库筛选的限制。LEMO Agent 通过闭环反馈机制有效解决了逆向设计中的化学有效性、性能优化和多样性保持难题，并为实验合成提供了切实可行的候选材料，证明了 AI 驱动的材料逆向设计在实际科研中的应用价值。",
+        "en": "- **Background**: Metal-organic frameworks (MOFs) offer a highly modular platform for adsorptive gas separation. However, their vast reticular design space makes inverse design challenging under simultaneous constraints..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.10559v1",
+        "pdf": "https://arxiv.org/pdf/2607.10559v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.10559.md",
+        "summary_en_path": "summary_en/2026-07/2607.10559.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10559.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10559.md"
       },
       "signals": {
         "priority_keyword": "Agent"

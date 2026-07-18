@@ -1,147 +1,22 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-07-17T04:36:28.107692+00:00",
-  "run_date": "2026-07-16",
+  "generated_at": "2026-07-18T04:22:20.719149+00:00",
+  "run_date": "2026-07-12",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2607.15095",
-      "date": "2026-07-16",
-      "title": "Digital Pantheon: Simulating and Auditing Coalition Formation with LLM Agents",
+      "paper_id": "2607.10582",
+      "date": "2026-07-12",
+      "title": "MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference",
       "authors": [
-        "Dylan Van Mulders",
-        "Matthias Bogaert",
-        "Dirk Van den Poel"
+        "Venkatesha Matam",
+        "Keon Kim"
       ],
-      "abstract": "The formation of political coalitions is a complex negotiation driven by both concrete policy objectives and deep-seated ideological convictions. While Large Language Models (LLMs) open new avenues for computational political science, the neutrality and helpfulness biases instilled by Reinforcement Learning from Human Feedback (RLHF) prevent them from sustaining steadfast partisan behaviour. We present a multi-agent framework that reconciles factual grounding with ideological alignment by combining Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Retrieval-Augmented Generation (RAG): DPO instils aggressive party-specific personas, while a per-party RAG pipeline keeps each agent bounded to its official manifesto. We operationalize the framework on the 2019 Flemish election, deploying the partisan agents in a hub-and-spoke negotiation arbitrated by a formateur. To make the emergent negotiation interpretable, we introduce a Multi-Layered Information Lineage Topology (MILT) that traces every clause in the final agreement back to its manifesto origin and classifies it into five provenance states, a Coalition Influence Score (CIS) that aggregates these traceable contributions to identify which party shaped the agreement, and a real-world grounding pass that benchmarks each simulated provision against the historically adopted coalition agreement. Across three independent simulations the framework yields a stable winner and ranking (N-VA ahead of CD\\&V and Open Vld), and manifesto-anchored lineage reliably predicts real-world materialization whereas hallucinated content does not. The result is a transparent, scalable testbed for the ex-ante exploration of party compatibility and formateur-mediated compromise.",
+      "abstract": "Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning, whose key-value (KV) cache can become a major memory bottleneck. Existing eviction policies generally apply the same attention- or recency-based rule to every token, ignoring semantic structure already available to the agent orchestrator. We introduce MemDecay, a training-free, region-aware KV-cache eviction policy. MemDecay assigns tokens region-specific base priorities and decay rates, refreshes retention scores when tokens receive attention, and evicts the lowest-scoring pages under a fixed cache budget while allowing critical regions to be pinned. We also provide a procedure for calibrating decay rates from measured attention lifetimes. We evaluate MemDecay at approximately 450 and 1,700 token contexts using Qwen2.5-1.5B and 3B. Across all settings, attention lifetimes differ by an order of magnitude across regions: system-token half-lives range from 148 to 189 decoding steps, compared with 14 to 16 for scratchpad tokens. Pinning preserves system-region facts at full-cache accuracy in every setting, while no baseline preserves more than 13 of 24. Region-aware retention remains effective as context grows, whereas recency-based retention collapses. Accumulated-attention retention performs better on unpinned content, however, and ablations identify attention-score normalization as the main limitation of the current formulation. These results establish semantic prompt structure as a robust signal for KV-cache management while clarifying how it should be combined with attention-based importance.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.15095v1",
-        "pdf": "https://arxiv.org/pdf/2607.15095v1",
+        "abs": "http://arxiv.org/abs/2607.10582v1",
+        "pdf": "https://arxiv.org/pdf/2607.10582v1",
         "github": null,
-        "blog": null
-      },
-      "institution": "Ghent University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：政治联盟的形成是议会民主的核心，涉及复杂的政策目标谈判和深层意识形态妥协。大型语言模型（LLM）为计算政治科学提供了新途径，可用于模拟立法投票和生成联盟妥协方案。\n- **已有工作为什么解决不了**：现有的基于RLHF训练的LLM被调整为中立和乐于助人，这与坚定的党派行为相悖。仅靠提示词工程构建的角色会导致推理能力下降且缺乏领域 grounding，而多智能体辩论往往加剧从众心理和主导党派偏见，无法准确模拟真实的党派立场和谈判过程。\n\n## 文章的核心贡献点\n- **提出了一个名为“Digital Pantheon”的多智能体框架**，该框架结合监督微调（SFT）、直接偏好优化（DPO）和检索增强生成（RAG），用于模拟和审计政治联盟形成过程。\n- **挑战1：如何使LLM代理保持坚定的党派立场而非中立？**\n  - 难点在于RLHF带来的中立偏见难以通过简单提示消除，且容易在交互中退化。\n  - 解决方法：利用DPO在参数层面注入激进的特定政党角色 persona，同时结合SFT，使代理在底层权重上内化党派承诺，从而维持一致的意识形态立场。\n- **挑战2：如何确保谈判内容的事实准确性并可解释？**\n  - 难点在于LLM容易产生幻觉，且黑盒式的谈判过程难以追溯各党派的具体贡献和影响。\n  - 解决方法：引入每党独立的RAG管道，将代理严格限制在其官方宣言范围内；提出多层信息谱系拓扑（MILT）和联盟影响力评分（CIS），追踪最终协议条款的来源并量化各党派的影响力，实现可解释的审计。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架应用于2019年佛兰德选举场景，部署党派代理进行由组阁人（formateur）仲裁的“中心-辐射”式谈判。\n- **评估结果**：\n  - 在三次独立模拟中，框架产生了稳定的获胜者和排名（N-VA领先于CD&V和Open Vld），与实际历史结果一致。\n  - 基于宣言锚定的谱系分析能可靠预测现实世界中条款的实现情况，而幻觉内容则不能。\n- **对比相关工作**：相比传统的博弈论方法（只能结构化捕捉但无法模拟语言介导的审议）和通用的LLM代理模拟（受限于中立偏见和幻觉），该方法通过参数级对齐和RAG grounding，提供了更透明、可扩展的事前党派兼容性探索测试床，且在预测真实联盟协议方面表现出更高的保真度。\n\n#### 总结\n本文提出了Digital Pantheon框架，通过结合DPO角色注入和RAG事实 grounding，解决了LLM在政治模拟中缺乏坚定党派立场和可解释性的问题。实验证明，该方法不仅能重现2019年佛兰德选举的联盟结果，还能通过MILT和CIS指标提供透明的谈判审计，为计算政治科学提供了一个可靠的事前模拟工具。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Coalition formation is central to parliamentary democracy, involving complex negotiations over policy objectives and ideological compromises. Large Language Models (LLMs) offer new avenues for computational political science, such as simulating legislative voting and generating coalition compromises.\n- **Why Existing Work Falls Short**: LLMs trained with Reinforcement Learning from Human Feedback (RLHF) are biased towards neutrality and helpfulness, which contradicts steadfast partisan behavior. Prompt-based personas suffer from degraded reasoning and lack domain grounding, while multi-agent debates often amplify conformity and dominant-party bias, failing to accurately simulate real partisan positions and negotiations.\n\n## Core Contributions\n- **Proposed a multi-agent framework called \"Digital Pantheon\"**, which combines Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Retrieval-Augmented Generation (RAG) to simulate and audit political coalition formation.\n- **Challenge 1: How to maintain steadfast partisan stance in LLM agents instead of neutrality?**\n  - Difficulty: RLHF-induced neutrality is hard to override with simple prompts, and personas tend to degrade during interaction.\n  - Solution: Used DPO to inject aggressive party-specific personas at the parameter level, combined with SFT, embedding party commitments into the model weights to ensure consistent ideological alignment.\n- **Challenge 2: How to ensure factual accuracy and interpretability of negotiation content?**\n  - Difficulty: LLMs are prone to hallucinations, and black-box negotiation processes make it hard to trace specific party contributions.\n  - Solution: Introduced a per-party RAG pipeline to bound agents to their official manifestos; proposed Multi-Layered Information Lineage Topology (MILT) and Coalition Influence Score (CIS) to trace the provenance of agreement clauses and quantify party influence, enabling interpretable auditing.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The framework was operationalized on the 2019 Flemish election scenario, deploying partisan agents in a hub-and-spoke negotiation arbitrated by a formateur.\n- **Evaluation Results**:\n  - Across three independent simulations, the framework yielded a stable winner and ranking (N-VA ahead of CD&V and Open Vld), consistent with historical outcomes.\n  - Manifesto-anchored lineage reliably predicted the materialization of real-world clauses, whereas hallucinated content did not.\n- **Comparison with Related Work**: Compared to traditional game-theoretic approaches (which capture structure but not language-mediated deliberation) and generic LLM agent simulations (limited by neutrality bias and hallucinations), this method offers higher fidelity through parameter-level alignment and RAG grounding. It provides a transparent, scalable testbed for ex-ante exploration of party compatibility.\n\n## 4. Conclusion\nThis paper presents the Digital Pantheon framework, addressing the lack of steadfast partisan stance and interpretability in LLM-based political simulations by combining DPO persona injection and RAG factual grounding. Experiments demonstrate that the method not only reproduces the coalition outcomes of the 2019 Flemish election but also provides transparent negotiation auditing via MILT and CIS metrics, offering a reliable tool for computational political science.",
-      "render_excerpt": "机构: Ghent University<br>本文提出了Digital Pantheon框架，通过结合DPO角色注入和RAG事实 grounding，解决了LLM在政治模拟中缺乏坚定党派立场和可解释性的问题。实验证明，该方法不仅能重现2019年佛兰德选举的联盟结果，还能通过MILT和CIS指标提供透明的谈判审计，为计算政治科学提供了一个可靠的事前模拟工具。",
-      "render_excerpt_en": "Institution: Ghent University<br>## 1. What the Paper Did - **Background**: Coalition formation is central to parliamentary democracy, involving complex negotiations over policy objectives and ideological compromises. Large Language Models (LLMs) offer new avenues for computational political science, such as simulating legislative voting and generating coalition compromises.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-16T15:08:29Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-16"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.14989",
-      "date": "2026-07-16",
-      "title": "OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios",
-      "authors": [
-        "Chengyu Shen",
-        "Yujie Fu",
-        "Gangtao Xin",
-        "Yanheng Hou",
-        "Wenlong Fei",
-        "Guojie Zhu",
-        "Jiawei Li",
-        "Hongcheng Gao",
-        "Runming He",
-        "Zhen Hao Wong",
-        "Meiyi Qiang",
-        "Hao Liang",
-        "Zhao Cao",
-        "Hao Jiang",
-        "Chong Chen",
-        "Wentao Zhang"
-      ],
-      "abstract": "Large language models are increasingly evolving from text generators into general agents capable of understanding user requests, invoking external tools, and completing complex tasks through interaction. However, existing agent benchmarks often focus on limited scenarios, tool ecosystems, or interaction formats, making it difficult to systematically characterize model capabilities across heterogeneous application settings. We introduce OmniaBench, a benchmark for evaluating general agents across diverse scenarios with explicit state spaces. We derive application-oriented scenario knowledge from app stores, product documents, industry resources, Web retrieval, and human refinement, forming a hierarchical taxonomy that spans ToC, ToB and ToE with 90 level-1 and 354 level-2 domains. Based on this taxonomy, we construct executable environments and synthesize single-turn and multi-turn tasks through four complementary routes: DAG, DAG-S, Solver, and Program. OmniaBench further introduces a ten-dimensional capability taxonomy and eight compositional atomic difficulty factors to support fine-grained evaluation and analysis. The resulting dataset contains 1,431 tasks, together with a challenging subset of 644 tasks designed to reduce evaluation cost and mitigate potential contamination of the full set after public release. The bench presents substantial challenges to current frontier models, with even Claude-Sonnet-5 and GPT-5.6-Sol achieving Overall Pass@1 scores of only 58.54 and 57.14, respectively. Further analyses reveal clear differences across domains and capabilities, as well as persistent limitations in planning, constraint maintenance, and adaptive correction. OmniaBench provides a broad and diagnostic benchmark for characterizing the capability boundaries of general agents.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.14989v1",
-        "pdf": "https://arxiv.org/pdf/2607.14989v1",
-        "github": "https://github.com/scuuy/OmniaBench",
-        "blog": "https://scuuy.github.io/OmniaBench"
-      },
-      "institution": "Huawei Cloud Post-Training Team, PKU DCAI Team",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）正从文本生成器演变为能够理解用户请求、调用外部工具并通过交互完成复杂任务的通用智能体（General AI Agents）。这些智能体在软件开发、办公自动化和商业工作流中展现出巨大潜力。\n- **已有工作的局限性**：现有的智能体基准测试通常局限于特定的场景、工具生态系统或交互格式。这种局限性使得难以在异构的应用设置中系统地刻画模型的能力，缺乏对通用智能体在广泛真实世界场景中表现的全面评估。\n\n## 文章的核心贡献点\n- **提出了一个 OmniaBench**：这是一个用于评估多样化场景中通用智能体的基准测试，具有显式的状态空间。\n- **挑战1：场景覆盖的广度与真实性不足**。现有基准缺乏对ToC（面向消费者）、ToB（面向企业）和ToE（面向员工）等广泛领域的覆盖，且场景往往过于简化。**解决方法**：论文从应用商店、产品文档、行业资源、网络检索及人工精炼中 derive 出面向应用的场景知识，构建了一个包含90个一级领域和354个二级领域的分层分类法，并基于此构建了可执行环境。\n- **挑战2：任务合成的多样性与难度可控性差**。传统方法难以生成既符合逻辑又具备不同难度层级的多步交互任务。**解决方法**：通过四种互补的路径（DAG、DAG-S、Solver 和 Program）合成单轮和多轮任务，并引入了十维能力分类法和八个组合原子难度因子，以支持细粒度的评估和分析。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集规模**：OmniaBench 包含 1,431 个任务，其中有一个由 644 个任务组成的挑战性子集，旨在降低评估成本并减轻公开发布后的数据污染风险。\n- **评估结果**：该基准对当前的前沿模型构成了重大挑战。即使是表现最好的闭源模型 Claude-Sonnet-5 和 GPT-5.6-Sol，其整体 Pass@1 得分也仅为 58.54 和 57.14。开源模型如 Qwen 系列和 DeepSeek 系列得分相对较低，显示出明显的性能差距。\n- **对比分析**：与仅关注工具调用或单一领域交互的先前工作相比，OmniaBench 揭示了模型在不同领域和能力维度上的显著差异。分析表明，当前模型在规划、约束保持和自适应修正方面仍存在 persistent limitations（持续性局限）。\n\n#### 总结\nOmniaBench 提供了一个广泛且具有诊断性的基准，用于刻画通用智能体的能力边界。通过构建涵盖广泛行业领域的分层分类法和多样化的任务合成机制，它弥补了现有基准在场景多样性和评估细粒度上的不足。实验结果表明，尽管前沿模型取得了一定进展，但在处理复杂、多步骤的真实世界代理任务时仍面临严峻挑战，特别是在长期规划和状态维护方面。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) are evolving from static text generators into general agents capable of understanding user intents, invoking external tools, and completing complex tasks through interaction. These agents show strong potential in software development, office automation, and business workflows.\n- **Limitations of Existing Work**: Current agent benchmarks often focus on limited scenarios, tool ecosystems, or interaction formats. This makes it difficult to systematically characterize model capabilities across heterogeneous application settings, lacking a comprehensive evaluation of general agents in diverse real-world contexts.\n\n## Core Contributions\n- **Proposed OmniaBench**: A benchmark for evaluating general agents across diverse scenarios with explicit state spaces.\n- **Challenge 1: Insufficient Breadth and Realism of Scenario Coverage**. Existing benchmarks lack coverage of broad domains like ToC, ToB, and ToE, and often use oversimplified scenarios. **Solution**: The paper derives application-oriented scenario knowledge from app stores, product documents, industry resources, web retrieval, and human refinement, creating a hierarchical taxonomy with 90 level-1 and 354 level-2 domains, based on which executable environments are constructed.\n- **Challenge 2: Poor Diversity and Controllability of Task Synthesis**. Traditional methods struggle to generate multi-step interactive tasks that are both logical and have controllable difficulty levels. **Solution**: Tasks (single-turn and multi-turn) are synthesized via four complementary routes: DAG, DAG-S, Solver, and Program. Additionally, a ten-dimensional capability taxonomy and eight compositional atomic difficulty factors are introduced to support fine-grained evaluation.\n\n## Implementation and Evaluation\n- **Dataset Scale**: OmniaBench contains 1,431 tasks, including a challenging subset of 644 tasks designed to reduce evaluation costs and mitigate data contamination risks after public release.\n- **Evaluation Results**: The benchmark presents substantial challenges to current frontier models. Even top-performing closed-source models like Claude-Sonnet-5 and GPT-5.6-Sol achieved Overall Pass@1 scores of only 58.54 and 57.14, respectively. Open-source models such as Qwen and DeepSeek series showed lower performance, indicating a significant gap.\n- **Comparison with Related Work**: Unlike prior works focusing solely on tool calling or single-domain interactions, OmniaBench reveals significant differences in model performance across domains and capabilities. Analysis highlights persistent limitations in planning, constraint maintenance, and adaptive correction in current models.\n\n## 4. Conclusion\nOmniaBench provides a broad and diagnostic benchmark for characterizing the capability boundaries of general agents. By constructing a hierarchical taxonomy covering wide industry domains and employing diverse task synthesis mechanisms, it addresses the lack of scenario diversity and evaluation granularity in existing benchmarks. Experimental results indicate that while frontier models have made progress, they still face severe challenges in handling complex, multi-step real-world agent tasks, particularly in long-horizon planning and state maintenance.",
-      "render_excerpt": "机构: Huawei Cloud Post-Training Team, PKU DCAI Team<br>OmniaBench 提供了一个广泛且具有诊断性的基准，用于刻画通用智能体的能力边界。通过构建涵盖广泛行业领域的分层分类法和多样化的任务合成机制，它弥补了现有基准在场景多样性和评估细粒度上的不足。实验结果表明，尽管前沿模型取得了一定进展，但在处理复杂、多步骤的真实世界代理任务时仍面临严峻挑战，特别是在长期规划和状态维护方面。",
-      "render_excerpt_en": "Institution: Huawei Cloud Post-Training Team, PKU DCAI Team<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) are evolving from static text generators into general agents capable of understanding user intents, invoking external tools, and completing complex tasks through interaction. These agents show strong potential in software development, office automation, and business workflows.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-16T13:38:07Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-16"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.14896",
-      "date": "2026-07-16",
-      "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
-      "authors": [
-        "Sizhong Qin",
-        "Yi Gu",
-        "Yao Jiang",
-        "Ao Cai",
-        "Changjian Zhou",
-        "Shaoxuan Shuai",
-        "Jiachang Wang",
-        "Tianhao Shen",
-        "Yueqiang Li",
-        "Xinhao Li",
-        "Li Zeng",
-        "Yueshi Chen",
-        "Dachen Gao",
-        "Genrong Xu",
-        "Wenjie Liao",
-        "Xinzheng Lu"
-      ],
-      "abstract": "Addressing a structural-engineering request requires more than a single answer; it requires a chain of interdependent artifacts: interpreted requirements, a computable model, validation records, solver outputs, code-check records, and a final report. Evaluations centered on question answering or script generation rarely verify this complete evidence chain and may therefore reward fluent outputs even when the underlying engineering workflow is incomplete, internally inconsistent, or non-executable. To address this limitation, we present StructureClaw, an artifact-centered workbench in which LLM agents operate through governed engineering skills, typed tools, shared artifact state, and local analysis backends. We also introduce StructureClaw-Bench, an executable benchmark of 150 controlled scenarios spanning standard workflow execution, interactive robustness, and multimodal structural-model reconstruction. A scenario succeeds only when all required artifact- and execution-level assertions pass in a single run. Across ten agent-model configurations, each evaluated on the same 50 standard cases, the average Success Rate rises from 56.8% with the generic-skill baseline to 88.6% with the full automatic workflow. The interactive and multimodal evaluations identify two prominent remaining challenges: safe handling of invalid numerical inputs and fixture-consistent reconstruction of structural models. These findings show that artifact-centered evaluation can expose workflow-level failures that are difficult to identify from final responses alone, providing a more rigorous basis for evaluating and improving structural-engineering agents. The code and benchmark are available at https://github.com/structureclaw/structureclaw.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.14896v1",
-        "pdf": "https://arxiv.org/pdf/2607.14896v1",
-        "github": "https://github.com/structureclaw/structureclaw",
         "blog": null
       },
       "institution": null,
@@ -151,19 +26,19 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：在结构工程领域，处理一个工程请求不仅仅需要生成单一的答案或代码，而是需要一系列相互依赖的工件链，包括需求解读、可计算模型、验证记录、求解器输出、规范检查记录和最终报告。\n- **已有工作的局限**：现有的评估方法主要集中在问答或脚本生成上，很少验证完整的证据链。这导致即使底层工程工作流不完整、内部不一致或不可执行，只要输出流畅，模型仍可能获得高分，无法真实反映工程代理的可靠性。\n\n## 文章的核心贡献点\n- **提出了 StructureClaw**：一个以工件为中心的工作台，LLM 代理通过受控的工程技能、类型化工具、共享工件状态和本地分析后端进行操作；同时引入了 StructureClaw-Bench，包含 150 个可控场景的可执行基准测试。\n- **挑战1：工作流完整性与可执行性验证难**。传统的文本评估难以发现上游工件缺失或不一致导致的下游执行失败。StructureClaw 通过强制要求所有必需的工件和执行级断言在单次运行中全部通过来定义成功，从而确保工作流的完整性和可执行性。\n- **挑战2：复杂交互与多模态重建的鲁棒性不足**。在处理无效数值输入的安全性和结构模型的多模态重建一致性方面存在困难。论文通过交互式和多模态评估场景，暴露了这些工作流级别的失败，为改进代理提供了具体方向。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：StructureClaw 集成了受控的工程技能、类型化工具和本地分析后端（如 OpenSeesPy），支持从需求到报告的完整 traceable 工作流。代码和基准测试已开源。\n- **评估结果**：在 10 种代理模型配置下，对 50 个标准案例进行评估。使用通用技能基线的平均成功率为 56.8%，而使用 StructureClaw 的全自动工作流后，平均成功率提升至 88.6%。\n- **对比与发现**：相比传统仅关注最终文本输出的评估，StructureClaw-Bench 揭示了工作流层面的失败。交互式和多模态评估指出了两个主要剩余挑战：安全处理无效数值输入以及保持固定装置一致性的结构模型重建。\n\n#### 总结\nStructureClaw 通过引入以工件为中心的评估范式，解决了结构工程 LLM 代理评估中缺乏完整证据链验证的问题。其提出的可执行基准测试 StructureClaw-Bench 能够更严格地评估代理在工作流执行、交互鲁棒性和多模态重建方面的能力，显著提升了评估的严谨性，并为未来工程代理的开发提供了可追溯、可执行的改进基础。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Addressing structural engineering requests requires a chain of interdependent artifacts, including interpreted requirements, computable models, validation records, solver outputs, code-check records, and final reports, rather than a single answer.\n- **Limitations of Existing Work**: Current evaluations focused on question answering or script generation rarely verify this complete evidence chain. Consequently, they may reward fluent outputs even when the underlying engineering workflow is incomplete, internally inconsistent, or non-executable.\n\n## Core Contributions\n- **Proposed StructureClaw**: An artifact-centered workbench where LLM agents operate via governed engineering skills, typed tools, shared artifact state, and local analysis backends. It also introduces StructureClaw-Bench, an executable benchmark with 150 controlled scenarios.\n- **Challenge 1: Difficulty in verifying workflow integrity and executability**. Traditional text-based evaluations fail to detect failures caused by missing or inconsistent upstream artifacts. StructureClaw addresses this by defining success only when all required artifact- and execution-level assertions pass in a single run, ensuring workflow completeness.\n- **Challenge 2: Insufficient robustness in complex interactions and multimodal reconstruction**. Handling invalid numerical inputs safely and reconstructing structural models with fixture consistency remains difficult. The paper exposes these workflow-level failures through interactive and multimodal evaluations, providing specific directions for improvement.\n\n## Implementation and Evaluation\n- **Implementation**: StructureClaw integrates governed engineering skills, typed tools, and local analysis backends (e.g., OpenSeesPy) to support a traceable workflow from requirements to reports. Code and benchmarks are open-sourced.\n- **Evaluation Results**: Across ten agent-model configurations evaluated on 50 standard cases, the average Success Rate increased from 56.8% with a generic-skill baseline to 88.6% with the full automatic workflow provided by StructureClaw.\n- **Comparison and Findings**: Unlike traditional evaluations focusing solely on final text, StructureClaw-Bench reveals workflow-level failures. Interactive and multimodal assessments identified two prominent remaining challenges: safe handling of invalid numerical inputs and fixture-consistent reconstruction of structural models.\n\n## 4. Conclusion\nStructureClaw addresses the lack of complete evidence chain verification in evaluating structural engineering LLM agents by introducing an artifact-centered evaluation paradigm. Its executable benchmark, StructureClaw-Bench, rigorously assesses agent capabilities in workflow execution, interactive robustness, and multimodal reconstruction, significantly enhancing evaluation strictness and providing a traceable, executable foundation for future agent development.",
-      "render_excerpt": "StructureClaw 通过引入以工件为中心的评估范式，解决了结构工程 LLM 代理评估中缺乏完整证据链验证的问题。其提出的可执行基准测试 StructureClaw-Bench 能够更严格地评估代理在工作流执行、交互鲁棒性和多模态重建方面的能力，显著提升了评估的严谨性，并为未来工程代理的开发提供了可追溯、可执行的改进基础。",
-      "render_excerpt_en": "## 1. What the Paper Did - **Background**: Addressing structural engineering requests requires a chain of interdependent artifacts, including interpreted requirements, computable models, validation records, solver outputs, code-check records, and final reports, rather than a single answer. - **Limitations of Existing Work**: Current evaluations focused on question answering or script generation rarely verify this complete evidence chain.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在长程交互中会积累异构上下文，包括系统指令、计划、用户对话、检索文档、工具输出和中间推理过程。这些内容导致键值（KV）缓存迅速增长，成为内存瓶颈，限制了长 horizon 推理和服务的效率。\n- **已有工作为什么解决不了**：现有的 KV 缓存驱逐策略通常基于注意力分数或最近性（recency），并对序列中的所有令牌应用统一的保留规则。这种方法忽略了智能体编排层已知的语义结构（例如系统指令与临时草稿的不同重要性），导致关键信息丢失或无效信息占用缓存。\n\n## 文章的核心贡献点\n- **提出了一个 MemDecay**：一种无需训练、具备区域感知能力的 KV 缓存驱逐框架。\n- **挑战1：异构上下文的差异化保留需求**。智能体上下文中的不同部分（如系统指令 vs. 临时推理）具有截然不同的生命周期和重要性，统一策略难以兼顾。**解决方法**：MemDecay 利用编排层提供的区域标签，为不同区域的令牌分配特定的基础优先级和衰减率，并允许固定关键区域（如系统指令），从而根据语义结构动态调整保留策略。\n- **挑战2：衰减率的量化与校准**。如何确定不同区域令牌的具体衰减速度以匹配其实际注意力寿命是一个难题。**解决方法**：论文提出了一种测量协议，通过分析智能体轨迹中的注意力寿命来校准各区域的衰减率，发现系统令牌的半衰期（148-189步）远高于草稿令牌（14-16步），据此优化驱逐决策。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 Qwen2.5-1.5B 和 3B 模型上，针对约 450 和 1,700 个令牌的上下文长度进行评估。\n- **主要结果**：\n    - **固定区域优势**：通过固定系统区域，MemDecay 在所有设置下均保持了全缓存的准确率；相比之下，没有任何基线方法能在 24 个测试案例中保留超过 13 个案例的准确性。\n    - **区域感知 vs. 最近性**：随着上下文增长，基于最近性的保留策略完全失效，而 MemDecay 的区域感知保留依然有效。\n    - **非固定内容表现**：对于未固定的内容，基于累积注意力的保留策略在模型规模增大时表现更好。消融实验表明，当前公式中注意力分数的归一化是主要限制因素。\n- **对比结论**：MemDecay 证明了语义提示结构是 KV 缓存管理的稳健信号，特别是在处理长程智能体任务时，优于传统的纯注意力或最近性基准。\n\n#### 总结\nMemDecay 通过引入区域感知的 KV 缓存驱逐机制，有效解决了 LLM 智能体在长程推理中的内存瓶颈问题。它利用智能体上下文的语义结构，为不同功能的令牌区域设定差异化的优先级和衰减策略。实验表明，该方法在保护关键系统指令方面显著优于现有基线，且在长上下文场景中比基于最近性的方法更具鲁棒性。尽管在非固定内容的注意力分数归一化上仍有改进空间，但该工作确立了结合语义结构与注意力信号进行高效缓存管理的新方向。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents accumulate heterogeneous contexts during long-horizon interactions, including system instructions, plans, user turns, retrieved documents, tool outputs, and intermediate reasoning. This causes the Key-Value (KV) cache to grow rapidly, creating a memory bottleneck that limits efficient long-horizon inference and serving.\n- **Why Existing Work Fails**: Existing KV cache eviction policies typically apply uniform retention rules based on attention scores or recency to all tokens. These methods ignore the semantic structure known to the agent orchestrator, failing to distinguish between critical long-term information (e.g., system instructions) and transient data (e.g., scratchpad reasoning), leading to suboptimal cache utilization.\n\n## Core Contributions\n- **Proposed MemDecay**: A training-free, region-aware KV cache eviction framework.\n- **Challenge 1: Differentiated Retention Needs for Heterogeneous Contexts**. Different parts of an agent's context have vastly different lifespans and importance levels, which uniform strategies cannot handle effectively. **Solution**: MemDecay leverages region labels from the orchestration layer to assign region-specific base priorities and decay rates. It allows pinning of critical regions (like system instructions) and dynamically adjusts retention based on semantic structure.\n- **Challenge 2: Quantifying and Calibrating Decay Rates**. Determining the specific decay speeds for different token regions to match their actual attention lifetimes is difficult. **Solution**: The paper introduces a measurement protocol to calibrate decay rates by analyzing attention lifetimes in agent traces. It finds that system tokens have much longer half-lives (148-189 steps) compared to scratchpad tokens (14-16 steps), using this data to optimize eviction decisions.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on Qwen2.5-1.5B and 3B models with context lengths of approximately 450 and 1,700 tokens.\n- **Key Results**:\n    - **Pinning Advantage**: By pinning system regions, MemDecay maintained full-cache accuracy across all settings. In contrast, no baseline preserved accuracy in more than 13 out of 24 test cases.\n    - **Region-Aware vs. Recency**: As context length increased, recency-based retention collapsed, whereas MemDecay's region-aware retention remained effective.\n    - **Unpinned Content Performance**: For unpinned content, accumulated-attention retention performed better as model scale increased. Ablation studies identified attention score normalization as the primary limitation in the current formulation.\n- **Comparison Conclusion**: MemDecay demonstrates that semantic prompt structure is a robust signal for KV cache management, significantly outperforming traditional attention-only or recency-based baselines, especially in long-context agent tasks.\n\n#### Summary\nMemDecay addresses the memory bottleneck in LLM agent long-horizon reasoning by introducing a region-aware KV cache eviction mechanism. By leveraging the semantic structure of agent contexts, it sets differentiated priorities and decay strategies for different functional token regions. Experiments show that this method significantly outperforms existing baselines in protecting critical system instructions and is more robust than recency-based methods in long-context scenarios. While there is room for improvement in attention score normalization for unpinned content, this work establishes a new direction for efficient cache management by combining semantic structure with attention signals.",
+      "render_excerpt": "MemDecay 通过引入区域感知的 KV 缓存驱逐机制，有效解决了 LLM 智能体在长程推理中的内存瓶颈问题。它利用智能体上下文的语义结构，为不同功能的令牌区域设定差异化的优先级和衰减策略。实验表明，该方法在保护关键系统指令方面显著优于现有基线，且在长上下文场景中比基于最近性的方法更具鲁棒性。尽管在非固定内容的注意力分数归一化上仍有改进空间，但该工作确立了结合语义结构与注意力信号进行高效缓存管理的新方向。",
+      "render_excerpt_en": "MemDecay addresses the memory bottleneck in LLM agent long-horizon reasoning by introducing a region-aware KV cache eviction mechanism. By leveraging the semantic structure of agent contexts, it sets differentiated priorities and decay strategies for different functional token regions. Experiments show that this method significantly outperforms existing baselines in protecting critical system instructions and is more robust than recency-based methods in long-context scenarios.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-16T12:13:41Z"
+        "captured_at": "2026-07-12T05:35:26Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-16"
+        "captured_at": "2026-07-12"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -178,46 +53,41 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.14651",
-      "date": "2026-07-16",
-      "title": "MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents",
+      "paper_id": "2607.10569",
+      "date": "2026-07-12",
+      "title": "When Does Restricting a Coding Agent to execute_code Help? A Regime $\\times$ Agent-Design Ablation",
       "authors": [
-        "Jifeng Gao",
-        "Kang Xia",
-        "Yi Zhang",
-        "Xiaobin Hong",
-        "Mingkai Lin",
-        "Xingshen Wei",
-        "Wenzhong Li",
-        "Sanglu Lu"
+        "Hong Yang",
+        "Qi Yu",
+        "Travis Desell"
       ],
-      "abstract": "Persistent external memory enhances agent continuity but introduces persistent security vulnerabilities: adversarial content can be injected via standard interaction channels, retained across turns, and later distort downstream behavior. To address this challenge, we propose MemPoison, a comprehensive benchmark and analysis framework featuring 1227 hand-validated cases across four attack types, three injection channels, and three representative memory substrates, evaluated on seven open-weight and three closed-weight model families. We introduce a three-tier taxonomy: (L1) direct single-record corruption, (L2) compositional multi-record corruption and (L3) context-triggered dormant corruption. Our evaluations reveal a distinct defense frontier: while baseline write-time defenses, such as consistency checks, substantially suppress direct L1 attacks, they fail to reliably suppress L2 and L3 attacks. Through mechanistic influence decomposition (MID), we demonstrate structural blind spots in write-time defenses, which admit seemingly benign records that later become harmful through joint retrieval composition or trigger-conditioned activation. Our findings advocate for shifting from static filtering to adaptive, context-sensitive memory defense strategies.",
+      "abstract": "Modern coding agents expose multiple tool surfaces -- IDE primitives, bash, and Model Context Protocol (MCP) code-execution -- and the field has shipped three contradictory claims about which one matters. We run the missing crossed comparison: an integrity-clean three-arm ablation (baseline / bash_only / code_only) on synthetic computation tasks and SWE-bench Mini modification tasks, holding model, harness, and prompts fixed, with two agents (Claude Code, OpenAI Codex CLI) so the comparison spans both regime and agent-design axes. Across the four resulting (regime, agent) cells, restricting the agent to a single execute_code MCP tool is cheaper than -- or statistically tied with -- its cheapest tool-rich rival in three cells (significantly on Artifact/Claude and SWE-bench/Codex; directionally on Artifact/Codex), with pass rates statistically tied within each cell. The lone exception is SWE-bench/Claude, where code_only is directionally costlier (+14.4%, not significant); a conditional-cost analysis localizes that gap to failure-cost on doomed-run trajectories, not a per-edit tax on successful runs. Two implications: the cheapest tool surface is jointly determined by task regime and agent design rather than by either axis alone, and the headline cost signal lives in cache-adjusted cost -- not pass rate, which is invariant across surfaces at the model sizes we evaluate. The benchmark harness, task suite, and analysis code are available at https://github.com/hyang0129/onlycodes.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.14651v1",
-        "pdf": "https://arxiv.org/pdf/2607.14651v1",
-        "github": null,
+        "abs": "http://arxiv.org/abs/2607.10569v1",
+        "pdf": "https://arxiv.org/pdf/2607.10569v1",
+        "github": "https://github.com/hyang0129/onlycodes",
         "blog": null
       },
-      "institution": "Nanjing University",
+      "institution": "Rochester Institute of Technology",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：持久化外部记忆增强了 LLM Agent 的连续性，但也引入了持久的安全漏洞。攻击者可以通过标准交互通道注入对抗性内容，这些内容被保留并在后续回合中扭曲下游行为。\n- **已有工作的不足**：现有评估支离破碎，主要关注简化的威胁模型（如孤立的单条记录注入），且仅评估狭窄的记忆抽象层。缺乏统一的基准测试框架来表征更真实的攻击模式（如组合腐败和上下文触发的休眠行为）。此外，现有的写入时防御（如一致性检查）的有效性在直接注入之外的场景中尚不清楚，且缺乏对失败如何产生和传播的深入可见性。\n\n## 文章的核心贡献点\n- **提出了一个 MemPoison 基准与分析框架**：包含 1227 个手工验证的案例，涵盖 4 种攻击类型、3 种注入通道和 3 种代表性记忆基底，并在 7 个开源和 3 个闭源模型家族上进行了评估。\n- **挑战 1：复杂攻击模式的系统性评估缺失**。难点在于现有工作难以捕捉多记录组合或上下文触发的隐蔽攻击。论文通过引入三层分类法（L1 直接单记录腐败、L2 组合多记录腐败、L3 上下文触发休眠腐败）解决了这一挑战，全面覆盖了从简单到复杂的攻击谱系。\n- **挑战 2：写入时防御的结构盲点难以解释**。难点在于传统防御能拦截 L1 攻击，但对 L2/L3 失效，且原因不明。论文通过机制影响分解（MID）技术，揭示了写入时防御的结构盲点，证明了看似良性的记录如何通过联合检索组合或触发条件激活而在后期变得有害，从而解释了防御失败的根本原因。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：评估了 7 个开源权重模型家族和 3 个闭源模型家族，覆盖三种代表性记忆基底。\n- **主要结果**：基线写入时防御（如一致性检查）能显著抑制直接的 L1 攻击，但无法可靠地抑制 L2（组合腐败）和 L3（上下文触发休眠腐败）攻击。\n- **对比分析**：与仅关注单条记录注入的先前工作相比，MemPoison 揭示了防御的前沿界限。通过 MID 分析发现，现有防御存在结构盲点，允许看似无害的记录进入记忆库，这些记录在后续通过组合或特定上下文触发时产生危害。这表明静态过滤不足以应对高级威胁。\n\n#### 总结\n本文提出了 MemPoison，首个针对 LLM Agent 持久化记忆威胁的综合基准和分析框架。通过建立 L1-L3 三级攻击分类法，研究揭示了当前主流的写入时防御策略在处理组合式和上下文触发式攻击时的结构性盲点。研究结果强烈建议将防御策略从静态过滤转向自适应、上下文敏感的记忆防御机制，以应对日益复杂的持久化记忆安全风险。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Persistent external memory enhances LLM agent continuity but introduces durable security vulnerabilities. Adversarial content injected via standard interaction channels can be retained across turns and distort downstream behavior.\n- **Limitations of Existing Work**: Current evaluations are fragmented, focusing on simplified threat models (e.g., isolated single-record injections) and narrow memory abstractions. There is a lack of a unified benchmarking framework for realistic attack regimes, such as compositional corruption and context-triggered dormant behaviors. Furthermore, the effectiveness of emerging write-time defenses remains poorly understood beyond direct injection settings, with limited visibility into failure propagation.\n\n## Core Contributions\n- **Proposed MemPoison**: A comprehensive benchmark and analysis framework featuring 1,227 hand-validated cases across four attack types, three injection channels, and three representative memory substrates, evaluated on ten model families (seven open-weight, three closed-weight).\n- **Challenge 1: Lack of systematic evaluation for complex attack patterns**. The difficulty lies in capturing隐蔽 attacks involving multi-record composition or context triggers. The paper addresses this by introducing a three-tier taxonomy: (L1) direct single-record corruption, (L2) compositional multi-record corruption, and (L3) context-triggered dormant corruption, covering the full spectrum from simple to complex attacks.\n- **Challenge 2: Unexplained structural blind spots in write-time defenses**. The difficulty is that while traditional defenses block L1 attacks, they fail against L2/L3 attacks without clear reasons. The paper uses Mechanistic Influence Decomposition (MID) to reveal these structural blind spots, demonstrating how seemingly benign records become harmful through joint retrieval composition or trigger-conditioned activation, thus explaining the root cause of defense failures.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on seven open-weight and three closed-weight model families across three representative memory substrates.\n- **Key Results**: Baseline write-time defenses (e.g., consistency checks) substantially suppress direct L1 attacks but fail to reliably suppress L2 (compositional) and L3 (context-triggered dormant) attacks.\n- **Comparison**: Unlike prior work focused on single-record injections, MemPoison reveals a distinct defense frontier. MID analysis shows that existing defenses have structural blind spots, admitting seemingly harmless records that later cause harm via composition or specific contexts. This indicates that static filtering is insufficient against advanced threats.\n\n## 4. Conclusion\nThis paper presents MemPoison, the first comprehensive benchmark and analysis framework for persistent memory threats in LLM agents. By establishing a three-level attack taxonomy (L1-L3), the study uncovers structural blind spots in current write-time defense strategies when handling compositional and context-triggered attacks. The findings strongly advocate for shifting from static filtering to adaptive, context-sensitive memory defense mechanisms to address increasingly sophisticated persistent memory security risks.",
-      "render_excerpt": "机构: Nanjing University<br>本文提出了 MemPoison，首个针对 LLM Agent 持久化记忆威胁的综合基准和分析框架。通过建立 L1-L3 三级攻击分类法，研究揭示了当前主流的写入时防御策略在处理组合式和上下文触发式攻击时的结构性盲点。研究结果强烈建议将防御策略从静态过滤转向自适应、上下文敏感的记忆防御机制，以应对日益复杂的持久化记忆安全风险。",
-      "render_excerpt_en": "Institution: Nanjing University<br>## 1. What the Paper Did - **Background**: Persistent external memory enhances LLM agent continuity but introduces durable security vulnerabilities. Adversarial content injected via standard interaction channels can be retained across turns and distort downstream behavior.",
+      "summary_cn": "## 文章做了什么\n- **背景**：现代编码智能体（Coding Agents）暴露了多种工具接口，包括 IDE 原语（如 Read/Edit）、Bash 命令行以及模型上下文协议（MCP）的代码执行工具。业界关于哪种工具接口最关键存在三种相互矛盾的观点：有的认为专用 IDE 原语至关重要，有的认为仅 Bash 就足够，还有的主张用代码执行工具替代所有原生工具以大幅降低 Token 消耗。\n- **已有工作为什么解决不了**：现有的研究从未在同一个测试 harness、使用相同的模型和提示词，并针对不同的任务机制（Regime）和智能体设计进行交叉对比。因此，领域内无法确定每种主张适用的具体条件，也无法判断这些观点是否真正矛盾。\n\n## 文章的核心贡献点\n- **提出了一个**：完整性干净的三臂消融实验框架（baseline / bash_only / code_only），在合成计算任务和 SWE-bench Mini 修改任务上，固定模型、harness 和提示词，跨越两种智能体（Claude Code, OpenAI Codex CLI）和两种任务机制进行交叉对比。\n- **挑战1：如何解耦任务机制与智能体设计对工具选择的影响？**\n  - **难点**：不同智能体的架构差异和不同任务类型（如纯计算 vs 代码修改）可能导致最优工具表面不同，单一维度的比较会产生偏差。\n  - **解决方法**：通过构建 (任务机制 × 智能体设计) 的四格矩阵，严格控制变量，发现最便宜的工具表面是由任务机制和智能体设计共同决定的，而非由单一因素决定。\n- **挑战2：如何准确评估工具限制对成本的影响，区分成功运行与失败运行的成本构成？**\n  - **难点**：简单的平均成本可能掩盖了在特定失败轨迹上的高额开销，导致对工具效率的误判。\n  - **解决方法**：引入条件成本分析（conditional-cost analysis），将成本差距定位到“注定失败”轨迹上的失败成本，而非成功运行中的每次编辑税收，揭示了主要成本信号存在于缓存调整后的成本中，而通过率在各工具表面间保持不变。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究使用了两个基准测试套件：用于计算任务的合成 Artifact 基准和用于代码修改任务的 SWE-bench Mini。实现了三个工具臂：基线（默认工具集）、bash_only（仅保留原生 bash 及 read/glob/grep，移除 Edit/Write）、code_only（仅使用单个 MCP execute_code 工具，禁用所有原生内置工具）。代码和基准测试 harness 已开源。\n- **Evaluation 结果**：\n  - 在四个（机制，智能体）组合单元格中，限制智能体仅使用 execute_code 工具在三个单元格中比其最便宜的丰富工具竞争对手更便宜或统计持平（在 Artifact/Claude 和 SWE-bench/Codex 上显著；在 Artifact/Codex 上方向性一致）。\n  - 唯一的例外是 SWE-bench/Claude，其中 code_only 成本高出 14.4%（不显著），分析表明这源于失败轨迹的成本。\n  - 所有单元格内的通过率在统计上是持平的，表明在当前评估的模型规模下，工具表面的改变不影响最终成功率，主要影响的是缓存调整后的成本。\n- **对比**：与 SWE-agent 强调 ACI 原语的重要性、mini-SWE-agent 主张 Bash 足够、以及行业报告称 MCP 代码执行可减少 98-99% Token 的说法相比，本文证明了这些结论依赖于具体的任务和智能体组合，不存在通用的“最佳”工具表面。\n\n## 总结\n本文通过严格的交叉消融实验，解决了编码智能体工具接口选择的争议。研究发现，限制智能体仅使用单一的 execute_code MCP 工具通常在成本上更具优势或持平，且不影响通过率。最优工具表面的选择取决于任务机制和智能体设计的共同作用，且成本优化的关键在于缓存调整后的成本，特别是避免在注定失败的轨迹上产生高额开销。这一发现为未来编码智能体的工具设计提供了实证依据，强调了情境化设计的重要性。",
+      "summary_en": "## What the Paper Did\n- **Background**: Modern coding agents expose multiple tool surfaces, including IDE primitives (e.g., Read/Edit), Bash, and Model Context Protocol (MCP) code-execution tools. The field has produced three contradictory claims regarding which surface is critical: some argue specialized IDE primitives are essential, others claim Bash alone is sufficient, and industry reports suggest replacing all native tools with code execution can reduce token usage by ~98–99%.\n- **Why Existing Work Falls Short**: Previous studies have never performed a crossed comparison on a single harness, using the same models and prompts, stratified by task regime and agent design. Consequently, it remains unclear under which conditions each claim applies or whether they genuinely contradict each other.\n\n## Core Contributions\n- **Proposed**: An integrity-clean three-arm ablation framework (baseline / bash_only / code_only) evaluated on synthetic computation tasks and SWE-bench Mini modification tasks. The study holds the model, harness, and prompts fixed while crossing two agents (Claude Code, OpenAI Codex CLI) with two task regimes.\n- **Challenge 1: How to decouple the impact of task regime and agent design on tool selection?**\n  - **Difficulty**: Differences in agent architectures and task types (e.g., pure computation vs. code modification) can lead to different optimal tool surfaces, making single-dimension comparisons biased.\n  - **Solution**: By constructing a (Regime × Agent-Design) matrix and strictly controlling variables, the study reveals that the cheapest tool surface is jointly determined by both task regime and agent design, not by either axis alone.\n- **Challenge 2: How to accurately assess the cost impact of tool restrictions, distinguishing between successful and failed runs?**\n  - **Difficulty**: Simple average costs may mask high expenses on specific failure trajectories, leading to misjudgments of tool efficiency.\n  - **Solution**: Introduced conditional-cost analysis to localize cost gaps to failure costs on \"doomed-run\" trajectories rather than a per-edit tax on successful runs. This revealed that the headline cost signal resides in cache-adjusted costs, while pass rates remain invariant across surfaces.\n\n## Implementation, Deployment, and Evaluation Results\n- **Implementation & Deployment**: The study utilized two benchmark suites: a synthetic Artifact benchmark for computation tasks and SWE-bench Mini for code modification tasks. Three tool arms were implemented: Baseline (default tools), bash_only (native bash + read/glob/grep, removing Edit/Write), and code_only (single MCP execute_code tool, disabling all native built-ins). The benchmark harness and code are open-sourced.\n- **Evaluation Results**:\n  - In three out of four (regime, agent) cells, restricting the agent to the execute_code tool was cheaper than or statistically tied with its cheapest tool-rich rival (significant on Artifact/Claude and SWE-bench/Codex; directional on Artifact/Codex).\n  - The lone exception was SWE-bench/Claude, where code_only was directionally costlier (+14.4%, not significant), attributed to failure costs on doomed trajectories.\n  - Pass rates were statistically tied across all cells, indicating that changing the tool surface does not affect success rates at the evaluated model sizes, but primarily impacts cache-adjusted costs.\n- **Comparison**: Contrasting with SWE-agent's emphasis on ACI primitives, mini-SWE-agent's sufficiency of Bash, and industry claims of massive token reduction via MCP, this paper demonstrates that these conclusions are contingent on specific task and agent combinations, disproving the existence of a universally \"best\" tool surface.\n\n## Summary\nThis paper resolves the controversy over coding agent tool interface selection through rigorous crossed ablation experiments. It finds that restricting agents to a single execute_code MCP tool is generally cost-effective or comparable, without compromising pass rates. The optimal tool surface depends on the joint effect of task regime and agent design. Cost optimization hinges on cache-adjusted costs, particularly by avoiding high expenses on doomed trajectories. These findings provide empirical evidence for future coding agent tool design, emphasizing the importance of contextualized design.",
+      "render_excerpt": "机构: Rochester Institute of Technology<br>## 文章做了什么 - **背景**：现代编码智能体（Coding Agents）暴露了多种工具接口，包括 IDE 原语（如 Read/Edit）、Bash 命令行以及模型上下文协议（MCP）的代码执行工具。业界关于哪种工具接口最关键存在三种相互矛盾的观点：有的认为专用 IDE 原语至关重要，有的认为仅 Bash 就足够，还有的主张用代码执行工具替代所有原生工具以大幅降低 Token 消耗。 - **已有工作为什么解决不了**：现有的研究从未在同一个测试 harness、使用相同的模型和提示词，并针对不同的任务机制（Regime）和智能体设计进行交叉对比。因此，领域内无法确定每种主张适用的具体条件，也无法判断这些观点是否真正矛盾。 ## 文章的核心贡献点 - **提出了一个**：完整性干净的三臂消融实验框架（baseline / bash_only / code_only），在合成计算任务和 SWE-bench Mini 修改任务上，固定模型、harness 和提示词，跨越两种智能体（Claude Code, OpenAI Codex CLI）和两种任务机制进行交叉对比。",
+      "render_excerpt_en": "Institution: Rochester Institute of Technology<br>## What the Paper Did - **Background**: Modern coding agents expose multiple tool surfaces, including IDE primitives (e.g., Read/Edit), Bash, and Model Context Protocol (MCP) code-execution tools. The field has produced three contradictory claims regarding which surface is critical: some argue specialized IDE primitives are essential, others claim Bash alone is sufficient, and industry reports suggest replacing all native tools with code execution can reduce token usage by ~98–99%. - **Why Existing Work Falls Short**: Previous studies have never performed a crossed comparison on a single harness, using the same models and prompts, stratified by task regime and agent design.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-16T07:19:33Z"
+        "captured_at": "2026-07-12T04:52:08Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-16"
+        "captured_at": "2026-07-12"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -232,47 +102,153 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.14642",
-      "date": "2026-07-16",
-      "title": "MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers",
+      "paper_id": "2607.10814",
+      "date": "2026-07-12",
+      "title": "Auditing Belief-Conditioned LLM Agents in Hidden-Information Social Deduction Games",
       "authors": [
-        "Huanxi Liu",
-        "Kun Hu",
-        "Jiaqi Liao",
-        "Qiang Wang",
-        "Pengfei Qian",
-        "YuanZhao Zhai",
-        "Dawei Feng",
-        "Bo Ding",
-        "Huaimin Wang"
+        "Yuan Gao",
+        "Jiangyi Yang",
+        "Yao Zhao",
+        "Yichi Zhang"
       ],
-      "abstract": "As Model Context Protocol (MCP) servers emerge as the core infrastructure for connecting LLMs with external tools, existing benchmarks leverage real-world MCP servers to evaluate LLM agents' tool-using capabilities. However, these benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers, resulting in flawed assessments that fail to capture the agent's adaptability in changing tool landscapes. To bridge this gap, we introduce \\textbf{MCPEvol-Bench}, a novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution. Inspired by large-scale empirical study, we propose 11 mutation operators to simulate realistic tool evolution within 123 MCP servers. We benchmark 12 state-of-the-art LLMs on multiple versions of MCP servers, revealing that even frontier models struggle to adapt to evolving tools. For instance, GPT-5.4 and Claude-Sonnet-4-6 exhibit performance declines of 13.7\\% and 14.4\\% in evolved MCP servers, respectively, accompanied by substantial increases in planning and reasoning errors. These findings highlight the vulnerability of LLM-driven workflows, establishing MCPEvol-Bench as a standard for evaluating agent adaptability in dynamic tool environments.",
+      "abstract": "Evaluating LLM agents in hidden-information multi-agent settings is hard: final outcomes are high-variance and rarely reveal why an agent decided as it did. We study this in a 9-player Werewolf environment where agents act under strict, code-level information isolation, and we build an auditable framework that maintains an external belief state over hidden roles, logs belief updates and belief-action deviations as structured evidence, and supports a defensive offline improvement loop that reviews bad cases before any strategy change. Across 1,080 frozen games spanning belief-disabled, active-belief, kernel-ablation, camp-restricted, consumption-policy, and high-load arms, and including a seed-paired A0/A1 comparison, the active-belief condition is associated with substantially better good-side outcomes: in the 200-seed A0/A1 comparison the good-side win rate rises from 0.205 to 0.390 (paired McNemar $χ^2 = 16.4$, $p < 0.001$), with fewer irreversible witch-poison errors. We do not, however, attribute this shift to belief content. Direct action-belief consistency is low ($\\approx 0.21$), and giving belief only to the werewolves helps the good side more than giving it only to the good side, which argues against a simple holder-benefit account; we therefore report the effect as an association and treat its mechanism as unresolved. The contribution is the audit framework itself: it makes the effect measurable, exposes low direct action-belief consistency, rejects an unreliable forced-consumption intervention with evidence, and separates strategy effects from load confounds. We accordingly position external belief in high-noise hidden-information games primarily as an auditable cognitive baseline that also carries decision-relevant signal, turning opaque agent behavior into replayable evidence for safer, controlled iteration.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.14642v1",
-        "pdf": "https://arxiv.org/pdf/2607.14642v1",
+        "abs": "http://arxiv.org/abs/2607.10814v1",
+        "pdf": "https://arxiv.org/pdf/2607.10814v1",
         "github": null,
         "blog": null
       },
-      "institution": "National University of Defense Technology",
+      "institution": "University of Melbourne",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着模型上下文协议（MCP）服务器成为连接大语言模型（LLM）与外部工具的核心基础设施，评估 LLM Agent 的工具使用能力变得至关重要。然而，现有的基准测试主要利用静态的或实时的 MCP 服务器进行评估。\n- **已有工作的不足**：现有基准测试忽视了 MCP 服务器中工具接口和功能的持续演变。这种静态评估无法捕捉 Agent 在动态变化的工具环境中的适应能力，导致评估结果存在缺陷，不能真实反映 Agent 在面对工具变更时的鲁棒性。\n\n## 文章的核心贡献点\n- **提出了一个 MCPEvol-Bench**：这是一个用于评估 LLM Agent 在动态工具集演变下任务解决能力的新型基准测试框架。\n- **挑战1：如何真实模拟工具演变？**\n  - **难点**：工具演变具有多样性和复杂性，简单的随机修改无法反映真实开发场景中的接口变更模式。\n  - **解决方法**：通过对大量 MCP 服务器进行实证研究，识别出主要的演变模式，并据此设计了 11 种变异算子。利用 LLM 驱动的方式自适应地选择这些算子对源代码进行修改，从而在 123 个 MCP 服务器中生成逼真的工具演变版本。\n- **挑战2：如何量化 Agent 对演变的适应性？**\n  - **难点**：需要在一个受控环境中，精确衡量同一 Agent 在不同版本工具集上的性能差异，并区分错误类型（如规划错误 vs 推理错误）。\n  - **解决方法**：构建了跨版本的评估流水线，在多个演变阶段的 MCP 服务器上基准测试 12 个最先进的 LLM。通过对比 Agent 在原始版本和演变版本上的任务成功率及错误分布，揭示了模型在适应动态工具时的具体弱点。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：研究团队分析了远程托管服务器和公共代码仓库的版本历史， curated 了包含 1,272 个工具的 123 个 MCP 服务器，涵盖软件开发、数据分析等多个领域。通过基于 LLM 的管道自动生成跨服务器任务。\n- **评估结果**：实验表明，即使是前沿模型也难以适应不断演变的工具。例如，GPT-5.4 和 Claude-Sonnet-4-6 在演变后的 MCP 服务器上性能分别下降了 13.7% 和 14.4%。此外，随着工具的演变，Agent 的规划和推理错误显著增加。\n- **对比**：与忽略工具演变的现有静态基准测试相比，MCPEvol-Bench 揭示了 LLM 驱动工作流在动态环境中的脆弱性，提供了更贴近真实世界部署场景的评估标准。\n\n#### 总结\n本文指出了当前 LLM Agent 基准测试在评估工具适应性方面的空白，提出了 MCPEvol-Bench。通过实证研究指导的变异算子和 LLM 驱动的演变模拟，该基准测试有效评估了 Agent 在动态工具环境下的表现。研究发现主流 LLM 在应对工具接口和功能变化时存在显著的性能下降和错误率上升，强调了提升 Agent 适应动态工具环境能力的重要性，并将 MCPEvol-Bench 确立为评估此类适应性的新标准。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: As Model Context Protocol (MCP) servers become core infrastructure for connecting LLMs with external tools, evaluating LLM agents' tool-use capabilities is critical. Existing benchmarks primarily use static or real-time MCP servers for assessment.\n- **Limitations of Existing Work**: Current benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers. This static evaluation fails to capture agent adaptability in dynamic tool landscapes, resulting in flawed assessments that do not reflect robustness against tool changes.\n\n## Core Contributions\n- **Proposed MCPEvol-Bench**: A novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution.\n- **Challenge 1: How to realistically simulate tool evolution?**\n  - **Difficulty**: Tool evolution is diverse and complex; simple random modifications do not reflect real-world interface change patterns.\n  - **Solution**: Conducted an empirical study to identify predominant evolution patterns and designed 11 mutation operators. Used an LLM-driven approach to adaptively select these operators for source code modification, generating realistic evolved toolsets across 123 MCP servers.\n- **Challenge 2: How to quantify agent adaptability to evolution?**\n  - **Difficulty**: Requires a controlled environment to precisely measure performance differences of the same agent across different tool versions and distinguish error types (e.g., planning vs. reasoning errors).\n  - **Solution**: Built a cross-version evaluation pipeline to benchmark 12 state-of-the-art LLMs on multiple stages of evolved MCP servers. By comparing success rates and error distributions between original and evolved versions, the study revealed specific weaknesses in model adaptability.\n\n## Implementation and Evaluation\n- **Implementation & Data**: Analyzed version histories of remote servers and public repositories, curating 123 MCP servers with 1,272 tools across domains like software development and data analytics. Cross-server tasks were automatically generated via an LLM-based pipeline.\n- **Evaluation Results**: Even frontier models struggle to adapt to evolving tools. GPT-5.4 and Claude-Sonnet-4-6 showed performance declines of 13.7% and 14.4%, respectively, on evolved servers, accompanied by substantial increases in planning and reasoning errors.\n- **Comparison**: Unlike existing static benchmarks that ignore tool evolution, MCPEvol-Bench exposes the vulnerability of LLM-driven workflows in dynamic environments, providing a more realistic standard for evaluation.\n\n## 4. Conclusion\nThis paper addresses the gap in evaluating tool adaptability in LLM agent benchmarks by proposing MCPEvol-Bench. Guided by empirical study-derived mutation operators and LLM-driven simulation, the benchmark effectively assesses agent performance in dynamic tool environments. Findings indicate significant performance drops and increased error rates for mainstream LLMs when facing tool interface and functionality changes, highlighting the need for improved agent adaptability and establishing MCPEvol-Bench as a new standard for such evaluations.",
-      "render_excerpt": "机构: National University of Defense Technology<br>本文指出了当前 LLM Agent 基准测试在评估工具适应性方面的空白，提出了 MCPEvol-Bench。通过实证研究指导的变异算子和 LLM 驱动的演变模拟，该基准测试有效评估了 Agent 在动态工具环境下的表现。研究发现主流 LLM 在应对工具接口和功能变化时存在显著的性能下降和错误率上升，强调了提升 Agent 适应动态工具环境能力的重要性，并将 MCPEvol-Bench 确立为评估此类适应性的新标准。",
-      "render_excerpt_en": "Institution: National University of Defense Technology<br>## 1. What the Paper Did - **Background**: As Model Context Protocol (MCP) servers become core infrastructure for connecting LLMs with external tools, evaluating LLM agents' tool-use capabilities is critical. Existing benchmarks primarily use static or real-time MCP servers for assessment.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体在隐藏信息的多智能体环境（如狼人杀）中面临评估难题。由于最终结果具有高方差，且往往无法揭示智能体决策的具体原因，传统的黑盒评估方法难以区分失败是源于证据缺失、信念跟踪错误、提示词诱导行为还是负载导致的LLM故障。\n- **已有工作为什么解决不了**：现有的评估多关注全 observable 状态或可从提示中重构的状态，而在部分可观测、存在欺骗性通信和对抗性交互的环境中，仅凭胜率这一噪声信号无法解释智能体内部推理过程的缺陷，也无法有效分离策略效果与系统负载等混淆因素。\n\n## 文章的核心贡献点\n- **提出了一个可审计的信念条件LLM智能体框架**：该框架在严格的代码级信息隔离下运行，维护一个关于隐藏角色的外部信念状态，并将信念更新和信念-行动偏差记录为结构化证据，支持防御性的离线改进循环。\n- **挑战1：如何量化和诊断高噪声环境下的智能体决策逻辑？**\n  - **难点**：在狼人杀等高方差游戏中，单一的游戏结果无法反映决策质量，且LLM的内部思维过程不透明，难以定位错误根源。\n  - **解决方法**：引入外部信念层作为可审计的认知基线，记录信念快照和行动轨迹，将不透明的智能体行为转化为可回放的结构化证据，从而实现对决策过程的细粒度诊断。\n- **挑战2：如何区分信念内容对性能的直接影响与其他混淆因素（如负载、强制消费策略）？**\n  - **难点**：很难确定性能提升是源于信念内容的准确性，还是源于额外的计算负载或特定的干预策略，且直接的动作-信念一致性可能很低。\n  - **解决方法**：通过多臂实验（包括信念禁用、主动信念、核消融、阵营限制等）和种子配对对比，分离策略效应与负载混淆。研究发现主动信念条件与好人阵营胜率显著提升相关，但直接动作-信念一致性低，且机制复杂，从而证明了框架在揭示这些细微差别上的价值。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：构建了一个9人狼人杀环境，LLM智能体在严格的信息隔离下运行。系统记录结构化游戏事件、决策痕迹、信念快照和评估报告。框架支持离线审查坏案例，然后再进行策略更改。\n- **评估结果**：\n  - 在1080场冻结游戏中进行了多组对比实验。\n  - 在200个种子的A0/A1配对比较中，启用主动信念条件后，好人阵营的胜率从0.205显著提升至0.390（配对McNemar检验 $p < 0.001$），且不可逆的女巫毒杀错误减少。\n  - 发现直接的动作-信念一致性较低（约0.21）。\n  - 有趣的是，仅向狼人提供信念比仅向好人提供信念对好人阵营更有利，这反驳了简单的“持有者受益”假设。\n- **对比**：与传统黑盒评估相比，该框架不仅展示了性能提升，还揭示了低一致性和复杂的机制，拒绝了不可靠的强制消费干预，并成功分离了策略效应与负载混淆，提供了更深入的洞察。\n\n#### 总结\n本文主要贡献在于提出了一套可审计的框架，而非单纯追求性能提升。该框架使得隐藏信息游戏中的LLM智能体行为变得可测量和可解释。通过将外部信念定位为一种可审计的认知基线，该研究将不透明的代理行为转化为可重放的证据，支持更安全、可控的智能体迭代。尽管主动信念与更好的结果相关，但其具体作用机制仍未完全解决，框架的价值在于能够暴露这些问题并提供实证依据。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Evaluating LLM agents in hidden-information multi-agent environments (e.g., Werewolf) is challenging. Final outcomes are high-variance and rarely reveal why an agent made a specific decision, making it difficult to distinguish whether failures stem from missing evidence, poor belief tracking, prompt-induced behaviors, or load-induced LLM faults.\n- **Why Existing Work Falls Short**: Current evaluations often focus on fully observable states or tasks where the state can be reconstructed from prompts. In partially observable, adversarial settings with deceptive communication, win rates alone are noisy signals that fail to explain internal reasoning defects or separate strategy effects from confounding factors like system load.\n\n## Core Contributions\n- **Proposed an Auditable Belief-Conditioned LLM Agent Framework**: This framework operates under strict code-level information isolation, maintains an external belief state over hidden roles, logs belief updates and belief-action deviations as structured evidence, and supports a defensive offline improvement loop.\n- **Challenge 1: How to quantify and diagnose agent decision logic in high-noise environments?**\n  - **Difficulty**: In high-variance games like Werewolf, single game outcomes do not reflect decision quality, and LLM internal reasoning is opaque, making it hard to pinpoint error sources.\n  - **Solution**: Introduced an external belief layer as an auditable cognitive baseline. By recording belief snapshots and action traces, the framework transforms opaque agent behavior into replayable structured evidence for fine-grained diagnosis.\n- **Challenge 2: How to distinguish the direct impact of belief content from other confounding factors (e.g., load, forced consumption)?**\n  - **Difficulty**: It is difficult to determine if performance gains come from belief accuracy or extra computational load/intervention strategies, especially when direct action-belief consistency is low.\n  - **Solution**: Conducted multi-arm experiments (belief-disabled, active-belief, kernel-ablation, etc.) and seed-paired comparisons to isolate strategy effects from load confounds. The study found that active belief conditions correlated with significantly better good-side outcomes, despite low direct action-belief consistency (~0.21) and complex mechanisms, demonstrating the framework's value in revealing these nuances.\n\n## Implementation and Evaluation\n- **Implementation**: A 9-player Werewolf environment was built where LLM agents operate under strict information isolation. The system records structured game events, decision traces, belief snapshots, and evaluation reports, enabling offline review of bad cases before strategy changes.\n- **Evaluation Results**:\n  - Experiments spanned 1,080 frozen games across multiple conditions.\n  - In a 200-seed A0/A1 paired comparison, the good-side win rate increased significantly from 0.205 to 0.390 (paired McNemar test $p < 0.001$) with the active belief condition, along with fewer irreversible witch-poison errors.\n  - Direct action-belief consistency was found to be low (~0.21).\n  - Counter-intuitively, giving beliefs only to werewolves helped the good side more than giving them only to the good side, arguing against a simple \"holder-benefit\" account.\n- **Comparison**: Unlike traditional black-box evaluations, this framework not only demonstrated performance improvements but also exposed low consistency and complex mechanisms. It rejected unreliable forced-consumption interventions with evidence and successfully separated strategy effects from load confounds, providing deeper insights.\n\n## 4. Conclusion\nThe primary contribution of this paper is the auditable framework itself, rather than just performance optimization. The framework makes LLM agent behavior in hidden-information games measurable and interpretable. By positioning external belief as an auditable cognitive baseline, the study turns opaque agent behavior into replayable evidence, supporting safer and more controlled agent iteration. Although active belief is associated with better outcomes, its exact mechanism remains unresolved; the framework's value lies in its ability to expose these issues and provide empirical evidence.",
+      "render_excerpt": "机构: University of Melbourne<br>本文主要贡献在于提出了一套可审计的框架，而非单纯追求性能提升。该框架使得隐藏信息游戏中的LLM智能体行为变得可测量和可解释。通过将外部信念定位为一种可审计的认知基线，该研究将不透明的代理行为转化为可重放的证据，支持更安全、可控的智能体迭代。尽管主动信念与更好的结果相关，但其具体作用机制仍未完全解决，框架的价值在于能够暴露这些问题并提供实证依据。",
+      "render_excerpt_en": "Institution: University of Melbourne<br>## 1. What the Paper Did - **Background**: Evaluating LLM agents in hidden-information multi-agent environments (e.g., Werewolf) is challenging. Final outcomes are high-variance and rarely reveal why an agent made a specific decision, making it difficult to distinguish whether failures stem from missing evidence, poor belief tracking, prompt-induced behaviors, or load-induced LLM faults.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-16T07:09:49Z"
+        "captured_at": "2026-07-12T16:03:30Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-16"
+        "captured_at": "2026-07-12"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.10789",
+      "date": "2026-07-12",
+      "title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging",
+      "authors": [
+        "Siyi Chen",
+        "Jiahe Ying",
+        "Yixuan Jia",
+        "Yuxuan Gu",
+        "Enze Ye",
+        "Weimin Bai",
+        "Zhijun Zeng",
+        "Shaochi Ren",
+        "Binhong Gao",
+        "Yubing Li",
+        "Tianhan Zhang",
+        "He Sun"
+      ],
+      "abstract": "Computational imaging, which recovers hidden signals from indirect, noisy measurements, underpins quantitative discovery across scientific disciplines, yet building a correct reconstruction pipeline demands deep domain expertise and remains laborious even for domain scientists. We introduce Imaging-101, a benchmark of 57 expert-verified computational imaging tasks spanning six scientific domains, each grounded in a peer-reviewed paper and canonicalized into a standardized four-stage pipeline (preprocessing, forward physics modeling, inverse solver, and visualization) Three evaluation tracks (planning, function-level unit tests, and end-to-end reconstruction) probe distinct agent capabilities across the full pipeline. Evaluating seven frontier LLMs uncovers systematic challenges in applying coding agents to computational imaging that go beyond those exposed by general coding benchmarks, spanning algorithm selection, physical convention handling, and pipeline integration. These findings highlight concrete capability gaps and point toward skill-augmented, domain-specialized agents as a practical path to reliable computational imaging assistance.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.10789v1",
+        "pdf": "https://arxiv.org/pdf/2607.10789v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Peking University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：计算成像（Computational Imaging）是从间接、噪声测量中恢复隐藏信号的关键技术，支撑着从黑洞成像到医学CT/MRI等多个科学领域的定量发现。然而，构建正确的重建流水线需要深厚的领域专业知识，即使对领域科学家而言也极其耗时费力。\n- **已有工作为什么解决不了**：现有的通用代码基准测试无法暴露LLM在科学计算成像中的系统性挑战。通用基准缺乏对物理模型、逆问题求解及特定领域惯例的深入考察，导致无法准确评估AI代理在处理复杂科学流水线时的真实能力缺口。\n\n## 文章的核心贡献点\n- **提出了一个 Imaging-101 基准**：包含57个经专家验证的计算成像任务，涵盖六个科学领域，每个任务均基于同行评审论文，并规范化为标准化的四阶段流水线（预处理、前向物理建模、逆求解器、可视化）。\n- **挑战1：算法选择与物理惯例处理**。难点在于模型需从多种数学方法中选择适合特定物理场景的算法，并正确处理复杂的物理约定。Imaging-101通过函数级单元测试和规划轨道，专门探测代理在算法匹配和物理逻辑一致性上的能力，揭示了LLM在此方面的系统性缺陷。\n- **挑战2：全流程集成与端到端重建**。难点在于将预处理、建模、求解和可视化无缝整合，任何阶段的错误都会导致最终重建失败。该基准通过端到端重建轨道评估代理在整个流水线中的协同工作能力，指出了当前LLM在长链条科学任务集成中的脆弱性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估设置**：研究评估了七种前沿LLM在Imaging-101上的表现，分为规划、函数级单元测试和端到端重建三个评估轨道。\n- **结果与对比**：实验发现，即使是表现最好的前沿LLM，在计算成像任务上也面临巨大挑战，其性能远低于在通用代码基准上的表现。具体而言，LLM在算法选择的准确性、物理约束的执行以及多阶段代码集成方面存在显著的能力差距。与通用编程任务相比，科学成像任务对逻辑严密性和领域知识的依赖使得LLM的错误率显著上升，证明了通用基准无法替代领域专用基准的重要性。\n\n#### 总结\nImaging-101填补了科学计算成像领域缺乏标准化LLM评估基准的空白。通过系统性地评估LLM在真实科学任务中的表现，文章揭示了当前AI代理在算法选择、物理建模和流水线集成方面的具体短板。研究结果表明，要实现可靠的计算成像辅助，未来的方向应是开发具备技能增强和领域专用知识的AI代理，而非仅依赖通用大语言模型。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Computational imaging is crucial for recovering hidden signals from indirect, noisy measurements in fields ranging from black hole imaging to medical CT/MRI. However, constructing correct reconstruction pipelines is laborious and demands deep domain expertise, even for scientists.\n- **Why Existing Work Falls Short**: General coding benchmarks fail to expose the systematic challenges LLMs face in scientific computational imaging. They lack the depth to evaluate physical modeling, inverse problem solving, and domain-specific conventions, leading to an inaccurate assessment of AI agents' capabilities in complex scientific workflows.\n\n## Core Contributions\n- **Proposed Imaging-101 Benchmark**: A benchmark comprising 57 expert-verified computational imaging tasks across six scientific domains. Each task is grounded in peer-reviewed literature and canonicalized into a standardized four-stage pipeline: preprocessing, forward physics modeling, inverse solver, and visualization.\n- **Challenge 1: Algorithm Selection and Physical Convention Handling**. The difficulty lies in selecting appropriate mathematical algorithms for specific physical contexts and correctly handling complex physical conventions. Imaging-101 addresses this through planning and function-level unit test tracks, exposing systematic LLM failures in algorithm matching and physical logical consistency.\n- **Challenge 2: Full Pipeline Integration and End-to-End Reconstruction**. The challenge involves seamlessly integrating preprocessing, modeling, solving, and visualization, where errors in any stage cause total failure. The benchmark uses an end-to-end reconstruction track to evaluate agent coordination across the entire pipeline, highlighting the fragility of current LLMs in long-chain scientific task integration.\n\n## Implementation and Evaluation\n- **Evaluation Setup**: Seven frontier LLMs were evaluated on Imaging-101 across three tracks: planning, function-level unit tests, and end-to-end reconstruction.\n- **Results and Comparison**: Results show that even top-performing LLMs struggle significantly with computational imaging tasks, performing far worse than on general coding benchmarks. Specific gaps were identified in algorithm selection accuracy, physical constraint enforcement, and multi-stage code integration. Compared to general programming tasks, scientific imaging tasks' reliance on rigorous logic and domain knowledge leads to significantly higher error rates, proving that general benchmarks cannot replace domain-specific ones.\n\n## 4. Conclusion\nImaging-101 fills the gap in standardized LLM evaluation for scientific computational imaging. By systematically assessing LLM performance on real-world scientific tasks, the paper reveals specific shortcomings in algorithm selection, physical modeling, and pipeline integration. The findings suggest that achieving reliable computational imaging assistance requires developing skill-augmented, domain-specialized AI agents rather than relying solely on general-purpose LLMs.",
+      "render_excerpt": "机构: Peking University<br>Imaging-101填补了科学计算成像领域缺乏标准化LLM评估基准的空白。通过系统性地评估LLM在真实科学任务中的表现，文章揭示了当前AI代理在算法选择、物理建模和流水线集成方面的具体短板。研究结果表明，要实现可靠的计算成像辅助，未来的方向应是开发具备技能增强和领域专用知识的AI代理，而非仅依赖通用大语言模型。",
+      "render_excerpt_en": "Institution: Peking University<br>## 1. What the Paper Did - **Background**: Computational imaging is crucial for recovering hidden signals from indirect, noisy measurements in fields ranging from black hole imaging to medical CT/MRI. However, constructing correct reconstruction pipelines is laborious and demands deep domain expertise, even for scientists.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-12T14:42:57Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-12"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.10559",
+      "date": "2026-07-12",
+      "title": "Large language model agents accelerate inverse design of metal-organic frameworks for gas separation",
+      "authors": [
+        "Zhaolin Hu",
+        "Hehe Fan",
+        "Wangyihan Guo",
+        "Meng Xu",
+        "Chenhao Rao",
+        "Qiwei Yang",
+        "Yi Yang"
+      ],
+      "abstract": "Metal-organic frameworks (MOFs) offer a highly modular platform for adsorptive gas separation, yet their vast reticular design space makes inverse design difficult under simultaneous constraints of chemical validity, separation performance, and structural diversity. Here, we present LEMO Agent, a large-language-model agent framework for closed-loop inverse design of gas-separation MOFs in MOFid space. LEMO Agent couples language-based candidate generation with MOFid standardization, explicit validity checking, Transformer-based property prediction, structured design memory, and multi-island exploration. Through iterative generate--validate--evaluate--remember cycles, the agent uses feedback from both successful and failed candidates to guide chemically constrained search across linker, metal, and topology choices. We evaluate LEMO Agent on CH$_4$/N$_2$ and CO$_2$/N$_2$ separation tasks. Compared with representative generative, optimization, and agentic baselines, LEMO Agent enriches high-performing candidates, improves predicted separation performance, and maintains broad chemical and topological diversity. Selected candidates are further reconstructed, evaluated by GCMC simulations, and passed through an experimental down-selection workflow based on chemical feasibility and ligand purchasability, leading to initial wet-lab synthesis and SEM characterization. These results demonstrate that large language model agents can serve as interpretable and scalable design engines for accelerating MOF discovery beyond conventional fixed-library screening.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.10559v1",
+        "pdf": "https://arxiv.org/pdf/2607.10559v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Zhejiang University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：金属有机框架（MOFs）因其高度模块化的结构，在吸附性气体分离领域展现出巨大潜力。然而，其巨大的网状设计空间使得在同时满足化学有效性、分离性能和结构多样性约束下的逆向设计变得极其困难。\n- **已有工作局限性**：传统的高通量计算筛选依赖于固定的实验或假设数据库，无法探索未知的广阔化学空间；现有的生成式模型或优化算法往往难以同时保证生成的MOF结构的化学合理性、高性能以及结构的多样性，且缺乏对失败案例的有效利用机制。\n\n## 文章的核心贡献点\n- **提出了一个 LEMO Agent**：这是一个基于大语言模型（LLM）的智能体框架，用于在 MOFid 空间中对气体分离 MOF 进行闭环逆向设计。\n- **挑战1：如何在巨大的组合空间中保证生成结构的化学有效性和合理性？**\n  - **难点**：MOF由金属节点、有机连接体和拓扑结构组成，随意组合极易产生化学上无效或不稳定的结构。\n  - **解决方法**：LEMO Agent 将基于语言的候选生成与 MOFid 标准化、显式的有效性检查相结合，并通过迭代“生成-验证-评估-记忆”循环，利用成功和失败候选者的反馈来指导受化学约束的搜索。\n- **挑战2：如何避免陷入局部最优并保持结构的多样性，同时提升分离性能？**\n  - **难点**：传统的优化方法容易收敛到少数几种已知的高性能结构，导致多样性丧失，且难以平衡性能与新颖性。\n  - **解决方法**：引入结构化设计记忆和多岛探索策略（multi-island exploration），结合基于 Transformer 的性质预测模型，使智能体能够广泛探索连接体、金属和拓扑的选择，从而丰富高性能候选者并维持广泛的化学和拓扑多样性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：LEMO Agent 整合了语言模型生成、MOFid 标准化、有效性检查、Transformer 性质预测、结构化记忆和多岛探索模块。选定的候选分子经过重建，通过巨正则蒙特卡洛（GCMC）模拟进行评估，并基于化学可行性和配体可购买性通过实验下行选择工作流程，最终进行了初步的湿法合成和扫描电子显微镜（SEM）表征。\n- **评估结果**：在 CH4/N2 和 CO2/N2 分离任务上进行了评估。\n- **对比相关工作**：与代表性的生成式、优化式和基于智能体的基线方法相比，LEMO Agent 显著丰富了高性能候选者的数量，提高了预测的分离性能，同时保持了更广泛的化学和拓扑多样性。实验验证证明了其从计算设计到实际合成的可行性。\n\n#### 总结\n本文展示了 LLM 智能体可以作为可解释且可扩展的设计引擎，加速 MOF 的发现过程，突破了传统固定库筛选的限制。LEMO Agent 通过闭环反馈机制有效解决了逆向设计中的化学有效性、性能优化和多样性保持难题，并为实验合成提供了切实可行的候选材料，证明了 AI 驱动的材料逆向设计在实际科研中的应用价值。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Metal-organic frameworks (MOFs) offer a highly modular platform for adsorptive gas separation. However, their vast reticular design space makes inverse design challenging under simultaneous constraints of chemical validity, separation performance, and structural diversity.\n- **Limitations of Existing Work**: Traditional high-throughput screening relies on fixed databases, limiting exploration of the unknown chemical space. Existing generative models or optimization algorithms often struggle to simultaneously ensure chemical validity, high performance, and structural diversity, lacking mechanisms to effectively leverage feedback from failed attempts.\n\n## Core Contributions\n- **Proposed LEMO Agent**: A large-language-model (LLM) agent framework for closed-loop inverse design of gas-separation MOFs in MOFid space.\n- **Challenge 1: How to ensure chemical validity and rationality of generated structures in a vast combinatorial space?**\n  - **Difficulty**: Arbitrary combinations of metal nodes, organic linkers, and topologies often result in chemically invalid or unstable structures.\n  - **Solution**: LEMO Agent couples language-based candidate generation with MOFid standardization and explicit validity checking. It uses an iterative \"generate-validate-evaluate-remember\" cycle, leveraging feedback from both successful and failed candidates to guide chemically constrained searches.\n- **Challenge 2: How to avoid local optima and maintain structural diversity while improving separation performance?**\n  - **Difficulty**: Traditional optimization methods tend to converge to a few known high-performing structures, sacrificing diversity and making it hard to balance performance with novelty.\n  - **Solution**: The framework introduces structured design memory and multi-island exploration strategies, combined with Transformer-based property prediction. This allows the agent to broadly explore linker, metal, and topology choices, enriching high-performing candidates while maintaining broad chemical and topological diversity.\n\n## Implementation and Evaluation\n- **Implementation**: LEMO Agent integrates LLM generation, MOFid standardization, validity checking, Transformer-based property prediction, structured memory, and multi-island exploration. Selected candidates were reconstructed, evaluated via Grand Canonical Monte Carlo (GCMC) simulations, and passed through an experimental down-selection workflow based on chemical feasibility and ligand purchasability, leading to initial wet-lab synthesis and SEM characterization.\n- **Evaluation**: The agent was evaluated on CH4/N2 and CO2/N2 separation tasks.\n- **Comparison with Related Work**: Compared to representative generative, optimization, and agentic baselines, LEMO Agent enriched the pool of high-performing candidates, improved predicted separation performance, and maintained broader chemical and topological diversity. Experimental validation confirmed the feasibility of translating computational designs into synthesized materials.\n\n## 4. Conclusion\nThis paper demonstrates that LLM agents can serve as interpretable and scalable design engines, accelerating MOF discovery beyond conventional fixed-library screening. LEMO Agent effectively addresses challenges in chemical validity, performance optimization, and diversity preservation in inverse design through a closed-loop feedback mechanism. It provides viable candidates for experimental synthesis, proving the practical value of AI-driven material inverse design in scientific research.",
+      "render_excerpt": "机构: Zhejiang University<br>本文展示了 LLM 智能体可以作为可解释且可扩展的设计引擎，加速 MOF 的发现过程，突破了传统固定库筛选的限制。LEMO Agent 通过闭环反馈机制有效解决了逆向设计中的化学有效性、性能优化和多样性保持难题，并为实验合成提供了切实可行的候选材料，证明了 AI 驱动的材料逆向设计在实际科研中的应用价值。",
+      "render_excerpt_en": "Institution: Zhejiang University<br>## 1. What the Paper Did - **Background**: Metal-organic frameworks (MOFs) offer a highly modular platform for adsorptive gas separation. However, their vast reticular design space makes inverse design challenging under simultaneous constraints of chemical validity, separation performance, and structural diversity.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-12T04:18:36Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-12"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
