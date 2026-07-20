@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.17_04:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.20_05:01-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月17日 04:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月20日 05:01</sub></summary>
 <br>
 
-- Digital Pantheon: Simulating and Auditing Coalition Formation with LLM Agents 
-- OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios 
-- StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows 
-- MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents 
-- MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers 
+- AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets 
+- LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization 
+- Scalable LLM Agent Tool Access in the Cloud 
+- SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents 
+- DSWorld: A Data Science World Model for Efficient Autonomous Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-17</span> | **AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets**<br><sub>机构: The University of Melbourne<br>AgentFAIR通过多智能体协作有效解决了地理空间数据集FAIR评估中因动态内容、异构元数据和缺乏语义理解导致的现有工具不一致问题。引入Critic智能体显著提升了评估的一致性和与专家判断的对齐度。尽管受限于基准测试规模和单一模型家族验证，该框架在可审计性、可行性和成本效益方面展示了巨大潜力，为地理空间数据的标准化合规评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15781v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15781.md)  |
+| <span style='display: inline-block; width: 42px;'>07-17</span> | **LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization**<br><sub>机构: University of Sharjah<br>本文是一篇关于LLM赋能的代理AI在5G/6G网络中应用的综合性教程与综述。它指出了当前研究在协议集成和标准化对齐方面的缺失，并通过两部分结构系统地解决了这一问题：首先形式化网络平面与代理基础，其次将代理能力映射到具体的网络控制面和标准体系中。文章为研究人员和从业者提供了从理论概念到标准化实践的清晰路线图，并指出了未来自主电信网络面临的关键挑战。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.16066v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.16066.md)  |
+| <span style='display: inline-block; width: 42px;'>07-17</span> | **Scalable LLM Agent Tool Access in the Cloud**<br><sub>机构: Nanjing University, Alibaba Cloud, Fudan University, RMIT University, Politecnico di Milano, Zhejiang University<br>本文针对 LLM 智能体在云规模下使用 MCP 协议面临的遗留系统集成难、上下文窗口限制、协议兼容性差及会话路由复杂等问题，提出了一种云规模的 MCP 网关系统。通过将协议适配、工具检索和路由逻辑卸载至网关，并结合混合检索技术，该系统成功实现了从直连模型到中心化网关模型的转变。实验表明，该系统在支持数千种工具访问的同时，大幅降低了 Token 消耗和延迟，提升了工具选择的准确性和系统的可扩展性，为生产环境中的大规模 LLM 智能体部署提供了可行的基础设施解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15593v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15593.md)  |
+| <span style='display: inline-block; width: 42px;'>07-17</span> | **SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents**<br><sub>机构: Peking University, EverMind, Shanda Group<br>SkillCorpus 是首个对 curated 社区语料库何时能改善真实代理任务以及何处失效进行的端到端系统性研究。它不仅提供了一个高质量、分类清晰的技能数据集，还验证了通过检索增强技能调用在实际应用中的有效性，为构建更强大的 LLM 代理生态系统提供了重要基础设施和实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15557v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15557.md)  |
+| <span style='display: inline-block; width: 42px;'>07-17</span> | **DSWorld: A Data Science World Model for Efficient Autonomous Agents**<br><sub>机构: The Hong Kong University of Science and Technology (Guangzhou)<br>DSWorld首次引入了数据科学世界模型的概念，通过预测环境状态转移来解决自主数据科学代理中昂贵的试错计算瓶颈。通过结合结构化状态构建、成本感知路由和反思性强化学习优化，DSWorld在不牺牲性能的前提下，显著加速了代理的训练和推理过程，为高效自主数据科学系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15901v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15901.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/DSWorld)</div> |
 | <span style='display: inline-block; width: 42px;'>07-16</span> | **Digital Pantheon: Simulating and Auditing Coalition Formation with LLM Agents**<br><sub>机构: Ghent University<br>本文提出了Digital Pantheon框架，通过结合DPO角色注入和RAG事实 grounding，解决了LLM在政治模拟中缺乏坚定党派立场和可解释性的问题。实验证明，该方法不仅能重现2019年佛兰德选举的联盟结果，还能通过MILT和CIS指标提供透明的谈判审计，为计算政治科学提供了一个可靠的事前模拟工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15095v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15095.md)  |
 | <span style='display: inline-block; width: 42px;'>07-16</span> | **OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios**<br><sub>机构: Huawei Cloud Post-Training Team, PKU DCAI Team<br>OmniaBench 提供了一个广泛且具有诊断性的基准，用于刻画通用智能体的能力边界。通过构建涵盖广泛行业领域的分层分类法和多样化的任务合成机制，它弥补了现有基准在场景多样性和评估细粒度上的不足。实验结果表明，尽管前沿模型取得了一定进展，但在处理复杂、多步骤的真实世界代理任务时仍面临严峻挑战，特别是在长期规划和状态维护方面。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.14989v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.14989.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/scuuy/OmniaBench)</div> |
 | <span style='display: inline-block; width: 42px;'>07-16</span> | **StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows**<br><sub>StructureClaw 通过引入以工件为中心的评估范式，解决了结构工程 LLM 代理评估中缺乏完整证据链验证的问题。其提出的可执行基准测试 StructureClaw-Bench 能够更严格地评估代理在工作流执行、交互鲁棒性和多模态重建方面的能力，显著提升了评估的严谨性，并为未来工程代理的开发提供了可追溯、可执行的改进基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.14896v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.14896.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/structureclaw/structureclaw)</div> |

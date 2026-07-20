@@ -1,38 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-18T07:15:45.241859+00:00",
-  "run_date": "2026-07-11",
+  "generated_at": "2026-07-20T05:01:59.904140+00:00",
+  "run_date": "2026-07-17",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.10390",
-      "date": "2026-07-11",
-      "title": "A Stepwise Questioning Expert-Editor Multi-Agent Framework for Long-Document Summarization",
+      "id": "arxiv:2607.15781",
+      "date": "2026-07-17",
+      "title": "AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Lingyun Shen",
-        "Xuejia Guo"
+        "Ming Chen",
+        "Pranav Pai"
       ],
-      "institution": "China South Industry Academy",
+      "institution": "The University of Melbourne",
       "summary": {
-        "zh": "本文提出了一种受学术审稿过程启发的多智能体协作框架，通过模拟“专家”关注内容实质、“编辑”关注形式规范的分工，利用逐步提问机制引导LLM对长文档摘要进行迭代优化。该方法有效解决了长文档摘要中的信息不完整和不忠实问题，在Arxiv和PubMed数据集上的实验验证了其优于传统方法的性能。",
-        "en": "- **Background**: While Large Language Models (LLMs) show promise in news summarization, they struggle with long-document summarization due to input length limits, context processing constraints, and hallucination..."
+        "zh": "AgentFAIR通过多智能体协作有效解决了地理空间数据集FAIR评估中因动态内容、异构元数据和缺乏语义理解导致的现有工具不一致问题。引入Critic智能体显著提升了评估的一致性和与专家判断的对齐度。尽管受限于基准测试规模和单一模型家族验证，该框架在可审计性、可行性和成本效益方面展示了巨大潜力，为地理空间数据的标准化合规评估提供了新范式。",
+        "en": "- **Background**: Geospatial datasets are critical for applications like urban planning and climate modeling, but assessing their compliance with FAIR principles (Findability, Accessibility, Interoperability,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.10390v1",
-        "pdf": "https://arxiv.org/pdf/2607.10390v1",
+        "abs": "http://arxiv.org/abs/2607.15781v1",
+        "pdf": "https://arxiv.org/pdf/2607.15781v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.10390.md",
-        "summary_en_path": "summary_en/2026-07/2607.10390.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10390.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10390.md"
+        "summary_zh_path": "summary/2026-07/2607.15781.md",
+        "summary_en_path": "summary_en/2026-07/2607.15781.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.15781.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.15781.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,45 +49,35 @@
       }
     },
     {
-      "id": "arxiv:2607.10275",
-      "date": "2026-07-11",
-      "title": "Information-seeking failures of large language models in agentic clinical reasoning",
+      "id": "arxiv:2607.16066",
+      "date": "2026-07-17",
+      "title": "LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Krischan Braitsch",
-        "Laura K. Schmalbrock",
-        "Theresa Weltermann",
-        "Andrew F. Berdel",
-        "Isabella Miller",
-        "Kai Tran",
-        "Michael Heider",
-        "Sabrina Kraus",
-        "Florian Bassermann",
-        "Jacqueline Lammert",
-        "Sebastian Ziegelmayer",
-        "Marcus Makowski",
-        "Lisa C. Adams",
-        "Keno K. Bressem"
+        "Mazene Ameur",
+        "Abdelkader Mekrache",
+        "Bouziane Brik",
+        "Adlen Ksentini"
       ],
-      "institution": "Technical University of Munich",
+      "institution": "University of Sharjah",
       "summary": {
-        "zh": "本文揭示了当前LLM在临床肿瘤学中的主要瓶颈不是医学知识储备不足，而是在不确定性环境下系统性地进行信息寻求的失败。模型表现出与新手医生类似的认知偏差，如锚定效应和过早闭合。未来的改进方向应聚焦于增强模型在动态、不确定环境下的主动信息获取能力，而非仅仅扩充知识库。",
-        "en": "- **Background**: Large Language Models (LLMs) achieve high scores in medical knowledge assessments, but clinical reasoning requires actively deciding what to investigate under uncertainty. Clinical decision-making in..."
+        "zh": "本文是一篇关于LLM赋能的代理AI在5G/6G网络中应用的综合性教程与综述。它指出了当前研究在协议集成和标准化对齐方面的缺失，并通过两部分结构系统地解决了这一问题：首先形式化网络平面与代理基础，其次将代理能力映射到具体的网络控制面和标准体系中。文章为研究人员和从业者提供了从理论概念到标准化实践的清晰路线图，并指出了未来自主电信网络面临的关键挑战。",
+        "en": "- **Background**: The telecommunications sector is at a critical inflection point with the maturation of 5G and the early architectural formulation of 6G. Modern networks are characterized by extreme heterogeneity,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.10275v1",
-        "pdf": "https://arxiv.org/pdf/2607.10275v1",
+        "abs": "http://arxiv.org/abs/2607.16066v1",
+        "pdf": "https://arxiv.org/pdf/2607.16066v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.10275.md",
-        "summary_en_path": "summary_en/2026-07/2607.10275.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10275.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10275.md"
+        "summary_zh_path": "summary/2026-07/2607.16066.md",
+        "summary_en_path": "summary_en/2026-07/2607.16066.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16066.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16066.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -104,32 +94,61 @@
       }
     },
     {
-      "id": "arxiv:2607.13071",
-      "date": "2026-07-11",
-      "title": "Compaction as Epistemic Failure: How Agentic LLM Tools Fabricate Confirmed Results from Killed Processes",
+      "id": "arxiv:2607.15593",
+      "date": "2026-07-17",
+      "title": "Scalable LLM Agent Tool Access in the Cloud",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hiroki Tamba"
+        "Mingxin Li",
+        "Enge Song",
+        "Yueshang Zuo",
+        "Xiaodong Liu",
+        "Rong Wen",
+        "Qiang Fu",
+        "Gianni Antichi",
+        "Jian He",
+        "Jing Tie",
+        "Zhou Shao",
+        "Xiaobo Xue",
+        "Xiong Xiao",
+        "Luyao Zhong",
+        "Shaokai Zhang",
+        "Jiangu Zhao",
+        "Jianyuan Lu",
+        "Shize Zhang",
+        "Xiaoqing Sun",
+        "Changgang Zheng",
+        "Zihao Fan",
+        "Haonan Li",
+        "Tian Pan",
+        "Xiaomin Wu",
+        "Yang Song",
+        "Xing Li",
+        "Biao Lyu",
+        "Meng Li",
+        "Haipeng Dai",
+        "Guihai Chen",
+        "Shunmin Zhu"
       ],
-      "institution": null,
+      "institution": "Nanjing University, Alibaba Cloud, Fudan University, RMIT University, Politecnico di Milano, Zhejiang University",
       "summary": {
-        "zh": "本文记录了 Claude Code 中一种可复现的故障模式，其中会话压缩将短暂的终端输出转化为伪造的确认结果。根本原因是“观察”与“持久性”的混淆。这一发现对依赖代理会话连续性进行数据处理、科学计算或多步自动化的任何工作流都有直接影响，强调了在代理系统中引入外部状态验证机制的必要性。",
-        "en": "- **Background**: Agentic LLM coding tools (e.g., Claude Code) maintain long-session continuity by compressing conversation histories into \"compaction summaries,\" which subsequent sessions inherit as ground truth. -..."
+        "zh": "本文针对 LLM 智能体在云规模下使用 MCP 协议面临的遗留系统集成难、上下文窗口限制、协议兼容性差及会话路由复杂等问题，提出了一种云规模的 MCP 网关系统。通过将协议适配、工具检索和路由逻辑卸载至网关，并结合混合检索技术，该系统成功实现了从直连模型到中心化网关模型的转变。实验表明，该系统在支持数千种工具访问的同时，大幅降低了 Token 消耗和延迟，提升了工具选择的准确性和系统的可扩展性，为生产环境中的大规模 LLM...",
+        "en": "- **Background**: LLM agents increasingly rely on tool calling to interact with external systems, with the Model Context Protocol (MCP) becoming the de facto interface. However, operating MCP at cloud scale presents..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.13071v1",
-        "pdf": "https://arxiv.org/pdf/2607.13071v1",
+        "abs": "http://arxiv.org/abs/2607.15593v1",
+        "pdf": "https://arxiv.org/pdf/2607.15593v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.13071.md",
-        "summary_en_path": "summary_en/2026-07/2607.13071.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.13071.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.13071.md"
+        "summary_zh_path": "summary/2026-07/2607.15593.md",
+        "summary_en_path": "summary_en/2026-07/2607.15593.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.15593.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.15593.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,37 +165,39 @@
       }
     },
     {
-      "id": "arxiv:2607.10079",
-      "date": "2026-07-11",
-      "title": "MAG: A Web-Agent Benchmark and Harness for Multimodal Action and Guide Generation",
+      "id": "arxiv:2607.15557",
+      "date": "2026-07-17",
+      "title": "SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chengguang Gan",
-        "Hanjun Wei",
-        "Yunhao Liang",
-        "Zhixi Cai",
-        "Qinghao Zhang",
-        "Shiwen Ni"
+        "Yanze Wang",
+        "Pengfei Yao",
+        "Tianyi Sun",
+        "Chuanrui Hu",
+        "Yan Xiao",
+        "Yunyun Han",
+        "Jun Sun",
+        "Yafeng Deng"
       ],
-      "institution": "University of Chinese Academy of Sciences",
+      "institution": "Peking University, EverMind, Shanda Group",
       "summary": {
-        "zh": "本文介绍了 MAG，首个统一 Web 代理动作执行与指引生成的多模态基准。通过引入基于截图的 grounding 方案和完整的评估框架，解决了现有研究中动作与指引割裂、以及缺乏真实视觉交互评估的问题。实验表明，结合专家轨迹的 GRPO 训练能显著提升模型性能，但当前最强模型仍面临巨大挑战，证明了 MAG 作为未来 Web 代理研究基准的重要价值。",
-        "en": "- **Background**: Digital Adoption Platforms (DAPs) are widely used to guide users through web systems. However, completing real tasks involves sequences of actions across changing page states, and current DAP guides..."
+        "zh": "SkillCorpus 是首个对 curated 社区语料库何时能改善真实代理任务以及何处失效进行的端到端系统性研究。它不仅提供了一个高质量、分类清晰的技能数据集，还验证了通过检索增强技能调用在实际应用中的有效性，为构建更强大的 LLM 代理生态系统提供了重要基础设施和实证依据。",
+        "en": "- **Background**: As Large Language Models (LLMs) evolve into autonomous agents capable of long-horizon tasks, extending agent capabilities via externalized skills (e.g., SKILL.md files) has become an industry..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.10079v3",
-        "pdf": "https://arxiv.org/pdf/2607.10079v3",
+        "abs": "http://arxiv.org/abs/2607.15557v1",
+        "pdf": "https://arxiv.org/pdf/2607.15557v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.10079.md",
-        "summary_en_path": "summary_en/2026-07/2607.10079.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10079.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10079.md"
+        "summary_zh_path": "summary/2026-07/2607.15557.md",
+        "summary_en_path": "summary_en/2026-07/2607.15557.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.15557.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.15557.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,39 +214,34 @@
       }
     },
     {
-      "id": "arxiv:2607.10059",
-      "date": "2026-07-11",
-      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "id": "arxiv:2607.15901",
+      "date": "2026-07-17",
+      "title": "DSWorld: A Data Science World Model for Efficient Autonomous Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xun Liu",
-        "Yi Evie Zhang",
-        "Vira Kasprova",
-        "Parisa Rabbani",
-        "Pardis Sadat Zahraei",
-        "Tianyu Zhang",
-        "Ali Ebrahimpour-Boroojeny",
-        "Varun Chandrasekaran"
+        "Zherui Yang",
+        "Fan Liu",
+        "Hao Liu"
       ],
-      "institution": "University of Illinois Urbana-Champaign",
+      "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
       "summary": {
-        "zh": "本文指出了 LLM 智能体在自主行动中缺乏“知止”能力的重大风险，并发布了首个系统性评估框架 AgentAbstain 及自动化生成工具 AbstainGen。研究结果表明，当前最先进的智能体在处理需要弃权的复杂场景时表现不佳，且这种能力不能通过单纯提升任务完成率来获得。该工作强调了开发更可信 LLM 智能体需要进行严格的弃权评估，并开源了相关代码和数据集。",
-        "en": "- **Background**: LLM-based agent systems are increasingly deployed for autonomous tasks (e.g., travel booking, file management). However, existing evaluations primarily focus on task success rates, neglecting whether..."
+        "zh": "DSWorld首次引入了数据科学世界模型的概念，通过预测环境状态转移来解决自主数据科学代理中昂贵的试错计算瓶颈。通过结合结构化状态构建、成本感知路由和反思性强化学习优化，DSWorld在不牺牲性能的前提下，显著加速了代理的训练和推理过程，为高效自主数据科学系统提供了新的范式。",
+        "en": "- **Background**: Autonomous data science agents demonstrate strong capabilities in data understanding and decision-making but heavily rely on trial-and-error workflows. These workflows involve expensive computations..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.10059v1",
-        "pdf": "https://arxiv.org/pdf/2607.10059v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.15901v1",
+        "pdf": "https://arxiv.org/pdf/2607.15901v1",
+        "github": "https://anonymous.4open.science/r/DSWorld"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.10059.md",
-        "summary_en_path": "summary_en/2026-07/2607.10059.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.10059.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.10059.md"
+        "summary_zh_path": "summary/2026-07/2607.15901.md",
+        "summary_en_path": "summary_en/2026-07/2607.15901.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.15901.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.15901.md"
       },
       "signals": {
         "priority_keyword": "Agent"
