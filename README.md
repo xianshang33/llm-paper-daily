@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.20_05:01-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.21_04:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月20日 05:01</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月21日 04:43</sub></summary>
 <br>
 
-- AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets 
-- LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization 
-- Scalable LLM Agent Tool Access in the Cloud 
-- SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents 
-- DSWorld: A Data Science World Model for Efficient Autonomous Agents 
+- FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications 
+- Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security 
+- MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models 
+- Harness Engineering for LLM-Driven GPU Kernel Generation 
+- LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-20</span> | **FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications**<br><sub>机构: Carnegie Mellon University, AMD, University at Buffalo<br>FlashRT 通过引入“程序链”范式和测量门控优化循环，成功解决了实时多模态应用部署中策略僵化和手工优化成本高的问题。它不仅显著提升了在主流 NVIDIA 硬件上的性能，更在 AMD 等新兴硬件平台上展现出超越专家手工优化方案的潜力，证明了代理驱动的系统优化在多模态服务领域的强大扩展性和实用性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18171v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18171.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/FlashRT)</div> |
+| <span style='display: inline-block; width: 42px;'>07-20</span> | **Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security**<br><sub>本文指出了当前 LLM 安全基准因使用静态攻击池而存在的评估偏差，提出了“Adaptive Adversaries”基准，通过多轮自适应攻击和多模型组合，更真实地反映了 LLM 代理在面对动态对手时的安全风险。研究结果表明，自适应攻击显著提高了成功率，且不同攻击模型和场景揭示了防御者不同的弱点，强调了在安全评估中采用动态、多视角基准的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18063v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18063.md)  |
+| <span style='display: inline-block; width: 42px;'>07-20</span> | **MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models**<br><sub>机构: University of Oslo, Bosch Center for Artificial Intelligence, LMU Munich, University of Cambridge<br>MADA-RL 通过引入反事实评论家优势和多智能体辩论机制，成功解决了紧凑模型在资源受限下的推理能力提升难题。它在大幅减少可训练参数（相比全量微调减少16倍）的同时，显著提高了数学推理准确率，证明了参数高效微调结合结构化辩论信号在小型模型上的巨大潜力，为低成本高性能推理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18006v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18006.md)  |
+| <span style='display: inline-block; width: 42px;'>07-20</span> | **Harness Engineering for LLM-Driven GPU Kernel Generation**<br><sub>机构: Baidu, Inc.<br>本文强调了“Harness工程”在LLM驱动的系统级代码生成中的核心作用。通过将人类定义的客观约束、反馈循环与LLM的实现搜索能力相结合，并辅以基于Profiler的控制器状态和工件记忆，该系统实现了可审计且高效的内核优化。研究结果表明，未来的AI驱动系统优化不应仅关注模型的自主性，更应重视工程化约束框架与人类专家知识的深度融合。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.17979v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.17979.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/syhya/mlsys26-flashinfer-contest)</div> |
+| <span style='display: inline-block; width: 42px;'>07-20</span> | **LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications**<br><sub>机构: University of California San Diego<br>本文作为一篇教程，系统回顾了用于电力系统的 LLM 和代理 AI 系统的构建模块（提示策略和代理架构）。核心贡献在于确立了“求解器 grounded”的设计原则，即 LLM 应作为规划者和编排者，而将数值计算交给可信工具。通过四个案例研究证实，这种分工明确、带有验证机制的代理系统相比纯 LLM 方法，在物理可行性和任务性能上有显著提升。文章最后提出的统一评估框架为未来智能电网中代理 AI 的研究提供了标准化基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18147v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18147.md)  |
 | <span style='display: inline-block; width: 42px;'>07-17</span> | **AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets**<br><sub>机构: The University of Melbourne<br>AgentFAIR通过多智能体协作有效解决了地理空间数据集FAIR评估中因动态内容、异构元数据和缺乏语义理解导致的现有工具不一致问题。引入Critic智能体显著提升了评估的一致性和与专家判断的对齐度。尽管受限于基准测试规模和单一模型家族验证，该框架在可审计性、可行性和成本效益方面展示了巨大潜力，为地理空间数据的标准化合规评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15781v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15781.md)  |
 | <span style='display: inline-block; width: 42px;'>07-17</span> | **LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization**<br><sub>机构: University of Sharjah<br>本文是一篇关于LLM赋能的代理AI在5G/6G网络中应用的综合性教程与综述。它指出了当前研究在协议集成和标准化对齐方面的缺失，并通过两部分结构系统地解决了这一问题：首先形式化网络平面与代理基础，其次将代理能力映射到具体的网络控制面和标准体系中。文章为研究人员和从业者提供了从理论概念到标准化实践的清晰路线图，并指出了未来自主电信网络面临的关键挑战。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.16066v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.16066.md)  |
 | <span style='display: inline-block; width: 42px;'>07-17</span> | **Scalable LLM Agent Tool Access in the Cloud**<br><sub>机构: Nanjing University, Alibaba Cloud, Fudan University, RMIT University, Politecnico di Milano, Zhejiang University<br>本文针对 LLM 智能体在云规模下使用 MCP 协议面临的遗留系统集成难、上下文窗口限制、协议兼容性差及会话路由复杂等问题，提出了一种云规模的 MCP 网关系统。通过将协议适配、工具检索和路由逻辑卸载至网关，并结合混合检索技术，该系统成功实现了从直连模型到中心化网关模型的转变。实验表明，该系统在支持数千种工具访问的同时，大幅降低了 Token 消耗和延迟，提升了工具选择的准确性和系统的可扩展性，为生产环境中的大规模 LLM 智能体部署提供了可行的基础设施解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.15593v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.15593.md)  |
