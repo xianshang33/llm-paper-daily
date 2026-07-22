@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.21_04:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.22_04:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月21日 04:43</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月22日 04:43</sub></summary>
 <br>
 
-- FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications 
-- Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security 
-- MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models 
-- Harness Engineering for LLM-Driven GPU Kernel Generation 
-- LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications 
+- AI Tour Meeting: Group Travel Planning by LLM Agents 
+- AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents 
+- Agents in the Wild: Where Research Meets Deployment 
+- Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents 
+- Toward Auditable Fraud Detection: Combining Graph Features, Model Explanations, and Agentic Case Investigation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-21</span> | **AI Tour Meeting: Group Travel Planning by LLM Agents**<br><sub>机构: NTT, Inc.<br>本文提出了 AI Tour Meeting，一个专为群体旅行规划设计的多LLM代理框架。通过引入领域特定的结构化表示、提议-投票工作流和约束验证机制，解决了通用框架在旅行规划场景下的适用性问题。该框架不仅简化了多代理协同规划的实现，还作为强大的仿真工具，支持对LLM代理在复杂协商场景下的行为进行深入分析，验证了其在平衡多方偏好和约束方面的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18806v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18806.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ntt-dkiku/ai-tour-meeting)</div> |
+| <span style='display: inline-block; width: 42px;'>07-21</span> | **AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents**<br><sub>机构: University of Illinois Urbana-Champaign, University of Toronto, Google, Stanford University<br>AgentDebugX 填补了 LLM 代理开发中从故障观察到自动恢复的空白。通过引入 DeepDebug 多轮诊断机制和闭环调试工作流，它不仅提高了根本原因定位的准确性，还显著提升了代理任务的自我修复成功率。作为一个开源工具包，它为开发者提供了标准化的调试接口和共享生态，有望成为 LLM 代理工程化落地的重要基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18754v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18754.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgentDebugX/AgentDebugX)</div> |
+| <span style='display: inline-block; width: 42px;'>07-21</span> | **Agents in the Wild: Where Research Meets Deployment**<br><sub>机构: Georgetown University<br>本文是一篇旨在弥合学术研究与工业部署之间鸿沟的教程论文。它系统地回顾了智能体系统从单体到多智能体架构的演变，重点解决了部署阶段的鲁棒性、安全性和可靠性问题。通过结合制药和金融领域的实际案例，文章提供了应对幻觉、死锁等故障的实用策略，并指出了多智能体可扩展性、终身适应性和可解释性等未来研究方向，为构建安全可靠的工业级智能体系统提供了全面指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.19336v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.19336.md)  |
+| <span style='display: inline-block; width: 42px;'>07-21</span> | **Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents**<br><sub>机构: Tynapse<br>本文确立了跨智能体活动归因作为保护野外 LLM 智能体的一个独特评估层。通过提出 $A^2FV$ 方法和 SCD-v1 基准，作者展示了即使在没有共享状态和攻击者身份的情况下，也能通过代理侧的可观察特征有效链接异步攻击会话。这一发现强调了从单一会话安全性向多会话潜在活动模式识别转变的重要性，为提升 LLM 智能体在复杂部署环境中的安全性提供了新方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18826v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18826.md)  |
+| <span style='display: inline-block; width: 42px;'>07-21</span> | **Toward Auditable Fraud Detection: Combining Graph Features, Model Explanations, and Agentic Case Investigation**<br><sub>机构: Vrije Universiteit Amsterdam<br>本文通过对分层欺诈检测系统的细致评估，揭示了各组件（图特征、异常信号、LLM代理）仅在特定条件下发挥作用。研究明确指出，LLM调查代理目前的决策能力尚未超越基础分类器，且其生成的看似合理的解释具有误导性。因此，不能仅凭代理提供的合理理由就认为其决策更优，需要引入如分歧升级等机制来辅助人工审查，以确保系统的审计性和可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.19266v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.19266.md)  |
 | <span style='display: inline-block; width: 42px;'>07-20</span> | **FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications**<br><sub>机构: Carnegie Mellon University, AMD, University at Buffalo<br>FlashRT 通过引入“程序链”范式和测量门控优化循环，成功解决了实时多模态应用部署中策略僵化和手工优化成本高的问题。它不仅显著提升了在主流 NVIDIA 硬件上的性能，更在 AMD 等新兴硬件平台上展现出超越专家手工优化方案的潜力，证明了代理驱动的系统优化在多模态服务领域的强大扩展性和实用性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18171v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18171.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/FlashRT)</div> |
 | <span style='display: inline-block; width: 42px;'>07-20</span> | **Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security**<br><sub>本文指出了当前 LLM 安全基准因使用静态攻击池而存在的评估偏差，提出了“Adaptive Adversaries”基准，通过多轮自适应攻击和多模型组合，更真实地反映了 LLM 代理在面对动态对手时的安全风险。研究结果表明，自适应攻击显著提高了成功率，且不同攻击模型和场景揭示了防御者不同的弱点，强调了在安全评估中采用动态、多视角基准的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18063v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18063.md)  |
 | <span style='display: inline-block; width: 42px;'>07-20</span> | **MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models**<br><sub>机构: University of Oslo, Bosch Center for Artificial Intelligence, LMU Munich, University of Cambridge<br>MADA-RL 通过引入反事实评论家优势和多智能体辩论机制，成功解决了紧凑模型在资源受限下的推理能力提升难题。它在大幅减少可训练参数（相比全量微调减少16倍）的同时，显著提高了数学推理准确率，证明了参数高效微调结合结构化辩论信号在小型模型上的巨大潜力，为低成本高性能推理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.18006v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.18006.md)  |
