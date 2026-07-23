@@ -1,137 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-22T04:43:54.316830+00:00",
-  "run_date": "2026-07-21",
+  "generated_at": "2026-07-23T04:47:48.783516+00:00",
+  "run_date": "2026-07-22",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.18806",
-      "date": "2026-07-21",
-      "title": "AI Tour Meeting: Group Travel Planning by LLM Agents",
+      "id": "arxiv:2607.19899",
+      "date": "2026-07-22",
+      "title": "Harnessing Disagreement: Detecting Correlated Agreement Blindness in Multi-Agent Triage",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Daisuke Kikuta"
+        "Shay Seiya McDonnell",
+        "Avantika Singh",
+        "Quoc-Viet Pham",
+        "Vratislav Havlik",
+        "Gregory M. P. O'Hare"
       ],
-      "institution": "NTT, Inc.",
+      "institution": "Trinity College Dublin",
       "summary": {
-        "zh": "本文提出了 AI Tour Meeting，一个专为群体旅行规划设计的多LLM代理框架。通过引入领域特定的结构化表示、提议-投票工作流和约束验证机制，解决了通用框架在旅行规划场景下的适用性问题。该框架不仅简化了多代理协同规划的实现，还作为强大的仿真工具，支持对LLM代理在复杂协商场景下的行为进行深入分析，验证了其在平衡多方偏好和约束方面的有效性。",
-        "en": "This paper proposes AI Tour Meeting, a multi-LLM agent framework designed specifically for group travel planning. By introducing domain-specific structured representations, proposal-voting workflows, and constraint..."
+        "zh": "本文揭示了多智能体系统中“相关一致性盲区”这一结构性风险，即模型能力越强，越容易因一致性而掩盖共同错误。提出的 ARAT 系统通过异构代理组合和分层仲裁机制，有效利用分歧并监控一致性下的潜在风险，显著降低了危险的低预测率。研究强调，在部署日益强大且相关的 AI 代理管道时，必须警惕一致性带来的虚假安全感，并通过架构设计确保产生有效的分歧以提升系统安全性。",
+        "en": "This paper identifies \"Correlated Agreement Blindness\" as a structural risk in multi-agent systems, where increased model capability leads to consensus that masks shared errors. The proposed ARAT system effectively..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.18806v1",
-        "pdf": "https://arxiv.org/pdf/2607.18806v1",
-        "github": "https://github.com/ntt-dkiku/ai-tour-meeting"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.18806.md",
-        "summary_en_path": "summary_en/2026-07/2607.18806.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.18806.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.18806.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.18754",
-      "date": "2026-07-21",
-      "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Kunlun Zhu",
-        "Xuyan Ye",
-        "Zhiguang Han",
-        "Yuchen Zhao",
-        "Bingxuan Li",
-        "Weijia Zhang",
-        "Muxin Tian",
-        "Xiangru Tang",
-        "Pan Lu",
-        "James Zou",
-        "Jiaxuan You",
-        "Heng Ji"
-      ],
-      "institution": "University of Illinois Urbana-Champaign, University of Toronto, Google, Stanford University",
-      "summary": {
-        "zh": "AgentDebugX 填补了 LLM 代理开发中从故障观察到自动恢复的空白。通过引入 DeepDebug 多轮诊断机制和闭环调试工作流，它不仅提高了根本原因定位的准确性，还显著提升了代理任务的自我修复成功率。作为一个开源工具包，它为开发者提供了标准化的调试接口和共享生态，有望成为 LLM 代理工程化落地的重要基础设施。",
-        "en": "AgentDebugX bridges the gap between failure observation and automated recovery in LLM agent development. By introducing the DeepDebug multi-turn diagnosis mechanism and a closed-loop debugging workflow, it significantly..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.18754v1",
-        "pdf": "https://arxiv.org/pdf/2607.18754v1",
-        "github": "https://github.com/AgentDebugX/AgentDebugX"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.18754.md",
-        "summary_en_path": "summary_en/2026-07/2607.18754.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.18754.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.18754.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.19336",
-      "date": "2026-07-21",
-      "title": "Agents in the Wild: Where Research Meets Deployment",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Grace Hui Yang",
-        "Pranav N. Venkit",
-        "Hooman Sedghamiz",
-        "Enrico Santus",
-        "Victor Dibia",
-        "Ioana Baldini"
-      ],
-      "institution": "Georgetown University",
-      "summary": {
-        "zh": "本文是一篇旨在弥合学术研究与工业部署之间鸿沟的教程论文。它系统地回顾了智能体系统从单体到多智能体架构的演变，重点解决了部署阶段的鲁棒性、安全性和可靠性问题。通过结合制药和金融领域的实际案例，文章提供了应对幻觉、死锁等故障的实用策略，并指出了多智能体可扩展性、终身适应性和可解释性等未来研究方向，为构建安全可靠的工业级智能体系统提供了全面指导。",
-        "en": "This tutorial paper aims to bridge the gap between academic research and industrial deployment of agentic systems. It systematically reviews the evolution from monolithic to multi-agent architectures, focusing on..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.19336v1",
-        "pdf": "https://arxiv.org/pdf/2607.19336v1",
+        "abs": "http://arxiv.org/abs/2607.19899v1",
+        "pdf": "https://arxiv.org/pdf/2607.19899v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.19336.md",
-        "summary_en_path": "summary_en/2026-07/2607.19336.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.19336.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.19336.md"
+        "summary_zh_path": "summary/2026-07/2607.19899.md",
+        "summary_en_path": "summary_en/2026-07/2607.19899.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.19899.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.19899.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -148,35 +52,36 @@
       }
     },
     {
-      "id": "arxiv:2607.18826",
-      "date": "2026-07-21",
-      "title": "Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents",
+      "id": "arxiv:2607.20019",
+      "date": "2026-07-22",
+      "title": "EvoDRC: A Self-Evolving Agentic Framework for Automated DRC Violation Repair",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "SangJin Park",
-        "Myungsub Choi",
-        "Jineok Kim",
-        "Minseung Kang"
+        "Bing-Yue Wu",
+        "Chia-Tung Ho",
+        "Haoyu Yang",
+        "Brucek Khailany",
+        "Vidya A. Chhabria"
       ],
-      "institution": "Tynapse",
+      "institution": "Arizona State University; NVIDIA Corporation",
       "summary": {
-        "zh": "本文确立了跨智能体活动归因作为保护野外 LLM 智能体的一个独特评估层。通过提出 $A^2FV$ 方法和 SCD-v1 基准，作者展示了即使在没有共享状态和攻击者身份的情况下，也能通过代理侧的可观察特征有效链接异步攻击会话。这一发现强调了从单一会话安全性向多会话潜在活动模式识别转变的重要性，为提升 LLM 智能体在复杂部署环境中的安全性提供了新方向。",
-        "en": "- **Background**: As Large Language Model (LLM) agents are increasingly deployed in fields like software engineering and customer support, defenses against prompt injections are typically evaluated on a per-session..."
+        "zh": "EvoDRC创新性地引入了自我进化的代理框架来解决高级节点物理设计中的DRC收敛难题。通过结合从参考设计蒸馏的初始技能和从目标设计实时收集的修复经验，该框架有效克服了LLM在EDA领域应用中的冷启动和适应性挑战。实验证明，该方法能显著减少设计规则违规，大幅降低人工ECO的工作量，为自动化物理设计流程提供了新的范式。",
+        "en": "- **Background**: Design Rule Check (DRC) closure is a major bottleneck in advanced-node physical design. Despite rule-aware detailed routers, residual Design Rule Violations (DRVs) often require manual Engineering..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.18826v1",
-        "pdf": "https://arxiv.org/pdf/2607.18826v1",
+        "abs": "http://arxiv.org/abs/2607.20019v1",
+        "pdf": "https://arxiv.org/pdf/2607.20019v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.18826.md",
-        "summary_en_path": "summary_en/2026-07/2607.18826.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.18826.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.18826.md"
+        "summary_zh_path": "summary/2026-07/2607.20019.md",
+        "summary_en_path": "summary_en/2026-07/2607.20019.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.20019.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.20019.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,32 +98,127 @@
       }
     },
     {
-      "id": "arxiv:2607.19266",
-      "date": "2026-07-21",
-      "title": "Toward Auditable Fraud Detection: Combining Graph Features, Model Explanations, and Agentic Case Investigation",
+      "id": "arxiv:2607.19739",
+      "date": "2026-07-22",
+      "title": "Personalized Recommendation Tool Learning via Autonomous Language Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Rahil Sharma"
+        "Mingdai Yang",
+        "Zhiwei Liu",
+        "Weizhi Zhang",
+        "Yibo Wang",
+        "Hao Peng",
+        "Philip Yu"
       ],
-      "institution": "Vrije Universiteit Amsterdam",
+      "institution": "University of Illinois Chicago, Microsoft, Beihang University",
       "summary": {
-        "zh": "本文通过对分层欺诈检测系统的细致评估，揭示了各组件（图特征、异常信号、LLM代理）仅在特定条件下发挥作用。研究明确指出，LLM调查代理目前的决策能力尚未超越基础分类器，且其生成的看似合理的解释具有误导性。因此，不能仅凭代理提供的合理理由就认为其决策更优，需要引入如分歧升级等机制来辅助人工审查，以确保系统的审计性和可靠性。",
-        "en": "- **Background**: Fraud detection systems must scale with rising transaction volumes while remaining explainable and auditable. Financial institutions face a high volume of false positive alerts and need automated tools..."
+        "zh": "本文提出了 PRTA 框架，通过将 LLM 作为中央规划器与传统推荐模型结合，有效解决了 LLM 在推荐系统中的幻觉和上下文限制问题。通过引入个性化反思机制，PRTA 能够动态选择最适合用户的推荐工具，显著提升了全排序推荐的性能。该方法在不修改 LLM 本身的情况下，通过架构创新实现了 LLM 推理能力与传统推荐模型可扩展性的优势互补。",
+        "en": "- **Background**: Large Language Models (LLMs) have gained traction in recommender systems due to their strong reasoning capabilities and extensive world knowledge, which traditional embedding-based models lack in..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.19266v1",
-        "pdf": "https://arxiv.org/pdf/2607.19266v1",
+        "abs": "http://arxiv.org/abs/2607.19739v1",
+        "pdf": "https://arxiv.org/pdf/2607.19739v1",
+        "github": "https://github.com/mdyfrank/RecToolAgent"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.19739.md",
+        "summary_en_path": "summary_en/2026-07/2607.19739.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.19739.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.19739.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.19967",
+      "date": "2026-07-22",
+      "title": "When Shippers Become Algorithms: Candidate Exposure, Information Design, and the Concentration of LLM-Mediated Freight Markets",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Takahiro Ezaki",
+        "Naoto Imura",
+        "Katsuhiro Nishinari"
+      ],
+      "institution": "The University of Tokyo",
+      "summary": {
+        "zh": "本文首次模拟了由真实 LLM 代理群体进行的货运采购过程，揭示了 LLM 中介市场中存在的算法单一文化和市场集中风险。研究指出，平台的信息设计（特别是披露剩余容量）是比模型选择或监管更有效的调控杠杆。这一发现为设计更健康、更具竞争性的 LLM 驱动市场提供了重要的理论依据和实践指导。",
+        "en": "- **Background**: Shippers are increasingly delegating carrier selection to autonomous Large Language Model (LLM) agents within supply chain workflows. Digital Freight Matching (DFM) platforms are evolving from..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.19967v1",
+        "pdf": "https://arxiv.org/pdf/2607.19967v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.19266.md",
-        "summary_en_path": "summary_en/2026-07/2607.19266.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.19266.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.19266.md"
+        "summary_zh_path": "summary/2026-07/2607.19967.md",
+        "summary_en_path": "summary_en/2026-07/2607.19967.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.19967.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.19967.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.20121",
+      "date": "2026-07-22",
+      "title": "OpenSkillRisk: Benchmarking Agent Safety When Using Real-World Risky Third-Party Skills",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Qiyuan Liu",
+        "Tingfeng Hui",
+        "Kun Zhan",
+        "Kaike Zhang",
+        "Ning Miao"
+      ],
+      "institution": "City University of Hong Kong, Hong Kong Institute of AI for Science, Beijing University of Posts and Telecommunications, Li Auto Inc.",
+      "summary": {
+        "zh": "本文构建了 OpenSkillRisk 基准，系统性地调查了当前智能体系统在使用第三方技能时的安全性。研究发现现有系统在面对真实世界风险时表现不佳，存在显著的漏洞。通过细粒度分析，文章指出了智能体在风险识别、干预和执行范围控制上的三大失败模式，强调了未来需要同时提升LLM的风险推理能力和智能体框架的执行控制机制。",
+        "en": "- **Background**: LLM-based agents leverage third-party skills to extend capabilities in open-world scenarios. However, these seemingly harmless skills can introduce latent security vulnerabilities, such as malicious..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.20121v1",
+        "pdf": "https://arxiv.org/pdf/2607.20121v1",
+        "github": "https://github.com/Miaow-Lab/OpenSkillRisk"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.20121.md",
+        "summary_en_path": "summary_en/2026-07/2607.20121.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.20121.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.20121.md"
       },
       "signals": {
         "priority_keyword": "Agent"
