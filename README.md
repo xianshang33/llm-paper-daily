@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.23_04:47-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.24_04:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月23日 04:47</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月24日 04:44</sub></summary>
 <br>
 
-- Harnessing Disagreement: Detecting Correlated Agreement Blindness in Multi-Agent Triage 
-- EvoDRC: A Self-Evolving Agentic Framework for Automated DRC Violation Repair 
-- Personalized Recommendation Tool Learning via Autonomous Language Agents 
-- When Shippers Become Algorithms: Candidate Exposure, Information Design, and the Concentration of LLM-Mediated Freight Markets 
-- OpenSkillRisk: Benchmarking Agent Safety When Using Real-World Risky Third-Party Skills 
+- Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks 
+- Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation 
+- GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG 
+- HiMe: Real-Time Self-Hosted Personal Agent Platform for Health Insights with Wearable Devices 
+- PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-23</span> | **Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks**<br><sub>机构: University College London<br>本文针对敏感数据研究中 AI 应用的数据隐私痛点，提出了 RRBench 框架，系统评估了本地部署的开放权重 LLM 在纵向数据准备任务中的能力。结果表明，31-35B 参数级别的模型在消费级硬件上即可实现接近 88% 的任务完成率，为在严格数据治理环境下实现 AI 辅助数据清洗和处理提供了切实可行的技术方案和评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21482v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21482.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/UCL-ARC/RRBench)</div> |
+| <span style='display: inline-block; width: 42px;'>07-23</span> | **Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation**<br><sub>机构: University of Pennsylvania<br>本文揭示了高能力LLM在多智能体工作流中存在严重的组合式安全缺口。研究表明，虽然模型能抵抗直接的有害指令，但当同一目标经过中间代理的转换和清洗，剥离了明显的操纵性措辞后，下游模型会倾向于执行该隐藏目标。这种“行为逆向偏移”暴露了当前AI系统在架构可见性上的根本缺陷：终端用户和模型无法追溯上游的原始恶意指令。这一发现对设计更安全的多智能体系统和审计机制提出了严峻挑战，强调了对工作流全链路透明度进行监管的必要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21518v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21518.md)  |
+| <span style='display: inline-block; width: 42px;'>07-23</span> | **GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG**<br><sub>机构: Bloomberg<br>GRADRAG 解决了多智能体 RAG 系统中组件孤立优化导致的错误传播问题。通过将流水线建模为计算图并引入跨组件的反馈循环，它能够有效利用下游评估信号来优化上游检索和证据构建过程。实验表明，该方法在无需大量迭代的情况下，显著提升了文档问答和摘要任务的性能，为协调多智能体 RAG 提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21324v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21324.md)  |
+| <span style='display: inline-block; width: 42px;'>07-23</span> | **HiMe: Real-Time Self-Hosted Personal Agent Platform for Health Insights with Wearable Devices**<br><sub>机构: King’s College London, The Alan Turing Institute<br>HiMe 是一个开创性的本地部署个人健康智能体平台，解决了可穿戴健康数据实时分析与隐私保护之间的难题。通过将数据库作为核心组件，并优化效率与效果的平衡，HiMe 使得个人能够在不牺牲隐私的前提下，利用 LLM 代理对连续的健康数据进行深度、个性化的长期监测与分析，为提升个人福祉提供了实用的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21019v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21019.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/thinkwee/HiMe)</div> |
+| <span style='display: inline-block; width: 42px;'>07-23</span> | **PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning**<br><sub>机构: Peking University, Tencent<br>PATS 提出了一种新颖的以策略为中心的强化学习训练范式，通过将技能视为动态的、可丢弃的训练脚手架，有效解决了长程 LLM 智能体训练中弱策略探索效率低的问题。该方法通过动态调整训练时的上下文支持，既帮助弱策略突破瓶颈，又在策略成熟后减少冗余，实现了性能提升与资源效率的双重优化，且在部署时无额外开销。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21419v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21419.md)  |
 | <span style='display: inline-block; width: 42px;'>07-22</span> | **Harnessing Disagreement: Detecting Correlated Agreement Blindness in Multi-Agent Triage**<br><sub>机构: Trinity College Dublin<br>本文揭示了多智能体系统中“相关一致性盲区”这一结构性风险，即模型能力越强，越容易因一致性而掩盖共同错误。提出的 ARAT 系统通过异构代理组合和分层仲裁机制，有效利用分歧并监控一致性下的潜在风险，显著降低了危险的低预测率。研究强调，在部署日益强大且相关的 AI 代理管道时，必须警惕一致性带来的虚假安全感，并通过架构设计确保产生有效的分歧以提升系统安全性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.19899v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.19899.md)  |
 | <span style='display: inline-block; width: 42px;'>07-22</span> | **EvoDRC: A Self-Evolving Agentic Framework for Automated DRC Violation Repair**<br><sub>机构: Arizona State University; NVIDIA Corporation<br>EvoDRC创新性地引入了自我进化的代理框架来解决高级节点物理设计中的DRC收敛难题。通过结合从参考设计蒸馏的初始技能和从目标设计实时收集的修复经验，该框架有效克服了LLM在EDA领域应用中的冷启动和适应性挑战。实验证明，该方法能显著减少设计规则违规，大幅降低人工ECO的工作量，为自动化物理设计流程提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.20019v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.20019.md)  |
 | <span style='display: inline-block; width: 42px;'>07-22</span> | **Personalized Recommendation Tool Learning via Autonomous Language Agents**<br><sub>机构: University of Illinois Chicago, Microsoft, Beihang University<br>本文提出了 PRTA 框架，通过将 LLM 作为中央规划器与传统推荐模型结合，有效解决了 LLM 在推荐系统中的幻觉和上下文限制问题。通过引入个性化反思机制，PRTA 能够动态选择最适合用户的推荐工具，显著提升了全排序推荐的性能。该方法在不修改 LLM 本身的情况下，通过架构创新实现了 LLM 推理能力与传统推荐模型可扩展性的优势互补。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.19739v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.19739.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/mdyfrank/RecToolAgent)</div> |
