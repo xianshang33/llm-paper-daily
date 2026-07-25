@@ -1,39 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-25T04:40:06.233001+00:00",
-  "run_date": "2026-07-19",
+  "generated_at": "2026-07-25T07:34:53.760441+00:00",
+  "run_date": "2026-07-18",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.17082",
-      "date": "2026-07-19",
-      "title": "Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories",
+      "id": "arxiv:2607.16712",
+      "date": "2026-07-18",
+      "title": "DS@GT ARC at eRisk 2026: Hybrid Multi-Agent LLM System with Structured Algorithmic Guidance for Conversational Depression Screening",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Babak Barazandeh",
-        "Subhabrata Majumdar",
-        "George Michailidis"
+        "Victor Gong",
+        "David Guecha"
       ],
-      "institution": "Fortinet, IIMB, UCLA",
+      "institution": "Georgia Institute of Technology",
       "summary": {
-        "zh": "本文针对 LLM 智能体轨迹评估中现有指标缺乏细粒度、对结构变化不鲁棒的问题，提出了 OTAP。通过将评估转化为图之间的最优传输距离，OTAP 实现了对依赖保持重排序的不变性，并能灵活处理步骤缺失、幻觉及粒度差异。实验表明，OTAP 在区分有效与无效轨迹方面显著优于现有语义或匹配基线，为智能体系统的 rigorous 评估提供了新的范式。",
-        "en": "This paper addresses the lack of granularity and structural robustness in existing LLM agent trajectory metrics by proposing OTAP. By formulating evaluation as an optimal transport distance between graphs, OTAP achieves..."
+        "zh": "- **背景**：抑郁症影响全球数亿人，但传统评估工具（如BDI-II）需要专业临床医生，难以在资源受限环境中大规模应用。自动化对话系统有望通过自然对话推断抑郁症状，从而扩大筛查范围。 - **已有工作为什么解决不了**：现有的LLM方法在处理此类任务时面临两大难点：一是任务禁止直接询问敏感心理健康问题，要求系统通过间接对话推断症状；二是缺乏实时地面真值标签进行调优，且需要在诊断 thoroughness...",
+        "en": "- **Background**: Depression affects over 280 million people globally, but traditional assessment tools like BDI-II require trained clinicians, limiting scalability. Automated conversational systems offer a promising..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.17082v1",
-        "pdf": "https://arxiv.org/pdf/2607.17082v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.16712v1",
+        "pdf": "https://arxiv.org/pdf/2607.16712v1",
+        "github": "https://github.com/dsgt-arc/erisk-task1-2026"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.17082.md",
-        "summary_en_path": "summary_en/2026-07/2607.17082.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.17082.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.17082.md"
+        "summary_zh_path": "summary/2026-07/2607.16712.md",
+        "summary_en_path": "summary_en/2026-07/2607.16712.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16712.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16712.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,34 +49,34 @@
       }
     },
     {
-      "id": "arxiv:2607.17437",
-      "date": "2026-07-19",
-      "title": "Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions",
+      "id": "arxiv:2607.16961",
+      "date": "2026-07-18",
+      "title": "Lomekwi: Resource-Bounded Tool Discovery in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chen Xia",
-        "Zexi Kuang",
-        "Yuqing Hu"
+        "Roshan Klein-Seetharaman",
+        "Daniel Wang",
+        "Andrew Xu"
       ],
-      "institution": "Rochester Institute of Technology, Northeastern University, The Pennsylvania State University",
+      "institution": "Yale University, Sea12 Technologies",
       "summary": {
-        "zh": "本文证明了通过将人口统计、时间使用和空间上下文等实证数据嵌入LLM代理的各个环节，可以显著提高代理在模拟灾害和中断期间人类行为的统计真实性。该方法不仅改善了日常行为的复现精度，还增强了对极端事件（如热浪）下适应性行为模式的捕捉能力。尽管仍存在一定的建模差距，但该研究为利用LLM代理进行未来 disruptions 模拟提供了一条可行路径：即用实证数据锚定日常行为，用LLM推理生成缺乏历史先例时的适应性响应。",
-        "en": "This paper demonstrates that embedding empirical data—such as demographics, time use, and spatial context—into LLM agents significantly enhances the statistical realism of simulated human behavior during disruptions...."
+        "zh": "- **背景**：大型语言模型（LLM）代理的工具使用能力日益普及，但现有研究通常直接提供工具或创建指令。现有的基准测试仅报告复杂多步任务的单一成功率，无法区分“工具使用”与“工具发现”，也无法衡量模型在未被告知情况下主动构建工具的倾向。 - **已有工作为什么解决不了**：现有基准测试将工具发现与记忆召回混淆，且往往强制要求创建工具，导致无法评估模型作为工具构建者的内在...",
+        "en": "- **Background**: While Large Language Model (LLM) agents are increasingly equipped with tools, existing research typically provides the tools or instructions directly. Current benchmarks report a single success rate..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.17437v1",
-        "pdf": "https://arxiv.org/pdf/2607.17437v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.16961v1",
+        "pdf": "https://arxiv.org/pdf/2607.16961v1",
+        "github": "https://github.com/DragonWrangler25/lomekwi-tool-discovery"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.17437.md",
-        "summary_en_path": "summary_en/2026-07/2607.17437.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.17437.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.17437.md"
+        "summary_zh_path": "summary/2026-07/2607.16961.md",
+        "summary_en_path": "summary_en/2026-07/2607.16961.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16961.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16961.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -94,35 +93,38 @@
       }
     },
     {
-      "id": "arxiv:2607.17331",
-      "date": "2026-07-19",
-      "title": "Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning",
+      "id": "arxiv:2607.16617",
+      "date": "2026-07-18",
+      "title": "DataFlow-Harness: A Grounded Code-Agent Platform for Constructing Editable LLM Data Pipelines",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhihao Liu",
-        "Tianyu Wang",
-        "Xi Vincent Wang",
-        "Lihui Wang"
+        "Runming He",
+        "Zhen Hao Wong",
+        "Hao Liang",
+        "Zimo Meng",
+        "Chengyu Shen",
+        "Xiaochen Ma",
+        "Wentao Zhang"
       ],
-      "institution": "KTH Royal Institute of Technology",
+      "institution": "Peking University, Institute for Advanced Algorithms Research, Zhongguancun Academy",
       "summary": {
-        "zh": "本文展示了在人类监督下的角色对齐LLM智能体如何将ERP系统从被动记录交易转变为主动执行操作决策。Agentic ERP 不仅提供了一个可参考的自主企业资源规划架构，还建立了一套标准的评估协议，解决了传统自动化无法应对例外情况和单体AI协调能力不足的问题，为下一代智能企业管理系统奠定了基础。",
-        "en": "- **Background**: Enterprise Resource Planning (ERP) systems are the operational backbone of modern organizations but still delegate almost all operational decision-making to human specialists. Classical rule-based..."
+        "zh": "DataFlow-Harness 有效解决了 LLM 代码代理在数据工程领域的“NL2Pipeline gap”问题。通过结合 MCP 协议、技能引导和可视化同步编辑，该平台不仅提高了工作流生成的可靠性和可编辑性，还大幅降低了经济成本和时间延迟，为生产环境中的 LLM 驱动数据管道构建提供了高效解决方案。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly used to automate data-processing workflows (e.g., synthetic data generation, evaluation). However, existing coding agents typically produce free-form..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.17331v1",
-        "pdf": "https://arxiv.org/pdf/2607.17331v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.16617v1",
+        "pdf": "https://arxiv.org/pdf/2607.16617v1",
+        "github": "https://github.com/OpenDCAI/DataFlow-WebUI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.17331.md",
-        "summary_en_path": "summary_en/2026-07/2607.17331.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.17331.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.17331.md"
+        "summary_zh_path": "summary/2026-07/2607.16617.md",
+        "summary_en_path": "summary_en/2026-07/2607.16617.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16617.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16617.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -139,34 +141,42 @@
       }
     },
     {
-      "id": "arxiv:2607.17311",
-      "date": "2026-07-19",
-      "title": "The Optimization Trilemma: Efficiency, Comfort and Fairness in Decentralized Multi-agent Coordination",
+      "id": "arxiv:2607.16621",
+      "date": "2026-07-18",
+      "title": "From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jovan Nikolic",
-        "Maciej Krzysztof Zuziak",
-        "Evangelos Pournaras"
+        "Bo Tang",
+        "Yang Zhang",
+        "Guomian Zhuang",
+        "Wenqiang Wei",
+        "Gaoyang Zheng",
+        "Lindong Xie",
+        "Yanchao Tan",
+        "Feiyu Xiong",
+        "Qingyu Yang",
+        "Edward Chung",
+        "Zhiyu li"
       ],
-      "institution": "LUT University; University of Leeds; Google",
+      "institution": "University of Science and Technology of China",
       "summary": {
-        "zh": "本文解决了去中心化多智能体系统中长期被忽视的公平性问题，提出了同时优化效率、舒适度和公平性的新范式。通过新颖的分布式模型，成功在不增加系统开销的前提下，实现了资源的 equitable redistribution，为构建可持续、高参与度的协作系统提供了理论支持和实证依据。",
-        "en": "- **Background**: In decentralized multi-agent coordination systems, resource allocation must balance system-wide efficiency, individual comfort (participation cost/discomfort), and fairness. For instance, in..."
+        "zh": "本文针对长程 LLM 智能体中记忆利用率低和技能提取难的问题，提出了 MSCE 框架。通过构建分层记忆结构和引入反射加权价值回填机制，MSCE 成功地将被动记忆转化为主动、可执行且具备自我验证能力的技能。该方法无需训练即可显著提升智能体在复杂长程任务中的表现，实现了记忆与技能的协同进化，为构建具备终身学习能力的智能体提供了新的范式。",
+        "en": "This paper addresses the low utilization of memory and the difficulty of skill extraction in long-horizon LLM agents by proposing the MSCE framework. By constructing a hierarchical memory structure and introducing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.17311v1",
-        "pdf": "https://arxiv.org/pdf/2607.17311v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.16621v1",
+        "pdf": "https://arxiv.org/pdf/2607.16621v1",
+        "github": "https://github.com/MemTensor/MemOS"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.17311.md",
-        "summary_en_path": "summary_en/2026-07/2607.17311.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.17311.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.17311.md"
+        "summary_zh_path": "summary/2026-07/2607.16621.md",
+        "summary_en_path": "summary_en/2026-07/2607.16621.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16621.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16621.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -183,33 +193,39 @@
       }
     },
     {
-      "id": "arxiv:2607.17038",
-      "date": "2026-07-19",
-      "title": "Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making",
+      "id": "arxiv:2607.16900",
+      "date": "2026-07-18",
+      "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Amez Amanj Ali",
-        "Kuo-Kun Tseng"
+        "Seanie Lee",
+        "Sanjoy Chowdhury",
+        "Chao Jiang",
+        "Cheng-Yu Hsieh",
+        "Ting-Yao Hu",
+        "Alexander T Toshev",
+        "Oncel Tuzel",
+        "Raviteja Vemulapalli"
       ],
-      "institution": "Harbin Institute of Technology, Shenzhen",
+      "institution": "Apple",
       "summary": {
-        "zh": "- **背景**：人工智能正从静态模式识别向能够在动态环境中执行复杂工作流的交互式自主系统转变。大型语言模型（LLM）催生了“代理智能”，旨在通过感知、规划和工具调用来实现高级目标。 - **已有工作的不足**：现有的基线模型主要依赖静态的零样本或少样本提示技术，缺乏鲁棒的感知-行动循环。它们难以处理长视野规划、稀疏奖励归因以及动态环境交互，导致错误累积且无法有效适应环境变化。 -...",
-        "en": "- **Background**: AI is shifting from static pattern recognition to interactive autonomous systems capable of complex workflows in dynamic environments. Large Language Models (LLMs) have enabled \"Agent Intelligence,\"..."
+        "zh": "本文提出了一种创新的无环境合成数据生成方法，通过利用 LLM 作为数字世界模型，解决了 API 智能体训练中数据收集对环境基础设施的依赖问题。通过任务生成、状态模拟和质量过滤的闭环流程，该方法能够仅从 API 规范中生成高质量、状态一致的交互轨迹。实验证实，基于此数据训练的模型在多个基准测试中表现优异，为大规模训练 API 智能体提供了一条高效、可扩展的新路径。",
+        "en": "- **Background**: Training Large Language Model (LLM) agents capable of calling APIs requires massive amounts of high-quality trajectory data, capturing multi-step interactions, state tracking, and error recovery. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.17038v1",
-        "pdf": "https://arxiv.org/pdf/2607.17038v1",
-        "github": "https://github.com/01Amez/RLAW_Implementation"
+        "abs": "http://arxiv.org/abs/2607.16900v2",
+        "pdf": "https://arxiv.org/pdf/2607.16900v2",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.17038.md",
-        "summary_en_path": "summary_en/2026-07/2607.17038.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.17038.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.17038.md"
+        "summary_zh_path": "summary/2026-07/2607.16900.md",
+        "summary_en_path": "summary_en/2026-07/2607.16900.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16900.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16900.md"
       },
       "signals": {
         "priority_keyword": "Agent"
