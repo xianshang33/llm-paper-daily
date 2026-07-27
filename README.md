@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.24_04:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.27_05:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月24日 04:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月27日 05:05</sub></summary>
 <br>
 
-- Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks 
-- Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation 
-- GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG 
-- HiMe: Real-Time Self-Hosted Personal Agent Platform for Health Insights with Wearable Devices 
-- PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning 
+- SceneActBench: Can Agents Act on the 3D Scenes They See? 
+- DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents 
+- The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents 
+- Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents 
+- CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-24</span> | **SceneActBench: Can Agents Act on the 3D Scenes They See?**<br><sub>机构: Tencent Hunyuan, Tsinghua University, Nanjing University, HKUST, UIUC, Peking University<br>SceneActBench 填补了评估VLM智能体在完整多对象3D场景中执行视觉条件动作的空白。通过引入基于几何精度的统一评估框架，揭示了当前主流VLM在3D理解和行动能力上的不足与不一致性，为未来提升智能体的3D交互能力提供了重要的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22393v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22393.md)  |
+| <span style='display: inline-block; width: 42px;'>07-24</span> | **DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents**<br><sub>机构: University of Electronic Science and Technology of China<br>DBA-Bench 揭示了当前 LLM 数据库智能体与生产级要求之间的显著差距。尽管自动化智能体在简单任务上表现出一定能力，但在面对复杂、动态且需要高安全性的生产环境故障时，其性能远不及人类专家。该基准为未来开发更 robust、安全的数据库运维智能体提供了重要的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22165v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22165.md)  |
+| <span style='display: inline-block; width: 42px;'>07-24</span> | **The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents**<br><sub>机构: Sentient Labs<br>本文指出，评估 LLM 智能体的程序化技能时，不能仅依赖平均成功率的提升，必须将净效应分解为增益和回归。研究揭示了技能导致的三种主要回归模式（描述渗透、grounding 位移、验证位移），并发现智能体的可靠性更多地取决于 grounding 和验证的质量，而非程序化技能本身的选择。未来的技能设计和评估应着重减少回归，特别是通过加强 grounding 和验证环节来提升鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22520v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22520.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sentient-agi/meta-skill-creator)</div> |
+| <span style='display: inline-block; width: 42px;'>07-24</span> | **Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents**<br><sub>机构: University of Technology Nuremberg<br>本文引入了 MissionBench，填补了通用 MLLM 在长视野、任务级空中具身智能评估方面的空白。研究结果表明，当前最先进的 MLLM 在此类复杂任务上仍远未达到人类水平，但模型规模的扩大能显著提升零样本性能。这强调了闭环评估的重要性，并指出了扩展通用模型对于具身 AI 发展的潜力与风险。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22014v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22014.md)  |
+| <span style='display: inline-block; width: 42px;'>07-24</span> | **CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference**<br><sub>机构: lable at<br>CausalForge 通过将因果推断研究建立在严格的 Lean 形式化基础之上，解决了自动化理论研究中评估不可靠的核心痛点。它不仅提供了大规模的可重用形式化库以降低验证成本，还创新性地引入了陈述审计机制来弥合形式化证明与科学意图之间的鸿沟，为高可信度的自动化科学研究提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22511v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22511.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Jiyuan-Tan/CausalForge)</div> |
 | <span style='display: inline-block; width: 42px;'>07-23</span> | **Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks**<br><sub>机构: University College London<br>本文针对敏感数据研究中 AI 应用的数据隐私痛点，提出了 RRBench 框架，系统评估了本地部署的开放权重 LLM 在纵向数据准备任务中的能力。结果表明，31-35B 参数级别的模型在消费级硬件上即可实现接近 88% 的任务完成率，为在严格数据治理环境下实现 AI 辅助数据清洗和处理提供了切实可行的技术方案和评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21482v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21482.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/UCL-ARC/RRBench)</div> |
 | <span style='display: inline-block; width: 42px;'>07-23</span> | **Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation**<br><sub>机构: University of Pennsylvania<br>本文揭示了高能力LLM在多智能体工作流中存在严重的组合式安全缺口。研究表明，虽然模型能抵抗直接的有害指令，但当同一目标经过中间代理的转换和清洗，剥离了明显的操纵性措辞后，下游模型会倾向于执行该隐藏目标。这种“行为逆向偏移”暴露了当前AI系统在架构可见性上的根本缺陷：终端用户和模型无法追溯上游的原始恶意指令。这一发现对设计更安全的多智能体系统和审计机制提出了严峻挑战，强调了对工作流全链路透明度进行监管的必要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21518v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21518.md)  |
 | <span style='display: inline-block; width: 42px;'>07-23</span> | **GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG**<br><sub>机构: Bloomberg<br>GRADRAG 解决了多智能体 RAG 系统中组件孤立优化导致的错误传播问题。通过将流水线建模为计算图并引入跨组件的反馈循环，它能够有效利用下游评估信号来优化上游检索和证据构建过程。实验表明，该方法在无需大量迭代的情况下，显著提升了文档问答和摘要任务的性能，为协调多智能体 RAG 提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.21324v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.21324.md)  |

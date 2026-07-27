@@ -1,231 +1,231 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-25T07:34:53.760441+00:00",
-  "run_date": "2026-07-18",
+  "generated_at": "2026-07-27T05:05:29.485752+00:00",
+  "run_date": "2026-07-24",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.16712",
-      "date": "2026-07-18",
-      "title": "DS@GT ARC at eRisk 2026: Hybrid Multi-Agent LLM System with Structured Algorithmic Guidance for Conversational Depression Screening",
+      "id": "arxiv:2607.22393",
+      "date": "2026-07-24",
+      "title": "SceneActBench: Can Agents Act on the 3D Scenes They See?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Victor Gong",
-        "David Guecha"
+        "Yifei Zhao",
+        "Xiangxin Zhou",
+        "Wenhao Yang",
+        "Jiaqi Tang",
+        "Pu Jian",
+        "Huanjin Yao",
+        "Jiarui Yao",
+        "Haowei Lin",
+        "Chunchao Guo",
+        "Zhuo Chen",
+        "Wenkai Lyu",
+        "Jianzhu Ma",
+        "Xueqian Wang",
+        "Wenxi Zhu"
       ],
-      "institution": "Georgia Institute of Technology",
+      "institution": "Tencent Hunyuan, Tsinghua University, Nanjing University, HKUST, UIUC, Peking University",
       "summary": {
-        "zh": "- **背景**：抑郁症影响全球数亿人，但传统评估工具（如BDI-II）需要专业临床医生，难以在资源受限环境中大规模应用。自动化对话系统有望通过自然对话推断抑郁症状，从而扩大筛查范围。 - **已有工作为什么解决不了**：现有的LLM方法在处理此类任务时面临两大难点：一是任务禁止直接询问敏感心理健康问题，要求系统通过间接对话推断症状；二是缺乏实时地面真值标签进行调优，且需要在诊断 thoroughness...",
-        "en": "- **Background**: Depression affects over 280 million people globally, but traditional assessment tools like BDI-II require trained clinicians, limiting scalability. Automated conversational systems offer a promising..."
+        "zh": "SceneActBench 填补了评估VLM智能体在完整多对象3D场景中执行视觉条件动作的空白。通过引入基于几何精度的统一评估框架，揭示了当前主流VLM在3D理解和行动能力上的不足与不一致性，为未来提升智能体的3D交互能力提供了重要的评估标准和方向。",
+        "en": "- **Background**: Vision-language model (VLM) agents are increasingly using tools to act on 3D scenes rather than just describing them. Acting on a scene is a stronger test of an agent's 3D understanding."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.16712v1",
-        "pdf": "https://arxiv.org/pdf/2607.16712v1",
-        "github": "https://github.com/dsgt-arc/erisk-task1-2026"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.16712.md",
-        "summary_en_path": "summary_en/2026-07/2607.16712.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16712.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16712.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.16961",
-      "date": "2026-07-18",
-      "title": "Lomekwi: Resource-Bounded Tool Discovery in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Roshan Klein-Seetharaman",
-        "Daniel Wang",
-        "Andrew Xu"
-      ],
-      "institution": "Yale University, Sea12 Technologies",
-      "summary": {
-        "zh": "- **背景**：大型语言模型（LLM）代理的工具使用能力日益普及，但现有研究通常直接提供工具或创建指令。现有的基准测试仅报告复杂多步任务的单一成功率，无法区分“工具使用”与“工具发现”，也无法衡量模型在未被告知情况下主动构建工具的倾向。 - **已有工作为什么解决不了**：现有基准测试将工具发现与记忆召回混淆，且往往强制要求创建工具，导致无法评估模型作为工具构建者的内在...",
-        "en": "- **Background**: While Large Language Model (LLM) agents are increasingly equipped with tools, existing research typically provides the tools or instructions directly. Current benchmarks report a single success rate..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.16961v1",
-        "pdf": "https://arxiv.org/pdf/2607.16961v1",
-        "github": "https://github.com/DragonWrangler25/lomekwi-tool-discovery"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.16961.md",
-        "summary_en_path": "summary_en/2026-07/2607.16961.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16961.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16961.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.16617",
-      "date": "2026-07-18",
-      "title": "DataFlow-Harness: A Grounded Code-Agent Platform for Constructing Editable LLM Data Pipelines",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Runming He",
-        "Zhen Hao Wong",
-        "Hao Liang",
-        "Zimo Meng",
-        "Chengyu Shen",
-        "Xiaochen Ma",
-        "Wentao Zhang"
-      ],
-      "institution": "Peking University, Institute for Advanced Algorithms Research, Zhongguancun Academy",
-      "summary": {
-        "zh": "DataFlow-Harness 有效解决了 LLM 代码代理在数据工程领域的“NL2Pipeline gap”问题。通过结合 MCP 协议、技能引导和可视化同步编辑，该平台不仅提高了工作流生成的可靠性和可编辑性，还大幅降低了经济成本和时间延迟，为生产环境中的 LLM 驱动数据管道构建提供了高效解决方案。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly used to automate data-processing workflows (e.g., synthetic data generation, evaluation). However, existing coding agents typically produce free-form..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.16617v1",
-        "pdf": "https://arxiv.org/pdf/2607.16617v1",
-        "github": "https://github.com/OpenDCAI/DataFlow-WebUI"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.16617.md",
-        "summary_en_path": "summary_en/2026-07/2607.16617.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16617.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16617.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.16621",
-      "date": "2026-07-18",
-      "title": "From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Bo Tang",
-        "Yang Zhang",
-        "Guomian Zhuang",
-        "Wenqiang Wei",
-        "Gaoyang Zheng",
-        "Lindong Xie",
-        "Yanchao Tan",
-        "Feiyu Xiong",
-        "Qingyu Yang",
-        "Edward Chung",
-        "Zhiyu li"
-      ],
-      "institution": "University of Science and Technology of China",
-      "summary": {
-        "zh": "本文针对长程 LLM 智能体中记忆利用率低和技能提取难的问题，提出了 MSCE 框架。通过构建分层记忆结构和引入反射加权价值回填机制，MSCE 成功地将被动记忆转化为主动、可执行且具备自我验证能力的技能。该方法无需训练即可显著提升智能体在复杂长程任务中的表现，实现了记忆与技能的协同进化，为构建具备终身学习能力的智能体提供了新的范式。",
-        "en": "This paper addresses the low utilization of memory and the difficulty of skill extraction in long-horizon LLM agents by proposing the MSCE framework. By constructing a hierarchical memory structure and introducing..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.16621v1",
-        "pdf": "https://arxiv.org/pdf/2607.16621v1",
-        "github": "https://github.com/MemTensor/MemOS"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.16621.md",
-        "summary_en_path": "summary_en/2026-07/2607.16621.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16621.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16621.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.16900",
-      "date": "2026-07-18",
-      "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Seanie Lee",
-        "Sanjoy Chowdhury",
-        "Chao Jiang",
-        "Cheng-Yu Hsieh",
-        "Ting-Yao Hu",
-        "Alexander T Toshev",
-        "Oncel Tuzel",
-        "Raviteja Vemulapalli"
-      ],
-      "institution": "Apple",
-      "summary": {
-        "zh": "本文提出了一种创新的无环境合成数据生成方法，通过利用 LLM 作为数字世界模型，解决了 API 智能体训练中数据收集对环境基础设施的依赖问题。通过任务生成、状态模拟和质量过滤的闭环流程，该方法能够仅从 API 规范中生成高质量、状态一致的交互轨迹。实验证实，基于此数据训练的模型在多个基准测试中表现优异，为大规模训练 API 智能体提供了一条高效、可扩展的新路径。",
-        "en": "- **Background**: Training Large Language Model (LLM) agents capable of calling APIs requires massive amounts of high-quality trajectory data, capturing multi-step interactions, state tracking, and error recovery. -..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.16900v2",
-        "pdf": "https://arxiv.org/pdf/2607.16900v2",
+        "abs": "http://arxiv.org/abs/2607.22393v1",
+        "pdf": "https://arxiv.org/pdf/2607.22393v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.16900.md",
-        "summary_en_path": "summary_en/2026-07/2607.16900.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.16900.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.16900.md"
+        "summary_zh_path": "summary/2026-07/2607.22393.md",
+        "summary_en_path": "summary_en/2026-07/2607.22393.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22393.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22393.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.22165",
+      "date": "2026-07-24",
+      "title": "DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Junming Chen",
+        "Junyang Jiang",
+        "Xu Chen",
+        "Zibo Liang",
+        "Kai Zheng"
+      ],
+      "institution": "University of Electronic Science and Technology of China",
+      "summary": {
+        "zh": "DBA-Bench 揭示了当前 LLM 数据库智能体与生产级要求之间的显著差距。尽管自动化智能体在简单任务上表现出一定能力，但在面对复杂、动态且需要高安全性的生产环境故障时，其性能远不及人类专家。该基准为未来开发更 robust、安全的数据库运维智能体提供了重要的评估标准和方向。",
+        "en": "- **Background**: LLM-based database agents show promise in tasks like query tuning and failure recovery, but the field lacks a unified evaluation standard. Different systems use varying task scopes, testbeds, and..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.22165v1",
+        "pdf": "https://arxiv.org/pdf/2607.22165v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.22165.md",
+        "summary_en_path": "summary_en/2026-07/2607.22165.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22165.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22165.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.22520",
+      "date": "2026-07-24",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Darshan Tank",
+        "Baran Nama"
+      ],
+      "institution": "Sentient Labs",
+      "summary": {
+        "zh": "本文指出，评估 LLM 智能体的程序化技能时，不能仅依赖平均成功率的提升，必须将净效应分解为增益和回归。研究揭示了技能导致的三种主要回归模式（描述渗透、grounding 位移、验证位移），并发现智能体的可靠性更多地取决于 grounding 和验证的质量，而非程序化技能本身的选择。未来的技能设计和评估应着重减少回归，特别是通过加强 grounding 和验证环节来提升鲁棒性。",
+        "en": "- **Background**: Adding procedural skills to LLM agents is typically evaluated by average improvement in task success. However, this metric hides a significant cost: skills can also degrade performance."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.22520v1",
+        "pdf": "https://arxiv.org/pdf/2607.22520v1",
+        "github": "https://github.com/sentient-agi/meta-skill-creator"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.22520.md",
+        "summary_en_path": "summary_en/2026-07/2607.22520.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22520.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22520.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.22014",
+      "date": "2026-07-24",
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Suman Navaratnarajah",
+        "Taehyoung Kim",
+        "Jona Ruthardt",
+        "Ishaan Bhimwal",
+        "Ryousuke Yamada",
+        "Yannik Blei",
+        "Wolfram Burgard",
+        "Yuki M Asano"
+      ],
+      "institution": "University of Technology Nuremberg",
+      "summary": {
+        "zh": "本文引入了 MissionBench，填补了通用 MLLM 在长视野、任务级空中具身智能评估方面的空白。研究结果表明，当前最先进的 MLLM 在此类复杂任务上仍远未达到人类水平，但模型规模的扩大能显著提升零样本性能。这强调了闭环评估的重要性，并指出了扩展通用模型对于具身 AI 发展的潜力与风险。",
+        "en": "- **Background**: Multimodal Large Language Models (MLLMs) are emerging as core reasoning modules for embodied agents. However, it remains unclear how well frozen, general-purpose MLLMs can solve long-horizon embodied..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.22014v1",
+        "pdf": "https://arxiv.org/pdf/2607.22014v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.22014.md",
+        "summary_en_path": "summary_en/2026-07/2607.22014.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22014.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22014.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.22511",
+      "date": "2026-07-24",
+      "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiyuan Tan",
+        "Vasilis Syrgkanis"
+      ],
+      "institution": "lable at",
+      "summary": {
+        "zh": "CausalForge 通过将因果推断研究建立在严格的 Lean 形式化基础之上，解决了自动化理论研究中评估不可靠的核心痛点。它不仅提供了大规模的可重用形式化库以降低验证成本，还创新性地引入了陈述审计机制来弥合形式化证明与科学意图之间的鸿沟，为高可信度的自动化科学研究提供了新的范式。",
+        "en": "CausalForge addresses the reliability crisis in automated theoretical research by grounding causal inference in rigorous Lean formalization. By providing a large-scale reusable formal library and introducing a novel..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.22511v1",
+        "pdf": "https://arxiv.org/pdf/2607.22511v1",
+        "github": "https://github.com/Jiyuan-Tan/CausalForge"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.22511.md",
+        "summary_en_path": "summary_en/2026-07/2607.22511.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22511.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22511.md"
       },
       "signals": {
         "priority_keyword": "Agent"
