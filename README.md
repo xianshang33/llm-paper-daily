@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.27_05:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.28_04:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月27日 05:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月28日 04:44</sub></summary>
 <br>
 
-- SceneActBench: Can Agents Act on the 3D Scenes They See? 
-- DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents 
-- The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents 
-- Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents 
-- CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference 
+- Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families 
+- Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents 
+- SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents 
+- MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents 
+- The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-27</span> | **Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families**<br><sub>本文提出了 Gubernaut 认知控制器（GCC），一种针对 LLM 代理的确定性稳态控制器。通过分离对象级（文本读写）和元级（仅数值遥测），GCC 在架构上免疫提示词注入，并成功在多个独立模型家族中验证了其抑制反应性故障（如冲突升级、谄媚）的能力。实验结果表明，GCC 能显著降低代理的反应性，且其效果具有跨模型的鲁棒性和可解释的动态恢复机制，为运行时对齐提供了新的架构范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24339v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24339.md)  |
+| <span style='display: inline-block; width: 42px;'>07-27</span> | **Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents**<br><sub>机构: Archestra AI<br>APPA 通过引入上下文分支和前瞻性策略执行，有效解决了 LLM Agent 中信息流控制的可用性瓶颈。它在形式化保证安全性的前提下，成功隔离了污点传播，既大幅降低了提示注入和数据泄露的风险，又保留了 Agent 处理复杂任务的能力，为构建安全且实用的自主 Agent 提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24625v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24625.md)  |
+| <span style='display: inline-block; width: 42px;'>07-27</span> | **SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents**<br><sub>机构: The Hong Kong University of Science and Technology (Guangzhou)<br>本文针对极端天气早期预警中传统方法成本高、现有 LLM 智能体研究碎片化的问题，提出了 SIREN 框架。通过构建全面的 SIREN-Bench 基准，作者揭示了现有方法的不足，并开发了基于历史经验 grounding 的智能体系统。该系统通过整合异构数据和模拟专家经验利用机制，在端到端预警任务中取得了超越基线的性能，为自动化、可扩展的气象预警系统提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24588v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24588.md)  |
+| <span style='display: inline-block; width: 42px;'>07-27</span> | **MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>MemChain 通过引入可训练的后检索记忆策略，解决了传统记忆增强 LLM 智能体中检索证据冗余和低效的问题。它通过生成结构化的证据轨迹和执行显式记忆动作，将杂乱的检索结果转化为紧凑、高质量的证据上下文。结合监督学习和提出的 TMPO 强化学习方法，MemChain 在保持甚至提升回答质量的同时，显著降低了上下文开销，为长期记忆管理提供了一种高效且可解释的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24097v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24097.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/mayiwen0212/MemChain)</div> |
+| <span style='display: inline-block; width: 42px;'>07-27</span> | **The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation**<br><sub>机构: Laboratory of Cognition and Decision Intelligence for Complex Systems, Institute of Automation, Chinese Academy of Sciences<br>本文系统地揭示了基础模型智能体在多轮长程规划能力上的“物理规律”，即能力如何在预训练中被获取、在后训练中被塑造和整合。研究强调了显式世界模型构建的重要性，指出了OPD在长程低质数据下的优势，并阐明了多教师蒸馏中模式兼容性对跨环境泛化和持续学习的关键作用，为开发更强大的智能体基础模型提供了理论依据和实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24720v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24720.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Quester-one/PlanPhysCode)</div> |
 | <span style='display: inline-block; width: 42px;'>07-24</span> | **SceneActBench: Can Agents Act on the 3D Scenes They See?**<br><sub>机构: Tencent Hunyuan, Tsinghua University, Nanjing University, HKUST, UIUC, Peking University<br>SceneActBench 填补了评估VLM智能体在完整多对象3D场景中执行视觉条件动作的空白。通过引入基于几何精度的统一评估框架，揭示了当前主流VLM在3D理解和行动能力上的不足与不一致性，为未来提升智能体的3D交互能力提供了重要的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22393v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22393.md)  |
 | <span style='display: inline-block; width: 42px;'>07-24</span> | **DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents**<br><sub>机构: University of Electronic Science and Technology of China<br>DBA-Bench 揭示了当前 LLM 数据库智能体与生产级要求之间的显著差距。尽管自动化智能体在简单任务上表现出一定能力，但在面对复杂、动态且需要高安全性的生产环境故障时，其性能远不及人类专家。该基准为未来开发更 robust、安全的数据库运维智能体提供了重要的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22165v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22165.md)  |
 | <span style='display: inline-block; width: 42px;'>07-24</span> | **The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents**<br><sub>机构: Sentient Labs<br>本文指出，评估 LLM 智能体的程序化技能时，不能仅依赖平均成功率的提升，必须将净效应分解为增益和回归。研究揭示了技能导致的三种主要回归模式（描述渗透、grounding 位移、验证位移），并发现智能体的可靠性更多地取决于 grounding 和验证的质量，而非程序化技能本身的选择。未来的技能设计和评估应着重减少回归，特别是通过加强 grounding 和验证环节来提升鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.22520v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.22520.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sentient-agi/meta-skill-creator)</div> |
