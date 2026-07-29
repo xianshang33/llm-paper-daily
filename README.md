@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.28_04:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.29_04:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月28日 04:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月29日 04:42</sub></summary>
 <br>
 
-- Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families 
-- Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents 
-- SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents 
-- MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents 
-- The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation 
+- MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents 
+- Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks 
+- HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs 
+- PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents 
+- Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-28</span> | **MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents**<br><sub>机构: Shandong University, Beihang University, City University of Hong Kong<br>## 文章做了什么 - **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。 - **已有工作的不足**：现有的LLM记忆系统通常采用粗粒度（效用无关或启发式效用）的方式，均匀对待异构的用户-LLM交互记录。这种方式无法显式建模哪些记忆单元对未来任务真正有用，导致冗余和低影响的记录长期驻留在记忆库中，稀释了任务相关的上下文，扩大了检索空间，并增加了响应生成时的Token开销。 ## 文章的核心贡献点 - **提出了一个名为 MemLens 的价值感知记忆管理系统**：该系统将记忆记录视为一等数据对象，提供端到端的交互式分析仪表板，涵盖完整的记忆生命周期。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25992v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25992.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/LIUHA1ZHU/MemLens)</div> |
+| <span style='display: inline-block; width: 42px;'>07-28</span> | **Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks**<br><sub>机构: University of Hull<br>本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25877v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25877.md)  |
+| <span style='display: inline-block; width: 42px;'>07-28</span> | **HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs**<br><sub>机构: Beijing University of Posts and Telecommunications<br>HiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25853v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25853.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/BUPT-GAMMA/HiSkill)</div> |
+| <span style='display: inline-block; width: 42px;'>07-28</span> | **PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents**<br><sub>机构: Amazon Health AI<br>PatientAgentBench 填补了面向患者的医疗代理系统评估的空白。它通过模拟真实交互和使用经过临床验证的自动化评估，揭示了当前模型在分诊、安全性和工作流准确性方面的具体缺陷。该框架为开发更安全、更可靠的医疗 AI 代理提供了重要的评估标准和方向，强调了动态、多轮交互评估在医疗AI安全性中的必要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25485v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25485.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/amazon-science/PatientAgentBench)</div> |
+| <span style='display: inline-block; width: 42px;'>07-28</span> | **Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction**<br><sub>机构: Shanghai Jiao Tong University; The Hong Kong Polytechnic University<br>本文针对LLM Agent中大规模工具检索的瓶颈，指出了现有独立评分范式的局限性。通过提出HYSET，将工具检索重构为查询条件下的超边预测问题，并引入基数特定交互以捕捉工具兼容性。该方法不仅作为无需修改Agent的预选择模块易于部署，且在检索准确性和端到端任务成功率上均超越了SOTA基线，同时展现出强大的跨领域和零样本泛化能力，证明了集合级工具检索的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25718v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25718.md)  |
 | <span style='display: inline-block; width: 42px;'>07-27</span> | **Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families**<br><sub>本文提出了 Gubernaut 认知控制器（GCC），一种针对 LLM 代理的确定性稳态控制器。通过分离对象级（文本读写）和元级（仅数值遥测），GCC 在架构上免疫提示词注入，并成功在多个独立模型家族中验证了其抑制反应性故障（如冲突升级、谄媚）的能力。实验结果表明，GCC 能显著降低代理的反应性，且其效果具有跨模型的鲁棒性和可解释的动态恢复机制，为运行时对齐提供了新的架构范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24339v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24339.md)  |
 | <span style='display: inline-block; width: 42px;'>07-27</span> | **Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents**<br><sub>机构: Archestra AI<br>APPA 通过引入上下文分支和前瞻性策略执行，有效解决了 LLM Agent 中信息流控制的可用性瓶颈。它在形式化保证安全性的前提下，成功隔离了污点传播，既大幅降低了提示注入和数据泄露的风险，又保留了 Agent 处理复杂任务的能力，为构建安全且实用的自主 Agent 提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24625v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24625.md)  |
 | <span style='display: inline-block; width: 42px;'>07-27</span> | **SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents**<br><sub>机构: The Hong Kong University of Science and Technology (Guangzhou)<br>本文针对极端天气早期预警中传统方法成本高、现有 LLM 智能体研究碎片化的问题，提出了 SIREN 框架。通过构建全面的 SIREN-Bench 基准，作者揭示了现有方法的不足，并开发了基于历史经验 grounding 的智能体系统。该系统通过整合异构数据和模拟专家经验利用机制，在端到端预警任务中取得了超越基线的性能，为自动化、可扩展的气象预警系统提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.24588v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.24588.md)  |

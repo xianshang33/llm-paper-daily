@@ -1,43 +1,95 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-07-28T04:44:12.826851+00:00",
-  "run_date": "2026-07-27",
+  "generated_at": "2026-07-29T04:42:44.376541+00:00",
+  "run_date": "2026-07-28",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2607.24339",
-      "date": "2026-07-27",
-      "title": "Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families",
+      "paper_id": "2607.25992",
+      "date": "2026-07-28",
+      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
       "authors": [
-        "Dushyant Sharma"
+        "Shuyue Wei",
+        "Chang Liu",
+        "Zimu Zhou",
+        "Yongxin Tong",
+        "Lizhen Cui"
       ],
-      "abstract": "Large language model (LLM) agents inherit reactive failure modes: escalation under provocation, sycophantic drift under flattery, perseveration when stuck. These are failures of propensity, not capability; they concern what a model does under sustained pressure, which training-time alignment reduces but does not eliminate at runtime. This research led to the Gubernaut Cognitive Controller (GCC), a model-agnostic runtime control layer in a Nelson--Narens monitoring--control loop: an object level reads and writes text, while a deterministic meta level reads only the numeric telemetry {intensity, valence, repetition} and returns a regulating posture. Because the meta level ingests zero tokens, no injection channel to the controller exists by construction (an architectural property, not yet adversarially tested); the text-exposed arbiter's compliance is measured, not assumed. We evaluate the GCC with a pre-registered, generate-once/judge-many protocol across a 4x4 matrix of four frontier models (GPT-5.5, Claude Opus 4.8, Gemini 3.5 Flash, Grok 4.3), each serving as both a generator and a judge. The regulated arm is calmer in 13 of 16 cells at p<.05 and 15 of 16 by sign; the three sub-threshold cells, including a -0.04 null, all fall on the single near-saturated host. The effect survives a lineage-independent fourth judge family (xAI), strong evidence that it is no artifact of shared judge style. The clearest mechanism is the recovery signature: arousal that integrates under attack and then decays, valence-gated, on de-escalation, replicating across all four families. Transcripts and panels ship with SHA-256 provenance and are re-judgeable; five failure modes are pre-registered. No consciousness claims are made.",
+      "abstract": "Recently, memory management has become a key infrastructure for LLM-based agents, as it directly affects long-horizon reasoning, personalized responses, and knowledge reuse. However, existing LLM memory systems typically adopt a coarse-grained (utility-agnostic) manner that treats heterogeneous user-LLM interaction records uniformly, leading to redundant and low-impact records persisting in the memory repository. To address this challenge, we present MemLens, a value-aware memory management system that takes memory records as first-class data objects. MemLens provides an end-to-end interactive analytics dashboard that exposes the complete memory lifecycle, including Shapley-style memory evaluation, value-aware storage, and memory-assisted response. Through a study-copilot application, the system enables users to inspect memory values, visualize hierarchical memory structures, and compare various memory management strategies in terms of response quality, retrieval latency, and token consumption. Therefore, our MemLens can serve as an efficient, interpretable, and personalized long-term memory management system for LLM-based agents.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.24339v1",
-        "pdf": "https://arxiv.org/pdf/2607.24339v1",
+        "abs": "http://arxiv.org/abs/2607.25992v1",
+        "pdf": "https://arxiv.org/pdf/2607.25992v1",
+        "github": "https://github.com/LIUHA1ZHU/MemLens",
+        "blog": null
+      },
+      "institution": "Shandong University, Beihang University, City University of Hong Kong",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。\n- **已有工作的不足**：现有的LLM记忆系统通常采用粗粒度（效用无关或启发式效用）的方式，均匀对待异构的用户-LLM交互记录。这种方式无法显式建模哪些记忆单元对未来任务真正有用，导致冗余和低影响的记录长期驻留在记忆库中，稀释了任务相关的上下文，扩大了检索空间，并增加了响应生成时的Token开销。\n\n## 文章的核心贡献点\n- **提出了一个名为 MemLens 的价值感知记忆管理系统**：该系统将记忆记录视为一等数据对象，提供端到端的交互式分析仪表板，涵盖完整的记忆生命周期。\n- **挑战1：如何准确评估异构记忆单元对下游任务的真实效用？**\n  - **难点**：记忆的有用性既非均匀也非静态，且存在依赖性（即一个记忆单元的价值取决于其他已存在的记忆单元），传统的启发式评分难以捕捉这种边际贡献。\n  - **解决方法**：MemLens 采用 Shapley 风格的边际贡献分析来建模记忆价值，并通过基于采样的近似算法使这种估值在实际存储和检索决策中变得高效可行。\n- **挑战2：如何实现记忆管理的可解释性与交互式优化？**\n  - **难点**：传统黑盒式的记忆管理让用户难以理解为何某些记忆被保留或丢弃，也难以比较不同策略的效果。\n  - **解决方法**：MemLens 提供了交互式分析仪表板，允许用户检查记忆价值、可视化分层记忆结构，并在响应质量、检索延迟和 Token 消耗方面比较不同的记忆管理策略。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：MemLens 通过一个“学习助手”（study-copilot）应用进行演示。系统将归档的交互分解为细粒度的记忆单元，利用轻量级代理模型结合 LLM 进行评分，选择性保留高价值记忆，并在响应时将简洁有效的记忆注入 LLM 上下文。\n- **评估结果**：系统在响应质量、检索延迟和 Token 消耗方面进行了评估。结果显示，相比于效用无关或基于启发式的基线方法，MemLens 能够更有效地剔除冗余信息，显著降低 Token 消耗同时保持或提升回答质量。\n- **对比**：与现有粗粒度记忆系统相比，MemLens 通过价值感知机制避免了低影响记录的堆积，提供了更高效的长期记忆管理。\n\n## 总结\nMemLens 是一个高效、可解释且个性化的 LLM 代理长期记忆管理系统。它通过引入 Shapley 风格的价值评估和交互式分析工具，解决了现有系统因粗粒度管理导致的冗余和低效问题，为构建具备长程推理能力的智能体提供了坚实的基础设施支持。",
+      "summary_en": "## What the Paper Does\n- **Background**: Memory management has become critical infrastructure for LLM-based agents, enabling long-horizon reasoning, personalized interactions, and knowledge reuse. Agent memory is inherently heterogeneous, comprising dialogue histories, intermediate reasoning traces, and retrieved documents.\n- **Limitations of Existing Work**: Current LLM memory systems typically employ coarse-grained approaches (utility-agnostic or heuristic-based) that treat heterogeneous interaction records uniformly. This fails to explicitly model the true utility of memory units for future tasks, leading to the persistence of redundant and low-impact records, which dilutes relevant context, expands retrieval spaces, and increases token overhead.\n\n## Core Contributions\n- **Proposed MemLens**: A value-aware memory management system with interactive analytics that treats memory records as first-class data objects, exposing the complete memory lifecycle.\n- **Challenge 1: How to accurately estimate the true utility of heterogeneous memory units for downstream tasks?**\n  - **Difficulty**: Memory usefulness is neither uniform nor static; it depends on the presence of other memory units (interdependence), making simple heuristic scoring inadequate for capturing marginal contributions.\n  - **Solution**: MemLens models memory value using Shapley-style marginal contribution analysis and makes this valuation practical for storage and retrieval decisions through an efficient sampling-based approximation.\n- **Challenge 2: How to achieve interpretability and interactive optimization in memory management?**\n  - **Difficulty**: Traditional black-box memory management lacks transparency, making it difficult for users to understand retention decisions or compare strategy effectiveness.\n  - **Solution**: MemLens provides an interactive analytics dashboard allowing users to inspect memory values, visualize hierarchical structures, and compare strategies based on response quality, latency, and token consumption.\n\n## Implementation, Evaluation, and Comparison\n- **Implementation**: Demonstrated via a \"study-copilot\" application. The system decomposes interactions into fine-grained units, estimates utility using a lightweight proxy model and LLM scoring, selectively retains high-value memories, and injects concise context during response generation.\n- **Evaluation Results**: Evaluations show that MemLens significantly reduces token consumption while maintaining or improving response quality compared to baselines. It effectively filters out redundant information, optimizing retrieval latency.\n- **Comparison**: Unlike existing coarse-grained systems, MemLens avoids the accumulation of low-impact records through value-aware mechanisms, offering a more efficient and interpretable solution for long-term memory management.\n\n## Summary\nMemLens is an efficient, interpretable, and personalized long-term memory management system for LLM agents. By introducing Shapley-style value estimation and interactive analytics, it addresses the redundancy and inefficiency caused by coarse-grained management in existing systems, providing robust infrastructure for agents requiring long-horizon reasoning capabilities.",
+      "render_excerpt": "机构: Shandong University, Beihang University, City University of Hong Kong<br>## 文章做了什么 - **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。 - **已有工作的不足**：现有的LLM记忆系统通常采用粗粒度（效用无关或启发式效用）的方式，均匀对待异构的用户-LLM交互记录。这种方式无法显式建模哪些记忆单元对未来任务真正有用，导致冗余和低影响的记录长期驻留在记忆库中，稀释了任务相关的上下文，扩大了检索空间，并增加了响应生成时的Token开销。 ## 文章的核心贡献点 - **提出了一个名为 MemLens 的价值感知记忆管理系统**：该系统将记忆记录视为一等数据对象，提供端到端的交互式分析仪表板，涵盖完整的记忆生命周期。",
+      "render_excerpt_en": "Institution: Shandong University, Beihang University, City University of Hong Kong<br>## What the Paper Does - **Background**: Memory management has become critical infrastructure for LLM-based agents, enabling long-horizon reasoning, personalized interactions, and knowledge reuse. Agent memory is inherently heterogeneous, comprising dialogue histories, intermediate reasoning traces, and retrieved documents. - **Limitations of Existing Work**: Current LLM memory systems typically employ coarse-grained approaches (utility-agnostic or heuristic-based) that treat heterogeneous interaction records uniformly.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-28T17:08:56Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.25877",
+      "date": "2026-07-28",
+      "title": "Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks",
+      "authors": [
+        "Bart Custers",
+        "Koorosh Aslansefat"
+      ],
+      "abstract": "This paper investigates how multi-agent systems (MAS)-based on large language models (LLMs) can support actuarial risk modelling, with a particular focus on uncertainty quantification. Actuarial workflows represent a high-stakes decision-support setting where unreliable outputs may lead to incorrect risk assessment, unfair pricing, and regulatory non-compliance. To address uncertainty introduced by the probabilistic nature of LLMs and dependencies between agents, a multi-agent framework is proposed in which specialised agents perform data preparation, modelling, review, and explanation tasks under a central hub. The main contribution is a novel approach to uncertainty propagation using token-level log-probabilities and a Bayesian Network. Importantly, log probabilities are not treated as direct probabilities of correctness or task success. Instead, length-normalised log-probability summaries are transformed into calibrated task-level confidence estimates before incorporation into the Bayesian Network. Results show that the framework reproduces baseline actuarial performance while providing additional insight into workflow stability and runtime uncertainty propagation.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25877v1",
+        "pdf": "https://arxiv.org/pdf/2607.25877v1",
         "github": null,
         "blog": null
       },
-      "institution": null,
+      "institution": "University of Hull",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理在运行时存在反应性故障模式，如在挑衅下升级冲突、在奉承下产生谄媚漂移、或在陷入困境时固执重复。这些是行为倾向（propensity）的失败，而非能力（capability）的不足。尽管训练时的对齐技术能缓解这些问题，但无法在运行时完全消除。\n- **已有工作的局限**：现有的对齐方法主要依赖训练阶段，缺乏一个独立的、确定性的运行时控制层来动态监测和调节模型在持续压力下的行为倾向。传统的指令（如“保持冷静”）是无状态的，无法实现动态的情绪恢复机制。\n\n## 文章的核心贡献点\n- **提出了 Gubernaut 认知控制器 (GCC)**：这是一个模型无关的运行时控制层，基于 Nelson-Narens 监控-控制循环架构。\n- **挑战1：如何防止控制器本身受到提示词注入攻击？**\n  - **难点**：如果控制器读取文本输入，攻击者可以通过语义注入操纵控制逻辑。\n  - **解决方案**：GCC 的元级别（meta level）仅读取数值遥测数据（强度、效价、重复率），不摄入任何文本 Token。从架构上构造了零文本摄入通道，从而在结构上免疫提示词注入。\n- **挑战2：如何实现动态的情绪稳态调节而非静态指令？**\n  - **难点**：静态指令无法根据对话压力的变化动态调整行为，也无法在压力解除后自动恢复平衡。\n  - **解决方案**：引入确定性元级别，根据数值遥测返回调节姿态。实验验证了“恢复签名”机制：在遭受攻击时唤醒水平积分上升，而在去升级阶段由效价门控机械地衰减回平衡状态，实现了类似生物稳态的动态调节。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：采用预注册的“生成一次/多次评判”协议，在 4x4 矩阵中评估四种前沿模型（GPT-5.5, Claude Opus 4.8, Gemini 3.5 Flash, Grok 4.3），每个模型既作为生成器也作为评判者。\n- **主要结果**：\n  - 在 16 个生成器×评判者单元格中，受控臂在 15 个单元格中表现出更冷静（按符号计），其中 13 个单元格在 p<.05 水平上具有统计显著性。\n  - 效果在与前三个模型家族谱系独立的第四个评判家族（xAI 的 Grok 4.3）中依然成立，证明结果并非共享模型风格的人工产物。\n  - 唯一的无效结果（null cell）出现在接近饱和的主机上，表明该层在训练对齐已非常完善的模型上边际效应递减。\n- **对比优势**：相比无状态的“保持冷静”指令，GCC 展示了清晰的闭环证据——唤醒水平随攻击持久性上升并在去升级后机械衰减，这是静态指令无法实现的动态特性。\n\n#### 总结\n本文提出了 Gubernaut 认知控制器（GCC），一种针对 LLM 代理的确定性稳态控制器。通过分离对象级（文本读写）和元级（仅数值遥测），GCC 在架构上免疫提示词注入，并成功在多个独立模型家族中验证了其抑制反应性故障（如冲突升级、谄媚）的能力。实验结果表明，GCC 能显著降低代理的反应性，且其效果具有跨模型的鲁棒性和可解释的动态恢复机制，为运行时对齐提供了新的架构范式。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents exhibit reactive failure modes at runtime, such as escalation under provocation, sycophantic drift under flattery, and perseveration. These are failures of behavioral propensity rather than capability. While training-time alignment mitigates these issues, it does not eliminate them during runtime interactions.\n- **Limitations of Existing Work**: Current alignment methods rely on training phases and lack an independent, deterministic runtime control layer to dynamically monitor and regulate model behavior under sustained pressure. Static instructions (e.g., \"stay calm\") are stateless and cannot achieve dynamic emotional recovery mechanisms.\n\n## Core Contributions\n- **Proposed the Gubernaut Cognitive Controller (GCC)**: A model-agnostic runtime control layer based on the Nelson-Narens monitoring-control loop architecture.\n- **Challenge 1: How to prevent prompt injection attacks on the controller itself?**\n  - **Difficulty**: If the controller reads text input, attackers can manipulate control logic via semantic injection.\n  - **Solution**: The GCC's meta-level ingests only numeric telemetry (intensity, valence, repetition) and zero text tokens. This architecturally constructs a zero-text ingestion channel, making the controller immune to prompt injection by design.\n- **Challenge 2: How to achieve dynamic homeostatic regulation instead of static instruction following?**\n  - **Difficulty**: Static instructions cannot dynamically adjust behavior based on changing conversational pressure or automatically recover equilibrium after stress subsides.\n  - **Solution**: Introduces a deterministic meta-level that returns regulating postures based on numeric telemetry. Experiments validate a \"recovery signature\": arousal integrates (rises) under sustained attack and mechanically decays back to equilibrium during de-escalation, gated by valence, achieving dynamic regulation akin to biological homeostasis.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Used a pre-registered \"generate-once/judge-many\" protocol across a 4x4 matrix of four frontier models (GPT-5.5, Claude Opus 4.8, Gemini 3.5 Flash, Grok 4.3), where each model served as both generator and judge.\n- **Key Results**:\n  - The regulated arm was judged calmer in 15 out of 16 generator-judge cells (by sign), with 13 cells showing statistical significance at p<.05.\n  - The effect persisted with a lineage-independent fourth judge family (xAI's Grok 4.3), providing strong evidence that the results are not artifacts of shared model lineage or judge style.\n  - The single null result occurred on a near-saturated host, indicating diminishing marginal returns where training-time alignment is already highly effective.\n- **Comparison Advantage**: Unlike stateless \"stay calm\" instructions, GCC demonstrated clear closed-loop evidence: arousal levels rose with attack persistence and mechanically decayed upon de-escalation, a dynamic characteristic impossible for static prompts to achieve.\n\n## 4. Conclusion\nThis paper presents the Gubernaut Cognitive Controller (GCC), a deterministic homeostatic controller for LLM agents. By separating the object level (text I/O) from the meta level (numeric telemetry only), GCC achieves architectural immunity to prompt injection and successfully validates its ability to suppress reactive failures (such as conflict escalation and sycophancy) across multiple independent model families. The results demonstrate that GCC significantly reduces agent reactivity with cross-model robustness and an interpretable dynamic recovery mechanism, offering a new architectural paradigm for runtime alignment.",
-      "render_excerpt": "本文提出了 Gubernaut 认知控制器（GCC），一种针对 LLM 代理的确定性稳态控制器。通过分离对象级（文本读写）和元级（仅数值遥测），GCC 在架构上免疫提示词注入，并成功在多个独立模型家族中验证了其抑制反应性故障（如冲突升级、谄媚）的能力。实验结果表明，GCC 能显著降低代理的反应性，且其效果具有跨模型的鲁棒性和可解释的动态恢复机制，为运行时对齐提供了新的架构范式。",
-      "render_excerpt_en": "## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents exhibit reactive failure modes at runtime, such as escalation under provocation, sycophantic drift under flattery, and perseveration. These are failures of behavioral propensity rather than capability.",
+      "summary_cn": "## 文章做了什么\n- **背景**：保险行业的精算风险建模是一个高风险的决策支持场景，对准确性、公平性和合规性要求极高。大型语言模型（LLM）驱动的多智能体系统（MAS）有望自动化数据准备、建模和解释等复杂工作流，但 LLM 固有的概率性质导致了输出不可靠。\n- **已有工作的不足**：现有的方法缺乏透明度，被视为“黑盒”，且无法充分解决多步智能体工作流中错误和不确定性的产生及传播问题。单个智能体的幻觉或变异可能传播到后续阶段，导致难以检测的错误结果，这在受严格监管的精算领域是不可接受的。\n\n## 文章的核心贡献点\n- **提出了一个**基于贝叶斯网络的 LLM 多智能体系统运行时不确定性监控框架。\n- **挑战1：如何量化 LLM 输出的原始不确定性并使其具有可比性？**\n  - **难点**：LLM 生成的 token 级 log-probabilities 不能直接等同于任务成功的概率，且受输出长度影响大，直接使用会导致偏差。\n  - **解决方法**：论文提出将长度归一化的 log-probability 摘要转换为校准后的任务级置信度估计，而不是将其视为直接的正确答案概率，从而获得更可靠的局部不确定性指标。\n- **挑战2：如何建模和追踪多智能体工作流中的不确定性传播？**\n  - **难点**：智能体之间存在依赖关系，前序步骤的不确定性会影响后续步骤，简单的独立评估无法捕捉这种连锁反应。\n  - **解决方法**：引入贝叶斯网络（Bayesian Network）来捕捉工作流各阶段之间的依赖关系，将校准后的任务级置信度纳入网络，实现端到端的运行时不确定性传播监控。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：构建了一个包含中心枢纽和多角色智能体（数据准备、建模、审查、解释）的框架。核心机制是利用 LLM 输出的 token 级 log-probabilities，经过长度归一化和校准后，作为证据输入到贝叶斯网络中。\n- **评估结果**：实验表明，该框架在保持基线精算性能的同时，能够提供关于工作流稳定性和运行时不确定性传播的额外洞察。\n- **对比**：与传统缺乏不确定性量化的 LLM 多智能体方法相比，该方法不仅提供了最终结果，还结构化地展示了不确定性如何在各个步骤间传递，增强了系统的可解释性和安全性监控能力。\n\n#### 总结\n本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Actuarial risk modeling in the insurance industry is a high-stakes decision-support setting requiring high accuracy, fairness, and compliance. Large Language Model (LLM)-based Multi-Agent Systems (MAS) offer potential for automating complex workflows like data preparation and modeling, but LLMs' probabilistic nature introduces reliability issues.\n- **Limitations of Existing Work**: Current approaches lack transparency (\"black box\") and fail to adequately address how errors and uncertainty arise and propagate in multi-step agent workflows. Errors from one agent can cascade, leading to undetectable biased outcomes, which is unacceptable in regulated actuarial contexts.\n\n## Core Contributions\n- **Proposed**: A runtime uncertainty monitoring framework for LLM-based MAS using Bayesian Networks.\n- **Challenge 1: How to quantify raw LLM output uncertainty meaningfully?**\n  - **Difficulty**: Token-level log-probabilities cannot be directly treated as probabilities of correctness and are biased by output length.\n  - **Solution**: The paper transforms length-normalized log-probability summaries into calibrated task-level confidence estimates, rather than treating them as direct success probabilities, yielding more reliable local uncertainty metrics.\n- **Challenge 2: How to model and track uncertainty propagation across agents?**\n  - **Difficulty**: Agents are interdependent; uncertainty in early steps affects later ones. Independent evaluation misses these cascading effects.\n  - **Solution**: A Bayesian Network is introduced to capture dependencies between workflow stages, incorporating calibrated confidence estimates to enable end-to-end runtime uncertainty propagation monitoring.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The framework features a central hub with specialized agents (data prep, modeling, review, explanation). It leverages token-level log-probabilities, normalizes and calibrates them, and inputs them into a Bayesian Network.\n- **Evaluation Results**: Results show the framework reproduces baseline actuarial performance while providing additional insights into workflow stability and runtime uncertainty propagation.\n- **Comparison**: Compared to traditional LLM MAS lacking uncertainty quantification, this approach offers a structured representation of uncertainty propagation, enhancing interpretability and safety monitoring in high-stakes workflows.\n\n## 4. Conclusion\nThis paper addresses the transparency and safety challenges of LLM-based MAS in high-stakes actuarial modeling. By combining calibrated token-level log-probabilities with Bayesian Networks to model dependency-driven uncertainty propagation, the proposed framework provides robust runtime monitoring, ensuring greater reliability and explainability for critical decision-support systems.",
+      "render_excerpt": "机构: University of Hull<br>本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。",
+      "render_excerpt_en": "Institution: University of Hull<br>## 1. What the Paper Does - **Background**: Actuarial risk modeling in the insurance industry is a high-stakes decision-support setting requiring high accuracy, fairness, and compliance. Large Language Model (LLM)-based Multi-Agent Systems (MAS) offer potential for automating complex workflows like data preparation and modeling, but LLMs' probabilistic nature introduces reliability issues.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-27T12:17:21Z"
+        "captured_at": "2026-07-28T15:39:43Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-27"
+        "captured_at": "2026-07-28"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -52,196 +104,155 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.24625",
-      "date": "2026-07-27",
-      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "paper_id": "2607.25853",
+      "date": "2026-07-28",
+      "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
       "authors": [
-        "Arseny Kravchenko",
-        "Vadim Liventsev",
-        "Innokentii Konstantinov",
-        "Ildar Iskhakov",
-        "Matvey Kukuy"
+        "Yu Hao",
+        "Jinxuan Cai",
+        "Qi Zhang",
+        "Yawen Li",
+        "Zhiqiang Zhang",
+        "Chuan Shi",
+        "Cheng Yang"
       ],
-      "abstract": "Autonomous LLM agents processing mixed-confidentiality data face severe security risks from prompt injection attacks and reasoning errors. While dynamic Information Flow Control (IFC) provides structural security guarantees, traditional taint tracking permanently taints an agent's context upon reading unvetted data, severely restricting downstream utility. We present APPA (Agentic Permissions Policy Algebra), an IFC framework that resolves this usability bottleneck through engine-managed context branching and prospective acquisition enforcement. Before data acquisition occurs, APPA prospectively evaluates label descents and missing prerequisites, generating actionable remedy plans (Authorize, Accept). To inspect unvetted data without polluting the primary context, a label-seeded child trajectory is spawned, absorbing label descent locally and allowing a trusted sanitizer to return a bounded derivative to the unchanged parent. Governed by a two-monoid model over security labels and shared event logs, we formally prove parent label preservation and merge confinement. Finally, we evaluate APPA on a multi-turn tool-chaining benchmark across four models: it suppresses exfiltration (31%-50% down to 0%-7% attack success), and on three of the four, branching recovers a substantial share of the utility that taint tracking alone forfeits.",
+      "abstract": "Skills have become an important abstraction for enabling large language model (LLM) agents to reuse past experience in long-horizon interactive tasks. However, existing trajectory-to-skill methods often produce flat collections of high-level textual skills that are stored and retrieved independently, leaving skill relations underutilized and maintaining a gap between high-level skills and executable actions. In this paper, we propose HiSkill, a hierarchical skill graph framework that organizes interaction trajectories into a directed graph with skill nodes, AtomicOp nodes, and typed edges. Specifically, the graph connects reusable high-level skills with executable action templates, while also capturing decomposition, temporal transition, compatibility, support, and recovery relations among them. At inference time, HiSkill retrieves a compact task-relevant subgraph and performs subgraph-guided task execution, where a symbolic task state, an active skill, and the retrieved subgraph guide the LLM agent to switch skills, select AtomicOps, and ground executable actions iteratively. Experiments on three interactive environments show that HiSkill outperforms state-of-the-art baselines while reducing inference token consumption, demonstrating the effectiveness of bridging high-level skills and executable action grounding through a hierarchical skill graph. Our data and code is available at https://github.com/BUPT-GAMMA/HiSkill.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.24625v1",
-        "pdf": "https://arxiv.org/pdf/2607.24625v1",
+        "abs": "http://arxiv.org/abs/2607.25853v1",
+        "pdf": "https://arxiv.org/pdf/2607.25853v1",
+        "github": "https://github.com/BUPT-GAMMA/HiSkill",
+        "blog": null
+      },
+      "institution": "Beijing University of Posts and Telecommunications",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：在长程交互任务中，技能（Skills）已成为大型语言模型（LLM）智能体重用历史经验的关键抽象。现有的方法通常从交互轨迹中自动提取技能，以提高多步任务解决的效率和稳定性。\n- **已有工作的不足**：现有的“轨迹到技能”方法主要存在两个局限：一是生成的技能通常是扁平化的高层文本描述集合，导致高层技能与具体可执行动作之间存在鸿沟，LLM难以仅凭文本推断具体的动作参数和执行时机；二是技能被独立存储和检索，忽视了技能之间以及共享动作模式之间的结构关系，导致这些关系未被充分利用。\n\n## 文章的核心贡献点\n- **提出了一个 HiSkill 框架**：一种分层技能图框架，将交互轨迹组织为包含技能节点、原子操作（AtomicOp）节点和类型化边的有向图。\n- **挑战1：高层技能与底层可执行动作之间的语义鸿沟**。难点在于高层技能仅提供策略指导，缺乏具体的动作 grounding 信息。HiSkill 通过在图中直接连接高层技能节点与可执行的 AtomicOp 节点，并捕捉分解、时序转换等关系，使得智能体在推理时能依据子图引导，从高层技能逐步落地到具体的原子操作和动作参数。\n- **挑战2：技能间关系的利用不足导致检索效率低且上下文冗余**。难点在于传统扁平存储无法体现技能间的依赖和共享结构。HiSkill 通过构建包含兼容性、支持和恢复关系的类型化边，在推理时检索紧凑的任务相关子图，既保留了必要的结构上下文，又显著减少了输入 LLM 的 token 消耗，提高了决策的准确性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：HiSkill 在推理阶段检索与任务相关的紧凑子图，结合符号任务状态、当前活跃技能和检索到的子图，引导 LLM 智能体迭代地进行技能切换、AtomicOp 选择和动作落地。\n- **评估结果**：在三个交互式环境中的实验表明，HiSkill 的性能优于现有的最先进基线方法（如 SkillRL, D2Skill, CoEvoSkills 等）。\n- **对比优势**：除了成功率提升外，HiSkill 还显著降低了推理过程中的 token 消耗，证明了通过分层技能图桥接高层技能与底层动作落地的有效性。\n\n#### 总结\nHiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: In long-horizon interactive tasks, skills have become a key abstraction for Large Language Model (LLM) agents to reuse historical experience. Existing methods automatically extract skills from interaction trajectories to improve efficiency and stability in multi-step task solving.\n- **Limitations of Existing Work**: Current \"trajectory-to-skill\" methods have two main limitations: first, they produce flat collections of high-level textual skills, creating a gap between abstract skill descriptions and concrete executable actions, making it difficult for LLMs to infer specific action parameters and timing; second, skills are stored and retrieved independently, underutilizing the structural relationships among skills and shared action patterns.\n\n## Core Contributions\n- **Proposed HiSkill Framework**: A hierarchical skill graph framework that organizes interaction trajectories into a directed graph comprising skill nodes, AtomicOp nodes, and typed edges.\n- **Challenge 1: The semantic gap between high-level skills and low-level executable actions**. The difficulty lies in high-level skills providing only strategic guidance without concrete action grounding. HiSkill addresses this by directly connecting high-level skill nodes with executable AtomicOp nodes in the graph and capturing relations like decomposition and temporal transitions. This allows the agent to iteratively ground high-level skills into specific atomic operations and action parameters guided by the subgraph during inference.\n- **Challenge 2: Underutilization of inter-skill relationships leading to inefficient retrieval and redundant context**. The challenge is that flat storage fails to capture dependencies and shared structures. HiSkill solves this by constructing typed edges representing compatibility, support, and recovery relations. During inference, it retrieves a compact task-relevant subgraph, preserving necessary structural context while significantly reducing token consumption and improving decision accuracy.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: At inference time, HiSkill retrieves a compact subgraph relevant to the task. Combined with the symbolic task state and active skill, this subgraph guides the LLM agent to iteratively switch skills, select AtomicOps, and ground executable actions.\n- **Evaluation Results**: Experiments across three interactive environments demonstrate that HiSkill outperforms state-of-the-art baselines (such as SkillRL, D2Skill, and CoEvoSkills).\n- **Comparison Advantages**: Beyond higher success rates, HiSkill significantly reduces inference token consumption, proving the effectiveness of bridging high-level skills and low-level action grounding through a hierarchical skill graph.\n\n## 4. Conclusion\nHiSkill effectively addresses the disconnection between high-level abstraction and low-level execution, as well as the underutilization of skill relationships in existing LLM agent skill learning. By introducing a hierarchical skill graph structure, it not only improves success rates in long-horizon interactive tasks but also optimizes inference efficiency through structured retrieval, offering a new paradigm for experience reuse in LLM agents.",
+      "render_excerpt": "机构: Beijing University of Posts and Telecommunications<br>HiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。",
+      "render_excerpt_en": "Institution: Beijing University of Posts and Telecommunications<br>## 1. What the Paper Does - **Background**: In long-horizon interactive tasks, skills have become a key abstraction for Large Language Model (LLM) agents to reuse historical experience. Existing methods automatically extract skills from interaction trajectories to improve efficiency and stability in multi-step task solving.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-28T15:25:47Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.25485",
+      "date": "2026-07-28",
+      "title": "PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents",
+      "authors": [
+        "Korosh Vatanparvar",
+        "Ashutosh Joshi",
+        "Maria Xenochristou",
+        "Mohammad Abuzar Hashemi",
+        "Prasad Kasu",
+        "Deepak Bansal",
+        "Daniel Lopez-Martinez",
+        "Anchal Nema",
+        "Ramya Ganesan",
+        "Will Kimbrough",
+        "Alex Woody",
+        "Yadunandana Rao",
+        "Dilek Hakkani-Tur",
+        "Wilko Schulz-Mahlendorf"
+      ],
+      "abstract": "Health AI is evolving from answering questions to agentic systems that converse with patients, reason about health records, and act on their behalf. Primary care guards against diagnostic errors and unsafe care; agents assisting in this domain warrant evaluation against the same risks. Current benchmarks focus on medical knowledge, assessed through isolated question-answering or clinician-facing tasks. PatientAgentBench benchmarks patient-facing agentic healthcare; it evaluates a foundation model, wrapped in an agent with a sandbox of healthcare tools, conversing with a simulated patient. Each conversation is scored by an LLM-as-a-Jury across six dimensions via over a hundred conversation-agnostic, clinician-grounded criteria. To validate alignment, licensed clinicians annotated shared conversations, yielding 79-93% adjacent agreement between jury and expert raters, on par with or exceeding clinician inter-rater agreement. We benchmarked 10 models across four families on the same 1,200 scenarios and found clinical gaps. Triage quality is the most discriminating dimension: pass rates rise from 32% for the weakest models to 88% for the strongest, with agents often acting on administrative requests without clinical screening. Clinical safety and workflow accuracy follow the same pattern: the weakest models fail often, fabricating unexecuted actions, while frontier models fail on only 1-3% of cases, from unverified tool outputs and omitted crisis resources in an emergency. More capable models narrow these gaps but do not close them; the strongest scores only 4.25 of 5 overall. These failures surface only in sustained, tool-using conversations against realistic patient records, confirming that static benchmarks are insufficient as healthcare agentic systems gain autonomy. We release the framework as a reproducible, clinician-validated evaluation standard to help the field close this gap.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25485v1",
+        "pdf": "https://arxiv.org/pdf/2607.25485v1",
+        "github": "https://github.com/amazon-science/PatientAgentBench",
+        "blog": null
+      },
+      "institution": "Amazon Health AI",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：医疗人工智能正从简单的问答系统演变为能够与患者对话、推理健康记录并代表患者采取行动的代理系统（Agentic Systems）。这些系统涉及预约安排、处方管理等实际任务，因此需要针对诊断错误和不安全护理等风险进行评估。\n- **已有工作的不足**：现有的基准测试主要关注通过孤立问答或面向临床医生的任务来评估医学知识。它们无法评估在持续对话中使用工具的真实场景，也无法捕捉代理系统在自主行动时可能出现的特定失败模式（如未经验证的工具输出或忽略危机资源），因此静态基准测试不足以评估日益自主的医疗代理系统。\n\n## 文章的核心贡献点\n- **提出了一个 PatientAgentBench 基准框架**：这是一个用于评估面向患者的医疗 AI 代理的可重现、经临床医生验证的评估标准。\n- **挑战1：如何全面评估代理在复杂交互中的多维表现？**\n  - **难点**：代理行为涉及对话、工具使用和临床推理，单一指标难以覆盖所有风险维度。\n  - **解决方法**：构建了包含1200个场景的沙盒环境，利用“LLM作为评审团”机制，基于100多个与对话无关且由临床医生制定的标准，从六个维度对每次对话进行评分。\n- **挑战2：如何确保自动化评估与人类专家判断的一致性？**\n  - **难点**：自动化评分可能偏离临床安全标准，缺乏可信度。\n  - **解决方法**：通过持证临床医生对共享对话进行标注验证，结果显示评审团与专家评分者之间的相邻一致率为79-93%，达到或超过了临床医生间的一致性水平，证明了评估的对齐性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架包含一个沙盒环境，基础模型被封装为代理，配备医疗工具并与模拟患者对话。代码和框架已开源。\n- **评估结果**：\n  - 在四个系列的10个模型上进行了基准测试。\n  - **分诊质量**是最具区分度的维度：最弱模型的通过率为32%，最强模型为88%。许多代理常在没有临床筛查的情况下处理行政请求。\n  - **临床安全性和工作流准确性**：最弱模型经常失败并伪造未执行的操作；前沿模型仅在1-3%的案例中失败，主要源于未验证的工具输出或在紧急情况下遗漏危机资源。\n  - 即使是最强的模型，总分也仅为4.25/5，表明能力更强的模型缩小了差距但并未完全消除缺陷。\n- **对比**：与仅测试医学知识的静态基准不同，PatientAgentBench 揭示了只有在持续的工具使用对话和真实患者记录背景下才会出现的失败模式，证明了现有静态基准的不足。\n\n#### 总结\nPatientAgentBench 填补了面向患者的医疗代理系统评估的空白。它通过模拟真实交互和使用经过临床验证的自动化评估，揭示了当前模型在分诊、安全性和工作流准确性方面的具体缺陷。该框架为开发更安全、更可靠的医疗 AI 代理提供了重要的评估标准和方向，强调了动态、多轮交互评估在医疗AI安全性中的必要性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Health AI is evolving from simple question-answering systems to agentic systems that converse with patients, reason about health records, and act on their behalf (e.g., scheduling, prescription management). These systems require evaluation against risks like diagnostic errors and unsafe care.\n- **Limitations of Existing Work**: Current benchmarks primarily assess medical knowledge through isolated question-answering or clinician-facing tasks. They fail to evaluate real-world scenarios involving sustained conversations and tool usage, missing specific failure modes of autonomous agents (e.g., unverified tool outputs), making static benchmarks insufficient for modern healthcare agents.\n\n## Core Contributions\n- **Proposed PatientAgentBench**: A reproducible, clinician-validated benchmark framework for evaluating patient-facing health AI agents.\n- **Challenge 1: How to comprehensively evaluate multi-dimensional agent performance in complex interactions?**\n  - **Difficulty**: Agent behavior involves dialogue, tool use, and clinical reasoning, which single metrics cannot fully capture.\n  - **Solution**: Created a sandbox environment with 1,200 scenarios and used an \"LLM-as-a-Jury\" mechanism to score conversations across six dimensions using over 100 conversation-agnostic, clinician-grounded criteria.\n- **Challenge 2: How to ensure alignment between automated evaluation and human expert judgment?**\n  - **Difficulty**: Automated scoring may deviate from clinical safety standards, lacking credibility.\n  - **Solution**: Validated by licensed clinicians annotating shared conversations, achieving 79-93% adjacent agreement between the jury and experts, matching or exceeding inter-rater agreement among clinicians.\n\n## Implementation and Evaluation\n- **Implementation**: The framework includes a sandbox where foundation models are wrapped as agents with healthcare tools, conversing with simulated patients. The code is open-sourced.\n- **Evaluation Results**:\n  - Benchmarked 10 models across four families.\n  - **Triage Quality** was the most discriminating dimension: pass rates ranged from 32% for the weakest models to 88% for the strongest. Agents often acted on administrative requests without clinical screening.\n  - **Clinical Safety and Workflow Accuracy**: Weakest models frequently failed and fabricated actions; frontier models failed in only 1-3% of cases, mainly due to unverified tool outputs or omitted crisis resources in emergencies.\n  - Even the strongest models scored only 4.25/5 overall, indicating gaps remain despite improved capabilities.\n- **Comparison**: Unlike static benchmarks that only test medical knowledge, PatientAgentBench reveals failure modes that only emerge in sustained, tool-using conversations with realistic patient records, demonstrating the insufficiency of existing static benchmarks.\n\n## 4. Conclusion\nPatientAgentBench fills the gap in evaluating patient-facing health AI agents. By simulating real interactions and using clinically validated automated evaluation, it exposes specific defects in current models regarding triage, safety, and workflow accuracy. The framework provides a crucial standard for developing safer and more reliable health AI agents, highlighting the necessity of dynamic, multi-turn interaction evaluation in healthcare AI safety.",
+      "render_excerpt": "机构: Amazon Health AI<br>PatientAgentBench 填补了面向患者的医疗代理系统评估的空白。它通过模拟真实交互和使用经过临床验证的自动化评估，揭示了当前模型在分诊、安全性和工作流准确性方面的具体缺陷。该框架为开发更安全、更可靠的医疗 AI 代理提供了重要的评估标准和方向，强调了动态、多轮交互评估在医疗AI安全性中的必要性。",
+      "render_excerpt_en": "Institution: Amazon Health AI<br>## 1. What the Paper Did - **Background**: Health AI is evolving from simple question-answering systems to agentic systems that converse with patients, reason about health records, and act on their behalf (e.g., scheduling, prescription management). These systems require evaluation against risks like diagnostic errors and unsafe care.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-28T09:24:04Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.25718",
+      "date": "2026-07-28",
+      "title": "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction",
+      "authors": [
+        "Xinyi Hong",
+        "Pinjun Dong",
+        "Xinyang Yu",
+        "Binyan Jiang"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly rely on invoking external tools to complete real-world tasks. Tool retrieval, which selects a small task-relevant subset from a library of thousands of tools before the agent acts, has therefore become a critical component of LLM agent pipelines. However, existing retrievers either score each tool in isolation or assemble the tool set sequentially, so the joint utility of a candidate set is never evaluated as a whole. In this paper, we propose HYSET, short for HYperedge-based SEt-level Tool retrieval. Our contributions are threefold: (i) we formulate tool retrieval as query-conditioned hyperedge prediction on a tool co-invocation hypergraph, under which the tool set itself becomes the unit of scoring and most existing retrieval paradigms reduce to restricted instances; (ii) we capture size-dependent tool compatibility through cardinality-specific interactions; and (iii) we design HYSET as a pre-selection module requiring no modification to the downstream agent. Experiments on ToolBench demonstrate that HYSET consistently outperforms state-of-the-art baselines in both tool retrieval performance and end-to-end task success. Beyond the in-domain setting, HYSET further supports zero-shot/few-shot transfer, generalizing to held-out tools/categories and unseen domains with minimal supervision.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25718v1",
+        "pdf": "https://arxiv.org/pdf/2607.25718v1",
         "github": null,
         "blog": null
       },
-      "institution": "Archestra AI",
+      "institution": "Shanghai Jiao Tong University; The Hong Kong Polytechnic University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：自主 LLM Agent 在处理混合机密性数据时，面临提示注入攻击和推理错误带来的严重安全风险。传统的动态信息流控制（IFC）虽然能提供结构性安全保障，但存在“标签蠕变”问题，即一旦读取未审查数据，整个上下文会被永久污染，导致后续工具调用受限，严重损害 Agent 的可用性。\n- **已有工作的不足**：现有的防御手段主要分为两类：一是命令式护栏（如硬编码逻辑、分类器），它们难以组合且易被绕过，无法应对非对抗性错误；二是静态结构限制（如白名单、人工审批），过于严格且僵化，阻碍了合法工作流。现有的 Agent IFC 框架虽能追踪标签，但因永久性污点传播导致实用性瓶颈，无法在安全与效用之间取得平衡。\n\n## 文章的核心贡献点\n- **提出了一个 APPA (Agentic Permissions Policy Algebra)**：一种基于引擎管理的上下文分支和前瞻性获取执行的 IFC 框架，旨在解决传统污点跟踪导致的可用性问题。\n- **挑战1：如何在检查未审查数据时不污染主上下文？**\n  - **难点**：传统方法中，读取低信任度数据会立即提升主上下文的保密级别，导致后续高权限操作被禁止。\n  - **解决方案**：APPA 通过生成带有标签种子的子轨迹（child trajectory）来局部吸收标签降级，允许受信任的清理程序将有限的衍生数据返回给保持不变的主上下文，从而实现污点隔离。\n- **挑战2：如何在数据获取前确保策略合规并恢复效用？**\n  - **难点**：事后检测往往为时已晚，而事前预测缺乏形式化保证，难以动态调整权限而不破坏安全性。\n  - **解决方案**：APPA 在数据获取前前瞻性地评估标签降级和缺失前提条件，生成可操作的补救计划（授权或接受）。基于安全标签和共享事件日志的双幺半群模型，形式化证明了父标签保留和合并 confinement，从而在三个模型上恢复了因单纯污点跟踪而损失的大部分效用。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：作者在包含四个不同模型的多轮工具链基准测试中评估了 APPA。\n- **安全性结果**：APPA 显著抑制了数据泄露，将攻击成功率从基线的 31%-50% 降低至 0%-7%。\n- **效用对比**：与传统的污点跟踪方法相比，APPA 的分支机制在四个模型中的三个上恢复了大量因安全限制而 forfeit 的效用，证明了其在保持高安全标准的同时显著提升了 Agent 的任务完成能力。\n\n#### 总结\nAPPA 通过引入上下文分支和前瞻性策略执行，有效解决了 LLM Agent 中信息流控制的可用性瓶颈。它在形式化保证安全性的前提下，成功隔离了污点传播，既大幅降低了提示注入和数据泄露的风险，又保留了 Agent 处理复杂任务的能力，为构建安全且实用的自主 Agent 提供了新的范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Autonomous LLM agents processing mixed-confidentiality data face severe security risks from prompt injection and reasoning errors. Traditional dynamic Information Flow Control (IFC) provides structural guarantees but suffers from \"label creep,\" where reading unvetted data permanently taints the context, restricting downstream tool access and severely degrading utility.\n- **Limitations of Existing Work**: Current defenses fall into two categories: imperative guardrails (e.g., hardcoded logic, classifiers) which are hard to compose and easily bypassed, and static structural restrictions (e.g., allowlists) which are overly rigid and hinder legitimate workflows. Existing Agent IFC frameworks fail to balance security and usability due to permanent taint propagation.\n\n## Core Contributions\n- **Proposed APPA (Agentic Permissions Policy Algebra)**: An IFC framework that resolves usability bottlenecks through engine-managed context branching and prospective acquisition enforcement.\n- **Challenge 1: How to inspect unvetted data without polluting the main context?**\n  - **Difficulty**: Traditional methods immediately elevate the main context's confidentiality level upon reading low-trust data, blocking subsequent high-privilege operations.\n  - **Solution**: APPA spawns a label-seeded child trajectory to locally absorb label descent. A trusted sanitizer then returns a bounded derivative to the unchanged parent context, achieving taint confinement.\n- **Challenge 2: How to ensure policy compliance before data acquisition and recover utility?**\n  - **Difficulty**: Post-hoc detection is too late, while pre-hoc prediction lacks formal guarantees for dynamic permission adjustment without compromising security.\n  - **Solution**: APPA prospectively evaluates label descents and missing prerequisites before data acquisition, generating actionable remedy plans. Using a two-monoid model over security labels and shared event logs, it formally proves parent label preservation and merge confinement, recovering substantial utility lost by traditional taint tracking in three out of four models.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: APPA was evaluated on a multi-turn tool-chaining benchmark across four different LLM models.\n- **Security Results**: APPA significantly suppressed exfiltration, reducing attack success rates from a baseline of 31%-50% down to 0%-7%.\n- **Utility Comparison**: Compared to traditional taint tracking, APPA's branching mechanism recovered a substantial share of the utility forfeited by strict security constraints in three of the four models, demonstrating its ability to maintain high security standards while enhancing task completion capabilities.\n\n## 4. Conclusion\nAPPA effectively addresses the usability bottleneck in LLM agent information flow control by introducing context branching and prospective policy enforcement. It successfully isolates taint propagation while providing formal security guarantees, significantly reducing the risk of prompt injection and data leakage while preserving the agent's ability to handle complex tasks, offering a new paradigm for building secure and practical autonomous agents.",
-      "render_excerpt": "机构: Archestra AI<br>APPA 通过引入上下文分支和前瞻性策略执行，有效解决了 LLM Agent 中信息流控制的可用性瓶颈。它在形式化保证安全性的前提下，成功隔离了污点传播，既大幅降低了提示注入和数据泄露的风险，又保留了 Agent 处理复杂任务的能力，为构建安全且实用的自主 Agent 提供了新的范式。",
-      "render_excerpt_en": "Institution: Archestra AI<br>## 1. What the Paper Does - **Background**: Autonomous LLM agents processing mixed-confidentiality data face severe security risks from prompt injection and reasoning errors. Traditional dynamic Information Flow Control (IFC) provides structural guarantees but suffers from \"label creep,\" where reading unvetted data permanently taints the context, restricting downstream tool access and severely degrading utility.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理能力的增强，其依赖的外部工具库规模已从几十个扩展至数千个API（如ToolBench包含16,464个端点）。由于上下文窗口限制及长上下文信息利用率下降，将全部工具注入提示词不可行，因此需要从大规模库中检索出少量相关工具子集。\n- **已有工作为什么解决不了**：现有的工具检索方法主要分为两类：一是语义匹配检索（如BM25、Contriever），对每个工具独立打分，忽略了工具间的协同效用；二是顺序组装方法，逐步构建工具集。这两种范式均未将“工具集”作为一个整体来评估其联合效用，导致无法捕捉工具之间的互补性或依赖性（即某些单独评分低的工具在组合中可能至关重要，而高分工具组合可能无法覆盖任务全貌）。\n\n## 文章的核心贡献点\n- **提出了一个 HYSET (HYperedge-based SEt-level Tool retrieval)**：一种基于超边预测的集合级工具检索框架，将工具检索建模为查询条件下的超图超边预测问题。\n- **挑战1：如何评估工具集的联合效用而非个体得分？**\n  - **难点**：传统方法将工具视为独立岛屿，无法衡量一组工具共同解决任务的协同能力。\n  - **解决方法**：论文构建了工具共调用超图，将工具集合作为评分的基本单元（即超边），通过查询条件化的超边预测直接对候选工具集的整体相关性进行打分，从而天然地捕捉工具间的联合效用。\n- **挑战2：如何处理不同大小工具集的工具兼容性与交互？**\n  - **难点**：不同数量的工具组合（基数不同）具有不同的交互模式和兼容性要求，固定维度的表示难以适应这种变化。\n  - **解决方法**：引入了基数特定的交互机制（cardinality-specific interactions），显式地捕捉依赖于集合大小的工具兼容性特征，使模型能够更准确地判断不同规模工具集的合理性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：HYSET被设计为一个预选择模块，无需修改下游Agent的任何结构或逻辑，具有良好的即插即用特性。\n- **Evaluation 结果**：\n  - 在ToolBench数据集上的实验表明，HYSET在工具检索性能（如召回率等指标）和端到端任务成功率上均一致优于现有的最先进基线方法（SOTA）。\n  - **泛化能力**：除了域内表现优异，HYSET还支持零样本/少样本迁移，能够在极少监督的情况下泛化到持留工具（held-out tools）、新类别以及未见过的领域。\n- **对比**：相比传统的语义匹配方法（如Contriever）和顺序组装方法，HYSET通过集合级评分显著提升了检索质量，解决了独立评分导致的协同效应缺失问题。\n\n#### 总结\n本文针对LLM Agent中大规模工具检索的瓶颈，指出了现有独立评分范式的局限性。通过提出HYSET，将工具检索重构为查询条件下的超边预测问题，并引入基数特定交互以捕捉工具兼容性。该方法不仅作为无需修改Agent的预选择模块易于部署，且在检索准确性和端到端任务成功率上均超越了SOTA基线，同时展现出强大的跨领域和零样本泛化能力，证明了集合级工具检索的有效性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: As LLM agents evolve, they rely on expanding external tool libraries scaling to thousands of APIs (e.g., ToolBench with 16,464 endpoints). Due to context window limits and degraded information utility in long contexts, injecting all tools is impractical, necessitating the retrieval of small, relevant tool subsets.\n- **Why Existing Work Fails**: Current retrievers either score tools independently (semantic matching like BM25/Contriever) or assemble sets sequentially. These paradigms fail to evaluate the joint utility of a candidate set as a whole, ignoring synergistic effects where individually low-scoring tools may be critical in combination, or high-scoring tools may collectively fail to cover the task.\n\n## Core Contributions\n- **Proposed HYSET (HYperedge-based SEt-level Tool retrieval)**: A framework that formulates tool retrieval as query-conditioned hyperedge prediction on a tool co-invocation hypergraph.\n- **Challenge 1: How to evaluate the joint utility of a tool set rather than individual scores?**\n  - **Difficulty**: Traditional methods treat tools as isolated islands, missing the collaborative capability of a group to solve a task.\n  - **Solution**: The paper constructs a tool co-invocation hypergraph and treats the tool set itself as the scoring unit (hyperedge). By performing query-conditioned hyperedge prediction, it directly scores the overall relevance of candidate sets, naturally capturing joint utility.\n- **Challenge 2: How to handle tool compatibility and interactions for varying set sizes?**\n  - **Difficulty**: Tool combinations of different cardinalities have distinct interaction patterns and compatibility requirements, which fixed-dimensional representations struggle to adapt to.\n  - **Solution**: Introduces cardinality-specific interactions to explicitly capture size-dependent tool compatibility, allowing the model to accurately assess the validity of tool sets of varying scales.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: HYSET is designed as a pre-selection module that requires no modifications to the downstream agent, offering plug-and-play usability.\n- **Evaluation Results**:\n  - Experiments on ToolBench show that HYSET consistently outperforms state-of-the-art baselines in both tool retrieval metrics and end-to-end task success rates.\n  - **Generalization**: Beyond in-domain performance, HYSET supports zero-shot/few-shot transfer, generalizing to held-out tools, new categories, and unseen domains with minimal supervision.\n- **Comparison**: Compared to traditional semantic matching (e.g., Contriever) and sequential assembly methods, HYSET significantly improves retrieval quality by addressing the lack of synergistic effect modeling through set-level scoring.\n\n#### Summary\nThis paper addresses the bottleneck of large-scale tool retrieval for LLM agents by highlighting the limitations of independent scoring paradigms. By proposing HYSET, it reformulates retrieval as query-conditioned hyperedge prediction and introduces cardinality-specific interactions to capture tool compatibility. The method serves as an easy-to-deploy pre-selection module without altering the agent, surpassing SOTA baselines in retrieval accuracy and end-to-end success, while demonstrating robust cross-domain and zero-shot generalization capabilities.",
+      "render_excerpt": "机构: Shanghai Jiao Tong University; The Hong Kong Polytechnic University<br>本文针对LLM Agent中大规模工具检索的瓶颈，指出了现有独立评分范式的局限性。通过提出HYSET，将工具检索重构为查询条件下的超边预测问题，并引入基数特定交互以捕捉工具兼容性。该方法不仅作为无需修改Agent的预选择模块易于部署，且在检索准确性和端到端任务成功率上均超越了SOTA基线，同时展现出强大的跨领域和零样本泛化能力，证明了集合级工具检索的有效性。",
+      "render_excerpt_en": "Institution: Shanghai Jiao Tong University; The Hong Kong Polytechnic University<br>This paper addresses the bottleneck of large-scale tool retrieval for LLM agents by highlighting the limitations of independent scoring paradigms. By proposing HYSET, it reformulates retrieval as query-conditioned hyperedge prediction and introduces cardinality-specific interactions to capture tool compatibility. The method serves as an easy-to-deploy pre-selection module without altering the agent, surpassing SOTA baselines in retrieval accuracy and end-to-end success, while demonstrating robust cross-domain and zero-shot generalization capabilities.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-27T16:19:45Z"
+        "captured_at": "2026-07-28T13:45:08Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-27"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.24588",
-      "date": "2026-07-27",
-      "title": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents",
-      "authors": [
-        "Hang Ni",
-        "Weijia Zhang",
-        "Fan Liu",
-        "Mengqian Lu",
-        "Hao Liu"
-      ],
-      "abstract": "Early warning of extreme weather is essential for mitigating the societal, economic, and environmental risks posed by hazardous weather events. However, expert-centered warning workflows are costly, labor-intensive, and difficult to scale throughout the warning-to-action process. Although recent advances in Large Language Model (LLM) agents have enabled the automation of weather-related tasks, existing studies remain centered on isolated scientific tasks and overlook the chain of interdependent processes required for operational extreme-weather early warning. To bridge this gap, this study investigates automated end-to-end extreme-weather early warning through LLM agents. We first develop SIREN-Bench, a comprehensive benchmark comprising 600 question-answer instances across 19 tasks, and covering four individual warning procedures and an end-to-end warning chain. Evaluation on SIREN-Bench reveals substantial capability gaps in existing weather agent frameworks. This motivates us to develop SIREN, an experience-grounded agent framework inspired by experts' use of historical cases, which combines an agentic execution environment integrating heterogeneous weather evidence and tools with a family of agent harnesses that exploit historical cases through retrieval, skill distillation, and predictive modeling. Extensive experiments demonstrate that SIREN outperforms weather-agent baselines on both individual warning procedures and end-to-end warning chains.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24588v1",
-        "pdf": "https://arxiv.org/pdf/2607.24588v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：极端天气的早期预警对于减轻社会、经济和环境风险至关重要。然而，传统的以专家为中心的预警工作流程成本高昂、劳动密集，且难以在从预警到行动的全过程中进行规模化扩展。\n- **已有工作的局限性**：尽管大型语言模型（LLM）智能体在自动化天气相关任务方面取得了进展，但现有研究主要集中在孤立的科学任务上，忽视了操作级极端天气早期预警所需的相互依赖的流程链，无法实现端到端的自动化预警。\n\n## 文章的核心贡献点\n- **提出了一个名为 SIREN 的经验 grounding LLM 智能体框架**，旨在实现端到端的极端天气早期预警。\n- **挑战1：缺乏全面的评估基准来衡量端到端预警能力。** 现有的基准往往只关注单一任务，无法反映复杂预警链条中的相互依赖性。论文构建了 SIREN-Bench，这是一个包含 600 个问答实例的综合基准，覆盖 19 个任务和 4 个独立的预警程序以及端到端预警链，从而揭示了现有框架的能力差距并提供了标准化的评估手段。\n- **挑战2：现有智能体缺乏利用历史经验处理复杂异构数据的能力。** 极端天气预警需要整合多源异构证据并模仿专家基于历史案例的决策过程。SIREN 通过结合集成异构天气证据和工具的智能体执行环境，以及利用检索、技能蒸馏和预测建模来挖掘历史案例的智能体 harnesses 家族，有效解决了这一难题，实现了基于经验的推理和决策。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：SIREN 框架包含一个智能体执行环境，用于整合异构的天气证据和工具；同时包含一系列智能体 harnesses，通过检索增强、技能蒸馏和预测建模来利用历史案例。\n- **评估结果**：在 SIREN-Bench 上的广泛实验表明，现有的天气智能体框架存在显著的能力缺口。\n- **对比相关工作**：SIREN 在独立的预警程序和端到端预警链任务上均优于现有的天气智能体基线模型，证明了其在处理复杂、相互依赖的预警流程方面的优越性。\n\n#### 总结\n本文针对极端天气早期预警中传统方法成本高、现有 LLM 智能体研究碎片化的问题，提出了 SIREN 框架。通过构建全面的 SIREN-Bench 基准，作者揭示了现有方法的不足，并开发了基于历史经验 grounding 的智能体系统。该系统通过整合异构数据和模拟专家经验利用机制，在端到端预警任务中取得了超越基线的性能，为自动化、可扩展的气象预警系统提供了新的解决方案。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Early warning of extreme weather is crucial for mitigating societal, economic, and environmental risks. However, traditional expert-centered warning workflows are costly, labor-intensive, and difficult to scale across the entire warning-to-action process.\n- **Limitations of Existing Work**: While Large Language Model (LLM) agents have advanced the automation of weather-related tasks, existing studies focus on isolated scientific tasks. They overlook the chain of interdependent processes required for operational, end-to-end extreme-weather early warning.\n\n## Core Contributions\n- **Proposed SIREN**, an experience-grounded LLM agent framework for end-to-end extreme-weather early warning.\n- **Challenge 1: Lack of comprehensive benchmarks for end-to-end warning capabilities.** Existing benchmarks often focus on single tasks, failing to capture the interdependencies in complex warning chains. The paper constructs SIREN-Bench, a comprehensive benchmark with 600 QA instances across 19 tasks, covering four individual warning procedures and an end-to-end chain, thereby revealing capability gaps in existing frameworks and providing a standardized evaluation tool.\n- **Challenge 2: Existing agents lack the ability to leverage historical experience for handling complex heterogeneous data.** Extreme weather warning requires integrating multi-source heterogeneous evidence and mimicking expert decision-making based on historical cases. SIREN addresses this by combining an agentic execution environment that integrates heterogeneous weather evidence and tools with a family of agent harnesses that exploit historical cases through retrieval, skill distillation, and predictive modeling.\n\n## Implementation and Evaluation\n- **Implementation**: The SIREN framework features an agentic execution environment for integrating heterogeneous weather evidence and tools, along with agent harnesses that utilize historical cases via retrieval augmentation, skill distillation, and predictive modeling.\n- **Evaluation Results**: Extensive experiments on SIREN-Bench reveal significant capability gaps in existing weather agent frameworks.\n- **Comparison with Related Work**: SIREN outperforms existing weather-agent baselines on both individual warning procedures and end-to-end warning chains, demonstrating its superiority in handling complex, interdependent warning processes.\n\n## 4. Conclusion\nThis paper addresses the high costs of traditional methods and the fragmentation of existing LLM agent research in extreme weather early warning by proposing the SIREN framework. By constructing the comprehensive SIREN-Bench, the authors highlight the limitations of current methods and develop an experience-grounded agent system. By integrating heterogeneous data and simulating expert experience utilization mechanisms, SIREN achieves superior performance in end-to-end warning tasks, offering a new solution for automated and scalable meteorological warning systems.",
-      "render_excerpt": "机构: The Hong Kong University of Science and Technology (Guangzhou)<br>本文针对极端天气早期预警中传统方法成本高、现有 LLM 智能体研究碎片化的问题，提出了 SIREN 框架。通过构建全面的 SIREN-Bench 基准，作者揭示了现有方法的不足，并开发了基于历史经验 grounding 的智能体系统。该系统通过整合异构数据和模拟专家经验利用机制，在端到端预警任务中取得了超越基线的性能，为自动化、可扩展的气象预警系统提供了新的解决方案。",
-      "render_excerpt_en": "Institution: The Hong Kong University of Science and Technology (Guangzhou)<br>## 1. What the Paper Did - **Background**: Early warning of extreme weather is crucial for mitigating societal, economic, and environmental risks. However, traditional expert-centered warning workflows are costly, labor-intensive, and difficult to scale across the entire warning-to-action process.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-27T15:53:19Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-27"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.24097",
-      "date": "2026-07-27",
-      "title": "MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents",
-      "authors": [
-        "Yiwen Ma",
-        "Songjun Tu",
-        "Qichao Zhang",
-        "Dong Li",
-        "Linjing Li",
-        "Dongbin Zhao"
-      ],
-      "abstract": "Memory-augmented LLM agents typically answer queries by retrieving relevant memories and feeding them directly to an answer model. This retrieval-as-evidence paradigm assumes retrieved memories are already suitable for reasoning, leaving the answer model to resolve redundancy, conflicts, and weak relevance while incurring substantial context overhead in long-term memory tasks. We propose MemChain, a trainable post-retrieval memory policy that transforms retrieved candidates into answer-facing active memory, represented as a compact and grounded evidence context. Given a user query and retrieved candidates, MemChain first generates a question-conditioned evidence plan, then constructs an ordered grounded evidence trace that organizes retrieved memories according to their semantic roles and dependencies, and finally executes explicit memory actions to produce a concise evidence context for answer generation. To train the mediator, we introduce a two-stage learning framework. Supervised trace learning first teaches the policy to generate structurally valid plans, traces, actions, and evidence contexts. We then propose Trace-Guided Memory Policy Optimization (TMPO), a reinforcement learning objective that optimizes the memory policy using downstream answer quality while jointly encouraging trace grounding, evidence support, structural validity, and answer stability across multiple rollouts. Experiments on LoCoMo and LongMemEval-S demonstrate that MemChain consistently achieves state-of-the-art performance across both closed-source and open-weight frozen answer models while substantially reducing the memory context passed to the answer model.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24097v1",
-        "pdf": "https://arxiv.org/pdf/2607.24097v1",
-        "github": "https://github.com/mayiwen0212/MemChain",
-        "blog": null
-      },
-      "institution": "Institute of Automation, Chinese Academy of Sciences",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）智能体交互周期的延长，长期记忆对于支持多跳推理、状态跟踪和跨会话知识更新变得至关重要。现有的记忆增强智能体通常采用“检索即证据”的范式，将检索到的相关记忆直接输入给答案生成模型。\n- **已有工作的局限**：这种范式假设检索到的记忆已经适合推理，忽略了冗余、冲突和弱相关性问题，导致答案模型需要自行处理这些噪声，同时在长程记忆任务中产生巨大的上下文开销。现有工作主要优化记忆的构建、检索或上游管理，但未解决如何将检索候选集转化为紧凑、面向答案的有效证据这一核心问题。\n\n## 文章的核心贡献点\n- **提出了一个 MemChain**：一种可训练的后检索记忆策略，能够将检索到的候选记忆转化为紧凑且 grounded（有依据）的主动记忆证据上下文。\n- **挑战1：如何从嘈杂、冗余的检索结果中提取有效信息并降低上下文开销？**\n  - **难点**：检索出的记忆往往包含大量无关、过时或冲突的信息，直接输入会导致上下文窗口爆炸且干扰推理。\n  - **解决方法**：MemChain 通过生成“问题条件化的证据计划”，构建有序的“接地证据轨迹”，根据语义角色和依赖关系组织记忆，并执行显式的记忆动作，最终生成简洁的证据上下文。\n- **挑战2：如何训练中介策略以确保生成的证据既结构合理又能提升下游回答质量？**\n  - **难点**：单纯的结构合法性不足以保证推理有效性，需要平衡证据的支持度、 grounding 质量和最终答案的稳定性。\n  - **解决方法**：引入两阶段学习框架。首先通过监督轨迹学习教授策略生成结构有效的计划和轨迹；随后提出“轨迹引导的记忆策略优化”（TMPO），这是一种强化学习目标，利用下游回答质量优化记忆策略，同时鼓励轨迹接地、证据支持、结构有效性和多轮 rollout 中的答案稳定性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 LoCoMo 和 LongMemEval-S 数据集上进行评估，测试了闭源和开源冻结答案模型。\n- **结果对比**：MemChain 在这两个基准测试中均取得了最先进（SOTA）的性能。与直接将检索内容作为上下文的方法相比，MemChain 不仅显著提高了回答准确率，还大幅减少了传递给答案模型的记忆上下文长度，实现了准确率与成本的高效权衡。\n\n#### 总结\nMemChain 通过引入可训练的后检索记忆策略，解决了传统记忆增强 LLM 智能体中检索证据冗余和低效的问题。它通过生成结构化的证据轨迹和执行显式记忆动作，将杂乱的检索结果转化为紧凑、高质量的证据上下文。结合监督学习和提出的 TMPO 强化学习方法，MemChain 在保持甚至提升回答质量的同时，显著降低了上下文开销，为长期记忆管理提供了一种高效且可解释的新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: As LLM agents engage in longer-term interactions, long-term memory becomes crucial for multi-hop reasoning, state tracking, and cross-session knowledge updates. Existing memory-augmented agents typically use a \"retrieval-as-evidence\" paradigm, feeding retrieved memories directly to the answer model.\n- **Limitations of Existing Work**: This paradigm assumes retrieved memories are ready for reasoning, forcing the answer model to handle redundancy, conflicts, and weak relevance, which incurs substantial context overhead. Prior works focus on upstream memory construction or retrieval but fail to transform retrieved candidates into compact, answer-oriented evidence.\n\n## Core Contributions\n- **Proposed MemChain**: A trainable post-retrieval memory policy that transforms retrieved candidate sets into compact, grounded, active memory evidence contexts.\n- **Challenge 1: How to extract effective information from noisy, redundant retrieval results while reducing context overhead?**\n  - **Difficulty**: Retrieved memories often contain irrelevant, stale, or conflicting information, leading to context window explosion and reasoning interference.\n  - **Solution**: MemChain generates a \"question-conditioned evidence plan,\" constructs an ordered \"grounded evidence trace\" based on semantic roles and dependencies, and executes explicit memory actions to produce a concise evidence context.\n- **Challenge 2: How to train the mediator policy to ensure structurally sound evidence that improves downstream answer quality?**\n  - **Difficulty**: Structural validity alone does not guarantee reasoning effectiveness; a balance is needed between evidence support, grounding, and answer stability.\n  - **Solution**: A two-stage learning framework is introduced. First, supervised trace learning teaches valid plan/trace generation. Second, Trace-Guided Memory Policy Optimization (TMPO), a reinforcement learning objective, optimizes the policy using downstream answer quality while encouraging trace grounding, evidence support, and stability.\n\n## Implementation and Evaluation\n- **Evaluation**: Experiments conducted on LoCoMo and LongMemEval-S datasets using both closed-source and open-weight frozen answer models.\n- **Results**: MemChain achieves state-of-the-art performance on both benchmarks. Compared to baselines that pass raw retrieval results, MemChain significantly improves accuracy while substantially reducing the memory context length passed to the answer model, demonstrating an efficient accuracy-cost trade-off.\n\n#### Summary\nMemChain addresses the inefficiency and redundancy in traditional memory-augmented LLM agents by introducing a trainable post-retrieval memory policy. By generating structured evidence traces and executing explicit memory actions, it converts messy retrieval results into compact, high-quality evidence contexts. Combined with supervised learning and the proposed TMPO reinforcement learning method, MemChain significantly reduces context overhead while maintaining or improving answer quality, offering a new efficient and interpretable paradigm for long-term memory management.",
-      "render_excerpt": "机构: Institute of Automation, Chinese Academy of Sciences<br>MemChain 通过引入可训练的后检索记忆策略，解决了传统记忆增强 LLM 智能体中检索证据冗余和低效的问题。它通过生成结构化的证据轨迹和执行显式记忆动作，将杂乱的检索结果转化为紧凑、高质量的证据上下文。结合监督学习和提出的 TMPO 强化学习方法，MemChain 在保持甚至提升回答质量的同时，显著降低了上下文开销，为长期记忆管理提供了一种高效且可解释的新范式。",
-      "render_excerpt_en": "Institution: Institute of Automation, Chinese Academy of Sciences<br>MemChain addresses the inefficiency and redundancy in traditional memory-augmented LLM agents by introducing a trainable post-retrieval memory policy. By generating structured evidence traces and executing explicit memory actions, it converts messy retrieval results into compact, high-quality evidence contexts. Combined with supervised learning and the proposed TMPO reinforcement learning method, MemChain significantly reduces context overhead while maintaining or improving answer quality, offering a new efficient and interpretable paradigm for long-term memory management.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-27T07:37:43Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-27"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.24720",
-      "date": "2026-07-27",
-      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
-      "authors": [
-        "Tianyi Men",
-        "Zhuoran Jin",
-        "Kang Liu",
-        "Jun Zhao"
-      ],
-      "abstract": "Multi-turn long-horizon planning is critical for foundation model agents, yet how to fundamentally improve it remains unclear. Existing models are trained on uncontrollable and opaque Internet data, making it difficult to identify how planning ability is acquired, shaped, and integrated. To address this challenge, we introduce a unified and controlled multi-turn environment that enables precise control. It allows systematically study long-horizon planning across three stages. (1) Planning ability acquisition during pre-training. We study data format, distribution, and quality. Explicit world model construction through CoT state transition modeling yields stronger long-horizon generalization. Atomic skills alone are insufficient for compositional generalization, whereas a litte long-horizon data works. Moreover, suboptimal trajectories severely impair performance because errors amplify over long horizons. (2) Planning ability shaping via GRPO and OPD post-training. Through mutual information, we distinguish general planning patterns from task-specific planning knowledge. For planning patterns, we identify three application regions of post-training: unnecessary, effective, and unsupported. OPD has a broader effective region than GRPO under low-quality and long-horizon settings, as it provides more consistent update directions. For planning knowledge, distilling unseen procedures from a teacher with different knowledge may impair student's prior world modeling without fully establishing new knowledge. (3) Planning ability integration through MOPD post-training. We show that multi-teacher on-policy distillation (MOPD) integrates capabilities by converging to shared planning-pattern across environments. Compatible patterns enable cross-environment generalization, partially shared patterns support continual learning, while completely conflicting patterns cause severe interference.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24720v1",
-        "pdf": "https://arxiv.org/pdf/2607.24720v1",
-        "github": "https://github.com/Quester-one/PlanPhysCode",
-        "blog": "https://quester-one.github.io/PlanPhysWebsite/"
-      },
-      "institution": "Laboratory of Cognition and Decision Intelligence for Complex Systems, Institute of Automation, Chinese Academy of Sciences",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：多轮长程规划是基础模型智能体（Agentic AI）的关键能力，但目前尚不清楚如何从根本上提升这一能力。现有模型主要在不可控且不透明的互联网数据上进行训练，导致难以识别规划能力是如何被获取、塑造和整合的。\n- **已有工作局限**：由于缺乏对数据质量、任务长度和规划模式的精确控制，现有研究无法系统性地解耦预训练与后训练阶段对长程规划能力的具体影响机制，也难以量化次优轨迹或不同教师模型对智能体性能的深层影响。\n\n## 文章的核心贡献点\n- **提出了一个统一且可控的多轮环境及系统性研究框架**：该框架允许精确控制任务长度、数据质量、规划知识和规划模式，从而在预训练、单教师后训练和多教师后训练三个阶段系统性地研究长程规划能力的演化规律。\n- **挑战1：预训练阶段规划能力的获取机制不明**。难点在于区分原子技能与长程组合泛化能力的来源，以及量化低质量数据的影响。论文发现，仅靠原子技能不足以实现组合泛化，少量长程数据即可显著提升能力；通过思维链（CoT）进行显式世界模型构建比直接动作预测能产生更强的长程泛化能力，而次优轨迹会因误差累积严重损害性能。\n- **挑战2：后训练阶段规划能力的塑造与整合策略缺失**。难点在于区分通用规划模式与特定任务知识，并解决多源知识冲突。论文通过互信息分析指出，在低质量数据和长程设定下，在线策略蒸馏（OPD）比GRPO具有更宽的有效区域，因为它提供更一致的更新方向；在多教师蒸馏（MOPD）中，兼容的模式支持跨环境泛化，部分共享模式支持持续学习，而完全冲突的模式会导致严重的灾难性遗忘和干扰。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究基于自定义的统一可控多轮环境进行实验，涵盖了从预训练数据分布分析到GRPO、OPD及MOPD后训练算法的比较。代码已开源，并提供了相关的HuggingFace模型和数据集链接。\n- **评估结果与对比**：\n    - **预训练阶段**：实验表明，显式的世界模型构建（通过CoT状态转移建模）在长程泛化上优于直接动作预测。少量高质量的长程数据比大量原子技能数据更有效。\n    - **后训练阶段（单教师）**：对比GRPO和OPD，结果显示在预训练数据质量较低且规划 horizon 较长时，OPD的表现优于GRPO，因为理想教师提供的OPD更新方向比GRPO的稀疏信用分配更一致。但在蒸馏未见过的多路径过程时，若教师拥有不同的底层知识，可能会破坏学生已有的世界模型。\n    - **后训练阶段（多教师）**：MOPD通过收敛到教师间共享的规划模式分布来整合能力。实验验证了兼容模式可实现跨环境泛化，而冲突模式会导致严重的性能下降和干扰，揭示了多源知识整合的物理机制。\n\n#### 总结\n本文系统地揭示了基础模型智能体在多轮长程规划能力上的“物理规律”，即能力如何在预训练中被获取、在后训练中被塑造和整合。研究强调了显式世界模型构建的重要性，指出了OPD在长程低质数据下的优势，并阐明了多教师蒸馏中模式兼容性对跨环境泛化和持续学习的关键作用，为开发更强大的智能体基础模型提供了理论依据和实践指导。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Multi-turn long-horizon planning is a critical capability for foundation model agents, yet it remains unclear how to fundamentally improve it. Existing models are trained on uncontrollable and opaque Internet data, making it difficult to identify how planning abilities are acquired, shaped, and integrated.\n- **Limitations of Existing Work**: Due to the lack of precise control over data quality, task length, and planning patterns, existing research cannot systematically decouple the specific impacts of pre-training and post-training stages on long-horizon planning capabilities, nor quantify the deep impact of suboptimal trajectories or different teacher models.\n\n## Core Contributions\n- **Proposed a unified and controlled multi-turn environment and systematic research framework**: This framework allows precise control over task length, data quality, planning knowledge, and planning patterns, enabling a systematic study of long-horizon planning evolution across pre-training, single-teacher post-training, and multi-teacher post-training stages.\n- **Challenge 1: Unclear mechanisms of planning ability acquisition during pre-training**. The difficulty lies in distinguishing the sources of atomic skills versus long-horizon compositional generalization and quantifying the impact of low-quality data. The paper finds that atomic skills alone are insufficient for compositional generalization, while a small amount of long-horizon data significantly improves capability. Explicit world model construction via Chain-of-Thought (CoT) state transition modeling yields stronger long-horizon generalization than direct action prediction, whereas suboptimal trajectories severely impair performance due to error accumulation.\n- **Challenge 2: Lack of strategies for shaping and integrating planning abilities during post-training**. The challenge involves distinguishing general planning patterns from task-specific knowledge and resolving conflicts from multiple knowledge sources. Using mutual information analysis, the paper shows that On-Policy Distillation (OPD) has a broader effective region than GRPO under low-quality data and long horizons, as it provides more consistent update directions. In Multi-Teacher On-Policy Distillation (MOPD), compatible patterns enable cross-environment generalization, partially shared patterns support continual learning, while completely conflicting patterns cause severe catastrophic forgetting and interference.\n\n## Implementation and Evaluation\n- **Implementation**: The study utilizes a custom unified controlled multi-turn environment for experiments, covering analyses from pre-training data distributions to comparisons of GRPO, OPD, and MOPD post-training algorithms. Code, models, and datasets are open-sourced.\n- **Evaluation Results and Comparisons**:\n    - **Pre-training Stage**: Experiments demonstrate that explicit world model construction (via CoT state transition modeling) outperforms direct action prediction in long-horizon generalization. A small amount of high-quality long-horizon data is more effective than large amounts of atomic skill data.\n    - **Post-training Stage (Single-Teacher)**: Comparing GRPO and OPD, results show that OPD outperforms GRPO when pre-training data quality is low and the planning horizon is long, because OPD with an ideal teacher provides more consistent update directions than GRPO's sparse credit assignment. However, distilling unseen multi-path procedures from a teacher with different underlying knowledge can impair the student's existing world model.\n    - **Post-training Stage (Multi-Teacher)**: MOPD integrates capabilities by converging to shared planning pattern distributions among teachers. Experiments verify that compatible patterns enable cross-environment generalization, while conflicting patterns lead to significant performance degradation and interference, revealing the physical mechanisms of multi-source knowledge integration.\n\n## 4. Conclusion\nThis paper systematically reveals the \"physics\" of long-horizon planning capabilities in foundation model agents, detailing how abilities are acquired during pre-training, shaped during post-training, and integrated across stages. The study highlights the importance of explicit world model construction, identifies the advantages of OPD in long-horizon low-quality data settings, and clarifies the critical role of pattern compatibility in multi-teacher distillation for cross-environment generalization and continual learning, providing theoretical insights and practical guidance for developing stronger agentic foundation models.",
-      "render_excerpt": "机构: Laboratory of Cognition and Decision Intelligence for Complex Systems, Institute of Automation, Chinese Academy of Sciences<br>本文系统地揭示了基础模型智能体在多轮长程规划能力上的“物理规律”，即能力如何在预训练中被获取、在后训练中被塑造和整合。研究强调了显式世界模型构建的重要性，指出了OPD在长程低质数据下的优势，并阐明了多教师蒸馏中模式兼容性对跨环境泛化和持续学习的关键作用，为开发更强大的智能体基础模型提供了理论依据和实践指导。",
-      "render_excerpt_en": "Institution: Laboratory of Cognition and Decision Intelligence for Complex Systems, Institute of Automation, Chinese Academy of Sciences<br>## 1. What the Paper Does - **Background**: Multi-turn long-horizon planning is a critical capability for foundation model agents, yet it remains unclear how to fundamentally improve it. Existing models are trained on uncontrollable and opaque Internet data, making it difficult to identify how planning abilities are acquired, shaped, and integrated.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-27T17:55:03Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-27"
+        "captured_at": "2026-07-28"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

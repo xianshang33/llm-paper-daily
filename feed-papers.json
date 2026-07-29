@@ -1,37 +1,84 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-28T04:44:12.826851+00:00",
-  "run_date": "2026-07-27",
+  "generated_at": "2026-07-29T04:42:44.376541+00:00",
+  "run_date": "2026-07-28",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.24339",
-      "date": "2026-07-27",
-      "title": "Gubernaut: A Deterministic Homeostatic Controller for Affect-Regulated LLM Agents, Validated Across Independent Model Families",
+      "id": "arxiv:2607.25992",
+      "date": "2026-07-28",
+      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dushyant Sharma"
+        "Shuyue Wei",
+        "Chang Liu",
+        "Zimu Zhou",
+        "Yongxin Tong",
+        "Lizhen Cui"
       ],
-      "institution": null,
+      "institution": "Shandong University, Beihang University, City University of Hong Kong",
       "summary": {
-        "zh": "本文提出了 Gubernaut 认知控制器（GCC），一种针对 LLM 代理的确定性稳态控制器。通过分离对象级（文本读写）和元级（仅数值遥测），GCC 在架构上免疫提示词注入，并成功在多个独立模型家族中验证了其抑制反应性故障（如冲突升级、谄媚）的能力。实验结果表明，GCC 能显著降低代理的反应性，且其效果具有跨模型的鲁棒性和可解释的动态恢复机制，为运行时对齐提供了新的架构范式。",
-        "en": "- **Background**: Large Language Model (LLM) agents exhibit reactive failure modes at runtime, such as escalation under provocation, sycophantic drift under flattery, and perseveration. These are failures of behavioral..."
+        "zh": "- **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。 -...",
+        "en": "- **Background**: Memory management has become critical infrastructure for LLM-based agents, enabling long-horizon reasoning, personalized interactions, and knowledge reuse. Agent memory is inherently heterogeneous,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.24339v1",
-        "pdf": "https://arxiv.org/pdf/2607.24339v1",
+        "abs": "http://arxiv.org/abs/2607.25992v1",
+        "pdf": "https://arxiv.org/pdf/2607.25992v1",
+        "github": "https://github.com/LIUHA1ZHU/MemLens"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.25992.md",
+        "summary_en_path": "summary_en/2026-07/2607.25992.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25992.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25992.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.25877",
+      "date": "2026-07-28",
+      "title": "Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Bart Custers",
+        "Koorosh Aslansefat"
+      ],
+      "institution": "University of Hull",
+      "summary": {
+        "zh": "本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。",
+        "en": "- **Background**: Actuarial risk modeling in the insurance industry is a high-stakes decision-support setting requiring high accuracy, fairness, and compliance. Large Language Model (LLM)-based Multi-Agent Systems (MAS)..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25877v1",
+        "pdf": "https://arxiv.org/pdf/2607.25877v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.24339.md",
-        "summary_en_path": "summary_en/2026-07/2607.24339.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.24339.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.24339.md"
+        "summary_zh_path": "summary/2026-07/2607.25877.md",
+        "summary_en_path": "summary_en/2026-07/2607.25877.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25877.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25877.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,174 +95,138 @@
       }
     },
     {
-      "id": "arxiv:2607.24625",
-      "date": "2026-07-27",
-      "title": "Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents",
+      "id": "arxiv:2607.25853",
+      "date": "2026-07-28",
+      "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Arseny Kravchenko",
-        "Vadim Liventsev",
-        "Innokentii Konstantinov",
-        "Ildar Iskhakov",
-        "Matvey Kukuy"
+        "Yu Hao",
+        "Jinxuan Cai",
+        "Qi Zhang",
+        "Yawen Li",
+        "Zhiqiang Zhang",
+        "Chuan Shi",
+        "Cheng Yang"
       ],
-      "institution": "Archestra AI",
+      "institution": "Beijing University of Posts and Telecommunications",
       "summary": {
-        "zh": "APPA 通过引入上下文分支和前瞻性策略执行，有效解决了 LLM Agent 中信息流控制的可用性瓶颈。它在形式化保证安全性的前提下，成功隔离了污点传播，既大幅降低了提示注入和数据泄露的风险，又保留了 Agent 处理复杂任务的能力，为构建安全且实用的自主 Agent 提供了新的范式。",
-        "en": "- **Background**: Autonomous LLM agents processing mixed-confidentiality data face severe security risks from prompt injection and reasoning errors. Traditional dynamic Information Flow Control (IFC) provides structural..."
+        "zh": "HiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。",
+        "en": "- **Background**: In long-horizon interactive tasks, skills have become a key abstraction for Large Language Model (LLM) agents to reuse historical experience. Existing methods automatically extract skills from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.24625v1",
-        "pdf": "https://arxiv.org/pdf/2607.24625v1",
+        "abs": "http://arxiv.org/abs/2607.25853v1",
+        "pdf": "https://arxiv.org/pdf/2607.25853v1",
+        "github": "https://github.com/BUPT-GAMMA/HiSkill"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.25853.md",
+        "summary_en_path": "summary_en/2026-07/2607.25853.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25853.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25853.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.25485",
+      "date": "2026-07-28",
+      "title": "PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Korosh Vatanparvar",
+        "Ashutosh Joshi",
+        "Maria Xenochristou",
+        "Mohammad Abuzar Hashemi",
+        "Prasad Kasu",
+        "Deepak Bansal",
+        "Daniel Lopez-Martinez",
+        "Anchal Nema",
+        "Ramya Ganesan",
+        "Will Kimbrough",
+        "Alex Woody",
+        "Yadunandana Rao",
+        "Dilek Hakkani-Tur",
+        "Wilko Schulz-Mahlendorf"
+      ],
+      "institution": "Amazon Health AI",
+      "summary": {
+        "zh": "PatientAgentBench 填补了面向患者的医疗代理系统评估的空白。它通过模拟真实交互和使用经过临床验证的自动化评估，揭示了当前模型在分诊、安全性和工作流准确性方面的具体缺陷。该框架为开发更安全、更可靠的医疗 AI 代理提供了重要的评估标准和方向，强调了动态、多轮交互评估在医疗AI安全性中的必要性。",
+        "en": "- **Background**: Health AI is evolving from simple question-answering systems to agentic systems that converse with patients, reason about health records, and act on their behalf (e.g., scheduling, prescription..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25485v1",
+        "pdf": "https://arxiv.org/pdf/2607.25485v1",
+        "github": "https://github.com/amazon-science/PatientAgentBench"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.25485.md",
+        "summary_en_path": "summary_en/2026-07/2607.25485.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25485.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25485.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.25718",
+      "date": "2026-07-28",
+      "title": "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xinyi Hong",
+        "Pinjun Dong",
+        "Xinyang Yu",
+        "Binyan Jiang"
+      ],
+      "institution": "Shanghai Jiao Tong University; The Hong Kong Polytechnic University",
+      "summary": {
+        "zh": "本文针对LLM Agent中大规模工具检索的瓶颈，指出了现有独立评分范式的局限性。通过提出HYSET，将工具检索重构为查询条件下的超边预测问题，并引入基数特定交互以捕捉工具兼容性。该方法不仅作为无需修改Agent的预选择模块易于部署，且在检索准确性和端到端任务成功率上均超越了SOTA基线，同时展现出强大的跨领域和零样本泛化能力，证明了集合级工具检索的有效性。",
+        "en": "This paper addresses the bottleneck of large-scale tool retrieval for LLM agents by highlighting the limitations of independent scoring paradigms. By proposing HYSET, it reformulates retrieval as query-conditioned..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.25718v1",
+        "pdf": "https://arxiv.org/pdf/2607.25718v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.24625.md",
-        "summary_en_path": "summary_en/2026-07/2607.24625.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.24625.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.24625.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.24588",
-      "date": "2026-07-27",
-      "title": "SIREN: Towards End-to-End Extreme-Weather Early Warning with Experience-Grounded LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Hang Ni",
-        "Weijia Zhang",
-        "Fan Liu",
-        "Mengqian Lu",
-        "Hao Liu"
-      ],
-      "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
-      "summary": {
-        "zh": "本文针对极端天气早期预警中传统方法成本高、现有 LLM 智能体研究碎片化的问题，提出了 SIREN 框架。通过构建全面的 SIREN-Bench 基准，作者揭示了现有方法的不足，并开发了基于历史经验 grounding 的智能体系统。该系统通过整合异构数据和模拟专家经验利用机制，在端到端预警任务中取得了超越基线的性能，为自动化、可扩展的气象预警系统提供了新的解决方案。",
-        "en": "- **Background**: Early warning of extreme weather is crucial for mitigating societal, economic, and environmental risks. However, traditional expert-centered warning workflows are costly, labor-intensive, and difficult..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24588v1",
-        "pdf": "https://arxiv.org/pdf/2607.24588v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.24588.md",
-        "summary_en_path": "summary_en/2026-07/2607.24588.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.24588.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.24588.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.24097",
-      "date": "2026-07-27",
-      "title": "MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yiwen Ma",
-        "Songjun Tu",
-        "Qichao Zhang",
-        "Dong Li",
-        "Linjing Li",
-        "Dongbin Zhao"
-      ],
-      "institution": "Institute of Automation, Chinese Academy of Sciences",
-      "summary": {
-        "zh": "MemChain 通过引入可训练的后检索记忆策略，解决了传统记忆增强 LLM 智能体中检索证据冗余和低效的问题。它通过生成结构化的证据轨迹和执行显式记忆动作，将杂乱的检索结果转化为紧凑、高质量的证据上下文。结合监督学习和提出的 TMPO 强化学习方法，MemChain 在保持甚至提升回答质量的同时，显著降低了上下文开销，为长期记忆管理提供了一种高效且可解释的新范式。",
-        "en": "MemChain addresses the inefficiency and redundancy in traditional memory-augmented LLM agents by introducing a trainable post-retrieval memory policy. By generating structured evidence traces and executing explicit..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24097v1",
-        "pdf": "https://arxiv.org/pdf/2607.24097v1",
-        "github": "https://github.com/mayiwen0212/MemChain"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.24097.md",
-        "summary_en_path": "summary_en/2026-07/2607.24097.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.24097.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.24097.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.24720",
-      "date": "2026-07-27",
-      "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Tianyi Men",
-        "Zhuoran Jin",
-        "Kang Liu",
-        "Jun Zhao"
-      ],
-      "institution": "Laboratory of Cognition and Decision Intelligence for Complex Systems, Institute of Automation, Chinese Academy of Sciences",
-      "summary": {
-        "zh": "本文系统地揭示了基础模型智能体在多轮长程规划能力上的“物理规律”，即能力如何在预训练中被获取、在后训练中被塑造和整合。研究强调了显式世界模型构建的重要性，指出了OPD在长程低质数据下的优势，并阐明了多教师蒸馏中模式兼容性对跨环境泛化和持续学习的关键作用，为开发更强大的智能体基础模型提供了理论依据和实践指导。",
-        "en": "- **Background**: Multi-turn long-horizon planning is a critical capability for foundation model agents, yet it remains unclear how to fundamentally improve it. Existing models are trained on uncontrollable and opaque..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.24720v1",
-        "pdf": "https://arxiv.org/pdf/2607.24720v1",
-        "github": "https://github.com/Quester-one/PlanPhysCode"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.24720.md",
-        "summary_en_path": "summary_en/2026-07/2607.24720.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.24720.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.24720.md"
+        "summary_zh_path": "summary/2026-07/2607.25718.md",
+        "summary_en_path": "summary_en/2026-07/2607.25718.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25718.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25718.md"
       },
       "signals": {
         "priority_keyword": "Agent"
