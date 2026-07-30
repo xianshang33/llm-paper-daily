@@ -1,41 +1,46 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-29T04:42:44.376541+00:00",
-  "run_date": "2026-07-28",
+  "generated_at": "2026-07-30T04:29:37.253961+00:00",
+  "run_date": "2026-07-29",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.25992",
-      "date": "2026-07-28",
-      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
+      "id": "arxiv:2607.26791",
+      "date": "2026-07-29",
+      "title": "SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shuyue Wei",
-        "Chang Liu",
-        "Zimu Zhou",
-        "Yongxin Tong",
-        "Lizhen Cui"
+        "Lehan Wang",
+        "Boli Chen",
+        "Ruixue Ding",
+        "Pengjun Xie",
+        "Jinwei Huang",
+        "Zhendong Liu",
+        "Shuo Wang",
+        "Tao Lei",
+        "Xin Ouyang",
+        "Xiaomeng Li"
       ],
-      "institution": "Shandong University, Beihang University, City University of Hong Kong",
+      "institution": "Tongyi Lab, Alibaba Group; Alibaba Cloud Computing, Alibaba Group; The Hong Kong University of Science and Technology",
       "summary": {
-        "zh": "- **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。 -...",
-        "en": "- **Background**: Memory management has become critical infrastructure for LLM-based agents, enabling long-horizon reasoning, personalized interactions, and knowledge reuse. Agent memory is inherently heterogeneous,..."
+        "zh": "SecRespond 填补了 LLM 智能体在妥协后事件响应评估领域的空白。通过引入基于真实受损主机磁盘快照的基准测试，该研究揭示了当前最先进的 LLM 智能体在主动取证和制定综合修复计划方面的严重不足。这表明，要构建能够胜任现实世界事件响应的智能体，仍需克服巨大的技术瓶颈，特别是在处理隐蔽威胁和复杂系统状态恢复方面。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly adopted in real-world security operations with access to host artifacts and command-line interfaces (CLIs), making it critical to assess their..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.25992v1",
-        "pdf": "https://arxiv.org/pdf/2607.25992v1",
-        "github": "https://github.com/LIUHA1ZHU/MemLens"
+        "abs": "http://arxiv.org/abs/2607.26791v1",
+        "pdf": "https://arxiv.org/pdf/2607.26791v1",
+        "github": "https://github.com/Alibaba-NLP/qqr/tree/main/data/secrespond"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.25992.md",
-        "summary_en_path": "summary_en/2026-07/2607.25992.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25992.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25992.md"
+        "summary_zh_path": "summary/2026-07/2607.26791.md",
+        "summary_en_path": "summary_en/2026-07/2607.26791.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26791.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26791.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,33 +57,37 @@
       }
     },
     {
-      "id": "arxiv:2607.25877",
-      "date": "2026-07-28",
-      "title": "Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks",
+      "id": "arxiv:2607.26661",
+      "date": "2026-07-29",
+      "title": "AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bart Custers",
-        "Koorosh Aslansefat"
+        "Junhao Qiu",
+        "Zidong Wang",
+        "Yansong Sun",
+        "Zhitong Ma",
+        "Ping Guo",
+        "Qingfu Zhang"
       ],
-      "institution": "University of Hull",
+      "institution": "City University of Hong Kong",
       "summary": {
-        "zh": "本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。",
-        "en": "- **Background**: Actuarial risk modeling in the insurance industry is a high-stakes decision-support setting requiring high accuracy, fairness, and compliance. Large Language Model (LLM)-based Multi-Agent Systems (MAS)..."
+        "zh": "AgenticCANN 成功解决了在低资源、陌生硬件平台（Ascend C）上利用 LLM 进行自动算子生成的难题。通过结合知识增强以解决可行性瓶颈，以及阶段自适应的代理进化策略以优化性能，该框架不仅在代码生成的可行性上取得了突破（特别是在元素级和归一化算子上），还实现了显著的推理加速。这项工作证明了在极端数据稀缺场景下，通过结构化的知识注入和动态代理策略，可以有效克服 LLM 的分布外泛化限制，为 NPU 算子自动化开发提供了新范式。",
+        "en": "- **Background**: As inference workloads diversify, Huawei Ascend NPUs have become a critical alternative to NVIDIA GPUs. The Ascend C programming model, based on the CANN toolkit, differs fundamentally from CUDA..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.25877v1",
-        "pdf": "https://arxiv.org/pdf/2607.25877v1",
+        "abs": "http://arxiv.org/abs/2607.26661v1",
+        "pdf": "https://arxiv.org/pdf/2607.26661v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.25877.md",
-        "summary_en_path": "summary_en/2026-07/2607.25877.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25877.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25877.md"
+        "summary_zh_path": "summary/2026-07/2607.26661.md",
+        "summary_en_path": "summary_en/2026-07/2607.26661.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26661.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26661.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -95,138 +104,132 @@
       }
     },
     {
-      "id": "arxiv:2607.25853",
-      "date": "2026-07-28",
-      "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
+      "id": "arxiv:2607.27155",
+      "date": "2026-07-29",
+      "title": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yu Hao",
-        "Jinxuan Cai",
-        "Qi Zhang",
-        "Yawen Li",
-        "Zhiqiang Zhang",
-        "Chuan Shi",
-        "Cheng Yang"
+        "Jingbo Zhou",
+        "Yusai Zhao",
+        "Qi Bao",
+        "Jingjia Cao",
+        "Zhenghai Chen",
+        "Chang Gao",
+        "Kaiqi Guo",
+        "Muxin Guo",
+        "Mingxuan Li",
+        "Xinjiang Lu",
+        "Yanru Ma",
+        "Yixiong Xiao",
+        "Zenghui Zhang",
+        "Le Zhang",
+        "Hua Wu"
       ],
-      "institution": "Beijing University of Posts and Telecommunications",
+      "institution": "Baidu Inc.",
       "summary": {
-        "zh": "HiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。",
-        "en": "- **Background**: In long-horizon interactive tasks, skills have become a key abstraction for Large Language Model (LLM) agents to reuse historical experience. Existing methods automatically extract skills from..."
+        "zh": "OmegaUse-OfficeVal 填补了 LLM 智能体在长周期办公任务中经济效能评估的空白。通过引入人类劳动时间和任务价格代理，该基准不仅评估任务完成质量，还量化了经济效率。尽管当前 LLM 在成本和速度上具有优势，但其在复杂办公任务中的交付质量仍需提升才能媲美人类专家。该工作为未来开发更具经济效益的智能体提供了重要的评估标准和数据支持。",
+        "en": "- **Background**: Large language model (LLM) agents are increasingly expected to assist users in completing complex tasks, particularly within office-suite workflows. However, existing benchmarks offer limited support..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.25853v1",
-        "pdf": "https://arxiv.org/pdf/2607.25853v1",
-        "github": "https://github.com/BUPT-GAMMA/HiSkill"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.25853.md",
-        "summary_en_path": "summary_en/2026-07/2607.25853.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25853.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25853.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.25485",
-      "date": "2026-07-28",
-      "title": "PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Korosh Vatanparvar",
-        "Ashutosh Joshi",
-        "Maria Xenochristou",
-        "Mohammad Abuzar Hashemi",
-        "Prasad Kasu",
-        "Deepak Bansal",
-        "Daniel Lopez-Martinez",
-        "Anchal Nema",
-        "Ramya Ganesan",
-        "Will Kimbrough",
-        "Alex Woody",
-        "Yadunandana Rao",
-        "Dilek Hakkani-Tur",
-        "Wilko Schulz-Mahlendorf"
-      ],
-      "institution": "Amazon Health AI",
-      "summary": {
-        "zh": "PatientAgentBench 填补了面向患者的医疗代理系统评估的空白。它通过模拟真实交互和使用经过临床验证的自动化评估，揭示了当前模型在分诊、安全性和工作流准确性方面的具体缺陷。该框架为开发更安全、更可靠的医疗 AI 代理提供了重要的评估标准和方向，强调了动态、多轮交互评估在医疗AI安全性中的必要性。",
-        "en": "- **Background**: Health AI is evolving from simple question-answering systems to agentic systems that converse with patients, reason about health records, and act on their behalf (e.g., scheduling, prescription..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.25485v1",
-        "pdf": "https://arxiv.org/pdf/2607.25485v1",
-        "github": "https://github.com/amazon-science/PatientAgentBench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.25485.md",
-        "summary_en_path": "summary_en/2026-07/2607.25485.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25485.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25485.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.25718",
-      "date": "2026-07-28",
-      "title": "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Xinyi Hong",
-        "Pinjun Dong",
-        "Xinyang Yu",
-        "Binyan Jiang"
-      ],
-      "institution": "Shanghai Jiao Tong University; The Hong Kong Polytechnic University",
-      "summary": {
-        "zh": "本文针对LLM Agent中大规模工具检索的瓶颈，指出了现有独立评分范式的局限性。通过提出HYSET，将工具检索重构为查询条件下的超边预测问题，并引入基数特定交互以捕捉工具兼容性。该方法不仅作为无需修改Agent的预选择模块易于部署，且在检索准确性和端到端任务成功率上均超越了SOTA基线，同时展现出强大的跨领域和零样本泛化能力，证明了集合级工具检索的有效性。",
-        "en": "This paper addresses the bottleneck of large-scale tool retrieval for LLM agents by highlighting the limitations of independent scoring paradigms. By proposing HYSET, it reformulates retrieval as query-conditioned..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.25718v1",
-        "pdf": "https://arxiv.org/pdf/2607.25718v1",
+        "abs": "http://arxiv.org/abs/2607.27155v1",
+        "pdf": "https://arxiv.org/pdf/2607.27155v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.25718.md",
-        "summary_en_path": "summary_en/2026-07/2607.25718.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.25718.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.25718.md"
+        "summary_zh_path": "summary/2026-07/2607.27155.md",
+        "summary_en_path": "summary_en/2026-07/2607.27155.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.27155.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.27155.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.26865",
+      "date": "2026-07-29",
+      "title": "Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Amirmohammad Farzaneh",
+        "Osvaldo Simeone"
+      ],
+      "institution": "Institute for Intelligent Networked Systems (INSI), Northeastern University London",
+      "summary": {
+        "zh": "本文针对边缘 LLM Agent 的资源受限与可靠性矛盾，提出了 TSDS 框架。通过结合动作收敛探测以缩短本地推理路径，以及基于困惑度的智能云侧推迟机制，并利用多目标 LTT 进行联合校准，TSDS 在多个复杂任务基准上实现了计算效率的大幅提升（减少 43%-73% 的思考计算），同时提供了严格的性能与成本保证，为边缘智能体的高效可靠部署提供了新思路。",
+        "en": "- **Background**: LLM agents following the ReAct paradigm are effective for complex multi-step tasks but face challenges when deployed on edge devices due to limited compute, memory, and power. They must manage..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.26865v1",
+        "pdf": "https://arxiv.org/pdf/2607.26865v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.26865.md",
+        "summary_en_path": "summary_en/2026-07/2607.26865.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26865.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26865.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.26773",
+      "date": "2026-07-29",
+      "title": "Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Huixiang Zhang",
+        "Mahzabeen Emu"
+      ],
+      "institution": "Georgia Institute of Technology",
+      "summary": {
+        "zh": "本文指出潜在通信虽然具有更高的表示容量，但并不保证接收者使用了任务相关信息。通过引入因果审计框架，作者解构了潜在通信中的多重效应，发现不同规模的模型在不同任务上对消息成分的依赖存在显著差异甚至反转。研究结论表明，仅靠最终任务准确率无法揭示潜在通信的真实机制，呼吁社区将受控消息比较作为评估潜在通信的标准范式，以确保多智能体系统中的信息传递是真实且有效的。",
+        "en": "The paper argues that while latent communication offers higher representational capacity, it does not guarantee that receivers utilize task-relevant information. By introducing a causal audit framework, the authors..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.26773v1",
+        "pdf": "https://arxiv.org/pdf/2607.26773v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.26773.md",
+        "summary_en_path": "summary_en/2026-07/2607.26773.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26773.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26773.md"
       },
       "signals": {
         "priority_keyword": "Agent"

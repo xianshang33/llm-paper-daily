@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.29_04:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.30_04:29-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月29日 04:42</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月30日 04:29</sub></summary>
 <br>
 
-- MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents 
-- Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks 
-- HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs 
-- PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents 
-- Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction 
+- SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response 
+- AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution 
+- OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding 
+- Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents 
+- Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-29</span> | **SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response**<br><sub>机构: Tongyi Lab, Alibaba Group; Alibaba Cloud Computing, Alibaba Group; The Hong Kong University of Science and Technology<br>SecRespond 填补了 LLM 智能体在妥协后事件响应评估领域的空白。通过引入基于真实受损主机磁盘快照的基准测试，该研究揭示了当前最先进的 LLM 智能体在主动取证和制定综合修复计划方面的严重不足。这表明，要构建能够胜任现实世界事件响应的智能体，仍需克服巨大的技术瓶颈，特别是在处理隐蔽威胁和复杂系统状态恢复方面。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26791v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26791.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Alibaba-NLP/qqr/tree/main/data/secrespond)</div> |
+| <span style='display: inline-block; width: 42px;'>07-29</span> | **AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution**<br><sub>机构: City University of Hong Kong<br>AgenticCANN 成功解决了在低资源、陌生硬件平台（Ascend C）上利用 LLM 进行自动算子生成的难题。通过结合知识增强以解决可行性瓶颈，以及阶段自适应的代理进化策略以优化性能，该框架不仅在代码生成的可行性上取得了突破（特别是在元素级和归一化算子上），还实现了显著的推理加速。这项工作证明了在极端数据稀缺场景下，通过结构化的知识注入和动态代理策略，可以有效克服 LLM 的分布外泛化限制，为 NPU 算子自动化开发提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26661v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26661.md)  |
+| <span style='display: inline-block; width: 42px;'>07-29</span> | **OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding**<br><sub>机构: Baidu Inc.<br>OmegaUse-OfficeVal 填补了 LLM 智能体在长周期办公任务中经济效能评估的空白。通过引入人类劳动时间和任务价格代理，该基准不仅评估任务完成质量，还量化了经济效率。尽管当前 LLM 在成本和速度上具有优势，但其在复杂办公任务中的交付质量仍需提升才能媲美人类专家。该工作为未来开发更具经济效益的智能体提供了重要的评估标准和数据支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.27155v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.27155.md)  |
+| <span style='display: inline-block; width: 42px;'>07-29</span> | **Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents**<br><sub>机构: Institute for Intelligent Networked Systems (INSI), Northeastern University London<br>本文针对边缘 LLM Agent 的资源受限与可靠性矛盾，提出了 TSDS 框架。通过结合动作收敛探测以缩短本地推理路径，以及基于困惑度的智能云侧推迟机制，并利用多目标 LTT 进行联合校准，TSDS 在多个复杂任务基准上实现了计算效率的大幅提升（减少 43%-73% 的思考计算），同时提供了严格的性能与成本保证，为边缘智能体的高效可靠部署提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26865v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26865.md)  |
+| <span style='display: inline-block; width: 42px;'>07-29</span> | **Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM**<br><sub>机构: Georgia Institute of Technology<br>本文指出潜在通信虽然具有更高的表示容量，但并不保证接收者使用了任务相关信息。通过引入因果审计框架，作者解构了潜在通信中的多重效应，发现不同规模的模型在不同任务上对消息成分的依赖存在显著差异甚至反转。研究结论表明，仅靠最终任务准确率无法揭示潜在通信的真实机制，呼吁社区将受控消息比较作为评估潜在通信的标准范式，以确保多智能体系统中的信息传递是真实且有效的。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26773v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26773.md)  |
 | <span style='display: inline-block; width: 42px;'>07-28</span> | **MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents**<br><sub>机构: Shandong University, Beihang University, City University of Hong Kong<br>## 文章做了什么 - **背景**：随着大语言模型（LLM）代理在长程推理、个性化响应和知识复用方面的应用日益广泛，记忆管理已成为关键的基础设施。代理的记忆具有异构性，包括对话历史、中间推理痕迹、检索文档等。 - **已有工作的不足**：现有的LLM记忆系统通常采用粗粒度（效用无关或启发式效用）的方式，均匀对待异构的用户-LLM交互记录。这种方式无法显式建模哪些记忆单元对未来任务真正有用，导致冗余和低影响的记录长期驻留在记忆库中，稀释了任务相关的上下文，扩大了检索空间，并增加了响应生成时的Token开销。 ## 文章的核心贡献点 - **提出了一个名为 MemLens 的价值感知记忆管理系统**：该系统将记忆记录视为一等数据对象，提供端到端的交互式分析仪表板，涵盖完整的记忆生命周期。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25992v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25992.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/LIUHA1ZHU/MemLens)</div> |
 | <span style='display: inline-block; width: 42px;'>07-28</span> | **Runtime Uncertainty Monitoring for LLM-Based Multi-Agent Systems Using Bayesian Networks**<br><sub>机构: University of Hull<br>本文针对保险精算这一高风险领域，提出了一种结合 token 级 log-probabilities 和贝叶斯网络的新型不确定性传播方法。通过校准置信度并建模智能体间的依赖关系，该框架有效解决了 LLM 多智能体系统在复杂工作流中的透明度和安全性问题，为高风险决策支持提供了可靠的运行时监控机制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25877v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25877.md)  |
 | <span style='display: inline-block; width: 42px;'>07-28</span> | **HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs**<br><sub>机构: Beijing University of Posts and Telecommunications<br>HiSkill 通过引入分层技能图结构，有效解决了现有 LLM 智能体技能学习中高层抽象与底层执行脱节以及技能关系利用不足的问题。该方法不仅提升了长程交互任务的成功率，还通过结构化检索优化了推理效率，为 LLM 智能体的经验重用提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.25853v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.25853.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/BUPT-GAMMA/HiSkill)</div> |
