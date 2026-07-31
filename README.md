@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.30_04:29-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_07.31_04:55-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月30日 04:29</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月31日 04:55</sub></summary>
 <br>
 
-- SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response 
-- AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution 
-- OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding 
-- Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents 
-- Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM 
+- ORCA-bench: How Ready Are Language Model Agents for Oncall? 
+- EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents 
+- Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game 
+- MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems 
+- Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-30</span> | **ORCA-bench: How Ready Are Language Model Agents for Oncall?**<br><sub>机构: Cornell Tech, Columbia University, Traversal<br>ORCA-bench 揭示了当前前沿编码 Agent 在生产级可靠性任务上的巨大能力缺口。由于真实生产系统比测试床更大、更动态且更具特异性，文中报告的差距仅是所需工程投入的下限。该研究强调，在将 Agent 安全地委托给生产可靠性之前，仍需大量的技术进步和工程投资。数据集已公开。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28545v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28545.md)  |
+| <span style='display: inline-block; width: 42px;'>07-30</span> | **EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents**<br><sub>机构: European Molecular Biology Laboratory (EMBL)<br>EMBL AI Librarian成功地将面向人类的文献检索基础设施转化为面向AI代理的知识层。通过LLM编排的自然语言查询规划和证据提取，它显著降低了AI代理获取生命科学知识的门槛，并在文献综合、事实核查和开放问答等多个基准测试中大幅超越了现有的网络搜索或基线方法，证明了专用知识层对提升垂直领域AI代理性能的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28229v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28229.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/petroni-lab/librarian)</div> |
+| <span style='display: inline-block; width: 42px;'>07-30</span> | **Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game**<br><sub>机构: University of Göttingen<br>本文通过引入 ParliamentBench 基准，填补了 LLM 在复杂社交欺骗和推理能力评估方面的空白。研究结果表明，虽然前沿模型在短期战术和即时推理上表现强劲，但在维持长期一致的欺骗策略方面仍存在显著缺陷。这为未来提升 LLM 在高风险环境下的安全性和鲁棒性提供了重要的评估工具和洞察方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28146v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28146.md)  |
+| <span style='display: inline-block; width: 42px;'>07-30</span> | **MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems**<br><sub>机构: Cornell University, University of Illinois Urbana-Champaign, Academia Sinica<br>MANTA 突破了传统多智能体系统拓扑结构固定的限制，首次实现了推理时的通信结构自我进化。通过结合任务条件的初始化和基于协作轨迹的在线结构更新，MANTA 能够动态调整智能体间的交互方式，显著提升了在复杂任务上的表现。这一工作证明了将自改进机制从内容层面扩展到架构层面的可行性和有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28527v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28527.md)  |
+| <span style='display: inline-block; width: 42px;'>07-30</span> | **Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis**<br><sub>机构: Peking University, Tsinghua University<br>Vibe-FDTR通过将领域代码和专家知识封装到代理技能中，成功解决了FDTR数据分析中高门槛、易出错和难复现的问题。实验证明，该方法不仅显著提高了分析的成功率和可靠性，还大幅降低了计算资源消耗，为实现低门槛、自主且可信的热计量学提供了一条有前景的技术路线。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28200v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28200.md)  |
 | <span style='display: inline-block; width: 42px;'>07-29</span> | **SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response**<br><sub>机构: Tongyi Lab, Alibaba Group; Alibaba Cloud Computing, Alibaba Group; The Hong Kong University of Science and Technology<br>SecRespond 填补了 LLM 智能体在妥协后事件响应评估领域的空白。通过引入基于真实受损主机磁盘快照的基准测试，该研究揭示了当前最先进的 LLM 智能体在主动取证和制定综合修复计划方面的严重不足。这表明，要构建能够胜任现实世界事件响应的智能体，仍需克服巨大的技术瓶颈，特别是在处理隐蔽威胁和复杂系统状态恢复方面。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26791v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26791.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Alibaba-NLP/qqr/tree/main/data/secrespond)</div> |
 | <span style='display: inline-block; width: 42px;'>07-29</span> | **AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution**<br><sub>机构: City University of Hong Kong<br>AgenticCANN 成功解决了在低资源、陌生硬件平台（Ascend C）上利用 LLM 进行自动算子生成的难题。通过结合知识增强以解决可行性瓶颈，以及阶段自适应的代理进化策略以优化性能，该框架不仅在代码生成的可行性上取得了突破（特别是在元素级和归一化算子上），还实现了显著的推理加速。这项工作证明了在极端数据稀缺场景下，通过结构化的知识注入和动态代理策略，可以有效克服 LLM 的分布外泛化限制，为 NPU 算子自动化开发提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.26661v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.26661.md)  |
 | <span style='display: inline-block; width: 42px;'>07-29</span> | **OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding**<br><sub>机构: Baidu Inc.<br>OmegaUse-OfficeVal 填补了 LLM 智能体在长周期办公任务中经济效能评估的空白。通过引入人类劳动时间和任务价格代理，该基准不仅评估任务完成质量，还量化了经济效率。尽管当前 LLM 在成本和速度上具有优势，但其在复杂办公任务中的交付质量仍需提升才能媲美人类专家。该工作为未来开发更具经济效益的智能体提供了重要的评估标准和数据支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.27155v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.27155.md)  |
