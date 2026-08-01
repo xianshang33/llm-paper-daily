@@ -1,44 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-07-31T04:55:07.264281+00:00",
-  "run_date": "2026-07-30",
+  "generated_at": "2026-08-01T04:48:17.116633+00:00",
+  "run_date": "2026-07-26",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.28545",
-      "date": "2026-07-30",
-      "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
+      "id": "arxiv:2607.23722",
+      "date": "2026-07-26",
+      "title": "E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Albert Gong",
-        "Kyuseong Choi",
-        "Abhineet Agarwal",
-        "Jason Schechner",
-        "Ryan Huang",
-        "Raj Agrawal",
-        "Anish Agarwal",
-        "Raaz Dwivedi"
+        "Weihuang Zheng",
+        "Tianyuan Zou",
+        "Eileen Ye",
+        "Alphet Liu",
+        "Youyong Kong",
+        "Ya-Qin Zhang",
+        "Duran Zheng",
+        "Maxm Pan"
       ],
-      "institution": "Cornell Tech, Columbia University, Traversal",
+      "institution": "Institute for AI Industry Research, Tsinghua University; Tencent",
       "summary": {
-        "zh": "ORCA-bench 揭示了当前前沿编码 Agent 在生产级可靠性任务上的巨大能力缺口。由于真实生产系统比测试床更大、更动态且更具特异性，文中报告的差距仅是所需工程投入的下限。该研究强调，在将 Agent 安全地委托给生产可靠性之前，仍需大量的技术进步和工程投资。数据集已公开。",
-        "en": "- **Background**: While Large Language Models (LLMs) excel at writing, patching, and searching code, on-call Root Cause Analysis (RCA) demands distinct capabilities: reasoning over noisy metrics, logs, traces, and..."
+        "zh": "E-Bench 填补了多步工具使用智能体评估的空白，通过完全合成的方法解决了真实世界场景中环境可控性和任务可扩展性的难题。实验结果表明，当前最先进的 LLM 在处理需要发现隐藏信息和组合多步工具调用的复杂产品场景时，可靠性和成功率仍有显著提升空间。该基准为评估和改进 LLM 智能体在真实有状态环境中的行动能力提供了重要标准。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps, a capability termed \"multi-step tool use,\" which involves gathering hidden..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28545v1",
-        "pdf": "https://arxiv.org/pdf/2607.28545v1",
+        "abs": "http://arxiv.org/abs/2607.23722v1",
+        "pdf": "https://arxiv.org/pdf/2607.23722v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28545.md",
-        "summary_en_path": "summary_en/2026-07/2607.28545.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28545.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28545.md"
+        "summary_zh_path": "summary/2026-07/2607.23722.md",
+        "summary_en_path": "summary_en/2026-07/2607.23722.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23722.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23722.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,43 +55,35 @@
       }
     },
     {
-      "id": "arxiv:2607.28229",
-      "date": "2026-07-30",
-      "title": "EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents",
+      "id": "arxiv:2607.23624",
+      "date": "2026-07-26",
+      "title": "Where Is the Cost of Third-Party API Routers in Agentic Software Development?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Luigi Sigillo",
-        "Matteo Silvestri",
-        "Francesco Tabaro",
-        "Rajat Bhatnagar",
-        "Syed Irtaza Mubashar",
-        "Matt Jeffryes",
-        "Daljit Nijjer",
-        "Vittorio Perera",
-        "Ola Spjuth",
-        "Julio Saez-Rodriguez",
-        "Melissa Harrison",
-        "Fabio Petroni"
+        "Donghao Fu",
+        "Jingxin Li",
+        "Xue Jiang",
+        "Yihong Dong"
       ],
-      "institution": "European Molecular Biology Laboratory (EMBL)",
+      "institution": "Shanghai Jiao Tong University, Beihang University, Peking University",
       "summary": {
-        "zh": "EMBL AI Librarian成功地将面向人类的文献检索基础设施转化为面向AI代理的知识层。通过LLM编排的自然语言查询规划和证据提取，它显著降低了AI代理获取生命科学知识的门槛，并在文献综合、事实核查和开放问答等多个基准测试中大幅超越了现有的网络搜索或基线方法，证明了专用知识层对提升垂直领域AI代理性能的重要性。",
-        "en": "- **Background**: AI agents are increasingly accessing the web, particularly in life sciences where they assist in literature summarization, bioinformatics, and hypothesis generation. These tasks rely heavily on..."
+        "zh": "本文通过实证研究揭示了第三方 API 路由器在代理式软件开发中带来的严重安全风险。研究表明，路由器侧的注入攻击能够轻易绕过现有的客户端防御机制，导致代码库被恶意修改。虽然客户端缓解措施有一定效果，但无法根本解决问题，因此文章呼吁需要在提供商侧建立输出完整性保证机制，以修复这一信任链缺口。",
+        "en": "- **Background**: In agentic software development, third-party API routers (e.g., LiteLLM, OpenRouter) have become a common middleware layer to unify access to diverse LLM providers. Coding agents often operate with..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28229v1",
-        "pdf": "https://arxiv.org/pdf/2607.28229v1",
-        "github": "https://github.com/petroni-lab/librarian"
+        "abs": "http://arxiv.org/abs/2607.23624v2",
+        "pdf": "https://arxiv.org/pdf/2607.23624v2",
+        "github": "https://github.com/Riyasushin/SIDEL"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28229.md",
-        "summary_en_path": "summary_en/2026-07/2607.28229.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28229.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28229.md"
+        "summary_zh_path": "summary/2026-07/2607.23624.md",
+        "summary_en_path": "summary_en/2026-07/2607.23624.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23624.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23624.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -108,37 +100,34 @@
       }
     },
     {
-      "id": "arxiv:2607.28146",
-      "date": "2026-07-30",
-      "title": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game",
+      "id": "arxiv:2607.23678",
+      "date": "2026-07-26",
+      "title": "Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Niklas Bauer",
-        "Lars Benedikt Kaesberg",
-        "Akiko Aizawa",
-        "Jan Philip Wahle",
-        "Bela Gipp",
-        "Terry Ruas"
+        "Mingzhou Fan",
+        "Siyuan Xu",
+        "Mingxuan Yuan"
       ],
-      "institution": "University of Göttingen",
+      "institution": null,
       "summary": {
-        "zh": "本文通过引入 ParliamentBench 基准，填补了 LLM 在复杂社交欺骗和推理能力评估方面的空白。研究结果表明，虽然前沿模型在短期战术和即时推理上表现强劲，但在维持长期一致的欺骗策略方面仍存在显著缺陷。这为未来提升 LLM 在高风险环境下的安全性和鲁棒性提供了重要的评估工具和洞察方向。",
-        "en": "- **Background**: As Large Language Models (LLMs) are deployed in high-stakes domains like healthcare and law, understanding their deceptive capabilities is critical for safety. Existing benchmarks (e.g., MMLU, GSM8K)..."
+        "zh": "本文确立了“注意力工程”（Attention Engineering）作为构建可扩展、智能多智能体图系统的新方向。通过引入AGAO框架，论文解决了多智能体系统中因规模扩大导致的注意力稀释和资源浪费问题，实现了从静态图执行到自适应目标聚焦执行的转变，为未来高效的大规模智能体协作提供了理论基础和技术路径。",
+        "en": "- **Background**: LLM-driven autonomous agent systems are evolving from single-agent iterative loops to multi-agent graph-based workflows. While graph-based orchestration supports flexible task decomposition and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28146v1",
-        "pdf": "https://arxiv.org/pdf/2607.28146v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.23678v1",
+        "pdf": "https://arxiv.org/pdf/2607.23678v1",
+        "github": "https://github.com/MingzhouFan97/AGAO"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28146.md",
-        "summary_en_path": "summary_en/2026-07/2607.28146.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28146.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28146.md"
+        "summary_zh_path": "summary/2026-07/2607.23678.md",
+        "summary_en_path": "summary_en/2026-07/2607.23678.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23678.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23678.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -155,37 +144,36 @@
       }
     },
     {
-      "id": "arxiv:2607.28527",
-      "date": "2026-07-30",
-      "title": "MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems",
+      "id": "arxiv:2607.23884",
+      "date": "2026-07-26",
+      "title": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mao-xun Huang",
-        "Jerry Wang",
-        "Yi-Cheng Lai",
-        "Zhengxin Zhang",
-        "Claire Cardie",
-        "Hen-Hsen Huang"
+        "Ionut Predoaia",
+        "Tuong Manh Vu",
+        "Konstantinos Barmpis",
+        "Dimitris Kolovos",
+        "Antonio García-Domínguez"
       ],
-      "institution": "Cornell University, University of Illinois Urbana-Champaign, Academia Sinica",
+      "institution": "University of York",
       "summary": {
-        "zh": "MANTA 突破了传统多智能体系统拓扑结构固定的限制，首次实现了推理时的通信结构自我进化。通过结合任务条件的初始化和基于协作轨迹的在线结构更新，MANTA 能够动态调整智能体间的交互方式，显著提升了在复杂任务上的表现。这一工作证明了将自改进机制从内容层面扩展到架构层面的可行性和有效性。",
-        "en": "MANTA breaks the limitation of fixed topology in traditional multi-agent systems by achieving self-evolution of communication structures during inference. By combining task-conditioned initialization with online..."
+        "zh": "本文通过实证研究对比了 MCP 和 A2A 两种协议在基于 LLM 的智能体系统中的应用。研究表明，MCP 适合追求轻量级和低复杂度的场景，但需开发者自行处理状态管理；而 A2A 适合需要复杂状态和多轮交互的场景，提供了强大的原生支持，但增加了系统复杂性。该研究为工程师在选择智能体协调协议时提供了重要的权衡参考，突出了协议设计对系统架构责任分配的影响。",
+        "en": "- **Background**: The rapid emergence of agentic systems composed of heterogeneous, tool-enhanced, and LLM-mediated components has raised practical questions about inter-agent coordination and protocol design. - **Why..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28527v1",
-        "pdf": "https://arxiv.org/pdf/2607.28527v1",
+        "abs": "http://arxiv.org/abs/2607.23884v1",
+        "pdf": "https://arxiv.org/pdf/2607.23884v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28527.md",
-        "summary_en_path": "summary_en/2026-07/2607.28527.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28527.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28527.md"
+        "summary_zh_path": "summary/2026-07/2607.23884.md",
+        "summary_en_path": "summary_en/2026-07/2607.23884.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23884.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23884.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -202,34 +190,35 @@
       }
     },
     {
-      "id": "arxiv:2607.28200",
-      "date": "2026-07-30",
-      "title": "Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis",
+      "id": "arxiv:2607.26083",
+      "date": "2026-07-26",
+      "title": "Cross-Model Cross-Language AI Coding Agent Performance: Accuracy and Speed of Parallel CLRS Algorithms",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Fuwei Yang",
-        "Weiheng Li",
-        "Bai Song"
+        "Shiqi Cheng",
+        "Evelyne Ringoot",
+        "Rabab Alomairy",
+        "Alan Edelman"
       ],
-      "institution": "Peking University, Tsinghua University",
+      "institution": "Massachusetts Institute of Technology (MIT), King Abdullah University of Science and Technology (KAUST)",
       "summary": {
-        "zh": "Vibe-FDTR通过将领域代码和专家知识封装到代理技能中，成功解决了FDTR数据分析中高门槛、易出错和难复现的问题。实验证明，该方法不仅显著提高了分析的成功率和可靠性，还大幅降低了计算资源消耗，为实现低门槛、自主且可信的热计量学提供了一条有前景的技术路线。",
-        "en": "- **Background**: Frequency-domain thermoreflectance (FDTR) is a widely used laser pump-probe technique for measuring thermal properties at micro- and nanoscales. However, its data analysis procedure is complex, heavily..."
+        "zh": "本文填补了 AI 编程代理在并行代码生成领域跨语言、跨模型性能评估的空白。研究结果表明，虽然当前的 AI 代理能够以较低的提示成本生成正确的并行代码，但实现真正的性能加速仍面临巨大挑战，且高度依赖于具体的算法类型和编程语言特性。特别是 Claude Sonnet 4.6 在性能优化方面表现出色，而 GPT 5.4 在效率提升上存在明显短板。该研究呼吁社区在评估 LLM...",
+        "en": "- **Background**: AI coding agents are ubiquitous in software engineering, with extensive existing research on their serial code accuracy and speed. However, initial findings suggest their parallel programming..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28200v1",
-        "pdf": "https://arxiv.org/pdf/2607.28200v1",
+        "abs": "http://arxiv.org/abs/2607.26083v1",
+        "pdf": "https://arxiv.org/pdf/2607.26083v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28200.md",
-        "summary_en_path": "summary_en/2026-07/2607.28200.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28200.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28200.md"
+        "summary_zh_path": "summary/2026-07/2607.26083.md",
+        "summary_en_path": "summary_en/2026-07/2607.26083.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26083.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26083.md"
       },
       "signals": {
         "priority_keyword": "Agent"
