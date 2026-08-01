@@ -1,50 +1,44 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-08-01T04:48:17.116633+00:00",
-  "run_date": "2026-07-26",
+  "generated_at": "2026-08-01T07:43:46.521408+00:00",
+  "run_date": "2026-07-25",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2607.23722",
-      "date": "2026-07-26",
-      "title": "E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios",
+      "paper_id": "2607.22962",
+      "date": "2026-07-25",
+      "title": "ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
       "authors": [
-        "Weihuang Zheng",
-        "Tianyuan Zou",
-        "Eileen Ye",
-        "Alphet Liu",
-        "Youyong Kong",
-        "Ya-Qin Zhang",
-        "Duran Zheng",
-        "Maxm Pan"
+        "Yan Zhang",
+        "Shibo Li"
       ],
-      "abstract": "Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps: gathering hidden information, composing tool calls, and committing state changes. We refer to this capability as multi-step tool use. Existing benchmarks have advanced tool-use agent evaluation, but often focus on isolated API calls, short trajectories, or settings that are difficult to scale or control. We introduce E-Bench, a fully synthetic benchmark with 323 state-changing tasks across three product domains: Honor of Kings, QQ Music, and Tencent Meeting. E-Bench decouples environment synthesis from task synthesis: graph-guided database filling builds reusable, orphan-free product environments, while generator-solver asymmetry creates tasks with both an information gap and a tool gap, requiring agents to discover hidden data and compose multiple tool calls before changing state. Outcomes are graded deterministically by database-state diffs. Since both environments and tasks are synthetic, E-Bench is controllable at the environment level and scalable at the task level. Benchmarking 11 cutting-edge LLMs shows that multi-step tool use remains challenging: Pass^3 stays below 60% for the strongest models, and even with code execution in the E-Bench-Code extension, reliability (Pass^3) remains below 70%.",
+      "abstract": "LLM agents that operate over many turns accumulate facts in an external memory store and reuse them as premises for downstream reasoning. A hallucinated fact written at one step therefore persists as a false premise for every subsequent step, a failure mode we call memory contamination. Existing memory management addresses retrieval and capacity but not write-time correctness; this admission problem cannot be solved by utility- or recency-based criteria, and uncontrolled contamination compounds across long trajectories. We propose ConsistencyGate, a write-time admission gate that, before committing a candidate fact m extracted from context c, queries the LLM K times for a soft support score and admits m only when the average exceeds a threshold. The mechanism is model-agnostic, requires no fine-tuning, and reduces to a single forward pass in a log-probability variant for latency-sensitive deployments. To measure the effect on natural data, we construct two real-conversation benchmarks (LoCoMo-Contam and MSC-Contam) by planting controlled single-detail corruptions in long-term conversations from LoCoMo and MSC, and complement them with a structured synthetic corpus (MemContam) that isolates a near-oracle upper bound. Across four LLM backbones, ConsistencyGate reduces contamination on every benchmark relative to a write-everything baseline, with the cost concentrated on facts that are stated only implicitly in the source context. We release all three benchmarks together with the gate implementation.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23722v1",
-        "pdf": "https://arxiv.org/pdf/2607.23722v1",
+        "abs": "http://arxiv.org/abs/2607.22962v1",
+        "pdf": "https://arxiv.org/pdf/2607.22962v1",
         "github": null,
         "blog": null
       },
-      "institution": "Institute for AI Industry Research, Tsinghua University; Tencent",
+      "institution": "Florida State University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）正逐渐从单纯的问答系统转变为能够与有状态环境进行多步交互的智能体（Agents）。这种能力被称为“多步工具使用”，涉及收集隐藏信息、组合工具调用以及提交状态更改。\n- **已有工作的不足**：现有的基准测试通常侧重于孤立的 API 调用、短轨迹任务，或者其设置难以扩展和控制。它们往往缺乏对真实产品中复杂、长 horizon 且涉及状态修改的交互场景的有效评估。\n\n## 文章的核心贡献点\n- **提出了一个 E-Bench**：这是一个完全合成的基准测试，包含跨越三个产品领域（王者荣耀、QQ 音乐、腾讯会议）的 323 个状态变更任务。\n- **挑战1：环境构建的可控性与可扩展性难**。传统真实环境难以大规模复制且状态不可控。论文通过解耦环境合成与任务合成，利用图引导的数据库填充构建可重用、无孤立节点的产品环境，实现了环境级的可控性和任务级的可扩展性。\n- **挑战2：评估的多步推理与隐蔽信息发现难**。现有基准缺乏对“信息缺口”和“工具缺口”的同时考察。论文采用生成器-求解器不对称机制创建任务，强制智能体在改变状态前发现隐藏数据并组合多次工具调用，并通过确定性的数据库状态差异（database-state diffs）进行严格 grading。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：E-Bench 覆盖王者荣耀、QQ 音乐和腾讯会议三个真实产品域。评估方式是通过比较最终数据库状态与 ground truth 的差异来进行确定性评分。\n- **评估结果**：对 11 种前沿 LLM 的基准测试显示，多步工具使用仍然极具挑战性。即使是最强的模型，其 Pass^3 指标也低于 60%。\n- **对比与扩展**：在引入代码执行的 E-Bench-Code 扩展中，可靠性（Pass^3）仍低于 70%。图表展示了 Avg@3 (%) 与每个任务的总 API 成本之间的关系，指出了成本效率的帕累托前沿。由于为了防止针对特定基准的训练或过拟合，作者未开源环境和任务数据，这与许多开源静态基准不同，强调了其作为封闭、高保真测试集的特性。\n\n#### 总结\nE-Bench 填补了多步工具使用智能体评估的空白，通过完全合成的方法解决了真实世界场景中环境可控性和任务可扩展性的难题。实验结果表明，当前最先进的 LLM 在处理需要发现隐藏信息和组合多步工具调用的复杂产品场景时，可靠性和成功率仍有显著提升空间。该基准为评估和改进 LLM 智能体在真实有状态环境中的行动能力提供了重要标准。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps, a capability termed \"multi-step tool use,\" which involves gathering hidden information, composing tool calls, and committing state changes.\n- **Limitations of Existing Work**: Current benchmarks often focus on isolated API calls, short trajectories, or settings that are difficult to scale and control, failing to adequately evaluate agentic behavior in realistic, state-modifying interaction scenarios.\n\n## Core Contributions\n- **Proposed E-Bench**: A fully synthetic benchmark featuring 323 state-changing tasks across three real-world product domains: Honor of Kings, QQ Music, and Tencent Meeting.\n- **Challenge 1: Controllability and Scalability of Environment Construction**. Real-world environments are hard to replicate at scale and control. The paper decouples environment synthesis from task synthesis, using graph-guided database filling to build reusable, orphan-free product environments, ensuring environment-level controllability and task-level scalability.\n- **Challenge 2: Evaluation of Multi-step Reasoning and Hidden Information Discovery**. Existing benchmarks lack simultaneous assessment of \"information gaps\" and \"tool gaps.\" The paper employs generator-solver asymmetry to create tasks that require agents to discover hidden data and compose multiple tool calls before changing state, evaluated deterministically via database-state diffs.\n\n## Implementation and Evaluation\n- **Implementation Details**: E-Bench covers three product domains. Evaluation is performed by deterministically grading outcomes based on differences between the final database state and the ground truth.\n- **Evaluation Results**: Benchmarking 11 cutting-edge LLMs reveals that multi-step tool use remains challenging. Even the strongest models achieve a Pass^3 score below 60%.\n- **Comparison and Extensions**: In the E-Bench-Code extension with code execution, reliability (Pass^3) remains below 70%. The paper presents the trade-off between performance (Avg@3) and API cost per task. Unlike many open static benchmarks, E-Bench environments and tasks are not open-sourced to prevent overfitting, emphasizing its role as a closed, high-fidelity test set.\n\n## 4. Conclusion\nE-Bench addresses the gap in evaluating multi-step tool-use agents by solving the issues of environment controllability and task scalability through a fully synthetic approach. Experimental results indicate that current state-of-the-art LLMs still have significant room for improvement in reliability and success rates when handling complex product scenarios requiring hidden information discovery and multi-step tool composition. This benchmark provides a crucial standard for assessing and enhancing LLM agent capabilities in real-world stateful environments.",
-      "render_excerpt": "机构: Institute for AI Industry Research, Tsinghua University; Tencent<br>E-Bench 填补了多步工具使用智能体评估的空白，通过完全合成的方法解决了真实世界场景中环境可控性和任务可扩展性的难题。实验结果表明，当前最先进的 LLM 在处理需要发现隐藏信息和组合多步工具调用的复杂产品场景时，可靠性和成功率仍有显著提升空间。该基准为评估和改进 LLM 智能体在真实有状态环境中的行动能力提供了重要标准。",
-      "render_excerpt_en": "Institution: Institute for AI Industry Research, Tsinghua University; Tencent<br>## 1. What the Paper Did - **Background**: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps, a capability termed \"multi-step tool use,\" which involves gathering hidden information, composing tool calls, and committing state changes. - **Limitations of Existing Work**: Current benchmarks often focus on isolated API calls, short trajectories, or settings that are difficult to scale and control, failing to adequately evaluate agentic behavior in realistic, state-modifying interaction scenarios.",
+      "summary_cn": "## 文章做了什么\n- **背景**：长程大语言模型（LLM）智能体在外部记忆库中积累事实，并将其作为后续推理的前提。如果某一步写入的事实是幻觉（错误的），该错误将作为错误前提持续影响后续所有步骤，这种现象被称为“记忆污染”。\n- **已有工作的局限性**：现有的记忆管理研究主要关注检索效率和存储容量，而忽视了写入时的正确性。基于效用、新颖性或近期性的准入标准无法识别幻觉事实，因为错误事实在这些维度上可能与正确事实无异，导致污染在长轨迹中不断累积且无法通过现有机制解决。\n\n## 文章的核心贡献点\n- **提出了一个 ConsistencyGate**：一种模型无关、无需微调的写入时准入控制机制，通过自一致性评分来决定是否将候选事实写入记忆。\n- **挑战1：如何在不依赖额外训练数据或微调的情况下，准确评估候选事实的真实性？**\n  - **难点**：传统方法难以区分语义相关但事实错误的内容，且缺乏针对写入正确性的专用判别器。\n  - **解决方案**：ConsistencyGate 在写入前对 LLM 进行 K 次查询以获取软支持分数（soft support score），仅当平均分超过阈值时才允许写入，利用模型自身的自一致性来验证事实。\n- **挑战2：如何在保证低延迟的同时实现高效的实时验证？**\n  - **难点**：多次采样验证会显著增加推理延迟，不适合对延迟敏感的应用场景。\n  - **解决方案**：提出了一种基于对数概率（log-probability）的变体，将多次查询简化为单次前向传播，从而在保持验证效果的同时大幅降低计算成本，适应延迟敏感型部署。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **基准构建**：为了评估自然数据上的效果，构建了两个真实对话基准（LoCoMo-Contam 和 MSC-Contam），通过在长对话中植入受控的单细节腐败；同时构建了结构化合成语料库（MemContam）以隔离出接近 oracle 的上限性能。\n- **实验结果**：在四个不同的 LLM 骨干网络上进行测试，与“全量写入”（Write-everything）基线相比，ConsistencyGate 在所有基准上均显著降低了记忆污染率。\n- **对比分析**：相比于基于效用或近期性的传统准入策略，ConsistencyGate 能有效拦截幻觉事实。虽然验证成本主要集中在源上下文中隐含陈述的事实上，但整体显著提升了下游问答的准确性（QA F1），证明了其在防止错误传播方面的有效性。\n\n#### 总结\n本文指出了 LLM 智能体中未被充分研究的“记忆污染”问题，即写入时的幻觉会污染后续推理。作者提出了 ConsistencyGate，一种基于自一致性的写入时准入门控机制，通过验证事实支持度而非效用来决定写入。该方法无需微调，且提供低延迟变体。实验表明，该方法在多个基准上有效减少了记忆污染并提升了下游任务性能，填补了现有记忆管理在写入正确性控制方面的空白。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Long-horizon LLM agents accumulate facts in external memory stores to use as premises for downstream reasoning. If a hallucinated fact is written at any step, it persists as a false premise for all subsequent steps, a failure mode termed \"memory contamination.\"\n- **Limitations of Existing Work**: Current memory management focuses on retrieval efficiency and capacity, ignoring write-time correctness. Admission criteria based on utility, novelty, or recency are structurally blind to contamination because hallucinated facts can be just as relevant and recent as correct ones, leading to compounding errors that existing mechanisms cannot resolve.\n\n## Core Contributions\n- **Proposed ConsistencyGate**: A model-agnostic, training-free write-time admission gate that uses self-consistency scoring to decide whether to commit a candidate fact to memory.\n- **Challenge 1: How to accurately assess the factual correctness of candidate facts without additional training data or fine-tuning?**\n  - **Difficulty**: Traditional methods struggle to distinguish semantically relevant but factually incorrect content, lacking specialized discriminators for write-time correctness.\n  - **Solution**: ConsistencyGate queries the LLM K times before writing to obtain a soft support score. A fact is admitted only if the average score exceeds a threshold, leveraging the model's own self-consistency for verification.\n- **Challenge 2: How to achieve efficient real-time verification while maintaining low latency?**\n  - **Difficulty**: Multiple sampling rounds for verification significantly increase inference latency, making it unsuitable for latency-sensitive applications.\n  - **Solution**: The authors propose a log-probability variant that reduces the verification process to a single forward pass, significantly lowering computational costs while maintaining effectiveness, thus enabling deployment in latency-sensitive scenarios.\n\n## Implementation and Evaluation\n- **Benchmark Construction**: To evaluate performance on natural data, two real-conversation benchmarks (LoCoMo-Contam and MSC-Contam) were constructed by planting controlled single-detail corruptions in long conversations. A structured synthetic corpus (MemContam) was also created to isolate near-oracle upper-bound performance.\n- **Experimental Results**: Tested across four different LLM backbones, ConsistencyGate significantly reduced memory contamination rates on all benchmarks compared to the \"Write-everything\" baseline.\n- **Comparison**: Unlike traditional utility- or recency-based admission policies, ConsistencyGate effectively intercepts hallucinated facts. While the verification cost is concentrated on facts implicitly stated in the source context, the method significantly improves downstream Question Answering accuracy (QA F1), demonstrating its effectiveness in preventing error propagation.\n\n#### Summary\nThis paper addresses the under-explored issue of \"memory contamination\" in LLM agents, where write-time hallucinations pollute subsequent reasoning. The authors propose ConsistencyGate, a self-consistency-based write-time admission gate that verifies factual support rather than utility. The method requires no fine-tuning and offers a low-latency variant. Experiments show that it effectively reduces memory contamination and improves downstream task performance across multiple benchmarks, filling the gap in existing memory management regarding write-time correctness control.",
+      "render_excerpt": "机构: Florida State University<br>本文指出了 LLM 智能体中未被充分研究的“记忆污染”问题，即写入时的幻觉会污染后续推理。作者提出了 ConsistencyGate，一种基于自一致性的写入时准入门控机制，通过验证事实支持度而非效用来决定写入。该方法无需微调，且提供低延迟变体。实验表明，该方法在多个基准上有效减少了记忆污染并提升了下游任务性能，填补了现有记忆管理在写入正确性控制方面的空白。",
+      "render_excerpt_en": "Institution: Florida State University<br>This paper addresses the under-explored issue of \"memory contamination\" in LLM agents, where write-time hallucinations pollute subsequent reasoning. The authors propose ConsistencyGate, a self-consistency-based write-time admission gate that verifies factual support rather than utility. The method requires no fine-tuning and offers a low-latency variant.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-26T15:38:28Z"
+        "captured_at": "2026-07-25T00:08:09Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-26"
+        "captured_at": "2026-07-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -59,142 +53,76 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.23624",
-      "date": "2026-07-26",
-      "title": "Where Is the Cost of Third-Party API Routers in Agentic Software Development?",
+      "paper_id": "2607.23124",
+      "date": "2026-07-25",
+      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
       "authors": [
-        "Donghao Fu",
-        "Jingxin Li",
-        "Xue Jiang",
-        "Yihong Dong"
+        "Hao Jiang",
+        "Gangtao Xin",
+        "Yingdi Huang",
+        "Guojie Zhu",
+        "Jiangshan Zhang",
+        "Xinyuan Lin",
+        "Yunkun Xu",
+        "Chengyu Shen",
+        "Wenlong Fei",
+        "Jiawei Li",
+        "Yujie Fu",
+        "Sichen Kang",
+        "Tingyu Xie",
+        "Yedi Hu",
+        "Jingren Zhang",
+        "Hongcheng Gao",
+        "Jianshu Zeng",
+        "Chong Chen",
+        "Chang Guo",
+        "Chao Feng",
+        "Feng Wang",
+        "Fulin Lin",
+        "Jinchao Ma",
+        "Lang Mei",
+        "Li Huang",
+        "Liyan Liu",
+        "Qing He",
+        "Shuting Tao",
+        "Siyu Mo",
+        "Xiangnan Chen",
+        "Xiaohan Yu",
+        "Xiaoyang Li",
+        "Yanheng Hou",
+        "Yanyu Wu",
+        "Zhihan Yang",
+        "Wentao Zhang",
+        "Yang Gao",
+        "Zhao Cao"
       ],
-      "abstract": "Third-party API routers have become a common layer that unifies access across increasingly diverse LLM providers. In coding-agent workflows, high-autonomy operation is widely adopted because it reduces interaction overhead. As a result, a third-party API router, which sits between the agent and the upstream provider, inevitably occupies the trusted path. It can inspect and modify every request and response, yet no mechanism verifies alignment between the provider's output and the repository-level actions ultimately executed by the agent. Consequently, client-side permission mechanisms may become ineffective in practice. Whether this control gap produces real, hard-to-detect effects on software development tasks remains empirically unmeasured. In this paper, we conduct an empirical study of router-side injection in coding agents, examining four intervention levels of increasing subtlety: Response Substitution (L1), Response Append (L2), LLM-Polished Injection (L3), and LLM-Polished with Distribution Alignment Injection (L4). Moreover, we develop SIDEL, a framework for trace recording, replay, injection, and defense evaluation, with a curated dataset of 400 samples. We evaluate four representative coding agents, and further evaluate whitelist-based execution control and LLM review. Router-side intervention substantially alters repository-level actions and remains difficult for existing client-side safeguards to detect. Without additional mitigations, all evaluated agents achieved a defense success rate of 0 percent across all injection levels. Client-side mitigations and reactive reviews improve resistance but do not fully restore end-to-end control, motivating provider-side output-integrity guarantees. Our code is available at https://github.com/Riyasushin/SIDEL.",
+      "abstract": "Large language model agents have advanced rapidly, yet progress remains fragmented across domains, capabilities, task difficulty, and interaction settings. We frame this as full-scenario agentic scaling and present AgentOmnia, a framework coordinating task-space definition, data synthesis, post-training, evaluation, and improvement across To-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications. An extensible Domain x Capability x Atomic Difficulty taxonomy aligns these stages and enables fine-grained diagnosis with OmniaBench. AgentOmnia combines bidirectional environment-task synthesis with tool-dependency, program-structured, and solver-based pipelines, constructing 5,018 stateful environments with 255,375 tools and 52,361 tasks. Programs, solvers, and verifiers provide correctness signals, while supervised fine-tuning, online agentic reinforcement learning, and a rollback curriculum support post-training. Evaluation failures translate into Product Requirement Documents (PRDs) for targeted self-evolution. Starting from Qwen3-30B-A3B-Thinking-2507, AgentOmnia raises the pass rate on the OmniaBench challenging subset from 9.16% to 37.11% and the macro-average across OmniaBench, $τ^2$-Bench, DeepPlanning, and VitaBench from 22.86% to 41.69%. Under a unified protocol,it leads the evaluated agentic post-trained baselines on OmniaBench and retains the highest four-benchmark macro-average. It also surpasses Qwen3-235B-A22B-Thinking-2507 on all four benchmarks and exceeds Qwen3.5-35B-A3B on the macro-average. Gains span three application splits, ten capability dimensions, eight atomic-difficulty factors, and 76 of 90 level-1 domains, indicating broad rather than category-specific improvement. A one-round study provides initial evidence for PRD-guided self-evolution, motivating validation at larger scales and in industrial settings.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23624v2",
-        "pdf": "https://arxiv.org/pdf/2607.23624v2",
-        "github": "https://github.com/Riyasushin/SIDEL",
-        "blog": null
-      },
-      "institution": "Shanghai Jiao Tong University, Beihang University, Peking University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：在代理式软件开发（Agentic Software Development）中，第三方 API 路由器（如 LiteLLM、OpenRouter）已成为统一访问不同 LLM 提供商的常见中间层。由于编码智能体通常采用高自主性操作以减少交互开销，路由器位于智能体与上游提供商之间的可信路径上。\n- **已有工作为什么解决不了**：现有的客户端权限机制假设 LLM 的输出是可信的，但路由器可以检查并修改每一个请求和响应，且目前缺乏机制来验证提供商输出与智能体最终执行的仓库级操作之间的一致性。这种控制缺口导致客户端安全措施在实践中可能失效，且其实际影响此前未经过实证测量。\n\n## 文章的核心贡献点\n- **提出了一个 SIDEL 框架**：用于轨迹记录、重放、注入和防御评估的实验框架，并构建了一个包含 400 个样本的精选数据集。\n- **挑战1：路由器侧注入的隐蔽性与多样性**。难点在于攻击者可以在不改变上下文解释的情况下替换或追加恶意命令，甚至通过 LLM 润色使注入内容在分布上与正常输出对齐，从而绕过基于规则的检测。论文通过定义四个逐渐隐蔽的干预级别（L1 响应替换、L2 响应追加、L3 LLM 润色注入、L4 分布对齐注入）来系统化地模拟和评估这些攻击。\n- **挑战2：现有客户端防御机制的有效性不足**。难点在于智能体的高自主性使其难以实时验证每个操作的语义安全性，且传统的白名单或事后审查难以应对经过精心伪装的注入。论文通过评估四种代表性编码智能体及两种缓解措施（白名单执行控制、LLM 审查），量化了防御缺口，证明了仅靠客户端手段无法完全恢复端到端的控制权。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：开发了 SIDEL 框架，支持对编码智能体的交互轨迹进行录制和重放，并实现了上述四种级别的注入攻击。实验评估了四种主流的编码智能体。\n- **Evaluation 结果**：\n    - 在没有额外缓解措施的情况下，所有被评估的智能体在所有注入级别下的防御成功率均为 0%。\n    - 路由器侧的干预显著改变了仓库级的操作行为，且现有的客户端 safeguards 难以检测。\n    - 引入客户端缓解措施（如白名单）和反应式审查（LLM Review）能提高抵抗能力，但未能完全恢复端到端的控制。\n- **对比**：与以往主要关注提示词注入或模型本身安全性的工作不同，本研究聚焦于供应链中的“中间人”风险，实证揭示了 API 路由器作为非受信中介带来的具体安全成本，填补了该领域实证研究的空白。\n\n#### 总结\n本文通过实证研究揭示了第三方 API 路由器在代理式软件开发中带来的严重安全风险。研究表明，路由器侧的注入攻击能够轻易绕过现有的客户端防御机制，导致代码库被恶意修改。虽然客户端缓解措施有一定效果，但无法根本解决问题，因此文章呼吁需要在提供商侧建立输出完整性保证机制，以修复这一信任链缺口。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: In agentic software development, third-party API routers (e.g., LiteLLM, OpenRouter) have become a common middleware layer to unify access to diverse LLM providers. Coding agents often operate with high autonomy to reduce interaction overhead, placing the router on the trusted path between the agent and the upstream provider.\n- **Why Existing Work Falls Short**: Existing client-side permission mechanisms assume LLM outputs are trustworthy. However, routers can inspect and modify every request and response, and there is no mechanism to verify alignment between the provider's output and the repository-level actions executed by the agent. This control gap renders client-side safeguards potentially ineffective, and its real-world impact had not been empirically measured prior to this work.\n\n## Core Contributions\n- **Proposed SIDEL Framework**: A framework for trace recording, replay, injection, and defense evaluation, accompanied by a curated dataset of 400 samples.\n- **Challenge 1: Subtlety and Diversity of Router-Side Injection**. The difficulty lies in attackers replacing or appending malicious commands without altering contextual explanations, or using LLMs to polish injections to align with normal output distributions, thereby bypassing rule-based detection. The paper addresses this by defining four levels of increasing subtlety (L1 Response Substitution, L2 Response Append, L3 LLM-Polished Injection, L4 Distribution Alignment Injection) to systematically simulate and evaluate these attacks.\n- **Challenge 2: Insufficiency of Existing Client-Side Defenses**. The challenge is that high-autonomy agents struggle to semantically validate every operation in real-time, and traditional whitelists or post-hoc reviews fail against carefully disguised injections. The paper quantifies this defense gap by evaluating four representative coding agents and two mitigation strategies (whitelist-based execution control, LLM review), demonstrating that client-side measures alone cannot fully restore end-to-end control.\n\n## Implementation and Evaluation\n- **Implementation**: The SIDEL framework was developed to record and replay agent interaction trajectories and implement the four levels of injection attacks. Four mainstream coding agents were evaluated.\n- **Evaluation Results**:\n    - Without additional mitigations, all evaluated agents achieved a 0% defense success rate across all injection levels.\n    - Router-side interventions substantially altered repository-level actions and remained difficult for existing client-side safeguards to detect.\n    - Client-side mitigations (e.g., whitelists) and reactive reviews improved resistance but did not fully restore end-to-end control.\n- **Comparison**: Unlike previous works focusing on prompt injection or model-intrinsic security, this study focuses on the \"man-in-the-middle\" risk in the supply chain, empirically revealing the specific security costs of API routers as untrusted intermediaries and filling a gap in empirical research.\n\n## 4. Conclusion\nThis paper empirically reveals the severe security risks posed by third-party API routers in agentic software development. It demonstrates that router-side injection attacks can easily bypass existing client-side defenses, leading to malicious modifications of code repositories. While client-side mitigations offer some protection, they are insufficient to address the root cause. The paper calls for provider-side output integrity guarantees to repair this trust chain gap.",
-      "render_excerpt": "机构: Shanghai Jiao Tong University, Beihang University, Peking University<br>本文通过实证研究揭示了第三方 API 路由器在代理式软件开发中带来的严重安全风险。研究表明，路由器侧的注入攻击能够轻易绕过现有的客户端防御机制，导致代码库被恶意修改。虽然客户端缓解措施有一定效果，但无法根本解决问题，因此文章呼吁需要在提供商侧建立输出完整性保证机制，以修复这一信任链缺口。",
-      "render_excerpt_en": "Institution: Shanghai Jiao Tong University, Beihang University, Peking University<br>## 1. What the Paper Did - **Background**: In agentic software development, third-party API routers (e.g., LiteLLM, OpenRouter) have become a common middleware layer to unify access to diverse LLM providers. Coding agents often operate with high autonomy to reduce interaction overhead, placing the router on the trusted path between the agent and the upstream provider.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-26T12:15:09Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-26"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.23678",
-      "date": "2026-07-26",
-      "title": "Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems",
-      "authors": [
-        "Mingzhou Fan",
-        "Siyuan Xu",
-        "Mingxuan Yuan"
-      ],
-      "abstract": "Large language models (LLMs) enable autonomous agents for reasoning, planning, and tool use. Recent systems increasingly organize these agents as graphs of specialized, interconnected nodes. Although graph-based orchestration supports flexible decomposition and coordination, it creates a key challenge: \\textbf{attention allocation}. As workflows grow, existing approaches often execute graph components uniformly, wasting resources on irrelevant or low-impact tasks. We introduce \\textbf{Attention Orchestration}, a paradigm that extends Transformer-style attention from token representations to workflow-level agent coordination. Our framework, \\textbf{Adaptive Goal-aware Attention Orchestration (AGAO)}, dynamically estimates agent importance based on user objectives, graph dependencies, and computational constraints. AGAO combines three components: (1) goal-aware attention, measuring semantic relevance between user goals and agent capabilities; (2) topology-aware attention, modeling structural dependencies in agent graphs; and (3) resource-aware attention, allocating budgets and execution priorities across heterogeneous agents. Together, these mechanisms transform static agent graphs into adaptive systems that focus computation on goal-critical reasoning paths. Experiments across diverse multi-agent workloads show that AGAO improves task effectiveness while reducing unnecessary computation, latency, and token consumption compared with existing graph-based execution strategies. Our work establishes \\textbf{Attention Engineering} as a direction for scalable, intelligent multi-agent systems. Code: https://github.com/MingzhouFan97/AGAO.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.23678v1",
-        "pdf": "https://arxiv.org/pdf/2607.23678v1",
-        "github": "https://github.com/MingzhouFan97/AGAO",
-        "blog": null
-      },
-      "institution": null,
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）驱动的自主智能体系统正从单智能体循环执行向多智能体图工作流演进。基于图的编排支持灵活的任务分解和协调，但随着工作流规模扩大，出现了“注意力分配”的关键挑战。\n- **已有工作的局限**：现有的图基智能体系统通常均匀地执行图中的所有组件，导致计算资源被浪费在与目标无关或低影响的任务上。随着节点数量增加，这种均匀执行导致了“注意力稀释”，无法动态聚焦于对达成用户目标至关重要的推理路径，缺乏可扩展性和效率。\n\n## 文章的核心贡献点\n- **提出了一个范式**：提出了“注意力编排”（Attention Orchestration）新范式，将Transformer中的注意力机制从Token级别扩展到工作流级别的智能体协调，并具体实现了自适应目标感知注意力编排框架（AGAO）。\n- **挑战1：语义相关性匹配难**。在复杂任务中，如何准确识别哪些智能体的能力与用户当前目标最相关是困难的，因为自然语言目标与智能体功能描述之间存在语义鸿沟。**解决方法**：引入“目标感知注意力”（Goal-aware Attention），通过计算用户目标与智能体能力之间的语义相关性得分，动态量化每个智能体对当前目标的重要性。\n- **挑战2：结构与资源约束下的动态调度难**。智能体之间存在复杂的依赖关系，且不同智能体消耗的计算资源异构，如何在满足拓扑依赖的同时优化资源分配极具挑战。**解决方法**：结合“拓扑感知注意力”（Topology-aware Attention）建模图结构依赖，以及“资源感知注意力”（Resource-aware Attention）根据计算预算和优先级动态分配执行资源，从而将静态图转化为自适应的执行系统。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：作者在多样化的多智能体工作负载上进行了广泛实验。AGAO框架通过整合三种注意力机制，实现了对智能体重要性的动态估计。\n- **对比结果**：与现有的基于图的智能体执行策略相比，AGAO在提高任务有效性（Task Effectiveness）的同时，显著减少了不必要的计算量、延迟和Token消耗。实验证明，该方法能够有效避免资源浪费，提升系统整体效率。\n\n#### 总结\n本文确立了“注意力工程”（Attention Engineering）作为构建可扩展、智能多智能体图系统的新方向。通过引入AGAO框架，论文解决了多智能体系统中因规模扩大导致的注意力稀释和资源浪费问题，实现了从静态图执行到自适应目标聚焦执行的转变，为未来高效的大规模智能体协作提供了理论基础和技术路径。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM-driven autonomous agent systems are evolving from single-agent iterative loops to multi-agent graph-based workflows. While graph-based orchestration supports flexible task decomposition and coordination, it introduces a critical challenge of \"attention allocation\" as workflow scales increase.\n- **Limitations of Existing Work**: Current graph-based agent systems often execute all graph components uniformly, wasting computational resources on irrelevant or low-impact tasks. This uniform execution leads to \"attention dilution,\" failing to dynamically focus on reasoning paths critical to achieving user goals, thereby lacking scalability and efficiency.\n\n## Core Contributions\n- **Proposed a Paradigm**: Introduced \"Attention Orchestration,\" a new paradigm extending Transformer-style attention from token-level representation to workflow-level agent coordination, specifically implemented as the Adaptive Goal-aware Attention Orchestration (AGAO) framework.\n- **Challenge 1: Semantic Relevance Matching**. It is difficult to accurately identify which agents' capabilities are most relevant to complex user goals due to the semantic gap between natural language goals and agent function descriptions. **Solution**: The paper introduces \"Goal-aware Attention,\" which dynamically quantifies the importance of each agent by measuring the semantic relevance between user goals and agent capabilities.\n- **Challenge 2: Dynamic Scheduling under Structural and Resource Constraints**. Managing complex dependencies among agents while optimizing heterogeneous resource consumption is challenging. **Solution**: The method combines \"Topology-aware Attention\" to model structural dependencies and \"Resource-aware Attention\" to dynamically allocate computational budgets and execution priorities, transforming static graphs into adaptive execution systems.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: Extensive experiments were conducted across diverse multi-agent workloads. The AGAO framework integrates three attention mechanisms to dynamically estimate agent importance.\n- **Comparison Results**: Compared to existing graph-based agent execution strategies, AGAO improves task effectiveness while significantly reducing unnecessary computation, latency, and token consumption. The results demonstrate that the method effectively avoids resource waste and enhances overall system efficiency.\n\n## 4. Conclusion\nThis paper establishes \"Attention Engineering\" as a new direction for building scalable and intelligent multi-agent graph systems. By introducing the AGAO framework, the paper addresses the issues of attention dilution and resource waste caused by scaling in multi-agent systems, achieving a shift from static graph execution to adaptive goal-focused execution, providing a theoretical foundation and technical path for future efficient large-scale agent collaboration.",
-      "render_excerpt": "本文确立了“注意力工程”（Attention Engineering）作为构建可扩展、智能多智能体图系统的新方向。通过引入AGAO框架，论文解决了多智能体系统中因规模扩大导致的注意力稀释和资源浪费问题，实现了从静态图执行到自适应目标聚焦执行的转变，为未来高效的大规模智能体协作提供了理论基础和技术路径。",
-      "render_excerpt_en": "## 1. What the Paper Did - **Background**: LLM-driven autonomous agent systems are evolving from single-agent iterative loops to multi-agent graph-based workflows. While graph-based orchestration supports flexible task decomposition and coordination, it introduces a critical challenge of \"attention allocation\" as workflow scales increase.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-07-26T14:23:33Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-07-26"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2607.23884",
-      "date": "2026-07-26",
-      "title": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
-      "authors": [
-        "Ionut Predoaia",
-        "Tuong Manh Vu",
-        "Konstantinos Barmpis",
-        "Dimitris Kolovos",
-        "Antonio García-Domínguez"
-      ],
-      "abstract": "Recent industry practice has seen the rapid emergence of agentic systems composed of heterogeneous, tool- and LLM-mediated agent components, raising practical questions about inter-agent coordination and protocol design. This paper presents an implementation-grounded comparison of the Model Context Protocol (MCP) and the Agent2Agent (A2A) protocol, from a multi-agent systems engineering perspective, using an inter-agent coordination scenario involving LLM-based agents. We evaluate an MCP-based and an A2A-based multi-agent implementation of the same software engineering task against a set of requirements derived from prior literature and discussions with industry partners, including agent discoverability, multi-part messaging, multi-turn conversations, asynchronous communication, observability, interoperability, and access control. The results evidence that MCP can support inter-agent coordination in constrained LLM-based systems through a comparatively lightweight implementation model with lower coordination complexity, although coordination concerns such as conversational state management and task lifecycle handling must be implemented explicitly at the application layer. In contrast, A2A provides richer native support for stateful, multi-turn coordination through protocol-level abstractions for tasks and lifecycle management, but this comes with substantially greater implementation and coordination complexity. Given the narrow scope of the evaluated coordination pattern, these findings are presented as design observations from an empirical experience report rather than general claims of protocol suitability or superiority across broader classes of MAS, highlighting trade-offs and how protocol abstractions shape the distribution of coordination responsibilities in contemporary agentic systems.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.23884v1",
-        "pdf": "https://arxiv.org/pdf/2607.23884v1",
+        "abs": "http://arxiv.org/abs/2607.23124v1",
+        "pdf": "https://arxiv.org/pdf/2607.23124v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of York",
+      "institution": "Huawei Cloud Post-Training Team",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）的进步，由异构、工具增强且基于 LLM 的智能体组件构成的智能体系统迅速兴起。这引发了关于智能体间协调和协议设计的实际问题。\n- **已有工作为什么解决不了**：现有的多智能体系统（MAS）文献主要关注经典代理定义，而当代基于 LLM 的智能体系统在架构上有所不同，缺乏针对这种新型异构智能体间通信协议（如 MCP 和 A2A）在实际工程实现中的对比研究，特别是在可发现性、状态管理、生命周期处理等具体工程需求方面的权衡尚不明确。\n\n## 文章的核心贡献点\n- **提出了一个**：基于实现的 Model Context Protocol (MCP) 与 Agent2Agent (A2A) 协议的实证对比研究，通过相同的软件工程任务场景评估两种协议在智能体协调中的表现。\n- **挑战1：如何在保持低复杂度的同时实现基本的智能体协调？**\n  - **难点**：复杂的协议会增加实现负担，阻碍快速部署。\n  - **解决方法**：论文指出 MCP 提供了一种相对轻量级的实现模型，降低了协调复杂度，适合受限的 LLM 系统，但需应用层显式处理状态和生命周期。\n- **挑战2：如何原生支持有状态的多轮对话和任务生命周期管理？**\n  - **难点**：简单的协议难以处理复杂的交互状态和长期运行的任务流程。\n  - **解决方法**：论文发现 A2A 通过协议级的任务和生命周期管理抽象，提供了更丰富的原生支持，但以显著增加实现和协调复杂性为代价。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究者实现了基于 MCP 和基于 A2A 的两个多智能体系统，执行相同的软件工程任务。评估指标包括智能体可发现性、多部分消息传递、多轮对话、异步通信、可观察性、互操作性和访问控制。\n- **结果对比**：\n  - **MCP**：优势在于实现轻量、协调复杂度低；劣势是会话状态管理和任务生命周期处理必须在应用层显式实现，缺乏原生支持。\n  - **A2A**：优势在于通过协议级抽象原生支持有状态的多轮协调和任务生命周期；劣势是实现和协调的复杂性显著更高。\n- **结论性质**：由于评估范围局限于特定的协调模式，结果被视为实证经验报告中的设计观察，强调了协议抽象如何塑造当代智能体系统中协调责任的分布，而非宣称某一方在所有 MAS 类别中普遍优越。\n\n#### 总结\n本文通过实证研究对比了 MCP 和 A2A 两种协议在基于 LLM 的智能体系统中的应用。研究表明，MCP 适合追求轻量级和低复杂度的场景，但需开发者自行处理状态管理；而 A2A 适合需要复杂状态和多轮交互的场景，提供了强大的原生支持，但增加了系统复杂性。该研究为工程师在选择智能体协调协议时提供了重要的权衡参考，突出了协议设计对系统架构责任分配的影响。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: The rapid emergence of agentic systems composed of heterogeneous, tool-enhanced, and LLM-mediated components has raised practical questions about inter-agent coordination and protocol design.\n- **Why Existing Work Falls Short**: Classical Multi-Agent Systems (MAS) literature does not fully address the architectural differences of contemporary LLM-based agents. There is a lack of implementation-grounded comparisons between emerging protocols like Model Context Protocol (MCP) and Agent2Agent (A2A), particularly regarding engineering trade-offs in discoverability, state management, and lifecycle handling.\n\n## Core Contributions\n- **Proposed**: An empirical, implementation-grounded comparative study of MCP and A2A protocols for inter-agent coordination in LLM-based systems, evaluated through a common software engineering task.\n- **Challenge 1: How to achieve basic agent coordination with low complexity?**\n  - **Difficulty**: Complex protocols can hinder rapid deployment and increase implementation burden.\n  - **Solution**: The paper demonstrates that MCP offers a comparatively lightweight implementation model with lower coordination complexity, suitable for constrained systems, though it requires explicit application-layer handling for state and lifecycle.\n- **Challenge 2: How to natively support stateful multi-turn conversations and task lifecycle management?**\n  - **Difficulty**: Simple protocols struggle with complex interaction states and long-running task flows.\n  - **Solution**: The paper finds that A2A provides richer native support for stateful coordination through protocol-level abstractions for tasks and lifecycle management, albeit at the cost of substantially greater implementation and coordination complexity.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The authors implemented two multi-agent systems (one MCP-based, one A2A-based) to perform the same software engineering task. They evaluated them against requirements such as agent discoverability, multi-part messaging, multi-turn conversations, asynchronous communication, observability, interoperability, and access control.\n- **Results Comparison**:\n  - **MCP**: Advantages include a lightweight implementation and lower coordination complexity. Disadvantages include the lack of native support for conversational state management and task lifecycle, which must be handled explicitly at the application layer.\n  - **A2A**: Advantages include rich native support for stateful, multi-turn coordination via protocol-level abstractions. Disadvantages include significantly higher implementation and coordination complexity.\n- **Nature of Findings**: Given the narrow scope, findings are presented as design observations from an empirical experience report, highlighting trade-offs and how protocol abstractions shape the distribution of coordination responsibilities, rather than making general claims of superiority.\n\n## 4. Conclusion\nThis paper provides an empirical comparison of MCP and A2A protocols in LLM-based agentic systems. It reveals that MCP is suitable for scenarios prioritizing lightweight implementation and low complexity, requiring developers to manage state manually. In contrast, A2A is better suited for complex, stateful interactions, offering robust native support but introducing higher complexity. The study offers critical trade-off insights for engineers selecting coordination protocols, emphasizing the impact of protocol design on architectural responsibility distribution.",
-      "render_excerpt": "机构: University of York<br>本文通过实证研究对比了 MCP 和 A2A 两种协议在基于 LLM 的智能体系统中的应用。研究表明，MCP 适合追求轻量级和低复杂度的场景，但需开发者自行处理状态管理；而 A2A 适合需要复杂状态和多轮交互的场景，提供了强大的原生支持，但增加了系统复杂性。该研究为工程师在选择智能体协调协议时提供了重要的权衡参考，突出了协议设计对系统架构责任分配的影响。",
-      "render_excerpt_en": "Institution: University of York<br>## 1. What the Paper Did - **Background**: The rapid emergence of agentic systems composed of heterogeneous, tool-enhanced, and LLM-mediated components has raised practical questions about inter-agent coordination and protocol design. - **Why Existing Work Falls Short**: Classical Multi-Agent Systems (MAS) literature does not fully address the architectural differences of contemporary LLM-based agents.",
+      "summary_cn": "## 文章做了什么\n\n**背景**\n大型语言模型（LLM）智能体发展迅速，但在不同领域、能力维度、任务难度和交互设置上的进展呈现碎片化。现有的研究往往局限于特定场景或单一能力，缺乏覆盖 ToC（面向消费者）、ToB（面向企业）和 ToE（面向员工）全场景的统一扩展框架。\n\n**已有的工作为什么解决不了**\n现有工作难以实现“全场景智能体扩展”，主要原因在于缺乏统一的分类体系来对齐数据合成、后训练和评估阶段，导致模型在复杂、多步骤且依赖工具的任务中泛化能力不足。此外，传统方法难以提供细粒度的诊断信号，无法针对特定失败模式进行定向优化，限制了智能体在真实复杂环境中的表现。\n\n## 文章的核心贡献点\n\n**提出了一个 AgentOmnia 框架**\n该框架协调了任务空间定义、数据合成、后训练、评估及迭代改进的全流程，旨在实现全场景智能体的规模化扩展。\n\n**挑战1：全场景任务空间的构建与数据合成难**\n*   **挑战描述**：覆盖广泛领域和能力的智能体需要海量高质量、状态化的训练数据，手动构建成本极高且难以保证多样性和正确性。\n*   **解决方法**：AgentOmnia 结合了双向环境-任务合成技术，利用工具依赖、程序结构和基于求解器的流水线，构建了包含 5,018 个状态化环境、255,375 个工具和 52,361 个任务的大规模数据集，并通过程序和验证器提供正确的监督信号。\n\n**挑战2：复杂任务的后训练与定向进化难**\n*   **挑战描述**：智能体在长程规划和工具使用中容易出错，传统的微调方法难以有效纠正复杂逻辑错误，且缺乏从评估失败中自动学习进化的机制。\n*   **解决方法**：采用监督微调（SFT）、在线智能体强化学习和回滚课程学习相结合的后训练策略。特别地，将评估失败转化为产品需求文档（PRD），指导模型的定向自我进化，从而显著提升其在困难子集上的通过率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n\n**实现细节**\n*   **基础模型**：Qwen3-30B-A3B-Thinking-2507。\n*   **基准测试**：发布了 OmniaBench，并联合 τ²-Bench, DeepPlanning, VitaBench 进行统一协议评估。\n*   **数据规模**：构建了大规模的代码驱动状态化环境和任务库。\n\n**评估结果与对比**\n*   **显著提升**：在 OmniaBench 挑战性子集上，通过率从 9.16% 提升至 37.11%；在四个基准测试（OmniaBench, τ²-Bench, DeepPlanning, VitaBench）的宏观平均分从 22.86% 提升至 41.69%。\n*   **超越更大参数模型**：AgentOmnia-30B 在所有四个基准测试上均超越了 Qwen3-235B-A22B-Thinking-2507，并在宏观平均分上超过了 Qwen3.5-35B-A3B。\n*   **领先同类基线**：在统一评估协议下，AgentOmnia 在 OmniaBench 上领先于其他经过智能体后训练的基线模型，并保持四个基准测试的最高宏观平均分。\n*   **广泛增益**：性能提升覆盖了 ToC/ToB/ToE 三大应用场景、10 个能力维度、8 个原子难度因子以及 90 个一级领域中的 76 个，证明了其通用性而非特定类别的提升。\n\n#### 总结\n\nAgentOmnia 通过建立“领域×能力×原子难度”的可扩展分类体系，解决了智能体发展中碎片化的问题。其核心创新在于大规模状态化环境的自动化合成以及基于 PRD 引导的自我进化机制。实验表明，仅使用 30B 参数模型，AgentOmnia 就能在全场景基准测试中取得超越千亿参数模型的性能，为工业级智能体的规模化部署和持续进化提供了有效的框架和实证支持。",
+      "summary_en": "## 1. What the Paper Did\n\n**Background**\nLarge language model (LLM) agents have advanced rapidly, but progress remains fragmented across domains, capabilities, task difficulties, and interaction settings. Existing research often focuses on specific scenarios or single capabilities, lacking a unified scaling framework that covers To-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications.\n\n**Why Existing Work Falls Short**\nCurrent methods struggle with \"full-scenario agentic scaling\" due to the lack of a unified taxonomy to align data synthesis, post-training, and evaluation. This misalignment limits generalization in complex, multi-step, tool-dependent tasks. Furthermore, traditional approaches lack fine-grained diagnostic signals, making it difficult to perform targeted optimizations for specific failure modes.\n\n## Core Contributions\n\n**Proposed AgentOmnia Framework**\nA comprehensive framework coordinating task-space definition, data synthesis, post-training, evaluation, and iterative improvement for full-scenario agent scaling.\n\n**Challenge 1: Construction of Full-Scenario Task Space and Data Synthesis**\n*   **Challenge**: Building massive, high-quality, stateful training data covering broad domains and capabilities is prohibitively expensive manually and hard to ensure diversity and correctness.\n*   **Solution**: AgentOmnia combines bidirectional environment-task synthesis with tool-dependency, program-structured, and solver-based pipelines. It constructs 5,018 stateful environments, 255,375 tools, and 52,361 tasks, using programs and verifiers to provide correct supervision signals.\n\n**Challenge 2: Post-Training and Targeted Evolution for Complex Tasks**\n*   **Challenge**: Agents often fail in long-horizon planning and tool use. Traditional fine-tuning struggles to correct complex logical errors, and there is a lack of mechanisms to automatically learn from evaluation failures.\n*   **Solution**: The framework employs Supervised Fine-Tuning (SFT), online agentic reinforcement learning, and a rollback curriculum. Crucially, it translates evaluation failures into Product Requirement Documents (PRDs) to guide targeted self-evolution, significantly improving pass rates on challenging subsets.\n\n## Implementation and Evaluation\n\n**Implementation Details**\n*   **Base Model**: Qwen3-30B-A3B-Thinking-2507.\n*   **Benchmarks**: Released OmniaBench and evaluated under a unified protocol alongside τ²-Bench, DeepPlanning, and VitaBench.\n*   **Data Scale**: Constructed a large-scale dataset of code-driven stateful environments and tasks.\n\n**Evaluation Results and Comparisons**\n*   **Significant Improvement**: Pass rate on the OmniaBench challenging subset increased from 9.16% to 37.11%. The macro-average score across four benchmarks rose from 22.86% to 41.69%.\n*   **Outperforming Larger Models**: AgentOmnia-30B surpassed Qwen3-235B-A22B-Thinking-2507 on all four benchmarks and exceeded Qwen3.5-35B-A3B in macro-average score.\n*   **Leading Baselines**: Under a unified evaluation protocol, AgentOmnia led other agentic post-trained baselines on OmniaBench and maintained the highest macro-average across the four benchmarks.\n*   **Broad Gains**: Improvements spanned ToC/ToB/ToE scenarios, 10 capability dimensions, 8 atomic difficulty factors, and 76 out of 90 level-1 domains, demonstrating general rather than category-specific improvements.\n\n## 4. Conclusion\n\nAgentOmnia addresses the fragmentation in agent development by establishing an extensible \"Domain × Capability × Atomic Difficulty\" taxonomy. Its core innovations lie in the automated synthesis of large-scale stateful environments and a PRD-guided self-evolution mechanism. Experiments demonstrate that a 30B parameter model enhanced by AgentOmnia achieves performance surpassing much larger models across full-scenario benchmarks, providing an effective framework and empirical evidence for the scalable deployment and continuous evolution of industrial-grade agents.",
+      "render_excerpt": "机构: Huawei Cloud Post-Training Team<br>AgentOmnia 通过建立“领域×能力×原子难度”的可扩展分类体系，解决了智能体发展中碎片化的问题。其核心创新在于大规模状态化环境的自动化合成以及基于 PRD 引导的自我进化机制。实验表明，仅使用 30B 参数模型，AgentOmnia 就能在全场景基准测试中取得超越千亿参数模型的性能，为工业级智能体的规模化部署和持续进化提供了有效的框架和实证支持。",
+      "render_excerpt_en": "Institution: Huawei Cloud Post-Training Team<br>## 1. What the Paper Did **Background** Large language model (LLM) agents have advanced rapidly, but progress remains fragmented across domains, capabilities, task difficulties, and interaction settings. Existing research often focuses on specific scenarios or single capabilities, lacking a unified scaling framework that covers To-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-26T23:05:08Z"
+        "captured_at": "2026-07-25T09:58:24Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-26"
+        "captured_at": "2026-07-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -209,42 +137,152 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2607.26083",
-      "date": "2026-07-26",
-      "title": "Cross-Model Cross-Language AI Coding Agent Performance: Accuracy and Speed of Parallel CLRS Algorithms",
+      "paper_id": "2607.23045",
+      "date": "2026-07-25",
+      "title": "Stress-testing large language model agents in a robotic chemistry laboratory",
       "authors": [
-        "Shiqi Cheng",
-        "Evelyne Ringoot",
-        "Rabab Alomairy",
-        "Alan Edelman"
+        "Lulu Guo",
+        "Yingkai Sun",
+        "Xiaobo Li",
+        "Luyao Ge",
+        "Ziming Wang",
+        "Haitao Zheng",
+        "Jingyu Li",
+        "Huijuan Zhang",
+        "Bingxu Chen",
+        "Daobin Liu",
+        "Yuebo Liu",
+        "Jie Li",
+        "Xiaohui Li",
+        "Linjiang Chen",
+        "Yi Luo",
+        "Jun Jiang"
       ],
-      "abstract": "AI coding agents have quickly become omnipresent in software engineering. Their serial performance, both in terms of accuracy and speed, has been extensively covered. However, recent initial results suggest their parallel programming capabilities lag behind serial programming capabilities. This paper presents a cross-language evaluation of three coding agents -- Cursor's Composer 2.0, GPT 5.4, and Claude Sonnet 4.6 -- on parallel code generation across three algorithm categories -- sorting, graph traversal, and search -- in C++, Python, and Julia. For each algorithm and language pair, we prompt a coding agent to produce a parallel implementation from a serial baseline, track the prompting effort required to achieve both functional correctness and performance improvements, and measure speedup against both custom serial baselines and third-party library implementations. We find that coding agents can produce correct parallel implementations with modest prompting effort, but that achieving meaningful speedup is heavily algorithm- and language-dependent. Sonnet 4.6 delivers the strongest overall performance gains, whereas GPT 5.4 produces no measurable speedups despite consistent correctness. C++ is most consistently parallelizable for graph algorithms, while Python and Julia achieve the largest speedups on search algorithms: no single language dominates across all categories. Python and Julia each achieve speedup on some graph algorithms but regress on others. These findings underscore the impact of including runtime performance efficiency as a main LLM performance metric, in addition to accuracy, particularly for parallel implementations.",
+      "abstract": "AI is evaluated through knowledge, reasoning and plan generation, yet scientific agency requires reliable physical action and adaptation to evidence. Here, we use a robotic chemistry laboratory as a physical-world testbed to make scientific agency measurable. Its 45 modular workstations exposed as machine-readable skills enabled 4,608 trials. Only 3.3% of trials produced expert-assessed executable workflows under laboratory constraints; even the best system achieved 28.1%. Long-horizon planning remained a challenge: only three executable workflows exceeded 30 operations, although the longest contained 44. Across five rounds, experimental feedback prompted local adjustments but no workflow-level replanning or analytical-method redesign. By making physical executability and evidence-driven replanning measurable, our study provides an evidence-based assessment of deployment readiness and a diagnostic framework to guide closed-loop improvements towards physically grounded autonomous research.",
       "links": {
-        "abs": "http://arxiv.org/abs/2607.26083v1",
-        "pdf": "https://arxiv.org/pdf/2607.26083v1",
+        "abs": "http://arxiv.org/abs/2607.23045v1",
+        "pdf": "https://arxiv.org/pdf/2607.23045v1",
         "github": null,
         "blog": null
       },
-      "institution": "Massachusetts Institute of Technology (MIT), King Abdullah University of Science and Technology (KAUST)",
+      "institution": "University of Science and Technology of China",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：AI 编程助手在软件工程中的应用日益普及，现有研究已广泛评估了其在串行代码生成上的准确性和速度。然而，初步迹象表明，这些模型在并行编程能力上明显落后于串行编程能力。\n- **已有工作的不足**：现有的基准测试（如 ParEval, PCEBench）通常局限于单一编程语言（主要是 C++ 或 Python），或者仅评估代码翻译而非原生生成。此外，大多数评估侧重于功能正确性，缺乏对运行时性能效率（即加速比）的系统性跨语言、跨模型对比，无法全面反映 AI 代理在高性能计算（HPC）场景下的实际效能。\n\n## 文章的核心贡献点\n- **提出了一个跨模型、跨语言的 AI 编程代理并行代码生成评估框架**：针对排序、图遍历和搜索三类经典算法，在 C++、Python 和 Julia 三种语言中，系统评估了 Cursor Composer 2.0、GPT 5.4 和 Claude Sonnet 4.6 的性能。\n- **挑战1：并行代码的功能正确性与实现难度**。并行编程涉及复杂的同步和竞争条件，难以保证正确性。论文通过追踪从串行基线到并行实现的提示工程努力程度，发现 AI 代理只需适度的提示即可生成功能正确的并行代码，证明了其在语法和逻辑层面的基本能力。\n- **挑战2：实现有意义的运行时加速比**。生成正确的并行代码并不等同于获得性能提升，且不同语言和算法的并行化潜力差异巨大。论文通过对比自定义串行基线和第三方库，发现加速比高度依赖于算法类别和编程语言；例如，Sonnet 4.6 实现了最强的整体性能增益，而 GPT 5.4 虽然代码正确但无 measurable 加速，揭示了准确性与效率之间的差距。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：选取三种主流 AI 编程代理（Cursor Composer 2.0, GPT 5.4, Claude Sonnet 4.6），在三种语言（C++, Python, Julia）上实现三类 CLRS 算法（排序、图遍历、搜索）的并行版本。\n- **评估指标**：功能正确性、提示努力程度、相对于串行基线和第三方库的加速比。\n- **主要结果**：\n    - **模型对比**：Claude Sonnet 4.6 在整体性能增益上表现最佳；GPT 5.4 虽能 consistently 生成正确代码，但未产生可测量的加速效果；Cursor Composer 2.0 表现居中。\n    - **语言与算法依赖**：没有一种语言在所有类别中占据主导地位。C++ 在图算法的并行化上表现最一致；Python 和 Julia 在搜索算法上取得了最大的加速比；但在某些图算法上，Python 和 Julia 甚至出现性能回退。\n- **与相关工作对比**：相较于 ParEval 等仅关注单一语言或正确性的研究，本文强调了将“运行时性能效率”作为 LLM 核心评估指标的重要性，并揭示了跨语言环境的复杂性，指出单纯的正确性评估不足以衡量并行编程助手的真实价值。\n\n#### 总结\n本文填补了 AI 编程代理在并行代码生成领域跨语言、跨模型性能评估的空白。研究结果表明，虽然当前的 AI 代理能够以较低的提示成本生成正确的并行代码，但实现真正的性能加速仍面临巨大挑战，且高度依赖于具体的算法类型和编程语言特性。特别是 Claude Sonnet 4.6 在性能优化方面表现出色，而 GPT 5.4 在效率提升上存在明显短板。该研究呼吁社区在评估 LLM 编程能力时，必须将运行时效率纳入核心指标，特别是在高性能计算和并行处理场景中。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: AI coding agents are ubiquitous in software engineering, with extensive existing research on their serial code accuracy and speed. However, initial findings suggest their parallel programming capabilities significantly lag behind serial ones.\n- **Limitations of Existing Work**: Current benchmarks (e.g., ParEval, PCEBench) often focus on single languages (mostly C++ or Python) or code translation rather than native generation. They primarily evaluate functional correctness, lacking a systematic cross-language and cross-model comparison of runtime performance efficiency (speedup), which fails to capture real-world HPC efficacy.\n\n## Core Contributions\n- **Proposed a cross-model, cross-language evaluation framework for AI coding agents generating parallel code**: Systematically evaluated Cursor Composer 2.0, GPT 5.4, and Claude Sonnet 4.6 across three algorithm categories (sorting, graph traversal, search) in C++, Python, and Julia.\n- **Challenge 1: Functional Correctness in Parallel Implementation**. Parallel programming involves complex synchronization and race conditions, making correctness difficult to achieve. The paper tracks prompting effort from serial baselines, finding that agents can produce functionally correct parallel code with modest effort, demonstrating basic syntactic and logical competence.\n- **Challenge 2: Achieving Meaningful Runtime Speedup**. Generating correct parallel code does not guarantee performance gains, and parallelization potential varies widely across languages and algorithms. By comparing against custom serial baselines and third-party libraries, the study reveals that speedup is highly algorithm- and language-dependent; for instance, Sonnet 4.6 delivered strong performance gains, while GPT 5.4 showed no measurable speedup despite correct code, highlighting the gap between accuracy and efficiency.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated three AI agents (Cursor Composer 2.0, GPT 5.4, Claude Sonnet 4.6) implementing parallel versions of three CLRS algorithm types in three languages (C++, Python, Julia).\n- **Metrics**: Functional correctness, prompting effort, and speedup relative to both custom serial baselines and third-party library implementations.\n- **Key Results**:\n    - **Model Comparison**: Claude Sonnet 4.6 achieved the strongest overall performance gains. GPT 5.4 consistently produced correct code but yielded no measurable speedups. Cursor Composer 2.0 performed intermediately.\n    - **Language and Algorithm Dependency**: No single language dominated all categories. C++ was most consistently parallelizable for graph algorithms. Python and Julia achieved the largest speedups on search algorithms but regressed on some graph algorithms.\n- **Comparison with Related Work**: Unlike studies like ParEval that focus on single languages or correctness alone, this work emphasizes \"runtime performance efficiency\" as a critical LLM metric. It reveals the complexity of cross-language environments, showing that correctness alone is insufficient for evaluating parallel programming assistants.\n\n## 4. Conclusion\nThis paper fills the gap in cross-language, cross-model performance evaluation of AI coding agents for parallel code generation. Results indicate that while current agents can generate correct parallel code with low prompting overhead, achieving true performance acceleration remains challenging and is heavily dependent on algorithm type and language specifics. Notably, Claude Sonnet 4.6 excelled in performance optimization, whereas GPT 5.4 showed significant shortcomings in efficiency improvement. The study calls for the inclusion of runtime efficiency as a core metric in LLM evaluation, particularly for high-performance computing and parallel processing scenarios.",
-      "render_excerpt": "机构: Massachusetts Institute of Technology (MIT), King Abdullah University of Science and Technology (KAUST)<br>本文填补了 AI 编程代理在并行代码生成领域跨语言、跨模型性能评估的空白。研究结果表明，虽然当前的 AI 代理能够以较低的提示成本生成正确的并行代码，但实现真正的性能加速仍面临巨大挑战，且高度依赖于具体的算法类型和编程语言特性。特别是 Claude Sonnet 4.6 在性能优化方面表现出色，而 GPT 5.4 在效率提升上存在明显短板。该研究呼吁社区在评估 LLM 编程能力时，必须将运行时效率纳入核心指标，特别是在高性能计算和并行处理场景中。",
-      "render_excerpt_en": "Institution: Massachusetts Institute of Technology (MIT), King Abdullah University of Science and Technology (KAUST)<br>## 1. What the Paper Did - **Background**: AI coding agents are ubiquitous in software engineering, with extensive existing research on their serial code accuracy and speed. However, initial findings suggest their parallel programming capabilities significantly lag behind serial ones.",
+      "summary_cn": "## 文章做了什么\n- **背景**：人工智能在科学领域的应用正从知识推理和计划生成向端到端的自主科学研究迈进，这要求AI代理不仅能提出假设，还能在机器人实验室中执行可靠的物理操作并根据实验证据进行适应。\n- **已有工作为什么解决不了**：尽管现有的AI代理在科学推理和实验规划方面表现出越来越高的自主性，且机器人实验室已实现自动化闭环实验，但缺乏系统性、定量的评估来确立AI代理将科学意图转化为机器人实验室中可执行动作的可靠性。特别是在集成异构能力的模块化机器人实验室中，如何确保动作符合仪器、参数和样本约束，并能在多轮实验中保持计划连贯性和适应性，仍是未解难题。\n\n## 文章的核心贡献点\n- **提出了一个**基于模块化机器人化学实验室的物理世界测试平台，用于对大型语言模型（LLM）驱动的科学代理进行端到端的压力测试，使科学代理能力（物理可执行性和证据驱动的重新规划）变得可测量。\n- **挑战1：物理可执行性低**。难点在于LLM生成的计划往往忽略具体的实验室硬件约束（如仪器接口、容器格式、操作参数），导致大部分计划无法直接执行。论文通过构建包含45个模块化工作站的标准化机器人实验室，将硬件能力暴露为机器可读的技能，进行了4608次试验，量化了不同系统在严格实验室约束下的工作流可执行率（仅3.3%的试验产生专家评估的可执行工作流，最佳系统为28.1%）。\n- **挑战2：长程规划与证据驱动的重新规划能力不足**。难点在于当实验反馈出现时，代理难以进行工作流级别的重新规划或分析方法的重设计，仅能进行局部调整。论文通过多轮实验发现，即使是最长的可执行工作流也仅含44步操作，且在五轮实验中，实验反馈并未触发工作流级别的重新规划，揭示了当前代理在长视界规划和深层适应上的局限性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：研究团队构建了一个通用的机器人催化实验室，包含45个模块化自动化工作站（涵盖液体处理、固体称量、离心、干燥、电化学、光催化、高温高压反应及多种光谱/色谱表征设备）。这些工作站通过标准化的容器格式和机械臂接口连接，并将操作封装为机器可读的技能。\n- **Evaluation 结果**：\n    - 在4608次试验中，仅有3.3%的试验产生了经专家评估的可执行工作流。\n    - 表现最好的系统达到了28.1%的可执行率。\n    - 长程规划依然困难：只有三个可执行工作流超过30个操作步骤，最长为44步。\n    - 适应性方面：在五轮实验迭代中，实验反馈仅促使了局部调整，未观察到工作流级别的重新规划或分析方法的重新设计。\n- **对比**：虽然文中未详细列出与其他特定SOTA模型的逐一对比表格，但明确指出此前研究缺乏这种系统性的定量评估。该研究通过揭示能力边界和失败模式，提供了比以往仅关注推理或单次任务成功率更全面的部署就绪度评估。\n\n#### 总结\n本研究通过在一个高度模块化的机器人化学实验室中对LLM驱动的科学代理进行大规模压力测试，首次系统地量化了AI代理在物理世界中的科学代理能力。结果表明，当前最先进的LLM代理在将科学意图转化为符合物理约束的可执行动作方面仍存在显著缺陷，尤其是在长程规划和基于证据的深度重新规划方面。该研究不仅提供了基于证据的部署就绪度评估，还为未来开发具有物理 grounding 的自主科学研究代理提供了诊断框架和改进方向。",
+      "summary_en": "## 1. What the paper did\n- **Background**: AI applications in science are evolving from knowledge reasoning and plan generation to end-to-end autonomous scientific research. This requires AI agents to not only propose hypotheses but also execute reliable physical actions in robotic laboratories and adapt based on experimental evidence.\n- **Why existing work falls short**: While current AI agents show increasing autonomy in scientific reasoning and planning, and robotic labs enable automated closed-loop experiments, there is a lack of systematic, quantitative assessment of how reliably AI agents can translate scientific intent into executable actions in robotic labs. Specifically, ensuring actions comply with hardware constraints (instruments, parameters, samples) and maintaining plan coherence and adaptability across multiple experimental rounds in modular, heterogeneous robotic labs remains an unsolved challenge.\n\n## Core Contributions\n- **Proposed a** physical-world testbed based on a modular robotic chemistry laboratory to conduct end-to-end stress tests on LLM-driven scientific agents, making scientific agency capabilities (physical executability and evidence-driven replanning) measurable.\n- **Challenge 1: Low physical executability**. The difficulty lies in LLM-generated plans often ignoring specific laboratory hardware constraints (e.g., instrument interfaces, container formats, operational parameters), rendering most plans unexecutable. The paper addressed this by building a standardized robotic lab with 45 modular workstations, exposing hardware capabilities as machine-readable skills. Through 4,608 trials, it quantified the workflow executability rate under strict constraints (only 3.3% of trials produced expert-assessed executable workflows, with the best system achieving 28.1%).\n- **Challenge 2: Insufficient long-horizon planning and evidence-driven replanning**. The difficulty is that agents struggle to perform workflow-level replanning or redesign analytical methods when receiving experimental feedback, limiting themselves to local adjustments. The paper revealed through multi-round experiments that even the longest executable workflows contained only 44 steps, and no workflow-level replanning was observed across five rounds, highlighting limitations in long-horizon planning and deep adaptation.\n\n## Implementation and Evaluation\n- **Implementation and Deployment**: The team built a general-purpose robotic catalysis laboratory with 45 modular automated workstations (covering liquid handling, solid weighing, centrifugation, drying, electrochemical, photocatalysis, high-T/P reactions, and various spectroscopic/chromatographic characterizations). These stations are connected via standardized container formats and robotic gripper interfaces, with operations encapsulated as machine-readable skills.\n- **Evaluation Results**:\n    - Out of 4,608 trials, only 3.3% resulted in expert-assessed executable workflows.\n    - The best-performing system achieved a 28.1% executability rate.\n    - Long-horizon planning remains challenging: only three executable workflows exceeded 30 steps, with the longest being 44 steps.\n    - Adaptability: In five rounds of iterative experiments, experimental feedback only triggered local adjustments; no workflow-level replanning or analytical method redesign was observed.\n- **Comparison**: While the paper does not provide a detailed table comparing specific SOTA models, it explicitly states that previous studies lacked such systematic quantitative assessment. This study offers a more comprehensive assessment of deployment readiness by revealing capability boundaries and failure modes, surpassing prior works that focused merely on reasoning or single-task success rates.\n\n## 4. Conclusion\nThis study systematically quantifies the scientific agency capabilities of AI agents in the physical world by conducting large-scale stress tests on LLM-driven agents in a highly modular robotic chemistry laboratory. The results indicate that state-of-the-art LLM agents still have significant deficiencies in translating scientific intent into physically constrained executable actions, particularly in long-horizon planning and evidence-based deep replanning. The study not only provides an evidence-based assessment of deployment readiness but also offers a diagnostic framework and direction for improving the development of physically grounded autonomous scientific research agents.",
+      "render_excerpt": "机构: University of Science and Technology of China<br>本研究通过在一个高度模块化的机器人化学实验室中对LLM驱动的科学代理进行大规模压力测试，首次系统地量化了AI代理在物理世界中的科学代理能力。结果表明，当前最先进的LLM代理在将科学意图转化为符合物理约束的可执行动作方面仍存在显著缺陷，尤其是在长程规划和基于证据的深度重新规划方面。该研究不仅提供了基于证据的部署就绪度评估，还为未来开发具有物理 grounding 的自主科学研究代理提供了诊断框架和改进方向。",
+      "render_excerpt_en": "Institution: University of Science and Technology of China<br>## 1. What the paper did - **Background**: AI applications in science are evolving from knowledge reasoning and plan generation to end-to-end autonomous scientific research. This requires AI agents to not only propose hypotheses but also execute reliable physical actions in robotic laboratories and adapt based on experimental evidence.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-07-26T19:31:17Z"
+        "captured_at": "2026-07-25T05:07:03Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-07-26"
+        "captured_at": "2026-07-25"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.23332",
+      "date": "2026-07-25",
+      "title": "AlloBench: Measuring Online Tool Allocation Capability in LLM Agents",
+      "authors": [
+        "Daniel Wang",
+        "Andrew Xu"
+      ],
+      "abstract": "Creating a reusable tool is an investment: an agent pays a fixed cost now in exchange for the potential of future reuse. Therefore, a user should prefer an agent that creates a small number of highly reusable tools, rather than many one-offs. We introduce a paired benchmark that tests whether LLM agents exhibit conscious allocation behavior under a fixed budget in two contexts: an abstract text-based formulation and a code-construction task. We find that every frontier model we test---Claude Haiku, Claude Opus, GPT-5.4-mini, and GPT-5.6 Sol---acts near-optimally in the abstract framing but fails to transfer this ability to script-writing. Through further experiments, we identify the particular failure modes for each model. Notably, the first three models fail even when the scripts are not evaluated, while GPT-5.6 Sol stays selective under that weaker manipulation and collapses only at full construction. Furthermore, an open-source Qwen model policy-trained for abstract allocation generalizes this ability across held-out lexical variations, but sees no improvement at script allocation. Together, these results establish online tool allocation as a significant capability boundary, even for modern frontier models.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.23332v1",
+        "pdf": "https://arxiv.org/pdf/2607.23332v1",
+        "github": "https://github.com/DragonWrangler25/AlloBench",
+        "blog": null
+      },
+      "institution": "Yale University, Sea12 Technologies",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体越来越多地被用于创建可复用的脚本、包装器或技能。然而，构建工具需要消耗固定的成本（时间和Token），因此智能体需要在“立即为当前任务编写脚本”和“等待更多重复证据以进行复用”之间做出权衡。理想的智能体应倾向于创建少量高复用性的工具，而非大量一次性工具。\n- **已有的工作为什么解决不了**：现有的评估主要关注模型是否能编写正确的工具、选择可用工具或从库中检索，却忽视了一个更根本的决策问题：何时应该创建工具？尽管已有研究指出模型在预算意识方面表现不佳且可通过后训练改善，但本文发现，在抽象分配能力与具体工具创建能力之间存在未被解决的能力鸿沟，现有的预算感知方法未能有效促使模型在脚本编写中表现出选择性。\n\n## 文章的核心贡献点\n- **提出了一个 AlloBench 基准测试**：这是一个配对基准，旨在测试 LLM 智能体在固定预算下，是否在两种情境中表现出有意识的资源分配行为：一种是抽象的文本基于形式，另一种是具体的代码构建任务。\n- **挑战1：抽象推理与具体执行之间的能力迁移失败**。难点在于模型可能在抽象层面理解最优分配策略，但无法将其转化为具体的代码生成决策。论文通过对比实验发现，所有测试的前沿模型（Claude Haiku/Opus, GPT-5.4-mini, GPT-5.6 Sol）在抽象框架下表现接近最优，但在脚本编写任务中完全无法转移这种能力，揭示了这一显著的能力边界。\n- **挑战2：不同模型在工具创建过程中的具体失效模式差异**。难点在于识别模型是在哪个阶段放弃选择性策略。论文通过细化实验发现，前三个模型即使在脚本不被评估的情况下也会失败，而 GPT-5.6 Sol 在较弱操纵下仍能保持选择性，仅在完整构建时才崩溃；此外，经过抽象分配策略训练的开源 Qwen 模型虽能在词汇变化上泛化，但在脚本分配上毫无提升，证明了该能力的局限性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：AlloBench 包含抽象文本任务和代码构建任务，并在固定行动预算下运行。代码、环境和原始日志已开源。\n- **Evaluation 结果**：\n    - **前沿模型表现**：Claude Haiku、Claude Opus、GPT-5.4-mini 和 GPT-5.6 Sol 在抽象分配任务中均表现出接近最优的策略，表明它们理解基本的资源权衡概念。\n    - **迁移失败**：所有上述模型在将抽象策略迁移到脚本编写任务时均失败。它们未能根据预算限制有效地选择何时构建工具，往往表现出过度构建或构建不足。\n    - **失效模式分析**：Claude 和 GPT-5.4-mini 等模型甚至在脚本无需执行评估时就已失去选择性；GPT-5.6 Sol 表现稍好，在简单条件下保持选择性，但在完整代码构建压力下崩溃。\n    - **微调模型表现**：针对抽象分配进行策略训练的开源 Qwen 模型能够在保留的词汇变体上泛化其抽象分配能力，但在脚本分配任务中未见任何改进，进一步证实了抽象推理到具体代码生成的迁移壁垒。\n- **对比相关工作**：与先前认为模型仅自然缺乏预算意识且易于通过后训练修复的观点不同，本文证明了存在一个根本性的能力墙，即抽象分配能力无法自动转化为工具创建中的预算感知行为，这是现有工作未充分解决的。\n\n## 总结\n本文引入了 AlloBench，揭示了现代 LLM 智能体在在线工具分配能力上的显著缺陷。尽管前沿模型在抽象层面上能够理解并执行近优的资源分配策略，但它们无法将这种能力迁移到实际的代码构建任务中。无论是闭源前沿模型还是经过特定策略训练的开源模型，均在脚本编写的预算感知选择上表现出系统性失败。这一发现确立了在线工具分配作为当前 LLM 能力的一个重要边界，提示未来研究需重点关注如何弥合抽象推理与具体工具生成之间的鸿沟。",
+      "summary_en": "## What the Paper Does\n- **Background**: LLM agents are increasingly used to create reusable scripts, wrappers, or skills. However, building tools incurs a fixed cost (time and tokens), requiring agents to trade off between \"writing a script for the current task immediately\" and \"waiting for more evidence of recurrence for reuse.\" An ideal agent should prefer creating a few highly reusable tools over many one-offs.\n- **Why Existing Work Falls Short**: Current evaluations focus on whether models can write correct tools, select available ones, or retrieve from libraries, ignoring the fundamental decision of *when* to create a tool. While prior studies suggest models lack budget awareness but can be easily post-trained, this paper identifies an unaddressed capability gap between abstract allocation reasoning and concrete tool creation, showing that existing budget-aware methods fail to induce selective tool creation in scripts.\n\n## Core Contributions\n- **Proposed AlloBench**: A paired benchmark designed to test whether LLM agents exhibit conscious resource allocation behavior under a fixed budget in two contexts: an abstract text-based formulation and a concrete code-construction task.\n- **Challenge 1: Failure to Transfer Abstract Reasoning to Concrete Execution**. The difficulty lies in the fact that models may understand optimal allocation strategies abstractly but fail to apply them to code generation decisions. Through comparative experiments, the paper finds that all tested frontier models (Claude Haiku/Opus, GPT-5.4-mini, GPT-5.6 Sol) perform near-optimally in abstract framing but completely fail to transfer this ability to script-writing, revealing a significant capability boundary.\n- **Challenge 2: Distinct Failure Modes Across Models**. The challenge is identifying at which stage models abandon selective strategies. Refined experiments show that the first three models fail even when scripts are not evaluated, while GPT-5.6 Sol remains selective under weaker manipulations and only collapses during full construction. Additionally, an open-source Qwen model policy-trained for abstract allocation generalizes across lexical variations but shows no improvement in script allocation, highlighting the limitation of this transfer.\n\n## Implementation, Evaluation, and Comparison\n- **Implementation**: AlloBench consists of abstract text tasks and code construction tasks, run under a fixed action budget. Code, environments, and raw logs are open-sourced.\n- **Evaluation Results**:\n    - **Frontier Model Performance**: Claude Haiku, Claude Opus, GPT-5.4-mini, and GPT-5.6 Sol all demonstrate near-optimal strategies in abstract allocation tasks, indicating they understand basic resource trade-off concepts.\n    - **Transfer Failure**: All aforementioned models fail to transfer these strategies to script-writing tasks. They do not effectively choose when to build tools based on budget constraints, often exhibiting over-building or under-building.\n    - **Failure Mode Analysis**: Models like Claude and GPT-5.4-mini lose selectivity even when script execution is not required; GPT-5.6 Sol performs slightly better, maintaining selectivity in simple conditions but collapsing under the pressure of full code construction.\n    - **Fine-tuned Model Performance**: An open-source Qwen model policy-trained for abstract allocation generalizes its ability across held-out lexical variations but shows no improvement in script allocation tasks, further confirming the barrier between abstract reasoning and concrete code generation.\n- **Comparison with Related Work**: Contrary to prior views that models merely lack natural budget awareness which is easily fixable via post-training, this paper proves there is a fundamental capability wall where abstract allocation skills do not automatically translate into budget-aware behavior in tool creation, a gap existing work has not sufficiently addressed.\n\n## Summary\nThis paper introduces AlloBench, revealing significant deficiencies in the online tool allocation capabilities of modern LLM agents. While frontier models can understand and execute near-optimal resource allocation strategies at an abstract level, they fail to transfer this ability to actual code construction tasks. Both closed-source frontier models and specifically policy-trained open-source models exhibit systematic failures in budget-aware selection for script writing. This finding establishes online tool allocation as a critical capability boundary for current LLMs, suggesting that future research must focus on bridging the gap between abstract reasoning and concrete tool generation.",
+      "render_excerpt": "机构: Yale University, Sea12 Technologies<br>## 文章做了什么 - **背景**：大型语言模型（LLM）智能体越来越多地被用于创建可复用的脚本、包装器或技能。然而，构建工具需要消耗固定的成本（时间和Token），因此智能体需要在“立即为当前任务编写脚本”和“等待更多重复证据以进行复用”之间做出权衡。理想的智能体应倾向于创建少量高复用性的工具，而非大量一次性工具。 - **已有的工作为什么解决不了**：现有的评估主要关注模型是否能编写正确的工具、选择可用工具或从库中检索，却忽视了一个更根本的决策问题：何时应该创建工具？尽管已有研究指出模型在预算意识方面表现不佳且可通过后训练改善，但本文发现，在抽象分配能力与具体工具创建能力之间存在未被解决的能力鸿沟，现有的预算感知方法未能有效促使模型在脚本编写中表现出选择性。 ## 文章的核心贡献点 - **提出了一个 AlloBench 基准测试**：这是一个配对基准，旨在测试 LLM 智能体在固定预算下，是否在两种情境中表现出有意识的资源分配行为：一种是抽象的文本基于形式，另一种是具体的代码构建任务。",
+      "render_excerpt_en": "Institution: Yale University, Sea12 Technologies<br>## What the Paper Does - **Background**: LLM agents are increasingly used to create reusable scripts, wrappers, or skills. However, building tools incurs a fixed cost (time and tokens), requiring agents to trade off between \"writing a script for the current task immediately\" and \"waiting for more evidence of recurrence for reuse.\" An ideal agent should prefer creating a few highly reusable tools over many one-offs. - **Why Existing Work Falls Short**: Current evaluations focus on whether models can write correct tools, select available ones, or retrieve from libraries, ignoring the fundamental decision of *when* to create a tool.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-25T19:05:29Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-25"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2607.23147",
+      "date": "2026-07-25",
+      "title": "False Prophets: On the Security of World Models in Agentic Systems",
+      "authors": [
+        "Erik Imgrund",
+        "Anna Wimbauer",
+        "Klim Kireev",
+        "Konrad Rieck"
+      ],
+      "abstract": "Large language models now power autonomous agents capable of complex, multi-step tasks in different environments. Accurate and reliable execution of these tasks requires the agent to predict the results of its actions. Recent research proposes to enhance predictive capabilities via specially trained environment simulators-world models. While world models can improve performance, they can also mislead agents into executing harmful actions, creating significant security and privacy risks. In this paper, we raise security concerns regarding the usage of world models in agentic systems. We discover a range of world model specific vulnerabilities, which can be exploited in terminal-based agents to execute malicious code or extract sensitive data. To facilitate future development, we introduce a security benchmark dataset designed for text-based world models. We argue that some risks are intrinsic to approximate world modeling, and show that attackers can induce mispredictions in agentic pipelines with up to 95% success rate, possibly resulting in unintended command execution, denial of service, drainage of wallet and private information extraction. Finally, we provide practical recommendations for practitioners to mitigate the discovered harms and harden agentic systems.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.23147v1",
+        "pdf": "https://arxiv.org/pdf/2607.23147v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "BIFOLD & TU Berlin",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）驱动的自主智能体能够执行复杂的多步任务。为了提高任务执行的准确性和可靠性，近期研究引入了“世界模型”（World Models），即专门训练的环境模拟器，用于预测智能体动作在环境中的结果。\n- **已有工作的不足**：虽然世界模型能提升规划能力，但现有研究主要关注其性能提升，忽视了其作为近似模拟器引入的安全风险。世界模型的预测错误可能被恶意利用，导致智能体执行有害操作，而现有的安全防护机制并未针对世界模型特有的脆弱性进行设计。\n\n## 文章的核心贡献点\n- **提出了一个**：针对文本世界模型的安全基准数据集（Security Benchmark Dataset），并系统性地揭示了智能体系统中世界模型的安全漏洞。\n- **挑战1：世界模型预测的不准确性导致的安全隐患**。由于世界模型是对真实环境的近似，其预测可能与现实不符，这种差异难以完全消除且容易被攻击者利用。论文通过实证分析展示了攻击者如何利用环境变量的差异等细微之处，诱导世界模型产生错误预测，从而绕过安全检查。\n- **挑战2：缺乏针对世界模型特定攻击面的防御机制**。现有的智能体安全框架未考虑到世界模型本身可能成为攻击向量。论文设计了特定的攻击场景，证明攻击者可以以高达95%的成功率诱导误判，进而执行恶意代码或窃取数据，并据此提出了具体的缓解建议。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：作者构建了一个专门用于测试基于文本的世界模型的安全基准数据集。他们在终端智能体（terminal-based agents）环境中进行了实验，模拟了多种攻击场景。\n- **结果**：实验表明，攻击者能够以高达95%的成功率在世界模型中引发错误预测。这些错误预测导致了严重的后果，包括非预期的命令执行（如删除系统文件）、拒绝服务、钱包资金被盗以及敏感信息提取。\n- **对比**：与以往仅关注世界模型提升任务成功率的研究不同，本文首次量化了世界模型在安全层面的风险，指出了其内在的近似性风险是现有高性能世界模型（如Qwen-AgentWorld等）普遍存在但未被充分重视的问题。\n\n#### 总结\n本文揭示了在自主智能体系统中使用世界模型所带来的严重安全和隐私风险。作者发现世界模型特有的漏洞可被利用来执行恶意代码或提取敏感数据，并发布了首个针对文本世界模型的安全基准数据集。研究证明，由于世界模型的近似本质，攻击者可高成功率地诱导错误预测，造成灾难性后果。最后，文章为从业者提供了实用的建议，以减轻这些危害并加固智能体系统。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) now power autonomous agents capable of complex, multi-step tasks. To enhance accuracy and reliability, recent research has introduced \"World Models\"—specialized environment simulators that predict the outcomes of an agent's actions.\n- **Limitations of Existing Work**: While world models improve planning capabilities, existing research primarily focuses on performance gains, overlooking the security risks introduced by their approximate nature. Prediction errors in world models can be exploited to bypass safety checks, leading to harmful actions, a vulnerability not addressed by current security frameworks.\n\n## Core Contributions\n- **Proposed**: A security benchmark dataset specifically designed for text-based world models, along with a systematic identification of vulnerabilities unique to world models in agentic systems.\n- **Challenge 1: Security risks stemming from prediction inaccuracies**. Since world models are approximations of reality, their predictions may diverge from actual outcomes, a discrepancy that is intrinsic and hard to eliminate. The paper demonstrates how attackers exploit these discrepancies (e.g., missing environment variables) to induce mispredictions and bypass safety checks.\n- **Challenge 2: Lack of defense mechanisms against world model-specific attack vectors**. Current agentic security frameworks do not account for the world model itself as an attack surface. The paper designs attack scenarios showing that attackers can induce mispredictions with up to 95% success rate, leading to malicious code execution or data theft, and provides mitigation strategies.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The authors constructed a security benchmark dataset for text-based world models and conducted experiments in terminal-based agent environments, simulating various attack scenarios.\n- **Results**: Experiments showed that attackers could induce mispredictions in world models with up to 95% success rate. These errors led to severe consequences, including unintended command execution (e.g., deleting system files), denial of service, wallet drainage, and private information extraction.\n- **Comparison**: Unlike prior work that highlights world models for improving task success rates, this paper quantifies the security risks, demonstrating that the intrinsic approximation error in high-performance world models (such as Qwen-AgentWorld) presents a critical, previously underappreciated security vulnerability.\n\n## 4. Conclusion\nThis paper exposes significant security and privacy risks associated with using world models in autonomous agentic systems. The authors identify specific vulnerabilities that can be exploited for malicious code execution or data extraction and release the first security benchmark dataset for text-based world models. The study proves that due to the approximate nature of world modeling, attackers can successfully induce harmful mispredictions at a high rate. Finally, the paper offers practical recommendations for practitioners to mitigate these harms and harden agentic systems.",
+      "render_excerpt": "机构: BIFOLD & TU Berlin<br>本文揭示了在自主智能体系统中使用世界模型所带来的严重安全和隐私风险。作者发现世界模型特有的漏洞可被利用来执行恶意代码或提取敏感数据，并发布了首个针对文本世界模型的安全基准数据集。研究证明，由于世界模型的近似本质，攻击者可高成功率地诱导错误预测，造成灾难性后果。最后，文章为从业者提供了实用的建议，以减轻这些危害并加固智能体系统。",
+      "render_excerpt_en": "Institution: BIFOLD & TU Berlin<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) now power autonomous agents capable of complex, multi-step tasks. To enhance accuracy and reliability, recent research has introduced \"World Models\"—specialized environment simulators that predict the outcomes of an agent's actions.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-07-25T10:55:14Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-07-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

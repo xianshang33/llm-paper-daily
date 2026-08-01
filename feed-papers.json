@@ -1,44 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-01T04:48:17.116633+00:00",
-  "run_date": "2026-07-26",
+  "generated_at": "2026-08-01T07:43:46.521408+00:00",
+  "run_date": "2026-07-25",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.23722",
-      "date": "2026-07-26",
-      "title": "E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios",
+      "id": "arxiv:2607.22962",
+      "date": "2026-07-25",
+      "title": "ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Weihuang Zheng",
-        "Tianyuan Zou",
-        "Eileen Ye",
-        "Alphet Liu",
-        "Youyong Kong",
-        "Ya-Qin Zhang",
-        "Duran Zheng",
-        "Maxm Pan"
+        "Yan Zhang",
+        "Shibo Li"
       ],
-      "institution": "Institute for AI Industry Research, Tsinghua University; Tencent",
+      "institution": "Florida State University",
       "summary": {
-        "zh": "E-Bench 填补了多步工具使用智能体评估的空白，通过完全合成的方法解决了真实世界场景中环境可控性和任务可扩展性的难题。实验结果表明，当前最先进的 LLM 在处理需要发现隐藏信息和组合多步工具调用的复杂产品场景时，可靠性和成功率仍有显著提升空间。该基准为评估和改进 LLM 智能体在真实有状态环境中的行动能力提供了重要标准。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps, a capability termed \"multi-step tool use,\" which involves gathering hidden..."
+        "zh": "本文指出了 LLM 智能体中未被充分研究的“记忆污染”问题，即写入时的幻觉会污染后续推理。作者提出了 ConsistencyGate，一种基于自一致性的写入时准入门控机制，通过验证事实支持度而非效用来决定写入。该方法无需微调，且提供低延迟变体。实验表明，该方法在多个基准上有效减少了记忆污染并提升了下游任务性能，填补了现有记忆管理在写入正确性控制方面的空白。",
+        "en": "This paper addresses the under-explored issue of \"memory contamination\" in LLM agents, where write-time hallucinations pollute subsequent reasoning. The authors propose ConsistencyGate, a self-consistency-based..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23722v1",
-        "pdf": "https://arxiv.org/pdf/2607.23722v1",
+        "abs": "http://arxiv.org/abs/2607.22962v1",
+        "pdf": "https://arxiv.org/pdf/2607.22962v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23722.md",
-        "summary_en_path": "summary_en/2026-07/2607.23722.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23722.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23722.md"
+        "summary_zh_path": "summary/2026-07/2607.22962.md",
+        "summary_en_path": "summary_en/2026-07/2607.22962.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22962.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22962.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,125 +49,69 @@
       }
     },
     {
-      "id": "arxiv:2607.23624",
-      "date": "2026-07-26",
-      "title": "Where Is the Cost of Third-Party API Routers in Agentic Software Development?",
+      "id": "arxiv:2607.23124",
+      "date": "2026-07-25",
+      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Donghao Fu",
-        "Jingxin Li",
-        "Xue Jiang",
-        "Yihong Dong"
+        "Hao Jiang",
+        "Gangtao Xin",
+        "Yingdi Huang",
+        "Guojie Zhu",
+        "Jiangshan Zhang",
+        "Xinyuan Lin",
+        "Yunkun Xu",
+        "Chengyu Shen",
+        "Wenlong Fei",
+        "Jiawei Li",
+        "Yujie Fu",
+        "Sichen Kang",
+        "Tingyu Xie",
+        "Yedi Hu",
+        "Jingren Zhang",
+        "Hongcheng Gao",
+        "Jianshu Zeng",
+        "Chong Chen",
+        "Chang Guo",
+        "Chao Feng",
+        "Feng Wang",
+        "Fulin Lin",
+        "Jinchao Ma",
+        "Lang Mei",
+        "Li Huang",
+        "Liyan Liu",
+        "Qing He",
+        "Shuting Tao",
+        "Siyu Mo",
+        "Xiangnan Chen",
+        "Xiaohan Yu",
+        "Xiaoyang Li",
+        "Yanheng Hou",
+        "Yanyu Wu",
+        "Zhihan Yang",
+        "Wentao Zhang",
+        "Yang Gao",
+        "Zhao Cao"
       ],
-      "institution": "Shanghai Jiao Tong University, Beihang University, Peking University",
+      "institution": "Huawei Cloud Post-Training Team",
       "summary": {
-        "zh": "本文通过实证研究揭示了第三方 API 路由器在代理式软件开发中带来的严重安全风险。研究表明，路由器侧的注入攻击能够轻易绕过现有的客户端防御机制，导致代码库被恶意修改。虽然客户端缓解措施有一定效果，但无法根本解决问题，因此文章呼吁需要在提供商侧建立输出完整性保证机制，以修复这一信任链缺口。",
-        "en": "- **Background**: In agentic software development, third-party API routers (e.g., LiteLLM, OpenRouter) have become a common middleware layer to unify access to diverse LLM providers. Coding agents often operate with..."
+        "zh": "AgentOmnia 通过建立“领域×能力×原子难度”的可扩展分类体系，解决了智能体发展中碎片化的问题。其核心创新在于大规模状态化环境的自动化合成以及基于 PRD 引导的自我进化机制。实验表明，仅使用 30B 参数模型，AgentOmnia 就能在全场景基准测试中取得超越千亿参数模型的性能，为工业级智能体的规模化部署和持续进化提供了有效的框架和实证支持。",
+        "en": "-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23624v2",
-        "pdf": "https://arxiv.org/pdf/2607.23624v2",
-        "github": "https://github.com/Riyasushin/SIDEL"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23624.md",
-        "summary_en_path": "summary_en/2026-07/2607.23624.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23624.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23624.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.23678",
-      "date": "2026-07-26",
-      "title": "Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Mingzhou Fan",
-        "Siyuan Xu",
-        "Mingxuan Yuan"
-      ],
-      "institution": null,
-      "summary": {
-        "zh": "本文确立了“注意力工程”（Attention Engineering）作为构建可扩展、智能多智能体图系统的新方向。通过引入AGAO框架，论文解决了多智能体系统中因规模扩大导致的注意力稀释和资源浪费问题，实现了从静态图执行到自适应目标聚焦执行的转变，为未来高效的大规模智能体协作提供了理论基础和技术路径。",
-        "en": "- **Background**: LLM-driven autonomous agent systems are evolving from single-agent iterative loops to multi-agent graph-based workflows. While graph-based orchestration supports flexible task decomposition and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.23678v1",
-        "pdf": "https://arxiv.org/pdf/2607.23678v1",
-        "github": "https://github.com/MingzhouFan97/AGAO"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23678.md",
-        "summary_en_path": "summary_en/2026-07/2607.23678.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23678.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23678.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.23884",
-      "date": "2026-07-26",
-      "title": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Ionut Predoaia",
-        "Tuong Manh Vu",
-        "Konstantinos Barmpis",
-        "Dimitris Kolovos",
-        "Antonio García-Domínguez"
-      ],
-      "institution": "University of York",
-      "summary": {
-        "zh": "本文通过实证研究对比了 MCP 和 A2A 两种协议在基于 LLM 的智能体系统中的应用。研究表明，MCP 适合追求轻量级和低复杂度的场景，但需开发者自行处理状态管理；而 A2A 适合需要复杂状态和多轮交互的场景，提供了强大的原生支持，但增加了系统复杂性。该研究为工程师在选择智能体协调协议时提供了重要的权衡参考，突出了协议设计对系统架构责任分配的影响。",
-        "en": "- **Background**: The rapid emergence of agentic systems composed of heterogeneous, tool-enhanced, and LLM-mediated components has raised practical questions about inter-agent coordination and protocol design. - **Why..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.23884v1",
-        "pdf": "https://arxiv.org/pdf/2607.23884v1",
+        "abs": "http://arxiv.org/abs/2607.23124v1",
+        "pdf": "https://arxiv.org/pdf/2607.23124v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23884.md",
-        "summary_en_path": "summary_en/2026-07/2607.23884.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23884.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23884.md"
+        "summary_zh_path": "summary/2026-07/2607.23124.md",
+        "summary_en_path": "summary_en/2026-07/2607.23124.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23124.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23124.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -190,35 +128,135 @@
       }
     },
     {
-      "id": "arxiv:2607.26083",
-      "date": "2026-07-26",
-      "title": "Cross-Model Cross-Language AI Coding Agent Performance: Accuracy and Speed of Parallel CLRS Algorithms",
+      "id": "arxiv:2607.23045",
+      "date": "2026-07-25",
+      "title": "Stress-testing large language model agents in a robotic chemistry laboratory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shiqi Cheng",
-        "Evelyne Ringoot",
-        "Rabab Alomairy",
-        "Alan Edelman"
+        "Lulu Guo",
+        "Yingkai Sun",
+        "Xiaobo Li",
+        "Luyao Ge",
+        "Ziming Wang",
+        "Haitao Zheng",
+        "Jingyu Li",
+        "Huijuan Zhang",
+        "Bingxu Chen",
+        "Daobin Liu",
+        "Yuebo Liu",
+        "Jie Li",
+        "Xiaohui Li",
+        "Linjiang Chen",
+        "Yi Luo",
+        "Jun Jiang"
       ],
-      "institution": "Massachusetts Institute of Technology (MIT), King Abdullah University of Science and Technology (KAUST)",
+      "institution": "University of Science and Technology of China",
       "summary": {
-        "zh": "本文填补了 AI 编程代理在并行代码生成领域跨语言、跨模型性能评估的空白。研究结果表明，虽然当前的 AI 代理能够以较低的提示成本生成正确的并行代码，但实现真正的性能加速仍面临巨大挑战，且高度依赖于具体的算法类型和编程语言特性。特别是 Claude Sonnet 4.6 在性能优化方面表现出色，而 GPT 5.4 在效率提升上存在明显短板。该研究呼吁社区在评估 LLM...",
-        "en": "- **Background**: AI coding agents are ubiquitous in software engineering, with extensive existing research on their serial code accuracy and speed. However, initial findings suggest their parallel programming..."
+        "zh": "本研究通过在一个高度模块化的机器人化学实验室中对LLM驱动的科学代理进行大规模压力测试，首次系统地量化了AI代理在物理世界中的科学代理能力。结果表明，当前最先进的LLM代理在将科学意图转化为符合物理约束的可执行动作方面仍存在显著缺陷，尤其是在长程规划和基于证据的深度重新规划方面。该研究不仅提供了基于证据的部署就绪度评估，还为未来开发具有物理 grounding 的自主科学研究代理提供了诊断框架和改进方向。",
+        "en": "- **Background**: AI applications in science are evolving from knowledge reasoning and plan generation to end-to-end autonomous scientific research. This requires AI agents to not only propose hypotheses but also..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.26083v1",
-        "pdf": "https://arxiv.org/pdf/2607.26083v1",
+        "abs": "http://arxiv.org/abs/2607.23045v1",
+        "pdf": "https://arxiv.org/pdf/2607.23045v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.26083.md",
-        "summary_en_path": "summary_en/2026-07/2607.26083.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.26083.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.26083.md"
+        "summary_zh_path": "summary/2026-07/2607.23045.md",
+        "summary_en_path": "summary_en/2026-07/2607.23045.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23045.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23045.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.23332",
+      "date": "2026-07-25",
+      "title": "AlloBench: Measuring Online Tool Allocation Capability in LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Daniel Wang",
+        "Andrew Xu"
+      ],
+      "institution": "Yale University, Sea12 Technologies",
+      "summary": {
+        "zh": "- **背景**：大型语言模型（LLM）智能体越来越多地被用于创建可复用的脚本、包装器或技能。然而，构建工具需要消耗固定的成本（时间和Token），因此智能体需要在“立即为当前任务编写脚本”和“等待更多重复证据以进行复用”之间做出权衡。理想的智能体应倾向于创建少量高复用性的工具，而非大量一次性工具。 -...",
+        "en": "- **Background**: LLM agents are increasingly used to create reusable scripts, wrappers, or skills. However, building tools incurs a fixed cost (time and tokens), requiring agents to trade off between \"writing a script..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.23332v1",
+        "pdf": "https://arxiv.org/pdf/2607.23332v1",
+        "github": "https://github.com/DragonWrangler25/AlloBench"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.23332.md",
+        "summary_en_path": "summary_en/2026-07/2607.23332.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23332.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23332.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2607.23147",
+      "date": "2026-07-25",
+      "title": "False Prophets: On the Security of World Models in Agentic Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Erik Imgrund",
+        "Anna Wimbauer",
+        "Klim Kireev",
+        "Konrad Rieck"
+      ],
+      "institution": "BIFOLD & TU Berlin",
+      "summary": {
+        "zh": "本文揭示了在自主智能体系统中使用世界模型所带来的严重安全和隐私风险。作者发现世界模型特有的漏洞可被利用来执行恶意代码或提取敏感数据，并发布了首个针对文本世界模型的安全基准数据集。研究证明，由于世界模型的近似本质，攻击者可高成功率地诱导错误预测，造成灾难性后果。最后，文章为从业者提供了实用的建议，以减轻这些危害并加固智能体系统。",
+        "en": "- **Background**: Large Language Models (LLMs) now power autonomous agents capable of complex, multi-step tasks. To enhance accuracy and reliability, recent research has introduced \"World Models\"—specialized environment..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2607.23147v1",
+        "pdf": "https://arxiv.org/pdf/2607.23147v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-07/2607.23147.md",
+        "summary_en_path": "summary_en/2026-07/2607.23147.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23147.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23147.md"
       },
       "signals": {
         "priority_keyword": "Agent"
