@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_07.31_04:55-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.03_04:59-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年07月31日 04:55</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月03日 04:59</sub></summary>
 <br>
 
-- ORCA-bench: How Ready Are Language Model Agents for Oncall? 
-- EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents 
-- Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game 
-- MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems 
-- Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis 
+- AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers 
+- Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory 
+- Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search 
+- AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair 
+- Scaling Scientific Discovery Environments for Turn-Level Agentic RL 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>07-31</span> | **AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers**<br><sub>机构: Fudan University, Shanghai Innovation Institute, East China Normal University, OpenMOSS<br>AgentHPOBench 填补了评估LLM智能体在真实科研环境中进行顺序超参数优化能力的空白。通过引入包含日志和中间状态观测的可执行任务，该基准揭示了当前智能体虽具备初步的实验优化能力，但在深度推理和持续迭代方面仍有显著提升空间，为未来开发更强大的自主科学智能体提供了重要的评估工具和方向指引。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.29626v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.29626.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/OpenMOSS/AgentHPOBench)</div> |
+| <span style='display: inline-block; width: 42px;'>07-31</span> | **Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory**<br><sub>机构: labels<br>本文揭示了LLM代理中长期记忆系统的一个新安全威胁——“记忆来源清洗”，即外部不可信信息通过记忆整合被伪装成高权限内部状态。作者提出了PPMF防火墙，通过保留来源元数据并实施基于风险-权限匹配的访问控制，有效阻断了此类攻击，同时在保证安全的前提下保留了系统的可用性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.29167v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.29167.md)  |
+| <span style='display: inline-block; width: 42px;'>07-31</span> | **Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search**<br><sub>机构: Purdue University<br>本文针对多智能体系统自动化修复这一空白领域，提出了 MARS 框架。通过将修复过程建模为 MCTS，并利用部分 rollout 和分类增强评估解决了搜索效率和中间状态评估两大难题。同时，作者构建了 StateMAS 基准以推动该领域研究。实验证明 MARS 在修复成功率和成本效率上均显著优于现有方法，为 MAS 的自主修复提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.29055v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.29055.md)  |
+| <span style='display: inline-block; width: 42px;'>07-31</span> | **AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair**<br><sub>机构: The University of Melbourne, Monash University<br>AgenticRepair 通过模拟安全工程师的工作流程，创新性地引入了多方面程序上下文工程。它通过协调多个 specialized LLM 子代理来构建代码结构、运行时执行和提交历史上下文，有效解决了现有方法在处理复杂漏洞上下文时的局限性。实验结果表明，该方法在真实世界的漏洞修复任务中显著优于现有技术，确立了多方面上下文工程作为代理式漏洞修复的重要设计方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.29422v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.29422.md)  |
+| <span style='display: inline-block; width: 42px;'>07-31</span> | **Scaling Scientific Discovery Environments for Turn-Level Agentic RL**<br><sub>机构: Shanghai AI Lab<br>本文针对数据驱动科学发现中长视界分析和缺乏过程监督的问题，提出了 SciDisco 框架。通过构建包含隐藏证据和验证器的 SciThèque 环境，结合 DAG 轨迹合成和 DiscoPO 轮次级信用分配算法，成功训练出能够进行稳健交互的科学发现代理。SciDisco-14B 在相关基准上取得了 SOTA 成绩，证明了过程可验证环境和细粒度强化学习信号在提升 LLM 科学推理能力方面的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28990v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28990.md)  |
 | <span style='display: inline-block; width: 42px;'>07-30</span> | **ORCA-bench: How Ready Are Language Model Agents for Oncall?**<br><sub>机构: Cornell Tech, Columbia University, Traversal<br>ORCA-bench 揭示了当前前沿编码 Agent 在生产级可靠性任务上的巨大能力缺口。由于真实生产系统比测试床更大、更动态且更具特异性，文中报告的差距仅是所需工程投入的下限。该研究强调，在将 Agent 安全地委托给生产可靠性之前，仍需大量的技术进步和工程投资。数据集已公开。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28545v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28545.md)  |
 | <span style='display: inline-block; width: 42px;'>07-30</span> | **EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents**<br><sub>机构: European Molecular Biology Laboratory (EMBL)<br>EMBL AI Librarian成功地将面向人类的文献检索基础设施转化为面向AI代理的知识层。通过LLM编排的自然语言查询规划和证据提取，它显著降低了AI代理获取生命科学知识的门槛，并在文献综合、事实核查和开放问答等多个基准测试中大幅超越了现有的网络搜索或基线方法，证明了专用知识层对提升垂直领域AI代理性能的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28229v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28229.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/petroni-lab/librarian)</div> |
 | <span style='display: inline-block; width: 42px;'>07-30</span> | **Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game**<br><sub>机构: University of Göttingen<br>本文通过引入 ParliamentBench 基准，填补了 LLM 在复杂社交欺骗和推理能力评估方面的空白。研究结果表明，虽然前沿模型在短期战术和即时推理上表现强劲，但在维持长期一致的欺骗策略方面仍存在显著缺陷。这为未来提升 LLM 在高风险环境下的安全性和鲁棒性提供了重要的评估工具和洞察方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2607.28146v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-07/2607.28146.md)  |

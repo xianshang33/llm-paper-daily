@@ -1,38 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-01T07:43:46.521408+00:00",
-  "run_date": "2026-07-25",
+  "generated_at": "2026-08-03T04:59:27.938393+00:00",
+  "run_date": "2026-07-31",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.22962",
-      "date": "2026-07-25",
-      "title": "ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
+      "id": "arxiv:2607.29626",
+      "date": "2026-07-31",
+      "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yan Zhang",
-        "Shibo Li"
+        "Tianyu Huai",
+        "Tingshuo Fan",
+        "Xinchi Chen",
+        "Yining Zheng",
+        "Yuxin Wang",
+        "Shuang Chen",
+        "Jie Zhou",
+        "Xuanjing Huang"
       ],
-      "institution": "Florida State University",
+      "institution": "Fudan University, Shanghai Innovation Institute, East China Normal University, OpenMOSS",
       "summary": {
-        "zh": "本文指出了 LLM 智能体中未被充分研究的“记忆污染”问题，即写入时的幻觉会污染后续推理。作者提出了 ConsistencyGate，一种基于自一致性的写入时准入门控机制，通过验证事实支持度而非效用来决定写入。该方法无需微调，且提供低延迟变体。实验表明，该方法在多个基准上有效减少了记忆污染并提升了下游任务性能，填补了现有记忆管理在写入正确性控制方面的空白。",
-        "en": "This paper addresses the under-explored issue of \"memory contamination\" in LLM agents, where write-time hallucinations pollute subsequent reasoning. The authors propose ConsistencyGate, a self-consistency-based..."
+        "zh": "AgentHPOBench 填补了评估LLM智能体在真实科研环境中进行顺序超参数优化能力的空白。通过引入包含日志和中间状态观测的可执行任务，该基准揭示了当前智能体虽具备初步的实验优化能力，但在深度推理和持续迭代方面仍有显著提升空间，为未来开发更强大的自主科学智能体提供了重要的评估工具和方向指引。",
+        "en": "- **Background**: As LLMs evolve into autonomous scientific agents, evaluating their ability to conduct experiments is crucial. A typical ML workflow involves executing baselines, inspecting metrics/logs, and adjusting..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.22962v1",
-        "pdf": "https://arxiv.org/pdf/2607.22962v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2607.29626v1",
+        "pdf": "https://arxiv.org/pdf/2607.29626v1",
+        "github": "https://github.com/OpenMOSS/AgentHPOBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.22962.md",
-        "summary_en_path": "summary_en/2026-07/2607.22962.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.22962.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.22962.md"
+        "summary_zh_path": "summary/2026-07/2607.29626.md",
+        "summary_en_path": "summary_en/2026-07/2607.29626.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29626.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29626.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,69 +55,36 @@
       }
     },
     {
-      "id": "arxiv:2607.23124",
-      "date": "2026-07-25",
-      "title": "AgentOmnia: Scaling Agentic Models for Full-Scenario Applications",
+      "id": "arxiv:2607.29167",
+      "date": "2026-07-31",
+      "title": "Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hao Jiang",
-        "Gangtao Xin",
-        "Yingdi Huang",
-        "Guojie Zhu",
-        "Jiangshan Zhang",
-        "Xinyuan Lin",
-        "Yunkun Xu",
-        "Chengyu Shen",
-        "Wenlong Fei",
-        "Jiawei Li",
-        "Yujie Fu",
-        "Sichen Kang",
-        "Tingyu Xie",
-        "Yedi Hu",
-        "Jingren Zhang",
-        "Hongcheng Gao",
-        "Jianshu Zeng",
-        "Chong Chen",
-        "Chang Guo",
-        "Chao Feng",
-        "Feng Wang",
-        "Fulin Lin",
-        "Jinchao Ma",
-        "Lang Mei",
-        "Li Huang",
-        "Liyan Liu",
-        "Qing He",
-        "Shuting Tao",
-        "Siyu Mo",
-        "Xiangnan Chen",
-        "Xiaohan Yu",
-        "Xiaoyang Li",
-        "Yanheng Hou",
-        "Yanyu Wu",
-        "Zhihan Yang",
-        "Wentao Zhang",
-        "Yang Gao",
-        "Zhao Cao"
+        "Jinghan Xu",
+        "Yiyong Xiao",
+        "Wanru Shao",
+        "Hankai Liu",
+        "Xinjin Li"
       ],
-      "institution": "Huawei Cloud Post-Training Team",
+      "institution": "labels",
       "summary": {
-        "zh": "AgentOmnia 通过建立“领域×能力×原子难度”的可扩展分类体系，解决了智能体发展中碎片化的问题。其核心创新在于大规模状态化环境的自动化合成以及基于 PRD 引导的自我进化机制。实验表明，仅使用 30B 参数模型，AgentOmnia 就能在全场景基准测试中取得超越千亿参数模型的性能，为工业级智能体的规模化部署和持续进化提供了有效的框架和实证支持。",
-        "en": "-Consumer (ToC), To-Business (ToB), and To-Employee (ToE) applications."
+        "zh": "本文揭示了LLM代理中长期记忆系统的一个新安全威胁——“记忆来源清洗”，即外部不可信信息通过记忆整合被伪装成高权限内部状态。作者提出了PPMF防火墙，通过保留来源元数据并实施基于风险-权限匹配的访问控制，有效阻断了此类攻击，同时在保证安全的前提下保留了系统的可用性。",
+        "en": "This paper identifies a new security threat in LLM agent long-term memory systems called \"memory provenance laundering,\" where untrusted external information is disguised as high-authority internal states through memory..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23124v1",
-        "pdf": "https://arxiv.org/pdf/2607.23124v1",
+        "abs": "http://arxiv.org/abs/2607.29167v1",
+        "pdf": "https://arxiv.org/pdf/2607.29167v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23124.md",
-        "summary_en_path": "summary_en/2026-07/2607.23124.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23124.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23124.md"
+        "summary_zh_path": "summary/2026-07/2607.29167.md",
+        "summary_en_path": "summary_en/2026-07/2607.29167.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29167.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29167.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -128,47 +101,33 @@
       }
     },
     {
-      "id": "arxiv:2607.23045",
-      "date": "2026-07-25",
-      "title": "Stress-testing large language model agents in a robotic chemistry laboratory",
+      "id": "arxiv:2607.29055",
+      "date": "2026-07-31",
+      "title": "Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Lulu Guo",
-        "Yingkai Sun",
-        "Xiaobo Li",
-        "Luyao Ge",
-        "Ziming Wang",
-        "Haitao Zheng",
-        "Jingyu Li",
-        "Huijuan Zhang",
-        "Bingxu Chen",
-        "Daobin Liu",
-        "Yuebo Liu",
-        "Jie Li",
-        "Xiaohui Li",
-        "Linjiang Chen",
-        "Yi Luo",
-        "Jun Jiang"
+        "Hanxiao Lu",
+        "Tianyi Zhang"
       ],
-      "institution": "University of Science and Technology of China",
+      "institution": "Purdue University",
       "summary": {
-        "zh": "本研究通过在一个高度模块化的机器人化学实验室中对LLM驱动的科学代理进行大规模压力测试，首次系统地量化了AI代理在物理世界中的科学代理能力。结果表明，当前最先进的LLM代理在将科学意图转化为符合物理约束的可执行动作方面仍存在显著缺陷，尤其是在长程规划和基于证据的深度重新规划方面。该研究不仅提供了基于证据的部署就绪度评估，还为未来开发具有物理 grounding 的自主科学研究代理提供了诊断框架和改进方向。",
-        "en": "- **Background**: AI applications in science are evolving from knowledge reasoning and plan generation to end-to-end autonomous scientific research. This requires AI agents to not only propose hypotheses but also..."
+        "zh": "本文针对多智能体系统自动化修复这一空白领域，提出了 MARS 框架。通过将修复过程建模为 MCTS，并利用部分 rollout 和分类增强评估解决了搜索效率和中间状态评估两大难题。同时，作者构建了 StateMAS 基准以推动该领域研究。实验证明 MARS 在修复成功率和成本效率上均显著优于现有方法，为 MAS 的自主修复提供了新的解决方案。",
+        "en": "This paper addresses the gap in automated MAS repair by proposing MARS, which models repair as an MCTS process. By leveraging partial rollouts and taxonomy-augmented evaluation, MARS effectively tackles the challenges..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23045v1",
-        "pdf": "https://arxiv.org/pdf/2607.23045v1",
+        "abs": "http://arxiv.org/abs/2607.29055v1",
+        "pdf": "https://arxiv.org/pdf/2607.29055v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23045.md",
-        "summary_en_path": "summary_en/2026-07/2607.23045.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23045.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23045.md"
+        "summary_zh_path": "summary/2026-07/2607.29055.md",
+        "summary_en_path": "summary_en/2026-07/2607.29055.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29055.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29055.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,33 +144,35 @@
       }
     },
     {
-      "id": "arxiv:2607.23332",
-      "date": "2026-07-25",
-      "title": "AlloBench: Measuring Online Tool Allocation Capability in LLM Agents",
+      "id": "arxiv:2607.29422",
+      "date": "2026-07-31",
+      "title": "AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Daniel Wang",
-        "Andrew Xu"
+        "Michael Fu",
+        "Qiyue Mei",
+        "Patanamon Thongtanunam",
+        "Kla Tantithamthavorn"
       ],
-      "institution": "Yale University, Sea12 Technologies",
+      "institution": "The University of Melbourne, Monash University",
       "summary": {
-        "zh": "- **背景**：大型语言模型（LLM）智能体越来越多地被用于创建可复用的脚本、包装器或技能。然而，构建工具需要消耗固定的成本（时间和Token），因此智能体需要在“立即为当前任务编写脚本”和“等待更多重复证据以进行复用”之间做出权衡。理想的智能体应倾向于创建少量高复用性的工具，而非大量一次性工具。 -...",
-        "en": "- **Background**: LLM agents are increasingly used to create reusable scripts, wrappers, or skills. However, building tools incurs a fixed cost (time and tokens), requiring agents to trade off between \"writing a script..."
+        "zh": "AgenticRepair 通过模拟安全工程师的工作流程，创新性地引入了多方面程序上下文工程。它通过协调多个 specialized LLM 子代理来构建代码结构、运行时执行和提交历史上下文，有效解决了现有方法在处理复杂漏洞上下文时的局限性。实验结果表明，该方法在真实世界的漏洞修复任务中显著优于现有技术，确立了多方面上下文工程作为代理式漏洞修复的重要设计方向。",
+        "en": "- **Background**: Automated vulnerability repair aims to reduce the time and effort required to patch security flaws. While agentic AI approaches show promise in general program repair, vulnerability repair demands..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23332v1",
-        "pdf": "https://arxiv.org/pdf/2607.23332v1",
-        "github": "https://github.com/DragonWrangler25/AlloBench"
+        "abs": "http://arxiv.org/abs/2607.29422v1",
+        "pdf": "https://arxiv.org/pdf/2607.29422v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23332.md",
-        "summary_en_path": "summary_en/2026-07/2607.23332.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23332.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23332.md"
+        "summary_zh_path": "summary/2026-07/2607.29422.md",
+        "summary_en_path": "summary_en/2026-07/2607.29422.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29422.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29422.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -228,35 +189,38 @@
       }
     },
     {
-      "id": "arxiv:2607.23147",
-      "date": "2026-07-25",
-      "title": "False Prophets: On the Security of World Models in Agentic Systems",
+      "id": "arxiv:2607.28990",
+      "date": "2026-07-31",
+      "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Erik Imgrund",
-        "Anna Wimbauer",
-        "Klim Kireev",
-        "Konrad Rieck"
+        "Yucheng Xu",
+        "Keyi Zhang",
+        "Yuyang Yu",
+        "Min Zhang",
+        "Shiyuan Meng",
+        "Pei Chu",
+        "Zhongying Tu"
       ],
-      "institution": "BIFOLD & TU Berlin",
+      "institution": "Shanghai AI Lab",
       "summary": {
-        "zh": "本文揭示了在自主智能体系统中使用世界模型所带来的严重安全和隐私风险。作者发现世界模型特有的漏洞可被利用来执行恶意代码或提取敏感数据，并发布了首个针对文本世界模型的安全基准数据集。研究证明，由于世界模型的近似本质，攻击者可高成功率地诱导错误预测，造成灾难性后果。最后，文章为从业者提供了实用的建议，以减轻这些危害并加固智能体系统。",
-        "en": "- **Background**: Large Language Models (LLMs) now power autonomous agents capable of complex, multi-step tasks. To enhance accuracy and reliability, recent research has introduced \"World Models\"—specialized environment..."
+        "zh": "本文针对数据驱动科学发现中长视界分析和缺乏过程监督的问题，提出了 SciDisco 框架。通过构建包含隐藏证据和验证器的 SciThèque 环境，结合 DAG 轨迹合成和 DiscoPO 轮次级信用分配算法，成功训练出能够进行稳健交互的科学发现代理。SciDisco-14B 在相关基准上取得了 SOTA 成绩，证明了过程可验证环境和细粒度强化学习信号在提升 LLM 科学推理能力方面的有效性。",
+        "en": "This paper addresses the challenges of long-horizon analysis and lack of process supervision in data-driven scientific discovery by proposing the SciDisco framework. By constructing the SciThèque environment with hidden..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.23147v1",
-        "pdf": "https://arxiv.org/pdf/2607.23147v1",
+        "abs": "http://arxiv.org/abs/2607.28990v1",
+        "pdf": "https://arxiv.org/pdf/2607.28990v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.23147.md",
-        "summary_en_path": "summary_en/2026-07/2607.23147.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.23147.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.23147.md"
+        "summary_zh_path": "summary/2026-07/2607.28990.md",
+        "summary_en_path": "summary_en/2026-07/2607.28990.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28990.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28990.md"
       },
       "signals": {
         "priority_keyword": "Agent"
