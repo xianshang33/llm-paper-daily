@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.03_04:59-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.04_04:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月03日 04:59</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月04日 04:40</sub></summary>
 <br>
 
-- AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers 
-- Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory 
-- Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search 
-- AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair 
-- Scaling Scientific Discovery Environments for Turn-Level Agentic RL 
+- Real-Time Detection and Repair of LLM Agent Failures 
+- ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision 
+- Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation 
+- From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents 
+- MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年08月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **Real-Time Detection and Repair of LLM Agent Failures**<br><sub>本文提出了一种高效、低成本的 LLM 智能体故障实时检测与修复框架。通过结合轻量级的单类 ESN 监控器和无参数的确定性验证层，系统能够在微秒级延迟内识别多种故障模式（包括循环、错误级联和内容损坏）。实验表明，该方法不仅显著降低了监控成本，还通过实时回滚重跑机制大幅提升了智能体的最终任务成功率，为构建鲁棒的自主智能体系统提供了切实可行的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02464v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02464.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision**<br><sub>ParEvalLayer 解决了 LLM Agent 评估中部分数据决策难的问题。它不仅仅是一个早停机制，而是一个透明的决策层，能够根据预设策略判断当前证据是否充分。实验证明，该方法能在显著减少评估成本（仅需少量任务结果）的同时，保持与全量评估高度一致的决策准确性，强调了在评估报告中明确决策规则和未决状态的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02444v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02444.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation**<br><sub>机构: Amazon<br>本文提出了一个通用的 S-RCT 框架，旨在利用 AI 代理在投入真实流量前低成本地筛选候选治疗方案。通过理论上的误差分解和实证上的校准协议及实验设计优化，显著提高了模拟的准确性和统计效力。尽管目前仍存在一定的局限性，但该框架为减少实验成本、加速产品迭代提供了可行的路径，特别适用于需要快速 vetting 大量候选方案的场景。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02345v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02345.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents**<br><sub>机构: National University of Singapore, University of Toronto, University of Minnesota Twin Cities, Harbin Institute of Technology (Shenzhen), University of Oxford<br>本文指出了当前个性化 LLM 智能体评估中存在的“知识到行动差距”，即代理虽知悉用户偏好却未能在任务执行中正确应用。为此，作者提出了 IBA-Bench 基准和 IBA-Agent 框架。IBA-Bench 通过模拟真实世界中充满噪声和隐式线索的长期交互来评估代理能力；IBA-Agent 则通过广泛检索和轨迹级对齐技术，成功提升了代理在动态、复杂场景下的隐式行为对齐水平，为下一代个性化智能体的研发提供了新的方向和评估标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02171v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02171.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents**<br><sub>机构: Huazhong University of Science and Technology, Fudan University<br>MemArbiter 通过引入功能感知的记忆仲裁机制，有效解决了长视野 LLM 智能体中的“记忆-行动鸿沟”问题。它不再仅仅关注信息的检索，而是重点优化信息的组织、优先级排序和呈现方式。实验证明，该方法在严格的 token 预算限制下，显著提升了智能体的任务成功率和鲁棒性，表明精细化的记忆管理对于提升 LLM 智能体的决策质量至关重要。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02113v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02113.md)  |
+
+---
+
 ### 2026年07月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.03_04:59-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.04_04:40-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-08-03 04:59</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-08-04 04:40</sub></summary>
 <br>
 
-- AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers 
-- Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory 
-- Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search 
-- AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair 
-- Scaling Scientific Discovery Environments for Turn-Level Agentic RL 
+- Real-Time Detection and Repair of LLM Agent Failures 
+- ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision 
+- Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation 
+- From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents 
+- MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-08
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **Real-Time Detection and Repair of LLM Agent Failures**<br><sub>This paper presents an efficient, low-cost framework for real-time detection and repair of LLM agent failures. By combining a lightweight one-class ESN monitor with a parameter-free deterministic verification layer, the system identifies various failure modes (including loops, error cascades, and content corruption) with microsecond-level latency. Experiments demonstrate that this method not only significantly reduces monitoring costs but also substantially improves final task success rates through real-time rollback and re-execution, offering a practical solution for building robust autonomous agent systems.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02464v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-08/2608.02464.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision**<br><sub>## 1. What the Paper Does - **Background**: LLM-Agent benchmark evaluations are often expensive and time-consuming, yet partial task outcomes are available long before the full run completes. There is a temptation to report these partial scores to save costs or speed up feedback.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02444v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-08/2608.02444.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation**<br><sub>Institution: Amazon<br>## 1. What the Paper Did - **Background**: A/B testing is the standard for rolling out new features in the tech industry, but each experiment consumes real user traffic, significant engineering effort, and weeks of wall-clock time. The aggregate cost is substantial for large organizations iterating through many candidates.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02345v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-08/2608.02345.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents**<br><sub>Institution: National University of Singapore, University of Toronto, University of Minnesota Twin Cities, Harbin Institute of Technology (Shenzhen), University of Oxford<br>This paper identifies the "knowledge-to-action gap" in current personalized LLM agents, where agents fail to apply known user preferences during task execution. To address this, the authors introduce IBA-Bench, a benchmark featuring noisy, long-term interaction histories, and IBA-Agent, a framework utilizing broad retrieval and trajectory-level alignment. Results indicate that IBA-Agent significantly outperforms existing methods in aligning agent behavior with implicit, evolving user constraints, offering a new direction for developing truly personalized autonomous agents.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02171v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-08/2608.02171.md)  |
+| <span style='display: inline-block; width: 42px;'>08-03</span> | **MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents**<br><sub>Institution: Huazhong University of Science and Technology, Fudan University<br>## 1. What the Paper Does - **Background**: Large Language Model (LLM) agents require the retention and utilization of cross-step information to act coherently in long-horizon tasks such as web navigation and embodied interaction. - **Why Existing Work Falls Short**: Current methods primarily focus on improving memory "accessibility" (e.g., context extension, retrieval, compression).</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02113v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-08/2608.02113.md)  |
+
+---
+
 ## 2026-07
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |

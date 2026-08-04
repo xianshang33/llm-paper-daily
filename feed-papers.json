@@ -1,90 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-03T04:59:27.938393+00:00",
-  "run_date": "2026-07-31",
+  "generated_at": "2026-08-04T04:40:33.838750+00:00",
+  "run_date": "2026-08-03",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2607.29626",
-      "date": "2026-07-31",
-      "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+      "id": "arxiv:2608.02464",
+      "date": "2026-08-03",
+      "title": "Real-Time Detection and Repair of LLM Agent Failures",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianyu Huai",
-        "Tingshuo Fan",
-        "Xinchi Chen",
-        "Yining Zheng",
-        "Yuxin Wang",
-        "Shuang Chen",
-        "Jie Zhou",
-        "Xuanjing Huang"
+        "Sunny Dubey"
       ],
-      "institution": "Fudan University, Shanghai Innovation Institute, East China Normal University, OpenMOSS",
+      "institution": null,
       "summary": {
-        "zh": "AgentHPOBench 填补了评估LLM智能体在真实科研环境中进行顺序超参数优化能力的空白。通过引入包含日志和中间状态观测的可执行任务，该基准揭示了当前智能体虽具备初步的实验优化能力，但在深度推理和持续迭代方面仍有显著提升空间，为未来开发更强大的自主科学智能体提供了重要的评估工具和方向指引。",
-        "en": "- **Background**: As LLMs evolve into autonomous scientific agents, evaluating their ability to conduct experiments is crucial. A typical ML workflow involves executing baselines, inspecting metrics/logs, and adjusting..."
+        "zh": "本文提出了一种高效、低成本的 LLM 智能体故障实时检测与修复框架。通过结合轻量级的单类 ESN 监控器和无参数的确定性验证层，系统能够在微秒级延迟内识别多种故障模式（包括循环、错误级联和内容损坏）。实验表明，该方法不仅显著降低了监控成本，还通过实时回滚重跑机制大幅提升了智能体的最终任务成功率，为构建鲁棒的自主智能体系统提供了切实可行的解决方案。",
+        "en": "This paper presents an efficient, low-cost framework for real-time detection and repair of LLM agent failures. By combining a lightweight one-class ESN monitor with a parameter-free deterministic verification layer, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.29626v1",
-        "pdf": "https://arxiv.org/pdf/2607.29626v1",
-        "github": "https://github.com/OpenMOSS/AgentHPOBench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.29626.md",
-        "summary_en_path": "summary_en/2026-07/2607.29626.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29626.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29626.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2607.29167",
-      "date": "2026-07-31",
-      "title": "Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Jinghan Xu",
-        "Yiyong Xiao",
-        "Wanru Shao",
-        "Hankai Liu",
-        "Xinjin Li"
-      ],
-      "institution": "labels",
-      "summary": {
-        "zh": "本文揭示了LLM代理中长期记忆系统的一个新安全威胁——“记忆来源清洗”，即外部不可信信息通过记忆整合被伪装成高权限内部状态。作者提出了PPMF防火墙，通过保留来源元数据并实施基于风险-权限匹配的访问控制，有效阻断了此类攻击，同时在保证安全的前提下保留了系统的可用性。",
-        "en": "This paper identifies a new security threat in LLM agent long-term memory systems called \"memory provenance laundering,\" where untrusted external information is disguised as high-authority internal states through memory..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2607.29167v1",
-        "pdf": "https://arxiv.org/pdf/2607.29167v1",
+        "abs": "http://arxiv.org/abs/2608.02464v1",
+        "pdf": "https://arxiv.org/pdf/2608.02464v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.29167.md",
-        "summary_en_path": "summary_en/2026-07/2607.29167.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29167.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29167.md"
+        "summary_zh_path": "summary/2026-08/2608.02464.md",
+        "summary_en_path": "summary_en/2026-08/2608.02464.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02464.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02464.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -101,33 +48,33 @@
       }
     },
     {
-      "id": "arxiv:2607.29055",
-      "date": "2026-07-31",
-      "title": "Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search",
+      "id": "arxiv:2608.02444",
+      "date": "2026-08-03",
+      "title": "ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hanxiao Lu",
-        "Tianyi Zhang"
+        "Wei-Jung Huang",
+        "Bonan Shen"
       ],
-      "institution": "Purdue University",
+      "institution": null,
       "summary": {
-        "zh": "本文针对多智能体系统自动化修复这一空白领域，提出了 MARS 框架。通过将修复过程建模为 MCTS，并利用部分 rollout 和分类增强评估解决了搜索效率和中间状态评估两大难题。同时，作者构建了 StateMAS 基准以推动该领域研究。实验证明 MARS 在修复成功率和成本效率上均显著优于现有方法，为 MAS 的自主修复提供了新的解决方案。",
-        "en": "This paper addresses the gap in automated MAS repair by proposing MARS, which models repair as an MCTS process. By leveraging partial rollouts and taxonomy-augmented evaluation, MARS effectively tackles the challenges..."
+        "zh": "ParEvalLayer 解决了 LLM Agent 评估中部分数据决策难的问题。它不仅仅是一个早停机制，而是一个透明的决策层，能够根据预设策略判断当前证据是否充分。实验证明，该方法能在显著减少评估成本（仅需少量任务结果）的同时，保持与全量评估高度一致的决策准确性，强调了在评估报告中明确决策规则和未决状态的重要性。",
+        "en": "- **Background**: LLM-Agent benchmark evaluations are often expensive and time-consuming, yet partial task outcomes are available long before the full run completes. There is a temptation to report these partial scores..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.29055v1",
-        "pdf": "https://arxiv.org/pdf/2607.29055v1",
+        "abs": "http://arxiv.org/abs/2608.02444v1",
+        "pdf": "https://arxiv.org/pdf/2608.02444v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.29055.md",
-        "summary_en_path": "summary_en/2026-07/2607.29055.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29055.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29055.md"
+        "summary_zh_path": "summary/2026-08/2608.02444.md",
+        "summary_en_path": "summary_en/2026-08/2608.02444.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02444.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02444.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,35 +91,33 @@
       }
     },
     {
-      "id": "arxiv:2607.29422",
-      "date": "2026-07-31",
-      "title": "AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair",
+      "id": "arxiv:2608.02345",
+      "date": "2026-08-03",
+      "title": "Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Michael Fu",
-        "Qiyue Mei",
-        "Patanamon Thongtanunam",
-        "Kla Tantithamthavorn"
+        "Stefan Hut",
+        "Lorenzo Masoero"
       ],
-      "institution": "The University of Melbourne, Monash University",
+      "institution": "Amazon",
       "summary": {
-        "zh": "AgenticRepair 通过模拟安全工程师的工作流程，创新性地引入了多方面程序上下文工程。它通过协调多个 specialized LLM 子代理来构建代码结构、运行时执行和提交历史上下文，有效解决了现有方法在处理复杂漏洞上下文时的局限性。实验结果表明，该方法在真实世界的漏洞修复任务中显著优于现有技术，确立了多方面上下文工程作为代理式漏洞修复的重要设计方向。",
-        "en": "- **Background**: Automated vulnerability repair aims to reduce the time and effort required to patch security flaws. While agentic AI approaches show promise in general program repair, vulnerability repair demands..."
+        "zh": "本文提出了一个通用的 S-RCT 框架，旨在利用 AI 代理在投入真实流量前低成本地筛选候选治疗方案。通过理论上的误差分解和实证上的校准协议及实验设计优化，显著提高了模拟的准确性和统计效力。尽管目前仍存在一定的局限性，但该框架为减少实验成本、加速产品迭代提供了可行的路径，特别适用于需要快速 vetting 大量候选方案的场景。",
+        "en": "- **Background**: A/B testing is the standard for rolling out new features in the tech industry, but each experiment consumes real user traffic, significant engineering effort, and weeks of wall-clock time. The..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.29422v1",
-        "pdf": "https://arxiv.org/pdf/2607.29422v1",
+        "abs": "http://arxiv.org/abs/2608.02345v1",
+        "pdf": "https://arxiv.org/pdf/2608.02345v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.29422.md",
-        "summary_en_path": "summary_en/2026-07/2607.29422.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.29422.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.29422.md"
+        "summary_zh_path": "summary/2026-08/2608.02345.md",
+        "summary_en_path": "summary_en/2026-08/2608.02345.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02345.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02345.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,38 +134,87 @@
       }
     },
     {
-      "id": "arxiv:2607.28990",
-      "date": "2026-07-31",
-      "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
+      "id": "arxiv:2608.02171",
+      "date": "2026-08-03",
+      "title": "From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yucheng Xu",
-        "Keyi Zhang",
-        "Yuyang Yu",
+        "Jiajia Song",
+        "Bobo Li",
+        "Haiwen Yi",
+        "Zibo Ji",
+        "Meishan Zhang",
+        "Hao Fei",
         "Min Zhang",
-        "Shiyuan Meng",
-        "Pei Chu",
-        "Zhongying Tu"
+        "Mong-Li Lee",
+        "Wynne Hsu"
       ],
-      "institution": "Shanghai AI Lab",
+      "institution": "National University of Singapore, University of Toronto, University of Minnesota Twin Cities, Harbin Institute of Technology (Shenzhen), University of Oxford",
       "summary": {
-        "zh": "本文针对数据驱动科学发现中长视界分析和缺乏过程监督的问题，提出了 SciDisco 框架。通过构建包含隐藏证据和验证器的 SciThèque 环境，结合 DAG 轨迹合成和 DiscoPO 轮次级信用分配算法，成功训练出能够进行稳健交互的科学发现代理。SciDisco-14B 在相关基准上取得了 SOTA 成绩，证明了过程可验证环境和细粒度强化学习信号在提升 LLM 科学推理能力方面的有效性。",
-        "en": "This paper addresses the challenges of long-horizon analysis and lack of process supervision in data-driven scientific discovery by proposing the SciDisco framework. By constructing the SciThèque environment with hidden..."
+        "zh": "本文指出了当前个性化 LLM 智能体评估中存在的“知识到行动差距”，即代理虽知悉用户偏好却未能在任务执行中正确应用。为此，作者提出了 IBA-Bench 基准和 IBA-Agent 框架。IBA-Bench 通过模拟真实世界中充满噪声和隐式线索的长期交互来评估代理能力；IBA-Agent 则通过广泛检索和轨迹级对齐技术，成功提升了代理在动态、复杂场景下的隐式行为对齐水平，为下一代个性化智能体的研发提供了新的方向和评估标准。",
+        "en": "This paper identifies the \"knowledge-to-action gap\" in current personalized LLM agents, where agents fail to apply known user preferences during task execution. To address this, the authors introduce IBA-Bench, a..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2607.28990v1",
-        "pdf": "https://arxiv.org/pdf/2607.28990v1",
+        "abs": "http://arxiv.org/abs/2608.02171v1",
+        "pdf": "https://arxiv.org/pdf/2608.02171v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-07/2607.28990.md",
-        "summary_en_path": "summary_en/2026-07/2607.28990.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-07/2607.28990.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-07/2607.28990.md"
+        "summary_zh_path": "summary/2026-08/2608.02171.md",
+        "summary_en_path": "summary_en/2026-08/2608.02171.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02171.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02171.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.02113",
+      "date": "2026-08-03",
+      "title": "MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiajun Dong",
+        "Yutao Hu",
+        "Fengrui Fan",
+        "Shihan Dou",
+        "Yueming Wu",
+        "Deqing Zou"
+      ],
+      "institution": "Huazhong University of Science and Technology, Fudan University",
+      "summary": {
+        "zh": "MemArbiter 通过引入功能感知的记忆仲裁机制，有效解决了长视野 LLM 智能体中的“记忆-行动鸿沟”问题。它不再仅仅关注信息的检索，而是重点优化信息的组织、优先级排序和呈现方式。实验证明，该方法在严格的 token 预算限制下，显著提升了智能体的任务成功率和鲁棒性，表明精细化的记忆管理对于提升 LLM 智能体的决策质量至关重要。",
+        "en": "- **Background**: Large Language Model (LLM) agents require the retention and utilization of cross-step information to act coherently in long-horizon tasks such as web navigation and embodied interaction. - **Why..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.02113v1",
+        "pdf": "https://arxiv.org/pdf/2608.02113v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.02113.md",
+        "summary_en_path": "summary_en/2026-08/2608.02113.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02113.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02113.md"
       },
       "signals": {
         "priority_keyword": "Agent"
