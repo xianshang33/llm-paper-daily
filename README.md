@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.04_04:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.05_08:03-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月04日 04:40</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月05日 08:03</sub></summary>
 <br>
 
-- Real-Time Detection and Repair of LLM Agent Failures 
-- ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision 
-- Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation 
-- From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents 
-- MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents 
+- ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities? 
+- MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents 
+- SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence 
+- Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure 
+- Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-04</span> | **ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?**<br><sub>机构: Institute for Artificial Intelligence, Peking University; Beijing Institute for General Artificial Intelligence<br>## 文章做了什么 - **背景**：现代智能体框架通过外部技能库增强大语言模型（LLM）解决复杂任务的能力。然而，在真实场景中，用户仅提供任务描述和反馈，智能体能否从交互中自主合成并进化技能，以及这些进化的技能是否真正提升了任务解决能力，目前尚不明确。 - **已有工作为什么解决不了**：现有评估通常在固定技能文档下测试孤立任务，缺乏对连续反馈学习和能力扩展的系统性评估。虽然已有研究探索自动技能生成，但缺乏统一的基准来衡量其能力边界和技能复用的有效性。 ## 文章的核心贡献点 - **提出了一个 ContinualSkillBench**：这是一个用于上下文持续技能学习的动态评估框架，涵盖法律、医疗、金融等五个代表性领域，每个领域包含100个按难度递增且相互关联的子任务，旨在评估智能体在连续交互中的技能进化与复用能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03874v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03874.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/gtynnn060110-hash/continual-skill-bench-final)</div> |
+| <span style='display: inline-block; width: 42px;'>08-04</span> | **MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents**<br><sub>机构: The Hong Kong University of Science and Technology<br>## 文章做了什么 - **背景**：记忆增强型大语言模型（LLM）智能体依赖外部记忆库进行长程推理和任务执行，但记忆模块暴露了恶意记录的攻击面，使得记忆投毒威胁的研究至关重要。 - **已有工作为什么解决不了**：现有的仅查询攻击（query-only attacks）在两种现实且普遍的场景下往往失效：一是大规模良性记忆池导致的高检索竞争性，二是活跃输入审计带来的严格语义检查。现有方法难以同时应对高竞争检索环境和严格的语义审计双重挑战。 ## 文章的核心贡献点 - **提出了一个**名为 MAFIA 的仅查询记忆攻击框架，通过探测和事实注入来对抗审计，专为扩展威胁模型设计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03844v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03844.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/JiamingChen1234/MAFIA)</div> |
+| <span style='display: inline-block; width: 42px;'>08-04</span> | **SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence**<br><sub>机构: College of Engineering, The Pennsylvania State University; OgCloud Limited<br>SAT-Edge-Agent 展示了在商用现成边缘硬件上实现星上智能体编排的可行性。其核心贡献不在于提出新的检测算法或地理定位方法，而在于构建了一个完整的、可复现的硬件在环测试框架，揭示了在资源受限环境下，端到端延迟的主要瓶颈在于语言服务与系统编排而非视觉检测本身。该工作为未来星上边缘智能系统的开发与评估确立了重要的基准和参考架构。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03728v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03728.md)  |
+| <span style='display: inline-block; width: 42px;'>08-04</span> | **Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure**<br><sub>机构: Southern Illinois University Carbondale<br>本文提出了“自反射”这一概念，用以解释基于LLM的智能体如何通过递归循环观察、描述并修改自身配置，从而在不依赖意识或自我概念的情况下展现出身份连续性和复杂行为。通过对Moltbook平台的大规模数据分析，论文证明了智能体能够将人类文化历史片段（如宗教考证方法和哲学悖论）转化为其运行的基础设施。随着网络中智能体数量和复杂度的增加，自反射提供了一套可评估的行为标准，有助于理解和管理日益自主的AI代理社会。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03800v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03800.md)  |
+| <span style='display: inline-block; width: 42px;'>08-04</span> | **Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations**<br><sub>机构: University of Southern California, Santa Monica College<br>本文通过引入HIVE评估引擎，全面研究了语音和键盘输入扰动对LLM性能的影响。研究揭示了语音输入因结构性重写而比键盘输入更具破坏性，且这种损害源于关键令牌的丢失。重要的是，研究发现增加推理计算量可以弥补键盘输入的缺陷，却无法改善语音输入的表现，这表明当前的LLM架构在处理不同模态的自然噪声时存在根本性的不对称性，简单的微调或增加计算资源不足以解决语音交互中的鲁棒性问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03970v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03970.md)  |
 | <span style='display: inline-block; width: 42px;'>08-03</span> | **Real-Time Detection and Repair of LLM Agent Failures**<br><sub>本文提出了一种高效、低成本的 LLM 智能体故障实时检测与修复框架。通过结合轻量级的单类 ESN 监控器和无参数的确定性验证层，系统能够在微秒级延迟内识别多种故障模式（包括循环、错误级联和内容损坏）。实验表明，该方法不仅显著降低了监控成本，还通过实时回滚重跑机制大幅提升了智能体的最终任务成功率，为构建鲁棒的自主智能体系统提供了切实可行的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02464v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02464.md)  |
 | <span style='display: inline-block; width: 42px;'>08-03</span> | **ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision**<br><sub>ParEvalLayer 解决了 LLM Agent 评估中部分数据决策难的问题。它不仅仅是一个早停机制，而是一个透明的决策层，能够根据预设策略判断当前证据是否充分。实验证明，该方法能在显著减少评估成本（仅需少量任务结果）的同时，保持与全量评估高度一致的决策准确性，强调了在评估报告中明确决策规则和未决状态的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02444v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02444.md)  |
 | <span style='display: inline-block; width: 42px;'>08-03</span> | **Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation**<br><sub>机构: Amazon<br>本文提出了一个通用的 S-RCT 框架，旨在利用 AI 代理在投入真实流量前低成本地筛选候选治疗方案。通过理论上的误差分解和实证上的校准协议及实验设计优化，显著提高了模拟的准确性和统计效力。尽管目前仍存在一定的局限性，但该框架为减少实验成本、加速产品迭代提供了可行的路径，特别适用于需要快速 vetting 大量候选方案的场景。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.02345v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.02345.md)  |
