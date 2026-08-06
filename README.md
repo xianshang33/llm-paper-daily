@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.05_08:03-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.06_04:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月05日 08:03</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月06日 04:40</sub></summary>
 <br>
 
-- ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities? 
-- MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents 
-- SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence 
-- Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure 
-- Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations 
+- SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System 
+- A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination 
+- EASy: Towards Efficient LLM-Based Agentic System 
+- When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs 
+- Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-05</span> | **SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System**<br><sub>机构: University of Minnesota<br>SparseDitto 通过结合轻量级统计模型与 LLM 驱动的智能体系统，解决了稀疏矩阵计算中因稀疏模式多样性和硬件差异性导致的性能优化难题。它不再依赖单一的固定实现，而是为每个工作负载动态生成最优 GPU 内核，显著提升了稀疏算子在多种 GPU 架构上的执行效率，展示了 LLM 在系统底层优化中的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.05033v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.05033.md)  |
+| <span style='display: inline-block; width: 42px;'>08-05</span> | **A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination**<br><sub>机构: Shanghai AI Laboratory, University of California at Los Angeles, Tongji University<br>A-SR 是一种创新的自我进化代理框架，专门用于解决符号回归中的复杂搜索问题。它通过引入基于角色的协调协议、在线评估反馈机制和状态路由记忆，克服了传统方法将异构失败简单化的缺陷。该方法不仅在合成基准测试中大幅超越了现有基线，还在真实科学发现任务中展现了卓越的准确性和泛化能力，证明了分层协调和多智能体协作在提升 LLM 科学推理能力方面的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.04872v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.04872.md)  |
+| <span style='display: inline-block; width: 42px;'>08-05</span> | **EASy: Towards Efficient LLM-Based Agentic System**<br><sub>机构: Monash University<br>EASy 通过引入显式的执行器成本/能力感知和强化学习训练的编排器，解决了现有智能体系统忽视执行效率的问题。其核心的“里程碑-计划-行动”机制和树状搜索训练策略，使得系统能够在复杂、动态的任务环境中实现性能与效率的最佳平衡，为构建实用的高效 LLM 智能体系统提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.04588v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.04588.md)  |
+| <span style='display: inline-block; width: 42px;'>08-05</span> | **When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs**<br><sub>机构: The Ohio State University<br>本文通过严格的因果审计揭示，多智能体 LLM 系统中中继 KV 缓存带来的性能提升并不总是源于“潜在思维”的示例特定传输。在需要私有信息的受控场景中，缓存内容至关重要；但在标准自然基准测试中，性能增益主要源于接口效应或通用状态的存在，而非具体的语义内容传递。该研究强调了区分“缓存效应”与“配对效应”的重要性，并发布了相应的审计工具以促进更严谨的系统评估。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.04893v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.04893.md)  |
+| <span style='display: inline-block; width: 42px;'>08-05</span> | **Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite**<br><sub>机构: Nankai University, Zhongguancun Academy, Beihang University<br>本文针对长期推理智能体中图记忆存在的检索噪声大和更新效率低的问题，提出了 HiGram 框架。通过引入分层图结构优化检索过程，并利用基于微图的路径级定位与协调重写机制解决记忆更新中的依赖一致性问题。实验证明，该方法在多种冲突场景下均能显著提升回答准确性和证据选择的有效性，同时提高了 Token 使用效率，为构建高效、可演化的智能体记忆系统提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.05095v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.05095.md)  |
 | <span style='display: inline-block; width: 42px;'>08-04</span> | **ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?**<br><sub>机构: Institute for Artificial Intelligence, Peking University; Beijing Institute for General Artificial Intelligence<br>## 文章做了什么 - **背景**：现代智能体框架通过外部技能库增强大语言模型（LLM）解决复杂任务的能力。然而，在真实场景中，用户仅提供任务描述和反馈，智能体能否从交互中自主合成并进化技能，以及这些进化的技能是否真正提升了任务解决能力，目前尚不明确。 - **已有工作为什么解决不了**：现有评估通常在固定技能文档下测试孤立任务，缺乏对连续反馈学习和能力扩展的系统性评估。虽然已有研究探索自动技能生成，但缺乏统一的基准来衡量其能力边界和技能复用的有效性。 ## 文章的核心贡献点 - **提出了一个 ContinualSkillBench**：这是一个用于上下文持续技能学习的动态评估框架，涵盖法律、医疗、金融等五个代表性领域，每个领域包含100个按难度递增且相互关联的子任务，旨在评估智能体在连续交互中的技能进化与复用能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03874v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03874.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/gtynnn060110-hash/continual-skill-bench-final)</div> |
 | <span style='display: inline-block; width: 42px;'>08-04</span> | **MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents**<br><sub>机构: The Hong Kong University of Science and Technology<br>## 文章做了什么 - **背景**：记忆增强型大语言模型（LLM）智能体依赖外部记忆库进行长程推理和任务执行，但记忆模块暴露了恶意记录的攻击面，使得记忆投毒威胁的研究至关重要。 - **已有工作为什么解决不了**：现有的仅查询攻击（query-only attacks）在两种现实且普遍的场景下往往失效：一是大规模良性记忆池导致的高检索竞争性，二是活跃输入审计带来的严格语义检查。现有方法难以同时应对高竞争检索环境和严格的语义审计双重挑战。 ## 文章的核心贡献点 - **提出了一个**名为 MAFIA 的仅查询记忆攻击框架，通过探测和事实注入来对抗审计，专为扩展威胁模型设计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03844v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03844.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/JiamingChen1234/MAFIA)</div> |
 | <span style='display: inline-block; width: 42px;'>08-04</span> | **SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence**<br><sub>机构: College of Engineering, The Pennsylvania State University; OgCloud Limited<br>SAT-Edge-Agent 展示了在商用现成边缘硬件上实现星上智能体编排的可行性。其核心贡献不在于提出新的检测算法或地理定位方法，而在于构建了一个完整的、可复现的硬件在环测试框架，揭示了在资源受限环境下，端到端延迟的主要瓶颈在于语言服务与系统编排而非视觉检测本身。该工作为未来星上边缘智能系统的开发与评估确立了重要的基准和参考架构。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.03728v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.03728.md)  |

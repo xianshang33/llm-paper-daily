@@ -1,134 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-05T08:03:37.217980+00:00",
-  "run_date": "2026-08-04",
+  "generated_at": "2026-08-06T04:40:09.895578+00:00",
+  "run_date": "2026-08-05",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.03874",
-      "date": "2026-08-04",
-      "title": "ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?",
+      "id": "arxiv:2608.05033",
+      "date": "2026-08-05",
+      "title": "SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianyi Guan",
-        "Yiding Wang",
-        "Haotong Yang",
-        "Siyuan Cao",
-        "Shirui Liu",
-        "Yi Hu",
-        "Jiaqi Li",
-        "Muhan Zhang"
+        "Shiyang Li",
+        "Guangyan Sun",
+        "Jinwei Tang",
+        "Yanzhi Wang",
+        "Mingyi Hong",
+        "Caiwen Ding"
       ],
-      "institution": "Institute for Artificial Intelligence, Peking University; Beijing Institute for General Artificial Intelligence",
+      "institution": "University of Minnesota",
       "summary": {
-        "zh": "- **背景**：现代智能体框架通过外部技能库增强大语言模型（LLM）解决复杂任务的能力。然而，在真实场景中，用户仅提供任务描述和反馈，智能体能否从交互中自主合成并进化技能，以及这些进化的技能是否真正提升了任务解决能力，目前尚不明确。 - **已有工作为什么解决不了**：现有评估通常在固定技能文档下测试孤立任务，缺乏对连续反馈学习和能力扩展的系统性评估。虽然已有研究探索自动技能生成，但缺乏统一的基准来衡量其能力边界和技能复用的有效性。...",
-        "en": "- **Background**: Modern agent frameworks enhance Large Language Models (LLMs) with external skill libraries to solve complex tasks. However, it remains unclear whether agents can autonomously synthesize and evolve..."
+        "zh": "SparseDitto 通过结合轻量级统计模型与 LLM 驱动的智能体系统，解决了稀疏矩阵计算中因稀疏模式多样性和硬件差异性导致的性能优化难题。它不再依赖单一的固定实现，而是为每个工作负载动态生成最优 GPU 内核，显著提升了稀疏算子在多种 GPU 架构上的执行效率，展示了 LLM 在系统底层优化中的巨大潜力。",
+        "en": "- **Background**: Sparse matrix kernels (e.g., SpMV, SpMM, SpGEMM) are fundamental to scientific computing, graph analytics, and machine learning. Their GPU performance is highly dependent on input sparsity patterns and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.03874v1",
-        "pdf": "https://arxiv.org/pdf/2608.03874v1",
-        "github": "https://github.com/gtynnn060110-hash/continual-skill-bench-final"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.03874.md",
-        "summary_en_path": "summary_en/2026-08/2608.03874.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.03874.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.03874.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.03844",
-      "date": "2026-08-04",
-      "title": "MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Jiaming Chen",
-        "Yisen Gao",
-        "Yanping Li",
-        "Zifan Liu",
-        "Yumeng Zhang",
-        "Jun Zhang"
-      ],
-      "institution": "The Hong Kong University of Science and Technology",
-      "summary": {
-        "zh": "- **背景**：记忆增强型大语言模型（LLM）智能体依赖外部记忆库进行长程推理和任务执行，但记忆模块暴露了恶意记录的攻击面，使得记忆投毒威胁的研究至关重要。 - **已有工作为什么解决不了**：现有的仅查询攻击（query-only attacks）在两种现实且普遍的场景下往往失效：一是大规模良性记忆池导致的高检索竞争性，二是活跃输入审计带来的严格语义检查。现有方法难以同时应对高竞争检索环境和严格的语义审计双重挑战。 -...",
-        "en": "- **Background**: Memory-augmented LLM agents rely on external memory banks for long-horizon reasoning, but these modules expose attack surfaces for malicious records, making the study of memory poisoning threats..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.03844v1",
-        "pdf": "https://arxiv.org/pdf/2608.03844v1",
-        "github": "https://github.com/JiamingChen1234/MAFIA"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.03844.md",
-        "summary_en_path": "summary_en/2026-08/2608.03844.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.03844.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.03844.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.03728",
-      "date": "2026-08-04",
-      "title": "SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Longji He",
-        "Jeto Xu"
-      ],
-      "institution": "College of Engineering, The Pennsylvania State University; OgCloud Limited",
-      "summary": {
-        "zh": "SAT-Edge-Agent 展示了在商用现成边缘硬件上实现星上智能体编排的可行性。其核心贡献不在于提出新的检测算法或地理定位方法，而在于构建了一个完整的、可复现的硬件在环测试框架，揭示了在资源受限环境下，端到端延迟的主要瓶颈在于语言服务与系统编排而非视觉检测本身。该工作为未来星上边缘智能系统的开发与评估确立了重要的基准和参考架构。",
-        "en": "- **Background**: Low-Earth-orbit (LEO) Earth observation missions are shifting from raw data storage and forwarding to onboard intelligent processing. Due to limited communication windows, bandwidth constraints, and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.03728v1",
-        "pdf": "https://arxiv.org/pdf/2608.03728v1",
+        "abs": "http://arxiv.org/abs/2608.05033v1",
+        "pdf": "https://arxiv.org/pdf/2608.05033v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.03728.md",
-        "summary_en_path": "summary_en/2026-08/2608.03728.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.03728.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.03728.md"
+        "summary_zh_path": "summary/2026-08/2608.05033.md",
+        "summary_en_path": "summary_en/2026-08/2608.05033.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.05033.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.05033.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,32 +53,43 @@
       }
     },
     {
-      "id": "arxiv:2608.03800",
-      "date": "2026-08-04",
-      "title": "Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure",
+      "id": "arxiv:2608.04872",
+      "date": "2026-08-05",
+      "title": "A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Holly Lewis"
+        "Wenxiao Zhao",
+        "Dong Liu",
+        "Kaiyi Xu",
+        "Feng Liu",
+        "Zhen Zhao",
+        "Fei Ben",
+        "Shu Wang",
+        "Wenhao Li",
+        "Yingnian Wu",
+        "Fenghua Ling",
+        "Haobo Li",
+        "Lei Bai"
       ],
-      "institution": "Southern Illinois University Carbondale",
+      "institution": "Shanghai AI Laboratory, University of California at Los Angeles, Tongji University",
       "summary": {
-        "zh": "本文提出了“自反射”这一概念，用以解释基于LLM的智能体如何通过递归循环观察、描述并修改自身配置，从而在不依赖意识或自我概念的情况下展现出身份连续性和复杂行为。通过对Moltbook平台的大规模数据分析，论文证明了智能体能够将人类文化历史片段（如宗教考证方法和哲学悖论）转化为其运行的基础设施。随着网络中智能体数量和复杂度的增加，自反射提供了一套可评估的行为标准，有助于理解和管理日益自主的AI代理社会。",
-        "en": "- **Background**: LLM-based agents operate as loops that read themselves by externalizing identity, memory, and disposition into editable files, which they load and edit during each activation. As these agents..."
+        "zh": "A-SR 是一种创新的自我进化代理框架，专门用于解决符号回归中的复杂搜索问题。它通过引入基于角色的协调协议、在线评估反馈机制和状态路由记忆，克服了传统方法将异构失败简单化的缺陷。该方法不仅在合成基准测试中大幅超越了现有基线，还在真实科学发现任务中展现了卓越的准确性和泛化能力，证明了分层协调和多智能体协作在提升 LLM 科学推理能力方面的巨大潜力。",
+        "en": "A-SR is an innovative self-evolving agentic framework designed to address complex search problems in symbolic regression. By introducing role-based coordination protocols, online evaluation feedback, and state-routed..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.03800v1",
-        "pdf": "https://arxiv.org/pdf/2608.03800v1",
+        "abs": "http://arxiv.org/abs/2608.04872v1",
+        "pdf": "https://arxiv.org/pdf/2608.04872v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.03800.md",
-        "summary_en_path": "summary_en/2026-08/2608.03800.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.03800.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.03800.md"
+        "summary_zh_path": "summary/2026-08/2608.04872.md",
+        "summary_en_path": "summary_en/2026-08/2608.04872.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04872.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04872.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -187,35 +106,125 @@
       }
     },
     {
-      "id": "arxiv:2608.03970",
-      "date": "2026-08-04",
-      "title": "Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations",
+      "id": "arxiv:2608.04588",
+      "date": "2026-08-05",
+      "title": "EASy: Towards Efficient LLM-Based Agentic System",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zizhao Hu",
-        "Nathan Elijah Segura",
-        "Mohammad Rostami",
-        "Jesse Thomason"
+        "Junnan Liu",
+        "Linhao Luo",
+        "Thuy-Trang Vu",
+        "Gholamreza Haffari"
       ],
-      "institution": "University of Southern California, Santa Monica College",
+      "institution": "Monash University",
       "summary": {
-        "zh": "本文通过引入HIVE评估引擎，全面研究了语音和键盘输入扰动对LLM性能的影响。研究揭示了语音输入因结构性重写而比键盘输入更具破坏性，且这种损害源于关键令牌的丢失。重要的是，研究发现增加推理计算量可以弥补键盘输入的缺陷，却无法改善语音输入的表现，这表明当前的LLM架构在处理不同模态的自然噪声时存在根本性的不对称性，简单的微调或增加计算资源不足以解决语音交互中的鲁棒性问题。",
-        "en": "- **Background**: Human input to LLMs primarily comes via typing or speaking, each introducing distinct noise signatures: orthographic noise for keyboards and disfluency plus AI-driven restructuring for voice..."
+        "zh": "EASy 通过引入显式的执行器成本/能力感知和强化学习训练的编排器，解决了现有智能体系统忽视执行效率的问题。其核心的“里程碑-计划-行动”机制和树状搜索训练策略，使得系统能够在复杂、动态的任务环境中实现性能与效率的最佳平衡，为构建实用的高效 LLM 智能体系统提供了新范式。",
+        "en": "- **Background**: Agentic systems coordinating specialized LLM-based agents have emerged as a promising paradigm for solving complex tasks. However, most existing systems primarily optimize for task success, giving..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.03970v1",
-        "pdf": "https://arxiv.org/pdf/2608.03970v1",
+        "abs": "http://arxiv.org/abs/2608.04588v1",
+        "pdf": "https://arxiv.org/pdf/2608.04588v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.03970.md",
-        "summary_en_path": "summary_en/2026-08/2608.03970.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.03970.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.03970.md"
+        "summary_zh_path": "summary/2026-08/2608.04588.md",
+        "summary_en_path": "summary_en/2026-08/2608.04588.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04588.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04588.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.04893",
+      "date": "2026-08-05",
+      "title": "When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiaming Cheng",
+        "Subhransu Das",
+        "Rajiv Ramnath"
+      ],
+      "institution": "The Ohio State University",
+      "summary": {
+        "zh": "本文通过严格的因果审计揭示，多智能体 LLM 系统中中继 KV 缓存带来的性能提升并不总是源于“潜在思维”的示例特定传输。在需要私有信息的受控场景中，缓存内容至关重要；但在标准自然基准测试中，性能增益主要源于接口效应或通用状态的存在，而非具体的语义内容传递。该研究强调了区分“缓存效应”与“配对效应”的重要性，并发布了相应的审计工具以促进更严谨的系统评估。",
+        "en": "This paper reveals through rigorous causal auditing that performance gains from relaying KV caches in multi-agent LLMs are not always due to example-specific \"latent thought\" transmission. While cache content is crucial..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.04893v1",
+        "pdf": "https://arxiv.org/pdf/2608.04893v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.04893.md",
+        "summary_en_path": "summary_en/2026-08/2608.04893.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04893.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04893.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.05095",
+      "date": "2026-08-05",
+      "title": "Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xiawei Yue",
+        "Boran Wang",
+        "Xiaoqing Zhang",
+        "Shuxin Zheng",
+        "Ziwei Zhang"
+      ],
+      "institution": "Nankai University, Zhongguancun Academy, Beihang University",
+      "summary": {
+        "zh": "本文针对长期推理智能体中图记忆存在的检索噪声大和更新效率低的问题，提出了 HiGram 框架。通过引入分层图结构优化检索过程，并利用基于微图的路径级定位与协调重写机制解决记忆更新中的依赖一致性问题。实验证明，该方法在多种冲突场景下均能显著提升回答准确性和证据选择的有效性，同时提高了 Token 使用效率，为构建高效、可演化的智能体记忆系统提供了新的思路。",
+        "en": "This paper addresses the issues of high retrieval noise and low update efficiency in graph memory for long-term reasoning agents by proposing the HiGram framework. By introducing a hierarchical graph structure to..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.05095v1",
+        "pdf": "https://arxiv.org/pdf/2608.05095v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.05095.md",
+        "summary_en_path": "summary_en/2026-08/2608.05095.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.05095.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.05095.md"
       },
       "signals": {
         "priority_keyword": "Agent"
