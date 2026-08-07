@@ -1,42 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-06T04:40:09.895578+00:00",
-  "run_date": "2026-08-05",
+  "generated_at": "2026-08-07T04:09:23.021326+00:00",
+  "run_date": "2026-08-06",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.05033",
-      "date": "2026-08-05",
-      "title": "SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System",
+      "id": "arxiv:2608.06362",
+      "date": "2026-08-06",
+      "title": "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shiyang Li",
-        "Guangyan Sun",
-        "Jinwei Tang",
-        "Yanzhi Wang",
-        "Mingyi Hong",
-        "Caiwen Ding"
+        "Boning Li",
+        "Yu Chen",
+        "Longbo Huang"
       ],
-      "institution": "University of Minnesota",
+      "institution": "Tsinghua University",
       "summary": {
-        "zh": "SparseDitto 通过结合轻量级统计模型与 LLM 驱动的智能体系统，解决了稀疏矩阵计算中因稀疏模式多样性和硬件差异性导致的性能优化难题。它不再依赖单一的固定实现，而是为每个工作负载动态生成最优 GPU 内核，显著提升了稀疏算子在多种 GPU 架构上的执行效率，展示了 LLM 在系统底层优化中的巨大潜力。",
-        "en": "- **Background**: Sparse matrix kernels (e.g., SpMV, SpMM, SpGEMM) are fundamental to scientific computing, graph analytics, and machine learning. Their GPU performance is highly dependent on input sparsity patterns and..."
+        "zh": "AV-AIVAT 成功地将方差缩减技术转化为高效、可审计的早期停止机制。它通过分离渐近筛选和精确认证，解决了不完全信息游戏中智能体评估成本高、噪声大的问题。该方法不仅保证了在任意时刻停止的统计有效性，还允许第三方在停止时刻重新验证结论，为 LLM 智能体在博弈环境中的评估提供了一种经济且严谨的新标准。",
+        "en": "- **Background**: Evaluating the strength of Large Language Model (LLM) agents in imperfect-information games (e.g., poker) is costly and noisy. Since the required number of games is unknown, fixed-budget evaluations..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.05033v1",
-        "pdf": "https://arxiv.org/pdf/2608.05033v1",
+        "abs": "http://arxiv.org/abs/2608.06362v1",
+        "pdf": "https://arxiv.org/pdf/2608.06362v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.05033.md",
-        "summary_en_path": "summary_en/2026-08/2608.05033.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.05033.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.05033.md"
+        "summary_zh_path": "summary/2026-08/2608.06362.md",
+        "summary_en_path": "summary_en/2026-08/2608.06362.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.06362.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.06362.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,43 +50,34 @@
       }
     },
     {
-      "id": "arxiv:2608.04872",
-      "date": "2026-08-05",
-      "title": "A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination",
+      "id": "arxiv:2608.06329",
+      "date": "2026-08-06",
+      "title": "Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wenxiao Zhao",
-        "Dong Liu",
-        "Kaiyi Xu",
-        "Feng Liu",
-        "Zhen Zhao",
-        "Fei Ben",
-        "Shu Wang",
-        "Wenhao Li",
-        "Yingnian Wu",
-        "Fenghua Ling",
-        "Haobo Li",
-        "Lei Bai"
+        "Noam Koren",
+        "Roy Bar-Haim",
+        "Abigail Goldsteen"
       ],
-      "institution": "Shanghai AI Laboratory, University of California at Los Angeles, Tongji University",
+      "institution": "IBM Research",
       "summary": {
-        "zh": "A-SR 是一种创新的自我进化代理框架，专门用于解决符号回归中的复杂搜索问题。它通过引入基于角色的协调协议、在线评估反馈机制和状态路由记忆，克服了传统方法将异构失败简单化的缺陷。该方法不仅在合成基准测试中大幅超越了现有基线，还在真实科学发现任务中展现了卓越的准确性和泛化能力，证明了分层协调和多智能体协作在提升 LLM 科学推理能力方面的巨大潜力。",
-        "en": "A-SR is an innovative self-evolving agentic framework designed to address complex search problems in symbolic regression. By introducing role-based coordination protocols, online evaluation feedback, and state-routed..."
+        "zh": "本文针对任务型对话智能体基准测试质量评估缺失的问题，提出了一种基于LLM裁判的无参考评估框架。该框架通过衡量一致性、复杂性和策略覆盖率，有效识别基准中的缺陷。实验验证表明，该方法与人类判断高度一致，并能灵敏地区分不同质量的基准。这为开发者和研究人员提供了一套实用的工具，用于提升合成及人工策划基准的可靠性，确保对话智能体评估结果的真实性。",
+        "en": "This paper addresses the lack of quality assessment for task-oriented conversational agent benchmarks by proposing a reference-free evaluation framework using LLM judges. By measuring consistency, complexity, and policy..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.04872v1",
-        "pdf": "https://arxiv.org/pdf/2608.04872v1",
+        "abs": "http://arxiv.org/abs/2608.06329v1",
+        "pdf": "https://arxiv.org/pdf/2608.06329v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.04872.md",
-        "summary_en_path": "summary_en/2026-08/2608.04872.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04872.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04872.md"
+        "summary_zh_path": "summary/2026-08/2608.06329.md",
+        "summary_en_path": "summary_en/2026-08/2608.06329.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.06329.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.06329.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -106,35 +94,38 @@
       }
     },
     {
-      "id": "arxiv:2608.04588",
-      "date": "2026-08-05",
-      "title": "EASy: Towards Efficient LLM-Based Agentic System",
+      "id": "arxiv:2608.06110",
+      "date": "2026-08-06",
+      "title": "ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junnan Liu",
-        "Linhao Luo",
-        "Thuy-Trang Vu",
-        "Gholamreza Haffari"
+        "Abdulkadir Külçe",
+        "Alihan Esen",
+        "Cağla Fikir",
+        "Berke Kurt",
+        "Kuzey Arar",
+        "Gökhan Ercan",
+        "Faik Boray Tek"
       ],
-      "institution": "Monash University",
+      "institution": "Istanbul Technical University",
       "summary": {
-        "zh": "EASy 通过引入显式的执行器成本/能力感知和强化学习训练的编排器，解决了现有智能体系统忽视执行效率的问题。其核心的“里程碑-计划-行动”机制和树状搜索训练策略，使得系统能够在复杂、动态的任务环境中实现性能与效率的最佳平衡，为构建实用的高效 LLM 智能体系统提供了新范式。",
-        "en": "- **Background**: Agentic systems coordinating specialized LLM-based agents have emerged as a promising paradigm for solving complex tasks. However, most existing systems primarily optimize for task success, giving..."
+        "zh": "ECHO 是一个针对慢性病管理的端到端本地化代理健康助手。它通过引入时序知识图谱解决了长期护理中的记忆一致性问题，通过两阶段混合护栏确保了医疗交互的安全性，并通过多模态语音分析增强了情感感知能力。该系统在保护患者隐私的前提下，实现了高性能的临床工具调用和安全分类，为本地部署的医疗AI提供了可行的技术路径。",
+        "en": "ECHO is an end-to-end localized agentic health assistant for chronic care management. It addresses memory consistency in long-term care through temporal knowledge graphs, ensures safety via a two-stage hybrid guardrail,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.04588v1",
-        "pdf": "https://arxiv.org/pdf/2608.04588v1",
+        "abs": "http://arxiv.org/abs/2608.06110v1",
+        "pdf": "https://arxiv.org/pdf/2608.06110v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.04588.md",
-        "summary_en_path": "summary_en/2026-08/2608.04588.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04588.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04588.md"
+        "summary_zh_path": "summary/2026-08/2608.06110.md",
+        "summary_en_path": "summary_en/2026-08/2608.06110.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.06110.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.06110.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -151,34 +142,34 @@
       }
     },
     {
-      "id": "arxiv:2608.04893",
-      "date": "2026-08-05",
-      "title": "When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs",
+      "id": "arxiv:2608.06027",
+      "date": "2026-08-06",
+      "title": "FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiaming Cheng",
-        "Subhransu Das",
-        "Rajiv Ramnath"
+        "Aman Dalmia",
+        "Sanskriti Midha",
+        "Jigar Doshi"
       ],
-      "institution": "The Ohio State University",
+      "institution": "Indian Institute of Science",
       "summary": {
-        "zh": "本文通过严格的因果审计揭示，多智能体 LLM 系统中中继 KV 缓存带来的性能提升并不总是源于“潜在思维”的示例特定传输。在需要私有信息的受控场景中，缓存内容至关重要；但在标准自然基准测试中，性能增益主要源于接口效应或通用状态的存在，而非具体的语义内容传递。该研究强调了区分“缓存效应”与“配对效应”的重要性，并发布了相应的审计工具以促进更严谨的系统评估。",
-        "en": "This paper reveals through rigorous causal auditing that performance gains from relaying KV caches in multi-agent LLMs are not always due to example-specific \"latent thought\" transmission. While cache content is crucial..."
+        "zh": "本文针对印度农村低识字率人群的社会福利注册难题，提出了 FormBharo 语音代理系统。通过结合 LLM 与确定性规则控制，解决了真实声学环境下语音识别错误导致的性能下降问题，并在严格资源约束下实现了高效的自动化表单填写。研究强调了端到端评估的重要性，指出组件性能不能代表最终任务效果，并通过新发布的基准测试和帕累托优化策略，为资源受限场景下的语音AI部署提供了重要参考。",
+        "en": "- **Background**: In India, accessing social benefits requires filling out forms, but the most needy populations are often illiterate. Currently, frontline health workers manually enroll beneficiaries one by one, which..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.04893v1",
-        "pdf": "https://arxiv.org/pdf/2608.04893v1",
+        "abs": "http://arxiv.org/abs/2608.06027v1",
+        "pdf": "https://arxiv.org/pdf/2608.06027v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.04893.md",
-        "summary_en_path": "summary_en/2026-08/2608.04893.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.04893.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.04893.md"
+        "summary_zh_path": "summary/2026-08/2608.06027.md",
+        "summary_en_path": "summary_en/2026-08/2608.06027.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.06027.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.06027.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -195,36 +186,33 @@
       }
     },
     {
-      "id": "arxiv:2608.05095",
-      "date": "2026-08-05",
-      "title": "Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite",
+      "id": "arxiv:2608.06130",
+      "date": "2026-08-06",
+      "title": "Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiawei Yue",
-        "Boran Wang",
-        "Xiaoqing Zhang",
-        "Shuxin Zheng",
-        "Ziwei Zhang"
+        "Leo Sambrook",
+        "Sampo Sovio"
       ],
-      "institution": "Nankai University, Zhongguancun Academy, Beihang University",
+      "institution": "Hardware Systems Security Lab (HSSL), Huawei Technologies & EPITA",
       "summary": {
-        "zh": "本文针对长期推理智能体中图记忆存在的检索噪声大和更新效率低的问题，提出了 HiGram 框架。通过引入分层图结构优化检索过程，并利用基于微图的路径级定位与协调重写机制解决记忆更新中的依赖一致性问题。实验证明，该方法在多种冲突场景下均能显著提升回答准确性和证据选择的有效性，同时提高了 Token 使用效率，为构建高效、可演化的智能体记忆系统提供了新的思路。",
-        "en": "This paper addresses the issues of high retrieval noise and low update efficiency in graph memory for long-term reasoning agents by proposing the HiGram framework. By introducing a hierarchical graph structure to..."
+        "zh": "本文指出当前 AI Agent 密钥管理的结构性弱点在于密钥必然短暂存在于软件内存中，易受提示词注入攻击。作者提出了一种基于硬件密钥库的零信任架构，通过 PKCS#11 接口将密钥操作完全限制在硬件边界内，并辅以五层安全强制机制。实验证明，该方案能将提示词注入攻击的成功率从 19.3% 降至 0%，且无误报，为 AI Agent 的加密工作流提供了实质性的安全保障。",
+        "en": "This paper highlights the structural weakness in current AI agent key management, where keys inevitably reside in software memory, making them vulnerable to prompt injection. The authors propose a hardware..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.05095v1",
-        "pdf": "https://arxiv.org/pdf/2608.05095v1",
+        "abs": "http://arxiv.org/abs/2608.06130v1",
+        "pdf": "https://arxiv.org/pdf/2608.06130v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.05095.md",
-        "summary_en_path": "summary_en/2026-08/2608.05095.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.05095.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.05095.md"
+        "summary_zh_path": "summary/2026-08/2608.06130.md",
+        "summary_en_path": "summary_en/2026-08/2608.06130.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.06130.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.06130.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.06_04:40-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.07_04:09-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月06日 04:40</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月07日 04:09</sub></summary>
 <br>
 
-- SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System 
-- A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination 
-- EASy: Towards Efficient LLM-Based Agentic System 
-- When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs 
-- Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite 
+- AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games 
+- Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents 
+- ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment 
+- FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India 
+- Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-06</span> | **AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games**<br><sub>机构: Tsinghua University<br>AV-AIVAT 成功地将方差缩减技术转化为高效、可审计的早期停止机制。它通过分离渐近筛选和精确认证，解决了不完全信息游戏中智能体评估成本高、噪声大的问题。该方法不仅保证了在任意时刻停止的统计有效性，还允许第三方在停止时刻重新验证结论，为 LLM 智能体在博弈环境中的评估提供了一种经济且严谨的新标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06362v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06362.md)  |
+| <span style='display: inline-block; width: 42px;'>08-06</span> | **Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents**<br><sub>机构: IBM Research<br>本文针对任务型对话智能体基准测试质量评估缺失的问题，提出了一种基于LLM裁判的无参考评估框架。该框架通过衡量一致性、复杂性和策略覆盖率，有效识别基准中的缺陷。实验验证表明，该方法与人类判断高度一致，并能灵敏地区分不同质量的基准。这为开发者和研究人员提供了一套实用的工具，用于提升合成及人工策划基准的可靠性，确保对话智能体评估结果的真实性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06329v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06329.md)  |
+| <span style='display: inline-block; width: 42px;'>08-06</span> | **ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment**<br><sub>机构: Istanbul Technical University<br>ECHO 是一个针对慢性病管理的端到端本地化代理健康助手。它通过引入时序知识图谱解决了长期护理中的记忆一致性问题，通过两阶段混合护栏确保了医疗交互的安全性，并通过多模态语音分析增强了情感感知能力。该系统在保护患者隐私的前提下，实现了高性能的临床工具调用和安全分类，为本地部署的医疗AI提供了可行的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06110v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06110.md)  |
+| <span style='display: inline-block; width: 42px;'>08-06</span> | **FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India**<br><sub>机构: Indian Institute of Science<br>本文针对印度农村低识字率人群的社会福利注册难题，提出了 FormBharo 语音代理系统。通过结合 LLM 与确定性规则控制，解决了真实声学环境下语音识别错误导致的性能下降问题，并在严格资源约束下实现了高效的自动化表单填写。研究强调了端到端评估的重要性，指出组件性能不能代表最终任务效果，并通过新发布的基准测试和帕累托优化策略，为资源受限场景下的语音AI部署提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06027v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06027.md)  |
+| <span style='display: inline-block; width: 42px;'>08-06</span> | **Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture**<br><sub>机构: Hardware Systems Security Lab (HSSL), Huawei Technologies & EPITA<br>本文指出当前 AI Agent 密钥管理的结构性弱点在于密钥必然短暂存在于软件内存中，易受提示词注入攻击。作者提出了一种基于硬件密钥库的零信任架构，通过 PKCS#11 接口将密钥操作完全限制在硬件边界内，并辅以五层安全强制机制。实验证明，该方案能将提示词注入攻击的成功率从 19.3% 降至 0%，且无误报，为 AI Agent 的加密工作流提供了实质性的安全保障。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06130v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06130.md)  |
 | <span style='display: inline-block; width: 42px;'>08-05</span> | **SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System**<br><sub>机构: University of Minnesota<br>SparseDitto 通过结合轻量级统计模型与 LLM 驱动的智能体系统，解决了稀疏矩阵计算中因稀疏模式多样性和硬件差异性导致的性能优化难题。它不再依赖单一的固定实现，而是为每个工作负载动态生成最优 GPU 内核，显著提升了稀疏算子在多种 GPU 架构上的执行效率，展示了 LLM 在系统底层优化中的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.05033v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.05033.md)  |
 | <span style='display: inline-block; width: 42px;'>08-05</span> | **A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination**<br><sub>机构: Shanghai AI Laboratory, University of California at Los Angeles, Tongji University<br>A-SR 是一种创新的自我进化代理框架，专门用于解决符号回归中的复杂搜索问题。它通过引入基于角色的协调协议、在线评估反馈机制和状态路由记忆，克服了传统方法将异构失败简单化的缺陷。该方法不仅在合成基准测试中大幅超越了现有基线，还在真实科学发现任务中展现了卓越的准确性和泛化能力，证明了分层协调和多智能体协作在提升 LLM 科学推理能力方面的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.04872v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.04872.md)  |
 | <span style='display: inline-block; width: 42px;'>08-05</span> | **EASy: Towards Efficient LLM-Based Agentic System**<br><sub>机构: Monash University<br>EASy 通过引入显式的执行器成本/能力感知和强化学习训练的编排器，解决了现有智能体系统忽视执行效率的问题。其核心的“里程碑-计划-行动”机制和树状搜索训练策略，使得系统能够在复杂、动态的任务环境中实现性能与效率的最佳平衡，为构建实用的高效 LLM 智能体系统提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.04588v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.04588.md)  |
