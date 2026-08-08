@@ -1,40 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-08T03:06:24.264424+00:00",
-  "run_date": "2026-08-02",
+  "generated_at": "2026-08-08T06:08:27.744531+00:00",
+  "run_date": "2026-08-01",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.01285",
-      "date": "2026-08-02",
-      "title": "Stop When Memory Suffices: Evidence-Conditioned Progressive Execution for LLM Agents",
+      "id": "arxiv:2608.00718",
+      "date": "2026-08-01",
+      "title": "Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yidan Lin",
-        "Kaixiang Wang",
-        "Jiong Lou",
-        "Jie Li"
+        "Faisal Haque Bappy",
+        "Tahrim Hossain",
+        "Tarannum Shaila Zaman",
+        "Raiful Hasan",
+        "Kamrul Hasan",
+        "Tariqul Islam"
       ],
-      "institution": null,
+      "institution": "University of Maryland Baltimore County",
       "summary": {
-        "zh": "Router-Mem 通过引入证据条件的渐进式执行机制，成功解决了长期记忆系统中质量与效率的矛盾。其核心在于利用轻量级路由器动态决定是早期终止还是深入分析，既避免了不必要的计算开销，又确保了在复杂任务中的证据充分性。该方法为构建高效、持久的 LLM 代理记忆系统提供了新的思路。",
-        "en": "- **Background**: As Large Language Models (LLMs) evolve towards persistent and adaptive intelligence, long-term memory mechanisms that preserve and reuse information across interactions are increasingly critical...."
+        "zh": "本文揭示了多智能体 LLM 系统中因缺乏边界验证而产生的结构性安全漏洞。通过分析内容、身份和委托边界的隐式信任假设，研究证明了 adversarial 内容可在代理间静默传播。实验表明，这种脆弱性是架构层面的固有属性，独立于具体模型能力，呼吁社区从单点防御转向系统级的流水线边界验证机制。",
+        "en": "- **Background**: Multi-agent LLM pipelines orchestrate specialized agents into structured workflows, passing intermediate outputs to solve complex tasks. This design introduces a security gap absent in single-agent..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.01285v1",
-        "pdf": "https://arxiv.org/pdf/2608.01285v1",
+        "abs": "http://arxiv.org/abs/2608.00718v1",
+        "pdf": "https://arxiv.org/pdf/2608.00718v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.01285.md",
-        "summary_en_path": "summary_en/2026-08/2608.01285.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.01285.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.01285.md"
+        "summary_zh_path": "summary/2026-08/2608.00718.md",
+        "summary_en_path": "summary_en/2026-08/2608.00718.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00718.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00718.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,36 +53,40 @@
       }
     },
     {
-      "id": "arxiv:2608.01543",
-      "date": "2026-08-02",
-      "title": "V-Mem: Modality-Routed Retrieval for Long-Term Multimodal Agentic Memory",
+      "id": "arxiv:2608.02657",
+      "date": "2026-08-01",
+      "title": "Your Agentic LLMs Secretly Encode Latent Signals of Indirect Prompt-Injection Exposure",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dingyi Kang",
-        "Dongming Jiang",
-        "Yi Li",
-        "Guanpeng Li",
-        "Bingzhe Li"
+        "Jianshuo Dong",
+        "Yiming Liu",
+        "Maosen Zhang",
+        "Nan Deng",
+        "Xu Peng",
+        "Xiaoping Zhang",
+        "Tianwei Zhang",
+        "Jie Zhang",
+        "Han Qiu"
       ],
-      "institution": "University of Texas at Dallas",
+      "institution": "Tsinghua University",
       "summary": {
-        "zh": "V-Mem 解决了多模态代理记忆中的关键检索难题。通过模态路由机制规避了跨模态向量比较的缺陷，并利用 LLM 生成的语义锚点缩小了查询与证据之间的语义差距。实验证明，该方法在长程多模态对话记忆检索中具有显著的性能优势，为构建更强大的多模态智能体提供了有效的记忆架构。",
-        "en": "V-Mem addresses critical retrieval challenges in multimodal agent memory. By employing modality routing to bypass cross-modal embedding defects and using LLM-generated semantic anchors to bridge the similarity-relevance..."
+        "zh": "本文深入研究了代理型 LLM 在间接提示注入攻击下的内部机制。首先证实了模型隐藏状态中存在高度可预测的 IPI 暴露信号；其次揭示了模型在识别风险与执行安全动作之间的差距，并提出了 AGRI 防御机制有效弥合了这一差距；最后通过解释性分析揭示了不同模型处理 IPI 信号的差异。该工作为理解和防御代理系统中的高级提示注入攻击提供了重要的理论基础和实践工具。",
+        "en": "- **Background**: Agentic LLMs operating in open environments are vulnerable to Indirect Prompt Injection (IPI) attacks, where malicious instructions are hidden within external tool outputs. While many efforts address..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.01543v1",
-        "pdf": "https://arxiv.org/pdf/2608.01543v1",
-        "github": "https://github.com/Dingyi-Kang/V-Mem"
+        "abs": "http://arxiv.org/abs/2608.02657v1",
+        "pdf": "https://arxiv.org/pdf/2608.02657v1",
+        "github": "https://github.com/jianshuod/IPI-exposure-signal"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.01543.md",
-        "summary_en_path": "summary_en/2026-08/2608.01543.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.01543.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.01543.md"
+        "summary_zh_path": "summary/2026-08/2608.02657.md",
+        "summary_en_path": "summary_en/2026-08/2608.02657.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02657.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02657.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,35 +103,39 @@
       }
     },
     {
-      "id": "arxiv:2608.01369",
-      "date": "2026-08-02",
-      "title": "CRAFTS: Collaborative Role-Adaptive Fine-Tuning of LLM Agents for Chemical Process Simulation",
+      "id": "arxiv:2608.00764",
+      "date": "2026-08-01",
+      "title": "FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ziyun Zhang",
-        "Yuxin Lin",
-        "Eldin Wee Chuan Lim",
-        "Xinghao Ding"
+        "Chaoqun Yang",
+        "Fengbin Zhu",
+        "Xinyu Lin",
+        "Long Bai",
+        "Xiaoluan Liu",
+        "Ke-Wei Huang",
+        "Roger Zimmermann",
+        "Tat-Seng Chua"
       ],
-      "institution": "National University of Singapore; Xiamen University",
+      "institution": "National University of Singapore",
       "summary": {
-        "zh": "CRAFTS 通过模仿化学工程师的分阶段工作流程，成功将复杂的化工过程模拟任务分解为由七个专用角色协同完成的子任务。通过结合针对关键角色的微调、类型化的中间表示以及基于白盒模拟器的确定性工程网关，该方法有效解决了从自然语言到可执行模拟模型的转化难题，在准确性和可靠性上取得了显著成果，为自动化化工过程建模提供了新的范式。",
-        "en": "- **Background**: Constructing executable chemical process models remains manually intensive. Chemical engineers must translate underspecified requests into coupled decisions regarding unit operations, thermodynamics,..."
+        "zh": "本文提出了 FinDeepIndicator，填补了金融领域端到端指标构建评估的空白。通过细粒度的多阶段评估和涵盖中美市场的真实数据，研究发现虽然深度研究智能体优于普通搜索增强LLM，但其在数据检索和数值计算上的不稳定性仍是阻碍其在金融领域可信应用的主要障碍。该工作为开发更强大、更可信的金融深度研究智能体提供了重要的洞察和基准支持。",
+        "en": "This paper introduces FinDeepIndicator, filling the gap in end-to-end financial indicator construction evaluation. Through fine-grained multi-stage assessment and real-world data covering US and Chinese markets, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.01369v1",
-        "pdf": "https://arxiv.org/pdf/2608.01369v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.00764v1",
+        "pdf": "https://arxiv.org/pdf/2608.00764v1",
+        "github": "https://github.com/FinDeepIndicator/FinDeepIndicator"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.01369.md",
-        "summary_en_path": "summary_en/2026-08/2608.01369.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.01369.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.01369.md"
+        "summary_zh_path": "summary/2026-08/2608.00764.md",
+        "summary_en_path": "summary_en/2026-08/2608.00764.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00764.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00764.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -142,32 +152,34 @@
       }
     },
     {
-      "id": "arxiv:2608.01388",
-      "date": "2026-08-02",
-      "title": "Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety",
+      "id": "arxiv:2608.00747",
+      "date": "2026-08-01",
+      "title": "When Prompts Control Robots: Prompt Injection Attacks in Multi-Agent Robotic Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ruiyang Zhang"
+        "Neha Nagaraja",
+        "Amisha Bagari",
+        "Hayretdin Bahsi"
       ],
-      "institution": "Ryonix Labs Inc. / Flock.io",
+      "institution": "Northern Arizona University; Tallinn University of Technology",
       "summary": {
-        "zh": "本文揭示了基于LTL/FSA的LLM智能体安全监控器失效的根本理论原因：固定不变量监控器的效能受限于攻击分布的熵。低熵（集中）分布允许高覆盖率，而高熵（分散）分布导致覆盖率极低，且无法通过常规工程手段优化。作者提出的熵-覆盖率边界理论和预部署熵测试为选择和应用运行时监控器提供了科学的指导原则，强调了在部署前评估攻击分布特性的重要性。",
-        "en": "- **Background**: Runtime safety monitors based on Linear Temporal Logic (LTL) and Finite State Automata (FSA) are increasingly used to intercept unsafe tool-call sequences in LLM agents. However, empirical evaluations..."
+        "zh": "本文首次系统地调查了基于LLM的多智能体机器人系统中的提示注入攻击。通过评估直接和间接注入策略，研究揭示了攻击在多智能体间的传播机制及其对物理任务的负面影响。结果表明，多智能体架构虽然增强了协作能力，但也扩大了攻击面，使得系统更容易受到跨智能体污染的影响。该研究为理解LLM驱动的网络物理系统的安全漏洞提供了重要见解，并强调了在设计此类系统时需考虑提示注入带来的物理安全风险。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly integrated into autonomous robotic systems for task planning and control. However, this integration exposes them to prompt injection attacks, which can..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.01388v1",
-        "pdf": "https://arxiv.org/pdf/2608.01388v1",
+        "abs": "http://arxiv.org/abs/2608.00747v2",
+        "pdf": "https://arxiv.org/pdf/2608.00747v2",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.01388.md",
-        "summary_en_path": "summary_en/2026-08/2608.01388.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.01388.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.01388.md"
+        "summary_zh_path": "summary/2026-08/2608.00747.md",
+        "summary_en_path": "summary_en/2026-08/2608.00747.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00747.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00747.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -184,33 +196,35 @@
       }
     },
     {
-      "id": "arxiv:2608.01425",
-      "date": "2026-08-02",
-      "title": "Training Small LLMs as Spatial Multi-Agent Policies",
+      "id": "arxiv:2608.00711",
+      "date": "2026-08-01",
+      "title": "Tracing the Cascade: A Topology-Aware Evaluation Framework for Scientific Agent Hallucinations",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yi Mao",
-        "Andrew Perrault"
+        "Xinshun Feng",
+        "Ziqi Miao",
+        "Lijun Li",
+        "Jing Shao"
       ],
-      "institution": "The Ohio State University",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
       "summary": {
-        "zh": "本文针对小型LLM在空间多智能体任务中的失效问题，提出了一种结合符号选项抽象与参数高效微调（LoRA+PA-MAGRPO）的训练框架。通过自动化构建带可行性守卫的选项库，解决了接地和长视界难题；通过独立策略优化，解决了角色同质化问题。研究进一步揭示了对多智能体系统进行行为审计的重要性，指出高奖励并不等同于有效合作，为评估LLM多智能体系统提供了新的视角。",
-        "en": "This paper addresses the failure of small LLMs in spatial multi-agent tasks by proposing a framework combining symbolic option abstraction with parameter-efficient fine-tuning (LoRA + PA-MAGRPO). By automating the..."
+        "zh": "本文针对科学智能体中幻觉传播的严重性问题，提出了 SCHEMA 框架。该框架通过构建科学概念图并采用拓扑感知的评估方法，解决了传统基准忽略知识互联性和推理过程结构缺陷的问题。研究结果表明，在高利害的科学应用中，仅靠终端准确率不足以衡量智能体的可靠性，必须结合基于知识拓扑的机制级评估。",
+        "en": "- **Background**: LLM agents are increasingly deployed in scientific research, a domain critical for reliability and characterized by densely interconnected knowledge. In this context, hallucinations are particularly..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.01425v1",
-        "pdf": "https://arxiv.org/pdf/2608.01425v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.00711v1",
+        "pdf": "https://arxiv.org/pdf/2608.00711v1",
+        "github": "https://github.com/circles-post/SCHEMA"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.01425.md",
-        "summary_en_path": "summary_en/2026-08/2608.01425.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.01425.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.01425.md"
+        "summary_zh_path": "summary/2026-08/2608.00711.md",
+        "summary_en_path": "summary_en/2026-08/2608.00711.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00711.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00711.md"
       },
       "signals": {
         "priority_keyword": "Agent"
