@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.07_04:09-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.10_03:24-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月07日 04:09</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月10日 03:24</sub></summary>
 <br>
 
-- AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games 
-- Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents 
-- ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment 
-- FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India 
-- Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture 
+- NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs 
+- Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory 
+- SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent 
+- Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing 
+- An Agentic Hybrid Top-Down and Bottom-Up Approach to Knowledge Graph Generation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-07</span> | **NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs**<br><sub>机构: Vishwakarma Institute of Technology<br>Niyam-AI 提出了一种创新的 AI 代理安全范式，通过结合意图合约和零知识证明，解决了传统基于信任的安全机制无法提供可验证保证的问题。它不仅在与现有主流安全基线（NeMo, Prompt Guard 2, GPT-OSS-Safeguard）的对比中展示了更高的准确性和更低的误报率，还首次实现了无需暴露模型权重即可由第三方独立验证的安全执行证明。尽管引入了一定的计算延迟，但其提供的数学级可验证性为高风险环境下的自主 AI 代理部署奠定了新的信任基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07167v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07167.md)  |
+| <span style='display: inline-block; width: 42px;'>08-07</span> | **Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory**<br><sub>机构: KAIST, DeepAuto.ai<br>本文针对小型 LLM 智能体因成功轨迹稀缺而导致记忆系统失效的问题，提出了 Agent Memory Distillation (AMD) 框架。通过构建包含工作流、子任务和函数三个层级的分层记忆，并结合主动注入与被动检索机制，AMD 有效地将大型教师模型的知识蒸馏给小型学生模型。实验表明，该方法在多个基准测试上显著提升了小型智能体的工具使用能力，且无需额外的训练成本，为资源受限环境下的高性能智能体部署提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07169v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07169.md)  |
+| <span style='display: inline-block; width: 42px;'>08-07</span> | **SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent**<br><sub>机构: Hong Kong University of Science and Technology<br>## 文章做了什么 - **背景**：大型语言模型（LLM）智能体通过积累“技能”（轻量级、可重用的文本工件）来适应重复性任务，而无需更新模型权重。当前的研究重点已从静态技能合成转向技能进化，即通过迭代执行、失败诊断和文本空间更新来优化技能。 - **已有工作的不足**：现有的技能进化框架存在两个主要缺陷：一是缺乏明确的“诊断-结果”反馈闭环，生成的诊断补丁通常直接提交，未经验证其实际效果；二是将删除视为通用的编辑操作，缺乏专门的知识巩固机制，导致技能随着迭代不断膨胀，包含冗余或冲突的信息，干扰有用知识的发挥。 ## 文章的核心贡献点 - **提出了一个 SkillProx 框架**：这是一种受近端梯度下降启发的“前向-后向”框架，将闭环诊断进化与效用感知的近端 refinement 相结合，旨在平衡任务损失和技能复杂度。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07449v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07449.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Steven011018/SkillProx)</div> |
+| <span style='display: inline-block; width: 42px;'>08-07</span> | **Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing**<br><sub>机构: Stanford University, University of Wisconsin–Madison<br>本文揭示了当前LLM代理在假设检验中缺乏可靠统计推理的问题，即虽然代码执行正确但统计推断存在细微错误。通过构建专注于统计有效性的新基准 P-Bench 和引入经过强化学习训练的 Fisher-R1 代理，文章证明了在具有验证统计奖励的任务上进行强化学习可以大幅提高LLM在科学假设检验中的可靠性。Fisher-R1 在多个领域和难度级别的任务上均优于现有的最先进模型，为自动化科学发现提供了更可信的工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07437v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07437.md)  |
+| <span style='display: inline-block; width: 42px;'>08-07</span> | **An Agentic Hybrid Top-Down and Bottom-Up Approach to Knowledge Graph Generation**<br><sub>机构: Malt<br>本文提出了一种创新的混合知识图谱生成方法，有效解决了 HR 领域中多语言、非标准化技能数据的组织难题。通过结合 Wikidata 的权威 grounding 和 LLM 代理的灵活生成能力，该方法克服了传统自顶向下方法缺乏灵活性和自底向上方法缺乏结构性的缺点。实验表明，该流水线能够自主适应噪声数据，生成高质量、可解释且动态更新的技能知识图谱，为人才匹配等应用提供了坚实基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07023v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07023.md)  |
 | <span style='display: inline-block; width: 42px;'>08-06</span> | **AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games**<br><sub>机构: Tsinghua University<br>AV-AIVAT 成功地将方差缩减技术转化为高效、可审计的早期停止机制。它通过分离渐近筛选和精确认证，解决了不完全信息游戏中智能体评估成本高、噪声大的问题。该方法不仅保证了在任意时刻停止的统计有效性，还允许第三方在停止时刻重新验证结论，为 LLM 智能体在博弈环境中的评估提供了一种经济且严谨的新标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06362v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06362.md)  |
 | <span style='display: inline-block; width: 42px;'>08-06</span> | **Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents**<br><sub>机构: IBM Research<br>本文针对任务型对话智能体基准测试质量评估缺失的问题，提出了一种基于LLM裁判的无参考评估框架。该框架通过衡量一致性、复杂性和策略覆盖率，有效识别基准中的缺陷。实验验证表明，该方法与人类判断高度一致，并能灵敏地区分不同质量的基准。这为开发者和研究人员提供了一套实用的工具，用于提升合成及人工策划基准的可靠性，确保对话智能体评估结果的真实性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06329v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06329.md)  |
 | <span style='display: inline-block; width: 42px;'>08-06</span> | **ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment**<br><sub>机构: Istanbul Technical University<br>ECHO 是一个针对慢性病管理的端到端本地化代理健康助手。它通过引入时序知识图谱解决了长期护理中的记忆一致性问题，通过两阶段混合护栏确保了医疗交互的安全性，并通过多模态语音分析增强了情感感知能力。该系统在保护患者隐私的前提下，实现了高性能的临床工具调用和安全分类，为本地部署的医疗AI提供了可行的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.06110v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.06110.md)  |

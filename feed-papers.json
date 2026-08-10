@@ -1,42 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-08T06:08:27.744531+00:00",
-  "run_date": "2026-08-01",
+  "generated_at": "2026-08-10T03:24:12.734305+00:00",
+  "run_date": "2026-08-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.00718",
-      "date": "2026-08-01",
-      "title": "Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures",
+      "id": "arxiv:2608.07167",
+      "date": "2026-08-07",
+      "title": "NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Faisal Haque Bappy",
-        "Tahrim Hossain",
-        "Tarannum Shaila Zaman",
-        "Raiful Hasan",
-        "Kamrul Hasan",
-        "Tariqul Islam"
+        "Aditya Katkar",
+        "Om Karkele",
+        "Kartik Mandhane",
+        "Manisha More",
+        "Yash Kashid"
       ],
-      "institution": "University of Maryland Baltimore County",
+      "institution": "Vishwakarma Institute of Technology",
       "summary": {
-        "zh": "本文揭示了多智能体 LLM 系统中因缺乏边界验证而产生的结构性安全漏洞。通过分析内容、身份和委托边界的隐式信任假设，研究证明了 adversarial 内容可在代理间静默传播。实验表明，这种脆弱性是架构层面的固有属性，独立于具体模型能力，呼吁社区从单点防御转向系统级的流水线边界验证机制。",
-        "en": "- **Background**: Multi-agent LLM pipelines orchestrate specialized agents into structured workflows, passing intermediate outputs to solve complex tasks. This design introduces a security gap absent in single-agent..."
+        "zh": "Niyam-AI 提出了一种创新的 AI 代理安全范式，通过结合意图合约和零知识证明，解决了传统基于信任的安全机制无法提供可验证保证的问题。它不仅在与现有主流安全基线（NeMo, Prompt Guard 2, GPT-OSS-Safeguard）的对比中展示了更高的准确性和更低的误报率，还首次实现了无需暴露模型权重即可由第三方独立验证的安全执行证明。尽管引入了一定的计算延迟，但其提供的数学级可验证性为高风险环境下的自主 AI...",
+        "en": "- **Background**: As Large Language Model (LLM) agents gain capabilities to send emails, query databases, and execute commands, they face new attack surfaces including prompt injection, hallucinated reasoning, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.00718v1",
-        "pdf": "https://arxiv.org/pdf/2608.00718v1",
+        "abs": "http://arxiv.org/abs/2608.07167v1",
+        "pdf": "https://arxiv.org/pdf/2608.07167v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.00718.md",
-        "summary_en_path": "summary_en/2026-08/2608.00718.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00718.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00718.md"
+        "summary_zh_path": "summary/2026-08/2608.07167.md",
+        "summary_en_path": "summary_en/2026-08/2608.07167.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07167.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07167.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,133 +52,34 @@
       }
     },
     {
-      "id": "arxiv:2608.02657",
-      "date": "2026-08-01",
-      "title": "Your Agentic LLMs Secretly Encode Latent Signals of Indirect Prompt-Injection Exposure",
+      "id": "arxiv:2608.07169",
+      "date": "2026-08-07",
+      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jianshuo Dong",
-        "Yiming Liu",
-        "Maosen Zhang",
-        "Nan Deng",
-        "Xu Peng",
-        "Xiaoping Zhang",
-        "Tianwei Zhang",
-        "Jie Zhang",
-        "Han Qiu"
+        "Taeil Kim",
+        "Kangsan Kim",
+        "Sung Ju Hwang"
       ],
-      "institution": "Tsinghua University",
+      "institution": "KAIST, DeepAuto.ai",
       "summary": {
-        "zh": "本文深入研究了代理型 LLM 在间接提示注入攻击下的内部机制。首先证实了模型隐藏状态中存在高度可预测的 IPI 暴露信号；其次揭示了模型在识别风险与执行安全动作之间的差距，并提出了 AGRI 防御机制有效弥合了这一差距；最后通过解释性分析揭示了不同模型处理 IPI 信号的差异。该工作为理解和防御代理系统中的高级提示注入攻击提供了重要的理论基础和实践工具。",
-        "en": "- **Background**: Agentic LLMs operating in open environments are vulnerable to Indirect Prompt Injection (IPI) attacks, where malicious instructions are hidden within external tool outputs. While many efforts address..."
+        "zh": "本文针对小型 LLM 智能体因成功轨迹稀缺而导致记忆系统失效的问题，提出了 Agent Memory Distillation (AMD) 框架。通过构建包含工作流、子任务和函数三个层级的分层记忆，并结合主动注入与被动检索机制，AMD 有效地将大型教师模型的知识蒸馏给小型学生模型。实验表明，该方法在多个基准测试上显著提升了小型智能体的工具使用能力，且无需额外的训练成本，为资源受限环境下的高性能智能体部署提供了新思路。",
+        "en": "This paper addresses the failure of memory systems in small LLM agents due to the scarcity of successful trajectories by proposing Agent Memory Distillation (AMD). By constructing hierarchical memories (Workflow,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.02657v1",
-        "pdf": "https://arxiv.org/pdf/2608.02657v1",
-        "github": "https://github.com/jianshuod/IPI-exposure-signal"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.02657.md",
-        "summary_en_path": "summary_en/2026-08/2608.02657.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.02657.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.02657.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.00764",
-      "date": "2026-08-01",
-      "title": "FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Chaoqun Yang",
-        "Fengbin Zhu",
-        "Xinyu Lin",
-        "Long Bai",
-        "Xiaoluan Liu",
-        "Ke-Wei Huang",
-        "Roger Zimmermann",
-        "Tat-Seng Chua"
-      ],
-      "institution": "National University of Singapore",
-      "summary": {
-        "zh": "本文提出了 FinDeepIndicator，填补了金融领域端到端指标构建评估的空白。通过细粒度的多阶段评估和涵盖中美市场的真实数据，研究发现虽然深度研究智能体优于普通搜索增强LLM，但其在数据检索和数值计算上的不稳定性仍是阻碍其在金融领域可信应用的主要障碍。该工作为开发更强大、更可信的金融深度研究智能体提供了重要的洞察和基准支持。",
-        "en": "This paper introduces FinDeepIndicator, filling the gap in end-to-end financial indicator construction evaluation. Through fine-grained multi-stage assessment and real-world data covering US and Chinese markets, the..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.00764v1",
-        "pdf": "https://arxiv.org/pdf/2608.00764v1",
-        "github": "https://github.com/FinDeepIndicator/FinDeepIndicator"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.00764.md",
-        "summary_en_path": "summary_en/2026-08/2608.00764.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00764.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00764.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.00747",
-      "date": "2026-08-01",
-      "title": "When Prompts Control Robots: Prompt Injection Attacks in Multi-Agent Robotic Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Neha Nagaraja",
-        "Amisha Bagari",
-        "Hayretdin Bahsi"
-      ],
-      "institution": "Northern Arizona University; Tallinn University of Technology",
-      "summary": {
-        "zh": "本文首次系统地调查了基于LLM的多智能体机器人系统中的提示注入攻击。通过评估直接和间接注入策略，研究揭示了攻击在多智能体间的传播机制及其对物理任务的负面影响。结果表明，多智能体架构虽然增强了协作能力，但也扩大了攻击面，使得系统更容易受到跨智能体污染的影响。该研究为理解LLM驱动的网络物理系统的安全漏洞提供了重要见解，并强调了在设计此类系统时需考虑提示注入带来的物理安全风险。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly integrated into autonomous robotic systems for task planning and control. However, this integration exposes them to prompt injection attacks, which can..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.00747v2",
-        "pdf": "https://arxiv.org/pdf/2608.00747v2",
+        "abs": "http://arxiv.org/abs/2608.07169v1",
+        "pdf": "https://arxiv.org/pdf/2608.07169v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.00747.md",
-        "summary_en_path": "summary_en/2026-08/2608.00747.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00747.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00747.md"
+        "summary_zh_path": "summary/2026-08/2608.07169.md",
+        "summary_en_path": "summary_en/2026-08/2608.07169.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07169.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07169.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -196,35 +96,129 @@
       }
     },
     {
-      "id": "arxiv:2608.00711",
-      "date": "2026-08-01",
-      "title": "Tracing the Cascade: A Topology-Aware Evaluation Framework for Scientific Agent Hallucinations",
+      "id": "arxiv:2608.07449",
+      "date": "2026-08-07",
+      "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xinshun Feng",
-        "Ziqi Miao",
-        "Lijun Li",
-        "Jing Shao"
+        "Mingxuan Zheng",
+        "Yujin Zhou",
+        "Chuxue Cao",
+        "Boqin Yin",
+        "Yuyao Zhang",
+        "Jiapeng Sun",
+        "Shuaishuai Gong",
+        "Sirui Han",
+        "Yike Guo"
       ],
-      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "institution": "Hong Kong University of Science and Technology",
       "summary": {
-        "zh": "本文针对科学智能体中幻觉传播的严重性问题，提出了 SCHEMA 框架。该框架通过构建科学概念图并采用拓扑感知的评估方法，解决了传统基准忽略知识互联性和推理过程结构缺陷的问题。研究结果表明，在高利害的科学应用中，仅靠终端准确率不足以衡量智能体的可靠性，必须结合基于知识拓扑的机制级评估。",
-        "en": "- **Background**: LLM agents are increasingly deployed in scientific research, a domain critical for reliability and characterized by densely interconnected knowledge. In this context, hallucinations are particularly..."
+        "zh": "- **背景**：大型语言模型（LLM）智能体通过积累“技能”（轻量级、可重用的文本工件）来适应重复性任务，而无需更新模型权重。当前的研究重点已从静态技能合成转向技能进化，即通过迭代执行、失败诊断和文本空间更新来优化技能。 -...",
+        "en": "- **Background**: LLM agents increasingly adapt to recurring tasks by accumulating \"skills\"—lightweight, reusable textual artifacts loaded into context without weight updates. The field is shifting from static skill..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.00711v1",
-        "pdf": "https://arxiv.org/pdf/2608.00711v1",
-        "github": "https://github.com/circles-post/SCHEMA"
+        "abs": "http://arxiv.org/abs/2608.07449v1",
+        "pdf": "https://arxiv.org/pdf/2608.07449v1",
+        "github": "https://github.com/Steven011018/SkillProx"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.00711.md",
-        "summary_en_path": "summary_en/2026-08/2608.00711.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.00711.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.00711.md"
+        "summary_zh_path": "summary/2026-08/2608.07449.md",
+        "summary_en_path": "summary_en/2026-08/2608.07449.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07449.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07449.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.07437",
+      "date": "2026-08-07",
+      "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiacheng Miao",
+        "Jin Mu",
+        "Guanhua Chen",
+        "James Zou"
+      ],
+      "institution": "Stanford University, University of Wisconsin–Madison",
+      "summary": {
+        "zh": "本文揭示了当前LLM代理在假设检验中缺乏可靠统计推理的问题，即虽然代码执行正确但统计推断存在细微错误。通过构建专注于统计有效性的新基准 P-Bench 和引入经过强化学习训练的 Fisher-R1 代理，文章证明了在具有验证统计奖励的任务上进行强化学习可以大幅提高LLM在科学假设检验中的可靠性。Fisher-R1 在多个领域和难度级别的任务上均优于现有的最先进模型，为自动化科学发现提供了更可信的工具。",
+        "en": "- **Background**: Reliable hypothesis testing is foundational to empirical scientific claims. Large Language Model (LLM) agents are increasingly used to automate this workflow by inspecting datasets, generating code,..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.07437v1",
+        "pdf": "https://arxiv.org/pdf/2608.07437v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.07437.md",
+        "summary_en_path": "summary_en/2026-08/2608.07437.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07437.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07437.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.07023",
+      "date": "2026-08-07",
+      "title": "An Agentic Hybrid Top-Down and Bottom-Up Approach to Knowledge Graph Generation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Emma Jouffroy",
+        "Warren Jouanneau",
+        "Marc Palyart"
+      ],
+      "institution": "Malt",
+      "summary": {
+        "zh": "本文提出了一种创新的混合知识图谱生成方法，有效解决了 HR 领域中多语言、非标准化技能数据的组织难题。通过结合 Wikidata 的权威 grounding 和 LLM 代理的灵活生成能力，该方法克服了传统自顶向下方法缺乏灵活性和自底向上方法缺乏结构性的缺点。实验表明，该流水线能够自主适应噪声数据，生成高质量、可解释且动态更新的技能知识图谱，为人才匹配等应用提供了坚实基础。",
+        "en": "- **Background**: HR platforms face persistent challenges in organizing thousands of unstandardized, multilingual expertise declarations, which directly impacts downstream tasks like accurate talent matching. Free-text..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.07023v1",
+        "pdf": "https://arxiv.org/pdf/2608.07023v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.07023.md",
+        "summary_en_path": "summary_en/2026-08/2608.07023.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07023.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07023.md"
       },
       "signals": {
         "priority_keyword": "Agent"
