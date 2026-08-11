@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.10_03:24-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.11_03:17-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月10日 03:24</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月11日 03:17</sub></summary>
 <br>
 
-- NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs 
-- Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory 
-- SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent 
-- Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing 
-- An Agentic Hybrid Top-Down and Bottom-Up Approach to Knowledge Graph Generation 
+- Stealing Reasoning Traces from Proprietary LLM APIs 
+- SHE: Trajectory-driven Safety Harness Evolution for LLM Agents 
+- Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy 
+- Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models 
+- Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-10</span> | **Stealing Reasoning Traces from Proprietary LLM APIs**<br><sub>机构: ELLIS Institute Tübingen, University of Tübingen, Max Planck Institute for Intelligent Systems<br>本文揭示了主流 LLM API 在处理客户端加密推理痕迹时存在的严重架构漏洞。通过利用加密块在生态系统内的互操作性，攻击者可以利用弱模型作为“解密 oracle”来窃取强模型的推理过程。这不仅威胁到模型的知识产权，还导致了大规模的用户隐私泄露和潜在的系统投毒风险。论文在负责任披露后，提出了具体的密码学和系统级缓解措施，建议提供商实施严格的绑定机制（如将会话 ID、模型版本与加密块绑定）以防止此类跨模型重用攻击。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09867v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09867.md)  |
+| <span style='display: inline-block; width: 42px;'>08-10</span> | **SHE: Trajectory-driven Safety Harness Evolution for LLM Agents**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>SHE 框架解决了 LLM 智能体安全 harness 静态且耦合的问题。通过解耦 harness 组件并建立基于轨迹归因的自动化演进循环，SHE 实现了安全边界的动态优化。实验证明该方法在显著提升安全性的同时保持了有用性，并具备优秀的泛化和跨模型迁移能力，为智能体安全提供了一种可演进的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09885v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09885.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/RainbowQTT/SHE)</div> |
+| <span style='display: inline-block; width: 42px;'>08-10</span> | **Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy**<br><sub>机构: Pacific Northwest National Laboratory<br>本文提出了一种名为“Agentic Harnesses”的LLM驱动验证层，旨在解决机器人自主系统中规划动作的安全性与伦理问题。通过采用多模型集成的“法官”机制，该方法有效克服了单一模型的局限性，在规划与执行之间建立了可靠的安全网关。实验结果表明，该系统在保证高精确率的同时，能极大程度地遏制对抗性攻击，为构建更安全、可信的无人监督机器人自主系统提供了新的架构思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09857v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09857.md)  |
+| <span style='display: inline-block; width: 42px;'>08-10</span> | **Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models**<br><sub>机构: University of British Columbia<br>本文提出了 Model Discovery Agent (MDA)，通过结合 LLM 的假设生成能力与贝叶斯实验设计的严谨性，解决了在昂贵实验条件下高效发现机制性世界模型的难题。MDA 特别适用于 M-open 场景，能够通过预测检查和假设空间扩展来应对未知机制。实验结果表明，该方法在多个科学领域均达到了状态-of-the-art 的性能，为自动化科学发现提供了强有力的工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09696v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09696.md)  |
+| <span style='display: inline-block; width: 42px;'>08-10</span> | **Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents**<br><sub>机构: Fudan University, Zhejiang University, East China Normal University, Alibaba Group<br>本文针对基于技能的 LLM 智能体在利用外部指导时面临的监督稀疏问题，提出了 BCSD 框架。通过引入双向上下文自蒸馏机制，BCSD 能够从增强和缩减两个互补视角提取细粒度信号，有效提升了智能体对技能的利用能力。实验结果表明该方法在多个基准任务上均达到了 SOTA 性能，为提升 LLM 智能体的技能利用效率提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09555v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09555.md)  |
 | <span style='display: inline-block; width: 42px;'>08-07</span> | **NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs**<br><sub>机构: Vishwakarma Institute of Technology<br>Niyam-AI 提出了一种创新的 AI 代理安全范式，通过结合意图合约和零知识证明，解决了传统基于信任的安全机制无法提供可验证保证的问题。它不仅在与现有主流安全基线（NeMo, Prompt Guard 2, GPT-OSS-Safeguard）的对比中展示了更高的准确性和更低的误报率，还首次实现了无需暴露模型权重即可由第三方独立验证的安全执行证明。尽管引入了一定的计算延迟，但其提供的数学级可验证性为高风险环境下的自主 AI 代理部署奠定了新的信任基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07167v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07167.md)  |
 | <span style='display: inline-block; width: 42px;'>08-07</span> | **Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory**<br><sub>机构: KAIST, DeepAuto.ai<br>本文针对小型 LLM 智能体因成功轨迹稀缺而导致记忆系统失效的问题，提出了 Agent Memory Distillation (AMD) 框架。通过构建包含工作流、子任务和函数三个层级的分层记忆，并结合主动注入与被动检索机制，AMD 有效地将大型教师模型的知识蒸馏给小型学生模型。实验表明，该方法在多个基准测试上显著提升了小型智能体的工具使用能力，且无需额外的训练成本，为资源受限环境下的高性能智能体部署提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07169v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07169.md)  |
 | <span style='display: inline-block; width: 42px;'>08-07</span> | **SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent**<br><sub>机构: Hong Kong University of Science and Technology<br>## 文章做了什么 - **背景**：大型语言模型（LLM）智能体通过积累“技能”（轻量级、可重用的文本工件）来适应重复性任务，而无需更新模型权重。当前的研究重点已从静态技能合成转向技能进化，即通过迭代执行、失败诊断和文本空间更新来优化技能。 - **已有工作的不足**：现有的技能进化框架存在两个主要缺陷：一是缺乏明确的“诊断-结果”反馈闭环，生成的诊断补丁通常直接提交，未经验证其实际效果；二是将删除视为通用的编辑操作，缺乏专门的知识巩固机制，导致技能随着迭代不断膨胀，包含冗余或冲突的信息，干扰有用知识的发挥。 ## 文章的核心贡献点 - **提出了一个 SkillProx 框架**：这是一种受近端梯度下降启发的“前向-后向”框架，将闭环诊断进化与效用感知的近端 refinement 相结合，旨在平衡任务损失和技能复杂度。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.07449v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.07449.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Steven011018/SkillProx)</div> |

@@ -1,41 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-10T03:24:12.734305+00:00",
-  "run_date": "2026-08-07",
+  "generated_at": "2026-08-11T03:17:34.419594+00:00",
+  "run_date": "2026-08-10",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.07167",
-      "date": "2026-08-07",
-      "title": "NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs",
+      "id": "arxiv:2608.09867",
+      "date": "2026-08-10",
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Aditya Katkar",
-        "Om Karkele",
-        "Kartik Mandhane",
-        "Manisha More",
-        "Yash Kashid"
+        "Alexander Panfilov",
+        "David Schmotz",
+        "Ilia Shumailov",
+        "Luca Beurer-Kellner",
+        "Joachim Schaeffer",
+        "Ameya Prabhu",
+        "Jonas Geiping",
+        "Maksym Andriushchenko"
       ],
-      "institution": "Vishwakarma Institute of Technology",
+      "institution": "ELLIS Institute Tübingen, University of Tübingen, Max Planck Institute for Intelligent Systems",
       "summary": {
-        "zh": "Niyam-AI 提出了一种创新的 AI 代理安全范式，通过结合意图合约和零知识证明，解决了传统基于信任的安全机制无法提供可验证保证的问题。它不仅在与现有主流安全基线（NeMo, Prompt Guard 2, GPT-OSS-Safeguard）的对比中展示了更高的准确性和更低的误报率，还首次实现了无需暴露模型权重即可由第三方独立验证的安全执行证明。尽管引入了一定的计算延迟，但其提供的数学级可验证性为高风险环境下的自主 AI...",
-        "en": "- **Background**: As Large Language Model (LLM) agents gain capabilities to send emails, query databases, and execute commands, they face new attack surfaces including prompt injection, hallucinated reasoning, and..."
+        "zh": "本文揭示了主流 LLM API 在处理客户端加密推理痕迹时存在的严重架构漏洞。通过利用加密块在生态系统内的互操作性，攻击者可以利用弱模型作为“解密 oracle”来窃取强模型的推理过程。这不仅威胁到模型的知识产权，还导致了大规模的用户隐私泄露和潜在的系统投毒风险。论文在负责任披露后，提出了具体的密码学和系统级缓解措施，建议提供商实施严格的绑定机制（如将会话 ID、模型版本与加密块绑定）以防止此类跨模型重用攻击。",
+        "en": "- **Background**: Leading LLM providers (e.g., Anthropic, OpenAI, Google) no longer return step-by-step reasoning (Chain-of-Thought, CoT) in plaintext to protect IP and prevent leakage. Instead, they return encrypted..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.07167v1",
-        "pdf": "https://arxiv.org/pdf/2608.07167v1",
+        "abs": "http://arxiv.org/abs/2608.09867v1",
+        "pdf": "https://arxiv.org/pdf/2608.09867v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.07167.md",
-        "summary_en_path": "summary_en/2026-08/2608.07167.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07167.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07167.md"
+        "summary_zh_path": "summary/2026-08/2608.09867.md",
+        "summary_en_path": "summary_en/2026-08/2608.09867.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09867.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09867.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,34 +55,46 @@
       }
     },
     {
-      "id": "arxiv:2608.07169",
-      "date": "2026-08-07",
-      "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+      "id": "arxiv:2608.09885",
+      "date": "2026-08-10",
+      "title": "SHE: Trajectory-driven Safety Harness Evolution for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Taeil Kim",
-        "Kangsan Kim",
-        "Sung Ju Hwang"
+        "Wanying Qu",
+        "Qinghua Mao",
+        "Yu Li",
+        "Jiyao Liu",
+        "Xin Zhang",
+        "Dadi Guo",
+        "Yanxu Zhu",
+        "Qingyu Liu",
+        "Leitao Yuan",
+        "Xi Lin",
+        "Shanfeng Zhu",
+        "Yanwei Fu",
+        "Jing Shao",
+        "Xia Hu",
+        "Dongrui Liu"
       ],
-      "institution": "KAIST, DeepAuto.ai",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
       "summary": {
-        "zh": "本文针对小型 LLM 智能体因成功轨迹稀缺而导致记忆系统失效的问题，提出了 Agent Memory Distillation (AMD) 框架。通过构建包含工作流、子任务和函数三个层级的分层记忆，并结合主动注入与被动检索机制，AMD 有效地将大型教师模型的知识蒸馏给小型学生模型。实验表明，该方法在多个基准测试上显著提升了小型智能体的工具使用能力，且无需额外的训练成本，为资源受限环境下的高性能智能体部署提供了新思路。",
-        "en": "This paper addresses the failure of memory systems in small LLM agents due to the scarcity of successful trajectories by proposing Agent Memory Distillation (AMD). By constructing hierarchical memories (Workflow,..."
+        "zh": "SHE 框架解决了 LLM 智能体安全 harness 静态且耦合的问题。通过解耦 harness 组件并建立基于轨迹归因的自动化演进循环，SHE 实现了安全边界的动态优化。实验证明该方法在显著提升安全性的同时保持了有用性，并具备优秀的泛化和跨模型迁移能力，为智能体安全提供了一种可演进的解决方案。",
+        "en": "- **Background**: The safety of Large Language Model (LLM) agents relies not only on model weights but also on the 'agent harness' that manages context, memory, tools, permissions, and runtime control. As agents are..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.07169v1",
-        "pdf": "https://arxiv.org/pdf/2608.07169v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.09885v1",
+        "pdf": "https://arxiv.org/pdf/2608.09885v1",
+        "github": "https://github.com/RainbowQTT/SHE"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.07169.md",
-        "summary_en_path": "summary_en/2026-08/2608.07169.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07169.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07169.md"
+        "summary_zh_path": "summary/2026-08/2608.09885.md",
+        "summary_en_path": "summary_en/2026-08/2608.09885.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09885.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09885.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,40 +111,34 @@
       }
     },
     {
-      "id": "arxiv:2608.07449",
-      "date": "2026-08-07",
-      "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
+      "id": "arxiv:2608.09857",
+      "date": "2026-08-10",
+      "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mingxuan Zheng",
-        "Yujin Zhou",
-        "Chuxue Cao",
-        "Boqin Yin",
-        "Yuyao Zhang",
-        "Jiapeng Sun",
-        "Shuaishuai Gong",
-        "Sirui Han",
-        "Yike Guo"
+        "Rohan Bhagra",
+        "Mahantesh Halapannavar",
+        "Uddhav Bhattarai"
       ],
-      "institution": "Hong Kong University of Science and Technology",
+      "institution": "Pacific Northwest National Laboratory",
       "summary": {
-        "zh": "- **背景**：大型语言模型（LLM）智能体通过积累“技能”（轻量级、可重用的文本工件）来适应重复性任务，而无需更新模型权重。当前的研究重点已从静态技能合成转向技能进化，即通过迭代执行、失败诊断和文本空间更新来优化技能。 -...",
-        "en": "- **Background**: LLM agents increasingly adapt to recurring tasks by accumulating \"skills\"—lightweight, reusable textual artifacts loaded into context without weight updates. The field is shifting from static skill..."
+        "zh": "本文提出了一种名为“Agentic Harnesses”的LLM驱动验证层，旨在解决机器人自主系统中规划动作的安全性与伦理问题。通过采用多模型集成的“法官”机制，该方法有效克服了单一模型的局限性，在规划与执行之间建立了可靠的安全网关。实验结果表明，该系统在保证高精确率的同时，能极大程度地遏制对抗性攻击，为构建更安全、可信的无人监督机器人自主系统提供了新的架构思路。",
+        "en": "This paper proposes \"Agentic Harnesses,\" an LLM-driven verification layer designed to address safety and ethical issues in robot autonomy planning actions. By employing a multi-model ensemble \"judge\" mechanism, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.07449v1",
-        "pdf": "https://arxiv.org/pdf/2608.07449v1",
-        "github": "https://github.com/Steven011018/SkillProx"
+        "abs": "http://arxiv.org/abs/2608.09857v1",
+        "pdf": "https://arxiv.org/pdf/2608.09857v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.07449.md",
-        "summary_en_path": "summary_en/2026-08/2608.07449.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07449.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07449.md"
+        "summary_zh_path": "summary/2026-08/2608.09857.md",
+        "summary_en_path": "summary_en/2026-08/2608.09857.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09857.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09857.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,35 +155,32 @@
       }
     },
     {
-      "id": "arxiv:2608.07437",
-      "date": "2026-08-07",
-      "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
+      "id": "arxiv:2608.09696",
+      "date": "2026-08-10",
+      "title": "Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiacheng Miao",
-        "Jin Mu",
-        "Guanhua Chen",
-        "James Zou"
+        "Kevin Murphy"
       ],
-      "institution": "Stanford University, University of Wisconsin–Madison",
+      "institution": "University of British Columbia",
       "summary": {
-        "zh": "本文揭示了当前LLM代理在假设检验中缺乏可靠统计推理的问题，即虽然代码执行正确但统计推断存在细微错误。通过构建专注于统计有效性的新基准 P-Bench 和引入经过强化学习训练的 Fisher-R1 代理，文章证明了在具有验证统计奖励的任务上进行强化学习可以大幅提高LLM在科学假设检验中的可靠性。Fisher-R1 在多个领域和难度级别的任务上均优于现有的最先进模型，为自动化科学发现提供了更可信的工具。",
-        "en": "- **Background**: Reliable hypothesis testing is foundational to empirical scientific claims. Large Language Model (LLM) agents are increasingly used to automate this workflow by inspecting datasets, generating code,..."
+        "zh": "本文提出了 Model Discovery Agent (MDA)，通过结合 LLM 的假设生成能力与贝叶斯实验设计的严谨性，解决了在昂贵实验条件下高效发现机制性世界模型的难题。MDA 特别适用于 M-open 场景，能够通过预测检查和假设空间扩展来应对未知机制。实验结果表明，该方法在多个科学领域均达到了状态-of-the-art 的性能，为自动化科学发现提供了强有力的工具。",
+        "en": "This paper presents the Model Discovery Agent (MDA), which combines the hypothesis generation capabilities of LLMs with the rigor of Bayesian experimental design to address the challenge of efficiently discovering..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.07437v1",
-        "pdf": "https://arxiv.org/pdf/2608.07437v1",
+        "abs": "http://arxiv.org/abs/2608.09696v1",
+        "pdf": "https://arxiv.org/pdf/2608.09696v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.07437.md",
-        "summary_en_path": "summary_en/2026-08/2608.07437.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07437.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07437.md"
+        "summary_zh_path": "summary/2026-08/2608.09696.md",
+        "summary_en_path": "summary_en/2026-08/2608.09696.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09696.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09696.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,34 +197,42 @@
       }
     },
     {
-      "id": "arxiv:2608.07023",
-      "date": "2026-08-07",
-      "title": "An Agentic Hybrid Top-Down and Bottom-Up Approach to Knowledge Graph Generation",
+      "id": "arxiv:2608.09555",
+      "date": "2026-08-10",
+      "title": "Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Emma Jouffroy",
-        "Warren Jouanneau",
-        "Marc Palyart"
+        "Tianjun Pan",
+        "Yuan Li",
+        "Hongda Wang",
+        "Linbo Jin",
+        "Mengfei Song",
+        "Lei Gao",
+        "Qiming Shi",
+        "Shaokang Fu",
+        "Jiarong Zhao",
+        "Chengyu Wang",
+        "Chengfu Huo"
       ],
-      "institution": "Malt",
+      "institution": "Fudan University, Zhejiang University, East China Normal University, Alibaba Group",
       "summary": {
-        "zh": "本文提出了一种创新的混合知识图谱生成方法，有效解决了 HR 领域中多语言、非标准化技能数据的组织难题。通过结合 Wikidata 的权威 grounding 和 LLM 代理的灵活生成能力，该方法克服了传统自顶向下方法缺乏灵活性和自底向上方法缺乏结构性的缺点。实验表明，该流水线能够自主适应噪声数据，生成高质量、可解释且动态更新的技能知识图谱，为人才匹配等应用提供了坚实基础。",
-        "en": "- **Background**: HR platforms face persistent challenges in organizing thousands of unstandardized, multilingual expertise declarations, which directly impacts downstream tasks like accurate talent matching. Free-text..."
+        "zh": "本文针对基于技能的 LLM 智能体在利用外部指导时面临的监督稀疏问题，提出了 BCSD 框架。通过引入双向上下文自蒸馏机制，BCSD 能够从增强和缩减两个互补视角提取细粒度信号，有效提升了智能体对技能的利用能力。实验结果表明该方法在多个基准任务上均达到了 SOTA 性能，为提升 LLM 智能体的技能利用效率提供了新的思路。",
+        "en": "This paper addresses the issue of sparse supervision in skill utilization for LLM agents by proposing the BCSD framework. By leveraging bidirectional context self-distillation, BCSD extracts fine-grained signals from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.07023v1",
-        "pdf": "https://arxiv.org/pdf/2608.07023v1",
+        "abs": "http://arxiv.org/abs/2608.09555v1",
+        "pdf": "https://arxiv.org/pdf/2608.09555v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.07023.md",
-        "summary_en_path": "summary_en/2026-08/2608.07023.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.07023.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.07023.md"
+        "summary_zh_path": "summary/2026-08/2608.09555.md",
+        "summary_en_path": "summary_en/2026-08/2608.09555.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09555.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09555.md"
       },
       "signals": {
         "priority_keyword": "Agent"
