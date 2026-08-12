@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.11_03:17-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.12_03:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月11日 03:17</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月12日 03:35</sub></summary>
 <br>
 
-- Stealing Reasoning Traces from Proprietary LLM APIs 
-- SHE: Trajectory-driven Safety Harness Evolution for LLM Agents 
-- Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy 
-- Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models 
-- Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents 
+- Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives 
+- GitSkills: A Dataset of Agent Skills on GitHub 
+- VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World? 
+- REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems 
+- Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-11</span> | **Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives**<br><sub>机构: Politecnico di Bari<br>本文针对XAI解释在不同受众间传达的难题，提出了XstrAI多智能体框架。通过固定底层证据并分离规划、实现与验证过程，有效解决了LLM生成中的忠实度问题和受众适配问题。实验证明，该方法在保持技术准确性的同时，显著提升了面向非专家和专家用户的解释质量和适用性，代码已开源。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11033v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11033.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sisinflab/XstrAI)</div> |
+| <span style='display: inline-block; width: 42px;'>08-11</span> | **GitSkills: A Dataset of Agent Skills on GitHub**<br><sub>机构: University College London<br>本文介绍了 GitSkills，这是第一个大规模公开可用的 Agent Skills 数据集，涵盖了 2026 年 7 月之前 GitHub 上的近 380 万个技能文件。该数据集解决了因 Agent Skills 的非传统特性（自然语言、概率加载、去中心化）而导致的研究数据缺失问题。通过提供详细的文件内容、元数据和复用追踪信息，GitSkills 为软件工程社区研究 LLM 代理技能的采用、维护、安全性和最佳实践奠定了基础，有助于理解这一新兴软件工件的演化规律。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.10906v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.10906.md)  |
+| <span style='display: inline-block; width: 42px;'>08-11</span> | **VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?**<br><sub>机构: Xiaohongshu Inc<br>本文指出了现有 LLM 代理评估在日常生活辅助场景下的缺失，提出了 VibeLifeBench 基准，旨在衡量代理在动态、长周期环境中的主动性和持久性。通过模拟真实世界的自发变化和隐含约束，该基准揭示了当前前沿模型在处理复杂生活任务时的显著局限性，为未来开发更可靠的生活助手提供了明确的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.10875v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.10875.md)  |
+| <span style='display: inline-block; width: 42px;'>08-11</span> | **REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems**<br><sub>机构: Fudan University, The Hong Kong University of Science and Technology, Alibaba Cloud Computing, Soochow University<br>REDAgentBench 通过引入可执行的红队测试框架，解决了现有LLM智能体安全评估中因混淆认知与执行、依赖单一文本视图而导致的测量偏差问题。它不仅揭示了智能体系统中普遍存在的“认知-执行差距”，还证明了基于状态和执行结果的忠实测量对于提升安全评估准确性和指导有效安全干预的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.10669v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.10669.md)  |
+| <span style='display: inline-block; width: 42px;'>08-11</span> | **Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems**<br><sub>机构: PwC<br>本文介绍了代理配置管理（ACM），填补了传统软件配置管理原则与现代智能体系统之间的空白。通过引入不可变的配置项、显式基线、生命周期管理和形式化的影响传播语义，ACM 成功地将异构智能体配置标准化。研究证明，通用治理语义可以有效支持跨不同框架的智能体系统的 reproducibility（可复现性）和 auditability（可审计性），为 governed agentic systems（受治理的智能体系统）提供了坚实的理论和工程基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11166v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11166.md)  |
 | <span style='display: inline-block; width: 42px;'>08-10</span> | **Stealing Reasoning Traces from Proprietary LLM APIs**<br><sub>机构: ELLIS Institute Tübingen, University of Tübingen, Max Planck Institute for Intelligent Systems<br>本文揭示了主流 LLM API 在处理客户端加密推理痕迹时存在的严重架构漏洞。通过利用加密块在生态系统内的互操作性，攻击者可以利用弱模型作为“解密 oracle”来窃取强模型的推理过程。这不仅威胁到模型的知识产权，还导致了大规模的用户隐私泄露和潜在的系统投毒风险。论文在负责任披露后，提出了具体的密码学和系统级缓解措施，建议提供商实施严格的绑定机制（如将会话 ID、模型版本与加密块绑定）以防止此类跨模型重用攻击。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09867v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09867.md)  |
 | <span style='display: inline-block; width: 42px;'>08-10</span> | **SHE: Trajectory-driven Safety Harness Evolution for LLM Agents**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>SHE 框架解决了 LLM 智能体安全 harness 静态且耦合的问题。通过解耦 harness 组件并建立基于轨迹归因的自动化演进循环，SHE 实现了安全边界的动态优化。实验证明该方法在显著提升安全性的同时保持了有用性，并具备优秀的泛化和跨模型迁移能力，为智能体安全提供了一种可演进的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09885v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09885.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/RainbowQTT/SHE)</div> |
 | <span style='display: inline-block; width: 42px;'>08-10</span> | **Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy**<br><sub>机构: Pacific Northwest National Laboratory<br>本文提出了一种名为“Agentic Harnesses”的LLM驱动验证层，旨在解决机器人自主系统中规划动作的安全性与伦理问题。通过采用多模型集成的“法官”机制，该方法有效克服了单一模型的局限性，在规划与执行之间建立了可靠的安全网关。实验结果表明，该系统在保证高精确率的同时，能极大程度地遏制对抗性攻击，为构建更安全、可信的无人监督机器人自主系统提供了新的架构思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.09857v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.09857.md)  |

@@ -1,44 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-11T03:17:34.419594+00:00",
-  "run_date": "2026-08-10",
+  "generated_at": "2026-08-12T03:35:04.277436+00:00",
+  "run_date": "2026-08-11",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.09867",
-      "date": "2026-08-10",
-      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "id": "arxiv:2608.11033",
+      "date": "2026-08-11",
+      "title": "Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Alexander Panfilov",
-        "David Schmotz",
-        "Ilia Shumailov",
-        "Luca Beurer-Kellner",
-        "Joachim Schaeffer",
-        "Ameya Prabhu",
-        "Jonas Geiping",
-        "Maksym Andriushchenko"
+        "Francesco Musicco",
+        "Danilo Danese",
+        "Giuseppe Fasano",
+        "Angela Lombardi",
+        "Alberto Carlo Maria Mancino",
+        "Tommaso Di Noia"
       ],
-      "institution": "ELLIS Institute Tübingen, University of Tübingen, Max Planck Institute for Intelligent Systems",
+      "institution": "Politecnico di Bari",
       "summary": {
-        "zh": "本文揭示了主流 LLM API 在处理客户端加密推理痕迹时存在的严重架构漏洞。通过利用加密块在生态系统内的互操作性，攻击者可以利用弱模型作为“解密 oracle”来窃取强模型的推理过程。这不仅威胁到模型的知识产权，还导致了大规模的用户隐私泄露和潜在的系统投毒风险。论文在负责任披露后，提出了具体的密码学和系统级缓解措施，建议提供商实施严格的绑定机制（如将会话 ID、模型版本与加密块绑定）以防止此类跨模型重用攻击。",
-        "en": "- **Background**: Leading LLM providers (e.g., Anthropic, OpenAI, Google) no longer return step-by-step reasoning (Chain-of-Thought, CoT) in plaintext to protect IP and prevent leakage. Instead, they return encrypted..."
+        "zh": "本文针对XAI解释在不同受众间传达的难题，提出了XstrAI多智能体框架。通过固定底层证据并分离规划、实现与验证过程，有效解决了LLM生成中的忠实度问题和受众适配问题。实验证明，该方法在保持技术准确性的同时，显著提升了面向非专家和专家用户的解释质量和适用性，代码已开源。",
+        "en": "- **Background**: In high-stakes domains like medical AI, numerical evidence from feature-attribution methods (e.g., SHAP) is often insufficient for audiences with varying expertise (patients, clinicians, data..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.09867v1",
-        "pdf": "https://arxiv.org/pdf/2608.09867v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.11033v1",
+        "pdf": "https://arxiv.org/pdf/2608.11033v1",
+        "github": "https://github.com/sisinflab/XstrAI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.09867.md",
-        "summary_en_path": "summary_en/2026-08/2608.09867.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09867.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09867.md"
+        "summary_zh_path": "summary/2026-08/2608.11033.md",
+        "summary_en_path": "summary_en/2026-08/2608.11033.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11033.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11033.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,46 +53,35 @@
       }
     },
     {
-      "id": "arxiv:2608.09885",
-      "date": "2026-08-10",
-      "title": "SHE: Trajectory-driven Safety Harness Evolution for LLM Agents",
+      "id": "arxiv:2608.10906",
+      "date": "2026-08-11",
+      "title": "GitSkills: A Dataset of Agent Skills on GitHub",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wanying Qu",
-        "Qinghua Mao",
-        "Yu Li",
-        "Jiyao Liu",
-        "Xin Zhang",
-        "Dadi Guo",
-        "Yanxu Zhu",
-        "Qingyu Liu",
-        "Leitao Yuan",
-        "Xi Lin",
-        "Shanfeng Zhu",
-        "Yanwei Fu",
-        "Jing Shao",
-        "Xia Hu",
-        "Dongrui Liu"
+        "Giuseppe Destefanis",
+        "Daniel Graziotin",
+        "Matteo Vaccargiu",
+        "Marco Ortu"
       ],
-      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "institution": "University College London",
       "summary": {
-        "zh": "SHE 框架解决了 LLM 智能体安全 harness 静态且耦合的问题。通过解耦 harness 组件并建立基于轨迹归因的自动化演进循环，SHE 实现了安全边界的动态优化。实验证明该方法在显著提升安全性的同时保持了有用性，并具备优秀的泛化和跨模型迁移能力，为智能体安全提供了一种可演进的解决方案。",
-        "en": "- **Background**: The safety of Large Language Model (LLM) agents relies not only on model weights but also on the 'agent harness' that manages context, memory, tools, permissions, and runtime control. As agents are..."
+        "zh": "本文介绍了 GitSkills，这是第一个大规模公开可用的 Agent Skills 数据集，涵盖了 2026 年 7 月之前 GitHub 上的近 380 万个技能文件。该数据集解决了因 Agent Skills 的非传统特性（自然语言、概率加载、去中心化）而导致的研究数据缺失问题。通过提供详细的文件内容、元数据和复用追踪信息，GitSkills 为软件工程社区研究 LLM...",
+        "en": "- **Background**: Anthropic introduced the \"Agent Skill\" open specification in October 2025, a folder structure containing a SKILL.md file to guide language model agents. By July 2026, millions of such files existed in..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.09885v1",
-        "pdf": "https://arxiv.org/pdf/2608.09885v1",
-        "github": "https://github.com/RainbowQTT/SHE"
+        "abs": "http://arxiv.org/abs/2608.10906v1",
+        "pdf": "https://arxiv.org/pdf/2608.10906v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.09885.md",
-        "summary_en_path": "summary_en/2026-08/2608.09885.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09885.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09885.md"
+        "summary_zh_path": "summary/2026-08/2608.10906.md",
+        "summary_en_path": "summary_en/2026-08/2608.10906.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10906.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10906.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -111,34 +98,32 @@
       }
     },
     {
-      "id": "arxiv:2608.09857",
-      "date": "2026-08-10",
-      "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
+      "id": "arxiv:2608.10875",
+      "date": "2026-08-11",
+      "title": "VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Rohan Bhagra",
-        "Mahantesh Halapannavar",
-        "Uddhav Bhattarai"
+        "Xiaohongshu Inc"
       ],
-      "institution": "Pacific Northwest National Laboratory",
+      "institution": "Xiaohongshu Inc",
       "summary": {
-        "zh": "本文提出了一种名为“Agentic Harnesses”的LLM驱动验证层，旨在解决机器人自主系统中规划动作的安全性与伦理问题。通过采用多模型集成的“法官”机制，该方法有效克服了单一模型的局限性，在规划与执行之间建立了可靠的安全网关。实验结果表明，该系统在保证高精确率的同时，能极大程度地遏制对抗性攻击，为构建更安全、可信的无人监督机器人自主系统提供了新的架构思路。",
-        "en": "This paper proposes \"Agentic Harnesses,\" an LLM-driven verification layer designed to address safety and ethical issues in robot autonomy planning actions. By employing a multi-model ensemble \"judge\" mechanism, the..."
+        "zh": "本文指出了现有 LLM 代理评估在日常生活辅助场景下的缺失，提出了 VibeLifeBench 基准，旨在衡量代理在动态、长周期环境中的主动性和持久性。通过模拟真实世界的自发变化和隐含约束，该基准揭示了当前前沿模型在处理复杂生活任务时的显著局限性，为未来开发更可靠的生活助手提供了明确的评估标准和方向。",
+        "en": "- **Background**: Large language model (LLM) agents are increasingly deployed as personal assistants, but existing evaluations mostly focus on short, self-contained requests in static environments (e.g., coding or..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.09857v1",
-        "pdf": "https://arxiv.org/pdf/2608.09857v1",
+        "abs": "http://arxiv.org/abs/2608.10875v1",
+        "pdf": "https://arxiv.org/pdf/2608.10875v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.09857.md",
-        "summary_en_path": "summary_en/2026-08/2608.09857.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09857.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09857.md"
+        "summary_zh_path": "summary/2026-08/2608.10875.md",
+        "summary_en_path": "summary_en/2026-08/2608.10875.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10875.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10875.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -155,32 +140,40 @@
       }
     },
     {
-      "id": "arxiv:2608.09696",
-      "date": "2026-08-10",
-      "title": "Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models",
+      "id": "arxiv:2608.10669",
+      "date": "2026-08-11",
+      "title": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kevin Murphy"
+        "Zixing Chen",
+        "Xingyuan Liu",
+        "Jie Zhu",
+        "Huaixia Dou",
+        "Shuo Jiang",
+        "Junhui Li",
+        "Lifan Guo",
+        "Feng Chen",
+        "Chi Zhang"
       ],
-      "institution": "University of British Columbia",
+      "institution": "Fudan University, The Hong Kong University of Science and Technology, Alibaba Cloud Computing, Soochow University",
       "summary": {
-        "zh": "本文提出了 Model Discovery Agent (MDA)，通过结合 LLM 的假设生成能力与贝叶斯实验设计的严谨性，解决了在昂贵实验条件下高效发现机制性世界模型的难题。MDA 特别适用于 M-open 场景，能够通过预测检查和假设空间扩展来应对未知机制。实验结果表明，该方法在多个科学领域均达到了状态-of-the-art 的性能，为自动化科学发现提供了强有力的工具。",
-        "en": "This paper presents the Model Discovery Agent (MDA), which combines the hypothesis generation capabilities of LLMs with the rigor of Bayesian experimental design to address the challenge of efficiently discovering..."
+        "zh": "REDAgentBench 通过引入可执行的红队测试框架，解决了现有LLM智能体安全评估中因混淆认知与执行、依赖单一文本视图而导致的测量偏差问题。它不仅揭示了智能体系统中普遍存在的“认知-执行差距”，还证明了基于状态和执行结果的忠实测量对于提升安全评估准确性和指导有效安全干预的重要性。",
+        "en": "- **Background**: Large language model (LLM) agents combine linguistic reasoning with external tools to perform complex tasks. Adversarial inputs can exploit interactions between the agent and its environment, causing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.09696v1",
-        "pdf": "https://arxiv.org/pdf/2608.09696v1",
+        "abs": "http://arxiv.org/abs/2608.10669v1",
+        "pdf": "https://arxiv.org/pdf/2608.10669v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.09696.md",
-        "summary_en_path": "summary_en/2026-08/2608.09696.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09696.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09696.md"
+        "summary_zh_path": "summary/2026-08/2608.10669.md",
+        "summary_en_path": "summary_en/2026-08/2608.10669.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10669.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10669.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -197,42 +190,32 @@
       }
     },
     {
-      "id": "arxiv:2608.09555",
-      "date": "2026-08-10",
-      "title": "Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents",
+      "id": "arxiv:2608.11166",
+      "date": "2026-08-11",
+      "title": "Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianjun Pan",
-        "Yuan Li",
-        "Hongda Wang",
-        "Linbo Jin",
-        "Mengfei Song",
-        "Lei Gao",
-        "Qiming Shi",
-        "Shaokang Fu",
-        "Jiarong Zhao",
-        "Chengyu Wang",
-        "Chengfu Huo"
+        "Audrey Quessada-Vial"
       ],
-      "institution": "Fudan University, Zhejiang University, East China Normal University, Alibaba Group",
+      "institution": "PwC",
       "summary": {
-        "zh": "本文针对基于技能的 LLM 智能体在利用外部指导时面临的监督稀疏问题，提出了 BCSD 框架。通过引入双向上下文自蒸馏机制，BCSD 能够从增强和缩减两个互补视角提取细粒度信号，有效提升了智能体对技能的利用能力。实验结果表明该方法在多个基准任务上均达到了 SOTA 性能，为提升 LLM 智能体的技能利用效率提供了新的思路。",
-        "en": "This paper addresses the issue of sparse supervision in skill utilization for LLM agents by proposing the BCSD framework. By leveraging bidirectional context self-distillation, BCSD extracts fine-grained signals from..."
+        "zh": "本文介绍了代理配置管理（ACM），填补了传统软件配置管理原则与现代智能体系统之间的空白。通过引入不可变的配置项、显式基线、生命周期管理和形式化的影响传播语义，ACM 成功地将异构智能体配置标准化。研究证明，通用治理语义可以有效支持跨不同框架的智能体系统的 reproducibility（可复现性）和 auditability（可审计性），为 governed agentic...",
+        "en": "- **Background**: Agentic systems are evolving from isolated LLM applications into complex software composed of interacting autonomous components (agents, tools, prompts, workflows). Ensuring reproducibility,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.09555v1",
-        "pdf": "https://arxiv.org/pdf/2608.09555v1",
+        "abs": "http://arxiv.org/abs/2608.11166v1",
+        "pdf": "https://arxiv.org/pdf/2608.11166v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.09555.md",
-        "summary_en_path": "summary_en/2026-08/2608.09555.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.09555.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.09555.md"
+        "summary_zh_path": "summary/2026-08/2608.11166.md",
+        "summary_en_path": "summary_en/2026-08/2608.11166.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11166.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11166.md"
       },
       "signals": {
         "priority_keyword": "Agent"
