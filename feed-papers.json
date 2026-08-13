@@ -1,42 +1,46 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-12T03:35:04.277436+00:00",
-  "run_date": "2026-08-11",
+  "generated_at": "2026-08-13T03:38:33.212953+00:00",
+  "run_date": "2026-08-12",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.11033",
-      "date": "2026-08-11",
-      "title": "Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives",
+      "id": "arxiv:2608.12253",
+      "date": "2026-08-12",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Francesco Musicco",
-        "Danilo Danese",
-        "Giuseppe Fasano",
-        "Angela Lombardi",
-        "Alberto Carlo Maria Mancino",
-        "Tommaso Di Noia"
+        "Simon Yu",
+        "Nicholas Tomlin",
+        "Marwa Abdulhai",
+        "Ximing Lu",
+        "Derek Chong",
+        "Abe Hou",
+        "Dilara Soylu",
+        "Sergey Levine",
+        "Christopher D. Manning",
+        "Weiyan Shi"
       ],
-      "institution": "Politecnico di Bari",
+      "institution": "Northeastern University, New York University, UC Berkeley, University of Washington, Stanford University",
       "summary": {
-        "zh": "本文针对XAI解释在不同受众间传达的难题，提出了XstrAI多智能体框架。通过固定底层证据并分离规划、实现与验证过程，有效解决了LLM生成中的忠实度问题和受众适配问题。实验证明，该方法在保持技术准确性的同时，显著提升了面向非专家和专家用户的解释质量和适用性，代码已开源。",
-        "en": "- **Background**: In high-stakes domains like medical AI, numerical evidence from feature-attribution methods (e.g., SHAP) is often insufficient for audiences with varying expertise (patients, clinicians, data..."
+        "zh": "本文揭示了在多智能体RL中使用单一冻结LLM作为模拟器会导致严重的“模拟器崩溃”问题，致使策略过拟合且泛化能力差。通过理论分析和实证研究，作者提出了推理时的言语化采样和训练时的协同训练两种方法，有效缓解了模式崩溃，显著提升了策略在 unseen simulators 和真实用户上的泛化性能。研究强调，训练环境的多样性对于多轮RL在现实世界部署中的泛化能力至关重要。",
+        "en": "This paper identifies \"Simulator Collapse\" as a critical failure mode in multi-agent RL when using a single frozen LLM simulator, leading to overfitting and poor generalization. By proposing Verbalized Sampling and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.11033v1",
-        "pdf": "https://arxiv.org/pdf/2608.11033v1",
-        "github": "https://github.com/sisinflab/XstrAI"
+        "abs": "http://arxiv.org/abs/2608.12253v1",
+        "pdf": "https://arxiv.org/pdf/2608.12253v1",
+        "github": "https://github.com/your-repo/SCOPE"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.11033.md",
-        "summary_en_path": "summary_en/2026-08/2608.11033.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11033.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11033.md"
+        "summary_zh_path": "summary/2026-08/2608.12253.md",
+        "summary_en_path": "summary_en/2026-08/2608.12253.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12253.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12253.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,35 +57,32 @@
       }
     },
     {
-      "id": "arxiv:2608.10906",
-      "date": "2026-08-11",
-      "title": "GitSkills: A Dataset of Agent Skills on GitHub",
+      "id": "arxiv:2608.12123",
+      "date": "2026-08-12",
+      "title": "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Giuseppe Destefanis",
-        "Daniel Graziotin",
-        "Matteo Vaccargiu",
-        "Marco Ortu"
+        "Josef Liyanjun Chen"
       ],
-      "institution": "University College London",
+      "institution": null,
       "summary": {
-        "zh": "本文介绍了 GitSkills，这是第一个大规模公开可用的 Agent Skills 数据集，涵盖了 2026 年 7 月之前 GitHub 上的近 380 万个技能文件。该数据集解决了因 Agent Skills 的非传统特性（自然语言、概率加载、去中心化）而导致的研究数据缺失问题。通过提供详细的文件内容、元数据和复用追踪信息，GitSkills 为软件工程社区研究 LLM...",
-        "en": "- **Background**: Anthropic introduced the \"Agent Skill\" open specification in October 2025, a folder structure containing a SKILL.md file to guide language model agents. By July 2026, millions of such files existed in..."
+        "zh": "本文通过理论分析和实验验证，解决了 LLM Agent 控制路径中的 GPU 利用率低和主机往返开销大问题。首先，通过“就绪队列”框架量化了 GPU 并发执行的潜在机会，证明精确打包能大幅恢复因固定窗口损失的性能。其次，通过保持路由决策在 GPU 设备端，避免了不必要的主机通信，实现了 1.19x-2.39x 的加速。这项工作为构建高效的 LLM Agent 系统提供了具体的系统设计指导，强调了截止期管理和数据放置的重要性。",
+        "en": "This paper addresses low GPU utilization and host round-trip overhead in LLM Agent control paths through theoretical analysis and experimental validation. First, it quantifies the potential for GPU concurrency via the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.10906v1",
-        "pdf": "https://arxiv.org/pdf/2608.10906v1",
+        "abs": "http://arxiv.org/abs/2608.12123v1",
+        "pdf": "https://arxiv.org/pdf/2608.12123v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.10906.md",
-        "summary_en_path": "summary_en/2026-08/2608.10906.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10906.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10906.md"
+        "summary_zh_path": "summary/2026-08/2608.12123.md",
+        "summary_en_path": "summary_en/2026-08/2608.12123.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12123.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12123.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,32 +99,37 @@
       }
     },
     {
-      "id": "arxiv:2608.10875",
-      "date": "2026-08-11",
-      "title": "VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?",
+      "id": "arxiv:2608.11888",
+      "date": "2026-08-12",
+      "title": "Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiaohongshu Inc"
+        "Gen Dong",
+        "Yanjie Gao",
+        "Liqun Li",
+        "Tianyin Xu",
+        "Yu Hua",
+        "Fan Yang"
       ],
-      "institution": "Xiaohongshu Inc",
+      "institution": "Huazhong University of Science and Technology, Microsoft Research, Microsoft, University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "本文指出了现有 LLM 代理评估在日常生活辅助场景下的缺失，提出了 VibeLifeBench 基准，旨在衡量代理在动态、长周期环境中的主动性和持久性。通过模拟真实世界的自发变化和隐含约束，该基准揭示了当前前沿模型在处理复杂生活任务时的显著局限性，为未来开发更可靠的生活助手提供了明确的评估标准和方向。",
-        "en": "- **Background**: Large language model (LLM) agents are increasingly deployed as personal assistants, but existing evaluations mostly focus on short, self-contained requests in static environments (e.g., coding or..."
+        "zh": "本文通过实证研究揭示了 LLM Agent 中“技能”可能带来的危害。作者提出的差分分析框架和 SkillTriage 工具有效地隔离并归因了技能引起的失败。主要发现表明，看似相关的技能往往会导致智能体在实现上出错或遗漏关键步骤，而效率上的损失主要源于技能强加的过度验证和复杂流程，而非简单的Prompt长度增加。这些发现为未来更安全、更具成本意识的技能重用提供了研究方向和工具改进建议。",
+        "en": "- **Background**: Agent Skills are the de facto mechanism for extending LLM agents with reusable guidance, shaping task execution including planning, tool use, and validation. - **Limitations of Prior Work**: Previous..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.10875v1",
-        "pdf": "https://arxiv.org/pdf/2608.10875v1",
+        "abs": "http://arxiv.org/abs/2608.11888v1",
+        "pdf": "https://arxiv.org/pdf/2608.11888v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.10875.md",
-        "summary_en_path": "summary_en/2026-08/2608.10875.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10875.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10875.md"
+        "summary_zh_path": "summary/2026-08/2608.11888.md",
+        "summary_en_path": "summary_en/2026-08/2608.11888.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11888.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11888.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -140,40 +146,32 @@
       }
     },
     {
-      "id": "arxiv:2608.10669",
-      "date": "2026-08-11",
-      "title": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems",
+      "id": "arxiv:2608.11775",
+      "date": "2026-08-12",
+      "title": "The Sleeping Agent: What Gist-Based Context Compression Loses and Why",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zixing Chen",
-        "Xingyuan Liu",
-        "Jie Zhu",
-        "Huaixia Dou",
-        "Shuo Jiang",
-        "Junhui Li",
-        "Lifan Guo",
-        "Feng Chen",
-        "Chi Zhang"
+        "Nicholas E. Kyrkewood"
       ],
-      "institution": "Fudan University, The Hong Kong University of Science and Technology, Alibaba Cloud Computing, Soochow University",
+      "institution": null,
       "summary": {
-        "zh": "REDAgentBench 通过引入可执行的红队测试框架，解决了现有LLM智能体安全评估中因混淆认知与执行、依赖单一文本视图而导致的测量偏差问题。它不仅揭示了智能体系统中普遍存在的“认知-执行差距”，还证明了基于状态和执行结果的忠实测量对于提升安全评估准确性和指导有效安全干预的重要性。",
-        "en": "- **Background**: Large language model (LLM) agents combine linguistic reasoning with external tools to perform complex tasks. Adversarial inputs can exploit interactions between the agent and its environment, causing..."
+        "zh": "本文通过引入生物启发的 SWC 框架，深入剖析了基于要点的上下文压缩在长程智能体中的得失。研究明确指出，通用压缩失败的主要原因是对时间锚点的系统性忽略，而非压缩本身无效。通过极简的提示词工程修复，可以在保持其他信息完整性的同时大幅恢复时间推理能力。这项工作为记忆架构设计提供了重要原则：应在压缩过程中显式保护时间锚点，而非依赖通用抽象。",
+        "en": "- **Background**: Gist-based context compression, which summarizes older conversation history into compact representations, is a common approach in long-horizon language model agents. However, its impact on different..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.10669v1",
-        "pdf": "https://arxiv.org/pdf/2608.10669v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.11775v1",
+        "pdf": "https://arxiv.org/pdf/2608.11775v1",
+        "github": "https://github.com/kyrkewood/sleeping-agent"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.10669.md",
-        "summary_en_path": "summary_en/2026-08/2608.10669.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.10669.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.10669.md"
+        "summary_zh_path": "summary/2026-08/2608.11775.md",
+        "summary_en_path": "summary_en/2026-08/2608.11775.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11775.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11775.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -190,32 +188,39 @@
       }
     },
     {
-      "id": "arxiv:2608.11166",
-      "date": "2026-08-11",
-      "title": "Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems",
+      "id": "arxiv:2608.11967",
+      "date": "2026-08-12",
+      "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Audrey Quessada-Vial"
+        "Zhixin Zhang",
+        "Xinke Jiang",
+        "Zhibang Yang",
+        "Weixuan Xu",
+        "Guohong Qiu",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
       ],
-      "institution": "PwC",
+      "institution": "Peking University",
       "summary": {
-        "zh": "本文介绍了代理配置管理（ACM），填补了传统软件配置管理原则与现代智能体系统之间的空白。通过引入不可变的配置项、显式基线、生命周期管理和形式化的影响传播语义，ACM 成功地将异构智能体配置标准化。研究证明，通用治理语义可以有效支持跨不同框架的智能体系统的 reproducibility（可复现性）和 auditability（可审计性），为 governed agentic...",
-        "en": "- **Background**: Agentic systems are evolving from isolated LLM applications into complex software composed of interacting autonomous components (agents, tools, prompts, workflows). Ensuring reproducibility,..."
+        "zh": "LoongReflect 解决了长视野智能体中反思学习的核心难题，即局部反思动作与全局任务结果之间的监督不匹配问题。通过将反思建模为记忆控制策略，并结合全局视角蒸馏（快速通道）与基于结果的轨迹优化（慢速通道），该方法有效地提升了智能体在复杂推理任务中的规划、纠错和最终成功率。",
+        "en": "LoongReflect addresses the core challenge of learning reflection in long-horizon agents: the mismatch between local reflective actions and global task outcomes. By modeling reflection as a memory-control policy and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.11166v1",
-        "pdf": "https://arxiv.org/pdf/2608.11166v1",
+        "abs": "http://arxiv.org/abs/2608.11967v1",
+        "pdf": "https://arxiv.org/pdf/2608.11967v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.11166.md",
-        "summary_en_path": "summary_en/2026-08/2608.11166.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11166.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11166.md"
+        "summary_zh_path": "summary/2026-08/2608.11967.md",
+        "summary_en_path": "summary_en/2026-08/2608.11967.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11967.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11967.md"
       },
       "signals": {
         "priority_keyword": "Agent"

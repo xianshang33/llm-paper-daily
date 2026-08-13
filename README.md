@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.12_03:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.13_03:38-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月12日 03:35</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月13日 03:38</sub></summary>
 <br>
 
-- Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives 
-- GitSkills: A Dataset of Agent Skills on GitHub 
-- VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World? 
-- REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems 
-- Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems 
+- One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL 
+- Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control 
+- Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents 
+- The Sleeping Agent: What Gist-Based Context Compression Loses and Why 
+- LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-12</span> | **One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL**<br><sub>机构: Northeastern University, New York University, UC Berkeley, University of Washington, Stanford University<br>本文揭示了在多智能体RL中使用单一冻结LLM作为模拟器会导致严重的“模拟器崩溃”问题，致使策略过拟合且泛化能力差。通过理论分析和实证研究，作者提出了推理时的言语化采样和训练时的协同训练两种方法，有效缓解了模式崩溃，显著提升了策略在 unseen simulators 和真实用户上的泛化性能。研究强调，训练环境的多样性对于多轮RL在现实世界部署中的泛化能力至关重要。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.12253v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.12253.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/your-repo/SCOPE)</div> |
+| <span style='display: inline-block; width: 42px;'>08-12</span> | **Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control**<br><sub>本文通过理论分析和实验验证，解决了 LLM Agent 控制路径中的 GPU 利用率低和主机往返开销大问题。首先，通过“就绪队列”框架量化了 GPU 并发执行的潜在机会，证明精确打包能大幅恢复因固定窗口损失的性能。其次，通过保持路由决策在 GPU 设备端，避免了不必要的主机通信，实现了 1.19x-2.39x 的加速。这项工作为构建高效的 LLM Agent 系统提供了具体的系统设计指导，强调了截止期管理和数据放置的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.12123v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.12123.md)  |
+| <span style='display: inline-block; width: 42px;'>08-12</span> | **Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents**<br><sub>机构: Huazhong University of Science and Technology, Microsoft Research, Microsoft, University of Illinois Urbana-Champaign<br>本文通过实证研究揭示了 LLM Agent 中“技能”可能带来的危害。作者提出的差分分析框架和 SkillTriage 工具有效地隔离并归因了技能引起的失败。主要发现表明，看似相关的技能往往会导致智能体在实现上出错或遗漏关键步骤，而效率上的损失主要源于技能强加的过度验证和复杂流程，而非简单的Prompt长度增加。这些发现为未来更安全、更具成本意识的技能重用提供了研究方向和工具改进建议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11888v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11888.md)  |
+| <span style='display: inline-block; width: 42px;'>08-12</span> | **The Sleeping Agent: What Gist-Based Context Compression Loses and Why**<br><sub>本文通过引入生物启发的 SWC 框架，深入剖析了基于要点的上下文压缩在长程智能体中的得失。研究明确指出，通用压缩失败的主要原因是对时间锚点的系统性忽略，而非压缩本身无效。通过极简的提示词工程修复，可以在保持其他信息完整性的同时大幅恢复时间推理能力。这项工作为记忆架构设计提供了重要原则：应在压缩过程中显式保护时间锚点，而非依赖通用抽象。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11775v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11775.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/kyrkewood/sleeping-agent)</div> |
+| <span style='display: inline-block; width: 42px;'>08-12</span> | **LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation**<br><sub>机构: Peking University<br>LoongReflect 解决了长视野智能体中反思学习的核心难题，即局部反思动作与全局任务结果之间的监督不匹配问题。通过将反思建模为记忆控制策略，并结合全局视角蒸馏（快速通道）与基于结果的轨迹优化（慢速通道），该方法有效地提升了智能体在复杂推理任务中的规划、纠错和最终成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11967v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11967.md)  |
 | <span style='display: inline-block; width: 42px;'>08-11</span> | **Who Are You Explaining To? A Multi-Agent System for Audience-Aware XAI Narratives**<br><sub>机构: Politecnico di Bari<br>本文针对XAI解释在不同受众间传达的难题，提出了XstrAI多智能体框架。通过固定底层证据并分离规划、实现与验证过程，有效解决了LLM生成中的忠实度问题和受众适配问题。实验证明，该方法在保持技术准确性的同时，显著提升了面向非专家和专家用户的解释质量和适用性，代码已开源。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11033v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11033.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sisinflab/XstrAI)</div> |
 | <span style='display: inline-block; width: 42px;'>08-11</span> | **GitSkills: A Dataset of Agent Skills on GitHub**<br><sub>机构: University College London<br>本文介绍了 GitSkills，这是第一个大规模公开可用的 Agent Skills 数据集，涵盖了 2026 年 7 月之前 GitHub 上的近 380 万个技能文件。该数据集解决了因 Agent Skills 的非传统特性（自然语言、概率加载、去中心化）而导致的研究数据缺失问题。通过提供详细的文件内容、元数据和复用追踪信息，GitSkills 为软件工程社区研究 LLM 代理技能的采用、维护、安全性和最佳实践奠定了基础，有助于理解这一新兴软件工件的演化规律。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.10906v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.10906.md)  |
 | <span style='display: inline-block; width: 42px;'>08-11</span> | **VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?**<br><sub>机构: Xiaohongshu Inc<br>本文指出了现有 LLM 代理评估在日常生活辅助场景下的缺失，提出了 VibeLifeBench 基准，旨在衡量代理在动态、长周期环境中的主动性和持久性。通过模拟真实世界的自发变化和隐含约束，该基准揭示了当前前沿模型在处理复杂生活任务时的显著局限性，为未来开发更可靠的生活助手提供了明确的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.10875v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.10875.md)  |
