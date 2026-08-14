@@ -1,46 +1,45 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-13T03:38:33.212953+00:00",
-  "run_date": "2026-08-12",
+  "generated_at": "2026-08-14T03:36:07.022667+00:00",
+  "run_date": "2026-08-13",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.12253",
-      "date": "2026-08-12",
-      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "id": "arxiv:2608.13476",
+      "date": "2026-08-13",
+      "title": "MARC v1: An Open-Source Multi-Agent Framework for Clinical AI Reasoning and Coordination",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Simon Yu",
-        "Nicholas Tomlin",
-        "Marwa Abdulhai",
-        "Ximing Lu",
-        "Derek Chong",
-        "Abe Hou",
-        "Dilara Soylu",
-        "Sergey Levine",
-        "Christopher D. Manning",
-        "Weiyan Shi"
+        "Saisha Shetty",
+        "Satvik Tripathi",
+        "Austin Lin",
+        "Colin Zhao",
+        "Theodore Kim",
+        "Don Enwerem",
+        "Jacinta Arnold",
+        "Shahriar Faghani",
+        "Tessa S Cook"
       ],
-      "institution": "Northeastern University, New York University, UC Berkeley, University of Washington, Stanford University",
+      "institution": "University of California, Davis; University of Pennsylvania; Drexel University",
       "summary": {
-        "zh": "本文揭示了在多智能体RL中使用单一冻结LLM作为模拟器会导致严重的“模拟器崩溃”问题，致使策略过拟合且泛化能力差。通过理论分析和实证研究，作者提出了推理时的言语化采样和训练时的协同训练两种方法，有效缓解了模式崩溃，显著提升了策略在 unseen simulators 和真实用户上的泛化性能。研究强调，训练环境的多样性对于多轮RL在现实世界部署中的泛化能力至关重要。",
-        "en": "This paper identifies \"Simulator Collapse\" as a critical failure mode in multi-agent RL when using a single frozen LLM simulator, leading to overfitting and poor generalization. By proposing Verbalized Sampling and..."
+        "zh": "- **背景**：大型语言模型（LLM）在医学领域（如放射报告生成、临床问答）展现出巨大潜力，但目前的部署多依赖于单体提示策略（monolithic prompting），即单个LLM实例同时负责提取、推理、验证和动作生成。 -...",
+        "en": "- **Background**: Large Language Models (LLMs) have shown significant potential in medicine, such as in radiology report generation and clinical question answering. However, current deployments largely rely on..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.12253v1",
-        "pdf": "https://arxiv.org/pdf/2608.12253v1",
-        "github": "https://github.com/your-repo/SCOPE"
+        "abs": "http://arxiv.org/abs/2608.13476v1",
+        "pdf": "https://arxiv.org/pdf/2608.13476v1",
+        "github": "https://github.com/Penn-RAIL/MARC-v1"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.12253.md",
-        "summary_en_path": "summary_en/2026-08/2608.12253.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12253.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12253.md"
+        "summary_zh_path": "summary/2026-08/2608.13476.md",
+        "summary_en_path": "summary_en/2026-08/2608.13476.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13476.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13476.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -57,32 +56,33 @@
       }
     },
     {
-      "id": "arxiv:2608.12123",
-      "date": "2026-08-12",
-      "title": "Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control",
+      "id": "arxiv:2608.13420",
+      "date": "2026-08-13",
+      "title": "Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Josef Liyanjun Chen"
+        "Aimilios Hadjiliasi",
+        "Louis Nisiotis"
       ],
-      "institution": null,
+      "institution": "University of Central Lancashire",
       "summary": {
-        "zh": "本文通过理论分析和实验验证，解决了 LLM Agent 控制路径中的 GPU 利用率低和主机往返开销大问题。首先，通过“就绪队列”框架量化了 GPU 并发执行的潜在机会，证明精确打包能大幅恢复因固定窗口损失的性能。其次，通过保持路由决策在 GPU 设备端，避免了不必要的主机通信，实现了 1.19x-2.39x 的加速。这项工作为构建高效的 LLM Agent 系统提供了具体的系统设计指导，强调了截止期管理和数据放置的重要性。",
-        "en": "This paper addresses low GPU utilization and host round-trip overhead in LLM Agent control paths through theoretical analysis and experimental validation. First, it quantifies the potential for GPU concurrency via the..."
+        "zh": "本文探讨了利用小语言模型（SLMs）和边缘计算来增强具身虚拟代理的认知能力。通过在NVIDIA Jetson Orin NX上部署Qwen2.5模型，研究验证了SLM在支持CEAA架构中“思考”和“记忆”组件方面的有效性。实验结果显示，该系统能够在资源受限的边缘环境中实现低延迟、上下文感知的交互，为开发在元宇宙等复杂虚拟环境中高效运行的智能代理提供了可行的技术路线和实证依据。",
+        "en": "- **Background**: Embodied intelligent virtual agents are expected to operate as persistent, adaptive, and context-aware entities in complex virtual and Metaverse environments. The Cognitive Embodied Agent Architecture..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.12123v1",
-        "pdf": "https://arxiv.org/pdf/2608.12123v1",
+        "abs": "http://arxiv.org/abs/2608.13420v1",
+        "pdf": "https://arxiv.org/pdf/2608.13420v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.12123.md",
-        "summary_en_path": "summary_en/2026-08/2608.12123.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12123.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12123.md"
+        "summary_zh_path": "summary/2026-08/2608.13420.md",
+        "summary_en_path": "summary_en/2026-08/2608.13420.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13420.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13420.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,37 +99,37 @@
       }
     },
     {
-      "id": "arxiv:2608.11888",
-      "date": "2026-08-12",
-      "title": "Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents",
+      "id": "arxiv:2608.13179",
+      "date": "2026-08-13",
+      "title": "Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Gen Dong",
-        "Yanjie Gao",
-        "Liqun Li",
-        "Tianyin Xu",
-        "Yu Hua",
-        "Fan Yang"
+        "Zechuan Wang",
+        "Siyuan Lu",
+        "Hongxuan Zhang",
+        "Linjian Mo",
+        "Chenyi Zhuang",
+        "Leilei Gan"
       ],
-      "institution": "Huazhong University of Science and Technology, Microsoft Research, Microsoft, University of Illinois Urbana-Champaign",
+      "institution": "Zhejiang University, Shanghai Innovation Institute, AWorld Team (Inclusion AI), Westlake University, Nanjing University",
       "summary": {
-        "zh": "本文通过实证研究揭示了 LLM Agent 中“技能”可能带来的危害。作者提出的差分分析框架和 SkillTriage 工具有效地隔离并归因了技能引起的失败。主要发现表明，看似相关的技能往往会导致智能体在实现上出错或遗漏关键步骤，而效率上的损失主要源于技能强加的过度验证和复杂流程，而非简单的Prompt长度增加。这些发现为未来更安全、更具成本意识的技能重用提供了研究方向和工具改进建议。",
-        "en": "- **Background**: Agent Skills are the de facto mechanism for extending LLM agents with reusable guidance, shaping task execution including planning, tool use, and validation. - **Limitations of Prior Work**: Previous..."
+        "zh": "本文针对多轮多步 LLM 智能体训练中的信用分配难题，提出了 CrEST 框架。该框架创新性地结合了 RL 的验证器上限优势和蒸馏的密集信号优势。通过轮次分割的优势计算解决轮间信用混淆，通过熵门控的教师幅度调制解决轮内梯度集中和教师上限问题。实验表明，CrEST 在复杂的多轮工具使用任务中显著提升了智能体的性能和鲁棒性，为高效训练自主 Agent 提供了新的范式。",
+        "en": "- **Background**: Large Language Models are evolving into autonomous agents capable of multi-turn, multi-step tool use. Reinforcement Learning with Verifiable Rewards (RLVR) is the dominant post-training paradigm,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.11888v1",
-        "pdf": "https://arxiv.org/pdf/2608.11888v1",
+        "abs": "http://arxiv.org/abs/2608.13179v1",
+        "pdf": "https://arxiv.org/pdf/2608.13179v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.11888.md",
-        "summary_en_path": "summary_en/2026-08/2608.11888.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11888.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11888.md"
+        "summary_zh_path": "summary/2026-08/2608.13179.md",
+        "summary_en_path": "summary_en/2026-08/2608.13179.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13179.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13179.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,81 +146,83 @@
       }
     },
     {
-      "id": "arxiv:2608.11775",
-      "date": "2026-08-12",
-      "title": "The Sleeping Agent: What Gist-Based Context Compression Loses and Why",
+      "id": "arxiv:2608.13173",
+      "date": "2026-08-13",
+      "title": "SkillShapley: Boundary-Adaptive Shapley Valuation for Skill Step Attribution in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nicholas E. Kyrkewood"
+        "Chang Liu",
+        "Yuqi Zhang",
+        "Yiman Zhong",
+        "Boyi Liu",
+        "Hengjun Wang",
+        "Shuyue Wei"
       ],
-      "institution": null,
+      "institution": "Beihang University, Shandong University",
       "summary": {
-        "zh": "本文通过引入生物启发的 SWC 框架，深入剖析了基于要点的上下文压缩在长程智能体中的得失。研究明确指出，通用压缩失败的主要原因是对时间锚点的系统性忽略，而非压缩本身无效。通过极简的提示词工程修复，可以在保持其他信息完整性的同时大幅恢复时间推理能力。这项工作为记忆架构设计提供了重要原则：应在压缩过程中显式保护时间锚点，而非依赖通用抽象。",
-        "en": "- **Background**: Gist-based context compression, which summarizes older conversation history into compact representations, is a common approach in long-horizon language model agents. However, its impact on different..."
+        "zh": "本文解决了 LLM 代理技能中细粒度步骤归因的开放性问题。通过提出 SkillShapley 框架，利用边界自适应的 Shapley 估值方法，克服了离散奖励带来的采样难题和组合爆炸的计算瓶颈。实验证明该方法能准确量化步骤贡献，指导更高效的技能设计与优化。",
+        "en": "- **Background**: Large Language Models (LLMs) act as autonomous agents executing multi-step tasks (e.g., debugging, data analysis) using \"Skills\"—step-by-step natural language instructions. Current skill design relies..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.11775v1",
-        "pdf": "https://arxiv.org/pdf/2608.11775v1",
-        "github": "https://github.com/kyrkewood/sleeping-agent"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.11775.md",
-        "summary_en_path": "summary_en/2026-08/2608.11775.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11775.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11775.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.11967",
-      "date": "2026-08-12",
-      "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Zhixin Zhang",
-        "Xinke Jiang",
-        "Zhibang Yang",
-        "Weixuan Xu",
-        "Guohong Qiu",
-        "Xu Chu",
-        "Junfeng Zhao",
-        "Yasha Wang"
-      ],
-      "institution": "Peking University",
-      "summary": {
-        "zh": "LoongReflect 解决了长视野智能体中反思学习的核心难题，即局部反思动作与全局任务结果之间的监督不匹配问题。通过将反思建模为记忆控制策略，并结合全局视角蒸馏（快速通道）与基于结果的轨迹优化（慢速通道），该方法有效地提升了智能体在复杂推理任务中的规划、纠错和最终成功率。",
-        "en": "LoongReflect addresses the core challenge of learning reflection in long-horizon agents: the mismatch between local reflective actions and global task outcomes. By modeling reflection as a memory-control policy and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.11967v1",
-        "pdf": "https://arxiv.org/pdf/2608.11967v1",
+        "abs": "http://arxiv.org/abs/2608.13173v1",
+        "pdf": "https://arxiv.org/pdf/2608.13173v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.11967.md",
-        "summary_en_path": "summary_en/2026-08/2608.11967.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.11967.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.11967.md"
+        "summary_zh_path": "summary/2026-08/2608.13173.md",
+        "summary_en_path": "summary_en/2026-08/2608.13173.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13173.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13173.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.12977",
+      "date": "2026-08-13",
+      "title": "Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiajun Ruan",
+        "Peiyang Li",
+        "Yukun Chen",
+        "Fengting Li",
+        "Chao Feng"
+      ],
+      "institution": "University of Minnesota, Ant Group, Tsinghua University, Zhejiang University",
+      "summary": {
+        "zh": "本文指出了当前 LLM 智能体运行时防御依赖人工设计、缺乏系统性框架的局限性。通过提出 harness-level 的形式化理论，作者构建了 HARD 框架，实现了防御机制的自主进化。实验结果表明，HARD 不仅在多种静态和自适应攻击场景下显著降低了攻击成功率，还有效保持了智能体的良性任务效用，为部署后的 LLM 智能体提供了一条持续自我完善的安全防护新范式。",
+        "en": "- **Background**: Large Language Model (LLM) agents have evolved into interactive systems capable of retrieving external information, invoking tools, and maintaining state. This expansion shifts security risks from..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.12977v1",
+        "pdf": "https://arxiv.org/pdf/2608.12977v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.12977.md",
+        "summary_en_path": "summary_en/2026-08/2608.12977.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12977.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12977.md"
       },
       "signals": {
         "priority_keyword": "Agent"

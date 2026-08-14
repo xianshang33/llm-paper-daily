@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.13_03:38-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.14_03:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月13日 03:38</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月14日 03:36</sub></summary>
 <br>
 
-- One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL 
-- Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control 
-- Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents 
-- The Sleeping Agent: What Gist-Based Context Compression Loses and Why 
-- LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation 
+- MARC v1: An Open-Source Multi-Agent Framework for Clinical AI Reasoning and Coordination 
+- Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes 
+- Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents 
+- SkillShapley: Boundary-Adaptive Shapley Valuation for Skill Step Attribution in LLM Agents 
+- Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-13</span> | **MARC v1: An Open-Source Multi-Agent Framework for Clinical AI Reasoning and Coordination**<br><sub>机构: University of California, Davis; University of Pennsylvania; Drexel University<br>## 文章做了什么 - **背景**：大型语言模型（LLM）在医学领域（如放射报告生成、临床问答）展现出巨大潜力，但目前的部署多依赖于单体提示策略（monolithic prompting），即单个LLM实例同时负责提取、推理、验证和动作生成。 - **已有工作为什么解决不了**：单体策略限制了模型潜力的发挥且缺乏可解释性。临床决策通常需要多源上下文信息和多步推理，而现有的单体方法难以处理这种复杂的顺序推理、验证及异构信息整合需求，导致可靠性、透明度和患者安全保障不足。 ## 文章的核心贡献点 - **提出了一个 MARC (Multi-Agent Reasoning and Coordination) 框架**：这是一个开源的、确定性的多智能体编排框架，旨在替代临床推理中的单体LLM提示。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.13476v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.13476.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Penn-RAIL/MARC-v1)</div> |
+| <span style='display: inline-block; width: 42px;'>08-13</span> | **Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes**<br><sub>机构: University of Central Lancashire<br>本文探讨了利用小语言模型（SLMs）和边缘计算来增强具身虚拟代理的认知能力。通过在NVIDIA Jetson Orin NX上部署Qwen2.5模型，研究验证了SLM在支持CEAA架构中“思考”和“记忆”组件方面的有效性。实验结果显示，该系统能够在资源受限的边缘环境中实现低延迟、上下文感知的交互，为开发在元宇宙等复杂虚拟环境中高效运行的智能代理提供了可行的技术路线和实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.13420v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.13420.md)  |
+| <span style='display: inline-block; width: 42px;'>08-13</span> | **Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents**<br><sub>机构: Zhejiang University, Shanghai Innovation Institute, AWorld Team (Inclusion AI), Westlake University, Nanjing University<br>本文针对多轮多步 LLM 智能体训练中的信用分配难题，提出了 CrEST 框架。该框架创新性地结合了 RL 的验证器上限优势和蒸馏的密集信号优势。通过轮次分割的优势计算解决轮间信用混淆，通过熵门控的教师幅度调制解决轮内梯度集中和教师上限问题。实验表明，CrEST 在复杂的多轮工具使用任务中显著提升了智能体的性能和鲁棒性，为高效训练自主 Agent 提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.13179v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.13179.md)  |
+| <span style='display: inline-block; width: 42px;'>08-13</span> | **SkillShapley: Boundary-Adaptive Shapley Valuation for Skill Step Attribution in LLM Agents**<br><sub>机构: Beihang University, Shandong University<br>本文解决了 LLM 代理技能中细粒度步骤归因的开放性问题。通过提出 SkillShapley 框架，利用边界自适应的 Shapley 估值方法，克服了离散奖励带来的采样难题和组合爆炸的计算瓶颈。实验证明该方法能准确量化步骤贡献，指导更高效的技能设计与优化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.13173v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.13173.md)  |
+| <span style='display: inline-block; width: 42px;'>08-13</span> | **Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents**<br><sub>机构: University of Minnesota, Ant Group, Tsinghua University, Zhejiang University<br>本文指出了当前 LLM 智能体运行时防御依赖人工设计、缺乏系统性框架的局限性。通过提出 harness-level 的形式化理论，作者构建了 HARD 框架，实现了防御机制的自主进化。实验结果表明，HARD 不仅在多种静态和自适应攻击场景下显著降低了攻击成功率，还有效保持了智能体的良性任务效用，为部署后的 LLM 智能体提供了一条持续自我完善的安全防护新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.12977v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.12977.md)  |
 | <span style='display: inline-block; width: 42px;'>08-12</span> | **One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL**<br><sub>机构: Northeastern University, New York University, UC Berkeley, University of Washington, Stanford University<br>本文揭示了在多智能体RL中使用单一冻结LLM作为模拟器会导致严重的“模拟器崩溃”问题，致使策略过拟合且泛化能力差。通过理论分析和实证研究，作者提出了推理时的言语化采样和训练时的协同训练两种方法，有效缓解了模式崩溃，显著提升了策略在 unseen simulators 和真实用户上的泛化性能。研究强调，训练环境的多样性对于多轮RL在现实世界部署中的泛化能力至关重要。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.12253v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.12253.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/your-repo/SCOPE)</div> |
 | <span style='display: inline-block; width: 42px;'>08-12</span> | **Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control**<br><sub>本文通过理论分析和实验验证，解决了 LLM Agent 控制路径中的 GPU 利用率低和主机往返开销大问题。首先，通过“就绪队列”框架量化了 GPU 并发执行的潜在机会，证明精确打包能大幅恢复因固定窗口损失的性能。其次，通过保持路由决策在 GPU 设备端，避免了不必要的主机通信，实现了 1.19x-2.39x 的加速。这项工作为构建高效的 LLM Agent 系统提供了具体的系统设计指导，强调了截止期管理和数据放置的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.12123v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.12123.md)  |
 | <span style='display: inline-block; width: 42px;'>08-12</span> | **Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents**<br><sub>机构: Huazhong University of Science and Technology, Microsoft Research, Microsoft, University of Illinois Urbana-Champaign<br>本文通过实证研究揭示了 LLM Agent 中“技能”可能带来的危害。作者提出的差分分析框架和 SkillTriage 工具有效地隔离并归因了技能引起的失败。主要发现表明，看似相关的技能往往会导致智能体在实现上出错或遗漏关键步骤，而效率上的损失主要源于技能强加的过度验证和复杂流程，而非简单的Prompt长度增加。这些发现为未来更安全、更具成本意识的技能重用提供了研究方向和工具改进建议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.11888v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.11888.md)  |
