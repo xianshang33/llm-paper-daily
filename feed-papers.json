@@ -1,45 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-14T03:36:07.022667+00:00",
-  "run_date": "2026-08-13",
+  "generated_at": "2026-08-15T02:31:34.987666+00:00",
+  "run_date": "2026-08-09",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.13476",
-      "date": "2026-08-13",
-      "title": "MARC v1: An Open-Source Multi-Agent Framework for Clinical AI Reasoning and Coordination",
+      "id": "arxiv:2608.08621",
+      "date": "2026-08-09",
+      "title": "Business Arena: Benchmarking LLM Agents in a Realistic Marketplace",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Saisha Shetty",
-        "Satvik Tripathi",
-        "Austin Lin",
-        "Colin Zhao",
-        "Theodore Kim",
-        "Don Enwerem",
-        "Jacinta Arnold",
-        "Shahriar Faghani",
-        "Tessa S Cook"
+        "Yijun Pan",
+        "Yukun Lian",
+        "Kunyu Shi",
+        "Junbo Li",
+        "Hongwei Xue",
+        "Sicong Xie",
+        "Guannan Zhang",
+        "Xiaoying Xing"
       ],
-      "institution": "University of California, Davis; University of Pennsylvania; Drexel University",
+      "institution": "Alibaba Group, Yale University",
       "summary": {
-        "zh": "- **背景**：大型语言模型（LLM）在医学领域（如放射报告生成、临床问答）展现出巨大潜力，但目前的部署多依赖于单体提示策略（monolithic prompting），即单个LLM实例同时负责提取、推理、验证和动作生成。 -...",
-        "en": "- **Background**: Large Language Models (LLMs) have shown significant potential in medicine, such as in radiology report generation and clinical question answering. However, current deployments largely rely on..."
+        "zh": "Business Arena 为评估端到端商业智能体迈出了第一步，提供了一个现实且可信的测试平台。通过结合真实数据、多维度的评估指标（利润、技能水平、动作归因）以及严格的消融实验，该研究不仅量化了当前LLM智能体在商业领域的性能差距，还深入剖析了其决策机制和经营风格。结果表明，尽管LLM智能体在处理复杂工作流方面取得了进展，但在面对噪声证据、延迟反馈和动态环境时的商业决策能力仍有显著提升空间，且目前仍无法媲美人类专家的策略水平。",
+        "en": "- **Background**: As Large Language Model (LLM) agents improve in coding, research, and complex workflow execution, their potential as end-to-end business operators is growing. However, existing agent benchmarks rarely..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.13476v1",
-        "pdf": "https://arxiv.org/pdf/2608.13476v1",
-        "github": "https://github.com/Penn-RAIL/MARC-v1"
+        "abs": "http://arxiv.org/abs/2608.08621v1",
+        "pdf": "https://arxiv.org/pdf/2608.08621v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.13476.md",
-        "summary_en_path": "summary_en/2026-08/2608.13476.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13476.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13476.md"
+        "summary_zh_path": "summary/2026-08/2608.08621.md",
+        "summary_en_path": "summary_en/2026-08/2608.08621.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08621.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08621.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -56,33 +55,49 @@
       }
     },
     {
-      "id": "arxiv:2608.13420",
-      "date": "2026-08-13",
-      "title": "Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes",
+      "id": "arxiv:2608.08852",
+      "date": "2026-08-09",
+      "title": "Findings of the First Teaching Monster Challenge: A Benchmark of Pedagogical Content Knowledge in AI Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Aimilios Hadjiliasi",
-        "Louis Nisiotis"
+        "Yi-Cheng Lin",
+        "Yu-Kai Guo",
+        "Szu-Chi Chen",
+        "Bo-Han Feng",
+        "Yun-Man Hsu",
+        "Hsiang Hsieh",
+        "Yu-Jung Lin",
+        "Yue-Ling Wu",
+        "Jia-Kai Dong",
+        "An-Yu Cheng",
+        "Yu-Han Huang",
+        "Lok-Lam Ieong",
+        "Kuan-Yu Chen",
+        "Ming-Douo Tchouang",
+        "Shao-Hua Sun",
+        "Che Lin",
+        "Jian-Jiun Ding",
+        "Hung-yi Lee"
       ],
-      "institution": "University of Central Lancashire",
+      "institution": "National Taiwan University",
       "summary": {
-        "zh": "本文探讨了利用小语言模型（SLMs）和边缘计算来增强具身虚拟代理的认知能力。通过在NVIDIA Jetson Orin NX上部署Qwen2.5模型，研究验证了SLM在支持CEAA架构中“思考”和“记忆”组件方面的有效性。实验结果显示，该系统能够在资源受限的边缘环境中实现低延迟、上下文感知的交互，为开发在元宇宙等复杂虚拟环境中高效运行的智能代理提供了可行的技术路线和实证依据。",
-        "en": "- **Background**: Embodied intelligent virtual agents are expected to operate as persistent, adaptive, and context-aware entities in complex virtual and Metaverse environments. The Cognitive Embodied Agent Architecture..."
+        "zh": "本文填补了AI教学能力评估的空白，首次提出了针对PCK能力的“Teaching Monster Challenge”。研究指出当前AI在内容生成上已成熟，但在个性化教学适配上仍有不足。同时，论文揭示了自动评估工具在高分段的失效问题，并开源了相关资源，为未来开发更强大的教学AI及更精准的自动评估模型提供了基础测试床。",
+        "en": "- **Background**: AI agents are now proficient at problem-solving, expert-like answering, and generating long-form multimodal content. However, Pedagogical Content Knowledge (PCK)—the ability to adapt lessons to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.13420v1",
-        "pdf": "https://arxiv.org/pdf/2608.13420v1",
+        "abs": "http://arxiv.org/abs/2608.08852v1",
+        "pdf": "https://arxiv.org/pdf/2608.08852v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.13420.md",
-        "summary_en_path": "summary_en/2026-08/2608.13420.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13420.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13420.md"
+        "summary_zh_path": "summary/2026-08/2608.08852.md",
+        "summary_en_path": "summary_en/2026-08/2608.08852.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08852.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08852.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,37 +114,40 @@
       }
     },
     {
-      "id": "arxiv:2608.13179",
-      "date": "2026-08-13",
-      "title": "Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents",
+      "id": "arxiv:2608.08640",
+      "date": "2026-08-09",
+      "title": "SkillReason: Reasoning-Enhanced Agent Skill Retrieval for Implicit User Requests",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zechuan Wang",
-        "Siyuan Lu",
-        "Hongxuan Zhang",
-        "Linjian Mo",
-        "Chenyi Zhuang",
-        "Leilei Gan"
+        "Donghong Jiang",
+        "Endian Lin",
+        "Luoping Cui",
+        "Hanqing Liu",
+        "Mingjie Liu",
+        "Fan Yang",
+        "Hong Wang",
+        "Zhao Yang",
+        "Chuang Zhu"
       ],
-      "institution": "Zhejiang University, Shanghai Innovation Institute, AWorld Team (Inclusion AI), Westlake University, Nanjing University",
+      "institution": "Beijing University of Posts and Telecommunications",
       "summary": {
-        "zh": "本文针对多轮多步 LLM 智能体训练中的信用分配难题，提出了 CrEST 框架。该框架创新性地结合了 RL 的验证器上限优势和蒸馏的密集信号优势。通过轮次分割的优势计算解决轮间信用混淆，通过熵门控的教师幅度调制解决轮内梯度集中和教师上限问题。实验表明，CrEST 在复杂的多轮工具使用任务中显著提升了智能体的性能和鲁棒性，为高效训练自主 Agent 提供了新的范式。",
-        "en": "- **Background**: Large Language Models are evolving into autonomous agents capable of multi-turn, multi-step tool use. Reinforcement Learning with Verifiable Rewards (RLVR) is the dominant post-training paradigm,..."
+        "zh": "本文针对 LLM 智能体在隐含用户请求下的技能检索难题，提出了 SkillReason 框架。通过引入大规模跨领域基准 SkillReason-Bench，并利用两阶段训练策略（教师模型监督内化推理 + GRPO 优化推理轨迹），成功让检索器学会了“像专家一样思考”潜在的能力需求，同时保持了推理阶段的高效性。该方法显著提升了技能检索的准确率，为构建更强大的代理系统提供了重要支持。",
+        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on reusable \"skills\" to extend capabilities beyond parametric knowledge. However, retrieving appropriate skills from large libraries is challenging..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.13179v1",
-        "pdf": "https://arxiv.org/pdf/2608.13179v1",
+        "abs": "http://arxiv.org/abs/2608.08640v1",
+        "pdf": "https://arxiv.org/pdf/2608.08640v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.13179.md",
-        "summary_en_path": "summary_en/2026-08/2608.13179.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13179.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13179.md"
+        "summary_zh_path": "summary/2026-08/2608.08640.md",
+        "summary_en_path": "summary_en/2026-08/2608.08640.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08640.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08640.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,37 +164,38 @@
       }
     },
     {
-      "id": "arxiv:2608.13173",
-      "date": "2026-08-13",
-      "title": "SkillShapley: Boundary-Adaptive Shapley Valuation for Skill Step Attribution in LLM Agents",
+      "id": "arxiv:2608.08605",
+      "date": "2026-08-09",
+      "title": "ForestBench: A Unified Graph Framework for Evaluating Multi-Agent Collaboration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chang Liu",
-        "Yuqi Zhang",
-        "Yiman Zhong",
-        "Boyi Liu",
-        "Hengjun Wang",
-        "Shuyue Wei"
+        "Guo Chen",
+        "Ziwen Li",
+        "Reed Li",
+        "Yu Lu",
+        "Haibo Shi",
+        "Bingbing Xu",
+        "Junjie Huang"
       ],
-      "institution": "Beihang University, Shandong University",
+      "institution": "Southwest University, Tencent, Institute of Computing Technology, Chinese Academy of Sciences",
       "summary": {
-        "zh": "本文解决了 LLM 代理技能中细粒度步骤归因的开放性问题。通过提出 SkillShapley 框架，利用边界自适应的 Shapley 估值方法，克服了离散奖励带来的采样难题和组合爆炸的计算瓶颈。实验证明该方法能准确量化步骤贡献，指导更高效的技能设计与优化。",
-        "en": "- **Background**: Large Language Models (LLMs) act as autonomous agents executing multi-step tasks (e.g., debugging, data analysis) using \"Skills\"—step-by-step natural language instructions. Current skill design relies..."
+        "zh": "- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）发展迅速，其核心优势在于通过规划、执行、批评等角色的分工协作来解决复杂问题。然而，新框架的涌现速度远超评估能力的提升。 -...",
+        "en": "- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) are rapidly evolving, leveraging collaboration among planners, executors, and critics to solve complex tasks. However, the proliferation..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.13173v1",
-        "pdf": "https://arxiv.org/pdf/2608.13173v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.08605v2",
+        "pdf": "https://arxiv.org/pdf/2608.08605v2",
+        "github": "https://github.com/WinstonCHEN1/ForestBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.13173.md",
-        "summary_en_path": "summary_en/2026-08/2608.13173.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.13173.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.13173.md"
+        "summary_zh_path": "summary/2026-08/2608.08605.md",
+        "summary_en_path": "summary_en/2026-08/2608.08605.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08605.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08605.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,36 +212,38 @@
       }
     },
     {
-      "id": "arxiv:2608.12977",
-      "date": "2026-08-13",
-      "title": "Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents",
+      "id": "arxiv:2608.08601",
+      "date": "2026-08-09",
+      "title": "Unaccountable Delegation, Fading Skills: Mapping the Risks of Workplace AI Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiajun Ruan",
-        "Peiyang Li",
-        "Yukun Chen",
-        "Fengting Li",
-        "Chao Feng"
+        "Gabriele La Malfa",
+        "Lakmal Meegahapola",
+        "Edyta Bogucka",
+        "Jie M. Zhang",
+        "Michael Luck",
+        "Elizabeth Black",
+        "Daniele Quercia"
       ],
-      "institution": "University of Minnesota, Ant Group, Tsinghua University, Zhejiang University",
+      "institution": "King's College London, Nokia Bell Labs, University of Sussex, Politecnico di Torino",
       "summary": {
-        "zh": "本文指出了当前 LLM 智能体运行时防御依赖人工设计、缺乏系统性框架的局限性。通过提出 harness-level 的形式化理论，作者构建了 HARD 框架，实现了防御机制的自主进化。实验结果表明，HARD 不仅在多种静态和自适应攻击场景下显著降低了攻击成功率，还有效保持了智能体的良性任务效用，为部署后的 LLM 智能体提供了一条持续自我完善的安全防护新范式。",
-        "en": "- **Background**: Large Language Model (LLM) agents have evolved into interactive systems capable of retrieving external information, invoking tools, and maintaining state. This expansion shifts security risks from..."
+        "zh": "本文指出职场 AI Agent 的风险不仅源于 Agent 本身，还取决于人与 Agent 的协作方式及部署模式。通过构建专门的多层框架和风险分类法，研究揭示了自动化与增强模式下的不同风险特征，强调了设计良好的人机协作机制对于构建更安全职场的重要性，为组织提供了更精准的风险识别和管理工具。",
+        "en": "- **Background**: As AI agents are increasingly deployed in workplaces, organizations need taxonomies to identify and classify the socio-technical risks they introduce. However, existing AI risk taxonomies are often too..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.12977v1",
-        "pdf": "https://arxiv.org/pdf/2608.12977v1",
+        "abs": "http://arxiv.org/abs/2608.08601v1",
+        "pdf": "https://arxiv.org/pdf/2608.08601v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.12977.md",
-        "summary_en_path": "summary_en/2026-08/2608.12977.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.12977.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.12977.md"
+        "summary_zh_path": "summary/2026-08/2608.08601.md",
+        "summary_en_path": "summary_en/2026-08/2608.08601.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08601.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08601.md"
       },
       "signals": {
         "priority_keyword": "Agent"
