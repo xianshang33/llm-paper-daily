@@ -1,38 +1,51 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-15T05:52:53.485460+00:00",
-  "run_date": "2026-08-08",
+  "generated_at": "2026-08-17T02:39:58.712817+00:00",
+  "run_date": "2026-08-14",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.08164",
-      "date": "2026-08-08",
-      "title": "STEMMA: An Adversarial Multi-Agent Framework for Evaluating Self-Identity Consistency in LLMs",
+      "id": "arxiv:2608.14055",
+      "date": "2026-08-14",
+      "title": "HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nuthakki Siva Gopala Krishna",
-        "Kanishka Jain"
+        "Ziqi Song",
+        "Zongyuan Xiang",
+        "James G. Ogg",
+        "Bruce S. Lieberman",
+        "Gabi Ogg",
+        "Natalia López Carranza",
+        "Wen Du",
+        "Yufei Ye",
+        "Shuan Li",
+        "Zhong Peng",
+        "Shaoqi Yu",
+        "Juye Wei",
+        "Ying Zhou",
+        "Jieping Ye",
+        "Jiang Yang"
       ],
-      "institution": "Indian Institute of Technology, Delhi",
+      "institution": "Zhejiang Laboratory",
       "summary": {
-        "zh": "本文指出了知识蒸馏过程中可能被忽视的风险：学生模型不仅学习功能知识，还可能继承教师模型的行为模式和身份特征，导致输出同质化和责任归属模糊。为此，作者提出了 STEMMA 框架，通过多智能体协作和对抗性提示系统地评估 LLM 的自我身份一致性。实验证明，当前主流模型在此类对抗性测试中表现出显著的脆弱性，强调了在模型开发和部署中关注身份一致性和行为透明度的重要性。",
-        "en": "This paper highlights an overlooked risk in knowledge distillation: student models may inherit behavioral patterns and identity traits from teacher models, leading to output homogeneity and ambiguous accountability. To..."
+        "zh": "HERMES 提供了一个实用的路径，将历史科学文献转化为面向FAIR的结构化数据。通过多智能体协作、领域约束集成和证据追踪，它克服了超长、多模态科学文档处理的难题，为数据密集型学科和大规模知识集成提供了可持续的基础设施。",
+        "en": "- **Background**: Authoritative scientific knowledge in geoscience is largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. As science..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.08164v1",
-        "pdf": "https://arxiv.org/pdf/2608.08164v1",
+        "abs": "http://arxiv.org/abs/2608.14055v1",
+        "pdf": "https://arxiv.org/pdf/2608.14055v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.08164.md",
-        "summary_en_path": "summary_en/2026-08/2608.08164.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08164.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08164.md"
+        "summary_zh_path": "summary/2026-08/2608.14055.md",
+        "summary_en_path": "summary_en/2026-08/2608.14055.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14055.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14055.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,40 +62,35 @@
       }
     },
     {
-      "id": "arxiv:2608.08160",
-      "date": "2026-08-08",
-      "title": "Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives",
+      "id": "arxiv:2608.14109",
+      "date": "2026-08-14",
+      "title": "A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yingpeng Ma",
-        "Jianhao Yan",
-        "Bei Shi",
-        "Ka Hou Kam",
-        "Runnan Wang",
-        "Xuebo Liu",
-        "Yulong Chen",
-        "Yue Zhang",
-        "Derek F. Wong"
+        "Ismail El Hamraoui",
+        "Sagar Jose",
+        "Nicolas Bureau",
+        "Robert Plana"
       ],
-      "institution": "University of Macau, Westlake University, Harbin Institute of Technology (Shenzhen), University of Cambridge, University of Aberdeen",
+      "institution": "Digital Excellence Center, Assystem EOS, France",
       "summary": {
-        "zh": "本文指出了LLM在互动叙事中长期被忽视的“叙事承诺保持”问题，并发布了NCP-Bench基准。研究发现，当前顶尖LLM在长程交互和对抗性用户输入面前，难以维持逻辑一致性和叙事完整性，事实冲突率高，生存率低。这为未来开发更具鲁棒性和一致性的叙事AI代理提供了重要的评估标准和研究方向。",
-        "en": "- **Background**: The rapid advancement of Large Language Models (LLMs) is revolutionizing AI for Games by enabling open-ended and fluid interactive storytelling. However, existing research has largely overlooked the..."
+        "zh": "本文针对自主 LLM 智能体在真实世界中面临的行为漂移问题，提出了一种基于图的强化学习恢复框架。通过将恢复过程分解为多个专用节点，并利用混合奖励机制训练小型语言模型，该方法实现了高效、结构化且语义准确的漂移诊断与恢复。这不仅解决了大型模型无法频繁重训的限制，还有效降低了因漂移导致的外部系统不可逆损害风险，在 AppWorld 基准测试中展现了良好的性能。",
+        "en": "- **Background**: Autonomous LLM agents executing real-world actions (API calls, emails, etc.) are vulnerable to \"runtime behavioral drift,\" a silent deviation from initial goals that can cause irreversible side effects..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.08160v1",
-        "pdf": "https://arxiv.org/pdf/2608.08160v1",
+        "abs": "http://arxiv.org/abs/2608.14109v1",
+        "pdf": "https://arxiv.org/pdf/2608.14109v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.08160.md",
-        "summary_en_path": "summary_en/2026-08/2608.08160.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08160.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08160.md"
+        "summary_zh_path": "summary/2026-08/2608.14109.md",
+        "summary_en_path": "summary_en/2026-08/2608.14109.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14109.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14109.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,32 +107,37 @@
       }
     },
     {
-      "id": "arxiv:2608.08239",
-      "date": "2026-08-08",
-      "title": "The Replay Gap: Static Evaluation of Model Switching in LLM Agents Scores the Wrong World",
+      "id": "arxiv:2608.14380",
+      "date": "2026-08-14",
+      "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ashritha Gonuguntla"
+        "Yu Zhuang",
+        "Kefei Chen",
+        "Yitong Duan",
+        "Shuxin Zheng",
+        "Jian Li",
+        "Xu-Yao Zhang"
       ],
-      "institution": "Carnegie Mellon University",
+      "institution": "University of Chinese Academy of Sciences",
       "summary": {
-        "zh": "本文指出当前 LLM Agent 路由评估中存在的根本性缺陷：静态重放评估错误地假设轨迹是开环的，忽略了模型切换对环境状态的连锁反应。通过引入分支 rollout 方法，作者证明了模型切换会导致轨迹迅速且大幅度的分歧，且重放评估在预测最终结果上完全失效。研究还揭示了推理服务配置（如 FP8 vs AWQ）对确定性的显著影响。作者发布了相关 harness 和轨迹数据，呼吁社区采用更真实的动态评估方法来指导 Agent 路由的研究与部署。",
-        "en": "This paper highlights a fundamental flaw in current LLM agent routing evaluation: static replay evaluation incorrectly assumes an open-loop trajectory, ignoring the cascading effects of model switching on environmental..."
+        "zh": "AgentRewind 针对长周期 LLM 智能体执行中错误难以恢复的问题，提出了一种基于检查点回滚和记忆引导的运行时恢复框架。通过允许智能体回溯到早期状态并吸取历史教训，该方法有效解决了错误传播问题，在 MettleBench 基准测试中展现了优于现有计划细化和安全检查方法的性能，为提升长周期任务的可靠性提供了新范式。",
+        "en": "AgentRewind addresses the lack of recovery mechanisms in long-horizon LLM agent execution by introducing a checkpoint-based rewind framework with memory guidance. By enabling agents to revert to earlier states and learn..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.08239v1",
-        "pdf": "https://arxiv.org/pdf/2608.08239v1",
-        "github": "https://github.com/AshrithaG/replay-gap"
+        "abs": "http://arxiv.org/abs/2608.14380v1",
+        "pdf": "https://arxiv.org/pdf/2608.14380v1",
+        "github": "https://github.com/Futuresis/replay-agent-recorder"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.08239.md",
-        "summary_en_path": "summary_en/2026-08/2608.08239.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08239.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08239.md"
+        "summary_zh_path": "summary/2026-08/2608.14380.md",
+        "summary_en_path": "summary_en/2026-08/2608.14380.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14380.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14380.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,39 +154,39 @@
       }
     },
     {
-      "id": "arxiv:2608.08236",
-      "date": "2026-08-08",
-      "title": "LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems",
+      "id": "arxiv:2608.14339",
+      "date": "2026-08-14",
+      "title": "Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Heng Zhou",
-        "Lian Zhang",
-        "Yutao Fan",
-        "Tiancheng He",
-        "Siki Chen",
-        "Hejia Geng",
-        "Philip Torr",
-        "Zhenfei Yin"
+        "Zhizhao Guan",
+        "Chen Huang",
+        "Ziming Liu",
+        "Hongru Liang",
+        "Wenqiang Lei",
+        "See-Kiong Ng",
+        "Tat-Seng Chua",
+        "Anthony G Cohn"
       ],
-      "institution": "University of Science and Technology of China",
+      "institution": "Sichuan University, National University of Singapore, University of Leeds",
       "summary": {
-        "zh": "LatticeMind 通过将矛盾处理视为记忆问题而非单纯的回答选择问题，提出了一种新的多智能体系统记忆原语。它通过结合廉价符号检查和选择性 LLM 协调，实现了高效且高精度的冲突管理。实验证明其在处理知识冲突方面显著优于现有基线，尽管在复杂规划任务中仍有局限，但为构建具有持久冲突感知能力的多智能体系统提供了重要基础。",
-        "en": "- **Background**: Multi-agent LLM systems often fail not due to a lack of candidate answers, but because they lack a persistent mechanism to decide which conflicting claims to trust. Existing aggregation strategies..."
+        "zh": "本文针对LLM智能体在复杂交互环境中缺乏主动探索能力的问题，指出了现有SFT-RL范式中数据偏差和训练机制的缺陷。通过提出SAFARI框架，结合合成探索丰富数据的SFT阶段和引入对比信号引导的RL阶段，成功赋予了智能体主动探索的能力。该方法不仅提升了智能体在长程决策任务中的表现，也为理解和发展具身智能体的探索行为提供了新的视角。代码已开源。",
+        "en": "- **Background**: As Large Language Models (LLMs) advance, LLM-based agents excel in multi-turn interactive tasks (e.g., online shopping). However, they lack \"proactive exploration\" capability—the ability to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.08236v1",
-        "pdf": "https://arxiv.org/pdf/2608.08236v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.14339v1",
+        "pdf": "https://arxiv.org/pdf/2608.14339v1",
+        "github": "https://github.com/GuanZhizhao/SAFARI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.08236.md",
-        "summary_en_path": "summary_en/2026-08/2608.08236.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08236.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08236.md"
+        "summary_zh_path": "summary/2026-08/2608.14339.md",
+        "summary_en_path": "summary_en/2026-08/2608.14339.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14339.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14339.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -190,32 +203,36 @@
       }
     },
     {
-      "id": "arxiv:2608.08131",
-      "date": "2026-08-08",
-      "title": "Compositional Threat Analysis of Latent Compromise in LLM Agent Systems: The Order 66 Scenario",
+      "id": "arxiv:2608.14452",
+      "date": "2026-08-14",
+      "title": "SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Satoshi Matsuoka"
+        "Panjing He",
+        "Mingyue Cheng",
+        "Yucong Luo",
+        "Li Li",
+        "Xiaohan Zhang"
       ],
-      "institution": "RIKEN Center for Computational Science",
+      "institution": "State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China",
       "summary": {
-        "zh": "本文通过将“66号指令”隐喻转化为对使用工具的LLM代理系统的起源中立安全分析，揭示了一种由休眠规则、激活触发和代理权限组成的复合威胁。文章指出，单一的防御手段不足以应对这种组合攻击，最有效的防御策略包括独立的能力中介、持久状态溯源、传播隔离以及受保护的恢复机制。尽管目前尚无完整的公开攻击案例，但该威胁模型为未来LLM代理系统的安全架构提供了重要的理论依据和防御指导。",
-        "en": "- **Background**: As open-weight LLMs increasingly serve as controllers for software agents, system security faces new challenges. The paper draws on the \"Order 66\" metaphor, where catastrophe arises not from a single..."
+        "zh": "SheetCompass 解决了 LLM 在处理复杂电子表格时因结构扁平化而丢失空间语义的关键问题。通过引入分层关系图来显式建模表格内部及之间的结构关系，并结合双层记忆机制和多代理协作框架，该方法有效增强了代理在复杂工作流中的规划、执行和自我修正能力，实现了电子表格自动化推理性能的显著提升。",
+        "en": "SheetCompass addresses the key issue of lost spatial semantics in LLM-based spreadsheet processing caused by structure flattening. By introducing a Hierarchical Relation Graph to explicitly model intra- and inter-sheet..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.08131v1",
-        "pdf": "https://arxiv.org/pdf/2608.08131v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.14452v1",
+        "pdf": "https://arxiv.org/pdf/2608.14452v1",
+        "github": "https://anonymous.4open.science/r/sheetcompass-411C"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.08131.md",
-        "summary_en_path": "summary_en/2026-08/2608.08131.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.08131.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.08131.md"
+        "summary_zh_path": "summary/2026-08/2608.14452.md",
+        "summary_en_path": "summary_en/2026-08/2608.14452.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14452.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14452.md"
       },
       "signals": {
         "priority_keyword": "Agent"
