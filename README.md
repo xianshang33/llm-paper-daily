@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.17_02:39-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.18_02:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月17日 02:39</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月18日 02:35</sub></summary>
 <br>
 
-- HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience 
-- A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents 
-- AgentRewind: Recoverable Execution for Long-Horizon LLM Agents 
-- Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents 
-- SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning 
+- PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning 
+- Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning 
+- Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs 
+- AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment 
+- Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-17</span> | **PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning**<br><sub>机构: Technical University of Berlin<br>本文针对LLM在长视野规划中的不可靠性及现有混合方法评估缺失的问题，提出了PDDLCoder代理框架和NL-pddlgym基准数据集。通过迭代生成与自动验证机制，PDDLCoder显著提高了PDDL生成的准确性和计划的可适用性，大幅超越了基线方法。该工作不仅展示了代理式符号规划的优势，还为LLM辅助规划研究建立了重要的标准化评估基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16637v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16637.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/vDawgg/PDDLCoder)</div> |
+| <span style='display: inline-block; width: 42px;'>08-17</span> | **Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning**<br><sub>机构: Writer, Inc.<br>Palmyra x6 技术报告展示了一种“少即是多”的后训练范式。通过精心设计的锚定监督微调（ASFT）和先进的优化器（Muon），研究者仅用极少量的合成数据（626 条轨迹）和单轮训练，就在不损害基础模型通用能力的前提下，显著提升了模型在企业级代理任务（如工具调用、多步规划）中的性能。该方法不仅在公共基准上取得了领先地位，更在实际企业应用场景中证明了其高效性和实用性，为资源受限下的高性能模型定制提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16620v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16620.md)  |
+| <span style='display: inline-block; width: 42px;'>08-17</span> | **Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs**<br><sub>机构: Tencent Zhuque Lab<br>本文针对第三方托管 LLM API 的验证难题，提出了 Ventor-QTest 黑盒审计框架。通过引入平均保真度损失（AFL）和极端保真度损失（EFL）两个指标，该方法在不依赖目标 API 概率信息的情况下，有效量化了部署行为与可信参考之间的偏差。实验表明，EFL 与长程代理任务的性能下降密切相关，强调了在审计复杂应用场景时联合监控平均偏差和极端偏差的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16391v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16391.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest)</div> |
+| <span style='display: inline-block; width: 42px;'>08-17</span> | **AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment**<br><sub>机构: Beihang University<br>本文提出了 AeroCopilotBench 和 ACOE，填补了航空领域 LLM 智能体在交互式环境下的评估空白。通过双层基准和安全门控机制，系统性地评估了智能体的知识应用、交互执行和操作安全性。研究结果表明，当前模型在将静态知识转化为安全、完整的程序执行方面仍存在显著挑战，为未来开发更可靠的航空辅助智能体提供了重要的评估基础和方向指引。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16349v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16349.md)  |
+| <span style='display: inline-block; width: 42px;'>08-17</span> | **Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory**<br><sub>机构: University of Southern California<br>BATON 通过将长程任务分解为独立的子任务探索单元，并引入精细的转换感知记忆机制（包括调用、交接和前瞻转换），有效解决了长程机器人操作中误差累积和状态不兼容的问题。该方法在不更新参数的情况下，显著降低了探索成本并提升了长程任务的成功率，证明了模块化探索与状态管理在复杂机器人任务中的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16889v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16889.md)  |
 | <span style='display: inline-block; width: 42px;'>08-14</span> | **HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience**<br><sub>机构: Zhejiang Laboratory<br>HERMES 提供了一个实用的路径，将历史科学文献转化为面向FAIR的结构化数据。通过多智能体协作、领域约束集成和证据追踪，它克服了超长、多模态科学文档处理的难题，为数据密集型学科和大规模知识集成提供了可持续的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.14055v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.14055.md)  |
 | <span style='display: inline-block; width: 42px;'>08-14</span> | **A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents**<br><sub>机构: Digital Excellence Center, Assystem EOS, France<br>本文针对自主 LLM 智能体在真实世界中面临的行为漂移问题，提出了一种基于图的强化学习恢复框架。通过将恢复过程分解为多个专用节点，并利用混合奖励机制训练小型语言模型，该方法实现了高效、结构化且语义准确的漂移诊断与恢复。这不仅解决了大型模型无法频繁重训的限制，还有效降低了因漂移导致的外部系统不可逆损害风险，在 AppWorld 基准测试中展现了良好的性能。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.14109v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.14109.md)  |
 | <span style='display: inline-block; width: 42px;'>08-14</span> | **AgentRewind: Recoverable Execution for Long-Horizon LLM Agents**<br><sub>机构: University of Chinese Academy of Sciences<br>AgentRewind 针对长周期 LLM 智能体执行中错误难以恢复的问题，提出了一种基于检查点回滚和记忆引导的运行时恢复框架。通过允许智能体回溯到早期状态并吸取历史教训，该方法有效解决了错误传播问题，在 MettleBench 基准测试中展现了优于现有计划细化和安全检查方法的性能，为提升长周期任务的可靠性提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.14380v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.14380.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Futuresis/replay-agent-recorder)</div> |

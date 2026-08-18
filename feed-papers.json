@@ -1,51 +1,89 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-17T02:39:58.712817+00:00",
-  "run_date": "2026-08-14",
+  "generated_at": "2026-08-18T02:35:03.288933+00:00",
+  "run_date": "2026-08-17",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.14055",
-      "date": "2026-08-14",
-      "title": "HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience",
+      "id": "arxiv:2608.16637",
+      "date": "2026-08-17",
+      "title": "PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ziqi Song",
-        "Zongyuan Xiang",
-        "James G. Ogg",
-        "Bruce S. Lieberman",
-        "Gabi Ogg",
-        "Natalia López Carranza",
-        "Wen Du",
-        "Yufei Ye",
-        "Shuan Li",
-        "Zhong Peng",
-        "Shaoqi Yu",
-        "Juye Wei",
-        "Ying Zhou",
-        "Jieping Ye",
-        "Jiang Yang"
+        "Veit Laule",
+        "Jiangtao Shuai",
+        "Manfred Hauswirth",
+        "Sonja Schimmler"
       ],
-      "institution": "Zhejiang Laboratory",
+      "institution": "Technical University of Berlin",
       "summary": {
-        "zh": "HERMES 提供了一个实用的路径，将历史科学文献转化为面向FAIR的结构化数据。通过多智能体协作、领域约束集成和证据追踪，它克服了超长、多模态科学文档处理的难题，为数据密集型学科和大规模知识集成提供了可持续的基础设施。",
-        "en": "- **Background**: Authoritative scientific knowledge in geoscience is largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. As science..."
+        "zh": "本文针对LLM在长视野规划中的不可靠性及现有混合方法评估缺失的问题，提出了PDDLCoder代理框架和NL-pddlgym基准数据集。通过迭代生成与自动验证机制，PDDLCoder显著提高了PDDL生成的准确性和计划的可适用性，大幅超越了基线方法。该工作不仅展示了代理式符号规划的优势，还为LLM辅助规划研究建立了重要的标准化评估基准。",
+        "en": "This paper addresses the unreliability of LLMs in long-horizon planning and the lack of evaluation standards in hybrid methods by introducing PDDLCoder and NL-pddlgym. Through iterative generation and automated..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14055v1",
-        "pdf": "https://arxiv.org/pdf/2608.14055v1",
+        "abs": "http://arxiv.org/abs/2608.16637v1",
+        "pdf": "https://arxiv.org/pdf/2608.16637v1",
+        "github": "https://github.com/vDawgg/PDDLCoder"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.16637.md",
+        "summary_en_path": "summary_en/2026-08/2608.16637.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.16637.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.16637.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.16620",
+      "date": "2026-08-17",
+      "title": "Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Peng Du",
+        "Kiran Kamble",
+        "Rakshith Vasudev",
+        "Zhizhuo Yang",
+        "Rohith Nadimpally",
+        "Arjun Krishna",
+        "Waseem Alshikh",
+        "Daniel M. Bikel"
+      ],
+      "institution": "Writer, Inc.",
+      "summary": {
+        "zh": "Palmyra x6 技术报告展示了一种“少即是多”的后训练范式。通过精心设计的锚定监督微调（ASFT）和先进的优化器（Muon），研究者仅用极少量的合成数据（626 条轨迹）和单轮训练，就在不损害基础模型通用能力的前提下，显著提升了模型在企业级代理任务（如工具调用、多步规划）中的性能。该方法不仅在公共基准上取得了领先地位，更在实际企业应用场景中证明了其高效性和实用性，为资源受限下的高性能模型定制提供了重要参考。",
+        "en": "- **Background**: Historically, creating LLMs excelling in specific domains required full training pipelines. Recent trends suggest that post-training existing high-performing LLMs with high-quality data and carefully..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.16620v1",
+        "pdf": "https://arxiv.org/pdf/2608.16620v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.14055.md",
-        "summary_en_path": "summary_en/2026-08/2608.14055.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14055.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14055.md"
+        "summary_zh_path": "summary/2026-08/2608.16620.md",
+        "summary_en_path": "summary_en/2026-08/2608.16620.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.16620.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.16620.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -62,35 +100,84 @@
       }
     },
     {
-      "id": "arxiv:2608.14109",
-      "date": "2026-08-14",
-      "title": "A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents",
+      "id": "arxiv:2608.16391",
+      "date": "2026-08-17",
+      "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ismail El Hamraoui",
-        "Sagar Jose",
-        "Nicolas Bureau",
-        "Robert Plana"
+        "Xiangfan Wu",
+        "Zonghao Ying",
+        "Huiyu Wu",
+        "Xing Zheng",
+        "Huangsheng Cheng",
+        "Xiaorong Shi",
+        "Jing Guo"
       ],
-      "institution": "Digital Excellence Center, Assystem EOS, France",
+      "institution": "Tencent Zhuque Lab",
       "summary": {
-        "zh": "本文针对自主 LLM 智能体在真实世界中面临的行为漂移问题，提出了一种基于图的强化学习恢复框架。通过将恢复过程分解为多个专用节点，并利用混合奖励机制训练小型语言模型，该方法实现了高效、结构化且语义准确的漂移诊断与恢复。这不仅解决了大型模型无法频繁重训的限制，还有效降低了因漂移导致的外部系统不可逆损害风险，在 AppWorld 基准测试中展现了良好的性能。",
-        "en": "- **Background**: Autonomous LLM agents executing real-world actions (API calls, emails, etc.) are vulnerable to \"runtime behavioral drift,\" a silent deviation from initial goals that can cause irreversible side effects..."
+        "zh": "本文针对第三方托管 LLM API 的验证难题，提出了 Ventor-QTest 黑盒审计框架。通过引入平均保真度损失（AFL）和极端保真度损失（EFL）两个指标，该方法在不依赖目标 API 概率信息的情况下，有效量化了部署行为与可信参考之间的偏差。实验表明，EFL 与长程代理任务的性能下降密切相关，强调了在审计复杂应用场景时联合监控平均偏差和极端偏差的重要性。",
+        "en": "This paper addresses the verification challenge of third-party hosted LLM APIs by proposing Ventor-QTest, a black-box audit framework. By introducing Average Fidelity Loss (AFL) and Extreme Fidelity Loss (EFL), the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14109v1",
-        "pdf": "https://arxiv.org/pdf/2608.14109v1",
+        "abs": "http://arxiv.org/abs/2608.16391v1",
+        "pdf": "https://arxiv.org/pdf/2608.16391v1",
+        "github": "https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.16391.md",
+        "summary_en_path": "summary_en/2026-08/2608.16391.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.16391.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.16391.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.16349",
+      "date": "2026-08-17",
+      "title": "AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yuchen Yuan",
+        "Zhenghuang Wu",
+        "Yuangan Li",
+        "Liang Ma",
+        "Ke Li"
+      ],
+      "institution": "Beihang University",
+      "summary": {
+        "zh": "本文提出了 AeroCopilotBench 和 ACOE，填补了航空领域 LLM 智能体在交互式环境下的评估空白。通过双层基准和安全门控机制，系统性地评估了智能体的知识应用、交互执行和操作安全性。研究结果表明，当前模型在将静态知识转化为安全、完整的程序执行方面仍存在显著挑战，为未来开发更可靠的航空辅助智能体提供了重要的评估基础和方向指引。",
+        "en": "- **Background**: Large Language Model (LLM) agents have the potential to assist flight crews in safety-critical domains like aviation. However, existing evaluations focus on static knowledge, failing to systematically..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.16349v1",
+        "pdf": "https://arxiv.org/pdf/2608.16349v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.14109.md",
-        "summary_en_path": "summary_en/2026-08/2608.14109.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14109.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14109.md"
+        "summary_zh_path": "summary/2026-08/2608.16349.md",
+        "summary_en_path": "summary_en/2026-08/2608.16349.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.16349.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.16349.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -107,132 +194,34 @@
       }
     },
     {
-      "id": "arxiv:2608.14380",
-      "date": "2026-08-14",
-      "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
+      "id": "arxiv:2608.16889",
+      "date": "2026-08-17",
+      "title": "Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yu Zhuang",
-        "Kefei Chen",
-        "Yitong Duan",
-        "Shuxin Zheng",
-        "Jian Li",
-        "Xu-Yao Zhang"
+        "Bingxin Xu",
+        "Yuzhang Shang",
+        "Emilio Ferrara"
       ],
-      "institution": "University of Chinese Academy of Sciences",
+      "institution": "University of Southern California",
       "summary": {
-        "zh": "AgentRewind 针对长周期 LLM 智能体执行中错误难以恢复的问题，提出了一种基于检查点回滚和记忆引导的运行时恢复框架。通过允许智能体回溯到早期状态并吸取历史教训，该方法有效解决了错误传播问题，在 MettleBench 基准测试中展现了优于现有计划细化和安全检查方法的性能，为提升长周期任务的可靠性提供了新范式。",
-        "en": "AgentRewind addresses the lack of recovery mechanisms in long-horizon LLM agent execution by introducing a checkpoint-based rewind framework with memory guidance. By enabling agents to revert to earlier states and learn..."
+        "zh": "BATON 通过将长程任务分解为独立的子任务探索单元，并引入精细的转换感知记忆机制（包括调用、交接和前瞻转换），有效解决了长程机器人操作中误差累积和状态不兼容的问题。该方法在不更新参数的情况下，显著降低了探索成本并提升了长程任务的成功率，证明了模块化探索与状态管理在复杂机器人任务中的重要性。",
+        "en": "BATON addresses the compounding errors and state incompatibilities in long-horizon robot manipulation by decomposing tasks into independently explored subunits and managing inter-subtask transitions through a..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14380v1",
-        "pdf": "https://arxiv.org/pdf/2608.14380v1",
-        "github": "https://github.com/Futuresis/replay-agent-recorder"
+        "abs": "http://arxiv.org/abs/2608.16889v1",
+        "pdf": "https://arxiv.org/pdf/2608.16889v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.14380.md",
-        "summary_en_path": "summary_en/2026-08/2608.14380.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14380.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14380.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.14339",
-      "date": "2026-08-14",
-      "title": "Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Zhizhao Guan",
-        "Chen Huang",
-        "Ziming Liu",
-        "Hongru Liang",
-        "Wenqiang Lei",
-        "See-Kiong Ng",
-        "Tat-Seng Chua",
-        "Anthony G Cohn"
-      ],
-      "institution": "Sichuan University, National University of Singapore, University of Leeds",
-      "summary": {
-        "zh": "本文针对LLM智能体在复杂交互环境中缺乏主动探索能力的问题，指出了现有SFT-RL范式中数据偏差和训练机制的缺陷。通过提出SAFARI框架，结合合成探索丰富数据的SFT阶段和引入对比信号引导的RL阶段，成功赋予了智能体主动探索的能力。该方法不仅提升了智能体在长程决策任务中的表现，也为理解和发展具身智能体的探索行为提供了新的视角。代码已开源。",
-        "en": "- **Background**: As Large Language Models (LLMs) advance, LLM-based agents excel in multi-turn interactive tasks (e.g., online shopping). However, they lack \"proactive exploration\" capability—the ability to..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.14339v1",
-        "pdf": "https://arxiv.org/pdf/2608.14339v1",
-        "github": "https://github.com/GuanZhizhao/SAFARI"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.14339.md",
-        "summary_en_path": "summary_en/2026-08/2608.14339.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14339.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14339.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.14452",
-      "date": "2026-08-14",
-      "title": "SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Panjing He",
-        "Mingyue Cheng",
-        "Yucong Luo",
-        "Li Li",
-        "Xiaohan Zhang"
-      ],
-      "institution": "State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China",
-      "summary": {
-        "zh": "SheetCompass 解决了 LLM 在处理复杂电子表格时因结构扁平化而丢失空间语义的关键问题。通过引入分层关系图来显式建模表格内部及之间的结构关系，并结合双层记忆机制和多代理协作框架，该方法有效增强了代理在复杂工作流中的规划、执行和自我修正能力，实现了电子表格自动化推理性能的显著提升。",
-        "en": "SheetCompass addresses the key issue of lost spatial semantics in LLM-based spreadsheet processing caused by structure flattening. By introducing a Hierarchical Relation Graph to explicitly model intra- and inter-sheet..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.14452v1",
-        "pdf": "https://arxiv.org/pdf/2608.14452v1",
-        "github": "https://anonymous.4open.science/r/sheetcompass-411C"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.14452.md",
-        "summary_en_path": "summary_en/2026-08/2608.14452.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.14452.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.14452.md"
+        "summary_zh_path": "summary/2026-08/2608.16889.md",
+        "summary_en_path": "summary_en/2026-08/2608.16889.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.16889.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.16889.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,57 +1,100 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-08-17T02:39:58.712817+00:00",
-  "run_date": "2026-08-14",
+  "generated_at": "2026-08-18T02:35:03.288933+00:00",
+  "run_date": "2026-08-17",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2608.14055",
-      "date": "2026-08-14",
-      "title": "HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience",
+      "paper_id": "2608.16637",
+      "date": "2026-08-17",
+      "title": "PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning",
       "authors": [
-        "Ziqi Song",
-        "Zongyuan Xiang",
-        "James G. Ogg",
-        "Bruce S. Lieberman",
-        "Gabi Ogg",
-        "Natalia López Carranza",
-        "Wen Du",
-        "Yufei Ye",
-        "Shuan Li",
-        "Zhong Peng",
-        "Shaoqi Yu",
-        "Juye Wei",
-        "Ying Zhou",
-        "Jieping Ye",
-        "Jiang Yang"
+        "Veit Laule",
+        "Jiangtao Shuai",
+        "Manfred Hauswirth",
+        "Sonja Schimmler"
       ],
-      "abstract": "Authoritative scientific knowledge in geoscience remains largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. We introduce HERMES, a scalable multi-agent framework that extracts structured data from ultra-long scientific documents. Using a coordinating large language model, HERMES integrates domain constraints, validation rules and evidence tracing within a unified document-level extraction process that incorporates parsed text, tables, figures and captions. Applied to the 55-volume Treatise on Invertebrate Paleontology, the system produced a structured database of 32,277 fossil taxonomic entities and 451,878 attributes, released online at https://treatise.geolex.org. Extraction performance remained stable across fossil groups (average F1 scores of approximately 0.90 for entities and 0.91 for attributes), improving per-volume efficiency approximately sixfold relative to the tested fully manual baseline. Evaluation in palaeomagnetism and geochemistry, conducted without additional model training, demonstrated transfer across distinct geoscience domains. This work provides a practical pathway to transform historical scientific literature into FAIR-oriented structured data, offering a sustainable infrastructure for data-intensive disciplines and large-scale knowledge integration.",
+      "abstract": "LLMs remain unreliable for long-horizon planning, often generating logically inconsistent or non-applicable plans. Recent hybrid methods instead translate natural language into the Planning Domain Definition Language (PDDL), allowing symbolic planners to produce verifiable plans. However, existing methods frequently rely on rigid generation pipelines, a partial PDDL definition, or human feedback. Furthermore, their evaluation is hindered by the lack of standardized benchmarks with automated verification. To address these limitations, we present PDDLCoder, an agentic framework for PDDL generation from natural language that iteratively generates, analyzes, and refines planning specifications. We further introduce NL-pddlgym, a benchmark dataset comprising 711 planning problems across 23 domains with executable gym environments for the automated verification of plan applicability. Experiments on the NL-pddlgym test set containing 106 problems across 4 held-out domains show that PDDLCoder generates applicable plans for 89.6\\% of tested planning problems. This improves upon our adaptations of previous PDDL generation methods, which achieved up to 45.3\\%, and outperforms direct LLM planning approaches, which reached up to 74.5\\% on the same test set. Our work demonstrates the effectiveness of agentic PDDL generation for planning and establishes a reproducible benchmark for future research on LLM-assisted symbolic planning.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14055v1",
-        "pdf": "https://arxiv.org/pdf/2608.14055v1",
+        "abs": "http://arxiv.org/abs/2608.16637v1",
+        "pdf": "https://arxiv.org/pdf/2608.16637v1",
+        "github": "https://github.com/vDawgg/PDDLCoder",
+        "blog": null
+      },
+      "institution": "Technical University of Berlin",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在长视野规划任务中表现不可靠，常生成逻辑不一致或无法执行的计划。混合方法试图通过将自然语言转化为规划域定义语言（PDDL），利用符号规划器生成可验证的计划。\n- **已有工作的局限性**：现有的PDDL生成方法通常依赖僵化的生成流水线、仅提供部分PDDL定义或需要人工反馈。此外，该领域缺乏带有自动化验证功能的标准基准测试，导致评估困难且结果难以复现。\n\n## 文章的核心贡献点\n- **提出了一个名为 PDDLCoder 的代理框架**：用于从自然语言迭代生成、分析和 refinement PDDL规划规范；同时引入了 NL-pddlgym 基准数据集。\n- **挑战1：PDDL生成的准确性与完整性难保证**。由于规划域复杂，一次性生成完整的PDDL文件极易出现语法错误或逻辑漏洞，且传统方法缺乏自我修正机制。PDDLCoder通过代理（Agent）架构，利用工具 iteratively 读取、编辑PDDL文件并获取语法错误反馈，从而逐步 refine 规划规格说明，解决单次生成失败率高的问题。\n- **挑战2：缺乏自动化且标准化的评估体系**。现有研究多依赖人工检查或非标准测试集，难以客观比较不同方法的计划适用性。文章构建了 NL-pddlgym，包含23个领域的711个问题及可执行的Gym环境，实现了计划适用性的自动化验证，为后续研究提供了可复现的基准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：PDDLCoder作为一个代理框架，接收自然语言描述，通过LLM Agent调用工具创建和编辑PDDL文件，并在NL-pddlgym环境中进行模拟验证。NL-pddlgym提供了标准化的接口和自动化验证流程。\n- **Evaluation 结果**：在包含4个保留领域共106个问题的测试集上，PDDLCoder为89.6%的测试问题生成了可适用的计划。\n- **对比**：\n    - 优于经过调整的先前PDDL生成方法（最高仅达45.3%）。\n    - 优于直接让LLM进行规划的方法（最高仅达74.5%）。\n    - 证明了代理式PDDL生成在规划任务中的有效性。\n\n#### 总结\n本文针对LLM在长视野规划中的不可靠性及现有混合方法评估缺失的问题，提出了PDDLCoder代理框架和NL-pddlgym基准数据集。通过迭代生成与自动验证机制，PDDLCoder显著提高了PDDL生成的准确性和计划的可适用性，大幅超越了基线方法。该工作不仅展示了代理式符号规划的优势，还为LLM辅助规划研究建立了重要的标准化评估基准。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) remain unreliable for long-horizon planning, often producing logically inconsistent or inapplicable plans. Hybrid approaches attempt to mitigate this by translating natural language into Planning Domain Definition Language (PDDL), enabling symbolic planners to generate verifiable plans.\n- **Limitations of Existing Work**: Current PDDL generation methods often rely on rigid pipelines, partial PDDL definitions, or human feedback. Furthermore, the field lacks standardized benchmarks with automated verification, hindering robust evaluation and reproducibility.\n\n## Core Contributions\n- **Proposed PDDLCoder**: An agentic framework for iterative PDDL generation from natural language, and **NL-pddlgym**, a new benchmark dataset.\n- **Challenge 1: Difficulty in ensuring accuracy and completeness of PDDL generation**. Complex planning domains make one-shot generation prone to syntax errors and logical flaws, while traditional methods lack self-correction. PDDLCoder addresses this by using an Agent architecture that iteratively reads, edits, and refines PDDL files based on syntax error feedback, significantly reducing failure rates.\n- **Challenge 2: Lack of automated and standardized evaluation systems**. Previous studies relied on manual checks or non-standard tests, making objective comparison difficult. The authors constructed NL-pddlgym, comprising 711 problems across 23 domains with executable Gym environments, enabling automated verification of plan applicability and providing a reproducible benchmark.\n\n## Implementation and Evaluation\n- **Implementation**: PDDLCoder operates as an agent framework that receives natural language descriptions, uses an LLM Agent to create and edit PDDL files via tools, and validates plans within the NL-pddlgym environment.\n- **Evaluation Results**: On a test set of 106 problems across 4 held-out domains, PDDLCoder generated applicable plans for 89.6% of the problems.\n- **Comparison**:\n    - Outperforms adapted previous PDDL generation methods (which achieved up to 45.3%).\n    - Outperforms direct LLM planning approaches (which reached up to 74.5%).\n    - Demonstrates the superior effectiveness of agentic PDDL generation.\n\n#### Summary\nThis paper addresses the unreliability of LLMs in long-horizon planning and the lack of evaluation standards in hybrid methods by introducing PDDLCoder and NL-pddlgym. Through iterative generation and automated verification, PDDLCoder significantly improves PDDL accuracy and plan applicability, surpassing baseline methods. The work highlights the advantages of agentic symbolic planning and establishes a crucial standardized benchmark for future research in LLM-assisted planning.",
+      "render_excerpt": "机构: Technical University of Berlin<br>本文针对LLM在长视野规划中的不可靠性及现有混合方法评估缺失的问题，提出了PDDLCoder代理框架和NL-pddlgym基准数据集。通过迭代生成与自动验证机制，PDDLCoder显著提高了PDDL生成的准确性和计划的可适用性，大幅超越了基线方法。该工作不仅展示了代理式符号规划的优势，还为LLM辅助规划研究建立了重要的标准化评估基准。",
+      "render_excerpt_en": "Institution: Technical University of Berlin<br>This paper addresses the unreliability of LLMs in long-horizon planning and the lack of evaluation standards in hybrid methods by introducing PDDLCoder and NL-pddlgym. Through iterative generation and automated verification, PDDLCoder significantly improves PDDL accuracy and plan applicability, surpassing baseline methods. The work highlights the advantages of agentic symbolic planning and establishes a crucial standardized benchmark for future research in LLM-assisted planning.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-17T14:34:56Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-17"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.16620",
+      "date": "2026-08-17",
+      "title": "Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning",
+      "authors": [
+        "Peng Du",
+        "Kiran Kamble",
+        "Rakshith Vasudev",
+        "Zhizhuo Yang",
+        "Rohith Nadimpally",
+        "Arjun Krishna",
+        "Waseem Alshikh",
+        "Daniel M. Bikel"
+      ],
+      "abstract": "Palmyra x6 is a large language model optimized for use with enterprise-oriented agentic tasks. The model was built by post-training a Mixture-of-Experts base model with Anchored Supervised Fine-Tuning on a compact corpus of verified, synthetic tool-use trajectories, optimized with a Muon + Adam hybrid. The recipe is deliberately conservative and deliberately controlled: 626 trajectories, a single epoch, a low learning rate, and a KL anchor to the frozen base. The model shows substantial gains over the previous default model for Writer Agent, and compares favorably with several recent models on public benchmarks, scoring the highest on BFCL Core at $0.785$ and posts the highest six-benchmark mean of the cohort. Furthermore, the model has shown itself to be competitive or leading relative to comparators in our bias and safety evaluations.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.16620v1",
+        "pdf": "https://arxiv.org/pdf/2608.16620v1",
         "github": null,
         "blog": null
       },
-      "institution": "Zhejiang Laboratory",
+      "institution": "Writer, Inc.",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：地球科学领域的权威知识大量被困在传统的专著和历史文献中，非结构化文本和复杂的版面布局阻碍了计算访问。随着数据密集型科学发现的兴起，从现有文献中系统化地整理和复用数据变得至关重要。\n- **已有工作为什么解决不了**：现有的自动化系统难以处理超长文档中的复杂布局（如文本、表格、图表混合），且缺乏领域约束和证据追踪能力，导致提取的结构化数据准确性低、不可靠，难以满足FAIR（可发现、可访问、可互操作、可重用）数据标准。\n\n## 文章的核心贡献点\n- **提出了一个 HERMES 框架**：这是一个可扩展的多智能体框架，用于从地球科学的超长文档中提取结构化数据。\n- **挑战1：超长文档与多模态复杂版面的统一理解难**。难点在于传统方法难以同时处理长达数百页的文档中的文本、表格、图像及其标题，且容易丢失上下文关联。HERMES 通过协调大语言模型，将解析后的文本、表格、图形和标题整合到统一的文档级提取过程中，利用多智能体协作实现全局上下文感知。\n- **挑战2：提取结果的领域一致性与可验证性难**。难点在于通用LLM容易产生幻觉，且缺乏对特定科学领域规则的理解。HERMES 集成了领域约束、验证规则和证据追踪机制，确保提取的数据符合地球科学的专业规范，并能追溯至原文证据，从而保证数据的准确性和可信度。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：HERMES 应用于55卷本的《无脊椎动物古生物学论丛》（Treatise on Invertebrate Paleontology），成功构建了一个包含32,277个化石分类实体和451,878个属性的结构化数据库，并已在线发布（https://treatise.geolex.org）。\n- **评估结果**：\n    - **准确性**：在不同化石类群中表现稳定，实体提取的平均F1分数约为0.90，属性提取的平均F1分数约为0.91。\n    - **效率**：相较于完全人工基线，每卷的处理效率提高了约6倍。\n    - **泛化能力**：在未进行额外模型训练的情况下，系统在古地磁学和地球化学领域的评估中展示了跨不同地球科学领域的迁移能力。\n- **对比**：相比传统手动提取或单一模型提取，HERMES 在多模态整合和领域规则约束下显著提升了效率和准确性，解决了长文档处理中的上下文断裂和幻觉问题。\n\n#### 总结\nHERMES 提供了一个实用的路径，将历史科学文献转化为面向FAIR的结构化数据。通过多智能体协作、领域约束集成和证据追踪，它克服了超长、多模态科学文档处理的难题，为数据密集型学科和大规模知识集成提供了可持续的基础设施。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Authoritative scientific knowledge in geoscience is largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. As science shifts towards data-intensive discovery, systematically curating and reusing data from existing literature is critical.\n- **Why Existing Work Falls Short**: Current automated systems struggle with complex layouts (mixed text, tables, figures) in ultra-long documents and lack domain constraints and evidence tracing. This leads to low accuracy and reliability in extracted structured data, failing to meet FAIR (Findable, Accessible, Interoperable, Reusable) standards.\n\n## Core Contributions\n- **Proposed HERMES**: A scalable multi-agent framework for extracting structured data from ultra-long geoscience documents.\n- **Challenge 1: Unified understanding of ultra-long documents with complex multimodal layouts**. The difficulty lies in simultaneously processing text, tables, images, and captions across hundreds of pages without losing contextual links. HERMES addresses this by using a coordinating LLM to integrate parsed text, tables, figures, and captions into a unified document-level extraction process, leveraging multi-agent collaboration for global context awareness.\n- **Challenge 2: Ensuring domain consistency and verifiability of extracted results**. General LLMs are prone to hallucinations and lack understanding of specific scientific rules. HERMES integrates domain constraints, validation rules, and evidence tracing mechanisms to ensure extracted data adheres to geoscience standards and can be traced back to original evidence, guaranteeing accuracy and trustworthiness.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Applied to the 55-volume \"Treatise on Invertebrate Paleontology,\" HERMES produced a structured database of 32,277 fossil taxonomic entities and 451,878 attributes, released online at https://treatise.geolex.org.\n- **Evaluation Results**:\n    - **Accuracy**: Performance remained stable across fossil groups, with average F1 scores of approximately 0.90 for entities and 0.91 for attributes.\n    - **Efficiency**: Achieved approximately sixfold improvement in per-volume efficiency compared to a fully manual baseline.\n    - **Generalizability**: Demonstrated transferability across distinct geoscience domains (paleomagnetism and geochemistry) without additional model training.\n- **Comparison**: Compared to traditional manual extraction or single-model approaches, HERMES significantly improves efficiency and accuracy by handling multimodal integration and enforcing domain rules, addressing context fragmentation and hallucinations in long-document processing.\n\n## 4. Conclusion\nHERMES provides a practical pathway to transform historical scientific literature into FAIR-oriented structured data. By leveraging multi-agent collaboration, domain constraint integration, and evidence tracing, it overcomes the challenges of processing ultra-long, multimodal scientific documents, offering sustainable infrastructure for data-intensive disciplines and large-scale knowledge integration.",
-      "render_excerpt": "机构: Zhejiang Laboratory<br>HERMES 提供了一个实用的路径，将历史科学文献转化为面向FAIR的结构化数据。通过多智能体协作、领域约束集成和证据追踪，它克服了超长、多模态科学文档处理的难题，为数据密集型学科和大规模知识集成提供了可持续的基础设施。",
-      "render_excerpt_en": "Institution: Zhejiang Laboratory<br>## 1. What the Paper Did - **Background**: Authoritative scientific knowledge in geoscience is largely trapped in legacy monographs and historical literature, where unstructured text and complex layouts hinder computational access. As science shifts towards data-intensive discovery, systematically curating and reusing data from existing literature is critical.",
+      "summary_cn": "## 文章做了什么\n- **背景**：为了构建在特定领域（如企业级代理任务）表现卓越的大语言模型，传统方法往往需要从头进行预训练或持续预训练。然而，近期研究表明，只要数据质量高且目标函数选择得当，对现有的高性能基础模型进行后训练（Post-training）往往就足够了。\n- **已有工作的局限**：传统的微调方法容易在赋予模型新技能（如工具使用）的同时，导致基础模型原有通用能力的灾难性遗忘。此外，针对复杂代理任务（多步规划、工具调用）的训练数据通常稀缺且噪声大，难以通过大规模粗放式训练获得稳定提升。\n\n## 文章的核心贡献点\n- **提出了一个基于锚定监督微调（Anchored Supervised Fine-Tuning, ASFT）的高效后训练方案 Palmyra x6**：该模型基于 GLM-5.2 MoE 基础模型，仅使用极少量高质量合成数据进行单轮微调，即可显著提升代理任务能力。\n- **挑战1：如何在注入复杂代理技能的同时防止基础能力退化？**\n  - **难点**：标准 SFT 容易破坏基础模型的知识分布，导致通用性能下降。\n  - **解决方法**：引入 KL 散度锚定（KL anchor）机制，将微调过程中的模型分布约束在冻结的基础模型附近，确保在仅使用 626 条轨迹和单轮训练的情况下，既增强了工具使用能力，又保留了基础模型的原有优势。\n- **挑战2：如何在数据极度受限的情况下实现最优收敛和性能最大化？**\n  - **难点**：小样本训练对优化器的稳定性和学习率极其敏感，常规优化器可能无法充分挖掘模型潜力或导致震荡。\n  - **解决方法**：采用 Muon + Adam 混合优化器策略，其中 Muon 专门用于优化二维权重矩阵，配合极低的学习率和保守的训练配方（Conservative Recipe），实现了在极小数据集上的高效收敛和性能突破。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：Palmyra x6 基于 GLM-5.2（744B 总参数，~40B 激活参数）的 MoE 架构。训练数据为经过严格验证的合成工具使用轨迹（仅 626 条）。训练过程仅进行一个 epoch，使用低学习率，并应用 ASFT 目标函数（KL 权重 K=0.1）。\n- **评估结果**：\n  - 在 BFCL Core 基准测试中得分 0.785，位居榜首。\n  - 在六个基准测试的平均得分中，Palmyra x6 在同组模型中排名第一。\n  - 相比 Writer Agent 的前一代默认模型，Palmyra x6 在所有基准上均取得显著进步，特别是在 MCP-Atlas (+0.320)、FinanceBench (+0.305) 和 IFBench (+0.304) 上提升巨大。\n- **对比相关工作**：与当时的前沿模型相比，Palmyra x6 在公共基准上表现优异或具有竞争力。更重要的是，在针对企业内部用例模拟的私有数据集上，其表现远超旧模型，证明了其在实际生产环境中的有效性。在偏见和安全性评估中，该模型也表现出竞争性或领先的优势。\n\n#### 总结\nPalmyra x6 技术报告展示了一种“少即是多”的后训练范式。通过精心设计的锚定监督微调（ASFT）和先进的优化器（Muon），研究者仅用极少量的合成数据（626 条轨迹）和单轮训练，就在不损害基础模型通用能力的前提下，显著提升了模型在企业级代理任务（如工具调用、多步规划）中的性能。该方法不仅在公共基准上取得了领先地位，更在实际企业应用场景中证明了其高效性和实用性，为资源受限下的高性能模型定制提供了重要参考。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Historically, creating LLMs excelling in specific domains required full training pipelines. Recent trends suggest that post-training existing high-performing LLMs with high-quality data and carefully chosen objectives is sufficient.\n- **Limitations of Existing Work**: Standard fine-tuning often leads to catastrophic forgetting of general capabilities when injecting new skills (like tool use). Additionally, training data for complex agentic tasks is scarce and noisy, making it difficult to achieve stable improvements through large-scale, uncontrolled training.\n\n## Core Contributions\n- **Proposed Palmyra x6**: An agentic model post-trained via Anchored Supervised Fine-Tuning (ASFT) on a Mixture-of-Experts (MoE) base model, using a minimal corpus of verified synthetic trajectories.\n- **Challenge 1: How to inject complex agentic skills without degrading base model capabilities?**\n  - **Difficulty**: Standard SFT can disrupt the knowledge distribution of the base model, reducing general performance.\n  - **Solution**: Introduced a KL-divergence anchor to constrain the model's distribution close to the frozen base model during fine-tuning. This allowed significant enhancement of tool-use capabilities using only 626 trajectories and a single epoch, while preserving the base model's original strengths.\n- **Challenge 2: How to achieve optimal convergence and performance with extremely limited data?**\n  - **Difficulty**: Small-sample training is highly sensitive to optimizer stability and learning rates; conventional optimizers may fail to fully exploit model potential or cause oscillation.\n  - **Solution**: Employed a Muon + Adam hybrid optimizer, where Muon optimizes 2D weight matrices. Combined with a low learning rate and a conservative training recipe, this approach ensured efficient convergence and performance breakthroughs on the tiny dataset.\n\n## Implementation and Evaluation\n- **Implementation Details**: Palmyra x6 is built on the GLM-5.2 MoE architecture (744B total parameters, ~40B active). It was trained on just 626 verified synthetic tool-use trajectories for a single epoch using a low learning rate and an ASFT objective (KL weight K=0.1).\n- **Evaluation Results**:\n  - Achieved a score of 0.785 on BFCL Core, ranking first.\n  - Secured the highest mean score across six benchmarks among the cohort.\n  - Showed substantial improvements over the previous default Writer Agent model, with notable gains in MCP-Atlas (+0.320), FinanceBench (+0.305), and IFBench (+0.304).\n- **Comparison with Related Work**: Palmyra x6 performs competitively or leads against frontier models on public benchmarks. More importantly, it significantly outperforms the previous model on internal datasets simulating enterprise use cases, demonstrating its production readiness. It also shows competitive or leading results in bias and safety evaluations.\n\n## 4. Conclusion\nThe Palmyra x6 technical report demonstrates a \"less is more\" post-training paradigm. By leveraging carefully designed Anchored Supervised Fine-Tuning (ASFT) and advanced optimization (Muon), the authors significantly enhanced the model's performance in enterprise agentic tasks (such as tool use and multi-step planning) using only a minimal amount of synthetic data (626 trajectories) and single-epoch training. This approach not only achieved state-of-the-art results on public benchmarks but also proved its efficiency and practicality in real-world enterprise scenarios, offering valuable insights for customizing high-performance models under resource constraints.",
+      "render_excerpt": "机构: Writer, Inc.<br>Palmyra x6 技术报告展示了一种“少即是多”的后训练范式。通过精心设计的锚定监督微调（ASFT）和先进的优化器（Muon），研究者仅用极少量的合成数据（626 条轨迹）和单轮训练，就在不损害基础模型通用能力的前提下，显著提升了模型在企业级代理任务（如工具调用、多步规划）中的性能。该方法不仅在公共基准上取得了领先地位，更在实际企业应用场景中证明了其高效性和实用性，为资源受限下的高性能模型定制提供了重要参考。",
+      "render_excerpt_en": "Institution: Writer, Inc.<br>## 1. What the Paper Does - **Background**: Historically, creating LLMs excelling in specific domains required full training pipelines. Recent trends suggest that post-training existing high-performing LLMs with high-quality data and carefully chosen objectives is sufficient.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-14T07:59:58Z"
+        "captured_at": "2026-08-17T14:21:03Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-14"
+        "captured_at": "2026-08-17"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -66,42 +109,96 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2608.14109",
-      "date": "2026-08-14",
-      "title": "A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents",
+      "paper_id": "2608.16391",
+      "date": "2026-08-17",
+      "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs",
       "authors": [
-        "Ismail El Hamraoui",
-        "Sagar Jose",
-        "Nicolas Bureau",
-        "Robert Plana"
+        "Xiangfan Wu",
+        "Zonghao Ying",
+        "Huiyu Wu",
+        "Xing Zheng",
+        "Huangsheng Cheng",
+        "Xiaorong Shi",
+        "Jing Guo"
       ],
-      "abstract": "Autonomous LLM agents are increasingly deployed in complex real-world workflows, yet they remain vulnerable to runtime behavioral drift, a silent deviation from the original task that can lead to irreversible side effects on external systems. Existing approaches address drift at the prompt level but lack structured mechanisms for step-level detection, risk assessment, and recovery decision. Because the main task-executing agent is often a large and expensive model that cannot be re-trained on every deployment, this work targets a plug-and-play recovery module instead. It introduces a graph-based framework in which a single small language model is trained via reinforcement learning to specialize at each node of a recovery graph, external to the main agent. Each node has a precise role\\,: drift classification, operation detection, risk evaluation, or final decision and the model learns to produce structured XML-formatted reasoning adapted to that role. Training combines rule-based structural rewards with an LLM-as-judge semantic-quality signal, so that the model is graded both on how it answers (schema and length) and on what it says. Experiments on the public AppWorld benchmark show that the method generally exploits information about the suspected drift onset to issue correct recovery decisions using a small language model. In addition, the trained small language model reliably respects the prescribed output schema and produces semantically appropriate content in each field according to its assigned node role.",
+      "abstract": "As large language models become increasingly widespread, third-party providers that deploy open-weight models have become an important part of the ecosystem. Auditing the quality of their inference APIs is therefore an open problem. We formalize hosted model routing as a stochastic process and propose \\mbox{\\textbf{Ventor-QTest}}, a composite black-box audit that requires no probability information from the target API. Its repeated-request component sends each frozen constrained context to the target multiple times, reconstructs a categorical output distribution from the returned text counts, and reports \\emph{average fidelity loss} (AFL) as a null-bias-corrected, within-window mean coarsened-KL statistic. Its long-sequence component uses independent runs to report \\emph{extreme fidelity loss} (EFL) through the empirical upper tail of a run-level reference-centered-surprisal statistic. Across three logprob-capable route conditions, AFL shows strong linear descriptive agreement with a logprob-derived coarsened-KL comparator. Across seven route snapshots, 20-run sequence probes reveal route-specific EFL variation. AFL and EFL have little detectable route-level association with GPQA-Diamond accuracy. In contrast, pronounced EFL coincides with a decline in Terminal-Bench pass rate as task exposure increases. This pattern may arise because correctness in long-horizon tasks is more sensitive to extreme fidelity loss. These results motivate reporting AFL and EFL jointly, particularly when auditing long-horizon agentic tasks. The open-source implementation is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14109v1",
-        "pdf": "https://arxiv.org/pdf/2608.14109v1",
+        "abs": "http://arxiv.org/abs/2608.16391v1",
+        "pdf": "https://arxiv.org/pdf/2608.16391v1",
+        "github": "https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest",
+        "blog": null
+      },
+      "institution": "Tencent Zhuque Lab",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n\n**背景**\n随着大语言模型（LLM）的普及，第三方提供商部署开源权重模型并通过 API 提供服务已成为生态系统的重要组成部分。然而，用户无法直接验证这些托管 API 是否真正运行了声称的模型版本、量化配置或解码策略，这导致了“验证缺口”。\n\n**已有的工作为什么解决不了**\n现有的审计方法通常依赖于目标 API 返回的对数概率（logprobs）信息，但许多商业或第三方 API 并不提供此数据，或者提供的数据不可信。此外，传统的黑盒测试难以区分由于随机性引起的输出差异与由于模型路由替换（如使用更便宜的模型或旧版本检查点）引起的系统性偏差，缺乏一种无需内部概率信息即可量化行为偏差的有效手段。\n\n## 文章的核心贡献点\n\n**提出了一个 Ventor-QTest**\n这是一种复合黑盒审计框架，将托管模型路由形式化为随机过程，无需目标 API 提供概率信息即可验证其行为一致性。\n\n**挑战1：如何在没有 logprobs 的情况下量化分布偏差？**\n*   **难点**：传统 KL 散度计算需要完整的概率分布，而黑盒 API 仅返回文本，且存在采样随机性，难以准确重构分布。\n*   **解决方法**：提出“重复请求组件”，向目标发送多次冻结的约束上下文，从返回的文本计数中重构分类输出分布，并报告“平均保真度损失”（AFL），这是一种经过零偏差校正的窗口内均值粗粒度 KL 统计量。\n\n**挑战2：如何检测长序列任务中的极端异常行为？**\n*   **难点**：长程代理任务对极端的保真度损失敏感，但平均指标可能掩盖尾部风险，且长序列生成的参考基准难以确定。\n*   **解决方法**：提出“长序列组件”，通过独立运行报告“极端保真度损失”（EFL），利用运行级参考中心惊喜度（surprisal）统计量的经验上尾来捕捉极端偏差，从而揭示特定路由下的性能下降。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n\n**实现与部署**\nVentor-QTest 已开源，作为腾讯 AI Infra Guard 的一部分提供。该工具完全基于黑盒查询，不依赖模型内部状态。\n\n**Evaluation 结果**\n1.  **AFL 有效性验证**：在三种支持 logprob 的路由条件下，AFL 与基于 logprob 衍生的粗粒度 KL 比较器显示出强烈的线性描述一致性，证明了其在无 logprob 场景下的代理有效性。\n2.  **EFL 变异性检测**：在七个路由快照中，20 次运行的序列探针揭示了特定于路由的 EFL 变化，表明不同部署配置下极端偏差存在显著差异。\n3.  **与下游任务性能的相关性**：\n    *   AFL 和 EFL 与 GPQA-Diamond 准确率几乎没有检测到路由级别的关联。\n    *   相比之下，随着任务暴露度的增加，显著的 EFL 与 Terminal-Bench 通过率的下降相吻合。这表明长程任务的正确性对极端保真度损失更为敏感。\n\n**对比**\n与传统仅关注平均准确率或使用 logprob 的方法相比，Ventor-QTest 能够联合报告 AFL 和 EFL，特别适用于审计长程代理任务，揭示了平均指标无法捕捉的尾部风险对复杂任务的影响。\n\n#### 总结\n\n本文针对第三方托管 LLM API 的验证难题，提出了 Ventor-QTest 黑盒审计框架。通过引入平均保真度损失（AFL）和极端保真度损失（EFL）两个指标，该方法在不依赖目标 API 概率信息的情况下，有效量化了部署行为与可信参考之间的偏差。实验表明，EFL 与长程代理任务的性能下降密切相关，强调了在审计复杂应用场景时联合监控平均偏差和极端偏差的重要性。",
+      "summary_en": "## 1. What the Paper Does\n\n**Background**\nAs Large Language Models (LLMs) become widespread, third-party providers deploying open-weight models via APIs have become a key part of the ecosystem. However, users cannot directly verify if these hosted APIs truly run the claimed model versions, quantization configurations, or decoding strategies, creating a \"verification gap.\"\n\n**Why Existing Work Falls Short**\nExisting audit methods often rely on log-probabilities (logprobs) returned by the target API, which many commercial or third-party APIs do not provide or may manipulate. Furthermore, traditional black-box testing struggles to distinguish output variations caused by stochastic sampling from systematic biases caused by model routing substitutions (e.g., using cheaper models or older checkpoints), lacking an effective means to quantify behavioral deviation without internal probability information.\n\n## Core Contributions\n\n**Proposed Ventor-QTest**\nA composite black-box audit framework that formalizes hosted model routing as a stochastic process, verifying behavioral consistency without requiring probability information from the target API.\n\n**Challenge 1: How to quantify distributional deviation without logprobs?**\n*   **Difficulty**: Traditional KL divergence calculation requires full probability distributions, but black-box APIs only return text, and sampling randomness makes accurate distribution reconstruction difficult.\n*   **Solution**: Proposes a \"repeated-request component\" that sends frozen constrained contexts multiple times, reconstructs categorical output distributions from returned text counts, and reports \"Average Fidelity Loss\" (AFL), a null-bias-corrected, within-window mean coarsened-KL statistic.\n\n**Challenge 2: How to detect extreme anomalous behavior in long-sequence tasks?**\n*   **Difficulty**: Long-horizon agentic tasks are sensitive to extreme fidelity losses, but average metrics may mask tail risks, and establishing reference baselines for long-sequence generation is challenging.\n*   **Solution**: Proposes a \"long-sequence component\" that reports \"Extreme Fidelity Loss\" (EFL) through independent runs, utilizing the empirical upper tail of a run-level reference-centered-surprisal statistic to capture extreme deviations and reveal performance degradation under specific routings.\n\n## Implementation and Evaluation\n\n**Implementation and Deployment**\nVentor-QTest is open-sourced as part of Tencent's AI Infra Guard. The tool operates entirely on black-box queries without relying on internal model states.\n\n**Evaluation Results**\n1.  **AFL Validity**: Across three logprob-capable route conditions, AFL shows strong linear descriptive agreement with a logprob-derived coarsened-KL comparator, proving its proxy effectiveness in scenarios without logprobs.\n2.  **EFL Variability Detection**: In seven route snapshots, 20-run sequence probes revealed route-specific EFL variations, indicating significant differences in extreme deviations across different deployment configurations.\n3.  **Correlation with Downstream Performance**:\n    *   AFL and EFL showed little detectable route-level association with GPQA-Diamond accuracy.\n    *   In contrast, pronounced EFL coincided with a decline in Terminal-Bench pass rates as task exposure increased. This suggests that correctness in long-horizon tasks is more sensitive to extreme fidelity loss.\n\n**Comparison**\nCompared to traditional methods focusing only on average accuracy or relying on logprobs, Ventor-QTest jointly reports AFL and EFL. It is particularly effective for auditing long-horizon agentic tasks, revealing tail risks that average metrics fail to capture.\n\n#### Summary\n\nThis paper addresses the verification challenge of third-party hosted LLM APIs by proposing Ventor-QTest, a black-box audit framework. By introducing Average Fidelity Loss (AFL) and Extreme Fidelity Loss (EFL), the method effectively quantifies the deviation between deployment behavior and trusted references without relying on target API probability information. Experiments demonstrate that EFL is closely correlated with performance degradation in long-horizon agentic tasks, highlighting the importance of jointly monitoring average and extreme deviations when auditing complex application scenarios.",
+      "render_excerpt": "机构: Tencent Zhuque Lab<br>本文针对第三方托管 LLM API 的验证难题，提出了 Ventor-QTest 黑盒审计框架。通过引入平均保真度损失（AFL）和极端保真度损失（EFL）两个指标，该方法在不依赖目标 API 概率信息的情况下，有效量化了部署行为与可信参考之间的偏差。实验表明，EFL 与长程代理任务的性能下降密切相关，强调了在审计复杂应用场景时联合监控平均偏差和极端偏差的重要性。",
+      "render_excerpt_en": "Institution: Tencent Zhuque Lab<br>This paper addresses the verification challenge of third-party hosted LLM APIs by proposing Ventor-QTest, a black-box audit framework. By introducing Average Fidelity Loss (AFL) and Extreme Fidelity Loss (EFL), the method effectively quantifies the deviation between deployment behavior and trusted references without relying on target API probability information. Experiments demonstrate that EFL is closely correlated with performance degradation in long-horizon agentic tasks, highlighting the importance of jointly monitoring average and extreme deviations when auditing complex application scenarios.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-17T10:41:18Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-17"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.16349",
+      "date": "2026-08-17",
+      "title": "AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment",
+      "authors": [
+        "Yuchen Yuan",
+        "Zhenghuang Wu",
+        "Yuangan Li",
+        "Liang Ma",
+        "Ke Li"
+      ],
+      "abstract": "Large language model (LLM) agents may assist flight crews with complex decisions and task execution, but existing aviation evaluations centered on static knowledge do not support systematic testing of procedural execution and safety compliance in interactive environments. This paper presents the AeroCopilot Operational Environment (ACOE), a reproducible interactive virtual-cockpit test environment, and AeroCopilotBench, a two-tier aviation agent evaluation benchmark. Tier-1 evaluates aviation knowledge using 1,200 multiple-choice questions, while Tier-2 comprises 73 emergency and abnormal tasks derived from the manufacturers' Pilot's Operating Handbooks (POHs) and instantiated in ACOE. ACOE converts natural-language procedures into executable state transitions, final-state goal conditions, and hard safety constraints, enabling models to interpret cockpit state, diagnose faults, and operate aircraft systems through standardized tool interfaces. We establish a safety-gated evaluation framework in which a trajectory succeeds only when all task goals are achieved without violating any hard safety constraint, while safe goal progress and trajectory safety are measured separately. Across 12 models, the highest Tier-2 success rate is 72.6%, while static knowledge performance does not consistently translate into procedural execution. Analysis of 451 failed episodes from 3 representative models identifies recurring failures in procedural completeness, use of state feedback, and long-horizon execution management. These findings motivate state-aware agent orchestration, joint assessment of task completion and trajectory safety, and repeated regression testing. ACOE and AeroCopilotBench provide a reproducible foundation for testing knowledge application, interactive execution, and operational safety in aviation agents.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.16349v1",
+        "pdf": "https://arxiv.org/pdf/2608.16349v1",
         "github": null,
         "blog": null
       },
-      "institution": "Digital Excellence Center, Assystem EOS, France",
+      "institution": "Beihang University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：自主 LLM 智能体在复杂工作流中执行 API 调用、发送邮件等实际操作时，容易遭受“运行时行为漂移”（Behavioral Drift）。这是一种静默的偏离初始目标的现象，可能导致对外部系统产生不可逆的副作用（如错误转账、删除数据），且仅重置模型记忆无法修复环境状态。\n- **已有工作的局限**：现有方法主要集中在输入层面的预防（如隔离不可信内容或指令层级训练），缺乏针对漂移发生后的结构化检测、风险评估和恢复决策机制。此外，由于主任务执行智能体通常是昂贵的大型模型，无法在每个部署环境中重新训练，因此需要一种即插即用的外部恢复模块。\n\n## 文章的核心贡献点\n- **提出了一个基于图的强化学习框架（Graph-Based RL Framework）**：该框架作为一个外部插件，使用单个小型语言模型（SLM）通过强化学习进行训练，专门处理漂移诊断与恢复。\n- **挑战1：多步骤恢复任务的复杂性与结构化需求**。漂移恢复需要逆向追踪漂移起点、检测已执行的操作、评估风险并决定回滚或升级人工，单一提示词难以兼顾所有子任务且自由形式的思维链缺乏结构约束。**解决方法**：构建恢复图，每个节点对应特定角色（漂移分类、操作检测、风险评估、最终决策），训练 SLM 在每个节点生成适应角色的结构化 XML 格式推理，确保输出符合 schema 规范。\n- **挑战2：小模型在语义质量与格式合规性之间的平衡**。小模型可能在遵循严格输出格式的同时牺牲语义准确性，或反之。**解决方法**：采用混合奖励机制进行强化学习训练，结合基于规则的结构奖励（评估 schema 和长度合规性）与“LLM-as-Judge”的语义质量信号（评估内容合理性），使模型同时优化“如何回答”和“回答什么”。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：该方法设计为即插即用模块，独立于主代理。使用一个小语言模型，在 AppWorld 基准测试上进行实验。训练过程结合了规则奖励和语义奖励。\n- **评估结果**：实验表明，该方法能够利用疑似漂移起始点的信息，使用小语言模型做出正确的恢复决策。训练后的小模型能够可靠地遵守规定的输出 schema，并根据其分配的角色在每个字段中生成语义适当的内容。\n- **对比**：相较于仅在提示层面解决漂移或缺乏结构化机制的现有方法，本方法提供了步骤级的检测、风险评估和恢复决策能力，且无需重新训练昂贵的主模型。\n\n#### 总结\n本文针对自主 LLM 智能体在真实世界中面临的行为漂移问题，提出了一种基于图的强化学习恢复框架。通过将恢复过程分解为多个专用节点，并利用混合奖励机制训练小型语言模型，该方法实现了高效、结构化且语义准确的漂移诊断与恢复。这不仅解决了大型模型无法频繁重训的限制，还有效降低了因漂移导致的外部系统不可逆损害风险，在 AppWorld 基准测试中展现了良好的性能。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Autonomous LLM agents executing real-world actions (API calls, emails, etc.) are vulnerable to \"runtime behavioral drift,\" a silent deviation from initial goals that can cause irreversible side effects on external systems. Resetting memory does not fix the altered environment state.\n- **Limitations of Existing Work**: Current approaches focus on input-level prevention (e.g., isolating untrusted content) but lack structured mechanisms for post-drift detection, risk assessment, and recovery. Since main agents are often large, expensive models that cannot be retrained per deployment, a plug-and-play external recovery module is needed.\n\n## Core Contributions\n- **Proposed a Graph-Based Reinforcement Learning Framework**: An external plug-and-play module using a single Small Language Model (SLM) trained via RL to handle drift diagnosis and recovery.\n- **Challenge 1: Complexity and Structuring of Multi-step Recovery**. Recovery requires backward tracing, operation detection, risk assessment, and decision-making (rollback vs. escalation), which is brittle in single prompts and lacks structure in free-form CoT. **Solution**: A recovery graph where each node has a specific role (classification, detection, evaluation, decision). The SLM is trained to generate structured XML-formatted reasoning adapted to each node's role.\n- **Challenge 2: Balancing Semantic Quality and Format Compliance in SLMs**. Small models may struggle to maintain both strict schema adherence and semantic accuracy. **Solution**: A hybrid reward mechanism combining rule-based structural rewards (schema/length) with an LLM-as-judge semantic quality signal, optimizing both how the model answers and what it says.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Designed as an external plug-and-play module independent of the main agent. Uses an SLM trained on the AppWorld benchmark with mixed rewards.\n- **Evaluation Results**: The method effectively uses information about suspected drift onset to issue correct recovery decisions using an SLM. The trained model reliably respects output schemas and produces semantically appropriate content for each node role.\n- **Comparison**: Unlike existing methods that lack step-level structured mechanisms or require retraining large models, this approach provides robust, structured, and cost-effective drift recovery without modifying the main agent.\n\n## 4. Conclusion\nThis paper addresses behavioral drift in autonomous LLM agents by introducing a graph-based RL framework for structured diagnosis and recovery. By decomposing the recovery process into specialized nodes and training an SLM with hybrid rewards, the method achieves efficient, structured, and semantically accurate recovery. It overcomes the limitations of retraining large models and mitigates irreversible environmental damage, demonstrating strong performance on the AppWorld benchmark.",
-      "render_excerpt": "机构: Digital Excellence Center, Assystem EOS, France<br>本文针对自主 LLM 智能体在真实世界中面临的行为漂移问题，提出了一种基于图的强化学习恢复框架。通过将恢复过程分解为多个专用节点，并利用混合奖励机制训练小型语言模型，该方法实现了高效、结构化且语义准确的漂移诊断与恢复。这不仅解决了大型模型无法频繁重训的限制，还有效降低了因漂移导致的外部系统不可逆损害风险，在 AppWorld 基准测试中展现了良好的性能。",
-      "render_excerpt_en": "Institution: Digital Excellence Center, Assystem EOS, France<br>## 1. What the Paper Does - **Background**: Autonomous LLM agents executing real-world actions (API calls, emails, etc.) are vulnerable to \"runtime behavioral drift,\" a silent deviation from initial goals that can cause irreversible side effects on external systems. Resetting memory does not fix the altered environment state.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体有望在航空等安全关键领域协助机组人员进行复杂决策和任务执行。然而，现有的航空评估主要集中在静态知识问答上，无法支持对交互式环境中程序执行和安全合规性的系统测试。\n- **已有工作为什么解决不了**：传统的问答式评估不足以全面评估安全关键场景下所需的领域知识、程序执行能力和安全合规性。它们无法衡量智能体将知识转化为具体操作工具调用的能力，也无法验证在高压紧急情况下是否违反硬性安全约束，存在显著的“知行差距”。\n\n## 文章的核心贡献点\n- **提出了一个 AeroCopilotBench 双层基准测试框架及 AeroCopilot Operational Environment (ACOE) 交互式虚拟驾驶舱环境**。\n- **挑战1：如何在动态交互环境中评估程序执行能力？**\n  - **难点**：航空任务涉及多步骤操作，需根据实时状态诊断故障并操作系统，静态文本无法模拟这种动态反馈循环。\n  - **解决方法**：ACOE 将自然语言程序转换为可执行的状态转换、最终状态目标条件和硬性安全约束，通过标准化工具接口使模型能够解释驾驶舱状态并操作系统。\n- **挑战2：如何严格量化安全性与任务完成的联合评估？**\n  - **难点**：传统评估往往只关注结果正确性，忽略过程中的安全违规，或者难以区分部分成功与完全失败。\n  - **解决方法**：建立了安全门控评估框架，只有在不违反任何硬性安全约束的前提下完成所有任务目标才算成功，同时单独测量安全目标进度和轨迹安全性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：构建了包含 Tier-1（1200道多项选择题评估航空知识）和 Tier-2（73个源自飞行员操作手册的紧急和异常任务，在 ACOE 中实例化）的双层基准。ACOE 支持 reproducible 的交互式虚拟驾驶舱测试。\n- **评估结果**：在12个模型上进行测试，Tier-2 的最高成功率为 72.6%。研究发现，静态知识表现好并不一定能转化为良好的程序执行能力。\n- **失败分析**：通过对3个代表性模型的451次失败episode进行分析，识别出程序完整性不足、状态反馈利用不当以及长 horizon 执行管理问题为主要失败原因。\n- **对比**：相较于仅评估静态知识的现有工作，该基准揭示了 LLM 在实际操作层面的局限性，强调了状态感知智能体编排和回归测试的重要性。\n\n#### 总结\n本文提出了 AeroCopilotBench 和 ACOE，填补了航空领域 LLM 智能体在交互式环境下的评估空白。通过双层基准和安全门控机制，系统性地评估了智能体的知识应用、交互执行和操作安全性。研究结果表明，当前模型在将静态知识转化为安全、完整的程序执行方面仍存在显著挑战，为未来开发更可靠的航空辅助智能体提供了重要的评估基础和方向指引。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Model (LLM) agents have the potential to assist flight crews in safety-critical domains like aviation. However, existing evaluations focus on static knowledge, failing to systematically test procedural execution and safety compliance in interactive environments.\n- **Why Existing Work Falls Short**: Conventional question-answering benchmarks cannot assess the ability to translate knowledge into concrete actions via tool calls or verify adherence to hard safety constraints during dynamic, multi-step tasks, leaving a significant \"knowing-doing gap.\"\n\n## Core Contributions\n- **Proposed AeroCopilotBench**, a two-tier benchmark, and **AeroCopilot Operational Environment (ACOE)**, a reproducible interactive virtual cockpit.\n- **Challenge 1: How to evaluate procedural execution in dynamic interactive environments?**\n  - **Difficulty**: Aviation tasks require diagnosing faults and operating systems based on real-time state feedback, which static text cannot simulate.\n  - **Solution**: ACOE converts natural-language procedures into executable state transitions, goal conditions, and hard safety constraints, enabling models to interpret cockpit states and operate systems via standardized interfaces.\n- **Challenge 2: How to strictly quantify joint assessment of safety and task completion?**\n  - **Difficulty**: Traditional metrics often overlook process violations or fail to distinguish partial success from failure in safety-critical contexts.\n  - **Solution**: Established a safety-gated evaluation framework where a trajectory succeeds only if all goals are met without violating any hard safety constraints, while separately measuring safe goal progress and trajectory safety.\n\n## Implementation and Evaluation\n- **Implementation**: The benchmark consists of Tier-1 (1,200 multiple-choice questions for knowledge) and Tier-2 (73 emergency/abnormal tasks from Pilot's Operating Handbooks instantiated in ACOE).\n- **Results**: Tested across 12 models, the highest Tier-2 success rate was 72.6%. Static knowledge performance did not consistently translate to procedural execution success.\n- **Failure Analysis**: Analysis of 451 failed episodes from 3 representative models identified recurring issues in procedural completeness, use of state feedback, and long-horizon execution management.\n- **Comparison**: Unlike prior static benchmarks, this work reveals the operational limitations of current LLMs, highlighting the need for state-aware orchestration and rigorous regression testing.\n\n## 4. Conclusion\nThis paper introduces AeroCopilotBench and ACOE to address the lack of interactive evaluation for aviation LLM agents. By employing a two-tier structure and safety-gated metrics, it systematically assesses knowledge application, interactive execution, and operational safety. The findings demonstrate significant challenges in translating static knowledge into safe, complete procedural execution, providing a foundational resource for developing more reliable aviation copilot agents.",
+      "render_excerpt": "机构: Beihang University<br>本文提出了 AeroCopilotBench 和 ACOE，填补了航空领域 LLM 智能体在交互式环境下的评估空白。通过双层基准和安全门控机制，系统性地评估了智能体的知识应用、交互执行和操作安全性。研究结果表明，当前模型在将静态知识转化为安全、完整的程序执行方面仍存在显著挑战，为未来开发更可靠的航空辅助智能体提供了重要的评估基础和方向指引。",
+      "render_excerpt_en": "Institution: Beihang University<br>## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents have the potential to assist flight crews in safety-critical domains like aviation. However, existing evaluations focus on static knowledge, failing to systematically test procedural execution and safety compliance in interactive environments.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-14T09:12:14Z"
+        "captured_at": "2026-08-17T09:53:52Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-14"
+        "captured_at": "2026-08-17"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -116,149 +213,41 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2608.14380",
-      "date": "2026-08-14",
-      "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
+      "paper_id": "2608.16889",
+      "date": "2026-08-17",
+      "title": "Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory",
       "authors": [
-        "Yu Zhuang",
-        "Kefei Chen",
-        "Yitong Duan",
-        "Shuxin Zheng",
-        "Jian Li",
-        "Xu-Yao Zhang"
+        "Bingxin Xu",
+        "Yuzhang Shang",
+        "Emilio Ferrara"
       ],
-      "abstract": "Many real-world tasks require LLM agents to interact with their environments over long execution horizons. Errors that occur early in execution may propagate through both the agent context and environment state, and their effects may be difficult to reverse through subsequent actions. Existing methods mainly seek to reduce such errors through plan refinement and safety checks but provide little support after errors occur. To enable recovery during long-horizon execution, we present AgentRewind, a runtime recovery framework that records aligned checkpoints of the agent context and controlled environment, allowing agents to return to an earlier state and resume execution with information from previous attempts. We also construct MettleBench, a benchmark for evaluating task completion and partial progress on long-horizon engineering assignments containing a series of related requirements. Experiments across tasks, multiple models, execution strategies, and agent harnesses show that AgentRewind improves task success rate and average checklist progress over the compared baselines.",
+      "abstract": "Long-horizon robot manipulation chains many contact-rich skills into one multi-stage task. Vision-language-action (VLA) models increasingly master the individual skills, yet the chain still fails: errors compound beyond the policy's ability to correct, and one subtask silently constrains the next. A promising recipe freezes the VLA and puts an LLM agent in charge: it plans in language, moves in free space with analytic primitives, invokes the VLA only for contact-rich segments, and writes adaptation into language memory. Applied to long horizons, it breaks twice. (1) Competence comes from whole-task exploration at test time, whose cost is multiplicative in stages: if one stage needs T episodes, a K-stage task needs about T^K, and a failure does not reveal which stage caused it. (2) It has no representation of transitions: the VLA primitive carries an exit but no entry condition, so a subtask can succeed in a form its successor cannot use. We present BATON. Against (1), BATON makes the subtask the unit of exploration: each is explored in the cheap short-horizon regime and its solution stored in memory; a long-horizon trajectory is then composed from these solutions rather than discovered whole. Cost becomes additive (T*K) and every failure is attributed to a single stage. Against (2), BATON equips exploration with a transition-aware memory. Within a subtask, a verifier agent governs the invocation transition: the VLA is called only after the wrist view confirms the scene is ready. Across subtasks, a handoff transition restores an entry state disturbed by the predecessor's residue, and a lookahead transition selects the strategy whose outcome the successor can inherit. No parameters are updated. On the long-horizon benchmark RoboMemArena, BATON improves task success by 11.6% and cumulative success by 14.9% over the SoTA.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.14380v1",
-        "pdf": "https://arxiv.org/pdf/2608.14380v1",
-        "github": "https://github.com/Futuresis/replay-agent-recorder",
+        "abs": "http://arxiv.org/abs/2608.16889v1",
+        "pdf": "https://arxiv.org/pdf/2608.16889v1",
+        "github": null,
         "blog": null
       },
-      "institution": "University of Chinese Academy of Sciences",
+      "institution": "University of Southern California",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：许多现实世界的任务（如迭代科学实验、跨应用工作流、仓库级软件工程）要求 LLM 智能体在长执行周期内与环境交互。早期执行中的错误可能会通过智能体上下文和环境状态传播，且难以通过后续操作逆转。\n- **已有工作的局限性**：现有方法主要通过执行前的计划细化（Plan Refinement）和执行中的安全检查来减少错误发生概率。然而，随着轨迹长度增加，累积失败风险依然很高，且这些方法在错误实际发生后缺乏有效的恢复支持，导致任务容易因早期错误而彻底失败。\n\n## 文章的核心贡献点\n- **提出了一个运行时恢复框架 AgentRewind**：该框架能够记录智能体上下文和受控环境的对齐检查点，允许智能体回滚到早期状态并利用之前的尝试信息恢复执行。\n- **挑战1：长周期执行中的错误传播与不可逆性**。早期错误（如删除关键文件、配置损坏）会污染环境和上下文，导致后续步骤在退化环境中运行，难以通过正向修正解决。**解决方法**：AgentRewind 通过记录对齐的检查点（Checkpoints），使智能体能够“时光倒流”回到错误发生前的干净状态，从而切断错误传播链。\n- **挑战2：恢复后如何避免重蹈覆辙**。单纯回滚可能导致智能体重复相同的错误路径。**解决方法**：框架保留了之前尝试的摘要作为“回滚记忆”（Rewind Memory），为智能体提供历史教训，指导其在恢复后的执行中做出更明智的决策，避免重复错误。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **基准测试构建**：构建了 MettleBench 基准测试，用于评估长周期工程任务中的任务完成率和部分进度，包含一系列相关需求。\n- **实验设置**：在多种任务、多个模型、不同执行策略和智能体 harness 上进行了广泛实验。\n- **结果对比**：实验结果显示，与主要基线方法相比，AgentRewind 显著提高了任务成功率（Task Success Rate）和平均检查表进度（Average Checklist Progress）。这证明了其在处理长周期复杂任务时的有效性和鲁棒性。\n\n#### 总结\nAgentRewind 针对长周期 LLM 智能体执行中错误难以恢复的问题，提出了一种基于检查点回滚和记忆引导的运行时恢复框架。通过允许智能体回溯到早期状态并吸取历史教训，该方法有效解决了错误传播问题，在 MettleBench 基准测试中展现了优于现有计划细化和安全检查方法的性能，为提升长周期任务的可靠性提供了新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Many real-world tasks (e.g., iterative scientific experimentation, repository-level software engineering) require LLM agents to interact with environments over long execution horizons. Errors occurring early can propagate through agent context and environment states, making them difficult to reverse.\n- **Limitations of Existing Work**: Current methods primarily focus on preventing errors via plan refinement and safety checks. However, they offer little support for recovery after errors occur. As trajectory length increases, cumulative failure risk grows, and existing approaches fail to adequately address execution disruption post-error.\n\n## Core Contributions\n- **Proposed AgentRewind**: A runtime recovery framework that records aligned checkpoints of agent context and controlled environment, enabling agents to rewind to earlier states and resume execution with insights from previous attempts.\n- **Challenge 1: Error Propagation and Irreversibility in Long-Horizon Execution**. Early errors (e.g., file deletion, config corruption) degrade the environment, making subsequent correction difficult. **Solution**: AgentRewind records aligned checkpoints, allowing the agent to \"rewind\" to a clean state before the error, effectively cutting off error propagation.\n- **Challenge 2: Avoiding Repetition of Errors after Recovery**. Simple rollback might lead to repeating the same mistakes. **Solution**: The framework retains a summary of the previous attempt as \"rewind memory,\" guiding the agent's subsequent decisions to avoid prior pitfalls.\n\n## Implementation and Evaluation\n- **Benchmark Construction**: Introduced MettleBench, a benchmark for evaluating task completion and partial progress on long-horizon engineering assignments with series of related requirements.\n- **Experimental Setup**: Extensive experiments conducted across various tasks, models, execution strategies, and agent harnesses.\n- **Results vs. Baselines**: AgentRewind significantly improves task success rate and average checklist progress compared to baseline methods (which rely mainly on planning and safety checks), demonstrating superior robustness in long-horizon tasks.\n\n#### Summary\nAgentRewind addresses the lack of recovery mechanisms in long-horizon LLM agent execution by introducing a checkpoint-based rewind framework with memory guidance. By enabling agents to revert to earlier states and learn from past failures, it effectively mitigates error propagation. Evaluations on the new MettleBench benchmark show that AgentRewind outperforms existing baselines in both success rates and progress, offering a new paradigm for enhancing reliability in complex, long-term agent tasks.",
-      "render_excerpt": "机构: University of Chinese Academy of Sciences<br>AgentRewind 针对长周期 LLM 智能体执行中错误难以恢复的问题，提出了一种基于检查点回滚和记忆引导的运行时恢复框架。通过允许智能体回溯到早期状态并吸取历史教训，该方法有效解决了错误传播问题，在 MettleBench 基准测试中展现了优于现有计划细化和安全检查方法的性能，为提升长周期任务的可靠性提供了新范式。",
-      "render_excerpt_en": "Institution: University of Chinese Academy of Sciences<br>AgentRewind addresses the lack of recovery mechanisms in long-horizon LLM agent execution by introducing a checkpoint-based rewind framework with memory guidance. By enabling agents to revert to earlier states and learn from past failures, it effectively mitigates error propagation. Evaluations on the new MettleBench benchmark show that AgentRewind outperforms existing baselines in both success rates and progress, offering a new paradigm for enhancing reliability in complex, long-term agent tasks.",
+      "summary_cn": "## 文章做了什么\n- **背景**：长程机器人操作任务需要将多个接触丰富的技能串联成一个多阶段任务。虽然视觉-语言-动作（VLA）模型在掌握单个技能方面表现出色，但在长程任务链中，错误会累积且超出策略的纠正能力，前一个子任务的执行结果往往会隐性约束下一个子任务，导致整体失败。\n- **已有工作的局限**：现有的“冻结VLA+LLM智能体”方案在长程任务中存在两个主要缺陷：(1) 测试时的全任务探索成本随阶段数呈指数级增长（$T^K$），且失败难以定位具体阶段；(2) 缺乏对子任务间“转换”的表示，VLA原语只有退出条件而无入口条件，导致子任务的成功状态可能无法被后续任务利用。\n\n## 文章的核心贡献点\n- **提出了 BATON**：一种通过智能体子任务探索和转换感知记忆来实现长程机器人操作的方法。\n- **挑战1：全任务探索的高昂成本与归因困难**。全任务探索的成本是乘性的，且失败无法定位到具体阶段。**解决方法**：BATON 将“子任务”作为探索单元，在廉价的短程机制下单独探索每个子任务并将解存入记忆，长程轨迹由这些解组合而成。这使得探索成本变为加性（$T \\\\cdot K$），且每次失败都能归因于单一阶段。\n- **挑战2：子任务间转换状态的缺失与不兼容**。VLA 缺乏入口条件表示，前序任务的残留状态可能导致后继任务失败。**解决方法**：BATON 配备了转换感知记忆。在子任务内，验证器智能体仅在腕部视图确认场景就绪后才调用 VLA（调用转换）；在子任务间，通过“交接转换”恢复被前序任务扰乱的入口状态，并通过“前瞻转换”选择后继任务可继承结果的执行策略。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现特点**：无需更新任何模型参数，完全基于 LLM 智能体规划、解析原语和 VLA 调用。\n- **评估基准**：长程操作基准 RoboMemArena。\n- **实验结果**：与当前最先进方法（SoTA）相比，BATON 的任务成功率提高了 11.6%，累积成功率提高了 14.9%。\n\n#### 总结\nBATON 通过将长程任务分解为独立的子任务探索单元，并引入精细的转换感知记忆机制（包括调用、交接和前瞻转换），有效解决了长程机器人操作中误差累积和状态不兼容的问题。该方法在不更新参数的情况下，显著降低了探索成本并提升了长程任务的成功率，证明了模块化探索与状态管理在复杂机器人任务中的重要性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Long-horizon robot manipulation chains multiple contact-rich skills into multi-stage tasks. While Vision-Language-Action (VLA) models excel at individual skills, they fail in long chains due to compounding errors and implicit constraints where one subtask's execution silently restricts the next.\n- **Limitations of Existing Work**: The current \"frozen VLA + LLM agent\" recipe fails in two ways: (1) Whole-task exploration at test time has multiplicative cost ($T^K$) and failures cannot be attributed to specific stages; (2) It lacks representation of transitions, as VLA primitives have exit but no entry conditions, leading to states that are successful in isolation but unusable by successors.\n\n## Core Contributions\n- **Proposed BATON**: A framework for long-horizon robot manipulation via Agentic Subtask Exploration and Transition-aware Memory.\n- **Challenge 1: High Cost and Ambiguity of Whole-Task Exploration**. Exploring the entire task is exponentially expensive and makes failure attribution difficult. **Solution**: BATON makes the subtask the unit of exploration. Each subtask is explored in a cheap short-horizon regime and stored in memory. Long-horizon trajectories are composed from these solutions, making cost additive ($T \\\\cdot K$) and attributing every failure to a single stage.\n- **Challenge 2: Lack of Transition Representation**. Missing entry conditions cause incompatibility between subtasks. **Solution**: BATON equips exploration with transition-aware memory. A verifier agent governs invocation transitions (calling VLA only when the wrist view confirms readiness). Across subtasks, handoff transitions restore entry states disturbed by predecessors, and lookahead transitions select strategies whose outcomes can be inherited by successors.\n\n## Implementation and Evaluation\n- **Implementation**: No parameters are updated; the system relies on LLM planning, analytic primitives, and VLA calls.\n- **Benchmark**: RoboMemArena for long-horizon manipulation.\n- **Results**: BATON improves task success rate by 11.6% and cumulative success rate by 14.9% over the current State-of-the-Art (SoTA).\n\n#### Summary\nBATON addresses the compounding errors and state incompatibilities in long-horizon robot manipulation by decomposing tasks into independently explored subunits and managing inter-subtask transitions through a specialized memory mechanism. By introducing invocation, handoff, and lookahead transitions, it significantly reduces exploration costs and boosts success rates without requiring model fine-tuning, demonstrating the efficacy of modular exploration and state management in complex robotic tasks.",
+      "render_excerpt": "机构: University of Southern California<br>BATON 通过将长程任务分解为独立的子任务探索单元，并引入精细的转换感知记忆机制（包括调用、交接和前瞻转换），有效解决了长程机器人操作中误差累积和状态不兼容的问题。该方法在不更新参数的情况下，显著降低了探索成本并提升了长程任务的成功率，证明了模块化探索与状态管理在复杂机器人任务中的重要性。",
+      "render_excerpt_en": "Institution: University of Southern California<br>BATON addresses the compounding errors and state incompatibilities in long-horizon robot manipulation by decomposing tasks into independently explored subunits and managing inter-subtask transitions through a specialized memory mechanism. By introducing invocation, handoff, and lookahead transitions, it significantly reduces exploration costs and boosts success rates without requiring model fine-tuning, demonstrating the efficacy of modular exploration and state management in complex robotic tasks.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-14T15:20:35Z"
+        "captured_at": "2026-08-17T17:59:57Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-14"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.14339",
-      "date": "2026-08-14",
-      "title": "Clearing the Fog: Towards Installing and Refining Proactive Exploration Capabilities in LLM Agents",
-      "authors": [
-        "Zhizhao Guan",
-        "Chen Huang",
-        "Ziming Liu",
-        "Hongru Liang",
-        "Wenqiang Lei",
-        "See-Kiong Ng",
-        "Tat-Seng Chua",
-        "Anthony G Cohn"
-      ],
-      "abstract": "We study proactive exploration in LLM agents, i.e., the ability to explore an environment to acquire information that improves future decision-making. In this regard, we first identify two fundamental bottlenecks that hinder this capability and then propose \\ours, a novel method designed to instill and refine proactive exploration. Specifically, \\ours\\ consists of two components: (1) Exploratory Data Construction, which synthesizes exploration-rich trajectories to mitigate the hindsight bias of standard demonstrations; and (2) RL Optimization with Contrastive Signal Guidance, which leverages contrastive trajectory pairs to distinguish productive exploration from redundant wandering. Extensive experiments demonstrate the effectiveness of \\ours\\ and provide insights into the characteristics of proactive exploration. Our code is available at: https://github.com/GuanZhizhao/SAFARI.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.14339v1",
-        "pdf": "https://arxiv.org/pdf/2608.14339v1",
-        "github": "https://github.com/GuanZhizhao/SAFARI",
-        "blog": null
-      },
-      "institution": "Sichuan University, National University of Singapore, University of Leeds",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）的发展，基于LLM的智能体在多轮交互任务（如在线购物）中表现出色。然而，现有智能体缺乏“主动探索”能力，即为了获取能改善未来决策的信息而自主探索环境的能力。\n- **已有工作为什么解决不了**：现有的标准SFT-RL范式存在两个根本瓶颈：\n    1. **SFT数据中的后见之明偏差（Hindsight Bias）**：专家轨迹通常剔除了必要的探索步骤，导致SFT仅教会智能体被动执行，无法注入主动探索能力。\n    2. **RL过程中的探索崩溃**：由于经过SFT的智能体天生缺乏探索倾向，在RL rollout中极少采样到探索行为，导致无法发现其长期收益，且缺乏有效引导，使得RL无法强化主动探索。\n\n## 文章的核心贡献点\n- **提出了一个名为 SAFARI 的新方法**：旨在为LLM智能体安装并细化主动探索能力。\n- **挑战1：如何克服SFT阶段的后见之明偏差，让智能体学习到探索行为？**\n    - **难点**：标准专家演示是结果导向的，隐藏了试错和搜索过程，智能体无法从中学习何时及如何探索。\n    - **解决方法**：提出“探索性数据构建”模块。通过树状结构上下文建模，直接从强大的LLM专家那里合成富含探索信息的轨迹，显式地提炼多样化的探索路径，从而弥补标准演示中缺失的探索步骤。\n- **挑战2：如何在RL阶段区分“ productive exploration”（有效探索）与“redundant wandering”（冗余徘徊），并加以强化？**\n    - **难点**：在稀疏奖励环境下，智能体难以判断哪些看似无目的的探索动作最终带来了收益，容易陷入无效随机游走或过早收敛。\n    - **解决方法**：提出“带对比信号引导的RL优化”模块。利用对比轨迹对（contrastive trajectory pairs）作为指导信号，帮助智能体区分具有生产力的探索和无效的徘徊，从而在RL过程中有效强化主动探索策略。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在多轮交互任务场景（如在线购物WebShop等基准）中进行评估。\n- **对比基线**：与标准的SFT方法、常规RL微调方法以及其他先进的Agent方法进行对比。\n- **结果**：大量实验表明，SAFARI在需要长 horizon 策略和主动信息获取的任务上显著优于基线方法。具体表现为智能体能够执行战略性回溯和翻页等操作，找到更优解（如更低价格的商品），从而获得更高的整体奖励。实验还揭示了主动探索能力的特征，证明了该方法能有效缓解探索崩溃问题。\n\n#### 总结\n本文针对LLM智能体在复杂交互环境中缺乏主动探索能力的问题，指出了现有SFT-RL范式中数据偏差和训练机制的缺陷。通过提出SAFARI框架，结合合成探索丰富数据的SFT阶段和引入对比信号引导的RL阶段，成功赋予了智能体主动探索的能力。该方法不仅提升了智能体在长程决策任务中的表现，也为理解和发展具身智能体的探索行为提供了新的视角。代码已开源。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: As Large Language Models (LLMs) advance, LLM-based agents excel in multi-turn interactive tasks (e.g., online shopping). However, they lack \"proactive exploration\" capability—the ability to autonomously explore an environment to acquire information that improves future decision-making.\n- **Why Existing Work Fails**: The standard SFT-RL paradigm suffers from two fundamental bottlenecks:\n    1. **Hindsight Bias in SFT Data**: Expert trajectories strip away essential exploratory steps, conditioning agents for reactive execution rather than proactive exploration.\n    2. **Exploration Collapse during RL**: SFT-trained agents lack inherent exploratory tendencies, rarely sampling such behaviors during RL rollouts. Without guidance, RL fails to discover and reinforce the long-term benefits of exploration.\n\n## Core Contributions\n- **Proposed SAFARI**: A novel method designed to inStill And reFine proActive exploRatIon capabilities in LLM agents.\n- **Challenge 1: How to overcome hindsight bias in SFT to teach exploration?**\n    - **Difficulty**: Standard expert demonstrations are outcome-oriented and hide the trial-and-error process, preventing agents from learning when and how to explore.\n    - **Solution**: Introduces \"Exploratory Data Construction.\" It synthesizes exploration-rich trajectories directly from a powerful LLM expert using tree-structured context modeling, explicitly distilling diverse exploratory paths to mitigate the bias of standard demonstrations.\n- **Challenge 2: How to distinguish \"productive exploration\" from \"redundant wandering\" in RL?**\n    - **Difficulty**: In sparse reward settings, it is difficult for agents to determine which seemingly aimless exploration actions lead to long-term gains, leading to ineffective random walking or premature convergence.\n    - **Solution**: Introduces \"RL Optimization with Contrastive Signal Guidance.\" It leverages contrastive trajectory pairs to guide the agent in distinguishing productive exploration from redundant wandering, effectively reinforcing proactive exploration strategies during RL.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on multi-turn interactive task benchmarks (e.g., WebShop).\n- **Baselines**: Compared against standard SFT, conventional RL fine-tuning, and other state-of-the-art Agent methods.\n- **Results**: Extensive experiments demonstrate that SAFARI significantly outperforms baselines in tasks requiring long-horizon strategies and active information acquisition. Agents equipped with SAFARI execute strategic backtracking and pagination to find better solutions (e.g., lower-priced products), yielding higher overall rewards. The results also provide insights into the characteristics of proactive exploration and prove the method's effectiveness in mitigating exploration collapse.\n\n## 4. Conclusion\nThis paper addresses the lack of proactive exploration in LLM agents by identifying defects in data bias and training mechanisms within the existing SFT-RL paradigm. By proposing the SAFARI framework, which combines SFT with synthesized exploration-rich data and RL guided by contrastive signals, it successfully instills proactive exploration capabilities. This approach not only improves performance in long-range decision-making tasks but also offers new perspectives on understanding and developing exploration behaviors in embodied agents. Code is available.",
-      "render_excerpt": "机构: Sichuan University, National University of Singapore, University of Leeds<br>本文针对LLM智能体在复杂交互环境中缺乏主动探索能力的问题，指出了现有SFT-RL范式中数据偏差和训练机制的缺陷。通过提出SAFARI框架，结合合成探索丰富数据的SFT阶段和引入对比信号引导的RL阶段，成功赋予了智能体主动探索的能力。该方法不仅提升了智能体在长程决策任务中的表现，也为理解和发展具身智能体的探索行为提供了新的视角。代码已开源。",
-      "render_excerpt_en": "Institution: Sichuan University, National University of Singapore, University of Leeds<br>## 1. What the Paper Does - **Background**: As Large Language Models (LLMs) advance, LLM-based agents excel in multi-turn interactive tasks (e.g., online shopping). However, they lack \"proactive exploration\" capability—the ability to autonomously explore an environment to acquire information that improves future decision-making.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-14T14:24:50Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-14"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.14452",
-      "date": "2026-08-14",
-      "title": "SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning",
-      "authors": [
-        "Panjing He",
-        "Mingyue Cheng",
-        "Yucong Luo",
-        "Li Li",
-        "Xiaohan Zhang"
-      ],
-      "abstract": "Spreadsheets are widely used to organize, analyze, and manipulate semi-structured data, yet automated spreadsheet reasoning remains challenging for large language models (LLMs). Real-world workbooks often contain implicit cross-table associations, fine-grained column dependencies, and complex spatial layouts. Existing methods typically flatten these multidimensional structures into sequential strings, losing important intra-sheet boundaries and inter-sheet semantics. Consequently, LLMs cannot exploit the global spatial context that human experts naturally use when inspecting spreadsheets. We propose SheetCompass, a graph-guided and memory-driven agentic framework for spreadsheet reasoning and automation. SheetCompass explicitly models structural relationships within and across worksheets while maintaining task-relevant information in memory, enabling agents to reason more effectively over complex workbooks.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.14452v1",
-        "pdf": "https://arxiv.org/pdf/2608.14452v1",
-        "github": "https://anonymous.4open.science/r/sheetcompass-411C",
-        "blog": null
-      },
-      "institution": "State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：电子表格广泛用于组织和分析半结构化数据，但大型语言模型（LLM）在自动化电子表格推理方面仍面临巨大挑战。现实工作簿通常包含隐式的跨表关联、细粒度的列依赖以及复杂的空间布局。\n- **已有工作的局限性**：现有方法通常将多维的电子表格结构“扁平化”为顺序字符串（如 Markdown 或 JSON）。这种做法丢失了关键的表内边界和表间语义，导致 LLM 无法利用人类专家在视觉扫描时自然使用的全局空间上下文，从而在处理复杂工作簿时性能急剧下降。\n\n## 文章的核心贡献点\n- **提出了一个名为 SheetCompass 的图引导且记忆驱动的代理框架**，用于电子表格推理和自动化。该框架通过将原始表格数据转换为结构化的证据空间，指导代理进行规划、执行和反思。\n- **挑战1：复杂的空间结构与隐式语义丢失**。电子表格具有多维结构和隐式的行列依赖，传统的线性化表示破坏了这种拓扑关系，使得模型难以理解全局布局。**解决方法**：SheetCompass 构建了一个分层关系图（Hierarchical Relation Graph），在表和列两个层级上将隐式布局形式化为稳定的锚点，从而显式地编码空间关系并映射结构拓扑，保留了关键的结构信息。\n- **挑战2：长程任务中的错误累积与知识缺失**。在复杂的自动化工作流中，代理容易重复犯错，且缺乏领域特定的工具使用知识。**解决方法**：引入了双层记忆机制，包括提供工具使用和领域知识的“专家知识记忆”，以及从先前执行轨迹中动态更新以支持工作流演进并防止连续错误的“推理经验记忆”。此外，协调导航探索者、逻辑程序员和关键反思者三个专用代理来处理感知、执行和迭代验证。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：SheetCompass 采用多代理协作架构，包含导航探索者（负责感知和定位）、逻辑程序员（负责代码生成和执行）和关键反思者（负责验证和纠错）。系统结合分层图结构和双层记忆模块进行运作。代码已开源。\n- **评估结果**：在多个数据集上进行的广泛实证评估表明，SheetCompass 在复杂的电子表格自动化任务中取得了最先进（SOTA）的性能。\n- **对比**：相较于主要依赖信息扁平化范式的现有方法，SheetCompass 通过保留空间结构和利用记忆机制，显著提升了推理的准确性和鲁棒性，特别是在处理具有复杂跨表关联和细粒度依赖的工作簿时表现优异。\n\n#### 总结\nSheetCompass 解决了 LLM 在处理复杂电子表格时因结构扁平化而丢失空间语义的关键问题。通过引入分层关系图来显式建模表格内部及之间的结构关系，并结合双层记忆机制和多代理协作框架，该方法有效增强了代理在复杂工作流中的规划、执行和自我修正能力，实现了电子表格自动化推理性能的显著提升。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Spreadsheets are widely used for organizing semi-structured data, but automated reasoning remains challenging for Large Language Models (LLMs). Real-world workbooks often contain implicit cross-table associations, fine-grained column dependencies, and complex spatial layouts.\n- **Limitations of Existing Work**: Current methods typically \"flatten\" multi-dimensional spreadsheet structures into sequential strings (e.g., Markdown or JSON). This process strips away critical intra-sheet boundaries and inter-sheet semantics, depriving LLMs of the global spatial context that human experts naturally leverage, leading to poor performance on complex tasks.\n\n## Core Contributions\n- **Proposed SheetCompass**, a graph-guided and memory-driven agentic framework for spreadsheet reasoning and automation. It transforms raw tabular data into structured evidence spaces to guide agent planning, execution, and reflection.\n- **Challenge 1: Loss of Spatial Structure and Implicit Semantics**. Spreadsheets have multi-dimensional structures and implicit dependencies; traditional linearization destroys these topological relationships, making global layout understanding difficult. **Solution**: SheetCompass constructs a Hierarchical Relation Graph that formalizes implicit layouts into stable anchors at both table and column levels, explicitly encoding spatial relations and preserving structural topology.\n- **Challenge 2: Error Accumulation and Lack of Domain Knowledge in Long-horizon Tasks**. Agents in complex workflows are prone to repetitive errors and lack specific tool-use knowledge. **Solution**: Introduces a dual-level memory mechanism: \"Expert Knowledge Memory\" for domain/tool knowledge, and \"Reasoning Experience Memory\" dynamically updated from past trajectories to prevent continuous mistakes. It also coordinates three specialized agents (Navigational Explorer, Logical Programmer, Critical Reflector) for perception, execution, and iterative verification.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: SheetCompass employs a multi-agent architecture comprising a Navigational Explorer (perception/localization), Logical Programmer (code generation/execution), and Critical Reflector (verification/correction). The system integrates the hierarchical graph structure with the dual-memory module. Code is available online.\n- **Evaluation Results**: Extensive empirical evaluations across various datasets demonstrate that SheetCompass achieves state-of-the-art (SOTA) performance in complex spreadsheet automation tasks.\n- **Comparison**: Compared to existing methods relying on information flattening, SheetCompass significantly improves reasoning accuracy and robustness by preserving spatial structures and leveraging memory mechanisms, especially excelling in workbooks with complex cross-table associations and fine-grained dependencies.\n\n#### Summary\nSheetCompass addresses the key issue of lost spatial semantics in LLM-based spreadsheet processing caused by structure flattening. By introducing a Hierarchical Relation Graph to explicitly model intra- and inter-sheet structural relationships, and combining it with a dual-memory mechanism and multi-agent collaboration, the method effectively enhances the agent's ability to plan, execute, and self-correct in complex workflows, achieving significant improvements in automated spreadsheet reasoning performance.",
-      "render_excerpt": "机构: State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China<br>SheetCompass 解决了 LLM 在处理复杂电子表格时因结构扁平化而丢失空间语义的关键问题。通过引入分层关系图来显式建模表格内部及之间的结构关系，并结合双层记忆机制和多代理协作框架，该方法有效增强了代理在复杂工作流中的规划、执行和自我修正能力，实现了电子表格自动化推理性能的显著提升。",
-      "render_excerpt_en": "Institution: State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China<br>SheetCompass addresses the key issue of lost spatial semantics in LLM-based spreadsheet processing caused by structure flattening. By introducing a Hierarchical Relation Graph to explicitly model intra- and inter-sheet structural relationships, and combining it with a dual-memory mechanism and multi-agent collaboration, the method effectively enhances the agent's ability to plan, execute, and self-correct in complex workflows, achieving significant improvements in automated spreadsheet reasoning performance.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-14T16:39:16Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-14"
+        "captured_at": "2026-08-17"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
