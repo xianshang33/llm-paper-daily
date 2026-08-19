@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.18_02:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.19_02:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月18日 02:35</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月19日 02:37</sub></summary>
 <br>
 
-- PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning 
-- Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning 
-- Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs 
-- AeroCopilotBench: A Two-Tier Benchmark for Evaluating LLM Agents as Aviation Copilots in an Interactive Virtual Cockpit Environment 
-- Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory 
+- Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation 
+- Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents 
+- EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection 
+- AdaLens: Interactive Storyline for Monitoring and Steering Long-Running Agentic Data Analysis 
+- StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-18</span> | **Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation**<br><sub>机构: H. Lee Moffitt Cancer Center & Research Institute<br>本文提出并验证了一种本地部署的多智能体AI系统，能够有效将非结构化放射科报告转化为标准化的解剖学结构，同时执行严格的质量保证检查。系统在保留原始信息完整性的前提下实现了高准确率的结构化，并能有效识别报告内部的逻辑矛盾。专家评估证实了其临床安全性（无遗漏、无幻觉）和有效性，表明该系统有望促进放射科报告的标准化和质量提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18072v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18072.md)  |
+| <span style='display: inline-block; width: 42px;'>08-18</span> | **Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents**<br><sub>机构: African Institute for Mathematical Sciences, Rwanda; AI Research and Innovation Nexus for Africa (AIRINA Labs), AI.Technipreneurs, Bénin; Sefako Makgatho Health Sciences University (SMU), South Africa; African Center for Advanced Studies (ACAS), Cameroon<br>本文主要解决了LLM与RL结合中的理论健全性问题，而非单纯的效率提升。通过将LLM反馈转化为有界势函数进行奖励塑造，论文从理论上证明了该方法在LLM评分不准确时仍能保持最优策略不变。这一贡献为混合智能体系统提供了坚实的理论基础，使其比现有的黑盒式LLM奖励方法更加可靠和可审计。未来的工作将侧重于大规模实证收敛性的研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18008v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18008.md)  |
+| <span style='display: inline-block; width: 42px;'>08-18</span> | **EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection**<br><sub>机构: Alan Turing Institute, University of Oxford, National University of Singapore, NatWest AI Research, University of Edinburgh, University College London<br>EvoTS-Agent 通过引入自进化机制和验证引导策略，有效解决了金融时间序列变点检测中因数据非平稳性和异质性导致的自动化难题。它摆脱了对专家经验的强依赖，通过 Revision、Alternative Strategy 和 Recombination 三种算子动态优化检测流程，不仅在性能上超越了现有 LLM Agent，还保证了极高的执行成功率，为金融领域的自动化分析提供了可扩展且适应性强的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.17933v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.17933.md)  |
+| <span style='display: inline-block; width: 42px;'>08-18</span> | **AdaLens: Interactive Storyline for Monitoring and Steering Long-Running Agentic Data Analysis**<br><sub>机构: Zhejiang University, Yonsei University<br>AdaLens 解决了长周期智能体数据分析中可观察性和可引导性不足的问题。通过引入故事线可视化技术，它将复杂的分析过程结构化，并允许分析师在运行时进行基于上下文的干预。这项工作强调了在人机协作的数据科学工作流中，从“驱动者”到“监督者”角色转变所需的界面支持，为未来的智能体交互设计提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.17834v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.17834.md)  |
+| <span style='display: inline-block; width: 42px;'>08-18</span> | **StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows**<br><sub>机构: ByteDance Seed, Nanjing University, M-A-P, TokenWave.AI<br>StartupBench 通过引入市场验证的AI初创产品工作流，填补了现有基准在真实性和评估细粒度上的空白。研究结果表明，尽管LLM进步显著，但当前通用智能体在可靠完成复杂的、市场驱动的真实用户任务方面仍有很大提升空间，特别是在复杂指令遵循和领域专长方面。该基准为衡量AI向真正实用的端到端助手演进提供了重要的实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.17800v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.17800.md)  |
 | <span style='display: inline-block; width: 42px;'>08-17</span> | **PDDLCoder: Agentic PDDL Generation for LLM-Assisted Symbolic Planning**<br><sub>机构: Technical University of Berlin<br>本文针对LLM在长视野规划中的不可靠性及现有混合方法评估缺失的问题，提出了PDDLCoder代理框架和NL-pddlgym基准数据集。通过迭代生成与自动验证机制，PDDLCoder显著提高了PDDL生成的准确性和计划的可适用性，大幅超越了基线方法。该工作不仅展示了代理式符号规划的优势，还为LLM辅助规划研究建立了重要的标准化评估基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16637v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16637.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/vDawgg/PDDLCoder)</div> |
 | <span style='display: inline-block; width: 42px;'>08-17</span> | **Palmyra x6 Technical Report: An Agentic, Tool-Use Model Post-Trained via Anchored Supervised Fine-Tuning**<br><sub>机构: Writer, Inc.<br>Palmyra x6 技术报告展示了一种“少即是多”的后训练范式。通过精心设计的锚定监督微调（ASFT）和先进的优化器（Muon），研究者仅用极少量的合成数据（626 条轨迹）和单轮训练，就在不损害基础模型通用能力的前提下，显著提升了模型在企业级代理任务（如工具调用、多步规划）中的性能。该方法不仅在公共基准上取得了领先地位，更在实际企业应用场景中证明了其高效性和实用性，为资源受限下的高性能模型定制提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16620v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16620.md)  |
 | <span style='display: inline-block; width: 42px;'>08-17</span> | **Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs**<br><sub>机构: Tencent Zhuque Lab<br>本文针对第三方托管 LLM API 的验证难题，提出了 Ventor-QTest 黑盒审计框架。通过引入平均保真度损失（AFL）和极端保真度损失（EFL）两个指标，该方法在不依赖目标 API 概率信息的情况下，有效量化了部署行为与可信参考之间的偏差。实验表明，EFL 与长程代理任务的性能下降密切相关，强调了在审计复杂应用场景时联合监控平均偏差和极端偏差的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.16391v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.16391.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest)</div> |
