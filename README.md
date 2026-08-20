@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.19_02:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.20_02:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月19日 02:37</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月20日 02:35</sub></summary>
 <br>
 
-- Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation 
-- Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents 
-- EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection 
-- AdaLens: Interactive Storyline for Monitoring and Steering Long-Running Agentic Data Analysis 
-- StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows 
+- SPADE: Self-Play in Adaptive Synthetic Executable Environments 
+- Beyond LLM-Based Reasoning: Lightweight GNNs for Agent Failure Attribution 
+- SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution 
+- A Multi-Agent Platform for Automated Enterprise Analytics and Insight Generation 
+- Sanyu Studio: A Multi-Agent System for Art-Historical Narrative Construction 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-19</span> | **SPADE: Self-Play in Adaptive Synthetic Executable Environments**<br><sub>机构: University of Washington<br>SPADE 通过将环境设计本身变为一个可学习的组件，迈出了通向开放式自我改进的具体一步。它利用自博弈机制，让 LLM 同时担任环境设计者和解决者，通过基于遗憾的信号动态调整环境难度，有效解决了静态训练环境限制 agent 持续成长的问题，在多个复杂基准测试中取得了 state-of-the-art 的性能。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19197v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19197.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/spade-rl/spade)</div> |
+| <span style='display: inline-block; width: 42px;'>08-19</span> | **Beyond LLM-Based Reasoning: Lightweight GNNs for Agent Failure Attribution**<br><sub>机构: University of Illinois<br>本文质疑了使用重型 LLM 进行智能体故障归因的必要性，提出了轻量级的 AFANet 框架。通过将多智能体交互轨迹建模为图结构，AFANet 以极低的计算成本实现了与昂贵 LLM 方法相当甚至更好的归因准确率。研究结果表明，有效的故障归因不需要沉重的 LLM 推理，轻量级且结构化的方法足以取得强劲性能，为解决 MAS 中的可解释性和调试问题提供了高效的新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18575v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18575.md)  |
+| <span style='display: inline-block; width: 42px;'>08-19</span> | **SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution**<br><sub>机构: Shanghai Jiao Tong University<br>SkillForge 提出了一种新颖的主动式自蒸馏范式，通过合成问题来预先积累项目特定知识，并将其结构化为可检索的技能。这种方法有效解决了现有反应式方法在数据依赖性和推理成本上的局限性，显著提升了 LLM 智能体在特定项目中的问题修复能力和效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18933v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18933.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/cslsolow/SkillForge)</div> |
+| <span style='display: inline-block; width: 42px;'>08-19</span> | **A Multi-Agent Platform for Automated Enterprise Analytics and Insight Generation**<br><sub>机构: Rakuten India Enterprise Private Limited<br>本文提出了一种用于自动化企业分析和洞察生成的多代理平台，通过结构化工作流解决了传统 BI 工具效率低和现有 AI 方案准确性不足的问题。该系统不仅在准确性和质量上显著优于单代理基线，还通过纵深防御安全和查询参数化机制满足了企业级部署的安全性和实用性需求，为对话式商业智能提供了可靠且可扩展的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18740v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18740.md)  |
+| <span style='display: inline-block; width: 42px;'>08-19</span> | **Sanyu Studio: A Multi-Agent System for Art-Historical Narrative Construction**<br><sub>机构: Renmin University of China, Georgia Institute of Technology, University of Cologne<br>本文提出了 Sanyu Studio，一个用于构建艺术史叙事的多智能体系统。通过将常玉的画作建模为智能体并引入记忆过滤机制，系统成功模拟了艺术史叙事的形成过程。研究表明，在设计良好的多智能体框架下，LLM 不仅能避免解读的同质化，还能在证据有限的情况下放大人类用户的能动性，为公众提供进入艺术史解读的交互式途径，支持多元艺术意义的生成。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18677v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18677.md)  |
 | <span style='display: inline-block; width: 42px;'>08-18</span> | **Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation**<br><sub>机构: H. Lee Moffitt Cancer Center & Research Institute<br>本文提出并验证了一种本地部署的多智能体AI系统，能够有效将非结构化放射科报告转化为标准化的解剖学结构，同时执行严格的质量保证检查。系统在保留原始信息完整性的前提下实现了高准确率的结构化，并能有效识别报告内部的逻辑矛盾。专家评估证实了其临床安全性（无遗漏、无幻觉）和有效性，表明该系统有望促进放射科报告的标准化和质量提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18072v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18072.md)  |
 | <span style='display: inline-block; width: 42px;'>08-18</span> | **Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents**<br><sub>机构: African Institute for Mathematical Sciences, Rwanda; AI Research and Innovation Nexus for Africa (AIRINA Labs), AI.Technipreneurs, Bénin; Sefako Makgatho Health Sciences University (SMU), South Africa; African Center for Advanced Studies (ACAS), Cameroon<br>本文主要解决了LLM与RL结合中的理论健全性问题，而非单纯的效率提升。通过将LLM反馈转化为有界势函数进行奖励塑造，论文从理论上证明了该方法在LLM评分不准确时仍能保持最优策略不变。这一贡献为混合智能体系统提供了坚实的理论基础，使其比现有的黑盒式LLM奖励方法更加可靠和可审计。未来的工作将侧重于大规模实证收敛性的研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18008v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18008.md)  |
 | <span style='display: inline-block; width: 42px;'>08-18</span> | **EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection**<br><sub>机构: Alan Turing Institute, University of Oxford, National University of Singapore, NatWest AI Research, University of Edinburgh, University College London<br>EvoTS-Agent 通过引入自进化机制和验证引导策略，有效解决了金融时间序列变点检测中因数据非平稳性和异质性导致的自动化难题。它摆脱了对专家经验的强依赖，通过 Revision、Alternative Strategy 和 Recombination 三种算子动态优化检测流程，不仅在性能上超越了现有 LLM Agent，还保证了极高的执行成功率，为金融领域的自动化分析提供了可扩展且适应性强的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.17933v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.17933.md)  |

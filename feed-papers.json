@@ -1,43 +1,54 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-19T02:37:17.987738+00:00",
-  "run_date": "2026-08-18",
+  "generated_at": "2026-08-20T02:35:55.483641+00:00",
+  "run_date": "2026-08-19",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.18072",
-      "date": "2026-08-18",
-      "title": "Multi-Agent AI System for Radiology Report Structuring and Quality Assurance with Independent Radiologist Evaluation",
+      "id": "arxiv:2608.19197",
+      "date": "2026-08-19",
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Iryna Hartsock",
-        "Cesar Lam",
-        "Christopher Otteni",
-        "Aliya Qayyum",
-        "Robert Gatenby",
-        "Cyrillo Araujo",
-        "Ghulam Rasool"
+        "Bo Liu",
+        "Simon Yu",
+        "Yiding Jiang",
+        "Ao Qu",
+        "Andrew Zhao",
+        "Zichen Liu",
+        "Junsu Kim",
+        "Zijian Zhou",
+        "Seungone Kim",
+        "Tongzheng Ren",
+        "Mickel Liu",
+        "Hanfei Yu",
+        "Zhaorun Chen",
+        "Weiyan Shi",
+        "Paul Pu Liang",
+        "Luke Zettlemoyer",
+        "Yejin Choi",
+        "Natasha Jaques"
       ],
-      "institution": "H. Lee Moffitt Cancer Center & Research Institute",
+      "institution": "University of Washington",
       "summary": {
-        "zh": "本文提出并验证了一种本地部署的多智能体AI系统，能够有效将非结构化放射科报告转化为标准化的解剖学结构，同时执行严格的质量保证检查。系统在保留原始信息完整性的前提下实现了高准确率的结构化，并能有效识别报告内部的逻辑矛盾。专家评估证实了其临床安全性（无遗漏、无幻觉）和有效性，表明该系统有望促进放射科报告的标准化和质量提升。",
-        "en": "- **Background**: Radiology reports often lack consistent structure, making it difficult for clinicians to locate critical information and hindering secondary uses like research and quality monitoring. Additionally,..."
+        "zh": "SPADE 通过将环境设计本身变为一个可学习的组件，迈出了通向开放式自我改进的具体一步。它利用自博弈机制，让 LLM 同时担任环境设计者和解决者，通过基于遗憾的信号动态调整环境难度，有效解决了静态训练环境限制 agent 持续成长的问题，在多个复杂基准测试中取得了 state-of-the-art 的性能。",
+        "en": "- **Background**: Continuous self-improvement in Agentic AI requires an ever-expanding pool of diverse, adaptive goals. As high-quality human text becomes scarce, the supply of interactive training environments with..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.18072v1",
-        "pdf": "https://arxiv.org/pdf/2608.18072v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.19197v1",
+        "pdf": "https://arxiv.org/pdf/2608.19197v1",
+        "github": "https://github.com/spade-rl/spade"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.18072.md",
-        "summary_en_path": "summary_en/2026-08/2608.18072.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18072.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18072.md"
+        "summary_zh_path": "summary/2026-08/2608.19197.md",
+        "summary_en_path": "summary_en/2026-08/2608.19197.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.19197.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.19197.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,34 +65,35 @@
       }
     },
     {
-      "id": "arxiv:2608.18008",
-      "date": "2026-08-18",
-      "title": "Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents",
+      "id": "arxiv:2608.18575",
+      "date": "2026-08-19",
+      "title": "Beyond LLM-Based Reasoning: Lightweight GNNs for Agent Failure Attribution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Christophe D. Hounwanou",
-        "John Emeka Eze",
-        "Yaé U. Gaba"
+        "Ting-Wei Li",
+        "Yuanchen Bei",
+        "Xiao Lin",
+        "Hanghang Tong"
       ],
-      "institution": "African Institute for Mathematical Sciences, Rwanda; AI Research and Innovation Nexus for Africa (AIRINA Labs), AI.Technipreneurs, Bénin; Sefako Makgatho Health Sciences University (SMU), South Africa; African Center for Advanced Studies (ACAS), Cameroon",
+      "institution": "University of Illinois",
       "summary": {
-        "zh": "本文主要解决了LLM与RL结合中的理论健全性问题，而非单纯的效率提升。通过将LLM反馈转化为有界势函数进行奖励塑造，论文从理论上证明了该方法在LLM评分不准确时仍能保持最优策略不变。这一贡献为混合智能体系统提供了坚实的理论基础，使其比现有的黑盒式LLM奖励方法更加可靠和可审计。未来的工作将侧重于大规模实证收敛性的研究。",
-        "en": "This paper primarily addresses the theoretical soundness of combining LLMs with RL, rather than just efficiency gains. By transforming LLM feedback into bounded potential functions for reward shaping, the paper..."
+        "zh": "本文质疑了使用重型 LLM 进行智能体故障归因的必要性，提出了轻量级的 AFANet 框架。通过将多智能体交互轨迹建模为图结构，AFANet 以极低的计算成本实现了与昂贵 LLM 方法相当甚至更好的归因准确率。研究结果表明，有效的故障归因不需要沉重的 LLM 推理，轻量级且结构化的方法足以取得强劲性能，为解决 MAS 中的可解释性和调试问题提供了高效的新途径。",
+        "en": "- **Background**: Large Language Model (LLM)-based Multi-Agent Systems (MAS) often exhibit complex failure modes, leading to incorrect outcomes. This motivates the task of Agent Failure Attribution (AFA): identifying..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.18008v1",
-        "pdf": "https://arxiv.org/pdf/2608.18008v1",
+        "abs": "http://arxiv.org/abs/2608.18575v1",
+        "pdf": "https://arxiv.org/pdf/2608.18575v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.18008.md",
-        "summary_en_path": "summary_en/2026-08/2608.18008.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18008.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18008.md"
+        "summary_zh_path": "summary/2026-08/2608.18575.md",
+        "summary_en_path": "summary_en/2026-08/2608.18575.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18575.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18575.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,41 +110,36 @@
       }
     },
     {
-      "id": "arxiv:2608.17933",
-      "date": "2026-08-18",
-      "title": "EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection",
+      "id": "arxiv:2608.18933",
+      "date": "2026-08-19",
+      "title": "SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Lei Jiang",
-        "Ye Wei",
-        "Xinyu Xi",
-        "Jordan Langham-Lopez",
-        "Yifan Bao",
-        "Raad Khraishi",
-        "Yihao Ang",
-        "Anthony K. H. Tung",
-        "Lukasz Szpruch",
-        "Hao Ni"
+        "Silin Chen",
+        "Han Li",
+        "Xiaodong Gu",
+        "Yuling Shi",
+        "Haibing Guan"
       ],
-      "institution": "Alan Turing Institute, University of Oxford, National University of Singapore, NatWest AI Research, University of Edinburgh, University College London",
+      "institution": "Shanghai Jiao Tong University",
       "summary": {
-        "zh": "EvoTS-Agent 通过引入自进化机制和验证引导策略，有效解决了金融时间序列变点检测中因数据非平稳性和异质性导致的自动化难题。它摆脱了对专家经验的强依赖，通过 Revision、Alternative Strategy 和 Recombination 三种算子动态优化检测流程，不仅在性能上超越了现有 LLM Agent，还保证了极高的执行成功率，为金融领域的自动化分析提供了可扩展且适应性强的解决方案。",
-        "en": "- **Background**: Financial time series exhibit non-stationary and heterogeneous statistical properties, making Change Point Detection (CPD) challenging. No single unsupervised algorithm performs consistently across all..."
+        "zh": "SkillForge 提出了一种新颖的主动式自蒸馏范式，通过合成问题来预先积累项目特定知识，并将其结构化为可检索的技能。这种方法有效解决了现有反应式方法在数据依赖性和推理成本上的局限性，显著提升了 LLM 智能体在特定项目中的问题修复能力和效率。",
+        "en": "- **Background**: Large Language Model (LLM)-based agents excel in automated software issue resolution but often struggle with specific repositories due to a lack of project-specific knowledge (e.g., structural..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.17933v1",
-        "pdf": "https://arxiv.org/pdf/2608.17933v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.18933v1",
+        "pdf": "https://arxiv.org/pdf/2608.18933v1",
+        "github": "https://github.com/cslsolow/SkillForge"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.17933.md",
-        "summary_en_path": "summary_en/2026-08/2608.17933.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.17933.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.17933.md"
+        "summary_zh_path": "summary/2026-08/2608.18933.md",
+        "summary_en_path": "summary_en/2026-08/2608.18933.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18933.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18933.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -149,38 +156,35 @@
       }
     },
     {
-      "id": "arxiv:2608.17834",
-      "date": "2026-08-18",
-      "title": "AdaLens: Interactive Storyline for Monitoring and Steering Long-Running Agentic Data Analysis",
+      "id": "arxiv:2608.18740",
+      "date": "2026-08-19",
+      "title": "A Multi-Agent Platform for Automated Enterprise Analytics and Insight Generation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yangtian Liu",
-        "Yan Miao",
-        "Shuhan Liu",
-        "Yunfan Zhou",
-        "Dae Hyun Kim",
-        "Di Weng",
-        "Yingcai Wu"
+        "Manoj N M",
+        "Vijayakrishna S",
+        "Manjunath Srinivas",
+        "Rohit Pahan"
       ],
-      "institution": "Zhejiang University, Yonsei University",
+      "institution": "Rakuten India Enterprise Private Limited",
       "summary": {
-        "zh": "AdaLens 解决了长周期智能体数据分析中可观察性和可引导性不足的问题。通过引入故事线可视化技术，它将复杂的分析过程结构化，并允许分析师在运行时进行基于上下文的干预。这项工作强调了在人机协作的数据科学工作流中，从“驱动者”到“监督者”角色转变所需的界面支持，为未来的智能体交互设计提供了重要参考。",
-        "en": "- **Background**: Large Language Models (LLMs) are driving data science towards increasingly autonomous agentic workflows, supporting multi-step, long-running analyses. Analysts' roles are shifting from step-by-step..."
+        "zh": "本文提出了一种用于自动化企业分析和洞察生成的多代理平台，通过结构化工作流解决了传统 BI 工具效率低和现有 AI 方案准确性不足的问题。该系统不仅在准确性和质量上显著优于单代理基线，还通过纵深防御安全和查询参数化机制满足了企业级部署的安全性和实用性需求，为对话式商业智能提供了可靠且可扩展的解决方案。",
+        "en": "This paper presents a multi-agent platform for automated enterprise analytics that addresses the inefficiencies of traditional BI tools and the accuracy limitations of existing AI solutions. By leveraging a structured..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.17834v1",
-        "pdf": "https://arxiv.org/pdf/2608.17834v1",
+        "abs": "http://arxiv.org/abs/2608.18740v1",
+        "pdf": "https://arxiv.org/pdf/2608.18740v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.17834.md",
-        "summary_en_path": "summary_en/2026-08/2608.17834.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.17834.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.17834.md"
+        "summary_zh_path": "summary/2026-08/2608.18740.md",
+        "summary_en_path": "summary_en/2026-08/2608.18740.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18740.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18740.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -197,69 +201,34 @@
       }
     },
     {
-      "id": "arxiv:2608.17800",
-      "date": "2026-08-18",
-      "title": "StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows",
+      "id": "arxiv:2608.18677",
+      "date": "2026-08-19",
+      "title": "Sanyu Studio: A Multi-Agent System for Art-Historical Narrative Construction",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Liya Zhu",
-        "Xin Ma",
-        "Tao Liu",
-        "Haodong Wang",
-        "Ge Zhang",
-        "Jingzhe Ding",
-        "Qingshui Gu",
-        "Yongjie Zhong",
-        "Jinxiang Meng",
-        "Yuan Gao",
-        "Yunqiu Zhou",
-        "Hao Zhu",
-        "Jifeng He",
-        "Yongzhi Liao",
-        "Xinyi Zhang",
-        "Chaoxin Li",
-        "Yi Zhu",
-        "Xi Lin",
-        "Duju Zeng",
-        "Xiang Gao",
-        "Wen Zhang",
-        "Yunyang Wang",
-        "Duo Wang",
-        "Huan Zhou",
-        "Zuo Wang",
-        "Jin Chen",
-        "Kaiyuan Zhang",
-        "Chuqian Yu",
-        "Tianhao Yu",
-        "Longxiang Liu",
-        "Jianbo Xue",
-        "Huimin Che",
-        "Jiahao Wang",
-        "Yujia Qin",
-        "Jiaheng Liu",
-        "Shen Yan",
-        "Xiaolong Chang",
-        "Wenhao Huang"
+        "Zhaoxi Wei",
+        "Hongye Yang",
+        "Shuyuan Tian"
       ],
-      "institution": "ByteDance Seed, Nanjing University, M-A-P, TokenWave.AI",
+      "institution": "Renmin University of China, Georgia Institute of Technology, University of Cologne",
       "summary": {
-        "zh": "StartupBench 通过引入市场验证的AI初创产品工作流，填补了现有基准在真实性和评估细粒度上的空白。研究结果表明，尽管LLM进步显著，但当前通用智能体在可靠完成复杂的、市场驱动的真实用户任务方面仍有很大提升空间，特别是在复杂指令遵循和领域专长方面。该基准为衡量AI向真正实用的端到端助手演进提供了重要的实证依据。",
-        "en": "StartupBench addresses the realism and granularity gaps in existing AI benchmarks by leveraging market-validated startup workflows. The results demonstrate that while LLMs have advanced, current general-purpose agents..."
+        "zh": "本文提出了 Sanyu Studio，一个用于构建艺术史叙事的多智能体系统。通过将常玉的画作建模为智能体并引入记忆过滤机制，系统成功模拟了艺术史叙事的形成过程。研究表明，在设计良好的多智能体框架下，LLM 不仅能避免解读的同质化，还能在证据有限的情况下放大人类用户的能动性，为公众提供进入艺术史解读的交互式途径，支持多元艺术意义的生成。",
+        "en": "- **Background**: There are growing concerns that Generative AI and LLMs may standardize and homogenize art interpretation, flattening artistic meaning. Traditional art-historical narrative relies on the interplay..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.17800v1",
-        "pdf": "https://arxiv.org/pdf/2608.17800v1",
+        "abs": "http://arxiv.org/abs/2608.18677v1",
+        "pdf": "https://arxiv.org/pdf/2608.18677v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.17800.md",
-        "summary_en_path": "summary_en/2026-08/2608.17800.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.17800.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.17800.md"
+        "summary_zh_path": "summary/2026-08/2608.18677.md",
+        "summary_en_path": "summary_en/2026-08/2608.18677.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.18677.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.18677.md"
       },
       "signals": {
         "priority_keyword": "Agent"
