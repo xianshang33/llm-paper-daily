@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.20_02:35-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.21_02:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月20日 02:35</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月21日 02:42</sub></summary>
 <br>
 
-- SPADE: Self-Play in Adaptive Synthetic Executable Environments 
-- Beyond LLM-Based Reasoning: Lightweight GNNs for Agent Failure Attribution 
-- SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution 
-- A Multi-Agent Platform for Automated Enterprise Analytics and Insight Generation 
-- Sanyu Studio: A Multi-Agent System for Art-Historical Narrative Construction 
+- AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement 
+- PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents 
+- MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents 
+- Credit Without Ground Truth: Auditing Step-Level Credit Assignment in LLM Agents Against Executed Replay 
+- ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-20</span> | **AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement**<br><sub>机构: Tsinghua University, Navers Lab, Einsia.AI<br>本文提出了AI4AI-Bench，首个专注于评估LLM Agent设计训练算法能力的基准。研究发现，当前最先进的Agent在递归自我改进的关键环节——算法设计上表现依然薄弱，多数Agent倾向于保守策略而不愿或无法修改核心学习逻辑。然而，增加推理计算量可以显著提升Agent探索算法改进的意愿和效果。该基准的发布为未来衡量和提升AI系统的自我进化能力提供了重要工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.20318v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.20318.md)  |
+| <span style='display: inline-block; width: 42px;'>08-20</span> | **PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents**<br><sub>机构: KAIST, DeepAuto.ai<br>PolicyGuide 创新性地结合了工作流执行的外部引导与运行时行为监控，解决了 LLM 代理在复杂多步任务中的合规性难题。通过将政策转化为可执行的工作流图并引入主动验证机制，它显著提升了代理在严格监管环境下的表现，特别是在高度结构化的领域（如电信）中效果显著，为构建安全、合规的客户服务代理提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19861v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19861.md)  |
+| <span style='display: inline-block; width: 42px;'>08-20</span> | **MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents**<br><sub>机构: Beijing Jiaotong University<br>MileGPO 针对长程 LLM 智能体强化学习中的信用分配难题，提出了一种基于局部证据的图策略优化方法。通过里程碑发现、可靠性校准塑形和进展对比校准三个核心设计，该方法能够从稀疏的最终奖励中提取出细粒度的过程级信用，有效克服了传统基于距离的方法忽略中间进展和产生信用歧义的缺陷。实验证明其在多个复杂任务基准上达到了 SOTA 性能，且无需额外的计算或交互成本，为长程任务中的高效 RL 优化提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19803v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19803.md)  |
+| <span style='display: inline-block; width: 42px;'>08-20</span> | **Credit Without Ground Truth: Auditing Step-Level Credit Assignment in LLM Agents Against Executed Replay**<br><sub>机构: University of Southern California<br>本文通过引入基于执行回放的因果地面真值，彻底审计了LLM智能体训练中的步骤级信用分配机制。研究发现，当前主流的信用信号（裁判评分、对数概率比、自信度）均无法有效识别对结果有因果影响的步骤，其表现不优于随机猜测。现有的性能提升假象源于训练样本量的差异（训练剂量），而非信用信号的质量。论文强调，未来的信用规则比较必须匹配有效样本量，否则衡量的只是数据量而非信用准确性。这一发现对基于步骤奖励的LLM智能体训练范式提出了严峻挑战。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19760v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19760.md)  |
+| <span style='display: inline-block; width: 42px;'>08-20</span> | **ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance**<br><sub>机构: HKUST, HKBU, NTU, Cornell University<br>本文指出金融合规评估不应简化为单一的合规分数，而应视为对基于规则的行动和证据使用的审计。通过引入 ReguSim 和 ReguBench，作者揭示了 LLM 代理在金融合规中存在的“行动差距”（action gap），即陈述的规则意识并不保证可执行的合规性。研究强调，有效的合规评估必须分离推理、动作、执行和证据四个维度，并指出在当前设置下，结构化方法在监控任务中仍具有竞争力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19974v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19974.md)  |
 | <span style='display: inline-block; width: 42px;'>08-19</span> | **SPADE: Self-Play in Adaptive Synthetic Executable Environments**<br><sub>机构: University of Washington<br>SPADE 通过将环境设计本身变为一个可学习的组件，迈出了通向开放式自我改进的具体一步。它利用自博弈机制，让 LLM 同时担任环境设计者和解决者，通过基于遗憾的信号动态调整环境难度，有效解决了静态训练环境限制 agent 持续成长的问题，在多个复杂基准测试中取得了 state-of-the-art 的性能。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19197v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19197.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/spade-rl/spade)</div> |
 | <span style='display: inline-block; width: 42px;'>08-19</span> | **Beyond LLM-Based Reasoning: Lightweight GNNs for Agent Failure Attribution**<br><sub>机构: University of Illinois<br>本文质疑了使用重型 LLM 进行智能体故障归因的必要性，提出了轻量级的 AFANet 框架。通过将多智能体交互轨迹建模为图结构，AFANet 以极低的计算成本实现了与昂贵 LLM 方法相当甚至更好的归因准确率。研究结果表明，有效的故障归因不需要沉重的 LLM 推理，轻量级且结构化的方法足以取得强劲性能，为解决 MAS 中的可解释性和调试问题提供了高效的新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18575v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18575.md)  |
 | <span style='display: inline-block; width: 42px;'>08-19</span> | **SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution**<br><sub>机构: Shanghai Jiao Tong University<br>SkillForge 提出了一种新颖的主动式自蒸馏范式，通过合成问题来预先积累项目特定知识，并将其结构化为可检索的技能。这种方法有效解决了现有反应式方法在数据依赖性和推理成本上的局限性，显著提升了 LLM 智能体在特定项目中的问题修复能力和效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.18933v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.18933.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/cslsolow/SkillForge)</div> |
