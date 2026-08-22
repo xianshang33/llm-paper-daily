@@ -1,46 +1,46 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-21T02:42:26.273062+00:00",
-  "run_date": "2026-08-20",
+  "generated_at": "2026-08-22T02:33:43.209284+00:00",
+  "run_date": "2026-08-16",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.20318",
-      "date": "2026-08-20",
-      "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement",
+      "id": "arxiv:2608.15763",
+      "date": "2026-08-16",
+      "title": "TaoLive Digital Avatar Agent Technical Report: Training Agents to Evolve with Their Harness",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yizhe Chi",
-        "Wenyi Li",
-        "Deyao Hong",
-        "Xiaoqiu Wang",
-        "Mingju Gao",
-        "Kaisen Yang",
-        "Bingxiang He",
-        "Youjie Zheng",
-        "Calvin Xiao",
-        "Qinhuai Na"
+        "TaoLive AIGC LLM Team",
+        "Yuhan Sun",
+        "Wenhao Lin",
+        "Yongdong Luo",
+        "Yibo Hu",
+        "Meiguang Jin",
+        "Junfeng Ma",
+        "Weihang Pan",
+        "Jiaxin Zhao",
+        "Zulong Chen"
       ],
-      "institution": "Tsinghua University, Navers Lab, Einsia.AI",
+      "institution": "TaoLive AIGC LLM Team",
       "summary": {
-        "zh": "本文提出了AI4AI-Bench，首个专注于评估LLM Agent设计训练算法能力的基准。研究发现，当前最先进的Agent在递归自我改进的关键环节——算法设计上表现依然薄弱，多数Agent倾向于保守策略而不愿或无法修改核心学习逻辑。然而，增加推理计算量可以显著提升Agent探索算法改进的意愿和效果。该基准的发布为未来衡量和提升AI系统的自我进化能力提供了重要工具。",
-        "en": "- **Background**: Recursive Self-Improvement (RSI) hinges on whether an AI system can improve the training algorithms that produce its successors. Better objectives or update rules enhance the compute-capability..."
+        "zh": "本文针对直播电商数字人主播面临的低延迟与高适应性矛盾，提出了可演化的 Harness 架构及 Harness-Aware Training (HAT) 方法。通过 Harness-State Augmentation 和三阶段训练策略，成功训练出一个紧凑的 35B...",
+        "en": "This paper addresses the conflict between low latency and high adaptability for live e-commerce digital avatars by proposing an Evolvable Harness architecture and Harness-Aware Training (HAT). By leveraging..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.20318v1",
-        "pdf": "https://arxiv.org/pdf/2608.20318v1",
+        "abs": "http://arxiv.org/abs/2608.15763v1",
+        "pdf": "https://arxiv.org/pdf/2608.15763v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.20318.md",
-        "summary_en_path": "summary_en/2026-08/2608.20318.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.20318.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.20318.md"
+        "summary_zh_path": "summary/2026-08/2608.15763.md",
+        "summary_en_path": "summary_en/2026-08/2608.15763.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15763.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15763.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -57,34 +57,37 @@
       }
     },
     {
-      "id": "arxiv:2608.19861",
-      "date": "2026-08-20",
-      "title": "PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents",
+      "id": "arxiv:2608.15654",
+      "date": "2026-08-16",
+      "title": "When Stories Evolve: Benchmarking LLM Storytelling Across Agent Architectures in Open-Ended World Simulations",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Seongjae Kang",
-        "Taehyung Yu",
-        "Sung Ju Hwang"
+        "Yuqi Chen",
+        "Sixuan Li",
+        "Yunfeng Cai",
+        "Xueai Li",
+        "Ka Man Yan",
+        "Ying Li"
       ],
-      "institution": "KAIST, DeepAuto.ai",
+      "institution": "The University of Hong Kong, Peking University, Tsinghua University, Beijing Institute of Mathematical Sciences and Applications",
       "summary": {
-        "zh": "PolicyGuide 创新性地结合了工作流执行的外部引导与运行时行为监控，解决了 LLM 代理在复杂多步任务中的合规性难题。通过将政策转化为可执行的工作流图并引入主动验证机制，它显著提升了代理在严格监管环境下的表现，特别是在高度结构化的领域（如电信）中效果显著，为构建安全、合规的客户服务代理提供了新的范式。",
-        "en": "- **Background**: Customer-service LLM agents must strictly adhere to organizational policies when acting on behalf of users. Compliance failures typically stem from two sources: executing forbidden actions (e.g.,..."
+        "zh": "本文引入了WSE-bench，这是一个针对开放世界模拟中LLM叙事的过程基准测试。通过将评估重点从最终产物转移到创作过程，该研究揭示了持续生成、规范一致性和有意义发展是三个 distinct 且常相互竞争的能力维度。研究发现模型规模主要利好生成长度，而对一致性和丰富度帮助有限，且二者间存在复杂的非凹帕累托权衡。这一基准为理解和优化AI原生游戏及动态叙事系统中的代理架构提供了新的视角和工具。",
+        "en": "- **Background**: Large Language Models (LLMs) can generate fluent text, but open-ended storytelling in evolving world simulations and AI-native games requires more than local fluency. Models must preserve facts,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.19861v1",
-        "pdf": "https://arxiv.org/pdf/2608.19861v1",
+        "abs": "http://arxiv.org/abs/2608.15654v1",
+        "pdf": "https://arxiv.org/pdf/2608.15654v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.19861.md",
-        "summary_en_path": "summary_en/2026-08/2608.19861.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.19861.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.19861.md"
+        "summary_zh_path": "summary/2026-08/2608.15654.md",
+        "summary_en_path": "summary_en/2026-08/2608.15654.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15654.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15654.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -101,37 +104,34 @@
       }
     },
     {
-      "id": "arxiv:2608.19803",
-      "date": "2026-08-20",
-      "title": "MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents",
+      "id": "arxiv:2608.15834",
+      "date": "2026-08-16",
+      "title": "Schema-Agnostic Graph Reasoning Agent for Hybrid Knowledge Graphs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bo Qian",
-        "Yuting Wu",
-        "Shuang Zeng",
-        "Huaiyu Wan",
-        "Dalin Zhang",
-        "Jiqiang Liu"
+        "Marius Dragic",
+        "Ruben Ifrah",
+        "Alexandre Rio"
       ],
-      "institution": "Beijing Jiaotong University",
+      "institution": "Oplit",
       "summary": {
-        "zh": "MileGPO 针对长程 LLM 智能体强化学习中的信用分配难题，提出了一种基于局部证据的图策略优化方法。通过里程碑发现、可靠性校准塑形和进展对比校准三个核心设计，该方法能够从稀疏的最终奖励中提取出细粒度的过程级信用，有效克服了传统基于距离的方法忽略中间进展和产生信用歧义的缺陷。实验证明其在多个复杂任务基准上达到了 SOTA 性能，且无需额外的计算或交互成本，为长程任务中的高效 RL 优化提供了新的思路。",
-        "en": "MileGPO addresses the credit assignment challenge in long-horizon LLM agent RL by proposing a graph-based policy optimization method leveraging local evidence. Through three core designs—Milestone Discovery,..."
+        "zh": "本文提出了 GRA，一种模式无关的图推理代理，通过将代码库导航的通用原语应用于混合知识图谱，实现了在运行时动态发现领域知识。实验表明，在工业级基准 UFK-M 上，GRA 通过选择性导航结构化数据，不仅在准确率上超越了全上下文方法，还显著降低了令牌消耗。研究核心结论为：在结构化基底上进行选择性导航优于穷尽式的上下文输入，且工具调用的可靠性是关键成功因素。",
+        "en": "- **Background**: Tool-calling LLM agents effectively navigate unfamiliar codebases using generic primitives (ls, cat, grep). Knowledge graphs admit a similar interface, where listing neighbors, reading node content,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.19803v1",
-        "pdf": "https://arxiv.org/pdf/2608.19803v1",
+        "abs": "http://arxiv.org/abs/2608.15834v1",
+        "pdf": "https://arxiv.org/pdf/2608.15834v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.19803.md",
-        "summary_en_path": "summary_en/2026-08/2608.19803.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.19803.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.19803.md"
+        "summary_zh_path": "summary/2026-08/2608.15834.md",
+        "summary_en_path": "summary_en/2026-08/2608.15834.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15834.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15834.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -148,32 +148,36 @@
       }
     },
     {
-      "id": "arxiv:2608.19760",
-      "date": "2026-08-20",
-      "title": "Credit Without Ground Truth: Auditing Step-Level Credit Assignment in LLM Agents Against Executed Replay",
+      "id": "arxiv:2608.15591",
+      "date": "2026-08-16",
+      "title": "Agent Gym: A Framework for Continuous Evaluation and Evolution of LLM Agents Through Human-in-the-Loop Feedback",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haiyue Zhang"
+        "Pouya Ghiasnezhad Omran",
+        "Michael Zimmermann",
+        "Duncan Cambridge",
+        "Ashmita Kapoor",
+        "Tanya Dixit"
       ],
-      "institution": "University of Southern California",
+      "institution": "Google Cloud",
       "summary": {
-        "zh": "本文通过引入基于执行回放的因果地面真值，彻底审计了LLM智能体训练中的步骤级信用分配机制。研究发现，当前主流的信用信号（裁判评分、对数概率比、自信度）均无法有效识别对结果有因果影响的步骤，其表现不优于随机猜测。现有的性能提升假象源于训练样本量的差异（训练剂量），而非信用信号的质量。论文强调，未来的信用规则比较必须匹配有效样本量，否则衡量的只是数据量而非信用准确性。这一发现对基于步骤奖励的LLM智能体训练范式提出了严峻挑战。",
-        "en": "- **Background**: In agentic reinforcement learning, training LLM agents through long tool-use episodes often relies on step-level credit signals (e.g., LLM judge scores, outcome-conditioned log-prob ratios, policy..."
+        "zh": "Agent Gym 解决了 LLM 智能体在生产环境中因行为冻结而无法适应动态业务规则的核心痛点。通过引入人机回环的持续演进机制、无真值合规验证架构以及程序化安全循环，它使得非技术人员（领域专家）能够直接参与智能体的优化与维护。这不仅降低了维护成本，还提高了智能体在面对边缘情况和规则漂移时的鲁棒性和适应性，为 LLM 智能体的长期可持续部署提供了可行的技术路径。",
+        "en": "- **Background**: LLM agents deployed in production face a \"static agent dilemma\": their behavior is frozen at deployment, while business rules and edge cases evolve continuously. Existing frameworks (e.g., ReAct,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.19760v1",
-        "pdf": "https://arxiv.org/pdf/2608.19760v1",
+        "abs": "http://arxiv.org/abs/2608.15591v1",
+        "pdf": "https://arxiv.org/pdf/2608.15591v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.19760.md",
-        "summary_en_path": "summary_en/2026-08/2608.19760.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.19760.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.19760.md"
+        "summary_zh_path": "summary/2026-08/2608.15591.md",
+        "summary_en_path": "summary_en/2026-08/2608.15591.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15591.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15591.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -190,38 +194,36 @@
       }
     },
     {
-      "id": "arxiv:2608.19974",
-      "date": "2026-08-20",
-      "title": "ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance",
+      "id": "arxiv:2608.15549",
+      "date": "2026-08-16",
+      "title": "MistyPilot: Enabling Social-Robot Control through Multi-Agent LLM Skill Orchestration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yiyang Luo",
-        "Yihang Jiang",
-        "Qijun Xie",
-        "Liang Lan",
-        "Lin Willian Cong",
-        "Anyi Rao",
-        "Yunya Song"
+        "Xiao Wang",
+        "Lu Dong",
+        "Ifeoma Nwogu",
+        "Srirangaraj Setlur",
+        "Venu Govindaraju"
       ],
-      "institution": "HKUST, HKBU, NTU, Cornell University",
+      "institution": "State University of New York at Buffalo",
       "summary": {
-        "zh": "本文指出金融合规评估不应简化为单一的合规分数，而应视为对基于规则的行动和证据使用的审计。通过引入 ReguSim 和 ReguBench，作者揭示了 LLM 代理在金融合规中存在的“行动差距”（action gap），即陈述的规则意识并不保证可执行的合规性。研究强调，有效的合规评估必须分离推理、动作、执行和证据四个维度，并指出在当前设置下，结构化方法在监控任务中仍具有竞争力。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly used in financial decision systems, such as trading agents and surveillance assistants. Compliance in this context requires not just textual proficiency..."
+        "zh": "MistyPilot 通过多智能体 LLM 架构成功解决了社交机器人自然语言编程中的关键难题，实现了反应式物理行为与有状态社交行为的无缝协同。其特有的任务路由和结果复用机制不仅提高了指令执行的准确性和效率，还降低了非专家用户的使用门槛。实验证明，该框架在真实机器人部署中具有高准确性和良好的用户体验，为社交机器人的普及应用提供了新的技术路径。",
+        "en": "- **Background**: Social robots (e.g., Misty) are increasingly used in assistance, education, and social interaction. However, enabling non-expert users to control these robots via natural language remains challenging."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.19974v1",
-        "pdf": "https://arxiv.org/pdf/2608.19974v1",
+        "abs": "http://arxiv.org/abs/2608.15549v1",
+        "pdf": "https://arxiv.org/pdf/2608.15549v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.19974.md",
-        "summary_en_path": "summary_en/2026-08/2608.19974.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.19974.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.19974.md"
+        "summary_zh_path": "summary/2026-08/2608.15549.md",
+        "summary_en_path": "summary_en/2026-08/2608.15549.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15549.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15549.md"
       },
       "signals": {
         "priority_keyword": "Agent"
