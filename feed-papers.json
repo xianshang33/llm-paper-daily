@@ -1,46 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-22T02:33:43.209284+00:00",
-  "run_date": "2026-08-16",
+  "generated_at": "2026-08-22T05:54:30.257331+00:00",
+  "run_date": "2026-08-15",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.15763",
-      "date": "2026-08-16",
-      "title": "TaoLive Digital Avatar Agent Technical Report: Training Agents to Evolve with Their Harness",
+      "id": "arxiv:2608.15117",
+      "date": "2026-08-15",
+      "title": "Anatomy of a Quantized Agent: VRAM Stability and Forecasting in Code-Synthesis Agentic Workloads",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "TaoLive AIGC LLM Team",
-        "Yuhan Sun",
-        "Wenhao Lin",
-        "Yongdong Luo",
-        "Yibo Hu",
-        "Meiguang Jin",
-        "Junfeng Ma",
-        "Weihang Pan",
-        "Jiaxin Zhao",
-        "Zulong Chen"
+        "Anubhab Banerjee"
       ],
-      "institution": "TaoLive AIGC LLM Team",
+      "institution": "Nokia Germany",
       "summary": {
-        "zh": "本文针对直播电商数字人主播面临的低延迟与高适应性矛盾，提出了可演化的 Harness 架构及 Harness-Aware Training (HAT) 方法。通过 Harness-State Augmentation 和三阶段训练策略，成功训练出一个紧凑的 35B...",
-        "en": "This paper addresses the conflict between low latency and high adaptability for live e-commerce digital avatars by proposing an Evolvable Harness architecture and Harness-Aware Training (HAT). By leveraging..."
+        "zh": "本文通过对量化智能体工作负载的深入分析，揭示了在高度量化、权重主导的推理场景中，显存消耗具有极高的稳定性。研究证明，透明且校准后的闭式解析模型足以胜任显存峰值预测任务，其性能不亚于甚至优于复杂的机器学习模型。这一发现挑战了部署复杂预测模型的必要性，为资源调度和准入控制提供了低成本、高可靠性的基础，有助于推动智能体在共享集群和边缘基础设施上的高效、安全部署。",
+        "en": "- **Background**: The deployment of autonomous AI agents is frequently bottlenecked by unpredictable VRAM consumption, leading to resource stranding or out-of-memory (OOM) failures on constrained hardware. Traditional..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15763v1",
-        "pdf": "https://arxiv.org/pdf/2608.15763v1",
+        "abs": "http://arxiv.org/abs/2608.15117v1",
+        "pdf": "https://arxiv.org/pdf/2608.15117v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15763.md",
-        "summary_en_path": "summary_en/2026-08/2608.15763.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15763.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15763.md"
+        "summary_zh_path": "summary/2026-08/2608.15117.md",
+        "summary_en_path": "summary_en/2026-08/2608.15117.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15117.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15117.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -57,37 +48,32 @@
       }
     },
     {
-      "id": "arxiv:2608.15654",
-      "date": "2026-08-16",
-      "title": "When Stories Evolve: Benchmarking LLM Storytelling Across Agent Architectures in Open-Ended World Simulations",
+      "id": "arxiv:2608.15391",
+      "date": "2026-08-15",
+      "title": "TwinGridShield: Consequence-Aware Runtime Authorization for LLM Grid-Agent Actions",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuqi Chen",
-        "Sixuan Li",
-        "Yunfeng Cai",
-        "Xueai Li",
-        "Ka Man Yan",
-        "Ying Li"
+        "Md Fazley Rafy"
       ],
-      "institution": "The University of Hong Kong, Peking University, Tsinghua University, Beijing Institute of Mathematical Sciences and Applications",
+      "institution": "West Virginia University",
       "summary": {
-        "zh": "本文引入了WSE-bench，这是一个针对开放世界模拟中LLM叙事的过程基准测试。通过将评估重点从最终产物转移到创作过程，该研究揭示了持续生成、规范一致性和有意义发展是三个 distinct 且常相互竞争的能力维度。研究发现模型规模主要利好生成长度，而对一致性和丰富度帮助有限，且二者间存在复杂的非凹帕累托权衡。这一基准为理解和优化AI原生游戏及动态叙事系统中的代理架构提供了新的视角和工具。",
-        "en": "- **Background**: Large Language Models (LLMs) can generate fluent text, but open-ended storytelling in evolving world simulations and AI-native games requires more than local fluency. Models must preserve facts,..."
+        "zh": "TwinGridShield填补了LLM代理在电网操作中缺乏物理后果验证的空白。通过引入基于数字孪生的运行时授权层，它有效地解决了LLM“动作盲区”和提示注入带来的物理安全风险。在理想模型匹配下，它能完全阻止不安全动作；但在模型存在误差时，其防护能力会受到一定影响，强调了维护高保真数字孪生模型对于此类安全机制至关重要。",
+        "en": "- **Background**: LLM-assisted energy management tools can translate natural language into structured grid commands, but syntactic validity does not guarantee physical admissibility. In power systems, incorrect commands..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15654v1",
-        "pdf": "https://arxiv.org/pdf/2608.15654v1",
+        "abs": "http://arxiv.org/abs/2608.15391v1",
+        "pdf": "https://arxiv.org/pdf/2608.15391v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15654.md",
-        "summary_en_path": "summary_en/2026-08/2608.15654.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15654.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15654.md"
+        "summary_zh_path": "summary/2026-08/2608.15391.md",
+        "summary_en_path": "summary_en/2026-08/2608.15391.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15391.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15391.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -104,34 +90,39 @@
       }
     },
     {
-      "id": "arxiv:2608.15834",
-      "date": "2026-08-16",
-      "title": "Schema-Agnostic Graph Reasoning Agent for Hybrid Knowledge Graphs",
+      "id": "arxiv:2608.15389",
+      "date": "2026-08-15",
+      "title": "Agentic-SQL Revisited: Autonomy-Based Taxonomy and Empirical Benchmark Analysis for LLM Text-to-SQL",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Marius Dragic",
-        "Ruben Ifrah",
-        "Alexandre Rio"
+        "Changruo Zhao",
+        "Zujun Peng",
+        "Yu Tian",
+        "Yuting Liu",
+        "Yiyun Su",
+        "Huiying Zhu",
+        "Luyan Zhang",
+        "Heming Zeng"
       ],
-      "institution": "Oplit",
+      "institution": null,
       "summary": {
-        "zh": "本文提出了 GRA，一种模式无关的图推理代理，通过将代码库导航的通用原语应用于混合知识图谱，实现了在运行时动态发现领域知识。实验表明，在工业级基准 UFK-M 上，GRA 通过选择性导航结构化数据，不仅在准确率上超越了全上下文方法，还显著降低了令牌消耗。研究核心结论为：在结构化基底上进行选择性导航优于穷尽式的上下文输入，且工具调用的可靠性是关键成功因素。",
-        "en": "- **Background**: Tool-calling LLM agents effectively navigate unfamiliar codebases using generic primitives (ls, cat, grep). Knowledge graphs admit a similar interface, where listing neighbors, reading node content,..."
+        "zh": "本文通过提出基于推理自主性的分类法，解决了 LLM Text-to-SQL 领域因实验设置异构导致的比较困难问题。通过构建可追溯的聚合排行榜和进行实证案例研究，文章揭示了自主性、鲁棒性与成本之间的复杂关系，并指出推理内化是一种有效的中间路径。发布的 Python 工具包为未来研究的标准化比较提供了基础设施。",
+        "en": "- **Background**: Progress in LLM-based Text-to-SQL is reported across heterogeneous benchmarks (Spider, BIRD, Spider 2.0), backbones, and inference protocols, making cross-system comparisons fragile and inconsistent. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15834v1",
-        "pdf": "https://arxiv.org/pdf/2608.15834v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.15389v1",
+        "pdf": "https://arxiv.org/pdf/2608.15389v1",
+        "github": "https://github.com/suyiyun/llm-text2sql-taxonomy"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15834.md",
-        "summary_en_path": "summary_en/2026-08/2608.15834.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15834.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15834.md"
+        "summary_zh_path": "summary/2026-08/2608.15389.md",
+        "summary_en_path": "summary_en/2026-08/2608.15389.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15389.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15389.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -148,36 +139,39 @@
       }
     },
     {
-      "id": "arxiv:2608.15591",
-      "date": "2026-08-16",
-      "title": "Agent Gym: A Framework for Continuous Evaluation and Evolution of LLM Agents Through Human-in-the-Loop Feedback",
+      "id": "arxiv:2608.15265",
+      "date": "2026-08-15",
+      "title": "VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pouya Ghiasnezhad Omran",
-        "Michael Zimmermann",
-        "Duncan Cambridge",
-        "Ashmita Kapoor",
-        "Tanya Dixit"
+        "Yansong Ning",
+        "Jingwen Ye",
+        "Zhongkai Wu",
+        "Yang Sun",
+        "Yiqin Zhu",
+        "Xingyi Li",
+        "Weidong Zhang",
+        "Hao Liu"
       ],
-      "institution": "Google Cloud",
+      "institution": "HKUST(GZ), Tencent",
       "summary": {
-        "zh": "Agent Gym 解决了 LLM 智能体在生产环境中因行为冻结而无法适应动态业务规则的核心痛点。通过引入人机回环的持续演进机制、无真值合规验证架构以及程序化安全循环，它使得非技术人员（领域专家）能够直接参与智能体的优化与维护。这不仅降低了维护成本，还提高了智能体在面对边缘情况和规则漂移时的鲁棒性和适应性，为 LLM 智能体的长期可持续部署提供了可行的技术路径。",
-        "en": "- **Background**: LLM agents deployed in production face a \"static agent dilemma\": their behavior is frozen at deployment, while business rules and edge cases evolve continuously. Existing frameworks (e.g., ReAct,..."
+        "zh": "本文提出了VibeWorlding框架，解决了现有3D世界构建代理评估标准单一和缺乏有效训练机制的问题。通过构建大规模的VWE-BENCH基准和支持RL训练的VibeWorlding-Gym环境，证明了强化学习后训练能显著提升开源多模态大模型在复杂3D场景构建任务上的性能，使其达到甚至超越当前最先进的闭源模型水平。",
+        "en": "- **Background**: Constructing interactive 3D open worlds from user queries is crucial for gaming, simulation, and embodied AI. The rise of Multimodal Large Language Models (MLLMs) has spurred interest in automating..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15591v1",
-        "pdf": "https://arxiv.org/pdf/2608.15591v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.15265v2",
+        "pdf": "https://arxiv.org/pdf/2608.15265v2",
+        "github": "https://github.com/usail-hkust/VibeWorlding-Gym"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15591.md",
-        "summary_en_path": "summary_en/2026-08/2608.15591.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15591.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15591.md"
+        "summary_zh_path": "summary/2026-08/2608.15265.md",
+        "summary_en_path": "summary_en/2026-08/2608.15265.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15265.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15265.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,36 +188,37 @@
       }
     },
     {
-      "id": "arxiv:2608.15549",
-      "date": "2026-08-16",
-      "title": "MistyPilot: Enabling Social-Robot Control through Multi-Agent LLM Skill Orchestration",
+      "id": "arxiv:2608.15175",
+      "date": "2026-08-15",
+      "title": "LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xiao Wang",
-        "Lu Dong",
-        "Ifeoma Nwogu",
-        "Srirangaraj Setlur",
-        "Venu Govindaraju"
+        "Yousef Emami",
+        "Mohammadhossein Homaei",
+        "Hao Zhou",
+        "Miguel Gutiérrez Gaitán",
+        "Atefeh Hajijamali Arani",
+        "Rui Zhang"
       ],
-      "institution": "State University of New York at Buffalo",
+      "institution": null,
       "summary": {
-        "zh": "MistyPilot 通过多智能体 LLM 架构成功解决了社交机器人自然语言编程中的关键难题，实现了反应式物理行为与有状态社交行为的无缝协同。其特有的任务路由和结果复用机制不仅提高了指令执行的准确性和效率，还降低了非专家用户的使用门槛。实验证明，该框架在真实机器人部署中具有高准确性和良好的用户体验，为社交机器人的普及应用提供了新的技术路径。",
-        "en": "- **Background**: Social robots (e.g., Misty) are increasingly used in assistance, education, and social interaction. However, enabling non-expert users to control these robots via natural language remains challenging."
+        "zh": "本文提出的 LAPF 框架通过构建包含感知、记忆、规划和行动的闭环认知架构，有效克服了现有 LLM 辅助导航方法在代理功能上的局限。实验结果表明，LAPF 不仅在路径规划效率上优于传统的 CoT 提示方法，更在复杂动态环境中的安全性和稳定性方面表现出显著优势，实现了零控制异常事件，为无人机在城镇规模户外环境中的自主导航提供了新的解决方案。",
+        "en": "- **Background**: Uncrewed Aerial Vehicles (UAVs) are increasingly deployed for autonomous navigation in complex outdoor environments, requiring intelligent adaptive decision-making. - **Limitations of Existing Work**:..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15549v1",
-        "pdf": "https://arxiv.org/pdf/2608.15549v1",
+        "abs": "http://arxiv.org/abs/2608.15175v1",
+        "pdf": "https://arxiv.org/pdf/2608.15175v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15549.md",
-        "summary_en_path": "summary_en/2026-08/2608.15549.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15549.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15549.md"
+        "summary_zh_path": "summary/2026-08/2608.15175.md",
+        "summary_en_path": "summary_en/2026-08/2608.15175.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15175.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15175.md"
       },
       "signals": {
         "priority_keyword": "Agent"
