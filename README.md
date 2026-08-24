@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.21_02:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.24_02:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月21日 02:42</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月24日 02:43</sub></summary>
 <br>
 
-- AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement 
-- PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents 
-- MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents 
-- Credit Without Ground Truth: Auditing Step-Level Credit Assignment in LLM Agents Against Executed Replay 
-- ReguSim: Evaluating LLM Agent Rule Grounding in Financial Compliance 
+- Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration 
+- Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence 
+- ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents 
+- Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems 
+- Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-21</span> | **Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration**<br><sub>机构: EPAM Systems<br>本文揭示了在异构 SDD 工作流中，规范不应被视为 Agent 中立的 artifacts。跨 Agent 的规范传递存在显著的质量退化风险，且不同 Agent 对规范的解读具有特异性。研究建议在多 Agent 软件工程中，必须明确考虑规范的可移植性、Agent 特定的解释机制以及基于检索的访问策略。检索增强被证明是提高跨 Agent 兼容性的有效手段，为未来构建互操作性更强的 LLM 开发代理生态系统提供了重要依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21208v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21208.md)  |
+| <span style='display: inline-block; width: 42px;'>08-21</span> | **Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence**<br><sub>本文指出了从“个体智能”向“系统智能”演进的必然趋势，并正式提出了“图工程”这一新范式。通过构建显式、动态且不断演化的图结构，图工程为解决多智能体协作中的任务组织、异构协调及状态管理难题提供了统一的理论基础和方法论框架。该综述不仅梳理了现有研究，还为构建下一代可扩展、自适应的 LLM 智能体系统指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21156v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21156.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DEEP-JLU/Awesome-Graph-Engineering)</div> |
+| <span style='display: inline-block; width: 42px;'>08-21</span> | **ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>ClawSentry 提出了一种针对自主 LLM 智能体的渐进式多层安全监控方案，解决了现有防御在跨阶段风险覆盖和状态感知上的不足。通过首次使用技能包审查、三层渐进式决策引擎以及会话级防绕过机制，它在多个主流智能体平台上实现了显著的攻击成功率降低，同时保持了极高的任务完成率，为智能体运行时安全提供了一个高效、通用的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21101v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21101.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Elroyper/ClawSentry)</div> |
+| <span style='display: inline-block; width: 42px;'>08-21</span> | **Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems**<br><sub>机构: Tampere University<br>本文针对 RAG 系统中存在的“安全-可靠性差距”，提出了一种基于评估代理的防御机制。通过融合 NLI 事实验证和多信号投毒检测，该代理能在生成前有效识别恶意检索内容，特别是在防御指令注入方面表现优异。尽管在处理细微语义篡改和跨域泛化上仍面临挑战，但该工作为构建可信赖的 RAG 系统提供了重要的在线防御思路和实用工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21095v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21095.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/GPT-Laboratory/TrustworthyRAG)</div> |
+| <span style='display: inline-block; width: 42px;'>08-21</span> | **Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents**<br><sub>机构: National University of Singapore<br>本文提出了COTA框架，解决了LLM智能体运行时干预中辅助模型成本高和能力冗余的问题。通过引入仅基于比较的小型顾问模型，COTA能够在不要求辅助模型具备完整任务求解能力的前提下，提供有效的恢复方向。实验证明，该方法在多个复杂任务基准上均取得了优于现有方法的性能，展示了轻量级干预在提升智能体可靠性方面的巨大潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21027v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21027.md)  |
 | <span style='display: inline-block; width: 42px;'>08-20</span> | **AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement**<br><sub>机构: Tsinghua University, Navers Lab, Einsia.AI<br>本文提出了AI4AI-Bench，首个专注于评估LLM Agent设计训练算法能力的基准。研究发现，当前最先进的Agent在递归自我改进的关键环节——算法设计上表现依然薄弱，多数Agent倾向于保守策略而不愿或无法修改核心学习逻辑。然而，增加推理计算量可以显著提升Agent探索算法改进的意愿和效果。该基准的发布为未来衡量和提升AI系统的自我进化能力提供了重要工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.20318v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.20318.md)  |
 | <span style='display: inline-block; width: 42px;'>08-20</span> | **PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents**<br><sub>机构: KAIST, DeepAuto.ai<br>PolicyGuide 创新性地结合了工作流执行的外部引导与运行时行为监控，解决了 LLM 代理在复杂多步任务中的合规性难题。通过将政策转化为可执行的工作流图并引入主动验证机制，它显著提升了代理在严格监管环境下的表现，特别是在高度结构化的领域（如电信）中效果显著，为构建安全、合规的客户服务代理提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19861v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19861.md)  |
 | <span style='display: inline-block; width: 42px;'>08-20</span> | **MileGPO: Milestone Inference with Local Evidence for Graph-Based Policy Optimization of Long-Horizon LLM Agents**<br><sub>机构: Beijing Jiaotong University<br>MileGPO 针对长程 LLM 智能体强化学习中的信用分配难题，提出了一种基于局部证据的图策略优化方法。通过里程碑发现、可靠性校准塑形和进展对比校准三个核心设计，该方法能够从稀疏的最终奖励中提取出细粒度的过程级信用，有效克服了传统基于距离的方法忽略中间进展和产生信用歧义的缺陷。实验证明其在多个复杂任务基准上达到了 SOTA 性能，且无需额外的计算或交互成本，为长程任务中的高效 RL 优化提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.19803v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.19803.md)  |

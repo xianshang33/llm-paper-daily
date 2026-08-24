@@ -1,37 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-22T05:54:30.257331+00:00",
-  "run_date": "2026-08-15",
+  "generated_at": "2026-08-24T02:43:12.963300+00:00",
+  "run_date": "2026-08-21",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.15117",
-      "date": "2026-08-15",
-      "title": "Anatomy of a Quantized Agent: VRAM Stability and Forecasting in Code-Synthesis Agentic Workloads",
+      "id": "arxiv:2608.21208",
+      "date": "2026-08-21",
+      "title": "Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anubhab Banerjee"
+        "Oleg Grynets",
+        "Oleksii Ilchuk",
+        "Dariia Zatulna",
+        "Vasyl Lyashkevych"
       ],
-      "institution": "Nokia Germany",
+      "institution": "EPAM Systems",
       "summary": {
-        "zh": "本文通过对量化智能体工作负载的深入分析，揭示了在高度量化、权重主导的推理场景中，显存消耗具有极高的稳定性。研究证明，透明且校准后的闭式解析模型足以胜任显存峰值预测任务，其性能不亚于甚至优于复杂的机器学习模型。这一发现挑战了部署复杂预测模型的必要性，为资源调度和准入控制提供了低成本、高可靠性的基础，有助于推动智能体在共享集群和边缘基础设施上的高效、安全部署。",
-        "en": "- **Background**: The deployment of autonomous AI agents is frequently bottlenecked by unpredictable VRAM consumption, leading to resource stranding or out-of-memory (OOM) failures on constrained hardware. Traditional..."
+        "zh": "本文揭示了在异构 SDD 工作流中，规范不应被视为 Agent 中立的 artifacts。跨 Agent 的规范传递存在显著的质量退化风险，且不同 Agent 对规范的解读具有特异性。研究建议在多 Agent 软件工程中，必须明确考虑规范的可移植性、Agent 特定的解释机制以及基于检索的访问策略。检索增强被证明是提高跨 Agent 兼容性的有效手段，为未来构建互操作性更强的 LLM 开发代理生态系统提供了重要依据。",
+        "en": "- **Background**: Large Language Models (LLMs) are shifting software engineering from prompt-based assistance to agentic development. In Specification-Driven Development (SDD), specifications serve as operational inputs..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15117v1",
-        "pdf": "https://arxiv.org/pdf/2608.15117v1",
+        "abs": "http://arxiv.org/abs/2608.21208v1",
+        "pdf": "https://arxiv.org/pdf/2608.21208v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15117.md",
-        "summary_en_path": "summary_en/2026-08/2608.15117.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15117.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15117.md"
+        "summary_zh_path": "summary/2026-08/2608.21208.md",
+        "summary_en_path": "summary_en/2026-08/2608.21208.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21208.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21208.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,81 +51,66 @@
       }
     },
     {
-      "id": "arxiv:2608.15391",
-      "date": "2026-08-15",
-      "title": "TwinGridShield: Consequence-Aware Runtime Authorization for LLM Grid-Agent Actions",
+      "id": "arxiv:2608.21156",
+      "date": "2026-08-21",
+      "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Md Fazley Rafy"
-      ],
-      "institution": "West Virginia University",
-      "summary": {
-        "zh": "TwinGridShield填补了LLM代理在电网操作中缺乏物理后果验证的空白。通过引入基于数字孪生的运行时授权层，它有效地解决了LLM“动作盲区”和提示注入带来的物理安全风险。在理想模型匹配下，它能完全阻止不安全动作；但在模型存在误差时，其防护能力会受到一定影响，强调了维护高保真数字孪生模型对于此类安全机制至关重要。",
-        "en": "- **Background**: LLM-assisted energy management tools can translate natural language into structured grid commands, but syntactic validity does not guarantee physical admissibility. In power systems, incorrect commands..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.15391v1",
-        "pdf": "https://arxiv.org/pdf/2608.15391v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15391.md",
-        "summary_en_path": "summary_en/2026-08/2608.15391.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15391.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15391.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.15389",
-      "date": "2026-08-15",
-      "title": "Agentic-SQL Revisited: Autonomy-Based Taxonomy and Empirical Benchmark Analysis for LLM Text-to-SQL",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Changruo Zhao",
-        "Zujun Peng",
-        "Yu Tian",
-        "Yuting Liu",
-        "Yiyun Su",
-        "Huiying Zhu",
-        "Luyan Zhang",
-        "Heming Zeng"
+        "Yuyuan Feng",
+        "Zhishang Xiang",
+        "Chaobin Yang",
+        "Qichao Ma",
+        "Zerui Chen",
+        "Yujing Zhang",
+        "Ke Huang",
+        "Chuanjie Wu",
+        "Zhaoxu Liu",
+        "Yili Wang",
+        "Xin He",
+        "Jiapu Wang",
+        "Zijin Hong",
+        "Hao Chen",
+        "Yuanchen Bei",
+        "Kun Wang",
+        "Shengyuan Chen",
+        "Ningyu Zhang",
+        "Enyan Dai",
+        "Linhao Luo",
+        "Qingyi Pan",
+        "Qi Wang",
+        "Wenqi Fan",
+        "Guangjing Wang",
+        "Na Zou",
+        "Yangqiu Song",
+        "Xin Wang",
+        "Zechao Li",
+        "Xia Hu",
+        "Qing Li",
+        "Xiao Huang",
+        "Zhihong Zhang",
+        "Jinsong Su",
+        "Qinggang Zhang",
+        "Yi Chang"
       ],
       "institution": null,
       "summary": {
-        "zh": "本文通过提出基于推理自主性的分类法，解决了 LLM Text-to-SQL 领域因实验设置异构导致的比较困难问题。通过构建可追溯的聚合排行榜和进行实证案例研究，文章揭示了自主性、鲁棒性与成本之间的复杂关系，并指出推理内化是一种有效的中间路径。发布的 Python 工具包为未来研究的标准化比较提供了基础设施。",
-        "en": "- **Background**: Progress in LLM-based Text-to-SQL is reported across heterogeneous benchmarks (Spider, BIRD, Spider 2.0), backbones, and inference protocols, making cross-system comparisons fragile and inconsistent. -..."
+        "zh": "本文指出了从“个体智能”向“系统智能”演进的必然趋势，并正式提出了“图工程”这一新范式。通过构建显式、动态且不断演化的图结构，图工程为解决多智能体协作中的任务组织、异构协调及状态管理难题提供了统一的理论基础和方法论框架。该综述不仅梳理了现有研究，还为构建下一代可扩展、自适应的 LLM 智能体系统指明了方向。",
+        "en": "-horizon tasks. This evolution has led to paradigms such as Prompt Engineering, Context Engineering, Harness Engineering, and Loop Engineering, designed to elicit capabilities, manage information, organize tools, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15389v1",
-        "pdf": "https://arxiv.org/pdf/2608.15389v1",
-        "github": "https://github.com/suyiyun/llm-text2sql-taxonomy"
+        "abs": "http://arxiv.org/abs/2608.21156v1",
+        "pdf": "https://arxiv.org/pdf/2608.21156v1",
+        "github": "https://github.com/DEEP-JLU/Awesome-Graph-Engineering"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15389.md",
-        "summary_en_path": "summary_en/2026-08/2608.15389.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15389.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15389.md"
+        "summary_zh_path": "summary/2026-08/2608.21156.md",
+        "summary_en_path": "summary_en/2026-08/2608.21156.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21156.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21156.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -139,39 +127,41 @@
       }
     },
     {
-      "id": "arxiv:2608.15265",
-      "date": "2026-08-15",
-      "title": "VibeWorlding: Can Multimodal Agents Construct 3D Open Worlds End-to-End?",
+      "id": "arxiv:2608.21101",
+      "date": "2026-08-21",
+      "title": "ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yansong Ning",
-        "Jingwen Ye",
-        "Zhongkai Wu",
-        "Yang Sun",
-        "Yiqin Zhu",
-        "Xingyi Li",
-        "Weidong Zhang",
-        "Hao Liu"
+        "Kai Wang",
+        "Zeming Wei",
+        "BiaoJie Zeng",
+        "Chang Jin",
+        "An Wang",
+        "Xiaokun Luan",
+        "Zhixiao Lin",
+        "Jingjing Qu",
+        "Xia Hu",
+        "Xingcheng Xu"
       ],
-      "institution": "HKUST(GZ), Tencent",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
       "summary": {
-        "zh": "本文提出了VibeWorlding框架，解决了现有3D世界构建代理评估标准单一和缺乏有效训练机制的问题。通过构建大规模的VWE-BENCH基准和支持RL训练的VibeWorlding-Gym环境，证明了强化学习后训练能显著提升开源多模态大模型在复杂3D场景构建任务上的性能，使其达到甚至超越当前最先进的闭源模型水平。",
-        "en": "- **Background**: Constructing interactive 3D open worlds from user queries is crucial for gaming, simulation, and embodied AI. The rise of Multimodal Large Language Models (MLLMs) has spurred interest in automating..."
+        "zh": "ClawSentry 提出了一种针对自主 LLM 智能体的渐进式多层安全监控方案，解决了现有防御在跨阶段风险覆盖和状态感知上的不足。通过首次使用技能包审查、三层渐进式决策引擎以及会话级防绕过机制，它在多个主流智能体平台上实现了显著的攻击成功率降低，同时保持了极高的任务完成率，为智能体运行时安全提供了一个高效、通用的解决方案。",
+        "en": "ClawSentry presents a progressive multi-tier security monitoring solution for autonomous LLM agents, addressing the gaps in cross-stage risk coverage and state awareness in existing defenses. By employing First-use..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15265v2",
-        "pdf": "https://arxiv.org/pdf/2608.15265v2",
-        "github": "https://github.com/usail-hkust/VibeWorlding-Gym"
+        "abs": "http://arxiv.org/abs/2608.21101v1",
+        "pdf": "https://arxiv.org/pdf/2608.21101v1",
+        "github": "https://github.com/Elroyper/ClawSentry"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15265.md",
-        "summary_en_path": "summary_en/2026-08/2608.15265.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15265.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15265.md"
+        "summary_zh_path": "summary/2026-08/2608.21101.md",
+        "summary_en_path": "summary_en/2026-08/2608.21101.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21101.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21101.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -188,37 +178,82 @@
       }
     },
     {
-      "id": "arxiv:2608.15175",
-      "date": "2026-08-15",
-      "title": "LAPF: LLM-Agent-Based Path Finder Using the UAVScenes Dataset",
+      "id": "arxiv:2608.21095",
+      "date": "2026-08-21",
+      "title": "Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yousef Emami",
-        "Mohammadhossein Homaei",
-        "Hao Zhou",
-        "Miguel Gutiérrez Gaitán",
-        "Atefeh Hajijamali Arani",
-        "Rui Zhang"
+        "Balkrishna Giri",
+        "Md Toufique Hasan",
+        "Jussi Rasku",
+        "Muhammad Waseem",
+        "Pekka Abrahamsson"
       ],
-      "institution": null,
+      "institution": "Tampere University",
       "summary": {
-        "zh": "本文提出的 LAPF 框架通过构建包含感知、记忆、规划和行动的闭环认知架构，有效克服了现有 LLM 辅助导航方法在代理功能上的局限。实验结果表明，LAPF 不仅在路径规划效率上优于传统的 CoT 提示方法，更在复杂动态环境中的安全性和稳定性方面表现出显著优势，实现了零控制异常事件，为无人机在城镇规模户外环境中的自主导航提供了新的解决方案。",
-        "en": "- **Background**: Uncrewed Aerial Vehicles (UAVs) are increasingly deployed for autonomous navigation in complex outdoor environments, requiring intelligent adaptive decision-making. - **Limitations of Existing Work**:..."
+        "zh": "本文针对 RAG 系统中存在的“安全-可靠性差距”，提出了一种基于评估代理的防御机制。通过融合 NLI 事实验证和多信号投毒检测，该代理能在生成前有效识别恶意检索内容，特别是在防御指令注入方面表现优异。尽管在处理细微语义篡改和跨域泛化上仍面临挑战，但该工作为构建可信赖的 RAG 系统提供了重要的在线防御思路和实用工具。",
+        "en": "This paper addresses the \"Security-Reliability Gap\" in RAG systems by proposing a defense mechanism based on an Evaluation Agent. By integrating NLI-based factual verification and multi-signal poison detection, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.15175v1",
-        "pdf": "https://arxiv.org/pdf/2608.15175v1",
+        "abs": "http://arxiv.org/abs/2608.21095v1",
+        "pdf": "https://arxiv.org/pdf/2608.21095v1",
+        "github": "https://github.com/GPT-Laboratory/TrustworthyRAG"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.21095.md",
+        "summary_en_path": "summary_en/2026-08/2608.21095.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21095.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21095.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.21027",
+      "date": "2026-08-21",
+      "title": "Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yanze Jiang",
+        "Mingxuan Li",
+        "Yuhao Wang",
+        "Shengfang Zhai",
+        "Jiaheng Zhang"
+      ],
+      "institution": "National University of Singapore",
+      "summary": {
+        "zh": "本文提出了COTA框架，解决了LLM智能体运行时干预中辅助模型成本高和能力冗余的问题。通过引入仅基于比较的小型顾问模型，COTA能够在不要求辅助模型具备完整任务求解能力的前提下，提供有效的恢复方向。实验证明，该方法在多个复杂任务基准上均取得了优于现有方法的性能，展示了轻量级干预在提升智能体可靠性方面的巨大潜力。",
+        "en": "This paper introduces COTA, addressing the cost and redundancy issues in LLM agent runtime intervention. By employing a tiny comparator that only evaluates relative quality of actions rather than generating solutions,..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.21027v1",
+        "pdf": "https://arxiv.org/pdf/2608.21027v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.15175.md",
-        "summary_en_path": "summary_en/2026-08/2608.15175.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.15175.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.15175.md"
+        "summary_zh_path": "summary/2026-08/2608.21027.md",
+        "summary_en_path": "summary_en/2026-08/2608.21027.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21027.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21027.md"
       },
       "signals": {
         "priority_keyword": "Agent"
