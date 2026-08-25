@@ -1,25 +1,23 @@
 {
   "schema_version": "v2",
   "feed_id": "paper-daily",
-  "last_run_date": "2026-08-21",
-  "last_preferred_date": "2026-08-23",
-  "last_run_at": "2026-08-24T02:43:12.980014+00:00",
+  "last_run_date": "2026-08-24",
+  "last_preferred_date": "2026-08-24",
+  "last_run_at": "2026-08-25T02:36:47.607012+00:00",
   "last_attempted_dates": [
-    "2026-08-23",
-    "2026-08-22",
-    "2026-08-21"
+    "2026-08-24"
   ],
   "last_update_status": "updated",
-  "last_success_at": "2026-08-24T02:43:12.980014+00:00",
-  "last_success_date": "2026-08-21",
-  "last_content_date": "2026-08-21",
-  "latest_updates_date": "2026-08-21",
+  "last_success_at": "2026-08-25T02:36:47.607012+00:00",
+  "last_success_date": "2026-08-24",
+  "last_content_date": "2026-08-24",
+  "latest_updates_date": "2026-08-24",
   "last_item_ids": [
-    "2608.21208",
-    "2608.21156",
-    "2608.21101",
-    "2608.21095",
-    "2608.21027"
+    "2608.23104",
+    "2608.23552",
+    "2608.23471",
+    "2608.23395",
+    "2608.23263"
   ],
   "analyzed_content_dates": [
     "2026-05-06",
@@ -130,10 +128,11 @@
     "2026-08-20",
     "2026-08-16",
     "2026-08-15",
-    "2026-08-21"
+    "2026-08-21",
+    "2026-08-24"
   ],
   "watermarks": {
-    "preferred_date": "2026-08-23",
-    "selected_date": "2026-08-21"
+    "preferred_date": "2026-08-24",
+    "selected_date": "2026-08-24"
   }
 }

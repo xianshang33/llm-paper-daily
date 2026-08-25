@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.24_02:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.25_02:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月24日 02:43</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月25日 02:36</sub></summary>
 <br>
 
-- Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration 
-- Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence 
-- ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents 
-- Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems 
-- Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents 
+- Molecular LLM Agents: From Architectural Design to Scientific Autonomy 
+- Prime Agent: A Self-Improving RLM Harness 
+- InjecMEM: Memory Injection Attack on LLM Agent Memory Systems 
+- Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep 
+- Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-24</span> | **Molecular LLM Agents: From Architectural Design to Scientific Autonomy**<br><sub>机构: The Hong Kong Polytechnic University<br>本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23104v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23104.md)  |
+| <span style='display: inline-block; width: 42px;'>08-24</span> | **Prime Agent: A Self-Improving RLM Harness**<br><sub>机构: Princeton University, Prime Intellect, MIT<br>Prime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23552v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23552.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/PrimeIntellect-ai/prime-agent)</div> |
+| <span style='display: inline-block; width: 42px;'>08-24</span> | **InjecMEM: Memory Injection Attack on LLM Agent Memory Systems**<br><sub>机构: Shanghai Jiao Tong University, Ant Group<br>本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23471v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23471.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/BlueBlood6/InjecMEM)</div> |
+| <span style='display: inline-block; width: 42px;'>08-24</span> | **Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep**<br><sub>机构: Independent Researcher<br>本文通过严格控制变量的试点研究，揭示了 LLM Agent 分解粒度对性能的非单调影响。虽然中间粒度的分解在准确率上表现最佳，但其优势受限于提示词预算的解释空间。研究指出，简单的多 Agent 分解并不总是优于单 Agent，且在面对结构化幻觉时更为脆弱。最终贡献在于提供了一套可复现的基准测试方法和“在依赖层中点进行分区”的启发式策略，为未来 Agent 系统设计提供了实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23395v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23395.md)  |
+| <span style='display: inline-block; width: 42px;'>08-24</span> | **Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records**<br><sub>机构: Fraunhofer Institute for Applied Information Technology (FIT)<br>本文提出了一种利用大语言模型将扁平文化遗产记录转化为 FAIR 数字对象知识图谱的方法。通过自动化区分需解析实体与字面量，并结合受控词表进行实体链接，该方法显著提升了元数据的机器可操作性，解决了现有数据模型中缺乏持久标识符引用的关键问题，为文化遗产数据的自动化智能处理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23263v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23263.md)  |
 | <span style='display: inline-block; width: 42px;'>08-21</span> | **Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration**<br><sub>机构: EPAM Systems<br>本文揭示了在异构 SDD 工作流中，规范不应被视为 Agent 中立的 artifacts。跨 Agent 的规范传递存在显著的质量退化风险，且不同 Agent 对规范的解读具有特异性。研究建议在多 Agent 软件工程中，必须明确考虑规范的可移植性、Agent 特定的解释机制以及基于检索的访问策略。检索增强被证明是提高跨 Agent 兼容性的有效手段，为未来构建互操作性更强的 LLM 开发代理生态系统提供了重要依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21208v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21208.md)  |
 | <span style='display: inline-block; width: 42px;'>08-21</span> | **Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence**<br><sub>本文指出了从“个体智能”向“系统智能”演进的必然趋势，并正式提出了“图工程”这一新范式。通过构建显式、动态且不断演化的图结构，图工程为解决多智能体协作中的任务组织、异构协调及状态管理难题提供了统一的理论基础和方法论框架。该综述不仅梳理了现有研究，还为构建下一代可扩展、自适应的 LLM 智能体系统指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21156v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21156.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DEEP-JLU/Awesome-Graph-Engineering)</div> |
 | <span style='display: inline-block; width: 42px;'>08-21</span> | **ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>ClawSentry 提出了一种针对自主 LLM 智能体的渐进式多层安全监控方案，解决了现有防御在跨阶段风险覆盖和状态感知上的不足。通过首次使用技能包审查、三层渐进式决策引擎以及会话级防绕过机制，它在多个主流智能体平台上实现了显著的攻击成功率降低，同时保持了极高的任务完成率，为智能体运行时安全提供了一个高效、通用的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.21101v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.21101.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Elroyper/ClawSentry)</div> |

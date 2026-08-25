@@ -1,40 +1,47 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-24T02:43:12.963300+00:00",
-  "run_date": "2026-08-21",
+  "generated_at": "2026-08-25T02:36:47.591642+00:00",
+  "run_date": "2026-08-24",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.21208",
-      "date": "2026-08-21",
-      "title": "Specification Portability Across LLM Development Agents: Cross-Agent Compatibility in Specification-Driven Software Migration",
+      "id": "arxiv:2608.23104",
+      "date": "2026-08-24",
+      "title": "Molecular LLM Agents: From Architectural Design to Scientific Autonomy",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Oleg Grynets",
-        "Oleksii Ilchuk",
-        "Dariia Zatulna",
-        "Vasyl Lyashkevych"
+        "Jiatong Li",
+        "Wengyu Zhang",
+        "Weida Wang",
+        "Yuxuan Ren",
+        "Wei Liu",
+        "Chenyang Mao",
+        "Yuqiang Li",
+        "Yatao Bian",
+        "Changmeng Zheng",
+        "Xiaoyong Wei",
+        "Qing Li"
       ],
-      "institution": "EPAM Systems",
+      "institution": "The Hong Kong Polytechnic University",
       "summary": {
-        "zh": "本文揭示了在异构 SDD 工作流中，规范不应被视为 Agent 中立的 artifacts。跨 Agent 的规范传递存在显著的质量退化风险，且不同 Agent 对规范的解读具有特异性。研究建议在多 Agent 软件工程中，必须明确考虑规范的可移植性、Agent 特定的解释机制以及基于检索的访问策略。检索增强被证明是提高跨 Agent 兼容性的有效手段，为未来构建互操作性更强的 LLM 开发代理生态系统提供了重要依据。",
-        "en": "- **Background**: Large Language Models (LLMs) are shifting software engineering from prompt-based assistance to agentic development. In Specification-Driven Development (SDD), specifications serve as operational inputs..."
+        "zh": "本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。",
+        "en": "This work establishes a comprehensive conceptual framework for molecular LLM agents, addressing the lack of unified standards and evaluation systems in the field. By combining an architectural view with a scientific..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.21208v1",
-        "pdf": "https://arxiv.org/pdf/2608.21208v1",
+        "abs": "http://arxiv.org/abs/2608.23104v1",
+        "pdf": "https://arxiv.org/pdf/2608.23104v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.21208.md",
-        "summary_en_path": "summary_en/2026-08/2608.21208.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21208.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21208.md"
+        "summary_zh_path": "summary/2026-08/2608.23104.md",
+        "summary_en_path": "summary_en/2026-08/2608.23104.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23104.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23104.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,66 +58,42 @@
       }
     },
     {
-      "id": "arxiv:2608.21156",
-      "date": "2026-08-21",
-      "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+      "id": "arxiv:2608.23552",
+      "date": "2026-08-24",
+      "title": "Prime Agent: A Self-Improving RLM Harness",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuyuan Feng",
-        "Zhishang Xiang",
-        "Chaobin Yang",
-        "Qichao Ma",
-        "Zerui Chen",
-        "Yujing Zhang",
-        "Ke Huang",
-        "Chuanjie Wu",
-        "Zhaoxu Liu",
-        "Yili Wang",
-        "Xin He",
-        "Jiapu Wang",
-        "Zijin Hong",
-        "Hao Chen",
-        "Yuanchen Bei",
-        "Kun Wang",
-        "Shengyuan Chen",
-        "Ningyu Zhang",
-        "Enyan Dai",
-        "Linhao Luo",
-        "Qingyi Pan",
-        "Qi Wang",
-        "Wenqi Fan",
-        "Guangjing Wang",
-        "Na Zou",
-        "Yangqiu Song",
-        "Xin Wang",
-        "Zechao Li",
-        "Xia Hu",
-        "Qing Li",
-        "Xiao Huang",
-        "Zhihong Zhang",
-        "Jinsong Su",
-        "Qinggang Zhang",
-        "Yi Chang"
+        "Seth Karten",
+        "Alex L. Zhang",
+        "Kevin Thomas",
+        "Sebastian Müller",
+        "Elie Bakouch",
+        "Daniel Auras",
+        "Mika Senghaas",
+        "Fares Obeid",
+        "Konstantin Dunas",
+        "Johannes Hagemann",
+        "Sami Jaghouar"
       ],
-      "institution": null,
+      "institution": "Princeton University, Prime Intellect, MIT",
       "summary": {
-        "zh": "本文指出了从“个体智能”向“系统智能”演进的必然趋势，并正式提出了“图工程”这一新范式。通过构建显式、动态且不断演化的图结构，图工程为解决多智能体协作中的任务组织、异构协调及状态管理难题提供了统一的理论基础和方法论框架。该综述不仅梳理了现有研究，还为构建下一代可扩展、自适应的 LLM 智能体系统指明了方向。",
-        "en": "-horizon tasks. This evolution has led to paradigms such as Prompt Engineering, Context Engineering, Harness Engineering, and Loop Engineering, designed to elicit capabilities, manage information, organize tools, and..."
+        "zh": "Prime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。",
+        "en": "- **Background**: Large Language Models (LLMs) are bounded sequential processors whose decisions are limited to model weights and active context. However, long-horizon agency requires external information storage and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.21156v1",
-        "pdf": "https://arxiv.org/pdf/2608.21156v1",
-        "github": "https://github.com/DEEP-JLU/Awesome-Graph-Engineering"
+        "abs": "http://arxiv.org/abs/2608.23552v1",
+        "pdf": "https://arxiv.org/pdf/2608.23552v1",
+        "github": "https://github.com/PrimeIntellect-ai/prime-agent"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.21156.md",
-        "summary_en_path": "summary_en/2026-08/2608.21156.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21156.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21156.md"
+        "summary_zh_path": "summary/2026-08/2608.23552.md",
+        "summary_en_path": "summary_en/2026-08/2608.23552.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23552.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23552.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -127,41 +110,39 @@
       }
     },
     {
-      "id": "arxiv:2608.21101",
-      "date": "2026-08-21",
-      "title": "ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents",
+      "id": "arxiv:2608.23471",
+      "date": "2026-08-24",
+      "title": "InjecMEM: Memory Injection Attack on LLM Agent Memory Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kai Wang",
-        "Zeming Wei",
-        "BiaoJie Zeng",
-        "Chang Jin",
-        "An Wang",
-        "Xiaokun Luan",
-        "Zhixiao Lin",
-        "Jingjing Qu",
-        "Xia Hu",
-        "Xingcheng Xu"
+        "Hanling Tian",
+        "Gengyu Zhang",
+        "Zeyang Sha",
+        "Jingying Wang",
+        "Yuhang Liu",
+        "Zhehao Huang",
+        "Kun Yang",
+        "Xiaolin Huang"
       ],
-      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "institution": "Shanghai Jiao Tong University, Ant Group",
       "summary": {
-        "zh": "ClawSentry 提出了一种针对自主 LLM 智能体的渐进式多层安全监控方案，解决了现有防御在跨阶段风险覆盖和状态感知上的不足。通过首次使用技能包审查、三层渐进式决策引擎以及会话级防绕过机制，它在多个主流智能体平台上实现了显著的攻击成功率降低，同时保持了极高的任务完成率，为智能体运行时安全提供了一个高效、通用的解决方案。",
-        "en": "ClawSentry presents a progressive multi-tier security monitoring solution for autonomous LLM agents, addressing the gaps in cross-stage risk coverage and state awareness in existing defenses. By employing First-use..."
+        "zh": "本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。",
+        "en": "This paper reveals new security threats facing LLM agent memory systems and proposes the InjecMEM attack framework. By decoupling retrieval anchors from adversarial commands and employing gradient optimization..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.21101v1",
-        "pdf": "https://arxiv.org/pdf/2608.21101v1",
-        "github": "https://github.com/Elroyper/ClawSentry"
+        "abs": "http://arxiv.org/abs/2608.23471v1",
+        "pdf": "https://arxiv.org/pdf/2608.23471v1",
+        "github": "https://github.com/BlueBlood6/InjecMEM"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.21101.md",
-        "summary_en_path": "summary_en/2026-08/2608.21101.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21101.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21101.md"
+        "summary_zh_path": "summary/2026-08/2608.23471.md",
+        "summary_en_path": "summary_en/2026-08/2608.23471.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23471.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23471.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -178,82 +159,77 @@
       }
     },
     {
-      "id": "arxiv:2608.21095",
-      "date": "2026-08-21",
-      "title": "Trustworthy RAG: An Evaluation Agent for Detecting Misinformation and Knowledge Poisoning in Generative AI Systems",
+      "id": "arxiv:2608.23395",
+      "date": "2026-08-24",
+      "title": "Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Balkrishna Giri",
-        "Md Toufique Hasan",
-        "Jussi Rasku",
-        "Muhammad Waseem",
-        "Pekka Abrahamsson"
+        "Pedro Santos"
       ],
-      "institution": "Tampere University",
+      "institution": "Independent Researcher",
       "summary": {
-        "zh": "本文针对 RAG 系统中存在的“安全-可靠性差距”，提出了一种基于评估代理的防御机制。通过融合 NLI 事实验证和多信号投毒检测，该代理能在生成前有效识别恶意检索内容，特别是在防御指令注入方面表现优异。尽管在处理细微语义篡改和跨域泛化上仍面临挑战，但该工作为构建可信赖的 RAG 系统提供了重要的在线防御思路和实用工具。",
-        "en": "This paper addresses the \"Security-Reliability Gap\" in RAG systems by proposing a defense mechanism based on an Evaluation Agent. By integrating NLI-based factual verification and multi-signal poison detection, the..."
+        "zh": "本文通过严格控制变量的试点研究，揭示了 LLM Agent 分解粒度对性能的非单调影响。虽然中间粒度的分解在准确率上表现最佳，但其优势受限于提示词预算的解释空间。研究指出，简单的多 Agent 分解并不总是优于单 Agent，且在面对结构化幻觉时更为脆弱。最终贡献在于提供了一套可复现的基准测试方法和“在依赖层中点进行分区”的启发式策略，为未来 Agent 系统设计提供了实证依据。",
+        "en": "- **Background**: Current LLM-agent systems face conflicting design choices: decomposing work across many narrow agents versus using a single strong tool-using agent. While some industry reports favor multi-agent..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.21095v1",
-        "pdf": "https://arxiv.org/pdf/2608.21095v1",
-        "github": "https://github.com/GPT-Laboratory/TrustworthyRAG"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.21095.md",
-        "summary_en_path": "summary_en/2026-08/2608.21095.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21095.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21095.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.21027",
-      "date": "2026-08-21",
-      "title": "Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yanze Jiang",
-        "Mingxuan Li",
-        "Yuhao Wang",
-        "Shengfang Zhai",
-        "Jiaheng Zhang"
-      ],
-      "institution": "National University of Singapore",
-      "summary": {
-        "zh": "本文提出了COTA框架，解决了LLM智能体运行时干预中辅助模型成本高和能力冗余的问题。通过引入仅基于比较的小型顾问模型，COTA能够在不要求辅助模型具备完整任务求解能力的前提下，提供有效的恢复方向。实验证明，该方法在多个复杂任务基准上均取得了优于现有方法的性能，展示了轻量级干预在提升智能体可靠性方面的巨大潜力。",
-        "en": "This paper introduces COTA, addressing the cost and redundancy issues in LLM agent runtime intervention. By employing a tiny comparator that only evaluates relative quality of actions rather than generating solutions,..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.21027v1",
-        "pdf": "https://arxiv.org/pdf/2608.21027v1",
+        "abs": "http://arxiv.org/abs/2608.23395v1",
+        "pdf": "https://arxiv.org/pdf/2608.23395v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.21027.md",
-        "summary_en_path": "summary_en/2026-08/2608.21027.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21027.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21027.md"
+        "summary_zh_path": "summary/2026-08/2608.23395.md",
+        "summary_en_path": "summary_en/2026-08/2608.23395.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23395.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23395.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.23263",
+      "date": "2026-08-24",
+      "title": "Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zeyd Boukhers",
+        "Lingxiao Kong",
+        "Xenophon Zabulis",
+        "Georgios Toubekis"
+      ],
+      "institution": "Fraunhofer Institute for Applied Information Technology (FIT)",
+      "summary": {
+        "zh": "本文提出了一种利用大语言模型将扁平文化遗产记录转化为 FAIR 数字对象知识图谱的方法。通过自动化区分需解析实体与字面量，并结合受控词表进行实体链接，该方法显著提升了元数据的机器可操作性，解决了现有数据模型中缺乏持久标识符引用的关键问题，为文化遗产数据的自动化智能处理提供了新范式。",
+        "en": "- **Background**: The FAIR Digital Object (FDO) framework mandates that metadata attribute values be expressed as Persistent Identifiers (PIDs) to create fully machine-actionable graphs. However, existing cultural..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.23263v1",
+        "pdf": "https://arxiv.org/pdf/2608.23263v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.23263.md",
+        "summary_en_path": "summary_en/2026-08/2608.23263.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23263.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23263.md"
       },
       "signals": {
         "priority_keyword": "Agent"
