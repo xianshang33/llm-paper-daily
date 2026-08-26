@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.25_02:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.26_02:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月25日 02:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月26日 02:44</sub></summary>
 <br>
 
-- Molecular LLM Agents: From Architectural Design to Scientific Autonomy 
-- Prime Agent: A Self-Improving RLM Harness 
-- InjecMEM: Memory Injection Attack on LLM Agent Memory Systems 
-- Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep 
-- Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records 
+- Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems 
+- Joint Optimization of Tool Creation and Use for Large Language Model Agents 
+- EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents 
+- PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents 
+- Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-25</span> | **Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems**<br><sub>机构: KAIST<br>Simthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24650.md)  |
+| <span style='display: inline-block; width: 42px;'>08-25</span> | **Joint Optimization of Tool Creation and Use for Large Language Model Agents**<br><sub>机构: Appier AI Research, National Taiwan University<br>本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24571v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24571.md)  |
+| <span style='display: inline-block; width: 42px;'>08-25</span> | **EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents**<br><sub>机构: Shanghai Jiao Tong University, Shanghai Innovation Institute<br>EviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24570v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24570.md)  |
+| <span style='display: inline-block; width: 42px;'>08-25</span> | **PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents**<br><sub>机构: Nanjing University<br>PeakBench 填补了 LLM 智能体基准测试中资源感知调度的空白。通过解耦逻辑规划与物理调度，该基准测试揭示了当前智能体在资源受限环境下的系统性脆弱性。研究表明，仅靠优秀的逻辑推理不足以保障高效执行，必须结合资源感知的调度策略。PeakBench 为诊断和优化资源感知的智能体行为提供了一个有用的测试平台。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24509v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24509.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Czzzk/Staggering-the-Peaks)</div> |
+| <span style='display: inline-block; width: 42px;'>08-25</span> | **Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight**<br><sub>机构: Sprinklr AI<br>本文通过实证研究建立了语音代理LLM评委评估的可靠性框架。结果表明，虽然LLM评委在大规模评估中具有巨大潜力，但不能盲目替代人类。最佳实践应采用混合流水线：由LLM评委处理可扩展的、客观的指标评估，而人类评委则专注于需要复杂上下文解释和高置信度判断的关键指标。这为未来语音代理的自动化评估标准制定提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24314v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24314.md)  |
 | <span style='display: inline-block; width: 42px;'>08-24</span> | **Molecular LLM Agents: From Architectural Design to Scientific Autonomy**<br><sub>机构: The Hong Kong Polytechnic University<br>本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23104v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23104.md)  |
 | <span style='display: inline-block; width: 42px;'>08-24</span> | **Prime Agent: A Self-Improving RLM Harness**<br><sub>机构: Princeton University, Prime Intellect, MIT<br>Prime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23552v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23552.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/PrimeIntellect-ai/prime-agent)</div> |
 | <span style='display: inline-block; width: 42px;'>08-24</span> | **InjecMEM: Memory Injection Attack on LLM Agent Memory Systems**<br><sub>机构: Shanghai Jiao Tong University, Ant Group<br>本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.23471v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.23471.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/BlueBlood6/InjecMEM)</div> |

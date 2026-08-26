@@ -1,53 +1,48 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-08-25T02:36:47.591642+00:00",
-  "run_date": "2026-08-24",
+  "generated_at": "2026-08-26T02:44:42.766525+00:00",
+  "run_date": "2026-08-25",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2608.23104",
-      "date": "2026-08-24",
-      "title": "Molecular LLM Agents: From Architectural Design to Scientific Autonomy",
+      "paper_id": "2608.24650",
+      "date": "2026-08-25",
+      "title": "Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems",
       "authors": [
-        "Jiatong Li",
-        "Wengyu Zhang",
-        "Weida Wang",
-        "Yuxuan Ren",
-        "Wei Liu",
-        "Chenyang Mao",
-        "Yuqiang Li",
-        "Yatao Bian",
-        "Changmeng Zheng",
-        "Xiaoyong Wei",
-        "Qing Li"
+        "Wonung Kim",
+        "Hyunmin Choi",
+        "Minsu Kim",
+        "Jaehong Cho",
+        "Yeongwook Kim",
+        "Jongse Park"
       ],
-      "abstract": "Molecular science represents an important frontier for LLM-based agents. Unlike general agents that mainly operate over natural language, code, or web environments, molecular LLM agents must perceive, reason about, and act upon chemical objects across symbolic strings, molecular graphs, 3D conformations, spectra, simulations, and wet-lab measurements. Their capabilities depend on chemically faithful molecular perception, an LLM-centered agent framework, domain-specific tool grounding, and computational or experimental feedback, in addition to planning and tool use. This work develops a conceptual framework for molecular LLM agents from two complementary perspectives. First, we introduce an architectural view of molecular-agent design, covering molecular representation and perception, the agent framework, domain-specific toolboxes, and learning and optimization. Second, we propose a scientific autonomy ladder inspired by staged autonomy in engineering systems, categorizing agents into four levels: L1 assistive or fixed workflows, L2 adaptive computational agents, L3 feedback-aware physical experiment agents, and L4 scientific-agenda agents. Together, these two perspectives establish a comprehensive framework for comparing existing molecular LLM agents, identifying missing capabilities and deployment risks, and guiding the design, evaluation, and deployment of future agents in molecular discovery workflows.",
+      "abstract": "System-level simulation is an essential tool for exploring the rapidly expanding design space of LLM serving systems, where real deployments remain costly and often infeasible. However, modern LLM serving now evolves faster than human-driven simulator development can track, and emerging workloads and mechanisms, from agentic workflows to disaggregated serving, no longer fit the monolithic simulation pipeline that existing simulators assume. Each new mechanism therefore demands an invasive rewrite, leaving a widening development gap between deployed serving systems and the simulators that model them. To close this gap, we present Borg, a framework that realizes agent-driven simulator development. Borg introduces a composable simulator infrastructure that uniformly expresses the complete serving workflow, including the control decisions that coordinate it, and realizes it as a unified dynamic graph in Borg simulator. Synthesizer agent, a harnessed coding agent, then lowers natural-language feature requests onto this abstraction under simulator-specific guardrails and fidelity validation, evolving one shared simulator instead of building a new one for every feature. Under the same coding agent and harnesses, extensions built on Borg follow a vLLM-based real system with 2.51% average throughput error, versus 6.03% for extensions built on existing simulators. On identical workloads, Borg also simulates up to 284.96x and 23.19x faster than two state-of-the-art simulators, LLMServingSim2.0 and Vidur, respectively.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23104v1",
-        "pdf": "https://arxiv.org/pdf/2608.23104v1",
+        "abs": "http://arxiv.org/abs/2608.24650v1",
+        "pdf": "https://arxiv.org/pdf/2608.24650v1",
         "github": null,
         "blog": null
       },
-      "institution": "The Hong Kong Polytechnic University",
+      "institution": "KAIST",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：分子科学是大型语言模型（LLM）智能体的重要前沿领域。与主要操作自然语言、代码或网络环境的通用智能体不同，分子 LLM 智能体必须跨符号字符串、分子图、3D 构象、光谱、模拟和湿实验测量等多种模态，对化学对象进行感知、推理和行动。\n- **已有工作的不足**：现有的研究缺乏一个统一的概念框架来系统性地比较不同的分子 LLM 智能体，难以识别当前系统在能力上的缺失以及实际部署中的风险，导致在分子发现工作流中设计和评估未来智能体时缺乏指导原则。\n\n## 文章的核心贡献点\n- **提出了一个分子 LLM 智能体的概念框架**：该框架从架构设计和科学自主性两个互补视角出发，旨在指导分子发现工作流中智能体的设计、评估和部署。\n- **挑战1：多模态化学感知的复杂性**。难点在于智能体需要处理从 SMILES 字符串到 3D 构象及实验数据等多种异构且专业的化学表示形式，且必须保证化学意义上的忠实性。论文通过引入涵盖分子表示与感知、代理框架、领域特定工具箱以及学习优化的架构视图，系统性地解决了如何整合这些多模态输入并实现准确感知的问题。\n- **挑战2：科学自主性的分级与评估缺失**。难点在于缺乏标准来衡量智能体在多大程度上能独立于人类进行科学探索，导致不同系统间难以横向对比。论文提出了受工程系统阶段性自主性启发的“科学自主性阶梯”，将智能体分为 L1（辅助/固定工作流）、L2（自适应计算代理）、L3（反馈感知物理实验代理）和 L4（科学议程代理）四个等级，为评估智能体的自主程度提供了清晰的标准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：本文主要贡献为理论框架而非单一的具体模型实现。它提供了一个综合框架，用于分析现有分子 LLM 智能体的架构组件（如感知、规划、工具使用）及其在科学自主性阶梯上的位置。\n- **评估结果与对比**：文章利用提出的框架对现有的分子 LLM 智能体进行了系统性比较和分类。通过这一框架，研究者能够识别出当前主流方法在特定自主性层级上的能力缺口（例如大多数现有工作集中在 L1-L2，而缺乏 L3-L4 的闭环实验能力）以及潜在的计算或实验反馈部署风险。这种对比揭示了从单纯的计算预测向包含湿实验反馈的完全自主科学发现演进的路径。\n\n#### 总结\n本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Molecular science is a critical frontier for LLM-based agents. Unlike general agents operating on natural language or code, molecular LLM agents must perceive, reason about, and act upon chemical objects across diverse modalities, including symbolic strings, molecular graphs, 3D conformations, spectra, simulations, and wet-lab measurements.\n- **Limitations of Existing Work**: Current research lacks a unified conceptual framework to systematically compare molecular LLM agents. This makes it difficult to identify capability gaps and deployment risks, hindering the structured design and evaluation of future agents in molecular discovery workflows.\n\n## Core Contributions\n- **Proposed a Conceptual Framework for Molecular LLM Agents**: The framework integrates two complementary perspectives: architectural design and scientific autonomy, guiding the development and assessment of agents in molecular science.\n- **Challenge 1: Complexity of Multi-modal Chemical Perception**. The difficulty lies in processing heterogeneous and specialized chemical representations (from SMILES to 3D structures and experimental data) while ensuring chemical fidelity. The paper addresses this by introducing an architectural view that covers molecular representation/perception, agent frameworks, domain-specific toolboxes, and learning optimization, providing a structured approach to integrating these inputs.\n- **Challenge 2: Lack of Standards for Scientific Autonomy**. It is challenging to measure the degree to which an agent can operate independently of humans, making horizontal comparison between systems difficult. The paper proposes a \"Scientific Autonomy Ladder\" inspired by engineering systems, categorizing agents into four levels: L1 (Assistive/Fixed), L2 (Adaptive Computational), L3 (Feedback-aware Physical Experiment), and L4 (Scientific-Agenda), establishing a clear metric for evaluating autonomy.\n\n## Implementation and Evaluation\n- **Implementation and Deployment**: The paper primarily contributes a theoretical framework rather than a single specific model implementation. It provides a lens to analyze the architectural components (perception, planning, tool use) of existing molecular LLM agents and map them to levels of scientific autonomy.\n- **Evaluation and Comparison**: The authors use the proposed framework to systematically compare and classify existing molecular LLM agents. This comparison reveals capability gaps in current methods (e.g., most works are confined to L1-L2, lacking L3-L4 closed-loop experimental capabilities) and highlights deployment risks related to computational or experimental feedback. It outlines the evolutionary path from pure computational prediction to fully autonomous scientific discovery involving wet-lab feedback.\n\n#### Summary\nThis work establishes a comprehensive conceptual framework for molecular LLM agents, addressing the lack of unified standards and evaluation systems in the field. By combining an architectural view with a scientific autonomy ladder, it clarifies the key capabilities required for molecular agents (such as chemically faithful perception and domain tool grounding). The framework provides theoretical guidance and risk assessment criteria for designing future agents capable of higher levels of scientific autonomy, such as automated wet-lab experiments and formulating scientific agendas.",
-      "render_excerpt": "机构: The Hong Kong Polytechnic University<br>本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。",
-      "render_excerpt_en": "Institution: The Hong Kong Polytechnic University<br>This work establishes a comprehensive conceptual framework for molecular LLM agents, addressing the lack of unified standards and evaluation systems in the field. By combining an architectural view with a scientific autonomy ladder, it clarifies the key capabilities required for molecular agents (such as chemically faithful perception and domain tool grounding). The framework provides theoretical guidance and risk assessment criteria for designing future agents capable of higher levels of scientific autonomy, such as automated wet-lab experiments and formulating scientific agendas.",
+      "summary_cn": "## 文章做了什么\n- **背景**：系统级模拟是探索大语言模型（LLM）服务系统设计空间的重要工具，因为真实部署成本高昂且往往不可行。随着LLM生态系统的快速演进，从单一推理流程转向多样化的动态工作流（如代理工作流、分离式服务），现有的模拟器难以跟上发展步伐。\n- **已有工作的局限性**：现有模拟器通常假设单体化的模拟管道，无法适应新兴的非单体化服务机制。每当出现新机制时，都需要对模拟器进行侵入式的重写，导致 deployed serving systems（已部署的服务系统）与模拟器之间的开发差距不断扩大，且人工开发速度远落后于系统演进速度。\n\n## 文章的核心贡献点\n- **提出了一个名为 Simthesizer 的框架**：这是一个由智能体驱动的模拟器开发框架，旨在通过自动化和模块化缩小模拟器与实际系统之间的差距。\n- **挑战1：模拟器的可扩展性与维护性差**。由于LLM服务机制快速迭代，传统模拟器需要针对每个新功能进行底层代码的手动修改，效率低且易出错。Simthesizer 引入了可组合的模拟器基础设施，将完整的服务工作流（包括控制决策）统一表达为动态图，使得新增功能只需在抽象层面进行组合，无需重写底层逻辑。\n- **挑战2：自然语言需求到可执行代码的准确映射**。如何将用户的高级自然语言功能请求准确转化为符合模拟器规范的代码是一个难点。Simthesizer 利用 Synthesizer Agent（一种受控的编码智能体），在模拟器特定的护栏和保真度验证下，将自然语言请求“降低”为基于统一动态图的实现，从而自动演化出一个共享的模拟器，而非为每个功能构建新的模拟器。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究团队实现了 Simthesizer 框架，并将其与基于 vLLM 的真实系统以及两个最先进的模拟器（LLMServingSim2.0 和 Vidur）进行了对比评估。\n- **准确性对比**：在相同的编码智能体和测试 harness 下，基于 Simthesizer 构建的扩展模块在跟踪 vLLM 真实系统时，平均吞吐量误差仅为 2.51%，而基于现有模拟器构建的扩展模块误差为 6.03%。这表明 Simthesizer 具有更高的模拟保真度。\n- **速度对比**：在相同的工作负载下，Simthesizer 的模拟速度显著优于现有方案。相比 LLMServingSim2.0，Simthesizer 快达 284.96 倍；相比 Vidur，快达 23.19 倍。\n\n#### 总结\nSimthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: System-level simulation is crucial for exploring the design space of LLM serving systems, as real-world deployments are costly and often infeasible. The LLM ecosystem is rapidly evolving from traditional single-inference flows to diverse, dynamic workflows (e.g., agentic workflows, disaggregated serving), outpacing the development of current simulators.\n- **Limitations of Existing Work**: Current simulators assume a monolithic simulation pipeline that cannot accommodate emerging non-monolithic serving mechanisms. Each new mechanism requires invasive manual rewrites, creating a widening gap between deployed systems and their simulators, with human-driven development unable to keep up with the fast evolution of LLM serving.\n\n## Core Contributions\n- **Proposed Simthesizer**: A framework that realizes agent-driven simulator development to bridge the gap between simulation and real-world deployment.\n- **Challenge 1: Poor Scalability and Maintainability of Simulators**. Traditional simulators require low-level manual code modifications for every new feature, which is inefficient and error-prone due to the rapid iteration of LLM serving mechanisms. Simthesizer addresses this by introducing a composable simulator infrastructure that uniformly expresses the entire serving workflow as a unified dynamic graph, allowing new features to be composed at an abstract level without rewriting underlying logic.\n- **Challenge 2: Accurate Mapping from Natural Language to Executable Code**. Translating high-level natural language feature requests into simulator-compliant code is difficult. Simthesizer employs a \"Synthesizer Agent\" (a harnessed coding agent) that lowers natural language requests onto the dynamic graph abstraction under simulator-specific guardrails and fidelity validation. This allows for the automatic evolution of a single shared simulator rather than building new ones for each feature.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The authors implemented Simthesizer and evaluated it against a vLLM-based real system and two state-of-the-art simulators: LLMServingSim2.0 and Vidur.\n- **Accuracy Comparison**: Extensions built on Simthesizer achieved an average throughput error of 2.51% when tracking the real vLLM system, compared to 6.03% for extensions built on existing simulators, demonstrating higher fidelity.\n- **Speed Comparison**: On identical workloads, Simthesizer simulated up to 284.96x faster than LLMServingSim2.0 and 23.19x faster than Vidur, showcasing significant performance improvements.\n\n## 4. Conclusion\nSimthesizer effectively addresses the challenges of maintenance lag, low fidelity, and slow development in existing LLM serving simulators by introducing an agent-driven development model and a composable dynamic graph infrastructure. It significantly enhances both development efficiency and execution speed while maintaining high simulation accuracy, providing a robust tool for rapid prototyping and performance evaluation of future LLM serving systems.",
+      "render_excerpt": "机构: KAIST<br>Simthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。",
+      "render_excerpt_en": "Institution: KAIST<br>## 1. What the Paper Does - **Background**: System-level simulation is crucial for exploring the design space of LLM serving systems, as real-world deployments are costly and often infeasible. The LLM ecosystem is rapidly evolving from traditional single-inference flows to diverse, dynamic workflows (e.g., agentic workflows, disaggregated serving), outpacing the development of current simulators.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-24T11:09:25Z"
+        "captured_at": "2026-08-25T14:58:26Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-24"
+        "captured_at": "2026-08-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -62,150 +57,43 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2608.23552",
-      "date": "2026-08-24",
-      "title": "Prime Agent: A Self-Improving RLM Harness",
+      "paper_id": "2608.24571",
+      "date": "2026-08-25",
+      "title": "Joint Optimization of Tool Creation and Use for Large Language Model Agents",
       "authors": [
-        "Seth Karten",
-        "Alex L. Zhang",
-        "Kevin Thomas",
-        "Sebastian Müller",
-        "Elie Bakouch",
-        "Daniel Auras",
-        "Mika Senghaas",
-        "Fares Obeid",
-        "Konstantin Dunas",
-        "Johannes Hagemann",
-        "Sami Jaghouar"
+        "Zhi Rui Tam",
+        "Chieh-Yen Lin",
+        "Yun-Nung Chen",
+        "Shao-Hua Sun",
+        "Hung-yi Lee"
       ],
-      "abstract": "Language models are sequential processors, but long-horizon agency requires external information and computation beyond model weights and active context. Prime Agent is an open-source harness for long-horizon evaluation and coding-agent workflows. A persistent IPython REPL follows the Recursive Language Model abstraction for programmatic context processing and test-time compute, while Continual Harness preserves histories, memories, skills, prompts, and subagent specifications across trajectories. Recursive subagents coordinate through direct agent-to-agent communication, and the Agents View lets humans inspect and manage daemon-backed sessions. Prime Agent standardizes execution, recovery, verification, and resource accounting while leaving strategy construction to the model. This low-friction, expressive membrane prevents harness failures from becoming model failures and pushes measurement toward the model's true maximal underlying capability. Prime Agent raises ARC-AGI-3 RHAE Best@1 from 30% to 95.5% and matches or exceeds native and popular harnesses across long-context coding, GPU-kernel generation, emulator construction, and autonomous nanoGPT speedruns. On Factorio, we find refinement allows for continuous technology progression and dedicated subagents enable parallelized work. Code is available at https://github.com/PrimeIntellect-ai/prime-agent.",
+      "abstract": "Tool-augmented language models are bounded by the APIs humans bothered to write; existing tool-creation systems patch this by prompting a frozen LLM at inference time, leaving the model that writes a tool decoupled from the one that uses it, with no signal that the schemas it produces are schemas it can invoke. We propose SMITH (Schema-grounded Multi-task Iterative Tool Honing), a reinforcement learning framework that jointly trains tool creation and tool use inside a single policy. Each rollout is either a build task (write a tool from a few examples) or a use task (invoke a pooled tool on a held-out question). Three separate reward axes catch schema, code, and outcome failures independently, so each failure mode contributes its own gradient. A 4B Qwen3 trained with SMITH on 13 procedural reasoning tasks with exact verifiers reaches 79.8 macro-average accuracy on held-out tasks, the best across all evaluated methods and ahead of an untrained 30B-A3B tool-writer. It also reaches 40.4 on TabMWP-Hard and 42.6 on out-of-domain GQA (+7.6 over the best same-backbone inference-time baseline), without any visual or tabular training data. Tools written by our 4B models also lifted the performance of LFM-2.5-350M and Qwen3-30B-A3B under same reasoning tasks.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23552v1",
-        "pdf": "https://arxiv.org/pdf/2608.23552v1",
-        "github": "https://github.com/PrimeIntellect-ai/prime-agent",
-        "blog": null
-      },
-      "institution": "Princeton University, Prime Intellect, MIT",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）本质上是受限的顺序处理器，其决策仅依赖于模型权重和当前活跃上下文。然而，长视野代理任务（Long-horizon agency）需要超出模型权重和上下文窗口的外部信息存储与计算能力。\n- **已有工作的局限**：现有的代理框架往往将工作流硬编码，或者在上下文管理上存在瓶颈（如简单的上下文压缩），导致“ harness 失败”被误判为“模型失败”。现有方法缺乏足够的表达力来让模型在推理时动态构建程序、子代理和反馈循环，无法充分利用测试时计算（test-time compute）和外部状态管理。\n\n## 文章的核心贡献点\n- **提出了一个名为 Prime Agent 的开源自改进递归语言模型（RLM）Harness**，旨在标准化长视野评估和编码代理工作流，通过低摩擦、高表达力的接口释放模型的潜在最大能力。\n- **挑战1：长视野任务中的状态保持与信息管理难题**。随着任务进行，关键信息容易超出上下文窗口或丢失，且传统方法难以有效利用历史数据。**解决方法**：引入“持续 Harness”（Continual Harness）机制，跨轨迹保留历史、记忆、技能和提示词；结合持久化的 IPython REPL 作为 L2 级缓存，使模型能够像冯·诺依曼架构一样读写可寻址的外部状态，实现程序化的上下文处理。\n- **挑战2：复杂任务的并行化与协调困难**。单一模型难以同时处理多线任务或进行自我修正与验证。**解决方法**：采用递归子代理（Recursive subagents）架构，支持直接的代理间通信（agent-to-agent communication），允许模型在推理时动态构建子代理 swarm 进行并行工作和协同，同时通过 Agents View 让人类可 inspect 和管理守护进程会话。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Prime Agent 是一个开源框架，标准化了执行、恢复、验证和资源计数。它提供了一个低摩擦的膜（membrane），防止因框架缺陷导致的任务失败，确保评估反映模型的真实能力。\n- **评估结果**：\n    - 在 ARC-AGI-3 RHAE Best@1 基准上，性能从 30% 显著提升至 95.5%。\n    - 在长上下文编码、GPU 内核生成、模拟器构建和自主 nanoGPT 速跑等任务中，其表现匹配或超过了原生及流行的 Harness。\n    - 在 Factorio 游戏中，展示了通过精炼实现连续技术 progression，以及专用子代理实现并行工作的能力。\n- **对比**：相比其他流行 Harness，Prime Agent 在长视野任务中更能挖掘模型的上限，避免了因资源计数错误或过早终止导致的性能低估。\n\n#### 总结\nPrime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) are bounded sequential processors whose decisions are limited to model weights and active context. However, long-horizon agency requires external information storage and computation beyond these limits.\n- **Limitations of Existing Work**: Current agent frameworks often hardcode workflows or struggle with context management (e.g., simple compaction), leading to \"harness failures\" being misinterpreted as \"model failures.\" They lack the expressivity to allow models to dynamically construct programs, subagents, and feedback loops at inference time, failing to fully leverage test-time compute and external state management.\n\n## Core Contributions\n- **Proposed Prime Agent**, an open-source self-improving Recursive Language Model (RLM) harness designed to standardize long-horizon evaluation and coding-agent workflows, unlocking the model's true maximal capability through a low-friction, expressive interface.\n- **Challenge 1: State Persistence and Information Management in Long-Horizon Tasks**. Critical information is easily lost as it exceeds context windows, and traditional methods fail to effectively utilize historical data. **Solution**: Introduces a \"Continual Harness\" that preserves histories, memories, skills, and prompts across trajectories. It combines this with a persistent IPython REPL acting as an L2 cache, enabling programmatic context processing and allowing the model to read/write addressable external state akin to a von Neumann architecture.\n- **Challenge 2: Parallelization and Coordination in Complex Tasks**. Single models struggle to handle multi-threaded tasks or perform self-correction and verification simultaneously. **Solution**: Employs recursive subagents with direct agent-to-agent communication, allowing the model to dynamically construct subagent swarms for parallel work and coordination at inference time, while providing an Agents View for human inspection and management.\n\n## Implementation and Evaluation\n- **Implementation**: Prime Agent is an open-source framework that standardizes execution, recovery, verification, and resource accounting. It acts as a low-friction membrane to prevent infrastructure-induced failures, ensuring evaluations reflect the model's actual capabilities.\n- **Evaluation Results**:\n    - Achieved a significant performance increase on ARC-AGI-3 RHAE Best@1, rising from 30% to 95.5%.\n    - Matched or exceeded native and popular harnesses in long-context coding, GPU-kernel generation, emulator construction, and autonomous nanoGPT speedruns.\n    - Demonstrated continuous technology progression through refinement and parallelized work via dedicated subagents in Factorio.\n- **Comparison**: Compared to other popular harnesses, Prime Agent better uncovers the model's upper bound in long-horizon tasks by avoiding performance underestimation caused by resource counting errors or premature termination.\n\n## 4. Conclusion\nPrime Agent addresses the bottlenecks of state management and computational expansion for LLMs in long-horizon tasks by introducing RLM abstractions and a Continual Harness. It transforms the model from a mere sequential processor into a von Neumann-like system capable of leveraging external storage and parallel computation, significantly enhancing performance in complex reasoning and coding tasks, and providing standardized infrastructure for assessing and improving AI agent capabilities.",
-      "render_excerpt": "机构: Princeton University, Prime Intellect, MIT<br>Prime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。",
-      "render_excerpt_en": "Institution: Princeton University, Prime Intellect, MIT<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) are bounded sequential processors whose decisions are limited to model weights and active context. However, long-horizon agency requires external information storage and computation beyond these limits.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-24T17:54:19Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-24"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.23471",
-      "date": "2026-08-24",
-      "title": "InjecMEM: Memory Injection Attack on LLM Agent Memory Systems",
-      "authors": [
-        "Hanling Tian",
-        "Gengyu Zhang",
-        "Zeyang Sha",
-        "Jingying Wang",
-        "Yuhang Liu",
-        "Zhehao Huang",
-        "Kun Yang",
-        "Xiaolin Huang"
-      ],
-      "abstract": "Memory is becoming a default subsystem in deployed LLM agents to provide persistent personalization and continuity. This naturally prompts a question: will memory system introduce new vulnerabilities into agents? Thus we propose InjecMEM, a novel memory injection attack paradigm that requires only a single interaction (no read/edit access to memory store) to steer later responses of related queries toward a pre-specified output. Guided by the retrieval-then-generate mechanism of memory systems, we craft the injection with a retriever-agnostic anchor and an adversarial command. The anchor contains high-recall topical cues so that downstream retrieval consistently associates the record with the target topic. The command is a short sequence optimized to remain effective under uncertain fused contexts, variable placements, and long prompts so that it reliably steers outputs once retrieved. We learn the command via gradient-based coordinate search, averaging over synthetic prompt templates and insertion positions, and extend it to joint optimization across backbones to study transfer. Evaluated across multiple memory systems and backbone models, InjecMEM achieves reliable topic-conditioned retrieval and targeted generation, remains effective under memory drift, and leaves non-target queries unaffected. Our results underscore the need to harden memory systems and provide a reproducible framework for studying agent memory.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.23471v1",
-        "pdf": "https://arxiv.org/pdf/2608.23471v1",
-        "github": "https://github.com/BlueBlood6/InjecMEM",
-        "blog": null
-      },
-      "institution": "Shanghai Jiao Tong University, Ant Group",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）代理在医疗、金融和个人助手等领域的广泛应用，记忆系统已成为提供持久个性化和对话连续性的默认子系统。然而，这种持续写入和读取的机制扩大了攻击面，引发了关于其安全漏洞的担忧。\n- **已有工作为什么解决不了**：现有的针对检索增强生成（RAG）的攻击方法通常假设嵌入空间是静态固定的，这在分布偏移下显得脆弱。而LLM代理的记忆系统是动态非平稳的，检索结果受可变上下文、混合长短期记忆及用户属性影响，且检索机制是多信号而非纯基于嵌入的，导致传统RAG投毒方法难以直接适用或效果不佳。\n\n## 文章的核心贡献点\n- **提出了一个名为 InjecMEM 的新型记忆注入攻击范式**：该攻击仅需单次交互（无需对记忆存储进行读写访问权限），即可通过注入恶意记录，引导后续相关查询的输出朝向预设目标。\n- **挑战1：如何在无需读取权限且检索机制复杂的情况下确保恶意记录被准确检索？**\n  - **难点**：记忆系统的检索依赖于动态变化的上下文和多信号匹配，攻击者无法预知具体的检索阈值或排名机制。\n  - **解决方法**：设计了与检索器无关的“锚点”（Anchor），包含高召回率的主题线索，确保下游检索能 consistently 将该记录与目标主题关联。\n- **挑战2：如何在不确定且多变的融合上下文中保持对抗指令的有效性？**\n  - **难点**：被检索出的记忆会被插入到长度不一、结构多样的Prompt中，位置和内容的不确定性可能导致对抗指令失效。\n  - **解决方法**：构建了短序列的“对抗命令”（Adversarial Command），并通过基于梯度的坐标搜索进行优化，平均化合成Prompt模板和插入位置的影响，使其在长Prompt和可变放置下仍能可靠地引导输出。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：InjecMEM 通过联合优化跨骨干模型来研究迁移性，并在多个记忆系统和主干模型上进行了评估。代码已开源。\n- **评估结果**：\n  - **检索可靠性**：实现了可靠的特定主题条件检索。\n  - **攻击成功率**：能够成功引导目标生成，且在存在记忆漂移（memory drift）的情况下依然有效。\n  - **隐蔽性/特异性**：攻击仅影响目标相关查询，非目标查询不受影响，证明了攻击的精准性。\n- **对比**：相较于传统RAG投毒方法，InjecMEM 在动态记忆系统中表现出更强的鲁棒性和适应性，克服了静态嵌入假设带来的局限性。\n\n#### 总结\n本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: As LLM agents are widely deployed in healthcare, finance, and personal assistants, memory systems have become default subsystems for providing persistent personalization and continuity. However, this continuous write-read mechanism expands the attack surface, raising concerns about security vulnerabilities.\n- **Why Existing Work Fails**: Existing attacks on Retrieval-Augmented Generation (RAG) often assume a static embedding geometry, which becomes brittle under distribution shifts. In contrast, LLM agent memory systems are dynamic and non-stationary. Retrieval is influenced by variable contexts, mixed long/short-term memories, and multi-signal mechanisms, making traditional RAG poisoning methods ineffective or difficult to apply directly.\n\n## Core Contributions\n- **Proposed InjecMEM**: A novel memory injection attack paradigm that requires only a single interaction (without read/edit access to the memory store) to steer later responses of related queries toward a pre-specified output.\n- **Challenge 1: How to ensure malicious records are accurately retrieved without read access and amidst complex retrieval mechanisms?**\n  - **Difficulty**: Memory retrieval relies on dynamic contexts and multi-signal matching, making it hard for attackers to predict ranking mechanisms or thresholds.\n  - **Solution**: Designed a retriever-agnostic \"Anchor\" containing high-recall topical cues, ensuring downstream retrieval consistently associates the injected record with the target topic.\n- **Challenge 2: How to maintain the effectiveness of adversarial commands within uncertain and variable fused contexts?**\n  - **Difficulty**: Retrieved memories are inserted into prompts of varying lengths and structures, where uncertainty in position and content can neutralize adversarial instructions.\n  - **Solution**: Constructed a short \"Adversarial Command\" optimized via gradient-based coordinate search. By averaging over synthetic prompt templates and insertion positions, the command remains effective in steering outputs even in long prompts with variable placements.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: InjecMEM studies transferability through joint optimization across backbone models and is evaluated on multiple memory systems and backbone models. The code is open-source.\n- **Evaluation Results**:\n  - **Retrieval Reliability**: Achieved reliable topic-conditioned retrieval.\n  - **Attack Success**: Successfully steered target generation and remained effective under memory drift.\n  - **Specificity**: The attack only affected target-related queries, leaving non-target queries unaffected, demonstrating precision.\n- **Comparison**: Compared to traditional RAG poisoning methods, InjecMEM demonstrates greater robustness and adaptability in dynamic memory systems, overcoming the limitations of static embedding assumptions.\n\n#### Summary\nThis paper reveals new security threats facing LLM agent memory systems and proposes the InjecMEM attack framework. By decoupling retrieval anchors from adversarial commands and employing gradient optimization strategies, it successfully achieves effective injection and manipulation of memory systems in a single interaction. The results underscore the urgent need to harden memory systems and provide a reproducible framework for agent memory security research.",
-      "render_excerpt": "机构: Shanghai Jiao Tong University, Ant Group<br>本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。",
-      "render_excerpt_en": "Institution: Shanghai Jiao Tong University, Ant Group<br>This paper reveals new security threats facing LLM agent memory systems and proposes the InjecMEM attack framework. By decoupling retrieval anchors from adversarial commands and employing gradient optimization strategies, it successfully achieves effective injection and manipulation of memory systems in a single interaction. The results underscore the urgent need to harden memory systems and provide a reproducible framework for agent memory security research.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-24T16:37:50Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-24"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.23395",
-      "date": "2026-08-24",
-      "title": "Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep",
-      "authors": [
-        "Pedro Santos"
-      ],
-      "abstract": "Recent LLM-agent systems make conflicting design bets: decompose work across many narrow agents, or use one strong tool-using agent. This pilot studies that choice on bounded cross-border VAT determination with reverse charge, where every case has an oracle label and each intermediate decision is independently scoreable. We hold the activity surface fixed (subtasks, tools, I/O schemas, validation checks, orchestrator, base model, and merge policy) and vary only the assignment of subtasks to workers across four orchestrated configurations, from one wide worker to five narrow ones, against S0, a tuned no-orchestrator single agent, with a deterministic rule engine as oracle. The program spans 4,400 runs: a 40-case, five-repeat main sweep, matched-token arms separating prompt-budget from agent-count effects, and three failure-injection arms, all judged against pre-registered falsification criteria. The two intermediate configurations lead on accuracy (0.830, against endpoints at 0.720 and 0.770) but miss the pre-stated bar against the fine endpoint, so the intermediate-optimum hypothesis remains unsupported at pilot scale. The single agent does not Pareto-dominate the orchestrated set. The matched-token criterion fires: the budget-matched single agent lands 6.5 points below the leader, but the interval includes zero, so any advantage is consistent with a prompt-budget explanation. Under injection, availability faults are absorbed at every granularity, with wide-scope restart over-recovering its baseline by +0.160, while one schema-conforming hallucinated record degrades every configuration and inverts the ordering, hitting fragmented configurations hardest. The contribution is a bounded, preregistered pilot heuristic for right-sizing decomposition (place one partition boundary at the dependency-layer midpoint), released with oracle, dataset, harness, raw traces, and analysis pipeline.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.23395v1",
-        "pdf": "https://arxiv.org/pdf/2608.23395v1",
+        "abs": "http://arxiv.org/abs/2608.24571v1",
+        "pdf": "https://arxiv.org/pdf/2608.24571v1",
         "github": null,
         "blog": null
       },
-      "institution": "Independent Researcher",
+      "institution": "Appier AI Research, National Taiwan University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：当前的 LLM Agent 系统在设计上存在分歧：是将工作分解给多个窄领域 Agent，还是使用一个强大的工具型单 Agent。Anthropic 等机构推崇多 Agent 协作，而 Cognition 等则认为多 Agent 设计脆弱且分散上下文。\n- **已有工作的不足**：现有的对比研究往往同时改变编排框架、基础模型、提示词预算、工具面和任务类型，导致无法单独控制并评估“Agent 作用域粒度”这一变量对性能的具体影响。\n\n## 文章的核心贡献点\n- **提出了一个**：针对增值税（VAT）判定任务的预注册受控试点研究框架，用于探索 Agent 分解的“合适规模”（Right-Sizing），并发布了包含 Oracle、数据集、测试 harness、原始轨迹和分析管道的完整资源。\n- **挑战1：如何隔离 Agent 数量与提示词预算的影响？**\n  - **难点**：多 Agent 系统通常消耗更多 Token，难以区分性能提升是源于分工协作还是单纯的计算/提示词预算增加。\n  - **解决**：通过设置“匹配 Token”的实验臂，在保持总 Token 预算一致的情况下对比单 Agent 与多 Agent 配置，从而分离出纯架构效应。\n- **挑战2：如何在复杂依赖关系中确定最佳分解粒度？**\n  - **难点**：任务包含并行查找和串行依赖（如反向充电逻辑），过度分解可能导致上下文丢失，不分解决策又可能超出单 Agent 能力。\n  - **解决**：固定活动表面（子任务、工具、I/O 模式等），仅变化子任务分配给 Worker 的方式（从 1 个宽范围 Worker 到 5 个窄范围 Worker），并提出启发式建议：在依赖层的中点放置一个分区边界。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：基于跨境增值税（含反向充电）判定任务，拥有确定性规则引擎作为 Oracle。共进行 4,400 次运行，包括 40 个案例的主扫描、匹配 Token 臂和故障注入臂。\n- **主要结果**：\n  - **准确率**：两种中间配置（中等粒度分解）准确率最高（0.830），优于极端配置（单 Agent 0.720，五 Agent 0.770）。但未达到预先设定的显著优于细粒度端点的标准，因此“中间最优”假设在试点规模下未获完全支持，仅为方向性结果。\n  - **Pareto 优势**：单 Agent 并未在 Pareto 意义上主导编排集合。\n  - **预算影响**：在匹配 Token 条件下，单 Agent 比领先配置低 6.5 个百分点，但置信区间包含零，表明任何优势都可能由提示词预算解释。\n- **鲁棒性对比**：\n  - **可用性故障**：所有粒度均能吸收超时和工具中断故障，宽范围重启甚至超额恢复基线 (+0.160)。\n  - **幻觉注入**：单个符合模式的幻觉记录会 degrade 所有配置并逆转排序，对碎片化（多 Agent）配置打击最大。\n\n#### 总结\n本文通过严格控制变量的试点研究，揭示了 LLM Agent 分解粒度对性能的非单调影响。虽然中间粒度的分解在准确率上表现最佳，但其优势受限于提示词预算的解释空间。研究指出，简单的多 Agent 分解并不总是优于单 Agent，且在面对结构化幻觉时更为脆弱。最终贡献在于提供了一套可复现的基准测试方法和“在依赖层中点进行分区”的启发式策略，为未来 Agent 系统设计提供了实证依据。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Current LLM-agent systems face conflicting design choices: decomposing work across many narrow agents versus using a single strong tool-using agent. While some industry reports favor multi-agent orchestration, others argue it introduces fragility and context dispersion.\n- **Limitations of Existing Work**: Previous comparisons often vary multiple factors simultaneously (orchestration framework, base model, prompt budget, tools, and task), leaving the specific effect of \"agent-scope granularity\" under-controlled and empirically unresolved.\n\n## Core Contributions\n- **Proposed**: A preregistered, controlled pilot study framework for \"right-sizing\" agent decomposition in VAT determination, releasing the oracle, dataset, harness, raw traces, and analysis pipeline.\n- **Challenge 1: Isolating agent count from prompt budget effects.**\n  - **Difficulty**: Multi-agent systems typically consume more tokens, making it hard to distinguish whether performance gains come from architectural decomposition or increased computational/prompt budget.\n  - **Solution**: Implemented \"matched-token\" experimental arms to compare single vs. multi-agent configurations under identical token budgets, isolating the pure architectural effect.\n- **Challenge 2: Determining optimal decomposition granularity amidst complex dependencies.**\n  - **Difficulty**: Tasks involve both parallel lookups and sequential dependencies (e.g., reverse-charge logic); over-decomposition risks context loss, while no decomposition may exceed single-agent capacity.\n  - **Solution**: Fixed the activity surface (subtasks, tools, I/O schemas) and varied only subtask assignment across four configurations (1 to 5 workers). Proposed a heuristic: place one partition boundary at the midpoint of the dependency layer.\n\n## Implementation and Evaluation\n- **Setup**: Cross-border VAT determination with reverse charge, using a deterministic rule engine as Oracle. 4,400 runs including main sweeps, matched-token arms, and failure-injection arms.\n- **Results**:\n  - **Accuracy**: Intermediate configurations achieved highest accuracy (0.830), outperforming endpoints (Single: 0.720, Five-Agent: 0.770). However, they did not meet the preregistered bar for statistical significance against the fine endpoint, leaving the \"intermediate-optimum\" hypothesis directionally supported but unproven at pilot scale.\n  - **Pareto Dominance**: The single agent did not Pareto-dominate the orchestrated set.\n  - **Budget Effect**: Under matched-token conditions, the single agent trailed the leader by 6.5 points, but the confidence interval included zero, suggesting advantages may be explained by prompt budget rather than architecture.\n- **Robustness**:\n  - **Availability Faults**: All granularities absorbed timeouts/outages; wide-scope restarts over-recovered baseline by +0.160.\n  - **Hallucination Injection**: A single schema-conforming hallucinated record degraded all configurations and inverted performance ordering, hitting fragmented (multi-agent) configurations hardest.\n\n## 4. Conclusion\nThis paper provides empirical evidence on the non-monotonic impact of agent decomposition granularity. While intermediate decomposition showed higher accuracy, its advantage is confounded by prompt budget effects. The study highlights that simple multi-agent decomposition is not universally superior to single agents and is more vulnerable to structured hallucinations. The key contribution is a reproducible benchmark and a heuristic for right-sizing agent decomposition.",
-      "render_excerpt": "机构: Independent Researcher<br>本文通过严格控制变量的试点研究，揭示了 LLM Agent 分解粒度对性能的非单调影响。虽然中间粒度的分解在准确率上表现最佳，但其优势受限于提示词预算的解释空间。研究指出，简单的多 Agent 分解并不总是优于单 Agent，且在面对结构化幻觉时更为脆弱。最终贡献在于提供了一套可复现的基准测试方法和“在依赖层中点进行分区”的启发式策略，为未来 Agent 系统设计提供了实证依据。",
-      "render_excerpt_en": "Institution: Independent Researcher<br>## 1. What the Paper Did - **Background**: Current LLM-agent systems face conflicting design choices: decomposing work across many narrow agents versus using a single strong tool-using agent. While some industry reports favor multi-agent orchestration, others argue it introduces fragility and context dispersion.",
+      "summary_cn": "## 文章做了什么\n- **背景**：工具增强的大语言模型（LLM）受限于人类编写的固定 API。现有的动态工具创建系统通常通过在推理时提示冻结的 LLM 来生成工具，但这导致“编写工具”的模型与“使用工具”的模型是解耦的。\n- **已有工作的局限**：现有方法中，工具创建者没有收到其生成的模式（Schema）是否可被有效调用的反馈信号。通常由更强的模型编写工具，较弱的模型使用工具，导致工具创建者缺乏优化自身生成工具可用性的激励，且未能在训练阶段显式优化工具的质量和可重用性。\n\n## 文章的核心贡献点\n- **提出了 SMITH (Schema-grounded Multi-task Iterative Tool Honing)**：一种强化学习框架，在单一策略内联合训练工具的创建和使用。\n- **挑战 1：奖励分解困难**。生成的工具包含模式（Schema）和后端代码实现，两者的失败需要不同的纠正信号，使得奖励分配变得复杂。**解决方法**：SMITH 设计了三个独立的奖励轴，分别捕捉模式、代码和执行结果的失败，使每种失败模式都能贡献独立的梯度进行优化。\n- **挑战 2：循环评估难题**。评估工具质量需要裁判，但自我评估不可靠，而外部评估器可能存在对齐问题且难以判断模式的实际可调用性。**解决方法**：通过多任务滚动（Rollout），交替执行“构建任务”（根据示例编写工具）和“使用任务”（在保留问题上调用 pooled 工具），利用精确验证器直接针对答案正确性进行优化，从而隐式地解决评估难题。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：使用 4B 参数的 Qwen3 模型，在 13 个具有精确验证器的过程推理任务上进行训练。\n- **主要结果**：\n    - 在保留任务上达到 79.8% 的宏观平均准确率，优于所有评估方法，甚至超过未训练的 30B-A3B 工具编写模型。\n    - 在 TabMWP-Hard 上达到 40.4，在域外 GQA 上达到 42.6（比最佳同骨干网推理时基线高出 7.6%），且无需任何视觉或表格训练数据。\n- **泛化能力**：该 4B 模型编写的工具还能提升 LFM-2.5-350M 和 Qwen3-30B-A3B 在相同推理任务下的性能。\n\n#### 总结\n本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Tool-augmented Large Language Models (LLMs) are limited by fixed, human-written APIs. Existing dynamic tool creation systems typically prompt frozen LLMs at inference time, decoupling the model that writes the tool from the one that uses it.\n- **Limitations of Prior Work**: In current methods, the tool creator receives no feedback on whether the generated schemas are effectively invocable. Often, a stronger model writes tools while a weaker one uses them, meaning the creator lacks incentive to optimize for usability. Furthermore, these methods do not explicitly optimize for tool quality or reusability during training.\n\n## Core Contributions\n- **Proposed SMITH (Schema-grounded Multi-task Iterative Tool Honing)**: A reinforcement learning framework that jointly trains tool creation and tool use within a single policy.\n- **Challenge 1: Reward Decomposition**. Generated tools consist of both a schema and backend code implementation; failures in these components require different corrective signals, making reward assignment nontrivial. **Solution**: SMITH employs three separate reward axes to independently catch schema, code, and outcome failures, allowing each failure mode to contribute its own gradient.\n- **Challenge 2: Circular Evaluation**. Evaluating tool quality requires a judge, but self-evaluation is unreliable, and external evaluators may suffer from alignment issues or lack the understanding to assess practical callability. **Solution**: By alternating rollouts between \"build tasks\" (writing tools from examples) and \"use tasks\" (invoking tools on held-out questions), the framework optimizes directly against answer correctness using exact verifiers, implicitly addressing the evaluation challenge.\n\n## Implementation and Evaluation\n- **Implementation**: A 4B parameter Qwen3 model was trained on 13 procedural reasoning tasks with exact verifiers.\n- **Key Results**:\n    - Achieved 79.8% macro-average accuracy on held-out tasks, outperforming all evaluated methods and surpassing an untrained 30B-A3B tool-writer.\n    - Reached 40.4 on TabMWP-Hard and 42.6 on out-of-domain GQA (+7.6 over the best same-backbone inference-time baseline), without any visual or tabular training data.\n- **Generalization**: Tools written by this 4B model also improved the performance of LFM-2.5-350M and Qwen3-30B-A3B on the same reasoning tasks.\n\n#### Summary\nThis paper addresses the decoupling of tool creation and usage in existing tool-augmented LLMs by proposing the SMITH framework. By jointly optimizing schema generation, code implementation, and tool usage via reinforcement learning, it overcomes challenges related to reward decomposition and circular evaluation. Experiments demonstrate that a 4B parameter model can outperform larger baselines on multiple reasoning benchmarks and exhibits strong cross-model tool reusability, validating the effectiveness of joint training for tool creation and use.",
+      "render_excerpt": "机构: Appier AI Research, National Taiwan University<br>本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。",
+      "render_excerpt_en": "Institution: Appier AI Research, National Taiwan University<br>This paper addresses the decoupling of tool creation and usage in existing tool-augmented LLMs by proposing the SMITH framework. By jointly optimizing schema generation, code implementation, and tool usage via reinforcement learning, it overcomes challenges related to reward decomposition and circular evaluation. Experiments demonstrate that a 4B parameter model can outperform larger baselines on multiple reasoning benchmarks and exhibits strong cross-model tool reusability, validating the effectiveness of joint training for tool creation and use.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-24T15:40:15Z"
+        "captured_at": "2026-08-25T13:59:34Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-24"
+        "captured_at": "2026-08-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -220,42 +108,141 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2608.23263",
-      "date": "2026-08-24",
-      "title": "Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records",
+      "paper_id": "2608.24570",
+      "date": "2026-08-25",
+      "title": "EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents",
       "authors": [
-        "Zeyd Boukhers",
-        "Lingxiao Kong",
-        "Xenophon Zabulis",
-        "Georgios Toubekis"
+        "Lihang Zeng",
+        "Shaoting Zhang",
+        "Xiaofan Zhang"
       ],
-      "abstract": "The FAIR Digital Object (FDO) framework mandates that metadata attribute values be expressed as persistent identifiers (PIDs) wherever possible, to produce a fully machine-actionable graph in which every reference is resolvable. The Europeana Data Model was designed long before the FDO specification, and it stores most metadata values as plain text. This serves human browsing well enough, but gives an automated agent nothing to follow across records or collections. We present a pipeline that transforms flat Europeana records into an FDO-compliant knowledge graph structured with CIDOC-CRM. Following the FDO specification, we model every heritage entity as a discrete FDO with its own PID, type, profile, and metadata layer. The core technical challenge is automating the FDO-prescribed distinction between values that must become PID references (resolvable entities) and those that may remain literals (terminal leaves such as notes, measurements, and dates). We address this with a large language model that classifies each metadata value, routes it to a controlled vocabulary (Getty AAT, Wikidata, VIAF, PeriodO), and links it to a shared entity FDO. We evaluate using 637 archaeological records from five Europeana providers, processing each with the LLM. The pipeline links 86% of metadata slots, resolving 58.5% of values Europeana had not already enriched. It also merges cross-lingual surface forms that byte-identical matching keeps apart, where 17 of 33 such merges are correct on manual review. Graph connectivity does not separate this from string matching; what distinguishes the FDO graph is that every node is typed and resolvable.",
+      "abstract": "Clinical diagnosis is an active evidence-seeking process in which clinicians acquire evidence, update competing hypotheses, and decide when the available evidence is sufficient for diagnosis. Yet many medical diagnosis systems built around large language models (LLMs) still formulate diagnosis as static case-to-answer prediction, with limited support for evidence acquisition. Agentic LLMs offer a dynamic alternative through tool use and intermediate diagnostic trajectories, but existing systems often under-specify how patient evidence should be exposed, scaffolded, and controlled at runtime. We introduce EviDx, an evidence-aware active diagnosis framework that pairs patient-specific diagnostic environments with a clinical diagnostic scaffold and an observer-guided runtime harness. In EviDx, $\\mathcal{E}$-Synthesis constructs interactive environments from raw clinical cases; the scaffold organizes role-specialized agents, evidence tools, and evolving evidence states; and the harness regulates diagnostic termination by tracking uncertainty and evidence coverage. A 3-level evaluation pyramid assesses execution robustness, reasoning dynamics, and diagnostic outcomes. Experiments show that EviDx improves diagnostic performance and process stability while revealing model-dependent capability boundaries.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23263v1",
-        "pdf": "https://arxiv.org/pdf/2608.23263v1",
+        "abs": "http://arxiv.org/abs/2608.24570v1",
+        "pdf": "https://arxiv.org/pdf/2608.24570v1",
         "github": null,
         "blog": null
       },
-      "institution": "Fraunhofer Institute for Applied Information Technology (FIT)",
+      "institution": "Shanghai Jiao Tong University, Shanghai Innovation Institute",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：FAIR 数字对象（FDO）框架要求元数据属性值尽可能使用持久标识符（PIDs），以构建完全可机器操作的图谱。然而，现有的文化遗产聚合平台（如 Europeana）的数据模型设计较早，大部分元数据以纯文本形式存储，虽适合人类浏览，但缺乏机器可追踪的语义链接。\n- **已有工作为什么解决不了**：传统的字符串匹配或简单的实体链接方法无法自动区分哪些值应转换为 PID 引用（可解析实体），哪些应保留为字面量（如注释、日期）。此外，现有方法难以处理跨语言表面形式的合并，导致自动化代理无法跨越记录或集合进行有效遍历。\n\n## 文章的核心贡献点\n- **提出了一个**基于大语言模型（LLM）的自动化流水线，将扁平的 Europeana 记录转换为符合 FDO 规范且基于 CIDOC-CRM 结构的知识图谱。\n- **挑战1：自动化区分 PID 引用与字面量值**。难点在于 FDO 规范严格规定了只有终端叶子节点（如数值、自由文本）可为字面量，其余必须为可解析实体，传统规则难以精准界定。论文利用 LLM 对每个元数据值进行分类，判断其是否应映射为实体，从而自动化执行这一边界划分。\n- **挑战2：跨词汇表实体链接与跨语言消歧**。难点在于需要将非结构化文本路由到受控词表（如 Getty AAT, Wikidata, VIAF, PeriodO）并解决同义不同名或跨语言问题。论文通过 LLM 将分类后的实体路由至特定受控词表，生成共享实体 FDO，成功合并了字节级匹配无法识别的跨语言表面形式。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究使用了来自五个 Europeana 提供者的 637 条考古记录进行评估。流水线利用 LLM 处理每条记录，将其转化为带有 PID、类型、配置文件和元数据层的离散 FDO。\n- **结果**：该流水线链接了 86% 的元数据槽位，并解析了 58.5% Europeana 此前未 enrich 的值。在跨语言表面形式合并方面，手动审查显示 33 次合并中有 17 次是正确的，证明了其优于传统字节级字符串匹配的能力。\n- **对比优势**：与传统字符串匹配相比，该方法生成的 FDO 图谱不仅具有连通性，而且每个节点都是类型化且可解析的，实现了真正的机器可操作性。\n\n#### 总结\n本文提出了一种利用大语言模型将扁平文化遗产记录转化为 FAIR 数字对象知识图谱的方法。通过自动化区分需解析实体与字面量，并结合受控词表进行实体链接，该方法显著提升了元数据的机器可操作性，解决了现有数据模型中缺乏持久标识符引用的关键问题，为文化遗产数据的自动化智能处理提供了新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: The FAIR Digital Object (FDO) framework mandates that metadata attribute values be expressed as Persistent Identifiers (PIDs) to create fully machine-actionable graphs. However, existing cultural heritage aggregators like Europeana store most metadata as plain text, which supports human browsing but lacks machine-traversable semantic links.\n- **Why Existing Work Falls Short**: Traditional string matching or simple entity linking cannot automatically distinguish between values that must become PID references (resolvable entities) and those that should remain literals (e.g., notes, dates). Furthermore, existing methods struggle with merging cross-lingual surface forms, preventing automated agents from effectively traversing across records or collections.\n\n## Core Contributions\n- **Proposed a pipeline** powered by Large Language Models (LLMs) that transforms flat Europeana records into FDO-compliant knowledge graphs structured with CIDOC-CRM.\n- **Challenge 1: Automating the distinction between PID references and literal values**. The difficulty lies in strictly enforcing the FDO specification where only terminal leaves can be literals, a boundary hard to define with traditional rules. The paper addresses this by using an LLM to classify each metadata value, determining whether it should be mapped to an entity or kept as a literal.\n- **Challenge 2: Entity linking across controlled vocabularies and cross-lingual disambiguation**. The challenge involves routing unstructured text to specific controlled vocabularies (Getty AAT, Wikidata, VIAF, PeriodO) and resolving synonyms or cross-language variations. The method uses the LLM to route classified entities to these vocabularies, generating shared entity FDOs and successfully merging cross-lingual surface forms that byte-level matching misses.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The study evaluated the pipeline using 637 archaeological records from five Europeana providers. Each record was processed by the LLM to create discrete FDOs with PIDs, types, profiles, and metadata layers.\n- **Results**: The pipeline linked 86% of metadata slots and resolved 58.5% of values that Europeana had not previously enriched. In terms of cross-lingual surface form merging, manual review confirmed 17 out of 33 merges were correct, demonstrating superiority over traditional byte-level string matching.\n- **Comparison Advantage**: Unlike traditional string matching, the resulting FDO graph ensures that every node is typed and resolvable, achieving true machine actionability as required by the FDO specification.\n\n## 4. Conclusion\nThis paper presents a method for transforming flat cultural heritage records into FAIR Digital Object knowledge graphs using Large Language Models. By automating the distinction between resolvable entities and literals, and linking them to controlled vocabularies, the approach significantly enhances machine actionability. It addresses the critical lack of persistent identifier references in current data models, offering a new paradigm for the automated intelligent processing of cultural heritage data.",
-      "render_excerpt": "机构: Fraunhofer Institute for Applied Information Technology (FIT)<br>本文提出了一种利用大语言模型将扁平文化遗产记录转化为 FAIR 数字对象知识图谱的方法。通过自动化区分需解析实体与字面量，并结合受控词表进行实体链接，该方法显著提升了元数据的机器可操作性，解决了现有数据模型中缺乏持久标识符引用的关键问题，为文化遗产数据的自动化智能处理提供了新范式。",
-      "render_excerpt_en": "Institution: Fraunhofer Institute for Applied Information Technology (FIT)<br>## 1. What the Paper Does - **Background**: The FAIR Digital Object (FDO) framework mandates that metadata attribute values be expressed as Persistent Identifiers (PIDs) to create fully machine-actionable graphs. However, existing cultural heritage aggregators like Europeana store most metadata as plain text, which supports human browsing but lacks machine-traversable semantic links.",
+      "summary_cn": "## 文章做了什么\n- **背景**：临床诊断是一个主动寻求证据的过程，医生需要不断获取证据、更新假设并决定何时停止。然而，现有的基于大语言模型（LLM）的医疗诊断系统大多将诊断视为静态的“病例到答案”预测，缺乏对证据获取过程的有效支持。\n- **已有工作的不足**：虽然基于代理（Agentic）的LLM通过工具使用提供了动态替代方案，但现有系统往往未明确指定如何在运行时暴露、构建和控制患者证据。它们通常依赖固定的工作流或简单的轮次限制，未能充分建模证据的充分性和终止控制，导致容易出现证据不足时的过早承诺等问题。\n\n## 文章的核心贡献点\n- **提出了一个名为 EviDx 的证据感知主动诊断框架**，该框架将特定患者的诊断环境与临床诊断脚手架及观察者引导的运行时 harness 相结合。\n- **挑战1：如何从原始临床数据中构建可控的交互式诊断环境？**\n  - **难点**：原始病历是非结构化的，直接让LLM访问所有信息会导致“作弊”或无法模拟真实的逐步问诊过程。\n  - **解决方法**：提出 $\\\\mathcal{E}$-Synthesis 模块，将原始临床病例转化为特定的交互式环境，通过标准化接口按需暴露证据，确保诊断过程的真实性和可控性。\n- **挑战2：如何组织复杂的诊断流程并确保证据充分后适时终止？**\n  - **难点**：多角色协作和动态证据状态管理复杂，且难以判断何时收集的证据足以做出准确诊断，容易导致无限循环或过早下结论。\n  - **解决方法**：引入临床诊断脚手架（Scaffold）来组织角色专用的代理、证据工具和演变的证据状态；同时设计观察者引导的运行时 harness，通过跟踪不确定性和证据覆盖率来调节诊断终止时机。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估体系**：提出了一个三级评估金字塔，分别评估执行鲁棒性、推理动态和诊断结果。\n- **对比工作**：与 MDAgents, Agent Hospital, AgentClinic, MedAgentBench, AutoMedic 等现有工作进行了定性对比。表1显示，现有工作在交互环境、证据访问、临床脚手架、运行时 Harness 或过程级评估方面存在缺失，而 EviDx 在所有这些维度上均具备支持。\n- **实验结果**：实验表明，EviDx 在提高诊断性能的同时增强了过程的稳定性。此外，研究还揭示了不同模型在主动诊断任务中的能力边界。\n\n#### 总结\nEviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Clinical diagnosis is an active evidence-seeking process where clinicians iteratively acquire evidence, update hypotheses, and decide when to stop. However, many existing LLM-based medical diagnosis systems treat diagnosis as a static case-to-answer prediction, lacking support for dynamic evidence acquisition.\n- **Limitations of Existing Work**: While agentic LLMs offer dynamic alternatives via tool use, existing systems often under-specify how patient evidence is exposed, scaffolded, and controlled at runtime. They typically rely on fixed workflows or simple turn limits, failing to adequately model evidence sufficiency and termination control, which leads to issues like premature commitment.\n\n## Core Contributions\n- **Proposed EviDx**, an evidence-aware active diagnosis framework that pairs patient-specific diagnostic environments with a clinical diagnostic scaffold and an observer-guided runtime harness.\n- **Challenge 1: How to construct controllable interactive diagnostic environments from raw clinical data?**\n  - **Difficulty**: Raw medical records are unstructured; giving LLMs full access simulates neither real-world step-by-step inquiry nor prevents \"cheating\".\n  - **Solution**: The $\\\\mathcal{E}$-Synthesis module converts raw clinical cases into interactive environments, exposing evidence through standardized interfaces on demand to ensure authenticity and controllability.\n- **Challenge 2: How to organize complex diagnostic processes and ensure timely termination based on evidence sufficiency?**\n  - **Difficulty**: Managing multi-agent collaboration and dynamic evidence states is complex, and determining when enough evidence has been gathered is difficult, leading to infinite loops or hasty conclusions.\n  - **Solution**: A Clinical Dx Scaffold organizes role-specialized agents, tools, and evolving evidence states. An observer-guided runtime harness regulates termination by tracking uncertainty and evidence coverage.\n\n## Implementation and Evaluation\n- **Evaluation Framework**: Introduces a 3-level evaluation pyramid assessing execution robustness, reasoning dynamics, and diagnostic outcomes.\n- **Comparison**: Qualitatively compared with MDAgents, Agent Hospital, AgentClinic, MedAgentBench, and AutoMedic. Table 1 shows that while existing works lack in areas like interactive environments, evidence access, scaffolding, or runtime harnesses, EviDx supports all these dimensions.\n- **Results**: Experiments demonstrate that EviDx improves diagnostic performance and process stability. It also reveals model-dependent capability boundaries in active diagnosis tasks.\n\n## 4. Conclusion\nEviDx addresses the limitations of existing LLM medical diagnosis systems in active evidence seeking by constructing interactive environments, structured diagnostic scaffolds, and intelligent runtime control mechanisms. It not only enhances diagnostic accuracy and process robustness but also provides a new framework and benchmark for evaluating and improving the dynamic reasoning capabilities of medical AI agents.",
+      "render_excerpt": "机构: Shanghai Jiao Tong University, Shanghai Innovation Institute<br>EviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。",
+      "render_excerpt_en": "Institution: Shanghai Jiao Tong University, Shanghai Innovation Institute<br>## 1. What the Paper Does - **Background**: Clinical diagnosis is an active evidence-seeking process where clinicians iteratively acquire evidence, update hypotheses, and decide when to stop. However, many existing LLM-based medical diagnosis systems treat diagnosis as a static case-to-answer prediction, lacking support for dynamic evidence acquisition.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-24T13:51:39Z"
+        "captured_at": "2026-08-25T13:54:30Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-24"
+        "captured_at": "2026-08-25"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.24509",
+      "date": "2026-08-25",
+      "title": "PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents",
+      "authors": [
+        "Zhi-Kai Chen",
+        "Xu-Xiang Zhong",
+        "Song-Yan Li",
+        "De-Chuan Zhan",
+        "Han-Jia Ye"
+      ],
+      "abstract": "LLM agents increasingly solve tasks by invoking multiple tools, where parallel execution is essential for low latency but difficult to manage safely. Existing agent benchmarks primarily evaluate tool selection, argument generation, and end-to-end success under mostly serial execution, largely overlooking valid parallelization and resource-constrained scheduling. This missing scheduling dimension creates a practical failure mode: serial execution is safe but slow, while resource-agnostic parallel execution is fast but prone to avoidable resource overflows. To address this gap, we introduce PeakBench, a benchmark of executable multi-tool workflows with execution-grounded dependency annotations and measured resource profiles. A central challenge in evaluating such workflows is attribution: failures and inefficiencies may arise from incorrect dependency planning, poor resource-constrained scheduling, or both. PeakBench addresses this challenge with a two-part evaluation framework that disentangles logical planning from physical scheduling, with dedicated metrics for each dimension. Using this framework, we show that strong logical planning does not reliably translate into safe or efficient execution under resource constraints. We further show that exposing resource information can reduce avoidable overflows and improve resource utilization, making PeakBench a useful testbed for diagnosing resource-aware agent behavior. Code is available at https://github.com/Czzzk/Staggering-the-Peaks.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.24509v1",
+        "pdf": "https://arxiv.org/pdf/2608.24509v1",
+        "github": "https://github.com/Czzzk/Staggering-the-Peaks",
+        "blog": null
+      },
+      "institution": "Nanjing University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体正从被动对话者转变为能够调用外部工具解决复杂任务的自主系统。为了降低延迟，并行执行多个工具调用至关重要。\n- **已有工作的不足**：现有的智能体基准测试主要评估工具选择、参数生成和端到端成功率，且大多基于串行执行假设。它们忽视了有效的并行化以及资源受限下的调度问题。这导致了一种实际故障模式：串行执行安全但缓慢，而无视资源的并行执行虽然快速，却容易引发可避免的资源溢出错误。\n\n## 文章的核心贡献点\n- **提出了一个 PeakBench**：这是一个包含可执行多工具工作流的基准测试，具备基于执行的依赖注释和实测的资源配置文件。\n- **挑战1：归因困难**。在评估工作流时，失败和低效可能源于错误的依赖规划、糟糕的资源受限调度，或两者兼有，难以区分。PeakBench 通过两部分评估框架解决了这一挑战，将逻辑规划与物理调度解耦，并为每个维度提供专用指标。\n- **挑战2：资源感知缺失**。现有框架通常假设基础设施容量无限，导致“逻辑独立”被错误地等同于“执行就绪”，从而引发资源溢出。PeakBench 通过引入实测资源profile，证明暴露资源信息可以减少可避免的溢出并提高资源利用率，从而诊断资源感知的智能体行为。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：PeakBench 提供了带有依赖标注和资源测量的可执行工作流。研究使用了两部分评估框架，分别衡量逻辑规划能力和物理调度效率。\n- **结果与对比**：实验表明，强大的逻辑规划能力并不能可靠地转化为资源约束下的安全或高效执行。与传统的串行执行（安全但慢）和盲目并行执行（快但不安全）相比，引入资源感知的调度策略能够在保持速度优势的同时避免资源溢出。结果显示，暴露资源信息显著减少了可避免的溢出错误，提升了资源利用率。\n\n#### 总结\nPeakBench 填补了 LLM 智能体基准测试中资源感知调度的空白。通过解耦逻辑规划与物理调度，该基准测试揭示了当前智能体在资源受限环境下的系统性脆弱性。研究表明，仅靠优秀的逻辑推理不足以保障高效执行，必须结合资源感知的调度策略。PeakBench 为诊断和优化资源感知的智能体行为提供了一个有用的测试平台。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents are evolving into autonomous task-solvers that invoke external tools. Parallel execution is essential for low latency in complex workflows.\n- **Limitations of Existing Work**: Current benchmarks primarily evaluate tool selection and argument generation under serial execution assumptions, overlooking valid parallelization and resource-constrained scheduling. This leads to a trade-off where serial execution is safe but slow, while resource-agnostic parallel execution is fast but prone to avoidable resource overflows.\n\n## Core Contributions\n- **Proposed PeakBench**: A benchmark of executable multi-tool workflows featuring execution-grounded dependency annotations and measured resource profiles.\n- **Challenge 1: Attribution Difficulty**. Failures and inefficiencies can stem from incorrect dependency planning, poor scheduling, or both, making it hard to identify the root cause. PeakBench addresses this with a two-part evaluation framework that disentangles logical planning from physical scheduling, providing dedicated metrics for each dimension.\n- **Challenge 2: Lack of Resource Awareness**. Existing frameworks often assume infinite infrastructure capacity, conflating logical independence with execution readiness, which causes resource overflows. PeakBench incorporates measured resource profiles, demonstrating that exposing resource information reduces avoidable overflows and improves utilization, enabling better diagnosis of resource-aware agent behavior.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: PeakBench provides executable workflows with dependency and resource data. The study employs a decoupled evaluation framework to assess logical planning and physical scheduling separately.\n- **Results & Comparison**: Experiments show that strong logical planning does not guarantee safe or efficient execution under resource constraints. Compared to sequential execution (safe but slow) and blind parallelism (fast but unsafe), resource-aware scheduling preserves speedup without causing overflows. Exposure to resource information significantly reduced avoidable errors and improved resource efficiency.\n\n## 4. Conclusion\nPeakBench fills the gap in resource-aware scheduling for LLM agent benchmarks. By decoupling logical planning from physical scheduling, it reveals systemic vulnerabilities in current agents operating under resource constraints. The study concludes that logical reasoning alone is insufficient; resource-aware scheduling is critical for efficient execution. PeakBench serves as a valuable testbed for diagnosing and optimizing resource-aware agent behaviors.",
+      "render_excerpt": "机构: Nanjing University<br>PeakBench 填补了 LLM 智能体基准测试中资源感知调度的空白。通过解耦逻辑规划与物理调度，该基准测试揭示了当前智能体在资源受限环境下的系统性脆弱性。研究表明，仅靠优秀的逻辑推理不足以保障高效执行，必须结合资源感知的调度策略。PeakBench 为诊断和优化资源感知的智能体行为提供了一个有用的测试平台。",
+      "render_excerpt_en": "Institution: Nanjing University<br>## 1. What the Paper Did - **Background**: LLM agents are evolving into autonomous task-solvers that invoke external tools. Parallel execution is essential for low latency in complex workflows.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-25T12:56:08Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-25"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.24314",
+      "date": "2026-08-25",
+      "title": "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight",
+      "authors": [
+        "Anupam Purwar",
+        "Shashank Singh",
+        "Kritika Srivastava"
+      ],
+      "abstract": "Evaluating conversational voice agents at scale re- quires reliable assessment methods that capture both observ- able interaction quality and the contextual judgment typically provided by human evaluators. We investigate LLM-as-a-Judge evaluation by comparing human judgments with GPT-4.1 and GPT-5 on telecom and retail voice-agent conversations, across conversational quality and safety dimensions. The same interac- tions are scored under three evaluation configurations, p0, p1, and p2, to test whether automated judgments are sensitive to the evaluation setup and whether observed patterns generalize across configurations and judge models. Beyond aggregate agreement, we examine metric-level correlations, evaluator consistency, and systematic human-LLM disagreement to identify which conver- sational attributes can be judged reliably by automation and which remain sensitive to interpretation and context. Effective voice-agent evaluation is also shaped by pipeline-level factors such as speech generation, streaming, and error propagation across ASR, reasoning, and tool-calling stages, motivating our focus on comparing how human and LLM judges score the same interactions end to end. Our results show that LLM- based evaluation can serve as an effective component of large- scale voice-agent assessment, but that its reliability is metric- and configuration-dependent rather than uniform. This pro- vides an empirical framework for identifying which metrics suit automated evaluation and supports hybrid pipelines in which LLM judges handle scalable assessment while human evaluators remain engaged for metrics that demand contextual interpretation and higher-confidence judgment.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.24314v1",
+        "pdf": "https://arxiv.org/pdf/2608.24314v1",
+        "github": null,
+        "blog": "https://anupam-purwar.github.io/page/"
+      },
+      "institution": "Sprinklr AI",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着对话式语音代理（Voice Agents）的普及，大规模评估其交互质量变得至关重要。传统上依赖人工评估，但成本高、耗时且难以扩展；而现有的自动化指标往往无法捕捉细微的对话质量和上下文判断。\n- **已有工作为什么解决不了**：现有的“LLM作为评委”（LLM-as-a-Judge）研究主要集中在文本对话领域，且存在位置偏差、提示词敏感性和设置不稳定性等问题。此外，语音代理涉及端到端流水线（包括ASR、推理、工具调用和语音合成），错误会在各阶段传播，仅评估文本转录无法全面反映语音代理的真实质量，现有工作缺乏针对语音场景下LLM评委可靠性、校准性及人类监督需求的系统性基准测试。\n\n## 文章的核心贡献点\n- **提出了一个**：针对语音代理评估的LLM评委基准框架，通过比较人类评委与GPT-4.1及GPT-5在电信和零售场景下的评分，系统分析了不同评估配置（p0, p1, p2）下的可靠性、一致性及人机分歧模式。\n- **挑战1：评估设置的敏感性与泛化能力不足**。LLM评委的评分可能因提示词结构或评估配置的不同而产生巨大波动，导致结果不可靠。论文通过在三种不同评估配置（p0, p1, p2）下对同一交互进行评分，量化了LLM评委对设置变化的敏感度，并验证了观察到的模式在不同配置和法官模型间是否具有泛化性，从而识别出稳定的评估维度。\n- **挑战2：语音流水线复杂性导致的评估维度差异**。语音代理的质量受ASR错误、延迟和语音合成等多因素影响，不同对话属性（如安全性 vs. 上下文理解）对人机共识的要求不同。论文通过细粒度的指标级相关性分析和系统性人机分歧研究，区分了哪些属性适合自动化评估，哪些仍需人类介入，为构建混合评估流水线提供了实证依据。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：研究使用了来自电信和零售领域的真实语音代理对话数据，涵盖对话质量和安全维度。评估对象包括人类评委以及先进的LLM模型（GPT-4.1和GPT-5）。\n- **评估结果**：\n    - LLM基于的评估可以作为大规模语音代理评估的有效组成部分，但其可靠性并非均匀分布，而是高度依赖于具体指标和评估配置。\n    - 发现了LLM评委与人类评委在某些维度上的高一致性，但在需要深层上下文解释的指标上存在系统性分歧。\n    - 证明了不同的评估配置（p0-p2）会显著影响评分结果，表明单一的自动化评估设置不足以覆盖所有质量维度。\n- **对比**：相较于以往仅关注文本对话或仅报告总体一致性的工作，本研究深入到了语音代理特有的端到端流水线误差传播问题，并提供了更细致的指标级分析，指出了自动化评估的边界。\n\n#### 总结\n本文通过实证研究建立了语音代理LLM评委评估的可靠性框架。结果表明，虽然LLM评委在大规模评估中具有巨大潜力，但不能盲目替代人类。最佳实践应采用混合流水线：由LLM评委处理可扩展的、客观的指标评估，而人类评委则专注于需要复杂上下文解释和高置信度判断的关键指标。这为未来语音代理的自动化评估标准制定提供了重要参考。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Scaling the evaluation of conversational voice agents requires reliable methods that capture both observable interaction quality and contextual judgments typically provided by humans. Traditional human evaluation is expensive and unscalable, while existing automated metrics often fail to capture nuanced conversational quality.\n- **Why Existing Work Falls Short**: Prior \"LLM-as-a-Judge\" research primarily focuses on text-based dialogues and suffers from issues like position bias, prompt sensitivity, and instability. Furthermore, voice agents involve end-to-end pipelines (ASR, reasoning, TTS) where errors compound; evaluating transcripts alone is insufficient. There is a lack of systematic benchmarking for LLM judge reliability, calibration, and the need for human oversight specifically in voice agent contexts.\n\n## Core Contributions\n- **Proposed a** benchmark framework for LLM judges in voice-agent evaluation, systematically comparing human judgments with GPT-4.1 and GPT-5 across telecom and retail scenarios, analyzing reliability and disagreement patterns under three different evaluation configurations (p0, p1, p2).\n- **Challenge 1: Sensitivity to Evaluation Settings**. LLM judges can produce volatile scores depending on prompt structure or configuration. The paper addresses this by scoring the same interactions under three distinct configurations to quantify sensitivity and test whether agreement patterns generalize across setups and models, identifying stable evaluation dimensions.\n- **Challenge 2: Complexity of Voice Pipelines and Metric Heterogeneity**. Voice agent quality is affected by ASR errors, latency, and synthesis, making some attributes harder to judge automatically than others. The paper addresses this by conducting metric-level correlation analysis and examining systematic human-LLM disagreements to distinguish which attributes are suitable for automation and which require human interpretation.\n\n## Implementation and Evaluation\n- **Implementation & Data**: Used real-world voice agent conversations from telecom and retail domains, covering quality and safety dimensions. Evaluators included human annotators and LLMs (GPT-4.1, GPT-5).\n- **Results**:\n    - LLM-based evaluation is effective for large-scale assessment but its reliability is metric- and configuration-dependent, not uniform.\n    - High consistency was found in some dimensions, but systematic disagreements persisted in areas requiring deep contextual interpretation.\n    - Evaluation configurations significantly impacted scores, indicating that a single automated setup is insufficient for all quality dimensions.\n- **Comparison**: Unlike prior work focusing on text-only or aggregate agreement, this study addresses end-to-end voice pipeline error propagation and provides granular metric-level insights, defining the boundaries of automated evaluation.\n\n## 4. Conclusion\nThe paper establishes an empirical framework for LLM judge reliability in voice-agent evaluation. It concludes that while LLM judges are powerful for scaling, they should not blindly replace humans. A hybrid pipeline is recommended: LLMs handle scalable, objective metrics, while humans oversee complex, context-sensitive judgments. This provides a roadmap for robust voice-agent assessment standards.",
+      "render_excerpt": "机构: Sprinklr AI<br>本文通过实证研究建立了语音代理LLM评委评估的可靠性框架。结果表明，虽然LLM评委在大规模评估中具有巨大潜力，但不能盲目替代人类。最佳实践应采用混合流水线：由LLM评委处理可扩展的、客观的指标评估，而人类评委则专注于需要复杂上下文解释和高置信度判断的关键指标。这为未来语音代理的自动化评估标准制定提供了重要参考。",
+      "render_excerpt_en": "Institution: Sprinklr AI<br>## 1. What the Paper Did - **Background**: Scaling the evaluation of conversational voice agents requires reliable methods that capture both observable interaction quality and contextual judgments typically provided by humans. Traditional human evaluation is expensive and unscalable, while existing automated metrics often fail to capture nuanced conversational quality.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-25T09:44:36Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-25"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

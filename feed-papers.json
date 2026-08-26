@@ -1,47 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-25T02:36:47.591642+00:00",
-  "run_date": "2026-08-24",
+  "generated_at": "2026-08-26T02:44:42.766525+00:00",
+  "run_date": "2026-08-25",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.23104",
-      "date": "2026-08-24",
-      "title": "Molecular LLM Agents: From Architectural Design to Scientific Autonomy",
+      "id": "arxiv:2608.24650",
+      "date": "2026-08-25",
+      "title": "Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiatong Li",
-        "Wengyu Zhang",
-        "Weida Wang",
-        "Yuxuan Ren",
-        "Wei Liu",
-        "Chenyang Mao",
-        "Yuqiang Li",
-        "Yatao Bian",
-        "Changmeng Zheng",
-        "Xiaoyong Wei",
-        "Qing Li"
+        "Wonung Kim",
+        "Hyunmin Choi",
+        "Minsu Kim",
+        "Jaehong Cho",
+        "Yeongwook Kim",
+        "Jongse Park"
       ],
-      "institution": "The Hong Kong Polytechnic University",
+      "institution": "KAIST",
       "summary": {
-        "zh": "本文建立了分子 LLM 智能体的全面概念框架，通过架构视图和科学自主性阶梯两个维度，解决了该领域缺乏统一标准和评估体系的问题。该工作不仅厘清了分子智能体所需的关键能力（如化学忠实感知、领域工具接地），还为未来设计能够承担更高级别科学自主任务（如自动湿实验和制定科学议程）的智能体提供了理论指导和风险评估依据。",
-        "en": "This work establishes a comprehensive conceptual framework for molecular LLM agents, addressing the lack of unified standards and evaluation systems in the field. By combining an architectural view with a scientific..."
+        "zh": "Simthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。",
+        "en": "- **Background**: System-level simulation is crucial for exploring the design space of LLM serving systems, as real-world deployments are costly and often infeasible. The LLM ecosystem is rapidly evolving from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23104v1",
-        "pdf": "https://arxiv.org/pdf/2608.23104v1",
+        "abs": "http://arxiv.org/abs/2608.24650v1",
+        "pdf": "https://arxiv.org/pdf/2608.24650v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.23104.md",
-        "summary_en_path": "summary_en/2026-08/2608.23104.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23104.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23104.md"
+        "summary_zh_path": "summary/2026-08/2608.24650.md",
+        "summary_en_path": "summary_en/2026-08/2608.24650.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24650.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24650.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -58,133 +53,36 @@
       }
     },
     {
-      "id": "arxiv:2608.23552",
-      "date": "2026-08-24",
-      "title": "Prime Agent: A Self-Improving RLM Harness",
+      "id": "arxiv:2608.24571",
+      "date": "2026-08-25",
+      "title": "Joint Optimization of Tool Creation and Use for Large Language Model Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Seth Karten",
-        "Alex L. Zhang",
-        "Kevin Thomas",
-        "Sebastian Müller",
-        "Elie Bakouch",
-        "Daniel Auras",
-        "Mika Senghaas",
-        "Fares Obeid",
-        "Konstantin Dunas",
-        "Johannes Hagemann",
-        "Sami Jaghouar"
+        "Zhi Rui Tam",
+        "Chieh-Yen Lin",
+        "Yun-Nung Chen",
+        "Shao-Hua Sun",
+        "Hung-yi Lee"
       ],
-      "institution": "Princeton University, Prime Intellect, MIT",
+      "institution": "Appier AI Research, National Taiwan University",
       "summary": {
-        "zh": "Prime Agent 通过引入递归语言模型抽象和持续 Harness 机制，解决了 LLM 在长视野任务中状态管理和计算扩展的瓶颈。它将模型从单纯的序列处理器转变为能够利用外部存储和并行计算的类冯·诺依曼系统，显著提升了在复杂推理和编码任务中的表现，为评估和提升 AI 代理的真实能力提供了标准化的基础设施。",
-        "en": "- **Background**: Large Language Models (LLMs) are bounded sequential processors whose decisions are limited to model weights and active context. However, long-horizon agency requires external information storage and..."
+        "zh": "本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。",
+        "en": "This paper addresses the decoupling of tool creation and usage in existing tool-augmented LLMs by proposing the SMITH framework. By jointly optimizing schema generation, code implementation, and tool usage via..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23552v1",
-        "pdf": "https://arxiv.org/pdf/2608.23552v1",
-        "github": "https://github.com/PrimeIntellect-ai/prime-agent"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.23552.md",
-        "summary_en_path": "summary_en/2026-08/2608.23552.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23552.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23552.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.23471",
-      "date": "2026-08-24",
-      "title": "InjecMEM: Memory Injection Attack on LLM Agent Memory Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Hanling Tian",
-        "Gengyu Zhang",
-        "Zeyang Sha",
-        "Jingying Wang",
-        "Yuhang Liu",
-        "Zhehao Huang",
-        "Kun Yang",
-        "Xiaolin Huang"
-      ],
-      "institution": "Shanghai Jiao Tong University, Ant Group",
-      "summary": {
-        "zh": "本文揭示了LLM代理记忆系统面临的新安全威胁，提出了InjecMEM攻击框架。通过解耦检索锚点和对抗命令，并采用梯度优化策略，成功在单次交互中实现了对记忆系统的有效注入和操控。研究结果强调了加固记忆系统的紧迫性，并为代理记忆安全研究提供了可复现的框架。",
-        "en": "This paper reveals new security threats facing LLM agent memory systems and proposes the InjecMEM attack framework. By decoupling retrieval anchors from adversarial commands and employing gradient optimization..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.23471v1",
-        "pdf": "https://arxiv.org/pdf/2608.23471v1",
-        "github": "https://github.com/BlueBlood6/InjecMEM"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.23471.md",
-        "summary_en_path": "summary_en/2026-08/2608.23471.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23471.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23471.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.23395",
-      "date": "2026-08-24",
-      "title": "Right-Sizing LLM-Agent Decomposition in VAT Determination: A Pilot Controlled Sweep",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Pedro Santos"
-      ],
-      "institution": "Independent Researcher",
-      "summary": {
-        "zh": "本文通过严格控制变量的试点研究，揭示了 LLM Agent 分解粒度对性能的非单调影响。虽然中间粒度的分解在准确率上表现最佳，但其优势受限于提示词预算的解释空间。研究指出，简单的多 Agent 分解并不总是优于单 Agent，且在面对结构化幻觉时更为脆弱。最终贡献在于提供了一套可复现的基准测试方法和“在依赖层中点进行分区”的启发式策略，为未来 Agent 系统设计提供了实证依据。",
-        "en": "- **Background**: Current LLM-agent systems face conflicting design choices: decomposing work across many narrow agents versus using a single strong tool-using agent. While some industry reports favor multi-agent..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.23395v1",
-        "pdf": "https://arxiv.org/pdf/2608.23395v1",
+        "abs": "http://arxiv.org/abs/2608.24571v1",
+        "pdf": "https://arxiv.org/pdf/2608.24571v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.23395.md",
-        "summary_en_path": "summary_en/2026-08/2608.23395.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23395.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23395.md"
+        "summary_zh_path": "summary/2026-08/2608.24571.md",
+        "summary_en_path": "summary_en/2026-08/2608.24571.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24571.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24571.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -201,35 +99,124 @@
       }
     },
     {
-      "id": "arxiv:2608.23263",
-      "date": "2026-08-24",
-      "title": "Automated Construction of FAIR Digital Object Knowledge Graphs from Flat Cultural Heritage Records",
+      "id": "arxiv:2608.24570",
+      "date": "2026-08-25",
+      "title": "EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zeyd Boukhers",
-        "Lingxiao Kong",
-        "Xenophon Zabulis",
-        "Georgios Toubekis"
+        "Lihang Zeng",
+        "Shaoting Zhang",
+        "Xiaofan Zhang"
       ],
-      "institution": "Fraunhofer Institute for Applied Information Technology (FIT)",
+      "institution": "Shanghai Jiao Tong University, Shanghai Innovation Institute",
       "summary": {
-        "zh": "本文提出了一种利用大语言模型将扁平文化遗产记录转化为 FAIR 数字对象知识图谱的方法。通过自动化区分需解析实体与字面量，并结合受控词表进行实体链接，该方法显著提升了元数据的机器可操作性，解决了现有数据模型中缺乏持久标识符引用的关键问题，为文化遗产数据的自动化智能处理提供了新范式。",
-        "en": "- **Background**: The FAIR Digital Object (FDO) framework mandates that metadata attribute values be expressed as Persistent Identifiers (PIDs) to create fully machine-actionable graphs. However, existing cultural..."
+        "zh": "EviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。",
+        "en": "- **Background**: Clinical diagnosis is an active evidence-seeking process where clinicians iteratively acquire evidence, update hypotheses, and decide when to stop. However, many existing LLM-based medical diagnosis..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23263v1",
-        "pdf": "https://arxiv.org/pdf/2608.23263v1",
+        "abs": "http://arxiv.org/abs/2608.24570v1",
+        "pdf": "https://arxiv.org/pdf/2608.24570v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.23263.md",
-        "summary_en_path": "summary_en/2026-08/2608.23263.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23263.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23263.md"
+        "summary_zh_path": "summary/2026-08/2608.24570.md",
+        "summary_en_path": "summary_en/2026-08/2608.24570.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24570.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24570.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.24509",
+      "date": "2026-08-25",
+      "title": "PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zhi-Kai Chen",
+        "Xu-Xiang Zhong",
+        "Song-Yan Li",
+        "De-Chuan Zhan",
+        "Han-Jia Ye"
+      ],
+      "institution": "Nanjing University",
+      "summary": {
+        "zh": "PeakBench 填补了 LLM 智能体基准测试中资源感知调度的空白。通过解耦逻辑规划与物理调度，该基准测试揭示了当前智能体在资源受限环境下的系统性脆弱性。研究表明，仅靠优秀的逻辑推理不足以保障高效执行，必须结合资源感知的调度策略。PeakBench 为诊断和优化资源感知的智能体行为提供了一个有用的测试平台。",
+        "en": "- **Background**: LLM agents are evolving into autonomous task-solvers that invoke external tools. Parallel execution is essential for low latency in complex workflows."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.24509v1",
+        "pdf": "https://arxiv.org/pdf/2608.24509v1",
+        "github": "https://github.com/Czzzk/Staggering-the-Peaks"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.24509.md",
+        "summary_en_path": "summary_en/2026-08/2608.24509.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24509.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24509.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.24314",
+      "date": "2026-08-25",
+      "title": "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Anupam Purwar",
+        "Shashank Singh",
+        "Kritika Srivastava"
+      ],
+      "institution": "Sprinklr AI",
+      "summary": {
+        "zh": "本文通过实证研究建立了语音代理LLM评委评估的可靠性框架。结果表明，虽然LLM评委在大规模评估中具有巨大潜力，但不能盲目替代人类。最佳实践应采用混合流水线：由LLM评委处理可扩展的、客观的指标评估，而人类评委则专注于需要复杂上下文解释和高置信度判断的关键指标。这为未来语音代理的自动化评估标准制定提供了重要参考。",
+        "en": "- **Background**: Scaling the evaluation of conversational voice agents requires reliable methods that capture both observable interaction quality and contextual judgments typically provided by humans. Traditional human..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.24314v1",
+        "pdf": "https://arxiv.org/pdf/2608.24314v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.24314.md",
+        "summary_en_path": "summary_en/2026-08/2608.24314.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24314.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24314.md"
       },
       "signals": {
         "priority_keyword": "Agent"
