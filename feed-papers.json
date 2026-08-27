@@ -1,42 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-26T02:44:42.766525+00:00",
-  "run_date": "2026-08-25",
+  "generated_at": "2026-08-27T11:41:13.803332+00:00",
+  "run_date": "2026-08-26",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.24650",
-      "date": "2026-08-25",
-      "title": "Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems",
+      "id": "arxiv:2608.26036",
+      "date": "2026-08-26",
+      "title": "Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wonung Kim",
-        "Hyunmin Choi",
-        "Minsu Kim",
-        "Jaehong Cho",
-        "Yeongwook Kim",
-        "Jongse Park"
+        "Srimonti Dutta",
+        "Akshata Kishore Moharir"
       ],
-      "institution": "KAIST",
+      "institution": "WAI USA Research Labs",
       "summary": {
-        "zh": "Simthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。",
-        "en": "- **Background**: System-level simulation is crucial for exploring the design space of LLM serving systems, as real-world deployments are costly and often infeasible. The LLM ecosystem is rapidly evolving from..."
+        "zh": "本文主张现实世界中的 LLM 数据代理不应仅通过输出是否匹配参考答案来评估，而应评估其输出是否有可审计的计算支持。通过提出 Trace Integrity 和执行契约，论文为解决结构化数据任务中的结构差距提供了具体方案，并强调 CAIT 率作为关键风险指标的重要性，旨在推动从“答案正确”向“计算可信”的范式转变。",
+        "en": "The paper argues that real-world LLM data agents should be evaluated not just on output matching, but on whether outputs are supported by auditable computation. By proposing Trace Integrity and Execution Contracts, it..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.24650v1",
-        "pdf": "https://arxiv.org/pdf/2608.24650v1",
+        "abs": "http://arxiv.org/abs/2608.26036v1",
+        "pdf": "https://arxiv.org/pdf/2608.26036v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.24650.md",
-        "summary_en_path": "summary_en/2026-08/2608.24650.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24650.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24650.md"
+        "summary_zh_path": "summary/2026-08/2608.26036.md",
+        "summary_en_path": "summary_en/2026-08/2608.26036.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.26036.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.26036.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,36 +49,38 @@
       }
     },
     {
-      "id": "arxiv:2608.24571",
-      "date": "2026-08-25",
-      "title": "Joint Optimization of Tool Creation and Use for Large Language Model Agents",
+      "id": "arxiv:2608.26004",
+      "date": "2026-08-26",
+      "title": "AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhi Rui Tam",
-        "Chieh-Yen Lin",
-        "Yun-Nung Chen",
-        "Shao-Hua Sun",
-        "Hung-yi Lee"
+        "Sheng Liang",
+        "Yongyue Zhang",
+        "Nathanael Brian",
+        "Hang Lv",
+        "Hao Wang",
+        "Chen Zhang",
+        "Yong Liu"
       ],
-      "institution": "Appier AI Research, National Taiwan University",
+      "institution": "Huawei Technologies Co., Ltd., University of Science and Technology of China",
       "summary": {
-        "zh": "本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。",
-        "en": "This paper addresses the decoupling of tool creation and usage in existing tool-augmented LLMs by proposing the SMITH framework. By jointly optimizing schema generation, code implementation, and tool usage via..."
+        "zh": "AsymSpec 通过解耦草稿模型和验证模型的上下文访问权限，创新性地解决了 Agent LLM 中上下文累积带来的推理瓶颈。它允许轻量级草稿模型利用完整上下文来弥补验证模型因压缩而丢失的信息，并通过对比 logits 融合和发散感知门控机制确保生成的稳定性和效率。实验表明，该方法在大幅降低计算成本的同时，保留了绝大部分的任务准确性，为高效部署长上下文 Agent 提供了新的思路。",
+        "en": "- **Background**: Agentic LLM pipelines face escalating inference costs as context accumulates from retrieval, tool use, and multi-turn interactions. Deployments often compress inputs to control latency, which degrades..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.24571v1",
-        "pdf": "https://arxiv.org/pdf/2608.24571v1",
+        "abs": "http://arxiv.org/abs/2608.26004v1",
+        "pdf": "https://arxiv.org/pdf/2608.26004v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.24571.md",
-        "summary_en_path": "summary_en/2026-08/2608.24571.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24571.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24571.md"
+        "summary_zh_path": "summary/2026-08/2608.26004.md",
+        "summary_en_path": "summary_en/2026-08/2608.26004.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.26004.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.26004.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,34 +97,34 @@
       }
     },
     {
-      "id": "arxiv:2608.24570",
-      "date": "2026-08-25",
-      "title": "EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents",
+      "id": "arxiv:2608.25992",
+      "date": "2026-08-26",
+      "title": "ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Lihang Zeng",
-        "Shaoting Zhang",
-        "Xiaofan Zhang"
+        "Somgyuan Li",
+        "Ahmed M. Abdelmoniem",
+        "Shiqiang Wang"
       ],
-      "institution": "Shanghai Jiao Tong University, Shanghai Innovation Institute",
+      "institution": "Aston University, Queen Mary University of London, University of Exeter",
       "summary": {
-        "zh": "EviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。",
-        "en": "- **Background**: Clinical diagnosis is an active evidence-seeking process where clinicians iteratively acquire evidence, update hypotheses, and decide when to stop. However, many existing LLM-based medical diagnosis..."
+        "zh": "本文针对多智能体 LLM 工作流高昂的运营成本问题，提出了 ProgRouter 框架。通过引入多视图任务进度评分器和自适应路由机制，ProgRouter 能够根据实时任务状态动态选择最合适的 LLM 代理。该方法有效解决了传统一次性路由无法适应动态工作流的缺陷，在多个复杂任务基准上实现了成本大幅降低且性能不降反升的效果，为可持续的 LLM 服务提供了新的思路。",
+        "en": "- **Background**: Multi-agent Large Language Model (LLM) workflows have emerged as a powerful paradigm for solving complex, open-ended tasks through collaborative reasoning. However, they incur substantial operating..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.24570v1",
-        "pdf": "https://arxiv.org/pdf/2608.24570v1",
+        "abs": "http://arxiv.org/abs/2608.25992v1",
+        "pdf": "https://arxiv.org/pdf/2608.25992v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.24570.md",
-        "summary_en_path": "summary_en/2026-08/2608.24570.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24570.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24570.md"
+        "summary_zh_path": "summary/2026-08/2608.25992.md",
+        "summary_en_path": "summary_en/2026-08/2608.25992.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25992.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25992.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -143,36 +141,37 @@
       }
     },
     {
-      "id": "arxiv:2608.24509",
-      "date": "2026-08-25",
-      "title": "PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents",
+      "id": "arxiv:2608.25937",
+      "date": "2026-08-26",
+      "title": "Candidate supply and answer selection shape the value of LLM judging in multi-agent systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhi-Kai Chen",
-        "Xu-Xiang Zhong",
-        "Song-Yan Li",
-        "De-Chuan Zhan",
-        "Han-Jia Ye"
+        "Jia-Hao Ji",
+        "Sijie Li",
+        "Jiabei Cheng",
+        "Zixi She",
+        "Jin-Tai Yu",
+        "Zhiyuan Yuan"
       ],
-      "institution": "Nanjing University",
+      "institution": "Fudan University, Shanghai Jiao Tong University, Shanghai Academy of Artificial Intelligence for Science",
       "summary": {
-        "zh": "PeakBench 填补了 LLM 智能体基准测试中资源感知调度的空白。通过解耦逻辑规划与物理调度，该基准测试揭示了当前智能体在资源受限环境下的系统性脆弱性。研究表明，仅靠优秀的逻辑推理不足以保障高效执行，必须结合资源感知的调度策略。PeakBench 为诊断和优化资源感知的智能体行为提供了一个有用的测试平台。",
-        "en": "- **Background**: LLM agents are evolving into autonomous task-solvers that invoke external tools. Parallel execution is essential for low latency in complex workflows."
+        "zh": "本文揭示了多智能体系统中“生成正确但输出错误”的悖论，指出问题的核心在于答案选择机制而非单纯的生成能力。通过隔离分析，作者证明 LLM 裁判的有效性高度依赖于上下文，且简单的选择规则优化（结合频率与裁判评分）能显著提升性能。该研究为设计能够保护生成出的正确答案不被丢失的多智能体架构提供了重要的诊断依据和设计原则。",
+        "en": "The paper reveals the paradox of \"generated correctly but output incorrectly\" in MAS, identifying the core issue as the answer selection mechanism rather than generation capability. By isolating analysis stages, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.24509v1",
-        "pdf": "https://arxiv.org/pdf/2608.24509v1",
-        "github": "https://github.com/Czzzk/Staggering-the-Peaks"
+        "abs": "http://arxiv.org/abs/2608.25937v1",
+        "pdf": "https://arxiv.org/pdf/2608.25937v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.24509.md",
-        "summary_en_path": "summary_en/2026-08/2608.24509.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24509.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24509.md"
+        "summary_zh_path": "summary/2026-08/2608.25937.md",
+        "summary_en_path": "summary_en/2026-08/2608.25937.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25937.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25937.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,34 +188,37 @@
       }
     },
     {
-      "id": "arxiv:2608.24314",
-      "date": "2026-08-25",
-      "title": "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight",
+      "id": "arxiv:2608.25920",
+      "date": "2026-08-26",
+      "title": "Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anupam Purwar",
-        "Shashank Singh",
-        "Kritika Srivastava"
+        "Zhongwen Luan",
+        "Xiaoyu Zhang",
+        "Ming Hu",
+        "Yue Yang",
+        "Jiongchi Yu",
+        "Xiaohong Chen"
       ],
-      "institution": "Sprinklr AI",
+      "institution": "East China Normal University, Nanyang Technological University, Singapore Management University, Xi’an University of Architecture and Technology",
       "summary": {
-        "zh": "本文通过实证研究建立了语音代理LLM评委评估的可靠性框架。结果表明，虽然LLM评委在大规模评估中具有巨大潜力，但不能盲目替代人类。最佳实践应采用混合流水线：由LLM评委处理可扩展的、客观的指标评估，而人类评委则专注于需要复杂上下文解释和高置信度判断的关键指标。这为未来语音代理的自动化评估标准制定提供了重要参考。",
-        "en": "- **Background**: Scaling the evaluation of conversational voice agents requires reliable methods that capture both observable interaction quality and contextual judgments typically provided by humans. Traditional human..."
+        "zh": "本文深入探讨了 LLM 多智能体系统中的失败调试问题，指出了现有重采样方法在因果归因上的缺陷。通过提出 SymTrace 评估框架和 SymFail 数据集，作者证明了现有方法的低效性，并验证了基于轨迹定位的症状驱动干预方法的有效性。研究结果表明，受控执行和局部证据比重复的随机重生成更有价值，为 MAS 的稳健部署提供了可行的调试和修复见解。",
+        "en": "This paper investigates failure debugging in LLM-based Multi-Agent Systems, highlighting the flaws in causal attribution of existing resampling methods. By introducing the SymTrace framework and SymFail dataset, the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.24314v1",
-        "pdf": "https://arxiv.org/pdf/2608.24314v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.25920v1",
+        "pdf": "https://arxiv.org/pdf/2608.25920v1",
+        "github": "https://anonymous.4open.science/r/SymTrace-7234"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.24314.md",
-        "summary_en_path": "summary_en/2026-08/2608.24314.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.24314.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.24314.md"
+        "summary_zh_path": "summary/2026-08/2608.25920.md",
+        "summary_en_path": "summary_en/2026-08/2608.25920.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25920.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25920.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.26_02:44-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.27_11:41-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月26日 02:44</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月27日 11:41</sub></summary>
 <br>
 
-- Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems 
-- Joint Optimization of Tool Creation and Use for Large Language Model Agents 
-- EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents 
-- PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents 
-- Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight 
+- Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems 
+- AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs 
+- ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs 
+- Candidate supply and answer selection shape the value of LLM judging in multi-agent systems 
+- Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-26</span> | **Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems**<br><sub>机构: WAI USA Research Labs<br>本文主张现实世界中的 LLM 数据代理不应仅通过输出是否匹配参考答案来评估，而应评估其输出是否有可审计的计算支持。通过提出 Trace Integrity 和执行契约，论文为解决结构化数据任务中的结构差距提供了具体方案，并强调 CAIT 率作为关键风险指标的重要性，旨在推动从“答案正确”向“计算可信”的范式转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26036v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26036.md)  |
+| <span style='display: inline-block; width: 42px;'>08-26</span> | **AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs**<br><sub>机构: Huawei Technologies Co., Ltd., University of Science and Technology of China<br>AsymSpec 通过解耦草稿模型和验证模型的上下文访问权限，创新性地解决了 Agent LLM 中上下文累积带来的推理瓶颈。它允许轻量级草稿模型利用完整上下文来弥补验证模型因压缩而丢失的信息，并通过对比 logits 融合和发散感知门控机制确保生成的稳定性和效率。实验表明，该方法在大幅降低计算成本的同时，保留了绝大部分的任务准确性，为高效部署长上下文 Agent 提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26004v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26004.md)  |
+| <span style='display: inline-block; width: 42px;'>08-26</span> | **ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs**<br><sub>机构: Aston University, Queen Mary University of London, University of Exeter<br>本文针对多智能体 LLM 工作流高昂的运营成本问题，提出了 ProgRouter 框架。通过引入多视图任务进度评分器和自适应路由机制，ProgRouter 能够根据实时任务状态动态选择最合适的 LLM 代理。该方法有效解决了传统一次性路由无法适应动态工作流的缺陷，在多个复杂任务基准上实现了成本大幅降低且性能不降反升的效果，为可持续的 LLM 服务提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.25992v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.25992.md)  |
+| <span style='display: inline-block; width: 42px;'>08-26</span> | **Candidate supply and answer selection shape the value of LLM judging in multi-agent systems**<br><sub>机构: Fudan University, Shanghai Jiao Tong University, Shanghai Academy of Artificial Intelligence for Science<br>本文揭示了多智能体系统中“生成正确但输出错误”的悖论，指出问题的核心在于答案选择机制而非单纯的生成能力。通过隔离分析，作者证明 LLM 裁判的有效性高度依赖于上下文，且简单的选择规则优化（结合频率与裁判评分）能显著提升性能。该研究为设计能够保护生成出的正确答案不被丢失的多智能体架构提供了重要的诊断依据和设计原则。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.25937v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.25937.md)  |
+| <span style='display: inline-block; width: 42px;'>08-26</span> | **Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems**<br><sub>机构: East China Normal University, Nanyang Technological University, Singapore Management University, Xi’an University of Architecture and Technology<br>本文深入探讨了 LLM 多智能体系统中的失败调试问题，指出了现有重采样方法在因果归因上的缺陷。通过提出 SymTrace 评估框架和 SymFail 数据集，作者证明了现有方法的低效性，并验证了基于轨迹定位的症状驱动干预方法的有效性。研究结果表明，受控执行和局部证据比重复的随机重生成更有价值，为 MAS 的稳健部署提供了可行的调试和修复见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.25920v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.25920.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/SymTrace-7234)</div> |
 | <span style='display: inline-block; width: 42px;'>08-25</span> | **Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems**<br><sub>机构: KAIST<br>Simthesizer 通过引入智能体驱动的开发模式和可组合的动态图基础设施，有效解决了现有 LLM 服务模拟器在面对快速演进的复杂工作流时维护困难、开发滞后及保真度不足的问题。它不仅大幅提升了模拟器的开发效率和执行速度，还保证了较高的模拟准确性，为未来 LLM 服务系统的快速原型设计和性能评估提供了强有力的工具支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24650.md)  |
 | <span style='display: inline-block; width: 42px;'>08-25</span> | **Joint Optimization of Tool Creation and Use for Large Language Model Agents**<br><sub>机构: Appier AI Research, National Taiwan University<br>本文针对现有工具增强 LLM 中工具创建与使用解耦的问题，提出了 SMITH 框架。通过强化学习联合优化工具的模式生成、代码实现及最终使用效果，解决了奖励分解和循环评估的挑战。实验表明，仅用 4B 参数模型即可在多个推理基准上超越更大的基线模型，并展现出良好的跨模型工具复用能力，证明了联合训练工具创建与使用的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24571v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24571.md)  |
 | <span style='display: inline-block; width: 42px;'>08-25</span> | **EviDx: Evidence-Aware Active Diagnosis with Scaffolded LLM Agents**<br><sub>机构: Shanghai Jiao Tong University, Shanghai Innovation Institute<br>EviDx 通过构建交互式环境、结构化诊断脚手架和智能运行时控制机制，解决了现有LLM医疗诊断系统在主动证据寻求方面的不足。它不仅提升了诊断的准确性和过程的稳健性，还为评估和改进医疗AI代理的动态推理能力提供了新的框架和基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.24570v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.24570.md)  |
