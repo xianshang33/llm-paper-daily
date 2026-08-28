@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.27_11:41-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.28_13:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月27日 11:41</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月28日 13:05</sub></summary>
 <br>
 
-- Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems 
-- AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs 
-- ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs 
-- Candidate supply and answer selection shape the value of LLM judging in multi-agent systems 
-- Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems 
+- What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents 
+- From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities 
+- When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents 
+- Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents 
+- FaulT-Bench: Towards Benchmarking Network Troubleshooting LLM Agents under Unreliable User Tickets 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-27</span> | **What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents**<br><sub>机构: Huawei Technologies Co., Ltd, Shanghai Jiao Tong University<br>本文针对LLM智能体数据生成缺乏统一标准的问题，提出了基于 $(E,q,\tau,v)$ 分解对象和 ACE（准确性-复杂性-多样性）视角的理论框架。该框架不仅澄清了现有工作中混淆的生成机制，还为未来在可扩展性、数据源、训练机制和自适应学习方面的研究提供了方向，强调核心挑战在于如何随着智能体的进化持续提供高质量、非冗余的交互经验。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27260v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27260.md)  |
+| <span style='display: inline-block; width: 42px;'>08-27</span> | **From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities**<br><sub>机构: Sun Yat-sen University, Tencent Youtu Lab, University of Illinois Chicago, Pengcheng Laboratory<br>本文指出了当前数学基准测试在评估LLM代理能力方面的局限性，并提出了一种基于原子能力映射的过程级评估框架。通过将代理行为分解为可复用的数学原子单元，并利用自动化流水线生成细粒度标注，该研究证明了过程级评估对于理解LLM真实潜力和指导鲁棒代理开发的重要性。研究发现，具有相似最终准确率的模型可能在代理能力上存在巨大差异，强调了从“原子”到“代理”的可解释性评估的必要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26950v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26950.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Eternity-gaga/Agentic-Math-Bench)</div> |
+| <span style='display: inline-block; width: 42px;'>08-27</span> | **When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents**<br><sub>机构: Institute of Information Engineering, Chinese Academy of Sciences<br>## 文章做了什么 - **背景**：工具增强的 LLM 智能体在执行开放式任务时，必须依赖不可信的运行时观察（Observations）。当工具输出不再仅提供数据，而是开始指定具体动作时，它们实际上变成了能够驱动超出用户意图的现实世界副作用的“命令”。 - **已有工作为什么解决不了**：现有的防御机制面临结构性张力：限制不可信的外部内容可以提高安全性，但会削弱开放式任务所需的运行时适应性；反之，若允许观察结果自由影响后续决策，攻击语义可能通过正常的工具步骤传播，最终产生未经授权的外部效应。现有方法难以区分合法的运行时适应与攻击诱导的行为，导致在安全性和实用性之间难以取得平衡。 ## 文章的核心贡献点 - **提出了一个 SARA 框架**：该框架将动作诱导（Action Induction）与执行授权（Execution Authorization）视为不同的运行时角色，并将动作来源与执行权限分离。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27146v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27146.md)  |
+| <span style='display: inline-block; width: 42px;'>08-27</span> | **Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents**<br><sub>机构: University of Chinese Academy of Sciences, Nanyang Technological University, JD.com, Peking University, Fudan University, Fullive-AI<br>本文揭示了 LLM 智能体安全中的一个根本性问题：安全不具有组合性（Safety Does Not Compose）。现有的单轨迹安全机制在面对跨迭代的碎片化攻击时完全失效。作者提出了 LoopHarness，通过维护循环级别的持久、非衰减安全状态，提供了理论上的安全边界，并通过严格的评估协议证明了其在抵御复杂跨迭代攻击方面的有效性，为自主 LLM 智能体的长期安全运行提供了新的理论基础和实践框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27141v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27141.md)  |
+| <span style='display: inline-block; width: 42px;'>08-27</span> | **FaulT-Bench: Towards Benchmarking Network Troubleshooting LLM Agents under Unreliable User Tickets**<br><sub>机构: University of Sydney<br>FaulT-Bench 填补了网络故障诊断 LLM 智能体评估中的关键空白，通过引入不可靠用户工单和多样化的人设重写，揭示了现有智能体在面对真实世界噪声时的脆弱性。研究表明，提高智能体对模糊信息的处理能力以及使其能够正确识别“无故障”状态，是未来开发可靠网络运维智能体的关键方向。该基准为评估和提升智能体在嘈杂、不可靠环境下的推理能力提供了重要工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27021v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27021.md)  |
 | <span style='display: inline-block; width: 42px;'>08-26</span> | **Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems**<br><sub>机构: WAI USA Research Labs<br>本文主张现实世界中的 LLM 数据代理不应仅通过输出是否匹配参考答案来评估，而应评估其输出是否有可审计的计算支持。通过提出 Trace Integrity 和执行契约，论文为解决结构化数据任务中的结构差距提供了具体方案，并强调 CAIT 率作为关键风险指标的重要性，旨在推动从“答案正确”向“计算可信”的范式转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26036v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26036.md)  |
 | <span style='display: inline-block; width: 42px;'>08-26</span> | **AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs**<br><sub>机构: Huawei Technologies Co., Ltd., University of Science and Technology of China<br>AsymSpec 通过解耦草稿模型和验证模型的上下文访问权限，创新性地解决了 Agent LLM 中上下文累积带来的推理瓶颈。它允许轻量级草稿模型利用完整上下文来弥补验证模型因压缩而丢失的信息，并通过对比 logits 融合和发散感知门控机制确保生成的稳定性和效率。实验表明，该方法在大幅降低计算成本的同时，保留了绝大部分的任务准确性，为高效部署长上下文 Agent 提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26004v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26004.md)  |
 | <span style='display: inline-block; width: 42px;'>08-26</span> | **ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs**<br><sub>机构: Aston University, Queen Mary University of London, University of Exeter<br>本文针对多智能体 LLM 工作流高昂的运营成本问题，提出了 ProgRouter 框架。通过引入多视图任务进度评分器和自适应路由机制，ProgRouter 能够根据实时任务状态动态选择最合适的 LLM 代理。该方法有效解决了传统一次性路由无法适应动态工作流的缺陷，在多个复杂任务基准上实现了成本大幅降低且性能不降反升的效果，为可持续的 LLM 服务提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.25992v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.25992.md)  |

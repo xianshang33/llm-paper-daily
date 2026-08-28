@@ -1,38 +1,50 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-27T11:41:13.803332+00:00",
-  "run_date": "2026-08-26",
+  "generated_at": "2026-08-28T13:05:16.946560+00:00",
+  "run_date": "2026-08-27",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.26036",
-      "date": "2026-08-26",
-      "title": "Trace Integrity for LLM Data Agents: A Vision for Auditable Structured Reasoning in Real-World Systems",
+      "id": "arxiv:2608.27260",
+      "date": "2026-08-27",
+      "title": "What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Srimonti Dutta",
-        "Akshata Kishore Moharir"
+        "Xingshan Zeng",
+        "Zishan Xu",
+        "Boju Zhang",
+        "Yuzhou Wu",
+        "Lingzhi Wang",
+        "Jianghao Lin",
+        "Liangyou Li",
+        "Yasheng Wang",
+        "Lifeng Shang",
+        "Xin Jiang",
+        "Weinan Zhang",
+        "Yong Yu",
+        "Qun Liu",
+        "Weiwen Liu"
       ],
-      "institution": "WAI USA Research Labs",
+      "institution": "Huawei Technologies Co., Ltd, Shanghai Jiao Tong University",
       "summary": {
-        "zh": "本文主张现实世界中的 LLM 数据代理不应仅通过输出是否匹配参考答案来评估，而应评估其输出是否有可审计的计算支持。通过提出 Trace Integrity 和执行契约，论文为解决结构化数据任务中的结构差距提供了具体方案，并强调 CAIT 率作为关键风险指标的重要性，旨在推动从“答案正确”向“计算可信”的范式转变。",
-        "en": "The paper argues that real-world LLM data agents should be evaluated not just on output matching, but on whether outputs are supported by auditable computation. By proposing Trace Integrity and Execution Contracts, it..."
+        "zh": "本文针对LLM智能体数据生成缺乏统一标准的问题，提出了基于 $(E,q,\\tau,v)$ 分解对象和 ACE（准确性-复杂性-多样性）视角的理论框架。该框架不仅澄清了现有工作中混淆的生成机制，还为未来在可扩展性、数据源、训练机制和自适应学习方面的研究提供了方向，强调核心挑战在于如何随着智能体的进化持续提供高质量、非冗余的交互经验。",
+        "en": "This paper addresses the lack of unified standards in LLM agent data generation by proposing a theoretical framework based on the $(E,q,\\tau,v)$ factorized object and the ACE (Accuracy-Complexity-divErsity) perspective...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.26036v1",
-        "pdf": "https://arxiv.org/pdf/2608.26036v1",
+        "abs": "http://arxiv.org/abs/2608.27260v1",
+        "pdf": "https://arxiv.org/pdf/2608.27260v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.26036.md",
-        "summary_en_path": "summary_en/2026-08/2608.26036.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.26036.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.26036.md"
+        "summary_zh_path": "summary/2026-08/2608.27260.md",
+        "summary_en_path": "summary_en/2026-08/2608.27260.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.27260.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.27260.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,38 +61,45 @@
       }
     },
     {
-      "id": "arxiv:2608.26004",
-      "date": "2026-08-26",
-      "title": "AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs",
+      "id": "arxiv:2608.26950",
+      "date": "2026-08-27",
+      "title": "From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sheng Liang",
-        "Yongyue Zhang",
-        "Nathanael Brian",
-        "Hang Lv",
-        "Hao Wang",
-        "Chen Zhang",
-        "Yong Liu"
+        "Jiayi Kuang",
+        "Yinghui Li",
+        "Yunze Song",
+        "Keyu Chen",
+        "Zhifeng Shen",
+        "Yangning Li",
+        "Yidong Wang",
+        "Di Yin",
+        "Ruizhi Qiao",
+        "Xing Sun",
+        "Kai Jin",
+        "Ying Shen",
+        "Liang Lin",
+        "Philip S. Yu"
       ],
-      "institution": "Huawei Technologies Co., Ltd., University of Science and Technology of China",
+      "institution": "Sun Yat-sen University, Tencent Youtu Lab, University of Illinois Chicago, Pengcheng Laboratory",
       "summary": {
-        "zh": "AsymSpec 通过解耦草稿模型和验证模型的上下文访问权限，创新性地解决了 Agent LLM 中上下文累积带来的推理瓶颈。它允许轻量级草稿模型利用完整上下文来弥补验证模型因压缩而丢失的信息，并通过对比 logits 融合和发散感知门控机制确保生成的稳定性和效率。实验表明，该方法在大幅降低计算成本的同时，保留了绝大部分的任务准确性，为高效部署长上下文 Agent 提供了新的思路。",
-        "en": "- **Background**: Agentic LLM pipelines face escalating inference costs as context accumulates from retrieval, tool use, and multi-turn interactions. Deployments often compress inputs to control latency, which degrades..."
+        "zh": "本文指出了当前数学基准测试在评估LLM代理能力方面的局限性，并提出了一种基于原子能力映射的过程级评估框架。通过将代理行为分解为可复用的数学原子单元，并利用自动化流水线生成细粒度标注，该研究证明了过程级评估对于理解LLM真实潜力和指导鲁棒代理开发的重要性。研究发现，具有相似最终准确率的模型可能在代理能力上存在巨大差异，强调了从“原子”到“代理”的可解释性评估的必要性。",
+        "en": "- **Background**: Large Language Models (LLMs) are evolving from end-to-end Chain-of-Thought reasoning to integrating Agentic Intelligence, which involves dynamic planning, action execution, and self-reflection for..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.26004v1",
-        "pdf": "https://arxiv.org/pdf/2608.26004v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.26950v1",
+        "pdf": "https://arxiv.org/pdf/2608.26950v1",
+        "github": "https://github.com/Eternity-gaga/Agentic-Math-Bench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.26004.md",
-        "summary_en_path": "summary_en/2026-08/2608.26004.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.26004.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.26004.md"
+        "summary_zh_path": "summary/2026-08/2608.26950.md",
+        "summary_en_path": "summary_en/2026-08/2608.26950.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.26950.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.26950.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,34 +116,39 @@
       }
     },
     {
-      "id": "arxiv:2608.25992",
-      "date": "2026-08-26",
-      "title": "ProgRouter: Online Progress-Guided Orchestration for Multi-Agent LLM Workflows under Quality-Cost Tradeoffs",
+      "id": "arxiv:2608.27146",
+      "date": "2026-08-27",
+      "title": "When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Somgyuan Li",
-        "Ahmed M. Abdelmoniem",
-        "Shiqiang Wang"
+        "Xiaokun Guo",
+        "Zhen Xu",
+        "Dongdong Huo",
+        "Yanqiu Zhang",
+        "Wei Wang",
+        "Qinfu Yang",
+        "Dongjin Yu",
+        "Yu Wang"
       ],
-      "institution": "Aston University, Queen Mary University of London, University of Exeter",
+      "institution": "Institute of Information Engineering, Chinese Academy of Sciences",
       "summary": {
-        "zh": "本文针对多智能体 LLM 工作流高昂的运营成本问题，提出了 ProgRouter 框架。通过引入多视图任务进度评分器和自适应路由机制，ProgRouter 能够根据实时任务状态动态选择最合适的 LLM 代理。该方法有效解决了传统一次性路由无法适应动态工作流的缺陷，在多个复杂任务基准上实现了成本大幅降低且性能不降反升的效果，为可持续的 LLM 服务提供了新的思路。",
-        "en": "- **Background**: Multi-agent Large Language Model (LLM) workflows have emerged as a powerful paradigm for solving complex, open-ended tasks through collaborative reasoning. However, they incur substantial operating..."
+        "zh": "- **背景**：工具增强的 LLM 智能体在执行开放式任务时，必须依赖不可信的运行时观察（Observations）。当工具输出不再仅提供数据，而是开始指定具体动作时，它们实际上变成了能够驱动超出用户意图的现实世界副作用的“命令”。 -...",
+        "en": "- **Background**: Tool-augmented LLM agents must rely on untrusted runtime Observations to complete open-ended tasks. When tool outputs specify concrete actions rather than just providing data, they effectively become..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.25992v1",
-        "pdf": "https://arxiv.org/pdf/2608.25992v1",
+        "abs": "http://arxiv.org/abs/2608.27146v1",
+        "pdf": "https://arxiv.org/pdf/2608.27146v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.25992.md",
-        "summary_en_path": "summary_en/2026-08/2608.25992.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25992.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25992.md"
+        "summary_zh_path": "summary/2026-08/2608.27146.md",
+        "summary_en_path": "summary_en/2026-08/2608.27146.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.27146.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.27146.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,37 +165,45 @@
       }
     },
     {
-      "id": "arxiv:2608.25937",
-      "date": "2026-08-26",
-      "title": "Candidate supply and answer selection shape the value of LLM judging in multi-agent systems",
+      "id": "arxiv:2608.27141",
+      "date": "2026-08-27",
+      "title": "Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jia-Hao Ji",
-        "Sijie Li",
-        "Jiabei Cheng",
-        "Zixi She",
-        "Jin-Tai Yu",
-        "Zhiyuan Yuan"
+        "Chenhao Wu",
+        "Haoxuan Jia",
+        "Yang Liu",
+        "Yingguang Yang",
+        "Yuhan Lin",
+        "Chongyang Zhang",
+        "Hao Zheng",
+        "Yulin Huang",
+        "Jianshen Zhang",
+        "Yongzhi Qi",
+        "Shang Luo",
+        "Kefu Xu",
+        "Jifeng Zhu",
+        "Bin Chong"
       ],
-      "institution": "Fudan University, Shanghai Jiao Tong University, Shanghai Academy of Artificial Intelligence for Science",
+      "institution": "University of Chinese Academy of Sciences, Nanyang Technological University, JD.com, Peking University, Fudan University, Fullive-AI",
       "summary": {
-        "zh": "本文揭示了多智能体系统中“生成正确但输出错误”的悖论，指出问题的核心在于答案选择机制而非单纯的生成能力。通过隔离分析，作者证明 LLM 裁判的有效性高度依赖于上下文，且简单的选择规则优化（结合频率与裁判评分）能显著提升性能。该研究为设计能够保护生成出的正确答案不被丢失的多智能体架构提供了重要的诊断依据和设计原则。",
-        "en": "The paper reveals the paradox of \"generated correctly but output incorrectly\" in MAS, identifying the core issue as the answer selection mechanism rather than generation capability. By isolating analysis stages, the..."
+        "zh": "本文揭示了 LLM 智能体安全中的一个根本性问题：安全不具有组合性（Safety Does Not Compose）。现有的单轨迹安全机制在面对跨迭代的碎片化攻击时完全失效。作者提出了 LoopHarness，通过维护循环级别的持久、非衰减安全状态，提供了理论上的安全边界，并通过严格的评估协议证明了其在抵御复杂跨迭代攻击方面的有效性，为自主 LLM 智能体的长期安全运行提供了新的理论基础和实践框架。",
+        "en": "This paper reveals a fundamental issue in LLM agent safety: safety does not compose. Existing single-trajectory safety mechanisms completely fail against fragmented cross-iteration attacks. The authors propose..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.25937v1",
-        "pdf": "https://arxiv.org/pdf/2608.25937v1",
+        "abs": "http://arxiv.org/abs/2608.27141v1",
+        "pdf": "https://arxiv.org/pdf/2608.27141v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.25937.md",
-        "summary_en_path": "summary_en/2026-08/2608.25937.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25937.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25937.md"
+        "summary_zh_path": "summary/2026-08/2608.27141.md",
+        "summary_en_path": "summary_en/2026-08/2608.27141.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.27141.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.27141.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -188,37 +220,37 @@
       }
     },
     {
-      "id": "arxiv:2608.25920",
-      "date": "2026-08-26",
-      "title": "Repair or Resample? Rethinking Failure Debugging in LLM Multi-Agent Systems",
+      "id": "arxiv:2608.27021",
+      "date": "2026-08-27",
+      "title": "FaulT-Bench: Towards Benchmarking Network Troubleshooting LLM Agents under Unreliable User Tickets",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhongwen Luan",
-        "Xiaoyu Zhang",
-        "Ming Hu",
-        "Yue Yang",
-        "Jiongchi Yu",
-        "Xiaohong Chen"
+        "Kuan-Hao Tseng",
+        "Niruth Bogahawatta",
+        "Yasod Ginige",
+        "Kunjan Patel",
+        "Kosta Dakic",
+        "Suranga Seneviratne"
       ],
-      "institution": "East China Normal University, Nanyang Technological University, Singapore Management University, Xi’an University of Architecture and Technology",
+      "institution": "University of Sydney",
       "summary": {
-        "zh": "本文深入探讨了 LLM 多智能体系统中的失败调试问题，指出了现有重采样方法在因果归因上的缺陷。通过提出 SymTrace 评估框架和 SymFail 数据集，作者证明了现有方法的低效性，并验证了基于轨迹定位的症状驱动干预方法的有效性。研究结果表明，受控执行和局部证据比重复的随机重生成更有价值，为 MAS 的稳健部署提供了可行的调试和修复见解。",
-        "en": "This paper investigates failure debugging in LLM-based Multi-Agent Systems, highlighting the flaws in causal attribution of existing resampling methods. By introducing the SymTrace framework and SymFail dataset, the..."
+        "zh": "FaulT-Bench 填补了网络故障诊断 LLM 智能体评估中的关键空白，通过引入不可靠用户工单和多样化的人设重写，揭示了现有智能体在面对真实世界噪声时的脆弱性。研究表明，提高智能体对模糊信息的处理能力以及使其能够正确识别“无故障”状态，是未来开发可靠网络运维智能体的关键方向。该基准为评估和提升智能体在嘈杂、不可靠环境下的推理能力提供了重要工具。",
+        "en": "- **Background**: LLM-based agents are increasingly proposed for network fault diagnosis. However, existing benchmarks evaluate them only on accurate tickets and always assume a fault is present, conditions rarely met..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.25920v1",
-        "pdf": "https://arxiv.org/pdf/2608.25920v1",
-        "github": "https://anonymous.4open.science/r/SymTrace-7234"
+        "abs": "http://arxiv.org/abs/2608.27021v1",
+        "pdf": "https://arxiv.org/pdf/2608.27021v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.25920.md",
-        "summary_en_path": "summary_en/2026-08/2608.25920.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.25920.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.25920.md"
+        "summary_zh_path": "summary/2026-08/2608.27021.md",
+        "summary_en_path": "summary_en/2026-08/2608.27021.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.27021.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.27021.md"
       },
       "signals": {
         "priority_keyword": "Agent"
