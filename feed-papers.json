@@ -1,40 +1,45 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-29T08:01:16.127158+00:00",
-  "run_date": "2026-08-23",
+  "generated_at": "2026-08-29T11:46:27.997612+00:00",
+  "run_date": "2026-08-22",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.22657",
-      "date": "2026-08-23",
-      "title": "Physical Agentic AI: An Architecture for Orchestrating a Robot Crew with LLMs",
+      "id": "arxiv:2608.23622",
+      "date": "2026-08-22",
+      "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xinyuan Liu",
-        "Eren Sadikoglu",
-        "Riana Chatterjee",
-        "Ransalu Senanayake"
+        "Yuchen Xia",
+        "Michael Weyrich",
+        "Nasser Jazdi",
+        "Johannes Stümpfle",
+        "Johannes Sigel",
+        "Akshay Narla",
+        "Gavin K. Reynolds",
+        "Anna Jawor-Baczynska",
+        "Pol Llopart"
       ],
-      "institution": "Arizona State University",
+      "institution": "University of Stuttgart, AstraZeneca",
       "summary": {
-        "zh": "本文提出了 Physical Agentic AI 架构，核心观点是将 deliberative 的语言推理与 determinstic 的执行授权分离。通过实验证明，虽然检索增强能显著改善 LLM 对技能的 grounding，但可靠的物理执行必须依赖于语言模型之外的约束强制执行机制。该框架通过类型化的技能库和确定性的编排器，实现了异构机器人团队在复杂任务中的安全、可靠协作。",
-        "en": "- **Background**: Agentic AI frameworks using LLMs interpret open-ended goals and decompose them into multi-step plans for robots. However, mapping semantic planning directly to physical execution carries significant..."
+        "zh": "本文提出了一种将 LLM 与科学仿真模型相结合的多智能体框架，专门用于解决制药工艺设计等需要受控实验的科学工程问题。通过让 LLM 智能体在仿真环境中进行假设测试、干预和对比观察，系统克服了传统 LLM 输出缺乏证据支持的局限。实验结果表明，该方法在工业应用中能提供更具体、更正确且更有帮助的工艺优化建议，验证了仿真集成实验推理在实际科学发现中的潜力。",
+        "en": "This paper presents a multi-agent framework integrating LLMs with scientific simulation models to address scientific engineering problems requiring controlled experiments, such as pharmaceutical process design. By..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.22657v1",
-        "pdf": "https://arxiv.org/pdf/2608.22657v1",
-        "github": "https://github.com/Liuuuxy/physical-agentic-ai"
+        "abs": "http://arxiv.org/abs/2608.23622v1",
+        "pdf": "https://arxiv.org/pdf/2608.23622v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.22657.md",
-        "summary_en_path": "summary_en/2026-08/2608.22657.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.22657.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.22657.md"
+        "summary_zh_path": "summary/2026-08/2608.23622.md",
+        "summary_en_path": "summary_en/2026-08/2608.23622.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.23622.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.23622.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,37 +56,39 @@
       }
     },
     {
-      "id": "arxiv:2608.22566",
-      "date": "2026-08-23",
-      "title": "From Diagnosis to Redesign: Using Quantitative Ethnography to Improve Multi-Agent LLM Reasoning",
+      "id": "arxiv:2608.21867",
+      "date": "2026-08-22",
+      "title": "MemGuard: Persisting Verifier Signals for LLM-Agent Memory Governance",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Vedant Khatri",
-        "Anthony Cusimano",
-        "Zachari Swiecki",
-        "Zhen Xu",
-        "Xiner Liu",
-        "Renzhe Yu"
+        "Haoyu Wang",
+        "Guangyuan Dong",
+        "He Liang",
+        "Zijing Zhang",
+        "Jiachen Luo",
+        "Chuang Liu",
+        "Chao Xue",
+        "Hao Tang"
       ],
-      "institution": "University of California, Irvine; University of California, Los Angeles; Monash University; Columbia University; University of Pennsylvania",
+      "institution": "Peking University, Queen Mary University of London, National University of Singapore, Shanghai Institute of Optics and Fine Mechanics (CAS), Nankai University, Technical University of Munich, Wuhan University, University of New South Wales",
       "summary": {
-        "zh": "本文提出了一种利用定量民族志和认识网络分析来诊断和改进多智能体LLM系统的新范式。通过深入分析智能体间的话语交互模式，研究者成功识别了导致推理失败的结构化原因，并通过针对性的提示词重设计显著提升了系统性能。该方法超越了传统的黑盒评估，为理解和优化复杂多智能体系统的推理机制提供了可解释、可操作的路径。",
-        "en": "- **Background**: Multi-agent Large Language Model (LLM) systems aim to enhance reasoning by decomposing tasks among specialized agents. However, the mere presence of multiple agents does not inherently guarantee..."
+        "zh": "- **背景**：LLM 智能体正从单次提示使用转向长任务流（如终端操作、软件工程、Web 任务），可复用的记忆成为核心能力。然而，只有当存储的经验在数百次交互中保持可靠时，记忆才有用。 -...",
+        "en": "- **Background**: LLM agents are transitioning from single-prompt interactions to long task streams (e.g., terminal operations, software engineering, web tasks), where reusable memory is a core capability. Memory is..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.22566v1",
-        "pdf": "https://arxiv.org/pdf/2608.22566v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.21867v1",
+        "pdf": "https://arxiv.org/pdf/2608.21867v1",
+        "github": "https://github.com/whyyyyy123/MemGuard"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.22566.md",
-        "summary_en_path": "summary_en/2026-08/2608.22566.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.22566.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.22566.md"
+        "summary_zh_path": "summary/2026-08/2608.21867.md",
+        "summary_en_path": "summary_en/2026-08/2608.21867.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21867.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21867.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,33 +105,39 @@
       }
     },
     {
-      "id": "arxiv:2608.22444",
-      "date": "2026-08-23",
-      "title": "Aligned Alone, Misaligned Together: Forecasting Adversarial Capture in LLM Agent Populations",
+      "id": "arxiv:2608.21946",
+      "date": "2026-08-22",
+      "title": "EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Isotta Magistrali",
-        "Chen Shani"
+        "Can Xie",
+        "Yuyi Zhou",
+        "Wen Yang",
+        "Ziyi zhang",
+        "Siyao Song",
+        "Yingzhuo Deng",
+        "Shuo Ren",
+        "Jiajun Zhang"
       ],
-      "institution": "ETH Zurich, Tel Aviv University, Stanford University",
+      "institution": "School of Artificial Intelligence, University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences",
       "summary": {
-        "zh": "本文指出“孤立对齐不等于群体对齐”。虽然个体安全的代理组成的群体可能在交互中被少数恶意代理捕获，但这种群体层面的脆弱性可以通过观察其良性互动来提前预测。此外，群体捕获是暂时且可逆的，增加推理透明度虽不能完全阻止强攻击，但能提供一定的缓冲。该研究为多代理系统的安全评估提供了新的视角和工具。",
-        "en": "- **Background**: As Large Language Models (LLMs) evolve from isolated models into populations of interacting agents, AI safety evaluation remains focused on individual models. However, individual alignment does not..."
+        "zh": "EDGE 提出了一种新的智能体强化学习范式，通过将外部经验从“推理时检索”转变为“训练时蒸馏”，解决了经验复用中的策略依赖性和外部依赖性问题。该方法不仅显著提升了长程复杂任务的性能，还实现了更轻量、更鲁棒的推理部署，为 LLM 智能体的持续学习和能力内化提供了有效路径。",
+        "en": "EDGE introduces a new paradigm for agentic RL by shifting experience reuse from \"inference-time retrieval\" to \"training-time distillation.\" It addresses policy dependency and external reliance issues, significantly..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.22444v2",
-        "pdf": "https://arxiv.org/pdf/2608.22444v2",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.21946v2",
+        "pdf": "https://arxiv.org/pdf/2608.21946v2",
+        "github": "https://github.com/xvolcano02/EDGE"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.22444.md",
-        "summary_en_path": "summary_en/2026-08/2608.22444.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.22444.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.22444.md"
+        "summary_zh_path": "summary/2026-08/2608.21946.md",
+        "summary_en_path": "summary_en/2026-08/2608.21946.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21946.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21946.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,40 +154,41 @@
       }
     },
     {
-      "id": "arxiv:2608.22339",
-      "date": "2026-08-23",
-      "title": "When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents",
+      "id": "arxiv:2608.21833",
+      "date": "2026-08-22",
+      "title": "GameXpert-Bench: How Far Are Coding Agents from Expert Game Development?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zihan Lin",
-        "Zhenyu Chen",
-        "Jiawen Wei",
-        "Xiaohan Wang",
-        "Jie Cao",
-        "Jiajun Chai",
-        "Wei Lin",
-        "Guojun Yin",
-        "Ran He"
+        "Kun Chen",
+        "Haorong Hong",
+        "Peizhong Gao",
+        "Jianfeng Lin",
+        "Tongxu Luo",
+        "Yuxuan Xie",
+        "Chenxu Liu",
+        "Jieling He",
+        "Zhongyuan Liu",
+        "Zeno Zeng"
       ],
-      "institution": "Meituan; School of Advanced Interdisciplinary Sciences, University of Chinese Academy of Sciences; MAIS&NLPR, Institute of Automation, Chinese Academy of Sciences; Zhongguancun Academy",
+      "institution": "Institute of Automation, Chinese Academy of Sciences; Tencent",
       "summary": {
-        "zh": "本文揭示了 LLM 智能体在技能记忆复用中存在的“技能模仿陷阱”，指出仅依赖成功轨迹会导致模型在语义相似但逻辑不同的任务中表现恶化。为此，作者提出了边界感知技能记忆（BASM），通过显式建模技能的适用边界、风险和恢复策略，将技能从无条件模板转变为状态感知的指导。实验证明，BASM 在多个基准测试中显著提升了成功率、准确性和安全性，同时减少了操作步骤，为构建更可靠的自我进化 LLM 智能体提供了新范式。",
-        "en": "This paper identifies the \"Skill Imitation Trap\" in LLM agent skill memory reuse, showing that relying solely on successful trajectories can degrade performance in semantically similar but logically distinct tasks. To..."
+        "zh": "GameXpert-Bench 填补了游戏开发领域全生命周期评估的空白，通过细分生成、修复和优化三个阶段，提供了更细粒度的能力画像。研究结果表明，虽然 LLM 智能体能快速构建游戏原型，但在达到专家级开发水平（特别是调试和长期维护）方面仍有很长的路要走。该基准为未来提升代码智能体的鲁棒性和工程化能力提供了重要的评估标准和方向。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly used as coding agents capable of building complete games from natural language requests. Game development is a demanding testbed as it requires the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.22339v1",
-        "pdf": "https://arxiv.org/pdf/2608.22339v1",
+        "abs": "http://arxiv.org/abs/2608.21833v1",
+        "pdf": "https://arxiv.org/pdf/2608.21833v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.22339.md",
-        "summary_en_path": "summary_en/2026-08/2608.22339.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.22339.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.22339.md"
+        "summary_zh_path": "summary/2026-08/2608.21833.md",
+        "summary_en_path": "summary_en/2026-08/2608.21833.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21833.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21833.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,45 +205,34 @@
       }
     },
     {
-      "id": "arxiv:2608.22610",
-      "date": "2026-08-23",
-      "title": "Coalition-Aware Skill Reliability for Self-Evolving Agents",
+      "id": "arxiv:2608.21864",
+      "date": "2026-08-22",
+      "title": "BioMed-Agent-RL: A Meta Learning, All You Need for Biomedical Applications",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qiyan Zhao",
-        "Xiaofeng Zhang",
-        "Bo Liu",
-        "Minda Chen",
-        "Wei Xiong",
-        "Jingyang Chen",
-        "Guanting Ye",
-        "Wenhao Yu",
-        "Xiaosong Yuan",
-        "Shijie Han",
-        "Da-Han Wang",
-        "Jianmin Ji",
-        "Fei Huang",
-        "Xu-Yao Zhang"
+        "Md Asaduzzaman Jabin",
+        "Zihao Wu",
+        "Tianming Liu"
       ],
-      "institution": "CASIA, LongShine AI Lab, SJTU, HKUST, USTC",
+      "institution": "The University of Georgia",
       "summary": {
-        "zh": "- **背景**：基于大语言模型（LLM）的自进化智能体通过将交互轨迹提炼为“技能”并存储在技能库中，以实现从过往经验中学习。现有研究主要关注技能的获取、进化和检索等操作层面。 - **已有工作的不足**：现有工作忽视了一个根本性的可靠性问题，即累积在技能库中的技能是否真正产生了积极的机制性贡献。孤立地评估技能无法反映其在特定组合（联盟）或跨域迁移后的真实效用，导致不可靠的技能被保留或错误迁移。 -...",
-        "en": "- **Background**: LLM-based self-evolving agents learn from past experiences by distilling interaction trajectories into reusable \"skills\" stored in skill banks. Existing research primarily focuses on operational..."
+        "zh": "BioMed-Agent-RL 通过引入自适应强化学习和多模态元学习，解决了当前临床视觉大模型在复杂病例中存在的噪声、错位和幻觉问题。它突破了静态代理系统的局限，能够动态整合多模态专家知识，即使在视觉线索冲突或专家建议有误的情况下也能做出可靠推理。实验证明其准确率和鲁棒性均优于现有 SOTA 模型，为独立临床推理智能体的建立提供了新范式。",
+        "en": "- **Background**: Clinical Vision Large Language Models (C-VLLMs) have improved digital diagnostics but still suffer from lesion noises, modality misalignment, hallucinations, and lack of contextual grounding in complex..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.22610v1",
-        "pdf": "https://arxiv.org/pdf/2608.22610v1",
+        "abs": "http://arxiv.org/abs/2608.21864v1",
+        "pdf": "https://arxiv.org/pdf/2608.21864v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.22610.md",
-        "summary_en_path": "summary_en/2026-08/2608.22610.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.22610.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.22610.md"
+        "summary_zh_path": "summary/2026-08/2608.21864.md",
+        "summary_en_path": "summary_en/2026-08/2608.21864.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.21864.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.21864.md"
       },
       "signals": {
         "priority_keyword": "Agent"
