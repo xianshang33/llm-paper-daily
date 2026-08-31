@@ -1,51 +1,100 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-08-29T11:46:27.997612+00:00",
-  "run_date": "2026-08-22",
+  "generated_at": "2026-08-31T07:13:07.075410+00:00",
+  "run_date": "2026-08-28",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2608.23622",
-      "date": "2026-08-22",
-      "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
+      "paper_id": "2608.28476",
+      "date": "2026-08-28",
+      "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
       "authors": [
-        "Yuchen Xia",
-        "Michael Weyrich",
-        "Nasser Jazdi",
-        "Johannes Stümpfle",
-        "Johannes Sigel",
-        "Akshay Narla",
-        "Gavin K. Reynolds",
-        "Anna Jawor-Baczynska",
-        "Pol Llopart"
+        "Zhuoshi Pan",
+        "Qizhi Pei",
+        "Junru Lu",
+        "Honglin Lin",
+        "H. Vicky Zhao",
+        "Di Yin",
+        "Xing Sun"
       ],
-      "abstract": "Large language models (LLMs) have shown strong capabilities in reasoning, planning, and tool use, but many scientific and engineering tasks require more than plausible text and code generation. They require understanding how a system responds to intervention, which in practice depends on controlled experimentation. In this work, we propose a multi-agent framework that enables LLM agents to conduct controlled experiments with scientific simulation models for pharmaceutical process design. Given a user query and a baseline configuration, the system constructs a structured task representation, designs experiments, executes comparative simulation, interprets the resulting outcomes, and synthesizes evidence-based recommendations for process parameter optimization. By coupling language models with high-fidelity simulation models in an interactive agent framework, the proposed system supports reasoning through intervention, comparison, and observation. As a result, it produces more specific and actionable outputs than language-only reasoning. In an industrial application setting, this advantage is reflected in higher output specificity as well as improved user-rated correctness and helpfulness. Ablation studies and visualized case analyses further demonstrate the effectiveness and practical utility of simulation-integrated experimental reasoning.",
+      "abstract": "Long-horizon agentic tasks require large language models (LLMs) to iteratively retrieve, integrate, and maintain dispersed information across multi-turn interactions, but preserving all interaction histories leads to a continuously growing working context. Recent proactive context management methods allow models to edit their own working context with specialized tools, yet they still face three key limitations: (1) a limited toolset restricted to search, deletion, and summarization, with no support for global planning, long-term memory, and adaptive compression; (2) inefficient exploration that treats context management actions uniformly despite their heterogeneous impacts on final outcomes; and (3) coarse-grained credit assignment that assigns the final trajectory-level reward to all intermediate context editing actions during RL. To bridge these gaps, we introduce ContextPilot, a proactive context management framework for long-horizon agentic reasoning. Our approach systematically augments the toolset with planning, long-term memory, and soft context offloading tools. We further propose an RL method tailored for context management, which uses context and entropy variation to identify critical editing decisions for branch sampling and estimates action-level advantages from all branched trajectories that pass through the corresponding context editing action. Experiments on long-context QA and deep search tasks show that ContextPilot achieves stronger performance with a more compact working context, consistently outperforming existing baselines across various base models and benchmarks. Code is available at https://github.com/Tencent/ContextPilot.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.23622v1",
-        "pdf": "https://arxiv.org/pdf/2608.23622v1",
+        "abs": "http://arxiv.org/abs/2608.28476v1",
+        "pdf": "https://arxiv.org/pdf/2608.28476v1",
+        "github": "https://github.com/Tencent/ContextPilot",
+        "blog": "https://tencent.github.io/ContextPilot"
+      },
+      "institution": "Tsinghua University, Tencent Youtu Lab, Shanghai AI Lab",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：长程智能体任务（如长上下文问答和深度搜索）要求大语言模型在多轮交互中迭代检索、整合和维护分散信息。随着交互进行，保留所有历史会导致工作上下文持续增长，影响效率和性能。\n- **已有工作的局限**：现有的主动上下文管理方法允许模型使用专用工具编辑上下文，但存在三个主要缺陷：(1) 工具集有限，仅支持搜索、删除和摘要，缺乏全局规划、长期记忆和自适应压缩能力；(2) 探索效率低，在强化学习中均匀对待所有上下文管理动作，忽略了它们对最终结果的不同影响；(3) 信用分配粗糙，将最终的轨迹级奖励平均分配给所有中间编辑动作，无法准确评估单个动作的价值。\n\n## 文章的核心贡献点\n- **提出了一个 ContextPilot 框架**：这是一个用于长程智能体推理的主动上下文管理框架，通过细粒度强化学习教智能体如何高效管理上下文。\n- **挑战1：现有工具集不足以应对长程任务的复杂性**\n  - **难点**：简单的删除或摘要无法处理跨片段的信息整合、结构化记忆维持以及全局行动规划。\n  - **解决方法**：系统性地扩展了工具集，增加了规划（planning）、长期记忆（long-term memory）和软上下文卸载（soft context offloading）工具，使模型能更精细地控制信息流。\n- **挑战2：强化学习中的低效探索与粗糙信用分配**\n  - **难点**：传统RL难以区分哪些上下文编辑动作是关键决策，且将所有动作同等对待导致训练信号噪声大。\n  - **解决方法**：提出了一种专为上下文管理定制的RL方法。利用上下文变化和熵变来识别关键编辑决策以进行分支采样，并从所有经过该编辑动作的分支轨迹中估计动作级优势（action-level advantages），实现细粒度的信用分配。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在长上下文QA和深度搜索任务上进行评估。\n- **结果对比**：ContextPilot 在多种基础模型和基准测试上均一致优于现有基线方法。\n- **核心优势**：不仅取得了更强的任务性能，还保持了更紧凑的工作上下文，证明了其在信息压缩与保留关键证据之间的平衡能力。\n- **资源发布**：代码、项目主页及模型已在 GitHub 和 Hugging Face 上开源。\n\n#### 总结\nContextPilot 通过增强工具集和改进强化学习算法，解决了长程智能体任务中上下文管理的三大痛点。它引入了规划、记忆和卸载机制，并通过基于上下文和熵变的细粒度信用分配提升了RL训练效率。实验表明，该方法能在减少上下文长度的同时提升任务表现，为长程智能体推理提供了高效的上下文管理方案。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Long-horizon agentic tasks (e.g., long-context QA and deep search) require LLMs to iteratively retrieve, integrate, and maintain dispersed information across multi-turn interactions. Preserving all interaction histories leads to a continuously growing working context, which hampers efficiency and performance.\n- **Limitations of Existing Work**: Recent proactive context management methods allow models to edit their context but suffer from three key limitations: (1) A limited toolset restricted to search, deletion, and summarization, lacking support for global planning, long-term memory, and adaptive compression; (2) Inefficient exploration in RL that treats all context management actions uniformly despite their heterogeneous impacts; (3) Coarse-grained credit assignment that assigns final trajectory-level rewards to all intermediate editing actions, failing to accurately evaluate individual actions.\n\n## Core Contributions\n- **Proposed ContextPilot**: A proactive context management framework for long-horizon agentic reasoning, teaching agents via fine-grained Reinforcement Learning (RL).\n- **Challenge 1: Insufficient Toolset for Long-Horizon Complexity**\n  - **Difficulty**: Simple deletion or summarization cannot handle cross-fragment information integration, structured memory maintenance, or global action planning.\n  - **Solution**: Systematically augmented the toolset with planning, long-term memory, and soft context offloading tools, enabling finer control over information flow.\n- **Challenge 2: Inefficient Exploration and Coarse Credit Assignment in RL**\n  - **Difficulty**: Traditional RL struggles to identify critical context editing decisions and treats all actions equally, leading to noisy training signals.\n  - **Solution**: Proposed an RL method tailored for context management. It uses context and entropy variation to identify critical editing decisions for branch sampling and estimates action-level advantages from all branched trajectories passing through the corresponding action, achieving fine-grained credit assignment.\n\n## Implementation and Evaluation\n- **Experiments**: Evaluated on long-context QA and deep search tasks.\n- **Results**: ContextPilot consistently outperforms existing baselines across various base models and benchmarks.\n- **Key Advantage**: Achieves stronger task performance while maintaining a more compact working context, demonstrating a superior balance between information compression and retaining key evidence.\n- **Resources**: Code, project page, and models are open-sourced on GitHub and Hugging Face.\n\n#### Summary\nContextPilot addresses three major pain points in context management for long-horizon agentic tasks by enhancing the toolset and improving RL algorithms. It introduces planning, memory, and offloading mechanisms, and employs fine-grained credit assignment based on context and entropy variations to boost RL training efficiency. Experiments show that the method improves task performance while reducing context length, offering an efficient solution for context management in long-horizon agentic reasoning.",
+      "render_excerpt": "机构: Tsinghua University, Tencent Youtu Lab, Shanghai AI Lab<br>ContextPilot 通过增强工具集和改进强化学习算法，解决了长程智能体任务中上下文管理的三大痛点。它引入了规划、记忆和卸载机制，并通过基于上下文和熵变的细粒度信用分配提升了RL训练效率。实验表明，该方法能在减少上下文长度的同时提升任务表现，为长程智能体推理提供了高效的上下文管理方案。",
+      "render_excerpt_en": "Institution: Tsinghua University, Tencent Youtu Lab, Shanghai AI Lab<br>ContextPilot addresses three major pain points in context management for long-horizon agentic tasks by enhancing the toolset and improving RL algorithms. It introduces planning, memory, and offloading mechanisms, and employs fine-grained credit assignment based on context and entropy variations to boost RL training efficiency. Experiments show that the method improves task performance while reducing context length, offering an efficient solution for context management in long-horizon agentic reasoning.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-28T16:01:08Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.28399",
+      "date": "2026-08-28",
+      "title": "RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents",
+      "authors": [
+        "Yupeng Zhang",
+        "Liuyuan Jiang",
+        "Hongyi Huang",
+        "Bingheng Li",
+        "Lisha Chen"
+      ],
+      "abstract": "In financial markets, a sequential policy that reacts systematically to price movements may become predictable to other market participants. This paper studies whether large language model (LLM) agents exhibit such directional structure through RetailAgent, an experimental framework in which an LLM observes anonymized intraday equity price histories and permitted state, then repeatedly chooses long (hold the stock) or flat (stay out) before the subsequent interval return is revealed. We compare returns during long and flat intervals along the same stock's intraday path after removing the overall fraction of long decisions. This exposure-matched measure reveals persistent negative timing across modality, horizon, state, and model family. Shuffling saved action sequences substantially attenuates the effect, showing that alignment between actions and subsequent returns drives the negative score. Feeding self-authored memories into decisions further increases policy persistence, while timing becomes more negative among stock-days on which the agent uses both actions. These results reveal stable, recoverable directional structure in sequential LLM financial decisions and a behavioral signal for studying how another participant could respond to a predictable policy.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.28399v1",
+        "pdf": "https://arxiv.org/pdf/2608.28399v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Stuttgart, AstraZeneca",
+      "institution": "University of Wisconsin–Madison, University of Rochester, Michigan State University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在推理、规划和工具使用方面表现出色，但许多科学和工程任务（如制药工艺设计）不仅需要生成合理的文本或代码，更需要理解系统对干预措施的响应。这依赖于通过控制变量法进行的受控实验。\n- **已有工作的局限**：现有的基于 LLM 的系统即使配备了外部工具，通常也仅用于检索信息或执行孤立功能，缺乏结构化的实验比较逻辑。因此，其输出往往是建议性的而非证据性的，难以在需要对比不同干预结果的任务中得出可靠结论。\n\n## 文章的核心贡献点\n- **提出了一个多智能体框架**：该框架使 LLM 智能体能够利用科学仿真模型进行受控实验，支持通过干预、比较和观察进行推理。\n- **挑战1：如何将自然语言查询转化为可执行的受控实验设计？**\n  - **难点**：用户查询通常模糊，而科学实验需要严格的变量控制和基线对比，LLM 难以直接映射这种严谨的逻辑。\n  - **解决方法**：系统首先构建结构化的任务表示，明确基线配置和待优化参数，由智能体自动设计对比实验方案，确保每次只改变特定因素而保持其他条件固定。\n- **挑战2：如何从仿真数据中提取因果见解并生成可操作建议？**\n  - **难点**：高保真仿真模型产生大量复杂数据，单纯的语言模型无法准确解读数据背后的物理/化学意义及因果关系。\n  - **解决方法**：智能体执行 comparative simulation（对比仿真），解释结果差异，并综合证据生成基于数据的工艺参数优化建议，从而实现从“语言推理”到“证据推理”的转变。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：该系统应用于制药工艺设计的工业场景中，结合了 LLM 与高保真仿真模型。工作流程包括：接收用户查询和基线配置 -> 构建结构化任务 -> 设计实验 -> 执行对比仿真 -> 解释结果 -> 合成建议。\n- **评估结果**：\n  - **输出特异性**：相比仅依赖语言推理的方法，该方法生成的输出具有更高的特异性。\n  - **用户评分**：在工业应用设置中，用户对输出的正确性和有用性评分显著提高。\n  - **消融实验与案例分析**：通过消融研究证明了仿真集成实验推理的有效性；可视化案例分析展示了其在实际实用中的价值。\n- **对比**：与传统 LLM 仅作为文本生成器或简单工具调用者相比，该方法通过引入受控实验循环，提供了更具证据支持和可操作性的结论。\n\n#### 总结\n本文提出了一种将 LLM 与科学仿真模型相结合的多智能体框架，专门用于解决制药工艺设计等需要受控实验的科学工程问题。通过让 LLM 智能体在仿真环境中进行假设测试、干预和对比观察，系统克服了传统 LLM 输出缺乏证据支持的局限。实验结果表明，该方法在工业应用中能提供更具体、更正确且更有帮助的工艺优化建议，验证了仿真集成实验推理在实际科学发现中的潜力。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) excel in reasoning and planning, but scientific and engineering tasks (e.g., pharmaceutical process design) require understanding system responses to interventions, which relies on controlled experimentation rather than just plausible text generation.\n- **Limitations of Existing Work**: Current LLM-based systems, even with tools, typically retrieve information or execute isolated functions without structured experimental comparison. Consequently, their outputs are often suggestive rather than evidential, failing to provide reliable conclusions for tasks dependent on controlled intervention comparisons.\n\n## Core Contributions\n- **Proposed a Multi-Agent Framework**: A framework enabling LLM agents to conduct controlled experiments using scientific simulation models, supporting reasoning through intervention, comparison, and observation.\n- **Challenge 1: Translating natural language queries into executable controlled experimental designs.**\n  - **Difficulty**: User queries are often vague, while scientific experiments require strict variable control and baseline comparisons, which LLMs struggle to map directly.\n  - **Solution**: The system constructs a structured task representation, defining baseline configurations and parameters. Agents automatically design comparative experiments, ensuring only specific factors are varied while others remain fixed.\n- **Challenge 2: Extracting causal insights from simulation data to generate actionable recommendations.**\n  - **Difficulty**: High-fidelity simulations produce complex data that pure language models cannot accurately interpret in terms of physical/chemical causality.\n  - **Solution**: Agents execute comparative simulations, interpret outcome differences, and synthesize evidence-based recommendations for process parameter optimization, shifting from \"language reasoning\" to \"evidence-based reasoning.\"\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Applied in an industrial pharmaceutical process design setting, coupling LLMs with high-fidelity simulation models. The workflow includes: receiving queries/baselines -> structuring tasks -> designing experiments -> executing comparative simulations -> interpreting results -> synthesizing recommendations.\n- **Evaluation Results**:\n  - **Output Specificity**: The method produces more specific outputs compared to language-only reasoning baselines.\n  - **User Ratings**: In industrial applications, user-rated correctness and helpfulness significantly improved.\n  - **Ablation Studies & Case Analysis**: Ablation studies confirmed the effectiveness of simulation-integrated experimental reasoning; visualized case analyses demonstrated practical utility.\n- **Comparison**: Unlike traditional LLMs acting merely as text generators or simple tool callers, this approach provides more evidential and actionable conclusions by introducing a controlled experimental loop.\n\n#### Summary\nThis paper presents a multi-agent framework integrating LLMs with scientific simulation models to address scientific engineering problems requiring controlled experiments, such as pharmaceutical process design. By enabling LLM agents to test hypotheses, intervene, and compare observations within a simulation environment, the system overcomes the lack of evidential support in traditional LLM outputs. Experimental results show that the method provides more specific, correct, and helpful process optimization recommendations in industrial settings, validating the potential of simulation-integrated experimental reasoning in practical scientific discovery.",
-      "render_excerpt": "机构: University of Stuttgart, AstraZeneca<br>本文提出了一种将 LLM 与科学仿真模型相结合的多智能体框架，专门用于解决制药工艺设计等需要受控实验的科学工程问题。通过让 LLM 智能体在仿真环境中进行假设测试、干预和对比观察，系统克服了传统 LLM 输出缺乏证据支持的局限。实验结果表明，该方法在工业应用中能提供更具体、更正确且更有帮助的工艺优化建议，验证了仿真集成实验推理在实际科学发现中的潜力。",
-      "render_excerpt_en": "Institution: University of Stuttgart, AstraZeneca<br>This paper presents a multi-agent framework integrating LLMs with scientific simulation models to address scientific engineering problems requiring controlled experiments, such as pharmaceutical process design. By enabling LLM agents to test hypotheses, intervene, and compare observations within a simulation environment, the system overcomes the lack of evidential support in traditional LLM outputs. Experimental results show that the method provides more specific, correct, and helpful process optimization recommendations in industrial settings, validating the potential of simulation-integrated experimental reasoning in practical scientific discovery.",
+      "summary_cn": "## 文章做了什么\n- **背景**：在金融市场中，如果交易策略对价格变动做出系统性反应，其他市场参与者可能会预测该策略并利用这一点。大型语言模型（LLM）代理在序列决策中表现出基于先前行动、记忆和自我生成解释的行为模式，这为研究此类可预测性提供了受控环境。\n- **已有工作为什么解决不了**：现有的LLM金融应用研究多关注最终收益或特定任务的性能，缺乏对LLM代理在序列决策过程中是否表现出稳定的、可被利用的方向性结构（即“逆向择时”或系统性错误时机选择）的深入分析。传统方法难以隔离出由模型内部逻辑导致的系统性 timing 错误，而非随机噪声。\n\n## 文章的核心贡献点\n- **提出了一个 RetailAgent 框架**：这是一个受控的多模态实验框架，用于追踪 LLM 在匿名日内股价历史和允许状态下的序列决策及自我编写的记忆。\n- **挑战1：如何量化并证明 LLM 存在系统性的逆向择时行为？**\n  - **难点**：需要从复杂的交易路径中分离出由策略本身导致的负向收益，排除市场整体趋势和随机波动的影响。\n  - **解决方法**：论文设计了“暴露匹配”（exposure-matched）度量标准，通过比较同一股票日内路径中“做多”与“空仓”区间的回报，并剔除做多决策的整体比例，从而揭示跨模态、时间跨度和模型家族的持续性负向择时现象。\n- **挑战2：如何验证这种负向择时是由动作与后续回报的对齐驱动的，而非随机噪声？**\n  - **难点**：证明观察到的负收益并非偶然，而是源于代理决策逻辑与市场后续走势的系统性错配。\n  - **解决方法**：通过打乱保存的动作序列，发现负面效应大幅减弱，证明了动作与后续回报之间的对齐是驱动负分的主要原因；同时发现引入自我编写的记忆会增加策略的持久性，进一步加剧了逆向择时。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：RetailAgent 框架接收匿名的滚动日内价格历史和内生状态，通过多模态途径输入 LLM，代理在每个时间步选择“做多”或“空仓”。框架记录观察值、内生状态、动作、自我编写的记忆以及随后揭示的回报。\n- **Evaluation 结果**：\n  - 结果显示，在所有测试的模态、时间范围、状态和模型家族中，LLM 代理均表现出持续且显著的负向择时（negative timing）。\n  - 当代理在同一天内同时使用两种动作（做多和空仓）时，择时负面效应更强。\n  - 打乱动作序列后，负面效应显著衰减，证实了策略的可预测性和结构性缺陷。\n- **对比**：与传统散户交易行为研究相比，该研究在受控环境中揭示了 LLM 代理具有类似甚至更稳定的“反向指标”特征，为研究其他参与者如何应对可预测策略提供了行为信号。\n\n#### 总结\n本文通过 RetailAgent 框架揭示了 LLM 代理在金融交易决策中存在稳定且可恢复的方向性结构，具体表现为系统性的逆向择时。这种负向 timing 并非随机噪声，而是由代理的动作与后续市场回报之间的系统性错配驱动，且因自我记忆的引入而加剧。这一发现表明，当前的 LLM 交易代理可能成为市场中可被利用的可预测对手方，为理解 AI 代理在市场微观结构中的行为提供了新视角。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: In financial markets, sequential policies that react systematically to price movements can become predictable to other participants. Large Language Model (LLM) agents offer a controlled setting to study such behavior as they make sequential decisions conditioned on prior actions, memories, and self-generated interpretations.\n- **Why Existing Work Falls Short**: Previous research on LLMs in finance largely focuses on final returns or task performance, lacking deep analysis of whether LLM agents exhibit stable, exploitable directional structures (i.e., systematic adverse timing) in their sequential decision-making processes. Traditional methods struggle to isolate systematic timing errors caused by internal model logic from random noise.\n\n## Core Contributions\n- **Proposed RetailAgent Framework**: A controlled multimodal experimental framework for tracing sequential LLM decisions and self-authored memory under anonymized market conditions.\n- **Challenge 1: How to quantify and prove the existence of systematic adverse timing in LLMs?**\n  - **Difficulty**: Isolating negative returns caused by the strategy itself from overall market trends and random fluctuations is complex.\n  - **Solution**: The paper designs an \"exposure-matched\" metric that compares returns during \"long\" vs. \"flat\" intervals along the same stock's intraday path, removing the overall fraction of long decisions. This reveals persistent negative timing across modalities, horizons, states, and model families.\n- **Challenge 2: How to verify that this negative timing is driven by the alignment between actions and subsequent returns, rather than random noise?**\n  - **Difficulty**: Proving that observed negative returns are not accidental but stem from a systematic mismatch between the agent's decision logic and subsequent market moves.\n  - **Solution**: Shuffling saved action sequences substantially attenuates the negative effect, confirming that the alignment between actions and subsequent returns drives the score. Additionally, feeding self-authored memories increases policy persistence, further exacerbating adverse timing.\n\n## Implementation and Evaluation\n- **Implementation**: RetailAgent inputs anonymized rolling intraday price histories and endogenous states into an LLM via multimodal pathways. The agent chooses \"long\" or \"flat\" at each interval, with the framework recording observations, states, actions, memories, and subsequent returns.\n- **Evaluation Results**:\n  - LLM agents exhibited persistent and significant negative timing across all tested modalities, time horizons, states, and model families.\n  - The adverse timing effect was more pronounced on stock-days where the agent used both actions (long and flat).\n  - Shuffling action sequences significantly reduced the negative effect, confirming the structural and predictable nature of the strategy's flaws.\n- **Comparison**: Unlike traditional studies on retail trader behavior, this work reveals in a controlled environment that LLM agents act as stable \"contrarian indicators,\" providing behavioral signals for studying how other market participants might respond to predictable AI policies.\n\n## 4. Conclusion\nThis paper reveals through the RetailAgent framework that LLM agents exhibit stable and recoverable directional structures in financial trading decisions, specifically manifesting as systematic adverse timing. This negative timing is not random noise but is driven by a systematic mismatch between the agent's actions and subsequent market returns, exacerbated by the inclusion of self-authored memories. These findings suggest that current LLM trading agents may become predictable counterparties in the market, offering new insights into AI agent behavior in market microstructure.",
+      "render_excerpt": "机构: University of Wisconsin–Madison, University of Rochester, Michigan State University<br>本文通过 RetailAgent 框架揭示了 LLM 代理在金融交易决策中存在稳定且可恢复的方向性结构，具体表现为系统性的逆向择时。这种负向 timing 并非随机噪声，而是由代理的动作与后续市场回报之间的系统性错配驱动，且因自我记忆的引入而加剧。这一发现表明，当前的 LLM 交易代理可能成为市场中可被利用的可预测对手方，为理解 AI 代理在市场微观结构中的行为提供了新视角。",
+      "render_excerpt_en": "Institution: University of Wisconsin–Madison, University of Rochester, Michigan State University<br>## 1. What the Paper Did - **Background**: In financial markets, sequential policies that react systematically to price movements can become predictable to other participants. Large Language Model (LLM) agents offer a controlled setting to study such behavior as they make sequential decisions conditioned on prior actions, memories, and self-generated interpretations.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-22T18:54:52Z"
+        "captured_at": "2026-08-28T14:53:08Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-22"
+        "captured_at": "2026-08-28"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -60,205 +109,142 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2608.21867",
-      "date": "2026-08-22",
-      "title": "MemGuard: Persisting Verifier Signals for LLM-Agent Memory Governance",
+      "paper_id": "2608.28363",
+      "date": "2026-08-28",
+      "title": "EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses",
       "authors": [
-        "Haoyu Wang",
-        "Guangyuan Dong",
-        "He Liang",
-        "Zijing Zhang",
-        "Jiachen Luo",
-        "Chuang Liu",
-        "Chao Xue",
-        "Hao Tang"
+        "Tanmay Sah",
+        "Dolly Sah",
+        "Harshul Jain",
+        "Tanya Sah"
       ],
-      "abstract": "LLM agents are moving from single-prompt use to long task streams in which reusable memory becomes a core capability for terminal, software-engineering, and web tasks. Such memory is useful only when stored experience remains reliable across hundreds of interactions, but two failure modes break that assumption in practice. The first is unreliable admission: failed trajectories,accidental successes, and misleading observations enter memory because they appear relevant, then mislead later decisions. The second is memory drift: long-running banks accumulate duplicate, stale, and conflicting records that retrieval alone cannot repair. MemGuard's key distinction is to treat verifier output not as a one-shot filter, but as persistent lifecycle metadata. It converts multi-criteria score-token verification into reward, confidence, label, and uncertainty descriptors that are attached to every candidate before activation and reused during retrieval, conflict resolution, summarization, and archival. We evaluate MemGuard on Terminal-Bench 2.0, SWE-Bench Verified, WebArena, and Mind2Web across four backbones, comparing against four memory baselines plus a verifier-only control under matched runtime budgets. Averaged over five seeds, MemGuard achieves the best success metric and lowest average steps in all 16 backbone-benchmark settings, improving over ReasoningBank, the strongest prior baseline among the memory methods we evaluate, with a largest gain of 7.9 success-rate points on WebArena, 5.6 step-success-rate points on Mind2Web, and 2.4-3.5 points on terminal and software-engineering benchmarks. Code is available at https://github.com/whyyyyy123/MemGuard.",
+      "abstract": "LLM agents increasingly modify their own prompts, tools, middleware, resources, and execution harnesses at runtime. Such self-evolution can improve capability, but a successful mutation may leave persistent effects that cannot be safely reversed in states different from the one in which it was created. We introduce EvoUndo, a framework for representing, synthesizing, diagnosing, and independently verifying recoverability of model-generated self-modifications across counterfactual states. Across 600 unseen one-shot self-evolution tasks, we identify 197 capability-improving mutations that fail recoverability verification. Under the original recovery representation, conventional repair strategies recover 0/197 of these natural failures. Deterministic oracle analysis recovers 48/197 under the original recovery language L0, while the extended recovery calculus increases empirical oracle recovery to 191/197. A protocol-locked 2x2 grounding-by-expressivity intervention then separates two bottlenecks: exact state-address grounding increases successful recovery from 0/48 to 38/48 (79.2%) when the original language is sufficient, while extending the recovery language enables recovery on 142/143 (99.3%) failures in the oracle-defined S1 stratum. On the primary gpt-oss-120b backbone, adding exact-address diagnostics to the richer language reduces recovery to 133/143 (93.0%); a Qwen3.8-27B replication preserves the grounding and expressivity effects but not this negative interaction, indicating that the latter is model-dependent. These results indicate that reliable agent self-evolution requires co-designing verification, state grounding, witness semantics, and recovery-language expressivity rather than relying on iterative prompting alone.",
       "links": {
-        "abs": "http://arxiv.org/abs/2608.21867v1",
-        "pdf": "https://arxiv.org/pdf/2608.21867v1",
-        "github": "https://github.com/whyyyyy123/MemGuard",
-        "blog": null
-      },
-      "institution": "Peking University, Queen Mary University of London, National University of Singapore, Shanghai Institute of Optics and Fine Mechanics (CAS), Nankai University, Technical University of Munich, Wuhan University, University of New South Wales",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：LLM 智能体正从单次提示使用转向长任务流（如终端操作、软件工程、Web 任务），可复用的记忆成为核心能力。然而，只有当存储的经验在数百次交互中保持可靠时，记忆才有用。\n- **已有工作为什么解决不了**：现有方法存在两个主要失效模式。首先是“不可靠的准入”：失败的轨迹、偶然的成功或误导性的观察因看似相关而被存入记忆，进而误导后续决策；其次是“记忆漂移”：长期运行的记忆库会积累重复、过时和冲突的记录，仅靠检索机制无法修复这些问题。\n\n## 文章的核心贡献点\n- **提出了一个 MemGuard 框架**：其核心区别在于将验证器输出不仅视为一次性过滤器，而是作为持久的生命周期元数据。\n- **挑战1：不可靠的记忆准入**。难点在于难以区分表面相关但实际错误或过时的经验。MemGuard 通过将多标准评分令牌验证转化为奖励、置信度、标签和不确定性描述符，并在激活前附加到每个候选项上，从而在源头控制记忆质量。\n- **挑战2：记忆漂移与冲突**。难点在于随着记忆库增长，检索无法自动剔除过时或冲突信息。MemGuard 在检索、冲突解决、摘要和归档阶段重用上述持久化元数据，实现全生命周期的记忆治理，确保持续的相关性和一致性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估设置**：在 Terminal-Bench 2.0、SWE-Bench Verified、WebArena 和 Mind2Web 四个基准测试上进行评估，涵盖四种骨干模型。对比了四种记忆基线方法以及一个仅验证器的对照组，并在匹配的运行时预算下进行测试。\n- **实验结果**：在全部 16 种骨干-基准组合中，MemGuard 均取得了最佳的成功率指标和最低的平均步数。\n- **对比优势**：相较于最强的记忆基线方法 ReasoningBank，MemGuard 在 WebArena 上成功率提升了 7.9 个百分点，在 Mind2Web 上步数成功率提升了 5.6 个百分点，在终端和软件工程基准测试上提升了 2.4-3.5 个百分点。\n\n## 总结\nMemGuard 通过将持续验证信号转化为持久的生命周期元数据，有效解决了 LLM 智能体记忆系统中的准入不可靠和记忆漂移问题。该方法在多个复杂任务基准上显著优于现有最先进方法，证明了基于元数据的记忆治理在提升智能体长期可靠性方面的有效性。",
-      "summary_en": "## What the Paper Does\n- **Background**: LLM agents are transitioning from single-prompt interactions to long task streams (e.g., terminal operations, software engineering, web tasks), where reusable memory is a core capability. Memory is only useful if stored experiences remain reliable across hundreds of interactions.\n- **Why Existing Work Fails**: Current methods suffer from two failure modes. First, \"unreliable admission\": failed trajectories, accidental successes, or misleading observations enter memory because they appear relevant, subsequently misleading later decisions. Second, \"memory drift\": long-running memory banks accumulate duplicate, stale, and conflicting records that retrieval mechanisms alone cannot repair.\n\n## Core Contributions\n- **Proposed MemGuard**: A framework that treats verifier output not as a one-shot filter but as persistent lifecycle metadata.\n- **Challenge 1: Unreliable Memory Admission**. The difficulty lies in distinguishing superficially relevant but actually erroneous or outdated experiences. MemGuard addresses this by converting multi-criteria score-token verification into reward, confidence, label, and uncertainty descriptors attached to every candidate before activation.\n- **Challenge 2: Memory Drift and Conflict**. The challenge is that retrieval cannot automatically filter out obsolete or conflicting information as the memory bank grows. MemGuard reuses these persistent descriptors during retrieval, conflict resolution, summarization, and archival to govern the entire memory lifecycle, ensuring continued relevance and consistency.\n\n## Implementation, Evaluation, and Comparison\n- **Evaluation Setup**: Evaluated on Terminal-Bench 2.0, SWE-Bench Verified, WebArena, and Mind2Web across four backbone models. Compared against four memory baselines and a verifier-only control under matched runtime budgets.\n- **Results**: MemGuard achieved the best success metrics and lowest average steps in all 16 backbone-benchmark settings.\n- **Comparison**: Compared to ReasoningBank, the strongest prior baseline, MemGuard improved success rates by 7.9 points on WebArena, step-success rates by 5.6 points on Mind2Web, and by 2.4–3.5 points on terminal and software engineering benchmarks.\n\n## Summary\nMemGuard effectively addresses unreliable admission and memory drift in LLM agent memory systems by persisting verifier signals as lifecycle metadata. The method significantly outperforms state-of-the-art baselines across multiple complex task benchmarks, demonstrating the effectiveness of metadata-based memory governance in enhancing long-term agent reliability.",
-      "render_excerpt": "机构: Peking University, Queen Mary University of London, National University of Singapore, Shanghai Institute of Optics and Fine Mechanics (CAS), Nankai University, Technical University of Munich, Wuhan University, University of New South Wales<br>## 文章做了什么 - **背景**：LLM 智能体正从单次提示使用转向长任务流（如终端操作、软件工程、Web 任务），可复用的记忆成为核心能力。然而，只有当存储的经验在数百次交互中保持可靠时，记忆才有用。 - **已有工作为什么解决不了**：现有方法存在两个主要失效模式。首先是“不可靠的准入”：失败的轨迹、偶然的成功或误导性的观察因看似相关而被存入记忆，进而误导后续决策；其次是“记忆漂移”：长期运行的记忆库会积累重复、过时和冲突的记录，仅靠检索机制无法修复这些问题。 ## 文章的核心贡献点 - **提出了一个 MemGuard 框架**：其核心区别在于将验证器输出不仅视为一次性过滤器，而是作为持久的生命周期元数据。",
-      "render_excerpt_en": "Institution: Peking University, Queen Mary University of London, National University of Singapore, Shanghai Institute of Optics and Fine Mechanics (CAS), Nankai University, Technical University of Munich, Wuhan University, University of New South Wales<br>## What the Paper Does - **Background**: LLM agents are transitioning from single-prompt interactions to long task streams (e.g., terminal operations, software engineering, web tasks), where reusable memory is a core capability. Memory is only useful if stored experiences remain reliable across hundreds of interactions. - **Why Existing Work Fails**: Current methods suffer from two failure modes.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-22T09:25:23Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-22"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.21946",
-      "date": "2026-08-22",
-      "title": "EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning",
-      "authors": [
-        "Can Xie",
-        "Yuyi Zhou",
-        "Wen Yang",
-        "Ziyi zhang",
-        "Siyao Song",
-        "Yingzhuo Deng",
-        "Shuo Ren",
-        "Jiajun Zhang"
-      ],
-      "abstract": "Reinforcement learning with outcome-based objectives such as GRPO enables LLM-based agents to solve complex, long-horizon tasks, yet the reusable exploration patterns embedded in interaction trajectories are largely discarded after a single policy update. Existing experience-augmented approaches retrieve historical guidance at inference time, but they apply experiences without accounting for the policy's evolving capability and create persistent dependencies on external retrieval. We propose EDGE (Experience-Distillation for Guided Exploration), a framework that treats retrieved experiences as temporary training-time scaffolds and progressively internalizes their benefits into the parametric policy. Concretely, EDGE partitions each rollout group into experience-conditioned and experience-free trajectories to estimate and admit only positive marginal gains without extra sampling, then distills the induced behavior into the base policy via a reverse-KL objective on its own empirical support. A co-evolutionary experience bank further synthesizes guidance from emerging failure modes and prunes obsolete entries as the policy evolves. Across embodied, web, and search-based QA tasks, EDGE improves over strong RL baselines by up to 12.5 points and remains effective without inference-time scaffolds or a proprietary reflector. The code is available at https://github.com/xvolcano02/EDGE.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.21946v2",
-        "pdf": "https://arxiv.org/pdf/2608.21946v2",
-        "github": "https://github.com/xvolcano02/EDGE",
-        "blog": null
-      },
-      "institution": "School of Artificial Intelligence, University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于结果导向目标（如 GRPO）的强化学习使 LLM 智能体能够解决复杂的长程任务，但交互轨迹中嵌入的可重用探索模式（如有效的任务分解、恢复策略）在单次策略更新后往往被丢弃，导致智能体必须从头重新发现这些模式，这在稀疏奖励环境中效率极低。\n- **已有工作为什么解决不了**：现有的经验增强方法通常在推理时检索历史指导，但存在两个主要局限：一是未考虑策略 evolving capability（演进能力），即对欠训练策略有用的指导在行为内化后可能变得冗余甚至有害；二是造成对外部检索的持久依赖，导致推理时的 token 开销增加及对检索噪声敏感。\n\n## 文章的核心贡献点\n- **提出了一个 EDGE (Experience-Distillation for Guided Exploration) 框架**：该框架将检索到的经验视为临时的训练时“脚手架”，并逐步将其益处内化到参数化策略中，实现经验的动态生命周期管理。\n- **挑战1：如何在不增加额外采样成本的情况下，准确评估经验带来的边际增益并避免负面引导？**\n  - **难点**：经验的有效性高度依赖于当前策略状态，盲目注入可能导致性能下降，且传统方法难以区分正负边际贡献。\n  - **解决方法**：EDGE 将每个 rollout 组划分为“经验条件”和“无经验”轨迹，通过对比估计仅接纳具有正向边际增益的经验，无需额外采样即可过滤无效或有害指导。\n- **挑战2：如何将外部经验有效内化为策略本身的参数能力，从而消除推理时的外部依赖？**\n  - **难点**：现有方法多依赖推理时检索，导致能力存储在上下文而非模型参数中，无法真正提升模型内在能力且增加推理负担。\n  - **解决方法**：通过在其自身经验支持上的反向 KL 散度目标，将经验诱导的行为蒸馏到基础策略中；同时引入协同进化的经验库，根据策略演进合成新指导并修剪过时条目，最终实现无需推理时脚手架的高效部署。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：EDGE 包含经验引导探索脚手架和协同进化经验库。在训练阶段使用经验作为临时指导，通过蒸馏将行为内化；在推理阶段无需任何外部检索或专有反射器（reflector），完全依赖内化后的参数策略。\n- **Evaluation 结果**：在具身智能、Web 操作和基于搜索的 QA 任务上进行评估。\n- **对比结果**：EDGE 相比强大的 RL 基线方法（如 vanilla GRPO 及其他记忆增强方法）性能提升高达 12.5 个点。实验表明， naive memory augmentation（如 EvolveR, GRPO+Mem0）因未过滤经验注入导致性能低于 vanilla GRPO，而 EDGE 既避免了性能退化，又消除了推理时的 token  overhead。\n\n#### 总结\nEDGE 提出了一种新的智能体强化学习范式，通过将外部经验从“推理时检索”转变为“训练时蒸馏”，解决了经验复用中的策略依赖性和外部依赖性问题。该方法不仅显著提升了长程复杂任务的性能，还实现了更轻量、更鲁棒的推理部署，为 LLM 智能体的持续学习和能力内化提供了有效路径。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Reinforcement learning with outcome-based objectives (e.g., GRPO) enables LLM agents to solve complex, long-horizon tasks. However, reusable exploration patterns (e.g., task decomposition, recovery strategies) embedded in interaction trajectories are largely discarded after a single policy update, forcing agents to rediscover them from scratch, which is inefficient in sparse-reward environments.\n- **Why Existing Work Fails**: Current experience-augmented approaches retrieve historical guidance at inference time but fail to account for the policy's evolving capability. Guidance useful for an undertrained policy may become redundant or harmful once internalized. Additionally, these methods create persistent dependencies on external retrieval, incurring token overhead and sensitivity to retrieval noise at deployment.\n\n## Core Contributions\n- **Proposed EDGE (Experience-Distillation for Guided Exploration)**: A framework that treats retrieved experiences as temporary training-time scaffolds, progressively internalizing their benefits into the parametric policy through a dynamic lifecycle.\n- **Challenge 1: How to estimate the marginal gain of experiences without extra sampling and avoid negative guidance?**\n  - **Difficulty**: Experience utility is policy-dependent; blind injection can degrade performance, and distinguishing positive vs. negative marginal contributions is difficult.\n  - **Solution**: EDGE partitions each rollout group into experience-conditioned and experience-free trajectories to estimate and admit only positive marginal gains, filtering out ineffective or harmful guidance without additional sampling costs.\n- **Challenge 2: How to internalize external experiences into the policy parameters to eliminate inference-time dependencies?**\n  - **Difficulty**: Existing methods rely on inference-time retrieval, storing competence in the context window rather than model parameters, leading to high overhead and lack of true capability improvement.\n  - **Solution**: It distills induced behavior into the base policy via a reverse-KL objective on its own empirical support. A co-evolutionary experience bank synthesizes guidance from emerging failure modes and prunes obsolete entries, enabling effective deployment without inference-time scaffolds.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: EDGE employs experience-guided exploration scaffolding during training and a co-evolutionary experience bank. At inference, it requires no external retrieval or proprietary reflectors, relying solely on the internalized policy parameters.\n- **Evaluation Results**: Evaluated across embodied, web, and search-based QA tasks.\n- **Comparison**: EDGE improves over strong RL baselines by up to 12.5 points. Unlike naive memory augmentation methods (e.g., EvolveR, GRPO+Mem0) which degrade performance below vanilla GRPO due to unfiltered injection, EDGE achieves significant gains while eliminating inference-time token overhead and retrieval sensitivity.\n\n#### Summary\nEDGE introduces a new paradigm for agentic RL by shifting experience reuse from \"inference-time retrieval\" to \"training-time distillation.\" It addresses policy dependency and external reliance issues, significantly boosting performance on long-horizon tasks while enabling lighter, more robust deployment. This approach offers an effective path for continuous learning and capability internalization in LLM agents.",
-      "render_excerpt": "机构: School of Artificial Intelligence, University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences<br>EDGE 提出了一种新的智能体强化学习范式，通过将外部经验从“推理时检索”转变为“训练时蒸馏”，解决了经验复用中的策略依赖性和外部依赖性问题。该方法不仅显著提升了长程复杂任务的性能，还实现了更轻量、更鲁棒的推理部署，为 LLM 智能体的持续学习和能力内化提供了有效路径。",
-      "render_excerpt_en": "Institution: School of Artificial Intelligence, University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences<br>EDGE introduces a new paradigm for agentic RL by shifting experience reuse from \"inference-time retrieval\" to \"training-time distillation.\" It addresses policy dependency and external reliance issues, significantly boosting performance on long-horizon tasks while enabling lighter, more robust deployment. This approach offers an effective path for continuous learning and capability internalization in LLM agents.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-22T13:16:25Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-22"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.21833",
-      "date": "2026-08-22",
-      "title": "GameXpert-Bench: How Far Are Coding Agents from Expert Game Development?",
-      "authors": [
-        "Kun Chen",
-        "Haorong Hong",
-        "Peizhong Gao",
-        "Jianfeng Lin",
-        "Tongxu Luo",
-        "Yuxuan Xie",
-        "Chenxu Liu",
-        "Jieling He",
-        "Zhongyuan Liu",
-        "Zeno Zeng"
-      ],
-      "abstract": "Recent large language models (LLMs) can operate as coding agents that build complete games from natural language requests. Game development is especially demanding because program logic, visual and audio content, interfaces, interaction and playability must function together in one executable artifact. Measuring this capability therefore requires evaluation of both game product and the development process. Existing benchmarks often assess the game development capabilities of LLMs by evaluating the final artifact or an isolated development stage. Our analysis of complete human-agent development trajectories identifies three stages that together span the lifecycle of game development with a coding agent: initial game generation, bug diagnosis and repair, and optimization over multiple turns. Therefore, we introduce GameXpert-Bench, which operationalizes the three lifecycle stages as three complementary benchmark tracks. GameGen evaluates complete game creation from a single request in an empty workspace. GameFix evaluates diagnosis and repair when defects are reported or left for the agent to discover. GameOpt evaluates cumulative optimization through request chains seeded by real development trajectories between users and agents. We evaluate each track using live game interaction, deterministic behavioral tests, or final product criteria with regression checks. The suite contains 97 generation tasks across 11 genres; 100 repair tasks from 50 game levels verified by humans, each with 19-27 injected bugs; and 17 optimization chains with six turns and 102 requests. Across the three tracks, current agents are more reliable at producing playable foundations and implementing explicit requirements than at discovering defects, verifying runtime behavior, and preserving functionality across changes.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.21833v1",
-        "pdf": "https://arxiv.org/pdf/2608.21833v1",
-        "github": null,
-        "blog": "https://kwen-chen.github.io/GameXpert-Bench/"
-      },
-      "institution": "Institute of Automation, Chinese Academy of Sciences; Tencent",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）作为代码智能体能力的提升，从自然语言请求构建完整游戏成为评估其综合编程能力的重要场景。游戏开发极具挑战性，要求程序逻辑、视听内容、界面交互和可玩性在一个可执行工件中协同工作。\n- **已有工作的不足**：现有的基准测试通常仅评估最终生成的游戏产物或孤立开发的某个阶段，缺乏对完整开发生命周期的覆盖。它们往往无法全面衡量智能体在缺陷诊断、运行时行为验证以及在多轮迭代中保持功能稳定性方面的能力。\n\n## 文章的核心贡献点\n- **提出了一个 GameXpert-Bench**：这是一个基于执行落地的基准测试套件，将游戏开发生命周期操作化为三个互补的评估轨道：GameGen（初始生成）、GameFix（缺陷修复）和 GameOpt（多轮优化）。\n- **挑战1：如何全面评估从零开始的完整游戏生成能力？**\n  - **难点**：游戏不仅是代码，还涉及资源、逻辑和交互的复杂整合，单一指标难以反映可玩性。\n  - **解决方法**：通过 GameGen 轨道，在空工作区中根据单个自然语言请求生成完整游戏，涵盖11种类型的97个任务，并结合实时游戏交互和确定性行为测试进行多维度评估。\n- **挑战2：如何量化智能体在调试和多轮迭代中的真实表现？**\n  - **难点**：现有基准缺乏高质量的带标注缺陷数据和真实的多轮优化轨迹，难以评估智能体发现隐蔽Bug和在修改中维持原有功能的能力。\n  - **解决方法**：引入 GameFix 轨道，使用人工验证的50个游戏关卡并注入19-27个Bug，评估智能体的自我发现和修复能力；引入 GameOpt 轨道，基于真实人机开发轨迹的17条优化链（共102个请求），评估多轮迭代中的累积优化效果和回归稳定性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据规模**：GameXpert-Bench 包含97个生成任务、100个修复任务（来自50个黄金游戏）以及17条多轮优化链。评估方法结合了实时游戏交互、确定性行为测试以及带有回归检查的最终产品标准。\n- **评估结果**：实验显示，当前的代码智能体在生成可玩的基础框架和实现明确需求方面表现较为可靠。然而，它们在发现缺陷、验证运行时行为以及在代码变更中保持功能完整性方面表现较弱。\n- **对比与洞察**：与仅关注最终产出的相关工作相比，该基准揭示了智能体能力的不对称性：初始生成质量高并不代表具备专家级的开发和调试能力。特别是在 GameFix 和 GameOpt 轨道中，智能体在处理复杂逻辑错误和避免回归错误方面仍有显著差距。\n\n#### 总结\nGameXpert-Bench 填补了游戏开发领域全生命周期评估的空白，通过细分生成、修复和优化三个阶段，提供了更细粒度的能力画像。研究结果表明，虽然 LLM 智能体能快速构建游戏原型，但在达到专家级开发水平（特别是调试和长期维护）方面仍有很长的路要走。该基准为未来提升代码智能体的鲁棒性和工程化能力提供了重要的评估标准和方向。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) are increasingly used as coding agents capable of building complete games from natural language requests. Game development is a demanding testbed as it requires the coherent integration of program logic, audiovisual assets, UI, and interactivity into a single executable artifact.\n- **Limitations of Existing Work**: Current benchmarks typically evaluate only the final game artifact or isolated stages of development. They fail to assess the complete development lifecycle, particularly overlooking the agent's ability to diagnose bugs, verify runtime behavior, and maintain functionality across iterative changes.\n\n## Core Contributions\n- **Proposed GameXpert-Bench**: A comprehensive benchmark suite that operationalizes the game development lifecycle into three complementary tracks: GameGen (initial generation), GameFix (bug diagnosis and repair), and GameOpt (multi-turn optimization).\n- **Challenge 1: How to comprehensively evaluate complete game generation from scratch?**\n  - **Difficulty**: Games involve complex interactions between code, resources, and logic, making single-metric evaluations insufficient for assessing playability.\n  - **Solution**: The GameGen track evaluates the creation of complete games from single natural language prompts in an empty workspace. It includes 97 tasks across 11 genres, assessed via live interaction and deterministic behavioral tests.\n- **Challenge 2: How to quantify agent performance in debugging and multi-turn iteration?**\n  - **Difficulty**: Lack of high-quality datasets with annotated defects and real-world multi-turn trajectories makes it hard to evaluate bug discovery and regression stability.\n  - **Solution**: The GameFix track uses 50 human-verified \"gold\" games with 19-27 injected bugs each to test self-discovery and repair. The GameOpt track uses 17 optimization chains (102 requests) derived from real human-agent trajectories to evaluate cumulative optimization and functional preservation.\n\n## Implementation and Evaluation\n- **Implementation & Scale**: The suite comprises 97 generation tasks, 100 repair tasks, and 17 multi-turn optimization chains. Evaluation combines live game interaction, deterministic tests, and product criteria with regression checks.\n- **Results**: Current agents are reliable at producing playable foundations and implementing explicit requirements. However, they struggle significantly with discovering defects, verifying runtime behavior, and preserving functionality during code changes.\n- **Comparison & Insights**: Unlike prior works focusing solely on final outputs, GameXpert-Bench reveals an asymmetry in agent capabilities: high initial generation quality does not equate to expert-level development skills. Agents show notable weaknesses in the GameFix and GameOpt tracks, highlighting gaps in robustness and engineering discipline.\n\n## 4. Conclusion\nGameXpert-Bench addresses the lack of full-lifecycle evaluation in game development by breaking down the process into generation, repair, and optimization. The study demonstrates that while LLM agents can rapidly prototype games, they fall short of expert-level proficiency, particularly in debugging and long-term maintenance. This benchmark provides a critical standard for guiding future improvements in the robustness and engineering capabilities of coding agents.",
-      "render_excerpt": "机构: Institute of Automation, Chinese Academy of Sciences; Tencent<br>GameXpert-Bench 填补了游戏开发领域全生命周期评估的空白，通过细分生成、修复和优化三个阶段，提供了更细粒度的能力画像。研究结果表明，虽然 LLM 智能体能快速构建游戏原型，但在达到专家级开发水平（特别是调试和长期维护）方面仍有很长的路要走。该基准为未来提升代码智能体的鲁棒性和工程化能力提供了重要的评估标准和方向。",
-      "render_excerpt_en": "Institution: Institute of Automation, Chinese Academy of Sciences; Tencent<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) are increasingly used as coding agents capable of building complete games from natural language requests. Game development is a demanding testbed as it requires the coherent integration of program logic, audiovisual assets, UI, and interactivity into a single executable artifact.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-08-22T08:05:16Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-08-22"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2608.21864",
-      "date": "2026-08-22",
-      "title": "BioMed-Agent-RL: A Meta Learning, All You Need for Biomedical Applications",
-      "authors": [
-        "Md Asaduzzaman Jabin",
-        "Zihao Wu",
-        "Tianming Liu"
-      ],
-      "abstract": "The current progress of Clinical Vision Large Language Models (C-VLLMs) has substantially improved digital diagnostics, still these frameworks often endure lesion noises, modality misalignment, hallucination, and missed contextual grounding in complex clinical cases. Moreover, prevailing agent systems usually depend on static and non-adaptable pipelines and lack the versatility necessary for complex medical reasoning. To resolve these difficulties, we present BioMed-Agent-RL, a unified medical agent that incorporates adaptive orchestration, policy, and reward-based reinforcement learning (RL) models for biomedical applications. To ensure reliability, it invokes clinical context-aware preference optimization (CPO), direct preference optimization (DPO), and group relative policy optimization (GRPO) with dynamic entropy regulation. This pipeline utilizes a multimodal meta-learning approach that operates as a field-specific expert and human judgment synthesizer. The agent adaptively utilizes a set of model-level expertise, such as clinical grounding and reasoner, lesion segmenter, and field-specific synthesizer, across various clinical modalities (e.g., X-ray) by utilizing an iterative and adaptive RL approach. The agent learns to seriously synthesize misleading, conflicting vision cues and trust in inherent reasoning, while specialist advice is faulty. An intensive ablation study is conducted across multiple benchmarks, and the agent significantly outperforms existing state of the art models, such as GPT-5, attaining up to ~73% accuracy (gain of ~5%) over contemporary baselines. As a result, the framework suggests a new standard for building factual, reliable, robust, and expert-like intelligent agent systems for independent clinical reasoning.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.21864v1",
-        "pdf": "https://arxiv.org/pdf/2608.21864v1",
+        "abs": "http://arxiv.org/abs/2608.28363v1",
+        "pdf": "https://arxiv.org/pdf/2608.28363v1",
         "github": null,
         "blog": null
       },
-      "institution": "The University of Georgia",
+      "institution": null,
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：临床视觉大语言模型（C-VLLMs）在数字诊断方面取得了显著进展，但在处理复杂临床病例时，常面临病灶噪声、模态错位、幻觉以及缺乏上下文 grounding 等问题。现有的智能体系统通常依赖静态且不可适应的流水线，缺乏复杂医疗推理所需的灵活性。\n- **已有工作的局限性**：单一骨干网络难以跨越不同模态（如MRI、CT、X光）和子领域（如放射科、病理科）进行有效推理；传统的基于人类反馈的强化学习（RLHF）计算成本高且耗时；现有的代理系统缺乏自适应能力，无法动态整合多模态线索，导致在多模态错位时产生幻觉或推理失败。\n\n## 文章的核心贡献点\n- **提出了一个 BioMed-Agent-RL**：这是一个统一的医疗智能体框架，结合了自适应编排、策略模型和基于奖励的强化学习模型，旨在通过多模态元学习方法实现特定领域的专家级推理和人类判断合成。\n- **挑战1：多模态错位与幻觉问题**。难点在于当视觉线索具有误导性或相互冲突时，模型容易生成错误诊断。该方法通过引入临床上下文感知偏好优化（CPO）、直接偏好优化（DPO）和带有动态熵调节的组相对策略优化（GRPO），使智能体能够自适应地综合 conflicting 视觉线索并信任内在推理，从而在专家建议出错时仍能保持可靠性。\n- **挑战2：静态流水线缺乏通用性与适应性**。难点在于现有系统无法针对不同临床模态和任务动态调整推理路径。该方法利用迭代且自适应的强化学习途径，动态调用模型级专业知识（如临床 grounding、推理器、病灶分割器和领域特定合成器），实现了跨多种临床模态的灵活 orchestration。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：框架集成了 CPO、DPO 和 GRPO 算法，并采用动态熵调节机制。它作为一个特定领域的专家和人类判断合成器运行，能够自适应地利用病灶分割、临床推理等模块。\n- **评估结果**：在多个基准测试上进行了广泛的消融研究。BioMed-Agent-RL 显著优于现有的最先进模型（包括文中提到的 GPT-5 等基线）。\n- **对比优势**：相比当代基线模型，该框架达到了约 73% 的准确率，提升了约 5%。结果表明其在构建事实性、可靠性、鲁棒性及类专家的智能临床推理系统方面设立了新标准。\n\n#### 总结\nBioMed-Agent-RL 通过引入自适应强化学习和多模态元学习，解决了当前临床视觉大模型在复杂病例中存在的噪声、错位和幻觉问题。它突破了静态代理系统的局限，能够动态整合多模态专家知识，即使在视觉线索冲突或专家建议有误的情况下也能做出可靠推理。实验证明其准确率和鲁棒性均优于现有 SOTA 模型，为独立临床推理智能体的建立提供了新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Clinical Vision Large Language Models (C-VLLMs) have improved digital diagnostics but still suffer from lesion noises, modality misalignment, hallucinations, and lack of contextual grounding in complex cases. Existing agent systems rely on static, non-adaptable pipelines lacking the versatility for complex medical reasoning.\n- **Limitations of Previous Work**: Single backbone models struggle with reasoning across diverse clinical subfields and modalities. Traditional RLHF is computationally expensive and time-consuming. Current agents lack adaptability, leading to failures in handling multimodal misalignment and dynamic clinical contexts.\n\n## Core Contributions\n- **Proposed BioMed-Agent-RL**: A unified medical agent framework incorporating adaptive orchestration, policy models, and reward-based reinforcement learning (RL). It utilizes a multimodal meta-learning approach to act as a field-specific expert and human judgment synthesizer.\n- **Challenge 1: Multimodal Misalignment and Hallucinations**. Difficulty: Models often fail when visual cues are misleading or conflicting. Solution: The method employs Clinical Context-aware Preference Optimization (CPO), Direct Preference Optimization (DPO), and Group Relative Policy Optimization (GRPO) with dynamic entropy regulation. This allows the agent to synthesize conflicting cues and trust inherent reasoning even when specialist advice is faulty.\n- **Challenge 2: Lack of Adaptability in Static Pipelines**. Difficulty: Existing systems cannot dynamically adjust reasoning paths for different modalities. Solution: The agent uses an iterative and adaptive RL approach to dynamically invoke model-level expertise (e.g., clinical grounding, lesion segmenter, reasoner) across various clinical modalities like X-ray, MRI, and CT.\n\n## Implementation and Evaluation\n- **Implementation**: The framework integrates CPO, DPO, and GRPO with dynamic entropy regulation. It operates by adaptively orchestrating specific mechanisms for multimodal grounding, reasoning, and report generation.\n- **Evaluation Results**: Extensive ablation studies were conducted across multiple benchmarks. BioMed-Agent-RL significantly outperforms existing state-of-the-art models, including baselines referred to as GPT-5.\n- **Comparison**: The agent achieved approximately 73% accuracy, representing a ~5% gain over contemporary baselines. It demonstrates superior factual reliability, robustness, and expert-like reasoning capabilities compared to current methods.\n\n## 4. Conclusion\nBioMed-Agent-RL addresses the limitations of current C-VLLMs by introducing adaptive reinforcement learning and multimodal meta-learning. It overcomes the rigidity of static agent systems by dynamically integrating multimodal expert knowledge, ensuring reliable reasoning even amidst conflicting visual cues. Experimental results confirm its superiority in accuracy and robustness over SOTA models, setting a new standard for intelligent agents in independent clinical reasoning.",
-      "render_excerpt": "机构: The University of Georgia<br>BioMed-Agent-RL 通过引入自适应强化学习和多模态元学习，解决了当前临床视觉大模型在复杂病例中存在的噪声、错位和幻觉问题。它突破了静态代理系统的局限，能够动态整合多模态专家知识，即使在视觉线索冲突或专家建议有误的情况下也能做出可靠推理。实验证明其准确率和鲁棒性均优于现有 SOTA 模型，为独立临床推理智能体的建立提供了新范式。",
-      "render_excerpt_en": "Institution: The University of Georgia<br>## 1. What the Paper Does - **Background**: Clinical Vision Large Language Models (C-VLLMs) have improved digital diagnostics but still suffer from lesion noises, modality misalignment, hallucinations, and lack of contextual grounding in complex cases. Existing agent systems rely on static, non-adaptable pipelines lacking the versatility for complex medical reasoning.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体正逐渐演变为可变系统，能够在运行时自主修改提示词、工具、中间件及执行环境。这种“自我进化”能提升能力，但成功的突变可能留下持久副作用（如覆盖配置、资源泄漏），且这些副作用在不同状态下难以安全逆转。\n- **已有工作的不足**：现有的自我改进程序主要优化突变的前向效果（即是否提升任务目标），而忽视了恢复性。简单的静态逆操作往往无法恢复先前的状态，因为正确的恢复过程通常依赖于突变前的状态证据，且需在不同反事实状态下均有效。现有方法缺乏对跨状态恢复能力的形式化验证和约束。\n\n## 文章的核心贡献点\n- **提出了 EvoUndo 框架**：一个用于表示、合成、诊断和独立验证模型生成的自修改在反事实状态下可恢复性的框架。\n- **挑战1：状态接地（State Grounding）的精确性**\n    - **难点**：恢复操作需要精确指向突变前的具体状态信息，若地址或上下文定位不准，恢复将失败。\n    - **解决方法**：引入精确状态地址诊断（exact state-address grounding），在原始恢复语言足够时，将成功恢复率从 0% 提升至 79.2%。\n- **挑战2：恢复语言的表达力（Expressivity）**\n    - **难点**：原有的恢复语言（L0）表达能力有限，无法描述复杂的恢复逻辑，导致大量自然失败无法修复。\n    - **解决方法**：扩展恢复微积分（extended recovery calculus），增强语言表达力，使确定性预言机分析下的恢复成功率从 48/197 提升至 191/197。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 600 个未见过的单样本自我进化任务中进行评估，识别出 197 个能力提升但恢复性验证失败的突变。\n- **基线对比**：在原始恢复表示下，传统修复策略对 197 个自然失败案例的恢复成功率为 0/197。\n- **主要结果**：\n    - 使用扩展恢复语言后，经验性预言机恢复率达到 191/197。\n    - 通过 2x2 接地-by-表达力干预实验分离瓶颈：在原始语言 sufficient 的子集中，精确接地将恢复率从 0/48 提升至 38/48；在需要更强表达力的子集（S1层）中，扩展语言实现了 142/143 (99.3%) 的恢复率。\n    - **模型差异**：在 gpt-oss-120b 主干上，结合精确地址诊断和丰富语言反而导致恢复率降至 93.0%（负面交互）；而在 Qwen3.8-27B 复现中未出现此负面交互，表明该交互具有模型依赖性。\n\n#### 总结\nEvoUndo 证明了可靠的智能体自我进化不能仅依赖迭代提示，而需要协同设计验证机制、状态接地、见证语义以及恢复语言的表达力。该框架通过强制要求突变具备跨状态的鲁棒可恢复性，解决了自主系统中长期运行的安全性与稳定性问题。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents are increasingly becoming mutable systems that can autonomously modify prompts, tools, middleware, and execution environments at runtime. While this \"self-evolution\" enhances capabilities, successful mutations may leave persistent side effects (e.g., configuration overwrites, resource leaks) that are difficult to safely reverse in states different from where they were created.\n- **Limitations of Existing Work**: Current self-improvement procedures primarily optimize the forward effect of modifications (i.e., task objective improvement) while neglecting recoverability. Simple static inverse operations often fail to restore prior states because correct recovery depends on pre-mutation state evidence and must hold across various counterfactual states. Existing methods lack formalized verification and constraints for cross-state recoverability.\n\n## Core Contributions\n- **Proposed EvoUndo Framework**: A framework for representing, synthesizing, diagnosing, and independently verifying the recoverability of model-generated self-modifications across counterfactual states.\n- **Challenge 1: Precision of State Grounding**\n    - **Difficulty**: Recovery operations require precise pointing to specific pre-mutation state information; inaccurate addressing or context localization leads to failure.\n    - **Solution**: Introduces exact state-address diagnostics, which increased successful recovery from 0% to 79.2% in cases where the original recovery language was sufficient.\n- **Challenge 2: Expressivity of Recovery Language**\n    - **Difficulty**: The original recovery language (L0) had limited expressivity, unable to describe complex recovery logic, leading to unrecoverable natural failures.\n    - **Solution**: Extends the recovery calculus to enhance language expressivity, increasing the deterministic oracle recovery rate from 48/197 to 191/197.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on 600 unseen one-shot self-evolution tasks, identifying 197 capability-improving mutations that failed recoverability verification.\n- **Baseline Comparison**: Under the original recovery representation, conventional repair strategies achieved a 0/197 success rate on these natural failures.\n- **Key Results**:\n    - With the extended recovery language, empirical oracle recovery reached 191/197.\n    - A 2x2 grounding-by-expressivity intervention isolated bottlenecks: Exact grounding improved recovery from 0/48 to 38/48 in the original language stratum; extended language enabled 142/143 (99.3%) recovery in the S1 stratum requiring higher expressivity.\n    - **Model Dependency**: On the gpt-oss-120b backbone, combining exact address diagnostics with rich language reduced recovery to 93.0% due to negative interaction; this interaction was not observed in the Qwen3.8-27B replication, indicating model-dependent behavior.\n\n## 4. Conclusion\nEvoUndo demonstrates that reliable agent self-evolution cannot rely solely on iterative prompting but requires the co-design of verification, state grounding, witness semantics, and recovery-language expressivity. By enforcing robust recoverability across states as an invariant, the framework addresses safety and stability concerns in long-lived autonomous systems.",
+      "render_excerpt": "EvoUndo 证明了可靠的智能体自我进化不能仅依赖迭代提示，而需要协同设计验证机制、状态接地、见证语义以及恢复语言的表达力。该框架通过强制要求突变具备跨状态的鲁棒可恢复性，解决了自主系统中长期运行的安全性与稳定性问题。",
+      "render_excerpt_en": "## 1. What the Paper Does - **Background**: LLM agents are increasingly becoming mutable systems that can autonomously modify prompts, tools, middleware, and execution environments at runtime. While this \"self-evolution\" enhances capabilities, successful mutations may leave persistent side effects (e.g., configuration overwrites, resource leaks) that are difficult to safely reverse in states different from where they were created.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-08-22T09:16:54Z"
+        "captured_at": "2026-08-28T14:15:36Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-08-22"
+        "captured_at": "2026-08-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.28147",
+      "date": "2026-08-28",
+      "title": "Post-Edit Re-Verification in Simulator-Backed Engineering Agents: A Controlled Comparison of Verification-Cadence Guidance",
+      "authors": [
+        "Qingchuan Zhu",
+        "Shuyue Tong",
+        "Pengju Ren"
+      ],
+      "abstract": "Engineering agents that interact with external simulators may need to coordinate design modification with reacquisition of engineering evidence for the modified state. We ask whether first post-edit re-verification changes when explicit verification-cadence guidance is retained versus omitted while verification-relevant state/facts are held constant. Cadence-Guided (CG) retained an instruction to request a new simulation after a substantive modification, whereas Cadence-Omitted (CO) removed that instruction; neither condition used a hard gate. The study therefore measures instruction-conditioned post-edit verification-policy adherence rather than spontaneous recognition that prior evidence has become stale. Using DWSIM as the simulator backend and continuous valve-pressure adjustment, five Alibaba/Qwen models were evaluated on eight synthetic cases; each model-case-condition combination was executed three times via live API calls, yielding 120 evaluation slots per condition. Re-verification was observed in 94/120 CG slots versus 32/120 CO slots; cadence violations occurred in 26/120 versus 87/120; and bounded final success was reached in 95/120 versus 35/120. qwen3.5-35b-a3b showed minimal re-verification (1/24 in CG and 0/24 in CO) and no final success in either condition. Within this bounded protocol, explicit post-edit verification-cadence guidance was associated with more re-verification, fewer cadence violations, and more frequent bounded final success, supporting the treatment of verification cadence as an explicit interaction-protocol component.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.28147v1",
+        "pdf": "https://arxiv.org/pdf/2608.28147v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Sinopec Petroleum Engineering Zhongyuan Co., Ltd.; Xi’an Jiaotong University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理在科学和工程工作流中日益重要，它们需要与外部模拟器（如DWSIM）交互以获取设计状态的工程证据。当代理对设计进行实质性修改后，之前的验证证据即失效，需要重新获取新状态的证据。\n- **已有工作的局限**：现有的工程代理系统虽然能够连接模拟器并执行迭代模拟，但往往缺乏对“何时”重新验证的明确协议控制。现有研究多关注代理能否自发识别证据过时，而未深入探究在保持验证相关状态/事实不变的情况下，显式的“验证节奏指导”（verification-cadence guidance）对代理行为的影响。\n\n## 文章的核心贡献点\n- **提出了一个受控对比实验框架**：研究了在模拟器支持的工程代理中，保留与省略显式“验证节奏指导”对编辑后重新验证行为的影响。\n- **挑战1：证据新鲜度与验证时机决策难**。代理在修改设计后，难以自发判断旧证据已失效并主动请求新模拟，导致基于过时证据做出错误决策。论文通过引入显式的“Cadence-Guided (CG)”指令（要求实质性修改后请求新模拟），与省略该指令的“Cadence-Omitted (CO)”条件进行对比，证明显式指导能显著规范代理的验证策略遵循度。\n- **挑战2：缺乏硬性约束下的协议依从性难保证**。在没有硬性网关（hard gate）强制拦截的情况下，依赖模型自发性往往导致验证遗漏。论文方法表明，即使没有硬性拦截，仅通过在交互协议中明确包含验证节奏作为显式组件，也能大幅提高代理重新验证的频率和最终任务的成功率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：使用 DWSIM 作为模拟器后端，针对连续阀门压力调整任务构建了8个合成案例。评估了5种阿里巴巴/Qwen系列模型。每个模型-案例-条件组合通过实时API调用执行3次，每种条件（CG和CO）共产生120个评估槽位。\n- **Evaluation 结果**：\n    - **重新验证率**：CG条件下为 94/120，显著高于 CO条件的 32/120。\n    - **节奏违规率**：CG条件下为 26/120，显著低于 CO条件的 87/120。\n    - **最终成功率**：CG条件下达到有界最终成功为 95/120，显著高于 CO条件的 35/120。\n    - **异常模型表现**：qwen3.5-35b-a3b 表现极差，在CG中仅1次重新验证，CO中0次，且两种条件下均无最终成功。\n- **对比结论**：与依赖代理自发识别证据过时的做法相比，将验证节奏作为显式交互协议组件，能更有效地协调设计修改与证据获取，显著提升工程代理的可靠性和成功率。\n\n#### 总结\n本文通过受控实验证明，在模拟器支持的工程代理工作流中，显式的“验证节奏指导”至关重要。即使在无硬性拦截机制下，明确指示代理在实质性修改后请求新模拟，能显著减少节奏违规，提高重新验证率和最终任务成功率。研究支持将验证节奏视为工程代理交互协议中的显式组成部分，而非依赖模型的自发认知。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents are increasingly used in scientific and engineering workflows, interacting with external simulators (e.g., DWSIM) to obtain engineering evidence. When an agent makes substantive design modifications, previous verification evidence becomes stale, necessitating re-verification of the new state.\n- **Limitations of Existing Work**: While existing systems connect LLM agents with simulators for iterative processes, they often lack explicit protocol control over \"when\" to re-verify. Prior research focuses on spontaneous recognition of stale evidence, neglecting the impact of explicit \"verification-cadence guidance\" on agent behavior when verification-relevant states are held constant.\n\n## Core Contributions\n- **Proposed a controlled comparison framework**: Investigated the impact of retaining versus omitting explicit \"verification-cadence guidance\" on post-edit re-verification behavior in simulator-backed engineering agents.\n- **Challenge 1: Difficulty in Evidence Freshness and Timing Decisions**. Agents struggle to spontaneously recognize that old evidence is invalid after design changes, leading to decisions based on stale data. The paper addresses this by comparing a \"Cadence-Guided (CG)\" condition (explicit instruction to request new simulation after modification) against a \"Cadence-Omitted (CO)\" condition, demonstrating that explicit guidance significantly improves adherence to verification policies.\n- **Challenge 2: Ensuring Protocol Adherence Without Hard Gates**. Relying on model spontaneity often leads to missed verifications in the absence of hard constraints. The method shows that treating verification cadence as an explicit component of the interaction protocol, even without hard gating, significantly increases re-verification frequency and final task success rates.\n\n## Implementation and Evaluation\n- **Implementation**: Used DWSIM as the simulator backend for continuous valve-pressure adjustment tasks across 8 synthetic cases. Five Alibaba/Qwen models were evaluated. Each model-case-condition combination was executed three times via live API calls, yielding 120 evaluation slots per condition (CG and CO).\n- **Evaluation Results**:\n    - **Re-verification Rate**: 94/120 in CG vs. 32/120 in CO.\n    - **Cadence Violations**: 26/120 in CG vs. 87/120 in CO.\n    - **Final Success Rate**: Bounded final success achieved in 95/120 in CG vs. 35/120 in CO.\n    - **Outlier Performance**: qwen3.5-35b-a3b performed poorly, with minimal re-verification (1/24 in CG, 0/24 in CO) and no final success in either condition.\n- **Comparison Conclusion**: Compared to relying on spontaneous recognition of stale evidence, explicitly including verification cadence in the interaction protocol coordinates design modification with evidence acquisition more effectively, significantly enhancing reliability and success rates.\n\n#### Summary\nThis paper demonstrates through controlled experiments that explicit \"verification-cadence guidance\" is critical in simulator-backed engineering agent workflows. Even without hard gating mechanisms, explicitly instructing agents to request new simulations after substantive modifications significantly reduces cadence violations, increases re-verification rates, and improves final task success. The study supports treating verification cadence as an explicit component of the engineering agent interaction protocol rather than relying on the model's spontaneous cognition.",
+      "render_excerpt": "机构: Sinopec Petroleum Engineering Zhongyuan Co., Ltd.; Xi’an Jiaotong University<br>本文通过受控实验证明，在模拟器支持的工程代理工作流中，显式的“验证节奏指导”至关重要。即使在无硬性拦截机制下，明确指示代理在实质性修改后请求新模拟，能显著减少节奏违规，提高重新验证率和最终任务成功率。研究支持将验证节奏视为工程代理交互协议中的显式组成部分，而非依赖模型的自发认知。",
+      "render_excerpt_en": "Institution: Sinopec Petroleum Engineering Zhongyuan Co., Ltd.; Xi’an Jiaotong University<br>This paper demonstrates through controlled experiments that explicit \"verification-cadence guidance\" is critical in simulator-backed engineering agent workflows. Even without hard gating mechanisms, explicitly instructing agents to request new simulations after substantive modifications significantly reduces cadence violations, increases re-verification rates, and improves final task success. The study supports treating verification cadence as an explicit component of the engineering agent interaction protocol rather than relying on the model's spontaneous cognition.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-28T10:11:50Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-28"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2608.28128",
+      "date": "2026-08-28",
+      "title": "VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning",
+      "authors": [
+        "Pengcheng Li",
+        "Zhengyang Zhang",
+        "Dongxu Zhang",
+        "Sui Huang",
+        "Shaohua Ma"
+      ],
+      "abstract": "Fine-grained credit assignment is a central challenge in reinforcement learning for long horizon LLM agents. Standard objectives often train from programmatically verifiable terminal rewards by broadcasting each sparse outcome to every action in a trajectory. Existing methods typically seek finer credit from the rollout side, constructing auxiliary trajectory signals or additional comparisons to estimate action importance. Although useful, these approaches still treat the verifier that judged success as a scalar reward, discarding its internal task structure. Our key insight is that many verifiable tasks already encode the relevant checks inside their terminal verifier. We propose VICT (VerifierInstrumented Credit Tracing), a training-time interface that exposes executable or evidence backed atoms and traces them back to actions through dependency-valid proof edges. VICT redistributes group-relative advantage only along those edges, shifting credit assignment from rollout-side inference to verifierside tracing. It preserves the original terminal reward, abstains when evidence is incomplete or ambiguous, and changes only the training-time advantage tensor, requiring no learned critic, process labels, branch rollouts, or inference-time verifier access. On ALFWorld and WebShop, VICT improves substantially over outcome-only training and achieves strong performance alongside recent fine-grained credit methods; ablations rule out dense atom rewards, final-commit credit, temporal proximity, and sparsity as sufficient explanations.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.28128v1",
+        "pdf": "https://arxiv.org/pdf/2608.28128v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Tsinghua University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：在长视界大型语言模型（LLM）智能体的强化学习（RL）中，细粒度信用分配是一个核心挑战。标准方法通常基于可编程验证的终端奖励进行训练，将稀疏的最终结果广播到轨迹中的每一个动作上。\n- **已有工作为什么解决不了**：现有方法试图从 rollout（ rollout 侧）构建辅助信号或额外比较来估计动作重要性，但它们仍将判断成功的验证器视为标量奖励，丢弃了其内部的任务结构信息。状态或轨迹相似性可能忽略与验证器相关的关键历史，而事后归因或过程反馈则依赖额外的辅助判断，且分支采样成本高昂。\n\n## 文章的核心贡献点\n- **提出了一个 VICT (Verifier-Instrumented Credit Tracing)**：一种训练时接口，通过暴露可执行或基于证据的原子检查项，并通过依赖有效的证明边将其回溯到具体动作，从而将信用分配从 rollout 侧推断转移到验证器侧追踪。\n- **挑战1：如何在不增加推理成本的情况下利用验证器的内部结构？**\n  - **难点**：传统方法忽略验证器内部的逻辑结构，仅使用最终标量奖励，导致信用分配粗糙；若要在推理时利用验证器细节，通常会增加巨大的计算开销。\n  - **解决方法**：VICT 仅在训练阶段介入，通过解析验证器生成的“证明边”（proof edges），将组相对优势（group-relative advantage）仅沿这些有效依赖路径重新分配，无需在推理时访问验证器，也无需学习额外的评论家网络。\n- **挑战2：如何处理证据不完整或模糊的情况以避免错误归因？**\n  - **难点**：强制将奖励分配给所有步骤或基于时间邻近性分配可能导致噪声干扰，特别是在长序列中，许多动作与最终成功无关。\n  - **解决方法**：VICT 在证据不完整或模棱两可时选择弃权（abstain），不强行分配信用。它只改变训练时的优势张量，保留了原始的终端奖励信号，从而避免了密集原子奖励或最终提交信用带来的偏差。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：VICT 不需要学习评论家（critic）、过程标签、分支 rollout 或推理时的验证器访问。它仅修改训练过程中的优势计算方式，易于集成到现有的基于组的 RL 方法（如 GRPO）中。\n- **评估结果**：在 ALFWorld 和 WebShop 基准测试上，VICT 相比仅使用结果奖励的训练方法有显著提升，并与最近的细粒度信用分配方法取得了相当甚至更强的性能。\n- **对比分析**：消融实验排除了密集原子奖励、最终提交信用、时间邻近性和稀疏性作为性能提升的充分解释，证明了 VICT 方法的有效性源于其对验证器内部结构的正确利用。相较于需要额外采样或复杂辅助模型的基线，VICT 更加高效且直接。\n\n#### 总结\n本文提出了 VICT，一种针对长视界 LLM 智能体强化学习的新型信用分配方法。其核心洞察在于利用任务验证器内部已有的结构化检查信息，通过“证明边”将终端奖励精确回溯到关键动作。该方法在不增加推理负担、不依赖额外模型的前提下，显著提升了训练效率和智能体性能，为细粒度信用分配提供了新的视角。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Fine-grained credit assignment is a central challenge in Reinforcement Learning (RL) for long-horizon LLM agents. Standard approaches train on programmatically verifiable terminal rewards, broadcasting sparse outcomes to every action in a trajectory.\n- **Why Existing Work Falls Short**: Existing methods attempt to derive finer credit from the rollout side by constructing auxiliary signals or comparisons. However, they treat the verifier merely as a scalar reward source, discarding its internal task structure. State/trajectory similarity may miss critical facts, while hindsight or process feedback relies on auxiliary judgments and incurs high sampling costs.\n\n## Core Contributions\n- **Proposed VICT (Verifier-Instrumented Credit Tracing)**: A training-time interface that exposes executable or evidence-backed atoms within the verifier and traces them back to actions via dependency-valid proof edges, shifting credit assignment from rollout-side inference to verifier-side tracing.\n- **Challenge 1: How to leverage verifier internal structure without increasing inference cost?**\n  - **Difficulty**: Traditional methods ignore verifier logic, leading to coarse credit assignment. Utilizing verifier details at inference time is computationally prohibitive.\n  - **Solution**: VICT intervenes only during training. It redistributes group-relative advantage along valid \"proof edges\" derived from the verifier's logic, requiring no learned critic, branch rollouts, or inference-time verifier access.\n- **Challenge 2: How to handle incomplete or ambiguous evidence to avoid misattribution?**\n  - **Difficulty**: Forcing credit distribution based on temporal proximity or dense rewards introduces noise, especially in long sequences where many actions are irrelevant to success.\n  - **Solution**: VICT abstains from assigning credit when evidence is incomplete or ambiguous. It modifies only the training-time advantage tensor while preserving the original terminal reward, avoiding biases from dense atom rewards or final-commit credit.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: VICT requires no learned critic, process labels, or inference-time verifier access. It integrates easily into existing group-based RL methods (e.g., GRPO) by modifying only the advantage calculation during training.\n- **Evaluation Results**: On ALFWorld and WebShop benchmarks, VICT substantially outperforms outcome-only training and achieves strong performance comparable to or better than recent fine-grained credit methods.\n- **Comparison**: Ablation studies rule out dense atom rewards, final-commit credit, temporal proximity, and sparsity as sufficient explanations for the improvement, validating that the gain comes from correctly utilizing verifier structure. Compared to baselines requiring extra sampling or complex auxiliary models, VICT is more efficient and direct.\n\n## 4. Conclusion\nThis paper proposes VICT, a novel credit assignment method for long-horizon LLM agent RL. Its key insight is leveraging the structured check information already present in task verifiers. By tracing terminal rewards back to key actions via \"proof edges,\" VICT significantly improves training efficiency and agent performance without adding inference overhead or relying on additional models, offering a new perspective on fine-grained credit assignment.",
+      "render_excerpt": "机构: Tsinghua University<br>本文提出了 VICT，一种针对长视界 LLM 智能体强化学习的新型信用分配方法。其核心洞察在于利用任务验证器内部已有的结构化检查信息，通过“证明边”将终端奖励精确回溯到关键动作。该方法在不增加推理负担、不依赖额外模型的前提下，显著提升了训练效率和智能体性能，为细粒度信用分配提供了新的视角。",
+      "render_excerpt_en": "Institution: Tsinghua University<br>## 1. What the Paper Does - **Background**: Fine-grained credit assignment is a central challenge in Reinforcement Learning (RL) for long-horizon LLM agents. Standard approaches train on programmatically verifiable terminal rewards, broadcasting sparse outcomes to every action in a trajectory.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-08-28T09:43:54Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-08-28"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",

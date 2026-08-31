@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_08.28_13:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_08.31_07:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月28日 13:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年08月31日 07:13</sub></summary>
 <br>
 
-- What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents 
-- From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities 
-- When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents 
-- Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents 
-- FaulT-Bench: Towards Benchmarking Network Troubleshooting LLM Agents under Unreliable User Tickets 
+- ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL 
+- RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents 
+- EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses 
+- Post-Edit Re-Verification in Simulator-Backed Engineering Agents: A Controlled Comparison of Verification-Cadence Guidance 
+- VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>08-28</span> | **ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL**<br><sub>机构: Tsinghua University, Tencent Youtu Lab, Shanghai AI Lab<br>ContextPilot 通过增强工具集和改进强化学习算法，解决了长程智能体任务中上下文管理的三大痛点。它引入了规划、记忆和卸载机制，并通过基于上下文和熵变的细粒度信用分配提升了RL训练效率。实验表明，该方法能在减少上下文长度的同时提升任务表现，为长程智能体推理提供了高效的上下文管理方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.28476v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.28476.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Tencent/ContextPilot)</div> |
+| <span style='display: inline-block; width: 42px;'>08-28</span> | **RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents**<br><sub>机构: University of Wisconsin–Madison, University of Rochester, Michigan State University<br>本文通过 RetailAgent 框架揭示了 LLM 代理在金融交易决策中存在稳定且可恢复的方向性结构，具体表现为系统性的逆向择时。这种负向 timing 并非随机噪声，而是由代理的动作与后续市场回报之间的系统性错配驱动，且因自我记忆的引入而加剧。这一发现表明，当前的 LLM 交易代理可能成为市场中可被利用的可预测对手方，为理解 AI 代理在市场微观结构中的行为提供了新视角。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.28399v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.28399.md)  |
+| <span style='display: inline-block; width: 42px;'>08-28</span> | **EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses**<br><sub>EvoUndo 证明了可靠的智能体自我进化不能仅依赖迭代提示，而需要协同设计验证机制、状态接地、见证语义以及恢复语言的表达力。该框架通过强制要求突变具备跨状态的鲁棒可恢复性，解决了自主系统中长期运行的安全性与稳定性问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.28363v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.28363.md)  |
+| <span style='display: inline-block; width: 42px;'>08-28</span> | **Post-Edit Re-Verification in Simulator-Backed Engineering Agents: A Controlled Comparison of Verification-Cadence Guidance**<br><sub>机构: Sinopec Petroleum Engineering Zhongyuan Co., Ltd.; Xi’an Jiaotong University<br>本文通过受控实验证明，在模拟器支持的工程代理工作流中，显式的“验证节奏指导”至关重要。即使在无硬性拦截机制下，明确指示代理在实质性修改后请求新模拟，能显著减少节奏违规，提高重新验证率和最终任务成功率。研究支持将验证节奏视为工程代理交互协议中的显式组成部分，而非依赖模型的自发认知。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.28147v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.28147.md)  |
+| <span style='display: inline-block; width: 42px;'>08-28</span> | **VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning**<br><sub>机构: Tsinghua University<br>本文提出了 VICT，一种针对长视界 LLM 智能体强化学习的新型信用分配方法。其核心洞察在于利用任务验证器内部已有的结构化检查信息，通过“证明边”将终端奖励精确回溯到关键动作。该方法在不增加推理负担、不依赖额外模型的前提下，显著提升了训练效率和智能体性能，为细粒度信用分配提供了新的视角。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.28128v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.28128.md)  |
 | <span style='display: inline-block; width: 42px;'>08-27</span> | **What Makes Good Agentic Data? An ACE Lens on Data Generation for LLM Agents**<br><sub>机构: Huawei Technologies Co., Ltd, Shanghai Jiao Tong University<br>本文针对LLM智能体数据生成缺乏统一标准的问题，提出了基于 $(E,q,\tau,v)$ 分解对象和 ACE（准确性-复杂性-多样性）视角的理论框架。该框架不仅澄清了现有工作中混淆的生成机制，还为未来在可扩展性、数据源、训练机制和自适应学习方面的研究提供了方向，强调核心挑战在于如何随着智能体的进化持续提供高质量、非冗余的交互经验。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27260v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27260.md)  |
 | <span style='display: inline-block; width: 42px;'>08-27</span> | **From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities**<br><sub>机构: Sun Yat-sen University, Tencent Youtu Lab, University of Illinois Chicago, Pengcheng Laboratory<br>本文指出了当前数学基准测试在评估LLM代理能力方面的局限性，并提出了一种基于原子能力映射的过程级评估框架。通过将代理行为分解为可复用的数学原子单元，并利用自动化流水线生成细粒度标注，该研究证明了过程级评估对于理解LLM真实潜力和指导鲁棒代理开发的重要性。研究发现，具有相似最终准确率的模型可能在代理能力上存在巨大差异，强调了从“原子”到“代理”的可解释性评估的必要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.26950v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.26950.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Eternity-gaga/Agentic-Math-Bench)</div> |
 | <span style='display: inline-block; width: 42px;'>08-27</span> | **When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents**<br><sub>机构: Institute of Information Engineering, Chinese Academy of Sciences<br>## 文章做了什么 - **背景**：工具增强的 LLM 智能体在执行开放式任务时，必须依赖不可信的运行时观察（Observations）。当工具输出不再仅提供数据，而是开始指定具体动作时，它们实际上变成了能够驱动超出用户意图的现实世界副作用的“命令”。 - **已有工作为什么解决不了**：现有的防御机制面临结构性张力：限制不可信的外部内容可以提高安全性，但会削弱开放式任务所需的运行时适应性；反之，若允许观察结果自由影响后续决策，攻击语义可能通过正常的工具步骤传播，最终产生未经授权的外部效应。现有方法难以区分合法的运行时适应与攻击诱导的行为，导致在安全性和实用性之间难以取得平衡。 ## 文章的核心贡献点 - **提出了一个 SARA 框架**：该框架将动作诱导（Action Induction）与执行授权（Execution Authorization）视为不同的运行时角色，并将动作来源与执行权限分离。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2608.27146v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-08/2608.27146.md)  |
