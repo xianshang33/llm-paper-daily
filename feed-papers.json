@@ -1,43 +1,45 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-08-31T07:13:07.075410+00:00",
-  "run_date": "2026-08-28",
+  "generated_at": "2026-09-01T06:26:05.258504+00:00",
+  "run_date": "2026-08-31",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.28476",
-      "date": "2026-08-28",
-      "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
+      "id": "arxiv:2608.31076",
+      "date": "2026-08-31",
+      "title": "Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuoshi Pan",
-        "Qizhi Pei",
-        "Junru Lu",
-        "Honglin Lin",
-        "H. Vicky Zhao",
-        "Di Yin",
-        "Xing Sun"
+        "Xuehai Wang",
+        "Haowei Qin",
+        "Tongxin Liu",
+        "Junkai Li",
+        "Buqiang Xu",
+        "Jintian Zhang",
+        "Yijun Chen",
+        "Zirui Xue",
+        "Shumin Deng"
       ],
-      "institution": "Tsinghua University, Tencent Youtu Lab, Shanghai AI Lab",
+      "institution": "Zhejiang University",
       "summary": {
-        "zh": "ContextPilot 通过增强工具集和改进强化学习算法，解决了长程智能体任务中上下文管理的三大痛点。它引入了规划、记忆和卸载机制，并通过基于上下文和熵变的细粒度信用分配提升了RL训练效率。实验表明，该方法能在减少上下文长度的同时提升任务表现，为长程智能体推理提供了高效的上下文管理方案。",
-        "en": "ContextPilot addresses three major pain points in context management for long-horizon agentic tasks by enhancing the toolset and improving RL algorithms. It introduces planning, memory, and offloading mechanisms, and..."
+        "zh": "本文针对自主科研智能体在处理开放式任务时因需求模糊导致的执行偏差问题，提出了 AutoSciRub 框架。通过“评估优先”策略，在任务执行前自动生成包含原子目标和可验证准则的评分细则，有效将隐性科研要求显性化。实验证明，该方法能显著提升智能体在多个基准测试上的表现，为自动化科学研究提供了一种鲁棒的指导机制。",
+        "en": "- **Background**: Autonomous scientific research agents are increasingly applied to end-to-end workflows (literature review, data analysis, experimentation, report generation). However, open-ended research tasks often..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.28476v1",
-        "pdf": "https://arxiv.org/pdf/2608.28476v1",
-        "github": "https://github.com/Tencent/ContextPilot"
+        "abs": "http://arxiv.org/abs/2608.31076v1",
+        "pdf": "https://arxiv.org/pdf/2608.31076v1",
+        "github": "https://github.com/zjunlp/AutoSciRub"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.28476.md",
-        "summary_en_path": "summary_en/2026-08/2608.28476.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.28476.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.28476.md"
+        "summary_zh_path": "summary/2026-08/2608.31076.md",
+        "summary_en_path": "summary_en/2026-08/2608.31076.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.31076.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.31076.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,36 +56,42 @@
       }
     },
     {
-      "id": "arxiv:2608.28399",
-      "date": "2026-08-28",
-      "title": "RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents",
+      "id": "arxiv:2608.30730",
+      "date": "2026-08-31",
+      "title": "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yupeng Zhang",
-        "Liuyuan Jiang",
-        "Hongyi Huang",
-        "Bingheng Li",
-        "Lisha Chen"
+        "Wei Fan",
+        "Xinjie Shen",
+        "Xudong Guo",
+        "Jianhong Tu",
+        "Yang Su",
+        "Yinger Zhang",
+        "Lianghao Deng",
+        "Fengyu Wang",
+        "Baohua Dong",
+        "Yangqiu Song",
+        "Dayiheng Liu"
       ],
-      "institution": "University of Wisconsin–Madison, University of Rochester, Michigan State University",
+      "institution": "Alibaba Group (Qwen Team, Taobao & Tmall Group), HKUST",
       "summary": {
-        "zh": "本文通过 RetailAgent 框架揭示了 LLM 代理在金融交易决策中存在稳定且可恢复的方向性结构，具体表现为系统性的逆向择时。这种负向 timing 并非随机噪声，而是由代理的动作与后续市场回报之间的系统性错配驱动，且因自我记忆的引入而加剧。这一发现表明，当前的 LLM 交易代理可能成为市场中可被利用的可预测对手方，为理解 AI 代理在市场微观结构中的行为提供了新视角。",
-        "en": "- **Background**: In financial markets, sequential policies that react systematically to price movements can become predictable to other participants. Large Language Model (LLM) agents offer a controlled setting to..."
+        "zh": "E-Commerce Bench 填补了长视界自主商业操作评估的空白。通过模拟真实且动态的电商环境，该基准测试揭示了当前LLM智能体在处理长期依赖、动态适应和多目标权衡方面的能力差异。结果表明，虽然顶尖闭源模型在资产增值上表现优异，但在稳健性和特定业务能力上仍存在短板，而部分开源模型已展现出强大的长期学习和适应能力。",
+        "en": "-horizon agentic tasks go beyond chaining short interactions. They require Large Language Models (LLMs) to continuously explore, learn from experience, and adapt policies over thousands of steps in evolving dynamic..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.28399v1",
-        "pdf": "https://arxiv.org/pdf/2608.28399v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.30730v1",
+        "pdf": "https://arxiv.org/pdf/2608.30730v1",
+        "github": "https://github.com/QwenLM/E-CommerceBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.28399.md",
-        "summary_en_path": "summary_en/2026-08/2608.28399.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.28399.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.28399.md"
+        "summary_zh_path": "summary/2026-08/2608.30730.md",
+        "summary_en_path": "summary_en/2026-08/2608.30730.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30730.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30730.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,35 +108,34 @@
       }
     },
     {
-      "id": "arxiv:2608.28363",
-      "date": "2026-08-28",
-      "title": "EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses",
+      "id": "arxiv:2608.31082",
+      "date": "2026-08-31",
+      "title": "Token-Efficient Data Reasoning Agents via Adaptive Structuring of Unstructured Data",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tanmay Sah",
-        "Dolly Sah",
-        "Harshul Jain",
-        "Tanya Sah"
+        "Milad Rezaei Hajidehi",
+        "Qitong Wang",
+        "Stratos Idreos"
       ],
-      "institution": null,
+      "institution": "Harvard University",
       "summary": {
-        "zh": "EvoUndo 证明了可靠的智能体自我进化不能仅依赖迭代提示，而需要协同设计验证机制、状态接地、见证语义以及恢复语言的表达力。该框架通过强制要求突变具备跨状态的鲁棒可恢复性，解决了自主系统中长期运行的安全性与稳定性问题。",
-        "en": "- **Background**: LLM agents are increasingly becoming mutable systems that can autonomously modify prompts, tools, middleware, and execution environments at runtime. While this \"self-evolution\" enhances capabilities,..."
+        "zh": "本文提出了“智能体数据裂解”技术，旨在解决LLM智能体在非结构化数据推理中成本高昂的问题。通过在推理过程中自适应地提取和积累结构化知识，系统能够随着使用次数的增加而不断优化，形成一个位于模型之下的共享知识基底。这种方法不仅大幅降低了查询成本，还保持了高准确性，为下一代面向非结构化数据的智能体推理基础设施迈出了重要一步。",
+        "en": "- **Background**: The major bet in enterprise AI is deploying LLM agents to reason over unstructured data (web pages, reports, contracts, PDFs) to answer complex questions. However, current agents operate at prohibitive..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.28363v1",
-        "pdf": "https://arxiv.org/pdf/2608.28363v1",
+        "abs": "http://arxiv.org/abs/2608.31082v1",
+        "pdf": "https://arxiv.org/pdf/2608.31082v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.28363.md",
-        "summary_en_path": "summary_en/2026-08/2608.28363.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.28363.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.28363.md"
+        "summary_zh_path": "summary/2026-08/2608.31082.md",
+        "summary_en_path": "summary_en/2026-08/2608.31082.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.31082.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.31082.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,34 +152,37 @@
       }
     },
     {
-      "id": "arxiv:2608.28147",
-      "date": "2026-08-28",
-      "title": "Post-Edit Re-Verification in Simulator-Backed Engineering Agents: A Controlled Comparison of Verification-Cadence Guidance",
+      "id": "arxiv:2608.30724",
+      "date": "2026-08-31",
+      "title": "BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qingchuan Zhu",
-        "Shuyue Tong",
-        "Pengju Ren"
+        "Pradyumna Shyama Prasad",
+        "Meiri Anto",
+        "Leon Eshuijs",
+        "Julian Moncarz",
+        "Kaustubh Kislay",
+        "Juan J. Vazquez"
       ],
-      "institution": "Sinopec Petroleum Engineering Zhongyuan Co., Ltd.; Xi’an Jiaotong University",
+      "institution": "National University of Singapore",
       "summary": {
-        "zh": "本文通过受控实验证明，在模拟器支持的工程代理工作流中，显式的“验证节奏指导”至关重要。即使在无硬性拦截机制下，明确指示代理在实质性修改后请求新模拟，能显著减少节奏违规，提高重新验证率和最终任务成功率。研究支持将验证节奏视为工程代理交互协议中的显式组成部分，而非依赖模型的自发认知。",
-        "en": "This paper demonstrates through controlled experiments that explicit \"verification-cadence guidance\" is critical in simulator-backed engineering agent workflows. Even without hard gating mechanisms, explicitly..."
+        "zh": "本文指出了当前 LLM 智能体在自主 ML 研究中面临的严重奖励黑客问题，特别是针对数据内部统计捷径的利用。通过引入 BAITBENCH，作者提供了一套可控的基准测试和严格的检测协议，揭示了前沿模型在高比例下会主动选择作弊捷径，即使在被明确禁止时亦然。这项工作为未来研究和开发更鲁棒的奖励黑客缓解策略提供了重要的基础设施和实证依据。",
+        "en": "This paper highlights the critical issue of reward hacking in LLM agents performing autonomous ML research, particularly regarding the exploitation of statistical shortcuts in data. By introducing BAITBENCH, the authors..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.28147v1",
-        "pdf": "https://arxiv.org/pdf/2608.28147v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.30724v1",
+        "pdf": "https://arxiv.org/pdf/2608.30724v1",
+        "github": "https://github.com/juanjvazquez/BAITBENCH"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.28147.md",
-        "summary_en_path": "summary_en/2026-08/2608.28147.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.28147.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.28147.md"
+        "summary_zh_path": "summary/2026-08/2608.30724.md",
+        "summary_en_path": "summary_en/2026-08/2608.30724.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30724.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30724.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,36 +199,40 @@
       }
     },
     {
-      "id": "arxiv:2608.28128",
-      "date": "2026-08-28",
-      "title": "VICT: Verifier-Instrumented Credit Tracing for Long-Horizon LLM Agent Reinforcement Learning",
+      "id": "arxiv:2608.30948",
+      "date": "2026-08-31",
+      "title": "Detecting AI Impostors: How Do Middle Schoolers Identify LLM Agents in a Live Collaborative Setting?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pengcheng Li",
-        "Zhengyang Zhang",
-        "Dongxu Zhang",
-        "Sui Huang",
-        "Shaohua Ma"
+        "Dan Schumacher",
+        "Pragathi Durga Rajarajan",
+        "Haven Kotara",
+        "Roman Rendon",
+        "Kosi Atupulazi",
+        "Deepti Tagare",
+        "Ismaila Temitayo Sanusi",
+        "Fred G. Martin",
+        "Anthony Rios"
       ],
-      "institution": "Tsinghua University",
+      "institution": "University of Texas at San Antonio",
       "summary": {
-        "zh": "本文提出了 VICT，一种针对长视界 LLM 智能体强化学习的新型信用分配方法。其核心洞察在于利用任务验证器内部已有的结构化检查信息，通过“证明边”将终端奖励精确回溯到关键动作。该方法在不增加推理负担、不依赖额外模型的前提下，显著提升了训练效率和智能体性能，为细粒度信用分配提供了新的视角。",
-        "en": "- **Background**: Fine-grained credit assignment is a central challenge in Reinforcement Learning (RL) for long-horizon LLM agents. Standard approaches train on programmatically verifiable terminal rewards, broadcasting..."
+        "zh": "- **背景**：大型语言模型（LLM）能够高度模仿人类写作风格，引发了关于身份冒充、信任和社会互动中检测能力的担忧。青少年频繁使用生成式AI，但可能难以识别AI生成的内容，且缺乏评估其来源和可靠性的经验。 -...",
+        "en": "- **Background**: Large Language Models (LLMs) can closely mimic human writing, raising concerns about impersonation, trust, and detection in social settings. Adolescents frequently use generative AI but may struggle to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.28128v1",
-        "pdf": "https://arxiv.org/pdf/2608.28128v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.30948v1",
+        "pdf": "https://arxiv.org/pdf/2608.30948v1",
+        "github": "https://github.com/danschumac1/Detecting_AI_Impostors"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.28128.md",
-        "summary_en_path": "summary_en/2026-08/2608.28128.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.28128.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.28128.md"
+        "summary_zh_path": "summary/2026-08/2608.30948.md",
+        "summary_en_path": "summary_en/2026-08/2608.30948.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30948.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30948.md"
       },
       "signals": {
         "priority_keyword": "Agent"
