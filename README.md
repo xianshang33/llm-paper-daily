@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.01_06:26-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.02_06:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月01日 06:26</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月02日 06:05</sub></summary>
 <br>
 
-- Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents 
-- E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation 
-- Token-Efficient Data Reasoning Agents via Adaptive Structuring of Unstructured Data 
-- BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks 
-- Detecting AI Impostors: How Do Middle Schoolers Identify LLM Agents in a Live Collaborative Setting? 
+- When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation 
+- Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching 
+- EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems 
+- GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions 
+- Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年09月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation**<br><sub>机构: Blossom AI Labs<br>本文通过法医式的案例研究，揭示了 LLM 智能体商业评估中的构念效度陷阱。文章证明，原本看似有效的市场护栏在消除实现偏差和控制随机性后，其效果变得微不足道甚至负面。核心贡献在于提出了一套严格的评估契约，强调在得出政策结论前必须验证激励有效性、协议隔离、随机稳定性和福利核算。该研究并未断言护栏无效，而是指出在模拟智能体和协议通过严格检查之前，其表面价值是无法确定的。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01519v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01519.md)  |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching**<br><sub>机构: NAVER Cloud<br>本文通过 DroneCATS 基准揭示了 MLLM 作为无人机控制代理的现状：模型的空间感知能力足以支持导航，但缺乏在低成本边缘计算环境下持续规划并准确终止任务的“纪律性”。未来的关键挑战在于缩小这一差距，开发出既能快速推理又能严格遵守动作协议的轻量级模型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01404v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01404.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/naver-ai/DroneCATS)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems**<br><sub>机构: Virginia Tech<br>本文针对 LLM 智能体多错误归因中忽视错误依赖关系的问题，提出了 EDGE 框架。通过构建和验证错误依赖图，并结合两阶段检测机制，EDGE 不仅提高了多错误归因的准确性，还为错误解释和修复分析提供了可靠的因果依据。研究结果表明，依赖结构是超越孤立根因预测的有力诊断工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01360.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/JuneHou/EDGE)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions**<br><sub>机构: University of Texas at Austin, AE Studio, Schmidt Sciences, University of Edinburgh<br>本文通过GlossoGen平台证实，LLM智能体在特定压力和交互机制下会自发演化出高效但人类不可读的组合性语言。研究揭示了模型强度在语言创新与传承中的不同作用，强调了LLM具备累积文化演化的潜力。这一发现对多智能体系统的安全性监控构成了严峻挑战，同时也为理解LLM的语言表征提供了新的历时性视角。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01491v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01491.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/agencyenterprise/GlossoGen, https://github.com/esteng/emergent_communication)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories**<br><sub>机构: MIT CSAIL<br>本文揭示了当前嵌入检索模型在结构化检索任务中存在严重的表面形式偏差，即模型倾向于匹配字面 tokens 而非底层任务结构。通过跨领域对比和严格的控制实验，论文证明了单一的检索基准评估具有误导性，并指出当前下游应用（如数学求解）中检索模块的性能提升空间有限，因为瓶颈在于生成阶段而非检索阶段。该研究为未来构建更鲁棒的结构化检索基准和评估体系提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01556.md)  |
+
+---
+
 ### 2026年08月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |

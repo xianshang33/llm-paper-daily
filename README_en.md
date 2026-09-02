@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.01_06:26-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.02_06:05-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-09-01 06:26</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-09-02 06:05</sub></summary>
 <br>
 
-- Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents 
-- E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation 
-- Token-Efficient Data Reasoning Agents via Adaptive Structuring of Unstructured Data 
-- BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks 
-- Detecting AI Impostors: How Do Middle Schoolers Identify LLM Agents in a Live Collaborative Setting? 
+- When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation 
+- Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching 
+- EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems 
+- GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions 
+- Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-09
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation**<br><sub>Institution: Blossom AI Labs<br>## 1. What the Paper Did - **Background**: Interactive simulations using LLM agents are increasingly used to evaluate market policies, generating economic metrics like prices, profits, and welfare. - **Problem with Existing Work**: Current evaluations suffer from construct validity failures.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01519v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-09/2609.01519.md)  |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching**<br><sub>Institution: NAVER Cloud<br>## 1. What the Paper Did ### Background Multimodal Large Language Models (MLLMs) are strong perceivers of visual data, but their capability to act within embodied systems remains unclear. This study investigates the extent to which MLLMs can function as generalist vision-language-action agents by embedding them directly into a drone's control loop, with the entire action space defined solely via prompts.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01404v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-09/2609.01404.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/naver-ai/DroneCATS)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems**<br><sub>Institution: Virginia Tech<br>## 1. What the Paper Does - **Background**: Failures in Large Language Model (LLM) agents often involve multiple interrelated errors rather than a single mistake. Existing attribution methods typically identify a responsible agent, step, or root cause but fail to explicitly model the dependencies between errors.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-09/2609.01360.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/JuneHou/EDGE)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions**<br><sub>Institution: University of Texas at Austin, AE Studio, Schmidt Sciences, University of Edinburgh<br>## 1. What the Paper Did - **Background**: As Large Language Model (LLM) agents increasingly interact in complex scenarios like software engineering and strategic games, the evolution of inter-agent communication raises critical questions regarding safety, monitorability, and the diachronic linguistic understanding of LLMs. - **Limitations of Existing Work**: Prior research largely focuses on static language snapshots or simple agents trained from scratch, lacking platforms to study language evolution in complex, pre-trained LLM settings.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01491v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-09/2609.01491.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/agencyenterprise/GlossoGen, https://github.com/esteng/emergent_communication)</div> |
+| <span style='display: inline-block; width: 42px;'>09-01</span> | **Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories**<br><sub>Institution: MIT CSAIL<br>## 1. What the Paper Did - **Background**: Existing embedding retrieval benchmarks typically validate cases where surface form (wording) and semantic meaning align. However, in structural retrieval, surface form and underlying structure are deliberately decoupled (e.g., math problems requiring the same technique but using different vocabulary; agent trajectories following the same procedure on different objects).</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-09/2609.01556.md)  |
+
+---
+
 ## 2026-08
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |
