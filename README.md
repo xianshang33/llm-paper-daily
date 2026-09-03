@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.02_06:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.03_06:03-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月02日 06:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月03日 06:03</sub></summary>
 <br>
 
-- When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation 
-- Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching 
-- EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems 
-- GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions 
-- Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories 
+- Codebook Agent: Amortized Topology Design for LLM Multi-Agent Systems 
+- LLM-as-a-Judge Is Not an Oracle: Why Self-Improving Agents Need Deterministic Guardrails 
+- Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems 
+- APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering 
+- CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-02</span> | **Codebook Agent: Amortized Topology Design for LLM Multi-Agent Systems**<br><sub>机构: University of California, Los Angeles<br>## 文章做了什么 - **背景**：在大语言模型（LLM）多智能体系统中，根据查询动态调整通信拓扑结构可以显著提高准确性和效率。当前的研究趋势是从手工设计的固定结构转向基于查询条件的生成式拓扑设计。 - **已有工作为什么解决不了**：现有的方法通常将拓扑设计视为条件图生成问题，使用变分、自回归或扩散解码器在巨大的邻接矩阵空间中搜索，并通过图神经网络代理基于效用和结构成本（如边数）对候选者进行排序。然而，这种 formulation 存在根本性错位： 1. 有效的拓扑空间实际上非常小（仅约6种 distinct graphs），生成式模型过度复杂化了问题； 2.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02264v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02264.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/jinxiy1104/CodebookAgent)</div> |
+| <span style='display: inline-block; width: 42px;'>09-02</span> | **LLM-as-a-Judge Is Not an Oracle: Why Self-Improving Agents Need Deterministic Guardrails**<br><sub>本文批判了将 LLM 法官视为自改进系统中绝对真理的做法，指出其在优化压力下极易失效。作者通过生产环境的实践经验，总结了评估失败的多种模式，并提出了 PROCTOR 架构。该架构通过引入确定性护栏（如沙箱、角色分离、冻结数据集等），将 LLM 法官从“神谕”降级为“顾问”，确保了系统改进的真实性和可靠性。研究表明，只有结合确定性验证层，才能有效防止奖励黑客攻击和评估信号腐败，实现真正的自改进。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02246v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02246.md)  |
+| <span style='display: inline-block; width: 42px;'>09-02</span> | **Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems**<br><sub>机构: UCL Centre for Artificial Intelligence<br>本文通过博弈论和信息论视角，为多智能体 LLM 系统提供了统一的理论框架。文章揭示了任务分解质量对协调的关键作用，并证明了仅靠文本反思的内在局限性，强调了环境接地验证的重要性。提出的 SRMA 算法不仅在理论上保证了收敛性，还在实际软件工程基准测试中取得了优于现有基线的性能，为构建更可靠、可解释的多智能体系统奠定了理论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02750v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02750.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/YihangChen9/Bilevel-Coordinated-Reflection)</div> |
+| <span style='display: inline-block; width: 42px;'>09-02</span> | **APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering**<br><sub>机构: University of Science and Technology of China<br>APEx 解决了深度研究智能体在经验利用上的核心痛点，即如何将历史交互转化为可泛化的程序技能，并在测试时无监督地适应新任务。通过分层记忆结构和奖励引导的蒸馏机制，APEx 实现了从“检索过去”到“适应未来”的转变，显著提升了智能体在复杂问答任务中的表现和鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02253v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02253.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/J-Ding519/APEx)</div> |
+| <span style='display: inline-block; width: 42px;'>09-02</span> | **CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents**<br><sub>本文针对个性化 LLM 代理中记忆机制带来的安全与适应性矛盾，提出了 CAPTURE 框架。通过将问题形式化为潜在用户状态下的连续时间部分可观察决策过程，CAPTURE 利用神经微分方程、多时间尺度记忆和主动澄清机制，有效解耦了真实偏好漂移与记忆投毒。实验表明，该方法在显著提升个性化准确率的同时，能有效抵御多种形式的记忆投毒攻击，为构建既智能又安全的记忆增强型代理提供了新思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02265v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02265.md)  |
 | <span style='display: inline-block; width: 42px;'>09-01</span> | **When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation**<br><sub>机构: Blossom AI Labs<br>本文通过法医式的案例研究，揭示了 LLM 智能体商业评估中的构念效度陷阱。文章证明，原本看似有效的市场护栏在消除实现偏差和控制随机性后，其效果变得微不足道甚至负面。核心贡献在于提出了一套严格的评估契约，强调在得出政策结论前必须验证激励有效性、协议隔离、随机稳定性和福利核算。该研究并未断言护栏无效，而是指出在模拟智能体和协议通过严格检查之前，其表面价值是无法确定的。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01519v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01519.md)  |
 | <span style='display: inline-block; width: 42px;'>09-01</span> | **Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching**<br><sub>机构: NAVER Cloud<br>本文通过 DroneCATS 基准揭示了 MLLM 作为无人机控制代理的现状：模型的空间感知能力足以支持导航，但缺乏在低成本边缘计算环境下持续规划并准确终止任务的“纪律性”。未来的关键挑战在于缩小这一差距，开发出既能快速推理又能严格遵守动作协议的轻量级模型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01404v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01404.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/naver-ai/DroneCATS)</div> |
 | <span style='display: inline-block; width: 42px;'>09-01</span> | **EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems**<br><sub>机构: Virginia Tech<br>本文针对 LLM 智能体多错误归因中忽视错误依赖关系的问题，提出了 EDGE 框架。通过构建和验证错误依赖图，并结合两阶段检测机制，EDGE 不仅提高了多错误归因的准确性，还为错误解释和修复分析提供了可靠的因果依据。研究结果表明，依赖结构是超越孤立根因预测的有力诊断工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.01360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.01360.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/JuneHou/EDGE)</div> |
