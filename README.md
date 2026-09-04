@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.03_06:03-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.04_06:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月03日 06:03</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月04日 06:11</sub></summary>
 <br>
 
-- Codebook Agent: Amortized Topology Design for LLM Multi-Agent Systems 
-- LLM-as-a-Judge Is Not an Oracle: Why Self-Improving Agents Need Deterministic Guardrails 
-- Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems 
-- APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering 
-- CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents 
+- SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center 
+- SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents 
+- Value-Preserving Architectures for Agentic AI Systems 
+- A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors 
+- Adapting to Evolving Requirements: Agentic AI for Retail Supply Chain Operations 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-03</span> | **SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center**<br><sub>机构: Indiana University<br>Sentinel-RL 通过神经符号混合方法解决了 LLM 在 SOC 自动化中的核心瓶颈。通过将拓扑推理卸载给基于图的强化学习策略，同时保留 LLM 在语义理解和报告生成上的优势，该系统在保证动作一致性和拓扑感知能力的同时，实现了企业级的高吞吐量和低延迟响应，为自动化安全运营提供了可靠的工程范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.04159v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.04159.md)  |
+| <span style='display: inline-block; width: 42px;'>09-03</span> | **SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents**<br><sub>机构: Sun Yat-sen University, Zhejiang University, Chongqing University<br>SWE-Gate 填补了现有软件工程智能体评估中的空白，指出“通过功能测试”并不等同于“可接受的补丁”。通过引入基于真实审查评论的约束测试，SWE-Gate 更真实地反映了工业界代码合并的标准。实验表明，当前 LLM 智能体在处理隐含的非功能性约束方面仍存在显著不足，未来的研究需同时优化功能正确性和代码规范合规性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.04167v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.04167.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DeepSoftwareAnalytics/SWE-Gate)</div> |
+| <span style='display: inline-block; width: 42px;'>09-03</span> | **Value-Preserving Architectures for Agentic AI Systems**<br><sub>机构: TU Wien<br>本文论证了架构选择不仅影响 MAS 的功能和性能，还能促进面向价值的系统行为。通过提出隐私感知的联邦架构、促进多元的分布式架构以及检测不公的守卫代理架构，本文为设计可信赖的代理式 AI 系统奠定了统一的架构模式和指导方针基础，推动了从功能正确性向价值对齐的工程范式转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.03920v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.03920.md)  |
+| <span style='display: inline-block; width: 42px;'>09-03</span> | **A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors**<br><sub>机构: Beijing University of Posts and Telecommunications<br>本文揭示了 AI Agent 框架中生命周期钩子更新路径这一新的攻击面。攻击者仅需控制插件元数据和钩子配置，即可通过供应链将良性插件特洛伊木马化，导致权限提升等恶意主机行为。提出的 HookPry 框架证明了该漏洞在多种主流框架中的普遍存在性和高成功率，且现有防御手段几乎无效，亟需针对生命周期钩子的专门安全机制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.03884v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.03884.md)  |
+| <span style='display: inline-block; width: 42px;'>09-03</span> | **Adapting to Evolving Requirements: Agentic AI for Retail Supply Chain Operations**<br><sub>机构: Hong Kong University of Science and Technology, University of Science and Technology of China, National University of Singapore<br>本文针对零售供应链中耦合决策模块适应 evolving 需求的难题，提出了一种图约束的智能体框架。通过限制干预路径搜索空间并利用下游KPI进行验证，该方法有效解决了异构流水线中多重干预路径和下游效应带来的挑战。实验表明，该框架显著提升了基于LLM的系统在真实零售场景中的适应能力和成功率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.03860v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.03860.md)  |
 | <span style='display: inline-block; width: 42px;'>09-02</span> | **Codebook Agent: Amortized Topology Design for LLM Multi-Agent Systems**<br><sub>机构: University of California, Los Angeles<br>## 文章做了什么 - **背景**：在大语言模型（LLM）多智能体系统中，根据查询动态调整通信拓扑结构可以显著提高准确性和效率。当前的研究趋势是从手工设计的固定结构转向基于查询条件的生成式拓扑设计。 - **已有工作为什么解决不了**：现有的方法通常将拓扑设计视为条件图生成问题，使用变分、自回归或扩散解码器在巨大的邻接矩阵空间中搜索，并通过图神经网络代理基于效用和结构成本（如边数）对候选者进行排序。然而，这种 formulation 存在根本性错位： 1. 有效的拓扑空间实际上非常小（仅约6种 distinct graphs），生成式模型过度复杂化了问题； 2.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02264v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02264.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/jinxiy1104/CodebookAgent)</div> |
 | <span style='display: inline-block; width: 42px;'>09-02</span> | **LLM-as-a-Judge Is Not an Oracle: Why Self-Improving Agents Need Deterministic Guardrails**<br><sub>本文批判了将 LLM 法官视为自改进系统中绝对真理的做法，指出其在优化压力下极易失效。作者通过生产环境的实践经验，总结了评估失败的多种模式，并提出了 PROCTOR 架构。该架构通过引入确定性护栏（如沙箱、角色分离、冻结数据集等），将 LLM 法官从“神谕”降级为“顾问”，确保了系统改进的真实性和可靠性。研究表明，只有结合确定性验证层，才能有效防止奖励黑客攻击和评估信号腐败，实现真正的自改进。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02246v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02246.md)  |
 | <span style='display: inline-block; width: 42px;'>09-02</span> | **Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems**<br><sub>机构: UCL Centre for Artificial Intelligence<br>本文通过博弈论和信息论视角，为多智能体 LLM 系统提供了统一的理论框架。文章揭示了任务分解质量对协调的关键作用，并证明了仅靠文本反思的内在局限性，强调了环境接地验证的重要性。提出的 SRMA 算法不仅在理论上保证了收敛性，还在实际软件工程基准测试中取得了优于现有基线的性能，为构建更可靠、可解释的多智能体系统奠定了理论基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.02750v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.02750.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/YihangChen9/Bilevel-Coordinated-Reflection)</div> |
