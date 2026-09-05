@@ -1,131 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-05T06:00:18.318376+00:00",
-  "run_date": "2026-08-30",
+  "generated_at": "2026-09-05T09:14:48.754133+00:00",
+  "run_date": "2026-08-29",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.30067",
-      "date": "2026-08-30",
-      "title": "How do World Models and Policies Compose in LLM Agents? A Joint Spectral and Behavioral Account",
+      "id": "arxiv:2608.29206",
+      "date": "2026-08-29",
+      "title": "Benevolent Bias in Multi-Turn Human-Agent Dialogue",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ruize Xu",
-        "Xiao Yu",
-        "Yujin Tang",
-        "Chenming Shang",
-        "Nikhil Singh"
+        "Qianqi Liu",
+        "Jin Huang",
+        "Fethiye Irmak Dogan",
+        "Hatice Gunes"
       ],
-      "institution": "Dartmouth College, Columbia University",
+      "institution": "University of Cambridge",
       "summary": {
-        "zh": "- **背景**：大型语言模型（LLM）智能体的后训练流程通常采用两阶段范式：首先进行世界模型训练（预测下一状态以理解环境动态），随后进行策略训练（最大化奖励以掌握任务）。尽管这种顺序流水线在实证上显著优于仅进行策略训练，但其内部机制尚不明确。 -...",
-        "en": "- **Background**: Post-training pipelines for LLM agents increasingly adopt a two-stage formula: world-model training (next-state prediction to understand environment dynamics) followed by policy training (reward..."
+        "zh": "本文首次系统性地研究并操作化了人机多轮对话中的“善意偏见”，构建了大规模基准数据集 BENEVDIAL。研究发现，传统的基于敌对语言的检测机制完全失效，而 LLM 作为检测器虽有所改进但面临高误报率的问题，尤其是在结合人口统计信息时。文章强调，未来的人机对话公平性监控必须超越表面语气，聚焦于实质性的差别待遇检测。",
+        "en": "This paper systematically studies and operationalizes \"benevolent bias\" in multi-turn human-agent dialogues, introducing the large-scale benchmark dataset BENEVDIAL. It finds that traditional detection mechanisms based..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.30067v1",
-        "pdf": "https://arxiv.org/pdf/2608.30067v1",
-        "github": "https://github.com/Rick-Xu315/WM_Spectral"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.30067.md",
-        "summary_en_path": "summary_en/2026-08/2608.30067.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30067.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30067.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.30047",
-      "date": "2026-08-30",
-      "title": "Can LLM Agents Discover? Evaluating Creativity on ML Engineering Tasks",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Shitanshu Bhushan",
-        "Yunxiang Zhang",
-        "Lu Wang"
-      ],
-      "institution": "University of Michigan",
-      "summary": {
-        "zh": "本文提出了一个多维度的 LLM 代理创造力评估框架，解决了现有方法无法区分内部新颖性与外部历史新颖性的问题。通过实证研究揭示了一个关键洞察：当前的 LLM 代理具备探索非传统解决方案的能力（高 H-Creativity），但在将这些创新转化为实际有效的工程成果方面存在显著缺陷。这表明未来的研究重点应从单纯鼓励新颖性转向提高代理将新颖想法转化为有用性能的能力。",
-        "en": "This paper introduces a multi-dimensional framework for evaluating LLM agent creativity, addressing the gap in distinguishing internal from historical novelty. The key insight is that while current LLM agents possess..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.30047v1",
-        "pdf": "https://arxiv.org/pdf/2608.30047v1",
-        "github": "https://github.com/shitanshubhushan/Creativity-Evaluation-Framework"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.30047.md",
-        "summary_en_path": "summary_en/2026-08/2608.30047.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30047.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30047.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2608.30041",
-      "date": "2026-08-30",
-      "title": "Reachability-Based Capability Confinement for LLM Agents under Indirect Prompt Injection",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Wujie Xiong",
-        "Rabimba Karanjai",
-        "Yang Lu",
-        "Weidong Shi",
-        "Lei Xu"
-      ],
-      "institution": "Kent State University, PayPal AI Labs, University of Houston",
-      "summary": {
-        "zh": "SkillGuard 提出了一种基于可达性的能力限制框架，有效解决了 LLM 代理在面临间接提示注入时的权限管理问题。通过引入技能影响图和无需模型推理的动态能力限制策略，它在保证高安全性的同时，最大限度地保留了代理的正常功能，且在性能开销上具有显著优势。该方法为构建更安全的 LLM 代理系统提供了新的系统级防御思路。",
-        "en": "- **Background**: Large Language Model (LLM) agents execute tasks by invoking external skills (e.g., APIs, databases) and incorporating outputs into their context. This architecture introduces risks of indirect prompt..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2608.30041v1",
-        "pdf": "https://arxiv.org/pdf/2608.30041v1",
+        "abs": "http://arxiv.org/abs/2608.29206v1",
+        "pdf": "https://arxiv.org/pdf/2608.29206v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.30041.md",
-        "summary_en_path": "summary_en/2026-08/2608.30041.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.30041.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.30041.md"
+        "summary_zh_path": "summary/2026-08/2608.29206.md",
+        "summary_en_path": "summary_en/2026-08/2608.29206.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29206.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29206.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -142,37 +51,38 @@
       }
     },
     {
-      "id": "arxiv:2608.29942",
-      "date": "2026-08-30",
-      "title": "Influence Is Not Authority: When Causal Guardrail Signals Make Legitimate Tool Use Look Like an Attack in Tool-Using LLM Agents",
+      "id": "arxiv:2608.29305",
+      "date": "2026-08-29",
+      "title": "Learning Simple Test-Time Environments for LLM Web Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tanzim Ahad",
-        "Ismail Hossain",
-        "Md Jahangir Alam",
-        "Sai Puppala",
-        "Syed Bahauddin Alam",
-        "Sajedul Talukder"
+        "Junxuan Li",
+        "Zijun Liu",
+        "Ziyi Huang",
+        "Peng Li",
+        "Yuzhou Liu",
+        "Ming Yan",
+        "Yang Liu"
       ],
-      "institution": "University of Texas at El Paso",
+      "institution": "Jilin University, Tsinghua University, Beijing Jiaotong University, Alibaba Group",
       "summary": {
-        "zh": "本文揭示了当前基于因果影响的 LLM Agent 护栏在处理工具使用场景时的根本缺陷：混淆了“因果影响”与“授权状态”。通过严格的审计实验，作者证明合法的来源变更会被误判为攻击信号，导致严重的可用性与安全性权衡问题。研究指出，单纯依赖因果信号不足以实现有效的安全防护，未来的护栏设计必须整合更精细的参考构建和路由机制，以准确区分合法的工具辅助操作与恶意的间接提示注入攻击。",
-        "en": "This paper exposes a fundamental flaw in current influence-based guardrails for tool-using LLM agents: the conflation of \"causal influence\" with \"authorization status.\" Through rigorous auditing, the authors demonstrate..."
+        "zh": "本文针对LLM Web智能体在真实复杂环境中性能崩溃的问题，提出了测试时环境分解（TTED）方法。通过将复杂观察分解为子模块并进行无标签的测试时学习，TTED有效克服了组合泛化差距。实验证明，该方法能显著提升智能体在真实Web自动化任务中的表现，为LLM智能体在复杂现实环境中的稳健部署提供了关键思路。",
+        "en": "- **Background**: Large Language Model (LLM) agents excel in manually constructed, simple environments but often fail when deployed in complex, real-world web settings. - **Why Existing Work Falls Short**: Current..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.29942v1",
-        "pdf": "https://arxiv.org/pdf/2608.29942v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2608.29305v1",
+        "pdf": "https://arxiv.org/pdf/2608.29305v1",
+        "github": "https://github.com/THUNLPMT/TTED"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.29942.md",
-        "summary_en_path": "summary_en/2026-08/2608.29942.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29942.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29942.md"
+        "summary_zh_path": "summary/2026-08/2608.29305.md",
+        "summary_en_path": "summary_en/2026-08/2608.29305.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29305.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29305.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,33 +99,124 @@
       }
     },
     {
-      "id": "arxiv:2609.00070",
-      "date": "2026-08-30",
-      "title": "AutoXRD: Autonomous LLM Agents and Comprehensive Evaluation for Powder Diffraction Analysis",
+      "id": "arxiv:2609.00038",
+      "date": "2026-08-29",
+      "title": "trajectory-judge: What Outcome-Only LLM Judges Miss on Agent Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuetong Wu",
-        "Maojun Sun"
+        "Hadi Mohammadi"
       ],
-      "institution": "The Chinese University of Hong Kong, The Hong Kong Polytechnic University",
+      "institution": "Utrecht University",
       "summary": {
-        "zh": "本文提出了 AutoXRD 框架和 XRDBench 基准，解决了粉末XRD自动化中缺乏科学保证和系统评估的问题。通过引入逐步精修机制和确定性物理检查，AutoXRD 显著提升了LLM在复杂晶体学任务中的表现。评估结果表明，尽管顶级模型已展现出一定能力，但在处理耦合参数和端到端工作流时仍存在显著缺陷，未来需要更强的科学约束、不确定性感知决策和更高效的规划机制。",
-        "en": "- **Background**: Powder X-ray diffraction (XRD) is central to materials characterization, yet reliable end-to-end automation remains challenging. An XRD agent must interpret diffraction evidence, operate refinement..."
+        "zh": "本文指出当前LLM智能体评估中“仅结果”方法的严重缺陷，特别是其对过程错误但结果正确的“沉默故障”的低检测率。通过构建一个具有精确Ground Truth的确定性测试环境，作者量化了不同法官模型的局限性，证明了步骤级评估（Step-rubric）在检测沉默故障上的优越性，尽管成本较高。文章强调未来的法官评估必须按“结果是否幸存”进行分层分析，并发布了完整的可复现 artifacts 以促进该领域的发展。",
+        "en": "- **Background**: The production default for evaluating LLM agents is \"outcome-only\" judgment, where a judge model assesses performance based solely on the user request and the final reply. This approach is structurally..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.00070v1",
-        "pdf": "https://arxiv.org/pdf/2609.00070v1",
+        "abs": "http://arxiv.org/abs/2609.00038v1",
+        "pdf": "https://arxiv.org/pdf/2609.00038v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2609.00070.md",
-        "summary_en_path": "summary_en/2026-08/2609.00070.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2609.00070.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2609.00070.md"
+        "summary_zh_path": "summary/2026-08/2609.00038.md",
+        "summary_en_path": "summary_en/2026-08/2609.00038.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2609.00038.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2609.00038.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.29096",
+      "date": "2026-08-29",
+      "title": "Development of an Autonomous AI Coding Agent using Monte Carlo Tree Search (MCTS) and Gemini LLM Frameworks",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Pravin Game",
+        "Vipin Ramakrishnan",
+        "Prathamesh Wagh"
+      ],
+      "institution": "Pimpri Chinchwad College of Engineering",
+      "summary": {
+        "zh": "本文提出了一种结合蒙特卡洛树搜索（MCTS）与 Gemini LLM 的自主 AI 编程代理，旨在解决传统 LLM 在代码生成中的逻辑幻觉和优化不足问题。通过引入自我批评机制和树搜索策略，该代理能够探索多种代码实现路径并选择最优解。实验表明，该方法在复杂逻辑任务中取得了 92% 的成功率，超越了传统的零样本生成方法，为从自然语言到生产级代码的自动化转换提供了有效解决方案。",
+        "en": "- **Background**: The evolving requirements in software engineering have created a strong demand for automated tools that can generate secure source code from natural language inputs. While Large Language Models (LLMs)..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.29096v1",
+        "pdf": "https://arxiv.org/pdf/2608.29096v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.29096.md",
+        "summary_en_path": "summary_en/2026-08/2608.29096.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29096.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29096.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2608.29363",
+      "date": "2026-08-29",
+      "title": "TRACER: Per-Tool Context Retention for LLM Agents via Consequence-Attributed Reinforcement Learning",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Ziqi Lin",
+        "Ye Wu",
+        "Mengying Yang",
+        "Xu Liu",
+        "Yizhou Liu",
+        "Qiang Ke",
+        "Qin Guo"
+      ],
+      "institution": "lable at each compression event. Its consequence-aware objective jointly accounts for task success",
+      "summary": {
+        "zh": "TRACER 有效解决了长 horizon 语言代理中的“压缩-后果差距”问题。通过引入后果感知的强化学习框架，它实现了细粒度的、每工具级别的动态上下文保留。实验表明，该方法在显著降低 token 成本的同时，避免了因信息丢失导致的昂贵工具重调用，提升了企业级数据代理的整体效率和实用性。",
+        "en": "- **Background**: Enterprise data agents answer business queries by chaining multiple tool calls over many reasoning steps, routinely accumulating hundreds of thousands of context tokens per session. This leads to..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2608.29363v1",
+        "pdf": "https://arxiv.org/pdf/2608.29363v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-08/2608.29363.md",
+        "summary_en_path": "summary_en/2026-08/2608.29363.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29363.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29363.md"
       },
       "signals": {
         "priority_keyword": "Agent"
