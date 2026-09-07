@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.04_06:11-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.07_06:19-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月04日 06:11</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月07日 06:19</sub></summary>
 <br>
 
-- SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center 
-- SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents 
-- Value-Preserving Architectures for Agentic AI Systems 
-- A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors 
-- Adapting to Evolving Requirements: Agentic AI for Retail Supply Chain Operations 
+- How do LLMs Evaluate Perceived Moral Agency? Investigating Moral Decision-Making in Human-Artificial Agents Interactions 
+- Moral Competence Before Moral Content: Why LLM Agents Lack the Prerequisites for Coherent Alignment 
+- CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls 
+- Trace2Tower: Transition-Aware EigenTrace Induction of Multi-Level Skills for LLM Agents 
+- TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-04</span> | **How do LLMs Evaluate Perceived Moral Agency? Investigating Moral Decision-Making in Human-Artificial Agents Interactions**<br><sub>机构: Institute for Infocomm Research (I2R), A*STAR; CNRS@CREATE; IRIT, Université de Toulouse; CLLE, Université de Toulouse; IPAL<br>本文通过首个系统性实证研究，揭示了LLM在评估道德主体性时的行为模式。研究发现，虽然LLM和人类一样认为人类的道德主体性高于AI，但LLM在进行道德判断时高度依赖外部情境（如伤害和紧迫性），而非代理的固有属性。这一发现对于理解LLM在日常道德决策中的作用具有重要意义，提示我们在部署涉及道德判断的AI系统时，需重点关注其对情境变化的敏感性及潜在的推理偏差。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.05037v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.05037.md)  |
+| <span style='display: inline-block; width: 42px;'>09-04</span> | **Moral Competence Before Moral Content: Why LLM Agents Lack the Prerequisites for Coherent Alignment**<br><sub>机构: Aithos Research Foundation<br>## 文章做了什么 - **背景**：AI对齐要求系统遵循人类规范、价值观或意图。在价值多元主义背景下，虽然不存在唯一的“正确”目标，但所有对齐框架共享一个先决条件：系统的行为必须表达出一个“连贯的策略”（coherent policy）。即从情境到裁决的映射应当在道德相关特征保持不变时具有不变性，而在这些特征变化时具有敏感性。 - **已有工作为什么解决不了**：现有的对齐研究（如社会选择、效用最大化、公平过程等）主要关注确定具体的规范性目标（即“什么是对的”），却忽视了对齐的结构性基础。由于大型语言模型（LLM）对语义上空洞的提示词变化极其敏感且不可预测，如果系统本身缺乏表达连贯策略的能力，那么针对具体价值观的对齐就失去了意义，因为观察到的行为样本无法代表其在不同部署中的表现。 ## 文章的核心贡献点 - **提出了一个**基于行为的“道德能力”评估框架，包含四个结构性条件：裁决稳定性（verdict stability）、单调性（monotonicity）、果断性（decisiveness）和帕累托可行性（Pareto viability）。这构成了对齐的“结构性底线”，无需参考特定的道德标准或专家基线即可评估。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.05036v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.05036.md)  |
+| <span style='display: inline-block; width: 42px;'>09-04</span> | **CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls**<br><sub>机构: ZAST.AI<br>本文指出了LLM代理系统中存在的“安全上下文不连续性”问题，即单独安全组件的组合可能导致端到端安全失效。为此，作者提出了CONTINUITY框架，通过假设-保证契约和密码学原语（如签名根授权、来源承诺、转换见证等）来维护跨组件边界的安全上下文完整性。实验表明，该框架能在极低延迟开销下，有效抵御多种跨层组合攻击，同时保证良性任务的正常执行，为构建可验证安全的LLM代理系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.05269v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.05269.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](github.com/zast-ai/continuity)</div> |
+| <span style='display: inline-block; width: 42px;'>09-04</span> | **Trace2Tower: Transition-Aware EigenTrace Induction of Multi-Level Skills for LLM Agents**<br><sub>机构: Fudan University<br>Trace2Tower 通过引入过渡感知的 EigenTrace 诱导机制，解决了 LLM 智能体在利用历史轨迹时面临的浅层检索和扁平化问题。它通过构建统一的行为图并应用对比谱分解，有效去除了失败捷径，提取出稳定的成功行为模式，并将其组织为多层次的动力技能塔。该方法在复杂交互任务中展现了卓越的性能和效率，为智能体的持续学习和经验复用提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.05261v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.05261.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/FudanSELab/Trace2Tower)</div> |
+| <span style='display: inline-block; width: 42px;'>09-04</span> | **TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents**<br><sub>TruthInsightBench 填补了评估开放式科学发现智能体的空白，通过自动化、基于证据的评分机制，明确区分了分析执行与科学发现。研究指出，当前智能体的主要瓶颈在于缺乏科学判断力，而非代码生成能力。该基准为衡量和提升 AI 科学家的真实发现能力提供了可量化的目标。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.05079v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.05079.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TruthInsight-stack/TruthInsightBench)</div> |
 | <span style='display: inline-block; width: 42px;'>09-03</span> | **SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center**<br><sub>机构: Indiana University<br>Sentinel-RL 通过神经符号混合方法解决了 LLM 在 SOC 自动化中的核心瓶颈。通过将拓扑推理卸载给基于图的强化学习策略，同时保留 LLM 在语义理解和报告生成上的优势，该系统在保证动作一致性和拓扑感知能力的同时，实现了企业级的高吞吐量和低延迟响应，为自动化安全运营提供了可靠的工程范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.04159v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.04159.md)  |
 | <span style='display: inline-block; width: 42px;'>09-03</span> | **SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents**<br><sub>机构: Sun Yat-sen University, Zhejiang University, Chongqing University<br>SWE-Gate 填补了现有软件工程智能体评估中的空白，指出“通过功能测试”并不等同于“可接受的补丁”。通过引入基于真实审查评论的约束测试，SWE-Gate 更真实地反映了工业界代码合并的标准。实验表明，当前 LLM 智能体在处理隐含的非功能性约束方面仍存在显著不足，未来的研究需同时优化功能正确性和代码规范合规性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.04167v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.04167.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DeepSoftwareAnalytics/SWE-Gate)</div> |
 | <span style='display: inline-block; width: 42px;'>09-03</span> | **Value-Preserving Architectures for Agentic AI Systems**<br><sub>机构: TU Wien<br>本文论证了架构选择不仅影响 MAS 的功能和性能，还能促进面向价值的系统行为。通过提出隐私感知的联邦架构、促进多元的分布式架构以及检测不公的守卫代理架构，本文为设计可信赖的代理式 AI 系统奠定了统一的架构模式和指导方针基础，推动了从功能正确性向价值对齐的工程范式转变。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.03920v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.03920.md)  |

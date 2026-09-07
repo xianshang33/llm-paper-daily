@@ -1,40 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-05T09:14:48.754133+00:00",
-  "run_date": "2026-08-29",
+  "generated_at": "2026-09-07T06:19:57.561659+00:00",
+  "run_date": "2026-09-04",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2608.29206",
-      "date": "2026-08-29",
-      "title": "Benevolent Bias in Multi-Turn Human-Agent Dialogue",
+      "id": "arxiv:2609.05037",
+      "date": "2026-09-04",
+      "title": "How do LLMs Evaluate Perceived Moral Agency? Investigating Moral Decision-Making in Human-Artificial Agents Interactions",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qianqi Liu",
-        "Jin Huang",
-        "Fethiye Irmak Dogan",
-        "Hatice Gunes"
+        "Fernanda Mansilla",
+        "Aloysius Tok",
+        "Bahia Guellaï",
+        "Farah Benamara",
+        "Nancy F. Chen"
       ],
-      "institution": "University of Cambridge",
+      "institution": "Institute for Infocomm Research (I2R), A*STAR; CNRS@CREATE; IRIT, Université de Toulouse; CLLE, Université de Toulouse; IPAL",
       "summary": {
-        "zh": "本文首次系统性地研究并操作化了人机多轮对话中的“善意偏见”，构建了大规模基准数据集 BENEVDIAL。研究发现，传统的基于敌对语言的检测机制完全失效，而 LLM 作为检测器虽有所改进但面临高误报率的问题，尤其是在结合人口统计信息时。文章强调，未来的人机对话公平性监控必须超越表面语气，聚焦于实质性的差别待遇检测。",
-        "en": "This paper systematically studies and operationalizes \"benevolent bias\" in multi-turn human-agent dialogues, introducing the large-scale benchmark dataset BENEVDIAL. It finds that traditional detection mechanisms based..."
+        "zh": "本文通过首个系统性实证研究，揭示了LLM在评估道德主体性时的行为模式。研究发现，虽然LLM和人类一样认为人类的道德主体性高于AI，但LLM在进行道德判断时高度依赖外部情境（如伤害和紧迫性），而非代理的固有属性。这一发现对于理解LLM在日常道德决策中的作用具有重要意义，提示我们在部署涉及道德判断的AI系统时，需重点关注其对情境变化的敏感性及潜在的推理偏差。",
+        "en": "- **Background**: As Large Language Models (LLMs) and Artificial Agents (AAs, such as robots and drones) become integrated into smart city environments, they increasingly assume roles requiring moral advice or..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.29206v1",
-        "pdf": "https://arxiv.org/pdf/2608.29206v1",
+        "abs": "http://arxiv.org/abs/2609.05037v1",
+        "pdf": "https://arxiv.org/pdf/2609.05037v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.29206.md",
-        "summary_en_path": "summary_en/2026-08/2608.29206.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29206.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29206.md"
+        "summary_zh_path": "summary/2026-09/2609.05037.md",
+        "summary_en_path": "summary_en/2026-09/2609.05037.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05037.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05037.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,38 +52,34 @@
       }
     },
     {
-      "id": "arxiv:2608.29305",
-      "date": "2026-08-29",
-      "title": "Learning Simple Test-Time Environments for LLM Web Agents",
+      "id": "arxiv:2609.05036",
+      "date": "2026-09-04",
+      "title": "Moral Competence Before Moral Content: Why LLM Agents Lack the Prerequisites for Coherent Alignment",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junxuan Li",
-        "Zijun Liu",
-        "Ziyi Huang",
-        "Peng Li",
-        "Yuzhou Liu",
-        "Ming Yan",
-        "Yang Liu"
+        "Arno Libert",
+        "Derck W. E. Prinzhorn",
+        "Daan R. Henselmans"
       ],
-      "institution": "Jilin University, Tsinghua University, Beijing Jiaotong University, Alibaba Group",
+      "institution": "Aithos Research Foundation",
       "summary": {
-        "zh": "本文针对LLM Web智能体在真实复杂环境中性能崩溃的问题，提出了测试时环境分解（TTED）方法。通过将复杂观察分解为子模块并进行无标签的测试时学习，TTED有效克服了组合泛化差距。实验证明，该方法能显著提升智能体在真实Web自动化任务中的表现，为LLM智能体在复杂现实环境中的稳健部署提供了关键思路。",
-        "en": "- **Background**: Large Language Model (LLM) agents excel in manually constructed, simple environments but often fail when deployed in complex, real-world web settings. - **Why Existing Work Falls Short**: Current..."
+        "zh": "- **背景**：AI对齐要求系统遵循人类规范、价值观或意图。在价值多元主义背景下，虽然不存在唯一的“正确”目标，但所有对齐框架共享一个先决条件：系统的行为必须表达出一个“连贯的策略”（coherent policy）。即从情境到裁决的映射应当在道德相关特征保持不变时具有不变性，而在这些特征变化时具有敏感性。 -...",
+        "en": "- **Background**: AI alignment requires systems to adhere to human norms, values, or intentions. Under value pluralism, while there is no single \"correct\" target, a shared prerequisite is that the system's behavior..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.29305v1",
-        "pdf": "https://arxiv.org/pdf/2608.29305v1",
-        "github": "https://github.com/THUNLPMT/TTED"
+        "abs": "http://arxiv.org/abs/2609.05036v1",
+        "pdf": "https://arxiv.org/pdf/2609.05036v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.29305.md",
-        "summary_en_path": "summary_en/2026-08/2608.29305.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29305.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29305.md"
+        "summary_zh_path": "summary/2026-09/2609.05036.md",
+        "summary_en_path": "summary_en/2026-09/2609.05036.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05036.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05036.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,32 +96,33 @@
       }
     },
     {
-      "id": "arxiv:2609.00038",
-      "date": "2026-08-29",
-      "title": "trajectory-judge: What Outcome-Only LLM Judges Miss on Agent Trajectories",
+      "id": "arxiv:2609.05269",
+      "date": "2026-09-04",
+      "title": "CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hadi Mohammadi"
+        "Chris Zheng",
+        "Geng Yang"
       ],
-      "institution": "Utrecht University",
+      "institution": "ZAST.AI",
       "summary": {
-        "zh": "本文指出当前LLM智能体评估中“仅结果”方法的严重缺陷，特别是其对过程错误但结果正确的“沉默故障”的低检测率。通过构建一个具有精确Ground Truth的确定性测试环境，作者量化了不同法官模型的局限性，证明了步骤级评估（Step-rubric）在检测沉默故障上的优越性，尽管成本较高。文章强调未来的法官评估必须按“结果是否幸存”进行分层分析，并发布了完整的可复现 artifacts 以促进该领域的发展。",
-        "en": "- **Background**: The production default for evaluating LLM agents is \"outcome-only\" judgment, where a judge model assesses performance based solely on the user request and the final reply. This approach is structurally..."
+        "zh": "本文指出了LLM代理系统中存在的“安全上下文不连续性”问题，即单独安全组件的组合可能导致端到端安全失效。为此，作者提出了CONTINUITY框架，通过假设-保证契约和密码学原语（如签名根授权、来源承诺、转换见证等）来维护跨组件边界的安全上下文完整性。实验表明，该框架能在极低延迟开销下，有效抵御多种跨层组合攻击，同时保证良性任务的正常执行，为构建可验证安全的LLM代理系统提供了新的范式。",
+        "en": ""
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.00038v1",
-        "pdf": "https://arxiv.org/pdf/2609.00038v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2609.05269v1",
+        "pdf": "https://arxiv.org/pdf/2609.05269v1",
+        "github": "github.com/zast-ai/continuity"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2609.00038.md",
-        "summary_en_path": "summary_en/2026-08/2609.00038.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2609.00038.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2609.00038.md"
+        "summary_zh_path": "summary/2026-09/2609.05269.md",
+        "summary_en_path": "summary_en/2026-09/2609.05269.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05269.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05269.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,34 +139,36 @@
       }
     },
     {
-      "id": "arxiv:2608.29096",
-      "date": "2026-08-29",
-      "title": "Development of an Autonomous AI Coding Agent using Monte Carlo Tree Search (MCTS) and Gemini LLM Frameworks",
+      "id": "arxiv:2609.05261",
+      "date": "2026-09-04",
+      "title": "Trace2Tower: Transition-Aware EigenTrace Induction of Multi-Level Skills for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pravin Game",
-        "Vipin Ramakrishnan",
-        "Prathamesh Wagh"
+        "Jiazheng Sun",
+        "Boyu Yang",
+        "Binhao Yuan",
+        "Mingxuan Li",
+        "Xin Peng"
       ],
-      "institution": "Pimpri Chinchwad College of Engineering",
+      "institution": "Fudan University",
       "summary": {
-        "zh": "本文提出了一种结合蒙特卡洛树搜索（MCTS）与 Gemini LLM 的自主 AI 编程代理，旨在解决传统 LLM 在代码生成中的逻辑幻觉和优化不足问题。通过引入自我批评机制和树搜索策略，该代理能够探索多种代码实现路径并选择最优解。实验表明，该方法在复杂逻辑任务中取得了 92% 的成功率，超越了传统的零样本生成方法，为从自然语言到生产级代码的自动化转换提供了有效解决方案。",
-        "en": "- **Background**: The evolving requirements in software engineering have created a strong demand for automated tools that can generate secure source code from natural language inputs. While Large Language Models (LLMs)..."
+        "zh": "Trace2Tower 通过引入过渡感知的 EigenTrace 诱导机制，解决了 LLM 智能体在利用历史轨迹时面临的浅层检索和扁平化问题。它通过构建统一的行为图并应用对比谱分解，有效去除了失败捷径，提取出稳定的成功行为模式，并将其组织为多层次的动力技能塔。该方法在复杂交互任务中展现了卓越的性能和效率，为智能体的持续学习和经验复用提供了新的范式。",
+        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on execution traces to master complex interactive tasks. Historical trajectories preserve decision processes and provide behavioral knowledge beyond..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.29096v1",
-        "pdf": "https://arxiv.org/pdf/2608.29096v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2609.05261v1",
+        "pdf": "https://arxiv.org/pdf/2609.05261v1",
+        "github": "https://github.com/FudanSELab/Trace2Tower"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.29096.md",
-        "summary_en_path": "summary_en/2026-08/2608.29096.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29096.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29096.md"
+        "summary_zh_path": "summary/2026-09/2609.05261.md",
+        "summary_en_path": "summary_en/2026-09/2609.05261.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05261.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05261.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,38 +185,35 @@
       }
     },
     {
-      "id": "arxiv:2608.29363",
-      "date": "2026-08-29",
-      "title": "TRACER: Per-Tool Context Retention for LLM Agents via Consequence-Attributed Reinforcement Learning",
+      "id": "arxiv:2609.05079",
+      "date": "2026-09-04",
+      "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ziqi Lin",
-        "Ye Wu",
-        "Mengying Yang",
-        "Xu Liu",
-        "Yizhou Liu",
-        "Qiang Ke",
-        "Qin Guo"
+        "Zhibo Yang",
+        "Chen Zhang",
+        "Yuewei Zhang",
+        "Hao Wang"
       ],
-      "institution": "lable at each compression event. Its consequence-aware objective jointly accounts for task success",
+      "institution": null,
       "summary": {
-        "zh": "TRACER 有效解决了长 horizon 语言代理中的“压缩-后果差距”问题。通过引入后果感知的强化学习框架，它实现了细粒度的、每工具级别的动态上下文保留。实验表明，该方法在显著降低 token 成本的同时，避免了因信息丢失导致的昂贵工具重调用，提升了企业级数据代理的整体效率和实用性。",
-        "en": "- **Background**: Enterprise data agents answer business queries by chaining multiple tool calls over many reasoning steps, routinely accumulating hundreds of thousands of context tokens per session. This leads to..."
+        "zh": "TruthInsightBench 填补了评估开放式科学发现智能体的空白，通过自动化、基于证据的评分机制，明确区分了分析执行与科学发现。研究指出，当前智能体的主要瓶颈在于缺乏科学判断力，而非代码生成能力。该基准为衡量和提升 AI 科学家的真实发现能力提供了可量化的目标。",
+        "en": "TruthInsightBench fills the gap in evaluating open-ended scientific discovery agents by providing an automated, evidence-based scoring mechanism that clearly distinguishes analysis execution from scientific discovery...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2608.29363v1",
-        "pdf": "https://arxiv.org/pdf/2608.29363v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2609.05079v1",
+        "pdf": "https://arxiv.org/pdf/2609.05079v1",
+        "github": "https://github.com/TruthInsight-stack/TruthInsightBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-08/2608.29363.md",
-        "summary_en_path": "summary_en/2026-08/2608.29363.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-08/2608.29363.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-08/2608.29363.md"
+        "summary_zh_path": "summary/2026-09/2609.05079.md",
+        "summary_en_path": "summary_en/2026-09/2609.05079.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05079.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05079.md"
       },
       "signals": {
         "priority_keyword": "Agent"
