@@ -1,41 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-07T06:19:57.561659+00:00",
-  "run_date": "2026-09-04",
+  "generated_at": "2026-09-09T06:13:54.501408+00:00",
+  "run_date": "2026-09-08",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.05037",
-      "date": "2026-09-04",
-      "title": "How do LLMs Evaluate Perceived Moral Agency? Investigating Moral Decision-Making in Human-Artificial Agents Interactions",
+      "id": "arxiv:2609.09153",
+      "date": "2026-09-08",
+      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Fernanda Mansilla",
-        "Aloysius Tok",
-        "Bahia Guellaï",
-        "Farah Benamara",
-        "Nancy F. Chen"
+        "Yuxing Lu",
+        "Yicheng Chen",
+        "Shanchan Wu",
+        "Sercan Ö. Arık"
       ],
-      "institution": "Institute for Infocomm Research (I2R), A*STAR; CNRS@CREATE; IRIT, Université de Toulouse; CLLE, Université de Toulouse; IPAL",
+      "institution": "Google, Georgia Institute of Technology, Peking University",
       "summary": {
-        "zh": "本文通过首个系统性实证研究，揭示了LLM在评估道德主体性时的行为模式。研究发现，虽然LLM和人类一样认为人类的道德主体性高于AI，但LLM在进行道德判断时高度依赖外部情境（如伤害和紧迫性），而非代理的固有属性。这一发现对于理解LLM在日常道德决策中的作用具有重要意义，提示我们在部署涉及道德判断的AI系统时，需重点关注其对情境变化的敏感性及潜在的推理偏差。",
-        "en": "- **Background**: As Large Language Models (LLMs) and Artificial Agents (AAs, such as robots and drones) become integrated into smart city environments, they increasingly assume roles requiring moral advice or..."
+        "zh": "本文提出了程序图（Procedural Graph），一种用于 LLM 智能体的自进化执行结构。通过将过程性知识显式地组织为图结构，并结合情境化指导和自进化机制，该方法有效解决了长程任务中智能体容易迷失方向和重复错误的问题。实验证明，该方法在多种场景下均优于现有的记忆基线和手工工作流，实现了无需大量人工干预的高效自动化过程优化。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as autonomous agents capable of long-horizon planning and tool use. However, most agents rely on unconstrained generation over accumulating..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.05037v1",
-        "pdf": "https://arxiv.org/pdf/2609.05037v1",
+        "abs": "http://arxiv.org/abs/2609.09153v1",
+        "pdf": "https://arxiv.org/pdf/2609.09153v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.05037.md",
-        "summary_en_path": "summary_en/2026-09/2609.05037.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05037.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05037.md"
+        "summary_zh_path": "summary/2026-09/2609.09153.md",
+        "summary_en_path": "summary_en/2026-09/2609.09153.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09153.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09153.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,34 +51,83 @@
       }
     },
     {
-      "id": "arxiv:2609.05036",
-      "date": "2026-09-04",
-      "title": "Moral Competence Before Moral Content: Why LLM Agents Lack the Prerequisites for Coherent Alignment",
+      "id": "arxiv:2609.08965",
+      "date": "2026-09-08",
+      "title": "PlannerForge: LLM Agents for Scenario-Based Testing of Motion Planners in Autonomous Driving",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Arno Libert",
-        "Derck W. E. Prinzhorn",
-        "Daan R. Henselmans"
+        "Yuan Gao",
+        "Sebastian Müller",
+        "Mattia Piccinini",
+        "Marc Kaufeld",
+        "Yuchen Zhang",
+        "Finn Rasmus Schäfer",
+        "Qunying Song",
+        "Johannes Betz"
       ],
-      "institution": "Aithos Research Foundation",
+      "institution": "Technical University of Munich",
       "summary": {
-        "zh": "- **背景**：AI对齐要求系统遵循人类规范、价值观或意图。在价值多元主义背景下，虽然不存在唯一的“正确”目标，但所有对齐框架共享一个先决条件：系统的行为必须表达出一个“连贯的策略”（coherent policy）。即从情境到裁决的映射应当在道德相关特征保持不变时具有不变性，而在这些特征变化时具有敏感性。 -...",
-        "en": "- **Background**: AI alignment requires systems to adhere to human norms, values, or intentions. Under value pluralism, while there is no single \"correct\" target, a shared prerequisite is that the system's behavior..."
+        "zh": "PlannerForge 填补了自动驾驶基于场景测试中缺乏统一 LLM Agent 框架的空白。它成功地将碎片化的测试流程整合为一个自动化的端到端系统，不仅在场景生成、检索和修改的关键指标上超越了现有的 SOTA 方法（如 Scenario Factory 2.0 和 BM25），还证明了开源中等规模模型（20-35B）在该任务上具有媲美商业模型的潜力。此外，该框架展示了通过 LLM...",
+        "en": "- **Background**: Ensuring the safety of Autonomous Driving Systems (ADSs) relies heavily on scenario-based testing. However, current pipelines are fragmented, with scenario generation, retrieval, modification,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.05036v1",
-        "pdf": "https://arxiv.org/pdf/2609.05036v1",
+        "abs": "http://arxiv.org/abs/2609.08965v1",
+        "pdf": "https://arxiv.org/pdf/2609.08965v1",
+        "github": "https://github.com/TUM-AVS/"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-09/2609.08965.md",
+        "summary_en_path": "summary_en/2026-09/2609.08965.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08965.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08965.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2609.08589",
+      "date": "2026-09-08",
+      "title": "The Unreliable Progress Bar: Can LLM Agents Reliably Report Task Progress Throughout Execution?",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Boyang Wang",
+        "Yunhan Wang",
+        "Yalun Wu"
+      ],
+      "institution": "Beihang University; National University of Singapore",
+      "summary": {
+        "zh": "本文系统性地研究了LLM智能体在任务执行全过程中报告进度的可靠性。研究发现，模型作为“进度条”并不可靠，其错误模式具有明显的阶段性特征（中期失效或末期保守）。文章提出的评估协议填补了这一领域的空白，并强烈建议智能体框架不应仅依赖模型生成的状态信号来控制任务流，而应结合外部环境状态验证或其他机制来提高鲁棒性。",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly used in agent frameworks where they self-report task progress to decide whether to continue or stop execution. This \"model as progress bar\" mechanism..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.08589v1",
+        "pdf": "https://arxiv.org/pdf/2609.08589v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.05036.md",
-        "summary_en_path": "summary_en/2026-09/2609.05036.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05036.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05036.md"
+        "summary_zh_path": "summary/2026-09/2609.08589.md",
+        "summary_en_path": "summary_en/2026-09/2609.08589.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08589.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08589.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -96,79 +144,37 @@
       }
     },
     {
-      "id": "arxiv:2609.05269",
-      "date": "2026-09-04",
-      "title": "CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls",
+      "id": "arxiv:2609.09115",
+      "date": "2026-09-08",
+      "title": "MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chris Zheng",
-        "Geng Yang"
-      ],
-      "institution": "ZAST.AI",
-      "summary": {
-        "zh": "本文指出了LLM代理系统中存在的“安全上下文不连续性”问题，即单独安全组件的组合可能导致端到端安全失效。为此，作者提出了CONTINUITY框架，通过假设-保证契约和密码学原语（如签名根授权、来源承诺、转换见证等）来维护跨组件边界的安全上下文完整性。实验表明，该框架能在极低延迟开销下，有效抵御多种跨层组合攻击，同时保证良性任务的正常执行，为构建可验证安全的LLM代理系统提供了新的范式。",
-        "en": ""
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.05269v1",
-        "pdf": "https://arxiv.org/pdf/2609.05269v1",
-        "github": "github.com/zast-ai/continuity"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.05269.md",
-        "summary_en_path": "summary_en/2026-09/2609.05269.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05269.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05269.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2609.05261",
-      "date": "2026-09-04",
-      "title": "Trace2Tower: Transition-Aware EigenTrace Induction of Multi-Level Skills for LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Jiazheng Sun",
         "Boyu Yang",
-        "Binhao Yuan",
-        "Mingxuan Li",
-        "Xin Peng"
+        "Jiazheng Sun",
+        "Zilong Lu",
+        "Zhi Qiu",
+        "Xin Peng",
+        "Jun Zheng"
       ],
-      "institution": "Fudan University",
+      "institution": "Fudan University, Beijing Institute of Technology",
       "summary": {
-        "zh": "Trace2Tower 通过引入过渡感知的 EigenTrace 诱导机制，解决了 LLM 智能体在利用历史轨迹时面临的浅层检索和扁平化问题。它通过构建统一的行为图并应用对比谱分解，有效去除了失败捷径，提取出稳定的成功行为模式，并将其组织为多层次的动力技能塔。该方法在复杂交互任务中展现了卓越的性能和效率，为智能体的持续学习和经验复用提供了新的范式。",
-        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on execution traces to master complex interactive tasks. Historical trajectories preserve decision processes and provide behavioral knowledge beyond..."
+        "zh": "MeClear 针对长程 LLM 智能体中记忆检索的痛点，提出了一种基于合作博弈论归因的风险感知记忆清除方法。它通过 Shapley 值解决了传统单点评估无法识别冗余有害记忆的问题，并通过动态抑制而非永久删除的策略保障了记忆系统的安全性。实验表明该方法显著优于现有基线，为长程智能体的记忆管理提供了新的解决方案。",
+        "en": "MeClear addresses the pain points of memory retrieval in long-horizon LLM agents by proposing a risk-aware memory clearance method based on cooperative game-theoretic attribution. It solves the problem of traditional..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.05261v1",
-        "pdf": "https://arxiv.org/pdf/2609.05261v1",
-        "github": "https://github.com/FudanSELab/Trace2Tower"
+        "abs": "http://arxiv.org/abs/2609.09115v1",
+        "pdf": "https://arxiv.org/pdf/2609.09115v1",
+        "github": "https://github.com/FudanSELab/MeClear"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.05261.md",
-        "summary_en_path": "summary_en/2026-09/2609.05261.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05261.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05261.md"
+        "summary_zh_path": "summary/2026-09/2609.09115.md",
+        "summary_en_path": "summary_en/2026-09/2609.09115.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09115.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09115.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,35 +191,35 @@
       }
     },
     {
-      "id": "arxiv:2609.05079",
-      "date": "2026-09-04",
-      "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
+      "id": "arxiv:2609.08599",
+      "date": "2026-09-08",
+      "title": "Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhibo Yang",
-        "Chen Zhang",
-        "Yuewei Zhang",
-        "Hao Wang"
+        "Dac Duy Anh Nguyen",
+        "Zhangchi Qiu",
+        "Shigeng Chen",
+        "Alan Wee-Chung Liew"
       ],
-      "institution": null,
+      "institution": "Griffith University",
       "summary": {
-        "zh": "TruthInsightBench 填补了评估开放式科学发现智能体的空白，通过自动化、基于证据的评分机制，明确区分了分析执行与科学发现。研究指出，当前智能体的主要瓶颈在于缺乏科学判断力，而非代码生成能力。该基准为衡量和提升 AI 科学家的真实发现能力提供了可量化的目标。",
-        "en": "TruthInsightBench fills the gap in evaluating open-ended scientific discovery agents by providing an automated, evidence-based scoring mechanism that clearly distinguishes analysis execution from scientific discovery...."
+        "zh": "本文旨在澄清基于图的记忆如何支持自适应、可控且以用户为中心的LLM智能体。通过构建生命周期视角，文章不仅整合了碎片化的研究成果，还指出了构建可靠长期个性化智能体所面临的开放挑战，为未来研究提供了清晰的设计空间和方向指引。",
+        "en": "- **Background**: Large Language Model (LLM) agents are evolving from single-session tools into long-term personal assistants that must adapt to individual users across various tasks, contexts, and interactions...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.05079v1",
-        "pdf": "https://arxiv.org/pdf/2609.05079v1",
-        "github": "https://github.com/TruthInsight-stack/TruthInsightBench"
+        "abs": "http://arxiv.org/abs/2609.08599v1",
+        "pdf": "https://arxiv.org/pdf/2609.08599v1",
+        "github": "https://github.com/icedpanda/awesome-personalized-graph-memory"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.05079.md",
-        "summary_en_path": "summary_en/2026-09/2609.05079.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05079.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05079.md"
+        "summary_zh_path": "summary/2026-09/2609.08599.md",
+        "summary_en_path": "summary_en/2026-09/2609.08599.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08599.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08599.md"
       },
       "signals": {
         "priority_keyword": "Agent"
