@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.09_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.10_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月09日 06:13</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月10日 06:13</sub></summary>
 <br>
 
-- Procedural Graphs: Self-Evolving Execution Structures for LLM Agents 
-- PlannerForge: LLM Agents for Scenario-Based Testing of Motion Planners in Autonomous Driving 
-- The Unreliable Progress Bar: Can LLM Agents Reliably Report Task Progress Throughout Execution? 
-- MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents 
-- Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation 
+- AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents 
+- Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts 
+- Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs 
+- TrajMark: Ownership Attribution and Segment-Level Tamper Localization for Coding-Agent Trajectories 
+- TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-09</span> | **AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents**<br><sub>机构: Thapar Institute of Engineering and Technology, Guru Tegh Bahadur Institute of Technology, Indira Gandhi Delhi Technical University for Women, Ministry of Electronics and Information Technology (Government of India)<br>AgentAudit 填补了AI代理全生命周期评估的空白，通过细粒度的多维度和故障归因分析，提供了比传统基准更深入的信任评估。它不仅能量化代理的整体可信度，还能诊断具体失效环节，对于开发更安全、可靠的AI代理系统具有重要价值。尽管存在使用单一裁判模型的局限性，但其无侵入式和通用的设计理念使其成为评估日益复杂的AI代理生态系统的有力工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.09875v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.09875.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ShreyNag/AgentAudit)</div> |
+| <span style='display: inline-block; width: 42px;'>09-09</span> | **Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts**<br><sub>机构: Chengdu Jincheng College<br>本文针对高原旅游气象服务的痛点，提出了 SmartWeatherAgent 框架。通过融合机器学习（LightGBM）与大语言模型（Qwen3），并创新性地引入提示词自优化机制，有效解决了上下文缺失、泛化能力弱和场景适应差的问题。实验表明，该系统不仅具备高效的极端天气预测能力，还能生成具有高度科学严谨性和可解释性的结构化预警信息，推动了气象服务向智能化代理方向发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10135v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10135.md)  |
+| <span style='display: inline-block; width: 42px;'>09-09</span> | **Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs**<br><sub>机构: Apple<br>Glyph 成功解决了一个大规模企业数据目录中的实际痛点，通过多智能体协作和混合策略（代码检索+多路召回融合），在保证隐私（无值处理）的前提下，实现了高精度、可审计且可扩展的自动化数据文档化和分类。该系统已在 Apple 的生产环境中验证，证明了 LLM 智能体系统在复杂企业数据治理任务中的可行性和优越性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10430v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10430.md)  |
+| <span style='display: inline-block; width: 42px;'>09-09</span> | **TrajMark: Ownership Attribution and Segment-Level Tamper Localization for Coding-Agent Trajectories**<br><sub>机构: University of New South Wales, Griffith University<br>TrajMark 解决了代码智能体轨迹溯源中的关键空白，即不仅验证“谁”生成了结果，还验证“过程”是否被篡改。通过分离所有权归属和完整性验证，该框架在保证全局身份识别鲁棒性的同时，实现了对局部篡改的高灵敏度检测和定位，且对智能体的执行性能几乎没有负面影响，为代码智能体的安全审计提供了强有力的工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10416v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10416.md)  |
+| <span style='display: inline-block; width: 42px;'>09-09</span> | **TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards**<br><sub>机构: Independent Researchers<br>本文证明了通过基于模拟的验证机制，可以将原本模糊的诊断推理任务转化为适合可扩展强化学习的形式。TRACE框架通过工程化手段构建了验证不对称性，使得中等规模的模型在经过RL训练后，能够在复杂的因果探索任务上超越更大规模的闭源模型，同时提高了推理效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10315v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10315.md)  |
 | <span style='display: inline-block; width: 42px;'>09-08</span> | **Procedural Graphs: Self-Evolving Execution Structures for LLM Agents**<br><sub>机构: Google, Georgia Institute of Technology, Peking University<br>本文提出了程序图（Procedural Graph），一种用于 LLM 智能体的自进化执行结构。通过将过程性知识显式地组织为图结构，并结合情境化指导和自进化机制，该方法有效解决了长程任务中智能体容易迷失方向和重复错误的问题。实验证明，该方法在多种场景下均优于现有的记忆基线和手工工作流，实现了无需大量人工干预的高效自动化过程优化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.09153v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.09153.md)  |
 | <span style='display: inline-block; width: 42px;'>09-08</span> | **PlannerForge: LLM Agents for Scenario-Based Testing of Motion Planners in Autonomous Driving**<br><sub>机构: Technical University of Munich<br>PlannerForge 填补了自动驾驶基于场景测试中缺乏统一 LLM Agent 框架的空白。它成功地将碎片化的测试流程整合为一个自动化的端到端系统，不仅在场景生成、检索和修改的关键指标上超越了现有的 SOTA 方法（如 Scenario Factory 2.0 和 BM25），还证明了开源中等规模模型（20-35B）在该任务上具有媲美商业模型的潜力。此外，该框架展示了通过 LLM 进行无需微调的规划器参数优化能力，显著提升了自动驾驶系统的安全性和测试效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.08965v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.08965.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/TUM-AVS/)</div> |
 | <span style='display: inline-block; width: 42px;'>09-08</span> | **The Unreliable Progress Bar: Can LLM Agents Reliably Report Task Progress Throughout Execution?**<br><sub>机构: Beihang University; National University of Singapore<br>本文系统性地研究了LLM智能体在任务执行全过程中报告进度的可靠性。研究发现，模型作为“进度条”并不可靠，其错误模式具有明显的阶段性特征（中期失效或末期保守）。文章提出的评估协议填补了这一领域的空白，并强烈建议智能体框架不应仅依赖模型生成的状态信号来控制任务流，而应结合外部环境状态验证或其他机制来提高鲁棒性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.08589v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.08589.md)  |

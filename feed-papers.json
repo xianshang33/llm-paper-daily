@@ -1,40 +1,85 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-09T06:13:54.501408+00:00",
-  "run_date": "2026-09-08",
+  "generated_at": "2026-09-10T06:13:37.193995+00:00",
+  "run_date": "2026-09-09",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.09153",
-      "date": "2026-09-08",
-      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+      "id": "arxiv:2609.09875",
+      "date": "2026-09-09",
+      "title": "AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuxing Lu",
-        "Yicheng Chen",
-        "Shanchan Wu",
-        "Sercan Ö. Arık"
+        "Shrey Nag",
+        "Sachita",
+        "Abhishek Kumar Singh",
+        "Lipi Goel",
+        "Rajeshwar Singh Janwar"
       ],
-      "institution": "Google, Georgia Institute of Technology, Peking University",
+      "institution": "Thapar Institute of Engineering and Technology, Guru Tegh Bahadur Institute of Technology, Indira Gandhi Delhi Technical University for Women, Ministry of Electronics and Information Technology (Government of India)",
       "summary": {
-        "zh": "本文提出了程序图（Procedural Graph），一种用于 LLM 智能体的自进化执行结构。通过将过程性知识显式地组织为图结构，并结合情境化指导和自进化机制，该方法有效解决了长程任务中智能体容易迷失方向和重复错误的问题。实验证明，该方法在多种场景下均优于现有的记忆基线和手工工作流，实现了无需大量人工干预的高效自动化过程优化。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as autonomous agents capable of long-horizon planning and tool use. However, most agents rely on unconstrained generation over accumulating..."
+        "zh": "AgentAudit 填补了AI代理全生命周期评估的空白，通过细粒度的多维度和故障归因分析，提供了比传统基准更深入的信任评估。它不仅能量化代理的整体可信度，还能诊断具体失效环节，对于开发更安全、可靠的AI代理系统具有重要价值。尽管存在使用单一裁判模型的局限性，但其无侵入式和通用的设计理念使其成为评估日益复杂的AI代理生态系统的有力工具。",
+        "en": "- **Background**: Large Language Models (LLMs) have evolved into complex AI agents capable of planning, tool use, memory management, and operating in dynamic environments. This increased complexity introduces multiple..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.09153v1",
-        "pdf": "https://arxiv.org/pdf/2609.09153v1",
+        "abs": "http://arxiv.org/abs/2609.09875v1",
+        "pdf": "https://arxiv.org/pdf/2609.09875v1",
+        "github": "https://github.com/ShreyNag/AgentAudit"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-09/2609.09875.md",
+        "summary_en_path": "summary_en/2026-09/2609.09875.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09875.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09875.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2609.10135",
+      "date": "2026-09-09",
+      "title": "Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Shuai Yan",
+        "Yang Xu",
+        "Shan He"
+      ],
+      "institution": "Chengdu Jincheng College",
+      "summary": {
+        "zh": "本文针对高原旅游气象服务的痛点，提出了 SmartWeatherAgent 框架。通过融合机器学习（LightGBM）与大语言模型（Qwen3），并创新性地引入提示词自优化机制，有效解决了上下文缺失、泛化能力弱和场景适应差的问题。实验表明，该系统不仅具备高效的极端天气预测能力，还能生成具有高度科学严谨性和可解释性的结构化预警信息，推动了气象服务向智能化代理方向发展。",
+        "en": "- **Background**: Highland tourism meteorology is characterized by high dynamism, strong spatial heterogeneity, and scenario dependence, posing challenges to the accuracy and timeliness of existing services. -..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.10135v1",
+        "pdf": "https://arxiv.org/pdf/2609.10135v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.09153.md",
-        "summary_en_path": "summary_en/2026-09/2609.09153.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09153.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09153.md"
+        "summary_zh_path": "summary/2026-09/2609.10135.md",
+        "summary_en_path": "summary_en/2026-09/2609.10135.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.10135.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.10135.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,83 +96,34 @@
       }
     },
     {
-      "id": "arxiv:2609.08965",
-      "date": "2026-09-08",
-      "title": "PlannerForge: LLM Agents for Scenario-Based Testing of Motion Planners in Autonomous Driving",
+      "id": "arxiv:2609.10430",
+      "date": "2026-09-09",
+      "title": "Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuan Gao",
-        "Sebastian Müller",
-        "Mattia Piccinini",
-        "Marc Kaufeld",
-        "Yuchen Zhang",
-        "Finn Rasmus Schäfer",
-        "Qunying Song",
-        "Johannes Betz"
+        "Kostia Kudriavtsev",
+        "Parvez Rafi",
+        "Sha Sundaram"
       ],
-      "institution": "Technical University of Munich",
+      "institution": "Apple",
       "summary": {
-        "zh": "PlannerForge 填补了自动驾驶基于场景测试中缺乏统一 LLM Agent 框架的空白。它成功地将碎片化的测试流程整合为一个自动化的端到端系统，不仅在场景生成、检索和修改的关键指标上超越了现有的 SOTA 方法（如 Scenario Factory 2.0 和 BM25），还证明了开源中等规模模型（20-35B）在该任务上具有媲美商业模型的潜力。此外，该框架展示了通过 LLM...",
-        "en": "- **Background**: Ensuring the safety of Autonomous Driving Systems (ADSs) relies heavily on scenario-based testing. However, current pipelines are fragmented, with scenario generation, retrieval, modification,..."
+        "zh": "Glyph 成功解决了一个大规模企业数据目录中的实际痛点，通过多智能体协作和混合策略（代码检索+多路召回融合），在保证隐私（无值处理）的前提下，实现了高精度、可审计且可扩展的自动化数据文档化和分类。该系统已在 Apple 的生产环境中验证，证明了 LLM 智能体系统在复杂企业数据治理任务中的可行性和优越性。",
+        "en": "Glyph successfully addresses a critical pain point in large-scale enterprise data catalogs. By leveraging multi-agent collaboration and hybrid strategies (code retrieval + multi-path recall fusion), it achieves..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.08965v1",
-        "pdf": "https://arxiv.org/pdf/2609.08965v1",
-        "github": "https://github.com/TUM-AVS/"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.08965.md",
-        "summary_en_path": "summary_en/2026-09/2609.08965.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08965.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08965.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2609.08589",
-      "date": "2026-09-08",
-      "title": "The Unreliable Progress Bar: Can LLM Agents Reliably Report Task Progress Throughout Execution?",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Boyang Wang",
-        "Yunhan Wang",
-        "Yalun Wu"
-      ],
-      "institution": "Beihang University; National University of Singapore",
-      "summary": {
-        "zh": "本文系统性地研究了LLM智能体在任务执行全过程中报告进度的可靠性。研究发现，模型作为“进度条”并不可靠，其错误模式具有明显的阶段性特征（中期失效或末期保守）。文章提出的评估协议填补了这一领域的空白，并强烈建议智能体框架不应仅依赖模型生成的状态信号来控制任务流，而应结合外部环境状态验证或其他机制来提高鲁棒性。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly used in agent frameworks where they self-report task progress to decide whether to continue or stop execution. This \"model as progress bar\" mechanism..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.08589v1",
-        "pdf": "https://arxiv.org/pdf/2609.08589v1",
+        "abs": "http://arxiv.org/abs/2609.10430v1",
+        "pdf": "https://arxiv.org/pdf/2609.10430v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.08589.md",
-        "summary_en_path": "summary_en/2026-09/2609.08589.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08589.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08589.md"
+        "summary_zh_path": "summary/2026-09/2609.10430.md",
+        "summary_en_path": "summary_en/2026-09/2609.10430.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.10430.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.10430.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,37 +140,36 @@
       }
     },
     {
-      "id": "arxiv:2609.09115",
-      "date": "2026-09-08",
-      "title": "MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents",
+      "id": "arxiv:2609.10416",
+      "date": "2026-09-09",
+      "title": "TrajMark: Ownership Attribution and Segment-Level Tamper Localization for Coding-Agent Trajectories",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Boyu Yang",
-        "Jiazheng Sun",
-        "Zilong Lu",
-        "Zhi Qiu",
-        "Xin Peng",
-        "Jun Zheng"
+        "Bokang Zeng",
+        "Zheng Gao",
+        "Xiaoyu Li",
+        "Xiaoyan Feng",
+        "Jiaojiao Jiang"
       ],
-      "institution": "Fudan University, Beijing Institute of Technology",
+      "institution": "University of New South Wales, Griffith University",
       "summary": {
-        "zh": "MeClear 针对长程 LLM 智能体中记忆检索的痛点，提出了一种基于合作博弈论归因的风险感知记忆清除方法。它通过 Shapley 值解决了传统单点评估无法识别冗余有害记忆的问题，并通过动态抑制而非永久删除的策略保障了记忆系统的安全性。实验表明该方法显著优于现有基线，为长程智能体的记忆管理提供了新的解决方案。",
-        "en": "MeClear addresses the pain points of memory retrieval in long-horizon LLM agents by proposing a risk-aware memory clearance method based on cooperative game-theoretic attribution. It solves the problem of traditional..."
+        "zh": "TrajMark 解决了代码智能体轨迹溯源中的关键空白，即不仅验证“谁”生成了结果，还验证“过程”是否被篡改。通过分离所有权归属和完整性验证，该框架在保证全局身份识别鲁棒性的同时，实现了对局部篡改的高灵敏度检测和定位，且对智能体的执行性能几乎没有负面影响，为代码智能体的安全审计提供了强有力的工具。",
+        "en": "- **Background**: As coding agents become prevalent in software engineering, their visible trajectories (records of actions like file reads, searches, edits) are crucial for auditing and provenance. However, existing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.09115v1",
-        "pdf": "https://arxiv.org/pdf/2609.09115v1",
-        "github": "https://github.com/FudanSELab/MeClear"
+        "abs": "http://arxiv.org/abs/2609.10416v1",
+        "pdf": "https://arxiv.org/pdf/2609.10416v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.09115.md",
-        "summary_en_path": "summary_en/2026-09/2609.09115.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09115.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09115.md"
+        "summary_zh_path": "summary/2026-09/2609.10416.md",
+        "summary_en_path": "summary_en/2026-09/2609.10416.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.10416.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.10416.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,35 +186,34 @@
       }
     },
     {
-      "id": "arxiv:2609.08599",
-      "date": "2026-09-08",
-      "title": "Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation",
+      "id": "arxiv:2609.10315",
+      "date": "2026-09-09",
+      "title": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dac Duy Anh Nguyen",
-        "Zhangchi Qiu",
-        "Shigeng Chen",
-        "Alan Wee-Chung Liew"
+        "Rui Sun",
+        "Zhan Shi",
+        "Bing He"
       ],
-      "institution": "Griffith University",
+      "institution": "Independent Researchers",
       "summary": {
-        "zh": "本文旨在澄清基于图的记忆如何支持自适应、可控且以用户为中心的LLM智能体。通过构建生命周期视角，文章不仅整合了碎片化的研究成果，还指出了构建可靠长期个性化智能体所面临的开放挑战，为未来研究提供了清晰的设计空间和方向指引。",
-        "en": "- **Background**: Large Language Model (LLM) agents are evolving from single-session tools into long-term personal assistants that must adapt to individual users across various tasks, contexts, and interactions...."
+        "zh": "本文证明了通过基于模拟的验证机制，可以将原本模糊的诊断推理任务转化为适合可扩展强化学习的形式。TRACE框架通过工程化手段构建了验证不对称性，使得中等规模的模型在经过RL训练后，能够在复杂的因果探索任务上超越更大规模的闭源模型，同时提高了推理效率。",
+        "en": "- **Background**: Reinforcement Learning with Verifiable Rewards (RLVR) has advanced LLM reasoning in domains like math and code where answers are easily verified. However, diagnostic reasoning over complex data lacks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.08599v1",
-        "pdf": "https://arxiv.org/pdf/2609.08599v1",
-        "github": "https://github.com/icedpanda/awesome-personalized-graph-memory"
+        "abs": "http://arxiv.org/abs/2609.10315v1",
+        "pdf": "https://arxiv.org/pdf/2609.10315v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.08599.md",
-        "summary_en_path": "summary_en/2026-09/2609.08599.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.08599.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.08599.md"
+        "summary_zh_path": "summary/2026-09/2609.10315.md",
+        "summary_en_path": "summary_en/2026-09/2609.10315.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.10315.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.10315.md"
       },
       "signals": {
         "priority_keyword": "Agent"
