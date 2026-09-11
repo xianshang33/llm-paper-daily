@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.10_06:13-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.11_06:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月10日 06:13</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月11日 06:16</sub></summary>
 <br>
 
-- AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents 
-- Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts 
-- Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs 
-- TrajMark: Ownership Attribution and Segment-Level Tamper Localization for Coding-Agent Trajectories 
-- TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards 
+- Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents 
+- A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies 
+- COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization 
+- Memory Compression for High-Fanout Agent Sandboxes 
+- When Agents Disagree: Bayesian Backward Reasoning as a Label-Free Anchor for Multi-Agent Collective Decision-Making 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-10</span> | **Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents**<br><sub>机构: Chengdu Institute of Computer Applications, Chinese Academy of Sciences; University of Chinese Academy of Sciences; Beijing Institute of Technology; Beijing University of Technology; Yangtze Delta Region Institute of Tsinghua University<br>Ecdysis 通过引入跨实例失败分析和多角色协同诊断机制，解决了现有 LLM Agent Harness 演进方法中效率低和泛化差的问题。它能够有效区分模型缺陷与 Harness 缺陷，专注于修复系统性的 Harness 问题，从而在大幅缩短训练时间的同时，显著提升了 Agent 的推理准确性和跨模型泛化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11677v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11677.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/cuiyu-ai/Ecdysis)</div> |
+| <span style='display: inline-block; width: 42px;'>09-10</span> | **A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies**<br><sub>机构: Wuhan United Imaging Surgical Co., Ltd. (UIS)<br>本文提出的 SurgicalRoomAgent 通过创新的架构设计和三项关键技术（KV Cache 前缀预热、流式部分 JSON 解析与并行执行、渐进式技能提示披露），成功构建了一个低延迟、高效率的手术室语音交互多智能体系统。该系统有效解决了传统手术室控制中的无菌破坏、交叉感染和认知过载问题，为智能手术室的落地应用提供了可行的技术方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11231v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11231.md)  |
+| <span style='display: inline-block; width: 42px;'>09-10</span> | **COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization**<br><sub>机构: The Chinese University of Hong Kong, Shenzhen; Tianjin University; The Hong Kong University of Science and Technology (Guangzhou); National University of Singapore<br>COBRA-Skills 通过引入上下文多臂老虎机引导的优先级排序和基于证据的技能演化，有效解决了 LLM 智能体技能优化中评估成本高和数据依赖强的问题。它在显著降低计算预算的同时，提升了技能的质量和智能体的整体性能，为高效构建可重用智能体技能提供了一种新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11682v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11682.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Jerry-LuP/COBRA-Skills)</div> |
+| <span style='display: inline-block; width: 42px;'>09-10</span> | **Memory Compression for High-Fanout Agent Sandboxes**<br><sub>机构: HKUST<br>AgentZip 针对高扇出 Agent 工作负载的特性，重新设计了内存压缩的策略。通过利用沙箱间的结构相似性、优化压缩时机以匹配 LLM 等待期、以及采用恢复时预取技术，AgentZip 在显著降低内存占用（最高 8.7 倍）的同时，有效控制了性能开销，为大规模 Agent 部署提供了高效的系统支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11294v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11294.md)  |
+| <span style='display: inline-block; width: 42px;'>09-10</span> | **When Agents Disagree: Bayesian Backward Reasoning as a Label-Free Anchor for Multi-Agent Collective Decision-Making**<br><sub>机构: The University of Melbourne, Sri Lanka Institute of Information Technology<br>该论文指出多智能体系统中前向推理导致的误差相关性问题，创新性地引入贝叶斯后向推理构建无标签锚点。通过计算前向与反向后验之间的Jensen-Shannon散度来衡量跨路径一致性，并据此设计了多种聚合策略。实验证明，该方法在DDXPlus数据集上显著提升了多智能体集体决策的性能，特别是在处理智能体分歧时表现出优越性，为无需额外训练数据的鲁棒聚合提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11709v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11709.md)  |
 | <span style='display: inline-block; width: 42px;'>09-09</span> | **AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents**<br><sub>机构: Thapar Institute of Engineering and Technology, Guru Tegh Bahadur Institute of Technology, Indira Gandhi Delhi Technical University for Women, Ministry of Electronics and Information Technology (Government of India)<br>AgentAudit 填补了AI代理全生命周期评估的空白，通过细粒度的多维度和故障归因分析，提供了比传统基准更深入的信任评估。它不仅能量化代理的整体可信度，还能诊断具体失效环节，对于开发更安全、可靠的AI代理系统具有重要价值。尽管存在使用单一裁判模型的局限性，但其无侵入式和通用的设计理念使其成为评估日益复杂的AI代理生态系统的有力工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.09875v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.09875.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ShreyNag/AgentAudit)</div> |
 | <span style='display: inline-block; width: 42px;'>09-09</span> | **Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts**<br><sub>机构: Chengdu Jincheng College<br>本文针对高原旅游气象服务的痛点，提出了 SmartWeatherAgent 框架。通过融合机器学习（LightGBM）与大语言模型（Qwen3），并创新性地引入提示词自优化机制，有效解决了上下文缺失、泛化能力弱和场景适应差的问题。实验表明，该系统不仅具备高效的极端天气预测能力，还能生成具有高度科学严谨性和可解释性的结构化预警信息，推动了气象服务向智能化代理方向发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10135v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10135.md)  |
 | <span style='display: inline-block; width: 42px;'>09-09</span> | **Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs**<br><sub>机构: Apple<br>Glyph 成功解决了一个大规模企业数据目录中的实际痛点，通过多智能体协作和混合策略（代码检索+多路召回融合），在保证隐私（无值处理）的前提下，实现了高精度、可审计且可扩展的自动化数据文档化和分类。该系统已在 Apple 的生产环境中验证，证明了 LLM 智能体系统在复杂企业数据治理任务中的可行性和优越性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.10430v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.10430.md)  |
