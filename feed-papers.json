@@ -1,92 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-11T06:16:52.987158+00:00",
-  "run_date": "2026-09-10",
+  "generated_at": "2026-09-12T06:03:28.367296+00:00",
+  "run_date": "2026-09-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.11677",
-      "date": "2026-09-10",
-      "title": "Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents",
+      "id": "arxiv:2609.07785",
+      "date": "2026-09-07",
+      "title": "What Does an LLM-Agent Leaderboard Rank Actually Compare?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ruiqing Yue",
-        "Yu Cui",
-        "Zhuoyu Sun",
-        "Sicheng Pan",
-        "Xianhong Xue",
-        "Tingyu Li",
-        "Ting Li",
-        "Wenzhuo Zhu",
-        "Yi Chen",
-        "Yifei Liu",
-        "Baohan Huang",
-        "Zhe Cui",
-        "Haibin Zhang",
-        "Cong Zuo"
+        "Wei-Jung Huang"
       ],
-      "institution": "Chengdu Institute of Computer Applications, Chinese Academy of Sciences; University of Chinese Academy of Sciences; Beijing Institute of Technology; Beijing University of Technology; Yangtze Delta Region Institute of Tsinghua University",
+      "institution": "Independent Researcher",
       "summary": {
-        "zh": "Ecdysis 通过引入跨实例失败分析和多角色协同诊断机制，解决了现有 LLM Agent Harness 演进方法中效率低和泛化差的问题。它能够有效区分模型缺陷与 Harness 缺陷，专注于修复系统性的 Harness 问题，从而在大幅缩短训练时间的同时，显著提升了 Agent 的推理准确性和跨模型泛化能力。",
-        "en": "- **Background**: The capabilities of Large Language Model (LLM) agents depend significantly on runtime harnesses (e.g., task planning, tool interaction, context management). Self-evolving runtime harnesses, which..."
+        "zh": "本文指出 LLM Agent 排行榜分数仅是对已发布评估的总结，而不能直接等同于通用的 Agent 优劣排序。作者提出的估计量感知成对决策程序强调，要得出细粒度的优越性主张，必须明确比较的估计量、测量来源以及不确定性规则。研究表明，在当前的公共基准中，许多排名接近的系统之间并无统计学上的显著差异，盲目依赖排行榜排名可能导致错误的模型选择决策。",
+        "en": "The paper argues that leaderboard scores are merely summaries of specific released evaluations and should not be equated with general agent superiority. The proposed estimand-aware pairwise decision procedure highlights..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.11677v1",
-        "pdf": "https://arxiv.org/pdf/2609.11677v1",
-        "github": "https://github.com/cuiyu-ai/Ecdysis"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.11677.md",
-        "summary_en_path": "summary_en/2026-09/2609.11677.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.11677.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.11677.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2609.11231",
-      "date": "2026-09-10",
-      "title": "A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Tianxiang Zhou"
-      ],
-      "institution": "Wuhan United Imaging Surgical Co., Ltd. (UIS)",
-      "summary": {
-        "zh": "本文提出的 SurgicalRoomAgent 通过创新的架构设计和三项关键技术（KV Cache 前缀预热、流式部分 JSON 解析与并行执行、渐进式技能提示披露），成功构建了一个低延迟、高效率的手术室语音交互多智能体系统。该系统有效解决了传统手术室控制中的无菌破坏、交叉感染和认知过载问题，为智能手术室的落地应用提供了可行的技术方案。",
-        "en": "- **Background**: Modern operating rooms (ORs) integrate numerous precision medical devices. Traditional control methods (physical buttons, touchscreens) pose risks of sterile field disruption, cross-contamination, high..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.11231v1",
-        "pdf": "https://arxiv.org/pdf/2609.11231v1",
+        "abs": "http://arxiv.org/abs/2609.07785v1",
+        "pdf": "https://arxiv.org/pdf/2609.07785v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.11231.md",
-        "summary_en_path": "summary_en/2026-09/2609.11231.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.11231.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.11231.md"
+        "summary_zh_path": "summary/2026-09/2609.07785.md",
+        "summary_en_path": "summary_en/2026-09/2609.07785.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.07785.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.07785.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -103,40 +48,41 @@
       }
     },
     {
-      "id": "arxiv:2609.11682",
-      "date": "2026-09-10",
-      "title": "COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization",
+      "id": "arxiv:2609.07611",
+      "date": "2026-09-07",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Pingchen Lu",
-        "Xiangyi Wang",
-        "Xiang Li",
-        "Jie Mao",
-        "Zikun Qu",
-        "Junfeng Luo",
-        "Yao Shu",
-        "Bryan Kian Hsiang Low",
-        "Zhongxiang Dai"
+        "Yunxiang Mo",
+        "Tianshi Zheng",
+        "Yisen Gao",
+        "Rui Wang",
+        "Newt Nguyen Kim Hue Nam",
+        "Kelvin Kiu Wai Tam",
+        "Jiaxin Bai",
+        "Yangqiu Song",
+        "Ginny Wong",
+        "Simon See"
       ],
-      "institution": "The Chinese University of Hong Kong, Shenzhen; Tianjin University; The Hong Kong University of Science and Technology (Guangzhou); National University of Singapore",
+      "institution": "HKUST, NVIDIA",
       "summary": {
-        "zh": "COBRA-Skills 通过引入上下文多臂老虎机引导的优先级排序和基于证据的技能演化，有效解决了 LLM 智能体技能优化中评估成本高和数据依赖强的问题。它在显著降低计算预算的同时，提升了技能的质量和智能体的整体性能，为高效构建可重用智能体技能提供了一种新的范式。",
-        "en": "- **Background**: Large language model (LLM) agents benefit from reusable skills distilled from prior task experience, which encode task-specific guidelines, reasoning strategies, or tool-use procedures. However,..."
+        "zh": "AgentIdeaBench 填补了自主 AI 科学家在科学构思能力评估上的空白。通过对比静态观察和主动探索两种模式，研究揭示了主动检索和推理对提升科学假设质量（特别是可行性和具体性）的关键作用，并指出了当前评估方法的局限性。该基准为未来研究和开发具备更强科学发现能力的 AI 代理提供了重要的测量标准和洞察。",
+        "en": "- **Background**: Scientific ideation, the capacity to formulate novel and testable hypotheses from evidence, is a critical foundation for autonomous AI scientists. As AI agents advance in execution tasks, rigorously..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.11682v1",
-        "pdf": "https://arxiv.org/pdf/2609.11682v1",
-        "github": "https://github.com/Jerry-LuP/COBRA-Skills"
+        "abs": "http://arxiv.org/abs/2609.07611v1",
+        "pdf": "https://arxiv.org/pdf/2609.07611v1",
+        "github": "https://github.com/HKUST-KnowComp/AgentIdeaBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.11682.md",
-        "summary_en_path": "summary_en/2026-09/2609.11682.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.11682.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.11682.md"
+        "summary_zh_path": "summary/2026-09/2609.07611.md",
+        "summary_en_path": "summary_en/2026-09/2609.07611.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.07611.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.07611.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -153,38 +99,87 @@
       }
     },
     {
-      "id": "arxiv:2609.11294",
-      "date": "2026-09-10",
-      "title": "Memory Compression for High-Fanout Agent Sandboxes",
+      "id": "arxiv:2609.07603",
+      "date": "2026-09-07",
+      "title": "FinCUABuild: Can Agents Build Reliable Benchmarks for Dynamic Financial Computer Use?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mengming Li",
-        "Ceyu XU",
-        "Qijun Zhang",
-        "Jiangnan Yu",
-        "Xiangfeng Sun",
-        "Haohui Mai",
-        "Zhiyao Xie"
+        "Jingpu Yang",
+        "Fengxian Ji",
+        "Jinri Guo",
+        "Tianhao Li",
+        "Qian Jiang",
+        "Fan Zhang",
+        "Min Peng",
+        "Qianqian Xie",
+        "Preslav Nakov",
+        "Zhuohan Xie"
       ],
-      "institution": "HKUST",
+      "institution": "Wuhan University, MBZUAI, Northeastern University, Zhongguancun Academy",
       "summary": {
-        "zh": "AgentZip 针对高扇出 Agent 工作负载的特性，重新设计了内存压缩的策略。通过利用沙箱间的结构相似性、优化压缩时机以匹配 LLM 等待期、以及采用恢复时预取技术，AgentZip 在显著降低内存占用（最高 8.7 倍）的同时，有效控制了性能开销，为大规模 Agent 部署提供了高效的系统支持。",
-        "en": "- **Background**: Modern AI Agents often operate in high-fanout modes, where a single task spawns multiple concurrent sandbox sessions (e.g., multiple trajectories in RL training or parallel candidates in inference)...."
+        "zh": "本文解决了金融领域 CUA 评估任务构建成本高、覆盖率低的问题。通过引入 FinCUABuildBench 基准和 FinCUABuildAgent 多代理系统，实现了金融 CUA 任务的自动化、高质量构建。实验表明，该方法不仅大幅提高了任务构建的合格率，而且生成的任务能有效服务于下游代理能力的评估，为扩展金融场景下的评估覆盖范围提供了切实可行的路径。",
+        "en": "This paper addresses the high cost and low coverage of CUA evaluation task construction in the financial domain. By introducing the FinCUABuildBench benchmark and the FinCUABuildAgent multi-agent system, it achieves..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.11294v1",
-        "pdf": "https://arxiv.org/pdf/2609.11294v1",
+        "abs": "http://arxiv.org/abs/2609.07603v1",
+        "pdf": "https://arxiv.org/pdf/2609.07603v1",
+        "github": "https://github.com/FengxianJi/FinCUABuild"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-09/2609.07603.md",
+        "summary_en_path": "summary_en/2026-09/2609.07603.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.07603.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.07603.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2609.09233",
+      "date": "2026-09-07",
+      "title": "Subagents vs Agent Skills: Executing Reusable Knowledge for Long-Horizon Agentic Tasks",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Wasu Top Piriyakulkij",
+        "Rachel Lawrence",
+        "Alicia Curth",
+        "Sushrut Karmalkar",
+        "Niranjani Prasad"
+      ],
+      "institution": "Cornell University, Microsoft Research Cambridge",
+      "summary": {
+        "zh": "本文揭示了在长程智能体任务中，简单的上下文加载式“技能”存在严重的扩展性问题。通过引入子智能体架构，利用独立上下文窗口隔离技能执行，有效缓解了上下文膨胀导致的推理退化问题。尽管增加了 Token 消耗，但在处理具有明确契约的复杂技能时，该方法能显著提升任务成功率，强调了知识组织形式对 LLM 智能体性能的关键影响。",
+        "en": "- **Background**: LLM agents typically leverage reusable knowledge through \"Agent Skills,\" which are multi-file packages containing instructions and scripts. These are executed by loading their instructions directly..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.09233v1",
+        "pdf": "https://arxiv.org/pdf/2609.09233v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.11294.md",
-        "summary_en_path": "summary_en/2026-09/2609.11294.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.11294.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.11294.md"
+        "summary_zh_path": "summary/2026-09/2609.09233.md",
+        "summary_en_path": "summary_en/2026-09/2609.09233.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.09233.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.09233.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -201,36 +196,35 @@
       }
     },
     {
-      "id": "arxiv:2609.11709",
-      "date": "2026-09-10",
-      "title": "When Agents Disagree: Bayesian Backward Reasoning as a Label-Free Anchor for Multi-Agent Collective Decision-Making",
+      "id": "arxiv:2609.07791",
+      "date": "2026-09-07",
+      "title": "LLM Agents as Computational Typologists",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ken Chen",
-        "Wei Wang",
-        "Sachith Seneviratne",
-        "Hansani Weeratunge",
-        "Saman Halgamuge"
+        "Changbing Yang",
+        "Christopher Hammerly",
+        "Freda Shi",
+        "Jian Zhu"
       ],
-      "institution": "The University of Melbourne, Sri Lanka Institute of Information Technology",
+      "institution": "University of British Columbia",
       "summary": {
-        "zh": "该论文指出多智能体系统中前向推理导致的误差相关性问题，创新性地引入贝叶斯后向推理构建无标签锚点。通过计算前向与反向后验之间的Jensen-Shannon散度来衡量跨路径一致性，并据此设计了多种聚合策略。实验证明，该方法在DDXPlus数据集上显著提升了多智能体集体决策的性能，特别是在处理智能体分歧时表现出优越性，为无需额外训练数据的鲁棒聚合提供了新范式。",
-        "en": "This paper addresses the issue of error correlation caused by forward reasoning in multi-agent systems by innovatively introducing Bayesian backward reasoning to construct a label-free anchor. By calculating the..."
+        "zh": "本文介绍了 AUTOTYPOLOGIST，一个基于LLM的智能体，旨在解决语言类型学中大规模跨语言比较的瓶颈。通过结合检索增强生成和ReAct推理机制，该智能体能够在参考语法的基础上进行证据驱动的特征编码和假设测试。实验表明，该方法在利用散文描述时表现优异，并能有效识别跨语言证据中的正反案例，为语言学家提供了强大的辅助工具，推动了类型学研究向可扩展、可解释的方向发展。",
+        "en": "- **Background**: Linguistic typology relies on expert analysis of reference grammars across languages to uncover linguistic universals. Traditionally, building large typological databases (e.g., WALS) requires years of..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.11709v1",
-        "pdf": "https://arxiv.org/pdf/2609.11709v1",
+        "abs": "http://arxiv.org/abs/2609.07791v1",
+        "pdf": "https://arxiv.org/pdf/2609.07791v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.11709.md",
-        "summary_en_path": "summary_en/2026-09/2609.11709.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.11709.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.11709.md"
+        "summary_zh_path": "summary/2026-09/2609.07791.md",
+        "summary_en_path": "summary_en/2026-09/2609.07791.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.07791.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.07791.md"
       },
       "signals": {
         "priority_keyword": "Agent"
