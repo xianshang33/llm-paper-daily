@@ -1,89 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-12T09:32:00.406750+00:00",
-  "run_date": "2026-09-06",
+  "generated_at": "2026-09-12T13:02:31.668517+00:00",
+  "run_date": "2026-09-05",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.06815",
-      "date": "2026-09-06",
-      "title": "Typed Federated Artifacts for the Agentic Web:Sharing Tool-Routing Knowledge Across Frozen,Heterogeneous LLM Agents",
+      "id": "arxiv:2609.05911",
+      "date": "2026-09-05",
+      "title": "Structurally Close, Temporally Distant: Measuring Security Exposure in Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Abhijit Chakraborty",
-        "Ni Trieu",
-        "Vivek Gupta"
+        "Md Jafrin Hossain",
+        "Nur Al Hasan Haldar"
       ],
-      "institution": "Arizona State University",
+      "institution": "University of Western Australia",
       "summary": {
-        "zh": "本文提出了类型化联邦工件的概念，解决了异构冻结LLM智能体间共享工具路由知识的难题。通过 SYNAPSE 实例，证明了结构化、模式验证的知识交换在隐私保护、冲突解决和跨模型迁移上的优势。尽管在特定基准测试上发现了数据泄露导致的评估偏差问题，但该方法在规范化的环境下展示了接近集中式学习的效率，并显著优于扁平文本交换方法。研究强调了在代理网络中建立标准化知识交换单元的重要性，并指出了当前基准测试在评估真实路由能力时的局限性。",
-        "en": ""
+        "zh": "本文指出了长程 LLM 智能体安全分析中“时间距离”不等于“结构距离”的关键问题。通过引入溯源感知的执行图和影响距离 $D_I$，作者证明了传统的序列距离 $D_T$ 往往高估了安全隔离。实证结果显示，绝大多数攻击路径在结构上比时间上更近。基于 $D_I$ 的防御机制能够捕捉到被步数掩盖的近邻攻击路径，为长程智能体的运行时安全干预提供了更精确的理论基础和实用工具。",
+        "en": "This paper highlights the critical issue that \"temporal distance\" does not equal \"structural distance\" in long-horizon LLM agent security analysis. By introducing a provenance-aware execution graph and Influence..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06815v1",
-        "pdf": "https://arxiv.org/pdf/2609.06815v1",
-        "github": "https://anonymous.4open.science/r/FederatedRAG-EE50/README.md"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.06815.md",
-        "summary_en_path": "summary_en/2026-09/2609.06815.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06815.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06815.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2609.06783",
-      "date": "2026-09-06",
-      "title": "AURA-Eval: Evaluation Framework for Acting Under Risk Awareness in LLM Agent Trajectories",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Ruoxi Shang",
-        "Christina-Maria Androna",
-        "Orfeas Menis Mastromichalakis",
-        "Yu Feng",
-        "Aniruddhan Ramesh",
-        "Rico Angell",
-        "Shang Hong Sim",
-        "Chrysoula Zerva",
-        "Emmanouil Koukoumidis"
-      ],
-      "institution": "University of Washington, Oumi",
-      "summary": {
-        "zh": "AURA-Eval 提供了一个新颖的框架，通过受控增强和细粒度诊断，深入评估 LLM 代理在工具使用轨迹中的风险意识行为。研究结果表明，当前开源模型在处理无安全路径的高风险情境时显著弱于前沿专有模型，且所有模型在监督减少时脆弱性增加。该框架为未来提升代理安全性提供了重要的评估维度和方向。",
-        "en": "AURA-Eval offers a novel framework for deeply evaluating LLM agent risk awareness through controlled augmentation and granular diagnosis. The study reveals that current open-source models are significantly weaker than..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.06783v1",
-        "pdf": "https://arxiv.org/pdf/2609.06783v1",
+        "abs": "http://arxiv.org/abs/2609.05911v1",
+        "pdf": "https://arxiv.org/pdf/2609.05911v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.06783.md",
-        "summary_en_path": "summary_en/2026-09/2609.06783.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06783.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06783.md"
+        "summary_zh_path": "summary/2026-09/2609.05911.md",
+        "summary_en_path": "summary_en/2026-09/2609.05911.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05911.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05911.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,78 +49,37 @@
       }
     },
     {
-      "id": "arxiv:2609.06563",
-      "date": "2026-09-06",
-      "title": "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games",
+      "id": "arxiv:2609.06063",
+      "date": "2026-09-05",
+      "title": "Explaining AI Agents Through Execution Traces",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hwang Yechan",
-        "Bae Sangjun",
-        "Kim Jeongmo",
-        "Bang Sangwoo",
-        "Han Seungyul"
+        "Vittoria Vineis",
+        "Fabiano Veglianti",
+        "Lorenzo Antonelli",
+        "Claudia Di Carlo",
+        "Matteo Silvestri",
+        "Gabriele Tolomei"
       ],
-      "institution": "UNIST",
+      "institution": "Sapienza University of Rome",
       "summary": {
-        "zh": "本文针对社交推理游戏中 LLM 智能体因缺乏关系信念 grounding 而导致的战略不一致问题，提出了 MARBO 框架。该方法通过将偏好优化与可靠的关系信念绑定，显著提升了紧凑型 LLM 在复杂社交环境下的推理一致性和游戏表现，为部分可观测下的多智能体协作与对抗提供了新的优化范式。",
-        "en": "- **Background**: Social Deduction Games (SDGs), such as Werewolf and Avalon, require agents to reason under partial observability by maintaining \"relational beliefs\" about hidden roles and team alignments. LLM agents..."
+        "zh": "本文针对AI Agent缺乏过程级透明度的问题，提出了一种通用的事后XAI框架。通过仅利用执行轨迹，该框架能够生成结构化且忠实的自然语言解释，有效克服了传统XAI方法在动态、多步交互场景下的局限性。评估结果证明，该方法在解释质量和错误检测能力上均优于简单的LLM生成基线，为AI Agent的可信部署提供了重要支持。",
+        "en": "- **Background**: AI Agents are increasingly deployed in real-world settings, interacting with external tools and making sequential decisions with limited human oversight. This creates an urgent need for reliable and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06563v1",
-        "pdf": "https://arxiv.org/pdf/2609.06563v1",
-        "github": "https://github.com/PleaseTakemeAway/MARBO"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.06563.md",
-        "summary_en_path": "summary_en/2026-09/2609.06563.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06563.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06563.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2609.06367",
-      "date": "2026-09-06",
-      "title": "Robust Conformal Consensus: Multi-Agent LLM-as-a-Judge Interval Evaluation with Conformal Prediction",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Lihui Liu"
-      ],
-      "institution": "Wayne State University",
-      "summary": {
-        "zh": "本文针对 LLM-as-a-Judge 评估中未被充分探索的不确定性问题，提出了一种基于多智能体共形预测的鲁棒框架。通过整合多个 LLM 裁判的评分并构建预测区间，该方法有效克服了单模型评估的局限性和变异性，为高风险应用中的自动化评估提供了具有统计保证的、更稳定可靠的不确定性量化方案。",
-        "en": "- **Background**: LLM-as-a-Judge has become a popular paradigm for evaluating natural language generation due to its flexibility and scalability. However, the inherent randomness of LLM outputs introduces uncertainty,..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.06367v1",
-        "pdf": "https://arxiv.org/pdf/2609.06367v1",
+        "abs": "http://arxiv.org/abs/2609.06063v1",
+        "pdf": "https://arxiv.org/pdf/2609.06063v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.06367.md",
-        "summary_en_path": "summary_en/2026-09/2609.06367.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06367.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06367.md"
+        "summary_zh_path": "summary/2026-09/2609.06063.md",
+        "summary_en_path": "summary_en/2026-09/2609.06063.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06063.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06063.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -188,36 +96,130 @@
       }
     },
     {
-      "id": "arxiv:2609.06702",
-      "date": "2026-09-06",
-      "title": "PARSER: Read in Parallel, Reason in Depth for Long-Context LLM Agents",
+      "id": "arxiv:2609.06128",
+      "date": "2026-09-05",
+      "title": "Substrate-Portable Execution for Production LLM Workflows",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kun Li",
-        "Zexuan Qiu",
-        "Tianhua Zhang",
-        "Irwin King",
-        "Helen Meng"
+        "Tarun Gopinath",
+        "Atul Kulkarni",
+        "Vijay Rajakumar",
+        "Shrikar Katti",
+        "Parthasarathy Govindarajen"
       ],
-      "institution": "The Chinese University of Hong Kong",
+      "institution": "Amazon",
       "summary": {
-        "zh": "PARSER 通过解耦阅读与推理，有效解决了长上下文 LLM 代理中的位置偏差和高延迟问题。其并行读取机制确保了全局信息的充分利用，而基于强化学习的主导代理则实现了深度迭代推理。实验表明，该方法在准确性和效率上均显著优于现有的顺序记忆方法和顶级闭源模型，为长文档理解提供了一种高效且鲁棒的新范式。",
-        "en": "- **Background**: Processing long documents is a core capability for LLMs, but models suffer from \"context rot\" and positional bias, where evidence far from input boundaries is ignored, even with million-token context..."
+        "zh": "本文提出了一种针对生产级 LLM 工作流的 substrate-portable（底层可移植）执行方案。通过将工作流定义为独立于执行环境的数据流图，并利用编译技术将其适配到实时、异步和批处理三种不同的运行时底层，解决了现有框架中执行语义耦合的问题。该方案在亚马逊 Rufus 系统的实际部署中证明了其有效性，既保持了输出质量的一致性，又显著降低了批处理工作的推理成本，为大规模 LLM 应用的多模式部署提供了高效的工程实践参考。",
+        "en": "- **Background**: Production LLM agents often need to execute identical logic across multiple operational modes: real-time serving (low-latency streaming), asynchronous background tasks (high fault tolerance), and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06702v1",
-        "pdf": "https://arxiv.org/pdf/2609.06702v1",
+        "abs": "http://arxiv.org/abs/2609.06128v1",
+        "pdf": "https://arxiv.org/pdf/2609.06128v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.06702.md",
-        "summary_en_path": "summary_en/2026-09/2609.06702.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06702.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06702.md"
+        "summary_zh_path": "summary/2026-09/2609.06128.md",
+        "summary_en_path": "summary_en/2026-09/2609.06128.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.06128.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.06128.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2609.05901",
+      "date": "2026-09-05",
+      "title": "From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yu Zheng",
+        "Qizhi Zhang"
+      ],
+      "institution": "University of California, Berkeley",
+      "summary": {
+        "zh": "本文针对自主LLM代理面临的安全风险，提出了KITA框架。通过将密钥隔离与阈值签名相结合，KITA确保了即使部分LLM进程被提示注入攻陷，也无法在未获得足够数量独立审查者批准的情况下执行敏感操作。该方法有效地将语义审查转化为具有密码学强制力的执行授权，提升了LLM代理在执行高风险操作时的安全性和完整性。",
+        "en": "- **Background**: Autonomous LLM agents can transform untrusted content into effectful actions like payments or permission changes. If the process interpreting this content also controls a reusable signing credential,..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.05901v1",
+        "pdf": "https://arxiv.org/pdf/2609.05901v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-09/2609.05901.md",
+        "summary_en_path": "summary_en/2026-09/2609.05901.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05901.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05901.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2609.05824",
+      "date": "2026-09-05",
+      "title": "Beyond Top-$k$ Skill Retrieval: Diversity-Aware Skill Routing for LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Wang Wei",
+        "Tiankai Yang",
+        "Samyadeep Basu",
+        "Hongjie Chen",
+        "Yue Zhao",
+        "Zhengzhong Tu",
+        "Xiyang Hu",
+        "Franck Dernoncourt",
+        "Ryan A. Rossi",
+        "Hoda Eldardiry"
+      ],
+      "institution": "Virginia Tech, University of Southern California, Adobe Research, Dolby Labs, Texas A&M University, Arizona State University",
+      "summary": {
+        "zh": "本文指出了当前LLM智能体技能路由中存在的冗余性问题，并提出了一种基于行列式点过程的多样化技能路由框架（DSR）。通过引入查询残差多样性核，DSR成功平衡了技能的相关性与多样性，解决了传统点对点排序方法在组合式任务中效率低下的问题。实验表明，该方法在大规模技能库中能显著提升多技能任务的覆盖率和召回率，为构建更高效、可扩展的LLM智能体系统提供了新的思路。",
+        "en": "- **Background**: Large Language Model (LLM) agents increasingly rely on external skill libraries to extend their capabilities. However, as skill registries grow to tens of thousands of entries, routing user requests..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.05824v1",
+        "pdf": "https://arxiv.org/pdf/2609.05824v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-09/2609.05824.md",
+        "summary_en_path": "summary_en/2026-09/2609.05824.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.05824.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.05824.md"
       },
       "signals": {
         "priority_keyword": "Agent"

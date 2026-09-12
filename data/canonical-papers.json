@@ -1,100 +1,44 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-09-12T09:32:00.406750+00:00",
-  "run_date": "2026-09-06",
+  "generated_at": "2026-09-12T13:02:31.668517+00:00",
+  "run_date": "2026-09-05",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2609.06815",
-      "date": "2026-09-06",
-      "title": "Typed Federated Artifacts for the Agentic Web:Sharing Tool-Routing Knowledge Across Frozen,Heterogeneous LLM Agents",
+      "paper_id": "2609.05911",
+      "date": "2026-09-05",
+      "title": "Structurally Close, Temporally Distant: Measuring Security Exposure in Long-Horizon LLM Agents",
       "authors": [
-        "Abhijit Chakraborty",
-        "Ni Trieu",
-        "Vivek Gupta"
+        "Md Jafrin Hossain",
+        "Nur Al Hasan Haldar"
       ],
-      "abstract": "An open, networked web will allow agents to run frozen models from multiple vendors, keep their history private, and teach each other which tool to call and when. Flat text (prompts, example pools) makes it difficult for the protocol to distinguish between noise statistics, merging rules, and documentation. Weights and adapters cannot transfer that knowledge between platforms. We suggest sharing typed federated artifacts, schema-validated objects with well-defined fields for per-field privacy (described here, but measured), dispute resolution, and cross-model transfer, and instantiating them as SYNAPSE1, a common tool-routing knowledge. After deleting 192 garbage entries and 1,916 training items that duplicate or almost duplicate test queries, a federated compendium routes within 1.1 points of a centralized one at 20 MB of JSON per client each round on StableToolBench (3,180 tools). The same experience merged and shown to the router as typed fields rather than one flat string is worth 8.5 points on clean data and 7.4 under 60% injected contradiction. Crossing merge and rendering shows the halves are inseparable (the typed merge shown flat is the worst arm), while three conflict policies are indistinguishable, so the conflict log that motivated this work is not the On τ-bench retail, each compendium arm improves GPT-4o agents' per-step tool-call accuracy by at least 6.7 points, attributed to format rather than federated experience. Two cautionary findings conclude the paper: on a topic-labeled math proxy and StableToolBench, a TF-IDF classifier over the same labeled experience beats every LLM routing arm (by 48 and 26 points, mostly retrieval recall) because the benchmark's pool holds labeled queries for every supposedly unseen tool and every test query verbatim before our filter. It cannot measure routing to tools without labels, which routing exists for.",
+      "abstract": "Long-horizon LLM agents interact with untrusted content, persistent memory, external state, and sensitive tools. Existing analyses often characterize attacks by the number of execution steps between malicious input and a downstream action. We show that temporal remoteness can overstate security separation in stateful agents. We introduce a provenance-aware execution graph linking agent events through deterministic state, identifier, and tool provenance, and define \\emph{influence distance} $\\DI$ as the shortest structural path from an untrusted source to a sensitive action. We compare it with \\emph{sequence distance} $\\DT$, the shortest injection--sink path in the ordered trajectory. Since the influence graph contains every sequence edge, $\\DI \\leq \\DT$; $\\Gap=\\DT-\\DI$ measures the separation hidden by step count. Across 454 injection--sink pairs from 360 long-horizon AgentDojo trajectories over OpenAI's \\texttt{gpt-4o-mini} and \\texttt{gpt-4o} and Claude's Haiku 4.5 and Sonnet 4.6, $\\Gap>0$ for 96.9% of pairs, with a median gap of 9 hops; 91.0% remain decoupled after removing the largest provenance-only edge class. On AgentDojo's banking suite, 33.8% of 231 pairs from 377 trajectories decouple through different provenance mechanisms. Among 274 OpenAI pairs, $\\Gap$ does not independently predict attack success after controlling for $\\DT$, attack family, and backend ($β_{\\Gap}=0.066$, $p=.088$). At matched thresholds $k=2,3$, a deterministic $\\DI$-based pre-execution gate blocks five attack sinks missed by a sequence-only gate with no additional benign blocking, although the paired gain is not significant ($p=.0625$). Execution structure therefore reveals proximity hidden by step count and can support targeted runtime intervention. We measure candidate influence pathways rather than causal attribution.",
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06815v1",
-        "pdf": "https://arxiv.org/pdf/2609.06815v1",
-        "github": "https://anonymous.4open.science/r/FederatedRAG-EE50/README.md",
-        "blog": null
-      },
-      "institution": "Arizona State University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n\n**背景**\n在开放的代理网络（Agentic Web）中，不同组织运行的智能体通常使用来自不同供应商的冻结模型。这些智能体需要共享关于“何时调用何种工具”的知识，同时保持历史数据的隐私性。\n\n**已有工作为什么解决不了**\n现有的知识共享方式存在显著缺陷：\n1. **权重和适配器无法跨平台迁移**：由于模型架构不同且参数冻结，无法通过微调或权重更新来传递知识。\n2. **扁平文本（如提示词、示例池）缺乏结构**：协议无法区分文本中的噪声统计信息、必须保留的合并规则以及文档说明，导致隐私保护（如差分隐私敏感度估计）和冲突解决难以精确定义和执行。\n\n## 文章的核心贡献点\n\n**提出了一个类型化联邦工件（Typed Federated Artifacts）框架及其实例 SYNAPSE**\n该框架通过模式验证的对象（Schema-validated objects）来交换工具路由知识，每个字段都有明确的角色、类型和验证规则。\n\n**挑战1：如何在异构冻结模型间定义明确的隐私保护和冲突解决机制？**\n*   **难点**：扁平文本使得敏感性难以估计，且字符串级别的合并容易丢失细微的规则差异或引入噪声。\n*   **解决方法**：通过为每个字段定义类型签名，使得每字段的差分隐私（基于声明的敏感性而非估计）和每字段的冲突解决（检测并保留分歧而非整体投票）成为良定义的操作。\n\n**挑战2：如何有效合并来自不同客户端的经验并转化为可操作的路由知识？**\n*   **难点**：不同客户端对同一工具的使用经验可能存在矛盾，且需要将分散的经验整合成统一的知识库供检索。\n*   **解决方法**：构建包含工具元数据、成功场景、注意事项、调用模板的结构化合集（Compendium）。边缘聚合器使用类型化操作符合并贡献，保留每字段的多数意见并将分歧记录为类型化的冲突日志，供路由器在推理时读取作为“禁止使用”的条件。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n\n**实验设置**\n*   **数据集**：StableToolBench（清理后，移除垃圾条目和重复项，涉及3,180个工具）和 τ-bench retail。\n*   **基线对比**：集中式知识库、扁平文本合并方法、TF-IDF分类器。\n\n**主要结果**\n1.  **接近集中式性能**：在 StableToolBench 上，联邦合集的路由性能仅比集中式版本低 1.1 个点，每轮每客户端传输数据量为 20 MB JSON。\n2.  **结构化优势**：将经验以类型化字段而非扁平字符串展示给路由器，在干净数据上提升 8.5 个点，在注入 60% 矛盾的数据下提升 7.4 个点。实验证明“类型化合并”与“结构化渲染”缺一不可，扁平展示的类型化合并效果最差。\n3.  **τ-bench 提升**：在 τ-bench retail 上，所有合集变体将 GPT-4o 智能体的单步工具调用准确率提高了至少 6.7 个点，主要归因于格式优化而非联邦经验本身。\n4.  **警示性发现**：在带有标签的数学代理任务和未充分清洗的 StableToolBench 上，简单的 TF-IDF 分类器击败了所有 LLM 路由臂（分别高出 48 和 26 个点），原因是基准测试中存在标签泄露和测试查询verbatim重复问题。这表明当前基准测试无法有效衡量对无标签工具的路由能力。\n\n#### 总结\n\n本文提出了类型化联邦工件的概念，解决了异构冻结LLM智能体间共享工具路由知识的难题。通过 SYNAPSE 实例，证明了结构化、模式验证的知识交换在隐私保护、冲突解决和跨模型迁移上的优势。尽管在特定基准测试上发现了数据泄露导致的评估偏差问题，但该方法在规范化的环境下展示了接近集中式学习的效率，并显著优于扁平文本交换方法。研究强调了在代理网络中建立标准化知识交换单元的重要性，并指出了当前基准测试在评估真实路由能力时的局限性。",
-      "summary_en": "## 1. What the Paper Did\n\n**Background**\nIn an open Agentic Web, agents running frozen models from different vendors need to share knowledge about \"which tool to call and when\" while keeping their interaction histories private.\n\n**Why Existing Work Falls Short**\nCurrent methods for knowledge sharing are inadequate:\n1. **Weights and adapters cannot transfer knowledge across heterogeneous, frozen architectures.**\n2. **Flat text (prompts, example pools) lacks structure:** Protocols cannot distinguish between noise statistics, mergeable rules, and documentation, making privacy preservation (e.g., sensitivity estimation for differential privacy) and conflict resolution ill-defined.\n\n## Core Contributions\n\n**Proposed Typed Federated Artifacts framework and its instantiation, SYNAPSE**\nThis framework exchanges tool-routing knowledge as schema-validated objects, where each field has a defined role, type, and validation rule.\n\n**Challenge 1: How to define clear privacy protection and conflict resolution mechanisms across heterogeneous frozen models?**\n*   **Difficulty:** Flat text makes sensitivity estimation difficult, and string-level merging can lose nuanced rule differences or introduce noise.\n*   **Solution:** By defining type signatures for each field, per-field differential privacy (based on declared rather than estimated sensitivity) and per-field conflict resolution (detecting and preserving dissent rather than voting on whole strings) become well-defined operations.\n\n**Challenge 2: How to effectively merge experiences from different clients into actionable routing knowledge?**\n*   **Difficulty:** Experiences regarding the same tool may contradict across clients, and分散ed experiences need to be integrated into a unified knowledge base for retrieval.\n*   **Solution:** Construct a structured compendium containing tool metadata, success scenarios, precautions, and call templates. Edge aggregators use typed operators to merge contributions, keeping per-field majority votes and recording dissent as typed conflict logs, which routers read as \"do not use\" conditions during inference.\n\n## Implementation and Evaluation\n\n**Experimental Setup**\n*   **Datasets:** StableToolBench (cleaned, removing junk and duplicates, covering 3,180 tools) and τ-bench retail.\n*   **Baselines:** Centralized knowledge base, flat text merging methods, TF-IDF classifier.\n\n**Key Results**\n1.  **Near-Centralized Performance:** On StableToolBench, the federated compendium's routing performance is within 1.1 points of the centralized version, with 20 MB of JSON transmitted per client per round.\n2.  **Advantage of Structured Data:** Presenting experience as typed fields rather than flat strings improves performance by 8.5 points on clean data and 7.4 points under 60% injected contradiction. The study shows that \"typed merging\" and \"structured rendering\" are inseparable; typed merging shown as flat text performs worst.\n3.  **τ-bench Improvement:** On τ-bench retail, all compendium arms improved GPT-4o agent's per-step tool-call accuracy by at least 6.7 points, attributed mainly to format optimization rather than federated experience itself.\n4.  **Cautionary Findings:** On a topic-labeled math proxy and the original StableToolBench, a simple TF-IDF classifier outperformed all LLM routing arms (by 48 and 26 points, respectively) due to label leakage and verbatim duplication of test queries in the benchmark pool. This indicates current benchmarks fail to measure routing capabilities for unlabeled tools.\n\n## 4. Conclusion\n\nThis paper introduces the concept of Typed Federated Artifacts to address the challenge of sharing tool-routing knowledge among heterogeneous, frozen LLM agents. Through the SYNAPSE instantiation, it demonstrates the advantages of structured, schema-validated knowledge exchange in privacy, conflict resolution, and cross-model transfer. Despite identifying evaluation biases due to data leakage in specific benchmarks, the method shows efficiency close to centralized learning in standardized environments and significantly outperforms flat text exchange. The study highlights the importance of establishing standardized units of knowledge exchange in the Agentic Web and points out limitations in current benchmarks for assessing true routing capabilities.",
-      "render_excerpt": "机构: Arizona State University<br>本文提出了类型化联邦工件的概念，解决了异构冻结LLM智能体间共享工具路由知识的难题。通过 SYNAPSE 实例，证明了结构化、模式验证的知识交换在隐私保护、冲突解决和跨模型迁移上的优势。尽管在特定基准测试上发现了数据泄露导致的评估偏差问题，但该方法在规范化的环境下展示了接近集中式学习的效率，并显著优于扁平文本交换方法。研究强调了在代理网络中建立标准化知识交换单元的重要性，并指出了当前基准测试在评估真实路由能力时的局限性。",
-      "render_excerpt_en": "Institution: Arizona State University<br>## 1. What the Paper Did **Background** In an open Agentic Web, agents running frozen models from different vendors need to share knowledge about \"which tool to call and when\" while keeping their interaction histories private. **Why Existing Work Falls Short** Current methods for knowledge sharing are inadequate: 1.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-09-06T20:15:09Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-09-06"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2609.06783",
-      "date": "2026-09-06",
-      "title": "AURA-Eval: Evaluation Framework for Acting Under Risk Awareness in LLM Agent Trajectories",
-      "authors": [
-        "Ruoxi Shang",
-        "Christina-Maria Androna",
-        "Orfeas Menis Mastromichalakis",
-        "Yu Feng",
-        "Aniruddhan Ramesh",
-        "Rico Angell",
-        "Shang Hong Sim",
-        "Chrysoula Zerva",
-        "Emmanouil Koukoumidis"
-      ],
-      "abstract": "LLM agents operate in workflows where unsafe actions can have real consequences. Existing safety evaluations often reduce behavior to a single score, obscuring risk recognition, pre-action detection, and safe task completion when a safe solution exists. We introduce AURA-Eval, a framework combining controlled augmentation with granular diagnosis of behavior in tool-use trajectories. Its pipeline identifies safety-critical decision points, generates controlled variations, and constructs counterparts differing in whether a request has a safe fulfillment path. Using 157 sourced trajectories, we generate 1,249 evaluation items and evaluate 20 frontier and open-weight models. We developed rubrics to classify risk detection, action strategy, and scenario-specific action safety. Our results show that LLM agents engage in unsafe behavior more often when no safe fulfillment path exists. In these cases, frontier proprietary models more often recognize risk and exhibit safer behavior by proposing alternatives, while evaluated open-weight models more often directly execute unsafe requests. Increasing impact or reducing opportunities for oversight before execution also exposes greater vulnerability across models.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.06783v1",
-        "pdf": "https://arxiv.org/pdf/2609.06783v1",
+        "abs": "http://arxiv.org/abs/2609.05911v1",
+        "pdf": "https://arxiv.org/pdf/2609.05911v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Washington, Oumi",
+      "institution": "University of Western Australia",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理在涉及工具使用的工作流中运行，不安全的行为可能导致删除生产数据、泄露隐私或执行未经授权的交易等真实后果。评估代理对上下文相关风险的识别和响应至关重要。\n- **已有工作为什么解决不了**：现有的安全基准测试通常将行为简化为单一的安全/不安全分数，掩盖了风险识别、行动前检测以及在存在安全解决方案时的安全任务完成情况。它们往往按领域或结果而非底层风险机制来组织风险，且二元标签无法区分有意义的上下文风险响应与简单的拒绝策略。\n\n## 文章的核心贡献点\n- **提出了一个 AURA-Eval 框架**：这是一个结合受控增强与工具使用轨迹中行为细粒度诊断的评估框架。\n- **挑战1：现有评估缺乏对风险机制的细粒度解耦，难以区分不同情境下的风险响应。**\n  - **难点**：相同的标签（如“不安全”）可能对应拒绝、确认或提出更安全替代方案等不同行为，传统方法无法捕捉这种细微差别。\n  - **解决方法**：AURA-Eval 通过识别安全关键决策点，生成受控变体，并构建在是否存在“安全履行路径”上不同的对照样本，从而将轨迹转化为更广泛的场景进行诊断。\n- **挑战2：缺乏对代理在无安全路径或有安全路径时行为差异的系统性评估。**\n  - **难点**：难以量化代理在面对不可避免的风险与可规避风险时的策略差异，以及不同模型在此类复杂情境下的脆弱性。\n  - **解决方法**：开发了分类风险检测、行动策略和特定场景行动安全性的评分标准（Rubrics），并通过增加影响程度或减少执行前的监督机会来暴露模型的脆弱性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：基于 157 个源轨迹，生成了 1,249 个评估项。评估了 20 个前沿（frontier）和开源权重（open-weight）模型。\n- **评估结果**：\n  - 当不存在安全履行路径时，LLM 代理更经常表现出不安全行为。\n  - 在这种情况下，前沿专有模型更倾向于识别风险并通过提出替代方案表现出更安全的行为。\n  - 相比之下，评估中的开源权重模型更倾向于直接执行不安全请求。\n  - 增加潜在影响或减少执行前的监督机会会暴露所有模型更大的脆弱性。\n- **对比**：与仅给出二元安全标签的现有基准相比，AURA-Eval 能够揭示模型在风险感知和策略选择上的深层差异，证明了专有模型在复杂风险情境下的优势。\n\n#### 总结\nAURA-Eval 提供了一个新颖的框架，通过受控增强和细粒度诊断，深入评估 LLM 代理在工具使用轨迹中的风险意识行为。研究结果表明，当前开源模型在处理无安全路径的高风险情境时显著弱于前沿专有模型，且所有模型在监督减少时脆弱性增加。该框架为未来提升代理安全性提供了重要的评估维度和方向。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents operate in workflows involving tools and APIs, where unsafe actions can have real-world consequences such as data deletion or privacy leaks. Evaluating how agents recognize and respond to context-dependent risks is critical.\n- **Why Existing Work Falls Short**: Current safety benchmarks often reduce behavior to a single binary score (safe/unsafe), obscuring nuances like risk recognition, pre-action detection, and the ability to find safe alternatives. They typically organize risks by domain rather than underlying mechanisms, failing to distinguish meaningful contextual responses from simple refusals.\n\n## Core Contributions\n- **Proposed AURA-Eval**: A framework combining controlled augmentation with granular diagnosis of behavior in tool-use trajectories.\n- **Challenge 1: Lack of fine-grained decoupling of risk mechanisms in existing evaluations.**\n  - **Difficulty**: Binary labels mask different behaviors (refusal, confirmation, alternative proposal) under the same outcome, making it hard to assess true risk awareness.\n  - **Solution**: AURA-Eval identifies safety-critical decision points, generates controlled variations, and constructs counterparts differing in whether a \"safe fulfillment path\" exists, allowing for detailed behavioral diagnosis.\n- **Challenge 2: Systematic assessment of agent behavior when safe paths are absent vs. present.**\n  - **Difficulty**: It is challenging to quantify strategic differences in handling unavoidable vs. avoidable risks and to measure model vulnerability under varying oversight conditions.\n  - **Solution**: Developed rubrics to classify risk detection, action strategy, and scenario-specific safety. The framework exposes vulnerabilities by increasing impact severity or reducing opportunities for pre-execution oversight.\n\n## Implementation and Evaluation\n- **Implementation & Data**: Generated 1,249 evaluation items from 157 source trajectories. Evaluated 20 frontier and open-weight models.\n- **Results**:\n  - LLM agents engage in unsafe behavior more frequently when no safe fulfillment path exists.\n  - Frontier proprietary models are more likely to recognize risk and propose safer alternatives in these scenarios.\n  - Open-weight models are more likely to directly execute unsafe requests.\n  - All models show greater vulnerability when potential impact increases or pre-execution oversight decreases.\n- **Comparison**: Unlike existing benchmarks that provide only binary safety scores, AURA-Eval reveals deep differences in risk perception and strategy selection, highlighting the superiority of proprietary models in complex risk contexts.\n\n#### Summary\nAURA-Eval offers a novel framework for deeply evaluating LLM agent risk awareness through controlled augmentation and granular diagnosis. The study reveals that current open-source models are significantly weaker than frontier proprietary models in handling high-risk scenarios without safe paths, and all models become more vulnerable with reduced oversight. This framework provides critical dimensions for future improvements in agent safety.",
-      "render_excerpt": "机构: University of Washington, Oumi<br>AURA-Eval 提供了一个新颖的框架，通过受控增强和细粒度诊断，深入评估 LLM 代理在工具使用轨迹中的风险意识行为。研究结果表明，当前开源模型在处理无安全路径的高风险情境时显著弱于前沿专有模型，且所有模型在监督减少时脆弱性增加。该框架为未来提升代理安全性提供了重要的评估维度和方向。",
-      "render_excerpt_en": "Institution: University of Washington, Oumi<br>AURA-Eval offers a novel framework for deeply evaluating LLM agent risk awareness through controlled augmentation and granular diagnosis. The study reveals that current open-source models are significantly weaker than frontier proprietary models in handling high-risk scenarios without safe paths, and all models become more vulnerable with reduced oversight. This framework provides critical dimensions for future improvements in agent safety.",
+      "summary_cn": "## 文章做了什么\n- **背景**：长程大语言模型（LLM）智能体在与非受信任内容、持久化记忆、外部状态和敏感工具交互时，面临间接提示注入等安全威胁。现有分析通常通过恶意输入与下游动作之间的执行步数（时间距离）来衡量攻击风险。\n- **已有工作的局限**：现有的基于“序列距离”（Sequence Distance, $D_T$）的分析方法假设时间上的遥远意味着结构上的隔离。然而，在具有状态保持能力的智能体中，这种假设是错误的。例如，早期步骤中读取的恶意指令可能被写入笔记或内存，并在很久之后被直接读取并触发敏感操作。此时，虽然时间步数相差很大，但数据流的结构路径却非常短。仅依靠步数会严重高估安全性隔离程度，导致无法准确识别潜在的攻击路径。\n\n## 文章的核心贡献点\n- **提出了一个溯源感知的执行图（Provenance-aware Execution Graph）及影响距离（Influence Distance, $D_I$）**：该图通过确定性状态、标识符和工具溯源将智能体事件连接起来，$D_I$ 定义为从非受信任源到敏感动作的最短结构路径。\n- **挑战1：如何量化时间距离对安全隔离的高估？**\n  - **难点**：传统的序列视图忽略了状态和内存中的直接数据依赖，导致看似遥远的攻击实际上在结构上紧密相连。\n  - **解决**：定义了差距指标 $Gap = D_T - D_I$。由于影响图包含所有序列边，$D_I \\\\leq D_T$ 恒成立。通过计算 Gap，量化了仅靠步数视图所掩盖的结构邻近性。\n- **挑战2：结构距离是否能更有效地指导运行时防御？**\n  - **难点**：需要证明基于结构的度量比基于时间的度量更能捕捉真实的攻击风险，并能用于构建更精准的防御网关。\n  - **解决**：实验表明，基于 $D_I$ 的预执行网关在相同阈值下能拦截序列网关漏掉的攻击 sink，且不会增加对良性行为的误拦。这证明了执行结构揭示了步数隐藏的邻近性，支持更有针对性的运行时干预。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集与模型**：使用 AgentDojo 基准测试中的 360 个长程轨迹，涵盖 OpenAI 的 gpt-4o-mini、gpt-4o 以及 Claude 的 Haiku 4.5 和 Sonnet 4.6。共分析了 454 个注入-sink 对。\n- **主要结果**：\n  - **Gap 普遍存在**：96.9% 的注入-sink 对的 $Gap > 0$，中位数差距为 9 跳。即使移除最大的纯溯源边类别，91.0% 的对仍然解耦。\n  - **跨域解耦**：在 AgentDojo 的银行套件中，33.8% 的对通过不同的溯源机制解耦。\n  - **预测能力**：在控制 $D_T$、攻击家族和后端模型后，$Gap$ 不能独立预测攻击成功率（$p=.088$），说明 $D_T$ 仍是主要预测因子，但 $D_I$ 提供了补充的结构视角。\n  - **防御效果对比**：在匹配阈值 $k=2,3$ 下，确定性的基于 $D_I$ 的预执行网关拦截了 5 个仅基于序列的网关漏掉的攻击 sink，且没有额外的良性阻塞。虽然配对增益在统计上不显著（$p=.0625$），但展示了结构感知防御的潜力。\n\n#### 总结\n本文指出了长程 LLM 智能体安全分析中“时间距离”不等于“结构距离”的关键问题。通过引入溯源感知的执行图和影响距离 $D_I$，作者证明了传统的序列距离 $D_T$ 往往高估了安全隔离。实证结果显示，绝大多数攻击路径在结构上比时间上更近。基于 $D_I$ 的防御机制能够捕捉到被步数掩盖的近邻攻击路径，为长程智能体的运行时安全干预提供了更精确的理论基础和实用工具。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Long-horizon LLM agents interact with untrusted content, persistent memory, external states, and sensitive tools, facing threats like indirect prompt injection. Existing analyses typically measure attack risk by the number of execution steps (temporal distance) between malicious input and downstream actions.\n- **Limitations of Prior Work**: Existing methods relying on \"Sequence Distance\" ($D_T$) assume that temporal remoteness implies structural isolation. This is flawed in stateful agents where early malicious inputs can be stored in memory or notes and accessed much later to trigger sensitive actions. In such cases, while the step count is large, the structural data-flow path is short. Relying solely on step counts significantly overstates security separation, failing to accurately identify potential attack paths.\n\n## Core Contributions\n- **Proposed a Provenance-aware Execution Graph and Influence Distance ($D_I$)**: This graph connects agent events via deterministic state, identifiers, and tool provenance. $D_I$ is defined as the shortest structural path from an untrusted source to a sensitive action.\n- **Challenge 1: How to quantify the overestimation of security isolation by temporal distance?**\n  - **Difficulty**: Traditional sequence views ignore direct data dependencies in state and memory, making structurally close attacks appear temporally distant.\n  - **Solution**: Defined the gap metric $Gap = D_T - D_I$. Since the influence graph contains all sequence edges, $D_I \\\\leq D_T$ always holds. The Gap quantifies the structural proximity hidden by the step-count view.\n- **Challenge 2: Can structural distance more effectively guide runtime defense?**\n  - **Difficulty**: It is necessary to prove that structural metrics capture real attack risks better than temporal metrics and can build more precise defense gates.\n  - **Solution**: Experiments show that a pre-execution gate based on $D_I$ intercepts attack sinks missed by sequence-only gates at the same thresholds, without increasing false positives on benign behavior. This demonstrates that execution structure reveals proximity hidden by step counts, supporting more targeted runtime intervention.\n\n## Implementation and Evaluation\n- **Dataset & Models**: Used 360 long-horizon trajectories from the AgentDojo benchmark, covering OpenAI's gpt-4o-mini, gpt-4o, and Claude's Haiku 4.5 and Sonnet 4.6. Analyzed 454 injection-sink pairs.\n- **Key Results**:\n  - **Prevalence of Gap**: $Gap > 0$ for 96.9% of pairs, with a median gap of 9 hops. 91.0% of pairs remain decoupled even after removing the largest class of provenance-only edges.\n  - **Cross-domain Decoupling**: In the AgentDojo banking suite, 33.8% of pairs decouple through different provenance mechanisms.\n  - **Predictive Power**: After controlling for $D_T$, attack family, and backend, $Gap$ does not independently predict attack success ($p=.088$), indicating $D_T$ remains the primary predictor, but $D_I$ offers a complementary structural perspective.\n  - **Defense Comparison**: At matched thresholds $k=2,3$, the deterministic $D_I$-based pre-execution gate blocked 5 attack sinks missed by the sequence-only gate, with no additional benign blocking. Although the paired gain was not statistically significant ($p=.0625$), it demonstrated the potential of structure-aware defense.\n\n#### Summary\nThis paper highlights the critical issue that \"temporal distance\" does not equal \"structural distance\" in long-horizon LLM agent security analysis. By introducing a provenance-aware execution graph and Influence Distance ($D_I$), the authors demonstrate that traditional Sequence Distance ($D_T$) often overstates security isolation. Empirical results show that most attack paths are structurally closer than they appear temporally. Defense mechanisms based on $D_I$ can capture nearby attack paths obscured by step counts, providing a more precise theoretical foundation and practical tool for runtime security intervention in long-horizon agents.",
+      "render_excerpt": "机构: University of Western Australia<br>本文指出了长程 LLM 智能体安全分析中“时间距离”不等于“结构距离”的关键问题。通过引入溯源感知的执行图和影响距离 $D_I$，作者证明了传统的序列距离 $D_T$ 往往高估了安全隔离。实证结果显示，绝大多数攻击路径在结构上比时间上更近。基于 $D_I$ 的防御机制能够捕捉到被步数掩盖的近邻攻击路径，为长程智能体的运行时安全干预提供了更精确的理论基础和实用工具。",
+      "render_excerpt_en": "Institution: University of Western Australia<br>This paper highlights the critical issue that \"temporal distance\" does not equal \"structural distance\" in long-horizon LLM agent security analysis. By introducing a provenance-aware execution graph and Influence Distance ($D_I$), the authors demonstrate that traditional Sequence Distance ($D_T$) often overstates security isolation. Empirical results show that most attack paths are structurally closer than they appear temporally.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-09-06T18:58:56Z"
+        "captured_at": "2026-09-05T06:09:06Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-09-06"
+        "captured_at": "2026-09-05"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -109,90 +53,44 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2609.06563",
-      "date": "2026-09-06",
-      "title": "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games",
+      "paper_id": "2609.06063",
+      "date": "2026-09-05",
+      "title": "Explaining AI Agents Through Execution Traces",
       "authors": [
-        "Hwang Yechan",
-        "Bae Sangjun",
-        "Kim Jeongmo",
-        "Bang Sangwoo",
-        "Han Seungyul"
+        "Vittoria Vineis",
+        "Fabiano Veglianti",
+        "Lorenzo Antonelli",
+        "Claudia Di Carlo",
+        "Matteo Silvestri",
+        "Gabriele Tolomei"
       ],
-      "abstract": "Social deduction games (SDGs) require agents to reason under partial observability by maintaining relational beliefs about hidden roles and team alignments. While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs. This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech. MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty. Experiments on representative SDGs show that MARBO enables compact LLM agents to consistently outperform existing baselines. The Code is available on https://github.com/PleaseTakemeAway/MARBO.",
+      "abstract": "AI Agents are increasingly deployed in real-world settings, where they interact with external tools and make sequential decisions with limited human oversight. This creates a pressing need for reliable and auditable explanations of what an agent did and why. However, traditional Explainable AI (XAI) methods fall short of providing the process-level transparency required for such interactive, multi-step systems, motivating a paradigm shift toward approaches specifically designed for AI Agents. To address this gap, we present a post-hoc XAI framework that transforms a lengthy agent's execution trace into a structured report and a faithful natural-language explanation explicitly grounded in its observable behavior. Because it relies solely on execution traces, the framework applies across different agent architectures, environments, and tasks. Human and automated evaluations across multiple benchmarks and architectures show that our framework produces high-quality, trace-faithful explanations while reliably identifying unsupported claims, unjustified actions, and evidence gaps, outperforming naive LLM-generated explanations.",
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06563v1",
-        "pdf": "https://arxiv.org/pdf/2609.06563v1",
-        "github": "https://github.com/PleaseTakemeAway/MARBO",
-        "blog": null
-      },
-      "institution": "UNIST",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：社交推理游戏（SDGs，如狼人杀、阿瓦隆）要求智能体在部分可观测环境下，通过维护关于隐藏角色和阵营对齐的“关系信念”来进行推理。大型语言模型（LLM）智能体在此类长 horizon 社交推理任务中展现出潜力。\n- **已有工作为什么解决不了**：现有的 LLM 智能体方法主要通过提示工程或偏好优化来提升表现，但它们往往直接优化行动和游戏内言语，而未将其明确 grounded 于关系信念中。这导致智能体（尤其是紧凑型 LLM）经常出现战略不一致的行为，例如基于表面指控而非深层关系推理，或做出与自身推理脱节的投票决策，因为现有方法即使在推理不准确或战略不利时也会强化某些行为。\n\n## 文章的核心贡献点\n- **提出了一个** Multi-Agent Relational Belief Optimization (MARBO)，这是一个基于信念的偏好优化框架，利用关系信念来指导战略决策和游戏内言语。\n- **挑战1：关系信念缺失导致的战略不一致**。难点在于现有方法缺乏对玩家间潜在关系（如狼队友、对立阵营）的显式建模，导致推理与行动脱节。MARBO 通过将偏好反馈仅限于那些由可靠关系信念支持且能带来有利社会结果的行为，从而鼓励在不确定性下进行更一致的学习。\n- **挑战2：紧凑型 LLM 在长程上下文中的推理脆弱性**。难点在于小参数模型难以维持长期的对话上下文和复杂的逻辑链，容易产生自相矛盾的指控或暴露身份。MARBO 通过引入关系信念作为优化的约束条件，过滤掉缺乏信念支持的噪声行为，使紧凑模型也能学习到稳健的战略模式。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：MARBO 是一个训练框架，代码已开源。它在代表性的社交推理游戏环境中进行了实验。\n- **Evaluation 结果**：实验表明，MARBO 使紧凑型 LLM 智能体能够持续优于现有的基线方法。具体体现在减少错误指控、提高投票决策与内部推理的一致性，以及生成更具战略误导性的言语。\n- **对比**：相比于传统的提示工程、反射机制（Reflection）及通用的偏好优化方法，MARBO 在需要深层社会推理的任务上表现更佳，特别是在处理部分可观测性和长期依赖时，有效避免了战略不一致的问题。\n\n#### 总结\n本文针对社交推理游戏中 LLM 智能体因缺乏关系信念 grounding 而导致的战略不一致问题，提出了 MARBO 框架。该方法通过将偏好优化与可靠的关系信念绑定，显著提升了紧凑型 LLM 在复杂社交环境下的推理一致性和游戏表现，为部分可观测下的多智能体协作与对抗提供了新的优化范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Social Deduction Games (SDGs), such as Werewolf and Avalon, require agents to reason under partial observability by maintaining \"relational beliefs\" about hidden roles and team alignments. LLM agents are increasingly used as testbeds for long-horizon social reasoning.\n- **Why Existing Work Falls Short**: Current LLM-agent approaches primarily optimize actions and in-game speech through prompting or preference optimization without explicitly grounding them in relational beliefs. This leads to strategically inconsistent behaviors, especially in compact LLMs, such as making accusations based on surface-level cues rather than latent player relations, or voting inconsistently with their own reasoning, as existing methods reinforce behaviors even when the underlying social reasoning is flawed.\n\n## Core Contributions\n- **Proposed**: Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech.\n- **Challenge 1: Strategic Inconsistency due to Lack of Relational Grounding**. The difficulty lies in the disconnect between an agent's internal reasoning about player relationships and its external actions. MARBO addresses this by providing preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable outcomes, ensuring consistent learning under uncertainty.\n- **Challenge 2: Fragility of Compact LLMs in Long-Horizon Reasoning**. Small models struggle to maintain coherent context and logic over long games. MARBO mitigates this by constraining optimization to belief-supported actions, filtering out noisy or contradictory behaviors, thus enabling compact models to learn robust strategic patterns.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: MARBO is a training framework with open-source code available. It was evaluated in representative SDG environments.\n- **Evaluation Results**: Experiments demonstrate that MARBO enables compact LLM agents to consistently outperform existing baselines. Improvements are seen in reduced false accusations, higher consistency between voting decisions and internal reasoning, and more strategically effective speech.\n- **Comparison**: Compared to standard prompting, reflection mechanisms, and generic preference optimization, MARBO shows superior performance in tasks requiring deep social reasoning, effectively handling partial observability and long-term dependencies by avoiding strategic inconsistencies.\n\n## 4. Conclusion\nThis paper addresses the issue of strategic inconsistency in LLM agents within social deduction games caused by the lack of relational belief grounding. By introducing MARBO, which ties preference optimization to reliable relational beliefs, the study significantly enhances the reasoning consistency and gameplay performance of compact LLMs in complex social environments, offering a new paradigm for multi-agent optimization under partial observability.",
-      "render_excerpt": "机构: UNIST<br>本文针对社交推理游戏中 LLM 智能体因缺乏关系信念 grounding 而导致的战略不一致问题，提出了 MARBO 框架。该方法通过将偏好优化与可靠的关系信念绑定，显著提升了紧凑型 LLM 在复杂社交环境下的推理一致性和游戏表现，为部分可观测下的多智能体协作与对抗提供了新的优化范式。",
-      "render_excerpt_en": "Institution: UNIST<br>## 1. What the Paper Does - **Background**: Social Deduction Games (SDGs), such as Werewolf and Avalon, require agents to reason under partial observability by maintaining \"relational beliefs\" about hidden roles and team alignments. LLM agents are increasingly used as testbeds for long-horizon social reasoning.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-09-06T12:18:39Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-09-06"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2609.06367",
-      "date": "2026-09-06",
-      "title": "Robust Conformal Consensus: Multi-Agent LLM-as-a-Judge Interval Evaluation with Conformal Prediction",
-      "authors": [
-        "Lihui Liu"
-      ],
-      "abstract": "LLM-as-a-Judge has emerged as a promising paradigm for evaluating natural language generation. However, the uncertainty associated with such evaluations remains largely unexplored, which limits their reliability in real-world applications. Although conformal prediction offers a principled framework for uncertainty quantification, existing approaches typically apply it to a single LLM judge, overlooking the variability introduced by using different LLM evaluators. In this work, we propose a robust uncertainty estimation framework for multi-agent LLM-as-a-Judge evaluation. Our approach constructs conformal prediction intervals for LLM-based scores from multiple LLMs. By considering intervals from different LLM judges, we obtain more stable and reliable uncertainty estimates. Extensive experiments demonstrate that our method produces valid prediction intervals with coverage guarantees, and that interval-based aggregation across multiple judges leads to more stable evaluation outcomes.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2609.06367v1",
-        "pdf": "https://arxiv.org/pdf/2609.06367v1",
+        "abs": "http://arxiv.org/abs/2609.06063v1",
+        "pdf": "https://arxiv.org/pdf/2609.06063v1",
         "github": null,
         "blog": null
       },
-      "institution": "Wayne State University",
+      "institution": "Sapienza University of Rome",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：LLM-as-a-Judge（大语言模型作为裁判）已成为评估自然语言生成任务的流行范式，因其灵活性和可扩展性而被广泛应用。然而，LLM 输出具有内在随机性，导致评估结果存在不确定性，这在医疗、金融等高风险领域限制了其可靠性。\n- **已有工作为什么解决不了**：现有的不确定性量化方法主要依赖共形预测（Conformal Prediction），但通常仅应用于单个 LLM 裁判。这种方法忽略了不同 LLM 评估器之间因训练数据、架构和对齐策略差异而产生的变异性，导致不确定性估计高度依赖于特定模型，可能产生过于自信或狭窄的预测区间，缺乏鲁棒性。\n\n## 文章的核心贡献点\n- **提出了一个**：鲁棒共形共识框架（Robust Conformal Consensus），用于多智能体 LLM-as-a-Judge 的区间评估。\n- **挑战1：单模型偏差与变异性忽略**。难点在于单一 LLM 的评分无法反映评估过程中的真实 variability，且不同模型间存在显著分歧。论文通过引入多个独立的 LLM 裁判，构建基于多模型评分的共形预测区间，显式地捕捉并量化了模型间的差异性，从而获得更稳定的不确定性估计。\n- **挑战2：多源不确定性的有效聚合**。难点在于如何将来自不同分布和偏好的多个 LLM 的预测区间进行合理整合，以保证统计覆盖率的同时提高评估稳定性。论文提出了一种区间适应框架，对多个 LLM 裁判生成的预测区间进行重新校准和聚合，确保最终结果既具有统计保证的覆盖率，又能通过共识机制减少个别模型的极端偏差。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：该框架可集成到现有的共形预测方法中，无需对底层 LLM 进行微调，仅需少量校准数据。实验涉及九个不同的 LLM 作为裁判。\n- **Evaluation 结果**：大量实验表明，该方法生成的预测区间具有有效的覆盖率保证（valid coverage guarantees）。与仅使用单个 LLM 裁判的传统共形预测方法相比，基于多裁判的区间聚合产生了更稳定、更可靠的评估结果。\n- **对比**：相较于现有的单模型共形预测方法，本文方法在处理 inter-LLM 变异性方面表现更优，避免了因选择特定 LLM 而导致的鲁棒性下降问题，提供了更可信的不确定性量化。\n\n#### 总结\n本文针对 LLM-as-a-Judge 评估中未被充分探索的不确定性问题，提出了一种基于多智能体共形预测的鲁棒框架。通过整合多个 LLM 裁判的评分并构建预测区间，该方法有效克服了单模型评估的局限性和变异性，为高风险应用中的自动化评估提供了具有统计保证的、更稳定可靠的不确定性量化方案。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-as-a-Judge has become a popular paradigm for evaluating natural language generation due to its flexibility and scalability. However, the inherent randomness of LLM outputs introduces uncertainty, limiting reliability in high-stakes domains like healthcare and finance.\n- **Why Existing Work Falls Short**: Current uncertainty quantification methods, primarily based on Conformal Prediction, are typically applied to a single LLM judge. These approaches overlook the variability introduced by different LLM evaluators (due to differences in training data, architecture, etc.), leading to model-dependent uncertainty estimates that may be overconfident and lack robustness.\n\n## Core Contributions\n- **Proposed**: A Robust Conformal Consensus framework for multi-agent LLM-as-a-Judge interval evaluation.\n- **Challenge 1: Single-Model Bias and Ignored Variability**. The difficulty lies in the fact that a single LLM's score cannot reflect the true variability of the evaluation process, and significant disagreements exist between different models. The paper addresses this by incorporating multiple independent LLM judges to construct conformal prediction intervals, explicitly capturing and quantifying inter-model discrepancies for more stable uncertainty estimates.\n- **Challenge 2: Effective Aggregation of Multi-Source Uncertainty**. The challenge is how to reasonably integrate prediction intervals from multiple LLMs with different distributions and biases while maintaining statistical coverage guarantees. The paper proposes an interval adaptation framework that recalibrates and aggregates intervals from multiple judges, ensuring the final results have valid coverage and reduced extreme biases through consensus.\n\n## Implementation and Evaluation\n- **Implementation**: The framework is compatible with existing conformal prediction methods and requires no fine-tuning of the underlying LLMs, only a small calibration set. Experiments involve nine different LLMs as judges.\n- **Evaluation Results**: Extensive experiments demonstrate that the method produces valid prediction intervals with guaranteed coverage. Compared to traditional conformal prediction using a single LLM judge, the multi-judge interval aggregation yields more stable and reliable evaluation outcomes.\n- **Comparison**: Unlike existing single-model conformal prediction methods, this approach better handles inter-LLM variability, avoiding robustness issues caused by the choice of a specific LLM, and provides more trustworthy uncertainty quantification.\n\n## 4. Conclusion\nThis paper addresses the under-explored uncertainty in LLM-as-a-Judge evaluations by proposing a robust framework based on multi-agent conformal prediction. By integrating scores from multiple LLM judges and constructing prediction intervals, the method effectively overcomes the limitations and variability of single-model evaluations, providing statistically guaranteed, stable, and reliable uncertainty quantification for automated assessments in high-stakes applications.",
-      "render_excerpt": "机构: Wayne State University<br>本文针对 LLM-as-a-Judge 评估中未被充分探索的不确定性问题，提出了一种基于多智能体共形预测的鲁棒框架。通过整合多个 LLM 裁判的评分并构建预测区间，该方法有效克服了单模型评估的局限性和变异性，为高风险应用中的自动化评估提供了具有统计保证的、更稳定可靠的不确定性量化方案。",
-      "render_excerpt_en": "Institution: Wayne State University<br>## 1. What the Paper Does - **Background**: LLM-as-a-Judge has become a popular paradigm for evaluating natural language generation due to its flexibility and scalability. However, the inherent randomness of LLM outputs introduces uncertainty, limiting reliability in high-stakes domains like healthcare and finance.",
+      "summary_cn": "## 文章做了什么\n- **背景**：AI Agent（智能体）在现实世界中日益普及，它们与外部工具交互并进行序列决策，但缺乏足够的人类监督。这产生了对可靠、可审计的解释的迫切需求，以明确Agent做了什么以及为什么这样做。\n- **已有工作的不足**：传统的可解释人工智能（XAI）方法主要针对静态、单步预测模型设计，无法提供交互式、多步系统所需的过程级透明度。现有的方法难以捕捉Agent轨迹、推理过程、工具交互和执行历史，导致在面对复杂的动态环境和多步错误传播时显得力不从心。\n\n## 文章的核心贡献点\n- **提出了一个基于执行轨迹的事后XAI框架**：该框架能够将冗长的Agent执行轨迹转化为结构化的报告和忠实于行为的自然语言解释。\n- **挑战1：如何确保解释的忠实性（Faithfulness）并避免幻觉？**\n  - **难点**： naive LLM生成的解释往往包含不支持的主张或幻觉，无法真实反映Agent的实际行为逻辑。\n  - **解决方法**：该方法仅依赖可观察的执行轨迹，通过将解释严格 grounded（扎根）于具体的 observable behavior（可观察行为），从而生成高保真度的解释，并能可靠地识别 unsupported claims（无支持的主张）和证据缺口。\n- **挑战2：如何实现跨架构和任务的通用性？**\n  - **难点**：不同的Agent架构、环境和任务具有巨大的差异性，传统的特定模型解释方法难以泛化。\n  - **解决方法**：由于框架仅依赖于标准化的执行轨迹（execution traces），而不深入模型内部参数或特定架构细节，因此能够适用于不同的Agent架构、环境和任务，实现了广泛的适用性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究在多个基准测试和不同架构上进行了人工和自动化评估。\n- **结果对比**：实验结果表明，该框架生成的解释具有高质量且忠实于轨迹。与 naive LLM 生成的解释相比，该方法在识别无支持的主张、不合理的操作以及证据缺失方面表现更优，显著提升了解释的可靠性和可审计性。\n\n#### 总结\n本文针对AI Agent缺乏过程级透明度的问题，提出了一种通用的事后XAI框架。通过仅利用执行轨迹，该框架能够生成结构化且忠实的自然语言解释，有效克服了传统XAI方法在动态、多步交互场景下的局限性。评估结果证明，该方法在解释质量和错误检测能力上均优于简单的LLM生成基线，为AI Agent的可信部署提供了重要支持。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: AI Agents are increasingly deployed in real-world settings, interacting with external tools and making sequential decisions with limited human oversight. This creates an urgent need for reliable and auditable explanations of agent actions and rationales.\n- **Limitations of Existing Work**: Traditional Explainable AI (XAI) methods are designed for static, single-step predictive models and fail to provide the process-level transparency required for interactive, multi-step systems. They struggle to capture agent trajectories, reasoning processes, and tool interactions in dynamic environments.\n\n## Core Contributions\n- **Proposed a post-hoc XAI framework based on execution traces**: This framework transforms lengthy agent execution traces into structured reports and faithful natural-language explanations explicitly grounded in observable behavior.\n- **Challenge 1: How to ensure explanation faithfulness and avoid hallucinations?**\n  - **Difficulty**: Naive LLM-generated explanations often contain unsupported claims or hallucinations, failing to reflect the agent's actual behavioral logic.\n  - **Solution**: The method relies solely on execution traces, strictly grounding explanations in observable behaviors. This generates high-fidelity explanations and reliably identifies unsupported claims, unjustified actions, and evidence gaps.\n- **Challenge 2: How to achieve generality across different architectures and tasks?**\n  - **Difficulty**: Significant variations exist among different agent architectures, environments, and tasks, making model-specific explanation methods hard to generalize.\n  - **Solution**: By relying only on standardized execution traces rather than internal model parameters or specific architectural details, the framework is applicable across diverse agent architectures, environments, and tasks.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The study conducted both human and automated evaluations across multiple benchmarks and different agent architectures.\n- **Comparison with Related Work**: Results demonstrate that the framework produces high-quality, trace-faithful explanations. It outperforms naive LLM-generated baselines by more reliably identifying unsupported claims, unjustified actions, and evidence gaps, thereby enhancing the reliability and auditability of explanations.\n\n## 4. Conclusion\nThis paper addresses the lack of process-level transparency in AI Agents by proposing a general-purpose post-hoc XAI framework. By leveraging only execution traces, it generates structured and faithful natural-language explanations, effectively overcoming the limitations of traditional XAI methods in dynamic, multi-step interaction scenarios. Evaluations confirm that the method surpasses simple LLM-generated baselines in explanation quality and error detection, supporting the trustworthy deployment of AI Agents.",
+      "render_excerpt": "机构: Sapienza University of Rome<br>本文针对AI Agent缺乏过程级透明度的问题，提出了一种通用的事后XAI框架。通过仅利用执行轨迹，该框架能够生成结构化且忠实的自然语言解释，有效克服了传统XAI方法在动态、多步交互场景下的局限性。评估结果证明，该方法在解释质量和错误检测能力上均优于简单的LLM生成基线，为AI Agent的可信部署提供了重要支持。",
+      "render_excerpt_en": "Institution: Sapienza University of Rome<br>## 1. What the Paper Did - **Background**: AI Agents are increasingly deployed in real-world settings, interacting with external tools and making sequential decisions with limited human oversight. This creates an urgent need for reliable and auditable explanations of agent actions and rationales.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-09-06T03:55:09Z"
+        "captured_at": "2026-09-05T12:45:56Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-09-06"
+        "captured_at": "2026-09-05"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -207,43 +105,147 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2609.06702",
-      "date": "2026-09-06",
-      "title": "PARSER: Read in Parallel, Reason in Depth for Long-Context LLM Agents",
+      "paper_id": "2609.06128",
+      "date": "2026-09-05",
+      "title": "Substrate-Portable Execution for Production LLM Workflows",
       "authors": [
-        "Kun Li",
-        "Zexuan Qiu",
-        "Tianhua Zhang",
-        "Irwin King",
-        "Helen Meng"
+        "Tarun Gopinath",
+        "Atul Kulkarni",
+        "Vijay Rajakumar",
+        "Shrikar Katti",
+        "Parthasarathy Govindarajen"
       ],
-      "abstract": "Sequential memory agents process long documents by reading chunks one after another while maintaining a compact memory state, coupling document traversal to reasoning depth. This coupling introduces sensitivity to evidence placement and ties inference latency linearly to document length. We introduce PARSER, which decouples reading from reasoning. A bank of lightweight subagents each bound to a single chunk read the entire document in parallel, while a lead agent reasons in depth through iterative scatter--gather rounds: at each round it broadcasts a query to all subagents, aggregates the returned evidence, and formulates a deeper follow-up query conditioned on what has been found so far. This decoupled design concentrates all learnable behavior in the lead agent, which is optimized with reinforcement learning, while the subagents remain frozen off-the-shelf models. On multi-hop QA with contexts ranging from 7K to 896K tokens, PARSER with a 4B backbone outperforms the strongest sequential memory baseline by 5.7 points on average and by 12.0 points at 896K tokens. Scaling to a 9B backbone, PARSER surpasses DeepSeek-V4-Pro by 6.3 points. Controlled experiments confirm that PARSER is robust to perturbations in evidence position, order, and distance, conditions that cause large accuracy swings in sequential methods, while reducing inference latency by up to 11x.",
+      "abstract": "Production LLM agents execute tool-calling loops, retrieval chains, and compositional workflows in multiple modes, yet execution semantics are often coupled to one runtime. We encountered this portability problem in Rufus, a conversational AI assistant with a large tool catalog that serves millions of Amazon customers. Rufus supports real-time serving, asynchronous background tasks, and high-volume batch workloads such as evaluation and content pregeneration. Each mode has distinct service-level objectives and typically uses a separate runtime. Reusing streaming orchestration makes asynchronous and batch workloads blocking and prevents use of batch inference APIs, which offer a 50 percent discount at published prices. We present a binding-adaptive agent execution platform that separates workflow definition from execution substrate. Developers define a workflow once as a typed dataflow graph. The platform compiles the graph to in-process streaming for real-time serving, durable AWS SWF orchestration for asynchronous execution, or distributed Apache Flink stream processing for batch inference. No workflow code changes are required. LLM inference is represented as a suspendable graph node whose behavior depends on the substrate: streaming delivery online, durable retry asynchronously, and batched submission offline. We validated dozens of production agent configurations across five orchestration patterns: single-inference RAG, iterative ReAct, compositional PreAct, conditional routing, and multi-agent deep research. Across all three bindings, we found no detectable difference in output quality. Batch execution reduced per-query inference cost in line with published batch API pricing while operating alongside the streaming path at production scale.",
       "links": {
-        "abs": "http://arxiv.org/abs/2609.06702v1",
-        "pdf": "https://arxiv.org/pdf/2609.06702v1",
+        "abs": "http://arxiv.org/abs/2609.06128v1",
+        "pdf": "https://arxiv.org/pdf/2609.06128v1",
         "github": null,
-        "blog": "https://cuhk-parser.github.io/"
+        "blog": null
       },
-      "institution": "The Chinese University of Hong Kong",
+      "institution": "Amazon",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型上下文窗口的扩大，处理长文档（如多文档问答、法律分析）成为核心能力。然而，即使拥有百万级上下文窗口，模型仍面临“上下文腐烂”问题，特别是位置偏差，即远离输入边界的证据容易被忽略。\n- **已有工作为什么解决不了**：现有的顺序记忆代理（Sequential Memory Agents，如MemAgent）通过逐块阅读并压缩记忆来处理长文档。这种范式存在两个主要缺陷：一是将文档遍历与推理深度耦合，导致对证据位置、顺序和距离高度敏感，因为在信息不全的情况下就要判断相关性；二是推理延迟与文档长度呈线性关系，因为每个步骤都依赖前一步的输出，无法利用并行计算优势。\n\n## 文章的核心贡献点\n- **提出了一个 PARSER 框架**：该框架将“阅读”与“推理”解耦。它包含一组轻量级的子代理（subagents），每个子代理绑定到一个文档块并并行读取整个文档；以及一个主导代理（lead agent），通过迭代的“散播-收集”（scatter-gather）回合进行深度推理。\n- **挑战1：证据位置敏感性与推理质量下降**。难点在于顺序方法在未见全文时需基于压缩的前缀状态判断相关性，导致多跳推理中分散证据被遗漏。PARSER 通过并行读取所有块，使主导代理在每次迭代中能获取全局潜在证据，从而消除位置偏差，确保证据无论位于何处都能被有效检索和整合。\n- **挑战2：长文档推理的高延迟**。难点在于顺序方法的串行依赖导致推理时间随文档长度线性增长。PARSER 通过将耗时的阅读过程并行化，仅保留主导代理的轻量级迭代推理，从而将推理延迟降低高达 11 倍，实现了效率与深度的平衡。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：所有可学习行为集中在主导代理上，并使用强化学习进行优化；子代理保持为冻结的现成模型，无需训练。\n- **评估结果**：在上下文长度为 7K 到 896K token 的多跳 QA 任务上，使用 4B 骨干网络的 PARSER 平均比最强的顺序记忆基线高出 5.7 分，在 896K token 时高出 12.0 分。扩展到 9B 骨干网络时，PARSER 比 DeepSeek-V4-Pro 高出 6.3 分。\n- **对比优势**：控制实验证实，PARSER 对证据位置、顺序和距离的扰动具有鲁棒性，而顺序方法在这些条件下准确率波动巨大。同时，PARSER 将推理延迟降低了多达 11 倍。\n\n#### 总结\nPARSER 通过解耦阅读与推理，有效解决了长上下文 LLM 代理中的位置偏差和高延迟问题。其并行读取机制确保了全局信息的充分利用，而基于强化学习的主导代理则实现了深度迭代推理。实验表明，该方法在准确性和效率上均显著优于现有的顺序记忆方法和顶级闭源模型，为长文档理解提供了一种高效且鲁棒的新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Processing long documents is a core capability for LLMs, but models suffer from \"context rot\" and positional bias, where evidence far from input boundaries is ignored, even with million-token context windows.\n- **Why Existing Work Fails**: Sequential memory agents (e.g., MemAgent) read chunks sequentially and compress memory. This couples document traversal with reasoning depth, causing sensitivity to evidence placement (due to information deficit during compression) and linear inference latency (due to irreducible sequential dependencies).\n\n## Core Contributions\n- **Proposed PARSER**: A framework that decouples reading from reasoning. It uses a bank of lightweight, frozen subagents to read document chunks in parallel, while a lead agent performs deep reasoning through iterative scatter-gather rounds.\n- **Challenge 1: Sensitivity to Evidence Placement**. Difficulty: Sequential methods judge relevance with incomplete information, missing scattered evidence in multi-hop reasoning. Solution: PARSER reads all chunks in parallel, allowing the lead agent to aggregate global evidence in each iteration, eliminating positional bias.\n- **Challenge 2: High Inference Latency**. Difficulty: Sequential dependency causes latency to grow linearly with document length. Solution: By parallelizing the reading phase and keeping the lead agent's reasoning lightweight, PARSER reduces inference latency by up to 11x.\n\n## Implementation and Evaluation\n- **Implementation**: Learnable behavior is concentrated in the lead agent, optimized via reinforcement learning. Subagents are frozen off-the-shelf models.\n- **Results**: On multi-hop QA (7K-896K tokens), PARSER (4B backbone) outperforms the strongest sequential baseline by 5.7 points on average and 12.0 points at 896K tokens. With a 9B backbone, it surpasses DeepSeek-V4-Pro by 6.3 points.\n- **Comparison**: PARSER is robust to perturbations in evidence position, order, and distance, unlike sequential methods which show large accuracy swings. It also achieves up to 11x lower inference latency.\n\n## 4. Conclusion\nPARSER effectively addresses positional bias and high latency in long-context LLM agents by decoupling reading and reasoning. Its parallel reading mechanism ensures comprehensive evidence retrieval, while the RL-optimized lead agent enables deep iterative reasoning. Experiments demonstrate superior accuracy and efficiency compared to state-of-the-art sequential methods and top-tier closed-source models.",
-      "render_excerpt": "机构: The Chinese University of Hong Kong<br>PARSER 通过解耦阅读与推理，有效解决了长上下文 LLM 代理中的位置偏差和高延迟问题。其并行读取机制确保了全局信息的充分利用，而基于强化学习的主导代理则实现了深度迭代推理。实验表明，该方法在准确性和效率上均显著优于现有的顺序记忆方法和顶级闭源模型，为长文档理解提供了一种高效且鲁棒的新范式。",
-      "render_excerpt_en": "Institution: The Chinese University of Hong Kong<br>## 1. What the Paper Does - **Background**: Processing long documents is a core capability for LLMs, but models suffer from \"context rot\" and positional bias, where evidence far from input boundaries is ignored, even with million-token context windows. - **Why Existing Work Fails**: Sequential memory agents (e.g., MemAgent) read chunks sequentially and compress memory.",
+      "summary_cn": "## 文章做了什么\n- **背景**：生产环境中的大型语言模型（LLM）代理通常需要在多种模式下执行相同的逻辑，包括实时服务（低延迟流式传输）、异步后台任务（高容错性）以及高容量批处理工作负载（如评估和内容预生成）。以亚马逊的 Rufus 助手为例，它服务于数百万用户，需要同时支持这些具有不同服务等级目标（SLO）的模式。\n- **已有工作为什么解决不了**：现有的 Agent 框架通常将工作流定义与特定的执行运行时紧密耦合。如果复用为流式传输设计的编排逻辑来处理异步或批处理任务，会导致阻塞式的同步执行模型，无法利用提供50%价格优惠的批量推理 API，且难以满足异步任务对持久性和重试机制的需求。\n\n## 文章的核心贡献点\n- **提出了一个绑定自适应的代理执行平台**：该平台将工作流定义与执行底层（Substrate）分离，允许开发者一次性定义类型化的数据流图，并自动编译适配到不同的运行时环境中。\n- **挑战1：执行语义与运行时的耦合导致代码冗余和维护困难**。不同模式（实时、异步、批处理）通常需要重写代码以适应不同的运行时特性。**解决方法**：通过引入“可挂起图节点”作为核心抽象，将 LLM 推理表示为根据所选底层动态改变行为的节点（在线流式交付、异步持久重试、离线批量提交），从而实现无需修改工作流代码即可适配三种运行时。\n- **挑战2：如何在保证输出质量一致性的前提下降低批处理成本并利用现有基础设施**。**解决方法**：平台将同一数据流图编译为进程内流式处理（实时）、AWS SWF 持久编排（异步）或 Apache Flink 分布式流处理（批处理）。实验验证表明，在不同绑定下输出质量无差异，且批处理执行成功利用了批量 API 定价降低了成本。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：该系统已应用于亚马逊的生产环境 Rufus 助手中。支持五种常见的编排模式：单次推理 RAG、迭代 ReAct、组合式 PreAct、条件路由和多代理深度研究。\n- **Evaluation 结果**：\n    - **输出质量**：在三种不同的执行绑定（实时、异步、批处理）下，未发现输出质量有任何可检测的差异。\n    - **成本效益**：批处理执行使得每次查询的推理成本降低，符合公布的批量 API 定价标准（约50%折扣）。\n    - **规模性**：系统能够在生产规模下运行，批处理路径与流式路径并行操作互不干扰。\n- **对比**：相较于传统方法需要为不同模式维护 separate codebases 或强制异步/批处理任务使用低效的阻塞式流运行时，该方法实现了真正的代码复用和成本优化。\n\n#### 总结\n本文提出了一种针对生产级 LLM 工作流的 substrate-portable（底层可移植）执行方案。通过将工作流定义为独立于执行环境的数据流图，并利用编译技术将其适配到实时、异步和批处理三种不同的运行时底层，解决了现有框架中执行语义耦合的问题。该方案在亚马逊 Rufus 系统的实际部署中证明了其有效性，既保持了输出质量的一致性，又显著降低了批处理工作的推理成本，为大规模 LLM 应用的多模式部署提供了高效的工程实践参考。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Production LLM agents often need to execute identical logic across multiple operational modes: real-time serving (low-latency streaming), asynchronous background tasks (high fault tolerance), and high-volume batch workloads (e.g., evaluation and content pre-generation). Amazon's Rufus assistant, serving millions of customers, exemplifies the need to support these modes with distinct Service Level Objectives (SLOs).\n- **Why Existing Work Falls Short**: Current agent frameworks typically couple workflow definitions with specific execution runtimes. Reusing orchestration logic designed for streaming forces asynchronous and batch workloads into inefficient blocking synchronous models. This prevents the use of cost-effective batch inference APIs (which offer ~50% discounts) and fails to meet the durability requirements of asynchronous tasks.\n\n## Core Contributions\n- **Proposed a Binding-Adaptive Agent Execution Platform**: This platform decouples workflow definition from the execution substrate, allowing developers to define a typed dataflow graph once that compiles to different runtimes.\n- **Challenge 1: Coupling of execution semantics with runtimes leads to code redundancy**. Different modes usually require separate codebases to handle specific runtime characteristics. **Solution**: The paper introduces \"suspendable graph nodes\" as a central abstraction. LLM inference behavior dynamically adapts to the selected substrate: streaming delivery for online, durable retries for asynchronous, and batched submission for offline, requiring no changes to the workflow code.\n- **Challenge 2: Maintaining output consistency while optimizing costs across diverse infrastructures**. **Solution**: The platform compiles the same graph into in-process streaming (real-time), AWS SWF durable orchestration (asynchronous), or Apache Flink distributed processing (batch). Evaluations show no detectable difference in output quality across bindings, while batch execution successfully leverages bulk API pricing to reduce costs.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Deployed in Amazon's production Rufus system. It supports five common orchestration patterns: single-inference RAG, iterative ReAct, compositional PreAct, conditional routing, and multi-agent deep research.\n- **Evaluation Results**:\n    - **Output Quality**: No detectable difference in output quality was found across the three execution bindings (real-time, asynchronous, batch).\n    - **Cost Efficiency**: Batch execution reduced per-query inference costs in line with published batch API pricing (~50% discount).\n    - **Scalability**: The system operates at production scale, with batch paths running alongside streaming paths without interference.\n- **Comparison**: Unlike traditional approaches that maintain separate codebases or force inefficient blocking models on non-real-time tasks, this approach achieves true code reuse and significant cost optimization.\n\n## 4. Conclusion\nThis paper presents a substrate-portable execution solution for production LLM workflows. By defining workflows as dataflow graphs independent of the execution environment and compiling them to fit real-time, asynchronous, and batch runtimes, it solves the problem of coupled execution semantics. Deployed in Amazon's Rufus, the solution demonstrates consistent output quality and significant cost reductions for batch workloads, offering an efficient engineering practice for multi-mode deployment of large-scale LLM applications.",
+      "render_excerpt": "机构: Amazon<br>本文提出了一种针对生产级 LLM 工作流的 substrate-portable（底层可移植）执行方案。通过将工作流定义为独立于执行环境的数据流图，并利用编译技术将其适配到实时、异步和批处理三种不同的运行时底层，解决了现有框架中执行语义耦合的问题。该方案在亚马逊 Rufus 系统的实际部署中证明了其有效性，既保持了输出质量的一致性，又显著降低了批处理工作的推理成本，为大规模 LLM 应用的多模式部署提供了高效的工程实践参考。",
+      "render_excerpt_en": "Institution: Amazon<br>## 1. What the Paper Did - **Background**: Production LLM agents often need to execute identical logic across multiple operational modes: real-time serving (low-latency streaming), asynchronous background tasks (high fault tolerance), and high-volume batch workloads (e.g., evaluation and content pre-generation). Amazon's Rufus assistant, serving millions of customers, exemplifies the need to support these modes with distinct Service Level Objectives (SLOs).",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-09-06T16:19:01Z"
+        "captured_at": "2026-09-05T14:52:35Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-09-06"
+        "captured_at": "2026-09-05"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2609.05901",
+      "date": "2026-09-05",
+      "title": "From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents",
+      "authors": [
+        "Yu Zheng",
+        "Qizhi Zhang"
+      ],
+      "abstract": "Autonomous LLM agents can turn untrusted content into effectful actions such as payments and permission changes. If the same process interprets this content and controls a reusable signing credential, prompt injection can cross the judgment boundary and reach execution authority. We present KITA, a review-to-authorization architecture that keeps the user's personal secret signing key and every threshold signing-key share outside all LLM processes. Under threshold signature unforgeability and our system assumptions, compromising the proposer and fewer than t reviewer-signer domains cannot produce a valid authorization for a new action without signing contributions from t distinct domains. Thus, any such authorization includes a share from an uncompromised domain, bound to the canonical action and released only after authenticated reviewer approval. This establishes execution-bound authorization integrity. We implement the complete reviewer-to-executor path with a structured-output LLM adapter and threshold BLS. Six system tests validate quorum gating and message binding at this interface, while cryptographic microbenchmarks measure the online signing path and its scaling behavior.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.05901v1",
+        "pdf": "https://arxiv.org/pdf/2609.05901v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of California, Berkeley",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：自主大语言模型（LLM）代理能够将不可信内容转化为具有实际效果的操作（如支付、权限变更）。如果解释内容的进程与控制可重用签名凭证的进程相同，提示注入攻击可能跨越判断边界，直接获取执行权限。\n- **已有工作的不足**：现有的多智能体辩论或投票机制仅能改善语义判断，其输出通常是建议性的，缺乏强制执行力；基于策略和委托的系统虽然限制了权限，但在处理需要模型判断的模糊证据时仍显不足；传统的阈值签名技术虽保证了法定人数的密码学必要性，但未将模型审查语义与具体的可执行动作及执行边界紧密结合，且未完全实现签名密钥材料与LLM进程的物理隔离。\n\n## 文章的核心贡献点\n- **提出了一个名为 KITA 的“审查到授权”架构**：该架构通过密钥隔离和阈值签名，确保用户的个人秘密签名密钥及所有阈值签名密钥分片均位于所有 LLM 进程之外。\n- **挑战1：防止提示注入跨越判断与执行的边界**。难点在于LLM既处理不可信输入又控制执行凭证时，恶意输入可直接触发未授权操作。KITA通过将签名密钥分片完全隔离在LLM之外，并引入多个独立的LLM审查者，使得任何单一被攻陷的提议者或少数审查者无法生成有效授权，从而在密码学层面阻断了注入攻击对执行权的直接获取。\n- **挑战2：确保语义审查与具体执行动作的强绑定**。难点在于如何保证模型批准的“语义意图”准确对应到底层的“字节级执行指令”，防止中间篡改。KITA要求提议者构建规范的授权对象，只有经过t个不同域名的审查者认证批准后，隔离的签名服务才释放针对该规范动作的签名分片，从而建立了执行绑定的授权完整性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现**：作者实现了完整的“审查者到执行者”路径，结合了结构化输出的LLM适配器和阈值BLS签名方案。\n- **评估结果**：通过六个系统测试验证了接口处的法定人数门控（quorum gating）和消息绑定机制的有效性。密码学微基准测试测量了在线签名路径及其扩展行为，证明了系统的可行性。\n- **对比**：相较于AP2等仅依赖确定性代码验证授权令牌的协议，KITA引入了基于模型的阈值审查作为强制执行条件；相较于单纯的多智能体辩论，KITA提供了密码学保证的执行授权，而不仅仅是建议。\n\n#### 总结\n本文针对自主LLM代理面临的安全风险，提出了KITA框架。通过将密钥隔离与阈值签名相结合，KITA确保了即使部分LLM进程被提示注入攻陷，也无法在未获得足够数量独立审查者批准的情况下执行敏感操作。该方法有效地将语义审查转化为具有密码学强制力的执行授权，提升了LLM代理在执行高风险操作时的安全性和完整性。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Autonomous LLM agents can transform untrusted content into effectful actions like payments or permission changes. If the process interpreting this content also controls a reusable signing credential, prompt injection attacks can cross the judgment boundary and seize execution authority.\n- **Limitations of Existing Work**: Multi-agent debate or voting mechanisms improve semantic judgment but produce advisory outputs lacking enforcement; policy and delegation systems constrain privileges but struggle with ambiguous evidence requiring model judgment; traditional threshold signing ensures cryptographic quorum but does not bind model-based review semantics to specific executable actions or fully isolate signing keys from LLM processes.\n\n## Core Contributions\n- **Proposed KITA**: A \"Review-to-Authorization\" architecture that keeps the user's personal secret signing key and all threshold signing-key shares outside all LLM processes.\n- **Challenge 1: Preventing prompt injection from crossing the judgment-execution boundary**. The difficulty lies in LLMs both processing untrusted inputs and controlling execution credentials, allowing malicious inputs to trigger unauthorized actions. KITA isolates signing key shares outside LLMs and employs multiple independent LLM reviewers, ensuring that no single compromised proposer or minority of reviewers can generate valid authorization, thus cryptographically blocking direct access to execution rights via injection.\n- **Challenge 2: Ensuring strong binding between semantic review and specific execution actions**. The challenge is guaranteeing that the model's approved \"semantic intent\" accurately corresponds to the underlying \"byte-level execution instructions\" to prevent tampering. KITA requires proposers to construct canonical authorization objects; isolated signer services release signature shares for these specific actions only after authenticated approval by t distinct reviewers, establishing execution-bound authorization integrity.\n\n## Implementation and Evaluation\n- **Implementation**: The authors implemented the complete reviewer-to-executor path using a structured-output LLM adapter and threshold BLS signatures.\n- **Evaluation Results**: Six system tests validated quorum gating and message binding at the interface. Cryptographic microbenchmarks measured the online signing path and its scaling behavior, demonstrating feasibility.\n- **Comparison**: Unlike protocols like AP2 that rely solely on deterministic code for mandate validation, KITA introduces model-based threshold review as an enforcement condition. Compared to simple multi-agent debates, KITA provides cryptographically guaranteed execution authorization rather than just advice.\n\n## 4. Conclusion\nThis paper addresses security risks in autonomous LLM agents by proposing the KITA framework. By combining key isolation with threshold signing, KITA ensures that even if some LLM processes are compromised via prompt injection, sensitive operations cannot be executed without approval from a sufficient number of independent reviewers. This approach effectively transforms semantic review into cryptographically enforced execution authorization, enhancing the security and integrity of LLM agents during high-risk operations.",
+      "render_excerpt": "机构: University of California, Berkeley<br>本文针对自主LLM代理面临的安全风险，提出了KITA框架。通过将密钥隔离与阈值签名相结合，KITA确保了即使部分LLM进程被提示注入攻陷，也无法在未获得足够数量独立审查者批准的情况下执行敏感操作。该方法有效地将语义审查转化为具有密码学强制力的执行授权，提升了LLM代理在执行高风险操作时的安全性和完整性。",
+      "render_excerpt_en": "Institution: University of California, Berkeley<br>## 1. What the Paper Does - **Background**: Autonomous LLM agents can transform untrusted content into effectful actions like payments or permission changes. If the process interpreting this content also controls a reusable signing credential, prompt injection attacks can cross the judgment boundary and seize execution authority.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-09-05T05:53:51Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-09-05"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2609.05824",
+      "date": "2026-09-05",
+      "title": "Beyond Top-$k$ Skill Retrieval: Diversity-Aware Skill Routing for LLM Agents",
+      "authors": [
+        "Wang Wei",
+        "Tiankai Yang",
+        "Samyadeep Basu",
+        "Hongjie Chen",
+        "Yue Zhao",
+        "Zhengzhong Tu",
+        "Xiyang Hu",
+        "Franck Dernoncourt",
+        "Ryan A. Rossi",
+        "Hoda Eldardiry"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly rely on external skills, but routing user requests over large skill registries is difficult because many skills are functionally redundant while complex tasks often require complementary skill sets. Existing skill routers typically rank candidates independently by query relevance, which can waste context budget on redundant skills. We propose Diverse Skill Routing (DSR), a diversity-aware reranking framework that uses a Determinantal Point Process to balance relevance and non-redundancy. DSR introduces a query-residual diversity kernel that penalizes redundant skill overlap while reducing penalties caused only by shared query relevance. On the SkillRouter benchmark, DSR improves recall and full coverage over a strong pointwise reranking baseline, with larger gains on multi-skill queries. These results suggest that skill routing should be treated not only as relevance ranking, but also as complementary set selection.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2609.05824v1",
+        "pdf": "https://arxiv.org/pdf/2609.05824v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "Virginia Tech, University of Southern California, Adobe Research, Dolby Labs, Texas A&M University, Arizona State University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体日益依赖外部技能库来扩展能力，但随着技能库规模扩大至数万级别，如何从海量技能中高效路由用户请求成为瓶颈。复杂任务通常需要多个互补的技能组合，而不仅仅是单一技能。\n- **已有工作为什么解决不了**：现有的技能路由方法通常将选择问题建模为点对点（pointwise）的检索或重排序问题，即独立计算每个候选技能与查询的相关性得分并返回Top-k。这种方法在处理需要多技能协作的组合式任务时，容易选出功能冗余的技能（例如多个相似的数据处理工具），导致有限的上下文窗口被浪费，且遗漏了其他必要但描述不同的互补技能。\n\n## 文章的核心贡献点\n- **提出了一个**：多样化技能路由（Diverse Skill Routing, DSR）框架，这是一种感知多样性的重排序机制，利用行列式点过程（Determinantal Point Process, DPP）来平衡技能的相关性与非冗余性。\n- **挑战1：如何在保证相关性的同时去除功能冗余？**\n  - **难点**：传统多样性方法可能会惩罚那些因共同响应同一查询而具有相似性的技能，从而误删高相关性的互补技能。\n  - **解决方法**：DSR引入了“查询残差多样性核”（query-residual diversity kernel），该机制专门惩罚技能间的冗余重叠，同时减少仅由共享查询相关性引起的惩罚，从而精准区分冗余与必要的相似性。\n- **挑战2：如何将技能选择从单一排名转化为互补集合选择？**\n  - **难点**：独立评分无法捕捉技能之间的互补关系，导致在多步工作流中覆盖不全。\n  - **解决方法**：通过DPP框架将技能选择建模为集合选择问题，全局优化所选技能子集的质量，确保最终选出的技能集既高度相关又相互补充，最大化对复杂任务的覆盖率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在SkillRouter基准测试上进行评估，该基准包含约8万个技能池，涵盖了多种复杂任务场景。\n- **对比基线**：与强大的点对点（pointwise）重排序基线方法进行对比。\n- **主要结果**：\n  - DSR在召回率（recall）和完全覆盖率（full coverage）上均优于基线方法。\n  - 在涉及多技能需求的复杂查询上，性能提升尤为显著。\n  - 结果证明，将技能路由视为互补集合选择而非单纯的相关性排序，能更有效地利用上下文预算并提升智能体执行复杂任务的能力。\n\n#### 总结\n本文指出了当前LLM智能体技能路由中存在的冗余性问题，并提出了一种基于行列式点过程的多样化技能路由框架（DSR）。通过引入查询残差多样性核，DSR成功平衡了技能的相关性与多样性，解决了传统点对点排序方法在组合式任务中效率低下的问题。实验表明，该方法在大规模技能库中能显著提升多技能任务的覆盖率和召回率，为构建更高效、可扩展的LLM智能体系统提供了新的思路。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Model (LLM) agents increasingly rely on external skill libraries to extend their capabilities. However, as skill registries grow to tens of thousands of entries, routing user requests efficiently becomes a bottleneck. Complex tasks often require combinations of multiple complementary skills rather than a single tool.\n- **Why Existing Work Fails**: Current skill routers typically model selection as a pointwise retrieval or reranking problem, scoring each candidate independently against the query. This approach fails for compositional tasks because it often returns functionally redundant skills (e.g., multiple similar data processing tools), wasting limited context budget and omitting other necessary but distinct complementary skills.\n\n## Core Contributions\n- **Proposed**: Diverse Skill Routing (DSR), a diversity-aware reranking framework that utilizes a Determinantal Point Process (DPP) to balance relevance and non-redundancy.\n- **Challenge 1: How to remove functional redundancy while maintaining relevance?**\n  - **Difficulty**: Traditional diversity methods might penalize skills that are similar simply because they are both relevant to the same query, potentially removing useful complementary tools.\n  - **Solution**: DSR introduces a \"query-residual diversity kernel\" that specifically penalizes redundant overlap between skills while reducing penalties for similarities arising solely from shared query relevance, thus distinguishing true redundancy from necessary similarity.\n- **Challenge 2: How to shift from individual ranking to complementary set selection?**\n  - **Difficulty**: Independent scoring cannot capture the complementary relationships between skills, leading to incomplete coverage for multi-step workflows.\n  - **Solution**: By employing a DPP framework, DSR models skill selection as a set selection problem, globally optimizing the subset of skills to ensure they are both highly relevant and mutually complementary, maximizing coverage for complex tasks.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on the SkillRouter benchmark, which features a pool of approximately 80,000 skills across various complex task scenarios.\n- **Baselines**: Compared against strong pointwise reranking baseline methods.\n- **Key Results**:\n  - DSR outperforms baselines in both recall and full coverage.\n  - Performance gains are particularly significant for queries requiring multiple skills.\n  - The results demonstrate that treating skill routing as complementary set selection, rather than just relevance ranking, more effectively utilizes context budget and improves agent performance on complex tasks.\n\n## 4. Conclusion\nThis paper addresses the redundancy issue in current LLM agent skill routing and proposes Diverse Skill Routing (DSR), a framework based on Determinantal Point Processes. By introducing a query-residual diversity kernel, DSR successfully balances relevance and diversity, overcoming the inefficiencies of traditional pointwise ranking in compositional tasks. Experiments show that the method significantly improves coverage and recall in large-scale skill libraries, offering new insights for building more efficient and scalable LLM agent systems.",
+      "render_excerpt": "机构: Virginia Tech, University of Southern California, Adobe Research, Dolby Labs, Texas A&M University, Arizona State University<br>本文指出了当前LLM智能体技能路由中存在的冗余性问题，并提出了一种基于行列式点过程的多样化技能路由框架（DSR）。通过引入查询残差多样性核，DSR成功平衡了技能的相关性与多样性，解决了传统点对点排序方法在组合式任务中效率低下的问题。实验表明，该方法在大规模技能库中能显著提升多技能任务的覆盖率和召回率，为构建更高效、可扩展的LLM智能体系统提供了新的思路。",
+      "render_excerpt_en": "Institution: Virginia Tech, University of Southern California, Adobe Research, Dolby Labs, Texas A&M University, Arizona State University<br>## 1. What the Paper Does - **Background**: Large Language Model (LLM) agents increasingly rely on external skill libraries to extend their capabilities. However, as skill registries grow to tens of thousands of entries, routing user requests efficiently becomes a bottleneck.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-09-05T02:39:28Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-09-05"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
