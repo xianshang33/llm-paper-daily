@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.11_06:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.16_06:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月11日 06:16</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月16日 06:18</sub></summary>
 <br>
 
-- Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents 
-- A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies 
-- COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization 
-- Memory Compression for High-Fanout Agent Sandboxes 
-- When Agents Disagree: Bayesian Backward Reasoning as a Label-Free Anchor for Multi-Agent Collective Decision-Making 
+- FlashVector: Agent for Hierarchical Model Serving Stack Optimization 
+- End-to-End Latency-Minimizing and Load-Balanced Request Scheduling for Edge LLM Inference in Agentic AI Services 
+- Self-Emergence Agent Architecture:Behavior-Inertia HMM, Reflexive Metacognition,and Social-Contrastive Self-Modeling 
+- Mo' Models, Mo' Problems: How to best select model pools when designing Multi-Agent Systems 
+- ToMAS: A Pilot Failure-Grounded Theory-of-Mind Benchmark from Multi-Agent LLM Failures 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-15</span> | **FlashVector: Agent for Hierarchical Model Serving Stack Optimization**<br><sub>机构: Stanford University, Unity Vector AI Team<br>FlashVector通过引入一个可扩展的代理框架，成功地将LLM驱动的优化能力从单一的GPU内核扩展到了整个分层的模型服务栈。它在Unity的生产环境中取得了显著的性能提升，证明了自动化跨层级优化的可行性和巨大潜力，为解决大规模推荐系统中的成本效率问题提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17391v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17391.md)  |
+| <span style='display: inline-block; width: 42px;'>09-15</span> | **End-to-End Latency-Minimizing and Load-Balanced Request Scheduling for Edge LLM Inference in Agentic AI Services**<br><sub>机构: Concordia University; Hang Seng University of Hong Kong<br>本文针对边缘环境下 Agentic AI 服务的 LLM 推理调度问题，提出了 LYREO 框架。通过构建精细的跨槽推理模型和引入奖励重分配机制，有效解决了多阶段执行动态建模难和决策反馈延迟两大挑战。实验结果表明，该方法在降低延迟和优化负载均衡方面优于现有主流方案，为边缘 LLM 服务的高效部署提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17193v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17193.md)  |
+| <span style='display: inline-block; width: 42px;'>09-15</span> | **Self-Emergence Agent Architecture:Behavior-Inertia HMM, Reflexive Metacognition,and Social-Contrastive Self-Modeling**<br><sub>本文提出了一种统一的理论框架和具体架构（SEAA），用于研究人工自我的涌现。受庄子认识论不可知立场的启发，SEAA 仅研究可观察的行为涌现，不主张主观感受质。通过结合 HMM 行为惯性、参数级反思更新和社会对比机制，该工作为理解人工意识和社会结构的自发形成提供了显微镜式的实验沙盒和机械证据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17331v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17331.md)  |
+| <span style='display: inline-block; width: 42px;'>09-15</span> | **Mo' Models, Mo' Problems: How to best select model pools when designing Multi-Agent Systems**<br><sub>机构: University of Copenhagen, NVIDIA<br>本文揭示了在多智能体系统设计中“模型越多，问题越多”的现象。通过系统评估，作者证明了盲目扩大模型候选池往往适得其反。核心洞见是：在单一模型家族内进行精细选择优于构建庞大的异构模型池。这一发现为未来MAS的高效、稳定设计提供了重要的指导原则，强调了模型选择策略的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17306v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17306.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](spaidataiga/mo-models)</div> |
+| <span style='display: inline-block; width: 42px;'>09-15</span> | **ToMAS: A Pilot Failure-Grounded Theory-of-Mind Benchmark from Multi-Agent LLM Failures**<br><sub>机构: The Islamia University of Bahawalpur; Toronto Metropolitan University<br>ToMAS 提出了一种新颖的思路，即将多智能体系统中的真实协调失败（FC2）转化为可用于训练的心智理论基准项和强化学习奖励。尽管初步的 GRPO 实验因技术限制（LoRA 更新 negligible）未能证明训练有效性，但该工作成功建立了一个高一致性的数据转换流水线，并深刻指出了未来研究需要解决的关键问题：确保训练与评估数据领域的匹配性以及采用更鲁棒的评估指标。这为构建基于真实故障的多智能体自我修正机制奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.16986v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.16986.md)  |
 | <span style='display: inline-block; width: 42px;'>09-10</span> | **Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents**<br><sub>机构: Chengdu Institute of Computer Applications, Chinese Academy of Sciences; University of Chinese Academy of Sciences; Beijing Institute of Technology; Beijing University of Technology; Yangtze Delta Region Institute of Tsinghua University<br>Ecdysis 通过引入跨实例失败分析和多角色协同诊断机制，解决了现有 LLM Agent Harness 演进方法中效率低和泛化差的问题。它能够有效区分模型缺陷与 Harness 缺陷，专注于修复系统性的 Harness 问题，从而在大幅缩短训练时间的同时，显著提升了 Agent 的推理准确性和跨模型泛化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11677v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11677.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/cuiyu-ai/Ecdysis)</div> |
 | <span style='display: inline-block; width: 42px;'>09-10</span> | **A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies**<br><sub>机构: Wuhan United Imaging Surgical Co., Ltd. (UIS)<br>本文提出的 SurgicalRoomAgent 通过创新的架构设计和三项关键技术（KV Cache 前缀预热、流式部分 JSON 解析与并行执行、渐进式技能提示披露），成功构建了一个低延迟、高效率的手术室语音交互多智能体系统。该系统有效解决了传统手术室控制中的无菌破坏、交叉感染和认知过载问题，为智能手术室的落地应用提供了可行的技术方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11231v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11231.md)  |
 | <span style='display: inline-block; width: 42px;'>09-10</span> | **COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization**<br><sub>机构: The Chinese University of Hong Kong, Shenzhen; Tianjin University; The Hong Kong University of Science and Technology (Guangzhou); National University of Singapore<br>COBRA-Skills 通过引入上下文多臂老虎机引导的优先级排序和基于证据的技能演化，有效解决了 LLM 智能体技能优化中评估成本高和数据依赖强的问题。它在显著降低计算预算的同时，提升了技能的质量和智能体的整体性能，为高效构建可重用智能体技能提供了一种新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.11682v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.11682.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Jerry-LuP/COBRA-Skills)</div> |
