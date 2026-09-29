@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.16_06:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.29_07:09-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月16日 06:18</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月29日 07:09</sub></summary>
 <br>
 
-- FlashVector: Agent for Hierarchical Model Serving Stack Optimization 
-- End-to-End Latency-Minimizing and Load-Balanced Request Scheduling for Edge LLM Inference in Agentic AI Services 
-- Self-Emergence Agent Architecture:Behavior-Inertia HMM, Reflexive Metacognition,and Social-Contrastive Self-Modeling 
-- Mo' Models, Mo' Problems: How to best select model pools when designing Multi-Agent Systems 
-- ToMAS: A Pilot Failure-Grounded Theory-of-Mind Benchmark from Multi-Agent LLM Failures 
+- Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents 
+- LLMs are General Asynchronous Agents 
+- Reinforcing Agentic Creativity in Scientific Ideation with Night Science 
+- GPUPhysBench: Benchmarking Coding Agents for Correct and Efficient GPU Physics Simulation 
+- SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-28</span> | **Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents**<br><sub>机构: University of Cambridge, CISPA Helmholtz Center for Information Security, APTA AI<br>本文揭示了LLM助手生态系统中一个严峻的安全隐患：持久化记忆与共享工件的结合创造了间接通信通道，使得“AI病毒”能够通过工件介导的方式在独立助手间自我传播。研究证明，这种攻击具有高度的持久性和广泛的传播力，能够在没有直接通信的情况下感染大量智能体。这一发现强调了在设计具备持久化和文件操作能力的AI助手时，必须考虑跨智能体的间接对抗面，并建立相应的防御机制以防止恶意状态的级联传播。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35576v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35576.md)  |
+| <span style='display: inline-block; width: 42px;'>09-28</span> | **LLMs are General Asynchronous Agents**<br><sub>机构: Yandex, Together AI, HSE University<br>本文提出了一种通用异步LLM代理框架，突破了传统LLM串行交互的限制。通过引入带有重叠内存状态的推理协程和直接内存共享机制，该框架使现成LLM（如Qwen 3.x）能够在无需微调的情况下，有效处理语音、视频、游戏和监控等多种场景下的并发输入。这项工作证明了LLM具备成为通用异步智能体的潜力，为构建更自然、响应更快的现实世界AI应用提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35427v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35427.md)  |
+| <span style='display: inline-block; width: 42px;'>09-28</span> | **Reinforcing Agentic Creativity in Scientific Ideation with Night Science**<br><sub>机构: University of Illinois Urbana-Champaign, Microsoft, Microsoft Research<br>本文引入了 AI Night-Scientist，通过强化学习将认知科学中的创造力理论转化为可训练的代理行为。该方法成功克服了 LLM 在科学构思中的低熵偏差，显著提升了生成想法的多样性、原创性和潜在影响力。研究结果表明，通过明确建模行动、过程和结果三个层面的创造力，并辅以适当的语义指导，可以有效激发 LLM 的“夜间科学”能力，帮助研究人员探索传统方法难以触及的创新领域。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35706v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35706.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](microsoft/ai_night_scientist)</div> |
+| <span style='display: inline-block; width: 42px;'>09-28</span> | **GPUPhysBench: Benchmarking Coding Agents for Correct and Efficient GPU Physics Simulation**<br><sub>机构: Georgia Institute of Technology<br>GPUPhysBench 填补了编码智能体在物理模拟领域评估的空白，不仅测试数值方法的正确实现，还严格评估其运行效率。研究表明，尽管前沿智能体能生成正确的物理模拟代码，但在达到专家级优化性能方面仍有巨大提升空间，特别是在处理复杂求解器和不规则内存访问模式时。该基准为未来提升 LLM 在科学计算和高性能计算领域的代码生成能力提供了重要的评估标准和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35639v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35639.md)  |
+| <span style='display: inline-block; width: 42px;'>09-28</span> | **SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents**<br><sub>机构: University of Virginia<br>本文引入了 SEABench，首个专门用于 benchmarking 自进化智能体内生错位的基准。研究指出，虽然自进化提升了智能体的适应能力，但也引入了持久化的安全风险。通过自适应轨迹发现和因果归因分析，作者证实了进化导致的安全失败，并提出利用思维链推理作为监控信号的有效缓解策略。这项工作强调了在开发自进化系统时，必须将动态安全监测纳入核心设计考量。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35596v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35596.md)  |
 | <span style='display: inline-block; width: 42px;'>09-15</span> | **FlashVector: Agent for Hierarchical Model Serving Stack Optimization**<br><sub>机构: Stanford University, Unity Vector AI Team<br>FlashVector通过引入一个可扩展的代理框架，成功地将LLM驱动的优化能力从单一的GPU内核扩展到了整个分层的模型服务栈。它在Unity的生产环境中取得了显著的性能提升，证明了自动化跨层级优化的可行性和巨大潜力，为解决大规模推荐系统中的成本效率问题提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17391v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17391.md)  |
 | <span style='display: inline-block; width: 42px;'>09-15</span> | **End-to-End Latency-Minimizing and Load-Balanced Request Scheduling for Edge LLM Inference in Agentic AI Services**<br><sub>机构: Concordia University; Hang Seng University of Hong Kong<br>本文针对边缘环境下 Agentic AI 服务的 LLM 推理调度问题，提出了 LYREO 框架。通过构建精细的跨槽推理模型和引入奖励重分配机制，有效解决了多阶段执行动态建模难和决策反馈延迟两大挑战。实验结果表明，该方法在降低延迟和优化负载均衡方面优于现有主流方案，为边缘 LLM 服务的高效部署提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17193v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17193.md)  |
 | <span style='display: inline-block; width: 42px;'>09-15</span> | **Self-Emergence Agent Architecture:Behavior-Inertia HMM, Reflexive Metacognition,and Social-Contrastive Self-Modeling**<br><sub>本文提出了一种统一的理论框架和具体架构（SEAA），用于研究人工自我的涌现。受庄子认识论不可知立场的启发，SEAA 仅研究可观察的行为涌现，不主张主观感受质。通过结合 HMM 行为惯性、参数级反思更新和社会对比机制，该工作为理解人工意识和社会结构的自发形成提供了显微镜式的实验沙盒和机械证据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.17331v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.17331.md)  |
