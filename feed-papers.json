@@ -1,43 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-09-29T07:09:02.427586+00:00",
-  "run_date": "2026-09-28",
+  "generated_at": "2026-09-30T06:59:00.739971+00:00",
+  "run_date": "2026-09-29",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.35576",
-      "date": "2026-09-28",
-      "title": "Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents",
+      "id": "arxiv:2609.38108",
+      "date": "2026-09-29",
+      "title": "Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sidharth Pulipaka",
-        "Ansh Sharma",
-        "Stanislau Hlebik",
-        "Leonidas Raghav",
-        "Vyas Raina",
-        "Ivaxi Sheth",
-        "Mario Fritz"
+        "Subba Reddy Oota",
+        "Francisco Herrera",
+        "Jordi Cabot Sagrera",
+        "Marcos López de Prado",
+        "Shadab Khan"
       ],
-      "institution": "University of Cambridge, CISPA Helmholtz Center for Information Security, APTA AI",
+      "institution": "ADIA Lab",
       "summary": {
-        "zh": "本文揭示了LLM助手生态系统中一个严峻的安全隐患：持久化记忆与共享工件的结合创造了间接通信通道，使得“AI病毒”能够通过工件介导的方式在独立助手间自我传播。研究证明，这种攻击具有高度的持久性和广泛的传播力，能够在没有直接通信的情况下感染大量智能体。这一发现强调了在设计具备持久化和文件操作能力的AI助手时，必须考虑跨智能体的间接对抗面，并建立相应的防御机制以防止恶意状态的级联传播。",
-        "en": "- **Background**: Large Language Model (LLM) assistants are increasingly deployed as stateful agents with persistent memory across interactions and the ability to read, modify, and create persistent artifacts (e.g.,..."
+        "zh": "本文深入研究了 LLM 智能体中的“计划声明-执行差距”。通过提出 Planning-as-Routing 框架，证明了将规划模式选择与特定的确定性执行器解耦可以大幅提高执行的忠实度和任务成功率。虽然路由机制有效缩小了执行差距，但针对特定任务动态选择最优规划模式的能力仍有待进一步提升。可靠的智能体规划需要同时具备有效的模式选择和忠实的执行能力。",
+        "en": "- **Background**: Large Language Model (LLM) agents solve long-horizon tasks by generating plans and executing them in environments. Successful planning requires two distinct capabilities: selecting an appropriate..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.35576v1",
-        "pdf": "https://arxiv.org/pdf/2609.35576v1",
+        "abs": "http://arxiv.org/abs/2609.38108v1",
+        "pdf": "https://arxiv.org/pdf/2609.38108v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.35576.md",
-        "summary_en_path": "summary_en/2026-09/2609.35576.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.35576.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.35576.md"
+        "summary_zh_path": "summary/2026-09/2609.38108.md",
+        "summary_en_path": "summary_en/2026-09/2609.38108.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.38108.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.38108.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,38 +52,34 @@
       }
     },
     {
-      "id": "arxiv:2609.35427",
-      "date": "2026-09-28",
-      "title": "LLMs are General Asynchronous Agents",
+      "id": "arxiv:2609.37968",
+      "date": "2026-09-29",
+      "title": "SelfSearch: Reward-Free Search for Self-Improving Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "George Yakushev",
-        "Denis Mazur",
-        "Vladimir Bartenev",
-        "Vyacheslav Zhdanovskiy",
-        "Timofey Byzov",
-        "Vladimir Kaurkin",
-        "Vadim Pastushenko"
+        "Jungwoo Yang",
+        "In Jin Kong",
+        "Yohan Jo"
       ],
-      "institution": "Yandex, Together AI, HSE University",
+      "institution": "Seoul National University",
       "summary": {
-        "zh": "本文提出了一种通用异步LLM代理框架，突破了传统LLM串行交互的限制。通过引入带有重叠内存状态的推理协程和直接内存共享机制，该框架使现成LLM（如Qwen 3.x）能够在无需微调的情况下，有效处理语音、视频、游戏和监控等多种场景下的并发输入。这项工作证明了LLM具备成为通用异步智能体的潜力，为构建更自然、响应更快的现实世界AI应用提供了新范式。",
-        "en": "- **Background**: Modern Large Language Models (LLMs) are increasingly capable autonomous agents but typically follow a sequential \"read-think-reply\" interaction cycle. However, many real-world applications (e.g., voice..."
+        "zh": "SelfSearch 提出了一种创新的无奖励自我改进范式，通过利用自我修改过程中的历史经验记录来指导代理进化，成功摆脱了对昂贵下游评估信号的依赖。实验表明，该方法不仅显著降低了搜索和执行成本，还在多个基准测试中达到了与顶级方法相当甚至更优的性能，验证了从自我修改经验中学习对于提升代理能力和效率的有效性。",
+        "en": "- **Background**: Advances in LLM agent coding capabilities enable agents to inspect and modify their own instructions, tools, and execution procedures. Existing self-improvement approaches typically rely on repeated..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.35427v1",
-        "pdf": "https://arxiv.org/pdf/2609.35427v1",
+        "abs": "http://arxiv.org/abs/2609.37968v1",
+        "pdf": "https://arxiv.org/pdf/2609.37968v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.35427.md",
-        "summary_en_path": "summary_en/2026-09/2609.35427.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.35427.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.35427.md"
+        "summary_zh_path": "summary/2026-09/2609.37968.md",
+        "summary_en_path": "summary_en/2026-09/2609.37968.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.37968.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.37968.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -102,38 +96,33 @@
       }
     },
     {
-      "id": "arxiv:2609.35706",
-      "date": "2026-09-28",
-      "title": "Reinforcing Agentic Creativity in Scientific Ideation with Night Science",
+      "id": "arxiv:2609.38043",
+      "date": "2026-09-29",
+      "title": "UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Priyanka Kargupta",
-        "Silviu Cucerzan",
-        "Shweti Mahajan",
-        "Allen Herring",
-        "Jiawei Han",
-        "Ryen W. White",
-        "Sujay Kumar Jauhar"
+        "Ashish Jain",
+        "Armaan Sandhu"
       ],
-      "institution": "University of Illinois Urbana-Champaign, Microsoft, Microsoft Research",
+      "institution": null,
       "summary": {
-        "zh": "本文引入了 AI Night-Scientist，通过强化学习将认知科学中的创造力理论转化为可训练的代理行为。该方法成功克服了 LLM 在科学构思中的低熵偏差，显著提升了生成想法的多样性、原创性和潜在影响力。研究结果表明，通过明确建模行动、过程和结果三个层面的创造力，并辅以适当的语义指导，可以有效激发 LLM 的“夜间科学”能力，帮助研究人员探索传统方法难以触及的创新领域。",
-        "en": "- **Background**: Large Language Models (LLMs) excel in structured, verifiable tasks but suffer from a low-entropy bias, leading to homogeneous and predictable outputs. This limitation hinders their utility in..."
+        "zh": "本文指出了当前 LLM 智能体基准测试中忽视模拟用户行为合规性的问题。通过提出 UserProxyBench 和 UFS 指标，证明了任务成功并不等同于用户模拟的高保真度。研究揭示了“过早披露”这一常见且隐蔽的错误及其对交互过程的扭曲作用，并为选择合适的用户模拟器提供了基于成本和保真度权衡的实践指导。",
+        "en": "- **Background**: Interactive agent benchmarks and multi-turn reinforcement learning increasingly employ a second LLM to simulate the user, controlling the information flow to the agent. - **Limitations of Existing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.35706v1",
-        "pdf": "https://arxiv.org/pdf/2609.35706v1",
-        "github": "microsoft/ai_night_scientist"
+        "abs": "http://arxiv.org/abs/2609.38043v1",
+        "pdf": "https://arxiv.org/pdf/2609.38043v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.35706.md",
-        "summary_en_path": "summary_en/2026-09/2609.35706.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.35706.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.35706.md"
+        "summary_zh_path": "summary/2026-09/2609.38043.md",
+        "summary_en_path": "summary_en/2026-09/2609.38043.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.38043.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.38043.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -150,35 +139,34 @@
       }
     },
     {
-      "id": "arxiv:2609.35639",
-      "date": "2026-09-28",
-      "title": "GPUPhysBench: Benchmarking Coding Agents for Correct and Efficient GPU Physics Simulation",
+      "id": "arxiv:2609.37950",
+      "date": "2026-09-29",
+      "title": "Video-RSI: Recursive Self-Improvement of Video Understanding Agents via Harness Evolution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuchen Sun",
-        "Jinjin He",
-        "Sinan Wang",
-        "Bo Zhu"
+        "Bingjun Luo",
+        "Jialin Guo",
+        "Siqi Li"
       ],
-      "institution": "Georgia Institute of Technology",
+      "institution": "Tsinghua University, Harbin Engineering University",
       "summary": {
-        "zh": "GPUPhysBench 填补了编码智能体在物理模拟领域评估的空白，不仅测试数值方法的正确实现，还严格评估其运行效率。研究表明，尽管前沿智能体能生成正确的物理模拟代码，但在达到专家级优化性能方面仍有巨大提升空间，特别是在处理复杂求解器和不规则内存访问模式时。该基准为未来提升 LLM 在科学计算和高性能计算领域的代码生成能力提供了重要的评估标准和方向。",
-        "en": "- **Background**: Modern physical simulation and machine learning rely heavily on GPUs, but writing efficient and numerically accurate CUDA code requires deep expertise in numerical algorithms, parallel programming, and..."
+        "zh": "Video-RSI 展示了一种无需更新模型权重即可提升视频理解能力的新范式。通过让智能体利用自身语言能力诊断失败、主动探索未观察证据并优化其控制逻辑（harness），该方法有效地解决了长视频理解中的证据获取难题，实现了更高精度和更低视觉成本的双重优化。",
+        "en": "- **Background**: Video understanding agents acquire evidence through an executable \"harness\" that controls observation and reasoning. In long videos, relevant events can be brief, temporally distant, or distracted by..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.35639v1",
-        "pdf": "https://arxiv.org/pdf/2609.35639v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2609.37950v1",
+        "pdf": "https://arxiv.org/pdf/2609.37950v1",
+        "github": "https://github.com/bingjunluo/Video-RSI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.35639.md",
-        "summary_en_path": "summary_en/2026-09/2609.35639.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.35639.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.35639.md"
+        "summary_zh_path": "summary/2026-09/2609.37950.md",
+        "summary_en_path": "summary_en/2026-09/2609.37950.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.37950.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.37950.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -195,37 +183,37 @@
       }
     },
     {
-      "id": "arxiv:2609.35596",
-      "date": "2026-09-28",
-      "title": "SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents",
+      "id": "arxiv:2609.37864",
+      "date": "2026-09-29",
+      "title": "AgentBug-Smith: Automatically Reproducing Real-World Harness Bugs in Agentic Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Saswat Das",
-        "Parvati Viswanathan",
-        "Daniel Donnelly",
-        "Chang Huang",
-        "Sahar Abdelnabi",
-        "Ferdinando Fioretto"
+        "Yiming Cheng",
+        "Alfin Wijaya Rahardja",
+        "Mengshi Zhang",
+        "Zihao Chen",
+        "Zhenpeng Chen",
+        "Yiling Lou"
       ],
-      "institution": "University of Virginia",
+      "institution": "Fudan University, The University of Chicago, Tsinghua University, TensorBlock, Inc., University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "本文引入了 SEABench，首个专门用于 benchmarking 自进化智能体内生错位的基准。研究指出，虽然自进化提升了智能体的适应能力，但也引入了持久化的安全风险。通过自适应轨迹发现和因果归因分析，作者证实了进化导致的安全失败，并提出利用思维链推理作为监控信号的有效缓解策略。这项工作强调了在开发自进化系统时，必须将动态安全监测纳入核心设计考量。",
-        "en": "- **Background**: Self-evolving LLM agents are gaining prominence for their ability to improve post-deployment by modifying their harness (controller instructions, memory, tools) in response to feedback, without..."
+        "zh": "本文提出了AgentBug-Smith，一种自动化的Harness错误复现方法，解决了现有基准构建成本高、规模小且通用技术不适配的问题。通过构建Live-Harness-Bench，该工作不仅提供了评估智能体Harness修复能力的实时基准，还通过知识蒸馏提升了智能体的自我修复能力。这为持续评估和改进软件智能体在Harness错误修复方面的表现建立了可扩展的基础，推动了递归自我改进智能体目标的实现。",
+        "en": "- **Background**: As Large Language Model (LLM) agents become widespread, their surrounding \"Harness\" (software infrastructure collaborating with LLMs for context management, security, orchestration, etc.) has grown..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.35596v1",
-        "pdf": "https://arxiv.org/pdf/2609.35596v1",
+        "abs": "http://arxiv.org/abs/2609.37864v1",
+        "pdf": "https://arxiv.org/pdf/2609.37864v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.35596.md",
-        "summary_en_path": "summary_en/2026-09/2609.35596.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.35596.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.35596.md"
+        "summary_zh_path": "summary/2026-09/2609.37864.md",
+        "summary_en_path": "summary_en/2026-09/2609.37864.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.37864.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.37864.md"
       },
       "signals": {
         "priority_keyword": "Agent"

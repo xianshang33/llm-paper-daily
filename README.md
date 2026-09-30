@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.29_07:09-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_09.30_06:59-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月29日 07:09</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月30日 06:59</sub></summary>
 <br>
 
-- Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents 
-- LLMs are General Asynchronous Agents 
-- Reinforcing Agentic Creativity in Scientific Ideation with Night Science 
-- GPUPhysBench: Benchmarking Coding Agents for Correct and Efficient GPU Physics Simulation 
-- SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents 
+- Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution 
+- SelfSearch: Reward-Free Search for Self-Improving Agents 
+- UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training 
+- Video-RSI: Recursive Self-Improvement of Video Understanding Agents via Harness Evolution 
+- AgentBug-Smith: Automatically Reproducing Real-World Harness Bugs in Agentic Systems 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-29</span> | **Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution**<br><sub>机构: ADIA Lab<br>本文深入研究了 LLM 智能体中的“计划声明-执行差距”。通过提出 Planning-as-Routing 框架，证明了将规划模式选择与特定的确定性执行器解耦可以大幅提高执行的忠实度和任务成功率。虽然路由机制有效缩小了执行差距，但针对特定任务动态选择最优规划模式的能力仍有待进一步提升。可靠的智能体规划需要同时具备有效的模式选择和忠实的执行能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.38108v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.38108.md)  |
+| <span style='display: inline-block; width: 42px;'>09-29</span> | **SelfSearch: Reward-Free Search for Self-Improving Agents**<br><sub>机构: Seoul National University<br>SelfSearch 提出了一种创新的无奖励自我改进范式，通过利用自我修改过程中的历史经验记录来指导代理进化，成功摆脱了对昂贵下游评估信号的依赖。实验表明，该方法不仅显著降低了搜索和执行成本，还在多个基准测试中达到了与顶级方法相当甚至更优的性能，验证了从自我修改经验中学习对于提升代理能力和效率的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.37968v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.37968.md)  |
+| <span style='display: inline-block; width: 42px;'>09-29</span> | **UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training**<br><sub>本文指出了当前 LLM 智能体基准测试中忽视模拟用户行为合规性的问题。通过提出 UserProxyBench 和 UFS 指标，证明了任务成功并不等同于用户模拟的高保真度。研究揭示了“过早披露”这一常见且隐蔽的错误及其对交互过程的扭曲作用，并为选择合适的用户模拟器提供了基于成本和保真度权衡的实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.38043v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.38043.md)  |
+| <span style='display: inline-block; width: 42px;'>09-29</span> | **Video-RSI: Recursive Self-Improvement of Video Understanding Agents via Harness Evolution**<br><sub>机构: Tsinghua University, Harbin Engineering University<br>Video-RSI 展示了一种无需更新模型权重即可提升视频理解能力的新范式。通过让智能体利用自身语言能力诊断失败、主动探索未观察证据并优化其控制逻辑（harness），该方法有效地解决了长视频理解中的证据获取难题，实现了更高精度和更低视觉成本的双重优化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.37950v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.37950.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/bingjunluo/Video-RSI)</div> |
+| <span style='display: inline-block; width: 42px;'>09-29</span> | **AgentBug-Smith: Automatically Reproducing Real-World Harness Bugs in Agentic Systems**<br><sub>机构: Fudan University, The University of Chicago, Tsinghua University, TensorBlock, Inc., University of Illinois Urbana-Champaign<br>本文提出了AgentBug-Smith，一种自动化的Harness错误复现方法，解决了现有基准构建成本高、规模小且通用技术不适配的问题。通过构建Live-Harness-Bench，该工作不仅提供了评估智能体Harness修复能力的实时基准，还通过知识蒸馏提升了智能体的自我修复能力。这为持续评估和改进软件智能体在Harness错误修复方面的表现建立了可扩展的基础，推动了递归自我改进智能体目标的实现。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.37864v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.37864.md)  |
 | <span style='display: inline-block; width: 42px;'>09-28</span> | **Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents**<br><sub>机构: University of Cambridge, CISPA Helmholtz Center for Information Security, APTA AI<br>本文揭示了LLM助手生态系统中一个严峻的安全隐患：持久化记忆与共享工件的结合创造了间接通信通道，使得“AI病毒”能够通过工件介导的方式在独立助手间自我传播。研究证明，这种攻击具有高度的持久性和广泛的传播力，能够在没有直接通信的情况下感染大量智能体。这一发现强调了在设计具备持久化和文件操作能力的AI助手时，必须考虑跨智能体的间接对抗面，并建立相应的防御机制以防止恶意状态的级联传播。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35576v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35576.md)  |
 | <span style='display: inline-block; width: 42px;'>09-28</span> | **LLMs are General Asynchronous Agents**<br><sub>机构: Yandex, Together AI, HSE University<br>本文提出了一种通用异步LLM代理框架，突破了传统LLM串行交互的限制。通过引入带有重叠内存状态的推理协程和直接内存共享机制，该框架使现成LLM（如Qwen 3.x）能够在无需微调的情况下，有效处理语音、视频、游戏和监控等多种场景下的并发输入。这项工作证明了LLM具备成为通用异步智能体的潜力，为构建更自然、响应更快的现实世界AI应用提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35427v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35427.md)  |
 | <span style='display: inline-block; width: 42px;'>09-28</span> | **Reinforcing Agentic Creativity in Scientific Ideation with Night Science**<br><sub>机构: University of Illinois Urbana-Champaign, Microsoft, Microsoft Research<br>本文引入了 AI Night-Scientist，通过强化学习将认知科学中的创造力理论转化为可训练的代理行为。该方法成功克服了 LLM 在科学构思中的低熵偏差，显著提升了生成想法的多样性、原创性和潜在影响力。研究结果表明，通过明确建模行动、过程和结果三个层面的创造力，并辅以适当的语义指导，可以有效激发 LLM 的“夜间科学”能力，帮助研究人员探索传统方法难以触及的创新领域。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.35706v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.35706.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](microsoft/ai_night_scientist)</div> |
