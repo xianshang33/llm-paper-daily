@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_09.30_06:59-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.01_11:48-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年09月30日 06:59</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月01日 11:48</sub></summary>
 <br>
 
-- Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution 
-- SelfSearch: Reward-Free Search for Self-Improving Agents 
-- UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training 
-- Video-RSI: Recursive Self-Improvement of Video Understanding Agents via Harness Evolution 
-- AgentBug-Smith: Automatically Reproducing Real-World Harness Bugs in Agentic Systems 
+- PhantomEnvironments: Training LLM Agents in Fictional Worlds 
+- PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents 
+- Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training 
+- How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering? 
+- Learning from Research: Toward Lifelong Agent Harness Evolution 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>09-30</span> | **PhantomEnvironments: Training LLM Agents in Fictional Worlds**<br><sub>机构: Cornell University, Stanford University<br>PhantomEnvironments证明了完全由规则生成的、基于虚构世界的合成环境是训练LLM搜索代理的高效且免费的资源。它解决了RL训练中环境构建的成本和可靠性瓶颈，并揭示了搜索技能的逻辑结构独立于具体事实知识，能够从虚构环境有效迁移至真实世界任务。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.40221v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.40221.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/kilian-group/phantom-envs)</div> |
+| <span style='display: inline-block; width: 42px;'>09-30</span> | **PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents**<br><sub>机构: Princeton University, NVIDIA, University of Maryland<br>PivotOPD 解决了多轮智能体训练中因早期关键错误导致的误差累积问题。通过结合预防性蒸馏（利用反向 KL 避免错误）和恢复性蒸馏（利用正向 KL 学习恢复路径），该方法不仅教会智能体少犯错，还教会其在犯错后如何自救。实验表明，该方法在多个复杂交互任务基准上均优于现有最先进方法，且具备跨模型家族的泛化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.40285v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.40285.md)  |
+| <span style='display: inline-block; width: 42px;'>09-30</span> | **Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training**<br><sub>机构: Apodex<br>本文引入了 Agent Error Dataset (AED) 和 Agentic Error-to-Training (AET) 管道，系统地解决了如何利用智能体失败经验进行后训练的问题。通过大规模收集错误-诊断对并验证修正方案，文章证明了基于错误诊断和修复的微调能显著提升模型的性能和步骤一致性，超越了传统的仅成功轨迹训练和强大的提示工程基线。这项工作为智能体系统的故障分析和误差感知后训练提供了新的数据资源和方法论。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.40111v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.40111.md)  |
+| <span style='display: inline-block; width: 42px;'>09-30</span> | **How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?**<br><sub>机构: EPFL, Apple<br>本文质疑了当前自主机器学习工程 Agent 设计中日益复杂的辅助框架（Harness）的必要性。通过严格的控制变量实验，作者发现当使用强大的前沿 LLM 作为骨干时，简单的、具有直接环境访问权限的最小化 Agent 在性能上与复杂的多智能体编排系统相当甚至更好。结论表明，当前的性能瓶颈在于模型本身的能力，而非辅助机制的缺失，建议在未来的 MLE 研究中将重点回归到提升骨干模型能力，而非过度工程化外部 Harness。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.40303v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.40303.md)  |
+| <span style='display: inline-block; width: 42px;'>09-30</span> | **Learning from Research: Toward Lifelong Agent Harness Evolution**<br><sub>机构: University of California, Santa Barbara; Microsoft<br>ScholarEvolve 提出了一种新颖的代理进化范式，即“从研究中学习”。它克服了传统基于反馈的进化方法在探索性和主动性上的不足，通过自动化地吸收学术界最新研究成果来指导代理 harness 的代码进化。实验证明，该方法能在不改变底层模型的情况下，显著提升代理在复杂任务中的表现，为构建具备终身学习能力的智能代理提供了有效路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.40169v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.40169.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/UCSB-NLP-Chang/ScholarEvolve)</div> |
 | <span style='display: inline-block; width: 42px;'>09-29</span> | **Do LLM Agents Execute the Plans They Declare? From Planning-Mode Declaration to Pattern-Specific Execution**<br><sub>机构: ADIA Lab<br>本文深入研究了 LLM 智能体中的“计划声明-执行差距”。通过提出 Planning-as-Routing 框架，证明了将规划模式选择与特定的确定性执行器解耦可以大幅提高执行的忠实度和任务成功率。虽然路由机制有效缩小了执行差距，但针对特定任务动态选择最优规划模式的能力仍有待进一步提升。可靠的智能体规划需要同时具备有效的模式选择和忠实的执行能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.38108v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.38108.md)  |
 | <span style='display: inline-block; width: 42px;'>09-29</span> | **SelfSearch: Reward-Free Search for Self-Improving Agents**<br><sub>机构: Seoul National University<br>SelfSearch 提出了一种创新的无奖励自我改进范式，通过利用自我修改过程中的历史经验记录来指导代理进化，成功摆脱了对昂贵下游评估信号的依赖。实验表明，该方法不仅显著降低了搜索和执行成本，还在多个基准测试中达到了与顶级方法相当甚至更优的性能，验证了从自我修改经验中学习对于提升代理能力和效率的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.37968v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.37968.md)  |
 | <span style='display: inline-block; width: 42px;'>09-29</span> | **UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training**<br><sub>本文指出了当前 LLM 智能体基准测试中忽视模拟用户行为合规性的问题。通过提出 UserProxyBench 和 UFS 指标，证明了任务成功并不等同于用户模拟的高保真度。研究揭示了“过早披露”这一常见且隐蔽的错误及其对交互过程的扭曲作用，并为选择合适的用户模拟器提供了基于成本和保真度权衡的实践指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2609.38043v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-09/2609.38043.md)  |
