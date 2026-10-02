@@ -1,44 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-01T11:48:29.272475+00:00",
-  "run_date": "2026-09-30",
+  "generated_at": "2026-10-02T07:31:11.084490+00:00",
+  "run_date": "2026-10-01",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.40221",
-      "date": "2026-09-30",
-      "title": "PhantomEnvironments: Training LLM Agents in Fictional Worlds",
+      "id": "arxiv:2610.02002",
+      "date": "2026-10-01",
+      "title": "Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anmol Kabra",
-        "Swathi Saravana Selvam",
-        "Albert Gong",
-        "Chao Wan",
-        "Christian Belardi",
-        "Dongyoung Go",
-        "Katie Z. Luo",
-        "Kilian Q. Weinberger"
+        "Ahmad Yehia",
+        "Aly O. Abdelkareem",
+        "Islam Ahmed",
+        "Hesham Omran",
+        "Khaled Alashmouny",
+        "Christian Claudel",
+        "Abduallah Mohamed"
       ],
-      "institution": "Cornell University, Stanford University",
+      "institution": "University of Texas at Austin",
       "summary": {
-        "zh": "PhantomEnvironments证明了完全由规则生成的、基于虚构世界的合成环境是训练LLM搜索代理的高效且免费的资源。它解决了RL训练中环境构建的成本和可靠性瓶颈，并揭示了搜索技能的逻辑结构独立于具体事实知识，能够从虚构环境有效迁移至真实世界任务。",
-        "en": "- **Background**: Training LLM agents with Reinforcement Learning (RL) is bottlenecked by the need for environments that provide verifiable rewards, support long-horizon interactions, and scale cheaply. - **Limitations..."
+        "zh": "Mem++ 通过引入非破坏性记忆框架，解决了 LLM 代理在长期组织工作中面临的历史决策追踪难题。它摒弃了传统的写入时信息压缩策略，转而采用写入时完整存储、读取时基于时间和语义筛选的策略。实验结果表明，该方法在多个基准测试中显著优于现有的 RAG 和其他记忆管理系统，为构建具备准确长期历史感知能力的组织级 LLM 代理提供了有效解决方案。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly involved in organizational work, where decisions are recorded across documents by multiple authors over months. In organizational settings, revised..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.40221v1",
-        "pdf": "https://arxiv.org/pdf/2609.40221v1",
-        "github": "https://github.com/kilian-group/phantom-envs"
+        "abs": "http://arxiv.org/abs/2610.02002v1",
+        "pdf": "https://arxiv.org/pdf/2610.02002v1",
+        "github": "https://github.com/AIDAChip-Inc/mem-plus-plus"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.40221.md",
-        "summary_en_path": "summary_en/2026-09/2609.40221.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.40221.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.40221.md"
+        "summary_zh_path": "summary/2026-10/2610.02002.md",
+        "summary_en_path": "summary_en/2026-10/2610.02002.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02002.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02002.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,38 +54,41 @@
       }
     },
     {
-      "id": "arxiv:2609.40285",
-      "date": "2026-09-30",
-      "title": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents",
+      "id": "arxiv:2610.02204",
+      "date": "2026-10-01",
+      "title": "Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yinghui He",
-        "Yapei Chang",
-        "Khushi Bhardwaj",
-        "Daniele Molinari",
-        "Tugrul Konuk",
-        "Jan Kautz",
-        "Ali Hatamizadeh"
+        "Yen-Jen Wang",
+        "Haozhe Jiang",
+        "Shuying Deng",
+        "Haoru Xue",
+        "Weirui Ye",
+        "Rocky Duan",
+        "Nika Haghtalab",
+        "S. Shankar Sastry",
+        "Pieter Abbeel",
+        "Haozhi Qi"
       ],
-      "institution": "Princeton University, NVIDIA, University of Maryland",
+      "institution": "UC Berkeley",
       "summary": {
-        "zh": "PivotOPD 解决了多轮智能体训练中因早期关键错误导致的误差累积问题。通过结合预防性蒸馏（利用反向 KL 避免错误）和恢复性蒸馏（利用正向 KL 学习恢复路径），该方法不仅教会智能体少犯错，还教会其在犯错后如何自救。实验表明，该方法在多个复杂交互任务基准上均优于现有最先进方法，且具备跨模型家族的泛化能力。",
-        "en": "PivotOPD addresses the issue of error accumulation in multi-turn agent training caused by early pivotal mistakes. By combining Preventive Distillation (using reverse KL to avoid errors) and Recovery Distillation (using..."
+        "zh": "本文提出了 RPG 框架，解决了具身智能体在不更新模型权重前提下自主改进执行系统的难题。通过结合离线数据重构、仿真中的闭环练习与诊断、以及严格的跨任务验证，RPG 能够自动生成和优化可重用的符号技能。实验表明，该方法在仿真和真实世界中均取得了超越当前最先进基线（如 ASPIRE 和 CaP-Agent0）的性能，实现了高效、鲁棒且可泛化的机器人控制，为减少机器人部署中的人工工程努力提供了新范式。",
+        "en": "This paper presents RPG, a framework that enables embodied agents to autonomously improve execution systems without updating model weights. By combining offline data reconstruction, closed-loop simulation practice with..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.40285v1",
-        "pdf": "https://arxiv.org/pdf/2609.40285v1",
+        "abs": "http://arxiv.org/abs/2610.02204v1",
+        "pdf": "https://arxiv.org/pdf/2610.02204v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.40285.md",
-        "summary_en_path": "summary_en/2026-09/2609.40285.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.40285.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.40285.md"
+        "summary_zh_path": "summary/2026-10/2610.02204.md",
+        "summary_en_path": "summary_en/2026-10/2610.02204.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02204.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02204.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -103,37 +105,34 @@
       }
     },
     {
-      "id": "arxiv:2609.40111",
-      "date": "2026-09-30",
-      "title": "Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training",
+      "id": "arxiv:2610.01833",
+      "date": "2026-10-01",
+      "title": "Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kunlun Zhu",
-        "Xuyan Ye",
-        "Yibo Li",
-        "Cheng Qian",
-        "Beibin Li",
-        "Heng Ji"
+        "Ngoc Phuoc An Vo",
+        "Aarya Doshi",
+        "Vadim Sheinin"
       ],
-      "institution": "Apodex",
+      "institution": "IBM Research, Georgia Institute of Technology",
       "summary": {
-        "zh": "本文引入了 Agent Error Dataset (AED) 和 Agentic Error-to-Training (AET) 管道，系统地解决了如何利用智能体失败经验进行后训练的问题。通过大规模收集错误-诊断对并验证修正方案，文章证明了基于错误诊断和修复的微调能显著提升模型的性能和步骤一致性，超越了传统的仅成功轨迹训练和强大的提示工程基线。这项工作为智能体系统的故障分析和误差感知后训练提供了新的数据资源和方法论。",
-        "en": "This paper introduces the Agent Error Dataset (AED) and the Agentic Error-to-Training (AET) pipeline, systematically addressing how to leverage agent failure experiences for post-training. By scaling up error-diagnosis..."
+        "zh": "本文强调了在企业级 AI Agent 持续演进过程中，仅靠结果评估不足以保障系统可靠性。作者提出的持续过程级评估框架通过程序化检查和受限 LLM 裁判，有效捕捉了隐藏在正确结果背后的过程错误。实验表明，绝大多数看似成功的运行实际上存在过程偏差，证明了该框架作为负责任部署循环中质量网关的重要价值。未来工作将包括在实际 API 演进下的纵向验证。",
+        "en": "- **Background**: Enterprise AI agent skills are dynamic, evolving with changes in tool APIs, LLM versions, and business specifications. Each revision introduces risks of behavioral regressions."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.40111v1",
-        "pdf": "https://arxiv.org/pdf/2609.40111v1",
+        "abs": "http://arxiv.org/abs/2610.01833v1",
+        "pdf": "https://arxiv.org/pdf/2610.01833v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.40111.md",
-        "summary_en_path": "summary_en/2026-09/2609.40111.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.40111.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.40111.md"
+        "summary_zh_path": "summary/2026-10/2610.01833.md",
+        "summary_en_path": "summary_en/2026-10/2610.01833.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.01833.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.01833.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -150,34 +149,35 @@
       }
     },
     {
-      "id": "arxiv:2609.40303",
-      "date": "2026-09-30",
-      "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+      "id": "arxiv:2610.02038",
+      "date": "2026-10-01",
+      "title": "Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kirill Brilliantov",
-        "Alejandro Hernández-Cano",
-        "Emmanuel Abbé"
+        "Yimeng Liu",
+        "Mi Zhang",
+        "Younsuk Dong",
+        "Zhichao Cao"
       ],
-      "institution": "EPFL, Apple",
+      "institution": "Michigan State University, Ohio State University",
       "summary": {
-        "zh": "本文质疑了当前自主机器学习工程 Agent 设计中日益复杂的辅助框架（Harness）的必要性。通过严格的控制变量实验，作者发现当使用强大的前沿 LLM 作为骨干时，简单的、具有直接环境访问权限的最小化 Agent 在性能上与复杂的多智能体编排系统相当甚至更好。结论表明，当前的性能瓶颈在于模型本身的能力，而非辅助机制的缺失，建议在未来的 MLE 研究中将重点回归到提升骨干模型能力，而非过度工程化外部 Harness。",
-        "en": "- **Background**: Autonomous Machine Learning Engineering (MLE) agents have made significant progress on public leaderboards. To address stagnation in long-horizon tasks and limited LLM primitives, modern MLE agents are..."
+        "zh": "Mimir 展示了持久性物理代理如何将语义推理与有界的、证据驱动的自我改进相结合，同时将物理真理和执行器权限保留给显式的数值机制。该研究强调，在长周期物理控制中，不应让 LLM 直接重写物理规则，而应通过双时间尺度的修复机制（快尺度的数值验证与慢尺度的原则提炼）来确保安全性和高效性。这一范式为 LLM 在需要长期状态依赖和严格安全约束的物理系统中的应用提供了重要启示。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly combining reasoning, tool use, and action, but most evidence comes from episodic tasks with immediate feedback and resettable failures. Long-running..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.40303v1",
-        "pdf": "https://arxiv.org/pdf/2609.40303v1",
+        "abs": "http://arxiv.org/abs/2610.02038v1",
+        "pdf": "https://arxiv.org/pdf/2610.02038v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.40303.md",
-        "summary_en_path": "summary_en/2026-09/2609.40303.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.40303.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.40303.md"
+        "summary_zh_path": "summary/2026-10/2610.02038.md",
+        "summary_en_path": "summary_en/2026-10/2610.02038.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02038.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02038.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,37 +194,34 @@
       }
     },
     {
-      "id": "arxiv:2609.40169",
-      "date": "2026-09-30",
-      "title": "Learning from Research: Toward Lifelong Agent Harness Evolution",
+      "id": "arxiv:2610.01887",
+      "date": "2026-10-01",
+      "title": "TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jingbo Yang",
-        "Kwei-Herng Lai",
-        "Xiaowen Wang",
-        "Yaar Harari",
-        "Evgeniy Gabrilovich",
-        "Shiyu Chang"
+        "Jose A. Ayala-Romero",
+        "Andres Garcia-Saavedra",
+        "Xavier Costa-Perez"
       ],
-      "institution": "University of California, Santa Barbara; Microsoft",
+      "institution": "NEC Laboratories Europe, i2CAT Foundation and ICREA",
       "summary": {
-        "zh": "ScholarEvolve 提出了一种新颖的代理进化范式，即“从研究中学习”。它克服了传统基于反馈的进化方法在探索性和主动性上的不足，通过自动化地吸收学术界最新研究成果来指导代理 harness 的代码进化。实验证明，该方法能在不改变底层模型的情况下，显著提升代理在复杂任务中的表现，为构建具备终身学习能力的智能代理提供了有效路径。",
-        "en": "- **Background**: As language agents face increasingly complex tasks, there is a growing need for continual improvement. A promising approach is evolving the \"agent harness\" (the software governing tool use, memory, and..."
+        "zh": "TRACE 解决了现有 AHD 方法在真实世界资源分配中因缺乏系统内部动态信息而导致性能受限的问题。通过引入多代理协作机制，自动从复杂的系统日志中提取因果知识和可执行工具，并将其反馈给进化算法，实现了比传统标量反馈方法更优的资源调度策略，同时保持了工业级所需的低延迟和高可解释性。",
+        "en": "- **Background**: Dynamic resource assignment is critical for modern infrastructure. However, industrial deployments rely on hand-written rules due to strict requirements for interpretability, auditability, and low..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.40169v1",
-        "pdf": "https://arxiv.org/pdf/2609.40169v1",
-        "github": "https://github.com/UCSB-NLP-Chang/ScholarEvolve"
+        "abs": "http://arxiv.org/abs/2610.01887v1",
+        "pdf": "https://arxiv.org/pdf/2610.01887v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.40169.md",
-        "summary_en_path": "summary_en/2026-09/2609.40169.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.40169.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.40169.md"
+        "summary_zh_path": "summary/2026-10/2610.01887.md",
+        "summary_en_path": "summary_en/2026-10/2610.01887.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.01887.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.01887.md"
       },
       "signals": {
         "priority_keyword": "Agent"

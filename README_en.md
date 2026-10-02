@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.01_11:48-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.02_07:31-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-10-01 11:48</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-10-02 07:31</sub></summary>
 <br>
 
-- PhantomEnvironments: Training LLM Agents in Fictional Worlds 
-- PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents 
-- Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training 
-- How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering? 
-- Learning from Research: Toward Lifelong Agent Harness Evolution 
+- Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents 
+- Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents 
+- Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills 
+- Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control 
+- TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-10
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents**<br><sub>Institution: University of Texas at Austin<br>## 1. What the Paper Does - **Background**: Large Language Model (LLM) agents are increasingly involved in organizational work, where decisions are recorded across documents by multiple authors over months. In organizational settings, revised decisions appear as new documents rather than edits to old ones, requiring accurate knowledge of which version was valid at a specific point in time.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02002v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-10/2610.02002.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AIDAChip-Inc/mem-plus-plus)</div> |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents**<br><sub>Institution: UC Berkeley<br>This paper presents RPG, a framework that enables embodied agents to autonomously improve execution systems without updating model weights. By combining offline data reconstruction, closed-loop simulation practice with diagnosis, and rigorous cross-task validation, RPG automatically generates and optimizes reusable symbolic skills. Experiments show that RPG surpasses state-of-the-art baselines (ASPIRE, CaP-Agent0) in both simulation and real-world deployments, offering a new paradigm for efficient, robust, and generalizable robot control with reduced human engineering effort.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02204v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-10/2610.02204.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills**<br><sub>Institution: IBM Research, Georgia Institute of Technology<br>## 1. What the Paper Does - **Background**: Enterprise AI agent skills are dynamic, evolving with changes in tool APIs, LLM versions, and business specifications. Each revision introduces risks of behavioral regressions.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.01833v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-10/2610.01833.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control**<br><sub>Institution: Michigan State University, Ohio State University<br>## 1. What the Paper Did - **Background**: Large Language Model (LLM) agents are increasingly combining reasoning, tool use, and action, but most evidence comes from episodic tasks with immediate feedback and resettable failures. Long-running physical control (e.g., irrigation) operates in a different regime where actions alter future states, errors compound, and agents must improve from experience without rewriting the physical rules that ensure safety.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02038v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-10/2610.02038.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design**<br><sub>Institution: NEC Laboratories Europe, i2CAT Foundation and ICREA<br>## 1. What the Paper Does - **Background**: Dynamic resource assignment is critical for modern infrastructure. However, industrial deployments rely on hand-written rules due to strict requirements for interpretability, auditability, and low latency, unlike Deep Reinforcement Learning (DRL) which suffers from black-box policies and sim-to-real gaps.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.01887v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-10/2610.01887.md)  |
+
+---
+
 ## 2026-09
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |

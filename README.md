@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.01_11:48-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.02_07:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月01日 11:48</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月02日 07:31</sub></summary>
 <br>
 
-- PhantomEnvironments: Training LLM Agents in Fictional Worlds 
-- PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents 
-- Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training 
-- How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering? 
-- Learning from Research: Toward Lifelong Agent Harness Evolution 
+- Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents 
+- Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents 
+- Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills 
+- Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control 
+- TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年10月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents**<br><sub>机构: University of Texas at Austin<br>Mem++ 通过引入非破坏性记忆框架，解决了 LLM 代理在长期组织工作中面临的历史决策追踪难题。它摒弃了传统的写入时信息压缩策略，转而采用写入时完整存储、读取时基于时间和语义筛选的策略。实验结果表明，该方法在多个基准测试中显著优于现有的 RAG 和其他记忆管理系统，为构建具备准确长期历史感知能力的组织级 LLM 代理提供了有效解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02002v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.02002.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AIDAChip-Inc/mem-plus-plus)</div> |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents**<br><sub>机构: UC Berkeley<br>本文提出了 RPG 框架，解决了具身智能体在不更新模型权重前提下自主改进执行系统的难题。通过结合离线数据重构、仿真中的闭环练习与诊断、以及严格的跨任务验证，RPG 能够自动生成和优化可重用的符号技能。实验表明，该方法在仿真和真实世界中均取得了超越当前最先进基线（如 ASPIRE 和 CaP-Agent0）的性能，实现了高效、鲁棒且可泛化的机器人控制，为减少机器人部署中的人工工程努力提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02204v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.02204.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills**<br><sub>机构: IBM Research, Georgia Institute of Technology<br>本文强调了在企业级 AI Agent 持续演进过程中，仅靠结果评估不足以保障系统可靠性。作者提出的持续过程级评估框架通过程序化检查和受限 LLM 裁判，有效捕捉了隐藏在正确结果背后的过程错误。实验表明，绝大多数看似成功的运行实际上存在过程偏差，证明了该框架作为负责任部署循环中质量网关的重要价值。未来工作将包括在实际 API 演进下的纵向验证。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.01833v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.01833.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control**<br><sub>机构: Michigan State University, Ohio State University<br>Mimir 展示了持久性物理代理如何将语义推理与有界的、证据驱动的自我改进相结合，同时将物理真理和执行器权限保留给显式的数值机制。该研究强调，在长周期物理控制中，不应让 LLM 直接重写物理规则，而应通过双时间尺度的修复机制（快尺度的数值验证与慢尺度的原则提炼）来确保安全性和高效性。这一范式为 LLM 在需要长期状态依赖和严格安全约束的物理系统中的应用提供了重要启示。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02038v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.02038.md)  |
+| <span style='display: inline-block; width: 42px;'>10-01</span> | **TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design**<br><sub>机构: NEC Laboratories Europe, i2CAT Foundation and ICREA<br>TRACE 解决了现有 AHD 方法在真实世界资源分配中因缺乏系统内部动态信息而导致性能受限的问题。通过引入多代理协作机制，自动从复杂的系统日志中提取因果知识和可执行工具，并将其反馈给进化算法，实现了比传统标量反馈方法更优的资源调度策略，同时保持了工业级所需的低延迟和高可解释性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.01887v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.01887.md)  |
+
+---
+
 ### 2026年09月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
