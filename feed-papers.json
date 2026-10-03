@@ -1,43 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-02T07:31:11.084490+00:00",
-  "run_date": "2026-10-01",
+  "generated_at": "2026-10-03T06:45:10.762576+00:00",
+  "run_date": "2026-09-27",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.02002",
-      "date": "2026-10-01",
-      "title": "Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents",
+      "id": "arxiv:2609.33768",
+      "date": "2026-09-27",
+      "title": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ahmad Yehia",
-        "Aly O. Abdelkareem",
-        "Islam Ahmed",
-        "Hesham Omran",
-        "Khaled Alashmouny",
-        "Christian Claudel",
-        "Abduallah Mohamed"
+        "Jingjuan Huang",
+        "Wenbin Wang",
+        "Yanchuan Yin",
+        "Alvaro Velasquez",
+        "Jia Liu"
       ],
-      "institution": "University of Texas at Austin",
+      "institution": "Ohio State University, University of Colorado at Boulder",
       "summary": {
-        "zh": "Mem++ 通过引入非破坏性记忆框架，解决了 LLM 代理在长期组织工作中面临的历史决策追踪难题。它摒弃了传统的写入时信息压缩策略，转而采用写入时完整存储、读取时基于时间和语义筛选的策略。实验结果表明，该方法在多个基准测试中显著优于现有的 RAG 和其他记忆管理系统，为构建具备准确长期历史感知能力的组织级 LLM 代理提供了有效解决方案。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly involved in organizational work, where decisions are recorded across documents by multiple authors over months. In organizational settings, revised..."
+        "zh": "DEALS 提出了一种新颖的去中心化、感知专业能力的负载服务框架，解决了多智能体 LLM 系统在并发异构任务流下的自组织和负载均衡难题。通过基于局部 backlog 和成功率的轻量级路由机制，以及支持任务断点续传的并发执行模型，DEALS 在不牺牲性能的前提下显著降低了协调开销，提升了系统的可扩展性、准确率和吞吐量，为高效的多智能体协作提供了新的范式。",
+        "en": "- **Background**: Multi-Agent Systems (MAS) coordinate LLM-based agents to solve complex tasks. In practice, they must handle continuous streams of heterogeneous and complex tasks, requiring agents to decompose tasks,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.02002v1",
-        "pdf": "https://arxiv.org/pdf/2610.02002v1",
-        "github": "https://github.com/AIDAChip-Inc/mem-plus-plus"
+        "abs": "http://arxiv.org/abs/2609.33768v1",
+        "pdf": "https://arxiv.org/pdf/2609.33768v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.02002.md",
-        "summary_en_path": "summary_en/2026-10/2610.02002.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02002.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02002.md"
+        "summary_zh_path": "summary/2026-09/2609.33768.md",
+        "summary_en_path": "summary_en/2026-09/2609.33768.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33768.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33768.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,41 +52,32 @@
       }
     },
     {
-      "id": "arxiv:2610.02204",
-      "date": "2026-10-01",
-      "title": "Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents",
+      "id": "arxiv:2609.34017",
+      "date": "2026-09-27",
+      "title": "Maat: Independent Deterministic Contract-Based Governance for Multi-Agent LLM Workflows",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yen-Jen Wang",
-        "Haozhe Jiang",
-        "Shuying Deng",
-        "Haoru Xue",
-        "Weirui Ye",
-        "Rocky Duan",
-        "Nika Haghtalab",
-        "S. Shankar Sastry",
-        "Pieter Abbeel",
-        "Haozhi Qi"
+        "Uliana Elina"
       ],
-      "institution": "UC Berkeley",
+      "institution": "SynWe Group s.r.o.",
       "summary": {
-        "zh": "本文提出了 RPG 框架，解决了具身智能体在不更新模型权重前提下自主改进执行系统的难题。通过结合离线数据重构、仿真中的闭环练习与诊断、以及严格的跨任务验证，RPG 能够自动生成和优化可重用的符号技能。实验表明，该方法在仿真和真实世界中均取得了超越当前最先进基线（如 ASPIRE 和 CaP-Agent0）的性能，实现了高效、鲁棒且可泛化的机器人控制，为减少机器人部署中的人工工程努力提供了新范式。",
-        "en": "This paper presents RPG, a framework that enables embodied agents to autonomously improve execution systems without updating model weights. By combining offline data reconstruction, closed-loop simulation practice with..."
+        "zh": "Maat提出了一种无需LLM参与的确定性运行时治理机制，旨在解决多智能体系统中的错误传播问题。虽然初步结果显示了潜在的性能增益和成本节约，但严格的审计揭示了验证器配置错误导致的较高误报率。修正后的数据表明，该方法在处理特定合同可表达缺陷时有效，但强调了验证逻辑本身的测试和归因准确性的重要性。Maat并非万能解决方案，而是多智能体安全体系中针对确定性规则检查的重要补充组件。",
+        "en": "Maat introduces a deterministic runtime governance mechanism independent of LLMs to address error propagation in multi-agent systems. While initial results suggested performance gains and cost savings, rigorous auditing..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.02204v1",
-        "pdf": "https://arxiv.org/pdf/2610.02204v1",
+        "abs": "http://arxiv.org/abs/2609.34017v1",
+        "pdf": "https://arxiv.org/pdf/2609.34017v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.02204.md",
-        "summary_en_path": "summary_en/2026-10/2610.02204.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02204.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02204.md"
+        "summary_zh_path": "summary/2026-09/2609.34017.md",
+        "summary_en_path": "summary_en/2026-09/2609.34017.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.34017.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.34017.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -105,34 +94,33 @@
       }
     },
     {
-      "id": "arxiv:2610.01833",
-      "date": "2026-10-01",
-      "title": "Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills",
+      "id": "arxiv:2609.33955",
+      "date": "2026-09-27",
+      "title": "Designing Reliable LLM-as-a-Judge Measurement Systems for Multi-Turn Business Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ngoc Phuoc An Vo",
-        "Aarya Doshi",
-        "Vadim Sheinin"
+        "Kaiwen Luo",
+        "Ming Gao"
       ],
-      "institution": "IBM Research, Georgia Institute of Technology",
+      "institution": "Meta",
       "summary": {
-        "zh": "本文强调了在企业级 AI Agent 持续演进过程中，仅靠结果评估不足以保障系统可靠性。作者提出的持续过程级评估框架通过程序化检查和受限 LLM 裁判，有效捕捉了隐藏在正确结果背后的过程错误。实验表明，绝大多数看似成功的运行实际上存在过程偏差，证明了该框架作为负责任部署循环中质量网关的重要价值。未来工作将包括在实际 API 演进下的纵向验证。",
-        "en": "- **Background**: Enterprise AI agent skills are dynamic, evolving with changes in tool APIs, LLM versions, and business specifications. Each revision introduces risks of behavioral regressions."
+        "zh": "本文针对生产环境中多轮业务 Agent 的评估难题，提出了一套完整的 LLM-as-a-Judge 测量系统设计方法论。通过整合评估规范、模块化 Judge、用户模拟和人机协同治理，解决了多轮交互中的状态追踪、失败归因及系统持续校准等核心挑战。实证结果表明，该框架能有效提升测量保真度，实现人工与自动化评估的共同进化，为构建可靠、可维护的业务 Agent 评估系统提供了实用指南。",
+        "en": "This paper addresses the evaluation challenges of production multi-turn business agents by proposing a comprehensive LLM-as-a-Judge measurement system design methodology. By integrating evaluation specifications,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.01833v1",
-        "pdf": "https://arxiv.org/pdf/2610.01833v1",
+        "abs": "http://arxiv.org/abs/2609.33955v1",
+        "pdf": "https://arxiv.org/pdf/2609.33955v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.01833.md",
-        "summary_en_path": "summary_en/2026-10/2610.01833.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.01833.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.01833.md"
+        "summary_zh_path": "summary/2026-09/2609.33955.md",
+        "summary_en_path": "summary_en/2026-09/2609.33955.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33955.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33955.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -149,35 +137,35 @@
       }
     },
     {
-      "id": "arxiv:2610.02038",
-      "date": "2026-10-01",
-      "title": "Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control",
+      "id": "arxiv:2609.33676",
+      "date": "2026-09-27",
+      "title": "Auditing Agent Actions through Query-Conditioned Attribution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yimeng Liu",
-        "Mi Zhang",
-        "Younsuk Dong",
-        "Zhichao Cao"
+        "Yifan Liu",
+        "Praveen Venkateswaran",
+        "Abdulhamid Adebayo",
+        "Dong Wang"
       ],
-      "institution": "Michigan State University, Ohio State University",
+      "institution": "University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "Mimir 展示了持久性物理代理如何将语义推理与有界的、证据驱动的自我改进相结合，同时将物理真理和执行器权限保留给显式的数值机制。该研究强调，在长周期物理控制中，不应让 LLM 直接重写物理规则，而应通过双时间尺度的修复机制（快尺度的数值验证与慢尺度的原则提炼）来确保安全性和高效性。这一范式为 LLM 在需要长期状态依赖和严格安全约束的物理系统中的应用提供了重要启示。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly combining reasoning, tool use, and action, but most evidence comes from episodic tasks with immediate feedback and resettable failures. Long-running..."
+        "zh": "本文针对 LLM 代理审计中缺乏针对性追踪和低效的问题，提出了查询条件化的动作归因任务。通过引入 $A^3Bench$ 基准和基于小型模型的归因提议者机制，该方法在无需访问模型内部权重或依赖昂贵 API 调用的情况下，实现了比现有最先进方法更高精度和更低延迟的动作归因，为代理系统的透明度和安全性审计提供了高效解决方案。",
+        "en": "This paper addresses the lack of targeted tracing and inefficiency in LLM agent auditing by formulating the Query-Conditioned Agent Action Attribution task. By introducing the $A^3Bench$ benchmark and a novel..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.02038v1",
-        "pdf": "https://arxiv.org/pdf/2610.02038v1",
+        "abs": "http://arxiv.org/abs/2609.33676v2",
+        "pdf": "https://arxiv.org/pdf/2609.33676v2",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.02038.md",
-        "summary_en_path": "summary_en/2026-10/2610.02038.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.02038.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.02038.md"
+        "summary_zh_path": "summary/2026-09/2609.33676.md",
+        "summary_en_path": "summary_en/2026-09/2609.33676.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33676.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33676.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,34 +182,34 @@
       }
     },
     {
-      "id": "arxiv:2610.01887",
-      "date": "2026-10-01",
-      "title": "TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design",
+      "id": "arxiv:2609.34004",
+      "date": "2026-09-27",
+      "title": "RICE-Alpha: Reliability-Informed Correction with Event Graphs for LLM-Agent Stock Forecasting",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jose A. Ayala-Romero",
-        "Andres Garcia-Saavedra",
-        "Xavier Costa-Perez"
+        "Tong Liu",
+        "Lanmiao Liu",
+        "Xiang Hu"
       ],
-      "institution": "NEC Laboratories Europe, i2CAT Foundation and ICREA",
+      "institution": "Utrecht University, The Max Planck Institute for Psycholinguistics, China Life R&D Center, Zircon Security",
       "summary": {
-        "zh": "TRACE 解决了现有 AHD 方法在真实世界资源分配中因缺乏系统内部动态信息而导致性能受限的问题。通过引入多代理协作机制，自动从复杂的系统日志中提取因果知识和可执行工具，并将其反馈给进化算法，实现了比传统标量反馈方法更优的资源调度策略，同时保持了工业级所需的低延迟和高可解释性。",
-        "en": "- **Background**: Dynamic resource assignment is critical for modern infrastructure. However, industrial deployments rely on hand-written rules due to strict requirements for interpretability, auditability, and low..."
+        "zh": "RICE-Alpha 证明了当历史信息在时间上扎根、经过可靠性校准并作为多视图预测的残差修正引入时，历史事件的延续能为股票预测提供显著的增量信息。该方法通过解耦基础预测与可靠性校准的残差修正，有效解决了现有 LLM 金融智能体在处理时间依赖性和事件连续性方面的局限。",
+        "en": "- **Background**: Equity-relevant news evolves through temporally dependent corporate events rather than isolated observations. Effective financial reasoning requires not only current evidence but also a temporally..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.01887v1",
-        "pdf": "https://arxiv.org/pdf/2610.01887v1",
+        "abs": "http://arxiv.org/abs/2609.34004v2",
+        "pdf": "https://arxiv.org/pdf/2609.34004v2",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.01887.md",
-        "summary_en_path": "summary_en/2026-10/2610.01887.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.01887.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.01887.md"
+        "summary_zh_path": "summary/2026-09/2609.34004.md",
+        "summary_en_path": "summary_en/2026-09/2609.34004.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.34004.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.34004.md"
       },
       "signals": {
         "priority_keyword": "Agent"
