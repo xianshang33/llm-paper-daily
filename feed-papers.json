@@ -1,41 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-03T06:45:10.762576+00:00",
-  "run_date": "2026-09-27",
+  "generated_at": "2026-10-03T10:33:36.970040+00:00",
+  "run_date": "2026-09-26",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.33768",
-      "date": "2026-09-27",
-      "title": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
+      "id": "arxiv:2609.32939",
+      "date": "2026-09-26",
+      "title": "Theory of Scene: Breaking the Symmetry Trap in Multi-Agent LLM Coordination",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jingjuan Huang",
-        "Wenbin Wang",
-        "Yanchuan Yin",
-        "Alvaro Velasquez",
-        "Jia Liu"
+        "Liangqi Yuan",
+        "Wenzhi Fang",
+        "Shiqiang Wang",
+        "Christopher G. Brinton"
       ],
-      "institution": "Ohio State University, University of Colorado at Boulder",
+      "institution": "Purdue University, University of Exeter",
       "summary": {
-        "zh": "DEALS 提出了一种新颖的去中心化、感知专业能力的负载服务框架，解决了多智能体 LLM 系统在并发异构任务流下的自组织和负载均衡难题。通过基于局部 backlog 和成功率的轻量级路由机制，以及支持任务断点续传的并发执行模型，DEALS 在不牺牲性能的前提下显著降低了协调开销，提升了系统的可扩展性、准确率和吞吐量，为高效的多智能体协作提供了新的范式。",
-        "en": "- **Background**: Multi-Agent Systems (MAS) coordinate LLM-based agents to solve complex tasks. In practice, they must handle continuous streams of heterogeneous and complex tasks, requiring agents to decompose tasks,..."
+        "zh": "本文揭示了多智能体LLM系统中的“对称陷阱”问题，即同质智能体在无通信并发行动中因行为一致而导致的协调失败。提出的ToS框架通过角色门控和任务耦合机制，利用公开角色和场景上下文动态推导劳动分工，无需训练即可显著提升多智能体在竞争、协作及混合任务中的协调性能，并在多个基准测试中取得了state-of-the-art的结果。",
+        "en": "This paper identifies the \"Symmetry Trap\" in multi-agent LLM systems, where homogeneous agents fail to coordinate due to identical behaviors in concurrent, non-communicative settings. The proposed ToS framework..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.33768v1",
-        "pdf": "https://arxiv.org/pdf/2609.33768v1",
+        "abs": "http://arxiv.org/abs/2609.32939v1",
+        "pdf": "https://arxiv.org/pdf/2609.32939v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.33768.md",
-        "summary_en_path": "summary_en/2026-09/2609.33768.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33768.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33768.md"
+        "summary_zh_path": "summary/2026-09/2609.32939.md",
+        "summary_en_path": "summary_en/2026-09/2609.32939.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32939.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32939.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,32 +51,33 @@
       }
     },
     {
-      "id": "arxiv:2609.34017",
-      "date": "2026-09-27",
-      "title": "Maat: Independent Deterministic Contract-Based Governance for Multi-Agent LLM Workflows",
+      "id": "arxiv:2609.33013",
+      "date": "2026-09-26",
+      "title": "The Epistemics of Agent Memory: Measuring, and Governing, the Consolidation Decision in Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Uliana Elina"
+        "Sasank Annapureddy",
+        "Anjaneya Prasad Thamatani"
       ],
-      "institution": "SynWe Group s.r.o.",
+      "institution": null,
       "summary": {
-        "zh": "Maat提出了一种无需LLM参与的确定性运行时治理机制，旨在解决多智能体系统中的错误传播问题。虽然初步结果显示了潜在的性能增益和成本节约，但严格的审计揭示了验证器配置错误导致的较高误报率。修正后的数据表明，该方法在处理特定合同可表达缺陷时有效，但强调了验证逻辑本身的测试和归因准确性的重要性。Maat并非万能解决方案，而是多智能体安全体系中针对确定性规则检查的重要补充组件。",
-        "en": "Maat introduces a deterministic runtime governance mechanism independent of LLMs to address error propagation in multi-agent systems. While initial results suggested performance gains and cost savings, rigorous auditing..."
+        "zh": "本文并未单纯提出一种新算法，而是重新定义了长程智能体记忆的研究范式：从关注记忆容量转向关注巩固决策的质量与可信度。通过四阶段研究，文章揭示了现有检索系统的局限性，提出了防泄漏协议和受控巩固框架，并诚实地报告了质量评分与下游性能之间的弱相关性。其核心贡献在于建立了一套可测量、可审计的记忆认识论体系，确保智能体记忆的可靠性与安全性。",
+        "en": "- **Background**: Long-horizon LLM agents must convert accumulated experience into durable memory, deciding what to retain, compress, abstract, or forget. Existing approaches treat memory primarily as a storage problem..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.34017v1",
-        "pdf": "https://arxiv.org/pdf/2609.34017v1",
+        "abs": "http://arxiv.org/abs/2609.33013v1",
+        "pdf": "https://arxiv.org/pdf/2609.33013v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.34017.md",
-        "summary_en_path": "summary_en/2026-09/2609.34017.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.34017.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.34017.md"
+        "summary_zh_path": "summary/2026-09/2609.33013.md",
+        "summary_en_path": "summary_en/2026-09/2609.33013.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33013.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33013.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -94,33 +94,34 @@
       }
     },
     {
-      "id": "arxiv:2609.33955",
-      "date": "2026-09-27",
-      "title": "Designing Reliable LLM-as-a-Judge Measurement Systems for Multi-Turn Business Agents",
+      "id": "arxiv:2609.32917",
+      "date": "2026-09-26",
+      "title": "Planner-as-Router: Joint Plan-Time Model Routing for Cost-Efficient Multi-Agent Workflows",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kaiwen Luo",
-        "Ming Gao"
+        "Vivek Kumar Singh",
+        "Preeti Priyam",
+        "Gautam Bhowmick"
       ],
-      "institution": "Meta",
+      "institution": null,
       "summary": {
-        "zh": "本文针对生产环境中多轮业务 Agent 的评估难题，提出了一套完整的 LLM-as-a-Judge 测量系统设计方法论。通过整合评估规范、模块化 Judge、用户模拟和人机协同治理，解决了多轮交互中的状态追踪、失败归因及系统持续校准等核心挑战。实证结果表明，该框架能有效提升测量保真度，实现人工与自动化评估的共同进化，为构建可靠、可维护的业务 Agent 评估系统提供了实用指南。",
-        "en": "This paper addresses the evaluation challenges of production multi-turn business agents by proposing a comprehensive LLM-as-a-Judge measurement system design methodology. By integrating evaluation specifications,..."
+        "zh": "Planner-as-Router (PaR) 通过将模型路由决策整合到任务规划阶段，解决了多智能体工作流中成本高企的问题。它通过全局视角分配不同能力的模型层级，避免了传统逐调用路由的错误累积问题，且无需额外训练数据。实验表明，PaR 在显著降低成本的同时保持了具有竞争力的准确性，为企业级 LLM 应用提供了一种高效的经济性解决方案。",
+        "en": "- **Background**: Running LLM agents in production is expensive. Frontier models are accurate but can cost up to 25 times more per token than small models, a gap that compounds in multi-step workflows."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.33955v1",
-        "pdf": "https://arxiv.org/pdf/2609.33955v1",
+        "abs": "http://arxiv.org/abs/2609.32917v1",
+        "pdf": "https://arxiv.org/pdf/2609.32917v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.33955.md",
-        "summary_en_path": "summary_en/2026-09/2609.33955.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33955.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33955.md"
+        "summary_zh_path": "summary/2026-09/2609.32917.md",
+        "summary_en_path": "summary_en/2026-09/2609.32917.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32917.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32917.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -137,35 +138,35 @@
       }
     },
     {
-      "id": "arxiv:2609.33676",
-      "date": "2026-09-27",
-      "title": "Auditing Agent Actions through Query-Conditioned Attribution",
+      "id": "arxiv:2609.32827",
+      "date": "2026-09-26",
+      "title": "Improving LLM Collaboration via Multi-Agent Preference Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yifan Liu",
-        "Praveen Venkateswaran",
-        "Abdulhamid Adebayo",
-        "Dong Wang"
+        "Shuo Liu",
+        "Xinzichen Li",
+        "Tianle Chen",
+        "Christopher Amato"
       ],
-      "institution": "University of Illinois Urbana-Champaign",
+      "institution": "Northeastern University",
       "summary": {
-        "zh": "本文针对 LLM 代理审计中缺乏针对性追踪和低效的问题，提出了查询条件化的动作归因任务。通过引入 $A^3Bench$ 基准和基于小型模型的归因提议者机制，该方法在无需访问模型内部权重或依赖昂贵 API 调用的情况下，实现了比现有最先进方法更高精度和更低延迟的动作归因，为代理系统的透明度和安全性审计提供了高效解决方案。",
-        "en": "This paper addresses the lack of targeted tracing and inefficiency in LLM agent auditing by formulating the Query-Conditioned Agent Action Attribution task. By introducing the $A^3Bench$ benchmark and a novel..."
+        "zh": "本文针对 LLM 多智能体协作中奖励函数难以设计的问题，提出了通用的多智能体偏好学习框架 MAPL。通过引入在线迭代偏好比较机制，MAPL 有效解决了策略空间巨大带来的数据覆盖难题，并通过 MARLHF 和 MADPO 两种实例化方法缓解了奖励建模的不稳定性。实验表明，该方法能在无明确奖励指标的情况下，实现接近传统强化学习的协作性能，为 LLM 智能体的高效协作提供了新的优化范式。",
+        "en": "- **Background**: As Large Language Models (LLMs) evolve into autonomous agents, Multi-Agent Systems (MAS) are increasingly used for complex tasks. Existing Multi-Agent Reinforcement Learning (MARL) approaches typically..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.33676v2",
-        "pdf": "https://arxiv.org/pdf/2609.33676v2",
+        "abs": "http://arxiv.org/abs/2609.32827v1",
+        "pdf": "https://arxiv.org/pdf/2609.32827v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.33676.md",
-        "summary_en_path": "summary_en/2026-09/2609.33676.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33676.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33676.md"
+        "summary_zh_path": "summary/2026-09/2609.32827.md",
+        "summary_en_path": "summary_en/2026-09/2609.32827.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32827.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32827.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -182,34 +183,34 @@
       }
     },
     {
-      "id": "arxiv:2609.34004",
-      "date": "2026-09-27",
-      "title": "RICE-Alpha: Reliability-Informed Correction with Event Graphs for LLM-Agent Stock Forecasting",
+      "id": "arxiv:2609.32754",
+      "date": "2026-09-26",
+      "title": "Adaptive Consistency Graph for Long-Horizon Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tong Liu",
-        "Lanmiao Liu",
-        "Xiang Hu"
+        "Jiecong Wang",
+        "Hao Peng",
+        "Zhanyi Wang"
       ],
-      "institution": "Utrecht University, The Max Planck Institute for Psycholinguistics, China Life R&D Center, Zircon Security",
+      "institution": "Beihang University",
       "summary": {
-        "zh": "RICE-Alpha 证明了当历史信息在时间上扎根、经过可靠性校准并作为多视图预测的残差修正引入时，历史事件的延续能为股票预测提供显著的增量信息。该方法通过解耦基础预测与可靠性校准的残差修正，有效解决了现有 LLM 金融智能体在处理时间依赖性和事件连续性方面的局限。",
-        "en": "- **Background**: Equity-relevant news evolves through temporally dependent corporate events rather than isolated observations. Effective financial reasoning requires not only current evidence but also a temporally..."
+        "zh": "本文针对 LLM 代理在长视野任务中的上下文漂移问题，提出了自适应一致性图（ACG）。ACG 通过构建持久化证据图和动态生成以需求为中心的上下文视图，有效解决了历史信息与当前决策脱节的难题。实验表明，ACG 能在不修改底层代理架构的情况下，显著提升复杂任务的成功率，特别是在需要长序列依赖的场景中表现优异。该方法为提升 LLM 代理的长期一致性和可追溯性提供了新的思路。",
+        "en": "-horizon tasks requiring sequences of dependent actions and tool calls. During execution, task requirements, historical evidence, and current states gradually become disconnected, causing later decisions to drift from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.34004v2",
-        "pdf": "https://arxiv.org/pdf/2609.34004v2",
-        "github": null
+        "abs": "http://arxiv.org/abs/2609.32754v2",
+        "pdf": "https://arxiv.org/pdf/2609.32754v2",
+        "github": "https://github.com/yunsaijc/Adaptive-Consistency-Graph"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.34004.md",
-        "summary_en_path": "summary_en/2026-09/2609.34004.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.34004.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.34004.md"
+        "summary_zh_path": "summary/2026-09/2609.32754.md",
+        "summary_en_path": "summary_en/2026-09/2609.32754.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32754.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32754.md"
       },
       "signals": {
         "priority_keyword": "Agent"
