@@ -1,40 +1,45 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-03T10:33:36.970040+00:00",
-  "run_date": "2026-09-26",
+  "generated_at": "2026-10-05T07:27:49.691073+00:00",
+  "run_date": "2026-10-02",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2609.32939",
-      "date": "2026-09-26",
-      "title": "Theory of Scene: Breaking the Symmetry Trap in Multi-Agent LLM Coordination",
+      "id": "arxiv:2610.03226",
+      "date": "2026-10-02",
+      "title": "D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Liangqi Yuan",
-        "Wenzhi Fang",
-        "Shiqiang Wang",
-        "Christopher G. Brinton"
+        "Daifeng Li",
+        "Huiqiang Jiang",
+        "Chengruidong Zhang",
+        "Wei Wu",
+        "Xudong Guo",
+        "Jianhong Tu",
+        "Jianwei Zhang",
+        "Binhang Yuan",
+        "Dayiheng Liu"
       ],
-      "institution": "Purdue University, University of Exeter",
+      "institution": "HKUST, Alibaba Group, USTC",
       "summary": {
-        "zh": "本文揭示了多智能体LLM系统中的“对称陷阱”问题，即同质智能体在无通信并发行动中因行为一致而导致的协调失败。提出的ToS框架通过角色门控和任务耦合机制，利用公开角色和场景上下文动态推导劳动分工，无需训练即可显著提升多智能体在竞争、协作及混合任务中的协调性能，并在多个基准测试中取得了state-of-the-art的结果。",
-        "en": "This paper identifies the \"Symmetry Trap\" in multi-agent LLM systems, where homogeneous agents fail to coordinate due to identical behaviors in concurrent, non-communicative settings. The proposed ToS framework..."
+        "zh": "D2K-Bench通过引入分层专家指导和多维度的诊断评估，解决了传统基准仅靠运行时数据无法区分设计与实现缺陷的问题。研究证实了专家设计指导在提升LLM生成GPU内核的正确性和效率方面的巨大价值，并为未来改进自动化内核开发工具提供了明确的方向，即需同时加强智能体的设计探索能力和代码实现 fidelity。",
+        "en": "- **Background**: GPU kernel efficiency is critical for ML system performance. LLM agents have emerged as a promising tool for automating GPU kernel development through iterative code generation and optimization."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.32939v1",
-        "pdf": "https://arxiv.org/pdf/2609.32939v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.03226v1",
+        "pdf": "https://arxiv.org/pdf/2610.03226v1",
+        "github": "https://github.com/QwenLM/D2K-Bench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.32939.md",
-        "summary_en_path": "summary_en/2026-09/2609.32939.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32939.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32939.md"
+        "summary_zh_path": "summary/2026-10/2610.03226.md",
+        "summary_en_path": "summary_en/2026-10/2610.03226.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03226.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03226.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,33 +56,37 @@
       }
     },
     {
-      "id": "arxiv:2609.33013",
-      "date": "2026-09-26",
-      "title": "The Epistemics of Agent Memory: Measuring, and Governing, the Consolidation Decision in Long-Horizon LLM Agents",
+      "id": "arxiv:2610.03394",
+      "date": "2026-10-02",
+      "title": "EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sasank Annapureddy",
-        "Anjaneya Prasad Thamatani"
+        "Yuhai Long",
+        "Yuanxin Wei",
+        "Kai Wu",
+        "Jinhui Wei",
+        "Dan Huang",
+        "Jiangsu Du"
       ],
-      "institution": null,
+      "institution": "Sun Yat-sen University",
       "summary": {
-        "zh": "本文并未单纯提出一种新算法，而是重新定义了长程智能体记忆的研究范式：从关注记忆容量转向关注巩固决策的质量与可信度。通过四阶段研究，文章揭示了现有检索系统的局限性，提出了防泄漏协议和受控巩固框架，并诚实地报告了质量评分与下游性能之间的弱相关性。其核心贡献在于建立了一套可测量、可审计的记忆认识论体系，确保智能体记忆的可靠性与安全性。",
-        "en": "- **Background**: Long-horizon LLM agents must convert accumulated experience into durable memory, deciding what to retain, compress, abstract, or forget. Existing approaches treat memory primarily as a storage problem..."
+        "zh": "EdgeAgent 通过微架构层面的零拷贝张量并行和调度层面的动态草稿预算及异步挂起机制，有效解决了端侧 UMA 架构上多智能体 LLM 推理面临的总线争用和执行碎片化问题。实验证明其在 Apple M4 平台上能显著提升推理速度，为隐私保护的端侧多智能体系统提供了高效的底层支持。",
+        "en": "- **Background**: The application of Large Language Models (LLMs) is shifting towards coordinated multi-agent systems. Due to privacy and security concerns, there is a growing demand for on-device deployment."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.33013v1",
-        "pdf": "https://arxiv.org/pdf/2609.33013v1",
+        "abs": "http://arxiv.org/abs/2610.03394v1",
+        "pdf": "https://arxiv.org/pdf/2610.03394v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.33013.md",
-        "summary_en_path": "summary_en/2026-09/2609.33013.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.33013.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.33013.md"
+        "summary_zh_path": "summary/2026-10/2610.03394.md",
+        "summary_en_path": "summary_en/2026-10/2610.03394.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03394.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03394.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -94,34 +103,41 @@
       }
     },
     {
-      "id": "arxiv:2609.32917",
-      "date": "2026-09-26",
-      "title": "Planner-as-Router: Joint Plan-Time Model Routing for Cost-Efficient Multi-Agent Workflows",
+      "id": "arxiv:2610.03356",
+      "date": "2026-10-02",
+      "title": "ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Vivek Kumar Singh",
-        "Preeti Priyam",
-        "Gautam Bhowmick"
+        "Hainiu Xu",
+        "Vítor N. Lourenço",
+        "Mohnish Dubey",
+        "Yunfei Bai",
+        "Yulan He",
+        "Caroline Catmur",
+        "Aline Paes",
+        "Marco Caserta",
+        "Akash Chandrayan",
+        "Luca D'Angelo"
       ],
-      "institution": null,
+      "institution": "King's College London, Amazon, Universidade Federal Fluminense, The Alan Turing Institute",
       "summary": {
-        "zh": "Planner-as-Router (PaR) 通过将模型路由决策整合到任务规划阶段，解决了多智能体工作流中成本高企的问题。它通过全局视角分配不同能力的模型层级，避免了传统逐调用路由的错误累积问题，且无需额外训练数据。实验表明，PaR 在显著降低成本的同时保持了具有竞争力的准确性，为企业级 LLM 应用提供了一种高效的经济性解决方案。",
-        "en": "- **Background**: Running LLM agents in production is expensive. Frontier models are accurate but can cost up to 25 times more per token than small models, a gap that compounds in multi-step workflows."
+        "zh": "ReFract 基准测试填补了LLM智能体在角色敏感型高风险场景评估中的空白。通过引入视角感知和视角路由的概念，该研究强调了智能体不仅需要具备执行任务的能力，更需要具备理解用户社会角色、权限边界及意图的理论心智能力。实验结果表明，当前最先进的模型在此方面仍有显著缺陷，亟需开发能够校准“为谁行动”的新型智能体架构。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly deployed in high-stakes settings like industrial maintenance, where users occupy various roles. Agents must calibrate their actions and information to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.32917v1",
-        "pdf": "https://arxiv.org/pdf/2609.32917v1",
+        "abs": "http://arxiv.org/abs/2610.03356v1",
+        "pdf": "https://arxiv.org/pdf/2610.03356v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.32917.md",
-        "summary_en_path": "summary_en/2026-09/2609.32917.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32917.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32917.md"
+        "summary_zh_path": "summary/2026-10/2610.03356.md",
+        "summary_en_path": "summary_en/2026-10/2610.03356.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03356.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03356.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -138,35 +154,36 @@
       }
     },
     {
-      "id": "arxiv:2609.32827",
-      "date": "2026-09-26",
-      "title": "Improving LLM Collaboration via Multi-Agent Preference Learning",
+      "id": "arxiv:2610.03585",
+      "date": "2026-10-02",
+      "title": "Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shuo Liu",
-        "Xinzichen Li",
-        "Tianle Chen",
-        "Christopher Amato"
+        "Neeraj Karamchandani",
+        "Piyush Nagasubramaniam",
+        "Xinhong Xie",
+        "Sencun Zhu",
+        "Dinghao Wu"
       ],
-      "institution": "Northeastern University",
+      "institution": "The Pennsylvania State University",
       "summary": {
-        "zh": "本文针对 LLM 多智能体协作中奖励函数难以设计的问题，提出了通用的多智能体偏好学习框架 MAPL。通过引入在线迭代偏好比较机制，MAPL 有效解决了策略空间巨大带来的数据覆盖难题，并通过 MARLHF 和 MADPO 两种实例化方法缓解了奖励建模的不稳定性。实验表明，该方法能在无明确奖励指标的情况下，实现接近传统强化学习的协作性能，为 LLM 智能体的高效协作提供了新的优化范式。",
-        "en": "- **Background**: As Large Language Models (LLMs) evolve into autonomous agents, Multi-Agent Systems (MAS) are increasingly used for complex tasks. Existing Multi-Agent Reinforcement Learning (MARL) approaches typically..."
+        "zh": "本文揭示了LLM智能体安全基准测试中存在严重的“威胁保持表示敏感性”问题。通过引入TPRS指标并在多个基准上进行大规模实证研究，作者证明了工具名称和描述等表面表示形式的微小变化会导致攻击成功率发生显著波动。这一发现挑战了当前仅凭单一ASR分数评估模型安全性的做法，呼吁社区在评估智能体鲁棒性时，应采用多种表示形式进行综合测试，以确保评估结果的泛化性和真实性。",
+        "en": "This paper reveals a critical issue of \"Threat-Preserving Representation Sensitivity\" in LLM agent security benchmarks. By introducing the TPRS metric and conducting large-scale empirical studies across multiple..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.32827v1",
-        "pdf": "https://arxiv.org/pdf/2609.32827v1",
+        "abs": "http://arxiv.org/abs/2610.03585v1",
+        "pdf": "https://arxiv.org/pdf/2610.03585v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.32827.md",
-        "summary_en_path": "summary_en/2026-09/2609.32827.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32827.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32827.md"
+        "summary_zh_path": "summary/2026-10/2610.03585.md",
+        "summary_en_path": "summary_en/2026-10/2610.03585.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03585.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03585.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -183,34 +200,32 @@
       }
     },
     {
-      "id": "arxiv:2609.32754",
-      "date": "2026-09-26",
-      "title": "Adaptive Consistency Graph for Long-Horizon Agents",
+      "id": "arxiv:2610.03448",
+      "date": "2026-10-02",
+      "title": "Passing the Test You Trained On: Re-evaluating Prompt-Injection Detectors for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiecong Wang",
-        "Hao Peng",
-        "Zhanyi Wang"
+        "Zhuowen Liu"
       ],
-      "institution": "Beihang University",
+      "institution": "Japan Advanced Institute of Science and Technology (JAIST)",
       "summary": {
-        "zh": "本文针对 LLM 代理在长视野任务中的上下文漂移问题，提出了自适应一致性图（ACG）。ACG 通过构建持久化证据图和动态生成以需求为中心的上下文视图，有效解决了历史信息与当前决策脱节的难题。实验表明，ACG 能在不修改底层代理架构的情况下，显著提升复杂任务的成功率，特别是在需要长序列依赖的场景中表现优异。该方法为提升 LLM 代理的长期一致性和可追溯性提供了新的思路。",
-        "en": "-horizon tasks requiring sequences of dependent actions and tool calls. During execution, task requirements, historical evidence, and current states gradually become disconnected, causing later decisions to drift from..."
+        "zh": "本文指出当前提示注入检测器的评估存在严重缺陷，基准测试分数不能预测其在 LLM Agent 中的实际行为。核心发现是检测器的性能高度依赖于其训练数据形式与评估输入形式的相似性，而非通用的检测能力。作者建议，旨在指导部署的评估应使用 Agent 自身的工具输出，报告低误报率下的检测性能，并严格审计检测器的训练数据来源。",
+        "en": "- **Background**: LLM agents increasingly use small prompt-injection detectors to screen tool outputs, with teams selecting detectors based on scores from public benchmarks like BIPIA. - **Why Existing Work Falls..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2609.32754v2",
-        "pdf": "https://arxiv.org/pdf/2609.32754v2",
-        "github": "https://github.com/yunsaijc/Adaptive-Consistency-Graph"
+        "abs": "http://arxiv.org/abs/2610.03448v1",
+        "pdf": "https://arxiv.org/pdf/2610.03448v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-09/2609.32754.md",
-        "summary_en_path": "summary_en/2026-09/2609.32754.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-09/2609.32754.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-09/2609.32754.md"
+        "summary_zh_path": "summary/2026-10/2610.03448.md",
+        "summary_en_path": "summary_en/2026-10/2610.03448.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03448.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03448.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.02_07:31-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.05_07:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月02日 07:31</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月05日 07:27</sub></summary>
 <br>
 
-- Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents 
-- Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents 
-- Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills 
-- Mimir: Physics-Grounded LLM Agents for Long-Horizon Irrigation Control 
-- TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design 
+- D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels? 
+- EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures 
+- ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models 
+- Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks 
+- Passing the Test You Trained On: Re-evaluating Prompt-Injection Detectors for LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-02</span> | **D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?**<br><sub>机构: HKUST, Alibaba Group, USTC<br>D2K-Bench通过引入分层专家指导和多维度的诊断评估，解决了传统基准仅靠运行时数据无法区分设计与实现缺陷的问题。研究证实了专家设计指导在提升LLM生成GPU内核的正确性和效率方面的巨大价值，并为未来改进自动化内核开发工具提供了明确的方向，即需同时加强智能体的设计探索能力和代码实现 fidelity。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03226v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03226.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/QwenLM/D2K-Bench)</div> |
+| <span style='display: inline-block; width: 42px;'>10-02</span> | **EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures**<br><sub>机构: Sun Yat-sen University<br>EdgeAgent 通过微架构层面的零拷贝张量并行和调度层面的动态草稿预算及异步挂起机制，有效解决了端侧 UMA 架构上多智能体 LLM 推理面临的总线争用和执行碎片化问题。实验证明其在 Apple M4 平台上能显著提升推理速度，为隐私保护的端侧多智能体系统提供了高效的底层支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03394v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03394.md)  |
+| <span style='display: inline-block; width: 42px;'>10-02</span> | **ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models**<br><sub>机构: King's College London, Amazon, Universidade Federal Fluminense, The Alan Turing Institute<br>ReFract 基准测试填补了LLM智能体在角色敏感型高风险场景评估中的空白。通过引入视角感知和视角路由的概念，该研究强调了智能体不仅需要具备执行任务的能力，更需要具备理解用户社会角色、权限边界及意图的理论心智能力。实验结果表明，当前最先进的模型在此方面仍有显著缺陷，亟需开发能够校准“为谁行动”的新型智能体架构。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03356v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03356.md)  |
+| <span style='display: inline-block; width: 42px;'>10-02</span> | **Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks**<br><sub>机构: The Pennsylvania State University<br>本文揭示了LLM智能体安全基准测试中存在严重的“威胁保持表示敏感性”问题。通过引入TPRS指标并在多个基准上进行大规模实证研究，作者证明了工具名称和描述等表面表示形式的微小变化会导致攻击成功率发生显著波动。这一发现挑战了当前仅凭单一ASR分数评估模型安全性的做法，呼吁社区在评估智能体鲁棒性时，应采用多种表示形式进行综合测试，以确保评估结果的泛化性和真实性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03585v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03585.md)  |
+| <span style='display: inline-block; width: 42px;'>10-02</span> | **Passing the Test You Trained On: Re-evaluating Prompt-Injection Detectors for LLM Agents**<br><sub>机构: Japan Advanced Institute of Science and Technology (JAIST)<br>本文指出当前提示注入检测器的评估存在严重缺陷，基准测试分数不能预测其在 LLM Agent 中的实际行为。核心发现是检测器的性能高度依赖于其训练数据形式与评估输入形式的相似性，而非通用的检测能力。作者建议，旨在指导部署的评估应使用 Agent 自身的工具输出，报告低误报率下的检测性能，并严格审计检测器的训练数据来源。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03448v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03448.md)  |
 | <span style='display: inline-block; width: 42px;'>10-01</span> | **Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents**<br><sub>机构: University of Texas at Austin<br>Mem++ 通过引入非破坏性记忆框架，解决了 LLM 代理在长期组织工作中面临的历史决策追踪难题。它摒弃了传统的写入时信息压缩策略，转而采用写入时完整存储、读取时基于时间和语义筛选的策略。实验结果表明，该方法在多个基准测试中显著优于现有的 RAG 和其他记忆管理系统，为构建具备准确长期历史感知能力的组织级 LLM 代理提供了有效解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02002v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.02002.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AIDAChip-Inc/mem-plus-plus)</div> |
 | <span style='display: inline-block; width: 42px;'>10-01</span> | **Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents**<br><sub>机构: UC Berkeley<br>本文提出了 RPG 框架，解决了具身智能体在不更新模型权重前提下自主改进执行系统的难题。通过结合离线数据重构、仿真中的闭环练习与诊断、以及严格的跨任务验证，RPG 能够自动生成和优化可重用的符号技能。实验表明，该方法在仿真和真实世界中均取得了超越当前最先进基线（如 ASPIRE 和 CaP-Agent0）的性能，实现了高效、鲁棒且可泛化的机器人控制，为减少机器人部署中的人工工程努力提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.02204v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.02204.md)  |
 | <span style='display: inline-block; width: 42px;'>10-01</span> | **Continuous Process-Level Evaluation for Evolving Enterprise AI Agent Skills**<br><sub>机构: IBM Research, Georgia Institute of Technology<br>本文强调了在企业级 AI Agent 持续演进过程中，仅靠结果评估不足以保障系统可靠性。作者提出的持续过程级评估框架通过程序化检查和受限 LLM 裁判，有效捕捉了隐藏在正确结果背后的过程错误。实验表明，绝大多数看似成功的运行实际上存在过程偏差，证明了该框架作为负责任部署循环中质量网关的重要价值。未来工作将包括在实际 API 演进下的纵向验证。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.01833v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.01833.md)  |
