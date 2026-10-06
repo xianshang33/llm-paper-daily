@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.05_07:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.06_07:46-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月05日 07:27</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月06日 07:46</sub></summary>
 <br>
 
-- D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels? 
-- EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures 
-- ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models 
-- Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks 
-- Passing the Test You Trained On: Re-evaluating Prompt-Injection Detectors for LLM Agents 
+- MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents 
+- RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents 
+- BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents 
+- ANT: A Multi-Granularity Network Traffic Dataset and Benchmark for Agents Behavior Auditing 
+- Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-05</span> | **MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents**<br><sub>机构: Nanyang Technological University, Tsinghua University, University of Illinois Urbana-Champaign<br>MemPilot 解决了现有智能体记忆系统在运行时适应性和多目标权衡方面的不足。通过引入基于强化学习的多步策略，动态协调异构模型的按需记忆整理，并结合目标级优势解耦和前缀边际效用估计技术，MemPilot 实现了细粒度的计算资源分配。实验表明，该方法能在性能、成本和延迟之间提供更优且更灵活的权衡方案，显著优于现有基线。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06830v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06830.md)  |
+| <span style='display: inline-block; width: 42px;'>10-05</span> | **RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents**<br><sub>机构: LIX, École polytechnique, Institut Polytechnique de Paris, CNRS; Google DeepMind; AMIAD; IRT SystemX<br>本文指出了现有 LLM 智能体防御间接提示注入方法中存在的分布漂移和对良性工具指导过度拒绝的问题。为此，作者提出了 RAISED 框架，利用自生成和自蒸馏技术，在有效抵御提示注入攻击的同时，保持了模型在复杂任务和通用场景下的高可用性，实现了鲁棒性与效用的良好平衡。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06401v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06401.md)  |
+| <span style='display: inline-block; width: 42px;'>10-05</span> | **BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents**<br><sub>机构: King's College London, University of Oxford, Institute for Decentralized AI, The Alan Turing Institute<br>本文介绍了BazaarBench，首个针对去中心化C2C市场中LLM代理委托安全性的基准测试。通过模拟真实市场动态和引入多种压力场景，研究揭示了当前主流LLM代理在面临经济诱惑和对抗性指令时，极易出现欺诈、过度承诺和隐私泄露等严重安全问题。该工作为开发更安全的 marketplace agents 提供了重要的评估工具和实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06748v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06748.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ziyan-wang98/BazaarBench)</div> |
+| <span style='display: inline-block; width: 42px;'>10-05</span> | **ANT: A Multi-Granularity Network Traffic Dataset and Benchmark for Agents Behavior Auditing**<br><sub>机构: Tsinghua University<br>本文介绍了 ANT，一个用于智能体行为审计的多粒度网络流量数据集和基准。通过提供风险、场景和行为原语三个层次的标注，ANT 解决了现有数据集在评估智能体行为可推断性方面的不足。基准测试结果表明，虽然现有流量分析方法能提取部分行为信号，但在处理相似流量模式和罕见行为时仍存在局限。ANT 为未来开发更精确的智能体行为审计和取证分析工具奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06514v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06514.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/ant-main-suite-7BC0/)</div> |
+| <span style='display: inline-block; width: 42px;'>10-05</span> | **Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification**<br><sub>机构: Columbia University<br>本文针对芯片设计验证中后模拟波形调试自动化的空白，提出了BTTF框架。通过将海量波形数据转化为关系型数据库，并结合多智能体系统进行自然语言到SQL的转换及RTL关联，有效解决了基础设施阻抗问题。实验结果表明，该方法在准确性和质量上均显著优于现有基线，为实现自主化的EDA验证流程迈出了重要一步。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06790v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06790.md)  |
 | <span style='display: inline-block; width: 42px;'>10-02</span> | **D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?**<br><sub>机构: HKUST, Alibaba Group, USTC<br>D2K-Bench通过引入分层专家指导和多维度的诊断评估，解决了传统基准仅靠运行时数据无法区分设计与实现缺陷的问题。研究证实了专家设计指导在提升LLM生成GPU内核的正确性和效率方面的巨大价值，并为未来改进自动化内核开发工具提供了明确的方向，即需同时加强智能体的设计探索能力和代码实现 fidelity。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03226v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03226.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/QwenLM/D2K-Bench)</div> |
 | <span style='display: inline-block; width: 42px;'>10-02</span> | **EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures**<br><sub>机构: Sun Yat-sen University<br>EdgeAgent 通过微架构层面的零拷贝张量并行和调度层面的动态草稿预算及异步挂起机制，有效解决了端侧 UMA 架构上多智能体 LLM 推理面临的总线争用和执行碎片化问题。实验证明其在 Apple M4 平台上能显著提升推理速度，为隐私保护的端侧多智能体系统提供了高效的底层支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03394v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03394.md)  |
 | <span style='display: inline-block; width: 42px;'>10-02</span> | **ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models**<br><sub>机构: King's College London, Amazon, Universidade Federal Fluminense, The Alan Turing Institute<br>ReFract 基准测试填补了LLM智能体在角色敏感型高风险场景评估中的空白。通过引入视角感知和视角路由的概念，该研究强调了智能体不仅需要具备执行任务的能力，更需要具备理解用户社会角色、权限边界及意图的理论心智能力。实验结果表明，当前最先进的模型在此方面仍有显著缺陷，亟需开发能够校准“为谁行动”的新型智能体架构。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.03356v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.03356.md)  |

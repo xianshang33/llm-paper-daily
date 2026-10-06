@@ -1,45 +1,45 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-05T07:27:49.691073+00:00",
-  "run_date": "2026-10-02",
+  "generated_at": "2026-10-06T07:46:17.579217+00:00",
+  "run_date": "2026-10-05",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.03226",
-      "date": "2026-10-02",
-      "title": "D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?",
+      "id": "arxiv:2610.06830",
+      "date": "2026-10-05",
+      "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Daifeng Li",
-        "Huiqiang Jiang",
-        "Chengruidong Zhang",
-        "Wei Wu",
-        "Xudong Guo",
-        "Jianhong Tu",
-        "Jianwei Zhang",
-        "Binhang Yuan",
-        "Dayiheng Liu"
+        "Haozhen Zhang",
+        "Haodong Yue",
+        "Quanyu Long",
+        "Jianzhu Bao",
+        "Qingyuan Liu",
+        "Tao Feng",
+        "Bohan Liu",
+        "Weida Liang",
+        "Wenya Wang"
       ],
-      "institution": "HKUST, Alibaba Group, USTC",
+      "institution": "Nanyang Technological University, Tsinghua University, University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "D2K-Bench通过引入分层专家指导和多维度的诊断评估，解决了传统基准仅靠运行时数据无法区分设计与实现缺陷的问题。研究证实了专家设计指导在提升LLM生成GPU内核的正确性和效率方面的巨大价值，并为未来改进自动化内核开发工具提供了明确的方向，即需同时加强智能体的设计探索能力和代码实现 fidelity。",
-        "en": "- **Background**: GPU kernel efficiency is critical for ML system performance. LLM agents have emerged as a promising tool for automating GPU kernel development through iterative code generation and optimization."
+        "zh": "MemPilot 解决了现有智能体记忆系统在运行时适应性和多目标权衡方面的不足。通过引入基于强化学习的多步策略，动态协调异构模型的按需记忆整理，并结合目标级优势解耦和前缀边际效用估计技术，MemPilot 实现了细粒度的计算资源分配。实验表明，该方法能在性能、成本和延迟之间提供更优且更灵活的权衡方案，显著优于现有基线。",
+        "en": "- **Background**: As LLM agents evolve towards persistent, long-horizon interactions, memory systems are crucial for retaining and reusing past experiences. However, most existing agent memory systems construct memory..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.03226v1",
-        "pdf": "https://arxiv.org/pdf/2610.03226v1",
-        "github": "https://github.com/QwenLM/D2K-Bench"
+        "abs": "http://arxiv.org/abs/2610.06830v1",
+        "pdf": "https://arxiv.org/pdf/2610.06830v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.03226.md",
-        "summary_en_path": "summary_en/2026-10/2610.03226.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03226.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03226.md"
+        "summary_zh_path": "summary/2026-10/2610.06830.md",
+        "summary_en_path": "summary_en/2026-10/2610.06830.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06830.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06830.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -56,37 +56,39 @@
       }
     },
     {
-      "id": "arxiv:2610.03394",
-      "date": "2026-10-02",
-      "title": "EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures",
+      "id": "arxiv:2610.06401",
+      "date": "2026-10-05",
+      "title": "RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuhai Long",
-        "Yuanxin Wei",
-        "Kai Wu",
-        "Jinhui Wei",
-        "Dan Huang",
-        "Jiangsu Du"
+        "Mohamed Dhouib",
+        "Clement Elliker",
+        "Alexi Canesse",
+        "Maël Jenny",
+        "Lucas-Andrei Thil",
+        "Mahammed El-Sharkawy",
+        "Sonia Vanier",
+        "Elie Bursztein"
       ],
-      "institution": "Sun Yat-sen University",
+      "institution": "LIX, École polytechnique, Institut Polytechnique de Paris, CNRS; Google DeepMind; AMIAD; IRT SystemX",
       "summary": {
-        "zh": "EdgeAgent 通过微架构层面的零拷贝张量并行和调度层面的动态草稿预算及异步挂起机制，有效解决了端侧 UMA 架构上多智能体 LLM 推理面临的总线争用和执行碎片化问题。实验证明其在 Apple M4 平台上能显著提升推理速度，为隐私保护的端侧多智能体系统提供了高效的底层支持。",
-        "en": "- **Background**: The application of Large Language Models (LLMs) is shifting towards coordinated multi-agent systems. Due to privacy and security concerns, there is a growing demand for on-device deployment."
+        "zh": "本文指出了现有 LLM 智能体防御间接提示注入方法中存在的分布漂移和对良性工具指导过度拒绝的问题。为此，作者提出了 RAISED 框架，利用自生成和自蒸馏技术，在有效抵御提示注入攻击的同时，保持了模型在复杂任务和通用场景下的高可用性，实现了鲁棒性与效用的良好平衡。",
+        "en": "- **Background**: Tool-using LLM agents are vulnerable to indirect prompt injection attacks because they process untrusted external content from sources like webpages and emails, which can hijack agent tasks. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.03394v1",
-        "pdf": "https://arxiv.org/pdf/2610.03394v1",
+        "abs": "http://arxiv.org/abs/2610.06401v1",
+        "pdf": "https://arxiv.org/pdf/2610.06401v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.03394.md",
-        "summary_en_path": "summary_en/2026-10/2610.03394.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03394.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03394.md"
+        "summary_zh_path": "summary/2026-10/2610.06401.md",
+        "summary_en_path": "summary_en/2026-10/2610.06401.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06401.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06401.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -103,41 +105,39 @@
       }
     },
     {
-      "id": "arxiv:2610.03356",
-      "date": "2026-10-02",
-      "title": "ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models",
+      "id": "arxiv:2610.06748",
+      "date": "2026-10-05",
+      "title": "BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hainiu Xu",
-        "Vítor N. Lourenço",
-        "Mohnish Dubey",
-        "Yunfei Bai",
-        "Yulan He",
-        "Caroline Catmur",
-        "Aline Paes",
-        "Marco Caserta",
-        "Akash Chandrayan",
-        "Luca D'Angelo"
+        "Ziyan Wang",
+        "Shuqing Shi",
+        "James Oldfield",
+        "Samuele Marro",
+        "Jialin Yu",
+        "Philip Torr",
+        "Yali Du",
+        "Adel Bibi"
       ],
-      "institution": "King's College London, Amazon, Universidade Federal Fluminense, The Alan Turing Institute",
+      "institution": "King's College London, University of Oxford, Institute for Decentralized AI, The Alan Turing Institute",
       "summary": {
-        "zh": "ReFract 基准测试填补了LLM智能体在角色敏感型高风险场景评估中的空白。通过引入视角感知和视角路由的概念，该研究强调了智能体不仅需要具备执行任务的能力，更需要具备理解用户社会角色、权限边界及意图的理论心智能力。实验结果表明，当前最先进的模型在此方面仍有显著缺陷，亟需开发能够校准“为谁行动”的新型智能体架构。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly deployed in high-stakes settings like industrial maintenance, where users occupy various roles. Agents must calibrate their actions and information to..."
+        "zh": "本文介绍了BazaarBench，首个针对去中心化C2C市场中LLM代理委托安全性的基准测试。通过模拟真实市场动态和引入多种压力场景，研究揭示了当前主流LLM代理在面临经济诱惑和对抗性指令时，极易出现欺诈、过度承诺和隐私泄露等严重安全问题。该工作为开发更安全的 marketplace agents 提供了重要的评估工具和实证依据。",
+        "en": "- **Background**: In decentralized consumer-to-consumer (C2C) marketplaces, trust relies on reputation. As Large Language Model (LLM) agents begin to act on behalf of users for trading and negotiation, risks to users'..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.03356v1",
-        "pdf": "https://arxiv.org/pdf/2610.03356v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.06748v1",
+        "pdf": "https://arxiv.org/pdf/2610.06748v1",
+        "github": "https://github.com/ziyan-wang98/BazaarBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.03356.md",
-        "summary_en_path": "summary_en/2026-10/2610.03356.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03356.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03356.md"
+        "summary_zh_path": "summary/2026-10/2610.06748.md",
+        "summary_en_path": "summary_en/2026-10/2610.06748.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06748.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06748.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -154,36 +154,38 @@
       }
     },
     {
-      "id": "arxiv:2610.03585",
-      "date": "2026-10-02",
-      "title": "Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks",
+      "id": "arxiv:2610.06514",
+      "date": "2026-10-05",
+      "title": "ANT: A Multi-Granularity Network Traffic Dataset and Benchmark for Agents Behavior Auditing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Neeraj Karamchandani",
-        "Piyush Nagasubramaniam",
-        "Xinhong Xie",
-        "Sencun Zhu",
-        "Dinghao Wu"
+        "Fan Li",
+        "Xiangyu Gao",
+        "Zixuan Liu",
+        "Tong Li",
+        "Chuanpu Fu",
+        "Ziqiang Wang",
+        "Ke Xu"
       ],
-      "institution": "The Pennsylvania State University",
+      "institution": "Tsinghua University",
       "summary": {
-        "zh": "本文揭示了LLM智能体安全基准测试中存在严重的“威胁保持表示敏感性”问题。通过引入TPRS指标并在多个基准上进行大规模实证研究，作者证明了工具名称和描述等表面表示形式的微小变化会导致攻击成功率发生显著波动。这一发现挑战了当前仅凭单一ASR分数评估模型安全性的做法，呼吁社区在评估智能体鲁棒性时，应采用多种表示形式进行综合测试，以确保评估结果的泛化性和真实性。",
-        "en": "This paper reveals a critical issue of \"Threat-Preserving Representation Sensitivity\" in LLM agent security benchmarks. By introducing the TPRS metric and conducting large-scale empirical studies across multiple..."
+        "zh": "本文介绍了 ANT，一个用于智能体行为审计的多粒度网络流量数据集和基准。通过提供风险、场景和行为原语三个层次的标注，ANT 解决了现有数据集在评估智能体行为可推断性方面的不足。基准测试结果表明，虽然现有流量分析方法能提取部分行为信号，但在处理相似流量模式和罕见行为时仍存在局限。ANT 为未来开发更精确的智能体行为审计和取证分析工具奠定了基础。",
+        "en": "This paper introduces ANT, a multi-granularity network traffic dataset and benchmark for agent behavior auditing. By providing annotations at three levels—risk, scenario, and behavior primitives—ANT addresses the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.03585v1",
-        "pdf": "https://arxiv.org/pdf/2610.03585v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.06514v1",
+        "pdf": "https://arxiv.org/pdf/2610.06514v1",
+        "github": "https://anonymous.4open.science/r/ant-main-suite-7BC0/"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.03585.md",
-        "summary_en_path": "summary_en/2026-10/2610.03585.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03585.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03585.md"
+        "summary_zh_path": "summary/2026-10/2610.06514.md",
+        "summary_en_path": "summary_en/2026-10/2610.06514.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06514.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06514.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -200,32 +202,34 @@
       }
     },
     {
-      "id": "arxiv:2610.03448",
-      "date": "2026-10-02",
-      "title": "Passing the Test You Trained On: Re-evaluating Prompt-Injection Detectors for LLM Agents",
+      "id": "arxiv:2610.06790",
+      "date": "2026-10-05",
+      "title": "Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuowen Liu"
+        "Je Yang",
+        "Ivan Lobov",
+        "Thomas Karpati"
       ],
-      "institution": "Japan Advanced Institute of Science and Technology (JAIST)",
+      "institution": "Columbia University",
       "summary": {
-        "zh": "本文指出当前提示注入检测器的评估存在严重缺陷，基准测试分数不能预测其在 LLM Agent 中的实际行为。核心发现是检测器的性能高度依赖于其训练数据形式与评估输入形式的相似性，而非通用的检测能力。作者建议，旨在指导部署的评估应使用 Agent 自身的工具输出，报告低误报率下的检测性能，并严格审计检测器的训练数据来源。",
-        "en": "- **Background**: LLM agents increasingly use small prompt-injection detectors to screen tool outputs, with teams selecting detectors based on scores from public benchmarks like BIPIA. - **Why Existing Work Falls..."
+        "zh": "本文针对芯片设计验证中后模拟波形调试自动化的空白，提出了BTTF框架。通过将海量波形数据转化为关系型数据库，并结合多智能体系统进行自然语言到SQL的转换及RTL关联，有效解决了基础设施阻抗问题。实验结果表明，该方法在准确性和质量上均显著优于现有基线，为实现自主化的EDA验证流程迈出了重要一步。",
+        "en": "- **Background**: The computational demands of modern AI rely on complex Systems-on-Chip (SoCs), yet chip verification workflows remain stubbornly manual. Verification consumes over 70% of the development cycle,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.03448v1",
-        "pdf": "https://arxiv.org/pdf/2610.03448v1",
+        "abs": "http://arxiv.org/abs/2610.06790v1",
+        "pdf": "https://arxiv.org/pdf/2610.06790v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.03448.md",
-        "summary_en_path": "summary_en/2026-10/2610.03448.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.03448.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.03448.md"
+        "summary_zh_path": "summary/2026-10/2610.06790.md",
+        "summary_en_path": "summary_en/2026-10/2610.06790.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06790.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06790.md"
       },
       "signals": {
         "priority_keyword": "Agent"
