@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.06_07:46-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.07_07:26-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月06日 07:46</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月07日 07:26</sub></summary>
 <br>
 
-- MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents 
-- RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents 
-- BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents 
-- ANT: A Multi-Granularity Network Traffic Dataset and Benchmark for Agents Behavior Auditing 
-- Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification 
+- Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts? 
+- WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation? 
+- Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions 
+- Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations 
+- Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments? 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-06</span> | **Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?**<br><sub>机构: University of Tübingen, ELLIS Institute Tübingen, Max Planck Institute for Intelligent Systems, École Polytechnique, KAIST AI<br>本文引入了“瓶装”（Bottling）概念及 BOTTLED 基准，旨在评估和提升 LLM 代理将通用能力转化为低成本、可扩展的特定任务工件的能力。研究发现，当前的零样本强模型并不必然具备优秀的瓶装能力，存在显著的性能落差。尽管如此，成功的瓶装策略能在保持高准确率的同时实现数百倍的成本降低，甚至在性价比上超越专用的轻量级模型。该研究为未来开发更高效的自主代理提供了重要的评估基础和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08775v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08775.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sonthalia/bottled)</div> |
+| <span style='display: inline-block; width: 42px;'>10-06</span> | **WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?**<br><sub>机构: NLPR & MAIS, CASIA; PKU; Huawei Noah’s Ark Lab<br>WorldSolver 是迈向智能体求解器生成的早期重要一步。它揭示了当前LLM智能体在整合物理理解、数学推理和代码实现方面的局限性。该基准测试旨在推动开发能够忠实模拟动态物理世界的智能体，为具身AI和相关领域的进一步发展提供评估标准和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08720v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08720.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sirujiang/WorldSolver)</div> |
+| <span style='display: inline-block; width: 42px;'>10-06</span> | **Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions**<br><sub>机构: Amazon<br>本文介绍了 Wiki-Talkie，这是一个针对基于人设的代理进行多语言基准测试的新资源。通过利用维基百科讨论页的真实对话和衍生的人设，该研究揭示了当前 LLM 代理在模拟人类交互时存在的系统性偏差（如过度积极），并证明了基于行为历史的条件策略比显式人设描述更有效。这些发现为开发更忠实于人类行为多样性的社交代理提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08513v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08513.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/amazon-science/wikitalkie)</div> |
+| <span style='display: inline-block; width: 42px;'>10-06</span> | **Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations**<br><sub>机构: UK AI Security Institute<br>Transect 通过提供灵活、可定制的记录分析管道，解决了长程、复杂 AI 评估中的可观测性危机。它不仅提高了评估效率，使评估者能够跟上日益频繁和复杂的 AI 系统迭代，还通过增强透明度、可追溯性和可复现性，支持了 AI 安全评估的科学严谨性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08364v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08364.md)  |
+| <span style='display: inline-block; width: 42px;'>10-06</span> | **Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?**<br><sub>机构: National University of Singapore<br>Learn2Play Bench 填补了评估 LLM 智能体在陌生环境中从经验学习能力的空白。通过引入规则新颖的文本游戏，该基准测试揭示了当前智能体在经验保留、策略探索效率以及框架依赖性方面的局限性。研究结果表明，简单的记忆保留优于复杂的规则提取，且优化智能体框架是提升学习效率和降低成本的有效途径，为未来改进智能体的自适应学习能力提供了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08215v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08215.md)  |
 | <span style='display: inline-block; width: 42px;'>10-05</span> | **MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents**<br><sub>机构: Nanyang Technological University, Tsinghua University, University of Illinois Urbana-Champaign<br>MemPilot 解决了现有智能体记忆系统在运行时适应性和多目标权衡方面的不足。通过引入基于强化学习的多步策略，动态协调异构模型的按需记忆整理，并结合目标级优势解耦和前缀边际效用估计技术，MemPilot 实现了细粒度的计算资源分配。实验表明，该方法能在性能、成本和延迟之间提供更优且更灵活的权衡方案，显著优于现有基线。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06830v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06830.md)  |
 | <span style='display: inline-block; width: 42px;'>10-05</span> | **RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents**<br><sub>机构: LIX, École polytechnique, Institut Polytechnique de Paris, CNRS; Google DeepMind; AMIAD; IRT SystemX<br>本文指出了现有 LLM 智能体防御间接提示注入方法中存在的分布漂移和对良性工具指导过度拒绝的问题。为此，作者提出了 RAISED 框架，利用自生成和自蒸馏技术，在有效抵御提示注入攻击的同时，保持了模型在复杂任务和通用场景下的高可用性，实现了鲁棒性与效用的良好平衡。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06401v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06401.md)  |
 | <span style='display: inline-block; width: 42px;'>10-05</span> | **BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents**<br><sub>机构: King's College London, University of Oxford, Institute for Decentralized AI, The Alan Turing Institute<br>本文介绍了BazaarBench，首个针对去中心化C2C市场中LLM代理委托安全性的基准测试。通过模拟真实市场动态和引入多种压力场景，研究揭示了当前主流LLM代理在面临经济诱惑和对抗性指令时，极易出现欺诈、过度承诺和隐私泄露等严重安全问题。该工作为开发更安全的 marketplace agents 提供了重要的评估工具和实证依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.06748v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.06748.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ziyan-wang98/BazaarBench)</div> |

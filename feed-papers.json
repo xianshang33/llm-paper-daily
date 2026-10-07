@@ -1,45 +1,182 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-06T07:46:17.579217+00:00",
-  "run_date": "2026-10-05",
+  "generated_at": "2026-10-07T07:26:44.480609+00:00",
+  "run_date": "2026-10-06",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.06830",
-      "date": "2026-10-05",
-      "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+      "id": "arxiv:2610.08775",
+      "date": "2026-10-06",
+      "title": "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haozhen Zhang",
-        "Haodong Yue",
-        "Quanyu Long",
-        "Jianzhu Bao",
-        "Qingyuan Liu",
-        "Tao Feng",
-        "Bohan Liu",
-        "Weida Liang",
-        "Wenya Wang"
+        "Ankit Sonthalia",
+        "Haritz Puerto",
+        "Alexander Rubinstein",
+        "Martin Gubri",
+        "Seong Joon Oh"
       ],
-      "institution": "Nanyang Technological University, Tsinghua University, University of Illinois Urbana-Champaign",
+      "institution": "University of Tübingen, ELLIS Institute Tübingen, Max Planck Institute for Intelligent Systems, École Polytechnique, KAIST AI",
       "summary": {
-        "zh": "MemPilot 解决了现有智能体记忆系统在运行时适应性和多目标权衡方面的不足。通过引入基于强化学习的多步策略，动态协调异构模型的按需记忆整理，并结合目标级优势解耦和前缀边际效用估计技术，MemPilot 实现了细粒度的计算资源分配。实验表明，该方法能在性能、成本和延迟之间提供更优且更灵活的权衡方案，显著优于现有基线。",
-        "en": "- **Background**: As LLM agents evolve towards persistent, long-horizon interactions, memory systems are crucial for retaining and reusing past experiences. However, most existing agent memory systems construct memory..."
+        "zh": "本文引入了“瓶装”（Bottling）概念及 BOTTLED 基准，旨在评估和提升 LLM 代理将通用能力转化为低成本、可扩展的特定任务工件的能力。研究发现，当前的零样本强模型并不必然具备优秀的瓶装能力，存在显著的性能落差。尽管如此，成功的瓶装策略能在保持高准确率的同时实现数百倍的成本降低，甚至在性价比上超越专用的轻量级模型。该研究为未来开发更高效的自主代理提供了重要的评估基础和方向。",
+        "en": "This paper introduces the concept of \"Bottling\" and the BOTTLED benchmark to evaluate and improve LLM agents' ability to transform general capabilities into low-cost, scalable artifacts for repetitive workloads. The..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.06830v1",
-        "pdf": "https://arxiv.org/pdf/2610.06830v1",
+        "abs": "http://arxiv.org/abs/2610.08775v1",
+        "pdf": "https://arxiv.org/pdf/2610.08775v1",
+        "github": "https://github.com/sonthalia/bottled"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.08775.md",
+        "summary_en_path": "summary_en/2026-10/2610.08775.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08775.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08775.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.08720",
+      "date": "2026-10-06",
+      "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Siru Jiang",
+        "Yongzhe Lyu",
+        "Shuo Lu",
+        "Yubin Wang",
+        "Yuxiang Zhang",
+        "Yue Liao",
+        "Bin Wang",
+        "Jian Liang",
+        "Tieniu Tan"
+      ],
+      "institution": "NLPR & MAIS, CASIA; PKU; Huawei Noah’s Ark Lab",
+      "summary": {
+        "zh": "WorldSolver 是迈向智能体求解器生成的早期重要一步。它揭示了当前LLM智能体在整合物理理解、数学推理和代码实现方面的局限性。该基准测试旨在推动开发能够忠实模拟动态物理世界的智能体，为具身AI和相关领域的进一步发展提供评估标准和研究方向。",
+        "en": "- **Background**: LLM-based agents are advancing in scientific and engineering problem-solving. Physics simulation is a critical yet challenging testbed for reproducing complex physical phenomena, with applications in..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.08720v1",
+        "pdf": "https://arxiv.org/pdf/2610.08720v1",
+        "github": "https://github.com/sirujiang/WorldSolver"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.08720.md",
+        "summary_en_path": "summary_en/2026-10/2610.08720.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08720.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08720.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.08513",
+      "date": "2026-10-06",
+      "title": "Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Dennis Fucci",
+        "Andrea Bacciu",
+        "Dong Liu",
+        "Weronika Łajewska",
+        "Saab Mansour"
+      ],
+      "institution": "Amazon",
+      "summary": {
+        "zh": "本文介绍了 Wiki-Talkie，这是一个针对基于人设的代理进行多语言基准测试的新资源。通过利用维基百科讨论页的真实对话和衍生的人设，该研究揭示了当前 LLM 代理在模拟人类交互时存在的系统性偏差（如过度积极），并证明了基于行为历史的条件策略比显式人设描述更有效。这些发现为开发更忠实于人类行为多样性的社交代理提供了重要见解。",
+        "en": "- **Background**: As Large Language Models (LLMs) are increasingly deployed as autonomous agents in social environments, it is critical to study their ability to faithfully simulate human interactions, which requires..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.08513v1",
+        "pdf": "https://arxiv.org/pdf/2610.08513v1",
+        "github": "https://github.com/amazon-science/wikitalkie"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.08513.md",
+        "summary_en_path": "summary_en/2026-10/2610.08513.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08513.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08513.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.08364",
+      "date": "2026-10-06",
+      "title": "Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Toby D. Pilditch",
+        "Konstantinos Voudouris",
+        "Alexandra Abbas",
+        "Cozmin Ududec"
+      ],
+      "institution": "UK AI Security Institute",
+      "summary": {
+        "zh": "Transect 通过提供灵活、可定制的记录分析管道，解决了长程、复杂 AI 评估中的可观测性危机。它不仅提高了评估效率，使评估者能够跟上日益频繁和复杂的 AI 系统迭代，还通过增强透明度、可追溯性和可复现性，支持了 AI 安全评估的科学严谨性。",
+        "en": "- **Background**: Frontier AI evaluations are shifting from static benchmarks to open-ended, agentic, long-horizon tasks. These involve complex multi-agent networks producing transcripts spanning hundreds of pages and..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.08364v1",
+        "pdf": "https://arxiv.org/pdf/2610.08364v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06830.md",
-        "summary_en_path": "summary_en/2026-10/2610.06830.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06830.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06830.md"
+        "summary_zh_path": "summary/2026-10/2610.08364.md",
+        "summary_en_path": "summary_en/2026-10/2610.08364.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08364.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08364.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -56,180 +193,38 @@
       }
     },
     {
-      "id": "arxiv:2610.06401",
-      "date": "2026-10-05",
-      "title": "RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents",
+      "id": "arxiv:2610.08215",
+      "date": "2026-10-06",
+      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mohamed Dhouib",
-        "Clement Elliker",
-        "Alexi Canesse",
-        "Maël Jenny",
-        "Lucas-Andrei Thil",
-        "Mahammed El-Sharkawy",
-        "Sonia Vanier",
-        "Elie Bursztein"
+        "Yibo Li",
+        "Jinhang Qiu",
+        "Zhi Zheng",
+        "Qianyun Guo",
+        "Jiaying Wu",
+        "Shuo Ji",
+        "Bryan Hooi"
       ],
-      "institution": "LIX, École polytechnique, Institut Polytechnique de Paris, CNRS; Google DeepMind; AMIAD; IRT SystemX",
+      "institution": "National University of Singapore",
       "summary": {
-        "zh": "本文指出了现有 LLM 智能体防御间接提示注入方法中存在的分布漂移和对良性工具指导过度拒绝的问题。为此，作者提出了 RAISED 框架，利用自生成和自蒸馏技术，在有效抵御提示注入攻击的同时，保持了模型在复杂任务和通用场景下的高可用性，实现了鲁棒性与效用的良好平衡。",
-        "en": "- **Background**: Tool-using LLM agents are vulnerable to indirect prompt injection attacks because they process untrusted external content from sources like webpages and emails, which can hijack agent tasks. -..."
+        "zh": "Learn2Play Bench 填补了评估 LLM 智能体在陌生环境中从经验学习能力的空白。通过引入规则新颖的文本游戏，该基准测试揭示了当前智能体在经验保留、策略探索效率以及框架依赖性方面的局限性。研究结果表明，简单的记忆保留优于复杂的规则提取，且优化智能体框架是提升学习效率和降低成本的有效途径，为未来改进智能体的自适应学习能力提供了方向。",
+        "en": "- **Background**: The ability of LLM agents to learn from experience in unfamiliar and dynamic environments is central to Artificial General Intelligence (AGI). Evaluating this capability is crucial for understanding..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.06401v1",
-        "pdf": "https://arxiv.org/pdf/2610.06401v1",
+        "abs": "http://arxiv.org/abs/2610.08215v1",
+        "pdf": "https://arxiv.org/pdf/2610.08215v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06401.md",
-        "summary_en_path": "summary_en/2026-10/2610.06401.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06401.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06401.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.06748",
-      "date": "2026-10-05",
-      "title": "BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Ziyan Wang",
-        "Shuqing Shi",
-        "James Oldfield",
-        "Samuele Marro",
-        "Jialin Yu",
-        "Philip Torr",
-        "Yali Du",
-        "Adel Bibi"
-      ],
-      "institution": "King's College London, University of Oxford, Institute for Decentralized AI, The Alan Turing Institute",
-      "summary": {
-        "zh": "本文介绍了BazaarBench，首个针对去中心化C2C市场中LLM代理委托安全性的基准测试。通过模拟真实市场动态和引入多种压力场景，研究揭示了当前主流LLM代理在面临经济诱惑和对抗性指令时，极易出现欺诈、过度承诺和隐私泄露等严重安全问题。该工作为开发更安全的 marketplace agents 提供了重要的评估工具和实证依据。",
-        "en": "- **Background**: In decentralized consumer-to-consumer (C2C) marketplaces, trust relies on reputation. As Large Language Model (LLM) agents begin to act on behalf of users for trading and negotiation, risks to users'..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.06748v1",
-        "pdf": "https://arxiv.org/pdf/2610.06748v1",
-        "github": "https://github.com/ziyan-wang98/BazaarBench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06748.md",
-        "summary_en_path": "summary_en/2026-10/2610.06748.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06748.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06748.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.06514",
-      "date": "2026-10-05",
-      "title": "ANT: A Multi-Granularity Network Traffic Dataset and Benchmark for Agents Behavior Auditing",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Fan Li",
-        "Xiangyu Gao",
-        "Zixuan Liu",
-        "Tong Li",
-        "Chuanpu Fu",
-        "Ziqiang Wang",
-        "Ke Xu"
-      ],
-      "institution": "Tsinghua University",
-      "summary": {
-        "zh": "本文介绍了 ANT，一个用于智能体行为审计的多粒度网络流量数据集和基准。通过提供风险、场景和行为原语三个层次的标注，ANT 解决了现有数据集在评估智能体行为可推断性方面的不足。基准测试结果表明，虽然现有流量分析方法能提取部分行为信号，但在处理相似流量模式和罕见行为时仍存在局限。ANT 为未来开发更精确的智能体行为审计和取证分析工具奠定了基础。",
-        "en": "This paper introduces ANT, a multi-granularity network traffic dataset and benchmark for agent behavior auditing. By providing annotations at three levels—risk, scenario, and behavior primitives—ANT addresses the..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.06514v1",
-        "pdf": "https://arxiv.org/pdf/2610.06514v1",
-        "github": "https://anonymous.4open.science/r/ant-main-suite-7BC0/"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06514.md",
-        "summary_en_path": "summary_en/2026-10/2610.06514.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06514.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06514.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.06790",
-      "date": "2026-10-05",
-      "title": "Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Je Yang",
-        "Ivan Lobov",
-        "Thomas Karpati"
-      ],
-      "institution": "Columbia University",
-      "summary": {
-        "zh": "本文针对芯片设计验证中后模拟波形调试自动化的空白，提出了BTTF框架。通过将海量波形数据转化为关系型数据库，并结合多智能体系统进行自然语言到SQL的转换及RTL关联，有效解决了基础设施阻抗问题。实验结果表明，该方法在准确性和质量上均显著优于现有基线，为实现自主化的EDA验证流程迈出了重要一步。",
-        "en": "- **Background**: The computational demands of modern AI rely on complex Systems-on-Chip (SoCs), yet chip verification workflows remain stubbornly manual. Verification consumes over 70% of the development cycle,..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.06790v1",
-        "pdf": "https://arxiv.org/pdf/2610.06790v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06790.md",
-        "summary_en_path": "summary_en/2026-10/2610.06790.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06790.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06790.md"
+        "summary_zh_path": "summary/2026-10/2610.08215.md",
+        "summary_en_path": "summary_en/2026-10/2610.08215.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08215.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08215.md"
       },
       "signals": {
         "priority_keyword": "Agent"
