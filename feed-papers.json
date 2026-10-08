@@ -1,182 +1,41 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-07T07:26:44.480609+00:00",
-  "run_date": "2026-10-06",
+  "generated_at": "2026-10-08T07:42:02.058141+00:00",
+  "run_date": "2026-10-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.08775",
-      "date": "2026-10-06",
-      "title": "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?",
+      "id": "arxiv:2610.10179",
+      "date": "2026-10-07",
+      "title": "Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ankit Sonthalia",
-        "Haritz Puerto",
-        "Alexander Rubinstein",
-        "Martin Gubri",
-        "Seong Joon Oh"
+        "Wenyu Huang",
+        "Xinyu Hou",
+        "Pavlos Vougiouklis",
+        "Ruofei Lai",
+        "Jeff Z. Pan"
       ],
-      "institution": "University of Tübingen, ELLIS Institute Tübingen, Max Planck Institute for Intelligent Systems, École Polytechnique, KAIST AI",
+      "institution": "University of Edinburgh",
       "summary": {
-        "zh": "本文引入了“瓶装”（Bottling）概念及 BOTTLED 基准，旨在评估和提升 LLM 代理将通用能力转化为低成本、可扩展的特定任务工件的能力。研究发现，当前的零样本强模型并不必然具备优秀的瓶装能力，存在显著的性能落差。尽管如此，成功的瓶装策略能在保持高准确率的同时实现数百倍的成本降低，甚至在性价比上超越专用的轻量级模型。该研究为未来开发更高效的自主代理提供了重要的评估基础和方向。",
-        "en": "This paper introduces the concept of \"Bottling\" and the BOTTLED benchmark to evaluate and improve LLM agents' ability to transform general capabilities into low-cost, scalable artifacts for repetitive workloads. The..."
+        "zh": "本文深入探讨了中间监督在搜索代理强化学习中的作用，指出仅靠最终结果奖励会导致信用分配稀疏和低效。通过系统研究奖励塑造和信用分配策略，作者提出了一种结合中间信号与最终奖励的训练框架。实验证实，合理设计中间奖励及其分配方式能显著提升代理性能，为未来构建更高效的检索增强生成代理提供了重要的设计指导。",
+        "en": "- **Background**: Search agents enable Large Language Models (LLMs) to iteratively retrieve and use information for complex multi-hop questions. Reinforcement Learning with Verifiable Rewards (RLVR) is a promising..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.08775v1",
-        "pdf": "https://arxiv.org/pdf/2610.08775v1",
-        "github": "https://github.com/sonthalia/bottled"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.08775.md",
-        "summary_en_path": "summary_en/2026-10/2610.08775.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08775.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08775.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.08720",
-      "date": "2026-10-06",
-      "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Siru Jiang",
-        "Yongzhe Lyu",
-        "Shuo Lu",
-        "Yubin Wang",
-        "Yuxiang Zhang",
-        "Yue Liao",
-        "Bin Wang",
-        "Jian Liang",
-        "Tieniu Tan"
-      ],
-      "institution": "NLPR & MAIS, CASIA; PKU; Huawei Noah’s Ark Lab",
-      "summary": {
-        "zh": "WorldSolver 是迈向智能体求解器生成的早期重要一步。它揭示了当前LLM智能体在整合物理理解、数学推理和代码实现方面的局限性。该基准测试旨在推动开发能够忠实模拟动态物理世界的智能体，为具身AI和相关领域的进一步发展提供评估标准和研究方向。",
-        "en": "- **Background**: LLM-based agents are advancing in scientific and engineering problem-solving. Physics simulation is a critical yet challenging testbed for reproducing complex physical phenomena, with applications in..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.08720v1",
-        "pdf": "https://arxiv.org/pdf/2610.08720v1",
-        "github": "https://github.com/sirujiang/WorldSolver"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.08720.md",
-        "summary_en_path": "summary_en/2026-10/2610.08720.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08720.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08720.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.08513",
-      "date": "2026-10-06",
-      "title": "Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Dennis Fucci",
-        "Andrea Bacciu",
-        "Dong Liu",
-        "Weronika Łajewska",
-        "Saab Mansour"
-      ],
-      "institution": "Amazon",
-      "summary": {
-        "zh": "本文介绍了 Wiki-Talkie，这是一个针对基于人设的代理进行多语言基准测试的新资源。通过利用维基百科讨论页的真实对话和衍生的人设，该研究揭示了当前 LLM 代理在模拟人类交互时存在的系统性偏差（如过度积极），并证明了基于行为历史的条件策略比显式人设描述更有效。这些发现为开发更忠实于人类行为多样性的社交代理提供了重要见解。",
-        "en": "- **Background**: As Large Language Models (LLMs) are increasingly deployed as autonomous agents in social environments, it is critical to study their ability to faithfully simulate human interactions, which requires..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.08513v1",
-        "pdf": "https://arxiv.org/pdf/2610.08513v1",
-        "github": "https://github.com/amazon-science/wikitalkie"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.08513.md",
-        "summary_en_path": "summary_en/2026-10/2610.08513.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08513.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08513.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.08364",
-      "date": "2026-10-06",
-      "title": "Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Toby D. Pilditch",
-        "Konstantinos Voudouris",
-        "Alexandra Abbas",
-        "Cozmin Ududec"
-      ],
-      "institution": "UK AI Security Institute",
-      "summary": {
-        "zh": "Transect 通过提供灵活、可定制的记录分析管道，解决了长程、复杂 AI 评估中的可观测性危机。它不仅提高了评估效率，使评估者能够跟上日益频繁和复杂的 AI 系统迭代，还通过增强透明度、可追溯性和可复现性，支持了 AI 安全评估的科学严谨性。",
-        "en": "- **Background**: Frontier AI evaluations are shifting from static benchmarks to open-ended, agentic, long-horizon tasks. These involve complex multi-agent networks producing transcripts spanning hundreds of pages and..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.08364v1",
-        "pdf": "https://arxiv.org/pdf/2610.08364v1",
+        "abs": "http://arxiv.org/abs/2610.10179v1",
+        "pdf": "https://arxiv.org/pdf/2610.10179v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.08364.md",
-        "summary_en_path": "summary_en/2026-10/2610.08364.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08364.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08364.md"
+        "summary_zh_path": "summary/2026-10/2610.10179.md",
+        "summary_en_path": "summary_en/2026-10/2610.10179.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10179.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10179.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,38 +52,170 @@
       }
     },
     {
-      "id": "arxiv:2610.08215",
-      "date": "2026-10-06",
-      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+      "id": "arxiv:2610.10126",
+      "date": "2026-10-07",
+      "title": "Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yibo Li",
-        "Jinhang Qiu",
-        "Zhi Zheng",
-        "Qianyun Guo",
-        "Jiaying Wu",
-        "Shuo Ji",
-        "Bryan Hooi"
+        "Xinwen Liu",
+        "Zhuocheng Pan",
+        "Isabella Zhu",
+        "Jawei Zhang",
+        "Xudong Liu",
+        "Tianyu Wo"
       ],
-      "institution": "National University of Singapore",
+      "institution": "Beihang University",
       "summary": {
-        "zh": "Learn2Play Bench 填补了评估 LLM 智能体在陌生环境中从经验学习能力的空白。通过引入规则新颖的文本游戏，该基准测试揭示了当前智能体在经验保留、策略探索效率以及框架依赖性方面的局限性。研究结果表明，简单的记忆保留优于复杂的规则提取，且优化智能体框架是提升学习效率和降低成本的有效途径，为未来改进智能体的自适应学习能力提供了方向。",
-        "en": "- **Background**: The ability of LLM agents to learn from experience in unfamiliar and dynamic environments is central to Artificial General Intelligence (AGI). Evaluating this capability is crucial for understanding..."
+        "zh": "本文揭示了通信拓扑与多智能体 LLM 系统故障模式之间的强相关性，并提出了 MAScope 框架。通过 TSE 模块从轨迹中恢复拓扑，并利用 TC-Judge 结合拓扑先验进行故障诊断，该方法不仅显著提高了诊断准确率，还通过拓扑复用机制大幅降低了推理成本，为高效、低成本的多智能体系统监控和调试提供了新途径。",
+        "en": "- **Background**: Multi-agent LLM systems coordinate tasks through information exchange. Coordination failures often present similar symptoms in execution traces but stem from different issues in information passing,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.08215v1",
-        "pdf": "https://arxiv.org/pdf/2610.08215v1",
+        "abs": "http://arxiv.org/abs/2610.10126v1",
+        "pdf": "https://arxiv.org/pdf/2610.10126v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.08215.md",
-        "summary_en_path": "summary_en/2026-10/2610.08215.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.08215.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.08215.md"
+        "summary_zh_path": "summary/2026-10/2610.10126.md",
+        "summary_en_path": "summary_en/2026-10/2610.10126.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10126.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10126.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.10226",
+      "date": "2026-10-07",
+      "title": "Why Software Engineering Is Indispensable in the Age of Coding Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Alfonso Fuggetta"
+      ],
+      "institution": "Politecnico di Milano",
+      "summary": {
+        "zh": "本文有力地反驳了“AI 将使软件工程过时”的观点。作者指出，LLM 固有的概率性和无状态性决定了其无法独立承担专业软件开发的责任。软件工程提供的方法论、领域知识、设计和过程控制是确保软件可信度的必要基础。未来的软件工程师将从单纯的代码编写者转变为 AI 智能体的管理者、验证者和架构守护者，其核心价值在于将 AI 的“概率性生成”转化为工程的“可证明正确性”。",
+        "en": "This paper strongly refutes the notion that AI will render Software Engineering obsolete. It argues that the inherent probabilistic and stateless nature of LLMs prevents them from independently handling professional..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.10226v1",
+        "pdf": "https://arxiv.org/pdf/2610.10226v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.10226.md",
+        "summary_en_path": "summary_en/2026-10/2610.10226.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10226.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10226.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.10184",
+      "date": "2026-10-07",
+      "title": "Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Ángel Sánchez-Fernández",
+        "Javier Pernas-Álvarez",
+        "Diego Crespo-Pereira"
+      ],
+      "institution": "Universidade da Coruña",
+      "summary": {
+        "zh": "本研究填补了自动化建模与代理式决策支持之间的空白，证明了未经过专门训练的通用LLM在代理架构辅助下，能够从自然语言描述中构建约束规划模型。通过引入MCP服务器和多代理协作机制，显著提升了代码生成的可执行率，为实现运筹学模型的民主化和降低工业应用门槛提供了可行路径，尽管在高度复杂耦合场景下仍有提升空间。",
+        "en": "This study bridges the gap between automated modeling and agentic decision support, demonstrating that general-purpose LLMs, when orchestrated as agents with MCP support, can effectively generate CP models from natural..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.10184v1",
+        "pdf": "https://arxiv.org/pdf/2610.10184v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.10184.md",
+        "summary_en_path": "summary_en/2026-10/2610.10184.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10184.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10184.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.10141",
+      "date": "2026-10-07",
+      "title": "AdaT$^2$: Adaptive Test Transformations for Black-Box Boundary Testing of Conversational Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Liting Lin",
+        "Boxi Yu",
+        "Qinghua Xu",
+        "Yuzhong Zhang",
+        "Lionel Briand",
+        "Emir Muñoz"
+      ],
+      "institution": "University of Limerick",
+      "summary": {
+        "zh": "AdaT² 通过从探索性对话中提取策略陈述，并结合自适应的测试变换指令生成技术，显著提升了对话代理黑盒边界测试的效果。该方法不仅提高了生成测试的有效性，还通过贝叶斯 UCB 算法优化了测试选择过程，能够在更少的测试次数下发现更多的策略违规和边界缺陷，优于现有的 AgentEval 方法。",
+        "en": "AdaT² significantly improves black-box boundary testing for conversational agents by extracting policy statements from exploratory dialogues and combining them with adaptive test transformation instruction generation...."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.10141v1",
+        "pdf": "https://arxiv.org/pdf/2610.10141v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.10141.md",
+        "summary_en_path": "summary_en/2026-10/2610.10141.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10141.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10141.md"
       },
       "signals": {
         "priority_keyword": "Agent"

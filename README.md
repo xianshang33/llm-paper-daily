@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.07_07:26-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.08_07:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月07日 07:26</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月08日 07:42</sub></summary>
 <br>
 
-- Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts? 
-- WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation? 
-- Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions 
-- Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations 
-- Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments? 
+- Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents 
+- Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures 
+- Why Software Engineering Is Indispensable in the Age of Coding Agents 
+- Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming 
+- AdaT$^2$: Adaptive Test Transformations for Black-Box Boundary Testing of Conversational Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-07</span> | **Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents**<br><sub>机构: University of Edinburgh<br>本文深入探讨了中间监督在搜索代理强化学习中的作用，指出仅靠最终结果奖励会导致信用分配稀疏和低效。通过系统研究奖励塑造和信用分配策略，作者提出了一种结合中间信号与最终奖励的训练框架。实验证实，合理设计中间奖励及其分配方式能显著提升代理性能，为未来构建更高效的检索增强生成代理提供了重要的设计指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10179v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10179.md)  |
+| <span style='display: inline-block; width: 42px;'>10-07</span> | **Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures**<br><sub>机构: Beihang University<br>本文揭示了通信拓扑与多智能体 LLM 系统故障模式之间的强相关性，并提出了 MAScope 框架。通过 TSE 模块从轨迹中恢复拓扑，并利用 TC-Judge 结合拓扑先验进行故障诊断，该方法不仅显著提高了诊断准确率，还通过拓扑复用机制大幅降低了推理成本，为高效、低成本的多智能体系统监控和调试提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10126v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10126.md)  |
+| <span style='display: inline-block; width: 42px;'>10-07</span> | **Why Software Engineering Is Indispensable in the Age of Coding Agents**<br><sub>机构: Politecnico di Milano<br>本文有力地反驳了“AI 将使软件工程过时”的观点。作者指出，LLM 固有的概率性和无状态性决定了其无法独立承担专业软件开发的责任。软件工程提供的方法论、领域知识、设计和过程控制是确保软件可信度的必要基础。未来的软件工程师将从单纯的代码编写者转变为 AI 智能体的管理者、验证者和架构守护者，其核心价值在于将 AI 的“概率性生成”转化为工程的“可证明正确性”。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10226v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10226.md)  |
+| <span style='display: inline-block; width: 42px;'>10-07</span> | **Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming**<br><sub>机构: Universidade da Coruña<br>本研究填补了自动化建模与代理式决策支持之间的空白，证明了未经过专门训练的通用LLM在代理架构辅助下，能够从自然语言描述中构建约束规划模型。通过引入MCP服务器和多代理协作机制，显著提升了代码生成的可执行率，为实现运筹学模型的民主化和降低工业应用门槛提供了可行路径，尽管在高度复杂耦合场景下仍有提升空间。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10184v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10184.md)  |
+| <span style='display: inline-block; width: 42px;'>10-07</span> | **AdaT$^2$: Adaptive Test Transformations for Black-Box Boundary Testing of Conversational Agents**<br><sub>机构: University of Limerick<br>AdaT² 通过从探索性对话中提取策略陈述，并结合自适应的测试变换指令生成技术，显著提升了对话代理黑盒边界测试的效果。该方法不仅提高了生成测试的有效性，还通过贝叶斯 UCB 算法优化了测试选择过程，能够在更少的测试次数下发现更多的策略违规和边界缺陷，优于现有的 AgentEval 方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10141v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10141.md)  |
 | <span style='display: inline-block; width: 42px;'>10-06</span> | **Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?**<br><sub>机构: University of Tübingen, ELLIS Institute Tübingen, Max Planck Institute for Intelligent Systems, École Polytechnique, KAIST AI<br>本文引入了“瓶装”（Bottling）概念及 BOTTLED 基准，旨在评估和提升 LLM 代理将通用能力转化为低成本、可扩展的特定任务工件的能力。研究发现，当前的零样本强模型并不必然具备优秀的瓶装能力，存在显著的性能落差。尽管如此，成功的瓶装策略能在保持高准确率的同时实现数百倍的成本降低，甚至在性价比上超越专用的轻量级模型。该研究为未来开发更高效的自主代理提供了重要的评估基础和方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08775v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08775.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sonthalia/bottled)</div> |
 | <span style='display: inline-block; width: 42px;'>10-06</span> | **WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?**<br><sub>机构: NLPR & MAIS, CASIA; PKU; Huawei Noah’s Ark Lab<br>WorldSolver 是迈向智能体求解器生成的早期重要一步。它揭示了当前LLM智能体在整合物理理解、数学推理和代码实现方面的局限性。该基准测试旨在推动开发能够忠实模拟动态物理世界的智能体，为具身AI和相关领域的进一步发展提供评估标准和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08720v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08720.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/sirujiang/WorldSolver)</div> |
 | <span style='display: inline-block; width: 42px;'>10-06</span> | **Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions**<br><sub>机构: Amazon<br>本文介绍了 Wiki-Talkie，这是一个针对基于人设的代理进行多语言基准测试的新资源。通过利用维基百科讨论页的真实对话和衍生的人设，该研究揭示了当前 LLM 代理在模拟人类交互时存在的系统性偏差（如过度积极），并证明了基于行为历史的条件策略比显式人设描述更有效。这些发现为开发更忠实于人类行为多样性的社交代理提供了重要见解。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.08513v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.08513.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/amazon-science/wikitalkie)</div> |
