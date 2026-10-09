@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.08_07:42-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.09_07:38-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月08日 07:42</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月09日 07:38</sub></summary>
 <br>
 
-- Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents 
-- Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures 
-- Why Software Engineering Is Indispensable in the Age of Coding Agents 
-- Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming 
-- AdaT$^2$: Adaptive Test Transformations for Black-Box Boundary Testing of Conversational Agents 
+- OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport 
+- Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict 
+- A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization 
+- Agentic-TTT: Training test-time policy for test-time training 
+- From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-08</span> | **OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport**<br><sub>机构: Cribl AI Research Lab<br>OnTrack 提出了一种创新的轻量级实时监控方案，通过结构感知最优传输技术解决了 LLM Agent 执行过程中的成本和安全隐患。它不仅在速度上达到了毫秒级响应，还在不同数据可用性的场景下展现了灵活的监控能力。实验证明，该方法在早期识别失败轨迹方面优于传统语义匹配方法，并能有效节省计算资源，为 LLM Agent 的安全部署提供了高效的工程化解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12375v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12375.md)  |
+| <span style='display: inline-block; width: 42px;'>10-08</span> | **Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict**<br><sub>机构: Johns Hopkins University, New York University<br>本文指出了当前LLM智能体评估中忽视“认知谦逊”的问题，提出了基于ISE（识别、解决、升级）维度的EH评估框架。研究发现，当前智能体虽然可能在特定任务上取得高准确率，但在面对知识冲突时往往缺乏适当的谦逊行为，如未能有效沟通不确定性。研究强调，提升智能体的认知谦逊需要综合考虑模型、架构和环境，且可能与追求极致准确率存在权衡。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12360.md)  |
+| <span style='display: inline-block; width: 42px;'>10-08</span> | **A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization**<br><sub>机构: Nanjing University<br>本文指出了当前基于代理的黑盒优化研究缺乏统一基准的问题，提出了 AgenticBBO-Bench。通过广泛的实验，证明了代理方法在跨领域 BBO 任务中的优越性，并深入分析了影响代理性能的关键因素。该基准为未来通用模型和代理系统的比较提供了标准化平台，推动了通过代理操作实现通用黑盒优化的发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12183v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12183.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/lamda-bbo/agentic-bbo)</div> |
+| <span style='display: inline-block; width: 42px;'>10-08</span> | **Agentic-TTT: Training test-time policy for test-time training**<br><sub>机构: National University of Singapore<br>Agentic-TTT通过引入测试时策略，解决了TTT在开放世界中适用性差和资源浪费的问题。它赋予模型自主决定如何从部署经验中学习的能力，实现了近乎翻倍的性能提升和良好的跨域泛化能力，标志着向自主自我改进模型迈出了重要一步。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12002v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12002.md)  |
+| <span style='display: inline-block; width: 42px;'>10-08</span> | **From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents**<br><sub>机构: Walsh College<br>本文通过分析2026年OpenAI、Anthropic和Google的智能体安全事件，指出依赖静态边界的传统评估方法存在根本缺陷。文章提出了PASAC框架和五层边界保障栈，主张将安全重点从单一模型或沙箱转移到整个执行系统的连续主动保障上。通过风险分级、最小权限、独立监控和动态授权等机制，该框架为构建更具韧性的智能体评估环境提供了理论指导和实践路径，强调了在智能体运行过程中实时验证安全边界的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12463v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12463.md)  |
 | <span style='display: inline-block; width: 42px;'>10-07</span> | **Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents**<br><sub>机构: University of Edinburgh<br>本文深入探讨了中间监督在搜索代理强化学习中的作用，指出仅靠最终结果奖励会导致信用分配稀疏和低效。通过系统研究奖励塑造和信用分配策略，作者提出了一种结合中间信号与最终奖励的训练框架。实验证实，合理设计中间奖励及其分配方式能显著提升代理性能，为未来构建更高效的检索增强生成代理提供了重要的设计指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10179v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10179.md)  |
 | <span style='display: inline-block; width: 42px;'>10-07</span> | **Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures**<br><sub>机构: Beihang University<br>本文揭示了通信拓扑与多智能体 LLM 系统故障模式之间的强相关性，并提出了 MAScope 框架。通过 TSE 模块从轨迹中恢复拓扑，并利用 TC-Judge 结合拓扑先验进行故障诊断，该方法不仅显著提高了诊断准确率，还通过拓扑复用机制大幅降低了推理成本，为高效、低成本的多智能体系统监控和调试提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10126v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10126.md)  |
 | <span style='display: inline-block; width: 42px;'>10-07</span> | **Why Software Engineering Is Indispensable in the Age of Coding Agents**<br><sub>机构: Politecnico di Milano<br>本文有力地反驳了“AI 将使软件工程过时”的观点。作者指出，LLM 固有的概率性和无状态性决定了其无法独立承担专业软件开发的责任。软件工程提供的方法论、领域知识、设计和过程控制是确保软件可信度的必要基础。未来的软件工程师将从单纯的代码编写者转变为 AI 智能体的管理者、验证者和架构守护者，其核心价值在于将 AI 的“概率性生成”转化为工程的“可证明正确性”。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.10226v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.10226.md)  |

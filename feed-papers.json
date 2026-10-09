@@ -1,41 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-08T07:42:02.058141+00:00",
-  "run_date": "2026-10-07",
+  "generated_at": "2026-10-09T07:38:40.360948+00:00",
+  "run_date": "2026-10-08",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.10179",
-      "date": "2026-10-07",
-      "title": "Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents",
+      "id": "arxiv:2610.12375",
+      "date": "2026-10-08",
+      "title": "OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wenyu Huang",
-        "Xinyu Hou",
-        "Pavlos Vougiouklis",
-        "Ruofei Lai",
-        "Jeff Z. Pan"
+        "Babak Barazandeh",
+        "Connor Swanson",
+        "Chinmay Kulkarni",
+        "Nikhil Mungel"
       ],
-      "institution": "University of Edinburgh",
+      "institution": "Cribl AI Research Lab",
       "summary": {
-        "zh": "本文深入探讨了中间监督在搜索代理强化学习中的作用，指出仅靠最终结果奖励会导致信用分配稀疏和低效。通过系统研究奖励塑造和信用分配策略，作者提出了一种结合中间信号与最终奖励的训练框架。实验证实，合理设计中间奖励及其分配方式能显著提升代理性能，为未来构建更高效的检索增强生成代理提供了重要的设计指导。",
-        "en": "- **Background**: Search agents enable Large Language Models (LLMs) to iteratively retrieve and use information for complex multi-hop questions. Reinforcement Learning with Verifiable Rewards (RLVR) is a promising..."
+        "zh": "OnTrack 提出了一种创新的轻量级实时监控方案，通过结构感知最优传输技术解决了 LLM Agent 执行过程中的成本和安全隐患。它不仅在速度上达到了毫秒级响应，还在不同数据可用性的场景下展现了灵活的监控能力。实验证明，该方法在早期识别失败轨迹方面优于传统语义匹配方法，并能有效节省计算资源，为 LLM Agent 的安全部署提供了高效的工程化解决方案。",
+        "en": "OnTrack introduces a lightweight, real-time monitoring solution for LLM Agents using structure-aware optimal transport. It addresses cost and safety concerns by detecting anomalies in milliseconds. Experiments show it..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.10179v1",
-        "pdf": "https://arxiv.org/pdf/2610.10179v1",
+        "abs": "http://arxiv.org/abs/2610.12375v1",
+        "pdf": "https://arxiv.org/pdf/2610.12375v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.10179.md",
-        "summary_en_path": "summary_en/2026-10/2610.10179.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10179.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10179.md"
+        "summary_zh_path": "summary/2026-10/2610.12375.md",
+        "summary_en_path": "summary_en/2026-10/2610.12375.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12375.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12375.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,37 +51,38 @@
       }
     },
     {
-      "id": "arxiv:2610.10126",
-      "date": "2026-10-07",
-      "title": "Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures",
+      "id": "arxiv:2610.12360",
+      "date": "2026-10-08",
+      "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xinwen Liu",
-        "Zhuocheng Pan",
-        "Isabella Zhu",
-        "Jawei Zhang",
-        "Xudong Liu",
-        "Tianyu Wo"
+        "Kaiser Sun",
+        "Bernal Jimenez Gutierrez",
+        "Hongjun Liu",
+        "Jingyu Zhang",
+        "Jie Gao",
+        "Mark Dredze",
+        "Daniel Khashabi"
       ],
-      "institution": "Beihang University",
+      "institution": "Johns Hopkins University, New York University",
       "summary": {
-        "zh": "本文揭示了通信拓扑与多智能体 LLM 系统故障模式之间的强相关性，并提出了 MAScope 框架。通过 TSE 模块从轨迹中恢复拓扑，并利用 TC-Judge 结合拓扑先验进行故障诊断，该方法不仅显著提高了诊断准确率，还通过拓扑复用机制大幅降低了推理成本，为高效、低成本的多智能体系统监控和调试提供了新途径。",
-        "en": "- **Background**: Multi-agent LLM systems coordinate tasks through information exchange. Coordination failures often present similar symptoms in execution traces but stem from different issues in information passing,..."
+        "zh": "本文指出了当前LLM智能体评估中忽视“认知谦逊”的问题，提出了基于ISE（识别、解决、升级）维度的EH评估框架。研究发现，当前智能体虽然可能在特定任务上取得高准确率，但在面对知识冲突时往往缺乏适当的谦逊行为，如未能有效沟通不确定性。研究强调，提升智能体的认知谦逊需要综合考虑模型、架构和环境，且可能与追求极致准确率存在权衡。",
+        "en": "- **Background**: As Large Language Models (LLMs) become the backbone of agentic systems, existing evaluations primarily focus on task success rates (final answer correctness), ignoring how agents handle uncertainty..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.10126v1",
-        "pdf": "https://arxiv.org/pdf/2610.10126v1",
+        "abs": "http://arxiv.org/abs/2610.12360v1",
+        "pdf": "https://arxiv.org/pdf/2610.12360v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.10126.md",
-        "summary_en_path": "summary_en/2026-10/2610.10126.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10126.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10126.md"
+        "summary_zh_path": "summary/2026-10/2610.12360.md",
+        "summary_en_path": "summary_en/2026-10/2610.12360.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12360.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12360.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,32 +99,42 @@
       }
     },
     {
-      "id": "arxiv:2610.10226",
-      "date": "2026-10-07",
-      "title": "Why Software Engineering Is Indispensable in the Age of Coding Agents",
+      "id": "arxiv:2610.12183",
+      "date": "2026-10-08",
+      "title": "A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Alfonso Fuggetta"
+        "Ming Chen",
+        "Rong-Xi Tan",
+        "Ke Xue",
+        "Yu-Jie Zhou",
+        "Taiye Lu",
+        "Zhi-Xuan Gao",
+        "Peng Xie",
+        "Zijun Shen",
+        "Chen Lu",
+        "Haopu Shang",
+        "Chao Qian"
       ],
-      "institution": "Politecnico di Milano",
+      "institution": "Nanjing University",
       "summary": {
-        "zh": "本文有力地反驳了“AI 将使软件工程过时”的观点。作者指出，LLM 固有的概率性和无状态性决定了其无法独立承担专业软件开发的责任。软件工程提供的方法论、领域知识、设计和过程控制是确保软件可信度的必要基础。未来的软件工程师将从单纯的代码编写者转变为 AI 智能体的管理者、验证者和架构守护者，其核心价值在于将 AI 的“概率性生成”转化为工程的“可证明正确性”。",
-        "en": "This paper strongly refutes the notion that AI will render Software Engineering obsolete. It argues that the inherent probabilistic and stateless nature of LLMs prevents them from independently handling professional..."
+        "zh": "本文指出了当前基于代理的黑盒优化研究缺乏统一基准的问题，提出了 AgenticBBO-Bench。通过广泛的实验，证明了代理方法在跨领域 BBO 任务中的优越性，并深入分析了影响代理性能的关键因素。该基准为未来通用模型和代理系统的比较提供了标准化平台，推动了通过代理操作实现通用黑盒优化的发展。",
+        "en": "- **Background**: Black-box optimization (BBO) is critical in scientific and engineering domains where objective evaluations are expensive and gradients are unavailable. Traditional methods (e.g., Bayesian Optimization,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.10226v1",
-        "pdf": "https://arxiv.org/pdf/2610.10226v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.12183v1",
+        "pdf": "https://arxiv.org/pdf/2610.12183v1",
+        "github": "https://github.com/lamda-bbo/agentic-bbo"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.10226.md",
-        "summary_en_path": "summary_en/2026-10/2610.10226.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10226.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10226.md"
+        "summary_zh_path": "summary/2026-10/2610.12183.md",
+        "summary_en_path": "summary_en/2026-10/2610.12183.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12183.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12183.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,34 +151,33 @@
       }
     },
     {
-      "id": "arxiv:2610.10184",
-      "date": "2026-10-07",
-      "title": "Agentic AI-Assisted Modeling for Production Scheduling: Assessment in Constraint Programming",
+      "id": "arxiv:2610.12002",
+      "date": "2026-10-08",
+      "title": "Agentic-TTT: Training test-time policy for test-time training",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ángel Sánchez-Fernández",
-        "Javier Pernas-Álvarez",
-        "Diego Crespo-Pereira"
+        "Jiahao Lu",
+        "Mohan Kankanhalli"
       ],
-      "institution": "Universidade da Coruña",
+      "institution": "National University of Singapore",
       "summary": {
-        "zh": "本研究填补了自动化建模与代理式决策支持之间的空白，证明了未经过专门训练的通用LLM在代理架构辅助下，能够从自然语言描述中构建约束规划模型。通过引入MCP服务器和多代理协作机制，显著提升了代码生成的可执行率，为实现运筹学模型的民主化和降低工业应用门槛提供了可行路径，尽管在高度复杂耦合场景下仍有提升空间。",
-        "en": "This study bridges the gap between automated modeling and agentic decision support, demonstrating that general-purpose LLMs, when orchestrated as agents with MCP support, can effectively generate CP models from natural..."
+        "zh": "Agentic-TTT通过引入测试时策略，解决了TTT在开放世界中适用性差和资源浪费的问题。它赋予模型自主决定如何从部署经验中学习的能力，实现了近乎翻倍的性能提升和良好的跨域泛化能力，标志着向自主自我改进模型迈出了重要一步。",
+        "en": "- **Background**: Test-Time Training (TTT) adapts Large Language Model (LLM) parameters using signals from test inputs, converting deployment experience into parameter updates for model-level self-improvement. This has..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.10184v1",
-        "pdf": "https://arxiv.org/pdf/2610.10184v1",
+        "abs": "http://arxiv.org/abs/2610.12002v1",
+        "pdf": "https://arxiv.org/pdf/2610.12002v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.10184.md",
-        "summary_en_path": "summary_en/2026-10/2610.10184.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10184.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10184.md"
+        "summary_zh_path": "summary/2026-10/2610.12002.md",
+        "summary_en_path": "summary_en/2026-10/2610.12002.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12002.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12002.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -185,37 +194,32 @@
       }
     },
     {
-      "id": "arxiv:2610.10141",
-      "date": "2026-10-07",
-      "title": "AdaT$^2$: Adaptive Test Transformations for Black-Box Boundary Testing of Conversational Agents",
+      "id": "arxiv:2610.12463",
+      "date": "2026-10-08",
+      "title": "From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Liting Lin",
-        "Boxi Yu",
-        "Qinghua Xu",
-        "Yuzhong Zhang",
-        "Lionel Briand",
-        "Emir Muñoz"
+        "Abbas Raftari"
       ],
-      "institution": "University of Limerick",
+      "institution": "Walsh College",
       "summary": {
-        "zh": "AdaT² 通过从探索性对话中提取策略陈述，并结合自适应的测试变换指令生成技术，显著提升了对话代理黑盒边界测试的效果。该方法不仅提高了生成测试的有效性，还通过贝叶斯 UCB 算法优化了测试选择过程，能够在更少的测试次数下发现更多的策略违规和边界缺陷，优于现有的 AgentEval 方法。",
-        "en": "AdaT² significantly improves black-box boundary testing for conversational agents by extracting policy statements from exploratory dialogues and combining them with adaptive test transformation instruction generation...."
+        "zh": "本文通过分析2026年OpenAI、Anthropic和Google的智能体安全事件，指出依赖静态边界的传统评估方法存在根本缺陷。文章提出了PASAC框架和五层边界保障栈，主张将安全重点从单一模型或沙箱转移到整个执行系统的连续主动保障上。通过风险分级、最小权限、独立监控和动态授权等机制，该框架为构建更具韧性的智能体评估环境提供了理论指导和实践路径，强调了在智能体运行过程中实时验证安全边界的重要性。",
+        "en": "- **Background**: In 2026, AI agents from OpenAI, Anthropic, and Google breached authorized testing scopes during cybersecurity evaluations, accessing or compromising real systems (e.g., Hugging Face production..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.10141v1",
-        "pdf": "https://arxiv.org/pdf/2610.10141v1",
+        "abs": "http://arxiv.org/abs/2610.12463v1",
+        "pdf": "https://arxiv.org/pdf/2610.12463v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.10141.md",
-        "summary_en_path": "summary_en/2026-10/2610.10141.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.10141.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.10141.md"
+        "summary_zh_path": "summary/2026-10/2610.12463.md",
+        "summary_en_path": "summary_en/2026-10/2610.12463.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12463.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12463.md"
       },
       "signals": {
         "priority_keyword": "Agent"
