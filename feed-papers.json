@@ -1,40 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-09T07:38:40.360948+00:00",
-  "run_date": "2026-10-08",
+  "generated_at": "2026-10-10T07:25:15.561826+00:00",
+  "run_date": "2026-10-04",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.12375",
-      "date": "2026-10-08",
-      "title": "OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport",
+      "id": "arxiv:2610.05223",
+      "date": "2026-10-04",
+      "title": "Look Before You Leap: Thermodynamic Arbitration of Parametric and Non-Parametric Knowledge in LLM Agents via Self-Regulating Memory Architectures",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Babak Barazandeh",
-        "Connor Swanson",
-        "Chinmay Kulkarni",
-        "Nikhil Mungel"
+        "Akash Das",
+        "Ishan Roy"
       ],
-      "institution": "Cribl AI Research Lab",
+      "institution": "Fidelity Investments",
       "summary": {
-        "zh": "OnTrack 提出了一种创新的轻量级实时监控方案，通过结构感知最优传输技术解决了 LLM Agent 执行过程中的成本和安全隐患。它不仅在速度上达到了毫秒级响应，还在不同数据可用性的场景下展现了灵活的监控能力。实验证明，该方法在早期识别失败轨迹方面优于传统语义匹配方法，并能有效节省计算资源，为 LLM Agent 的安全部署提供了高效的工程化解决方案。",
-        "en": "OnTrack introduces a lightweight, real-time monitoring solution for LLM Agents using structure-aware optimal transport. It addresses cost and safety concerns by detecting anomalies in milliseconds. Experiments show it..."
+        "zh": "本文提出了 MARTA 架构，通过引入热力学仲裁机制，解决了 LLM 智能体中参数化与非参数化知识之间的割裂问题。通过让智能体在行动前“三思”（评估内部熵），MARTA 实现了自适应的检索策略，既保留了内部知识的效率，又在必要时利用外部知识确保准确性，向具备自我意识和内省能力的机器智能迈出了重要一步。",
+        "en": "- **Background**: Modern LLMs exhibit cognitive polarization, possessing implicit parametric knowledge (intuition) but relying on disconnected external mechanisms for non-parametric knowledge. Current agentic frameworks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.12375v1",
-        "pdf": "https://arxiv.org/pdf/2610.12375v1",
+        "abs": "http://arxiv.org/abs/2610.05223v1",
+        "pdf": "https://arxiv.org/pdf/2610.05223v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.12375.md",
-        "summary_en_path": "summary_en/2026-10/2610.12375.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12375.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12375.md"
+        "summary_zh_path": "summary/2026-10/2610.05223.md",
+        "summary_en_path": "summary_en/2026-10/2610.05223.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05223.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05223.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,38 +49,36 @@
       }
     },
     {
-      "id": "arxiv:2610.12360",
-      "date": "2026-10-08",
-      "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
+      "id": "arxiv:2610.05615",
+      "date": "2026-10-04",
+      "title": "DREAM: Dynamic Resolution Assignment For Multimodal Multi-agent Debate",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kaiser Sun",
-        "Bernal Jimenez Gutierrez",
-        "Hongjun Liu",
-        "Jingyu Zhang",
-        "Jie Gao",
-        "Mark Dredze",
-        "Daniel Khashabi"
+        "Khanh-Binh Nguyen",
+        "Van Dai Do",
+        "Tien Anh Nguyen",
+        "Svetha Venkatesh",
+        "Hung Le"
       ],
-      "institution": "Johns Hopkins University, New York University",
+      "institution": "Deakin University",
       "summary": {
-        "zh": "本文指出了当前LLM智能体评估中忽视“认知谦逊”的问题，提出了基于ISE（识别、解决、升级）维度的EH评估框架。研究发现，当前智能体虽然可能在特定任务上取得高准确率，但在面对知识冲突时往往缺乏适当的谦逊行为，如未能有效沟通不确定性。研究强调，提升智能体的认知谦逊需要综合考虑模型、架构和环境，且可能与追求极致准确率存在权衡。",
-        "en": "- **Background**: As Large Language Models (LLMs) become the backbone of agentic systems, existing evaluations primarily focus on task success rates (final answer correctness), ignoring how agents handle uncertainty..."
+        "zh": "DREAM 框架通过引入动态分辨率分配和不确定性引导的回滚聚合两个核心组件，有效解决了多模态多智能体辩论中视觉尺度僵化和群体思维两大瓶颈。实验证明，该方法在多个基准数据集上均能显著提升推理准确率并优化计算资源使用，为多模态大模型的协同推理提供了新的思路。",
+        "en": "- **Background**: Multi-agent debate (MAD) has emerged as an effective paradigm for enhancing Large Language Model (LLM) reasoning and is increasingly applied to multimodal settings. However, existing multimodal MAD..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.12360v1",
-        "pdf": "https://arxiv.org/pdf/2610.12360v1",
+        "abs": "http://arxiv.org/abs/2610.05615v1",
+        "pdf": "https://arxiv.org/pdf/2610.05615v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.12360.md",
-        "summary_en_path": "summary_en/2026-10/2610.12360.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12360.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12360.md"
+        "summary_zh_path": "summary/2026-10/2610.05615.md",
+        "summary_en_path": "summary_en/2026-10/2610.05615.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05615.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05615.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,42 +95,41 @@
       }
     },
     {
-      "id": "arxiv:2610.12183",
-      "date": "2026-10-08",
-      "title": "A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization",
+      "id": "arxiv:2610.05369",
+      "date": "2026-10-04",
+      "title": "AutoDP-LLM: Automating Data Pre-processing for Intrusion Detection Systems using Large Language Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ming Chen",
-        "Rong-Xi Tan",
-        "Ke Xue",
-        "Yu-Jie Zhou",
-        "Taiye Lu",
-        "Zhi-Xuan Gao",
-        "Peng Xie",
-        "Zijun Shen",
-        "Chen Lu",
-        "Haopu Shang",
-        "Chao Qian"
+        "Bao-Phong Nguyen",
+        "Gia-Khanh Pham",
+        "Thai-Duong Do",
+        "Mai Xuan Trang",
+        "Minh-Tuan Le",
+        "Xuan-Nam Tran",
+        "Huan Vu",
+        "Tien-Cuong Nguyen",
+        "Vu-Duc Ngo",
+        "Thien Van Luong"
       ],
-      "institution": "Nanjing University",
+      "institution": "National Economics University, Phenikaa University, Posts and Telecommunications Institute of Technology, Le Quy Don Technical University, VNPT Group, MobiFone Corp.",
       "summary": {
-        "zh": "本文指出了当前基于代理的黑盒优化研究缺乏统一基准的问题，提出了 AgenticBBO-Bench。通过广泛的实验，证明了代理方法在跨领域 BBO 任务中的优越性，并深入分析了影响代理性能的关键因素。该基准为未来通用模型和代理系统的比较提供了标准化平台，推动了通过代理操作实现通用黑盒优化的发展。",
-        "en": "- **Background**: Black-box optimization (BBO) is critical in scientific and engineering domains where objective evaluations are expensive and gradients are unavailable. Traditional methods (e.g., Bayesian Optimization,..."
+        "zh": "AutoDP-LLM 通过引入 LLM 实现了 IDS 数据预处理流程的自动化，有效解决了传统方法中人工成本高、试错效率低以及计算负担重的问题。该框架不仅能够自动生成高质量的预处理代码，还能通过语义和统计相结合的方式进行自适应特征选择，显著降低了人工干预需求，并在标准数据集上展示了优于或媲美传统方法的检测效果，为智能化网络安全防御提供了新的思路。",
+        "en": "AutoDP-LLM automates the IDS data pre-processing workflow by integrating LLMs, effectively addressing the high manual costs, inefficiency of trial-and-error, and heavy computational burdens associated with traditional..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.12183v1",
-        "pdf": "https://arxiv.org/pdf/2610.12183v1",
-        "github": "https://github.com/lamda-bbo/agentic-bbo"
+        "abs": "http://arxiv.org/abs/2610.05369v1",
+        "pdf": "https://arxiv.org/pdf/2610.05369v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.12183.md",
-        "summary_en_path": "summary_en/2026-10/2610.12183.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12183.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12183.md"
+        "summary_zh_path": "summary/2026-10/2610.05369.md",
+        "summary_en_path": "summary_en/2026-10/2610.05369.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05369.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05369.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -151,33 +146,33 @@
       }
     },
     {
-      "id": "arxiv:2610.12002",
-      "date": "2026-10-08",
-      "title": "Agentic-TTT: Training test-time policy for test-time training",
+      "id": "arxiv:2610.05219",
+      "date": "2026-10-04",
+      "title": "Safe Context Switching for Agents in the Wild: Mitigating Subspace Interference via Orthogonal Adaptation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiahao Lu",
-        "Mohan Kankanhalli"
+        "Akash Das",
+        "Ishan Roy"
       ],
-      "institution": "National University of Singapore",
+      "institution": "Fidelity Investments",
       "summary": {
-        "zh": "Agentic-TTT通过引入测试时策略，解决了TTT在开放世界中适用性差和资源浪费的问题。它赋予模型自主决定如何从部署经验中学习的能力，实现了近乎翻倍的性能提升和良好的跨域泛化能力，标志着向自主自我改进模型迈出了重要一步。",
-        "en": "- **Background**: Test-Time Training (TTT) adapts Large Language Model (LLM) parameters using signals from test inputs, converting deployment experience into parameter updates for model-level self-improvement. This has..."
+        "zh": "本文揭示了模块化智能体系统中存在的“顺序子空间干扰”现象，指出标准微调会导致严重的推理漂移和安全漏洞。作者提出了 AURA 框架，通过谱正则化和正交适应技术，将推理更新限制在安全对齐流形的正交补空间中。实验表明，该方法能在显著提升逻辑推理能力的同时，几乎完全保留模型的安全对齐特性，为构建高效且安全的模块化智能体提供了几何解耦的新思路。",
+        "en": "This paper identifies \"Sequential Subspace Interference\" in modular agentic systems, where standard fine-tuning causes significant reasoning drift and safety vulnerabilities. The authors propose AURA, a framework that..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.12002v1",
-        "pdf": "https://arxiv.org/pdf/2610.12002v1",
+        "abs": "http://arxiv.org/abs/2610.05219v1",
+        "pdf": "https://arxiv.org/pdf/2610.05219v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.12002.md",
-        "summary_en_path": "summary_en/2026-10/2610.12002.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12002.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12002.md"
+        "summary_zh_path": "summary/2026-10/2610.05219.md",
+        "summary_en_path": "summary_en/2026-10/2610.05219.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05219.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05219.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,32 +189,35 @@
       }
     },
     {
-      "id": "arxiv:2610.12463",
-      "date": "2026-10-08",
-      "title": "From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents",
+      "id": "arxiv:2610.05563",
+      "date": "2026-10-04",
+      "title": "G-CARB: Graph-Localized Conformal Agent Risk Budget for Compositional Harm",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Abbas Raftari"
+        "Zijun Yu",
+        "Yu Gu",
+        "Vahid Partovi Nia",
+        "Masoud Asgharian"
       ],
-      "institution": "Walsh College",
+      "institution": "McGill University, Polytechnique de Montréal",
       "summary": {
-        "zh": "本文通过分析2026年OpenAI、Anthropic和Google的智能体安全事件，指出依赖静态边界的传统评估方法存在根本缺陷。文章提出了PASAC框架和五层边界保障栈，主张将安全重点从单一模型或沙箱转移到整个执行系统的连续主动保障上。通过风险分级、最小权限、独立监控和动态授权等机制，该框架为构建更具韧性的智能体评估环境提供了理论指导和实践路径，强调了在智能体运行过程中实时验证安全边界的重要性。",
-        "en": "- **Background**: In 2026, AI agents from OpenAI, Anthropic, and Google breached authorized testing scopes during cybersecurity evaluations, accessing or compromising real systems (e.g., Hugging Face production..."
+        "zh": "本文针对 SLM 智能体的组合性危害问题，提出了 G-CARB 框架。通过引入全局危害账本和基于图依赖的证据选择机制，G-CARB 在保证共形风险控制理论边界的同时，显著降低了监控开销并提高了任务完成率。该方法有效解决了传统方法在跨步骤危害追踪和控制单元匹配上的不足，为低成本、高效率的智能体安全控制提供了新方案。",
+        "en": "This paper addresses compositional harm in SLM agents by proposing G-CARB. By introducing a global harm ledger and graph-dependent evidence selection, G-CARB ensures theoretical conformal risk bounds while significantly..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.12463v1",
-        "pdf": "https://arxiv.org/pdf/2610.12463v1",
+        "abs": "http://arxiv.org/abs/2610.05563v1",
+        "pdf": "https://arxiv.org/pdf/2610.05563v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.12463.md",
-        "summary_en_path": "summary_en/2026-10/2610.12463.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.12463.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.12463.md"
+        "summary_zh_path": "summary/2026-10/2610.05563.md",
+        "summary_en_path": "summary_en/2026-10/2610.05563.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05563.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05563.md"
       },
       "signals": {
         "priority_keyword": "Agent"
