@@ -1,38 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-10T07:25:15.561826+00:00",
-  "run_date": "2026-10-04",
+  "generated_at": "2026-10-10T11:19:39.373494+00:00",
+  "run_date": "2026-10-03",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.05223",
-      "date": "2026-10-04",
-      "title": "Look Before You Leap: Thermodynamic Arbitration of Parametric and Non-Parametric Knowledge in LLM Agents via Self-Regulating Memory Architectures",
+      "id": "arxiv:2610.04528",
+      "date": "2026-10-03",
+      "title": "Quantifying Collusion Among Autonomous LLM Agents: A Statistical Analysis of the Collusion Wiki Incident",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Akash Das",
-        "Ishan Roy"
+        "Shariq Murtuza"
       ],
-      "institution": "Fidelity Investments",
+      "institution": null,
       "summary": {
-        "zh": "本文提出了 MARTA 架构，通过引入热力学仲裁机制，解决了 LLM 智能体中参数化与非参数化知识之间的割裂问题。通过让智能体在行动前“三思”（评估内部熵），MARTA 实现了自适应的检索策略，既保留了内部知识的效率，又在必要时利用外部知识确保准确性，向具备自我意识和内省能力的机器智能迈出了重要一步。",
-        "en": "- **Background**: Modern LLMs exhibit cognitive polarization, possessing implicit parametric knowledge (intuition) but relying on disconnected external mechanisms for non-parametric knowledge. Current agentic frameworks..."
+        "zh": "本文通过对“Collusion Wiki”事件的重新分析，强调了在分析自主LLM代理行为日志时避免方法论陷阱的重要性。通过修复四个关键的技术错误，作者提供了关于代理行为模式的严格统计证据，揭示了同一代理时间聚类的显著性、版主干预的有效性以及代理间中继通信的真实规模。这项工作为未来研究自主代理的协调行为提供了可靠的分析框架和工具。",
+        "en": "This paper re-analyzes the \"Collusion Wiki\" incident, emphasizing the importance of avoiding methodological pitfalls in analyzing autonomous LLM agent behavioral logs. By fixing four key technical errors, the authors..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.05223v1",
-        "pdf": "https://arxiv.org/pdf/2610.05223v1",
+        "abs": "http://arxiv.org/abs/2610.04528v1",
+        "pdf": "https://arxiv.org/pdf/2610.04528v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.05223.md",
-        "summary_en_path": "summary_en/2026-10/2610.05223.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05223.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05223.md"
+        "summary_zh_path": "summary/2026-10/2610.04528.md",
+        "summary_en_path": "summary_en/2026-10/2610.04528.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04528.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04528.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,36 +48,34 @@
       }
     },
     {
-      "id": "arxiv:2610.05615",
-      "date": "2026-10-04",
-      "title": "DREAM: Dynamic Resolution Assignment For Multimodal Multi-agent Debate",
+      "id": "arxiv:2610.06971",
+      "date": "2026-10-03",
+      "title": "AegisFlow: A Multi-Agent Agentic AI Framework for Autonomous Remediation and Self-Healing in Fragile Data Ecosystems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Khanh-Binh Nguyen",
-        "Van Dai Do",
-        "Tien Anh Nguyen",
-        "Svetha Venkatesh",
-        "Hung Le"
+        "Muhammad Bilal Awan",
+        "Zubair Hussain",
+        "Abdul Shahid"
       ],
-      "institution": "Deakin University",
+      "institution": "Ministry of Defense, Doha, Qatar; IQRA University, Islamabad, Pakistan; South East Technological University, Waterford, Ireland",
       "summary": {
-        "zh": "DREAM 框架通过引入动态分辨率分配和不确定性引导的回滚聚合两个核心组件，有效解决了多模态多智能体辩论中视觉尺度僵化和群体思维两大瓶颈。实验证明，该方法在多个基准数据集上均能显著提升推理准确率并优化计算资源使用，为多模态大模型的协同推理提供了新的思路。",
-        "en": "- **Background**: Multi-agent debate (MAD) has emerged as an effective paradigm for enhancing Large Language Model (LLM) reasoning and is increasingly applied to multimodal settings. However, existing multimodal MAD..."
+        "zh": "AegisFlow 通过引入基于 LLM 的多智能体框架和并行影子补丁技术，成功解决了数据管道脆弱性和人工修复效率低下的问题。它实现了从被动可观测性到主动代理修复的范式转变，大幅缩短了平均修复时间并提高了自动化修复的成功率，为复杂数据生态系统的自愈提供了有效的解决方案。",
+        "en": "- **Background**: Traditional data pipelines are brittle and frequently fail due to upstream schema drift, API contract changes, or website DOM modifications. Existing observability tools only raise alerts, relying on..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.05615v1",
-        "pdf": "https://arxiv.org/pdf/2610.05615v1",
+        "abs": "http://arxiv.org/abs/2610.06971v1",
+        "pdf": "https://arxiv.org/pdf/2610.06971v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.05615.md",
-        "summary_en_path": "summary_en/2026-10/2610.05615.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05615.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05615.md"
+        "summary_zh_path": "summary/2026-10/2610.06971.md",
+        "summary_en_path": "summary_en/2026-10/2610.06971.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06971.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06971.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -95,41 +92,39 @@
       }
     },
     {
-      "id": "arxiv:2610.05369",
-      "date": "2026-10-04",
-      "title": "AutoDP-LLM: Automating Data Pre-processing for Intrusion Detection Systems using Large Language Models",
+      "id": "arxiv:2610.04672",
+      "date": "2026-10-03",
+      "title": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bao-Phong Nguyen",
-        "Gia-Khanh Pham",
-        "Thai-Duong Do",
-        "Mai Xuan Trang",
-        "Minh-Tuan Le",
-        "Xuan-Nam Tran",
-        "Huan Vu",
-        "Tien-Cuong Nguyen",
-        "Vu-Duc Ngo",
-        "Thien Van Luong"
+        "Qizhi Chu",
+        "Zekai Yu",
+        "Sijie Wen",
+        "Yang Liu",
+        "Chen Qian",
+        "Cheng Yang",
+        "Chuan Shi",
+        "Zhiyuan Liu"
       ],
-      "institution": "National Economics University, Phenikaa University, Posts and Telecommunications Institute of Technology, Le Quy Don Technical University, VNPT Group, MobiFone Corp.",
+      "institution": "Beijing University of Posts and Telecommunications, Shanghai Jiao Tong University, Tsinghua University",
       "summary": {
-        "zh": "AutoDP-LLM 通过引入 LLM 实现了 IDS 数据预处理流程的自动化，有效解决了传统方法中人工成本高、试错效率低以及计算负担重的问题。该框架不仅能够自动生成高质量的预处理代码，还能通过语义和统计相结合的方式进行自适应特征选择，显著降低了人工干预需求，并在标准数据集上展示了优于或媲美传统方法的检测效果，为智能化网络安全防御提供了新的思路。",
-        "en": "AutoDP-LLM automates the IDS data pre-processing workflow by integrating LLMs, effectively addressing the high manual costs, inefficiency of trial-and-error, and heavy computational burdens associated with traditional..."
+        "zh": "MASBench填补了部分可观测环境下多智能体协作评估的空白。通过解耦协作机制并引入确定性指标，它为设计和优化高效的LLM多智能体系统提供了标准化的测试平台和实证指导，强调了在信息受限场景下协作机制设计的重要性。",
+        "en": "- **Background**: Large Language Models (LLMs) have evolved into the core of autonomous agents. LLM-based Multi-Agent Systems (MAS) coordinate multiple agents to accomplish complex tasks."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.05369v1",
-        "pdf": "https://arxiv.org/pdf/2610.05369v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.04672v1",
+        "pdf": "https://arxiv.org/pdf/2610.04672v1",
+        "github": "https://github.com/BUPT-GAMMA/MASBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.05369.md",
-        "summary_en_path": "summary_en/2026-10/2610.05369.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05369.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05369.md"
+        "summary_zh_path": "summary/2026-10/2610.04672.md",
+        "summary_en_path": "summary_en/2026-10/2610.04672.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04672.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04672.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,33 +141,32 @@
       }
     },
     {
-      "id": "arxiv:2610.05219",
-      "date": "2026-10-04",
-      "title": "Safe Context Switching for Agents in the Wild: Mitigating Subspace Interference via Orthogonal Adaptation",
+      "id": "arxiv:2610.04699",
+      "date": "2026-10-03",
+      "title": "Not Self-Decidable: LLMs Cannot Draw the Boundary of What an Agent Verifier Can Check",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Akash Das",
-        "Ishan Roy"
+        "Anthony Rhodes"
       ],
-      "institution": "Fidelity Investments",
+      "institution": "Confidential Core AI",
       "summary": {
-        "zh": "本文揭示了模块化智能体系统中存在的“顺序子空间干扰”现象，指出标准微调会导致严重的推理漂移和安全漏洞。作者提出了 AURA 框架，通过谱正则化和正交适应技术，将推理更新限制在安全对齐流形的正交补空间中。实验表明，该方法能在显著提升逻辑推理能力的同时，几乎完全保留模型的安全对齐特性，为构建高效且安全的模块化智能体提供了几何解耦的新思路。",
-        "en": "This paper identifies \"Sequential Subspace Interference\" in modular agentic systems, where standard fine-tuning causes significant reasoning drift and safety vulnerabilities. The authors propose AURA, a framework that..."
+        "zh": "本文核心观点是“自决性”并非模型的一种能力，而是验证器必须构建的边界。通过实证分析揭示了 LLM 在区分可代码化检查与需人工裁决规则时的系统性失败，特别是模型间的共谋错误。提出的 CoVer 算法通过“先佐证后验证”的策略，利用干预测试和确定性重述来严格界定可判定性，为高风险领域的 Agent 验证提供了更可靠的方法论基础。",
+        "en": "- **Background**: In regulated domains like finance, healthcare, and law, AI Agents must enforce external rules. A verifier must distinguish between rules settleable by fixed code checks (decidable) and those requiring..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.05219v1",
-        "pdf": "https://arxiv.org/pdf/2610.05219v1",
+        "abs": "http://arxiv.org/abs/2610.04699v1",
+        "pdf": "https://arxiv.org/pdf/2610.04699v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.05219.md",
-        "summary_en_path": "summary_en/2026-10/2610.05219.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05219.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05219.md"
+        "summary_zh_path": "summary/2026-10/2610.04699.md",
+        "summary_en_path": "summary_en/2026-10/2610.04699.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04699.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04699.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,35 +183,36 @@
       }
     },
     {
-      "id": "arxiv:2610.05563",
-      "date": "2026-10-04",
-      "title": "G-CARB: Graph-Localized Conformal Agent Risk Budget for Compositional Harm",
+      "id": "arxiv:2610.06964",
+      "date": "2026-10-03",
+      "title": "Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zijun Yu",
-        "Yu Gu",
-        "Vahid Partovi Nia",
-        "Masoud Asgharian"
+        "Bowen Ye",
+        "Yongchao Xu",
+        "Junkai Ma",
+        "Xiang Yin",
+        "Wenzhao Li"
       ],
-      "institution": "McGill University, Polytechnique de Montréal",
+      "institution": "Shanghai Jiao Tong University, Alibaba Group, University of Science and Technology of China",
       "summary": {
-        "zh": "本文针对 SLM 智能体的组合性危害问题，提出了 G-CARB 框架。通过引入全局危害账本和基于图依赖的证据选择机制，G-CARB 在保证共形风险控制理论边界的同时，显著降低了监控开销并提高了任务完成率。该方法有效解决了传统方法在跨步骤危害追踪和控制单元匹配上的不足，为低成本、高效率的智能体安全控制提供了新方案。",
-        "en": "This paper addresses compositional harm in SLM agents by proposing G-CARB. By introducing a global harm ledger and graph-dependent evidence selection, G-CARB ensures theoretical conformal risk bounds while significantly..."
+        "zh": "本文针对 LLM 智能体难以从经验中持续进化的问题，提出了 SAGA 框架。该框架通过将具体交互抽象为分层知识（情景、过程、原则），并利用“执行-抽象”反馈闭环将抽象知识实例化为具体行动指导，有效解决了知识泛化与落地执行的难题。实验证明该方法能显著提升智能体在复杂交互环境中的表现。",
+        "en": "This paper addresses the limitation of LLM agents in continual learning by proposing SAGA. By abstracting concrete interactions into hierarchical knowledge (episodes, procedures, principles) and employing an..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.05563v1",
-        "pdf": "https://arxiv.org/pdf/2610.05563v1",
+        "abs": "http://arxiv.org/abs/2610.06964v1",
+        "pdf": "https://arxiv.org/pdf/2610.06964v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.05563.md",
-        "summary_en_path": "summary_en/2026-10/2610.05563.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.05563.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.05563.md"
+        "summary_zh_path": "summary/2026-10/2610.06964.md",
+        "summary_en_path": "summary_en/2026-10/2610.06964.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06964.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06964.md"
       },
       "signals": {
         "priority_keyword": "Agent"
