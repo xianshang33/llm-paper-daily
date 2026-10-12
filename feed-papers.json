@@ -1,37 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-10T11:19:39.373494+00:00",
-  "run_date": "2026-10-03",
+  "generated_at": "2026-10-12T07:37:51.958720+00:00",
+  "run_date": "2026-10-09",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.04528",
-      "date": "2026-10-03",
-      "title": "Quantifying Collusion Among Autonomous LLM Agents: A Statistical Analysis of the Collusion Wiki Incident",
+      "id": "arxiv:2610.13325",
+      "date": "2026-10-09",
+      "title": "Taking Tokenization off the Host for Agentic LLM Serving",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shariq Murtuza"
+        "Mohammad Siavashi",
+        "Pascal Schwinte",
+        "Ali Banaei",
+        "Gerald Q. Maguire",
+        "Marco Chiesa",
+        "Dejan Kostić"
       ],
-      "institution": null,
+      "institution": "KTH Royal Institute of Technology",
       "summary": {
-        "zh": "本文通过对“Collusion Wiki”事件的重新分析，强调了在分析自主LLM代理行为日志时避免方法论陷阱的重要性。通过修复四个关键的技术错误，作者提供了关于代理行为模式的严格统计证据，揭示了同一代理时间聚类的显著性、版主干预的有效性以及代理间中继通信的真实规模。这项工作为未来研究自主代理的协调行为提供了可靠的分析框架和工具。",
-        "en": "This paper re-analyzes the \"Collusion Wiki\" incident, emphasizing the importance of avoiding methodological pitfalls in analyzing autonomous LLM agent behavioral logs. By fixing four key technical errors, the authors..."
+        "zh": "GraphTok 通过将分词任务卸载到 GPU 并利用 CUDA 图技术，有效解决了 Agentic 工作负载中因前缀缓存普及而凸显的分词瓶颈。它不仅大幅降低了首字延迟，更显著提升了单前端能支持的 GPU 集群规模和整体系统吞吐量，为大规模 LLM 代理服务提供了高效的基础设施支持。",
+        "en": "- **Background**: With the rise of LLM agents, workloads involve repeated calls with long, largely unchanged contexts. While prefix caching skips most prefill computation, every request must still be fully tokenized..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.04528v1",
-        "pdf": "https://arxiv.org/pdf/2610.04528v1",
+        "abs": "http://arxiv.org/abs/2610.13325v1",
+        "pdf": "https://arxiv.org/pdf/2610.13325v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.04528.md",
-        "summary_en_path": "summary_en/2026-10/2610.04528.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04528.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04528.md"
+        "summary_zh_path": "summary/2026-10/2610.13325.md",
+        "summary_en_path": "summary_en/2026-10/2610.13325.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.13325.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.13325.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,34 +53,43 @@
       }
     },
     {
-      "id": "arxiv:2610.06971",
-      "date": "2026-10-03",
-      "title": "AegisFlow: A Multi-Agent Agentic AI Framework for Autonomous Remediation and Self-Healing in Fragile Data Ecosystems",
+      "id": "arxiv:2610.13438",
+      "date": "2026-10-09",
+      "title": "Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Muhammad Bilal Awan",
-        "Zubair Hussain",
-        "Abdul Shahid"
+        "Chen Xi",
+        "Ding Ruixue",
+        "Wang Zhigaoyuan",
+        "Zhang Fanrui",
+        "Zhang Qiang",
+        "Chen Boli",
+        "Wang Shihang",
+        "Wang Tianfu",
+        "Ren Ailin",
+        "Wang Pengyong",
+        "Xie Pengjun",
+        "Xiong Hui"
       ],
-      "institution": "Ministry of Defense, Doha, Qatar; IQRA University, Islamabad, Pakistan; South East Technological University, Waterford, Ireland",
+      "institution": "Alibaba Group, HKUST (Guangzhou)",
       "summary": {
-        "zh": "AegisFlow 通过引入基于 LLM 的多智能体框架和并行影子补丁技术，成功解决了数据管道脆弱性和人工修复效率低下的问题。它实现了从被动可观测性到主动代理修复的范式转变，大幅缩短了平均修复时间并提高了自动化修复的成功率，为复杂数据生态系统的自愈提供了有效的解决方案。",
-        "en": "- **Background**: Traditional data pipelines are brittle and frequently fail due to upstream schema drift, API contract changes, or website DOM modifications. Existing observability tools only raise alerts, relying on..."
+        "zh": "本文针对智能体强化学习中因任务超出能力边界导致的训练崩溃问题，提出了 Rollout-Time Intervention (RTI) 方法。通过在 rollout 阶段利用评估规则修正错误轨迹并过滤高分布偏移数据，RTI 有效解决了有效轨迹稀疏和离线数据分布偏移的挑战。实验表明，RTI 能显著提升智能体性能，使其突破原有能力限制，为提升 LLM 智能体的复杂任务处理能力提供了新途径。",
+        "en": "- **Background**: Reinforcement Learning (RL) is a key paradigm for enhancing Large Language Model (LLM) agents in reasoning, planning, and tool use. However, existing agent RL methods suffer from an \"on-policy..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.06971v1",
-        "pdf": "https://arxiv.org/pdf/2610.06971v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.13438v1",
+        "pdf": "https://arxiv.org/pdf/2610.13438v1",
+        "github": "https://github.com/Alibaba-NLP/qqr"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06971.md",
-        "summary_en_path": "summary_en/2026-10/2610.06971.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06971.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06971.md"
+        "summary_zh_path": "summary/2026-10/2610.13438.md",
+        "summary_en_path": "summary_en/2026-10/2610.13438.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.13438.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.13438.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -92,39 +106,37 @@
       }
     },
     {
-      "id": "arxiv:2610.04672",
-      "date": "2026-10-03",
-      "title": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
+      "id": "arxiv:2610.13663",
+      "date": "2026-10-09",
+      "title": "A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qizhi Chu",
-        "Zekai Yu",
-        "Sijie Wen",
-        "Yang Liu",
-        "Chen Qian",
-        "Cheng Yang",
-        "Chuan Shi",
-        "Zhiyuan Liu"
+        "Ivan Moloshnikov",
+        "Dmitry Kunitsyn",
+        "Alexander Sboev",
+        "Maksim Skorokhodov",
+        "Roman Rybka",
+        "Yuanchao Liu"
       ],
-      "institution": "Beijing University of Posts and Telecommunications, Shanghai Jiao Tong University, Tsinghua University",
+      "institution": "National Research Centre “Kurchatov Institute”, National Research Nuclear University MEPhI, Moscow Institute of Physics and Technology, Harbin Institute of Technology",
       "summary": {
-        "zh": "MASBench填补了部分可观测环境下多智能体协作评估的空白。通过解耦协作机制并引入确定性指标，它为设计和优化高效的LLM多智能体系统提供了标准化的测试平台和实证指导，强调了在信息受限场景下协作机制设计的重要性。",
-        "en": "- **Background**: Large Language Models (LLMs) have evolved into the core of autonomous agents. LLM-based Multi-Agent Systems (MAS) coordinate multiple agents to accomplish complex tasks."
+        "zh": "本文提出了一种基于多代理LLM的自动化调优框架，专门用于调整专用神经网络模型中的关键功能模块。通过限制代码生成范围至特定组件并保持整体架构稳定，该方法成功克服了传统自动化ML方法在灵活性和通用性上的局限。实验结果表明，该框架在脉冲神经网络分类和物理信息神经网络求解微分方程等截然不同的任务中均取得了显著的性能提升，展现了强大的跨领域迁移能力和自动化调优潜力。",
+        "en": "This paper proposes a multi-agent LLM-based automated tuning framework specifically designed for adjusting key functional modules in specialized neural network models. By restricting code generation to specific..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.04672v1",
-        "pdf": "https://arxiv.org/pdf/2610.04672v1",
-        "github": "https://github.com/BUPT-GAMMA/MASBench"
+        "abs": "http://arxiv.org/abs/2610.13663v1",
+        "pdf": "https://arxiv.org/pdf/2610.13663v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.04672.md",
-        "summary_en_path": "summary_en/2026-10/2610.04672.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04672.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04672.md"
+        "summary_zh_path": "summary/2026-10/2610.13663.md",
+        "summary_en_path": "summary_en/2026-10/2610.13663.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.13663.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.13663.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -141,32 +153,37 @@
       }
     },
     {
-      "id": "arxiv:2610.04699",
-      "date": "2026-10-03",
-      "title": "Not Self-Decidable: LLMs Cannot Draw the Boundary of What an Agent Verifier Can Check",
+      "id": "arxiv:2610.13755",
+      "date": "2026-10-09",
+      "title": "Matched-Context Group Policy Optimization for LLM Agent Training",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anthony Rhodes"
+        "Chenxu Zhang",
+        "Yaorui Shi",
+        "Wenlong Zhang",
+        "Jianchao Tan",
+        "Zihan Wang",
+        "Yiming Cheng"
       ],
-      "institution": "Confidential Core AI",
+      "institution": "Imperial College London, University of Science and Technology of China, Meituan, Tsinghua University",
       "summary": {
-        "zh": "本文核心观点是“自决性”并非模型的一种能力，而是验证器必须构建的边界。通过实证分析揭示了 LLM 在区分可代码化检查与需人工裁决规则时的系统性失败，特别是模型间的共谋错误。提出的 CoVer 算法通过“先佐证后验证”的策略，利用干预测试和确定性重述来严格界定可判定性，为高风险领域的 Agent 验证提供了更可靠的方法论基础。",
-        "en": "- **Background**: In regulated domains like finance, healthcare, and law, AI Agents must enforce external rules. A verifier must distinguish between rules settleable by fixed code checks (decidable) and those requiring..."
+        "zh": "本文针对 LLM 智能体训练中的长视野信用分配问题，提出了 MCGPO 方法。通过引入规则感知的上下文匹配机制，解决了传统组相对 RL 方法中因状态摘要模糊导致的上下文不匹配问题。实验证明，MCGPO 在多个基准测试和模型规模上均优于现有的 GraphGPO 方法，特别是在高基线性能下仍能实现显著增益，为无评论家的 LLM 智能体训练提供了更精细的信用分配方案。",
+        "en": "- **Background**: Training long-horizon LLM agents requires assigning credit to intermediate decisions from sparse terminal feedback. Existing group-relative reinforcement learning methods perform critic-free updates by..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.04699v1",
-        "pdf": "https://arxiv.org/pdf/2610.04699v1",
+        "abs": "http://arxiv.org/abs/2610.13755v1",
+        "pdf": "https://arxiv.org/pdf/2610.13755v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.04699.md",
-        "summary_en_path": "summary_en/2026-10/2610.04699.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.04699.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.04699.md"
+        "summary_zh_path": "summary/2026-10/2610.13755.md",
+        "summary_en_path": "summary_en/2026-10/2610.13755.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.13755.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.13755.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -183,36 +200,37 @@
       }
     },
     {
-      "id": "arxiv:2610.06964",
-      "date": "2026-10-03",
-      "title": "Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction",
+      "id": "arxiv:2610.13335",
+      "date": "2026-10-09",
+      "title": "AgentTune: A Unified Training Lifecycle for Tool-Using LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bowen Ye",
-        "Yongchao Xu",
-        "Junkai Ma",
-        "Xiang Yin",
-        "Wenzhao Li"
+        "R E Zera Marveen Lyngkhoi",
+        "Abhivansh Gupta",
+        "Vidushee Vats",
+        "Ram Mohan Rao Kadiyala",
+        "Vinay Kumar Sankarapu",
+        "Pratinav Seth"
       ],
-      "institution": "Shanghai Jiao Tong University, Alibaba Group, University of Science and Technology of China",
+      "institution": "Lexsi Labs",
       "summary": {
-        "zh": "本文针对 LLM 智能体难以从经验中持续进化的问题，提出了 SAGA 框架。该框架通过将具体交互抽象为分层知识（情景、过程、原则），并利用“执行-抽象”反馈闭环将抽象知识实例化为具体行动指导，有效解决了知识泛化与落地执行的难题。实验证明该方法能显著提升智能体在复杂交互环境中的表现。",
-        "en": "This paper addresses the limitation of LLM agents in continual learning by proposing SAGA. By abstracting concrete interactions into hierarchical knowledge (episodes, procedures, principles) and employing an..."
+        "zh": "AgentTune 通过定义统一的轨迹契约（EventLog）和共享的训练栈，解决了当前 LLM Agent 开发中工具链碎片化的问题。它不仅简化了从构建到维护的开发流程，还通过支持自我修复和多种强化学习算法，提升了 Agent 的鲁棒性和性能。该框架为未来复杂 Agent 系统的标准化开发和优化提供了重要基础。",
+        "en": "- **Background**: Tool-using LLM agents increasingly require a common substrate for building, training, evaluating, distilling, and maintaining agentic systems. - **Why Existing Work Falls Short**: Existing tools (e.g.,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.06964v1",
-        "pdf": "https://arxiv.org/pdf/2610.06964v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.13335v1",
+        "pdf": "https://arxiv.org/pdf/2610.13335v1",
+        "github": "https://github.com/Lexsi-Labs/AgentTune"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.06964.md",
-        "summary_en_path": "summary_en/2026-10/2610.06964.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.06964.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.06964.md"
+        "summary_zh_path": "summary/2026-10/2610.13335.md",
+        "summary_en_path": "summary_en/2026-10/2610.13335.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.13335.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.13335.md"
       },
       "signals": {
         "priority_keyword": "Agent"

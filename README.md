@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.09_07:38-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.12_07:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月09日 07:38</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月12日 07:37</sub></summary>
 <br>
 
-- OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport 
-- Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict 
-- A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization 
-- Agentic-TTT: Training test-time policy for test-time training 
-- From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents 
+- Taking Tokenization off the Host for Agentic LLM Serving 
+- Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits 
+- A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models 
+- Matched-Context Group Policy Optimization for LLM Agent Training 
+- AgentTune: A Unified Training Lifecycle for Tool-Using LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-09</span> | **Taking Tokenization off the Host for Agentic LLM Serving**<br><sub>机构: KTH Royal Institute of Technology<br>GraphTok 通过将分词任务卸载到 GPU 并利用 CUDA 图技术，有效解决了 Agentic 工作负载中因前缀缓存普及而凸显的分词瓶颈。它不仅大幅降低了首字延迟，更显著提升了单前端能支持的 GPU 集群规模和整体系统吞吐量，为大规模 LLM 代理服务提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13325v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13325.md)  |
+| <span style='display: inline-block; width: 42px;'>10-09</span> | **Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits**<br><sub>机构: Alibaba Group, HKUST (Guangzhou)<br>本文针对智能体强化学习中因任务超出能力边界导致的训练崩溃问题，提出了 Rollout-Time Intervention (RTI) 方法。通过在 rollout 阶段利用评估规则修正错误轨迹并过滤高分布偏移数据，RTI 有效解决了有效轨迹稀疏和离线数据分布偏移的挑战。实验表明，RTI 能显著提升智能体性能，使其突破原有能力限制，为提升 LLM 智能体的复杂任务处理能力提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13438v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13438.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Alibaba-NLP/qqr)</div> |
+| <span style='display: inline-block; width: 42px;'>10-09</span> | **A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models**<br><sub>机构: National Research Centre “Kurchatov Institute”, National Research Nuclear University MEPhI, Moscow Institute of Physics and Technology, Harbin Institute of Technology<br>本文提出了一种基于多代理LLM的自动化调优框架，专门用于调整专用神经网络模型中的关键功能模块。通过限制代码生成范围至特定组件并保持整体架构稳定，该方法成功克服了传统自动化ML方法在灵活性和通用性上的局限。实验结果表明，该框架在脉冲神经网络分类和物理信息神经网络求解微分方程等截然不同的任务中均取得了显著的性能提升，展现了强大的跨领域迁移能力和自动化调优潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13663v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13663.md)  |
+| <span style='display: inline-block; width: 42px;'>10-09</span> | **Matched-Context Group Policy Optimization for LLM Agent Training**<br><sub>机构: Imperial College London, University of Science and Technology of China, Meituan, Tsinghua University<br>本文针对 LLM 智能体训练中的长视野信用分配问题，提出了 MCGPO 方法。通过引入规则感知的上下文匹配机制，解决了传统组相对 RL 方法中因状态摘要模糊导致的上下文不匹配问题。实验证明，MCGPO 在多个基准测试和模型规模上均优于现有的 GraphGPO 方法，特别是在高基线性能下仍能实现显著增益，为无评论家的 LLM 智能体训练提供了更精细的信用分配方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13755v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13755.md)  |
+| <span style='display: inline-block; width: 42px;'>10-09</span> | **AgentTune: A Unified Training Lifecycle for Tool-Using LLM Agents**<br><sub>机构: Lexsi Labs<br>AgentTune 通过定义统一的轨迹契约（EventLog）和共享的训练栈，解决了当前 LLM Agent 开发中工具链碎片化的问题。它不仅简化了从构建到维护的开发流程，还通过支持自我修复和多种强化学习算法，提升了 Agent 的鲁棒性和性能。该框架为未来复杂 Agent 系统的标准化开发和优化提供了重要基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13335v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13335.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Lexsi-Labs/AgentTune)</div> |
 | <span style='display: inline-block; width: 42px;'>10-08</span> | **OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport**<br><sub>机构: Cribl AI Research Lab<br>OnTrack 提出了一种创新的轻量级实时监控方案，通过结构感知最优传输技术解决了 LLM Agent 执行过程中的成本和安全隐患。它不仅在速度上达到了毫秒级响应，还在不同数据可用性的场景下展现了灵活的监控能力。实验证明，该方法在早期识别失败轨迹方面优于传统语义匹配方法，并能有效节省计算资源，为 LLM Agent 的安全部署提供了高效的工程化解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12375v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12375.md)  |
 | <span style='display: inline-block; width: 42px;'>10-08</span> | **Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict**<br><sub>机构: Johns Hopkins University, New York University<br>本文指出了当前LLM智能体评估中忽视“认知谦逊”的问题，提出了基于ISE（识别、解决、升级）维度的EH评估框架。研究发现，当前智能体虽然可能在特定任务上取得高准确率，但在面对知识冲突时往往缺乏适当的谦逊行为，如未能有效沟通不确定性。研究强调，提升智能体的认知谦逊需要综合考虑模型、架构和环境，且可能与追求极致准确率存在权衡。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12360v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12360.md)  |
 | <span style='display: inline-block; width: 42px;'>10-08</span> | **A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization**<br><sub>机构: Nanjing University<br>本文指出了当前基于代理的黑盒优化研究缺乏统一基准的问题，提出了 AgenticBBO-Bench。通过广泛的实验，证明了代理方法在跨领域 BBO 任务中的优越性，并深入分析了影响代理性能的关键因素。该基准为未来通用模型和代理系统的比较提供了标准化平台，推动了通过代理操作实现通用黑盒优化的发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.12183v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.12183.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/lamda-bbo/agentic-bbo)</div> |
