@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.12_07:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.14_06:22-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月12日 07:37</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月14日 06:22</sub></summary>
 <br>
 
-- Taking Tokenization off the Host for Agentic LLM Serving 
-- Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits 
-- A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models 
-- Matched-Context Group Policy Optimization for LLM Agent Training 
-- AgentTune: A Unified Training Lifecycle for Tool-Using LLM Agents 
+- BLADE: Auditing Information Use for Failure Attribution in LLM Multi-Agent Systems 
+- Can an Agent Learn to Predict Its Own Failure? Outcome-Grounded Confidence Calibration in LLM Agents 
+- Knowledge Graphs as Files: An Agent Harness Where Tool Creation and Tool Use Co-Evolve 
+- Lost in Implicit Routing: How LLM Agents Fail to Load Relevant Skills at Scale 
+- ProAS: A Progress-Aware Advantage Shaping Framework for Multi-Turn Agentic Reinforcement Learning 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-13</span> | **BLADE: Auditing Information Use for Failure Attribution in LLM Multi-Agent Systems**<br><sub>机构: University of Connecticut<br>BLADE 通过审计依赖证据而非仅仅追踪依赖关系，解决了多智能体系统中故障归因的难题。它通过概率选择关键交接点并审计信息使用的忠实性，有效区分了错误的引入与传播。实验证明，BLADE 在无参考答案的情况下，显著优于现有基线方法，为构建更可解释和可靠的多智能体系统提供了新路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.18780v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.18780.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/GXG-CS/BLADE)</div> |
+| <span style='display: inline-block; width: 42px;'>10-13</span> | **Can an Agent Learn to Predict Its Own Failure? Outcome-Grounded Confidence Calibration in LLM Agents**<br><sub>机构: SAP<br>本文提出了一种基于最终结果 grounding 的 LLM Agent 置信度校准方法，解决了传统单步校准无法预测长程任务最终结果的问题。通过 GRPO 框架和适当的评分规则，Agent 能够生成可靠的逐步骤置信度信号。实验表明，该方法在多个环境中显著提升了置信度校准质量（AUROC 和 ECE），并使 Agent 能够在早期识别潜在失败的任务，为运行时控制和人工介入提供了有效依据。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.18614v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.18614.md)  |
+| <span style='display: inline-block; width: 42px;'>10-13</span> | **Knowledge Graphs as Files: An Agent Harness Where Tool Creation and Tool Use Co-Evolve**<br><sub>机构: Texas A&M University, University of Oregon<br>本文提出了DKGI框架，通过将知识图谱视为文件，打破了预定义接口的束缚。其核心创新在于允许智能体在任务执行过程中动态创建和修改访问图谱的代码，实现了工具创建与使用的协同进化。实验证明，这种无需训练的方法在多个基准测试中显著超越了现有的最先进方法，展示了在复杂图搜索任务中赋予智能体更高数据访问自由度和代码演化能力的巨大价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.18616v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.18616.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/leopoldwhite/DKGI)</div> |
+| <span style='display: inline-block; width: 42px;'>10-13</span> | **Lost in Implicit Routing: How LLM Agents Fail to Load Relevant Skills at Scale**<br><sub>机构: The University of Hong Kong, Huazhong University of Science and Technology<br>本文揭示了 LLM Agent 在大规模技能库中面临的“隐式路由崩溃”问题，证明了随着无关技能增加，语义干扰和指令竞争会导致 Agent 无法加载必要技能。研究建议采用显式的技能预选择机制（如 RAG 或 LLM 过滤器）将技能检索与任务执行解耦，从而在保持高召回率的同时提升 Agent 的可扩展性和成功率。这一发现为未来 Agent 技能协议的设计和评估提供了重要指导。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.18522v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.18522.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/jinlinll/lost-in-implicit-routing)</div> |
+| <span style='display: inline-block; width: 42px;'>10-13</span> | **ProAS: A Progress-Aware Advantage Shaping Framework for Multi-Turn Agentic Reinforcement Learning**<br><sub>机构: Westlake University, Zhejiang University, Huawei Noah’s Ark Lab<br>ProAS通过引入进度感知的优势塑造机制，有效解决了无评论家RL算法中的均匀信用分配难题。它在不增加额外评论家网络计算负担的前提下，通过细粒度的动作级信用修正，显著提升了LLM智能体在多轮交互任务中的性能和训练效率，为高效强化学习对齐提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.18683v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.18683.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/LINs-lab/ProAS)</div> |
 | <span style='display: inline-block; width: 42px;'>10-09</span> | **Taking Tokenization off the Host for Agentic LLM Serving**<br><sub>机构: KTH Royal Institute of Technology<br>GraphTok 通过将分词任务卸载到 GPU 并利用 CUDA 图技术，有效解决了 Agentic 工作负载中因前缀缓存普及而凸显的分词瓶颈。它不仅大幅降低了首字延迟，更显著提升了单前端能支持的 GPU 集群规模和整体系统吞吐量，为大规模 LLM 代理服务提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13325v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13325.md)  |
 | <span style='display: inline-block; width: 42px;'>10-09</span> | **Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits**<br><sub>机构: Alibaba Group, HKUST (Guangzhou)<br>本文针对智能体强化学习中因任务超出能力边界导致的训练崩溃问题，提出了 Rollout-Time Intervention (RTI) 方法。通过在 rollout 阶段利用评估规则修正错误轨迹并过滤高分布偏移数据，RTI 有效解决了有效轨迹稀疏和离线数据分布偏移的挑战。实验表明，RTI 能显著提升智能体性能，使其突破原有能力限制，为提升 LLM 智能体的复杂任务处理能力提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13438v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13438.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Alibaba-NLP/qqr)</div> |
 | <span style='display: inline-block; width: 42px;'>10-09</span> | **A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models**<br><sub>机构: National Research Centre “Kurchatov Institute”, National Research Nuclear University MEPhI, Moscow Institute of Physics and Technology, Harbin Institute of Technology<br>本文提出了一种基于多代理LLM的自动化调优框架，专门用于调整专用神经网络模型中的关键功能模块。通过限制代码生成范围至特定组件并保持整体架构稳定，该方法成功克服了传统自动化ML方法在灵活性和通用性上的局限。实验结果表明，该框架在脉冲神经网络分类和物理信息神经网络求解微分方程等截然不同的任务中均取得了显著的性能提升，展现了强大的跨领域迁移能力和自动化调优潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.13663v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.13663.md)  |
