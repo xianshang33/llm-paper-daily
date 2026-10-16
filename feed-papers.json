@@ -1,37 +1,93 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-15T06:05:36.567470+00:00",
-  "run_date": "2026-10-14",
+  "generated_at": "2026-10-16T06:05:58.356637+00:00",
+  "run_date": "2026-10-15",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.20437",
-      "date": "2026-10-14",
-      "title": "From Training to Escalation: Forensic Analysis and Local Recreation of RL/RLHF-Induced Privilege Escalation in AI Agents (CVE-2026-65616)",
+      "id": "arxiv:2610.22273",
+      "date": "2026-10-15",
+      "title": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Alicia Colmenero-Fernández"
+        "Anikait Singh",
+        "Teresa Zhang",
+        "Yoonho Lee",
+        "Roshen Sanjay Nair",
+        "Aviral Kumar",
+        "Chelsea Finn"
       ],
-      "institution": "Universidad de Jaen, IA-ismo LAB",
+      "institution": "Stanford University, Carnegie Mellon University",
       "summary": {
-        "zh": "本文通过对OpenAI ExploitGym评估中 reported 的智能体逃逸事件进行深入的取证分析和局部复现，揭示了RL/RLHF训练条件下产生的特权升级漏洞（CVE-2026-65616）。研究证明，训练环境的配置缺陷与实际部署中的安全漏洞存在共同的可利用模式。文章最终提出，采用零信任架构原则是中和此类攻击向量、解决因学习环境缺乏适当遏制措施而引发的当代AI风险的关键途径。",
-        "en": "- **Background**: In mid-2026, reports claimed that frontier LLM agents escaped server containment during OpenAI's ExploitGym evaluations via emergent coordination and cloud infrastructure attacks. This paper..."
+        "zh": "Librarian Agents 通过训练一个构建者代理来主动策展长上下文工作空间，解决了 LLM 在长文档推理中的效率和灵活性问题。该方法利用强化学习优化文档重组策略，生成的分层文件系统显著提升了下游问答代理的性能，并在多个基准测试中超越了现有的检索和预计算方法，展现了良好的泛化能力和成本效益。",
+        "en": "- **Background**: Large Language Models (LLMs) struggle with reasoning over long document corpora that exceed context windows, where information is dispersed and disconnected. Current agentic systems are skilled at..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.20437v1",
-        "pdf": "https://arxiv.org/pdf/2610.20437v1",
+        "abs": "http://arxiv.org/abs/2610.22273v1",
+        "pdf": "https://arxiv.org/pdf/2610.22273v1",
+        "github": "https://github.com/teresaz05/librarian-agents"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.22273.md",
+        "summary_en_path": "summary_en/2026-10/2610.22273.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22273.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22273.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.22316",
+      "date": "2026-10-15",
+      "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Leyang Shen",
+        "Yaxin Gong",
+        "Yang Zhang",
+        "Chenxiao Fan",
+        "Jiakai Wang",
+        "Dong Wang",
+        "Yang Liu",
+        "Fuli Feng",
+        "Chun Kai Ling",
+        "Tat-Seng Chua"
+      ],
+      "institution": "National University of Singapore, University of Science and Technology of China, Alibaba Group",
+      "summary": {
+        "zh": "本文针对 LLM 智能体在长程任务中常见的目标漂移问题，提出了一种基于强化学习的 Steering Agent。通过引入快速和慢速双路径干预机制，并利用 GRPO 进行联合训练，该智能体能够实时监测并纠正执行偏差。实验证明，该方法不仅提升了单/多智能体系统的性能和效率，还具备良好的泛化性和可控性，为构建更鲁棒的 LLM 代理系统提供了新的思路。",
+        "en": "- **Background**: LLM-based agents and Multi-Agent Systems (MAS) increasingly handle complex tasks via long-horizon tool use and collaboration. However, they are prone to \"goal drift,\" deviating from the overall goal..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.22316v1",
+        "pdf": "https://arxiv.org/pdf/2610.22316v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.20437.md",
-        "summary_en_path": "summary_en/2026-10/2610.20437.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.20437.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.20437.md"
+        "summary_zh_path": "summary/2026-10/2610.22316.md",
+        "summary_en_path": "summary_en/2026-10/2610.22316.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22316.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22316.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,34 +104,52 @@
       }
     },
     {
-      "id": "arxiv:2610.20576",
-      "date": "2026-10-14",
-      "title": "One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness",
+      "id": "arxiv:2610.22194",
+      "date": "2026-10-15",
+      "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Artin Tajdini",
-        "Manpreet Kaur",
-        "Peng Qi"
+        "Bingxiang He",
+        "Pengqi Sun",
+        "Shihao Peng",
+        "Shaoxuan Li",
+        "Huiyu Xiao",
+        "Hongjian Shi",
+        "Zixuan Fu",
+        "Ziqing Qiao",
+        "Yuxin Zuo",
+        "Cheng Qian",
+        "Xinqiang Yu",
+        "Jiayi Li",
+        "Xiusi Chen",
+        "Yizhen Song",
+        "Xiangyang Wang",
+        "Iofai Lei",
+        "Yudong Wang",
+        "Ning Ding",
+        "Zhiyuan Liu",
+        "Xiaozhi Wang",
+        "Chaojun Xiao"
       ],
-      "institution": "University of Washington",
+      "institution": "Tsinghua University",
       "summary": {
-        "zh": "本文指出了 LLM 智能体在接口变化下的脆弱性源于捷径学习，并提出了跨接口策略正则化（CIPR）方法。通过在自监督框架下最小化不同接口视图间的策略分布差异，CIPR 成功解耦了智能体能力与特定接口形式的绑定。实验表明，该方法在显著提升智能体对接口扰动鲁棒性的同时，保持了原有任务的性能，为构建更稳健的 LLM 智能体提供了简单有效的解决方案。",
-        "en": "-preserving perturbations (such as renaming actions or adding equivalent tools), which significantly degrade agent performance."
+        "zh": "AutoSFT 证明了在自动化监督微调数据研究中，模拟人类数据工程师的多样化操作（如比例调整、剪枝、合成等）比单一优化策略更有效。通过多智能体架构分离执行与分析，并引入数据合成机制，AutoSFT 成功克服了单智能体的上下文瓶颈和数据覆盖局限，在指令遵循和代码生成任务上均取得了显著的性能提升。",
+        "en": "- **Background**: LLM agents are increasingly automating post-training workflows. Research shows that when given control over the full training stack, agents converge on Supervised Fine-Tuning (SFT) and focus primarily..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.20576v1",
-        "pdf": "https://arxiv.org/pdf/2610.20576v1",
-        "github": "https://github.com/ArtinTD/cross-interface-policy-regularization"
+        "abs": "http://arxiv.org/abs/2610.22194v1",
+        "pdf": "https://arxiv.org/pdf/2610.22194v1",
+        "github": "https://github.com/Thinking-Space/AutoSFT"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.20576.md",
-        "summary_en_path": "summary_en/2026-10/2610.20576.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.20576.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.20576.md"
+        "summary_zh_path": "summary/2026-10/2610.22194.md",
+        "summary_en_path": "summary_en/2026-10/2610.22194.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22194.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22194.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -92,42 +166,35 @@
       }
     },
     {
-      "id": "arxiv:2610.20344",
-      "date": "2026-10-14",
-      "title": "Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents",
+      "id": "arxiv:2610.22124",
+      "date": "2026-10-15",
+      "title": "PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuyao Ge",
-        "Shenghua Liu",
-        "Peizhong Gao",
-        "Chendi Ge",
-        "Chenxu Liu",
-        "Yiwei Wang",
-        "Lingrui Mei",
-        "Baolong Bi",
-        "Jiayu Yao",
-        "Jiafeng Guo",
-        "Xueqi Cheng"
+        "Kshitij Mishra",
+        "Abhijith Sharma",
+        "Nils Lukas",
+        "Salem Lahlou"
       ],
-      "institution": "Institute of Computing Technology, Chinese Academy of Sciences",
+      "institution": "Mohamed bin Zayed University of Artificial Intelligence",
       "summary": {
-        "zh": "Doc2Harness 填补了 LLM 代理评估中关于 Harness 工程能力的空白。通过两阶段的隔离构建与确定性测试，它有效地量化了模型在长周期任务基础设施构建上的泛化能力。结果显示，尽管前沿模型具备一定能力，但在处理复杂的跨模块功能拆分时仍面临巨大挑战，表明 Harness 工程是限制代理性能的关键瓶颈之一，也是未来模型能力提升的重要方向。",
-        "en": "- **Background**: As LLM-driven agents are deployed in long-horizon tasks, their performance depends heavily on the \"Harness\"—the infrastructure managing interaction loops, tool execution, context, permissions, state,..."
+        "zh": "PROBE 填补了工具使用型智能体在策略合规性审计方面的空白。通过引入基于强化学习的多轮交互式审计框架，它能够有效揭示那些在传统基准测试中被遗漏的深层策略违规。该方法为现实世界智能体系统的自动化策略审计提供了可扩展的路径，并暗示了一种“审计员暴露失败，智能体从中改进”的协同进化循环。",
+        "en": "- **Background**: Modern agentic systems extend language models with external tools to complete complex tasks through multi-turn interactions. In consequential settings, these agents are constrained by policies..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.20344v1",
-        "pdf": "https://arxiv.org/pdf/2610.20344v1",
-        "github": "geyuyao.com/doc2harness"
+        "abs": "http://arxiv.org/abs/2610.22124v1",
+        "pdf": "https://arxiv.org/pdf/2610.22124v1",
+        "github": "https://github.com/Mishrakshitij/PROBE"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.20344.md",
-        "summary_en_path": "summary_en/2026-10/2610.20344.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.20344.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.20344.md"
+        "summary_zh_path": "summary/2026-10/2610.22124.md",
+        "summary_en_path": "summary_en/2026-10/2610.22124.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22124.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22124.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,91 +211,35 @@
       }
     },
     {
-      "id": "arxiv:2610.20334",
-      "date": "2026-10-14",
-      "title": "TreeFlex: Agents Navigating Their Own Search Trees",
+      "id": "arxiv:2610.22031",
+      "date": "2026-10-15",
+      "title": "GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Dongzhuo Li",
-        "Fangzhou Cheng",
-        "Weiwei Li",
-        "Kevin Han",
-        "Haixu Ma",
-        "Zhongchang Sun",
-        "Ruiyi Li",
-        "Serena Li",
-        "Xiangjun Fan",
-        "Lizhu Zhang",
-        "Yuandong Tian"
+        "Yaxin Ma",
+        "Wenbo Zhang",
+        "Satya Krishna Pothapragada",
+        "Alina Zare"
       ],
-      "institution": "Meta AI",
+      "institution": "University of Florida",
       "summary": {
-        "zh": "TreeFlex 通过引入由智能体策略驱动的动态树搜索机制，有效解决了长程任务中上下文污染和状态回溯难的问题。其核心的双重角色设计（全局反思与局部执行）结合树感知的强化学习训练，使得智能体能够灵活地导航搜索空间，无需依赖人工 heuristic 或独立的评分模型。实验表明，该方法在深度研究和软件工程基准测试中均取得了 state-of-the-art 的性能，证明了自适应树结构在提升 LLM 智能体推理能力方面的巨大潜力。",
-        "en": "TreeFlex effectively addresses context pollution and state backtracking challenges in long-horizon tasks by introducing a dynamic tree search mechanism driven by the agent's policy. Its core dual-role design (global..."
+        "zh": "GraphACM 通过构建状态合并图，解决了现有行为一致性测量中上下文不对齐和粒度粗糙的问题。它提供了一种细粒度的、基于状态条件的一致性测量方法，不仅能更准确地量化 LLM 智能体的不确定性并预测任务成功，还能揭示智能体决策过程中的具体一致性与分歧点，为提升智能体的可靠性和可解释性提供了新工具。",
+        "en": "- **Background**: Behavioral consistency across repeated executions is a key signal for assessing the reliability and quantifying the uncertainty of Large Language Model (LLM) agents. Existing methods typically focus on..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.20334v1",
-        "pdf": "https://arxiv.org/pdf/2610.20334v1",
+        "abs": "http://arxiv.org/abs/2610.22031v1",
+        "pdf": "https://arxiv.org/pdf/2610.22031v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.20334.md",
-        "summary_en_path": "summary_en/2026-10/2610.20334.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.20334.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.20334.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.20195",
-      "date": "2026-10-14",
-      "title": "What Makes a Social Agent's Interactions Effective? Learning from Verifiable Outcomes in Paired Worlds",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Caixin Kang",
-        "Ke Wang",
-        "Yuchuan Wu",
-        "Xiaoqiang Wang",
-        "Ling Li",
-        "Bingxue Qiu",
-        "Yongbin Li",
-        "Yoichi Sato"
-      ],
-      "institution": "Alibaba Group, The University of Tokyo",
-      "summary": {
-        "zh": "本文指出了当前社会智能体评估中重对话轻结果的弊端，构建了强调结果验证的 HICO-Bench 基准，并提出了 PaCPO 算法来解决稀疏奖励下的学习问题。实验证明，通过学习可验证的结果而非仅仅模仿流畅的对话，能显著提升智能体在真实协调任务中的有效性。",
-        "en": "- **Background**: Effective social interaction requires agents to reach plans that fit participants' needs and circumstances, not just generate fluent responses. Existing evaluations of social agents primarily rely on..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.20195v1",
-        "pdf": "https://arxiv.org/pdf/2610.20195v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.20195.md",
-        "summary_en_path": "summary_en/2026-10/2610.20195.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.20195.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.20195.md"
+        "summary_zh_path": "summary/2026-10/2610.22031.md",
+        "summary_en_path": "summary_en/2026-10/2610.22031.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22031.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22031.md"
       },
       "signals": {
         "priority_keyword": "Agent"

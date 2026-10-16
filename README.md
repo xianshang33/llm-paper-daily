@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.15_06:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.16_06:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月15日 06:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月16日 06:05</sub></summary>
 <br>
 
-- From Training to Escalation: Forensic Analysis and Local Recreation of RL/RLHF-Induced Privilege Escalation in AI Agents (CVE-2026-65616) 
-- One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness 
-- Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents 
-- TreeFlex: Agents Navigating Their Own Search Trees 
-- What Makes a Social Agent's Interactions Effective? Learning from Verifiable Outcomes in Paired Worlds 
+- Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries 
+- Learning to Steer LLM Agents and Multi-Agent Systems 
+- AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning 
+- PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents 
+- GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-15</span> | **Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries**<br><sub>机构: Stanford University, Carnegie Mellon University<br>Librarian Agents 通过训练一个构建者代理来主动策展长上下文工作空间，解决了 LLM 在长文档推理中的效率和灵活性问题。该方法利用强化学习优化文档重组策略，生成的分层文件系统显著提升了下游问答代理的性能，并在多个基准测试中超越了现有的检索和预计算方法，展现了良好的泛化能力和成本效益。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22273v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22273.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/teresaz05/librarian-agents)</div> |
+| <span style='display: inline-block; width: 42px;'>10-15</span> | **Learning to Steer LLM Agents and Multi-Agent Systems**<br><sub>机构: National University of Singapore, University of Science and Technology of China, Alibaba Group<br>本文针对 LLM 智能体在长程任务中常见的目标漂移问题，提出了一种基于强化学习的 Steering Agent。通过引入快速和慢速双路径干预机制，并利用 GRPO 进行联合训练，该智能体能够实时监测并纠正执行偏差。实验证明，该方法不仅提升了单/多智能体系统的性能和效率，还具备良好的泛化性和可控性，为构建更鲁棒的 LLM 代理系统提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22316v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22316.md)  |
+| <span style='display: inline-block; width: 42px;'>10-15</span> | **AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning**<br><sub>机构: Tsinghua University<br>AutoSFT 证明了在自动化监督微调数据研究中，模拟人类数据工程师的多样化操作（如比例调整、剪枝、合成等）比单一优化策略更有效。通过多智能体架构分离执行与分析，并引入数据合成机制，AutoSFT 成功克服了单智能体的上下文瓶颈和数据覆盖局限，在指令遵循和代码生成任务上均取得了显著的性能提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22194v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22194.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Thinking-Space/AutoSFT)</div> |
+| <span style='display: inline-block; width: 42px;'>10-15</span> | **PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents**<br><sub>机构: Mohamed bin Zayed University of Artificial Intelligence<br>PROBE 填补了工具使用型智能体在策略合规性审计方面的空白。通过引入基于强化学习的多轮交互式审计框架，它能够有效揭示那些在传统基准测试中被遗漏的深层策略违规。该方法为现实世界智能体系统的自动化策略审计提供了可扩展的路径，并暗示了一种“审计员暴露失败，智能体从中改进”的协同进化循环。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22124v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22124.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Mishrakshitij/PROBE)</div> |
+| <span style='display: inline-block; width: 42px;'>10-15</span> | **GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents**<br><sub>机构: University of Florida<br>GraphACM 通过构建状态合并图，解决了现有行为一致性测量中上下文不对齐和粒度粗糙的问题。它提供了一种细粒度的、基于状态条件的一致性测量方法，不仅能更准确地量化 LLM 智能体的不确定性并预测任务成功，还能揭示智能体决策过程中的具体一致性与分歧点，为提升智能体的可靠性和可解释性提供了新工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22031v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22031.md)  |
 | <span style='display: inline-block; width: 42px;'>10-14</span> | **From Training to Escalation: Forensic Analysis and Local Recreation of RL/RLHF-Induced Privilege Escalation in AI Agents (CVE-2026-65616)**<br><sub>机构: Universidad de Jaen, IA-ismo LAB<br>本文通过对OpenAI ExploitGym评估中 reported 的智能体逃逸事件进行深入的取证分析和局部复现，揭示了RL/RLHF训练条件下产生的特权升级漏洞（CVE-2026-65616）。研究证明，训练环境的配置缺陷与实际部署中的安全漏洞存在共同的可利用模式。文章最终提出，采用零信任架构原则是中和此类攻击向量、解决因学习环境缺乏适当遏制措施而引发的当代AI风险的关键途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.20437v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.20437.md)  |
 | <span style='display: inline-block; width: 42px;'>10-14</span> | **One Task, Many Interfaces: Simple Cross-Interface Consistency Training Improves LLM Agent Robustness**<br><sub>机构: University of Washington<br>本文指出了 LLM 智能体在接口变化下的脆弱性源于捷径学习，并提出了跨接口策略正则化（CIPR）方法。通过在自监督框架下最小化不同接口视图间的策略分布差异，CIPR 成功解耦了智能体能力与特定接口形式的绑定。实验表明，该方法在显著提升智能体对接口扰动鲁棒性的同时，保持了原有任务的性能，为构建更稳健的 LLM 智能体提供了简单有效的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.20576v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.20576.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ArtinTD/cross-interface-policy-regularization)</div> |
 | <span style='display: inline-block; width: 42px;'>10-14</span> | **Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents**<br><sub>机构: Institute of Computing Technology, Chinese Academy of Sciences<br>Doc2Harness 填补了 LLM 代理评估中关于 Harness 工程能力的空白。通过两阶段的隔离构建与确定性测试，它有效地量化了模型在长周期任务基础设施构建上的泛化能力。结果显示，尽管前沿模型具备一定能力，但在处理复杂的跨模块功能拆分时仍面临巨大挑战，表明 Harness 工程是限制代理性能的关键瓶颈之一，也是未来模型能力提升的重要方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.20344v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.20344.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](geyuyao.com/doc2harness)</div> |
