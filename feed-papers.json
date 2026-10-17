@@ -1,42 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-16T06:05:58.356637+00:00",
-  "run_date": "2026-10-15",
+  "generated_at": "2026-10-17T09:36:37.290959+00:00",
+  "run_date": "2026-10-12",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.22273",
-      "date": "2026-10-15",
-      "title": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries",
+      "id": "arxiv:2610.17444",
+      "date": "2026-10-12",
+      "title": "The belief-action gap in language model agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Anikait Singh",
-        "Teresa Zhang",
-        "Yoonho Lee",
-        "Roshen Sanjay Nair",
-        "Aviral Kumar",
-        "Chelsea Finn"
+        "Ayse Sila Okcu",
+        "Weisheng Wang",
+        "Tongmeng Xie",
+        "Niall Dalton",
+        "Angelos Nalmpantis",
+        "Raghu Arghal",
+        "Mario Giulianelli"
       ],
-      "institution": "Stanford University, Carnegie Mellon University",
+      "institution": "University of Cambridge",
       "summary": {
-        "zh": "Librarian Agents 通过训练一个构建者代理来主动策展长上下文工作空间，解决了 LLM 在长文档推理中的效率和灵活性问题。该方法利用强化学习优化文档重组策略，生成的分层文件系统显著提升了下游问答代理的性能，并在多个基准测试中超越了现有的检索和预计算方法，展现了良好的泛化能力和成本效益。",
-        "en": "- **Background**: Large Language Models (LLMs) struggle with reasoning over long document corpora that exceed context windows, where information is dispersed and disconnected. Current agentic systems are skilled at..."
+        "zh": "本文揭示了语言模型智能体中存在的“信念-行动差距”，即模型内部虽然编码了正确的状态和价值信息，但未能将其一致地转化为最优行动。通过分解信念、偏好和决策机制，研究发现决策在承诺点附近趋于确定，但信念变化与偏好转移缺乏简单因果关系。干预实验表明，推理上下文的移植比局部激活编辑更能影响行动。这一发现强调，提升LM智能体性能不仅需要增强信息获取能力，更需优化信息到行动的转化机制，为诊断和干预智能体失败提供了新的视角。",
+        "en": "- **Background**: As Language Models (LMs) are increasingly deployed as agents that observe, reason, and act in external environments, evaluation based solely on outputs fails to diagnose the root causes of agent..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.22273v1",
-        "pdf": "https://arxiv.org/pdf/2610.22273v1",
-        "github": "https://github.com/teresaz05/librarian-agents"
+        "abs": "http://arxiv.org/abs/2610.17444v1",
+        "pdf": "https://arxiv.org/pdf/2610.17444v1",
+        "github": "https://anonymous.4open.science/r/belief-action-gap-F745/"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.22273.md",
-        "summary_en_path": "summary_en/2026-10/2610.22273.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22273.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22273.md"
+        "summary_zh_path": "summary/2026-10/2610.17444.md",
+        "summary_en_path": "summary_en/2026-10/2610.17444.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.17444.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.17444.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,41 +54,33 @@
       }
     },
     {
-      "id": "arxiv:2610.22316",
-      "date": "2026-10-15",
-      "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+      "id": "arxiv:2610.17118",
+      "date": "2026-10-12",
+      "title": "When LLM Agents See a Conflict but Still Proceed: Cross-Domain Dependencies in Network Slicing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Leyang Shen",
-        "Yaxin Gong",
-        "Yang Zhang",
-        "Chenxiao Fan",
-        "Jiakai Wang",
-        "Dong Wang",
-        "Yang Liu",
-        "Fuli Feng",
-        "Chun Kai Ling",
-        "Tat-Seng Chua"
+        "Marcos Lima Romero",
+        "Ricardo Suyama"
       ],
-      "institution": "National University of Singapore, University of Science and Technology of China, Alibaba Group",
+      "institution": "Federal University of ABC (UFABC)",
       "summary": {
-        "zh": "本文针对 LLM 智能体在长程任务中常见的目标漂移问题，提出了一种基于强化学习的 Steering Agent。通过引入快速和慢速双路径干预机制，并利用 GRPO 进行联合训练，该智能体能够实时监测并纠正执行偏差。实验证明，该方法不仅提升了单/多智能体系统的性能和效率，还具备良好的泛化性和可控性，为构建更鲁棒的 LLM 代理系统提供了新的思路。",
-        "en": "- **Background**: LLM-based agents and Multi-Agent Systems (MAS) increasingly handle complex tasks via long-horizon tool use and collaboration. However, they are prone to \"goal drift,\" deviating from the overall goal..."
+        "zh": "本文通过实证研究指出，在 AI 原生网络中，仅仅让 LLM 代理“看到”跨域依赖并不是足够的安全保障。由于代理经常出现“视而不见”或“知错犯错”的行为，网络管理架构必须在执行不可逆操作之前，通过架构层面的强制机制来执行依赖验证，而不能单纯依赖 LLM 的自我判断。",
+        "en": "- **Background**: Future AI-native networks (e.g., 6G) aim to use Large Language Model (LLM)-based autonomous agents for network management via intents. In critical scenarios like smart grids, intents from different..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.22316v1",
-        "pdf": "https://arxiv.org/pdf/2610.22316v1",
+        "abs": "http://arxiv.org/abs/2610.17118v1",
+        "pdf": "https://arxiv.org/pdf/2610.17118v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.22316.md",
-        "summary_en_path": "summary_en/2026-10/2610.22316.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22316.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22316.md"
+        "summary_zh_path": "summary/2026-10/2610.17118.md",
+        "summary_en_path": "summary_en/2026-10/2610.17118.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.17118.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.17118.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -104,142 +97,124 @@
       }
     },
     {
-      "id": "arxiv:2610.22194",
-      "date": "2026-10-15",
-      "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning",
+      "id": "arxiv:2610.17039",
+      "date": "2026-10-12",
+      "title": "MENTOR: Procedural Shielding of Tool-Using LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Bingxiang He",
-        "Pengqi Sun",
-        "Shihao Peng",
-        "Shaoxuan Li",
-        "Huiyu Xiao",
-        "Hongjian Shi",
-        "Zixuan Fu",
-        "Ziqing Qiao",
-        "Yuxin Zuo",
-        "Cheng Qian",
-        "Xinqiang Yu",
-        "Jiayi Li",
-        "Xiusi Chen",
-        "Yizhen Song",
-        "Xiangyang Wang",
-        "Iofai Lei",
-        "Yudong Wang",
-        "Ning Ding",
-        "Zhiyuan Liu",
-        "Xiaozhi Wang",
-        "Chaojun Xiao"
+        "Ashwani Anand",
+        "Ivi Chatzi",
+        "Ritam Raha",
+        "Anne-Kathrin Schmuck"
       ],
-      "institution": "Tsinghua University",
+      "institution": "Max Planck Institute for Software Systems",
       "summary": {
-        "zh": "AutoSFT 证明了在自动化监督微调数据研究中，模拟人类数据工程师的多样化操作（如比例调整、剪枝、合成等）比单一优化策略更有效。通过多智能体架构分离执行与分析，并引入数据合成机制，AutoSFT 成功克服了单智能体的上下文瓶颈和数据覆盖局限，在指令遵循和代码生成任务上均取得了显著的性能提升。",
-        "en": "- **Background**: LLM agents are increasingly automating post-training workflows. Research shows that when given control over the full training stack, agents converge on Supervised Fine-Tuning (SFT) and focus primarily..."
+        "zh": "MENTOR 通过引入基于博弈的历史依赖运行时屏蔽器，解决了 LLM 智能体在遵循自然语言程序手册时的合规性难题。它不仅防止违规操作，还主动引导智能体正确执行任务，实现了上下文感知的过程屏蔽。该方法在提升合规性的同时避免了过度保守的行为，使得轻量级开源模型在实际应用中具备超越 proprietary 模型的竞争力，为自动化工作流提供了一种高效、可靠且具成本效益的解决方案。",
+        "en": "- **Background**: Tool-using LLM agents are increasingly deployed to automate workflows governed by procedural manuals written in natural language (e.g., corporate travel booking or hardware procurement rules). Ensuring..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.22194v1",
-        "pdf": "https://arxiv.org/pdf/2610.22194v1",
-        "github": "https://github.com/Thinking-Space/AutoSFT"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.22194.md",
-        "summary_en_path": "summary_en/2026-10/2610.22194.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22194.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22194.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.22124",
-      "date": "2026-10-15",
-      "title": "PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Kshitij Mishra",
-        "Abhijith Sharma",
-        "Nils Lukas",
-        "Salem Lahlou"
-      ],
-      "institution": "Mohamed bin Zayed University of Artificial Intelligence",
-      "summary": {
-        "zh": "PROBE 填补了工具使用型智能体在策略合规性审计方面的空白。通过引入基于强化学习的多轮交互式审计框架，它能够有效揭示那些在传统基准测试中被遗漏的深层策略违规。该方法为现实世界智能体系统的自动化策略审计提供了可扩展的路径，并暗示了一种“审计员暴露失败，智能体从中改进”的协同进化循环。",
-        "en": "- **Background**: Modern agentic systems extend language models with external tools to complete complex tasks through multi-turn interactions. In consequential settings, these agents are constrained by policies..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.22124v1",
-        "pdf": "https://arxiv.org/pdf/2610.22124v1",
-        "github": "https://github.com/Mishrakshitij/PROBE"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.22124.md",
-        "summary_en_path": "summary_en/2026-10/2610.22124.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22124.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22124.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.22031",
-      "date": "2026-10-15",
-      "title": "GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yaxin Ma",
-        "Wenbo Zhang",
-        "Satya Krishna Pothapragada",
-        "Alina Zare"
-      ],
-      "institution": "University of Florida",
-      "summary": {
-        "zh": "GraphACM 通过构建状态合并图，解决了现有行为一致性测量中上下文不对齐和粒度粗糙的问题。它提供了一种细粒度的、基于状态条件的一致性测量方法，不仅能更准确地量化 LLM 智能体的不确定性并预测任务成功，还能揭示智能体决策过程中的具体一致性与分歧点，为提升智能体的可靠性和可解释性提供了新工具。",
-        "en": "- **Background**: Behavioral consistency across repeated executions is a key signal for assessing the reliability and quantifying the uncertainty of Large Language Model (LLM) agents. Existing methods typically focus on..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.22031v1",
-        "pdf": "https://arxiv.org/pdf/2610.22031v1",
+        "abs": "http://arxiv.org/abs/2610.17039v1",
+        "pdf": "https://arxiv.org/pdf/2610.17039v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.22031.md",
-        "summary_en_path": "summary_en/2026-10/2610.22031.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.22031.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.22031.md"
+        "summary_zh_path": "summary/2026-10/2610.17039.md",
+        "summary_en_path": "summary_en/2026-10/2610.17039.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.17039.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.17039.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.17206",
+      "date": "2026-10-12",
+      "title": "AutoMARS: Automatic and Scalable Multi-Agent Large Language Model Framework for Supply Chain Risk Assessment",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Yinzhu Quan",
+        "Zefang Liu",
+        "Frederick Benaben",
+        "Benoit Montreuil"
+      ],
+      "institution": "Georgia Institute of Technology",
+      "summary": {
+        "zh": "AutoMARS 是一个创新的多智能体 LLM 框架，专门针对供应链风险评估中的自动化和可扩展性痛点。它通过整合异构数据源、自动化工作流规划和并行任务处理，实现了对供应链网络风险的全面、高效且可解释的评估，为供应链选址和风险管理提供了强有力的决策支持工具。",
+        "en": "- **Background**: Modern supply chains operate in Volatile, Uncertain, Complex, and Ambiguous (VUCA) environments, facing diverse disruption risks such as natural hazards, environmental issues, transportation accidents,..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.17206v1",
+        "pdf": "https://arxiv.org/pdf/2610.17206v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.17206.md",
+        "summary_en_path": "summary_en/2026-10/2610.17206.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.17206.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.17206.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.17418",
+      "date": "2026-10-12",
+      "title": "Why Agentic Workflows Fail: A Taxonomy Derived from Literature and Empirical Data",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xin Li",
+        "Rami Bahsoon",
+        "Tao Chen"
+      ],
+      "institution": "University of Birmingham",
+      "summary": {
+        "zh": "本文提出了一种新颖的来源感知智能体工作流故障分类体系，通过双轴定位矩阵实现了对故障中间状态的精细化诊断。实证研究表明，学术研究与实际工程应用在故障分布上存在显著差异，前者关注认知能力，后者关注执行与系统集成。该工作强调应将智能体工作流的可靠性视为系统级问题，为未来的结构化评估、根本原因分析、故障注入测试及工程分流提供了坚实基础。",
+        "en": "This paper presents a novel source-aware taxonomy for agentic workflow failures, enabling fine-grained diagnosis through a two-axis localization matrix. Empirical analysis demonstrates a significant divergence between..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.17418v1",
+        "pdf": "https://arxiv.org/pdf/2610.17418v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.17418.md",
+        "summary_en_path": "summary_en/2026-10/2610.17418.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.17418.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.17418.md"
       },
       "signals": {
         "priority_keyword": "Agent"
