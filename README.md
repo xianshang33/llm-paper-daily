@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.16_06:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.19_11:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月16日 06:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月19日 11:05</sub></summary>
 <br>
 
-- Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries 
-- Learning to Steer LLM Agents and Multi-Agent Systems 
-- AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning 
-- PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents 
-- GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents 
+- On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management 
+- SIT-Eval: Situation-Based Interactive Turn-by-Turn Evaluation of Conversational Agents 
+- Robust Function Calling for LLM Agents Under Interface Drift 
+- RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory 
+- Darwin-Claw: Environment-Adaptive Experience Consolidation for Recursively Self-Evolving Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-16</span> | **On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management**<br><sub>机构: University of Cincinnati; IASI, CNR; Sapienza University of Rome<br>本文系统地分析了基于LLM的多代理系统在医疗多准则决策中的可能性与局限性。研究指出，虽然LLM能生成看似合理的偏好，但其显式偏好易受交互方式影响（审议导致同质化），隐式偏好易受顺序偏差干扰。因此，直接将LLM输出作为优化权重存在风险，必须通过鲁棒优化等方法处理偏好不确定性，并在实际部署前进行严格的可靠性审计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23673v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23673.md)  |
+| <span style='display: inline-block; width: 42px;'>10-16</span> | **SIT-Eval: Situation-Based Interactive Turn-by-Turn Evaluation of Conversational Agents**<br><sub>机构: Satbayev University, Sber AI Lab<br>SIT-Eval 提出了一种新颖的基于情境的交互式评估框架，通过将行为形式化为情境规则，并利用 LLM 驱动的动态情境触发和经过验证的 LLM 裁判，解决了现有静态基准在覆盖罕见情境和细粒度评估方面的不足。实验表明，该方法能有效揭示模型在特定情境下的细微失败模式，特别是在处理歧义和引导式提问时的弱点，为对话 AI 的安全性和鲁棒性评估提供了更可靠的工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23612v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23612.md)  |
+| <span style='display: inline-block; width: 42px;'>10-16</span> | **Robust Function Calling for LLM Agents Under Interface Drift**<br><sub>本文研究了 LLM 代理在部署后面临的“接口漂移”问题，提出了一种无需训练的推理时修复方法 SchemaShield-Lite。通过结合模式验证、候选集重试和约束修复，该方法在多个基准测试上显著提升了函数调用的鲁棒性，证明了验证与修复层作为部署后 LLM 代理工具使用的实用性强健性组件的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23342v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23342.md)  |
+| <span style='display: inline-block; width: 42px;'>10-16</span> | **RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory**<br><sub>机构: Tsinghua University, Qiyuan Lab<br>本文针对长周期智能体记忆检索中时间错位导致的关键证据丢失问题，提出了 TIDER 框架。通过引入 RL 训练的时间间隔定位器，实现了在检索阶段对时间窗口的精确推断，并结合双通道检索与重排序机制，有效解决了语义相似但时间不匹配记忆的干扰问题。实验表明，该方法在多个基准测试中取得了 SOTA 性能，验证了时间感知检索在长期记忆管理中的核心价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23598v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23598.md)  |
+| <span style='display: inline-block; width: 42px;'>10-16</span> | **Darwin-Claw: Environment-Adaptive Experience Consolidation for Recursively Self-Evolving Agents**<br><sub>机构: Zhejiang University, Tencent, Zhongguancun Academy<br>Darwin-Claw 针对 LLM 智能体缺乏持续学习和环境适应能力的问题，提出了一种基于分层经验巩固的自进化框架。通过细粒度错误归因和原型向量泛化，它有效地将情景经验转化为技能优化和记忆更新的信号。实验证明该方法在性能上优于现有范式，为构建能够适应用户特定环境的终身学习智能体提供了新的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23574v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23574.md)  |
 | <span style='display: inline-block; width: 42px;'>10-15</span> | **Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries**<br><sub>机构: Stanford University, Carnegie Mellon University<br>Librarian Agents 通过训练一个构建者代理来主动策展长上下文工作空间，解决了 LLM 在长文档推理中的效率和灵活性问题。该方法利用强化学习优化文档重组策略，生成的分层文件系统显著提升了下游问答代理的性能，并在多个基准测试中超越了现有的检索和预计算方法，展现了良好的泛化能力和成本效益。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22273v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22273.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/teresaz05/librarian-agents)</div> |
 | <span style='display: inline-block; width: 42px;'>10-15</span> | **Learning to Steer LLM Agents and Multi-Agent Systems**<br><sub>机构: National University of Singapore, University of Science and Technology of China, Alibaba Group<br>本文针对 LLM 智能体在长程任务中常见的目标漂移问题，提出了一种基于强化学习的 Steering Agent。通过引入快速和慢速双路径干预机制，并利用 GRPO 进行联合训练，该智能体能够实时监测并纠正执行偏差。实验证明，该方法不仅提升了单/多智能体系统的性能和效率，还具备良好的泛化性和可控性，为构建更鲁棒的 LLM 代理系统提供了新的思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22316v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22316.md)  |
 | <span style='display: inline-block; width: 42px;'>10-15</span> | **AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning**<br><sub>机构: Tsinghua University<br>AutoSFT 证明了在自动化监督微调数据研究中，模拟人类数据工程师的多样化操作（如比例调整、剪枝、合成等）比单一优化策略更有效。通过多智能体架构分离执行与分析，并引入数据合成机制，AutoSFT 成功克服了单智能体的上下文瓶颈和数据覆盖局限，在指令遵循和代码生成任务上均取得了显著的性能提升。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.22194v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.22194.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Thinking-Space/AutoSFT)</div> |
