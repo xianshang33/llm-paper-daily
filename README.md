@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.19_11:05-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.20_06:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月19日 11:05</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月20日 06:15</sub></summary>
 <br>
 
-- On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management 
-- SIT-Eval: Situation-Based Interactive Turn-by-Turn Evaluation of Conversational Agents 
-- Robust Function Calling for LLM Agents Under Interface Drift 
-- RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory 
-- Darwin-Claw: Environment-Adaptive Experience Consolidation for Recursively Self-Evolving Agents 
+- Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows 
+- RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development 
+- AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes 
+- Fake News, Real Crashes: Information Injection Attacks on LLM Financial Trading Agents 
+- OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-19</span> | **Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows**<br><sub>机构: Cornell University, Microsoft, Columbia University, New York University, Shanghai University of Finance and Economics<br>本文针对 LLM 智能体工作流中模型角色分配的优化问题，提出了 CC-Gittins 算法。该算法巧妙利用了评估成本与部署成本的耦合特性，通过多目标搜索策略，在极低的评价成本下高效地推荐出质量、成本和延迟之间的最佳帕累托最优解，解决了现有方法灵活性不足和计算开销大的问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26676v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26676.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgentOptimizer/agentopt-research)</div> |
+| <span style='display: inline-block; width: 42px;'>10-19</span> | **RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development**<br><sub>机构: MMLab, CUHK; Alibaba Token Foundry<br>RefCraft 填补了基于视觉参考的智能体生成评估的空白，通过构建逼真的多模态网页开发任务，揭示了当前最先进模型在处理复杂视觉参考和多源信息融合方面的局限性。该基准为未来研究提供了更贴近实际应用场景的评估标准，强调了提升智能体视觉理解和迭代优化能力的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26826v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26826.md)  |
+| <span style='display: inline-block; width: 42px;'>10-19</span> | **AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes**<br><sub>本文通过部署 AllPath 系统，揭示了 LLM 交易代理在真实环境中面临的独特验证挑战。研究证明，单一验证者无法覆盖所有故障类型，必须采用分层架构：代码处理确定性约束，人类处理主观判断，代理在受限范围内自我反思。该工作为 LLM 在金融领域的实际部署提供了关于人机协作、验证策略及故障分类的重要实证参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26662v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26662.md)  |
+| <span style='display: inline-block; width: 42px;'>10-19</span> | **Fake News, Real Crashes: Information Injection Attacks on LLM Financial Trading Agents**<br><sub>机构: Texas A&M University<br>本文揭示了LLM金融交易代理在“数据平面”面临的严重安全威胁，即信息注入攻击。通过构建系统性基准，研究证明伪造新闻比传统提示注入更具危害性，且攻击成功率高度依赖于文本的表面可信度线索及代理的即时状态。现有防御措施如模型扩展和同行辩论大多无效，仅有分层聚合显示出一定的防御潜力。该研究强调了在自主金融代理中建立针对证据可信度验证机制的紧迫性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26438v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26438.md)  |
+| <span style='display: inline-block; width: 42px;'>10-19</span> | **OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory**<br><sub>机构: University of California, Los Angeles<br>OpenVLHarness通过引入能力层和持久化多模态记忆，解决了MLLMs在需要外部证据的复杂视觉任务中推理能力不足的问题。它有效地将异构工具集成到推理循环中，不仅显著提升了多个主流模型在22个基准测试上的性能，还大幅降低了达到同等或更高性能所需的计算成本，证明了“工具增强+记忆保持”范式在视觉代理任务中的高效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26860v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26860.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](github.com/uclanlp/OpenVLHarness)</div> |
 | <span style='display: inline-block; width: 42px;'>10-16</span> | **On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management**<br><sub>机构: University of Cincinnati; IASI, CNR; Sapienza University of Rome<br>本文系统地分析了基于LLM的多代理系统在医疗多准则决策中的可能性与局限性。研究指出，虽然LLM能生成看似合理的偏好，但其显式偏好易受交互方式影响（审议导致同质化），隐式偏好易受顺序偏差干扰。因此，直接将LLM输出作为优化权重存在风险，必须通过鲁棒优化等方法处理偏好不确定性，并在实际部署前进行严格的可靠性审计。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23673v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23673.md)  |
 | <span style='display: inline-block; width: 42px;'>10-16</span> | **SIT-Eval: Situation-Based Interactive Turn-by-Turn Evaluation of Conversational Agents**<br><sub>机构: Satbayev University, Sber AI Lab<br>SIT-Eval 提出了一种新颖的基于情境的交互式评估框架，通过将行为形式化为情境规则，并利用 LLM 驱动的动态情境触发和经过验证的 LLM 裁判，解决了现有静态基准在覆盖罕见情境和细粒度评估方面的不足。实验表明，该方法能有效揭示模型在特定情境下的细微失败模式，特别是在处理歧义和引导式提问时的弱点，为对话 AI 的安全性和鲁棒性评估提供了更可靠的工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23612v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23612.md)  |
 | <span style='display: inline-block; width: 42px;'>10-16</span> | **Robust Function Calling for LLM Agents Under Interface Drift**<br><sub>本文研究了 LLM 代理在部署后面临的“接口漂移”问题，提出了一种无需训练的推理时修复方法 SchemaShield-Lite。通过结合模式验证、候选集重试和约束修复，该方法在多个基准测试上显著提升了函数调用的鲁棒性，证明了验证与修复层作为部署后 LLM 代理工具使用的实用性强健性组件的有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.23342v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.23342.md)  |
