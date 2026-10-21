@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.20_06:15-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.21_10:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月20日 06:15</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月21日 10:27</sub></summary>
 <br>
 
-- Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows 
-- RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development 
-- AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes 
-- Fake News, Real Crashes: Information Injection Attacks on LLM Financial Trading Agents 
-- OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory 
+- MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems 
+- Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory 
+- After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents 
+- ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents 
+- Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-20</span> | **MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems**<br><sub>机构: Oracle AI<br>MAS-Guard 填补了当前 LLM 代理安全领域的空白，提出了一种从个体代理到多智能体系统的统一防护方案。通过结合本地细粒度检查和系统级宏观控制，它有效解决了混合代理环境中的碎片化防御问题，显著降低了攻击成功率，为构建安全的代理式 AI 应用提供了可行的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28397v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28397.md)  |
+| <span style='display: inline-block; width: 42px;'>10-20</span> | **Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory**<br><sub>机构: MBZUAI, Third Intelligence, RIKEN AIP<br>本文揭示了LLM代理持久化记忆中存在的一个自我强化的隐私泄露循环：代理基于记忆的预设促使用户确认，进而固化敏感信息。研究表明，单纯依赖用户自我保护无效，最有效的缓解策略是在代理端抑制对属性的陈述和预设，从而在维持个性化服务优势的同时显著降低隐私风险。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28315v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28315.md)  |
+| <span style='display: inline-block; width: 42px;'>10-20</span> | **After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>本文指出了 LLM 智能体在跨会话状态持久化过程中面临的新型安全威胁——遗留攻击。通过提出 CarryoverBench 基准，作者系统性地评估了即时、自主和潜伏三种触发渠道下的攻击持续性。研究发现，当前主流模型在面对此类攻击时，一旦恶意负载植入成功，后续触发几乎无法阻挡，且攻击效果不会随时间衰减。这表明防御遗留攻击需要在运行时层面（Runtime-layer）引入额外的控制机制，而不仅仅依赖于提示词级别的防御。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28425v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28425.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/igloomatics/CarryoverBench)</div> |
+| <span style='display: inline-block; width: 42px;'>10-20</span> | **ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents**<br><sub>机构: University of Toronto, MPI-SWS, EPFL, Aarhus University<br>ClawMMU 通过将操作系统中的内存管理单元（MMU）保护理念引入 LLM Agent 架构，解决了因缺乏数据来源追踪而导致的安全漏洞。它通过为内存数据附加不可篡改的权限标签，并在系统层面强制执行访问控制策略，成功将复杂的语义攻击转化为可拦截的系统级保护错误。这种方法不依赖模型的内容识别能力，为有状态 Agent 的长期记忆安全提供了强有力的保障。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28093v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28093.md)  |
+| <span style='display: inline-block; width: 42px;'>10-20</span> | **Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints**<br><sub>机构: University of Oxford, Apple<br>本文证明了多轮LLM智能体可以通过精心设计的奖励函数（特别是针对超支行为的惩罚）内化预算约束，从而在动态指定的预算下自主优化资源分配。这种方法消除了对外部复杂控制机制的依赖，提升了智能体在不同资源类型、 unseen budgets 及新任务分布下的适应能力和合规性，为构建更高效、可控的自主智能体提供了新的训练范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28409v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28409.md)  |
 | <span style='display: inline-block; width: 42px;'>10-19</span> | **Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows**<br><sub>机构: Cornell University, Microsoft, Columbia University, New York University, Shanghai University of Finance and Economics<br>本文针对 LLM 智能体工作流中模型角色分配的优化问题，提出了 CC-Gittins 算法。该算法巧妙利用了评估成本与部署成本的耦合特性，通过多目标搜索策略，在极低的评价成本下高效地推荐出质量、成本和延迟之间的最佳帕累托最优解，解决了现有方法灵活性不足和计算开销大的问题。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26676v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26676.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgentOptimizer/agentopt-research)</div> |
 | <span style='display: inline-block; width: 42px;'>10-19</span> | **RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development**<br><sub>机构: MMLab, CUHK; Alibaba Token Foundry<br>RefCraft 填补了基于视觉参考的智能体生成评估的空白，通过构建逼真的多模态网页开发任务，揭示了当前最先进模型在处理复杂视觉参考和多源信息融合方面的局限性。该基准为未来研究提供了更贴近实际应用场景的评估标准，强调了提升智能体视觉理解和迭代优化能力的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26826v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26826.md)  |
 | <span style='display: inline-block; width: 42px;'>10-19</span> | **AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes**<br><sub>本文通过部署 AllPath 系统，揭示了 LLM 交易代理在真实环境中面临的独特验证挑战。研究证明，单一验证者无法覆盖所有故障类型，必须采用分层架构：代码处理确定性约束，人类处理主观判断，代理在受限范围内自我反思。该工作为 LLM 在金融领域的实际部署提供了关于人机协作、验证策略及故障分类的重要实证参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.26662v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.26662.md)  |
