@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.21_10:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.22_06:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月21日 10:27</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月22日 06:18</sub></summary>
 <br>
 
-- MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems 
-- Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory 
-- After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents 
-- ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents 
-- Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints 
+- What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion 
+- Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research 
+- Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents 
+- HGM-Dual: Lineage-Aware Guided Agent Harness Optimization for Long-Horizon Planning 
+- Did the Problem Actually Get Harder? Testing LLMs on Paired P and NP-Complete Problems Hardened by Adversarial Multi-Agent Rewriting 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-21</span> | **What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion**<br><sub>机构: Amazon<br>本文揭示了企业文档 ingestion 层中一个被忽视的关键问题：视觉格式（尤其是颜色和高亮）所承载的语义信息在转换过程中被静默丢失，导致智能体产生高风险的错误判断。研究证明，问题的根源在于 ingestion 而非推理阶段，且修复成本低廉、效果可测。对于智能体构建者而言，保留并显式传递这些视觉线索是提升系统可靠性的关键步骤。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30026v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30026.md)  |
+| <span style='display: inline-block; width: 42px;'>10-21</span> | **Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research**<br><sub>机构: Navers Lab, Einsia.AI<br>Quant-Arena填补了LLM在端到端量化研究领域评估的空白，通过严格的样本外测试和真实的交易成本模拟，揭示了当前最前沿LLM代理在真实A股市场中尚无法稳定战胜市场基准的现状。该基准开放给任何模型或代理框架提交，为未来提升LLM在金融量化领域的实际应用能力提供了重要的评估标准和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30113v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30113.md)  |
+| <span style='display: inline-block; width: 42px;'>10-21</span> | **Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents**<br><sub>本文通过严格的控制实验指出，在生物医学文献验证任务中，提升代理自主构建查询的能力比单纯增加模型参数知识更有效。研究揭示了当前科学助手面临的主要瓶颈在于检索环节，并警告仅依靠 PMID 存在性检查无法防止引用无关文献的幻觉问题，为未来科学代理的设计提供了实证依据和安全警示。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.29812v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.29812.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/saqlain2204/real-pmids-wrong-papers)</div> |
+| <span style='display: inline-block; width: 42px;'>10-21</span> | **HGM-Dual: Lineage-Aware Guided Agent Harness Optimization for Long-Horizon Planning**<br><sub>机构: Samsung Research America<br>HGM-Dual 通过引入谱系感知的上下文记录和错误导向的双路生成机制，有效解决了现有递归自我改进方法在长程规划任务中面临的搜索效率低和针对性差的问题。该方法不仅提升了代理在复杂约束下的规划准确率，还大幅降低了优化过程中的计算和评估成本，为闭源 LLM 代理的高效优化提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30042v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30042.md)  |
+| <span style='display: inline-block; width: 42px;'>10-21</span> | **Did the Problem Actually Get Harder? Testing LLMs on Paired P and NP-Complete Problems Hardened by Adversarial Multi-Agent Rewriting**<br><sub>机构: United International University, BRAC University, University of California, Riverside, University of Maryland, Baltimore County<br>本文指出了当前 LLM 在算法推理评估中的缺陷，即过度依赖标准表述的记忆。通过引入 AgentGAN 对抗性重写框架和 P2NPCBench 基准，作者证明了即使去除了表面线索，模型在 NPC 问题上的表现仍显著差于 P 问题，且这种差距主要源于代码生成的正确性而非计算资源限制。该研究强调了开发真正具备结构推理能力而非模式匹配能力的 LLM 的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30103v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30103.md)  |
 | <span style='display: inline-block; width: 42px;'>10-20</span> | **MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems**<br><sub>机构: Oracle AI<br>MAS-Guard 填补了当前 LLM 代理安全领域的空白，提出了一种从个体代理到多智能体系统的统一防护方案。通过结合本地细粒度检查和系统级宏观控制，它有效解决了混合代理环境中的碎片化防御问题，显著降低了攻击成功率，为构建安全的代理式 AI 应用提供了可行的基础设施。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28397v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28397.md)  |
 | <span style='display: inline-block; width: 42px;'>10-20</span> | **Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory**<br><sub>机构: MBZUAI, Third Intelligence, RIKEN AIP<br>本文揭示了LLM代理持久化记忆中存在的一个自我强化的隐私泄露循环：代理基于记忆的预设促使用户确认，进而固化敏感信息。研究表明，单纯依赖用户自我保护无效，最有效的缓解策略是在代理端抑制对属性的陈述和预设，从而在维持个性化服务优势的同时显著降低隐私风险。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28315v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28315.md)  |
 | <span style='display: inline-block; width: 42px;'>10-20</span> | **After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>本文指出了 LLM 智能体在跨会话状态持久化过程中面临的新型安全威胁——遗留攻击。通过提出 CarryoverBench 基准，作者系统性地评估了即时、自主和潜伏三种触发渠道下的攻击持续性。研究发现，当前主流模型在面对此类攻击时，一旦恶意负载植入成功，后续触发几乎无法阻挡，且攻击效果不会随时间衰减。这表明防御遗留攻击需要在运行时层面（Runtime-layer）引入额外的控制机制，而不仅仅依赖于提示词级别的防御。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.28425v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.28425.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/igloomatics/CarryoverBench)</div> |

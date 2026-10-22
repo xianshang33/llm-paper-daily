@@ -1,44 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-21T10:27:34.419459+00:00",
-  "run_date": "2026-10-20",
+  "generated_at": "2026-10-22T06:18:25.997903+00:00",
+  "run_date": "2026-10-21",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.28397",
-      "date": "2026-10-20",
-      "title": "MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems",
+      "id": "arxiv:2610.30026",
+      "date": "2026-10-21",
+      "title": "What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mohammad Kachuee",
-        "Phu Mon Htut",
-        "Sheng Li",
-        "Nikolaos Pappas",
-        "Miguel Ballesteros Martinez",
-        "Yassine Benajiba",
-        "Sujith Ravi",
-        "Dan Roth"
+        "Yikai Zhao",
+        "Saurabh Pandey",
+        "Pradeep Kumar Misra"
       ],
-      "institution": "Oracle AI",
+      "institution": "Amazon",
       "summary": {
-        "zh": "MAS-Guard 填补了当前 LLM 代理安全领域的空白，提出了一种从个体代理到多智能体系统的统一防护方案。通过结合本地细粒度检查和系统级宏观控制，它有效解决了混合代理环境中的碎片化防御问题，显著降低了攻击成功率，为构建安全的代理式 AI 应用提供了可行的基础设施。",
-        "en": "- **Background**: Agentic AI extends Large Language Models (LLMs) from text generation to planning and executing complex workflows, introducing risks such as unsafe actions, information leakage, and adversarial..."
+        "zh": "本文揭示了企业文档 ingestion 层中一个被忽视的关键问题：视觉格式（尤其是颜色和高亮）所承载的语义信息在转换过程中被静默丢失，导致智能体产生高风险的错误判断。研究证明，问题的根源在于 ingestion 而非推理阶段，且修复成本低廉、效果可测。对于智能体构建者而言，保留并显式传递这些视觉线索是提升系统可靠性的关键步骤。",
+        "en": "- **Background**: Enterprise agents rely on an ingestion layer to convert Word or PDF documents into tokens before executing tasks like policy compliance or ticketing. While mature converters faithfully recover text and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.28397v1",
-        "pdf": "https://arxiv.org/pdf/2610.28397v1",
+        "abs": "http://arxiv.org/abs/2610.30026v1",
+        "pdf": "https://arxiv.org/pdf/2610.30026v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.28397.md",
-        "summary_en_path": "summary_en/2026-10/2610.28397.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.28397.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.28397.md"
+        "summary_zh_path": "summary/2026-10/2610.30026.md",
+        "summary_en_path": "summary_en/2026-10/2610.30026.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.30026.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.30026.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,34 +50,43 @@
       }
     },
     {
-      "id": "arxiv:2610.28315",
-      "date": "2026-10-20",
-      "title": "Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory",
+      "id": "arxiv:2610.30113",
+      "date": "2026-10-21",
+      "title": "Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Masahiro Kaneko",
-        "Hiromi Arai",
-        "Timothy Baldwin"
+        "Houde Qian",
+        "Zheng Jiang",
+        "Wenyi Li",
+        "Chenxi Xu",
+        "Xinjie Lin",
+        "Yuzhao Peng",
+        "Ruoyu Han",
+        "Youjie Zheng",
+        "Kaisen Yang",
+        "Qinhuai Na",
+        "You Fu",
+        "Calvin Xiao"
       ],
-      "institution": "MBZUAI, Third Intelligence, RIKEN AIP",
+      "institution": "Navers Lab, Einsia.AI",
       "summary": {
-        "zh": "本文揭示了LLM代理持久化记忆中存在的一个自我强化的隐私泄露循环：代理基于记忆的预设促使用户确认，进而固化敏感信息。研究表明，单纯依赖用户自我保护无效，最有效的缓解策略是在代理端抑制对属性的陈述和预设，从而在维持个性化服务优势的同时显著降低隐私风险。",
-        "en": "- **Background**: LLM agents increasingly use persistent memory for personalization, posing privacy risks as stored personal attributes may be exposed. - **Limitations of Existing Work**: Prior studies mostly focus on..."
+        "zh": "Quant-Arena填补了LLM在端到端量化研究领域评估的空白，通过严格的样本外测试和真实的交易成本模拟，揭示了当前最前沿LLM代理在真实A股市场中尚无法稳定战胜市场基准的现状。该基准开放给任何模型或代理框架提交，为未来提升LLM在金融量化领域的实际应用能力提供了重要的评估标准和研究方向。",
+        "en": "- **Background**: Quantitative research is an iterative loop involving hypothesis proposal, implementation as executable signals, historical testing, and strategy selection. Large Language Models (LLMs) are naturally..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.28315v1",
-        "pdf": "https://arxiv.org/pdf/2610.28315v1",
+        "abs": "http://arxiv.org/abs/2610.30113v1",
+        "pdf": "https://arxiv.org/pdf/2610.30113v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.28315.md",
-        "summary_en_path": "summary_en/2026-10/2610.28315.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.28315.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.28315.md"
+        "summary_zh_path": "summary/2026-10/2610.30113.md",
+        "summary_en_path": "summary_en/2026-10/2610.30113.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.30113.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.30113.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,37 +103,32 @@
       }
     },
     {
-      "id": "arxiv:2610.28425",
-      "date": "2026-10-20",
-      "title": "After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents",
+      "id": "arxiv:2610.29812",
+      "date": "2026-10-21",
+      "title": "Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhiyue Xu",
-        "Xukai Wang",
-        "Zhiyuan Huang",
-        "Mingjie Zhan",
-        "Jian Zhao",
-        "Xu-Yao Zhang"
+        "Mohammed Saqlain"
       ],
-      "institution": "Institute of Automation, Chinese Academy of Sciences",
+      "institution": null,
       "summary": {
-        "zh": "本文指出了 LLM 智能体在跨会话状态持久化过程中面临的新型安全威胁——遗留攻击。通过提出 CarryoverBench 基准，作者系统性地评估了即时、自主和潜伏三种触发渠道下的攻击持续性。研究发现，当前主流模型在面对此类攻击时，一旦恶意负载植入成功，后续触发几乎无法阻挡，且攻击效果不会随时间衰减。这表明防御遗留攻击需要在运行时层面（Runtime-layer）引入额外的控制机制，而不仅仅依赖于提示词级别的防御。",
-        "en": "This paper identifies a new security threat for LLM agents: Carryover Attacks, arising from cross-session state persistence. By introducing the CarryoverBench benchmark, the authors systematically evaluate attack..."
+        "zh": "本文通过严格的控制实验指出，在生物医学文献验证任务中，提升代理自主构建查询的能力比单纯增加模型参数知识更有效。研究揭示了当前科学助手面临的主要瓶颈在于检索环节，并警告仅依靠 PMID 存在性检查无法防止引用无关文献的幻觉问题，为未来科学代理的设计提供了实证依据和安全警示。",
+        "en": "- **Background**: Literature-searching language agents are becoming standard in scientific assistants for life sciences, yet there is little controlled evidence on which parts of their harness design actually matter. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.28425v1",
-        "pdf": "https://arxiv.org/pdf/2610.28425v1",
-        "github": "https://github.com/igloomatics/CarryoverBench"
+        "abs": "http://arxiv.org/abs/2610.29812v1",
+        "pdf": "https://arxiv.org/pdf/2610.29812v1",
+        "github": "https://github.com/saqlain2204/real-pmids-wrong-papers"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.28425.md",
-        "summary_en_path": "summary_en/2026-10/2610.28425.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.28425.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.28425.md"
+        "summary_zh_path": "summary/2026-10/2610.29812.md",
+        "summary_en_path": "summary_en/2026-10/2610.29812.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.29812.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.29812.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,38 +145,37 @@
       }
     },
     {
-      "id": "arxiv:2610.28093",
-      "date": "2026-10-20",
-      "title": "ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents",
+      "id": "arxiv:2610.30042",
+      "date": "2026-10-21",
+      "title": "HGM-Dual: Lineage-Aware Guided Agent Harness Optimization for Long-Horizon Planning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jinhao Hu",
-        "Bardia Mohammadi",
-        "Mofasshara Binte Rafique",
-        "Lars Henning Klein",
-        "Akhil Arora",
-        "Ashvin Goel",
-        "Laurent Bindschaedler"
+        "Sudipta Paul",
+        "Pengrui Quan",
+        "Aounon Kumar",
+        "Nicholas Tzou",
+        "Vivek Kulkarni",
+        "Srinivas Chappidi"
       ],
-      "institution": "University of Toronto, MPI-SWS, EPFL, Aarhus University",
+      "institution": "Samsung Research America",
       "summary": {
-        "zh": "ClawMMU 通过将操作系统中的内存管理单元（MMU）保护理念引入 LLM Agent 架构，解决了因缺乏数据来源追踪而导致的安全漏洞。它通过为内存数据附加不可篡改的权限标签，并在系统层面强制执行访问控制策略，成功将复杂的语义攻击转化为可拦截的系统级保护错误。这种方法不依赖模型的内容识别能力，为有状态 Agent 的长期记忆安全提供了强有力的保障。",
-        "en": "ClawMMU introduces OS-style memory protection to LLM agents by tracking data provenance through immutable permission labels. By enforcing access control at the system level rather than relying on model interpretation,..."
+        "zh": "HGM-Dual 通过引入谱系感知的上下文记录和错误导向的双路生成机制，有效解决了现有递归自我改进方法在长程规划任务中面临的搜索效率低和针对性差的问题。该方法不仅提升了代理在复杂约束下的规划准确率，还大幅降低了优化过程中的计算和评估成本，为闭源 LLM 代理的高效优化提供了新的范式。",
+        "en": "HGM-Dual effectively addresses the low search efficiency and lack of targeting in existing recursive self-improvement methods for long-horizon planning. By introducing lineage-aware context and error-guided dual-path..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.28093v1",
-        "pdf": "https://arxiv.org/pdf/2610.28093v1",
+        "abs": "http://arxiv.org/abs/2610.30042v1",
+        "pdf": "https://arxiv.org/pdf/2610.30042v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.28093.md",
-        "summary_en_path": "summary_en/2026-10/2610.28093.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.28093.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.28093.md"
+        "summary_zh_path": "summary/2026-10/2610.30042.md",
+        "summary_en_path": "summary_en/2026-10/2610.30042.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.30042.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.30042.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,36 +192,36 @@
       }
     },
     {
-      "id": "arxiv:2610.28409",
-      "date": "2026-10-20",
-      "title": "Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints",
+      "id": "arxiv:2610.30103",
+      "date": "2026-10-21",
+      "title": "Did the Problem Actually Get Harder? Testing LLMs on Paired P and NP-Complete Problems Hardened by Adversarial Multi-Agent Rewriting",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tom A. Lamb",
-        "Adam Golinski",
-        "Eleonora Gualdoni",
-        "Sinead Williamson",
-        "Michael Kirchhof"
+        "Nurul Labib Sayeedi",
+        "Md. Faiyaz Abdullah Sayeedi",
+        "Zabir Al Nazi",
+        "Mahbub E Sobhani",
+        "Shubhashis Roy Dipta"
       ],
-      "institution": "University of Oxford, Apple",
+      "institution": "United International University, BRAC University, University of California, Riverside, University of Maryland, Baltimore County",
       "summary": {
-        "zh": "本文证明了多轮LLM智能体可以通过精心设计的奖励函数（特别是针对超支行为的惩罚）内化预算约束，从而在动态指定的预算下自主优化资源分配。这种方法消除了对外部复杂控制机制的依赖，提升了智能体在不同资源类型、 unseen budgets 及新任务分布下的适应能力和合规性，为构建更高效、可控的自主智能体提供了新的训练范式。",
-        "en": "- **Background**: Large language model (LLM) agents are often assigned an inference budget (e.g., tokens, API calls, or environment steps) and must maximize task success over multiple turns. Current multi-turn agents..."
+        "zh": "本文指出了当前 LLM 在算法推理评估中的缺陷，即过度依赖标准表述的记忆。通过引入 AgentGAN 对抗性重写框架和 P2NPCBench 基准，作者证明了即使去除了表面线索，模型在 NPC 问题上的表现仍显著差于 P 问题，且这种差距主要源于代码生成的正确性而非计算资源限制。该研究强调了开发真正具备结构推理能力而非模式匹配能力的 LLM 的重要性。",
+        "en": "This paper highlights flaws in current LLM algorithmic reasoning evaluations, specifically the over-reliance on memorization of standard formulations. By introducing the AgentGAN adversarial rewriting framework and the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.28409v1",
-        "pdf": "https://arxiv.org/pdf/2610.28409v1",
+        "abs": "http://arxiv.org/abs/2610.30103v1",
+        "pdf": "https://arxiv.org/pdf/2610.30103v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.28409.md",
-        "summary_en_path": "summary_en/2026-10/2610.28409.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.28409.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.28409.md"
+        "summary_zh_path": "summary/2026-10/2610.30103.md",
+        "summary_en_path": "summary_en/2026-10/2610.30103.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.30103.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.30103.md"
       },
       "signals": {
         "priority_keyword": "Agent"
