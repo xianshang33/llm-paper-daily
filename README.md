@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.22_06:18-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.23_06:12-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月22日 06:18</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月23日 06:12</sub></summary>
 <br>
 
-- What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion 
-- Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research 
-- Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents 
-- HGM-Dual: Lineage-Aware Guided Agent Harness Optimization for Long-Horizon Planning 
-- Did the Problem Actually Get Harder? Testing LLMs on Paired P and NP-Complete Problems Hardened by Adversarial Multi-Agent Rewriting 
+- EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence 
+- AgenticEvolve: Evolutionary Program Search with Persistent Language Model Agents that Design and Run Experiments 
+- Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines 
+- AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents 
+- AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-22</span> | **EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence**<br><sub>机构: City University of Hong Kong<br>本文提出了 EpiSEM-Bench，首个专注于评估 LLM 智能体在证据缺失情况下认识论安全性的基准测试。通过解耦世界状态与可见证据，该基准揭示了当前模型在处理不完整信息时的脆弱性及证据恢复能力的不足，为提升智能体在真实复杂环境中的安全性提供了重要的评估工具和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31650.md)  |
+| <span style='display: inline-block; width: 42px;'>10-22</span> | **AgenticEvolve: Evolutionary Program Search with Persistent Language Model Agents that Design and Run Experiments**<br><sub>机构: University of Chinese Academy of Sciences<br>AgenticEvolve 通过将持久化 LLM 智能体引入进化搜索循环，解决了传统方法中模型缺乏代码执行和分析能力的问题。通过在评估间隙自主设计实验，该方法显著提高了搜索效率和程序质量，在启发式设计和符号回归任务上均超越了当前最先进的基线方法，证明了自主实验在进化程序搜索中的关键价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31326v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31326.md)  |
+| <span style='display: inline-block; width: 42px;'>10-22</span> | **Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines**<br><sub>机构: Universidade Federal de Pernambuco (UFPE)<br>本文通过严谨的消融实验指出，在多智能体 LLM 流水线中，观察到的准确性提升主要归功于任务分解和专用提示词，而非智能体间的类型化契约。然而，类型化契约在软件质量保证方面具有独特价值，它能提供早期结构验证、防止静默失败并略微提升跨模型的一致性。研究呼吁社区在评估多智能体系统时，应超越单一的准确率指标，关注架构机制对系统可靠性和健壮性的实际贡献。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31280v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31280.md)  |
+| <span style='display: inline-block; width: 42px;'>10-22</span> | **AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents**<br><sub>机构: The Ohio State University<br>本文揭示了LLM智能体在删除原始记忆记录后，信息仍可通过衍生状态（如摘要或分散组件）被恢复的风险。通过引入AfterDeleteBench基准，作者证明了仅删除源记录不足以实现真正的遗忘，特别是在存在非verbatim衍生状态时。研究强调了行为审计的重要性，并指出有效的隐私保护需要超越简单的存储删除，转向更全面的来源感知管理策略。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31366v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31366.md)  |
+| <span style='display: inline-block; width: 42px;'>10-22</span> | **AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack**<br><sub>机构: Carnegie Mellon University<br>本文指出了当前 LLM 邮件代理在面对自适应社会工程学攻击时的严重安全隐患。通过引入 AgentPhishing 基准和 PhishOpt 优化方法，研究证明了传统检测指标不足以衡量代理的真实安全性。结果显示，相当比例的先进代理容易被精心构造的 persuasive 攻击所欺骗并执行恶意操作，强调了未来需要建立包含行为响应评估在内的更全面的安全测试标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31404v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31404.md)  |
 | <span style='display: inline-block; width: 42px;'>10-21</span> | **What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion**<br><sub>机构: Amazon<br>本文揭示了企业文档 ingestion 层中一个被忽视的关键问题：视觉格式（尤其是颜色和高亮）所承载的语义信息在转换过程中被静默丢失，导致智能体产生高风险的错误判断。研究证明，问题的根源在于 ingestion 而非推理阶段，且修复成本低廉、效果可测。对于智能体构建者而言，保留并显式传递这些视觉线索是提升系统可靠性的关键步骤。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30026v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30026.md)  |
 | <span style='display: inline-block; width: 42px;'>10-21</span> | **Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research**<br><sub>机构: Navers Lab, Einsia.AI<br>Quant-Arena填补了LLM在端到端量化研究领域评估的空白，通过严格的样本外测试和真实的交易成本模拟，揭示了当前最前沿LLM代理在真实A股市场中尚无法稳定战胜市场基准的现状。该基准开放给任何模型或代理框架提交，为未来提升LLM在金融量化领域的实际应用能力提供了重要的评估标准和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.30113v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.30113.md)  |
 | <span style='display: inline-block; width: 42px;'>10-21</span> | **Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents**<br><sub>本文通过严格的控制实验指出，在生物医学文献验证任务中，提升代理自主构建查询的能力比单纯增加模型参数知识更有效。研究揭示了当前科学助手面临的主要瓶颈在于检索环节，并警告仅依靠 PMID 存在性检查无法防止引用无关文献的幻觉问题，为未来科学代理的设计提供了实证依据和安全警示。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.29812v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.29812.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/saqlain2204/real-pmids-wrong-papers)</div> |
