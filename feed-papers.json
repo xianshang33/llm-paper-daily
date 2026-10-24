@@ -1,43 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-23T06:12:00.883794+00:00",
-  "run_date": "2026-10-22",
+  "generated_at": "2026-10-24T06:07:29.621262+00:00",
+  "run_date": "2026-10-18",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.31650",
-      "date": "2026-10-22",
-      "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
+      "id": "arxiv:2610.25540",
+      "date": "2026-10-18",
+      "title": "Auditing Tool Traces in Agentic LLMs: Source Localization and Counterfactual Dependence Testing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qijin Zhang",
-        "Hanzhen Wang",
-        "Yuehan Zhao",
-        "Haoyu Dai",
-        "Yao Shu",
-        "Zhongxiang Dai",
-        "Shuang Qiu"
+        "Junhao Liu",
+        "Tianxiao Li",
+        "Yongxian Wu",
+        "Ziheng Duan",
+        "Ren Li",
+        "Jing Zhang",
+        "Martin Renqiang Min"
       ],
-      "institution": "City University of Hong Kong",
+      "institution": "University of California, Irvine; NEC Labs America",
       "summary": {
-        "zh": "本文提出了 EpiSEM-Bench，首个专注于评估 LLM 智能体在证据缺失情况下认识论安全性的基准测试。通过解耦世界状态与可见证据，该基准揭示了当前模型在处理不完整信息时的脆弱性及证据恢复能力的不足，为提升智能体在真实复杂环境中的安全性提供了重要的评估工具和洞察。",
-        "en": "- **Background**: Tool-using LLM agents rely on environmental facts to determine if an action is permitted. When a tool response omits a safety-relevant fact, an agent may execute a prohibited action even if the user..."
+        "zh": "本文揭示了代理式LLM在科学工作流中面临的一个严重评估失效模式：隐藏标签捷径可能伪装成科学推理。通过提出的PT2D和Token-Class Redaction两阶段审计方法，作者证明了在TCR-pMHC预测中，模型的高性能主要源于对工具输出中标识符的依赖，而非真正的生物学推理。这一发现强调在信任基准测试增益之前，必须进行源级别的审计，以确保模型真正利用了外部证据。",
+        "en": "This paper reveals a critical evaluation failure mode in Agentic LLMs for scientific workflows: hidden label shortcuts can masquerade as scientific reasoning. Using the proposed two-stage audit (PT2D and Token-Class..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.31650v1",
-        "pdf": "https://arxiv.org/pdf/2610.31650v1",
+        "abs": "http://arxiv.org/abs/2610.25540v1",
+        "pdf": "https://arxiv.org/pdf/2610.25540v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.31650.md",
-        "summary_en_path": "summary_en/2026-10/2610.31650.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.31650.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.31650.md"
+        "summary_zh_path": "summary/2026-10/2610.25540.md",
+        "summary_en_path": "summary_en/2026-10/2610.25540.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.25540.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.25540.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,36 +54,34 @@
       }
     },
     {
-      "id": "arxiv:2610.31326",
-      "date": "2026-10-22",
-      "title": "AgenticEvolve: Evolutionary Program Search with Persistent Language Model Agents that Design and Run Experiments",
+      "id": "arxiv:2610.25456",
+      "date": "2026-10-18",
+      "title": "System X: An LLM Decision Model That Replies from Its Own KV Cache",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ze-Yu Peng",
-        "Qing-Yu Lan",
-        "Zhan-He Wang",
-        "Jun Zhang",
-        "Yun-Song Piao"
+        "Syed Usama Khalid Bukhari",
+        "Syed Safwan Khalid",
+        "Muhammad Aamir"
       ],
-      "institution": "University of Chinese Academy of Sciences",
+      "institution": "University of Oxford",
       "summary": {
-        "zh": "AgenticEvolve 通过将持久化 LLM 智能体引入进化搜索循环，解决了传统方法中模型缺乏代码执行和分析能力的问题。通过在评估间隙自主设计实验，该方法显著提高了搜索效率和程序质量，在启发式设计和符号回归任务上均超越了当前最先进的基线方法，证明了自主实验在进化程序搜索中的关键价值。",
-        "en": "- **Background**: Evolutionary program search with Large Language Models (LLMs) retains the structure of evolutionary algorithms, using LLMs as variation operators. Existing methods (e.g., FunSearch, AlphaEvolve)..."
+        "zh": "System X创新性地解决了LLM代理中决策与生成分离导致的效率低下问题。通过在决策选项中嵌入回复机制并复用KV缓存，它在保持甚至提升决策准确性和校准度的同时，显著降低了推理延迟。该方法证明了单一模型可以高效地同时处理结构化决策和非结构化文本生成，为部署轻量级、低延迟的智能代理提供了新范式。尽管存在状态冲突等失败模式，但其潜力在实验中得到验证。",
+        "en": "System X innovatively addresses the inefficiency of separating decision-making and generation in LLM agents. By embedding a reply mechanism within decision options and reusing the KV cache, it significantly reduces..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.31326v1",
-        "pdf": "https://arxiv.org/pdf/2610.31326v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.25456v1",
+        "pdf": "https://arxiv.org/pdf/2610.25456v1",
+        "github": "https://github.com/Turinglogicuk/system-x"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.31326.md",
-        "summary_en_path": "summary_en/2026-10/2610.31326.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.31326.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.31326.md"
+        "summary_zh_path": "summary/2026-10/2610.25456.md",
+        "summary_en_path": "summary_en/2026-10/2610.25456.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.25456.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.25456.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,33 +98,35 @@
       }
     },
     {
-      "id": "arxiv:2610.31280",
-      "date": "2026-10-22",
-      "title": "Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines",
+      "id": "arxiv:2610.25563",
+      "date": "2026-10-18",
+      "title": "Learning Which Device to Call: Online Tool Grounding for LLM Agents in IoT",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Maria Gabriela Alves Zuppardo",
-        "Vinicius Cardoso Garcia"
+        "Yichen Liu",
+        "Xiaochong Jiang",
+        "Haoran Yu",
+        "Lifei Liu"
       ],
-      "institution": "Universidade Federal de Pernambuco (UFPE)",
+      "institution": null,
       "summary": {
-        "zh": "本文通过严谨的消融实验指出，在多智能体 LLM 流水线中，观察到的准确性提升主要归功于任务分解和专用提示词，而非智能体间的类型化契约。然而，类型化契约在软件质量保证方面具有独特价值，它能提供早期结构验证、防止静默失败并略微提升跨模型的一致性。研究呼吁社区在评估多智能体系统时，应超越单一的准确率指标，关注架构机制对系统可靠性和健壮性的实际贡献。",
-        "en": "- **Background**: Multi-agent LLM pipelines are often credited with performance gains in software engineering, but it remains unclear whether these gains stem from typed contracts between agents or from specialized..."
+        "zh": "本文针对 LLM 智能体在 IoT 环境中面临的多设备选择难题，提出了在线工具 grounding 框架。通过将其转化为上下文多臂老虎机问题，并结合自适应分区、分层树结构以及差分隐私机制，有效解决了动态环境下的设备选择优化与隐私保护问题。实验证明该方法在成功率、成本、能耗和延迟方面均显著优于现有基线策略。",
+        "en": "This paper addresses the multi-device selection challenge for LLM agents in IoT environments by proposing an online tool grounding framework. By formulating the problem as a contextual bandit and incorporating adaptive..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.31280v1",
-        "pdf": "https://arxiv.org/pdf/2610.31280v1",
+        "abs": "http://arxiv.org/abs/2610.25563v1",
+        "pdf": "https://arxiv.org/pdf/2610.25563v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.31280.md",
-        "summary_en_path": "summary_en/2026-10/2610.31280.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.31280.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.31280.md"
+        "summary_zh_path": "summary/2026-10/2610.25563.md",
+        "summary_en_path": "summary_en/2026-10/2610.25563.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.25563.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.25563.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -143,36 +143,38 @@
       }
     },
     {
-      "id": "arxiv:2610.31366",
-      "date": "2026-10-22",
-      "title": "AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents",
+      "id": "arxiv:2610.25550",
+      "date": "2026-10-18",
+      "title": "Editing as Language: Teaching LLM Agents a Grammar for Native Context Editing",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ehsan Saleh",
-        "Roozbeh Nahavandi",
-        "Sama Salarian",
-        "Raef Bassily",
-        "Andrew Perrault"
+        "Yunlong Deng",
+        "Yan Li",
+        "Xing Hu",
+        "Yida Zhu",
+        "Sean Du",
+        "Weiyang Liu",
+        "Guangyi Chen"
       ],
-      "institution": "The Ohio State University",
+      "institution": "The Chinese University of Hong Kong, Nanyang Technological University, Meituan LongCat Team, Mohamed bin Zayed University of Artificial Intelligence, Carnegie Mellon University",
       "summary": {
-        "zh": "本文揭示了LLM智能体在删除原始记忆记录后，信息仍可通过衍生状态（如摘要或分散组件）被恢复的风险。通过引入AfterDeleteBench基准，作者证明了仅删除源记录不足以实现真正的遗忘，特别是在存在非verbatim衍生状态时。研究强调了行为审计的重要性，并指出有效的隐私保护需要超越简单的存储删除，转向更全面的来源感知管理策略。",
-        "en": "This paper reveals the risk that information persists in LLM agents through derived states (e.g., summaries or dispersed components) even after original memory records are deleted. By introducing AfterDeleteBench, the..."
+        "zh": "本文提出了原生上下文编辑（NCE）框架，通过将上下文编辑操作编码为专用特殊令牌的语法，使LLM智能体能够通过语言本身原生地编辑其上下文。这种方法克服了传统基于规则或外部工具方法的局限性，将上下文管理转化为模型的内在能力。实验表明，NCE在多个长程智能体基准测试中显著提高了任务成功率并大幅降低了Token使用量，展现了在多样化真实工作流中优秀的泛化性能和效率。",
+        "en": "This paper proposes the Native Context Editing (NCE) framework, which enables LLM agents to natively edit their context by encoding editing operations into a grammar of special tokens. This approach overcomes the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.31366v1",
-        "pdf": "https://arxiv.org/pdf/2610.31366v1",
+        "abs": "http://arxiv.org/abs/2610.25550v1",
+        "pdf": "https://arxiv.org/pdf/2610.25550v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.31366.md",
-        "summary_en_path": "summary_en/2026-10/2610.31366.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.31366.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.31366.md"
+        "summary_zh_path": "summary/2026-10/2610.25550.md",
+        "summary_en_path": "summary_en/2026-10/2610.25550.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.25550.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.25550.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -189,34 +191,39 @@
       }
     },
     {
-      "id": "arxiv:2610.31404",
-      "date": "2026-10-22",
-      "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+      "id": "arxiv:2610.25208",
+      "date": "2026-10-18",
+      "title": "BrandEval: A Two-Track Multi-Agent Benchmark for Risk-Sensitive LLM Crisis Communication",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Justin Tan",
-        "Miao Li",
-        "Ding Zhao"
+        "Haotian Gan",
+        "Weidong Tang",
+        "Hanbin Sun",
+        "Yi Luo",
+        "Xintian Li",
+        "Jiayong Wang",
+        "WanYue Li",
+        "Yudong Li"
       ],
-      "institution": "Carnegie Mellon University",
+      "institution": "Shaanxi University of Science and Technology, China Agricultural University, Tianjin University, Tsinghua University, Shaanxi Normal University, Hong Kong Metropolitan University",
       "summary": {
-        "zh": "本文指出了当前 LLM 邮件代理在面对自适应社会工程学攻击时的严重安全隐患。通过引入 AgentPhishing 基准和 PhishOpt 优化方法，研究证明了传统检测指标不足以衡量代理的真实安全性。结果显示，相当比例的先进代理容易被精心构造的 persuasive 攻击所欺骗并执行恶意操作，强调了未来需要建立包含行为响应评估在内的更全面的安全测试标准。",
-        "en": "- **Background**: Large Language Model (LLM)-powered computer-use agents are increasingly handling private information and executing tasks on behalf of users in applications like email. Phishing poses significant..."
+        "zh": "BrandEval 填补了LLM在危机沟通领域评估的空白，通过静态分析和动态沙盒模拟相结合的方式，全面评估模型在处理产品危机时的战略思维和长期风险控制能力。研究指出，仅靠静态文本生成评估不足以衡量危机沟通的有效性，必须引入包含多方博弈和时间维度的动态评估框架。提出的 Strategic Rationale 方法为提升LLM在高风险场景下的决策质量提供了新方向。",
+        "en": "- **Background**: In product crises (e.g., safety, quality, service issues), a company's public response significantly impacts public judgment of responsibility and trust. As opinions spread and evolve rapidly on social..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.31404v1",
-        "pdf": "https://arxiv.org/pdf/2610.31404v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.25208v1",
+        "pdf": "https://arxiv.org/pdf/2610.25208v1",
+        "github": "https://github.com/htgan-ai/BrandEval"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.31404.md",
-        "summary_en_path": "summary_en/2026-10/2610.31404.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.31404.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.31404.md"
+        "summary_zh_path": "summary/2026-10/2610.25208.md",
+        "summary_en_path": "summary_en/2026-10/2610.25208.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.25208.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.25208.md"
       },
       "signals": {
         "priority_keyword": "Agent"
