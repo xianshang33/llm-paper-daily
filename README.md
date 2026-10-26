@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.23_06:12-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.26_06:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月23日 06:12</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月26日 06:37</sub></summary>
 <br>
 
-- EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence 
-- AgenticEvolve: Evolutionary Program Search with Persistent Language Model Agents that Design and Run Experiments 
-- Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines 
-- AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents 
-- AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack 
+- Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance 
+- ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents 
+- Do "True" and "False" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations 
+- Decoupling Patient Personas and Clinical Workflows: A Dual-Agent Approach to Realistic Medical Dialogue Generation 
+- When Agents Fail: Model or Harness--Who's to Blame? 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-23</span> | **Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance**<br><sub>机构: University of Luxembourg<br>本文揭示了当前 LLM 智能体在面对真实 MCP 工具故障时的脆弱性，并打破了“模型越大越容错”的迷思。通过引入基于真实数据校准的 MCP-Injector，作者证明了框架级的错误处理设计比模型规模更能决定智能体的鲁棒性。该研究呼吁社区在评估智能体时，除了关注能力基准，还应纳入协议感知的故障注入测试，以全面评估其在生产环境中的可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32555v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32555.md)  |
+| <span style='display: inline-block; width: 42px;'>10-23</span> | **ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents**<br><sub>机构: Actioneer, Mountain View, California, USA<br>ActionRAG 通过引入图扩散过滤机制，有效解决了 LLM 智能体长期记忆中的索引错误和检索僵化问题。它不仅在多跳推理和冲突解决等复杂任务上显著优于现有的 RAG 和图检索方法，还保持了较低的计算成本和延迟，为构建具备强大长期记忆能力的 LLM 智能体提供了新的架构思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32752v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32752.md)  |
+| <span style='display: inline-block; width: 42px;'>10-23</span> | **Do "True" and "False" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations**<br><sub>机构: University of Electronic Science and Technology of China (UESTC)<br>本文指出，在将 LLM 模拟概率解读为信念之前，必须单独测试其在重述下的互补一致性。当前的小规模开源模型在处理互补主张时表现出严重的系统性偏差，这种局部不一致性会通过反馈机制放大，导致群体模拟轨迹失真。虽然简单的平均修复可以恢复数学一致性，但并不总能提高最终的预测准确性，强调了在复杂模拟中区分“措辞效应”与“信念更新”的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32874v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32874.md)  |
+| <span style='display: inline-block; width: 42px;'>10-23</span> | **Decoupling Patient Personas and Clinical Workflows: A Dual-Agent Approach to Realistic Medical Dialogue Generation**<br><sub>机构: Wuhan University of Science and Technology<br>本文提出了 CoRPS-Dial，一种解耦患者画像与临床工作流程的双智能体医疗对话生成框架。通过分离患者角色的多样性模拟与医生角色的流程规范引导，并结合高效的事后质量控制，该方法成功解决了现有方法在临床可靠性与数据多样性之间的权衡问题。实验证明其生成的数据在多个维度上更接近真实对话，并能有效增强下游医疗 AI 模型的性能，为低成本获取高质量医疗对话数据提供了新途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32443v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32443.md)  |
+| <span style='display: inline-block; width: 42px;'>10-23</span> | **When Agents Fail: Model or Harness--Who's to Blame?**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>本文强调了将 LLM Agent 视为模型与执行层的联合系统进行评估的重要性。通过提出的五维评估框架，研究揭示了执行层排名的高度依赖性，以及任务成功与执行可靠性之间的复杂关系。结果表明，未来的方向应包括训练模型具备可迁移的执行层使用能力，以及设计适应特定模型和任务的执行层，而非仅仅优化模型本身或孤立地优化执行框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32483v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32483.md)  |
 | <span style='display: inline-block; width: 42px;'>10-22</span> | **EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence**<br><sub>机构: City University of Hong Kong<br>本文提出了 EpiSEM-Bench，首个专注于评估 LLM 智能体在证据缺失情况下认识论安全性的基准测试。通过解耦世界状态与可见证据，该基准揭示了当前模型在处理不完整信息时的脆弱性及证据恢复能力的不足，为提升智能体在真实复杂环境中的安全性提供了重要的评估工具和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31650v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31650.md)  |
 | <span style='display: inline-block; width: 42px;'>10-22</span> | **AgenticEvolve: Evolutionary Program Search with Persistent Language Model Agents that Design and Run Experiments**<br><sub>机构: University of Chinese Academy of Sciences<br>AgenticEvolve 通过将持久化 LLM 智能体引入进化搜索循环，解决了传统方法中模型缺乏代码执行和分析能力的问题。通过在评估间隙自主设计实验，该方法显著提高了搜索效率和程序质量，在启发式设计和符号回归任务上均超越了当前最先进的基线方法，证明了自主实验在进化程序搜索中的关键价值。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31326v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31326.md)  |
 | <span style='display: inline-block; width: 42px;'>10-22</span> | **Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines**<br><sub>机构: Universidade Federal de Pernambuco (UFPE)<br>本文通过严谨的消融实验指出，在多智能体 LLM 流水线中，观察到的准确性提升主要归功于任务分解和专用提示词，而非智能体间的类型化契约。然而，类型化契约在软件质量保证方面具有独特价值，它能提供早期结构验证、防止静默失败并略微提升跨模型的一致性。研究呼吁社区在评估多智能体系统时，应超越单一的准确率指标，关注架构机制对系统可靠性和健壮性的实际贡献。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.31280v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.31280.md)  |
