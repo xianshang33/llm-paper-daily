@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.26_06:37-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.27_06:32-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月26日 06:37</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月27日 06:32</sub></summary>
 <br>
 
-- Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance 
-- ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents 
-- Do "True" and "False" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations 
-- Decoupling Patient Personas and Clinical Workflows: A Dual-Agent Approach to Realistic Medical Dialogue Generation 
-- When Agents Fail: Model or Harness--Who's to Blame? 
+- A Unified Arena for LLM Agents across Diverse Eurogame 
+- Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents 
+- KAPPA: Checking the Proofs in Statistics Papers with Lean 4 and Language Model Agents 
+- Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean 
+- Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-26</span> | **A Unified Arena for LLM Agents across Diverse Eurogame**<br><sub>机构: Alibaba Group, Nanjing University, National University of Singapore, University of North Carolina at Chapel Hill, The Hong Kong University of Science and Technology, Peking University<br>本文介绍了 DECE，一个用于评估 LLM 智能体的统一 Eurogame 竞技平台。通过大规模的多模型、多框架、多游戏实验，文章揭示了跨游戏性能的一致性模式、执行框架对结果的显著影响以及性能与资源效率之间的脱节。研究主张在评估 LLM 智能体时，应采用包含竞争性能和资源效率的综合指标，为未来智能体系统的开发和基准测试提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35773v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35773.md)  |
+| <span style='display: inline-block; width: 42px;'>10-26</span> | **Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents**<br><sub>机构: Peking University, Beijing University of Posts and Telecommunications<br>本文通过构建统一的 RCAtlas 基准，证明了在微服务根因分析任务中，让模型自由观察和推理的“简单 Harness”优于复杂的手工编排智能体。研究表明，过度预设的调查流程会阻碍模型获取关键证据，而简单的方法不仅在准确率上领先，且在成本和时间的效率权衡上占据绝对优势。这提示未来的 RCA 系统设计应更侧重于增强模型的基础能力和数据访问自由度，而非复杂的流程控制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35767v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35767.md)  |
+| <span style='display: inline-block; width: 42px;'>10-26</span> | **KAPPA: Checking the Proofs in Statistics Papers with Lean 4 and Language Model Agents**<br><sub>机构: Purdue University<br>KAPPA 通过结合 LLM 的翻译能力与 Lean 4 的形式化验证能力，提供了一种高效、自动化的统计论文证明检查方案。它解决了传统形式化耗时过长和纯 LLM 验证不可靠的问题，能够准确发现证明中的错误并精确定位，同时确保了验证过程的透明性和可复现性，显著提升了统计理论研究的可靠性和可重复性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35596v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35596.md)  |
+| <span style='display: inline-block; width: 42px;'>10-26</span> | **Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean**<br><sub>机构: University of Birmingham<br>本文展示了首个能够在Lean中设计高效黑盒优化算法并提供机器检查运行时边界的自动化流水线。研究结果表明，Lean中的机器检查规范可以替代开放算法发现过程中的经验性评估。通过分阶段的设计和形式化验证，LLM代理能够克服单纯经验设计的局限性，实现兼具创新性和理论保证的算法自动设计，为理论计算机科学中的自动化算法设计开辟了新路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35595v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35595.md)  |
+| <span style='display: inline-block; width: 42px;'>10-26</span> | **Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents**<br><sub>机构: Aalto University; Koc University<br>本文提出了一种创新的LLM驱动框架，解决了生物过程建模中结构未知和参数耦合的难题。通过结合LLM的逻辑推理能力、RAG的知识检索能力、MHE的参数估计能力以及主动实验设计的探索能力，实现了对复杂生物动力学结构的自主发现和高精度参数辨识，为构建高保真生物制造数字孪生提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35391v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35391.md)  |
 | <span style='display: inline-block; width: 42px;'>10-23</span> | **Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance**<br><sub>机构: University of Luxembourg<br>本文揭示了当前 LLM 智能体在面对真实 MCP 工具故障时的脆弱性，并打破了“模型越大越容错”的迷思。通过引入基于真实数据校准的 MCP-Injector，作者证明了框架级的错误处理设计比模型规模更能决定智能体的鲁棒性。该研究呼吁社区在评估智能体时，除了关注能力基准，还应纳入协议感知的故障注入测试，以全面评估其在生产环境中的可靠性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32555v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32555.md)  |
 | <span style='display: inline-block; width: 42px;'>10-23</span> | **ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents**<br><sub>机构: Actioneer, Mountain View, California, USA<br>ActionRAG 通过引入图扩散过滤机制，有效解决了 LLM 智能体长期记忆中的索引错误和检索僵化问题。它不仅在多跳推理和冲突解决等复杂任务上显著优于现有的 RAG 和图检索方法，还保持了较低的计算成本和延迟，为构建具备强大长期记忆能力的 LLM 智能体提供了新的架构思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32752v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32752.md)  |
 | <span style='display: inline-block; width: 42px;'>10-23</span> | **Do "True" and "False" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations**<br><sub>机构: University of Electronic Science and Technology of China (UESTC)<br>本文指出，在将 LLM 模拟概率解读为信念之前，必须单独测试其在重述下的互补一致性。当前的小规模开源模型在处理互补主张时表现出严重的系统性偏差，这种局部不一致性会通过反馈机制放大，导致群体模拟轨迹失真。虽然简单的平均修复可以恢复数学一致性，但并不总能提高最终的预测准确性，强调了在复杂模拟中区分“措辞效应”与“信念更新”的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.32874v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.32874.md)  |
