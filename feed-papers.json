@@ -1,45 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-27T06:32:44.064644+00:00",
-  "run_date": "2026-10-26",
+  "generated_at": "2026-10-28T07:00:58.941466+00:00",
+  "run_date": "2026-10-27",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.35773",
-      "date": "2026-10-26",
-      "title": "A Unified Arena for LLM Agents across Diverse Eurogame",
+      "id": "arxiv:2610.37434",
+      "date": "2026-10-27",
+      "title": "FeatureArc: Benchmarking Coding Agents on Evolving Features",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Fengrui Zhang",
-        "Xiang Li",
-        "Ruomeng Ding",
-        "Jiayi Yuan",
-        "Yuchen Huang",
-        "Zhaoyang Han",
-        "Xiaoliang Wang",
-        "Daoyuan Chen",
-        "Yaliang Li"
+        "Yunlong Wang",
+        "Alyssa Wu",
+        "Cuiyun Gao",
+        "Jia Feng",
+        "Songyuanyi Lu",
+        "Zhichao Hu"
       ],
-      "institution": "Alibaba Group, Nanjing University, National University of Singapore, University of North Carolina at Chapel Hill, The Hong Kong University of Science and Technology, Peking University",
+      "institution": "Tencent, The Chinese University of Hong Kong",
       "summary": {
-        "zh": "本文介绍了 DECE，一个用于评估 LLM 智能体的统一 Eurogame 竞技平台。通过大规模的多模型、多框架、多游戏实验，文章揭示了跨游戏性能的一致性模式、执行框架对结果的显著影响以及性能与资源效率之间的脱节。研究主张在评估 LLM 智能体时，应采用包含竞争性能和资源效率的综合指标，为未来智能体系统的开发和基准测试提供了重要参考。",
-        "en": "- **Background**: Interactive environments provide a practical way to evaluate Large Language Model (LLM) agents, with competitive games extending this to decisions shaped by competing goals and other agents' choices...."
+        "zh": "FeatureArc 填补了编码智能体在演进式功能开发评估上的空白。通过构建具有强依赖性的多阶段任务和 L4 级自主评估环境，文章揭示了当前智能体在处理长期依赖和自我纠错方面的严重不足，特别是“继承缺陷”导致的成功率断崖式下跌。该研究为提升智能体在复杂、连续软件开发任务中的可靠性提供了重要的基准和洞察。",
+        "en": "- **Background**: Software features evolve over time as developers extend existing code to meet new requirements. Current coding agent benchmarks (e.g., SWE-bench) primarily evaluate the ability to resolve single..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.35773v1",
-        "pdf": "https://arxiv.org/pdf/2610.35773v1",
+        "abs": "http://arxiv.org/abs/2610.37434v1",
+        "pdf": "https://arxiv.org/pdf/2610.37434v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.35773.md",
-        "summary_en_path": "summary_en/2026-10/2610.35773.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.35773.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.35773.md"
+        "summary_zh_path": "summary/2026-10/2610.37434.md",
+        "summary_en_path": "summary_en/2026-10/2610.37434.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37434.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37434.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -56,36 +53,41 @@
       }
     },
     {
-      "id": "arxiv:2610.35767",
-      "date": "2026-10-26",
-      "title": "Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents",
+      "id": "arxiv:2610.37276",
+      "date": "2026-10-27",
+      "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tingzhu Bi",
-        "Xun Zhang",
-        "Jinglin Li",
-        "Ping Wang",
-        "Meng Ma"
+        "Sichun Luo",
+        "Yi Huang",
+        "Mukai Li",
+        "Haochen Luo",
+        "Guanzhi Deng",
+        "Haibo Wang",
+        "Jian Xu",
+        "Zefa Hu",
+        "Junlan Feng",
+        "Qi Liu"
       ],
-      "institution": "Peking University, Beijing University of Posts and Telecommunications",
+      "institution": "The University of Hong Kong",
       "summary": {
-        "zh": "本文通过构建统一的 RCAtlas 基准，证明了在微服务根因分析任务中，让模型自由观察和推理的“简单 Harness”优于复杂的手工编排智能体。研究表明，过度预设的调查流程会阻碍模型获取关键证据，而简单的方法不仅在准确率上领先，且在成本和时间的效率权衡上占据绝对优势。这提示未来的 RCA 系统设计应更侧重于增强模型的基础能力和数据访问自由度，而非复杂的流程控制。",
-        "en": "- **Background**: Root Cause Analysis (RCA) for microservice failures has seen a surge in LLM-based agents. Current state-of-the-art methods typically rely on \"hand-crafted\" designs, enforcing strict investigation..."
+        "zh": "本文深入研究了 LLM 驱动代理脚手架进化中的评估预算分配问题，指出搜索引导与最终选择对评估的不同需求。提出的 EvalAlloc 框架通过“稀疏搜索反馈 + 针对性最终确认”的策略，有效解决了成本与性能的权衡问题。实验证明，该方法能在大幅减少评估开销的同时，提升最终代理脚手架的性能，为自动化 Agent 优化提供了高效的评估范式。",
+        "en": "- **Background**: LLM-driven agent scaffold evolution improves agent workflows through iterative candidate generation and evaluation. Evaluation serves two distinct roles: guiding subsequent search and determining the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.35767v1",
-        "pdf": "https://arxiv.org/pdf/2610.35767v1",
+        "abs": "http://arxiv.org/abs/2610.37276v1",
+        "pdf": "https://arxiv.org/pdf/2610.37276v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.35767.md",
-        "summary_en_path": "summary_en/2026-10/2610.35767.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.35767.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.35767.md"
+        "summary_zh_path": "summary/2026-10/2610.37276.md",
+        "summary_en_path": "summary_en/2026-10/2610.37276.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37276.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37276.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -102,33 +104,33 @@
       }
     },
     {
-      "id": "arxiv:2610.35596",
-      "date": "2026-10-26",
-      "title": "KAPPA: Checking the Proofs in Statistics Papers with Lean 4 and Language Model Agents",
+      "id": "arxiv:2610.37319",
+      "date": "2026-10-27",
+      "title": "AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zihua She",
-        "Xiao Wang"
+        "Yichen Long",
+        "Keren Zhu"
       ],
-      "institution": "Purdue University",
+      "institution": "Fudan University",
       "summary": {
-        "zh": "KAPPA 通过结合 LLM 的翻译能力与 Lean 4 的形式化验证能力，提供了一种高效、自动化的统计论文证明检查方案。它解决了传统形式化耗时过长和纯 LLM 验证不可靠的问题，能够准确发现证明中的错误并精确定位，同时确保了验证过程的透明性和可复现性，显著提升了统计理论研究的可靠性和可重复性。",
-        "en": "- **Background**: Statistical theory papers rely on long proofs that are rarely checked line-by-line by readers or referees, allowing errors in routine steps to go unnoticed until corrections are published. Formalizing..."
+        "zh": "AnalogScout通过结合精英设计复用、解析式的gm/Id局部尺寸调整和全角点验证下的全局细化，有效解决了模拟电路尺寸调整中仿真成本高企的问题。该方法显著提高了仿真效率，在有限的仿真预算下实现了比传统优化算法和现有LLM方法更优的低功耗设计结果，为模拟设计自动化提供了一种高效的新范式。",
+        "en": "- **Background**: Analog device sizing must satisfy all specifications across process, voltage, and temperature (PVT) corners to ensure tape-out success. However, simulating every candidate at all corners dominates the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.35596v1",
-        "pdf": "https://arxiv.org/pdf/2610.35596v1",
+        "abs": "http://arxiv.org/abs/2610.37319v1",
+        "pdf": "https://arxiv.org/pdf/2610.37319v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.35596.md",
-        "summary_en_path": "summary_en/2026-10/2610.35596.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.35596.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.35596.md"
+        "summary_zh_path": "summary/2026-10/2610.37319.md",
+        "summary_en_path": "summary_en/2026-10/2610.37319.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37319.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37319.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,32 +147,37 @@
       }
     },
     {
-      "id": "arxiv:2610.35595",
-      "date": "2026-10-26",
-      "title": "Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean",
+      "id": "arxiv:2610.37405",
+      "date": "2026-10-27",
+      "title": "Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Per Kristian Lehre"
+        "Zongyuan Sun",
+        "Shuai Zhao",
+        "Yingjun Du",
+        "Ke Shu",
+        "Ziyue Zhu",
+        "Haoran Luo"
       ],
-      "institution": "University of Birmingham",
+      "institution": "Beijing University of Posts and Telecommunications",
       "summary": {
-        "zh": "本文展示了首个能够在Lean中设计高效黑盒优化算法并提供机器检查运行时边界的自动化流水线。研究结果表明，Lean中的机器检查规范可以替代开放算法发现过程中的经验性评估。通过分阶段的设计和形式化验证，LLM代理能够克服单纯经验设计的局限性，实现兼具创新性和理论保证的算法自动设计，为理论计算机科学中的自动化算法设计开辟了新路。",
-        "en": "- **Background**: Large Language Models (LLMs) have demonstrated capability in proving hard theorems in Lean, and LLM-guided design of optimization heuristics (e.g., AlphaEvolve) has shown progress. However, traditional..."
+        "zh": "本文针对LLM在事实问答中“有答案无证据”的问题，提出了FoG框架。通过构造带有天然证据链的合成数据以及设计激励证据检索的过程奖励机制，FoG成功训练了小参数量的KG代理同时实现高精度答案生成和高覆盖率证据检索。该方法有效清除了推理过程中的“迷雾”，提升了KG增强型LLM的可信度和可解释性，并在多个基准测试中超越了更大规模的模型。",
+        "en": "- **Background**: Large Language Models (LLMs) often answer factual questions correctly but lack traceable evidence. In high-stakes domains like healthcare and law, users require verifiable evidence to trust the output."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.35595v1",
-        "pdf": "https://arxiv.org/pdf/2610.35595v1",
+        "abs": "http://arxiv.org/abs/2610.37405v1",
+        "pdf": "https://arxiv.org/pdf/2610.37405v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.35595.md",
-        "summary_en_path": "summary_en/2026-10/2610.35595.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.35595.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.35595.md"
+        "summary_zh_path": "summary/2026-10/2610.37405.md",
+        "summary_en_path": "summary_en/2026-10/2610.37405.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37405.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37405.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -187,33 +194,40 @@
       }
     },
     {
-      "id": "arxiv:2610.35391",
-      "date": "2026-10-26",
-      "title": "Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents",
+      "id": "arxiv:2610.37166",
+      "date": "2026-10-27",
+      "title": "LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Erdal Aydin",
-        "Yaman Arkun"
+        "Sinuo Wang",
+        "Wentao Zhao",
+        "Jiacheng Lu",
+        "Rui Sun",
+        "Beidi Luan",
+        "Qiming Shi",
+        "Jing Li",
+        "Daxin Jiang",
+        "Zuo Bai"
       ],
-      "institution": "Aalto University; Koc University",
+      "institution": "StepFun, Tsinghua University, FinStep, Adelaide University, Shanghai Jiao Tong University, Zhejiang University",
       "summary": {
-        "zh": "本文提出了一种创新的LLM驱动框架，解决了生物过程建模中结构未知和参数耦合的难题。通过结合LLM的逻辑推理能力、RAG的知识检索能力、MHE的参数估计能力以及主动实验设计的探索能力，实现了对复杂生物动力学结构的自主发现和高精度参数辨识，为构建高保真生物制造数字孪生提供了新的技术路径。",
-        "en": "This paper proposes an innovative LLM-driven framework that addresses the challenges of unknown structure and parameter coupling in bioprocess modeling. By combining the logical reasoning of LLMs, knowledge retrieval..."
+        "zh": "LiveSearch 通过引入“问题即代码”的创新范式，成功构建了一个能够实时反映金融市场变化的动态基准测试。它不仅解决了传统金融基准中答案过时、构建成本高和脱离专业实践的问题，还通过自动化流程实现了可持续的评估体系。实验表明，现有模型在处理实时金融信息时仍面临巨大挑战，LiveSearch 为评估和提升金融智能体的实时检索与分析能力提供了重要工具。",
+        "en": "- **Background**: In finance, answers are highly time-sensitive (e.g., stock prices, interest rates), making the retrieval of up-to-date facts a core capability for financial agents. However, most existing financial..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.35391v1",
-        "pdf": "https://arxiv.org/pdf/2610.35391v1",
+        "abs": "http://arxiv.org/abs/2610.37166v1",
+        "pdf": "https://arxiv.org/pdf/2610.37166v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.35391.md",
-        "summary_en_path": "summary_en/2026-10/2610.35391.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.35391.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.35391.md"
+        "summary_zh_path": "summary/2026-10/2610.37166.md",
+        "summary_en_path": "summary_en/2026-10/2610.37166.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37166.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37166.md"
       },
       "signals": {
         "priority_keyword": "Agent"

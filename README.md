@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.27_06:32-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.28_07:00-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月27日 06:32</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月28日 07:00</sub></summary>
 <br>
 
-- A Unified Arena for LLM Agents across Diverse Eurogame 
-- Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents 
-- KAPPA: Checking the Proofs in Statistics Papers with Lean 4 and Language Model Agents 
-- Agentic Algorithm Design: LLMs that Propose, Formalise, and Prove Runtime Bounds for Evolutionary Algorithms in Lean 
-- Autonomous Structural Discovery Of Bioprocess Dynamics And Kinetics Via LLM-Driven Agents 
+- FeatureArc: Benchmarking Coding Agents on Evolving Features 
+- Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution? 
+- AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents 
+- Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers 
+- LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-27</span> | **FeatureArc: Benchmarking Coding Agents on Evolving Features**<br><sub>机构: Tencent, The Chinese University of Hong Kong<br>FeatureArc 填补了编码智能体在演进式功能开发评估上的空白。通过构建具有强依赖性的多阶段任务和 L4 级自主评估环境，文章揭示了当前智能体在处理长期依赖和自我纠错方面的严重不足，特别是“继承缺陷”导致的成功率断崖式下跌。该研究为提升智能体在复杂、连续软件开发任务中的可靠性提供了重要的基准和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37434v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37434.md)  |
+| <span style='display: inline-block; width: 42px;'>10-27</span> | **Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?**<br><sub>机构: The University of Hong Kong<br>本文深入研究了 LLM 驱动代理脚手架进化中的评估预算分配问题，指出搜索引导与最终选择对评估的不同需求。提出的 EvalAlloc 框架通过“稀疏搜索反馈 + 针对性最终确认”的策略，有效解决了成本与性能的权衡问题。实验证明，该方法能在大幅减少评估开销的同时，提升最终代理脚手架的性能，为自动化 Agent 优化提供了高效的评估范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37276v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37276.md)  |
+| <span style='display: inline-block; width: 42px;'>10-27</span> | **AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents**<br><sub>机构: Fudan University<br>AnalogScout通过结合精英设计复用、解析式的gm/Id局部尺寸调整和全角点验证下的全局细化，有效解决了模拟电路尺寸调整中仿真成本高企的问题。该方法显著提高了仿真效率，在有限的仿真预算下实现了比传统优化算法和现有LLM方法更优的低功耗设计结果，为模拟设计自动化提供了一种高效的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37319v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37319.md)  |
+| <span style='display: inline-block; width: 42px;'>10-27</span> | **Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers**<br><sub>机构: Beijing University of Posts and Telecommunications<br>本文针对LLM在事实问答中“有答案无证据”的问题，提出了FoG框架。通过构造带有天然证据链的合成数据以及设计激励证据检索的过程奖励机制，FoG成功训练了小参数量的KG代理同时实现高精度答案生成和高覆盖率证据检索。该方法有效清除了推理过程中的“迷雾”，提升了KG增强型LLM的可信度和可解释性，并在多个基准测试中超越了更大规模的模型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37405v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37405.md)  |
+| <span style='display: inline-block; width: 42px;'>10-27</span> | **LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents**<br><sub>机构: StepFun, Tsinghua University, FinStep, Adelaide University, Shanghai Jiao Tong University, Zhejiang University<br>LiveSearch 通过引入“问题即代码”的创新范式，成功构建了一个能够实时反映金融市场变化的动态基准测试。它不仅解决了传统金融基准中答案过时、构建成本高和脱离专业实践的问题，还通过自动化流程实现了可持续的评估体系。实验表明，现有模型在处理实时金融信息时仍面临巨大挑战，LiveSearch 为评估和提升金融智能体的实时检索与分析能力提供了重要工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37166v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37166.md)  |
 | <span style='display: inline-block; width: 42px;'>10-26</span> | **A Unified Arena for LLM Agents across Diverse Eurogame**<br><sub>机构: Alibaba Group, Nanjing University, National University of Singapore, University of North Carolina at Chapel Hill, The Hong Kong University of Science and Technology, Peking University<br>本文介绍了 DECE，一个用于评估 LLM 智能体的统一 Eurogame 竞技平台。通过大规模的多模型、多框架、多游戏实验，文章揭示了跨游戏性能的一致性模式、执行框架对结果的显著影响以及性能与资源效率之间的脱节。研究主张在评估 LLM 智能体时，应采用包含竞争性能和资源效率的综合指标，为未来智能体系统的开发和基准测试提供了重要参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35773v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35773.md)  |
 | <span style='display: inline-block; width: 42px;'>10-26</span> | **Free to Look, Free to Reason: Simple LLM Harnesses Outdiagnose Hand-Crafted Root Cause Analysis Agents**<br><sub>机构: Peking University, Beijing University of Posts and Telecommunications<br>本文通过构建统一的 RCAtlas 基准，证明了在微服务根因分析任务中，让模型自由观察和推理的“简单 Harness”优于复杂的手工编排智能体。研究表明，过度预设的调查流程会阻碍模型获取关键证据，而简单的方法不仅在准确率上领先，且在成本和时间的效率权衡上占据绝对优势。这提示未来的 RCA 系统设计应更侧重于增强模型的基础能力和数据访问自由度，而非复杂的流程控制。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35767v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35767.md)  |
 | <span style='display: inline-block; width: 42px;'>10-26</span> | **KAPPA: Checking the Proofs in Statistics Papers with Lean 4 and Language Model Agents**<br><sub>机构: Purdue University<br>KAPPA 通过结合 LLM 的翻译能力与 Lean 4 的形式化验证能力，提供了一种高效、自动化的统计论文证明检查方案。它解决了传统形式化耗时过长和纯 LLM 验证不可靠的问题，能够准确发现证明中的错误并精确定位，同时确保了验证过程的透明性和可复现性，显著提升了统计理论研究的可靠性和可重复性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.35596v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.35596.md)  |
