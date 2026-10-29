@@ -1,42 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-28T07:00:58.941466+00:00",
-  "run_date": "2026-10-27",
+  "generated_at": "2026-10-29T07:23:29.418454+00:00",
+  "run_date": "2026-10-25",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.37434",
-      "date": "2026-10-27",
-      "title": "FeatureArc: Benchmarking Coding Agents on Evolving Features",
+      "id": "arxiv:2610.34535",
+      "date": "2026-10-25",
+      "title": "SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yunlong Wang",
-        "Alyssa Wu",
-        "Cuiyun Gao",
-        "Jia Feng",
-        "Songyuanyi Lu",
-        "Zhichao Hu"
+        "Md Abu Yusuf",
+        "Oyshi Tabassum Aditi",
+        "Md Faysal Hosain Mazed"
       ],
-      "institution": "Tencent, The Chinese University of Hong Kong",
+      "institution": "Maharishi International University, Daffodil International University, University of the Cumberlands",
       "summary": {
-        "zh": "FeatureArc 填补了编码智能体在演进式功能开发评估上的空白。通过构建具有强依赖性的多阶段任务和 L4 级自主评估环境，文章揭示了当前智能体在处理长期依赖和自我纠错方面的严重不足，特别是“继承缺陷”导致的成功率断崖式下跌。该研究为提升智能体在复杂、连续软件开发任务中的可靠性提供了重要的基准和洞察。",
-        "en": "- **Background**: Software features evolve over time as developers extend existing code to meet new requirements. Current coding agent benchmarks (e.g., SWE-bench) primarily evaluate the ability to resolve single..."
+        "zh": "SentryBench 填补了公共安全领域 LLM 代理安全评估的空白，指出了传统“拒绝即安全”假设在该高风险领域的失效。通过引入成本敏感的不对称危害评估框架，文章证明了简单的谨慎策略会导致灾难性的过度拒绝，而提出的目标信任门控方法能在不牺牲真实紧急情况响应的前提下有效抵御对抗性攻击。该研究强调了在关键任务部署中，必须联合优化攻击防御与可用性，并透明化平台级过滤器的影响。",
+        "en": "SentryBench fills a critical gap in LLM agent safety evaluation for public safety, highlighting the failure of the traditional \"refusal equals safety\" assumption in high-stakes environments. By introducing a..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.37434v1",
-        "pdf": "https://arxiv.org/pdf/2610.37434v1",
+        "abs": "http://arxiv.org/abs/2610.34535v1",
+        "pdf": "https://arxiv.org/pdf/2610.34535v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.37434.md",
-        "summary_en_path": "summary_en/2026-10/2610.37434.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37434.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37434.md"
+        "summary_zh_path": "summary/2026-10/2610.34535.md",
+        "summary_en_path": "summary_en/2026-10/2610.34535.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34535.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34535.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,41 +50,36 @@
       }
     },
     {
-      "id": "arxiv:2610.37276",
-      "date": "2026-10-27",
-      "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?",
+      "id": "arxiv:2610.34425",
+      "date": "2026-10-25",
+      "title": "CTXAgent - Self-Controlled Context Management of LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sichun Luo",
-        "Yi Huang",
-        "Mukai Li",
-        "Haochen Luo",
-        "Guanzhi Deng",
-        "Haibo Wang",
-        "Jian Xu",
-        "Zefa Hu",
-        "Junlan Feng",
-        "Qi Liu"
+        "Matthias Busch",
+        "Marius Tacke",
+        "Roland C. Aydin",
+        "Christian Feiler",
+        "Christian J. Cyron"
       ],
-      "institution": "The University of Hong Kong",
+      "institution": "Institute for Artificial Intelligence and Simulation in Mechanics, Hamburg University of Technology",
       "summary": {
-        "zh": "本文深入研究了 LLM 驱动代理脚手架进化中的评估预算分配问题，指出搜索引导与最终选择对评估的不同需求。提出的 EvalAlloc 框架通过“稀疏搜索反馈 + 针对性最终确认”的策略，有效解决了成本与性能的权衡问题。实验证明，该方法能在大幅减少评估开销的同时，提升最终代理脚手架的性能，为自动化 Agent 优化提供了高效的评估范式。",
-        "en": "- **Background**: LLM-driven agent scaffold evolution improves agent workflows through iterative candidate generation and evaluation. Evaluation serves two distinct roles: guiding subsequent search and determining the..."
+        "zh": "CTXAgent 证明了前沿 LLM 具备在无复杂脚手架情况下自主管理上下文的能力。通过让模型决定压缩时机和内容，该方法在保持任务成功率的同时显著降低了 token 成本，特别是对于 Claude Opus 5.5 等高级模型，成本降低可达 34%-49%。该研究发布了 Agent、基准测试及所有结果数据，为未来高效 Agent 系统设计提供了新方向。",
+        "en": "- **Background**: In long-session LLM Agent applications, the dominant cost is re-sending prefix tokens, and the main risk is context window overflow or key information being buried. Existing production frameworks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.37276v1",
-        "pdf": "https://arxiv.org/pdf/2610.37276v1",
+        "abs": "http://arxiv.org/abs/2610.34425v1",
+        "pdf": "https://arxiv.org/pdf/2610.34425v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.37276.md",
-        "summary_en_path": "summary_en/2026-10/2610.37276.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37276.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37276.md"
+        "summary_zh_path": "summary/2026-10/2610.34425.md",
+        "summary_en_path": "summary_en/2026-10/2610.34425.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34425.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34425.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -104,33 +96,37 @@
       }
     },
     {
-      "id": "arxiv:2610.37319",
-      "date": "2026-10-27",
-      "title": "AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents",
+      "id": "arxiv:2610.34491",
+      "date": "2026-10-25",
+      "title": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yichen Long",
-        "Keren Zhu"
+        "Kaiser Sun",
+        "Yongchan Kwon",
+        "Zain Hasan",
+        "Shang Zhu",
+        "Kaitlyn Zhou",
+        "Federico Bianchi"
       ],
-      "institution": "Fudan University",
+      "institution": "Johns Hopkins University, Together AI, Cornell University",
       "summary": {
-        "zh": "AnalogScout通过结合精英设计复用、解析式的gm/Id局部尺寸调整和全角点验证下的全局细化，有效解决了模拟电路尺寸调整中仿真成本高企的问题。该方法显著提高了仿真效率，在有限的仿真预算下实现了比传统优化算法和现有LLM方法更优的低功耗设计结果，为模拟设计自动化提供了一种高效的新范式。",
-        "en": "- **Background**: Analog device sizing must satisfy all specifications across process, voltage, and temperature (PVT) corners to ensure tape-out success. However, simulating every candidate at all corners dominates the..."
+        "zh": "本文揭示了LLM推理努力程度作为一种“信任品”的经济特性，指出盲目追求高计算量不仅成本高昂，还可能损害简单任务的性能。通过实证分析，作者证明了高努力程度会改变代理的行为模式（如过度验证）。最终，文章提出了一种基于验证失败的动态升级策略，为用户在不确定任务难度时提供了更具成本效益的推理配置方案。",
+        "en": "- **Background**: As Large Language Models (LLMs) are deployed in long-horizon agentic tasks, inference cost has become a central concern. Many reasoning models now expose a \"reasoning effort\" parameter, allowing users..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.37319v1",
-        "pdf": "https://arxiv.org/pdf/2610.37319v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.34491v1",
+        "pdf": "https://arxiv.org/pdf/2610.34491v1",
+        "github": "https://github.com/KaiserWhoLearns/ReasoningEffortLLM"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.37319.md",
-        "summary_en_path": "summary_en/2026-10/2610.37319.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37319.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37319.md"
+        "summary_zh_path": "summary/2026-10/2610.34491.md",
+        "summary_en_path": "summary_en/2026-10/2610.34491.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34491.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34491.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -147,37 +143,40 @@
       }
     },
     {
-      "id": "arxiv:2610.37405",
-      "date": "2026-10-27",
-      "title": "Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers",
+      "id": "arxiv:2610.34386",
+      "date": "2026-10-25",
+      "title": "ParetoRSI-Gym: Can AI Agents Improve Language Models Across Multiple Domains?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zongyuan Sun",
-        "Shuai Zhao",
-        "Yingjun Du",
-        "Ke Shu",
-        "Ziyue Zhu",
-        "Haoran Luo"
+        "Haojin Wang",
+        "Yangzhen Wu",
+        "Zeyi Chen",
+        "Jian Xie",
+        "Jiaying Ye",
+        "Lili Meng",
+        "Shuyun Tang",
+        "Shangding Gu",
+        "Dawn Song"
       ],
-      "institution": "Beijing University of Posts and Telecommunications",
+      "institution": "University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "本文针对LLM在事实问答中“有答案无证据”的问题，提出了FoG框架。通过构造带有天然证据链的合成数据以及设计激励证据检索的过程奖励机制，FoG成功训练了小参数量的KG代理同时实现高精度答案生成和高覆盖率证据检索。该方法有效清除了推理过程中的“迷雾”，提升了KG增强型LLM的可信度和可解释性，并在多个基准测试中超越了更大规模的模型。",
-        "en": "- **Background**: Large Language Models (LLMs) often answer factual questions correctly but lack traceable evidence. In high-stakes domains like healthcare and law, users require verifiable evidence to trust the output."
+        "zh": "ParetoRSI-Gym填补了递归自我改进系统在多领域真实场景下评估的空白。通过固定除数据外的所有变量，该框架有效地隔离并量化了智能体在数据策展方面的贡献。实验结果证明，先进的智能体系统能够显著提升多领域通用化性能，同时揭示了不同智能体策略的差异性。这项工作标志着向评估现实世界中复杂RSI系统迈出了重要一步，强调了在多目标优化背景下评估AI自我改进能力的重要性。",
+        "en": "- **Background**: Recursive Self-Improvement (RSI) requires agentic systems to design, train, and evaluate their successors. Data-driven post-training is a central component of this loop, aiming to enhance model..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.37405v1",
-        "pdf": "https://arxiv.org/pdf/2610.37405v1",
+        "abs": "http://arxiv.org/abs/2610.34386v1",
+        "pdf": "https://arxiv.org/pdf/2610.34386v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.37405.md",
-        "summary_en_path": "summary_en/2026-10/2610.37405.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37405.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37405.md"
+        "summary_zh_path": "summary/2026-10/2610.34386.md",
+        "summary_en_path": "summary_en/2026-10/2610.34386.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34386.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34386.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -194,40 +193,34 @@
       }
     },
     {
-      "id": "arxiv:2610.37166",
-      "date": "2026-10-27",
-      "title": "LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents",
+      "id": "arxiv:2610.34422",
+      "date": "2026-10-25",
+      "title": "From GPU to TPU with Coding Agents: What Works, What Fails, and What It Costs?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sinuo Wang",
-        "Wentao Zhao",
-        "Jiacheng Lu",
-        "Rui Sun",
-        "Beidi Luan",
-        "Qiming Shi",
-        "Jing Li",
-        "Daxin Jiang",
-        "Zuo Bai"
+        "Hui Sun",
+        "Anderson Uchôa",
+        "Wesley K. G. Assunção"
       ],
-      "institution": "StepFun, Tsinghua University, FinStep, Adelaide University, Shanghai Jiao Tong University, Zhejiang University",
+      "institution": "North Carolina State University; Federal University of Ceará",
       "summary": {
-        "zh": "LiveSearch 通过引入“问题即代码”的创新范式，成功构建了一个能够实时反映金融市场变化的动态基准测试。它不仅解决了传统金融基准中答案过时、构建成本高和脱离专业实践的问题，还通过自动化流程实现了可持续的评估体系。实验表明，现有模型在处理实时金融信息时仍面临巨大挑战，LiveSearch 为评估和提升金融智能体的实时检索与分析能力提供了重要工具。",
-        "en": "- **Background**: In finance, answers are highly time-sensitive (e.g., stock prices, interest rates), making the retrieval of up-to-date facts a core capability for financial agents. However, most existing financial..."
+        "zh": "本文通过实证研究指出，虽然编码智能体能辅助 GPU 到 TPU 的迁移，但存在较高的静默失败风险和显著的人工干预需求。迁移不仅涉及代码转换，更关乎数值行为的保持和成本效益的平衡。建议实践者采用独立的参考运行、在目标硬件配置下进行验证，并制定涵盖计算和人力成本的特定工作负载验收及停止标准，以确保迁移的可信度和经济性。",
+        "en": "- **Background**: Rising compute costs, limited accelerator capacity, and vendor dependence are driving organizations to migrate machine learning workloads from GPUs to alternatives like TPUs. Coding agents are expected..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.37166v1",
-        "pdf": "https://arxiv.org/pdf/2610.37166v1",
+        "abs": "http://arxiv.org/abs/2610.34422v1",
+        "pdf": "https://arxiv.org/pdf/2610.34422v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.37166.md",
-        "summary_en_path": "summary_en/2026-10/2610.37166.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.37166.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.37166.md"
+        "summary_zh_path": "summary/2026-10/2610.34422.md",
+        "summary_en_path": "summary_en/2026-10/2610.34422.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34422.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34422.md"
       },
       "signals": {
         "priority_keyword": "Agent"
