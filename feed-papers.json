@@ -1,182 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-29T07:23:29.418454+00:00",
-  "run_date": "2026-10-25",
+  "generated_at": "2026-10-29T11:41:34.771638+00:00",
+  "run_date": "2026-10-24",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.34535",
-      "date": "2026-10-25",
-      "title": "SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments",
+      "id": "arxiv:2610.33509",
+      "date": "2026-10-24",
+      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Md Abu Yusuf",
-        "Oyshi Tabassum Aditi",
-        "Md Faysal Hosain Mazed"
-      ],
-      "institution": "Maharishi International University, Daffodil International University, University of the Cumberlands",
-      "summary": {
-        "zh": "SentryBench 填补了公共安全领域 LLM 代理安全评估的空白，指出了传统“拒绝即安全”假设在该高风险领域的失效。通过引入成本敏感的不对称危害评估框架，文章证明了简单的谨慎策略会导致灾难性的过度拒绝，而提出的目标信任门控方法能在不牺牲真实紧急情况响应的前提下有效抵御对抗性攻击。该研究强调了在关键任务部署中，必须联合优化攻击防御与可用性，并透明化平台级过滤器的影响。",
-        "en": "SentryBench fills a critical gap in LLM agent safety evaluation for public safety, highlighting the failure of the traditional \"refusal equals safety\" assumption in high-stakes environments. By introducing a..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34535v1",
-        "pdf": "https://arxiv.org/pdf/2610.34535v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.34535.md",
-        "summary_en_path": "summary_en/2026-10/2610.34535.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34535.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34535.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.34425",
-      "date": "2026-10-25",
-      "title": "CTXAgent - Self-Controlled Context Management of LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Matthias Busch",
-        "Marius Tacke",
-        "Roland C. Aydin",
-        "Christian Feiler",
-        "Christian J. Cyron"
-      ],
-      "institution": "Institute for Artificial Intelligence and Simulation in Mechanics, Hamburg University of Technology",
-      "summary": {
-        "zh": "CTXAgent 证明了前沿 LLM 具备在无复杂脚手架情况下自主管理上下文的能力。通过让模型决定压缩时机和内容，该方法在保持任务成功率的同时显著降低了 token 成本，特别是对于 Claude Opus 5.5 等高级模型，成本降低可达 34%-49%。该研究发布了 Agent、基准测试及所有结果数据，为未来高效 Agent 系统设计提供了新方向。",
-        "en": "- **Background**: In long-session LLM Agent applications, the dominant cost is re-sending prefix tokens, and the main risk is context window overflow or key information being buried. Existing production frameworks..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34425v1",
-        "pdf": "https://arxiv.org/pdf/2610.34425v1",
-        "github": null
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.34425.md",
-        "summary_en_path": "summary_en/2026-10/2610.34425.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34425.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34425.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.34491",
-      "date": "2026-10-25",
-      "title": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Kaiser Sun",
-        "Yongchan Kwon",
-        "Zain Hasan",
-        "Shang Zhu",
-        "Kaitlyn Zhou",
-        "Federico Bianchi"
-      ],
-      "institution": "Johns Hopkins University, Together AI, Cornell University",
-      "summary": {
-        "zh": "本文揭示了LLM推理努力程度作为一种“信任品”的经济特性，指出盲目追求高计算量不仅成本高昂，还可能损害简单任务的性能。通过实证分析，作者证明了高努力程度会改变代理的行为模式（如过度验证）。最终，文章提出了一种基于验证失败的动态升级策略，为用户在不确定任务难度时提供了更具成本效益的推理配置方案。",
-        "en": "- **Background**: As Large Language Models (LLMs) are deployed in long-horizon agentic tasks, inference cost has become a central concern. Many reasoning models now expose a \"reasoning effort\" parameter, allowing users..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34491v1",
-        "pdf": "https://arxiv.org/pdf/2610.34491v1",
-        "github": "https://github.com/KaiserWhoLearns/ReasoningEffortLLM"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.34491.md",
-        "summary_en_path": "summary_en/2026-10/2610.34491.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34491.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34491.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.34386",
-      "date": "2026-10-25",
-      "title": "ParetoRSI-Gym: Can AI Agents Improve Language Models Across Multiple Domains?",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Haojin Wang",
-        "Yangzhen Wu",
-        "Zeyi Chen",
-        "Jian Xie",
-        "Jiaying Ye",
-        "Lili Meng",
-        "Shuyun Tang",
-        "Shangding Gu",
-        "Dawn Song"
+        "Yihan Yang",
+        "Chenyuan Yang",
+        "Zijie Zhao",
+        "Anh Nguyen Hoang",
+        "Ziqi Zhang",
+        "Weidong Wang",
+        "Zhiheng Lyu",
+        "Lingming Zhang"
       ],
       "institution": "University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "ParetoRSI-Gym填补了递归自我改进系统在多领域真实场景下评估的空白。通过固定除数据外的所有变量，该框架有效地隔离并量化了智能体在数据策展方面的贡献。实验结果证明，先进的智能体系统能够显著提升多领域通用化性能，同时揭示了不同智能体策略的差异性。这项工作标志着向评估现实世界中复杂RSI系统迈出了重要一步，强调了在多目标优化背景下评估AI自我改进能力的重要性。",
-        "en": "- **Background**: Recursive Self-Improvement (RSI) requires agentic systems to design, train, and evaluate their successors. Data-driven post-training is a central component of this loop, aiming to enhance model..."
+        "zh": "本文介绍了 SecPRBench，填补了代理式安全代码审查在真实漏洞引入场景评估上的空白。通过自动化管道收集真实世界的漏洞提交并利用 LLM 作为裁判进行细粒度诊断评估，研究揭示了当前顶尖模型在安全审查中仍存在显著的诊断偏差，且不同的安全优化策略对召回率有截然不同的影响。该基准为未来提升 LLM 安全审查能力提供了重要的评估基础和方向。",
+        "en": "- **Background**: LLM agents are increasingly adopted for security-focused code review to catch vulnerabilities before merging. However, existing benchmarks mostly derive reviewed changes from later fixes rather than..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.34386v1",
-        "pdf": "https://arxiv.org/pdf/2610.34386v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.33509v1",
+        "pdf": "https://arxiv.org/pdf/2610.33509v1",
+        "github": "https://github.com/yijan4845/secprbench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.34386.md",
-        "summary_en_path": "summary_en/2026-10/2610.34386.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34386.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34386.md"
+        "summary_zh_path": "summary/2026-10/2610.33509.md",
+        "summary_en_path": "summary_en/2026-10/2610.33509.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33509.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33509.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -193,34 +55,174 @@
       }
     },
     {
-      "id": "arxiv:2610.34422",
-      "date": "2026-10-25",
-      "title": "From GPU to TPU with Coding Agents: What Works, What Fails, and What It Costs?",
+      "id": "arxiv:2610.33845",
+      "date": "2026-10-24",
+      "title": "Build, Don't Play: Self-Improving LLM Research Agents Develop a Hearthstone Battlegrounds AI That Rivals Top Players",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hui Sun",
-        "Anderson Uchôa",
-        "Wesley K. G. Assunção"
+        "Changlian Ma",
+        "Limin Wang"
       ],
-      "institution": "North Carolina State University; Federal University of Ceará",
+      "institution": "Nanjing University, Shanghai AI Laboratory",
       "summary": {
-        "zh": "本文通过实证研究指出，虽然编码智能体能辅助 GPU 到 TPU 的迁移，但存在较高的静默失败风险和显著的人工干预需求。迁移不仅涉及代码转换，更关乎数值行为的保持和成本效益的平衡。建议实践者采用独立的参考运行、在目标硬件配置下进行验证，并制定涵盖计算和人力成本的特定工作负载验收及停止标准，以确保迁移的可信度和经济性。",
-        "en": "- **Background**: Rising compute costs, limited accelerator capacity, and vendor dependence are driving organizations to migrate machine learning workloads from GPUs to alternatives like TPUs. Coding agents are expected..."
+        "zh": "本文证明了LLM Agent具备从原始数据出发，独立构建复杂现实世界系统并达到超越人类顶尖水平的能力。通过AutoTavern系统，研究者成功开发了《炉石传说：酒馆战棋》的高保真模拟器和超强AI代理TavernAgent。核心结论是“LLM Agent更擅长构建系统而非直接参与游戏”，即Agent作为研究者构建出的专用AI系统在性能和效率上均远超直接使用通用LLM进行游戏决策。相关代码和基准测试已开源。",
+        "en": "- **Background**: Games have long served as AI milestones (e.g., Go, StarCraft), traditionally built by large teams of human experts. With LLM agents now capable of writing code, research is shifting towards whether..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.34422v1",
-        "pdf": "https://arxiv.org/pdf/2610.34422v1",
+        "abs": "http://arxiv.org/abs/2610.33845v1",
+        "pdf": "https://arxiv.org/pdf/2610.33845v1",
+        "github": "https://github.com/MCG-NJU/AutoTavern"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.33845.md",
+        "summary_en_path": "summary_en/2026-10/2610.33845.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33845.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33845.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.33876",
+      "date": "2026-10-24",
+      "title": "FlashScript: Compiling Recurring Agent Workflows into Reusable Neuro-Symbolic Programs",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Sadra Sabouri",
+        "Hosein Hasanbeig",
+        "Adam Sage",
+        "Shreya Sinha",
+        "Cale Darling",
+        "Ashish Tiwari",
+        "Katie Garms",
+        "Souti Chattopadhyay",
+        "Sumit Gulwani"
+      ],
+      "institution": "University of Southern California, Microsoft",
+      "summary": {
+        "zh": "FlashScript 通过将代理的成功运行轨迹编译为神经符号程序，解决了代理工作流中重复执行成本高、结果不一致的问题。它将确定性逻辑代码化，仅保留必要的 LLM 调用并使其局部化，从而显著降低了 Token 消耗和延迟，同时提高了运行的可靠性和可测试性。这项工作表明，从代理轨迹生成的 NSP 可以作为终端用户的累积软件资产，用于测试、维护和复用 recurring workflows。",
+        "en": "- **Background**: AI agents are increasingly used for recurring tasks (e.g., weekly report updates). However, current agents regenerate their reasoning and action paths on every run, leading to inconsistent results even..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33876v1",
+        "pdf": "https://arxiv.org/pdf/2610.33876v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.34422.md",
-        "summary_en_path": "summary_en/2026-10/2610.34422.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.34422.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.34422.md"
+        "summary_zh_path": "summary/2026-10/2610.33876.md",
+        "summary_en_path": "summary_en/2026-10/2610.33876.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33876.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33876.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.33605",
+      "date": "2026-10-24",
+      "title": "Data Governance for Generative and Agentic AI : Technology, Law, Economics, and Security",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Narayana Darapaneni",
+        "Padmaja K",
+        "Gnana Chaithra D"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "本书构建了面向生成式和代理式 AI 的统一治理框架，解决了传统静态数据治理在动态、自主 AI 系统中的局限性。通过整合技术（零信任、血缘追踪）、法律（全球数据保护与知识产权）和经济学（责任与激励）视角，提出了涵盖数据质量、伦理、安全及监管合规的全生命周期治理方案。其核心贡献在于定义了动态信息状态的治理范式，并设计了面向未来的治理控制平面，为政策制定者和技术开发者提供了跨司法辖区的实践指南。",
+        "en": "- **Background**: As AI evolves from static data processing to Generative and Agentic AI, systems now retrieve, generate, infer, remember, and act autonomously. Traditional data governance models, focused on access..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33605v1",
+        "pdf": "https://arxiv.org/pdf/2610.33605v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.33605.md",
+        "summary_en_path": "summary_en/2026-10/2610.33605.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33605.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33605.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.33539",
+      "date": "2026-10-24",
+      "title": "CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xufei Shi",
+        "Derong Xu",
+        "Wei Chen",
+        "Yanyu Yao",
+        "Zhi Zheng",
+        "Tong Xu"
+      ],
+      "institution": "University of Science and Technology of China",
+      "summary": {
+        "zh": "CoEvolve 解决了多智能体系统中记忆与协作独立进化导致的不对齐问题。通过引入“技能”作为连接桥梁，并利用反事实分析引导进化方向，该框架实现了记忆与协作结构的协同优化，显著提升了系统在动态环境中的适应能力和任务执行效率。",
+        "en": "- **Background**: LLM-based multi-agent systems (MAS) show strong capabilities but often suffer from static memory and collaboration architectures post-deployment, limiting long-term adaptation. - **Why Existing Work..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33539v1",
+        "pdf": "https://arxiv.org/pdf/2610.33539v1",
+        "github": "https://github.com/MINE-USTC/CoEvolve"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.33539.md",
+        "summary_en_path": "summary_en/2026-10/2610.33539.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33539.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33539.md"
       },
       "signals": {
         "priority_keyword": "Agent"

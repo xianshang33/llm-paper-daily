@@ -1,182 +1,29 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-10-29T07:23:29.418454+00:00",
-  "run_date": "2026-10-25",
+  "generated_at": "2026-10-29T11:41:34.771638+00:00",
+  "run_date": "2026-10-24",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2610.34535",
-      "date": "2026-10-25",
-      "title": "SentryBench: A Cost-Sensitive Benchmark for Adversarial Robustness of Tool-Using LLM Agents in Public-Safety Deployments",
+      "paper_id": "2610.33509",
+      "date": "2026-10-24",
+      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?",
       "authors": [
-        "Md Abu Yusuf",
-        "Oyshi Tabassum Aditi",
-        "Md Faysal Hosain Mazed"
+        "Yihan Yang",
+        "Chenyuan Yang",
+        "Zijie Zhao",
+        "Anh Nguyen Hoang",
+        "Ziqi Zhang",
+        "Weidong Wang",
+        "Zhiheng Lyu",
+        "Lingming Zhang"
       ],
-      "abstract": "Large language model (LLM) agents are increasingly wired to consequential tools that send public alerts, dispatch responders, and query citizen records, where one erroneous tool call carries real-world cost. Existing agent-safety benchmarks measure generic harm or prompt-injection success and implicitly treat refusing as the safe default. In public-safety deployments that assumption breaks: an agent too cautious to dispatch help fails as surely as one that triggers a false alert. We present SentryBench, which scores agents on a two-sided, cost-sensitive frontier jointly measuring attack success, over-refusal (missing a real emergency), and over-reaction (unwarranted action) under adversarial tool use, with scenarios grounded in real emergency-call transcripts, disaster messages, and real injection/jailbreak payloads. We formalize deployment harm as an asymmetric cost functional, prove naive caution is harm-dominated whenever it refuses more genuine emergencies than the attack harm it averts, and prove a targeted trust gate adds zero over-refusal on clean input. Across 840 scored episodes over three frontier models and three defenses, refuse-more caution drives over-refusal to 100 percent on two of three models for at most a 3.7-point change in attack success and yields the worst harm everywhere, whereas our trust-gating wrapper dominates the frontier (lowest harm on every model, over-refusal at or below baseline, higher containment). Provider content filters also silently perform part of the defending and must be reported separately.",
+      "abstract": "LLM agents have been increasingly adopted for security-focused code review, but existing benchmarks mostly derive the reviewed changes from their later fixes instead of the real-world bug-introducing commits. In this paper, we present SecPRBench, the first comprehensive benchmark for evaluating agentic security review on validated real-world code changes. More specifically, we have built an automated agentic pipeline to autonomously harvest, build, and validate massive real-world bug-introducing commits for popular software systems. To ensure precise evaluation, we also adopt LLM-as-a-judge to credit the findings matching ground-truth vulnerabilities. To date, we have collected 265 tasks from nine critical systems, including Firefox, V8, and OpenSSL with millions of lines of code. Across eight frontier models, recall ranges from 32.5% to 78.1%, with Grok 4.6 and GPT-6 sol ranking at the top. Our study also shows that most misses are not simply oversights: in 68% of them, the agent reports on a file that holds the flaw but argues for a different mechanism. Security-focused harnesses also behave differently: OpenAI's Codex Security lowers recall by 8.3 points, mostly by abstaining, while Anthropic's Defending Code harness raises it by 7.7 points, at a higher cost.",
       "links": {
-        "abs": "http://arxiv.org/abs/2610.34535v1",
-        "pdf": "https://arxiv.org/pdf/2610.34535v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "Maharishi International University, Daffodil International University, University of the Cumberlands",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理正逐渐接入具有实际后果的工具（如发送公共警报、调度救援人员、查询公民记录），在公共安全部署中，一次错误的工具调用会带来真实的现实成本。\n- **已有工作为什么解决不了**：现有的代理安全基准测试主要衡量通用危害或提示注入成功率，并隐含地将“拒绝响应”视为安全默认值。然而在公共安全场景中，这种假设失效：过于谨慎而拒绝派遣帮助的代理，与触发虚假警报的代理一样失败。现有基准缺乏对“过度拒绝”（漏报真实紧急情况）和“过度反应”（误报或不必要行动）的双向联合评估。\n\n## 文章的核心贡献点\n- **提出了一个 SentryBench**：这是一个针对公共安全部署中工具使用 LLM 代理对抗鲁棒性的成本敏感型基准测试框架，基于真实的紧急呼叫转录、灾难消息和注入/越狱payload构建。\n- **挑战1：双向风险与不对称成本的量化难题**。难点在于传统安全评估只关注防止有害输出（单向），忽略了在公共安全中“不作为”（过度拒绝）同样具有高昂甚至致命的成本，且两种错误的代价不对称。论文通过将部署危害形式化为不对称成本函数，并引入双向良性控制臂（紧急 vs 模糊场景），同时测量攻击成功率、过度拒绝率和过度反应率，从而解决了这一评估盲区。\n- **挑战2：防御措施导致的过度拒绝权衡**。难点在于传统的“更加谨慎”防御策略虽然能略微降低攻击成功率，但会导致极高的过度拒绝率（即漏掉真实求助）。论文证明 naive caution（天真谨慎）在危害上是占劣的，并提出了一种“目标信任门控”（targeted trust gate）包装器，理论上证明其在干净输入上增加零过度拒绝，实验显示其在所有模型上实现了最低危害和更高的攻击 containment，主导了帕累托前沿。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：SentryBench 包含 840 个评分episode，覆盖三个前沿模型和三种防御机制。场景 grounded 于四个子领域、五种攻击向量（注入、投毒、目标劫持、过度信任、权限升级）和三类结果。此外，研究还单独报告了提供商内容过滤器的静默防御效果。\n- **Evaluation 结果**：\n    - **基线对比**：采用“更多拒绝”策略导致两个模型在至少 100% 的情况下出现过度拒绝，而攻击成功率仅变化最多 3.7 个百分点，总体危害最大。\n    - ** proposed 方法表现**：提出的信任门控包装器在所有模型上均实现了最低的危害值，过度拒绝率等于或低于基线，同时具有更高的攻击遏制能力，在帕累托前沿上占据主导地位。\n    - **平台效应**：发现提供商的内容过滤器在暗中执行部分防御工作，必须在评估中单独报告以避免混淆模型比较。\n\n#### 总结\nSentryBench 填补了公共安全领域 LLM 代理安全评估的空白，指出了传统“拒绝即安全”假设在该高风险领域的失效。通过引入成本敏感的不对称危害评估框架，文章证明了简单的谨慎策略会导致灾难性的过度拒绝，而提出的目标信任门控方法能在不牺牲真实紧急情况响应的前提下有效抵御对抗性攻击。该研究强调了在关键任务部署中，必须联合优化攻击防御与可用性，并透明化平台级过滤器的影响。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large language model (LLM) agents are increasingly integrated into operational loops with physical consequences, such as sending public alerts, dispatching responders, and querying citizen records. In public-safety deployments, a single erroneous tool call incurs real-world costs.\n- **Why Existing Work Fails**: Current agent-safety benchmarks measure generic harm or prompt-injection success and implicitly treat \"refusal\" as the safe default. This assumption breaks in public safety: an agent that is too cautious to dispatch help fails just as critically as one that triggers a false alert. Existing benchmarks lack a bidirectional evaluation that jointly assesses \"over-refusal\" (missing real emergencies) and \"over-reaction\" (unwarranted actions).\n\n## Core Contributions\n- **Proposed SentryBench**: A cost-sensitive benchmark for evaluating the adversarial robustness of tool-using LLM agents in public-safety deployments, grounded in real emergency call transcripts, disaster messages, and injection/jailbreak payloads.\n- **Challenge 1: Quantifying Bidirectional Risks and Asymmetric Costs**. The difficulty lies in traditional safety evaluations focusing only on preventing harmful outputs (unidirectional), ignoring that \"inaction\" (over-refusal) in public safety has high, potentially lethal costs, with asymmetric penalties for different error types. The paper addresses this by formalizing deployment harm as an asymmetric cost functional and introducing a two-sided benign control arm (urgent vs. ambiguous scenarios) to simultaneously measure attack success, over-refusal, and over-reaction.\n- **Challenge 2: The Over-Refusal Trade-off in Defense**. The challenge is that traditional \"caution-first\" defenses slightly reduce attack success but cause extremely high over-refusal rates (missing genuine help requests). The paper proves that naive caution is harm-dominated and proposes a \"targeted trust gate\" wrapper. It theoretically proves this gate adds zero over-refusal on clean inputs and experimentally demonstrates it dominates the Pareto frontier with the lowest harm across all models.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: SentryBench comprises 840 scored episodes across three frontier models and three defense mechanisms. It covers four sub-domains, five attack vectors (injection, poisoning, goal-hijack, over-trust, privilege escalation), and three outcome classes. Provider content filter effects are reported separately.\n- **Evaluation Results**:\n    - **Baseline Comparison**: The \"refuse-more\" strategy drove over-refusal to 100% for two out of three models, with at most a 3.7-point change in attack success, resulting in the worst overall harm.\n    - **Proposed Method Performance**: The proposed trust-gating wrapper achieved the lowest harm on every model, with over-refusal at or below baseline levels and higher attack containment, thus dominating the performance frontier.\n    - **Platform Effects**: Provider content filters were found to silently perform part of the defense, necessitating separate reporting to avoid confounding model comparisons.\n\n#### Summary\nSentryBench fills a critical gap in LLM agent safety evaluation for public safety, highlighting the failure of the traditional \"refusal equals safety\" assumption in high-stakes environments. By introducing a cost-sensitive, asymmetric harm evaluation framework, the study demonstrates that simple caution strategies lead to catastrophic over-refusal. The proposed target trust gating method effectively mitigates adversarial attacks without sacrificing responsiveness to genuine emergencies. The research underscores the need to jointly optimize attack defense and usability in critical deployments and to transparently account for platform-level filtering effects.",
-      "render_excerpt": "机构: Maharishi International University, Daffodil International University, University of the Cumberlands<br>SentryBench 填补了公共安全领域 LLM 代理安全评估的空白，指出了传统“拒绝即安全”假设在该高风险领域的失效。通过引入成本敏感的不对称危害评估框架，文章证明了简单的谨慎策略会导致灾难性的过度拒绝，而提出的目标信任门控方法能在不牺牲真实紧急情况响应的前提下有效抵御对抗性攻击。该研究强调了在关键任务部署中，必须联合优化攻击防御与可用性，并透明化平台级过滤器的影响。",
-      "render_excerpt_en": "Institution: Maharishi International University, Daffodil International University, University of the Cumberlands<br>SentryBench fills a critical gap in LLM agent safety evaluation for public safety, highlighting the failure of the traditional \"refusal equals safety\" assumption in high-stakes environments. By introducing a cost-sensitive, asymmetric harm evaluation framework, the study demonstrates that simple caution strategies lead to catastrophic over-refusal. The proposed target trust gating method effectively mitigates adversarial attacks without sacrificing responsiveness to genuine emergencies.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-10-25T19:49:40Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-10-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2610.34425",
-      "date": "2026-10-25",
-      "title": "CTXAgent - Self-Controlled Context Management of LLM Agents",
-      "authors": [
-        "Matthias Busch",
-        "Marius Tacke",
-        "Roland C. Aydin",
-        "Christian Feiler",
-        "Christian J. Cyron"
-      ],
-      "abstract": "Agent harnesses keep long sessions inside the context window by compacting the history when a token threshold is crossed. We study an alternative in which the model manages its own context: it decides when to compact, what to keep and what to write as the hand-off, given two tools and one paragraph of guidance. Since earlier work found that open-weight models cannot manage their own context without scaffolding, we compare seven frontier models under identical conditions, with and without the context tools, on token cost and benchmark score, and we compare our harness with three widely used harnesses on two of these models. The benchmark is assembled from existing ones: coding exercises, multi-step SciCode problems and SWE-bench Pro and Terminal-Bench 4.0 tasks are interleaved with planted facts, ephemeral observations and standing instructions, all checked deterministically, in sessions of 35-212 turns that resemble a user working through different tasks in one chat. Most of the strongest models manage their context: they compact and curate regularly, the live context of the mixed sessions stays mostly below 100k tokens, and their benchmark scores mostly do not drop significantly. For the models that manage their context well, the cost reduction is substantial but varies between models, because some models compact so often that other costs increase. With Claude Opus 5.5, the self-managed harness matches Claude Code on task success at 34% lower cost than its explicit 200k-window configuration and 49% lower than its default, with no context window to choose. We release the agent, the benchmark and all result rows.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34425v1",
-        "pdf": "https://arxiv.org/pdf/2610.34425v1",
-        "github": null,
-        "blog": null
-      },
-      "institution": "Institute for Artificial Intelligence and Simulation in Mechanics, Hamburg University of Technology",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：在长会话的 LLM Agent 应用中，主要成本在于每次请求重新发送的前缀 tokens，主要风险在于上下文窗口溢出或关键信息被无关 tokens 淹没。现有的生产级 Agent 框架（如 Claude Code, Codex）通常采用基于固定 token 阈值的硬性压缩策略，由操作员统一配置窗口大小，模型本身不参与决策。\n- **已有工作为什么解决不了**：早期研究表明，开源模型在没有额外脚手架（如固定间隔的检查规则、准入网关和强制回退机制）的情况下，无法有效管理自身上下文，因为它们无法识别上下文何时退化。然而，这些研究未验证当前最强的前沿闭源模型是否具备这种元认知能力，也未对比模型自主管理与传统阈值管理在成本和性能上的差异。\n\n## 文章的核心贡献点\n- **提出了一个 CTXAgent**：一种让模型自主决定何时压缩上下文、保留什么内容以及如何编写交接摘要的 Agent 框架，仅通过两个工具和一段指导原则实现。\n- **挑战1：模型能否在无复杂脚手架下自主管理上下文？**\n  - **难点**：模型需要准确判断任务状态和上下文相关性，避免过早遗忘或过晚压缩。\n  - **解决方法**：论文测试了七种前沿模型，发现大多数最强模型能够定期压缩和整理上下文，将混合会话的活动上下文保持在 100k tokens 以下，且基准测试分数无显著下降，证明了前沿模型具备足够的元认知能力来自主管理上下文。\n- **挑战2：自主管理相比传统阈值管理有何优势？**\n  - **难点**：需要在降低 token 成本的同时，确保任务成功率不降低，并适应不同任务的动态需求。\n  - **解决方法**：通过构建包含编码练习、多步 SciCode 问题等复杂任务的基准测试，对比发现对于表现良好的模型，自主管理能大幅降低成本。例如，Claude Opus 5.5 在任务成功率匹配 Claude Code 的情况下，成本比其显式 200k 窗口配置低 34%，比默认配置低 49%。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与基准**：构建了由现有基准（编码练习、SciCode、SWE-bench Pro、Terminal-Bench 4.0）组成的混合基准，穿插植入事实、短暂观察和常驻指令，会话长度为 35-212 轮，模拟真实用户多任务场景。所有检查均为确定性。\n- **评估结果**：\n  - **模型能力**：大多数最强模型能有效管理上下文，活动上下文通常低于 100k tokens，性能无明显下降。\n  - **成本效益**：成本降低幅度因模型而异，部分模型因过度压缩导致其他成本增加。Claude Opus 5.5 表现最佳，无需选择上下文窗口即可实现显著成本节约。\n- **对比相关工作**：将 CTXAgent 与三种广泛使用的 Agent 框架在两个模型上进行对比，结果显示自管理框架在保持性能的同时显著降低了成本，优于基于固定阈值的传统方法。\n\n#### 总结\nCTXAgent 证明了前沿 LLM 具备在无复杂脚手架情况下自主管理上下文的能力。通过让模型决定压缩时机和内容，该方法在保持任务成功率的同时显著降低了 token 成本，特别是对于 Claude Opus 5.5 等高级模型，成本降低可达 34%-49%。该研究发布了 Agent、基准测试及所有结果数据，为未来高效 Agent 系统设计提供了新方向。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: In long-session LLM Agent applications, the dominant cost is re-sending prefix tokens, and the main risk is context window overflow or key information being buried. Existing production frameworks (e.g., Claude Code, Codex) use fixed token thresholds for compaction, configured by operators, without model involvement.\n- **Why Previous Work Failed**: Earlier studies found open-weight models could not manage context without scaffolding (e.g., fixed checks, gates). However, these studies did not verify if current frontier closed-source models possess this metacognitive ability, nor did they compare autonomous management with traditional threshold-based methods in terms of cost and performance.\n\n## Core Contributions\n- **Proposed CTXAgent**: A framework where the model autonomously decides when to compact, what to keep, and how to write hand-off summaries, using only two tools and a paragraph of guidance.\n- **Challenge 1: Can models manage context without complex scaffolding?**\n  - **Difficulty**: Models must accurately judge task states and context relevance to avoid premature forgetting or late compaction.\n  - **Solution**: Testing seven frontier models revealed that most strongest models can regularly compact and curate context, keeping active context below 100k tokens with no significant drop in benchmark scores, proving sufficient metacognitive ability.\n- **Challenge 2: What are the advantages of autonomous management over threshold-based management?**\n  - **Difficulty**: Reducing token costs while maintaining task success rates and adapting to dynamic task needs.\n  - **Solution**: Using a mixed benchmark (coding, SciCode, etc.), the study found substantial cost reductions for well-performing models. For instance, Claude Opus 5.5 matched Claude Code's success rate at 34% lower cost than its 200k-window configuration and 49% lower than default, without needing window selection.\n\n## Implementation and Evaluation\n- **Implementation & Benchmark**: A mixed benchmark from existing suites (coding, SciCode, SWE-bench Pro, Terminal-Bench 4.0) with planted facts and ephemeral observations, simulating 35-212 turn sessions. All checks are deterministic.\n- **Evaluation Results**:\n  - **Model Capability**: Most strongest models managed context effectively, keeping active context under 100k tokens with stable performance.\n  - **Cost Efficiency**: Cost reduction varied; some models over-compacted. Claude Opus 5.5 achieved the best results, saving 34-49% in costs while matching performance.\n- **Comparison**: Compared CTXAgent with three widely used frameworks on two models, showing that self-managed frameworks significantly reduce costs while maintaining performance, outperforming fixed-threshold methods.\n\n## 4. Conclusion\nCTXAgent demonstrates that frontier LLMs can autonomously manage context without complex scaffolding. By allowing the model to decide compaction timing and content, the method significantly reduces token costs while maintaining task success rates, particularly for advanced models like Claude Opus 5.5 (34-49% cost reduction). The study releases the agent, benchmark, and results, offering a new direction for efficient Agent system design.",
-      "render_excerpt": "机构: Institute for Artificial Intelligence and Simulation in Mechanics, Hamburg University of Technology<br>CTXAgent 证明了前沿 LLM 具备在无复杂脚手架情况下自主管理上下文的能力。通过让模型决定压缩时机和内容，该方法在保持任务成功率的同时显著降低了 token 成本，特别是对于 Claude Opus 5.5 等高级模型，成本降低可达 34%-49%。该研究发布了 Agent、基准测试及所有结果数据，为未来高效 Agent 系统设计提供了新方向。",
-      "render_excerpt_en": "Institution: Institute for Artificial Intelligence and Simulation in Mechanics, Hamburg University of Technology<br>## 1. What the Paper Did - **Background**: In long-session LLM Agent applications, the dominant cost is re-sending prefix tokens, and the main risk is context window overflow or key information being buried. Existing production frameworks (e.g., Claude Code, Codex) use fixed token thresholds for compaction, configured by operators, without model involvement.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-10-25T16:30:56Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-10-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2610.34491",
-      "date": "2026-10-25",
-      "title": "What Effort Level Should I Choose? On the Economics of Reasoning Effort in LLM Agents",
-      "authors": [
-        "Kaiser Sun",
-        "Yongchan Kwon",
-        "Zain Hasan",
-        "Shang Zhu",
-        "Kaitlyn Zhou",
-        "Federico Bianchi"
-      ],
-      "abstract": "Generative models increasingly expose a reasoning effort setting that lets users scale inference-time compute, trading higher cost for potentially improved performance. Users must choose an effort level before knowing whether extra reasoning will help, and even a successful run does not reveal whether the effort purchased was necessary. Reasoning effort is therefore a credence good: buyers observe the outcome but cannot assess the marginal value of the computation they paid for. In this work, we measure the counterfactual effect of effort levels on both proprietary and open-weight models on four benchmarks, spanning single-call reasoning and long-horizon agentic tasks. Effort, it turns out, does not consistently preserve tasks that lower effort solves, can overspend, and can change trajectory behavior. First, we find that although higher effort can raise accuracy in aggregate, it frequently fails on tasks that lower effort solved. Second, on the subset of easy tasks that every effort level solves, higher effort is generally more costly, with the highest effort level costing up to 42x as much as the lowest. Lastly, effort changes not only how many tokens are used, but also how agents solve tasks: at higher effort, agents verify their own work more heavily and more often search for solutions than work through problems directly, both of which lengthen trajectories without necessarily altering the outcome. These findings show that naively choosing the highest level is not only cost-inefficient but also offers no guarantee of the best instance-level performance. A simple alternative, starting at the lowest effort and escalating only after a verified failure, matches or improves on fixed top effort across all models and benchmarks at lower cost for most proprietary models.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34491v1",
-        "pdf": "https://arxiv.org/pdf/2610.34491v1",
-        "github": "https://github.com/KaiserWhoLearns/ReasoningEffortLLM",
-        "blog": null
-      },
-      "institution": "Johns Hopkins University, Together AI, Cornell University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）在长程代理任务中的广泛应用，推理成本成为核心关切。许多推理模型现在暴露出“推理努力程度”（reasoning effort）参数，允许用户通过增加推理时的计算量来换取潜在的性能提升。\n- **已有工作为什么解决不了**：用户必须在不知道额外计算是否有帮助的情况下选择努力程度。即使任务成功完成，用户也无法判断所购买的计算量是否必要，因为重新运行不同级别以验证边际价值成本过高。这种不确定性使得推理努力成为一种“信任品”（credence good），现有方法缺乏对这一经济特性的深入分析和优化策略。\n\n## 文章的核心贡献点\n- **提出了一个**针对LLM代理中推理努力程度的反事实效应分析及低成本替代策略。\n- **挑战1：高努力程度并不保证保留低努力程度能解决的任务，且存在过度消费。**\n  - **难点**：直观上认为更高计算量应带来更好或至少持平的结果，但实验发现高努力程度经常导致在简单任务上失败，且成本高达最低努力程度的42倍。\n  - **解决方法**：通过跨四个基准测试对专有和开源模型进行系统性测量，揭示了高努力程度不仅改变token数量，还改变了解题轨迹（如更多自我验证和搜索），从而证明了盲目选择最高努力程度的低效性。\n- **挑战2：缺乏动态调整机制导致资源浪费。**\n  - **难点**：静态选择最高努力程度既昂贵又不能保证实例级的最佳性能，而用户无法预先知道任务的难易程度。\n  - **解决方法**：提出了一种简单的替代策略：从最低努力程度开始，仅在验证失败后才升级努力程度。该方法在所有模型和基准测试中匹配或优于固定最高努力程度的表现，且对大多数专有模型而言成本更低。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究在四个基准测试上评估了专有模型和开源权重模型，涵盖单次调用推理和长程代理任务。实验固定任务、提示词和代理框架，仅变化努力程度参数。\n- **主要结果**：\n  1. **准确性悖论**：虽然高努力程度在总体上提高了准确率，但它经常在低努力程度能解决的任务上失败。\n  2. **成本差异**：在所有努力程度都能解决的简单任务子集中，最高努力程度的成本是最低努力程度的42倍。\n  3. **行为变化**：高努力程度下，代理更频繁地验证自身工作并搜索解决方案，而非直接解决问题，这延长了轨迹但不一定改变结果。\n- **对比优势**：提出的“从低到高 escalation”策略相比传统的“固定最高努力程度”方法，在保持或提高性能的同时，显著降低了大多数专有模型的推理成本。\n\n#### 总结\n本文揭示了LLM推理努力程度作为一种“信任品”的经济特性，指出盲目追求高计算量不仅成本高昂，还可能损害简单任务的性能。通过实证分析，作者证明了高努力程度会改变代理的行为模式（如过度验证）。最终，文章提出了一种基于验证失败的动态升级策略，为用户在不确定任务难度时提供了更具成本效益的推理配置方案。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: As Large Language Models (LLMs) are deployed in long-horizon agentic tasks, inference cost has become a central concern. Many reasoning models now expose a \"reasoning effort\" parameter, allowing users to trade higher inference-time compute for potentially improved performance.\n- **Why Existing Work Falls Short**: Users must select an effort level without knowing if additional computation will help. Even if a task is solved, users cannot assess whether the purchased effort was necessary, as re-running at different levels to verify marginal value is prohibitively expensive. This uncertainty makes reasoning effort a \"credence good,\" and existing approaches lack deep analysis and optimization strategies for this economic characteristic.\n\n## Core Contributions\n- **Proposed**: A counterfactual analysis of reasoning effort in LLM agents and a low-cost alternative strategy.\n- **Challenge 1: Higher effort does not consistently preserve successes from lower effort levels and leads to overspending.**\n  - **Difficulty**: Intuitively, higher compute should yield better or equal results, but experiments show high effort often fails on tasks solvable by low effort, costing up to 42x more.\n  - **Solution**: By systematically measuring proprietary and open-weight models across four benchmarks, the paper reveals that high effort changes solution trajectories (e.g., excessive self-verification and search), proving that naively choosing the highest effort is inefficient.\n- **Challenge 2: Lack of dynamic adjustment mechanisms leads to resource waste.**\n  - **Difficulty**: Static selection of maximum effort is expensive and does not guarantee optimal instance-level performance, while users cannot pre-determine task difficulty.\n  - **Solution**: The paper proposes a simple alternative strategy: start at the lowest effort level and escalate only after a verified failure. This method matches or outperforms fixed top-effort settings across all models and benchmarks at a lower cost for most proprietary models.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: The study evaluated proprietary and open-weight models on four benchmarks, covering single-call reasoning and long-horizon agentic tasks. Tasks, prompts, and agentic harnesses were fixed while varying only the effort parameter.\n- **Key Results**:\n  1. **Accuracy Paradox**: While higher effort improves aggregate accuracy, it frequently fails on tasks that lower effort levels successfully solved.\n  2. **Cost Disparity**: For easy tasks solved by all effort levels, the highest effort level costs up to 42 times more than the lowest.\n  3. **Behavioral Shift**: At higher effort levels, agents verify their work more heavily and search for solutions more often rather than solving problems directly, lengthening trajectories without necessarily altering outcomes.\n- **Comparison Advantage**: The proposed \"escalation upon failure\" strategy significantly reduces inference costs for most proprietary models compared to the traditional \"fixed maximum effort\" approach, while maintaining or improving performance.\n\n## 4. Conclusion\nThis paper highlights the economic nature of LLM reasoning effort as a \"credence good,\" demonstrating that blindly pursuing high compute is not only costly but can also degrade performance on simple tasks. Through empirical analysis, the authors show that high effort alters agent behavior (e.g., over-verification). Ultimately, the paper proposes a dynamic escalation strategy based on verified failures, offering a more cost-effective reasoning configuration for users facing uncertainty about task difficulty.",
-      "render_excerpt": "机构: Johns Hopkins University, Together AI, Cornell University<br>本文揭示了LLM推理努力程度作为一种“信任品”的经济特性，指出盲目追求高计算量不仅成本高昂，还可能损害简单任务的性能。通过实证分析，作者证明了高努力程度会改变代理的行为模式（如过度验证）。最终，文章提出了一种基于验证失败的动态升级策略，为用户在不确定任务难度时提供了更具成本效益的推理配置方案。",
-      "render_excerpt_en": "Institution: Johns Hopkins University, Together AI, Cornell University<br>## 1. What the Paper Did - **Background**: As Large Language Models (LLMs) are deployed in long-horizon agentic tasks, inference cost has become a central concern. Many reasoning models now expose a \"reasoning effort\" parameter, allowing users to trade higher inference-time compute for potentially improved performance.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-10-25T18:33:17Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-10-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2610.34386",
-      "date": "2026-10-25",
-      "title": "ParetoRSI-Gym: Can AI Agents Improve Language Models Across Multiple Domains?",
-      "authors": [
-        "Haojin Wang",
-        "Yangzhen Wu",
-        "Zeyi Chen",
-        "Jian Xie",
-        "Jiaying Ye",
-        "Lili Meng",
-        "Shuyun Tang",
-        "Shangding Gu",
-        "Dawn Song"
-      ],
-      "abstract": "Recursive self-improvement (RSI) requires an agentic system to design, train, and evaluate its own successor. Data-driven post-training is a central part of that loop, yet existing evaluations measure it on a single benchmark, where an agent selects from a static pool or distills a stronger model to push one score up in one run. Real post-training is multi-domain, and a gain in one domain has to be weighed against a regression in another. We propose ParetoRSI-Gym, in which an agent searches for data, curates it, trains, reads back per-domain results, and repeats, with everything but the data held fixed: the initial LLM, the five domains (math, code, finance, medicine, science), the toolset, and the SFT pipeline. Generalization benchmarks in each domain separate capability gains from overfitting to the scores the agent optimizes against. Across three agent systems, three base models, five rounds and multiple seeds, the strongest system, Claude Code with Opus-5, raises the generalization scores of its proxy-best checkpoint by 9.2% relative to the starting model (+2.3 absolute points), averaged with equal weight over three base models and five domains, with a single-domain relative gain of up to 63% (medicine on Ministral-3-3B). Further analysis shows that the harness matters as much as the model it drives, and that each agent keeps a unique data selection strategy. We see our work as a step towards evaluation of RSI systems in real-world machine learning engineering.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.34386v1",
-        "pdf": "https://arxiv.org/pdf/2610.34386v1",
-        "github": null,
-        "blog": null
+        "abs": "http://arxiv.org/abs/2610.33509v1",
+        "pdf": "https://arxiv.org/pdf/2610.33509v1",
+        "github": "https://github.com/yijan4845/secprbench",
+        "blog": "https://yijan4845.github.io/secprbench-results"
       },
       "institution": "University of Illinois Urbana-Champaign",
       "category_key": "agent",
@@ -185,19 +32,19 @@
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：递归自我改进（RSI）要求智能体系统设计、训练并评估其继任者。数据驱动的后训练是这一循环的核心部分，旨在通过自动化数据策展来提升模型能力。\n- **已有工作的局限**：现有的评估方法通常仅在单一基准测试上进行，智能体从静态数据池中选择数据或蒸馏更强模型以在单次运行中提升单一分数。然而，真实的后训练是多领域的，一个领域的增益往往伴随着另一个领域的退化，现有工作无法有效权衡这种多领域间的帕累托优化问题。\n\n## 文章的核心贡献点\n- **提出了 ParetoRSI-Gym**：一个用于评估多领域递归自我改进系统的框架，其中智能体在固定初始模型、五个领域（数学、代码、金融、医学、科学）、工具集和SFT流程的情况下，迭代地搜索数据、策展、训练并读取各领域结果。\n- **挑战1：多领域能力的权衡与协同优化**。难点在于提升一个领域的性能可能导致其他领域性能下降（负迁移），且难以区分是真实能力提升还是对代理基准的过拟合。ParetoRSI-Gym通过引入通用化基准测试分离能力增益与过拟合，并要求智能体在每一轮中根据各领域反馈更新原则，实现能力向量的整体扩展而非单点突破。\n- **挑战2：自动化数据策展策略的有效性与差异性**。难点在于不同智能体系统在面对相同任务时可能采取截然不同的数据选择策略，且“驾驭层”（harness）对最终效果影响巨大。该框架通过多轮迭代、多种子实验及详细分析，揭示了不同智能体独特的数据选择策略及其对最终模型性能的显著影响，证明了框架在捕捉这些细微差别方面的有效性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架固定了初始LLM、五个特定领域、工具集和监督微调（SFT）管道。智能体在每轮中根据当前原则从HuggingFace搜索并拉取数据，经过清洗、修复和理由论证后提交训练，并根据各领域的基准测试得分更新下一轮的原则。\n- **评估结果**：在三个智能体系统、三个基础模型、五轮迭代及多种子设置下进行测试。最强的系统（Claude Code with Opus-5）使其代理最佳检查点的通用化分数相较于起始模型相对提升了9.2%（绝对值提升2.3个点，平均涵盖三个基础模型和五个领域）。在单个领域上，Ministral-3-3B在医学领域的相对增益高达63%。\n- **对比与分析**：与传统单一基准评估不同，ParetoRSI-Gym展示了智能体如何在多领域间进行权衡。分析表明，智能体的“驾驭层”与其驱动的模型同样重要，且每个智能体都保持了独特的数据选择策略，这为评估现实世界机器学习工程中的RSI系统提供了更全面的视角。\n\n#### 总结\nParetoRSI-Gym填补了递归自我改进系统在多领域真实场景下评估的空白。通过固定除数据外的所有变量，该框架有效地隔离并量化了智能体在数据策展方面的贡献。实验结果证明，先进的智能体系统能够显著提升多领域通用化性能，同时揭示了不同智能体策略的差异性。这项工作标志着向评估现实世界中复杂RSI系统迈出了重要一步，强调了在多目标优化背景下评估AI自我改进能力的重要性。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Recursive Self-Improvement (RSI) requires agentic systems to design, train, and evaluate their successors. Data-driven post-training is a central component of this loop, aiming to enhance model capabilities through automated data curation.\n- **Limitations of Existing Work**: Current evaluations typically focus on single benchmarks, where agents select from static pools or distill stronger models to boost a single score in one run. However, real-world post-training is multi-domain, where gains in one area often come at the cost of regression in another. Existing works fail to effectively address this Pareto optimization problem across multiple domains.\n\n## Core Contributions\n- **Proposed ParetoRSI-Gym**: A framework for evaluating multi-domain RSI systems, where an agent iteratively searches for data, curates it, trains, and reads per-domain results, keeping the initial LLM, five domains (Math, Code, Finance, Medicine, Science), toolset, and SFT pipeline fixed.\n- **Challenge 1: Trade-offs and Synergistic Optimization Across Multiple Domains**. The difficulty lies in the fact that improving performance in one domain can lead to degradation in others (negative transfer), and it is hard to distinguish true capability gains from overfitting to proxy benchmarks. ParetoRSI-Gym addresses this by introducing generalization benchmarks to separate capability gains from overfitting and requiring the agent to update principles based on per-domain feedback in each round, aiming for holistic expansion of the capability vector rather than single-point breakthroughs.\n- **Challenge 2: Effectiveness and Variability of Automated Data Curation Strategies**. The challenge is that different agent systems may adopt vastly different data selection strategies for the same task, and the \"harness\" significantly impacts final performance. The framework reveals these unique strategies and their significant impact on final model performance through multi-round iterations, multi-seed experiments, and detailed analysis, demonstrating its effectiveness in capturing these nuances.\n\n## Implementation and Evaluation\n- **Implementation**: The framework fixes the initial LLM, five specific domains, tools, and Supervised Fine-Tuning (SFT) pipeline. In each round, the agent searches and pulls data from HuggingFace based on current principles, cleans, repairs, and justifies entries, submits them for training, and updates principles for the next round based on per-domain benchmark scores.\n- **Evaluation Results**: Tested across three agent systems, three base models, five rounds, and multiple seeds. The strongest system (Claude Code with Opus-5) raised the generalization scores of its proxy-best checkpoint by 9.2% relative to the starting model (+2.3 absolute points, averaged over three base models and five domains). Single-domain relative gains reached up to 63% (Medicine on Ministral-3-3B).\n- **Comparison and Analysis**: Unlike traditional single-benchmark evaluations, ParetoRSI-Gym demonstrates how agents balance trade-offs across multiple domains. Analysis shows that the agent's \"harness\" is as important as the model it drives, and each agent maintains a unique data selection strategy, providing a more comprehensive perspective for evaluating RSI systems in real-world ML engineering.\n\n## 4. Conclusion\nParetoRSI-Gym fills the gap in evaluating RSI systems in realistic multi-domain scenarios. By fixing all variables except data, the framework effectively isolates and quantifies the agent's contribution to data curation. Experimental results prove that advanced agent systems can significantly improve multi-domain generalization performance, while revealing differences in agent strategies. This work marks an important step towards evaluating complex RSI systems in the real world, emphasizing the importance of assessing AI self-improvement capabilities in a multi-objective optimization context.",
-      "render_excerpt": "机构: University of Illinois Urbana-Champaign<br>ParetoRSI-Gym填补了递归自我改进系统在多领域真实场景下评估的空白。通过固定除数据外的所有变量，该框架有效地隔离并量化了智能体在数据策展方面的贡献。实验结果证明，先进的智能体系统能够显著提升多领域通用化性能，同时揭示了不同智能体策略的差异性。这项工作标志着向评估现实世界中复杂RSI系统迈出了重要一步，强调了在多目标优化背景下评估AI自我改进能力的重要性。",
-      "render_excerpt_en": "Institution: University of Illinois Urbana-Champaign<br>## 1. What the Paper Does - **Background**: Recursive Self-Improvement (RSI) requires agentic systems to design, train, and evaluate their successors. Data-driven post-training is a central component of this loop, aiming to enhance model capabilities through automated data curation.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体正被越来越多地用于安全代码审查，以在代码合并前发现漏洞。然而，现有的基准测试大多基于漏洞修复后的代码变更构建，而非真实的引入漏洞的提交记录。\n- **已有工作的不足**：现有的检测数据集通常对单个函数进行二分类评分，模型可能因错误的原因得出正确结果；复现和利用基准从已知漏洞出发，侧重于生成概念验证（PoC）；现有的安全PR审查基准（如MalPR-Bench）大多使用后来修复的逆向或部分应用补丁，导致diff集中在修复代码上，无法真实反映审查者在面对原始漏洞引入代码时的诊断能力。\n\n## 文章的核心贡献点\n- **提出了 SecPRBench**：这是第一个针对代理式安全审查的综合基准测试，旨在评估智能体在经验证的真实世界代码变更上的表现。\n- **挑战1：缺乏真实的漏洞引入场景评估**。难点在于现有基准多基于修复后的代码，无法衡量智能体在未知漏洞情况下的根本原因诊断能力。解决方法：构建自动化智能体管道，自主收集、构建并验证来自Firefox、V8、OpenSSL等关键系统的真实漏洞引入提交，确保每个任务都基于历史真实的bug-introducing commit。\n- **挑战2：评估标准的精确性与诊断深度**。难点在于简单的二元标签或匹配文件不足以证明智能体真正理解了漏洞机制。解决方法：采用“LLM-as-a-judge”机制，仅当智能体的发现能够解释目标漏洞的根本原因时才给予积分，从而精确评估其诊断质量而非仅仅是定位能力。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据**：SecPRBench 包含来自9个关键系统（包括Firefox, V8, OpenSSL等，数百万行代码）的265个任务。每个任务提供真实的历史变更diff、提交信息和仓库上下文，但不提供漏洞描述。\n- **评估结果**：在8个前沿模型上进行测试，召回率范围从32.5%到78.1%。Grok 4.6 和 GPT-6 sol 排名靠前。\n- **深入分析**：研究发现，大多数漏报并非简单的疏忽：在68%的漏报案例中，智能体报告了包含缺陷的文件，但论证了错误的机制。此外，安全专用 harness 表现各异：OpenAI 的 Codex Security 主要因弃权导致召回率降低8.3个百分点，而 Anthropic 的 Defending Code harness 则以更高成本将召回率提高了7.7个百分点。\n- **对比**：相较于 MalPR-Bench 等基于修复补丁的基准，SecPRBench 提供了更贴近现实预合并审查场景的评估，揭示了当前模型在根本原因诊断上的局限性。\n\n#### 总结\n本文介绍了 SecPRBench，填补了代理式安全代码审查在真实漏洞引入场景评估上的空白。通过自动化管道收集真实世界的漏洞提交并利用 LLM 作为裁判进行细粒度诊断评估，研究揭示了当前顶尖模型在安全审查中仍存在显著的诊断偏差，且不同的安全优化策略对召回率有截然不同的影响。该基准为未来提升 LLM 安全审查能力提供了重要的评估基础和方向。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM agents are increasingly adopted for security-focused code review to catch vulnerabilities before merging. However, existing benchmarks mostly derive reviewed changes from later fixes rather than real-world bug-introducing commits.\n- **Limitations of Existing Work**: Current detection datasets score binary labels on single functions, where models may get right answers for wrong reasons. Reproduction benchmarks start from known vulnerabilities to generate PoCs. Existing security PR-review benchmarks (e.g., MalPR-Bench) often use reverted or partially applied fixes, centering diffs on repaired code, which fails to measure diagnostic capability on original vulnerability-introducing changes.\n\n## Core Contributions\n- **Proposed SecPRBench**: The first comprehensive benchmark for evaluating agentic security review on validated real-world code changes.\n- **Challenge 1: Lack of evaluation on real vulnerability-introducing scenarios**. Difficulty: Existing benchmarks rely on fix-based diffs, failing to assess diagnosis on unknown vulnerabilities. Solution: Built an automated agentic pipeline to autonomously harvest, build, and validate massive real-world bug-introducing commits from critical systems like Firefox, V8, and OpenSSL.\n- **Challenge 2: Precision in evaluation and diagnostic depth**. Difficulty: Simple binary labels or file matching do not prove understanding of the vulnerability mechanism. Solution: Adopted LLM-as-a-judge to credit findings only if they explain the root cause of the target vulnerability, ensuring precise assessment of diagnostic quality.\n\n## Implementation and Evaluation\n- **Implementation & Data**: SecPRBench contains 265 tasks from nine critical systems (millions of lines of code). Each task provides the diff of a real historical change, commit message, and repository context without describing the flaw.\n- **Evaluation Results**: Tested on eight frontier models, recall ranges from 32.5% to 78.1%, with Grok 4.6 and GPT-6 sol ranking at the top.\n- **In-depth Analysis**: Most misses are not simple oversights; in 68% of cases, the agent reports the correct file but argues for a different mechanism. Security harnesses behave differently: OpenAI's Codex Security lowers recall by 8.3 points (mostly by abstaining), while Anthropic's Defending Code harness raises it by 7.7 points at a higher cost.\n- **Comparison**: Unlike MalPR-Bench which uses fix-based patches, SecPRBench offers a realistic pre-merge review scenario, revealing significant diagnostic biases in current models.\n\n## 4. Conclusion\nThis paper introduces SecPRBench, filling the gap in evaluating agentic security code review on real vulnerability-introducing commits. By leveraging an automated pipeline for data collection and LLM-as-a-judge for fine-grained diagnostic evaluation, the study reveals that even top-tier models suffer from diagnostic misalignment. It also highlights how different security optimization strategies impact recall differently, providing a crucial foundation for future improvements in LLM-based security review.",
+      "render_excerpt": "机构: University of Illinois Urbana-Champaign<br>本文介绍了 SecPRBench，填补了代理式安全代码审查在真实漏洞引入场景评估上的空白。通过自动化管道收集真实世界的漏洞提交并利用 LLM 作为裁判进行细粒度诊断评估，研究揭示了当前顶尖模型在安全审查中仍存在显著的诊断偏差，且不同的安全优化策略对召回率有截然不同的影响。该基准为未来提升 LLM 安全审查能力提供了重要的评估基础和方向。",
+      "render_excerpt_en": "Institution: University of Illinois Urbana-Champaign<br>## 1. What the Paper Does - **Background**: LLM agents are increasingly adopted for security-focused code review to catch vulnerabilities before merging. However, existing benchmarks mostly derive reviewed changes from later fixes rather than real-world bug-introducing commits.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-10-25T15:40:21Z"
+        "captured_at": "2026-10-24T07:32:42Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-10-25"
+        "captured_at": "2026-10-24"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -212,41 +59,196 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2610.34422",
-      "date": "2026-10-25",
-      "title": "From GPU to TPU with Coding Agents: What Works, What Fails, and What It Costs?",
+      "paper_id": "2610.33845",
+      "date": "2026-10-24",
+      "title": "Build, Don't Play: Self-Improving LLM Research Agents Develop a Hearthstone Battlegrounds AI That Rivals Top Players",
       "authors": [
-        "Hui Sun",
-        "Anderson Uchôa",
-        "Wesley K. G. Assunção"
+        "Changlian Ma",
+        "Limin Wang"
       ],
-      "abstract": "A coding agent can migrate a machine learning workload, report success, and still change how the model trains. Rising compute costs, limited accelerator capacity, and vendor dependence are pushing organizations toward alternatives to graphics processing units (GPUs); a key question is whether agent-generated migrations to tensor processing units (TPUs) can be trusted and at what cost. We build a dataset of 148 PyTorch ML research projects and use Claude Code to migrate ten of them from NVIDIA GPUs to Google Cloud TPUs. We independently assess whether each migration runs, preserves numerical behavior, executes on the intended hardware, maintains the project's goal, and delivers acceptable performance. We also examine failures, human effort, and costs. Eight projects meet our project-goal criterion, and migrations require 2.4 human interventions on average. Of 70 execution attempts, 53 fail (76%), and 26 of these failures (49%) raise no error. The most frequent cause is repeated compilation and other execution inefficiencies, while interactions with third-party libraries can silently change the computation: in one four-chip migration, the agent reports success despite a change in gradient clipping that reduces accuracy from 86.53% to 84.89%. Execution costs vary widely: in one workload, TorchTPU, a PyTorch execution backend for TPUs, trains 1.86 times faster and 25% cheaper per run than the GPU. For practitioners, these findings motivate independent reference runs, verification under the intended hardware configuration, and workload-specific acceptance and stopping criteria that account for both computational and human costs.",
+      "abstract": "Can LLM agents carry a hard real-world problem from raw data to a system that holds its own against people? We study this in Hearthstone Battlegrounds, an eight-player auto-battler with stochastic shops and battles, hidden information and nearly a thousand interacting cards. We present AutoTavern, a self-improving research system: specialised LLM research agents share a typed research memory, every claim passes verification gates, and live games close the loop, so the agents improve the simulator, opponents and policy and, from the same feedback, their own research process; a human sets goals and rules on ambiguous mechanics. In 20 days AutoTavern built TavernGym, the first faithful, full-content reproduction of the live game, and delivered 23 versions of TavernAgent, trained with PPO against opponents calibrated to real games. TavernAgent plays complete games on the live ladder by itself: its rating rose from 6,000 to about 15,000 and, on the public leaderboard's measure, its last 20 records average a placement of 1.60 with 80% first places, better than the server's ten highest-rated players on every statistic (2.34, 59%). TavernBench, 960 tasks in 40 scenarios, shows that the system the agents built is the strongest player: TavernAgent answers 91% of the play tasks against at most 63% for frontier LLMs, and decides in 0.03 s where they need up to 26 s; within the second a live turn allows, it keeps 90% and no LLM more than 26%. LLM agents build far better than they play. We will open-source TavernBench and TavernGym at https://github.com/MCG-NJU/AutoTavern.",
       "links": {
-        "abs": "http://arxiv.org/abs/2610.34422v1",
-        "pdf": "https://arxiv.org/pdf/2610.34422v1",
-        "github": null,
+        "abs": "http://arxiv.org/abs/2610.33845v1",
+        "pdf": "https://arxiv.org/pdf/2610.33845v1",
+        "github": "https://github.com/MCG-NJU/AutoTavern",
         "blog": null
       },
-      "institution": "North Carolina State University; Federal University of Ceará",
+      "institution": "Nanjing University, Shanghai AI Laboratory",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：随着计算成本上升、加速器容量受限以及对单一硬件供应商（如 NVIDIA）的依赖，组织正寻求将机器学习工作负载从 GPU 迁移到 TPU 等替代加速器。编码智能体（Coding Agents）被寄予厚望，旨在自动化这一迁移过程以降低工程努力。\n- **已有工作的不足**：现有的研究工具大多针对单一内核、算子或框架翻译，缺乏对完整项目迁移后是否可信、数值行为是否保持以及运营成本是否合理的全面评估。仅仅减少代码适配的工作量并不能证明代理生成的迁移是可靠的，也无法确定其操作收益是否合理。\n\n## 文章的核心贡献点\n- **提出了一个实证研究框架与数据集**：构建了包含 148 个 PyTorch ML 研究项目的数据集，并使用 Claude Code 将其中的 10 个项目从 NVIDIA GPU 迁移到 Google Cloud TPU，独立评估迁移的运行情况、数值行为保持、硬件执行正确性、目标达成情况及性能。\n- **挑战1：静默失败与数值行为漂移**。难点在于迁移后的代码可能无报错运行，但因底层库交互或并行策略改变（如梯度裁剪逻辑变化）导致模型精度下降，智能体却报告成功。论文通过独立验证数值行为和设定严格的项目目标标准，揭示了这种“成功但错误”的风险（如某案例中精度从 86.53% 降至 84.89%）。\n- **挑战2：高失败率与隐性成本**。难点在于自动化迁移的实际成功率低且调试困难。论文发现 70 次执行尝试中有 53 次失败（76%），其中近半数无报错；平均每次迁移需 2.4 次人工干预。通过分析失败原因（如重复编译、第三方库兼容性问题），量化了人力成本和计算成本，指出需结合两者制定验收标准。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：使用 Claude Code 作为编码智能体，针对 10 个选定的 PyTorch 项目进行 GPU 到 TPU 的迁移。评估指标包括代码是否运行、是否在预期硬件上执行、数值行为是否一致、是否达到项目目标以及性能成本。\n- **Evaluation 结果**：\n    - **成功率**：10 个项目中有 8 个满足项目目标标准。\n    - **失败分析**：70 次执行尝试中 53 次失败（76%），其中 26 次（49%）未抛出任何错误。主要失败原因是重复编译和执行效率低下，以及第三方库交互导致的静默计算变更。\n    - **人力成本**：平均每次迁移需要 2.4 次人工干预。\n    - **性能与成本**：差异显著。在一个工作负载中，使用 TorchTPU 后端在 TPU 上的训练速度比 GPU 快 1.86 倍，每次运行成本低 25%。\n- **对比**：相较于 Google 此前报道的多智能体系统在生产环境 TensorFlow 到 JAX 迁移中实现的 6.4–8 倍加速，本研究聚焦于更广泛的 PyTorch 研究项目，揭示了在实际科研代码迁移中存在的更高复杂性和静默错误风险，强调了独立参考运行和特定工作负载验收标准的必要性。\n\n#### 总结\n本文通过实证研究指出，虽然编码智能体能辅助 GPU 到 TPU 的迁移，但存在较高的静默失败风险和显著的人工干预需求。迁移不仅涉及代码转换，更关乎数值行为的保持和成本效益的平衡。建议实践者采用独立的参考运行、在目标硬件配置下进行验证，并制定涵盖计算和人力成本的特定工作负载验收及停止标准，以确保迁移的可信度和经济性。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Rising compute costs, limited accelerator capacity, and vendor dependence are driving organizations to migrate machine learning workloads from GPUs to alternatives like TPUs. Coding agents are expected to automate this migration to reduce engineering effort.\n- **Limitations of Existing Work**: Current tools mostly target single kernels, operators, or framework translations. They lack comprehensive assessment of whether agent-generated migrations for complete projects are trustworthy, preserve numerical behavior, and offer justified operational benefits. Reducing code adaptation effort does not guarantee reliability or cost-effectiveness.\n\n## Core Contributions\n- **Proposed an Empirical Study Framework and Dataset**: Constructed a dataset of 148 PyTorch ML research projects and used Claude Code to migrate ten of them from NVIDIA GPUs to Google Cloud TPUs. Independently assessed execution, numerical preservation, hardware correctness, goal attainment, and performance.\n- **Challenge 1: Silent Failures and Numerical Drift**. The difficulty lies in migrated code running without errors while producing incorrect results due to underlying library interactions or parallel strategy changes (e.g., gradient clipping logic), leading agents to falsely report success. The paper addresses this by independently verifying numerical behavior and setting strict project-goal criteria, exposing risks like accuracy drops (e.g., from 86.53% to 84.89%).\n- **Challenge 2: High Failure Rates and Hidden Costs**. The challenge is the low actual success rate and difficult debugging of automated migrations. The study found 76% of execution attempts failed, with nearly half raising no errors, and an average of 2.4 human interventions per migration. It quantifies human and compute costs by analyzing failure causes (e.g., repeated compilation, third-party library issues), advocating for acceptance criteria that account for both.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Used Claude Code to migrate 10 selected PyTorch projects from GPU to TPU. Evaluated based on execution success, hardware targeting, numerical consistency, goal achievement, and performance/cost.\n- **Evaluation Results**:\n    - **Success Rate**: 8 out of 10 projects met the project-goal criteria.\n    - **Failure Analysis**: 53 out of 70 execution attempts failed (76%), with 26 (49%) raising no errors. Primary causes were repeated compilation, execution inefficiencies, and silent computation changes from third-party libraries.\n    - **Human Effort**: Average of 2.4 human interventions per migration.\n    - **Performance & Cost**: Varied widely. In one workload, TorchTPU on TPU trained 1.86x faster and was 25% cheaper per run than on GPU.\n- **Comparison**: Unlike Google's reported 6.4–8x speedup in production TensorFlow-to-JAX migration, this study focuses on diverse PyTorch research projects, revealing higher complexity and silent error risks in real-world scientific code migration. It emphasizes the need for independent reference runs and workload-specific acceptance criteria.\n\n## 4. Conclusion\nThe paper demonstrates that while coding agents assist in GPU-to-TPU migration, there are significant risks of silent failures and substantial human intervention requirements. Migration involves not just code translation but also preserving numerical behavior and balancing cost-effectiveness. Practitioners are advised to use independent reference runs, verify under target hardware configurations, and establish acceptance/stopping criteria that account for both computational and human costs to ensure trustworthiness and economic viability.",
-      "render_excerpt": "机构: North Carolina State University; Federal University of Ceará<br>本文通过实证研究指出，虽然编码智能体能辅助 GPU 到 TPU 的迁移，但存在较高的静默失败风险和显著的人工干预需求。迁移不仅涉及代码转换，更关乎数值行为的保持和成本效益的平衡。建议实践者采用独立的参考运行、在目标硬件配置下进行验证，并制定涵盖计算和人力成本的特定工作负载验收及停止标准，以确保迁移的可信度和经济性。",
-      "render_excerpt_en": "Institution: North Carolina State University; Federal University of Ceará<br>## 1. What the Paper Did - **Background**: Rising compute costs, limited accelerator capacity, and vendor dependence are driving organizations to migrate machine learning workloads from GPUs to alternatives like TPUs. Coding agents are expected to automate this migration to reduce engineering effort.",
+      "summary_cn": "## 文章做了什么\n- **背景**：游戏一直是人工智能发展的里程碑（如围棋、星际争霸等），但以往的系统均由大型人类专家团队构建环境、设计算法并调试。随着LLM Agent能够编写和运行代码，研究焦点转向Agent能否自动化整个研究过程。\n- **已有工作为什么解决不了**：现有的LLM Agent研究证据主要来自基准测试任务或论文综述，尚未有证据表明Agent能够处理从原始数据到最终系统的完整闭环，特别是在像《炉石传说：酒馆战棋》这样具有随机性、隐藏信息、近一千种交互卡牌且规则频繁更新的复杂真实世界问题中。此前缺乏对实时游戏的忠实模拟器，现有AI工作要么仅作为人类玩家的顾问，要么仅研究简化版本的游戏。\n\n## 文章的核心贡献点\n- **提出了一个名为 AutoTavern 的自我改进研究系统**：该系统由专门的LLM研究Agent组成，它们共享类型化的研究记忆，所有主张均通过验证门控，并通过实时游戏形成闭环，使Agent能够改进模拟器、对手策略、自身策略以及研究流程本身。\n- **挑战1：复杂游戏环境的精确建模与仿真**。由于游戏包含随机商店、战斗、隐藏信息及大量卡牌交互，构建高保真模拟器极难。AutoTavern通过Agent在20天内自动构建了TavernGym，这是首个对实时游戏进行忠实、全内容复现的模拟器，并通过人工设定模糊机制的目标和规则来辅助验证。\n- **挑战2：在严格实时限制下实现超越人类的决策能力**。实时回合制要求极快的决策速度（<1秒），而传统LLM推理缓慢且准确率低。论文通过Agent迭代生成的TavernAgent，使用PPO算法针对校准后的真实对手进行训练，实现了0.03秒的快速决策，并在准确率上远超前沿LLM，证明了“LLM Agent擅长构建系统而非直接玩游戏”。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：AutoTavern在20天内构建了TavernGym模拟器，并交付了23个版本的TavernAgent。TavernAgent能够在实时天梯上独立进行完整游戏。\n- **评估结果**：\n    - **天梯表现**：TavernAgent的评分从6,000分上升至约15,000分。在最近20场记录中，平均排名为1.60，首名率达到80%。相比之下，服务器上评分最高的十名玩家平均排名为2.34，首名率为59%。TavernAgent在所有统计指标上均优于顶级人类玩家。\n    - **TavernBench基准测试**：包含40个场景下的960个任务。TavernAgent回答了91%的游戏任务，而前沿LLM（如GPT-6 Astra, Claude Opus 5.5等）最高仅为63%。\n    - **速度对比**：TavernAgent每次决策仅需0.03秒，而前沿LLM需要高达26秒。在实时回合允许的1秒内，TavernAgent保持了90%的性能，而其他LLM因超时无法完成有效决策。\n\n#### 总结\n本文证明了LLM Agent具备从原始数据出发，独立构建复杂现实世界系统并达到超越人类顶尖水平的能力。通过AutoTavern系统，研究者成功开发了《炉石传说：酒馆战棋》的高保真模拟器和超强AI代理TavernAgent。核心结论是“LLM Agent更擅长构建系统而非直接参与游戏”，即Agent作为研究者构建出的专用AI系统在性能和效率上均远超直接使用通用LLM进行游戏决策。相关代码和基准测试已开源。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Games have long served as AI milestones (e.g., Go, StarCraft), traditionally built by large teams of human experts. With LLM agents now capable of writing code, research is shifting towards whether agents can automate the entire research process.\n- **Why Existing Work Falls Short**: Current evidence of LLM agent capabilities is limited to benchmark tasks or paper reviews. There is no proof that agents can handle the full pipeline from raw data to a competitive system in complex, real-world problems like 'Hearthstone Battlegrounds,' which features stochasticity, hidden information, and nearly 1,000 interacting cards. Previous AI efforts lacked faithful simulators of the live game, serving only as advisors or studying simplified versions.\n\n## Core Contributions\n- **Proposed AutoTavern**: A self-improving research system where specialized LLM research agents share typed research memory, pass claims through verification gates, and close the loop with live games to iteratively improve the simulator, opponents, policy, and their own research process.\n- **Challenge 1: Accurate Modeling of Complex Game Environments**. Creating a high-fidelity simulator is difficult due to random shops, battles, hidden info, and massive card interactions. AutoTavern solved this by having agents build 'TavernGym' in 20 days, the first faithful, full-content reproduction of the live game, aided by human-defined rules for ambiguous mechanics.\n- **Challenge 2: Achieving Super-Human Decision-Making Under Strict Real-Time Constraints**. Real-time turns require decisions in <1 second, whereas LLMs are slow and inaccurate. The paper addressed this by using agents to generate 'TavernAgent,' trained with PPO against calibrated opponents. This resulted in decision times of 0.03 seconds and accuracy far surpassing frontier LLMs, demonstrating that 'LLM agents build far better than they play.'\n\n## Implementation and Evaluation\n- **Implementation**: AutoTavern built TavernGym and produced 23 versions of TavernAgent. TavernAgent plays complete games independently on the live ladder.\n- **Evaluation Results**:\n    - **Ladder Performance**: TavernAgent's rating rose from 6,000 to ~15,000. In its last 20 games, it achieved an average placement of 1.60 with an 80% first-place rate, outperforming the server's top 10 human players (avg placement 2.34, 59% first-place rate).\n    - **TavernBench Benchmark**: Across 960 tasks in 40 scenarios, TavernAgent solved 91% of tasks, compared to a maximum of 63% for frontier LLMs (e.g., GPT-6 Astra, Claude Opus 5.5).\n    - **Speed Comparison**: TavernAgent decides in 0.03 seconds, while frontier LLMs take up to 26 seconds. Within the 1-second limit of a live turn, TavernAgent maintains 90% performance, whereas other LLMs fail due to latency.\n\n## 4. Conclusion\nThis paper demonstrates that LLM agents can independently build complex real-world systems from raw data that surpass top human performance. Through AutoTavern, the authors developed a high-fidelity simulator and a super-human AI agent for Hearthstone Battlegrounds. The key insight is that 'LLM agents are better at building systems than playing games,' as the specialized AI systems constructed by agents significantly outperform direct LLM gameplay in both efficiency and accuracy. Code and benchmarks are open-sourced.",
+      "render_excerpt": "机构: Nanjing University, Shanghai AI Laboratory<br>本文证明了LLM Agent具备从原始数据出发，独立构建复杂现实世界系统并达到超越人类顶尖水平的能力。通过AutoTavern系统，研究者成功开发了《炉石传说：酒馆战棋》的高保真模拟器和超强AI代理TavernAgent。核心结论是“LLM Agent更擅长构建系统而非直接参与游戏”，即Agent作为研究者构建出的专用AI系统在性能和效率上均远超直接使用通用LLM进行游戏决策。相关代码和基准测试已开源。",
+      "render_excerpt_en": "Institution: Nanjing University, Shanghai AI Laboratory<br>## 1. What the Paper Did - **Background**: Games have long served as AI milestones (e.g., Go, StarCraft), traditionally built by large teams of human experts. With LLM agents now capable of writing code, research is shifting towards whether agents can automate the entire research process.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-10-25T16:21:56Z"
+        "captured_at": "2026-10-24T18:33:51Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-10-25"
+        "captured_at": "2026-10-24"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2610.33876",
+      "date": "2026-10-24",
+      "title": "FlashScript: Compiling Recurring Agent Workflows into Reusable Neuro-Symbolic Programs",
+      "authors": [
+        "Sadra Sabouri",
+        "Hosein Hasanbeig",
+        "Adam Sage",
+        "Shreya Sinha",
+        "Cale Darling",
+        "Ashish Tiwari",
+        "Katie Garms",
+        "Souti Chattopadhyay",
+        "Sumit Gulwani"
+      ],
+      "abstract": "Many agent tasks recur with new data or small changes, yet agents regenerate their reasoning and actions on each run, producing different results. Distilling a prior run into a skill helps the agent avoid earlier mistakes, but it still re-runs the full process each time, so runs can vary and incur that cost. We compile a successful agent run into a reusable neuro-symbolic program (NSP) with a set of guidelines we call FlashScript. Actions and data transformations become code, instance-specific values become parameters, and decisions that need model judgment become LLM calls. We identify three layers where these calls belong and three techniques that replace most of them with code. The compilation does not remove nondeterminism; it localizes it, so the deterministic program and its neural calls can be reviewed and tested separately. Across 120 WorkBench analytics tasks with Claude Haiku 4.5, the NSPs were correct and made identical tool calls on every run, using about 70 times fewer input tokens and a third of the runtime of a skill-guided agent whose runs were inconsistent. In a composite version of the tasks, the skill-guided agent's accuracy fell to 23%, and its output inconsistency increased, while the NSPs remained correct and identical across all runs. The NSPs successfully generalized to all 108 unseen instances of the same templates. Our findings suggest that NSPs from agent trajectories can be considered cumulative software assets for end-users to test, maintain, and reuse in their recurring workflows.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33876v1",
+        "pdf": "https://arxiv.org/pdf/2610.33876v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Southern California, Microsoft",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：AI 代理（Agent）越来越多地为用户执行重复性任务（如每周更新报告）。然而，现有的代理在每次运行时都会重新生成推理和行动路径，导致即使面对相同或相似的任务，结果也可能不一致，且无法复用之前成功运行中蕴含的程序性知识。\n- **已有工作为什么解决不了**：现有的方法通常通过“技能蒸馏”将之前的运行经验保存下来，但这只是让代理在下次运行时参考这些经验，本质上仍然需要重新执行完整的推理过程。这不仅成本高（Token 消耗大、延迟高），而且由于 LLM 的非确定性，运行结果依然可能变化，无法像传统软件那样保证确定性和可测试性。\n\n## 文章的核心贡献点\n- **提出了一个名为 FlashScript 的编译框架**：该框架能够将一次成功的代理运行轨迹编译成可复用的神经符号程序（Neuro-Symbolic Program, NSP）。\n- **挑战1：如何将非结构化的代理轨迹转化为结构化代码？**\n  - **难点**：代理的运行包含大量自然语言推理、工具调用和数据操作，直接固化会导致过拟合特定实例，缺乏泛化能力。\n  - **解决方法**：FlashScript 识别出三个层级，将动作和数据转换转化为确定性代码，将实例特定的值提取为参数，仅将需要模型判断的决策保留为 LLM 调用。通过三种技术替换大部分 LLM 调用为代码，实现逻辑的确定性。\n- **挑战2：如何处理不可避免的非确定性并保证可靠性？**\n  - **难点**：完全消除 LLM 的参与是不现实的，但非确定性使得程序难以调试和验证。\n  - **解决方法**：FlashScript 并不试图移除所有非确定性，而是将其“局部化”。确定的程序逻辑与少量的神经调用（LLM calls）分离，使得开发者可以单独审查和测试确定性部分，从而将 NSP 视为可维护的软件资产。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 120 个 WorkBench 分析任务上使用 Claude Haiku 4.5 进行评估，并测试了 108 个未见过的同类模板实例。\n- **对比基线**：与使用技能引导（skill-guided）的代理进行对比。\n- **主要结果**：\n  - **一致性与正确性**：NSP 在每次运行中都产生正确的结果和完全相同的工具调用；相比之下，技能引导代理的运行结果不一致。\n  - **效率提升**：NSP 使用的输入 Token 数量减少了约 70 倍，运行时间仅为技能引导代理的三分之一。\n  - **复杂任务表现**：在复合任务版本中，技能引导代理的准确率下降至 23%，且输出不一致性增加；而 NSP 在所有运行中保持正确且一致。\n  - **泛化能力**：NSP 成功泛化到所有 108 个未见过的实例中。\n\n#### 总结\nFlashScript 通过将代理的成功运行轨迹编译为神经符号程序，解决了代理工作流中重复执行成本高、结果不一致的问题。它将确定性逻辑代码化，仅保留必要的 LLM 调用并使其局部化，从而显著降低了 Token 消耗和延迟，同时提高了运行的可靠性和可测试性。这项工作表明，从代理轨迹生成的 NSP 可以作为终端用户的累积软件资产，用于测试、维护和复用 recurring workflows。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: AI agents are increasingly used for recurring tasks (e.g., weekly report updates). However, current agents regenerate their reasoning and action paths on every run, leading to inconsistent results even for similar tasks and failing to reuse procedural knowledge from successful prior executions.\n- **Why Existing Work Falls Short**: Prior approaches, such as \"skill distillation,\" save past experiences but still require the agent to re-execute the full reasoning process. This remains costly (high token usage and latency) and suffers from LLM non-determinism, lacking the consistency and testability of traditional software.\n\n## Core Contributions\n- **Proposed FlashScript**: A compilation framework that transforms a successful agent execution trace into a reusable Neuro-Symbolic Program (NSP).\n- **Challenge 1: How to convert unstructured agent traces into structured code?**\n  - **Difficulty**: Agent runs contain natural language reasoning, tool calls, and data operations. Directly hardcoding them leads to overfitting specific instances and lacks generalization.\n  - **Solution**: FlashScript identifies three layers, converting actions and data transformations into deterministic code, extracting instance-specific values as parameters, and retaining only necessary model judgments as LLM calls. It uses three techniques to replace most LLM calls with code.\n- **Challenge 2: How to handle inevitable non-determinism while ensuring reliability?**\n  - **Difficulty**: Completely eliminating LLM involvement is unrealistic, but non-determinism makes programs hard to debug and verify.\n  - **Solution**: FlashScript localizes non-determinism rather than removing it. By separating deterministic program logic from sparse neural calls, developers can review and test the deterministic parts independently, treating NSPs as maintainable software assets.\n\n## Implementation and Evaluation\n- **Setup**: Evaluated on 120 WorkBench analytics tasks using Claude Haiku 4.5, including generalization tests on 108 unseen instances of the same templates.\n- **Baseline**: Compared against skill-guided agents.\n- **Key Results**:\n  - **Consistency & Correctness**: NSPs produced correct results and identical tool calls in every run; in contrast, skill-guided agents showed inconsistency.\n  - **Efficiency**: NSPs used approximately 70x fewer input tokens and one-third of the runtime compared to skill-guided agents.\n  - **Complex Tasks**: In composite task versions, the accuracy of skill-guided agents dropped to 23% with increased inconsistency, while NSPs remained correct and identical across all runs.\n  - **Generalization**: NSPs successfully generalized to all 108 unseen instances.\n\n## 4. Conclusion\nFlashScript addresses the high cost and inconsistency of recurring agent workflows by compiling successful execution traces into Neuro-Symbolic Programs. By codifying deterministic logic and localizing necessary LLM calls, it significantly reduces token consumption and latency while enhancing reliability and testability. The work demonstrates that NSPs derived from agent trajectories can serve as cumulative software assets for end-users to test, maintain, and reuse.",
+      "render_excerpt": "机构: University of Southern California, Microsoft<br>FlashScript 通过将代理的成功运行轨迹编译为神经符号程序，解决了代理工作流中重复执行成本高、结果不一致的问题。它将确定性逻辑代码化，仅保留必要的 LLM 调用并使其局部化，从而显著降低了 Token 消耗和延迟，同时提高了运行的可靠性和可测试性。这项工作表明，从代理轨迹生成的 NSP 可以作为终端用户的累积软件资产，用于测试、维护和复用 recurring workflows。",
+      "render_excerpt_en": "Institution: University of Southern California, Microsoft<br>## 1. What the Paper Does - **Background**: AI agents are increasingly used for recurring tasks (e.g., weekly report updates). However, current agents regenerate their reasoning and action paths on every run, leading to inconsistent results even for similar tasks and failing to reuse procedural knowledge from successful prior executions.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-10-24T19:32:30Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-10-24"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2610.33605",
+      "date": "2026-10-24",
+      "title": "Data Governance for Generative and Agentic AI : Technology, Law, Economics, and Security",
+      "authors": [
+        "Narayana Darapaneni",
+        "Padmaja K",
+        "Gnana Chaithra D"
+      ],
+      "abstract": "This book develops a unified governance framework for systems that retrieve, generate, infer, remember and act on information from large language models and retrieval augmented pipelines to autonomous multi agent systems. Eleven chapters and eight appendices integrate three disciplinary lenses-technology, law and economics-across the full lifecycle: data quality, lineage and provenance; global data protection law and intellectual property; the economics of data governance; digital trust, cybersecurity and zero-trust architecture; ethics and responsible AI; governing generative AI pipelines; governing agentic AI and multi-agent systems; data governance in elections and the public sphere; AI regulation across six jurisdictions; and the design of a governance control plane for 2030. Each chapter is anchored in Indian law and institutions while maintaining a comparative, cross jurisdictional perspective.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33605v1",
+        "pdf": "https://arxiv.org/pdf/2610.33605v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着人工智能从静态数据处理转向生成式 AI（Generative AI）和代理式 AI（Agentic AI），系统具备了检索、生成、推断、记忆及自主行动的能力。传统的数据治理模型主要关注存储资产的访问控制，已无法适应动态信息状态和自主决策循环。\n- **已有工作为什么解决不了**：经典数据治理模型将数据视为静态资产，侧重于 IT 层面的家务管理而非战略层面。它们未能解决从“访问控制”到“行动控制”的转变，也无法有效治理由模型生成的动态信息、多智能体系统的复杂交互以及跨司法辖区的法律合规性（如印度 DPDP Act、欧盟 AI Act 等）。\n\n## 文章的核心贡献点\n- **提出了一个统一的数据治理框架**：该框架整合了技术、法律和经济学三个学科视角，覆盖从大型语言模型、检索增强生成（RAG）管道到自主多智能体系统的全生命周期。\n- **挑战1：动态信息状态与生成内容的治理难题**。难点在于生成式 AI 产生的信息是动态流动的，且涉及推断和记忆，传统静态治理无法追踪其血缘和 provenance。论文通过定义“七种动态信息状态”和“数据-模型-代理-行动循环”，将治理重点从静态存储转移到动态生产信息的整个生命周期，确保生成内容可追溯、可审计。\n- **挑战2：自主代理的行动控制与跨域合规复杂性**。难点在于多智能体系统具有自主行动能力，且需同时满足技术安全（零信任架构）、法律合规（不同司法辖区的数据保护法）和经济激励（责任分配）的要求。论文提出了“CRAFT 框架”和“治理控制平面（Governance Control Plane）”设计，结合零信任安全架构和比较法视角（以印度法律为锚点，对比全球法规），实现了对代理行为的技术约束与法律责任的明确划分。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：本文为一本专著/预印本，未提供具体的代码库或单一算法实现，而是提出了一套理论框架和设计蓝图。核心部署概念包括设计面向 2030 年的“治理控制平面”，集成数字信任、网络安全和零信任架构。\n- **Evaluation 结果**：由于是框架性著作，评估主要通过案例分析（如“SmartCity Surveillance”）、法律条文对比（印度、欧盟、美国等六个司法辖区）以及经济学原理推演进行。它展示了如何将抽象的法律权利（如隐私权）转化为具体的技术治理要求。\n- **相关工作对比**：与传统 IT 数据治理相比，本文超越了单纯的元数据管理和访问控制，引入了代理行为和生成内容的治理；与单一视角的法律或技术研究相比，本文创新性地融合了技术、法律和经济学三重透镜，提供了更全面的跨学科解决方案。\n\n#### 总结\n本书构建了面向生成式和代理式 AI 的统一治理框架，解决了传统静态数据治理在动态、自主 AI 系统中的局限性。通过整合技术（零信任、血缘追踪）、法律（全球数据保护与知识产权）和经济学（责任与激励）视角，提出了涵盖数据质量、伦理、安全及监管合规的全生命周期治理方案。其核心贡献在于定义了动态信息状态的治理范式，并设计了面向未来的治理控制平面，为政策制定者和技术开发者提供了跨司法辖区的实践指南。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: As AI evolves from static data processing to Generative and Agentic AI, systems now retrieve, generate, infer, remember, and act autonomously. Traditional data governance models, focused on access control for stored assets, are insufficient for these dynamic information states and autonomous decision loops.\n- **Why Existing Work Fails**: Classical data governance treats data as static assets and focuses on IT housekeeping rather than strategic oversight. It fails to address the shift from \"access control\" to \"action control,\" cannot effectively govern dynamically generated information and multi-agent interactions, and lacks a unified approach to cross-jurisdictional legal compliance (e.g., India's DPDP Act, EU AI Act).\n\n## Core Contributions\n- **Proposed a Unified Data Governance Framework**: Integrates three disciplinary lenses—technology, law, and economics—covering the full lifecycle from LLMs and RAG pipelines to autonomous multi-agent systems.\n- **Challenge 1: Governing Dynamic Information States and Generated Content**. The difficulty lies in the fluid nature of AI-generated information involving inference and memory, which static governance cannot track. The paper addresses this by defining \"Seven Dynamic Information States\" and the \"Data-Model-Agent-Action Loop,\" shifting governance focus to the entire lifecycle of produced information to ensure traceability and auditability.\n- **Challenge 2: Action Control for Autonomous Agents and Cross-Domain Compliance Complexity**. The challenge is managing autonomous agent actions while satisfying technical security (Zero Trust), legal compliance (varying jurisdictions), and economic incentives (liability allocation). The paper proposes the \"CRAFT Framework\" and a \"Governance Control Plane\" design for 2030, combining Zero Trust architecture with comparative legal perspectives (anchored in Indian law) to technically constrain agent behavior and clarify legal liabilities.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: As a monograph/preprint, it does not provide a specific codebase but offers a theoretical framework and design blueprint. Key deployment concepts include the \"Governance Control Plane\" integrating digital trust, cybersecurity, and Zero Trust architecture.\n- **Evaluation Results**: Evaluation is conducted through case studies (e.g., \"SmartCity Surveillance\"), comparative legal analysis (across six jurisdictions including India, EU, US), and economic reasoning. It demonstrates how abstract legal rights (like privacy) translate into concrete technical governance requirements.\n- **Comparison with Related Work**: Unlike traditional IT data governance limited to metadata and access control, this work governs agent behavior and generated content. Compared to single-discipline studies, it innovatively fuses technology, law, and economics, offering a comprehensive interdisciplinary solution.\n\n## 4. Conclusion\nThis book constructs a unified governance framework for Generative and Agentic AI, addressing the limitations of traditional static data governance in dynamic, autonomous systems. By integrating technology (Zero Trust, lineage), law (global data protection, IP), and economics (liability, incentives), it provides a full-lifecycle governance scheme covering data quality, ethics, security, and compliance. Its core contribution is defining a governance paradigm for dynamic information states and designing a future-oriented Governance Control Plane, serving as a practical guide for policymakers and developers across jurisdictions.",
+      "render_excerpt": "本书构建了面向生成式和代理式 AI 的统一治理框架，解决了传统静态数据治理在动态、自主 AI 系统中的局限性。通过整合技术（零信任、血缘追踪）、法律（全球数据保护与知识产权）和经济学（责任与激励）视角，提出了涵盖数据质量、伦理、安全及监管合规的全生命周期治理方案。其核心贡献在于定义了动态信息状态的治理范式，并设计了面向未来的治理控制平面，为政策制定者和技术开发者提供了跨司法辖区的实践指南。",
+      "render_excerpt_en": "## 1. What the Paper Does - **Background**: As AI evolves from static data processing to Generative and Agentic AI, systems now retrieve, generate, infer, remember, and act autonomously. Traditional data governance models, focused on access control for stored assets, are insufficient for these dynamic information states and autonomous decision loops.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-10-24T11:03:57Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-10-24"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2610.33539",
+      "date": "2026-10-24",
+      "title": "CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems",
+      "authors": [
+        "Xufei Shi",
+        "Derong Xu",
+        "Wei Chen",
+        "Yanyu Yao",
+        "Zhi Zheng",
+        "Tong Xu"
+      ],
+      "abstract": "Large language model (LLM)-based multi-agent systems have demonstrated remarkable capabilities across diverse tasks. Yet their memory and collaboration architectures often remain static, constraining continued adaptation and improvement over time. Recent work addresses this limitation by evolving memory or collaboration based on interaction experience. However, updates to these interdependent components are not necessarily aligned: an evolved workflow may require experience that memory does not provide, while evolved memory may encode guidance that the workflow cannot use. To address this problem, we propose CoEvolve, a skill-centered framework for aligned memory--collaboration evolution. CoEvolve represents reusable local collaboration patterns as skills that link evolving collaboration decisions to their supporting memories. It further compares original and counterfactual trajectories to identify local evolution signals, which coordinate updates to the skill library, skill memory, and executor memories across rounds. Experiments on the ALFWorld and WebShop benchmarks confirm that CoEvolve achieves the best overall performance among the evaluated baselines, while ablation studies further validate the effectiveness of aligned co-evolution and counterfactual-guided evolution.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.33539v1",
+        "pdf": "https://arxiv.org/pdf/2610.33539v1",
+        "github": "https://github.com/MINE-USTC/CoEvolve",
+        "blog": null
+      },
+      "institution": "University of Science and Technology of China",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）在复杂任务中表现出色，但其记忆和协作架构通常在部署后保持静态，限制了系统随时间适应和改进的能力。\n- **已有工作为什么解决不了**：现有的自进化方法通常独立地进化记忆或协作机制。然而，这两个组件是相互依赖的：进化的工作流可能需要记忆无法提供的经验，而进化的记忆可能编码了当前工作流无法利用的指导，导致组件间的不匹配和性能瓶颈。\n\n## 文章的核心贡献点\n- **提出了一个**名为 CoEvolve 的以技能为中心的框架，旨在实现记忆与协作的对齐协同进化。\n- **挑战1：记忆与协作进化的不对齐问题**。难点在于单独优化任一组件会导致另一组件的需求无法满足（如工作流锁死无法利用新记忆，或新工作流缺乏对应记忆支持）。CoEvolve 通过将可重用的局部协作模式表示为“技能”，将 evolving 的协作决策与其支持记忆直接链接，确保两者同步更新。\n- **挑战2：如何精准识别有效的进化信号**。难点在于从复杂的交互轨迹中提取真正有助于改进的局部信号。CoEvolve 通过比较原始轨迹与反事实轨迹（counterfactual trajectories）来识别局部进化信号，从而协调技能库、技能记忆和执行器记忆的跨轮次更新。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 ALFWorld 和 WebShop 基准测试上进行评估。\n- **对比基线**：与 MemEvolve、MemSkill、GPTSwarm、HFlow、EvoChamber 等仅进化记忆或仅进化协作的最新方法进行对比。\n- **结果**：CoEvolve 在所有评估的基线中取得了最佳的总体性能。消融实验进一步验证了对齐协同进化和反事实引导进化的有效性，证明了该方法在解决组件不匹配问题上的优势。\n\n#### 总结\nCoEvolve 解决了多智能体系统中记忆与协作独立进化导致的不对齐问题。通过引入“技能”作为连接桥梁，并利用反事实分析引导进化方向，该框架实现了记忆与协作结构的协同优化，显著提升了系统在动态环境中的适应能力和任务执行效率。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-based multi-agent systems (MAS) show strong capabilities but often suffer from static memory and collaboration architectures post-deployment, limiting long-term adaptation.\n- **Why Existing Work Falls Short**: Recent self-evolving approaches typically evolve memory or collaboration independently. This leads to misalignment: an evolved workflow may require memory support that isn't available, or evolved memory may contain guidance unusable by the current workflow, causing performance bottlenecks.\n\n## Core Contributions\n- **Proposed CoEvolve**: A skill-centered framework for aligned co-evolution of memory and collaboration.\n- **Challenge 1: Misalignment between Memory and Collaboration Evolution**. The difficulty lies in the interdependence of these components; optimizing one in isolation breaks the synergy with the other. CoEvolve addresses this by representing reusable local collaboration patterns as \"skills\" that explicitly link evolving collaboration decisions to their supporting memories, ensuring synchronized updates.\n- **Challenge 2: Identifying Effective Evolution Signals**. Extracting precise improvement signals from complex interaction traces is difficult. CoEvolve compares original and counterfactual trajectories to identify local evolution signals, coordinating updates across the skill library, skill memory, and executor memories.\n\n## Implementation and Evaluation\n- **Benchmarks**: Evaluated on ALFWorld and WebShop.\n- **Baselines**: Compared against state-of-the-art methods like MemEvolve, MemSkill, GPTSwarm, HFlow, and EvoChamber.\n- **Results**: CoEvolve achieved the best overall performance among all evaluated baselines. Ablation studies confirmed the effectiveness of both aligned co-evolution and counterfactual-guided evolution mechanisms.\n\n## 4. Conclusion\nCoEvolve effectively addresses the misalignment issue in MAS evolution by introducing \"skills\" as a bridging mechanism and using counterfactual analysis for guided updates. This approach ensures synchronized optimization of memory and collaboration structures, significantly enhancing system adaptability and task performance in dynamic environments.",
+      "render_excerpt": "机构: University of Science and Technology of China<br>CoEvolve 解决了多智能体系统中记忆与协作独立进化导致的不对齐问题。通过引入“技能”作为连接桥梁，并利用反事实分析引导进化方向，该框架实现了记忆与协作结构的协同优化，显著提升了系统在动态环境中的适应能力和任务执行效率。",
+      "render_excerpt_en": "Institution: University of Science and Technology of China<br>## 1. What the Paper Does - **Background**: LLM-based multi-agent systems (MAS) show strong capabilities but often suffer from static memory and collaboration architectures post-deployment, limiting long-term adaptation. - **Why Existing Work Falls Short**: Recent self-evolving approaches typically evolve memory or collaboration independently.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-10-24T08:35:39Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-10-24"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
