@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.28_07:00-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_10.30_07:25-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月28日 07:00</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月30日 07:25</sub></summary>
 <br>
 
-- FeatureArc: Benchmarking Coding Agents on Evolving Features 
-- Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution? 
-- AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents 
-- Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers 
-- LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents 
+- EpiAgent: Epistemic Self-Play for LLM Agents 
+- Agentic University: Collaborative Agents for Personalized Learning 
+- Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation 
+- The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables 
+- EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-29</span> | **EpiAgent: Epistemic Self-Play for LLM Agents**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>EpiAgent 通过引入显式、可学习的认知层，成功弥补了现有LLM智能体在不完全信息多智能体交互中的短板。其核心创新在于将认知更新与动作规划解耦为双层优化问题，并通过认知自博弈算法实现两者的协同进化。实验结果证明了该方法在提升信念推断准确性和最终决策性能方面的有效性，为构建更强大的多智能体系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40227v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40227.md)  |
+| <span style='display: inline-block; width: 42px;'>10-29</span> | **Agentic University: Collaborative Agents for Personalized Learning**<br><sub>机构: Shanghai Jiao Tong University, Nanyang Technological University, National University of Singapore<br>本文提出了Agentic University，一种基于人类参与式多智能体组织的个性化学习系统。通过将学习者纳入多智能体协作循环，并维护动态可修订的能力计划，AU有效解决了目标、活动与评估对齐的难题。实验表明，该方法在提升学习成效和认知支持方面优于现有方法，为自适应学习提供了一种以学习者参与为核心的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40492v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40492.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgenticOrgLab/AgenticUniversity.git)</div> |
+| <span style='display: inline-block; width: 42px;'>10-29</span> | **Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation**<br><sub>机构: The Chinese University of Hong Kong, Tencent, The Hong Kong University of Science and Technology<br>本文针对 LLM 代理在长程任务中因上下文噪声累积导致的认知过载问题，提出了 CORAL 框架。通过引入主动的上下文优化机制，允许代理自行管理检查工作记忆并重置上下文，结合强化学习优化这一过程，CORAL 在保持高准确率的同时大幅降低了推理成本，并在多个复杂基准测试中超越了现有方法，为构建高效长程 LLM 代理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40350v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40350.md)  |
+| <span style='display: inline-block; width: 42px;'>10-29</span> | **The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables**<br><sub>机构: KavAI<br>本文提出了 EpiCoach，一个用于个体化生理学的代理贝叶斯实验设计系统。它通过建立可证伪的假设注册表和机制化数字孪生，解决了现有 LLM 健康代理缺乏可审计学习过程的问题。实验表明，该系统能够在保证安全的前提下，从噪声可穿戴数据中学习个体特征，并为数字健康领域的可审计个人化提供了模板。作者发布了注册表、基准测试和协议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40370v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40370.md)  |
+| <span style='display: inline-block; width: 42px;'>10-29</span> | **EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation**<br><sub>机构: QpiAI, Bangalore, India<br>## 文章做了什么 - **背景**：基于大语言模型（LLM）的计算机使用代理（Computer-use agents）在状态可变的应用程序中执行多步工作流。在真实部署中，环境状态会在代理行动期间发生变化（如预约时间变动、政策修订、记录更新），而现有的评估方法通常假设episode开始后的应用状态是固定的。 - **已有工作的不足**：现有研究虽然扩展了交互式评估以涵盖长程任务和动态环境，但存在一个关键的方法论缺陷：难以区分代理失败是由于代理自身能力不足，还是由于基准测试机制的问题（如状态变更未按预期触发、代理未接收到更新、或评分器错误评分）。这种不确定性不仅影响基准测试的准确性，还会导致基于可验证奖励的强化学习训练信号错误。 ## 文章的核心贡献点 - **提出了一个 EnvOS 框架**：用于构建和认证“中途变化”环境的框架，确保环境变化的有效性、任务的可解性以及评分的准确性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40246v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40246.md)  |
 | <span style='display: inline-block; width: 42px;'>10-27</span> | **FeatureArc: Benchmarking Coding Agents on Evolving Features**<br><sub>机构: Tencent, The Chinese University of Hong Kong<br>FeatureArc 填补了编码智能体在演进式功能开发评估上的空白。通过构建具有强依赖性的多阶段任务和 L4 级自主评估环境，文章揭示了当前智能体在处理长期依赖和自我纠错方面的严重不足，特别是“继承缺陷”导致的成功率断崖式下跌。该研究为提升智能体在复杂、连续软件开发任务中的可靠性提供了重要的基准和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37434v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37434.md)  |
 | <span style='display: inline-block; width: 42px;'>10-27</span> | **Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?**<br><sub>机构: The University of Hong Kong<br>本文深入研究了 LLM 驱动代理脚手架进化中的评估预算分配问题，指出搜索引导与最终选择对评估的不同需求。提出的 EvalAlloc 框架通过“稀疏搜索反馈 + 针对性最终确认”的策略，有效解决了成本与性能的权衡问题。实验证明，该方法能在大幅减少评估开销的同时，提升最终代理脚手架的性能，为自动化 Agent 优化提供了高效的评估范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37276v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37276.md)  |
 | <span style='display: inline-block; width: 42px;'>10-27</span> | **AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents**<br><sub>机构: Fudan University<br>AnalogScout通过结合精英设计复用、解析式的gm/Id局部尺寸调整和全角点验证下的全局细化，有效解决了模拟电路尺寸调整中仿真成本高企的问题。该方法显著提高了仿真效率，在有限的仿真预算下实现了比传统优化算法和现有LLM方法更优的低功耗设计结果，为模拟设计自动化提供了一种高效的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.37319v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.37319.md)  |

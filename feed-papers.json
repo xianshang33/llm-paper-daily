@@ -1,137 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-29T11:41:34.771638+00:00",
-  "run_date": "2026-10-24",
+  "generated_at": "2026-10-30T07:25:40.085829+00:00",
+  "run_date": "2026-10-29",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.33509",
-      "date": "2026-10-24",
-      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?",
+      "id": "arxiv:2610.40227",
+      "date": "2026-10-29",
+      "title": "EpiAgent: Epistemic Self-Play for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yihan Yang",
-        "Chenyuan Yang",
-        "Zijie Zhao",
-        "Anh Nguyen Hoang",
-        "Ziqi Zhang",
-        "Weidong Wang",
-        "Zhiheng Lyu",
-        "Lingming Zhang"
+        "Xuanfa Jin",
+        "Xinyu Cui",
+        "Zhijian Ma",
+        "Xue Yan",
+        "Jian Zhao",
+        "Haifeng Zhang",
+        "Jun Wang"
       ],
-      "institution": "University of Illinois Urbana-Champaign",
+      "institution": "Institute of Automation, Chinese Academy of Sciences",
       "summary": {
-        "zh": "本文介绍了 SecPRBench，填补了代理式安全代码审查在真实漏洞引入场景评估上的空白。通过自动化管道收集真实世界的漏洞提交并利用 LLM 作为裁判进行细粒度诊断评估，研究揭示了当前顶尖模型在安全审查中仍存在显著的诊断偏差，且不同的安全优化策略对召回率有截然不同的影响。该基准为未来提升 LLM 安全审查能力提供了重要的评估基础和方向。",
-        "en": "- **Background**: LLM agents are increasingly adopted for security-focused code review to catch vulnerabilities before merging. However, existing benchmarks mostly derive reviewed changes from later fixes rather than..."
+        "zh": "EpiAgent 通过引入显式、可学习的认知层，成功弥补了现有LLM智能体在不完全信息多智能体交互中的短板。其核心创新在于将认知更新与动作规划解耦为双层优化问题，并通过认知自博弈算法实现两者的协同进化。实验结果证明了该方法在提升信念推断准确性和最终决策性能方面的有效性，为构建更强大的多智能体系统提供了新的范式。",
+        "en": "- **Background**: Large Language Models (LLMs) excel in single-agent tasks but struggle in Multi-Agent Systems (MAS) due to non-stationarity and incomplete information. Epistemic Game Theory suggests that strategic..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.33509v1",
-        "pdf": "https://arxiv.org/pdf/2610.33509v1",
-        "github": "https://github.com/yijan4845/secprbench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.33509.md",
-        "summary_en_path": "summary_en/2026-10/2610.33509.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33509.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33509.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.33845",
-      "date": "2026-10-24",
-      "title": "Build, Don't Play: Self-Improving LLM Research Agents Develop a Hearthstone Battlegrounds AI That Rivals Top Players",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Changlian Ma",
-        "Limin Wang"
-      ],
-      "institution": "Nanjing University, Shanghai AI Laboratory",
-      "summary": {
-        "zh": "本文证明了LLM Agent具备从原始数据出发，独立构建复杂现实世界系统并达到超越人类顶尖水平的能力。通过AutoTavern系统，研究者成功开发了《炉石传说：酒馆战棋》的高保真模拟器和超强AI代理TavernAgent。核心结论是“LLM Agent更擅长构建系统而非直接参与游戏”，即Agent作为研究者构建出的专用AI系统在性能和效率上均远超直接使用通用LLM进行游戏决策。相关代码和基准测试已开源。",
-        "en": "- **Background**: Games have long served as AI milestones (e.g., Go, StarCraft), traditionally built by large teams of human experts. With LLM agents now capable of writing code, research is shifting towards whether..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.33845v1",
-        "pdf": "https://arxiv.org/pdf/2610.33845v1",
-        "github": "https://github.com/MCG-NJU/AutoTavern"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.33845.md",
-        "summary_en_path": "summary_en/2026-10/2610.33845.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33845.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33845.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2610.33876",
-      "date": "2026-10-24",
-      "title": "FlashScript: Compiling Recurring Agent Workflows into Reusable Neuro-Symbolic Programs",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Sadra Sabouri",
-        "Hosein Hasanbeig",
-        "Adam Sage",
-        "Shreya Sinha",
-        "Cale Darling",
-        "Ashish Tiwari",
-        "Katie Garms",
-        "Souti Chattopadhyay",
-        "Sumit Gulwani"
-      ],
-      "institution": "University of Southern California, Microsoft",
-      "summary": {
-        "zh": "FlashScript 通过将代理的成功运行轨迹编译为神经符号程序，解决了代理工作流中重复执行成本高、结果不一致的问题。它将确定性逻辑代码化，仅保留必要的 LLM 调用并使其局部化，从而显著降低了 Token 消耗和延迟，同时提高了运行的可靠性和可测试性。这项工作表明，从代理轨迹生成的 NSP 可以作为终端用户的累积软件资产，用于测试、维护和复用 recurring workflows。",
-        "en": "- **Background**: AI agents are increasingly used for recurring tasks (e.g., weekly report updates). However, current agents regenerate their reasoning and action paths on every run, leading to inconsistent results even..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2610.33876v1",
-        "pdf": "https://arxiv.org/pdf/2610.33876v1",
+        "abs": "http://arxiv.org/abs/2610.40227v1",
+        "pdf": "https://arxiv.org/pdf/2610.40227v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.33876.md",
-        "summary_en_path": "summary_en/2026-10/2610.33876.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33876.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33876.md"
+        "summary_zh_path": "summary/2026-10/2610.40227.md",
+        "summary_en_path": "summary_en/2026-10/2610.40227.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40227.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40227.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -148,34 +54,90 @@
       }
     },
     {
-      "id": "arxiv:2610.33605",
-      "date": "2026-10-24",
-      "title": "Data Governance for Generative and Agentic AI : Technology, Law, Economics, and Security",
+      "id": "arxiv:2610.40492",
+      "date": "2026-10-29",
+      "title": "Agentic University: Collaborative Agents for Personalized Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Narayana Darapaneni",
-        "Padmaja K",
-        "Gnana Chaithra D"
+        "Jingru Fan",
+        "Tianle Zhou",
+        "Yunjie Zhou",
+        "Zihao He",
+        "Yixuan Zhou",
+        "Kezhao Wu",
+        "Xinyu Zheng",
+        "Xiyuan Wang",
+        "Yuheng Wang",
+        "Zhi Li",
+        "Songhua Liu",
+        "Weinan E",
+        "Chen Qian"
       ],
-      "institution": null,
+      "institution": "Shanghai Jiao Tong University, Nanyang Technological University, National University of Singapore",
       "summary": {
-        "zh": "本书构建了面向生成式和代理式 AI 的统一治理框架，解决了传统静态数据治理在动态、自主 AI 系统中的局限性。通过整合技术（零信任、血缘追踪）、法律（全球数据保护与知识产权）和经济学（责任与激励）视角，提出了涵盖数据质量、伦理、安全及监管合规的全生命周期治理方案。其核心贡献在于定义了动态信息状态的治理范式，并设计了面向未来的治理控制平面，为政策制定者和技术开发者提供了跨司法辖区的实践指南。",
-        "en": "- **Background**: As AI evolves from static data processing to Generative and Agentic AI, systems now retrieve, generate, infer, remember, and act autonomously. Traditional data governance models, focused on access..."
+        "zh": "本文提出了Agentic University，一种基于人类参与式多智能体组织的个性化学习系统。通过将学习者纳入多智能体协作循环，并维护动态可修订的能力计划，AU有效解决了目标、活动与评估对齐的难题。实验表明，该方法在提升学习成效和认知支持方面优于现有方法，为自适应学习提供了一种以学习者参与为核心的新范式。",
+        "en": "- **Background**: Large Language Models (LLMs) show promise in personalized tutoring, content generation, and adaptive learning path planning. However, true capability development requires integrating these elements..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.33605v1",
-        "pdf": "https://arxiv.org/pdf/2610.33605v1",
+        "abs": "http://arxiv.org/abs/2610.40492v1",
+        "pdf": "https://arxiv.org/pdf/2610.40492v1",
+        "github": "https://github.com/AgenticOrgLab/AgenticUniversity.git"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.40492.md",
+        "summary_en_path": "summary_en/2026-10/2610.40492.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40492.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40492.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.40350",
+      "date": "2026-10-29",
+      "title": "Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zheng Zhu",
+        "Xiaozhuan Liang",
+        "Xi Chen",
+        "Bei Yu",
+        "Jiaya Jia"
+      ],
+      "institution": "The Chinese University of Hong Kong, Tencent, The Hong Kong University of Science and Technology",
+      "summary": {
+        "zh": "本文针对 LLM 代理在长程任务中因上下文噪声累积导致的认知过载问题，提出了 CORAL 框架。通过引入主动的上下文优化机制，允许代理自行管理检查工作记忆并重置上下文，结合强化学习优化这一过程，CORAL 在保持高准确率的同时大幅降低了推理成本，并在多个复杂基准测试中超越了现有方法，为构建高效长程 LLM 代理提供了新范式。",
+        "en": "This paper addresses cognitive overload in LLM agents during long-horizon tasks caused by accumulated context noise. It proposes CORAL, a framework enabling proactive context optimization through self-managed working..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.40350v1",
+        "pdf": "https://arxiv.org/pdf/2610.40350v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.33605.md",
-        "summary_en_path": "summary_en/2026-10/2610.33605.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33605.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33605.md"
+        "summary_zh_path": "summary/2026-10/2610.40350.md",
+        "summary_en_path": "summary_en/2026-10/2610.40350.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40350.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40350.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -192,37 +154,78 @@
       }
     },
     {
-      "id": "arxiv:2610.33539",
-      "date": "2026-10-24",
-      "title": "CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems",
+      "id": "arxiv:2610.40370",
+      "date": "2026-10-29",
+      "title": "The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xufei Shi",
-        "Derong Xu",
-        "Wei Chen",
-        "Yanyu Yao",
-        "Zhi Zheng",
-        "Tong Xu"
+        "Behnam Moradi"
       ],
-      "institution": "University of Science and Technology of China",
+      "institution": "KavAI",
       "summary": {
-        "zh": "CoEvolve 解决了多智能体系统中记忆与协作独立进化导致的不对齐问题。通过引入“技能”作为连接桥梁，并利用反事实分析引导进化方向，该框架实现了记忆与协作结构的协同优化，显著提升了系统在动态环境中的适应能力和任务执行效率。",
-        "en": "- **Background**: LLM-based multi-agent systems (MAS) show strong capabilities but often suffer from static memory and collaboration architectures post-deployment, limiting long-term adaptation. - **Why Existing Work..."
+        "zh": "本文提出了 EpiCoach，一个用于个体化生理学的代理贝叶斯实验设计系统。它通过建立可证伪的假设注册表和机制化数字孪生，解决了现有 LLM 健康代理缺乏可审计学习过程的问题。实验表明，该系统能够在保证安全的前提下，从噪声可穿戴数据中学习个体特征，并为数字健康领域的可审计个人化提供了模板。作者发布了注册表、基准测试和协议。",
+        "en": "- **Background**: Current Large Language Model (LLM) agents for personal health can read wearable data and provide recommendations, but they lack an auditable, falsifiable learning mechanism for the individual. They..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.33539v1",
-        "pdf": "https://arxiv.org/pdf/2610.33539v1",
-        "github": "https://github.com/MINE-USTC/CoEvolve"
+        "abs": "http://arxiv.org/abs/2610.40370v1",
+        "pdf": "https://arxiv.org/pdf/2610.40370v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.33539.md",
-        "summary_en_path": "summary_en/2026-10/2610.33539.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.33539.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.33539.md"
+        "summary_zh_path": "summary/2026-10/2610.40370.md",
+        "summary_en_path": "summary_en/2026-10/2610.40370.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40370.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40370.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2610.40246",
+      "date": "2026-10-29",
+      "title": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Ankush Kadu",
+        "Athira Gopal",
+        "Niharika Singh",
+        "Arpit Jain",
+        "Aswanth Krishnan"
+      ],
+      "institution": "QpiAI, Bangalore, India",
+      "summary": {
+        "zh": "- **背景**：基于大语言模型（LLM）的计算机使用代理（Computer-use agents）在状态可变的应用程序中执行多步工作流。在真实部署中，环境状态会在代理行动期间发生变化（如预约时间变动、政策修订、记录更新），而现有的评估方法通常假设episode开始后的应用状态是固定的。 -...",
+        "en": "- **Background**: Large Language Model (LLM)-based computer-use agents operate in stateful applications where the environment can change during execution (e.g., appointment rescheduling, policy updates). Existing..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2610.40246v1",
+        "pdf": "https://arxiv.org/pdf/2610.40246v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-10/2610.40246.md",
+        "summary_en_path": "summary_en/2026-10/2610.40246.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40246.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40246.md"
       },
       "signals": {
         "priority_keyword": "Agent"
