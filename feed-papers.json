@@ -1,43 +1,49 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-30T07:25:40.085829+00:00",
-  "run_date": "2026-10-29",
+  "generated_at": "2026-10-31T07:13:42.608461+00:00",
+  "run_date": "2026-10-28",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.40227",
-      "date": "2026-10-29",
-      "title": "EpiAgent: Epistemic Self-Play for LLM Agents",
+      "id": "arxiv:2610.38882",
+      "date": "2026-10-28",
+      "title": "Aligning Autoresearch: Co-Improvement between Agents and Humans",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xuanfa Jin",
-        "Xinyu Cui",
-        "Zhijian Ma",
-        "Xue Yan",
-        "Jian Zhao",
-        "Haifeng Zhang",
-        "Jun Wang"
+        "Tianjian Li",
+        "Chuanyang Jin",
+        "Seungone Kim",
+        "Tong Chen",
+        "John Hoffman",
+        "Yoram Bachrach amd Pedro Rodriguez",
+        "Ping Yu",
+        "Eryk Helenowski",
+        "Swarnadeep Saha",
+        "Jack Lanchantin",
+        "Weizhe Yuan",
+        "Ilia Kulikov",
+        "Jason Weston"
       ],
-      "institution": "Institute of Automation, Chinese Academy of Sciences",
+      "institution": "FAIR at Meta, Johns Hopkins University, Carnegie Mellon University, University of Washington",
       "summary": {
-        "zh": "EpiAgent 通过引入显式、可学习的认知层，成功弥补了现有LLM智能体在不完全信息多智能体交互中的短板。其核心创新在于将认知更新与动作规划解耦为双层优化问题，并通过认知自博弈算法实现两者的协同进化。实验结果证明了该方法在提升信念推断准确性和最终决策性能方面的有效性，为构建更强大的多智能体系统提供了新的范式。",
-        "en": "- **Background**: Large Language Models (LLMs) excel in single-agent tasks but struggle in Multi-Agent Systems (MAS) due to non-stationarity and incomplete information. Epistemic Game Theory suggests that strategic..."
+        "zh": "本文深入探讨了自动研究智能体与人类研究者之间的“共同改进”关系。通过实证分析明确了人类在创意阶段的关键作用，开发了HackBench基准揭示了当前智能体在对齐和反黑客方面的不足，并提出了基于人类模拟器代理的RL训练方法及基于专家量表的文本生成优化方案。这些贡献为构建更强大、更安全且能与人类高效协作的研究智能体提供了清晰的路径和方法论支持。",
+        "en": "- **Background**: Autoresearch agents can now attempt end-to-end long-horizon AI research (self-improvement). However, the best results are still achieved through interaction between research agents and human..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.40227v1",
-        "pdf": "https://arxiv.org/pdf/2610.40227v1",
+        "abs": "http://arxiv.org/abs/2610.38882v1",
+        "pdf": "https://arxiv.org/pdf/2610.38882v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.40227.md",
-        "summary_en_path": "summary_en/2026-10/2610.40227.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40227.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40227.md"
+        "summary_zh_path": "summary/2026-10/2610.38882.md",
+        "summary_en_path": "summary_en/2026-10/2610.38882.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38882.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38882.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -54,44 +60,36 @@
       }
     },
     {
-      "id": "arxiv:2610.40492",
-      "date": "2026-10-29",
-      "title": "Agentic University: Collaborative Agents for Personalized Learning",
+      "id": "arxiv:2610.38869",
+      "date": "2026-10-28",
+      "title": "Auditable Belief Updates as a Missing Safety Layer for LLM-Powered Multi-Agent Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jingru Fan",
-        "Tianle Zhou",
-        "Yunjie Zhou",
-        "Zihao He",
-        "Yixuan Zhou",
-        "Kezhao Wu",
-        "Xinyu Zheng",
-        "Xiyuan Wang",
-        "Yuheng Wang",
-        "Zhi Li",
-        "Songhua Liu",
-        "Weinan E",
-        "Chen Qian"
+        "Zhuoyun Li",
+        "Boxuan Wang",
+        "Jinwei Hu",
+        "Xiaowei Huang",
+        "Yi Dong"
       ],
-      "institution": "Shanghai Jiao Tong University, Nanyang Technological University, National University of Singapore",
+      "institution": "University of Liverpool",
       "summary": {
-        "zh": "本文提出了Agentic University，一种基于人类参与式多智能体组织的个性化学习系统。通过将学习者纳入多智能体协作循环，并维护动态可修订的能力计划，AU有效解决了目标、活动与评估对齐的难题。实验表明，该方法在提升学习成效和认知支持方面优于现有方法，为自适应学习提供了一种以学习者参与为核心的新范式。",
-        "en": "- **Background**: Large Language Models (LLMs) show promise in personalized tutoring, content generation, and adaptive learning path planning. However, true capability development requires integrating these elements..."
+        "zh": "本文指出，随着 LLM 深度融入社会决策流程，仅仅依靠输出过滤已不足以保障安全。作者定义了“信念”作为基于证据承诺的工程抽象，并提出了 EB-MAS 系统。该系统通过外部化信念状态和应用认知防火墙，实现了对信念更新的可审计性和约束力，有效应对弱证据诱导和群体认知风险。这项工作为构建下一代安全的 LLM 多智能体系统提供了一个缺失的关键安全层，强调了运行时追踪和校准信念修订的重要性。",
+        "en": "- **Background**: Large Language Models (LLMs) are evolving from passive information tools into active cognitive interfaces that shape user perception, communication, and decision-making. As systems become more..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.40492v1",
-        "pdf": "https://arxiv.org/pdf/2610.40492v1",
-        "github": "https://github.com/AgenticOrgLab/AgenticUniversity.git"
+        "abs": "http://arxiv.org/abs/2610.38869v1",
+        "pdf": "https://arxiv.org/pdf/2610.38869v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.40492.md",
-        "summary_en_path": "summary_en/2026-10/2610.40492.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40492.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40492.md"
+        "summary_zh_path": "summary/2026-10/2610.38869.md",
+        "summary_en_path": "summary_en/2026-10/2610.38869.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38869.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38869.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -108,36 +106,35 @@
       }
     },
     {
-      "id": "arxiv:2610.40350",
-      "date": "2026-10-29",
-      "title": "Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation",
+      "id": "arxiv:2610.38691",
+      "date": "2026-10-28",
+      "title": "Beyond fabrication: Misattributed numbers in papers written by AI research agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zheng Zhu",
-        "Xiaozhuan Liang",
-        "Xi Chen",
-        "Bei Yu",
-        "Jiaya Jia"
+        "Mosab Alfaqeeh",
+        "Omar Hourani",
+        "Muath Hourani",
+        "Hashem Alfaqeeh"
       ],
-      "institution": "The Chinese University of Hong Kong, Tencent, The Hong Kong University of Science and Technology",
+      "institution": "Al-Ahliyya Amman University; Binghamton University, State University of New York",
       "summary": {
-        "zh": "本文针对 LLM 代理在长程任务中因上下文噪声累积导致的认知过载问题，提出了 CORAL 框架。通过引入主动的上下文优化机制，允许代理自行管理检查工作记忆并重置上下文，结合强化学习优化这一过程，CORAL 在保持高准确率的同时大幅降低了推理成本，并在多个复杂基准测试中超越了现有方法，为构建高效长程 LLM 代理提供了新范式。",
-        "en": "This paper addresses cognitive overload in LLM agents during long-horizon tasks caused by accumulated context noise. It proposes CORAL, a framework enabling proactive context optimization through self-managed working..."
+        "zh": "本文指出AI研究智能体生成的论文中，数值错误主要源于“错误归因”而非“捏造”。现有的LLM法官无法有效区分这两者。作者提出了一种确定性的声明到证据检查器，以高精度验证数值来源，并证明了将其与LLM验证器结合使用的必要性。研究强调了在AI生成的研究中实施“来源优先”（provenance-first）审计的重要性，以确保数据质量和研究诚信。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly tasked with extended analytical work, including writing code, running experiments, and producing full research papers. Organizations rely on these..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.40350v1",
-        "pdf": "https://arxiv.org/pdf/2610.40350v1",
+        "abs": "http://arxiv.org/abs/2610.38691v1",
+        "pdf": "https://arxiv.org/pdf/2610.38691v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.40350.md",
-        "summary_en_path": "summary_en/2026-10/2610.40350.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40350.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40350.md"
+        "summary_zh_path": "summary/2026-10/2610.38691.md",
+        "summary_en_path": "summary_en/2026-10/2610.38691.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38691.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38691.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -154,32 +151,39 @@
       }
     },
     {
-      "id": "arxiv:2610.40370",
-      "date": "2026-10-29",
-      "title": "The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables",
+      "id": "arxiv:2610.38620",
+      "date": "2026-10-28",
+      "title": "Think Before You Act: Decision Gate for LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Behnam Moradi"
+        "Iftach Shoham",
+        "Yuval David",
+        "Offer Akrabi",
+        "Erez Bilgory",
+        "Ido Levy",
+        "Sami Marreed",
+        "Sergey Zeltyn",
+        "Segev Shlomov"
       ],
-      "institution": "KavAI",
+      "institution": "IBM SIL",
       "summary": {
-        "zh": "本文提出了 EpiCoach，一个用于个体化生理学的代理贝叶斯实验设计系统。它通过建立可证伪的假设注册表和机制化数字孪生，解决了现有 LLM 健康代理缺乏可审计学习过程的问题。实验表明，该系统能够在保证安全的前提下，从噪声可穿戴数据中学习个体特征，并为数字健康领域的可审计个人化提供了模板。作者发布了注册表、基准测试和协议。",
-        "en": "- **Background**: Current Large Language Model (LLM) agents for personal health can read wearable data and provide recommendations, but they lack an auditable, falsifiable learning mechanism for the individual. They..."
+        "zh": "本文提出了 JevAct，一种用于 LLM 智能体的运行时验证框架。通过将领域策略编译为可执行检查和由轻量级决策模型评估的结构化问题，JevAct 能够在动作执行前有效拦截违规或不当操作。该方法无需修改底层模型，通过提供针对性反馈支持智能体自我修正，实验证明其在多个基准测试中显著提升了智能体使用工具的可靠性和安全性。",
+        "en": "- **Background**: LLM agents increasingly perform consequential actions via external tools (e.g., modifying records, making bookings). However, these proposed actions are often executed without independent verification..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.40370v1",
-        "pdf": "https://arxiv.org/pdf/2610.40370v1",
+        "abs": "http://arxiv.org/abs/2610.38620v1",
+        "pdf": "https://arxiv.org/pdf/2610.38620v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.40370.md",
-        "summary_en_path": "summary_en/2026-10/2610.40370.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40370.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40370.md"
+        "summary_zh_path": "summary/2026-10/2610.38620.md",
+        "summary_en_path": "summary_en/2026-10/2610.38620.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38620.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38620.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -196,36 +200,41 @@
       }
     },
     {
-      "id": "arxiv:2610.40246",
-      "date": "2026-10-29",
-      "title": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
+      "id": "arxiv:2610.38867",
+      "date": "2026-10-28",
+      "title": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ankush Kadu",
-        "Athira Gopal",
-        "Niharika Singh",
-        "Arpit Jain",
-        "Aswanth Krishnan"
+        "Chengquan Guo",
+        "Xiaodong Liu",
+        "Weiwei Yang",
+        "Mingqian Feng",
+        "Jialin Song",
+        "Qiyao Ma",
+        "Carolyn Buractaon",
+        "Christopher White",
+        "Bo Li",
+        "Jianfeng Gao"
       ],
-      "institution": "QpiAI, Bangalore, India",
+      "institution": "University of Chicago, Microsoft Research, University of Rochester, Simon Fraser University, University of California Davis, University of Illinois Urbana-Champaign",
       "summary": {
-        "zh": "- **背景**：基于大语言模型（LLM）的计算机使用代理（Computer-use agents）在状态可变的应用程序中执行多步工作流。在真实部署中，环境状态会在代理行动期间发生变化（如预约时间变动、政策修订、记录更新），而现有的评估方法通常假设episode开始后的应用状态是固定的。 -...",
-        "en": "- **Background**: Large Language Model (LLM)-based computer-use agents operate in stateful applications where the environment can change during execution (e.g., appointment rescheduling, policy updates). Existing..."
+        "zh": "本文首次系统性地表征了间接提示注入中不同注入位置的有效性，提出了“信任区域效应”这一概念，指出智能体对环境不同区域存在不均匀的信任分布。通过构建多领域测试床和开发基于学习的攻击者，论文证明了注入位置对攻击成功率的重大影响。这一发现为未来设计更 robust 的智能体攻击与防御机制提供了重要见解，强调在安全评估中必须同时考虑注入的内容和上下文位置。",
+        "en": "- **Background**: LLM agents are increasingly adopted for long-horizon tasks interacting with diverse external environments. However, they remain vulnerable to indirect prompt injections, where malicious instructions..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.40246v1",
-        "pdf": "https://arxiv.org/pdf/2610.40246v1",
+        "abs": "http://arxiv.org/abs/2610.38867v1",
+        "pdf": "https://arxiv.org/pdf/2610.38867v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.40246.md",
-        "summary_en_path": "summary_en/2026-10/2610.40246.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.40246.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.40246.md"
+        "summary_zh_path": "summary/2026-10/2610.38867.md",
+        "summary_en_path": "summary_en/2026-10/2610.38867.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38867.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38867.md"
       },
       "signals": {
         "priority_keyword": "Agent"
