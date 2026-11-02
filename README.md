@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_10.30_07:25-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.02_07:53-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年10月30日 07:25</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月02日 07:53</sub></summary>
 <br>
 
-- EpiAgent: Epistemic Self-Play for LLM Agents 
-- Agentic University: Collaborative Agents for Personalized Learning 
-- Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation 
-- The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables 
-- EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation 
+- TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents 
+- SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI 
+- Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System 
+- KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents 
+- What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>10-30</span> | **TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents**<br><sub>机构: College of Computer Science, Beijing Information Science and Technology University<br>本文指出了现有 LLM 谈判基准忽视“执行落地”价值的缺陷，提出了 TradeWar 基准，强调将谈判转化为可执行政策并评估其宏观经济影响。提出的 TACTIC 智能体通过跨回合的策略自适应优化，在不微调模型权重的情况下，显著提升了谈判的经济健康指数，并在动态冲击环境下表现出优越的鲁棒性。这项工作推动了 LLM 智能体从单纯的对话协商向具备实际执行价值和长期战略规划能力的方向演进。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.42004v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.42004.md)  |
+| <span style='display: inline-block; width: 42px;'>10-30</span> | **SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI**<br><sub>机构: University of Marburg, Technische Universität Berlin, University of Groningen, German Research Center for Artificial Intelligence (DFKI)<br>SimXAI 证明了使用单一的、支持工具调用的 LLM 作为对话层，可以有效替代复杂且僵化的传统 GUS 架构。它不仅简化了 ConvXAI 系统的开发和部署，还通过更好的上下文处理能力提升了用户的交互体验和模型理解效率，是一种简单即插即用的高效解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.41856v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.41856.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/bach-mr/SimXAI)</div> |
+| <span style='display: inline-block; width: 42px;'>10-30</span> | **Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System**<br><sub>机构: Shenyang Institute of Technology<br>本文揭示了LLM智能体系统中普遍存在的“声称-实现”差距，指出模块名称与实际计算必须作为独立主张进行审计。提出的静态审计协议和失败分类法不仅适用于认知架构，也为更广泛的软件工程中的死代码分析和集成测试提供了新的视角和工具，强调了在AI系统开发中进行严格代码级验证的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.41604v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.41604.md)  |
+| <span style='display: inline-block; width: 42px;'>10-30</span> | **KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents**<br><sub>机构: Sejong University<br>本文指出了长视界智能体递归记忆系统中的“自一致性偏差”问题，即错误信息会在记忆更新中顽固留存。作者提出的 KEEPER 框架通过系统比较不同的辅助学习目标，发现基于奖励的预测信号能最有效地提升智能体性能并缓解该偏差。研究强调，评估递归记忆系统时，必须将错误持久性和有效信息保留率与任务结果结合考量，为构建更可靠的长程智能体记忆机制提供了新的视角和方法论支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.41482v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.41482.md)  |
+| <span style='display: inline-block; width: 42px;'>10-30</span> | **What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer**<br><sub>机构: University of Salamanca, AIR Institute, University of Oslo<br>本文批判了当前 LLM 智能体劫持检测器评估中的方法论缺陷，指出标准评估因忽略类别不平衡、分布偏移（特别是未见工具）和跨基准泛化而隐藏了真实性能。通过系统实验，作者展示了高 AUROC 并不等同于高安全性，并提出了包含变异攻击率、工具覆盖率分析和跨基准测试在内的评估清单，旨在推动更鲁棒、更真实的检测器研发与评估。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.41803v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.41803.md)  |
 | <span style='display: inline-block; width: 42px;'>10-29</span> | **EpiAgent: Epistemic Self-Play for LLM Agents**<br><sub>机构: Institute of Automation, Chinese Academy of Sciences<br>EpiAgent 通过引入显式、可学习的认知层，成功弥补了现有LLM智能体在不完全信息多智能体交互中的短板。其核心创新在于将认知更新与动作规划解耦为双层优化问题，并通过认知自博弈算法实现两者的协同进化。实验结果证明了该方法在提升信念推断准确性和最终决策性能方面的有效性，为构建更强大的多智能体系统提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40227v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40227.md)  |
 | <span style='display: inline-block; width: 42px;'>10-29</span> | **Agentic University: Collaborative Agents for Personalized Learning**<br><sub>机构: Shanghai Jiao Tong University, Nanyang Technological University, National University of Singapore<br>本文提出了Agentic University，一种基于人类参与式多智能体组织的个性化学习系统。通过将学习者纳入多智能体协作循环，并维护动态可修订的能力计划，AU有效解决了目标、活动与评估对齐的难题。实验表明，该方法在提升学习成效和认知支持方面优于现有方法，为自适应学习提供了一种以学习者参与为核心的新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40492v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40492.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgenticOrgLab/AgenticUniversity.git)</div> |
 | <span style='display: inline-block; width: 42px;'>10-29</span> | **Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation**<br><sub>机构: The Chinese University of Hong Kong, Tencent, The Hong Kong University of Science and Technology<br>本文针对 LLM 代理在长程任务中因上下文噪声累积导致的认知过载问题，提出了 CORAL 框架。通过引入主动的上下文优化机制，允许代理自行管理检查工作记忆并重置上下文，结合强化学习优化这一过程，CORAL 在保持高准确率的同时大幅降低了推理成本，并在多个复杂基准测试中超越了现有方法，为构建高效长程 LLM 代理提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2610.40350v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-10/2610.40350.md)  |

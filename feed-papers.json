@@ -1,49 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-10-31T07:13:42.608461+00:00",
-  "run_date": "2026-10-28",
+  "generated_at": "2026-11-02T07:53:42.429169+00:00",
+  "run_date": "2026-10-30",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2610.38882",
-      "date": "2026-10-28",
-      "title": "Aligning Autoresearch: Co-Improvement between Agents and Humans",
+      "id": "arxiv:2610.42004",
+      "date": "2026-10-30",
+      "title": "TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tianjian Li",
-        "Chuanyang Jin",
-        "Seungone Kim",
-        "Tong Chen",
-        "John Hoffman",
-        "Yoram Bachrach amd Pedro Rodriguez",
-        "Ping Yu",
-        "Eryk Helenowski",
-        "Swarnadeep Saha",
-        "Jack Lanchantin",
-        "Weizhe Yuan",
-        "Ilia Kulikov",
-        "Jason Weston"
+        "Xiangyu Kong",
+        "Ruirui Yang",
+        "Xia Hou"
       ],
-      "institution": "FAIR at Meta, Johns Hopkins University, Carnegie Mellon University, University of Washington",
+      "institution": "College of Computer Science, Beijing Information Science and Technology University",
       "summary": {
-        "zh": "本文深入探讨了自动研究智能体与人类研究者之间的“共同改进”关系。通过实证分析明确了人类在创意阶段的关键作用，开发了HackBench基准揭示了当前智能体在对齐和反黑客方面的不足，并提出了基于人类模拟器代理的RL训练方法及基于专家量表的文本生成优化方案。这些贡献为构建更强大、更安全且能与人类高效协作的研究智能体提供了清晰的路径和方法论支持。",
-        "en": "- **Background**: Autoresearch agents can now attempt end-to-end long-horizon AI research (self-improvement). However, the best results are still achieved through interaction between research agents and human..."
+        "zh": "本文指出了现有 LLM 谈判基准忽视“执行落地”价值的缺陷，提出了 TradeWar 基准，强调将谈判转化为可执行政策并评估其宏观经济影响。提出的 TACTIC 智能体通过跨回合的策略自适应优化，在不微调模型权重的情况下，显著提升了谈判的经济健康指数，并在动态冲击环境下表现出优越的鲁棒性。这项工作推动了 LLM 智能体从单纯的对话协商向具备实际执行价值和长期战略规划能力的方向演进。",
+        "en": "This paper identifies the limitation of existing LLM negotiation benchmarks in ignoring \"execution-grounded\" value. It introduces the TradeWar benchmark, emphasizing the translation of negotiations into executable..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.38882v1",
-        "pdf": "https://arxiv.org/pdf/2610.38882v1",
+        "abs": "http://arxiv.org/abs/2610.42004v1",
+        "pdf": "https://arxiv.org/pdf/2610.42004v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.38882.md",
-        "summary_en_path": "summary_en/2026-10/2610.38882.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38882.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38882.md"
+        "summary_zh_path": "summary/2026-10/2610.42004.md",
+        "summary_en_path": "summary_en/2026-10/2610.42004.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.42004.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.42004.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -60,36 +50,36 @@
       }
     },
     {
-      "id": "arxiv:2610.38869",
-      "date": "2026-10-28",
-      "title": "Auditable Belief Updates as a Missing Safety Layer for LLM-Powered Multi-Agent Systems",
+      "id": "arxiv:2610.41856",
+      "date": "2026-10-30",
+      "title": "SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuoyun Li",
-        "Boxuan Wang",
-        "Jinwei Hu",
-        "Xiaowei Huang",
-        "Yi Dong"
+        "Van Bach Nguyen",
+        "Qianli Wang",
+        "Nils Feldhus",
+        "Jörg Schlötterer",
+        "Christin Seifert"
       ],
-      "institution": "University of Liverpool",
+      "institution": "University of Marburg, Technische Universität Berlin, University of Groningen, German Research Center for Artificial Intelligence (DFKI)",
       "summary": {
-        "zh": "本文指出，随着 LLM 深度融入社会决策流程，仅仅依靠输出过滤已不足以保障安全。作者定义了“信念”作为基于证据承诺的工程抽象，并提出了 EB-MAS 系统。该系统通过外部化信念状态和应用认知防火墙，实现了对信念更新的可审计性和约束力，有效应对弱证据诱导和群体认知风险。这项工作为构建下一代安全的 LLM 多智能体系统提供了一个缺失的关键安全层，强调了运行时追踪和校准信念修订的重要性。",
-        "en": "- **Background**: Large Language Models (LLMs) are evolving from passive information tools into active cognitive interfaces that shape user perception, communication, and decision-making. As systems become more..."
+        "zh": "SimXAI 证明了使用单一的、支持工具调用的 LLM 作为对话层，可以有效替代复杂且僵化的传统 GUS 架构。它不仅简化了 ConvXAI 系统的开发和部署，还通过更好的上下文处理能力提升了用户的交互体验和模型理解效率，是一种简单即插即用的高效解决方案。",
+        "en": "- **Background**: Conversational Explainable AI (ConvXAI) agents typically employ GUS-style architectures with separate modules for intent recognition, dialogue management, and template-based response generation. While..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.38869v1",
-        "pdf": "https://arxiv.org/pdf/2610.38869v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2610.41856v1",
+        "pdf": "https://arxiv.org/pdf/2610.41856v1",
+        "github": "https://github.com/bach-mr/SimXAI"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.38869.md",
-        "summary_en_path": "summary_en/2026-10/2610.38869.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38869.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38869.md"
+        "summary_zh_path": "summary/2026-10/2610.41856.md",
+        "summary_en_path": "summary_en/2026-10/2610.41856.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.41856.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.41856.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -106,35 +96,35 @@
       }
     },
     {
-      "id": "arxiv:2610.38691",
-      "date": "2026-10-28",
-      "title": "Beyond fabrication: Misattributed numbers in papers written by AI research agents",
+      "id": "arxiv:2610.41604",
+      "date": "2026-10-30",
+      "title": "Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mosab Alfaqeeh",
-        "Omar Hourani",
-        "Muath Hourani",
-        "Hashem Alfaqeeh"
+        "Peter Chen",
+        "Ni Zhang",
+        "Ying Xu",
+        "Siyuan Zhang"
       ],
-      "institution": "Al-Ahliyya Amman University; Binghamton University, State University of New York",
+      "institution": "Shenyang Institute of Technology",
       "summary": {
-        "zh": "本文指出AI研究智能体生成的论文中，数值错误主要源于“错误归因”而非“捏造”。现有的LLM法官无法有效区分这两者。作者提出了一种确定性的声明到证据检查器，以高精度验证数值来源，并证明了将其与LLM验证器结合使用的必要性。研究强调了在AI生成的研究中实施“来源优先”（provenance-first）审计的重要性，以确保数据质量和研究诚信。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly tasked with extended analytical work, including writing code, running experiments, and producing full research papers. Organizations rely on these..."
+        "zh": "本文揭示了LLM智能体系统中普遍存在的“声称-实现”差距，指出模块名称与实际计算必须作为独立主张进行审计。提出的静态审计协议和失败分类法不仅适用于认知架构，也为更广泛的软件工程中的死代码分析和集成测试提供了新的视角和工具，强调了在AI系统开发中进行严格代码级验证的重要性。",
+        "en": "- **Background**: Agent systems built on local Large Language Models (LLMs) are increasingly marketed using cognitive architecture vocabulary (e.g., global workspace, theory of mind). The presence of a module name is..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.38691v1",
-        "pdf": "https://arxiv.org/pdf/2610.38691v1",
+        "abs": "http://arxiv.org/abs/2610.41604v1",
+        "pdf": "https://arxiv.org/pdf/2610.41604v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.38691.md",
-        "summary_en_path": "summary_en/2026-10/2610.38691.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38691.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38691.md"
+        "summary_zh_path": "summary/2026-10/2610.41604.md",
+        "summary_en_path": "summary_en/2026-10/2610.41604.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.41604.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.41604.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -151,39 +141,35 @@
       }
     },
     {
-      "id": "arxiv:2610.38620",
-      "date": "2026-10-28",
-      "title": "Think Before You Act: Decision Gate for LLM Agents",
+      "id": "arxiv:2610.41482",
+      "date": "2026-10-30",
+      "title": "KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Iftach Shoham",
-        "Yuval David",
-        "Offer Akrabi",
-        "Erez Bilgory",
-        "Ido Levy",
-        "Sami Marreed",
-        "Sergey Zeltyn",
-        "Segev Shlomov"
+        "Jinkyeong Choi",
+        "Chaebin Jeong",
+        "Junsung Jeon",
+        "Donghyeon Park"
       ],
-      "institution": "IBM SIL",
+      "institution": "Sejong University",
       "summary": {
-        "zh": "本文提出了 JevAct，一种用于 LLM 智能体的运行时验证框架。通过将领域策略编译为可执行检查和由轻量级决策模型评估的结构化问题，JevAct 能够在动作执行前有效拦截违规或不当操作。该方法无需修改底层模型，通过提供针对性反馈支持智能体自我修正，实验证明其在多个基准测试中显著提升了智能体使用工具的可靠性和安全性。",
-        "en": "- **Background**: LLM agents increasingly perform consequential actions via external tools (e.g., modifying records, making bookings). However, these proposed actions are often executed without independent verification..."
+        "zh": "本文指出了长视界智能体递归记忆系统中的“自一致性偏差”问题，即错误信息会在记忆更新中顽固留存。作者提出的 KEEPER 框架通过系统比较不同的辅助学习目标，发现基于奖励的预测信号能最有效地提升智能体性能并缓解该偏差。研究强调，评估递归记忆系统时，必须将错误持久性和有效信息保留率与任务结果结合考量，为构建更可靠的长程智能体记忆机制提供了新的视角和方法论支持。",
+        "en": "- **Background**: Long-horizon language agents rely on recursive textual memory to guide subsequent decisions. This memory system continuously updates by combining previous memory summaries with the latest interaction..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.38620v1",
-        "pdf": "https://arxiv.org/pdf/2610.38620v1",
+        "abs": "http://arxiv.org/abs/2610.41482v1",
+        "pdf": "https://arxiv.org/pdf/2610.41482v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.38620.md",
-        "summary_en_path": "summary_en/2026-10/2610.38620.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38620.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38620.md"
+        "summary_zh_path": "summary/2026-10/2610.41482.md",
+        "summary_en_path": "summary_en/2026-10/2610.41482.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.41482.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.41482.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -200,41 +186,34 @@
       }
     },
     {
-      "id": "arxiv:2610.38867",
-      "date": "2026-10-28",
-      "title": "Where You Inject Matters: The Trust Region Effect in LLM Agents",
+      "id": "arxiv:2610.41803",
+      "date": "2026-10-30",
+      "title": "What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chengquan Guo",
-        "Xiaodong Liu",
-        "Weiwei Yang",
-        "Mingqian Feng",
-        "Jialin Song",
-        "Qiyao Ma",
-        "Carolyn Buractaon",
-        "Christopher White",
-        "Bo Li",
-        "Jianfeng Gao"
+        "Mahmoud Abbasi",
+        "Juan M. Núñez V.",
+        "Amin Shahraki"
       ],
-      "institution": "University of Chicago, Microsoft Research, University of Rochester, Simon Fraser University, University of California Davis, University of Illinois Urbana-Champaign",
+      "institution": "University of Salamanca, AIR Institute, University of Oslo",
       "summary": {
-        "zh": "本文首次系统性地表征了间接提示注入中不同注入位置的有效性，提出了“信任区域效应”这一概念，指出智能体对环境不同区域存在不均匀的信任分布。通过构建多领域测试床和开发基于学习的攻击者，论文证明了注入位置对攻击成功率的重大影响。这一发现为未来设计更 robust 的智能体攻击与防御机制提供了重要见解，强调在安全评估中必须同时考虑注入的内容和上下文位置。",
-        "en": "- **Background**: LLM agents are increasingly adopted for long-horizon tasks interacting with diverse external environments. However, they remain vulnerable to indirect prompt injections, where malicious instructions..."
+        "zh": "本文批判了当前 LLM 智能体劫持检测器评估中的方法论缺陷，指出标准评估因忽略类别不平衡、分布偏移（特别是未见工具）和跨基准泛化而隐藏了真实性能。通过系统实验，作者展示了高 AUROC 并不等同于高安全性，并提出了包含变异攻击率、工具覆盖率分析和跨基准测试在内的评估清单，旨在推动更鲁棒、更真实的检测器研发与评估。",
+        "en": "- **Background**: LLM-based agents execute tasks by calling tools (e.g., email, payment systems) but are vulnerable to indirect prompt injection attacks that hijack their behavior. Current defenses detect these hijacks..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2610.38867v1",
-        "pdf": "https://arxiv.org/pdf/2610.38867v1",
+        "abs": "http://arxiv.org/abs/2610.41803v1",
+        "pdf": "https://arxiv.org/pdf/2610.41803v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2610.38867.md",
-        "summary_en_path": "summary_en/2026-10/2610.38867.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.38867.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.38867.md"
+        "summary_zh_path": "summary/2026-10/2610.41803.md",
+        "summary_en_path": "summary_en/2026-10/2610.41803.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2610.41803.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2610.41803.md"
       },
       "signals": {
         "priority_keyword": "Agent"
