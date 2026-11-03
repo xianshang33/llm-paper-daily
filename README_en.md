@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily Daily Paper Selection</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.02_07:53-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.03_08:10-success.svg)]() [![Simplified Chinese badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -13,14 +13,14 @@
 
 <!-- paper-daily:readme-en:updates:start -->
 <details>
-  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-11-02 07:53</sub></summary>
+  <summary>Click to view latest updates. &nbsp;&nbsp;<sub>Update time: 2026-11-03 08:10</sub></summary>
 <br>
 
-- TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents 
-- SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI 
-- Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System 
-- KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents 
-- What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer 
+- Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL 
+- Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis 
+- Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction 
+- From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents 
+- VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably 
 </details>
 <!-- paper-daily:readme-en:updates:end -->
 
@@ -38,6 +38,18 @@ The agent will use the `paper-subscribe` skill from this repo. It only reads the
 </details>
 
 <!-- paper-daily:readme-en:months:start -->
+## 2026-11
+
+| &nbsp;Date&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL**<br><sub>Institution: Oracle AI<br>## 1. What the Paper Did - **Background**: While LLM coding agents are increasingly automating model post-training, it remains unclear if they can act as Forward-Deployed Engineers (FDEs) who discover customer requirements and make deployment decisions. Major industry players like OpenAI and Anthropic are heavily investing in this role, emphasizing the transition from idea to production systems.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03551v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-11/2611.03551.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis**<br><sub>Institution: Dream Security<br>## 1. What the Paper Did - **Background**: Government intelligence teams require LLM agents to analyze large, messy, and heterogeneous evidence collections. However, security sensitivity and cost constraints often preclude the use of hosted frontier models and necessitate strict control over exposed tool surfaces.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03434v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-11/2611.03434.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction**<br><sub>Institution: Vrije Universiteit Amsterdam<br>## 1. What the Paper Did - **Background**: LLM agents compact long interaction histories to fit context windows and reduce costs. However, the compacted context must retain operating rules (e.g., safety policies) that govern subsequent actions.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03223v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-11/2611.03223.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/VUAISec/ARCBench)</div> |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents**<br><sub>Institution: Renmin University of China, Huawei Technologies Ltd.<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) are enabling autonomous agents to interact with real-world environments, particularly the Web. However, training agents for long-horizon web tasks is challenging.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03116v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-11/2611.03116.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably**<br><sub>Institution: University of Virginia<br>This paper identifies a critical yet overlooked safety issue in LLM coding agents: "Harmful Success," where agents cause unintended damage while successfully completing benign tasks. By introducing the VeriHarm framework and VeriHarm-Bench, the authors enable programmable verification and quantification of this phenomenon. Experiments show that while state-of-the-art models exhibit high task completion rates, they perform poorly in avoiding unintended harm, with safe success rates significantly lower than task accuracy.</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03575v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary_en/2026-11/2611.03575.md)  |
+
+---
+
 ## 2026-10
 
 | &nbsp;Date&nbsp; | Paper | Links & Summary |

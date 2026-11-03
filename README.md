@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.02_07:53-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.03_08:10-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月02日 07:53</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月03日 08:10</sub></summary>
 <br>
 
-- TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents 
-- SimXAI: A Simple Drop-in Layer Increases Interaction Quality and Understanding in Conversational XAI 
-- Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules in an LLM-Based Agent System 
-- KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents 
-- What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer 
+- Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL 
+- Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis 
+- Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction 
+- From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents 
+- VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -38,6 +38,18 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 ## 最新论文
 
 <!-- paper-daily:readme:months:start -->
+### 2026年11月
+
+| &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
+| --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL**<br><sub>机构: Oracle AI<br>本文首次系统性地研究了LLM智能体作为前向部署工程师（FDE）的能力，特别是在企业Text-to-SQL场景下的需求发现与交付。研究发现，尽管LLM在编码任务上表现强劲，但在处理模糊需求、规划复杂工程决策及确保生产级可靠性方面仍存在显著瓶颈。文章建议引入人类对发现需求的审查、在执行过程中监控智能体计划，并明确指定包含硬件、预算和生产检查的实验环境规范，以提升交付的可靠性和效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03551v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03551.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis**<br><sub>机构: Dream Security<br>本文针对高安全需求下的情报分析场景，提出了 CLEO 方法，通过自底向上的最小化构建和严格的理由门控机制，成功在可自托管的小型 LLM 上实现了接近前沿闭源模型性能的 Agent Harness。该方法在保证高准确性的同时，极大提升了系统的可审计性和安全性，为受限环境下的 LLM 应用提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03434v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03434.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction**<br><sub>机构: Vrije Universiteit Amsterdam<br>本文引入了 ARCBench，填补了在完整智能体框架下评估规则合规性的空白。研究揭示了一个关键发现：上下文压缩导致的违规主要不是因为规则被物理删除，而是因为智能体在压缩上下文中对规则的语义理解失效或优先级判断错误。即使规则被保留，智能体也更容易违反规则。这表明未来的改进方向不应仅关注规则的信息检索保留，更应关注智能体在压缩上下文中的推理一致性和规则遵循能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03223v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03223.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/VUAISec/ARCBench)</div> |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents**<br><sub>机构: Renmin University of China, Huawei Technologies Ltd.<br>本文针对 LLM Web 智能体在长程任务中面临的探索效率低和失败经验浪费问题，提出了 SCOPE 框架。该框架模仿人类技能习得过程，通过迭代地发现局部技能、编排技能链以及基于失败经验扩展新技能，实现了从局部能力到全局任务解决能力的渐进式构建。实验证明该方法在多个基准测试中显著优于现有最先进方法，为长程 Web 代理的训练提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03116v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03116.md)  |
+| <span style='display: inline-block; width: 42px;'>11-02</span> | **VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably**<br><sub>机构: University of Virginia<br>本文指出了 LLM 编码代理中一个被忽视的关键安全问题——“有害成功”，即代理在完成良性任务的同时造成意外损害。通过提出 VeriHarm 框架和 VeriHarm-Bench 基准，作者实现了对这一现象的可编程验证和量化评估。实验表明，当前最先进的模型虽然具备极高的任务完成能力，但在避免意外危害方面表现不佳，安全成功率远低于任务准确率。这项工作强调了在评估编码代理时，必须超越单纯的任务准确性，纳入对副作用和安全性的综合考量。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03575v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03575.md)  |
+
+---
+
 ### 2026年10月
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
