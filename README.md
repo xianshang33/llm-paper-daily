@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.03_08:10-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.04_07:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月03日 08:10</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月04日 07:43</sub></summary>
 <br>
 
-- Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL 
-- Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis 
-- Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction 
-- From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents 
-- VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably 
+- PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data 
+- HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation 
+- LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation 
+- Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint 
+- OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-03</span> | **PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data**<br><sub>机构: Peking University, NVIDIA<br>PyRUA-DataFarm 证明了LLM智能体可以作为高效、低成本的遥操作员替代品。通过结合自动化仿真构建和视频生成模型，该系统能够生成高质量、真实就绪的机器人训练数据。实验表明，该方法不仅在标准任务上超越了传统遥操作数据的训练效果，且在分布外场景下表现出显著的鲁棒性，同时大幅降低了数据采集的经济和时间成本，为大规模机器人学习提供了可行的数据引擎方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.05320v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.05320.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DAGroup-PKU/PyRUA-Lean/tree/DataFarm)</div> |
+| <span style='display: inline-block; width: 42px;'>11-03</span> | **HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation**<br><sub>机构: Harbin Institute of Technology, Shenzhen; Great Bay University; Shenzhen Loop Area Institute<br>本文指出了当前 LLM 推荐系统中用户与物品交互的不对称性问题，并创新性地将其建模为代理通信过程。提出的 HARP 框架通过构建对称的双向画像、在检索阶段引入同质性门控以及实现无训练的用户画像动态更新，显著提升了推荐性能。该方法无需额外训练，具有高效性和即插即用的优势，为 LLM 推荐系统提供了一种新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.05319v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.05319.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Jove-Zhen/HARP)</div> |
+| <span style='display: inline-block; width: 42px;'>11-03</span> | **LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation**<br><sub>机构: Sejong University<br>本文提出了一种利用LLM作为设计者来自动生成机器人RL策略的新范式。通过引入依赖感知的智能体框架ARPG，解决了传统自动化方法中因组件语义不对齐导致的策略不可学习问题。该方法通过序列化建模和局部验证，显著提升了从自然语言描述到可执行RL管道的转化效率和质量，为降低机器人RL开发门槛提供了有效途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.04974v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.04974.md)  |
+| <span style='display: inline-block; width: 42px;'>11-03</span> | **Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint**<br><sub>机构: University of Southern California, HKUST<br>本文从排队论角度研究了内存约束下的 LLM 在线推理调度问题。通过建立包含计算和内存因素的流体模型，推导出了渐近最优的 $c\\mu$ 优先级规则。理论证明和真实硬件实验均表明，该策略能有效平衡响应速度和资源利用率，显著降低延迟并提升吞吐量，为解决大规模 LLM 推理中的内存瓶颈提供了有力的理论支持和实践方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.04807v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.04807.md)  |
+| <span style='display: inline-block; width: 42px;'>11-03</span> | **OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes**<br><sub>机构: Imperial College London<br>OperAItor 框架成功展示了 LLM 智能体在化工过程监督故障管理中的潜力。通过引入严格的动作验证机制（特别是确定性允许性检查），有效弥补了 LLM 在物理一致性上的不足。该研究不仅证明了智能体能显著减少非计划停车和经济损失，还提供了一个包含复杂动态模型和安全系统的标准化基准，推动了 Agentic AI 在工业过程控制领域的可靠应用。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.05179v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.05179.md)  |
 | <span style='display: inline-block; width: 42px;'>11-02</span> | **Can LLM Agents Be Forward-Deployed Engineers? Requirement Discovery and Delivery for Enterprise Text-to-SQL**<br><sub>机构: Oracle AI<br>本文首次系统性地研究了LLM智能体作为前向部署工程师（FDE）的能力，特别是在企业Text-to-SQL场景下的需求发现与交付。研究发现，尽管LLM在编码任务上表现强劲，但在处理模糊需求、规划复杂工程决策及确保生产级可靠性方面仍存在显著瓶颈。文章建议引入人类对发现需求的审查、在执行过程中监控智能体计划，并明确指定包含硬件、预算和生产检查的实验环境规范，以提升交付的可靠性和效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03551v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03551.md)  |
 | <span style='display: inline-block; width: 42px;'>11-02</span> | **Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis**<br><sub>机构: Dream Security<br>本文针对高安全需求下的情报分析场景，提出了 CLEO 方法，通过自底向上的最小化构建和严格的理由门控机制，成功在可自托管的小型 LLM 上实现了接近前沿闭源模型性能的 Agent Harness。该方法在保证高准确性的同时，极大提升了系统的可审计性和安全性，为受限环境下的 LLM 应用提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03434v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03434.md)  |
 | <span style='display: inline-block; width: 42px;'>11-02</span> | **Do Agents Still Follow the Rules? Benchmarking Rule Compliance under Agent Context Compaction**<br><sub>机构: Vrije Universiteit Amsterdam<br>本文引入了 ARCBench，填补了在完整智能体框架下评估规则合规性的空白。研究揭示了一个关键发现：上下文压缩导致的违规主要不是因为规则被物理删除，而是因为智能体在压缩上下文中对规则的语义理解失效或优先级判断错误。即使规则被保留，智能体也更容易违反规则。这表明未来的改进方向不应仅关注规则的信息检索保留，更应关注智能体在压缩上下文中的推理一致性和规则遵循能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.03223v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.03223.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/VUAISec/ARCBench)</div> |
