@@ -1,141 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-04T07:43:05.333746+00:00",
-  "run_date": "2026-11-03",
+  "generated_at": "2026-11-05T08:06:42.155620+00:00",
+  "run_date": "2026-11-04",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.05320",
-      "date": "2026-11-03",
-      "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+      "id": "arxiv:2611.06914",
+      "date": "2026-11-04",
+      "title": "A Framework for Context Enrichment and Selective Robustness in LLM Social Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Kewei Zhang",
-        "Juncheng Ma",
-        "Guodong Lv",
-        "Duomin Wang",
-        "Feixiang Ruan",
-        "Ruiyang Si",
-        "Chuanrui Zhang",
-        "Yuxuan Chen",
-        "Hao Chen",
-        "Yichen Liu",
-        "Yintianrun Zhang",
-        "Yufan Deng",
-        "Enze Xie",
-        "Daquan Zhou"
+        "Mattia Greiche",
+        "Reihaneh Rabbany",
+        "Maximilian Puelma Touzel"
       ],
-      "institution": "Peking University, NVIDIA",
+      "institution": "McGill University, Mila - Quebec Artificial Intelligence Institute",
       "summary": {
-        "zh": "PyRUA-DataFarm 证明了LLM智能体可以作为高效、低成本的遥操作员替代品。通过结合自动化仿真构建和视频生成模型，该系统能够生成高质量、真实就绪的机器人训练数据。实验表明，该方法不仅在标准任务上超越了传统遥操作数据的训练效果，且在分布外场景下表现出显著的鲁棒性，同时大幅降低了数据采集的经济和时间成本，为大规模机器人学习提供了可行的数据引擎方案。",
-        "en": "- **Background**: Teleoperation remains the default method for collecting robot demonstration data, but it is expensive as each episode requires robot and operator time, and every new task starts from scratch. -..."
+        "zh": "本文针对 LLM 社会模拟中存在的验证难题，提出了一套结合受控上下文增强和选择性鲁棒性评估的新框架。通过系统化地丰富上下文类型并定义双重验证标准（对无关变化不敏感，对相关变化敏感），该方法为提升社会模拟智能体的可靠性和可解释性提供了有效工具，并在博弈论场景中验证了其有效性。",
+        "en": "- **Background**: Researchers use Large Language Models (LLMs) as agents in social simulations, shaping their actions via prompts containing observations and background information. However, LLM agents exhibit..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.05320v1",
-        "pdf": "https://arxiv.org/pdf/2611.05320v1",
-        "github": "https://github.com/DAGroup-PKU/PyRUA-Lean/tree/DataFarm"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.05320.md",
-        "summary_en_path": "summary_en/2026-11/2611.05320.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.05320.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.05320.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.05319",
-      "date": "2026-11-03",
-      "title": "HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Zhen Tao",
-        "Xun Zhou",
-        "Xuhui Chen",
-        "Ziyue Qiao",
-        "Qingqiang Sun"
-      ],
-      "institution": "Harbin Institute of Technology, Shenzhen; Great Bay University; Shenzhen Loop Area Institute",
-      "summary": {
-        "zh": "本文指出了当前 LLM 推荐系统中用户与物品交互的不对称性问题，并创新性地将其建模为代理通信过程。提出的 HARP 框架通过构建对称的双向画像、在检索阶段引入同质性门控以及实现无训练的用户画像动态更新，显著提升了推荐性能。该方法无需额外训练，具有高效性和即插即用的优势，为 LLM 推荐系统提供了一种新的范式。",
-        "en": "- **Background**: In LLM-based recommendation systems, memory modules typically act as user-level agents. However, existing paradigms suffer from significant asymmetry: only users have structured profiles, which are..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.05319v1",
-        "pdf": "https://arxiv.org/pdf/2611.05319v1",
-        "github": "https://github.com/Jove-Zhen/HARP"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.05319.md",
-        "summary_en_path": "summary_en/2026-11/2611.05319.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.05319.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.05319.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.04974",
-      "date": "2026-11-03",
-      "title": "LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Hong Je-Gal",
-        "Jinwoo Kim",
-        "Chanbin Yi",
-        "Hyun-Suk Lee"
-      ],
-      "institution": "Sejong University",
-      "summary": {
-        "zh": "本文提出了一种利用LLM作为设计者来自动生成机器人RL策略的新范式。通过引入依赖感知的智能体框架ARPG，解决了传统自动化方法中因组件语义不对齐导致的策略不可学习问题。该方法通过序列化建模和局部验证，显著提升了从自然语言描述到可执行RL管道的转化效率和质量，为降低机器人RL开发门槛提供了有效途径。",
-        "en": "This paper proposes a new paradigm using LLMs as designers to automatically generate robot RL policies. By introducing the dependency-aware ARPG framework, it addresses the issue of unlearnable policies caused by..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.04974v1",
-        "pdf": "https://arxiv.org/pdf/2611.04974v1",
+        "abs": "http://arxiv.org/abs/2611.06914v1",
+        "pdf": "https://arxiv.org/pdf/2611.06914v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.04974.md",
-        "summary_en_path": "summary_en/2026-11/2611.04974.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.04974.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.04974.md"
+        "summary_zh_path": "summary/2026-11/2611.06914.md",
+        "summary_en_path": "summary_en/2026-11/2611.06914.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.06914.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.06914.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -152,34 +50,39 @@
       }
     },
     {
-      "id": "arxiv:2611.04807",
-      "date": "2026-11-03",
-      "title": "Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint",
+      "id": "arxiv:2611.06868",
+      "date": "2026-11-04",
+      "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhenghao Li",
-        "Shengbo Wang",
-        "Nian Si"
+        "Jalaj Bhandari",
+        "Dhawal Gupta",
+        "Hongli Zhan",
+        "Zhenting Wang",
+        "Varad Pimpalkhute",
+        "Zhengzhong Liu",
+        "Eric Xing",
+        "Rupesh Srivastava"
       ],
-      "institution": "University of Southern California, HKUST",
+      "institution": "Institute of Foundation Models (IFM), MBZUAI Labs",
       "summary": {
-        "zh": "本文从排队论角度研究了内存约束下的 LLM 在线推理调度问题。通过建立包含计算和内存因素的流体模型，推导出了渐近最优的 $c\\\\mu$ 优先级规则。理论证明和真实硬件实验均表明，该策略能有效平衡响应速度和资源利用率，显著降低延迟并提升吞吐量，为解决大规模 LLM 推理中的内存瓶颈提供了有力的理论支持和实践方案。",
-        "en": "- **Background**: With the widespread deployment of Large Language Models (LLMs), inference workloads have scaled significantly. The long input prompts and generation sequences common in agentic and reasoning tasks lead..."
+        "zh": "本文提出并评估了一种简单但有效的推理时扩展方法——轮次级 Best-of-N 采样（Turn-BoN）。通过在每一步生成多个候选动作并利用现成 LLM 进行选择，该方法克服了传统搜索方法对环境状态回滚的依赖以及轨迹级采样无法优化中间决策的局限。实验结果表明，Turn-BoN 能显著提升 LLM 智能体在复杂长程任务中的准确性和一致性，促使智能体展现出更理想的调试、测试和指令遵循行为，为提升 LLM...",
+        "en": "- **Background**: Large Language Model (LLM) agents excel at complex, long-horizon tasks but suffer from inconsistency due to stochastic action sampling. Inference-time scaling is a key technique to improve performance..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.04807v1",
-        "pdf": "https://arxiv.org/pdf/2611.04807v1",
+        "abs": "http://arxiv.org/abs/2611.06868v1",
+        "pdf": "https://arxiv.org/pdf/2611.06868v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.04807.md",
-        "summary_en_path": "summary_en/2026-11/2611.04807.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.04807.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.04807.md"
+        "summary_zh_path": "summary/2026-11/2611.06868.md",
+        "summary_en_path": "summary_en/2026-11/2611.06868.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.06868.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.06868.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -196,33 +99,128 @@
       }
     },
     {
-      "id": "arxiv:2611.05179",
-      "date": "2026-11-03",
-      "title": "OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes",
+      "id": "arxiv:2611.06841",
+      "date": "2026-11-04",
+      "title": "ServerBench: How can your coding agents design specialized LLM serving systems?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Javal Vyas",
-        "Mehmet Mercang{ö}z"
+        "Xinrui Zhong",
+        "Zhiming Wang",
+        "Yongqi Liu",
+        "Zhaohui Wang",
+        "Shanglin Yang",
+        "Zikun Li",
+        "Zhuoming Chen",
+        "Beidi Chen"
       ],
-      "institution": "Imperial College London",
+      "institution": "Carnegie Mellon University, University of Southern California",
       "summary": {
-        "zh": "OperAItor 框架成功展示了 LLM 智能体在化工过程监督故障管理中的潜力。通过引入严格的动作验证机制（特别是确定性允许性检查），有效弥补了 LLM 在物理一致性上的不足。该研究不仅证明了智能体能显著减少非计划停车和经济损失，还提供了一个包含复杂动态模型和安全系统的标准化基准，推动了 Agentic AI 在工业过程控制领域的可靠应用。",
-        "en": "- **Background**: Abnormal conditions in chemical processes often require interventions beyond regulatory control. While Basic Process Control Systems (BPCS) handle normal operations and Safety Instrumented Systems..."
+        "zh": "ServerBench 为研究智能体如何将服务目标和反馈转化为有效、已验证的服务系统提供了系统性的支持。研究发现了三个关键见解：高价值设计需协调容量改进与负载选择；智能体通过与工作负载相关的实验来解释性能反馈；可靠的交付需要验证优化引入的执行路径。该基准测试推动了LLM智能体在系统设计和优化领域的实际应用研究。",
+        "en": ""
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.05179v1",
-        "pdf": "https://arxiv.org/pdf/2611.05179v1",
+        "abs": "http://arxiv.org/abs/2611.06841v1",
+        "pdf": "https://arxiv.org/pdf/2611.06841v1",
+        "github": "https://github.com/Infini-AI-Lab/Server-Bench"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.06841.md",
+        "summary_en_path": "summary_en/2026-11/2611.06841.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.06841.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.06841.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.06674",
+      "date": "2026-11-04",
+      "title": "AgentTrustCI: Build-Time Policy, Grounding, and Trajectory Tests for Java LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Sachin Gupta"
+      ],
+      "institution": null,
+      "summary": {
+        "zh": "AgentTrustCI 提出了一种实用的模式，用于在现有的 Java 发布管道中表达和验证 LLM 代理的行为契约。通过策略、接地和轨迹三层检查，它能够有效检测代理在执行过程中的各类违规行为，为工程团队提供了可重复、确定性的构建时测试手段。尽管其结果主要证明了对回归测试套件的覆盖能力而非生产环境的绝对准确性，但它为 evolving 的工作流维护期望值和集成生产轨迹验证协议奠定了基础。",
+        "en": "- **Background**: As Large Language Model (LLM) agents become prevalent in enterprise applications, ensuring their behavior aligns with security and workflow specifications is critical. However, existing infrastructure..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.06674v1",
+        "pdf": "https://arxiv.org/pdf/2611.06674v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.05179.md",
-        "summary_en_path": "summary_en/2026-11/2611.05179.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.05179.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.05179.md"
+        "summary_zh_path": "summary/2026-11/2611.06674.md",
+        "summary_en_path": "summary_en/2026-11/2611.06674.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.06674.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.06674.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.06381",
+      "date": "2026-11-04",
+      "title": "LegalEvolver: Agentic Legal Judgment Prediction via Rubric-Guided Self-Evolution",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xinyu Yang",
+        "Jiejun Tan",
+        "Chenlong Deng",
+        "Chenghao Zhang",
+        "Tongyu Wen",
+        "Zhicheng Dou"
+      ],
+      "institution": "Renmin University of China",
+      "summary": {
+        "zh": "",
+        "en": "-step reasoning and retrieve external legal evidence. As LLM-based agents develop, they are increasingly applied in the legal domain to compensate for the limitations of parametric knowledge in covering frequently..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.06381v1",
+        "pdf": "https://arxiv.org/pdf/2611.06381v1",
+        "github": "https://github.com/yxy-919/LegalEvolver"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.06381.md",
+        "summary_en_path": "summary_en/2026-11/2611.06381.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.06381.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.06381.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.04_07:43-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.05_08:06-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月04日 07:43</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月05日 08:06</sub></summary>
 <br>
 
-- PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data 
-- HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation 
-- LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation 
-- Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint 
-- OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes 
+- A Framework for Context Enrichment and Selective Robustness in LLM Social Agents 
+- On Turn-Level Best-of-N Sampling for Scaling LLM Agents 
+- ServerBench: How can your coding agents design specialized LLM serving systems? 
+- AgentTrustCI: Build-Time Policy, Grounding, and Trajectory Tests for Java LLM Agents 
+- LegalEvolver: Agentic Legal Judgment Prediction via Rubric-Guided Self-Evolution 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-04</span> | **A Framework for Context Enrichment and Selective Robustness in LLM Social Agents**<br><sub>机构: McGill University, Mila - Quebec Artificial Intelligence Institute<br>本文针对 LLM 社会模拟中存在的验证难题，提出了一套结合受控上下文增强和选择性鲁棒性评估的新框架。通过系统化地丰富上下文类型并定义双重验证标准（对无关变化不敏感，对相关变化敏感），该方法为提升社会模拟智能体的可靠性和可解释性提供了有效工具，并在博弈论场景中验证了其有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06914v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06914.md)  |
+| <span style='display: inline-block; width: 42px;'>11-04</span> | **On Turn-Level Best-of-N Sampling for Scaling LLM Agents**<br><sub>机构: Institute of Foundation Models (IFM), MBZUAI Labs<br>本文提出并评估了一种简单但有效的推理时扩展方法——轮次级 Best-of-N 采样（Turn-BoN）。通过在每一步生成多个候选动作并利用现成 LLM 进行选择，该方法克服了传统搜索方法对环境状态回滚的依赖以及轨迹级采样无法优化中间决策的局限。实验结果表明，Turn-BoN 能显著提升 LLM 智能体在复杂长程任务中的准确性和一致性，促使智能体展现出更理想的调试、测试和指令遵循行为，为提升 LLM 智能体性能提供了一条低成本、高效率的路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06868v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06868.md)  |
+| <span style='display: inline-block; width: 42px;'>11-04</span> | **ServerBench: How can your coding agents design specialized LLM serving systems?**<br><sub>机构: Carnegie Mellon University, University of Southern California<br>ServerBench 为研究智能体如何将服务目标和反馈转化为有效、已验证的服务系统提供了系统性的支持。研究发现了三个关键见解：高价值设计需协调容量改进与负载选择；智能体通过与工作负载相关的实验来解释性能反馈；可靠的交付需要验证优化引入的执行路径。该基准测试推动了LLM智能体在系统设计和优化领域的实际应用研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06841v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06841.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/Server-Bench)</div> |
+| <span style='display: inline-block; width: 42px;'>11-04</span> | **AgentTrustCI: Build-Time Policy, Grounding, and Trajectory Tests for Java LLM Agents**<br><sub>AgentTrustCI 提出了一种实用的模式，用于在现有的 Java 发布管道中表达和验证 LLM 代理的行为契约。通过策略、接地和轨迹三层检查，它能够有效检测代理在执行过程中的各类违规行为，为工程团队提供了可重复、确定性的构建时测试手段。尽管其结果主要证明了对回归测试套件的覆盖能力而非生产环境的绝对准确性，但它为 evolving 的工作流维护期望值和集成生产轨迹验证协议奠定了基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06674v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06674.md)  |
+| <span style='display: inline-block; width: 42px;'>11-04</span> | **LegalEvolver: Agentic Legal Judgment Prediction via Rubric-Guided Self-Evolution**<br><sub>机构: Renmin University of China<br>## 文章做了什么 ### 背景 法律判决预测（LJP）要求模型进行多步推理并检索外部法律证据。随着基于大语言模型（LLM）的智能体发展，它们被越来越多地应用于法律领域，以弥补参数化知识在覆盖频繁修订的法律条文方面的不足。 ### 已有的工作为什么解决不了 现有的法律搜索智能体性能往往受限于检索查询的质量。它们通常直接根据初始用户请求构建查询，忽略了潜在的法律问题和具有法律显著性的细节。此外，传统的“监督微调后接强化学习”（SFT+RL）方法存在两个主要缺陷：一是探索过程受限于模型的初始假设，难以跳出既定思维框架；二是仅依靠结果奖励无法区分不同类型的搜索失败，导致模型难以从错误中有效学习。 ## 文章的核心贡献点 ### 提出了一个 LegalEvolver 这是一个专为 LJP 导向的检索设计的查询优化框架，旨在生成具有法律信息量的查询。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06381v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06381.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/yxy-919/LegalEvolver)</div> |
 | <span style='display: inline-block; width: 42px;'>11-03</span> | **PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data**<br><sub>机构: Peking University, NVIDIA<br>PyRUA-DataFarm 证明了LLM智能体可以作为高效、低成本的遥操作员替代品。通过结合自动化仿真构建和视频生成模型，该系统能够生成高质量、真实就绪的机器人训练数据。实验表明，该方法不仅在标准任务上超越了传统遥操作数据的训练效果，且在分布外场景下表现出显著的鲁棒性，同时大幅降低了数据采集的经济和时间成本，为大规模机器人学习提供了可行的数据引擎方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.05320v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.05320.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DAGroup-PKU/PyRUA-Lean/tree/DataFarm)</div> |
 | <span style='display: inline-block; width: 42px;'>11-03</span> | **HARP: Training-Free Dual-Profile Agentic Communication for LLM-Based Recommendation**<br><sub>机构: Harbin Institute of Technology, Shenzhen; Great Bay University; Shenzhen Loop Area Institute<br>本文指出了当前 LLM 推荐系统中用户与物品交互的不对称性问题，并创新性地将其建模为代理通信过程。提出的 HARP 框架通过构建对称的双向画像、在检索阶段引入同质性门控以及实现无训练的用户画像动态更新，显著提升了推荐性能。该方法无需额外训练，具有高效性和即插即用的优势，为 LLM 推荐系统提供了一种新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.05319v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.05319.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Jove-Zhen/HARP)</div> |
 | <span style='display: inline-block; width: 42px;'>11-03</span> | **LLMs as MDP Designers: A Dependency-Aware Agentic Framework for Automated Robot Policy Generation**<br><sub>机构: Sejong University<br>本文提出了一种利用LLM作为设计者来自动生成机器人RL策略的新范式。通过引入依赖感知的智能体框架ARPG，解决了传统自动化方法中因组件语义不对齐导致的策略不可学习问题。该方法通过序列化建模和局部验证，显著提升了从自然语言描述到可执行RL管道的转化效率和质量，为降低机器人RL开发门槛提供了有效途径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.04974v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.04974.md)  |
