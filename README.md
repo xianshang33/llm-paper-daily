@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.05_08:06-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.06_08:10-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月05日 08:06</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月06日 08:10</sub></summary>
 <br>
 
-- A Framework for Context Enrichment and Selective Robustness in LLM Social Agents 
-- On Turn-Level Best-of-N Sampling for Scaling LLM Agents 
-- ServerBench: How can your coding agents design specialized LLM serving systems? 
-- AgentTrustCI: Build-Time Policy, Grounding, and Trajectory Tests for Java LLM Agents 
-- LegalEvolver: Agentic Legal Judgment Prediction via Rubric-Guided Self-Evolution 
+- SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving 
+- From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations? 
+- SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization 
+- ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering 
+- PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers? 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-05</span> | **SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving**<br><sub>机构: University of Maryland Baltimore County<br>SMART 框架通过多智能体协作和基于角色的提示策略，成功解决了复杂科学主张验证中因上下文有限和隐式知识缺失导致的推理难题。其核心创新在于将实体状态转化为可验证的前提知识，并通过对比性推理深化理解。实验表明，这种方法不仅显著提升了验证准确率，还证明了 grounding 前提知识对于提高 LLM 推理可靠性的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08196v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08196.md)  |
+| <span style='display: inline-block; width: 42px;'>11-05</span> | **From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?**<br><sub>机构: Beijing Normal University, Tencent AI Lab<br>本文介绍了 HaluCheck，一个旨在系统评估和提升LLM生成后幻觉检测能力的大规模双语基准。通过涵盖文本事实性幻觉和智能体忠实度幻觉的多层级标注，研究揭示了当前LLM在细粒度定位、纠正及智能体场景下的主要缺陷。尽管引入推理、搜索和微调技术有所助益，但可靠的多维度幻觉检测仍是未解难题，HaluCheck 为后续研究和诊断LLM可靠性提供了坚实基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08231v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08231.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/xMiles/HaluCheck)</div> |
+| <span style='display: inline-block; width: 42px;'>11-05</span> | **SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization**<br><sub>机构: Brown University<br>SwarmEvolve通过让智能体群在潜空间中通信和推理，克服了传统LLM引导进化搜索中因文本生成带来的速度慢、成本高的问题。该方法通过KV缓存共享和基于隐藏状态的新颖性过滤，实现了高效的思想交叉和多样性维持。实验证明，这是一种针对科学问题程序搜索的快速、低成本且高性能的解决方案，甚至能用较小模型超越使用更大模型的现有最先进方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08483v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08483.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Qile-J/SwarmEvolve)</div> |
+| <span style='display: inline-block; width: 42px;'>11-05</span> | **ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering**<br><sub>机构: Delft University of Technology<br>ChemE-as-Code 通过将化学工程工作转化为类似软件的“代码即基础设施”模式，利用 LLM 智能体、Git 版本控制和自动化检查工具，解决了化学工程设计中多文档耦合、一致性维护难以及智能体输出验证的问题。它提供了一个开源框架，使智能体能够以较低成本完成初步工程设计，并通过透明的溯源和自动化检查辅助工程师进行高效审查，推动了化学工程向智能化、自动化工作流的转型。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.07947v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.07947.md)  |
+| <span style='display: inline-block; width: 42px;'>11-05</span> | **PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?**<br><sub>机构: The University of Texas at Dallas<br>PCBRouteAgent 通过模拟人类工程师的全局规划与局部执行协作机制，有效解决了复杂 PCB 布线中的协调难题。其核心创新在于将多模态信息融合用于全局规划，并通过结构化反馈机制实现高效的局部错误恢复。实验结果表明，该方法在真实世界场景下的布线成功率显著高于当前最佳基线，展示了 LLM 智能体在专业工程设计领域接近人类工程师水平的潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08175v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08175.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/chip-ai-agent/PCBRouteAgent)</div> |
 | <span style='display: inline-block; width: 42px;'>11-04</span> | **A Framework for Context Enrichment and Selective Robustness in LLM Social Agents**<br><sub>机构: McGill University, Mila - Quebec Artificial Intelligence Institute<br>本文针对 LLM 社会模拟中存在的验证难题，提出了一套结合受控上下文增强和选择性鲁棒性评估的新框架。通过系统化地丰富上下文类型并定义双重验证标准（对无关变化不敏感，对相关变化敏感），该方法为提升社会模拟智能体的可靠性和可解释性提供了有效工具，并在博弈论场景中验证了其有效性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06914v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06914.md)  |
 | <span style='display: inline-block; width: 42px;'>11-04</span> | **On Turn-Level Best-of-N Sampling for Scaling LLM Agents**<br><sub>机构: Institute of Foundation Models (IFM), MBZUAI Labs<br>本文提出并评估了一种简单但有效的推理时扩展方法——轮次级 Best-of-N 采样（Turn-BoN）。通过在每一步生成多个候选动作并利用现成 LLM 进行选择，该方法克服了传统搜索方法对环境状态回滚的依赖以及轨迹级采样无法优化中间决策的局限。实验结果表明，Turn-BoN 能显著提升 LLM 智能体在复杂长程任务中的准确性和一致性，促使智能体展现出更理想的调试、测试和指令遵循行为，为提升 LLM 智能体性能提供了一条低成本、高效率的路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06868v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06868.md)  |
 | <span style='display: inline-block; width: 42px;'>11-04</span> | **ServerBench: How can your coding agents design specialized LLM serving systems?**<br><sub>机构: Carnegie Mellon University, University of Southern California<br>ServerBench 为研究智能体如何将服务目标和反馈转化为有效、已验证的服务系统提供了系统性的支持。研究发现了三个关键见解：高价值设计需协调容量改进与负载选择；智能体通过与工作负载相关的实验来解释性能反馈；可靠的交付需要验证优化引入的执行路径。该基准测试推动了LLM智能体在系统设计和优化领域的实际应用研究。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.06841v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.06841.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Infini-AI-Lab/Server-Bench)</div> |
