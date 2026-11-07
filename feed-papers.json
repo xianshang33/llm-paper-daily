@@ -1,38 +1,52 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-06T08:10:17.532078+00:00",
-  "run_date": "2026-11-05",
+  "generated_at": "2026-11-07T07:29:06.842445+00:00",
+  "run_date": "2026-11-01",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.08196",
-      "date": "2026-11-05",
-      "title": "SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving",
+      "id": "arxiv:2611.02079",
+      "date": "2026-11-01",
+      "title": "ParetoSaddler: Pareto-Guided Optimization of Agent Harnesses for Quality and Cost",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sai Vallurupalli",
-        "Francis Ferraro"
+        "Xingzhi Qian",
+        "Sungho Park",
+        "Rongyuan Tan",
+        "Jianbo Yu",
+        "Jue Zhang",
+        "Lorenzo Cavallaro",
+        "Menglin Xia",
+        "Yanzhi Chen",
+        "Xinnuo Xu",
+        "Yu Kang",
+        "Xinran Zheng",
+        "Gagan Somashekar",
+        "Xuchao Zhang",
+        "Chetan Bansal",
+        "Qingwei Lin",
+        "Victor Rühle"
       ],
-      "institution": "University of Maryland Baltimore County",
+      "institution": "University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence",
       "summary": {
-        "zh": "SMART 框架通过多智能体协作和基于角色的提示策略，成功解决了复杂科学主张验证中因上下文有限和隐式知识缺失导致的推理难题。其核心创新在于将实体状态转化为可验证的前提知识，并通过对比性推理深化理解。实验表明，这种方法不仅显著提升了验证准确率，还证明了 grounding 前提知识对于提高 LLM 推理可靠性的重要性。",
-        "en": "The SMART framework successfully addresses reasoning challenges in complex scientific claim verification caused by limited context and missing implicit knowledge. Its core innovation lies in transforming entity states..."
+        "zh": "ParetoSaddler 解决了 LLM 智能体 Harness 优化中质量与成本联合优化的难题。通过引入贝叶斯 bootstrap 帕累托支持机制，它有效地分离了中间探索与最终选择，避免了因早期偏好应用导致的局部最优陷阱。实验证明，该方法在多个基准测试上均能同时提升智能体的回答质量并显著降低推理成本，优于现有的单目标及多目标优化基线。",
+        "en": "ParetoSaddler addresses the challenge of joint quality and cost optimization in LLM agent harnesses. By introducing a Bayesian bootstrap Pareto support mechanism, it effectively decouples intermediate exploration from..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08196v1",
-        "pdf": "https://arxiv.org/pdf/2611.08196v1",
+        "abs": "http://arxiv.org/abs/2611.02079v1",
+        "pdf": "https://arxiv.org/pdf/2611.02079v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.08196.md",
-        "summary_en_path": "summary_en/2026-11/2611.08196.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.08196.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.08196.md"
+        "summary_zh_path": "summary/2026-11/2611.02079.md",
+        "summary_en_path": "summary_en/2026-11/2611.02079.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.02079.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.02079.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,38 +63,44 @@
       }
     },
     {
-      "id": "arxiv:2611.08231",
-      "date": "2026-11-05",
-      "title": "From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?",
+      "id": "arxiv:2611.02269",
+      "date": "2026-11-01",
+      "title": "Qubrio: High-Performance Quantum Compilation via Multi-Agent LLM Collaboration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Hanyu Qiu",
-        "Ze Liu",
-        "Zhe Zhao",
-        "Kuang Xiong",
-        "Blaze Chen",
-        "Zhenxiang Yan",
-        "Renfen Hu"
+        "Jixuan Ruan",
+        "Zhuo Cui",
+        "Zhengding Hu",
+        "Zhongkai Yu",
+        "Xiang Fang",
+        "Yue Guan",
+        "Jason Ludmir",
+        "Phillip E. Weinberg",
+        "Xiuzhe Luo",
+        "Shengtao Wang",
+        "Sonia Lopez Alarcon",
+        "Hezi Zhang",
+        "Yufei Ding"
       ],
-      "institution": "Beijing Normal University, Tencent AI Lab",
+      "institution": "University of California, San Diego",
       "summary": {
-        "zh": "本文介绍了 HaluCheck，一个旨在系统评估和提升LLM生成后幻觉检测能力的大规模双语基准。通过涵盖文本事实性幻觉和智能体忠实度幻觉的多层级标注，研究揭示了当前LLM在细粒度定位、纠正及智能体场景下的主要缺陷。尽管引入推理、搜索和微调技术有所助益，但可靠的多维度幻觉检测仍是未解难题，HaluCheck 为后续研究和诊断LLM可靠性提供了坚实基础。",
-        "en": "- **Background**: Large Language Models (LLMs) are widely adopted for information access, content generation, and agent-based tasks, yet their outputs remain susceptible to subtle, high-risk hallucinations. Given the..."
+        "zh": "Qubrio 通过多智能体协作和任务分解，成功解决了 LLM 在量子编译中面临的上下文、异构任务和反馈难题。它不仅实现了比现有 SOTA 方法更高的编译效率和保真度，还具备自动适应新硬件的能力，减少了人工重新设计启发式规则的需求，为量子编译提供了一种高效、灵活且实用的新范式。",
+        "en": "- **Background**: Quantum compilation translates high-level quantum algorithms into hardware-executable instructions. Traditional compilers rely on manually engineered heuristics, creating a heavy maintenance burden as..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08231v1",
-        "pdf": "https://arxiv.org/pdf/2611.08231v1",
-        "github": "https://github.com/xMiles/HaluCheck"
+        "abs": "http://arxiv.org/abs/2611.02269v1",
+        "pdf": "https://arxiv.org/pdf/2611.02269v1",
+        "github": "https://github.com/crosaa/Qubrio"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.08231.md",
-        "summary_en_path": "summary_en/2026-11/2611.08231.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.08231.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.08231.md"
+        "summary_zh_path": "summary/2026-11/2611.02269.md",
+        "summary_en_path": "summary_en/2026-11/2611.02269.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.02269.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.02269.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,75 +117,37 @@
       }
     },
     {
-      "id": "arxiv:2611.08483",
-      "date": "2026-11-05",
-      "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+      "id": "arxiv:2611.01976",
+      "date": "2026-11-01",
+      "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qile Jiang",
-        "George Em Karniadakis"
+        "Shiyu Kan",
+        "Yue Qi",
+        "Yufei Han",
+        "Xinjian Luo",
+        "Guojun Xiong",
+        "Xiaofeng Gao"
       ],
-      "institution": "Brown University",
+      "institution": "Shanghai Jiao Tong University, Inria",
       "summary": {
-        "zh": "SwarmEvolve通过让智能体群在潜空间中通信和推理，克服了传统LLM引导进化搜索中因文本生成带来的速度慢、成本高的问题。该方法通过KV缓存共享和基于隐藏状态的新颖性过滤，实现了高效的思想交叉和多样性维持。实验证明，这是一种针对科学问题程序搜索的快速、低成本且高性能的解决方案，甚至能用较小模型超越使用更大模型的现有最先进方法。",
-        "en": "- **Background**: Many problems in mathematical discovery and scientific computing can be framed as program search tasks. Recently, LLM-guided evolutionary search frameworks (e.g., FunSearch, AlphaEvolve) have made..."
+        "zh": "- **背景**：基于大语言模型（LLM）的智能体（Agent）日益依赖外部工具来执行复杂任务，如访问本地文件、调用Web服务等。这些工具通常来自开源社区或第三方市场，并会通过软件更新不断演进。 - **已有工作为什么解决不了**：现有的安全研究主要集中在“提示注入”（Prompt...",
+        "en": "- **Background**: Large Language Model (LLM)-based agents increasingly rely on external tools for complex tasks like file access and web interaction. These tools evolve via software updates from open-source or..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08483v1",
-        "pdf": "https://arxiv.org/pdf/2611.08483v1",
-        "github": "https://github.com/Qile-J/SwarmEvolve"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.08483.md",
-        "summary_en_path": "summary_en/2026-11/2611.08483.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.08483.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.08483.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.07947",
-      "date": "2026-11-05",
-      "title": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Artur M. Schweidtmann"
-      ],
-      "institution": "Delft University of Technology",
-      "summary": {
-        "zh": "ChemE-as-Code 通过将化学工程工作转化为类似软件的“代码即基础设施”模式，利用 LLM 智能体、Git 版本控制和自动化检查工具，解决了化学工程设计中多文档耦合、一致性维护难以及智能体输出验证的问题。它提供了一个开源框架，使智能体能够以较低成本完成初步工程设计，并通过透明的溯源和自动化检查辅助工程师进行高效审查，推动了化学工程向智能化、自动化工作流的转型。",
-        "en": "- **Background**: Generative AI, specifically LLM-based agents, is poised to reshape chemical engineering by executing tasks, using tools, and iterating on results. Software engineering has demonstrated the efficacy of..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.07947v1",
-        "pdf": "https://arxiv.org/pdf/2611.07947v1",
+        "abs": "http://arxiv.org/abs/2611.01976v1",
+        "pdf": "https://arxiv.org/pdf/2611.01976v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.07947.md",
-        "summary_en_path": "summary_en/2026-11/2611.07947.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.07947.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.07947.md"
+        "summary_zh_path": "summary/2026-11/2611.01976.md",
+        "summary_en_path": "summary_en/2026-11/2611.01976.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.01976.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.01976.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -182,36 +164,85 @@
       }
     },
     {
-      "id": "arxiv:2611.08175",
-      "date": "2026-11-05",
-      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+      "id": "arxiv:2611.01930",
+      "date": "2026-11-01",
+      "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yue Zhang",
-        "Jilei Sun",
-        "Liqiang Jing",
-        "Yijie Wei",
-        "Ruohan Yang"
+        "Boyang Yang",
+        "Ziyao Yang",
+        "Yu Zhang",
+        "Duo Chai",
+        "Xiaoming Chen",
+        "Haoye Tian"
       ],
-      "institution": "The University of Texas at Dallas",
+      "institution": "Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University",
       "summary": {
-        "zh": "PCBRouteAgent 通过模拟人类工程师的全局规划与局部执行协作机制，有效解决了复杂 PCB 布线中的协调难题。其核心创新在于将多模态信息融合用于全局规划，并通过结构化反馈机制实现高效的局部错误恢复。实验结果表明，该方法在真实世界场景下的布线成功率显著高于当前最佳基线，展示了 LLM 智能体在专业工程设计领域接近人类工程师水平的潜力。",
-        "en": "PCBRouteAgent effectively addresses the coordination challenges in complex PCB routing by mimicking the collaborative mechanism of human engineers' global planning and local execution. Its core innovation lies in fusing..."
+        "zh": "本文首次量化并修复了 LLM 智能体在命令行操作中的“返回假设”问题。研究表明，智能体的可靠性不仅取决于 LLM 本身，还取决于其框架允许观察到的工具执行状态。作者建议智能体构建者应报告工具调用的实际执行情况而非仅返回状态码，基准测试维护者应在排名 LLM 之前修复并公开输入连接的处理方式。RECEIPT 通过监控系统调用状态并提供结构化反馈，有效消除了假成功并降低了资源消耗。",
+        "en": "- **Background**: LLM agents operate Web infrastructure via command-line interfaces, relying on a \"Return Assumption\" that tool calls return within a bounded time with the requested action completed. However, many..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08175v1",
-        "pdf": "https://arxiv.org/pdf/2611.08175v1",
-        "github": "https://github.com/chip-ai-agent/PCBRouteAgent"
+        "abs": "http://arxiv.org/abs/2611.01930v1",
+        "pdf": "https://arxiv.org/pdf/2611.01930v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.08175.md",
-        "summary_en_path": "summary_en/2026-11/2611.08175.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.08175.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.08175.md"
+        "summary_zh_path": "summary/2026-11/2611.01930.md",
+        "summary_en_path": "summary_en/2026-11/2611.01930.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.01930.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.01930.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.01840",
+      "date": "2026-11-01",
+      "title": "Self-Evolving Agentic Workflows via Semantic Decomposition of Complex Tasks",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Zichuan Fu",
+        "Junjia Qi",
+        "Xian Wu",
+        "Wenlin Zhang",
+        "Yimin Deng",
+        "Kaifeng Guo",
+        "Xiangyu Zhao"
+      ],
+      "institution": "City University of Hong Kong, Tencent Jarvis Lab",
+      "summary": {
+        "zh": "本文提出了一种通过语义任务分解构建自进化智能体工作流的新范式。通过将复杂任务分解为带有明确适用条件的子任务，并利用执行反馈动态优化工作流，该方法成功地将大量决策过程从昂贵的 LLM 推理转移至高效的代码执行。在 GLEE 基准测试中的表现证明了其在降低推理成本、减少延迟以及提升复杂交互任务处理能力方面的有效性，为构建高效、自适应的智能体系统提供了新思路。",
+        "en": "- **Background**: LLM-based agentic workflows organize complex tasks into reusable step sequences. However, invoking an LLM at every step incurs significant inference costs and latency, making them unsuitable for..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.01840v1",
+        "pdf": "https://arxiv.org/pdf/2611.01840v1",
+        "github": "https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.01840.md",
+        "summary_en_path": "summary_en/2026-11/2611.01840.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.01840.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.01840.md"
       },
       "signals": {
         "priority_keyword": "Agent"

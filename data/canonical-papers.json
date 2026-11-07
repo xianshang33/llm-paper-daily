@@ -1,44 +1,169 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-11-06T08:10:17.532078+00:00",
-  "run_date": "2026-11-05",
+  "generated_at": "2026-11-07T07:29:06.842445+00:00",
+  "run_date": "2026-11-01",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2611.08196",
-      "date": "2026-11-05",
-      "title": "SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving",
+      "paper_id": "2611.02079",
+      "date": "2026-11-01",
+      "title": "ParetoSaddler: Pareto-Guided Optimization of Agent Harnesses for Quality and Cost",
       "authors": [
-        "Sai Vallurupalli",
-        "Francis Ferraro"
+        "Xingzhi Qian",
+        "Sungho Park",
+        "Rongyuan Tan",
+        "Jianbo Yu",
+        "Jue Zhang",
+        "Lorenzo Cavallaro",
+        "Menglin Xia",
+        "Yanzhi Chen",
+        "Xinnuo Xu",
+        "Yu Kang",
+        "Xinran Zheng",
+        "Gagan Somashekar",
+        "Xuchao Zhang",
+        "Chetan Bansal",
+        "Qingwei Lin",
+        "Victor Rühle"
       ],
-      "abstract": "Complex problems with limited context, such as claims, require a means to obtain additional knowledge necessary for solution reasoning. We propose a multi-agent framework, SMART, to obtain knowledge through capturing the implicit state of participating entities in a problem context. SMART curates the state knowledge as diverse, complementary and solution-salient premises using a variety of LLMs and a structured role-based prompt strategy. Using knowledge from these real-world verified curated premises, SMART's knowledge guided solution reasoning improves validation performance up to 20% on complex scientific claims spanning 3 datasets. We show that grounding premises in real-world knowledge is necessary and improves performance up to 5%.",
+      "abstract": "Harness optimization can substantially improve LLM agents without modifying model weights, but existing methods primarily optimize response quality. Extending them to joint quality--cost optimization introduces a challenge: applying the deployment preference during intermediate updates can prematurely reject candidates that are valuable for later improvements. We introduce ParetoSaddler, which addresses this mismatch by separating intermediate candidate promotion from final deployment selection. At each iteration, an optimizer updates a parent harness to produce a candidate, and then compares the two over repeated executions and uses Bayesian bootstrap Pareto support to promote candidates showing credible progress in either quality or cost. Promoted candidates receive broader development evaluation and remain available as parents for later optimization steps. We evaluate ParetoSaddler on ClawMark and GAIA2 using domain-disjoint splits. On ClawMark, ParetoSaddler improves quality from 70.86\\% to 81.35\\% while reducing cost from \\$1.17 to \\$1.01 per task; on GAIA2, it improves quality from 56.22\\% to 62.89\\% while reducing cost from \\$0.78 to \\$0.45 per task. The Pareto-selected harnesses also achieve higher quality at lower cost than quality-only harness optimization. Analysis shows that Pareto-aware optimization retains intermediate candidates that would be discarded by deployment preference but can support later improvements, while Bayesian bootstrap screening filters out candidates whose gains are weakly supported across runs.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08196v1",
-        "pdf": "https://arxiv.org/pdf/2611.08196v1",
+        "abs": "http://arxiv.org/abs/2611.02079v1",
+        "pdf": "https://arxiv.org/pdf/2611.02079v1",
+        "github": null,
+        "blog": "https://aka.ms/ParetoSaddler-website"
+      },
+      "institution": "University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体的能力不仅取决于模型权重，还很大程度上取决于其“Harness”（包括提示词、工具、中间件和控制逻辑）。自动 Harness 优化（AHO）可以在不修改模型权重的情况下显著提升智能体性能。\n- **已有工作为什么解决不了**：现有的 AHO 方法主要专注于优化响应质量，而忽略了实际部署中至关重要的成本因素。当尝试同时优化质量和成本时，如果在中间更新步骤直接应用最终的部署偏好（如特定的质量-成本权衡），会导致过早丢弃那些在当前看来不佳但对后续迭代有价值的候选方案，从而限制了最终优化的上限。\n\n## 文章的核心贡献点\n- **提出了一个 ParetoSaddler**：一种帕累托引导的智能体 Harness 优化框架，旨在联合优化任务响应质量和 LLM Token 成本。\n- **挑战1：中间候选者的过早淘汰问题**。在多目标优化中，直接应用部署偏好会丢弃那些在某一方面（如成本）有潜力但另一方面（如质量）暂时落后的中间候选者，导致搜索空间受限。**解决方法**：ParetoSaddler 将“中间候选者晋升”与“最终部署选择”分离。它使用贝叶斯 bootstrap 帕累托支持度来评估候选者，只要候选者在质量或成本任一维度上显示出可信的进步，就会被保留并作为后续优化的父代，从而保留了多样化的搜索路径。\n- **挑战2：优化结果的不稳定性与噪声**。由于 LLM 输出的随机性，单次执行的结果可能无法真实反映 Harness 的性能变化，导致基于噪声的无效优化。**解决方法**：通过重复执行和贝叶斯 bootstrap 方法进行筛选，只有那些在多次运行中获得统计支持的显著改进才会被认可，从而过滤掉由随机波动引起的弱增益候选者，确保优化的稳健性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 ClawMark 和 GAIA2 两个基准测试上进行评估，使用域不相交的数据划分以确保泛化能力。\n- **对比结果**：\n    - **ClawMark**：ParetoSaddler 将质量从 70.86% 提升至 81.35%，同时将每个任务的成本从 $1.17 降低至 $1.01。\n    - **GAIA2**：质量从 56.22% 提升至 62.89%，成本从 $0.78 大幅降低至 $0.45。\n- **相关工作对比**：与仅优化质量的基线方法（如 AutoSaddler-Quality）和其他多目标方法（如 Meta-Harness-Pareto）相比，ParetoSaddler 能够在更低的成本区域发现更高质量的 Harness。分析表明，传统的部署偏好筛选会丢弃对后续改进至关重要的中间候选者，而 ParetoSaddler 通过帕累托感知优化保留了这些候选者，实现了更好的质量-成本权衡前沿。\n\n#### 总结\nParetoSaddler 解决了 LLM 智能体 Harness 优化中质量与成本联合优化的难题。通过引入贝叶斯 bootstrap 帕累托支持机制，它有效地分离了中间探索与最终选择，避免了因早期偏好应用导致的局部最优陷阱。实验证明，该方法在多个基准测试上均能同时提升智能体的回答质量并显著降低推理成本，优于现有的单目标及多目标优化基线。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: The capabilities of Large Language Model (LLM) agents depend not only on model weights but also on their \"Harness\" (prompts, tools, middleware, and control logic). Automatic Harness Optimization (AHO) can significantly improve agent performance without modifying model weights.\n- **Why Existing Work Falls Short**: Current AHO methods primarily optimize for response quality, ignoring cost, which is critical for real-world deployment. Extending these methods to joint quality-cost optimization introduces a challenge: applying final deployment preferences during intermediate updates can prematurely discard candidates that are valuable for future improvements, limiting the optimization potential.\n\n## Core Contributions\n- **Proposed ParetoSaddler**: A Pareto-guided optimization framework for agent harnesses that jointly optimizes task response quality and LLM token cost.\n- **Challenge 1: Premature Elimination of Intermediate Candidates**. In multi-objective optimization, directly applying deployment preferences discards intermediate candidates that may be suboptimal in one dimension but hold potential for future gains, restricting the search space. **Solution**: ParetoSaddler separates intermediate candidate promotion from final deployment selection. It uses Bayesian bootstrap Pareto support to promote candidates showing credible progress in either quality or cost, preserving diverse search paths for subsequent iterations.\n- **Challenge 2: Instability and Noise in Optimization Results**. Due to the stochastic nature of LLMs, single-execution results may not reflect true harness performance, leading to ineffective optimizations based on noise. **Solution**: The method employs repeated executions and Bayesian bootstrap screening to filter out candidates with weakly supported gains, ensuring that only statistically significant improvements drive the optimization process.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on ClawMark and GAIA2 benchmarks using domain-disjoint splits to ensure generalizability.\n- **Results**:\n    - **ClawMark**: Quality improved from 70.86% to 81.35%, while cost per task decreased from $1.17 to $1.01.\n    - **GAIA2**: Quality improved from 56.22% to 62.89%, with cost per task dropping significantly from $0.78 to $0.45.\n- **Comparison with Related Work**: Compared to quality-only baselines (e.g., AutoSaddler-Quality) and other multi-objective methods (e.g., Meta-Harness-Pareto), ParetoSaddler discovers higher-quality harnesses in lower-cost regions. Analysis confirms that Pareto-aware optimization retains intermediate candidates discarded by strict deployment preferences, leading to superior quality-cost trade-offs.\n\n#### Summary\nParetoSaddler addresses the challenge of joint quality and cost optimization in LLM agent harnesses. By introducing a Bayesian bootstrap Pareto support mechanism, it effectively decouples intermediate exploration from final selection, avoiding local optima caused by early preference application. Experiments demonstrate that the method simultaneously improves answer quality and significantly reduces inference costs across multiple benchmarks, outperforming existing single and multi-objective optimization baselines.",
+      "render_excerpt": "机构: University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence<br>ParetoSaddler 解决了 LLM 智能体 Harness 优化中质量与成本联合优化的难题。通过引入贝叶斯 bootstrap 帕累托支持机制，它有效地分离了中间探索与最终选择，避免了因早期偏好应用导致的局部最优陷阱。实验证明，该方法在多个基准测试上均能同时提升智能体的回答质量并显著降低推理成本，优于现有的单目标及多目标优化基线。",
+      "render_excerpt_en": "Institution: University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence<br>ParetoSaddler addresses the challenge of joint quality and cost optimization in LLM agent harnesses. By introducing a Bayesian bootstrap Pareto support mechanism, it effectively decouples intermediate exploration from final selection, avoiding local optima caused by early preference application. Experiments demonstrate that the method simultaneously improves answer quality and significantly reduces inference costs across multiple benchmarks, outperforming existing single and multi-objective optimization baselines.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-11-01T17:36:05Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-11-01"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.02269",
+      "date": "2026-11-01",
+      "title": "Qubrio: High-Performance Quantum Compilation via Multi-Agent LLM Collaboration",
+      "authors": [
+        "Jixuan Ruan",
+        "Zhuo Cui",
+        "Zhengding Hu",
+        "Zhongkai Yu",
+        "Xiang Fang",
+        "Yue Guan",
+        "Jason Ludmir",
+        "Phillip E. Weinberg",
+        "Xiuzhe Luo",
+        "Shengtao Wang",
+        "Sonia Lopez Alarcon",
+        "Hezi Zhang",
+        "Yufei Ding"
+      ],
+      "abstract": "Large Language Models (LLMs) offer an adaptable alternative to traditional quantum compilation heuristics, which bottleneck progress by demanding costly manual redesigns whenever hardware evolves. However, naive single-pass LLM approaches fail under the unique challenges introduced by quantum compilation. We introduce Qubrio, a practical agentic framework that significantly reduces heuristic redesigns through a three-level decomposition. By (1) partitioning programs into sequential operation stages, (2) deploying specialized agents for placement, routing and optimization, and (3) using disaggregated feedback for precise error correction, our system reliably navigates complex physical constraints. Beyond serving as a direct compiler, our LLM framework also uncovers novel strategies that facilitate convoy-style shuttling, substantially enhancing hardware concurrency without sacrificing fidelity. We further integrate these strategies into the previous state-of-the-art (SOTA) compiler, recovering a significant fraction of the LLM's performance advantages. On realistic workloads, our compiler achieves significant improvements in hardware runtime and program fidelity over the SOTA baseline PowerMove, seamlessly adapting to new hardware capabilities. Qubrio features an open user interface for practical use, and its code is publicly available at https://github.com/crosaa/Qubrio.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.02269v1",
+        "pdf": "https://arxiv.org/pdf/2611.02269v1",
+        "github": "https://github.com/crosaa/Qubrio",
+        "blog": null
+      },
+      "institution": "University of California, San Diego",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：量子编译是将高层量子算法转换为硬件可执行指令的关键步骤。传统编译器依赖人工设计的启发式规则，每当硬件更新时都需要专家 costly 地重新设计 heuristic，维护负担重且适应性差。\n- **已有工作局限**：虽然大语言模型（LLM）具有强大的代码生成和推理能力，但 naive 的单次通过（single-pass）LLM 方法在量子编译中表现失败。这是因为量子编译面临输入上下文过长、任务异构性导致的交叉干扰以及反馈模糊无法定位错误根源等独特挑战，单一 LLM 难以同时处理这些复杂约束。\n\n## 文章的核心贡献点\n- **提出了一个名为 Qubrio 的多智能体 LLM 协作框架**，通过三级分解策略解决量子编译难题。\n- **挑战1：输入复杂性与上下文限制**。量子程序整体超出当前 LLM 可靠推理的上下文范围，且决策具有强依赖性。**解决方法**：通过将程序划分为顺序操作阶段（Input decomposition），使每个阶段适配 LLM 的上下文窗口，降低单次推理难度。\n- **挑战2：任务异构性与反馈模糊**。放置、路由和优化需要不同的推理模式，单一代理易产生干扰；且整体性能反馈无法指导具体错误修复。**解决方法**：部署专门化的智能体分别负责放置、路由和优化（Specialized agents），并利用解耦的反馈机制（Disaggregated feedback）提供精确的错误修正梯度，从而有效导航复杂的物理约束。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Qubrio 提供了一个开放的用户界面以便实际使用，代码已开源。除了作为直接编译器，该框架还发现了促进“车队式”穿梭（convoy-style shuttling）的新策略，提升了硬件并发率而不牺牲保真度。\n- **评估结果**：在真实工作负载下，Qubrio 在硬件运行时间和程序保真度方面均显著优于当前的 SOTA 基线编译器 PowerMove。\n- **对比与整合**：研究还将 LLM 发现的新策略整合回传统的 SOTA 编译器中，恢复了 LLM 性能优势的很大一部分，证明了其策略的通用性和有效性，并能无缝适应新的硬件能力。\n\n#### 总结\nQubrio 通过多智能体协作和任务分解，成功解决了 LLM 在量子编译中面临的上下文、异构任务和反馈难题。它不仅实现了比现有 SOTA 方法更高的编译效率和保真度，还具备自动适应新硬件的能力，减少了人工重新设计启发式规则的需求，为量子编译提供了一种高效、灵活且实用的新范式。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Quantum compilation translates high-level quantum algorithms into hardware-executable instructions. Traditional compilers rely on manually engineered heuristics, creating a heavy maintenance burden as experts must redesign rules whenever hardware evolves.\n- **Limitations of Existing Work**: While Large Language Models (LLMs) show promise in code synthesis, naive single-pass LLM approaches fail in quantum compilation. They struggle with unique challenges such as excessive input complexity, task heterogeneity causing cross-task interference, and ambiguous feedback that prevents precise error correction.\n\n## Core Contributions\n- **Proposed Qubrio**, a practical agentic framework for quantum compilation via multi-agent LLM collaboration using a three-level decomposition strategy.\n- **Challenge 1: Input Complexity and Context Limits**. Full quantum programs exceed the reliable reasoning context of current LLMs, and decisions are highly interdependent. **Solution**: The system partitions programs into sequential operation stages, ensuring each stage fits within the LLM's context window and simplifying reasoning.\n- **Challenge 2: Task Heterogeneity and Ambiguous Feedback**. Compilation involves distinct sub-tasks (placement, routing, optimization) that interfere when handled by a single agent, and global feedback lacks actionable gradients for repair. **Solution**: Specialized agents are deployed for each sub-task, and disaggregated feedback is used to provide precise error signals, allowing the system to navigate complex physical constraints effectively.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Qubrio features an open user interface and publicly available code. Beyond direct compilation, it uncovers novel strategies like \"convoy-style shuttling\" to enhance hardware concurrency without sacrificing fidelity.\n- **Evaluation Results**: On realistic workloads, Qubrio achieves significant improvements in hardware runtime and program fidelity compared to the state-of-the-art (SOTA) baseline, PowerMove.\n- **Comparison & Integration**: The novel strategies discovered by the LLM framework were integrated back into the traditional SOTA compiler, recovering a significant fraction of the LLM's performance advantages. This demonstrates Qubrio's ability to seamlessly adapt to new hardware capabilities and improve existing pipelines.\n\n## 4. Conclusion\nQubrio successfully addresses the limitations of LLMs in quantum compilation through multi-agent collaboration and task decomposition. It outperforms current SOTA methods in efficiency and fidelity while reducing the need for manual heuristic redesign. By offering a flexible and adaptable framework, Qubrio represents a significant step forward in practical, high-performance quantum compilation.",
+      "render_excerpt": "机构: University of California, San Diego<br>Qubrio 通过多智能体协作和任务分解，成功解决了 LLM 在量子编译中面临的上下文、异构任务和反馈难题。它不仅实现了比现有 SOTA 方法更高的编译效率和保真度，还具备自动适应新硬件的能力，减少了人工重新设计启发式规则的需求，为量子编译提供了一种高效、灵活且实用的新范式。",
+      "render_excerpt_en": "Institution: University of California, San Diego<br>## 1. What the Paper Does - **Background**: Quantum compilation translates high-level quantum algorithms into hardware-executable instructions. Traditional compilers rely on manually engineered heuristics, creating a heavy maintenance burden as experts must redesign rules whenever hardware evolves.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-11-01T22:49:33Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-11-01"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.01976",
+      "date": "2026-11-01",
+      "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
+      "authors": [
+        "Shiyu Kan",
+        "Yue Qi",
+        "Yufei Han",
+        "Xinjian Luo",
+        "Guojun Xiong",
+        "Xiaofeng Gao"
+      ],
+      "abstract": "Large language model based agents increasingly rely on external tools to invoke services and interact with web resources. These tools can evolve through software updates, yet agentic frameworks may continue trusting them without re-verifying their safety after implementation changes. This tool update gap creates a supply-chain vulnerability in agentic systems: because updated tool code executes outside the LLM's context window, malicious functionality embedded in tool updates can bypass defenses centered on model-visible interactions, leaving agents exposed to stealthy, persistent threats that existing in-context defenses can hardly address. To thoroughly investigate this threat, we introduce ETUDE (Exploiting Tool Updates for Direct Execution), an attack that embeds malicious functionality into updates of initially benign tools to produce compromised tools, while preserving their legitimate tool functionality. Unlike prompt-based attacks, ETUDE operates entirely outside the LLM's context and requires no adversarial instructions, thereby bypassing defenses restricted to model-visible content. We evaluate ETUDE across three representative attack workloads and seven widely used commercial and open-source agentic frameworks, including Gemini CLI, Codex CLI, and Claude Code. The results show that ETUDE achieves a 97.6% ASR while maintaining a 95.9% legitimate task completion rate. We further examine existing defenses and find that they provide insufficient protection against this threat. These findings expose a fundamental blind spot in current agent security practices: trust established for a tool does not necessarily remain valid after its implementation updates.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.01976v1",
+        "pdf": "https://arxiv.org/pdf/2611.01976v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Maryland Baltimore County",
+      "institution": "Shanghai Jiao Tong University, Inria",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：在处理如科学主张验证等上下文有限的复杂问题时，往往需要获取额外的知识来进行推理。现有的大型语言模型（LLM）虽然拥有庞大的预训练知识库，但在推理过程中难以充分利用这些相关知识，且容易受限于表面文本，导致产生偏见或幻觉。\n- **已有工作为什么解决不了**：现有方法通常无法有效捕捉问题语境中参与实体的隐式状态（implicit state），也难以引入未明确提及但对推理至关重要的新实体（如从“JAM-A”联想到“肠上皮细胞”）。此外，缺乏对前提知识进行外部验证的机制，导致推理基础不可靠。\n\n## 文章的核心贡献点\n- **提出了一个名为 SMART 的多智能体框架**：该框架通过基于结构的角色提示策略，利用多种 LLM 捕获问题语境中参与实体的隐式状态，并将这些状态知识整理为多样化、互补且与解决方案相关的前提。\n- **挑战1：隐式实体状态的捕捉与知识缺失**。难点在于许多关键实体并未在原始声明中明确提及，且实体间的相互作用复杂。SMART 通过动态识别相关实体并为每个实体分配“专家”智能体，生成对比性前提（contrastive premises），从而挖掘出深层的、连接性的状态知识。\n- **挑战2：前提知识的可靠性与验证**。难点在于 LLM 生成的知识可能包含幻觉，直接影响最终验证的准确性。SMART 强调将前提建立在可验证的现实世界知识之上，通过 curated premises（经过筛选的前提）来引导解决方案的推理，确保了推理链条的 grounded（有依据）。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：SMART 在三个包含复杂科学主张的数据集上进行了评估。该方法采用多智能体协作，结合结构化提示来获取和验证状态知识。\n- **结果对比**：实验结果显示，SMART 的知识引导解决方案推理使验证性能提高了高达 20%。消融实验进一步证明，将前提建立在现实世界知识上是必要的，这一举措单独带来了高达 5% 的性能提升。相较于传统仅依赖 LLM 内部知识或直接推理的方法，SMART 通过显式的状态知识获取和验证机制，显著减少了幻觉并提升了推理深度。\n\n#### 总结\nSMART 框架通过多智能体协作和基于角色的提示策略，成功解决了复杂科学主张验证中因上下文有限和隐式知识缺失导致的推理难题。其核心创新在于将实体状态转化为可验证的前提知识，并通过对比性推理深化理解。实验表明，这种方法不仅显著提升了验证准确率，还证明了 grounding 前提知识对于提高 LLM 推理可靠性的重要性。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Complex problems with limited context, such as verifying scientific claims, require additional knowledge for reasoning. While Large Language Models (LLMs) possess vast pre-trained knowledge, they struggle to fully leverage it during reasoning, often relying on surface text which leads to biases and hallucinations.\n- **Why Existing Work Falls Short**: Current methods fail to effectively capture the implicit states of entities within the problem context and struggle to introduce latent but crucial entities (e.g., inferring \"intestinal epithelium\" from \"JAM-A\"). Furthermore, there is a lack of mechanisms to validate the premises used in reasoning, making the foundation of the solution unreliable.\n\n## Core Contributions\n- **Proposed SMART**: A multi-agent framework that captures the implicit state of participating entities using a structured role-based prompting strategy. It curates state knowledge into diverse, complementary, and solution-salient premises using various LLMs.\n- **Challenge 1: Capturing Implicit Entity States and Missing Knowledge**. The difficulty lies in identifying key entities not explicitly mentioned in the claim and understanding complex interactions. SMART addresses this by dynamically identifying relevant entities and assigning \"expert\" agents to each, generating contrastive premises to uncover deep, connected state knowledge.\n- **Challenge 2: Reliability and Verification of Premises**. The challenge is that LLM-generated knowledge can be hallucinated, compromising reasoning accuracy. SMART addresses this by grounding premises in verifiable real-world knowledge, using curated premises to guide solution reasoning, ensuring the reasoning chain is well-founded.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: SMART was evaluated on three datasets containing complex scientific claims. The framework employs multi-agent collaboration combined with structured prompting to acquire and verify state knowledge.\n- **Results & Comparison**: Experiments show that SMART's knowledge-guided reasoning improves validation performance by up to 20%. Ablation studies demonstrate that grounding premises in real-world knowledge is necessary, contributing an additional 5% performance gain. Compared to traditional methods relying solely on internal LLM knowledge or direct reasoning, SMART significantly reduces hallucinations and enhances reasoning depth through explicit state knowledge acquisition and verification.\n\n#### Summary\nThe SMART framework successfully addresses reasoning challenges in complex scientific claim verification caused by limited context and missing implicit knowledge. Its core innovation lies in transforming entity states into verifiable premises and deepening understanding through contrastive reasoning via multi-agent collaboration. Experiments confirm that this approach significantly improves validation accuracy and highlights the importance of grounding premise knowledge for enhancing LLM reasoning reliability.",
-      "render_excerpt": "机构: University of Maryland Baltimore County<br>SMART 框架通过多智能体协作和基于角色的提示策略，成功解决了复杂科学主张验证中因上下文有限和隐式知识缺失导致的推理难题。其核心创新在于将实体状态转化为可验证的前提知识，并通过对比性推理深化理解。实验表明，这种方法不仅显著提升了验证准确率，还证明了 grounding 前提知识对于提高 LLM 推理可靠性的重要性。",
-      "render_excerpt_en": "Institution: University of Maryland Baltimore County<br>The SMART framework successfully addresses reasoning challenges in complex scientific claim verification caused by limited context and missing implicit knowledge. Its core innovation lies in transforming entity states into verifiable premises and deepening understanding through contrastive reasoning via multi-agent collaboration. Experiments confirm that this approach significantly improves validation accuracy and highlights the importance of grounding premise knowledge for enhancing LLM reasoning reliability.",
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体（Agent）日益依赖外部工具来执行复杂任务，如访问本地文件、调用Web服务等。这些工具通常来自开源社区或第三方市场，并会通过软件更新不断演进。\n- **已有工作为什么解决不了**：现有的安全研究主要集中在“提示注入”（Prompt Injection）攻击上，即通过操纵LLM可见的输入来误导智能体。相应的防御机制（如指令-数据边界强化、上下文检测）也仅针对模型可见内容。然而，工具更新后的代码执行发生在LLM上下文窗口之外，现有的基于上下文的防御无法检测到工具实现变更中嵌入的恶意逻辑，导致存在巨大的安全盲区。\n\n## 文章的核心贡献点\n- **提出了一个名为 ETUDE (Exploiting Tool Updates for Direct Execution) 的攻击框架**，揭示了智能体系统中的“工具更新间隙”（Tool Update Gap）这一供应链漏洞。\n- **挑战1：如何绕过基于LLM上下文的防御机制？**\n  - **难点**：传统攻击依赖 adversarial instructions（对抗性指令），容易被提示注入检测器拦截；且工具代码执行不在LLM视野内，LLM无法感知代码逻辑变化。\n  - **解决方法**：ETUDE 完全在 LLM 上下文之外运行，不依赖任何对抗性提示。它通过替换已受信工具的底层可执行代码，将恶意功能嵌入到看似 benign（良性）的工具更新中，从而彻底避开针对模型可见内容的防御。\n- **挑战2：如何在植入恶意功能的同时保持工具的合法性以维持信任？**\n  - **难点**：如果更新导致工具正常功能失效，容易引发用户或系统的警觉，导致攻击中断或被回滚。\n  - **解决方法**：ETUDE 设计了一种机制，在保留工具原有合法功能（Legitimate Task Completion）的前提下嵌入恶意负载。实验显示其在执行恶意操作的同时，仍能保持极高的正常任务完成率，确保持续性和隐蔽性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估设置**：在三个具有代表性的攻击工作负载和七个广泛使用的商业及开源智能体框架（包括 Gemini CLI, Codex CLI, Claude Code, OpenCode 等）上进行了评估。\n- **主要结果**：\n  - **攻击成功率 (ASR)**：ETUDE 达到了 **97.6%** 的高攻击成功率。\n  - **隐蔽性/可用性**：在发动攻击的同时，保持了 **95.9%** 的合法任务完成率，证明其具有极强的隐蔽性。\n- **与相关工作对比**：\n  - 现有防御主要针对提示注入，对 ETUDE 这种基于代码更新的供应链攻击几乎无效。\n  - 研究指出，当前智能体框架在工具初次安装时可能进行安全检查，但在后续更新中往往直接沿用之前的权限信任，缺乏对更新后代码的重新验证，这使得 ETUDE 能够轻易利用这一“信任持久化”漏洞。\n\n## 总结\n本文揭示了 LLM 智能体安全中一个根本性的盲点：**对工具的信任不应在其实现在更新后自动延续**。通过提出 ETUDE 攻击，作者证明了攻击者可以通过分发初始良性工具建立信任，随后通过更新植入恶意代码，从而绕过所有基于 LLM 上下文的防御。这一发现强调了在智能体生态系统中建立动态、持续的工具完整性验证机制的紧迫性，而非仅依赖静态的准入检查或提示层面的防御。",
+      "summary_en": "## What the Paper Did\n- **Background**: Large Language Model (LLM)-based agents increasingly rely on external tools for complex tasks like file access and web interaction. These tools evolve via software updates from open-source or third-party sources.\n- **Why Existing Work Fails**: Current security research focuses primarily on \"Prompt Injection,\" where defenses monitor model-visible inputs. However, tool code executes outside the LLM's context window. Existing defenses cannot detect malicious logic embedded in tool implementation updates, creating a significant security blind spot known as the \"Tool Update Gap.\"\n\n## Core Contributions\n- **Proposed ETUDE (Exploiting Tool Updates for Direct Execution)**, an attack framework that exploits the supply-chain vulnerability in agent systems.\n- **Challenge 1: How to bypass defenses based on LLM context?**\n  - **Difficulty**: Traditional attacks use adversarial instructions visible to the LLM, making them susceptible to prompt injection detectors. The LLM cannot perceive changes in underlying code execution.\n  - **Solution**: ETUDE operates entirely outside the LLM's context without using adversarial prompts. It embeds malicious payloads into updates of previously trusted tools, completely bypassing defenses restricted to model-visible content.\n- **Challenge 2: How to maintain legitimacy while injecting malicious functionality?**\n  - **Difficulty**: If the update breaks normal functionality, it raises alerts or causes rollback, breaking the attack chain.\n  - **Solution**: ETUDE preserves the tool's original legitimate functions while embedding malicious logic. Experiments show it maintains a high legitimate task completion rate, ensuring stealth and persistence.\n\n## Implementation, Evaluation, and Comparison\n- **Evaluation Setup**: Tested across three representative attack workloads and seven widely used commercial and open-source agent frameworks (including Gemini CLI, Codex CLI, Claude Code, and OpenCode).\n- **Key Results**:\n  - **Attack Success Rate (ASR)**: ETUDE achieved a **97.6%** ASR.\n  - **Stealth/Usability**: Maintained a **95.9%** legitimate task completion rate during attacks, demonstrating high stealth.\n- **Comparison with Related Work**:\n  - Existing defenses against prompt injection are ineffective against ETUDE's code-update-based supply chain attacks.\n  - The study reveals that agent frameworks often persist permissions from initial installation to subsequent updates without re-verifying code safety, allowing ETUDE to exploit this \"trust persistence\" vulnerability easily.\n\n## Summary\nThis paper exposes a fundamental blind spot in LLM agent security: **trust established for a tool does not remain valid after its implementation updates**. By introducing ETUDE, the authors demonstrate that attackers can distribute benign tools to establish trust and then inject malicious code via updates, bypassing all LLM-context-based defenses. This highlights the urgent need for dynamic, continuous integrity verification mechanisms for tools in agent ecosystems, rather than relying solely on static admission checks or prompt-level defenses.",
+      "render_excerpt": "机构: Shanghai Jiao Tong University, Inria<br>## 文章做了什么 - **背景**：基于大语言模型（LLM）的智能体（Agent）日益依赖外部工具来执行复杂任务，如访问本地文件、调用Web服务等。这些工具通常来自开源社区或第三方市场，并会通过软件更新不断演进。 - **已有工作为什么解决不了**：现有的安全研究主要集中在“提示注入”（Prompt Injection）攻击上，即通过操纵LLM可见的输入来误导智能体。相应的防御机制（如指令-数据边界强化、上下文检测）也仅针对模型可见内容。然而，工具更新后的代码执行发生在LLM上下文窗口之外，现有的基于上下文的防御无法检测到工具实现变更中嵌入的恶意逻辑，导致存在巨大的安全盲区。 ## 文章的核心贡献点 - **提出了一个名为 ETUDE (Exploiting Tool Updates for Direct Execution) 的攻击框架**，揭示了智能体系统中的“工具更新间隙”（Tool Update Gap）这一供应链漏洞。",
+      "render_excerpt_en": "Institution: Shanghai Jiao Tong University, Inria<br>## What the Paper Did - **Background**: Large Language Model (LLM)-based agents increasingly rely on external tools for complex tasks like file access and web interaction. These tools evolve via software updates from open-source or third-party sources. - **Why Existing Work Fails**: Current security research focuses primarily on \"Prompt Injection,\" where defenses monitor model-visible inputs.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-05T15:51:39Z"
+        "captured_at": "2026-11-01T15:14:02Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-05"
+        "captured_at": "2026-11-01"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -53,140 +178,44 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.08231",
-      "date": "2026-11-05",
-      "title": "From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?",
+      "paper_id": "2611.01930",
+      "date": "2026-11-01",
+      "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations",
       "authors": [
-        "Hanyu Qiu",
-        "Ze Liu",
-        "Zhe Zhao",
-        "Kuang Xiong",
-        "Blaze Chen",
-        "Zhenxiang Yan",
-        "Renfen Hu"
+        "Boyang Yang",
+        "Ziyao Yang",
+        "Yu Zhang",
+        "Duo Chai",
+        "Xiaoming Chen",
+        "Haoye Tian"
       ],
-      "abstract": "Large language models (LLMs) are widely used for information access, content production, and agent-based task execution, but their outputs remain vulnerable to subtle, high-risk hallucinations. To systematically evaluate and advance post-generation hallucination detection, we introduce HaluCheck, a large-scale, bilingual benchmark comprising over 42k instances spanning both factual hallucinations in text and faithfulness hallucinations in agent trajectories. HaluCheck features fine-grained, multi-level annotations for detection, localization, and correction, covering different tasks and perturbation degrees. Experiments on fourteen LLMs reveal that, while models show basic sample-level detection ability, they struggle with fine-grained localization, correction, and agent hallucination detection. Further analysis demonstrates that thinking, web search, and supervised fine-tuning each offer partial improvements, but none fully solve the problem. HaluCheck thus provides a solid basis for benchmarking and diagnosing LLM reliability across text and agent scenarios.",
+      "abstract": "LLM agents operate Web infrastructure from the command line and rely on a return assumption, namely that each tool call returns within a bounded time and with its requested action finished. Many commands, however, ask a question before they act, and the agent's harness either closes the program's input or keeps it open as a terminal at which nobody types. With closed input, the program can return status 0 without the requested action. With open input, it waits until a time limit, and the agent pays in time and tokens. To the best of our knowledge, this paper is the first to measure and repair the return assumption. We collect 91,469 production tool calls and 89,047 public agent trajectories, test how 8 widely used harnesses launch commands, and build Litmus, a catalog of 158 checked command-line invocations, and Tripwire, a benchmark of 25 task pairs that differ only in whether a question guards the requested action. We then propose RECEIPT, which keeps the input open, reads what each process waits for from system calls, and returns this state to an unmodified agent through a model-checked protocol. On Litmus, closed input causes 11.5% of tested invocations to return status 0 without performing the requested action, and 7 of 8 harnesses close input when no terminal is attached. An unanswered question at a plain terminal multiplies a task's token use by 2.9, and the input connection moves an LLM from 7th to 3rd place among 8. Across 5 LLMs, RECEIPT reduces false claims of success by 73.5% and completes all 25 guarded tasks on a second harness. An agent's reliability therefore depends on what its harness lets it observe as well as on its LLM. Agent builders should report what each tool call did, not only how it ended, and benchmark maintainers should fix and report the input connection before they rank LLMs.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08231v1",
-        "pdf": "https://arxiv.org/pdf/2611.08231v1",
-        "github": "https://github.com/xMiles/HaluCheck",
-        "blog": null
-      },
-      "institution": "Beijing Normal University, Tencent AI Lab",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）已广泛应用于信息获取、内容生成及智能体任务执行，但其输出仍易受细微且高风险的幻觉影响。随着AI生成内容规模的扩大，人工验证变得不可行，因此亟需评估LLM在生成后可靠检测幻觉的能力。\n- **已有工作为什么解决不了**：现有的基准测试往往局限于单一维度的事实性错误检测，缺乏对智能体轨迹中忠实度幻觉的系统性评估。此外，现有工作通常仅提供样本级别的标签，缺乏细粒度的定位、纠正和归因标注，导致难以全面诊断模型在复杂场景下的可靠性短板。\n\n## 文章的核心贡献点\n- **提出了一个名为 HaluCheck 的大规模双语基准测试**：包含超过4.2万个实例，涵盖文本中的事实性幻觉和智能体轨迹中的忠实度幻觉，提供检测、定位、纠正和归因的多层级细粒度标注。\n- **挑战1：细粒度定位与纠正困难**。难点在于模型不仅要判断是否存在幻觉，还需精确定位错误片段并给出修正，这对模型的语义理解和知识边界要求极高。HaluCheck通过提供受控扰动和适度捏造的细粒度标注，揭示了当前模型在此任务上的巨大差距，并为训练和评估提供了精确的监督信号。\n- **挑战2：智能体场景下的幻觉检测复杂**。难点在于智能体幻觉涉及工具调用、规划逻辑与上下文的一致性，错误可能转化为不安全或错误的行动。HaluCheck引入了智能体轨迹中的忠实度幻觉评估，暴露了大多数模型在上下文整合和过程监控方面的严重不足，填补了该领域的评估空白。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与数据构建**：HaluCheck 包含 HaluText（文本幻觉）和 Agent Perturbation（智能体扰动）两部分。通过数值偏差、细节捏造、规划错误等策略生成数据，覆盖多种任务和扰动程度。\n- **评估结果**：在14个LLM上的实验显示，虽然模型具备基本的样本级检测能力，但在细粒度定位、纠正以及智能体幻觉检测方面表现挣扎。更强的模型表现出更好的不确定性表达能力（自我意识），但仍未根本解决问题。\n- **对比与分析**：进一步分析表明，思维链（Thinking）、网络搜索和监督微调（SFT）均能带来部分性能提升，但没有任何一种方法能完全解决多维度幻觉检测问题。相较于以往仅关注事实准确性的工作，HaluCheck 证明了在智能体交互和细粒度纠错方面存在显著的性能瓶颈。\n\n#### 总结\n本文介绍了 HaluCheck，一个旨在系统评估和提升LLM生成后幻觉检测能力的大规模双语基准。通过涵盖文本事实性幻觉和智能体忠实度幻觉的多层级标注，研究揭示了当前LLM在细粒度定位、纠正及智能体场景下的主要缺陷。尽管引入推理、搜索和微调技术有所助益，但可靠的多维度幻觉检测仍是未解难题，HaluCheck 为后续研究和诊断LLM可靠性提供了坚实基础。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) are widely adopted for information access, content generation, and agent-based tasks, yet their outputs remain susceptible to subtle, high-risk hallucinations. Given the scale of AI-generated content, manual verification is infeasible, necessitating robust post-generation hallucination detection.\n- **Why Existing Work Falls Short**: Current benchmarks often focus solely on factual errors in text, lacking systematic evaluation of faithfulness hallucinations in agent trajectories. Furthermore, they typically provide only sample-level labels without fine-grained annotations for localization, correction, or attribution, limiting the ability to diagnose model reliability in complex scenarios.\n\n## Core Contributions\n- **Proposed HaluCheck**: A large-scale, bilingual benchmark comprising over 42k instances, covering both factual hallucinations in text and faithfulness hallucinations in agent trajectories, with multi-level fine-grained annotations for detection, localization, correction, and attribution.\n- **Challenge 1: Difficulty in Fine-Grained Localization and Correction**. The challenge lies in requiring models to not only detect errors but also precisely locate and correct them, demanding high semantic understanding and knowledge boundary awareness. HaluCheck addresses this by providing controlled perturbations and fine-grained labels, exposing significant gaps in current models and offering precise signals for training and evaluation.\n- **Challenge 2: Complexity of Hallucination Detection in Agent Scenarios**. This is difficult because agent hallucinations involve consistency across tool calls, planning logic, and context, where errors can lead to unsafe actions. HaluCheck introduces faithfulness hallucination evaluation in agent trajectories, revealing severe deficiencies in context integration and process monitoring, thus filling a critical gap in existing evaluations.\n\n## Implementation and Evaluation\n- **Implementation & Data Construction**: HaluCheck consists of HaluText (text hallucinations) and Agent Perturbation modules. Data is generated using strategies like numerical deviation, detail invention, and planning errors, covering diverse tasks and perturbation degrees.\n- **Evaluation Results**: Experiments on 14 LLMs show that while models possess basic sample-level detection capabilities, they struggle significantly with fine-grained localization, correction, and agent hallucination detection. Stronger models demonstrate better uncertainty expression (self-awareness) but fail to fully resolve the issues.\n- **Comparison & Analysis**: Further analysis indicates that Chain-of-Thought (Thinking), web search, and Supervised Fine-Tuning (SFT) offer partial improvements, but none completely solve the problem. Compared to prior works focusing only on factual accuracy, HaluCheck highlights substantial performance bottlenecks in agent interaction and fine-grained error correction.\n\n## 4. Conclusion\nThis paper presents HaluCheck, a large-scale bilingual benchmark designed to systematically evaluate and advance post-generation hallucination detection in LLMs. By incorporating multi-level annotations for both textual factual hallucinations and agent faithfulness hallucinations, the study reveals major deficits in current LLMs regarding fine-grained localization, correction, and agent scenario reliability. Although techniques like reasoning, search, and fine-tuning provide some benefits, reliable multi-dimensional hallucination detection remains an open challenge, with HaluCheck serving as a solid foundation for future research and diagnosis.",
-      "render_excerpt": "机构: Beijing Normal University, Tencent AI Lab<br>本文介绍了 HaluCheck，一个旨在系统评估和提升LLM生成后幻觉检测能力的大规模双语基准。通过涵盖文本事实性幻觉和智能体忠实度幻觉的多层级标注，研究揭示了当前LLM在细粒度定位、纠正及智能体场景下的主要缺陷。尽管引入推理、搜索和微调技术有所助益，但可靠的多维度幻觉检测仍是未解难题，HaluCheck 为后续研究和诊断LLM可靠性提供了坚实基础。",
-      "render_excerpt_en": "Institution: Beijing Normal University, Tencent AI Lab<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) are widely adopted for information access, content generation, and agent-based tasks, yet their outputs remain susceptible to subtle, high-risk hallucinations. Given the scale of AI-generated content, manual verification is infeasible, necessitating robust post-generation hallucination detection.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-05T16:15:18Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-05"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.08483",
-      "date": "2026-11-05",
-      "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
-      "authors": [
-        "Qile Jiang",
-        "George Em Karniadakis"
-      ],
-      "abstract": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.08483v1",
-        "pdf": "https://arxiv.org/pdf/2611.08483v1",
-        "github": "https://github.com/Qile-J/SwarmEvolve",
-        "blog": null
-      },
-      "institution": "Brown University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：在数学发现和科学计算领域，许多问题可以转化为程序搜索问题。近年来，利用大语言模型（LLM）引导的进化搜索（如FunSearch, AlphaEvolve）通过迭代优化和组合高分方法取得了显著进展。\n- **已有工作的局限性**：现有的LLM引导框架通常速度缓慢且成本高昂。主要原因在于每个智能体在每一轮都需要生成长文本的思维链（Chain of Thought），并且为了维持种群多样性，必须重复多次生成过程，导致计算资源消耗巨大且效率低下。\n\n## 文章的核心贡献点\n- **提出了一个名为 SwarmEvolve 的框架**：该框架利用潜空间中的低成体智能体群进行进化发现和优化，无需将推理过程解码为文本，而是通过传递键值缓存（KV caches）来共享信息。\n- **挑战1：传统文本生成导致的低效与高延迟**\n  - **难点**：传统的基于文本的进化搜索需要LLM逐字生成冗长的思维链，这不仅耗时，还限制了每单位时间内可探索的方案数量。\n  - **解决方案**：SwarmEvolve让数百个低成本智能体在潜空间中直接推理，避免了文本解码过程。智能体通过传递KV缓存来交换信息，极大地提高了吞吐量和搜索速度。\n- **挑战2：如何在高速搜索中维持解的多样性并实现有效交叉**\n  - **难点**：在快速迭代中，容易陷入局部最优或产生大量重复解，同时传统的文本交叉操作难以高效融合多个智能体的思路。\n  - **解决方案**：引入新颖性过滤器，通过直接测量智能体隐藏状态向量之间的距离来保留最具差异化的想法；同时，汇总智能体接收所有群组成员的组合KV缓存，使得思想交叉在潜空间中自然发生，无需复杂的文本重组。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在21个数学发现和科学计算问题上进行评估，使用Qwen3 8B模型在单GPU上运行。\n- **对比基线**：OpenEvolve, ShinkaEvolve, CodeEvolve, 以及使用前沿LLM的AlphaEvolve。\n- **主要结果**：\n  - **速度与效率**：SwarmEvolve达到其他最先进框架60分钟最佳分数所需的中位时间仅为3到8分钟，速度提升显著。\n  - **性能表现**：在15分钟时，SwarmEvolve获得的平均最佳分数高于所有对比基线。\n  - **解的质量**：在某些问题上，使用较小模型（Qwen3 8B）的SwarmEvolve所找到的解优于AlphaEvolve使用前沿大模型首次发现的解。\n  - **吞吐量**：在相同时间内，SwarmEvolve生成的程序数量远超其他方法（例如在组合数学问题上生成734个程序，而OpenEvolve仅生成52个）。\n\n#### 总结\nSwarmEvolve通过让智能体群在潜空间中通信和推理，克服了传统LLM引导进化搜索中因文本生成带来的速度慢、成本高的问题。该方法通过KV缓存共享和基于隐藏状态的新颖性过滤，实现了高效的思想交叉和多样性维持。实验证明，这是一种针对科学问题程序搜索的快速、低成本且高性能的解决方案，甚至能用较小模型超越使用更大模型的现有最先进方法。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Many problems in mathematical discovery and scientific computing can be framed as program search tasks. Recently, LLM-guided evolutionary search frameworks (e.g., FunSearch, AlphaEvolve) have made significant progress by iteratively refining and combining high-scoring solutions.\n- **Limitations of Existing Work**: Current LLM-guided frameworks are often slow and expensive. This is primarily because each agent must generate a long textual chain of thought for every iteration, and maintaining population diversity requires repeating this generation process many times, leading to high computational costs and low efficiency.\n\n## Core Contributions\n- **Proposed SwarmEvolve**: A framework where hundreds of low-cost agents per round operate in swarms, reasoning in latent space without decoding to text, and sharing information by passing KV caches.\n- **Challenge 1: Inefficiency and High Latency due to Text Generation**\n  - **Difficulty**: Traditional text-based evolutionary search requires LLMs to generate verbose chains of thought token-by-token, which is time-consuming and limits the number of solutions explored per unit of time.\n  - **Solution**: SwarmEvolve enables agents to reason directly in latent space, bypassing text decoding. Agents exchange information via KV caches, significantly increasing throughput and search speed.\n- **Challenge 2: Maintaining Diversity and Effective Crossover in High-Speed Search**\n  - **Difficulty**: Rapid iteration risks converging to local optima or producing duplicate solutions, while traditional text-based crossover operations struggle to efficiently merge ideas from multiple agents.\n  - **Solution**: A novelty filter retains the most distinct ideas by measuring distances between agents' hidden state vectors. Additionally, a summarizer agent receives combined KV caches from all swarm members, allowing idea crossover to occur naturally in latent space without complex text reconstruction.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on 21 problems in mathematical discovery and scientific computing, using Qwen3 8B on a single GPU.\n- **Baselines**: Compared against OpenEvolve, ShinkaEvolve, CodeEvolve, and AlphaEvolve (using frontier LLMs).\n- **Key Results**:\n  - **Speed & Efficiency**: SwarmEvolve reached the best scores achieved by other state-of-the-art frameworks in 60 minutes within a median of only 3 to 8 minutes.\n  - **Performance**: At the 15-minute mark, SwarmEvolve achieved higher mean best scores than all baselines.\n  - **Solution Quality**: On several problems, SwarmEvolve with the smaller Qwen3 8B model improved upon solutions initially found by AlphaEvolve using larger, frontier LLMs.\n  - **Throughput**: SwarmEvolve generated significantly more programs than other methods in the same timeframe (e.g., 734 vs. 52 in combinatorics).\n\n## 4. Conclusion\nSwarmEvolve overcomes the speed and cost limitations of traditional LLM-guided evolutionary search by enabling agent swarms to communicate and reason in latent space. By leveraging KV cache sharing and novelty filtering based on hidden states, it achieves efficient idea crossover and diversity maintenance. The results demonstrate that this approach offers a fast, low-cost, and high-performance solution for program search in scientific domains, outperforming existing methods even with smaller models.",
-      "render_excerpt": "机构: Brown University<br>SwarmEvolve通过让智能体群在潜空间中通信和推理，克服了传统LLM引导进化搜索中因文本生成带来的速度慢、成本高的问题。该方法通过KV缓存共享和基于隐藏状态的新颖性过滤，实现了高效的思想交叉和多样性维持。实验证明，这是一种针对科学问题程序搜索的快速、低成本且高性能的解决方案，甚至能用较小模型超越使用更大模型的现有最先进方法。",
-      "render_excerpt_en": "Institution: Brown University<br>## 1. What the Paper Does - **Background**: Many problems in mathematical discovery and scientific computing can be framed as program search tasks. Recently, LLM-guided evolutionary search frameworks (e.g., FunSearch, AlphaEvolve) have made significant progress by iteratively refining and combining high-scoring solutions.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-05T18:59:29Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-05"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.07947",
-      "date": "2026-11-05",
-      "title": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
-      "authors": [
-        "Artur M. Schweidtmann"
-      ],
-      "abstract": "ChemE-as-Code provides an open-source environment in which AI agents built on large language models (LLMs) can carry out chemical engineering work and engineers can check it. Its calculation tools range from catalysis through process simulation to plant layout, HAZOP and life cycle assessment, and skills tell a general-purpose agent how to use them. Engineering files are linked, machine-readable and versioned in Git; calculations run outside the LLM, each value records its origin, and automated checks report inconsistencies and out-of-date results by file and line. In an illustrative ammonia case, agents developed a written task into a preliminary basic-engineering package (simulation files, P&IDs, layout, HAZOP, datasheets, relief) for USD 224 of API cost in the design sessions. Planted faults and engineering changes show that the checks find what their rules cover and miss the rest, so they guide human review rather than replace it. No independent engineer has reviewed the design.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.07947v1",
-        "pdf": "https://arxiv.org/pdf/2611.07947v1",
+        "abs": "http://arxiv.org/abs/2611.01930v1",
+        "pdf": "https://arxiv.org/pdf/2611.01930v1",
         "github": null,
         "blog": null
       },
-      "institution": "Delft University of Technology",
+      "institution": "Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：生成式人工智能，特别是基于大语言模型（LLM）的智能体（Agents），有望重塑化学工程领域。智能体不仅能回答问题，还能使用工具、编辑文件并迭代结果。软件工程已证明这种模式能加速开发，因为代码存在于可版本控制和自动测试的文本文件中。\n- **已有工作为什么解决不了**：化学工程比软件工程更复杂，因为工厂由许多耦合文档描述（如流程模拟、P&ID、设备数据、布局、安全研究等）。这些文档相互依赖，但依赖关系很少被记录，导致一处变更（如设计产能增加）会静默地使其他地方的数据失效。现有的集成信息模型和数字线程虽能交换数据，但无法在整个项目周期中记录哪些结果仍保持一致、哪些已过时。此外，早期的流程图和P&ID生成器（无论是基于规则还是学习模型）通常只生成部分设计，缺乏决策过程且脱离工程工作流，难以应对智能体快速产生的大量需验证的输出。\n\n## 文章的核心贡献点\n- **提出了一个 ChemE-as-Code 开源平台**：这是一个开放源码环境，允许基于 LLM 的 AI 智能体执行化学工程任务，并让工程师进行检查。它将工程文件链接、机器可读并通过 Git 进行版本控制，计算在 LLM 外部运行，每个值记录其来源，并通过自动化检查报告不一致和过时的结果。\n- **挑战1：多文档耦合与一致性维护难**。化学工程设计涉及多种异构文档，变更会导致静默错误，传统方法难以追踪依赖。**解决方法**：通过将工程知识封装为“技能”（Skills，指导智能体如何操作的指令文件）和“工具”（Tools，执行计算或检查的程序），并将所有工程文件置于 Git 版本控制下。计算在 LLM 外部执行并记录数据来源，自动化检查工具按文件和行号报告不一致性，从而确保数据溯源和一致性。\n- **挑战2：智能体输出的验证与可信度**。智能体生成的输出可能看似合理但实际无效，且数量庞大，人工审查压力大。**解决方法**：采用通用智能体加载所需技能和工具的模式，而非多学科专用智能体团队。通过自动化检查规则发现覆盖范围内的错误，明确告知人类审查者哪些部分通过了规则检查，哪些未覆盖，从而引导而非替代人工审查，提高审查效率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与案例**：在一个 illustrative ammonia（氨合成）案例中，智能体将书面任务转化为初步的基础工程包，包括模拟文件、P&ID、布局、HAZOP 分析、数据表和泄压设计。整个设计会话的 API 成本仅为 224 美元。\n- **评估结果**：通过植入故障和工程变更进行测试，结果显示自动化检查能够发现规则覆盖范围内的错误，但会遗漏规则未覆盖的部分。这证明了该系统能有效辅助人类审查，但不能完全取代独立工程师的审核（目前尚无独立工程师审查该设计）。\n- **对比**：与传统的基于规则或学习的流程图/P&ID 生成器相比，ChemE-as-Code 不仅生成设计产物，还保留了决策过程，并将其整合到可版本控制的工程工作流中，解决了以往工具脱离工程上下文且缺乏一致性追踪的问题。\n\n#### 总结\nChemE-as-Code 通过将化学工程工作转化为类似软件的“代码即基础设施”模式，利用 LLM 智能体、Git 版本控制和自动化检查工具，解决了化学工程设计中多文档耦合、一致性维护难以及智能体输出验证的问题。它提供了一个开源框架，使智能体能够以较低成本完成初步工程设计，并通过透明的溯源和自动化检查辅助工程师进行高效审查，推动了化学工程向智能化、自动化工作流的转型。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Generative AI, specifically LLM-based agents, is poised to reshape chemical engineering by executing tasks, using tools, and iterating on results. Software engineering has demonstrated the efficacy of this approach due to versioned, testable codebases.\n- **Why Existing Work Falls Short**: Chemical engineering involves complex, coupled documents (simulations, P&IDs, layouts, etc.) where dependencies are rarely recorded. Changes in one area silently invalidate others. Current digital threads facilitate data exchange but fail to track consistency and obsolescence across revisions. Previous flowchart/P&ID generators operate outside the engineering workflow, lacking decision traceability and struggling to verify the high volume of plausible but potentially invalid agent outputs.\n\n## Core Contributions\n- **Proposed ChemE-as-Code**: An open-source platform enabling LLM-based agents to perform chemical engineering tasks within a verifiable environment. It links engineering files, makes them machine-readable and version-controlled via Git, runs calculations outside the LLM with source tracking, and uses automated checks to flag inconsistencies.\n- **Challenge 1: Maintaining Consistency Across Coupled Documents**. The interdependence of diverse engineering documents makes silent errors common and hard to track. **Solution**: Encapsulates domain knowledge into \"Skills\" (instructions for agents) and \"Tools\" (calculation/check programs). By versioning all files in Git and executing calculations externally with provenance tracking, automated checks identify inconsistencies at the file and line level, ensuring data integrity.\n- **Challenge 2: Verification of Agent Outputs**. Agents produce vast amounts of output that may be plausible but incorrect, overwhelming manual review. **Solution**: Uses a general-purpose agent that loads specific skills/tools as needed. Automated checks identify errors within their rule scope, guiding human reviewers to focus on uncovered areas, thus augmenting rather than replacing human oversight.\n\n## Implementation and Evaluation\n- **Implementation & Case Study**: In an illustrative ammonia case, agents generated a preliminary basic engineering package (simulations, P&IDs, layout, HAZOP, datasheets, relief) for an API cost of USD 224.\n- **Evaluation Results**: Tests with planted faults and engineering changes showed that automated checks successfully detected errors covered by rules but missed others. This confirms the system's role in guiding human review rather than replacing independent engineer validation (which has not yet been performed).\n- **Comparison**: Unlike traditional rule-based or learned generators that produce isolated design fragments, ChemE-as-Code integrates generation into a version-controlled workflow with traceable decisions, addressing the lack of consistency tracking and context in prior tools.\n\n## 4. Conclusion\nChemE-as-Code transforms chemical engineering into a \"code-like\" infrastructure, leveraging LLM agents, Git versioning, and automated checks to address challenges in document coupling, consistency maintenance, and output verification. It provides an open-source framework for low-cost preliminary design generation, enhancing engineer efficiency through transparent provenance and targeted automated assistance, thereby advancing the field towards intelligent, automated workflows.",
-      "render_excerpt": "机构: Delft University of Technology<br>ChemE-as-Code 通过将化学工程工作转化为类似软件的“代码即基础设施”模式，利用 LLM 智能体、Git 版本控制和自动化检查工具，解决了化学工程设计中多文档耦合、一致性维护难以及智能体输出验证的问题。它提供了一个开源框架，使智能体能够以较低成本完成初步工程设计，并通过透明的溯源和自动化检查辅助工程师进行高效审查，推动了化学工程向智能化、自动化工作流的转型。",
-      "render_excerpt_en": "Institution: Delft University of Technology<br>## 1. What the Paper Did - **Background**: Generative AI, specifically LLM-based agents, is poised to reshape chemical engineering by executing tasks, using tools, and iterating on results. Software engineering has demonstrated the efficacy of this approach due to versioned, testable codebases.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体通过命令行操作 Web 基础设施，并依赖于一个“返回假设”（Return Assumption），即每个工具调用都会在有限时间内返回，且请求的操作已完成。然而，许多命令在执行前会提出问题（如确认提示、密码输入等）。\n- **已有工作为什么解决不了**：现有的智能体框架（Harness）在处理此类交互式命令时存在缺陷。如果关闭输入流，程序可能在未执行实际操作的情况下返回状态码 0（假成功）；如果保持输入流开放（如终端模式），程序会等待用户输入直到超时，导致智能体浪费大量时间和 Token，并可能因超时而误判任务失败。现有研究未能量化这一假设的失效情况，也未提供有效的修复机制。\n\n## 文章的核心贡献点\n- **提出了一个名为 RECEIPT 的系统**，用于测量和修复 LLM 智能体在 Web 服务操作中的返回假设问题。\n- **挑战 1：静默失败与假成功**。当输入流关闭时，需要交互的命令可能直接退出并返回成功状态码，导致智能体误以为操作已完成。**解决方法**：RECEIPT 保持输入流开放，并通过系统调用监控进程状态，识别进程是否正在等待输入，从而避免将未执行的命令误判为成功。\n- **挑战 2：资源浪费与超时误判**。当输入流保持开放但无自动响应机制时，命令会等待直至超时，造成 Token 消耗激增和任务延迟。**解决方法**：RECEIPT 读取进程等待的具体内容（如提示符），并通过经过模型检测验证的协议将这些状态信息返回给未经修改的智能体，使智能体能够及时提供正确输入，显著减少等待时间和 Token 消耗。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集与基准测试**：收集了 91,469 次生产环境工具调用和 89,047 条公共智能体轨迹。构建了 Litmus（包含 158 个已验证的命令行调用目录）和 Tripwire（包含 25 对任务，区别仅在于是否有问题守护请求的操作）。\n- **测量结果**：在 Litmus 测试中，关闭输入导致 11.5% 的测试调用在未执行请求操作的情况下返回状态 0；8 个主流框架中有 7 个在未连接终端时会关闭输入。在 Tripwire 测试中，未回答的问题使 Token 使用量增加 2.9 倍，且输入连接方式可将 Llama-3.3-70B 的排名从第 7 位提升至第 3 位。\n- **RECEIPT 效果**：相比关闭输入的方式，RECEIPT 将虚假成功声明减少了 73.5%；相比普通终端模式，Token 使用量减少了 24.4%。它能以 85.0% 的准确率报告等待状态且无误报。在商业智能体运行时中，每次 Shell 调用的检查中位数耗时不超过 0.54 毫秒。\n- **对比**：现有框架要么导致静默失败，要么导致高昂的超时成本，而 RECEIPT 通过精确的状态反馈解决了这两者之间的矛盾，提升了智能体的可靠性和效率。\n\n#### 总结\n本文首次量化并修复了 LLM 智能体在命令行操作中的“返回假设”问题。研究表明，智能体的可靠性不仅取决于 LLM 本身，还取决于其框架允许观察到的工具执行状态。作者建议智能体构建者应报告工具调用的实际执行情况而非仅返回状态码，基准测试维护者应在排名 LLM 之前修复并公开输入连接的处理方式。RECEIPT 通过监控系统调用状态并提供结构化反馈，有效消除了假成功并降低了资源消耗。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents operate Web infrastructure via command-line interfaces, relying on a \"Return Assumption\" that tool calls return within a bounded time with the requested action completed. However, many commands require interactive input (e.g., confirmations, passwords) before executing.\n- **Why Existing Work Fails**: Current agent harnesses handle interactive commands poorly. Closing the input stream can cause programs to exit with status 0 without performing the action (silent failure). Keeping the input open (e.g., as a terminal) causes the program to wait until timeout, leading to excessive token consumption and potential misjudgment of task failure due to timeouts. Prior work has neither measured the extent of this assumption's failure nor provided a robust repair mechanism.\n\n## Core Contributions\n- **Proposed RECEIPT**, a system to measure and repair the Return Assumption in LLM agents for Web service operations.\n- **Challenge 1: Silent Failures and False Successes**. When input is closed, interactive commands may exit successfully without doing any work, misleading the agent. **Solution**: RECEIPT keeps the input open and monitors process states via system calls to detect if a process is waiting for input, preventing the misclassification of unexecuted commands as successful.\n- **Challenge 2: Resource Waste and Timeout Misjudgments**. With open input but no automated response, commands wait until timeout, wasting tokens and time. **Solution**: RECEIPT reads what the process is waiting for (e.g., prompts) and returns this state to the unmodified agent via a model-checked protocol, enabling the agent to provide timely input, significantly reducing wait times and token usage.\n\n## Implementation and Evaluation\n- **Datasets & Benchmarks**: Collected 91,469 production tool calls and 89,047 public agent trajectories. Built Litmus (a catalog of 158 verified command-line invocations) and Tripwire (a benchmark of 25 task pairs differing only by the presence of an input guard).\n- **Measurement Results**: On Litmus, closed input caused 11.5% of invocations to return status 0 without performing the action; 7 out of 8 major harnesses close input when no terminal is attached. On Tripwire, unanswered questions increased token usage by 2.9x, and the input connection method improved Llama-3.3-70B's ranking from 7th to 3rd among 8 LLMs.\n- **RECEIPT Performance**: Compared to closed input, RECEIPT reduced false success claims by 73.5%. Compared to plain terminal mode, it reduced token usage by 24.4%. It reported waiting states with 85.0% accuracy and no false positives. In a commercial agent runtime, checks took a median of at most 0.54ms per shell call.\n- **Comparison**: Unlike existing frameworks that suffer from either silent failures or high timeout costs, RECEIPT resolves this trade-off by providing precise state feedback, enhancing both reliability and efficiency.\n\n## 4. Conclusion\nThis paper is the first to quantify and repair the \"Return Assumption\" in LLM agents for command-line operations. It demonstrates that agent reliability depends not only on the LLM but also on the observability provided by the harness. The authors recommend that agent builders report actual tool execution outcomes rather than just exit codes, and benchmark maintainers should fix and disclose input handling methods before ranking LLMs. RECEIPT effectively eliminates false successes and reduces resource overhead by monitoring system call states and providing structured feedback.",
+      "render_excerpt": "机构: Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University<br>本文首次量化并修复了 LLM 智能体在命令行操作中的“返回假设”问题。研究表明，智能体的可靠性不仅取决于 LLM 本身，还取决于其框架允许观察到的工具执行状态。作者建议智能体构建者应报告工具调用的实际执行情况而非仅返回状态码，基准测试维护者应在排名 LLM 之前修复并公开输入连接的处理方式。RECEIPT 通过监控系统调用状态并提供结构化反馈，有效消除了假成功并降低了资源消耗。",
+      "render_excerpt_en": "Institution: Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University<br>## 1. What the Paper Did - **Background**: LLM agents operate Web infrastructure via command-line interfaces, relying on a \"Return Assumption\" that tool calls return within a bounded time with the requested action completed. However, many commands require interactive input (e.g., confirmations, passwords) before executing.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-05T12:45:28Z"
+        "captured_at": "2026-11-01T14:06:53Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-05"
+        "captured_at": "2026-11-01"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -201,43 +230,45 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.08175",
-      "date": "2026-11-05",
-      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+      "paper_id": "2611.01840",
+      "date": "2026-11-01",
+      "title": "Self-Evolving Agentic Workflows via Semantic Decomposition of Complex Tasks",
       "authors": [
-        "Yue Zhang",
-        "Jilei Sun",
-        "Liqiang Jing",
-        "Yijie Wei",
-        "Ruohan Yang"
+        "Zichuan Fu",
+        "Junjia Qi",
+        "Xian Wu",
+        "Wenlin Zhang",
+        "Yimin Deng",
+        "Kaifeng Guo",
+        "Xiangyu Zhao"
       ],
-      "abstract": "Automating printed circuit board (PCB) routing requires coordinating board-level connectivity decisions with geometric execution under strict design rules. Although recent agents can interact with native routing tools, reliable routing on complex boards remains challenging. We present PCBRouteAgent, a multimodal PCB routing agent inspired by how human engineers coordinate global strategy with local execution. A Global Routing Planner combines board images and structured electrical and geometric information to specify connection topology, routing order, corridors, and layer transitions. A Detailed Routing Executor realizes these guides through KiCad's native routing engine and performs bounded local recovery. Unresolved failures are returned as structured feedback, enabling targeted guide revisions while preserving accepted routes. We evaluate PCBRouteAgent on 247 synthetic and real-world boards from four PCBWorld-Bench test splits. It achieves clean-pass rates of 100%, 94.9%, 100%, and 40% on D2, D3-A, D3-B, and D3-C, respectively. On the three real-world subsets, PCBRouteAgent outperforms the best evaluated baseline in clean-pass rate by 13.9, 36, and 10 percentage points, respectively.",
+      "abstract": "Agentic workflows organize complex tasks into reusable procedures. However, invoking an LLM at every step incurs repeated inference costs and delays. We propose a framework for self-evolving agentic workflows through semantic task decomposition. Each subtask has explicit applicability conditions and a procedure that executes code or invokes a model as needed. An agent uses execution feedback to refine the decomposition and update these procedures. Experiments in the GLEE competition show the framework on bargaining, negotiation and persuasion. Most observed final-decision procedures are implemented in code. Code is available at https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.08175v1",
-        "pdf": "https://arxiv.org/pdf/2611.08175v1",
-        "github": "https://github.com/chip-ai-agent/PCBRouteAgent",
-        "blog": "https://chip-ai-agent.github.io/research/pcbrouteagent"
+        "abs": "http://arxiv.org/abs/2611.01840v1",
+        "pdf": "https://arxiv.org/pdf/2611.01840v1",
+        "github": "https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow",
+        "blog": null
       },
-      "institution": "The University of Texas at Dallas",
+      "institution": "City University of Hong Kong, Tencent Jarvis Lab",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：印刷电路板（PCB）布线需要将原理图的连接性转化为物理布局，涉及在严格的设计规则（如间距、线宽、过孔等）下协调板级连通性决策与几何执行。这是一个耦合的物理设计问题，每个布线决策都会影响后续连接。\n- **已有工作为什么解决不了**：传统的基于规则的方法依赖启发式搜索和拥塞感知成本，难以处理复杂约束；虽然最近的智能体（Agents）能够与原生的布线工具交互，但在复杂电路板上的可靠布线仍然具有挑战性，主要因为缺乏类似人类工程师的全局策略与局部执行协调能力。\n\n## 文章的核心贡献点\n- **提出了一个**：PCBRouteAgent，一种受人类工程师工作方式启发的多模态 PCB 布线智能体，通过协调全局策略与局部执行来实现自动化布线。\n- **挑战1：全局拓扑规划与局部几何执行的脱节**。难点在于既要考虑板级的电气连接拓扑、布线顺序和层转换，又要满足严格的几何约束。论文通过“全局布线规划器”结合电路板图像和结构化电气/几何信息，指定连接拓扑、走廊和层转换，从而解决这一宏观协调难题。\n- **挑战2：错误恢复与迭代优化的效率**。难点在于当局部执行失败时，如何在不破坏已接受路线的情况下进行修正。论文通过“详细布线执行器”利用 KiCad 原生引擎实现有界局部恢复，并将未解决的失败作为结构化反馈返回，从而实现针对性的指南修订，保留成功部分并仅修正错误。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：PCBRouteAgent 包含全局布线规划器（Global Routing Planner）和详细布线执行器（Detailed Routing Executor）。它在 PCBWorld-Bench 的四个测试分割集上进行了评估，涵盖 247 个合成和真实世界的电路板。\n- **Evaluation 结果**：在 D2、D3-A、D3-B 和 D3-C 数据集上，PCBRouteAgent 的干净通过率（clean-pass rates）分别达到 100%、94.9%、100% 和 40%。\n- **对比**：在三个真实世界子集上，PCBRouteAgent 的干净通过率比评估过的最佳基线方法分别高出 13.9、36 和 10 个百分点，显著优于现有方法。\n\n#### 总结\nPCBRouteAgent 通过模拟人类工程师的全局规划与局部执行协作机制，有效解决了复杂 PCB 布线中的协调难题。其核心创新在于将多模态信息融合用于全局规划，并通过结构化反馈机制实现高效的局部错误恢复。实验结果表明，该方法在真实世界场景下的布线成功率显著高于当前最佳基线，展示了 LLM 智能体在专业工程设计领域接近人类工程师水平的潜力。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Automating Printed Circuit Board (PCB) routing requires coordinating board-level connectivity decisions with geometric execution under strict design rules (e.g., clearance, trace width, vias). It is a coupled physical design problem where each decision impacts subsequent connections.\n- **Why Existing Work Falls Short**: Traditional rule-based methods rely on heuristic searches and struggle with complex constraints. While recent agents can interact with native routing tools, reliable routing on complex boards remains challenging due to the lack of coordination between global strategy and local execution, akin to human engineering workflows.\n\n## Core Contributions\n- **Proposed**: PCBRouteAgent, a multimodal PCB routing agent inspired by how human engineers coordinate global strategy with local execution.\n- **Challenge 1: Disconnection between global topology planning and local geometric execution**. The difficulty lies in balancing board-level electrical topology, routing order, and layer transitions with strict geometric constraints. The paper addresses this by using a \"Global Routing Planner\" that combines board images and structured electrical/geometric information to specify connection topology, corridors, and layer transitions.\n- **Challenge 2: Efficient error recovery and iterative optimization**. The challenge is correcting local execution failures without disrupting accepted routes. The paper solves this via a \"Detailed Routing Executor\" that uses KiCad's native engine for bounded local recovery and returns unresolved failures as structured feedback, enabling targeted guide revisions while preserving successful paths.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: PCBRouteAgent consists of a Global Routing Planner and a Detailed Routing Executor. It was evaluated on 247 synthetic and real-world boards across four splits of the PCBWorld-Bench.\n- **Evaluation Results**: The agent achieved clean-pass rates of 100%, 94.9%, 100%, and 40% on the D2, D3-A, D3-B, and D3-C datasets, respectively.\n- **Comparison**: On the three real-world subsets, PCBRouteAgent outperformed the best-evaluated baseline in clean-pass rate by 13.9, 36, and 10 percentage points, respectively, demonstrating significant superiority over existing methods.\n\n#### Summary\nPCBRouteAgent effectively addresses the coordination challenges in complex PCB routing by mimicking the collaborative mechanism of human engineers' global planning and local execution. Its core innovation lies in fusing multimodal information for global planning and employing a structured feedback mechanism for efficient local error recovery. Experimental results show that the method significantly outperforms current state-of-the-art baselines in real-world scenarios, highlighting the potential of LLM agents to approach human-engineer levels in specialized engineering design tasks.",
-      "render_excerpt": "机构: The University of Texas at Dallas<br>PCBRouteAgent 通过模拟人类工程师的全局规划与局部执行协作机制，有效解决了复杂 PCB 布线中的协调难题。其核心创新在于将多模态信息融合用于全局规划，并通过结构化反馈机制实现高效的局部错误恢复。实验结果表明，该方法在真实世界场景下的布线成功率显著高于当前最佳基线，展示了 LLM 智能体在专业工程设计领域接近人类工程师水平的潜力。",
-      "render_excerpt_en": "Institution: The University of Texas at Dallas<br>PCBRouteAgent effectively addresses the coordination challenges in complex PCB routing by mimicking the collaborative mechanism of human engineers' global planning and local execution. Its core innovation lies in fusing multimodal information for global planning and employing a structured feedback mechanism for efficient local error recovery. Experimental results show that the method significantly outperforms current state-of-the-art baselines in real-world scenarios, highlighting the potential of LLM agents to approach human-engineer levels in specialized engineering design tasks.",
+      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体工作流将复杂任务组织为可重用的步骤序列。然而，传统方法在每个步骤都调用 LLM，导致推理成本高昂且延迟显著，特别是在时间敏感的交互场景中。\n- **已有工作的局限**：现有工作试图通过减少模型调用来降低开销，但往往缺乏系统性的方法来区分哪些步骤需要模型推理，哪些可以通过确定性代码解决。此外，静态工作流难以根据执行反馈动态优化决策路径，导致在复杂交互（如谈判、博弈）中适应性不足。\n\n## 文章的核心贡献点\n- **提出了一个基于语义分解的自进化智能体工作流框架（SeaFlow）**：该框架通过语义任务分解将复杂交互决策组织为层次化的子任务，每个子任务明确定义了适用条件及解决方案（代码执行或模型调用）。\n- **挑战1：高推理成本与延迟**。传统工作流每步均调用 LLM，造成资源浪费。**解决方法**：通过语义分解，将具有明确解法的子任务转化为可执行代码，仅在必要时调用模型，从而大幅降低推理开销并提升响应速度。\n- **挑战2：工作流的静态性与适应性差**。固定流程难以应对动态变化的交互环境。**解决方法**：引入反馈驱动的自我进化机制，智能体利用执行记录识别低效或错误的子任务，动态调整其适用范围或修改解决程序，实现工作流的持续迭代优化。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架包含构建、执行、定位问题、修订代码和评估五个阶段的闭环迭代。代码已开源。\n- **评估结果**：在 GLEE 竞赛的三个环境（讨价还价、谈判、说服）中进行测试。分析了 725 次开发迭代和 12,249 条行动记录。\n- **对比与发现**：实验显示，最终优化的工作流中，大多数最终决策过程由代码实现而非 LLM 推理。这表明该方法能有效将复杂的逻辑判断转化为高效的代码执行，相比纯 LLM 驱动的工作流，在保持性能的同时显著降低了成本和延迟。\n\n#### 总结\n本文提出了一种通过语义任务分解构建自进化智能体工作流的新范式。通过将复杂任务分解为带有明确适用条件的子任务，并利用执行反馈动态优化工作流，该方法成功地将大量决策过程从昂贵的 LLM 推理转移至高效的代码执行。在 GLEE 基准测试中的表现证明了其在降低推理成本、减少延迟以及提升复杂交互任务处理能力方面的有效性，为构建高效、自适应的智能体系统提供了新思路。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-based agentic workflows organize complex tasks into reusable step sequences. However, invoking an LLM at every step incurs significant inference costs and latency, making them unsuitable for time-sensitive interactions.\n- **Limitations of Existing Work**: Current approaches lack systematic methods to distinguish between steps requiring model reasoning and those solvable by deterministic code. Furthermore, static workflows struggle to adapt to dynamic interactive environments based on execution feedback, leading to poor adaptability in complex scenarios like negotiation and bargaining.\n\n## Core Contributions\n- **Proposed a Self-Evolving Agentic Workflow Framework via Semantic Decomposition (SeaFlow)**: This framework organizes complex interactive decisions into a hierarchy of subtasks, each with explicit applicability conditions and solution procedures (code execution or model invocation).\n- **Challenge 1: High Inference Cost and Latency**. Traditional workflows call LLMs at every step, wasting resources. **Solution**: By semantically decomposing tasks, subtasks with clear solutions are converted into executable code, invoking models only when necessary, thereby significantly reducing overhead and improving response speed.\n- **Challenge 2: Static Nature and Poor Adaptability**. Fixed pipelines cannot handle dynamic interaction changes. **Solution**: A feedback-driven self-evolution mechanism is introduced, where the agent uses execution records to identify inefficient or erroneous subtasks, dynamically adjusting their scope or modifying solution procedures for continuous iterative optimization.\n\n## Implementation and Evaluation\n- **Implementation**: The framework operates in a closed loop of construction, execution, problem localization, code revision, and evaluation. Code is open-sourced.\n- **Evaluation Results**: Tested across three GLEE environments (bargaining, negotiation, persuasion). The study analyzed 725 development iterations and 12,249 action records.\n- **Comparison and Findings**: Experiments showed that most final decision procedures in the optimized workflows were implemented in code rather than LLM reasoning. This demonstrates that the method effectively shifts complex logical judgments to efficient code execution, significantly reducing cost and latency compared to pure LLM-driven workflows while maintaining performance.\n\n## 4. Conclusion\nThis paper proposes a new paradigm for constructing self-evolving agentic workflows through semantic task decomposition. By breaking down complex tasks into subtasks with explicit conditions and dynamically optimizing workflows using execution feedback, the method successfully transfers a large portion of decision-making from expensive LLM reasoning to efficient code execution. Performance on the GLEE benchmark proves its effectiveness in reducing inference costs, minimizing latency, and enhancing capabilities in complex interactive tasks, offering new insights for building efficient and adaptive agent systems.",
+      "render_excerpt": "机构: City University of Hong Kong, Tencent Jarvis Lab<br>本文提出了一种通过语义任务分解构建自进化智能体工作流的新范式。通过将复杂任务分解为带有明确适用条件的子任务，并利用执行反馈动态优化工作流，该方法成功地将大量决策过程从昂贵的 LLM 推理转移至高效的代码执行。在 GLEE 基准测试中的表现证明了其在降低推理成本、减少延迟以及提升复杂交互任务处理能力方面的有效性，为构建高效、自适应的智能体系统提供了新思路。",
+      "render_excerpt_en": "Institution: City University of Hong Kong, Tencent Jarvis Lab<br>## 1. What the Paper Does - **Background**: LLM-based agentic workflows organize complex tasks into reusable step sequences. However, invoking an LLM at every step incurs significant inference costs and latency, making them unsuitable for time-sensitive interactions.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-05T15:31:15Z"
+        "captured_at": "2026-11-01T12:18:19Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-05"
+        "captured_at": "2026-11-01"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
