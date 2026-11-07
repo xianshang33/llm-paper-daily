@@ -1,169 +1,46 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-11-07T07:29:06.842445+00:00",
-  "run_date": "2026-11-01",
+  "generated_at": "2026-11-07T11:53:31.966674+00:00",
+  "run_date": "2026-10-31",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2611.02079",
-      "date": "2026-11-01",
-      "title": "ParetoSaddler: Pareto-Guided Optimization of Agent Harnesses for Quality and Cost",
+      "paper_id": "2611.01301",
+      "date": "2026-10-31",
+      "title": "CuriousTogether: Implications of Curiosity and Cultural Grounding in Multi-Agent LLM Interactions",
       "authors": [
-        "Xingzhi Qian",
-        "Sungho Park",
-        "Rongyuan Tan",
-        "Jianbo Yu",
-        "Jue Zhang",
-        "Lorenzo Cavallaro",
-        "Menglin Xia",
-        "Yanzhi Chen",
-        "Xinnuo Xu",
-        "Yu Kang",
-        "Xinran Zheng",
-        "Gagan Somashekar",
-        "Xuchao Zhang",
-        "Chetan Bansal",
-        "Qingwei Lin",
-        "Victor Rühle"
+        "Angana Borah",
+        "Zoha Hayat Bhatti",
+        "Zhijing Jin",
+        "Rada Mihalcea"
       ],
-      "abstract": "Harness optimization can substantially improve LLM agents without modifying model weights, but existing methods primarily optimize response quality. Extending them to joint quality--cost optimization introduces a challenge: applying the deployment preference during intermediate updates can prematurely reject candidates that are valuable for later improvements. We introduce ParetoSaddler, which addresses this mismatch by separating intermediate candidate promotion from final deployment selection. At each iteration, an optimizer updates a parent harness to produce a candidate, and then compares the two over repeated executions and uses Bayesian bootstrap Pareto support to promote candidates showing credible progress in either quality or cost. Promoted candidates receive broader development evaluation and remain available as parents for later optimization steps. We evaluate ParetoSaddler on ClawMark and GAIA2 using domain-disjoint splits. On ClawMark, ParetoSaddler improves quality from 70.86\\% to 81.35\\% while reducing cost from \\$1.17 to \\$1.01 per task; on GAIA2, it improves quality from 56.22\\% to 62.89\\% while reducing cost from \\$0.78 to \\$0.45 per task. The Pareto-selected harnesses also achieve higher quality at lower cost than quality-only harness optimization. Analysis shows that Pareto-aware optimization retains intermediate candidates that would be discarded by deployment preference but can support later improvements, while Bayesian bootstrap screening filters out candidates whose gains are weakly supported across runs.",
+      "abstract": "Large Language Models (LLMs) are increasingly deployed in multi-agent settings, exhibiting emergent collective behaviors, yet the role of curiosity as a driver of such dynamics remains understudied. We introduce CuriousTogether, a framework evaluating curiosity-driven multi-agent LLM interactions across three complementary dimensions: novelty-seeking, epistemic and social curiosity. Across eight tasks spanning reasoning, creative generation, and social bias mitigation, curiosity-guided multi-agent settings yield improvements over non-curious ones on seven out of eight tasks, with gains of up to 20.6% in story generation (semantic diversity) and a 14.9 pp reduction in stereotype rates. Furthermore, country-conditioned cultural grounding show benefits for story generation and social tasks, but can hurt precision-oriented reasoning. Finally, we show that inference-time multi-agent curiosity-based approach offers favorable quality-token trade-offs, compared with single-agent baselines. Together, these findings support curiosity-guided interaction as a practical mechanism for improving multi-agent collaboration, with downstream benefits for reasoning, creative, and societal tasks.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.02079v1",
-        "pdf": "https://arxiv.org/pdf/2611.02079v1",
-        "github": null,
-        "blog": "https://aka.ms/ParetoSaddler-website"
-      },
-      "institution": "University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体的能力不仅取决于模型权重，还很大程度上取决于其“Harness”（包括提示词、工具、中间件和控制逻辑）。自动 Harness 优化（AHO）可以在不修改模型权重的情况下显著提升智能体性能。\n- **已有工作为什么解决不了**：现有的 AHO 方法主要专注于优化响应质量，而忽略了实际部署中至关重要的成本因素。当尝试同时优化质量和成本时，如果在中间更新步骤直接应用最终的部署偏好（如特定的质量-成本权衡），会导致过早丢弃那些在当前看来不佳但对后续迭代有价值的候选方案，从而限制了最终优化的上限。\n\n## 文章的核心贡献点\n- **提出了一个 ParetoSaddler**：一种帕累托引导的智能体 Harness 优化框架，旨在联合优化任务响应质量和 LLM Token 成本。\n- **挑战1：中间候选者的过早淘汰问题**。在多目标优化中，直接应用部署偏好会丢弃那些在某一方面（如成本）有潜力但另一方面（如质量）暂时落后的中间候选者，导致搜索空间受限。**解决方法**：ParetoSaddler 将“中间候选者晋升”与“最终部署选择”分离。它使用贝叶斯 bootstrap 帕累托支持度来评估候选者，只要候选者在质量或成本任一维度上显示出可信的进步，就会被保留并作为后续优化的父代，从而保留了多样化的搜索路径。\n- **挑战2：优化结果的不稳定性与噪声**。由于 LLM 输出的随机性，单次执行的结果可能无法真实反映 Harness 的性能变化，导致基于噪声的无效优化。**解决方法**：通过重复执行和贝叶斯 bootstrap 方法进行筛选，只有那些在多次运行中获得统计支持的显著改进才会被认可，从而过滤掉由随机波动引起的弱增益候选者，确保优化的稳健性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在 ClawMark 和 GAIA2 两个基准测试上进行评估，使用域不相交的数据划分以确保泛化能力。\n- **对比结果**：\n    - **ClawMark**：ParetoSaddler 将质量从 70.86% 提升至 81.35%，同时将每个任务的成本从 $1.17 降低至 $1.01。\n    - **GAIA2**：质量从 56.22% 提升至 62.89%，成本从 $0.78 大幅降低至 $0.45。\n- **相关工作对比**：与仅优化质量的基线方法（如 AutoSaddler-Quality）和其他多目标方法（如 Meta-Harness-Pareto）相比，ParetoSaddler 能够在更低的成本区域发现更高质量的 Harness。分析表明，传统的部署偏好筛选会丢弃对后续改进至关重要的中间候选者，而 ParetoSaddler 通过帕累托感知优化保留了这些候选者，实现了更好的质量-成本权衡前沿。\n\n#### 总结\nParetoSaddler 解决了 LLM 智能体 Harness 优化中质量与成本联合优化的难题。通过引入贝叶斯 bootstrap 帕累托支持机制，它有效地分离了中间探索与最终选择，避免了因早期偏好应用导致的局部最优陷阱。实验证明，该方法在多个基准测试上均能同时提升智能体的回答质量并显著降低推理成本，优于现有的单目标及多目标优化基线。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: The capabilities of Large Language Model (LLM) agents depend not only on model weights but also on their \"Harness\" (prompts, tools, middleware, and control logic). Automatic Harness Optimization (AHO) can significantly improve agent performance without modifying model weights.\n- **Why Existing Work Falls Short**: Current AHO methods primarily optimize for response quality, ignoring cost, which is critical for real-world deployment. Extending these methods to joint quality-cost optimization introduces a challenge: applying final deployment preferences during intermediate updates can prematurely discard candidates that are valuable for future improvements, limiting the optimization potential.\n\n## Core Contributions\n- **Proposed ParetoSaddler**: A Pareto-guided optimization framework for agent harnesses that jointly optimizes task response quality and LLM token cost.\n- **Challenge 1: Premature Elimination of Intermediate Candidates**. In multi-objective optimization, directly applying deployment preferences discards intermediate candidates that may be suboptimal in one dimension but hold potential for future gains, restricting the search space. **Solution**: ParetoSaddler separates intermediate candidate promotion from final deployment selection. It uses Bayesian bootstrap Pareto support to promote candidates showing credible progress in either quality or cost, preserving diverse search paths for subsequent iterations.\n- **Challenge 2: Instability and Noise in Optimization Results**. Due to the stochastic nature of LLMs, single-execution results may not reflect true harness performance, leading to ineffective optimizations based on noise. **Solution**: The method employs repeated executions and Bayesian bootstrap screening to filter out candidates with weakly supported gains, ensuring that only statistically significant improvements drive the optimization process.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated on ClawMark and GAIA2 benchmarks using domain-disjoint splits to ensure generalizability.\n- **Results**:\n    - **ClawMark**: Quality improved from 70.86% to 81.35%, while cost per task decreased from $1.17 to $1.01.\n    - **GAIA2**: Quality improved from 56.22% to 62.89%, with cost per task dropping significantly from $0.78 to $0.45.\n- **Comparison with Related Work**: Compared to quality-only baselines (e.g., AutoSaddler-Quality) and other multi-objective methods (e.g., Meta-Harness-Pareto), ParetoSaddler discovers higher-quality harnesses in lower-cost regions. Analysis confirms that Pareto-aware optimization retains intermediate candidates discarded by strict deployment preferences, leading to superior quality-cost trade-offs.\n\n#### Summary\nParetoSaddler addresses the challenge of joint quality and cost optimization in LLM agent harnesses. By introducing a Bayesian bootstrap Pareto support mechanism, it effectively decouples intermediate exploration from final selection, avoiding local optima caused by early preference application. Experiments demonstrate that the method simultaneously improves answer quality and significantly reduces inference costs across multiple benchmarks, outperforming existing single and multi-objective optimization baselines.",
-      "render_excerpt": "机构: University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence<br>ParetoSaddler 解决了 LLM 智能体 Harness 优化中质量与成本联合优化的难题。通过引入贝叶斯 bootstrap 帕累托支持机制，它有效地分离了中间探索与最终选择，避免了因早期偏好应用导致的局部最优陷阱。实验证明，该方法在多个基准测试上均能同时提升智能体的回答质量并显著降低推理成本，优于现有的单目标及多目标优化基线。",
-      "render_excerpt_en": "Institution: University College London, Pohang University of Science and Technology, Microsoft, Southern University of Science and Technology, Southeast University, Mohamed bin Zayed University of Artificial Intelligence<br>ParetoSaddler addresses the challenge of joint quality and cost optimization in LLM agent harnesses. By introducing a Bayesian bootstrap Pareto support mechanism, it effectively decouples intermediate exploration from final selection, avoiding local optima caused by early preference application. Experiments demonstrate that the method simultaneously improves answer quality and significantly reduces inference costs across multiple benchmarks, outperforming existing single and multi-objective optimization baselines.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-01T17:36:05Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-01"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.02269",
-      "date": "2026-11-01",
-      "title": "Qubrio: High-Performance Quantum Compilation via Multi-Agent LLM Collaboration",
-      "authors": [
-        "Jixuan Ruan",
-        "Zhuo Cui",
-        "Zhengding Hu",
-        "Zhongkai Yu",
-        "Xiang Fang",
-        "Yue Guan",
-        "Jason Ludmir",
-        "Phillip E. Weinberg",
-        "Xiuzhe Luo",
-        "Shengtao Wang",
-        "Sonia Lopez Alarcon",
-        "Hezi Zhang",
-        "Yufei Ding"
-      ],
-      "abstract": "Large Language Models (LLMs) offer an adaptable alternative to traditional quantum compilation heuristics, which bottleneck progress by demanding costly manual redesigns whenever hardware evolves. However, naive single-pass LLM approaches fail under the unique challenges introduced by quantum compilation. We introduce Qubrio, a practical agentic framework that significantly reduces heuristic redesigns through a three-level decomposition. By (1) partitioning programs into sequential operation stages, (2) deploying specialized agents for placement, routing and optimization, and (3) using disaggregated feedback for precise error correction, our system reliably navigates complex physical constraints. Beyond serving as a direct compiler, our LLM framework also uncovers novel strategies that facilitate convoy-style shuttling, substantially enhancing hardware concurrency without sacrificing fidelity. We further integrate these strategies into the previous state-of-the-art (SOTA) compiler, recovering a significant fraction of the LLM's performance advantages. On realistic workloads, our compiler achieves significant improvements in hardware runtime and program fidelity over the SOTA baseline PowerMove, seamlessly adapting to new hardware capabilities. Qubrio features an open user interface for practical use, and its code is publicly available at https://github.com/crosaa/Qubrio.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.02269v1",
-        "pdf": "https://arxiv.org/pdf/2611.02269v1",
-        "github": "https://github.com/crosaa/Qubrio",
-        "blog": null
-      },
-      "institution": "University of California, San Diego",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：量子编译是将高层量子算法转换为硬件可执行指令的关键步骤。传统编译器依赖人工设计的启发式规则，每当硬件更新时都需要专家 costly 地重新设计 heuristic，维护负担重且适应性差。\n- **已有工作局限**：虽然大语言模型（LLM）具有强大的代码生成和推理能力，但 naive 的单次通过（single-pass）LLM 方法在量子编译中表现失败。这是因为量子编译面临输入上下文过长、任务异构性导致的交叉干扰以及反馈模糊无法定位错误根源等独特挑战，单一 LLM 难以同时处理这些复杂约束。\n\n## 文章的核心贡献点\n- **提出了一个名为 Qubrio 的多智能体 LLM 协作框架**，通过三级分解策略解决量子编译难题。\n- **挑战1：输入复杂性与上下文限制**。量子程序整体超出当前 LLM 可靠推理的上下文范围，且决策具有强依赖性。**解决方法**：通过将程序划分为顺序操作阶段（Input decomposition），使每个阶段适配 LLM 的上下文窗口，降低单次推理难度。\n- **挑战2：任务异构性与反馈模糊**。放置、路由和优化需要不同的推理模式，单一代理易产生干扰；且整体性能反馈无法指导具体错误修复。**解决方法**：部署专门化的智能体分别负责放置、路由和优化（Specialized agents），并利用解耦的反馈机制（Disaggregated feedback）提供精确的错误修正梯度，从而有效导航复杂的物理约束。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Qubrio 提供了一个开放的用户界面以便实际使用，代码已开源。除了作为直接编译器，该框架还发现了促进“车队式”穿梭（convoy-style shuttling）的新策略，提升了硬件并发率而不牺牲保真度。\n- **评估结果**：在真实工作负载下，Qubrio 在硬件运行时间和程序保真度方面均显著优于当前的 SOTA 基线编译器 PowerMove。\n- **对比与整合**：研究还将 LLM 发现的新策略整合回传统的 SOTA 编译器中，恢复了 LLM 性能优势的很大一部分，证明了其策略的通用性和有效性，并能无缝适应新的硬件能力。\n\n#### 总结\nQubrio 通过多智能体协作和任务分解，成功解决了 LLM 在量子编译中面临的上下文、异构任务和反馈难题。它不仅实现了比现有 SOTA 方法更高的编译效率和保真度，还具备自动适应新硬件的能力，减少了人工重新设计启发式规则的需求，为量子编译提供了一种高效、灵活且实用的新范式。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Quantum compilation translates high-level quantum algorithms into hardware-executable instructions. Traditional compilers rely on manually engineered heuristics, creating a heavy maintenance burden as experts must redesign rules whenever hardware evolves.\n- **Limitations of Existing Work**: While Large Language Models (LLMs) show promise in code synthesis, naive single-pass LLM approaches fail in quantum compilation. They struggle with unique challenges such as excessive input complexity, task heterogeneity causing cross-task interference, and ambiguous feedback that prevents precise error correction.\n\n## Core Contributions\n- **Proposed Qubrio**, a practical agentic framework for quantum compilation via multi-agent LLM collaboration using a three-level decomposition strategy.\n- **Challenge 1: Input Complexity and Context Limits**. Full quantum programs exceed the reliable reasoning context of current LLMs, and decisions are highly interdependent. **Solution**: The system partitions programs into sequential operation stages, ensuring each stage fits within the LLM's context window and simplifying reasoning.\n- **Challenge 2: Task Heterogeneity and Ambiguous Feedback**. Compilation involves distinct sub-tasks (placement, routing, optimization) that interfere when handled by a single agent, and global feedback lacks actionable gradients for repair. **Solution**: Specialized agents are deployed for each sub-task, and disaggregated feedback is used to provide precise error signals, allowing the system to navigate complex physical constraints effectively.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Qubrio features an open user interface and publicly available code. Beyond direct compilation, it uncovers novel strategies like \"convoy-style shuttling\" to enhance hardware concurrency without sacrificing fidelity.\n- **Evaluation Results**: On realistic workloads, Qubrio achieves significant improvements in hardware runtime and program fidelity compared to the state-of-the-art (SOTA) baseline, PowerMove.\n- **Comparison & Integration**: The novel strategies discovered by the LLM framework were integrated back into the traditional SOTA compiler, recovering a significant fraction of the LLM's performance advantages. This demonstrates Qubrio's ability to seamlessly adapt to new hardware capabilities and improve existing pipelines.\n\n## 4. Conclusion\nQubrio successfully addresses the limitations of LLMs in quantum compilation through multi-agent collaboration and task decomposition. It outperforms current SOTA methods in efficiency and fidelity while reducing the need for manual heuristic redesign. By offering a flexible and adaptable framework, Qubrio represents a significant step forward in practical, high-performance quantum compilation.",
-      "render_excerpt": "机构: University of California, San Diego<br>Qubrio 通过多智能体协作和任务分解，成功解决了 LLM 在量子编译中面临的上下文、异构任务和反馈难题。它不仅实现了比现有 SOTA 方法更高的编译效率和保真度，还具备自动适应新硬件的能力，减少了人工重新设计启发式规则的需求，为量子编译提供了一种高效、灵活且实用的新范式。",
-      "render_excerpt_en": "Institution: University of California, San Diego<br>## 1. What the Paper Does - **Background**: Quantum compilation translates high-level quantum algorithms into hardware-executable instructions. Traditional compilers rely on manually engineered heuristics, creating a heavy maintenance burden as experts must redesign rules whenever hardware evolves.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-01T22:49:33Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-01"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.01976",
-      "date": "2026-11-01",
-      "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
-      "authors": [
-        "Shiyu Kan",
-        "Yue Qi",
-        "Yufei Han",
-        "Xinjian Luo",
-        "Guojun Xiong",
-        "Xiaofeng Gao"
-      ],
-      "abstract": "Large language model based agents increasingly rely on external tools to invoke services and interact with web resources. These tools can evolve through software updates, yet agentic frameworks may continue trusting them without re-verifying their safety after implementation changes. This tool update gap creates a supply-chain vulnerability in agentic systems: because updated tool code executes outside the LLM's context window, malicious functionality embedded in tool updates can bypass defenses centered on model-visible interactions, leaving agents exposed to stealthy, persistent threats that existing in-context defenses can hardly address. To thoroughly investigate this threat, we introduce ETUDE (Exploiting Tool Updates for Direct Execution), an attack that embeds malicious functionality into updates of initially benign tools to produce compromised tools, while preserving their legitimate tool functionality. Unlike prompt-based attacks, ETUDE operates entirely outside the LLM's context and requires no adversarial instructions, thereby bypassing defenses restricted to model-visible content. We evaluate ETUDE across three representative attack workloads and seven widely used commercial and open-source agentic frameworks, including Gemini CLI, Codex CLI, and Claude Code. The results show that ETUDE achieves a 97.6% ASR while maintaining a 95.9% legitimate task completion rate. We further examine existing defenses and find that they provide insufficient protection against this threat. These findings expose a fundamental blind spot in current agent security practices: trust established for a tool does not necessarily remain valid after its implementation updates.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.01976v1",
-        "pdf": "https://arxiv.org/pdf/2611.01976v1",
+        "abs": "http://arxiv.org/abs/2611.01301v1",
+        "pdf": "https://arxiv.org/pdf/2611.01301v1",
         "github": null,
         "blog": null
       },
-      "institution": "Shanghai Jiao Tong University, Inria",
+      "institution": "University of Michigan – Ann Arbor",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体（Agent）日益依赖外部工具来执行复杂任务，如访问本地文件、调用Web服务等。这些工具通常来自开源社区或第三方市场，并会通过软件更新不断演进。\n- **已有工作为什么解决不了**：现有的安全研究主要集中在“提示注入”（Prompt Injection）攻击上，即通过操纵LLM可见的输入来误导智能体。相应的防御机制（如指令-数据边界强化、上下文检测）也仅针对模型可见内容。然而，工具更新后的代码执行发生在LLM上下文窗口之外，现有的基于上下文的防御无法检测到工具实现变更中嵌入的恶意逻辑，导致存在巨大的安全盲区。\n\n## 文章的核心贡献点\n- **提出了一个名为 ETUDE (Exploiting Tool Updates for Direct Execution) 的攻击框架**，揭示了智能体系统中的“工具更新间隙”（Tool Update Gap）这一供应链漏洞。\n- **挑战1：如何绕过基于LLM上下文的防御机制？**\n  - **难点**：传统攻击依赖 adversarial instructions（对抗性指令），容易被提示注入检测器拦截；且工具代码执行不在LLM视野内，LLM无法感知代码逻辑变化。\n  - **解决方法**：ETUDE 完全在 LLM 上下文之外运行，不依赖任何对抗性提示。它通过替换已受信工具的底层可执行代码，将恶意功能嵌入到看似 benign（良性）的工具更新中，从而彻底避开针对模型可见内容的防御。\n- **挑战2：如何在植入恶意功能的同时保持工具的合法性以维持信任？**\n  - **难点**：如果更新导致工具正常功能失效，容易引发用户或系统的警觉，导致攻击中断或被回滚。\n  - **解决方法**：ETUDE 设计了一种机制，在保留工具原有合法功能（Legitimate Task Completion）的前提下嵌入恶意负载。实验显示其在执行恶意操作的同时，仍能保持极高的正常任务完成率，确保持续性和隐蔽性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **评估设置**：在三个具有代表性的攻击工作负载和七个广泛使用的商业及开源智能体框架（包括 Gemini CLI, Codex CLI, Claude Code, OpenCode 等）上进行了评估。\n- **主要结果**：\n  - **攻击成功率 (ASR)**：ETUDE 达到了 **97.6%** 的高攻击成功率。\n  - **隐蔽性/可用性**：在发动攻击的同时，保持了 **95.9%** 的合法任务完成率，证明其具有极强的隐蔽性。\n- **与相关工作对比**：\n  - 现有防御主要针对提示注入，对 ETUDE 这种基于代码更新的供应链攻击几乎无效。\n  - 研究指出，当前智能体框架在工具初次安装时可能进行安全检查，但在后续更新中往往直接沿用之前的权限信任，缺乏对更新后代码的重新验证，这使得 ETUDE 能够轻易利用这一“信任持久化”漏洞。\n\n## 总结\n本文揭示了 LLM 智能体安全中一个根本性的盲点：**对工具的信任不应在其实现在更新后自动延续**。通过提出 ETUDE 攻击，作者证明了攻击者可以通过分发初始良性工具建立信任，随后通过更新植入恶意代码，从而绕过所有基于 LLM 上下文的防御。这一发现强调了在智能体生态系统中建立动态、持续的工具完整性验证机制的紧迫性，而非仅依赖静态的准入检查或提示层面的防御。",
-      "summary_en": "## What the Paper Did\n- **Background**: Large Language Model (LLM)-based agents increasingly rely on external tools for complex tasks like file access and web interaction. These tools evolve via software updates from open-source or third-party sources.\n- **Why Existing Work Fails**: Current security research focuses primarily on \"Prompt Injection,\" where defenses monitor model-visible inputs. However, tool code executes outside the LLM's context window. Existing defenses cannot detect malicious logic embedded in tool implementation updates, creating a significant security blind spot known as the \"Tool Update Gap.\"\n\n## Core Contributions\n- **Proposed ETUDE (Exploiting Tool Updates for Direct Execution)**, an attack framework that exploits the supply-chain vulnerability in agent systems.\n- **Challenge 1: How to bypass defenses based on LLM context?**\n  - **Difficulty**: Traditional attacks use adversarial instructions visible to the LLM, making them susceptible to prompt injection detectors. The LLM cannot perceive changes in underlying code execution.\n  - **Solution**: ETUDE operates entirely outside the LLM's context without using adversarial prompts. It embeds malicious payloads into updates of previously trusted tools, completely bypassing defenses restricted to model-visible content.\n- **Challenge 2: How to maintain legitimacy while injecting malicious functionality?**\n  - **Difficulty**: If the update breaks normal functionality, it raises alerts or causes rollback, breaking the attack chain.\n  - **Solution**: ETUDE preserves the tool's original legitimate functions while embedding malicious logic. Experiments show it maintains a high legitimate task completion rate, ensuring stealth and persistence.\n\n## Implementation, Evaluation, and Comparison\n- **Evaluation Setup**: Tested across three representative attack workloads and seven widely used commercial and open-source agent frameworks (including Gemini CLI, Codex CLI, Claude Code, and OpenCode).\n- **Key Results**:\n  - **Attack Success Rate (ASR)**: ETUDE achieved a **97.6%** ASR.\n  - **Stealth/Usability**: Maintained a **95.9%** legitimate task completion rate during attacks, demonstrating high stealth.\n- **Comparison with Related Work**:\n  - Existing defenses against prompt injection are ineffective against ETUDE's code-update-based supply chain attacks.\n  - The study reveals that agent frameworks often persist permissions from initial installation to subsequent updates without re-verifying code safety, allowing ETUDE to exploit this \"trust persistence\" vulnerability easily.\n\n## Summary\nThis paper exposes a fundamental blind spot in LLM agent security: **trust established for a tool does not remain valid after its implementation updates**. By introducing ETUDE, the authors demonstrate that attackers can distribute benign tools to establish trust and then inject malicious code via updates, bypassing all LLM-context-based defenses. This highlights the urgent need for dynamic, continuous integrity verification mechanisms for tools in agent ecosystems, rather than relying solely on static admission checks or prompt-level defenses.",
-      "render_excerpt": "机构: Shanghai Jiao Tong University, Inria<br>## 文章做了什么 - **背景**：基于大语言模型（LLM）的智能体（Agent）日益依赖外部工具来执行复杂任务，如访问本地文件、调用Web服务等。这些工具通常来自开源社区或第三方市场，并会通过软件更新不断演进。 - **已有工作为什么解决不了**：现有的安全研究主要集中在“提示注入”（Prompt Injection）攻击上，即通过操纵LLM可见的输入来误导智能体。相应的防御机制（如指令-数据边界强化、上下文检测）也仅针对模型可见内容。然而，工具更新后的代码执行发生在LLM上下文窗口之外，现有的基于上下文的防御无法检测到工具实现变更中嵌入的恶意逻辑，导致存在巨大的安全盲区。 ## 文章的核心贡献点 - **提出了一个名为 ETUDE (Exploiting Tool Updates for Direct Execution) 的攻击框架**，揭示了智能体系统中的“工具更新间隙”（Tool Update Gap）这一供应链漏洞。",
-      "render_excerpt_en": "Institution: Shanghai Jiao Tong University, Inria<br>## What the Paper Did - **Background**: Large Language Model (LLM)-based agents increasingly rely on external tools for complex tasks like file access and web interaction. These tools evolve via software updates from open-source or third-party sources. - **Why Existing Work Fails**: Current security research focuses primarily on \"Prompt Injection,\" where defenses monitor model-visible inputs.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）越来越多地部署在多智能体环境中，展现出 emergent collective behaviors（涌现的集体行为）。然而，好奇心作为驱动这些动态的关键因素，其作用尚未得到充分研究。人类心理学表明，好奇心驱动学习、探索和创新，且受文化背景影响（好奇心 contagion）。\n- **已有的工作为什么解决不了**：现有的多智能体 LLM 研究主要集中在规划、工具使用或安全评估上，往往忽略了“好奇心”这一内在驱动力对协作质量的影响，也缺乏对文化 grounding 如何调节好奇心和交互效果的系统性评估。\n\n## 文章的核心贡献点\n- **提出了一个 CuriousTogether 框架**：这是一个评估好奇心驱动的多智能体 LLM 交互的框架，涵盖三个互补维度：寻求新奇（novelty-seeking）、认知好奇心（epistemic curiosity）和社会好奇心（social curiosity）。\n- **挑战1：如何在多智能体协作中量化并激发不同类型的好奇心以提升任务性能？**\n  - **难点**：好奇心是一个抽象概念，难以直接转化为 LLM 的可操作指令，且不同任务（如推理 vs 创作）需要不同类型的好奇心驱动。\n  - **解决方法**：论文设计了特定于任务的交互协议。例如，在创意生成中通过“提出引导性问题”激发寻求新奇；在推理中通过“询问澄清问题”和“要求证据”激发认知好奇心；在社会任务中通过“询问视角问题”激发社会好奇心。实验显示，这种引导在8个任务中的7个上优于非好奇设置。\n- **挑战2：文化背景如何影响多智能体交互的效果及潜在偏见？**\n  - **难点**：文化规范差异巨大，盲目引入文化 grounding 可能在某些需要精确性的任务中引入噪声或偏差，而在社交任务中又可能有益，平衡二者极具挑战。\n  - **解决方法**：论文引入了国家条件化的文化 grounding（country-conditioned cultural grounding）。研究发现，文化 grounding 有利于故事生成和社交任务（降低刻板印象率达 14.9%），但可能损害面向精度的推理任务。这揭示了文化适配的场景依赖性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估设置**：\n  - **任务**：涵盖8个任务，包括推理（CSQA, StrategyQA）、创意生成（故事生成、假设生成、Codenames）和社会偏见缓解（偏见场景、ETHICS）。\n  - **基线对比**：与 Zero-shot 单智能体、Token-matched 单智能体基线进行对比。\n  - **消融实验**：对比了全好奇（All-curious）、部分好奇（One-curious）和无好奇（No-curious）设置，以及有无文化 grounding 的设置。\n- **主要结果**：\n  - **性能提升**：好奇心引导的多智能体设置在8个任务中的7个上优于非好奇设置。其中，故事生成的语义多样性提高了 20.6%，社会任务中的刻板印象率降低了 14.9 个百分点。\n  - **文化影响**：文化 grounding 在创意和社交任务中表现更好，但在精确推理任务中表现较差。\n  - **效率权衡**：与单智能体基线相比，基于推理时多智能体好奇心的方法提供了更优的质量-令牌（quality-token）权衡，即在消耗合理 token 的情况下获得更高的输出质量。\n\n#### 总结\nCuriousTogether 框架证实了好奇心引导的交互是改善多智能体协作的实用机制。通过将好奇心分解为寻求新奇、认知和社会三个维度，并结合文化 grounding，该方法在推理、创意和社会任务中均取得了显著改进。研究不仅展示了好奇心在减少偏见和提升创造力方面的潜力，还指出了其在不同任务类型和文化背景下的复杂影响，为未来设计更具适应性和社会意识的人工智能系统提供了重要见解。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Models (LLMs) are increasingly deployed in multi-agent settings, exhibiting emergent collective behaviors. However, the role of curiosity as a driver of these dynamics remains understudied. Human psychology suggests curiosity drives learning, exploration, and innovation, and is influenced by cultural backgrounds (curiosity contagion).\n- **Why Existing Work Falls Short**: Current multi-agent LLM research focuses mainly on planning, tool use, or safety evaluation, often overlooking \"curiosity\" as an intrinsic driver of collaboration quality. There is also a lack of systematic evaluation of how cultural grounding modulates curiosity and interaction outcomes.\n\n## Core Contributions\n- **Proposed CuriousTogether Framework**: A framework for evaluating curiosity-driven multi-agent LLM interactions across three complementary dimensions: novelty-seeking, epistemic curiosity, and social curiosity.\n- **Challenge 1: How to quantify and stimulate different types of curiosity in multi-agent collaboration to enhance task performance?**\n  - **Difficulty**: Curiosity is an abstract concept difficult to translate into actionable LLM instructions, and different tasks (e.g., reasoning vs. creation) require different types of curiosity drivers.\n  - **Solution**: The paper designs task-specific interaction protocols. For instance, it stimulates novelty-seeking in creative generation via \"guiding questions,\" epistemic curiosity in reasoning via \"clarifying questions\" and \"requesting evidence,\" and social curiosity in social tasks via \"perspective-taking questions.\" Experiments show this guidance outperforms non-curious settings in 7 out of 8 tasks.\n- **Challenge 2: How does cultural background affect multi-agent interaction outcomes and potential biases?**\n  - **Difficulty**: Cultural norms vary widely; blindly introducing cultural grounding may introduce noise or bias in precision-required tasks, while being beneficial in social tasks, making balance challenging.\n  - **Solution**: The paper introduces country-conditioned cultural grounding. Findings indicate that cultural grounding benefits story generation and social tasks (reducing stereotype rates by 14.9 percentage points) but may hinder precision-oriented reasoning tasks, revealing the scenario-dependent nature of cultural adaptation.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation Setup**:\n  - **Tasks**: Covers 8 tasks including reasoning (CSQA, StrategyQA), creative generation (Story generation, Hypothesis generation, Codenames), and social bias mitigation (Bias Scenarios, ETHICS).\n  - **Baselines**: Compared against Zero-shot single-agent and Token-matched single-agent baselines.\n  - **Ablations**: Compared All-curious, One-curious, and No-curious settings, as well as settings with and without cultural grounding.\n- **Key Results**:\n  - **Performance Improvement**: Curiosity-guided multi-agent settings outperformed non-curious ones in 7 out of 8 tasks. Notably, semantic diversity in story generation improved by 20.6%, and stereotype rates in social tasks decreased by 14.9 percentage points.\n  - **Cultural Impact**: Cultural grounding performed better in creative and social tasks but worse in precise reasoning tasks.\n  - **Efficiency Trade-off**: Compared to single-agent baselines, the inference-time multi-agent curiosity-based approach offered favorable quality-token trade-offs, achieving higher output quality with reasonable token consumption.\n\n## 4. Conclusion\nThe CuriousTogether framework demonstrates that curiosity-guided interaction is a practical mechanism for improving multi-agent collaboration. By decomposing curiosity into novelty-seeking, epistemic, and social dimensions, and incorporating cultural grounding, the method achieves significant improvements in reasoning, creative, and social tasks. The study not only highlights the potential of curiosity in reducing bias and enhancing creativity but also points out its complex impacts across different task types and cultural contexts, providing important insights for designing more adaptive and socially aware AI systems in the future.",
+      "render_excerpt": "机构: University of Michigan – Ann Arbor<br>CuriousTogether 框架证实了好奇心引导的交互是改善多智能体协作的实用机制。通过将好奇心分解为寻求新奇、认知和社会三个维度，并结合文化 grounding，该方法在推理、创意和社会任务中均取得了显著改进。研究不仅展示了好奇心在减少偏见和提升创造力方面的潜力，还指出了其在不同任务类型和文化背景下的复杂影响，为未来设计更具适应性和社会意识的人工智能系统提供了重要见解。",
+      "render_excerpt_en": "Institution: University of Michigan – Ann Arbor<br>## 1. What the Paper Does - **Background**: Large Language Models (LLMs) are increasingly deployed in multi-agent settings, exhibiting emergent collective behaviors. However, the role of curiosity as a driver of these dynamics remains understudied.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-01T15:14:02Z"
+        "captured_at": "2026-10-31T22:01:33Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-01"
+        "captured_at": "2026-10-31"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -178,44 +55,43 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.01930",
-      "date": "2026-11-01",
-      "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations",
+      "paper_id": "2611.00923",
+      "date": "2026-10-31",
+      "title": "Illusion: Safeguarding Topology Confidentiality in LLM Multi-Agent Systems via Behavior-Preserving Obfuscation",
       "authors": [
-        "Boyang Yang",
-        "Ziyao Yang",
-        "Yu Zhang",
-        "Duo Chai",
-        "Xiaoming Chen",
-        "Haoye Tian"
+        "Yiu-Fai Cheung",
+        "Hongzhi Guo",
+        "Miao Pan",
+        "Irwin King",
+        "Hao Wang"
       ],
-      "abstract": "LLM agents operate Web infrastructure from the command line and rely on a return assumption, namely that each tool call returns within a bounded time and with its requested action finished. Many commands, however, ask a question before they act, and the agent's harness either closes the program's input or keeps it open as a terminal at which nobody types. With closed input, the program can return status 0 without the requested action. With open input, it waits until a time limit, and the agent pays in time and tokens. To the best of our knowledge, this paper is the first to measure and repair the return assumption. We collect 91,469 production tool calls and 89,047 public agent trajectories, test how 8 widely used harnesses launch commands, and build Litmus, a catalog of 158 checked command-line invocations, and Tripwire, a benchmark of 25 task pairs that differ only in whether a question guards the requested action. We then propose RECEIPT, which keeps the input open, reads what each process waits for from system calls, and returns this state to an unmodified agent through a model-checked protocol. On Litmus, closed input causes 11.5% of tested invocations to return status 0 without performing the requested action, and 7 of 8 harnesses close input when no terminal is attached. An unanswered question at a plain terminal multiplies a task's token use by 2.9, and the input connection moves an LLM from 7th to 3rd place among 8. Across 5 LLMs, RECEIPT reduces false claims of success by 73.5% and completes all 25 guarded tasks on a second harness. An agent's reliability therefore depends on what its harness lets it observe as well as on its LLM. Agent builders should report what each tool call did, not only how it ended, and benchmark maintainers should fix and report the input connection before they rank LLMs.",
+      "abstract": "The communication topology of Large Language Model Multi-Agent Systems (LLM-MASs) governs how information propagates among agents and encodes critical domain knowledge and expert workflow design. It is valuable intellectual property and plays a decisive role in system utility and safety, yet remains vulnerable to inference attacks that stealthily reconstruct it from agent outputs. Existing defenses detect or mitigate such attacks but do not proactively conceal the topology itself. We propose \\textit{Illusion}, a proactive topology obfuscation defense for LLM-MAS. \\textit{Illusion} injects fake edges and fake messages to present attackers with a deceptive topology, while selecting low-impact candidates that preserve output-distribution equivalence and task-accuracy non-inferiority. The resulting fake edges are designed to be indistinguishable from genuine messages under black-box observation. Extensive experiments show that \\textit{Illusion} reduces edge-level F1 from over 0.87 to 0.62 and graph similarity from over 0.94 to 0.71. It also largely preserves output distributions and task performance, and its fake edges resist both similarity-based and LLM-judge filtering, even under adaptive pruning.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.01930v1",
-        "pdf": "https://arxiv.org/pdf/2611.01930v1",
+        "abs": "http://arxiv.org/abs/2611.00923v1",
+        "pdf": "https://arxiv.org/pdf/2611.00923v1",
         "github": null,
         "blog": null
       },
-      "institution": "Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University",
+      "institution": "The Chinese University of Hong Kong, University of Nebraska-Lincoln, University of Houston, Stevens Institute of Technology",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体通过命令行操作 Web 基础设施，并依赖于一个“返回假设”（Return Assumption），即每个工具调用都会在有限时间内返回，且请求的操作已完成。然而，许多命令在执行前会提出问题（如确认提示、密码输入等）。\n- **已有工作为什么解决不了**：现有的智能体框架（Harness）在处理此类交互式命令时存在缺陷。如果关闭输入流，程序可能在未执行实际操作的情况下返回状态码 0（假成功）；如果保持输入流开放（如终端模式），程序会等待用户输入直到超时，导致智能体浪费大量时间和 Token，并可能因超时而误判任务失败。现有研究未能量化这一假设的失效情况，也未提供有效的修复机制。\n\n## 文章的核心贡献点\n- **提出了一个名为 RECEIPT 的系统**，用于测量和修复 LLM 智能体在 Web 服务操作中的返回假设问题。\n- **挑战 1：静默失败与假成功**。当输入流关闭时，需要交互的命令可能直接退出并返回成功状态码，导致智能体误以为操作已完成。**解决方法**：RECEIPT 保持输入流开放，并通过系统调用监控进程状态，识别进程是否正在等待输入，从而避免将未执行的命令误判为成功。\n- **挑战 2：资源浪费与超时误判**。当输入流保持开放但无自动响应机制时，命令会等待直至超时，造成 Token 消耗激增和任务延迟。**解决方法**：RECEIPT 读取进程等待的具体内容（如提示符），并通过经过模型检测验证的协议将这些状态信息返回给未经修改的智能体，使智能体能够及时提供正确输入，显著减少等待时间和 Token 消耗。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **数据集与基准测试**：收集了 91,469 次生产环境工具调用和 89,047 条公共智能体轨迹。构建了 Litmus（包含 158 个已验证的命令行调用目录）和 Tripwire（包含 25 对任务，区别仅在于是否有问题守护请求的操作）。\n- **测量结果**：在 Litmus 测试中，关闭输入导致 11.5% 的测试调用在未执行请求操作的情况下返回状态 0；8 个主流框架中有 7 个在未连接终端时会关闭输入。在 Tripwire 测试中，未回答的问题使 Token 使用量增加 2.9 倍，且输入连接方式可将 Llama-3.3-70B 的排名从第 7 位提升至第 3 位。\n- **RECEIPT 效果**：相比关闭输入的方式，RECEIPT 将虚假成功声明减少了 73.5%；相比普通终端模式，Token 使用量减少了 24.4%。它能以 85.0% 的准确率报告等待状态且无误报。在商业智能体运行时中，每次 Shell 调用的检查中位数耗时不超过 0.54 毫秒。\n- **对比**：现有框架要么导致静默失败，要么导致高昂的超时成本，而 RECEIPT 通过精确的状态反馈解决了这两者之间的矛盾，提升了智能体的可靠性和效率。\n\n#### 总结\n本文首次量化并修复了 LLM 智能体在命令行操作中的“返回假设”问题。研究表明，智能体的可靠性不仅取决于 LLM 本身，还取决于其框架允许观察到的工具执行状态。作者建议智能体构建者应报告工具调用的实际执行情况而非仅返回状态码，基准测试维护者应在排名 LLM 之前修复并公开输入连接的处理方式。RECEIPT 通过监控系统调用状态并提供结构化反馈，有效消除了假成功并降低了资源消耗。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: LLM agents operate Web infrastructure via command-line interfaces, relying on a \"Return Assumption\" that tool calls return within a bounded time with the requested action completed. However, many commands require interactive input (e.g., confirmations, passwords) before executing.\n- **Why Existing Work Fails**: Current agent harnesses handle interactive commands poorly. Closing the input stream can cause programs to exit with status 0 without performing the action (silent failure). Keeping the input open (e.g., as a terminal) causes the program to wait until timeout, leading to excessive token consumption and potential misjudgment of task failure due to timeouts. Prior work has neither measured the extent of this assumption's failure nor provided a robust repair mechanism.\n\n## Core Contributions\n- **Proposed RECEIPT**, a system to measure and repair the Return Assumption in LLM agents for Web service operations.\n- **Challenge 1: Silent Failures and False Successes**. When input is closed, interactive commands may exit successfully without doing any work, misleading the agent. **Solution**: RECEIPT keeps the input open and monitors process states via system calls to detect if a process is waiting for input, preventing the misclassification of unexecuted commands as successful.\n- **Challenge 2: Resource Waste and Timeout Misjudgments**. With open input but no automated response, commands wait until timeout, wasting tokens and time. **Solution**: RECEIPT reads what the process is waiting for (e.g., prompts) and returns this state to the unmodified agent via a model-checked protocol, enabling the agent to provide timely input, significantly reducing wait times and token usage.\n\n## Implementation and Evaluation\n- **Datasets & Benchmarks**: Collected 91,469 production tool calls and 89,047 public agent trajectories. Built Litmus (a catalog of 158 verified command-line invocations) and Tripwire (a benchmark of 25 task pairs differing only by the presence of an input guard).\n- **Measurement Results**: On Litmus, closed input caused 11.5% of invocations to return status 0 without performing the action; 7 out of 8 major harnesses close input when no terminal is attached. On Tripwire, unanswered questions increased token usage by 2.9x, and the input connection method improved Llama-3.3-70B's ranking from 7th to 3rd among 8 LLMs.\n- **RECEIPT Performance**: Compared to closed input, RECEIPT reduced false success claims by 73.5%. Compared to plain terminal mode, it reduced token usage by 24.4%. It reported waiting states with 85.0% accuracy and no false positives. In a commercial agent runtime, checks took a median of at most 0.54ms per shell call.\n- **Comparison**: Unlike existing frameworks that suffer from either silent failures or high timeout costs, RECEIPT resolves this trade-off by providing precise state feedback, enhancing both reliability and efficiency.\n\n## 4. Conclusion\nThis paper is the first to quantify and repair the \"Return Assumption\" in LLM agents for command-line operations. It demonstrates that agent reliability depends not only on the LLM but also on the observability provided by the harness. The authors recommend that agent builders report actual tool execution outcomes rather than just exit codes, and benchmark maintainers should fix and disclose input handling methods before ranking LLMs. RECEIPT effectively eliminates false successes and reduces resource overhead by monitoring system call states and providing structured feedback.",
-      "render_excerpt": "机构: Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University<br>本文首次量化并修复了 LLM 智能体在命令行操作中的“返回假设”问题。研究表明，智能体的可靠性不仅取决于 LLM 本身，还取决于其框架允许观察到的工具执行状态。作者建议智能体构建者应报告工具调用的实际执行情况而非仅返回状态码，基准测试维护者应在排名 LLM 之前修复并公开输入连接的处理方式。RECEIPT 通过监控系统调用状态并提供结构化反馈，有效消除了假成功并降低了资源消耗。",
-      "render_excerpt_en": "Institution: Yanshan University, Tencent, Shenzhen Intelligent Strong Technology Co., Ltd., Aalto University<br>## 1. What the Paper Did - **Background**: LLM agents operate Web infrastructure via command-line interfaces, relying on a \"Return Assumption\" that tool calls return within a bounded time with the requested action completed. However, many commands require interactive input (e.g., confirmations, passwords) before executing.",
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型多智能体系统（LLM-MAS）的通信拓扑结构决定了信息如何在智能体间传播，并编码了关键的领域知识和专家工作流设计。这种拓扑结构是极具价值的知识产权，对系统的效用和安全性起着决定性作用。\n- **已有工作的不足**：现有的防御机制主要集中在检测或缓解针对MAS的攻击（如提示注入、越狱等），但缺乏对拓扑结构本身的主动保护。攻击者可以通过黑盒访问，利用智能体输出中的语义线索 stealthily 推断出通信拓扑，导致知识产权泄露和更严重的安全风险，而现有方法无法有效 conceal 这一结构。\n\n## 文章的核心贡献点\n- **提出了一个名为 Illusion 的主动拓扑混淆防御框架**：该框架通过注入虚假边和虚假消息，向攻击者展示一个具有欺骗性的拓扑结构，同时确保系统行为的保留。\n- **挑战1：如何在混淆拓扑的同时保持系统任务性能不下降？**\n  - **难点**：随意添加虚假连接或消息可能会干扰智能体间的正常协作，导致输出分布改变或任务准确率降低，从而影响系统的实用性。\n  - **解决方法**：Illusion 精心选择“低影响”的候选虚假边和消息，确保它们在统计上保持输出分布的等价性，并保证任务准确率的非劣性（non-inferiority），从而在迷惑攻击者的同时不影响正常业务逻辑。\n- **挑战2：如何使虚假拓扑在黑盒观察下难以被识别和过滤？**\n  - **难点**：攻击者可能使用基于相似度的过滤或LLM裁判来区分真实消息和虚假消息，或者通过自适应剪枝去除异常连接，导致混淆失效。\n  - **解决方法**：Illusion 生成的虚假边在设计上与真实消息在黑盒观察下不可区分。实验表明，其生成的虚假边能够有效抵抗基于相似度的过滤和LLM裁判过滤，即使在面对自适应剪枝攻击时也能保持混淆效果。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验结果**：广泛实验显示，Illusion 显著降低了攻击者的推断能力。边缘级别的 F1 分数从超过 0.87 降低到 0.62，图相似度从超过 0.94 降低到 0.71。\n- **性能保持**：该方法在很大程度上保留了原始的输出分布和任务性能，证明了其行为 preserving 的特性。\n- **鲁棒性对比**：与现有仅能检测或缓解攻击的方法不同，Illusion 主动混淆拓扑。其生成的虚假连接能够抵抗多种高级过滤技术（包括相似度过滤和LLM裁判），且在自适应剪枝场景下依然有效，展示了优于被动防御的鲁棒性。\n\n#### 总结\n本文针对 LLM-MAS 中通信拓扑泄露导致的知识产权和安全风险，提出了 Illusion 框架。通过注入行为保持的虚假边和消息，Illusion 成功地在黑盒环境下混淆了真实拓扑，显著降低了攻击者的推断准确率，同时保证了系统原有的任务性能和输出分布稳定性，为 LLM-MAS 的拓扑保密提供了有效的主动防御方案。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: The communication topology of Large Language Model Multi-Agent Systems (LLM-MASs) governs information propagation and encodes critical domain knowledge and expert workflow designs. This topology is valuable intellectual property (IP) and plays a decisive role in system utility and safety.\n- **Limitations of Existing Work**: Current defenses focus on detecting or mitigating attacks (e.g., prompt injection, jailbreaking) but do not proactively conceal the topology itself. Attackers can stealthily reconstruct the topology from agent outputs via black-box access, leading to IP leakage and enhanced security risks, which existing methods fail to prevent.\n\n## Core Contributions\n- **Proposed Illusion**: A proactive topology obfuscation defense framework for LLM-MAS that injects fake edges and messages to present a deceptive topology while preserving system behavior.\n- **Challenge 1: How to obfuscate topology without degrading task performance?**\n  - **Difficulty**: Randomly adding fake connections or messages can disrupt normal agent collaboration, altering output distributions and reducing task accuracy, thereby compromising system utility.\n  - **Solution**: Illusion carefully selects \"low-impact\" candidate fake edges and messages to ensure output-distribution equivalence and task-accuracy non-inferiority, thus confusing attackers without affecting normal business logic.\n- **Challenge 2: How to make the fake topology indistinguishable under black-box observation?**\n  - **Difficulty**: Attackers may use similarity-based filtering or LLM judges to distinguish real messages from fake ones, or employ adaptive pruning to remove anomalous connections, rendering obfuscation ineffective.\n  - **Solution**: Illusion designs fake edges to be indistinguishable from genuine messages under black-box observation. Experiments show these fake edges resist both similarity-based and LLM-judge filtering, remaining effective even against adaptive pruning.\n\n## Implementation and Evaluation\n- **Results**: Extensive experiments demonstrate that Illusion significantly reduces attacker inference capabilities. The edge-level F1 score drops from over 0.87 to 0.62, and graph similarity decreases from over 0.94 to 0.71.\n- **Performance Preservation**: The method largely preserves original output distributions and task performance, validating its behavior-preserving nature.\n- **Robustness Comparison**: Unlike existing passive defenses that only detect or mitigate attacks, Illusion proactively obfuscates the topology. Its generated fake connections resist advanced filtering techniques (including similarity filtering and LLM judges) and remain robust under adaptive pruning, demonstrating superior resilience compared to baseline approaches.\n\n## 4. Conclusion\nThis paper addresses the IP and security risks associated with topology leakage in LLM-MAS by proposing the Illusion framework. By injecting behavior-preserving fake edges and messages, Illusion successfully obfuscates the true topology in black-box environments, significantly reducing attacker inference accuracy while maintaining system task performance and output stability, offering an effective proactive defense for LLM-MAS topology confidentiality.",
+      "render_excerpt": "机构: The Chinese University of Hong Kong, University of Nebraska-Lincoln, University of Houston, Stevens Institute of Technology<br>本文针对 LLM-MAS 中通信拓扑泄露导致的知识产权和安全风险，提出了 Illusion 框架。通过注入行为保持的虚假边和消息，Illusion 成功地在黑盒环境下混淆了真实拓扑，显著降低了攻击者的推断准确率，同时保证了系统原有的任务性能和输出分布稳定性，为 LLM-MAS 的拓扑保密提供了有效的主动防御方案。",
+      "render_excerpt_en": "Institution: The Chinese University of Hong Kong, University of Nebraska-Lincoln, University of Houston, Stevens Institute of Technology<br>## 1. What the Paper Does - **Background**: The communication topology of Large Language Model Multi-Agent Systems (LLM-MASs) governs information propagation and encodes critical domain knowledge and expert workflow designs. This topology is valuable intellectual property (IP) and plays a decisive role in system utility and safety.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-01T14:06:53Z"
+        "captured_at": "2026-10-31T13:23:42Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-01"
+        "captured_at": "2026-10-31"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -230,45 +106,147 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.01840",
-      "date": "2026-11-01",
-      "title": "Self-Evolving Agentic Workflows via Semantic Decomposition of Complex Tasks",
+      "paper_id": "2611.01001",
+      "date": "2026-10-31",
+      "title": "GURU: A Hierarchical Neuro-Symbolic Multi-Agent System for Verification-Aware Automation of Mission-Critical Digital Engineering and Operations",
       "authors": [
-        "Zichuan Fu",
-        "Junjia Qi",
-        "Xian Wu",
-        "Wenlin Zhang",
-        "Yimin Deng",
-        "Kaifeng Guo",
-        "Xiangyu Zhao"
+        "Allan Grosvenor",
+        "Anton Zemlyansky",
+        "Abdul Wahab",
+        "Kyrylo Bohachov",
+        "Aras Dogan",
+        "Ryland Adams",
+        "Dwyer Deighan"
       ],
-      "abstract": "Agentic workflows organize complex tasks into reusable procedures. However, invoking an LLM at every step incurs repeated inference costs and delays. We propose a framework for self-evolving agentic workflows through semantic task decomposition. Each subtask has explicit applicability conditions and a procedure that executes code or invokes a model as needed. An agent uses execution feedback to refine the decomposition and update these procedures. Experiments in the GLEE competition show the framework on bargaining, negotiation and persuasion. Most observed final-decision procedures are implemented in code. Code is available at https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow.",
+      "abstract": "An AI can find a safe action faster than any human, but it must never decide what counts as safe. We present GURU, a hierarchical neuro-symbolic multi-agent system for mission-critical digital engineering and operations, built on one partition of authority: learned models propose, rank, and accelerate; a symbolic rules engine checks every consequential action against hard limits before it executes; and validated physics confirms and decides. GURU runs a workflow as a closed control loop, with Navigation, Action, and Planning agents sharing one Common Internal Language and one training factory. Nuclear, aviation, and national-security guidance now requires this pattern; a harnessed language model keeps the model at the center, GURU puts a validated reference there. In computational fluid dynamics, the workflow raised the converged-simulation rate on unseen aircraft geometries from under 1 percent to 74 percent over 100 single-attempt cases, ran 54 live cases to Mach 6 on three facilities, and an ablation put the symbolic layer at 13 points of boundary-layer capture. Knowledge-graph retrieval and role adapters raised ParaView control success from 55 to 75 percent. In space domain awareness, where a language model cannot be trusted to decide, a frozen self-supervised world model under validated propagation scored highest of five methods at conjunction risk, including fully fine-tuned language models, with several-times-lower seed variance: the trustworthy design gives up nothing in accuracy, and the recipe transferred to reactor anomaly detection. A radar-to-avoidance debris pipeline was demonstrated in stages on a 2026 reentry; the hierarchy coordinates simulated teams of 200 aircraft. Training scaled near-linearly past 1,000 Aurora nodes and ran at 8,000. The approach extends to a control-grade microreactor digital twin with validated physics, not a learned model, as the safety basis.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.01840v1",
-        "pdf": "https://arxiv.org/pdf/2611.01840v1",
-        "github": "https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow",
+        "abs": "http://arxiv.org/abs/2611.01001v1",
+        "pdf": "https://arxiv.org/pdf/2611.01001v1",
+        "github": null,
         "blog": null
       },
-      "institution": "City University of Hong Kong, Tencent Jarvis Lab",
+      "institution": "MSBAI",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的智能体工作流将复杂任务组织为可重用的步骤序列。然而，传统方法在每个步骤都调用 LLM，导致推理成本高昂且延迟显著，特别是在时间敏感的交互场景中。\n- **已有工作的局限**：现有工作试图通过减少模型调用来降低开销，但往往缺乏系统性的方法来区分哪些步骤需要模型推理，哪些可以通过确定性代码解决。此外，静态工作流难以根据执行反馈动态优化决策路径，导致在复杂交互（如谈判、博弈）中适应性不足。\n\n## 文章的核心贡献点\n- **提出了一个基于语义分解的自进化智能体工作流框架（SeaFlow）**：该框架通过语义任务分解将复杂交互决策组织为层次化的子任务，每个子任务明确定义了适用条件及解决方案（代码执行或模型调用）。\n- **挑战1：高推理成本与延迟**。传统工作流每步均调用 LLM，造成资源浪费。**解决方法**：通过语义分解，将具有明确解法的子任务转化为可执行代码，仅在必要时调用模型，从而大幅降低推理开销并提升响应速度。\n- **挑战2：工作流的静态性与适应性差**。固定流程难以应对动态变化的交互环境。**解决方法**：引入反馈驱动的自我进化机制，智能体利用执行记录识别低效或错误的子任务，动态调整其适用范围或修改解决程序，实现工作流的持续迭代优化。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：框架包含构建、执行、定位问题、修订代码和评估五个阶段的闭环迭代。代码已开源。\n- **评估结果**：在 GLEE 竞赛的三个环境（讨价还价、谈判、说服）中进行测试。分析了 725 次开发迭代和 12,249 条行动记录。\n- **对比与发现**：实验显示，最终优化的工作流中，大多数最终决策过程由代码实现而非 LLM 推理。这表明该方法能有效将复杂的逻辑判断转化为高效的代码执行，相比纯 LLM 驱动的工作流，在保持性能的同时显著降低了成本和延迟。\n\n#### 总结\n本文提出了一种通过语义任务分解构建自进化智能体工作流的新范式。通过将复杂任务分解为带有明确适用条件的子任务，并利用执行反馈动态优化工作流，该方法成功地将大量决策过程从昂贵的 LLM 推理转移至高效的代码执行。在 GLEE 基准测试中的表现证明了其在降低推理成本、减少延迟以及提升复杂交互任务处理能力方面的有效性，为构建高效、自适应的智能体系统提供了新思路。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: LLM-based agentic workflows organize complex tasks into reusable step sequences. However, invoking an LLM at every step incurs significant inference costs and latency, making them unsuitable for time-sensitive interactions.\n- **Limitations of Existing Work**: Current approaches lack systematic methods to distinguish between steps requiring model reasoning and those solvable by deterministic code. Furthermore, static workflows struggle to adapt to dynamic interactive environments based on execution feedback, leading to poor adaptability in complex scenarios like negotiation and bargaining.\n\n## Core Contributions\n- **Proposed a Self-Evolving Agentic Workflow Framework via Semantic Decomposition (SeaFlow)**: This framework organizes complex interactive decisions into a hierarchy of subtasks, each with explicit applicability conditions and solution procedures (code execution or model invocation).\n- **Challenge 1: High Inference Cost and Latency**. Traditional workflows call LLMs at every step, wasting resources. **Solution**: By semantically decomposing tasks, subtasks with clear solutions are converted into executable code, invoking models only when necessary, thereby significantly reducing overhead and improving response speed.\n- **Challenge 2: Static Nature and Poor Adaptability**. Fixed pipelines cannot handle dynamic interaction changes. **Solution**: A feedback-driven self-evolution mechanism is introduced, where the agent uses execution records to identify inefficient or erroneous subtasks, dynamically adjusting their scope or modifying solution procedures for continuous iterative optimization.\n\n## Implementation and Evaluation\n- **Implementation**: The framework operates in a closed loop of construction, execution, problem localization, code revision, and evaluation. Code is open-sourced.\n- **Evaluation Results**: Tested across three GLEE environments (bargaining, negotiation, persuasion). The study analyzed 725 development iterations and 12,249 action records.\n- **Comparison and Findings**: Experiments showed that most final decision procedures in the optimized workflows were implemented in code rather than LLM reasoning. This demonstrates that the method effectively shifts complex logical judgments to efficient code execution, significantly reducing cost and latency compared to pure LLM-driven workflows while maintaining performance.\n\n## 4. Conclusion\nThis paper proposes a new paradigm for constructing self-evolving agentic workflows through semantic task decomposition. By breaking down complex tasks into subtasks with explicit conditions and dynamically optimizing workflows using execution feedback, the method successfully transfers a large portion of decision-making from expensive LLM reasoning to efficient code execution. Performance on the GLEE benchmark proves its effectiveness in reducing inference costs, minimizing latency, and enhancing capabilities in complex interactive tasks, offering new insights for building efficient and adaptive agent systems.",
-      "render_excerpt": "机构: City University of Hong Kong, Tencent Jarvis Lab<br>本文提出了一种通过语义任务分解构建自进化智能体工作流的新范式。通过将复杂任务分解为带有明确适用条件的子任务，并利用执行反馈动态优化工作流，该方法成功地将大量决策过程从昂贵的 LLM 推理转移至高效的代码执行。在 GLEE 基准测试中的表现证明了其在降低推理成本、减少延迟以及提升复杂交互任务处理能力方面的有效性，为构建高效、自适应的智能体系统提供了新思路。",
-      "render_excerpt_en": "Institution: City University of Hong Kong, Tencent Jarvis Lab<br>## 1. What the Paper Does - **Background**: LLM-based agentic workflows organize complex tasks into reusable step sequences. However, invoking an LLM at every step incurs significant inference costs and latency, making them unsuitable for time-sensitive interactions.",
+      "summary_cn": "## 文章做了什么\n- **背景**：在核能、航空和国家安全等任务关键型数字工程与运营中，人工智能被要求处理高风险任务（如太空态势感知、计算流体力学模拟、微反应堆控制）。这些场景具有状态依赖性、专用软件绑定以及严格的物理和程序约束。\n- **已有工作为什么解决不了**：现有的纯学习模型（包括微调的大语言模型）虽然速度快，但缺乏对“什么是安全”的最终决定权，存在幻觉和不可控风险；而传统的符号系统或物理模拟器虽然可靠，但缺乏灵活性和自动化搜索能力。单纯依赖LLM无法满足核能、航空等领域对硬性安全限制和可验证性的监管要求。\n\n## 文章的核心贡献点\n- **提出了一个名为 GURU 的分层神经符号多智能体系统**：该系统基于权限划分原则，将学习模型用于提议、排序和加速，符号规则引擎用于在执行前检查硬性限制，验证过的物理模型用于最终确认和决策。\n- **挑战1：如何在保持高效率的同时确保任务关键型操作的安全性？**\n  - **难点**：LLM 容易产生不可预测的错误，而在高风险环境中任何错误都可能导致灾难性后果，传统方法难以兼顾速度与绝对安全。\n  - **解决方法**：GURU 采用闭环控制工作流，通过“神经-符号-物理”三层架构，让 LLM 仅作为提议者，所有关键动作必须经过符号规则引擎的硬性检查和验证物理模型的确认，从而在保证安全的前提下利用 AI 加速。\n- **挑战2：如何在复杂、 unseen 的物理仿真和跨域任务中实现泛化与高精度？**\n  - **难点**：面对未见过的飞机几何形状或复杂的太空碎片轨迹，单一模型难以收敛或准确预测，且不同领域（如 CFD 和太空感知）的需求差异大。\n  - **解决方法**：通过共享通用内部语言和训练工厂的导航、行动和规划智能体协同工作，结合知识图谱检索和角色适配器，并在太空领域使用冻结的自监督世界模型配合验证传播，实现了在未见过数据上的高收敛率和低风险方差。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **计算流体力学 (CFD)**：在未见过的飞机几何形状上，单次尝试的收敛模拟率从不到 1% 提高到 74%（100个案例）；在三个设施上运行了 54 个马赫数高达 6 的实时案例；消融实验显示符号层对边界层捕捉贡献了 13 个点。\n- **软件控制 (ParaView)**：通过知识图谱检索和角色适配器，将 ParaView 的控制成功率从 55% 提高到 75%。\n- **太空态势感知 (SDA)**：在 conjunction risk（碰撞风险）评估中，GURU 使用的冻结自监督世界模型在五种方法中得分最高，优于完全微调的 LLM，且种子方差低数倍，证明了其可信设计在不牺牲准确率的情况下提高了稳定性。\n- **扩展性与部署**：展示了针对 2026 年再入任务的雷达至避免碎片管道；层级结构协调了 200 架飞机的模拟团队；训练在超过 1,000 个 Aurora 节点上近线性扩展，并在 8,000 个节点上运行。\n- **其他应用**：该方案已转移到反应堆异常检测，并扩展到以验证物理而非学习模型为安全基础的控制级微反应堆数字孪生。\n\n#### 总结\nGURU 系统通过创新的分层神经符号架构，成功解决了任务关键型领域中 AI 安全性与效率之间的矛盾。它不依赖 LLM 做出最终安全决策，而是将其置于由符号规则和验证物理构成的严格约束之下。实验结果表明，GURU 在 CFD 模拟收敛率、软件控制成功率及太空风险评估准确性上均显著优于现有方法，同时具备极高的可扩展性，为核能、航空等高敏感领域的自动化提供了可验证、可信赖的解决方案。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: In mission-critical digital engineering and operations such as nuclear energy, aviation, and national security, AI is tasked with high-risk operations (e.g., space domain awareness, computational fluid dynamics simulations, microreactor control). These scenarios are stateful, bound to specialized software, and governed by strict physical and procedural constraints.\n- **Why Existing Work Fails**: Pure learning models (including fine-tuned LLMs) are fast but lack final authority on \"what is safe,\" suffering from hallucinations and uncontrollability. Traditional symbolic systems or physics simulators are reliable but lack flexibility and automation capabilities. Sole reliance on LLMs fails to meet regulatory requirements for hard safety limits and verifiability in high-stakes domains.\n\n## Core Contributions\n- **Proposed GURU**: A hierarchical neuro-symbolic multi-agent system for verification-aware automation.\n- **Challenge 1: How to ensure safety in mission-critical operations while maintaining high efficiency?**\n  - **Difficulty**: LLMs are prone to unpredictable errors, which can be catastrophic in high-risk environments. Traditional methods struggle to balance speed with absolute safety.\n  - **Solution**: GURU employs a closed-loop workflow with a \"Neuro-Symbolic-Physics\" three-tier architecture. LLMs act only as proposers, while all consequential actions are checked against hard limits by a symbolic rules engine and confirmed by validated physics models, ensuring safety while leveraging AI for acceleration.\n- **Challenge 2: How to achieve generalization and high precision in complex, unseen physical simulations and cross-domain tasks?**\n  - **Difficulty**: Single models struggle to converge or predict accurately on unseen aircraft geometries or complex space debris trajectories, and demands vary significantly across domains like CFD and space awareness.\n  - **Solution**: Navigation, Action, and Planning agents share a Common Internal Language and training factory. By integrating knowledge graph retrieval, role adapters, and a frozen self-supervised world model with validated propagation for space tasks, GURU achieves high convergence rates and low variance on unseen data.\n\n## Implementation and Evaluation\n- **Computational Fluid Dynamics (CFD)**: The converged-simulation rate on unseen aircraft geometries increased from under 1% to 74% over 100 single-attempt cases. It ran 54 live cases up to Mach 6 across three facilities. Ablation studies attributed 13 points of boundary-layer capture to the symbolic layer.\n- **Software Control (ParaView)**: Knowledge-graph retrieval and role adapters raised ParaView control success from 55% to 75%.\n- **Space Domain Awareness (SDA)**: In conjunction risk assessment, GURU's frozen self-supervised world model scored highest among five methods, outperforming fully fine-tuned LLMs with several-times-lower seed variance, demonstrating that trustworthy design sacrifices no accuracy.\n- **Scalability and Deployment**: Demonstrated a radar-to-avoidance debris pipeline for a 2026 reentry; the hierarchy coordinated simulated teams of 200 aircraft. Training scaled near-linearly past 1,000 Aurora nodes and ran at 8,000 nodes.\n- **Other Applications**: The approach transferred to reactor anomaly detection and extends to a control-grade microreactor digital twin where validated physics, not learned models, serves as the safety basis.\n\n#### Summary\nThe GURU system successfully resolves the conflict between AI safety and efficiency in mission-critical domains through its innovative hierarchical neuro-symbolic architecture. By placing LLMs under strict constraints of symbolic rules and validated physics rather than relying on them for final safety decisions, GURU ensures verifiability. Experimental results show significant improvements over existing methods in CFD convergence, software control success, and space risk assessment accuracy, offering a scalable, trustworthy solution for automation in sensitive sectors like nuclear energy and aviation.",
+      "render_excerpt": "机构: MSBAI<br>GURU 系统通过创新的分层神经符号架构，成功解决了任务关键型领域中 AI 安全性与效率之间的矛盾。它不依赖 LLM 做出最终安全决策，而是将其置于由符号规则和验证物理构成的严格约束之下。实验结果表明，GURU 在 CFD 模拟收敛率、软件控制成功率及太空风险评估准确性上均显著优于现有方法，同时具备极高的可扩展性，为核能、航空等高敏感领域的自动化提供了可验证、可信赖的解决方案。",
+      "render_excerpt_en": "Institution: MSBAI<br>The GURU system successfully resolves the conflict between AI safety and efficiency in mission-critical domains through its innovative hierarchical neuro-symbolic architecture. By placing LLMs under strict constraints of symbolic rules and validated physics rather than relying on them for final safety decisions, GURU ensures verifiability. Experimental results show significant improvements over existing methods in CFD convergence, software control success, and space risk assessment accuracy, offering a scalable, trustworthy solution for automation in sensitive sectors like nuclear energy and aviation.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-01T12:18:19Z"
+        "captured_at": "2026-10-31T14:41:00Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-01"
+        "captured_at": "2026-10-31"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.00838",
+      "date": "2026-10-31",
+      "title": "Can Agentic AI Undermine Its Own Assurance Loop? Closed-Loop Dependency Assurance for Cognitive Network Digital Twins",
+      "authors": [
+        "Ahmed Hussain",
+        "Konstantinos Kalogiannis",
+        "Salahuddin Salahuddin",
+        "Hexu Li",
+        "Thiemo Voigt"
+      ],
+      "abstract": "Agentic Artificial Intelligence (AI) and Network Digital Twins (NDTs) are increasingly combined to form Cognitive Digital Twins (CDTs) that translate operational intents into network changes and support closed-loop management. However, a network change may achieve its intended objective while disrupting the monitoring or recovery mechanisms needed for subsequent decisions. For example, a service may be rerouted while its latency-monitoring traffic continues along the original path, producing measurements that no longer reflect the service's performance. We propose Closed-Loop Dependency Assurance (CLDA), an assurance mechanism that augments agentic AI-enabled NDTs with dependency-aware validation. In our framework, an agentic AI planner generates and refines network plans, while the NDT evaluates the projected network outcomes of these plans. CLDA extends this analysis using a Loop Dependency Graph (LDG) that connects service requirements to monitoring mechanisms, forwarding paths, failure domains, and recovery prerequisites. CLDA projects candidate actions onto these dependencies, checks intermediate states of multistep plans, and supports deterministic make-before-break repairs using temporary monitoring mechanisms. Unlike the Large Language Model (LLM)-based planner, CLDA uses explicit, deterministic rules for assurance decisions and repair. We evaluate CLDA through controlled reconfigurations, a 240-trial LLM-based planning campaign, and live network execution. A separate synthetic study examines deterministic assurance scalability across network models representing up to 1,024 routers.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.00838v1",
+        "pdf": "https://arxiv.org/pdf/2611.00838v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "KTH Royal Institute of Technology, Uppsala University, RISE, SSH Communications Security, Lenovo",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：代理式人工智能（Agentic AI）与网络数字孪生（NDT）结合形成认知数字孪生（CDT），用于将操作意图转化为网络变更并支持闭环管理。\n- **已有的工作为什么解决不了**：现有的基于大语言模型（LLM）的规划器虽然能生成网络配置，但往往忽视网络变更对监控和恢复机制的副作用。例如，服务重路由后，监控流量可能仍走旧路径，导致监测数据失效（即“自我解耦”问题），从而破坏后续决策所需的保证循环。\n\n## 文章的核心贡献点\n- **提出了一个**：闭环依赖保证（Closed-Loop Dependency Assurance, CLDA）机制，通过依赖感知验证增强代理式AI赋能的NDT。\n- **挑战1：监控与恢复依赖的自我解耦**。网络变更可能在实现目标的同时，使监控数据不再反映真实服务状态或使回滚机制失效，这很难被传统LLM规划器察觉。**解决方法**：CLDA引入循环依赖图（LDG），显式连接服务需求、监控机制、转发路径和恢复前提，通过确定性规则投影候选动作并检查中间状态，确保依赖关系在变更中保持有效。\n- **挑战2：多步计划中的临时状态风险与可扩展性**。在多步重配置过程中，中间状态可能导致短暂的服务监控缺失，且大规模网络下的确定性验证计算复杂。**解决方法**：CLDA支持使用临时监控机制进行确定性的“先建后断”（make-before-break）修复，并通过合成研究验证了其在多达1024个路由器的大规模网络模型中的可扩展性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：研究通过受控重配置、包含240次试验的基于LLM的规划活动以及实时网络执行来评估CLDA。此外，还进行了独立的合成研究以测试确定性保证的可扩展性。\n- **结果与对比**：与仅依赖LLM进行规划和验证的方法不同，CLDA使用显式的确定性规则进行保证决策和修复。实验表明，CLDA能有效识别并防止因网络变更导致的监控失效和恢复能力丧失问题，且在大规模网络拓扑中表现出良好的可扩展性，弥补了纯LLM方法在逻辑严密性和依赖感知上的不足。\n\n#### 总结\n本文指出了代理式AI在网络自动化中可能破坏自身保证循环的风险，特别是“自我解耦”现象。提出的CLDA框架通过构建循环依赖图（LDG）并结合确定性规则，有效解决了LLM规划器在监控和恢复依赖验证上的盲区。该方法不仅确保了网络变更期间的持续可观测性和可恢复性，还在大规模网络场景中展现了良好的性能，为构建更可靠的认知数字孪生系统提供了关键保障。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Agentic AI and Network Digital Twins (NDTs) are combined to form Cognitive Digital Twins (CDTs) that translate operational intents into network changes for closed-loop management.\n- **Why Existing Work Fails**: Current LLM-based planners often overlook the side effects of network changes on monitoring and recovery mechanisms. For instance, service rerouting may leave monitoring traffic on the old path, rendering data invalid (a problem termed \"self-decoupling\") and breaking the assurance loop required for subsequent decisions.\n\n## Core Contributions\n- **Proposed**: Closed-Loop Dependency Assurance (CLDA), a mechanism that augments agentic AI-enabled NDTs with dependency-aware validation.\n- **Challenge 1: Self-decoupling of monitoring and recovery dependencies**. Network changes can invalidate monitoring data or rollback capabilities while achieving their primary goal, a nuance difficult for LLMs to detect. **Solution**: CLDA introduces a Loop Dependency Graph (LDG) to explicitly link service requirements with monitoring, paths, and recovery prerequisites, using deterministic rules to project actions and validate intermediate states.\n- **Challenge 2: Risks in intermediate states of multi-step plans and scalability**. Multi-step reconfigurations may temporarily lose monitoring validity, and deterministic verification is computationally intensive at scale. **Solution**: CLDA supports deterministic \"make-before-break\" repairs using temporary monitoring mechanisms and demonstrates scalability in synthetic studies with up to 1,024 routers.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: CLDA was evaluated through controlled reconfigurations, a 240-trial LLM-based planning campaign, and live network execution. A separate synthetic study assessed scalability.\n- **Results & Comparison**: Unlike pure LLM-based approaches, CLDA uses explicit, deterministic rules for assurance. Results show it effectively prevents monitoring invalidation and loss of recoverability caused by network changes, addressing the logical gaps in LLM planners while maintaining scalability in large network topologies.\n\n## 4. Conclusion\nThe paper highlights the risk of Agentic AI undermining its own assurance loop via \"self-decoupling.\" The proposed CLDA framework addresses this by using a Loop Dependency Graph and deterministic rules to validate dependencies that LLMs often miss. This ensures continuous observability and recoverability during network changes, providing a robust foundation for reliable Cognitive Digital Twins.",
+      "render_excerpt": "机构: KTH Royal Institute of Technology, Uppsala University, RISE, SSH Communications Security, Lenovo<br>本文指出了代理式AI在网络自动化中可能破坏自身保证循环的风险，特别是“自我解耦”现象。提出的CLDA框架通过构建循环依赖图（LDG）并结合确定性规则，有效解决了LLM规划器在监控和恢复依赖验证上的盲区。该方法不仅确保了网络变更期间的持续可观测性和可恢复性，还在大规模网络场景中展现了良好的性能，为构建更可靠的认知数字孪生系统提供了关键保障。",
+      "render_excerpt_en": "Institution: KTH Royal Institute of Technology, Uppsala University, RISE, SSH Communications Security, Lenovo<br>## 1. What the Paper Does - **Background**: Agentic AI and Network Digital Twins (NDTs) are combined to form Cognitive Digital Twins (CDTs) that translate operational intents into network changes for closed-loop management. - **Why Existing Work Fails**: Current LLM-based planners often overlook the side effects of network changes on monitoring and recovery mechanisms.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-10-31T11:41:33Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-10-31"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.00773",
+      "date": "2026-10-31",
+      "title": "Designing Informative Actions: Action Construction for Long-Horizon Research Agents",
+      "authors": [
+        "Alkut Arxidin",
+        "Shaoning Zeng",
+        "Jianhang Zhou",
+        "Jianping Gou",
+        "Xinzhong Zhu"
+      ],
+      "abstract": "Large language model agents support automated scientific research by connecting literature analysis and planning with experimentation. Evaluating which action an agent selects does not establish which experiment its instruction specifies, because omitted interventions or replication counts leave consequential choices to the executor. We introduce a reading-set framework for evaluating action construction under a common cost rule. Across 30 synthetic states, complete-design requests increase affordable efficiency by 465.98% and 327.91% relative to the action-name baseline in the two model families, respectively. An author-constructed research-action evaluation dataset provides 60 scenarios for complementary judgment evaluation. On this dataset, the scenario-level information-per-cost measure has a mean within-scenario correlation of 0.733 with judgments from 18 human participants. The framework makes design specification and execution ambiguity measurable, providing a reproducible basis for assessing how research agents translate scientific intent into informative, budget-feasible experiments.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.00773v1",
+        "pdf": "https://arxiv.org/pdf/2611.00773v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": null,
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）代理正被用于自动化科学研究，连接文献分析、规划与实验执行。然而，评估代理选择的“动作”并不能确定其指令具体指定了哪个实验，因为省略的干预措施或重复次数会将关键选择留给执行者，导致歧义。\n- **已有工作为什么解决不了**：现有的研究代理基准和评估方法主要关注任务成功率和步骤正确性，但无法解决动作指令中未明确指定的实验设计选择问题。一个科学上相关的指令可能对应多个具有不同信息价值和成本的可执行设计，现有方法缺乏对这种“设计规范性”和“执行歧义”的量化评估手段。\n\n## 文章的核心贡献点\n- **提出了一个阅读集框架（Reading-Set Framework）**：该框架在统一成本规则下，通过每个设计的预算门控来评分指令所允许的设计方案，使指令对设计的依赖性可见。\n- **挑战1：如何量化指令的执行歧义与信息价值？**\n  - **难点**：传统评估仅看动作名称，忽略了同一动作名称下可能存在的多种具体实验设计，导致无法衡量实际的信息获取效率。\n  - **解决方法**：引入“阅读集”概念，评估指令所涵盖的所有可能设计，并在统一成本规则下进行评分，从而将设计规范和执行歧义转化为可测量的指标。\n- **挑战2：如何验证评估指标与人类判断的一致性？**\n  - **难点**：缺乏标准化的数据集来验证自动化评估指标是否真实反映科学实验设计的优劣。\n  - **解决方法**：构建了包含60个场景和240个候选动作的作者构建研究动作评估数据集，并证明场景级的“单位成本信息量”指标与18名人类参与者的判断具有0.733的平均组内相关性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在30个合成状态下进行测试，并使用新构建的60个场景数据集进行互补评估。\n- **主要结果**：\n  - 在两个模型家族中，相较于传统的“动作名称”基线，完整设计请求（complete-design requests）将可负担的效率分别提高了465.98%和327.91%。\n  - 在新建数据集上，提出的场景级“单位成本信息量”指标与人类判断的平均组内相关性为0.733，显示了良好的一致性。\n- **对比**：与传统仅评估动作选择的方法相比，该框架能够区分不同具体设计的信息价值和成本，解决了以往方法无法衡量执行层面歧义的问题，提供了更可复现的评估基础。\n\n#### 总结\n本文针对LLM科研代理在实验设计阶段的指令歧义问题，提出了一种基于阅读集的评估框架。通过量化指令所允许的设计空间及其在统一成本下的信息价值，该方法显著提升了评估的准确性。实验表明，明确完整的设计规范能大幅提高实验效率，且提出的评估指标与人类专家判断高度相关，为评估科研代理将科学意图转化为可行实验的能力提供了可复现的基础。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Large language model (LLM) agents are increasingly used for automated scientific research, linking literature analysis, planning, and experimentation. However, evaluating the \"action\" selected by an agent does not determine the specific experiment specified by its instruction, as omitted interventions or replication counts leave critical choices to the executor, creating ambiguity.\n- **Why Existing Work Falls Short**: Current research agent benchmarks and evaluation methods focus on task success and step-level correctness but fail to resolve experimental design choices left unspecified in an action. A scientifically relevant instruction may correspond to multiple executable designs with varying information values and costs, and existing methods lack metrics to quantify this \"design specification\" and \"execution ambiguity.\"\n\n## Core Contributions\n- **Proposed a Reading-Set Framework**: This framework scores the designs admitted by an instruction under a common cost rule with per-design budget gating, making the dependence of the instruction on specific designs visible.\n- **Challenge 1: How to quantify execution ambiguity and information value of instructions?**\n  - **Difficulty**: Traditional evaluations only look at action names, ignoring the variety of specific experimental designs possible under the same action name, thus failing to measure actual information acquisition efficiency.\n  - **Solution**: Introduced the \"reading-set\" concept to evaluate all possible designs covered by an instruction, scoring them under a unified cost rule to transform design specifications and execution ambiguities into measurable metrics.\n- **Challenge 2: How to validate the consistency of evaluation metrics with human judgment?**\n  - **Difficulty**: There is a lack of standardized datasets to verify whether automated evaluation metrics truly reflect the quality of scientific experimental designs.\n  - **Solution**: Constructed an author-curated research-action evaluation dataset with 60 scenarios and 240 candidate actions, demonstrating that the scenario-level \"information-per-cost\" metric has a mean within-scenario correlation of 0.733 with judgments from 18 human participants.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Tested across 30 synthetic states and used the newly constructed dataset of 60 scenarios for complementary evaluation.\n- **Key Results**:\n  - Across two model families, complete-design requests increased affordable efficiency by 465.98% and 327.91%, respectively, compared to the traditional \"action-name\" baseline.\n  - On the new dataset, the proposed scenario-level \"information-per-cost\" metric showed a mean within-scenario correlation of 0.733 with human judgments, indicating strong alignment.\n- **Comparison**: Unlike traditional methods that only evaluate action selection, this framework distinguishes the information value and cost of different specific designs, addressing the inability of previous methods to measure execution-level ambiguity and providing a more reproducible basis for assessment.\n\n#### Summary\nThis paper addresses the issue of instruction ambiguity in the experimental design phase of LLM research agents by proposing a reading-set based evaluation framework. By quantifying the design space allowed by an instruction and its information value under a unified cost, the method significantly improves evaluation accuracy. Experiments show that specifying complete design norms greatly enhances experimental efficiency, and the proposed evaluation metrics correlate highly with human expert judgments, providing a reproducible foundation for assessing how research agents translate scientific intent into feasible experiments.",
+      "render_excerpt": "本文针对LLM科研代理在实验设计阶段的指令歧义问题，提出了一种基于阅读集的评估框架。通过量化指令所允许的设计空间及其在统一成本下的信息价值，该方法显著提升了评估的准确性。实验表明，明确完整的设计规范能大幅提高实验效率，且提出的评估指标与人类专家判断高度相关，为评估科研代理将科学意图转化为可行实验的能力提供了可复现的基础。",
+      "render_excerpt_en": "This paper addresses the issue of instruction ambiguity in the experimental design phase of LLM research agents by proposing a reading-set based evaluation framework. By quantifying the design space allowed by an instruction and its information value under a unified cost, the method significantly improves evaluation accuracy. Experiments show that specifying complete design norms greatly enhances experimental efficiency, and the proposed evaluation metrics correlate highly with human expert judgments, providing a reproducible foundation for assessing how research agents translate scientific intent into feasible experiments.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-10-31T09:33:20Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-10-31"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
