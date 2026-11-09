@@ -1,40 +1,42 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-07T11:53:31.966674+00:00",
-  "run_date": "2026-10-31",
+  "generated_at": "2026-11-09T08:17:06.330604+00:00",
+  "run_date": "2026-11-06",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.01301",
-      "date": "2026-10-31",
-      "title": "CuriousTogether: Implications of Curiosity and Cultural Grounding in Multi-Agent LLM Interactions",
+      "id": "arxiv:2611.09768",
+      "date": "2026-11-06",
+      "title": "Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Angana Borah",
-        "Zoha Hayat Bhatti",
-        "Zhijing Jin",
-        "Rada Mihalcea"
+        "Yuchen Li",
+        "Lisa Liu",
+        "Runqi Zou",
+        "Shuxuan Kuang",
+        "Qingquan Zhang",
+        "Julian Togelius"
       ],
-      "institution": "University of Michigan – Ann Arbor",
+      "institution": "Lingnan University, New York University",
       "summary": {
-        "zh": "CuriousTogether 框架证实了好奇心引导的交互是改善多智能体协作的实用机制。通过将好奇心分解为寻求新奇、认知和社会三个维度，并结合文化 grounding，该方法在推理、创意和社会任务中均取得了显著改进。研究不仅展示了好奇心在减少偏见和提升创造力方面的潜力，还指出了其在不同任务类型和文化背景下的复杂影响，为未来设计更具适应性和社会意识的人工智能系统提供了重要见解。",
-        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed in multi-agent settings, exhibiting emergent collective behaviors. However, the role of curiosity as a driver of these dynamics remains..."
+        "zh": "本文通过严格的控制实验揭示了在LLM社交推理智能体中，语言形式（复杂度和礼貌程度）对最终决策和信任建立的影响微乎其微。研究发现，智能体在博弈中更倾向于直接沟通，且不易被语言风格操纵。这一结果挑战了关于语言风格在复杂交互中具有强大说服力的假设，强调了在评估LLM社会行为时区分内容与形式的重要性。",
+        "en": "- **Background**: Large Language Model (LLM) agents coordinate via conversation, where the same message can be phrased with varying complexity or politeness. Prior research indicates that linguistic form (e.g.,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.01301v1",
-        "pdf": "https://arxiv.org/pdf/2611.01301v1",
+        "abs": "http://arxiv.org/abs/2611.09768v1",
+        "pdf": "https://arxiv.org/pdf/2611.09768v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2611.01301.md",
-        "summary_en_path": "summary_en/2026-10/2611.01301.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2611.01301.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2611.01301.md"
+        "summary_zh_path": "summary/2026-11/2611.09768.md",
+        "summary_en_path": "summary_en/2026-11/2611.09768.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.09768.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.09768.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,36 +53,36 @@
       }
     },
     {
-      "id": "arxiv:2611.00923",
-      "date": "2026-10-31",
-      "title": "Illusion: Safeguarding Topology Confidentiality in LLM Multi-Agent Systems via Behavior-Preserving Obfuscation",
+      "id": "arxiv:2611.09721",
+      "date": "2026-11-06",
+      "title": "MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yiu-Fai Cheung",
-        "Hongzhi Guo",
-        "Miao Pan",
-        "Irwin King",
-        "Hao Wang"
+        "David H. Yang",
+        "Blake Bullwinkel",
+        "Amanda Minnich",
+        "Mohammad Mohammadi Amiri",
+        "Giorgio Severi"
       ],
-      "institution": "The Chinese University of Hong Kong, University of Nebraska-Lincoln, University of Houston, Stevens Institute of Technology",
+      "institution": "Rensselaer Polytechnic Institute, Microsoft",
       "summary": {
-        "zh": "本文针对 LLM-MAS 中通信拓扑泄露导致的知识产权和安全风险，提出了 Illusion 框架。通过注入行为保持的虚假边和消息，Illusion 成功地在黑盒环境下混淆了真实拓扑，显著降低了攻击者的推断准确率，同时保证了系统原有的任务性能和输出分布稳定性，为 LLM-MAS 的拓扑保密提供了有效的主动防御方案。",
-        "en": "- **Background**: The communication topology of Large Language Model Multi-Agent Systems (LLM-MASs) governs information propagation and encodes critical domain knowledge and expert workflow designs. This topology is..."
+        "zh": "本文介绍了 MemoryDojo，这是首个专门用于评估 LLM 智能体记忆系统中毒风险的基准测试。通过大规模的多会话实验，文章揭示了所有主流记忆架构均存在安全漏洞，且风险程度因架构设计而异。提出的记忆感知优化方法进一步证明了针对性攻击的高效性。该工作为理解和缓解智能体记忆风险提供了重要工具和研究方向。",
+        "en": "- **Background**: LLM agents leverage memory systems to enhance performance in long-horizon, multi-session tasks. However, this introduces a critical attack surface where malicious instructions encountered in one..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.00923v1",
-        "pdf": "https://arxiv.org/pdf/2611.00923v1",
+        "abs": "http://arxiv.org/abs/2611.09721v1",
+        "pdf": "https://arxiv.org/pdf/2611.09721v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2611.00923.md",
-        "summary_en_path": "summary_en/2026-10/2611.00923.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2611.00923.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2611.00923.md"
+        "summary_zh_path": "summary/2026-11/2611.09721.md",
+        "summary_en_path": "summary_en/2026-11/2611.09721.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.09721.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.09721.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,38 +99,35 @@
       }
     },
     {
-      "id": "arxiv:2611.01001",
-      "date": "2026-10-31",
-      "title": "GURU: A Hierarchical Neuro-Symbolic Multi-Agent System for Verification-Aware Automation of Mission-Critical Digital Engineering and Operations",
+      "id": "arxiv:2611.09802",
+      "date": "2026-11-06",
+      "title": "When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Allan Grosvenor",
-        "Anton Zemlyansky",
-        "Abdul Wahab",
-        "Kyrylo Bohachov",
-        "Aras Dogan",
-        "Ryland Adams",
-        "Dwyer Deighan"
+        "Tural Mehtiyev",
+        "Biruk Tadesse",
+        "Lawrence Arkoh",
+        "Wesley Assunção"
       ],
-      "institution": "MSBAI",
+      "institution": "North Carolina State University",
       "summary": {
-        "zh": "GURU 系统通过创新的分层神经符号架构，成功解决了任务关键型领域中 AI 安全性与效率之间的矛盾。它不依赖 LLM 做出最终安全决策，而是将其置于由符号规则和验证物理构成的严格约束之下。实验结果表明，GURU 在 CFD 模拟收敛率、软件控制成功率及太空风险评估准确性上均显著优于现有方法，同时具备极高的可扩展性，为核能、航空等高敏感领域的自动化提供了可验证、可信赖的解决方案。",
-        "en": "The GURU system successfully resolves the conflict between AI safety and efficiency in mission-critical domains through its innovative hierarchical neuro-symbolic architecture. By placing LLMs under strict constraints..."
+        "zh": "本文指出，LLM 编码智能体面临的“文档债务”是一个被忽视的重要问题。虽然智能体具备较强的容错和恢复能力，能够克服过时指令带来的障碍并完成任务，但这伴随着显著的隐性成本（如额外的工具调用和资源消耗）。研究强调，仅凭任务成功率不足以评估智能体的真实效能，未来的评估体系必须纳入对智能体行为轨迹和效率成本的考量，同时开发者应及时维护指令文件以避免技术债务的累积。",
+        "en": "- **Background**: LLM-based coding agents (e.g., Claude Code) rely on repository instruction files (like AGENTS.md or CLAUDE.md) for guidance. These files are read in every session but can become stale as code evolves,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.01001v1",
-        "pdf": "https://arxiv.org/pdf/2611.01001v1",
+        "abs": "http://arxiv.org/abs/2611.09802v1",
+        "pdf": "https://arxiv.org/pdf/2611.09802v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2611.01001.md",
-        "summary_en_path": "summary_en/2026-10/2611.01001.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2611.01001.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2611.01001.md"
+        "summary_zh_path": "summary/2026-11/2611.09802.md",
+        "summary_en_path": "summary_en/2026-11/2611.09802.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.09802.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.09802.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,36 +144,35 @@
       }
     },
     {
-      "id": "arxiv:2611.00838",
-      "date": "2026-10-31",
-      "title": "Can Agentic AI Undermine Its Own Assurance Loop? Closed-Loop Dependency Assurance for Cognitive Network Digital Twins",
+      "id": "arxiv:2611.09414",
+      "date": "2026-11-06",
+      "title": "Typed-Centrality Grounding for Agentic GraphRAG: A Symbolic Approach for Agentic Reasoning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ahmed Hussain",
-        "Konstantinos Kalogiannis",
-        "Salahuddin Salahuddin",
-        "Hexu Li",
-        "Thiemo Voigt"
+        "Rosario Napoli",
+        "Antonio Celesti",
+        "Massimo Villari",
+        "Maria Fazio"
       ],
-      "institution": "KTH Royal Institute of Technology, Uppsala University, RISE, SSH Communications Security, Lenovo",
+      "institution": "University of Messina",
       "summary": {
-        "zh": "本文指出了代理式AI在网络自动化中可能破坏自身保证循环的风险，特别是“自我解耦”现象。提出的CLDA框架通过构建循环依赖图（LDG）并结合确定性规则，有效解决了LLM规划器在监控和恢复依赖验证上的盲区。该方法不仅确保了网络变更期间的持续可观测性和可恢复性，还在大规模网络场景中展现了良好的性能，为构建更可靠的认知数字孪生系统提供了关键保障。",
-        "en": "- **Background**: Agentic AI and Network Digital Twins (NDTs) are combined to form Cognitive Digital Twins (CDTs) that translate operational intents into network changes for closed-loop management. - **Why Existing Work..."
+        "zh": "本文提出了一种创新的 Agentic GraphRAG 框架，通过引入“类型中心性”概念解决了现有方法将 KG 同质化处理的问题。通过构建符号层，该方法成功将 KG 的确定性结构知识融入 LLM 的概率性推理中，显著减少了幻觉并提高了回答的上下文一致性，为异构数据的知识表示与推理提供了新的混合范式。",
+        "en": "- **Background**: Knowledge Graphs (KGs) offer deterministic structured knowledge, while Large Language Models (LLMs) provide probabilistic reasoning. GraphRAG systems aim to integrate these by using KGs to provide..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.00838v1",
-        "pdf": "https://arxiv.org/pdf/2611.00838v1",
+        "abs": "http://arxiv.org/abs/2611.09414v1",
+        "pdf": "https://arxiv.org/pdf/2611.09414v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2611.00838.md",
-        "summary_en_path": "summary_en/2026-10/2611.00838.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2611.00838.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2611.00838.md"
+        "summary_zh_path": "summary/2026-11/2611.09414.md",
+        "summary_en_path": "summary_en/2026-11/2611.09414.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.09414.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.09414.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -191,36 +189,33 @@
       }
     },
     {
-      "id": "arxiv:2611.00773",
-      "date": "2026-10-31",
-      "title": "Designing Informative Actions: Action Construction for Long-Horizon Research Agents",
+      "id": "arxiv:2611.09445",
+      "date": "2026-11-06",
+      "title": "Incentive Pathologies in a Live LLM Agent Arena: An Empirical Study of Concentration, Reward-Rule Implementation Discrepancy, and Network Dilution",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Alkut Arxidin",
-        "Shaoning Zeng",
-        "Jianhang Zhou",
-        "Jianping Gou",
-        "Xinzhong Zhu"
+        "Lei Zhenbing",
+        "Lei Chang"
       ],
-      "institution": null,
+      "institution": "University of Chinese Academy of Social Sciences",
       "summary": {
-        "zh": "本文针对LLM科研代理在实验设计阶段的指令歧义问题，提出了一种基于阅读集的评估框架。通过量化指令所允许的设计空间及其在统一成本下的信息价值，该方法显著提升了评估的准确性。实验表明，明确完整的设计规范能大幅提高实验效率，且提出的评估指标与人类专家判断高度相关，为评估科研代理将科学意图转化为可行实验的能力提供了可复现的基础。",
-        "en": "This paper addresses the issue of instruction ambiguity in the experimental design phase of LLM research agents by proposing a reading-set based evaluation framework. By quantifying the design space allowed by an..."
+        "zh": "本文通过对实时LLM智能体竞技场AITRAP的实证审计，揭示了激励设计中存在的严重病理，特别是公告规则与代码实现之间的巨大差异，以及激励变更导致的网络集中度变化和活跃度稀释。研究结果表明，仅依靠模拟或官方公告无法准确预测复杂多智能体系统的行为，必须通过代码级审计和实时数据监控来验证激励机制的有效性。这对未来的激励设计者提出了警示，即需关注实施透明度，并利用公共同行评审作为系统行为的客观记录。",
+        "en": "- **Background**: LLM Agent Arenas have emerged as a paradigm for studying multi-agent behavior at scale using economic incentives (e.g., token rewards, progressive taxation, continuation bonuses) in dynamic ecosystems,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.00773v1",
-        "pdf": "https://arxiv.org/pdf/2611.00773v1",
+        "abs": "http://arxiv.org/abs/2611.09445v1",
+        "pdf": "https://arxiv.org/pdf/2611.09445v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-10/2611.00773.md",
-        "summary_en_path": "summary_en/2026-10/2611.00773.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-10/2611.00773.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-10/2611.00773.md"
+        "summary_zh_path": "summary/2026-11/2611.09445.md",
+        "summary_en_path": "summary_en/2026-11/2611.09445.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.09445.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.09445.md"
       },
       "signals": {
         "priority_keyword": "Agent"

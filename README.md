@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.06_08:10-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.09_08:17-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月06日 08:10</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月09日 08:17</sub></summary>
 <br>
 
-- SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving 
-- From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations? 
-- SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization 
-- ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering 
-- PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers? 
+- Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents 
+- MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory 
+- When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents 
+- Typed-Centrality Grounding for Agentic GraphRAG: A Symbolic Approach for Agentic Reasoning 
+- Incentive Pathologies in a Live LLM Agent Arena: An Empirical Study of Concentration, Reward-Rule Implementation Discrepancy, and Network Dilution 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-06</span> | **Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents**<br><sub>机构: Lingnan University, New York University<br>本文通过严格的控制实验揭示了在LLM社交推理智能体中，语言形式（复杂度和礼貌程度）对最终决策和信任建立的影响微乎其微。研究发现，智能体在博弈中更倾向于直接沟通，且不易被语言风格操纵。这一结果挑战了关于语言风格在复杂交互中具有强大说服力的假设，强调了在评估LLM社会行为时区分内容与形式的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09768v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09768.md)  |
+| <span style='display: inline-block; width: 42px;'>11-06</span> | **MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory**<br><sub>机构: Rensselaer Polytechnic Institute, Microsoft<br>本文介绍了 MemoryDojo，这是首个专门用于评估 LLM 智能体记忆系统中毒风险的基准测试。通过大规模的多会话实验，文章揭示了所有主流记忆架构均存在安全漏洞，且风险程度因架构设计而异。提出的记忆感知优化方法进一步证明了针对性攻击的高效性。该工作为理解和缓解智能体记忆风险提供了重要工具和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09721v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09721.md)  |
+| <span style='display: inline-block; width: 42px;'>11-06</span> | **When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents**<br><sub>机构: North Carolina State University<br>本文指出，LLM 编码智能体面临的“文档债务”是一个被忽视的重要问题。虽然智能体具备较强的容错和恢复能力，能够克服过时指令带来的障碍并完成任务，但这伴随着显著的隐性成本（如额外的工具调用和资源消耗）。研究强调，仅凭任务成功率不足以评估智能体的真实效能，未来的评估体系必须纳入对智能体行为轨迹和效率成本的考量，同时开发者应及时维护指令文件以避免技术债务的累积。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09802v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09802.md)  |
+| <span style='display: inline-block; width: 42px;'>11-06</span> | **Typed-Centrality Grounding for Agentic GraphRAG: A Symbolic Approach for Agentic Reasoning**<br><sub>机构: University of Messina<br>本文提出了一种创新的 Agentic GraphRAG 框架，通过引入“类型中心性”概念解决了现有方法将 KG 同质化处理的问题。通过构建符号层，该方法成功将 KG 的确定性结构知识融入 LLM 的概率性推理中，显著减少了幻觉并提高了回答的上下文一致性，为异构数据的知识表示与推理提供了新的混合范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09414v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09414.md)  |
+| <span style='display: inline-block; width: 42px;'>11-06</span> | **Incentive Pathologies in a Live LLM Agent Arena: An Empirical Study of Concentration, Reward-Rule Implementation Discrepancy, and Network Dilution**<br><sub>机构: University of Chinese Academy of Social Sciences<br>本文通过对实时LLM智能体竞技场AITRAP的实证审计，揭示了激励设计中存在的严重病理，特别是公告规则与代码实现之间的巨大差异，以及激励变更导致的网络集中度变化和活跃度稀释。研究结果表明，仅依靠模拟或官方公告无法准确预测复杂多智能体系统的行为，必须通过代码级审计和实时数据监控来验证激励机制的有效性。这对未来的激励设计者提出了警示，即需关注实施透明度，并利用公共同行评审作为系统行为的客观记录。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09445v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09445.md)  |
 | <span style='display: inline-block; width: 42px;'>11-05</span> | **SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving**<br><sub>机构: University of Maryland Baltimore County<br>SMART 框架通过多智能体协作和基于角色的提示策略，成功解决了复杂科学主张验证中因上下文有限和隐式知识缺失导致的推理难题。其核心创新在于将实体状态转化为可验证的前提知识，并通过对比性推理深化理解。实验表明，这种方法不仅显著提升了验证准确率，还证明了 grounding 前提知识对于提高 LLM 推理可靠性的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08196v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08196.md)  |
 | <span style='display: inline-block; width: 42px;'>11-05</span> | **From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?**<br><sub>机构: Beijing Normal University, Tencent AI Lab<br>本文介绍了 HaluCheck，一个旨在系统评估和提升LLM生成后幻觉检测能力的大规模双语基准。通过涵盖文本事实性幻觉和智能体忠实度幻觉的多层级标注，研究揭示了当前LLM在细粒度定位、纠正及智能体场景下的主要缺陷。尽管引入推理、搜索和微调技术有所助益，但可靠的多维度幻觉检测仍是未解难题，HaluCheck 为后续研究和诊断LLM可靠性提供了坚实基础。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08231v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08231.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/xMiles/HaluCheck)</div> |
 | <span style='display: inline-block; width: 42px;'>11-05</span> | **SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization**<br><sub>机构: Brown University<br>SwarmEvolve通过让智能体群在潜空间中通信和推理，克服了传统LLM引导进化搜索中因文本生成带来的速度慢、成本高的问题。该方法通过KV缓存共享和基于隐藏状态的新颖性过滤，实现了高效的思想交叉和多样性维持。实验证明，这是一种针对科学问题程序搜索的快速、低成本且高性能的解决方案，甚至能用较小模型超越使用更大模型的现有最先进方法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.08483v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.08483.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Qile-J/SwarmEvolve)</div> |
