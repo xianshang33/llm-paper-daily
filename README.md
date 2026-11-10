@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.09_08:17-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.10_08:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月09日 08:17</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月10日 08:36</sub></summary>
 <br>
 
-- Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents 
-- MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory 
-- When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents 
-- Typed-Centrality Grounding for Agentic GraphRAG: A Symbolic Approach for Agentic Reasoning 
-- Incentive Pathologies in a Live LLM Agent Arena: An Empirical Study of Concentration, Reward-Rule Implementation Discrepancy, and Network Dilution 
+- System Optimizations for Cost-Efficient Agent Harnesses 
+- Safe Reinforcement Learning for Multi-Turn Clinical Agents: When Dense Rewards Beat Outcome Rewards 
+- CARE-PO: Controllable Tool-Call Efficiency for LLM Agents 
+- Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks 
+- Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-09</span> | **System Optimizations for Cost-Efficient Agent Harnesses**<br><sub>机构: University of California, Berkeley; Northwestern University; University of Illinois at Urbana-Champaign<br>本文指出了 AI Agent 系统中被忽视的 Harness 层面成本优化机会。通过分析发现，上下文读取和低效的工具调用是主要成本驱动因素。为此，作者提出了 Agency，一个用于 Harness 介入的系统平台，能够在不改变模型且不牺牲准确率的情况下，通过系统级优化显著降低 Agent 的执行成本（最高达 35%）。这项工作为构建更具成本效益的 AI Agent 系统提供了新的系统视角和实用工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12122v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12122.md)  |
+| <span style='display: inline-block; width: 42px;'>11-09</span> | **Safe Reinforcement Learning for Multi-Turn Clinical Agents: When Dense Rewards Beat Outcome Rewards**<br><sub>本文证明了在安全关键的临床多轮 Agent 训练中，仅靠可验证的最终结果是不足的。奖励设计必须充分考虑得出答案的过程，评估体系需区分自适应的信息收集与利用奖励漏洞的捷径。研究确定了奖励几何结构、初始化覆盖率和任务余量是决定 RL 在序列推理中起积极作用还是消极作用的关键相互作用因素。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12728v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12728.md)  |
+| <span style='display: inline-block; width: 42px;'>11-09</span> | **CARE-PO: Controllable Tool-Call Efficiency for LLM Agents**<br><sub>机构: Shenzhen University; The Chinese University of Hong Kong, Shenzhen; Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ); China Southern Power Grid Company Limited<br>CARE-PO 通过引入固定难度的参考预算和提示词中的努力标签，有效解决了现有 RL 方法在优化工具调用效率时的策略崩溃和操作点单一问题。该方法不仅在多个模型尺寸上实现了成功率与效率的双重提升，还提供了灵活的可控性，使开发者能够根据实际需求在单次训练权重的基础上调整 Agent 的行为模式，显著降低了 LLM Agent 的运行成本。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12125v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12125.md)  |
+| <span style='display: inline-block; width: 42px;'>11-09</span> | **Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks**<br><sub>机构: George Mason University<br>本文针对 LLM 驱动的网络攻击，提出了一种被动式的指纹识别框架“Shibboleth Traps”。通过巧妙设计蜜罐服务的交互逻辑，迫使攻击 Agent 在追求目标资源的过程中暴露其底层 LLM 的声明特征和 Harness 的行为特征。实验表明，该方法能在不依赖内部日志或直接查询接口的情况下，高精度地识别出攻击者使用的具体模型版本和执行框架，即使面对试图隐藏身份的 Agent 也依然有效，为网络安全防御中的攻击归因提供了新的技术手段。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12386v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12386.md)  |
+| <span style='display: inline-block; width: 42px;'>11-09</span> | **Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation**<br><sub>本文指出自主AI代理加速了影子IT的增长，并证明了仅靠行为分析无法有效检测未授权的AI代理。作者提出的 Agent Detector 通过结合远程服务身份识别和历史上下文关联，成功区分了AI代理与普通程序，在控制实验中实现了零误报和高检出率。尽管存在时间窗口和间歇性检测的限制，但该研究为端点上的影子AI检测提供了可行的新方向，强调了多源证据关联的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12377v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12377.md)  |
 | <span style='display: inline-block; width: 42px;'>11-06</span> | **Language as Trait, Politeness as Strategy: Controlled Tests of Linguistic Effects in LLM Social-Deduction Agents**<br><sub>机构: Lingnan University, New York University<br>本文通过严格的控制实验揭示了在LLM社交推理智能体中，语言形式（复杂度和礼貌程度）对最终决策和信任建立的影响微乎其微。研究发现，智能体在博弈中更倾向于直接沟通，且不易被语言风格操纵。这一结果挑战了关于语言风格在复杂交互中具有强大说服力的假设，强调了在评估LLM社会行为时区分内容与形式的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09768v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09768.md)  |
 | <span style='display: inline-block; width: 42px;'>11-06</span> | **MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory**<br><sub>机构: Rensselaer Polytechnic Institute, Microsoft<br>本文介绍了 MemoryDojo，这是首个专门用于评估 LLM 智能体记忆系统中毒风险的基准测试。通过大规模的多会话实验，文章揭示了所有主流记忆架构均存在安全漏洞，且风险程度因架构设计而异。提出的记忆感知优化方法进一步证明了针对性攻击的高效性。该工作为理解和缓解智能体记忆风险提供了重要工具和研究方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09721v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09721.md)  |
 | <span style='display: inline-block; width: 42px;'>11-06</span> | **When Instruction Files Go Stale: Documentation Debt and Hidden Cost in Coding Agents**<br><sub>机构: North Carolina State University<br>本文指出，LLM 编码智能体面临的“文档债务”是一个被忽视的重要问题。虽然智能体具备较强的容错和恢复能力，能够克服过时指令带来的障碍并完成任务，但这伴随着显著的隐性成本（如额外的工具调用和资源消耗）。研究强调，仅凭任务成功率不足以评估智能体的真实效能，未来的评估体系必须纳入对智能体行为轨迹和效率成本的考量，同时开发者应及时维护指令文件以避免技术债务的累积。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.09802v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.09802.md)  |
