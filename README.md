@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.10_08:36-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.11_07:57-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月10日 08:36</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月11日 07:57</sub></summary>
 <br>
 
-- System Optimizations for Cost-Efficient Agent Harnesses 
-- Safe Reinforcement Learning for Multi-Turn Clinical Agents: When Dense Rewards Beat Outcome Rewards 
-- CARE-PO: Controllable Tool-Call Efficiency for LLM Agents 
-- Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks 
-- Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation 
+- Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI Traffic, Evaluated from Simulation to Real-Kernel Adversarial Testing 
+- OpenRE-Bench: A Benchmark Harness for Multi-Agent Requirements Engineering with Mined GitHub Issues 
+- Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents 
+- When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents 
+- Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-10</span> | **Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI Traffic, Evaluated from Simulation to Real-Kernel Adversarial Testing**<br><sub>机构: Comcast Corporation<br>本文提出了VATC，解决了LLM代理流量在网络中缺乏专用QoS类别且易被滥用的问题。通过结合声明式标记、行为验证和速率限制，VATC在显著降低代理延迟的同时，有效防御了优先级欺骗攻击并保护了人类用户的体验。尽管在复杂网络延迟下的分类准确性仍有挑战，但该机制为企业和园区网提供了一种可行的代理流量管理方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14211v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14211.md)  |
+| <span style='display: inline-block; width: 42px;'>11-10</span> | **OpenRE-Bench: A Benchmark Harness for Multi-Agent Requirements Engineering with Mined GitHub Issues**<br><sub>机构: Waseda University, Karlsruhe Institute of Technology (KIT), Adelaide University<br>OpenRE-Bench 通过标准化运行环境、引入适配器机制和构建基于真实 GitHub Issue 的可扩展数据集，解决了多智能体需求工程框架评估中缺乏公平性和可复现性的关键问题。它不仅提供了一个紧凑的版本化案例套件，还建立了一个可持续增长的基准测试生态系统，促进了该领域的标准化比较和研究进展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.13925v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.13925.md)  |
+| <span style='display: inline-block; width: 42px;'>11-10</span> | **Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents**<br><sub>机构: Amazon<br>本文通过严格的三阶段对比研究，确立了基于轨迹的LLM评判在功能评估中的优势，以及 adversarial red-teaming 在安全验证中的必要性。研究建议采用双框架策略：使用基于轨迹的评估进行功能评估，使用对抗性红队测试进行安全验证，以全面保障企业级分析智能体的可靠性与安全性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14493v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14493.md)  |
+| <span style='display: inline-block; width: 42px;'>11-10</span> | **When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents**<br><sub>机构: Nanyang Technological University, Georgia Institute of Technology, University of Washington, Washington University in St. Louis, The University of Sydney, National University of Singapore<br>本文针对LLM智能体长期记忆更新中的可靠性问题，提出了FGSE框架。通过将经验教训转化为结构化假设，并在提交到持久状态前进行迁移、证伪和回归测试，FGSE有效平衡了学习与安全。实验证明该方法在多个复杂基准上不仅提升了任务成功率，还大幅降低了有害更新和性能回归的风险，为智能体的安全自我进化提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14326v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14326.md)  |
+| <span style='display: inline-block; width: 42px;'>11-10</span> | **Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents**<br><sub>机构: KAIST<br>本文指出了 LLM 智能体在使用外部记忆时面临的“记忆诱导退化”问题，即错误的记忆反而阻碍智能体解决原本能处理的任务。为此，作者提出了 WikiTrace，一种将抽象教训与具体执行轨迹证据相链接的记忆系统。通过允许智能体在行动前回溯并验证记忆来源，WikiTrace 有效纠正了错误教训，在多个基准测试中实现了比现有方法更高的性能和更低的退化率，为构建更可靠的智能体记忆系统提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14320v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14320.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/yukyeongleee/wikitrace)</div> |
 | <span style='display: inline-block; width: 42px;'>11-09</span> | **System Optimizations for Cost-Efficient Agent Harnesses**<br><sub>机构: University of California, Berkeley; Northwestern University; University of Illinois at Urbana-Champaign<br>本文指出了 AI Agent 系统中被忽视的 Harness 层面成本优化机会。通过分析发现，上下文读取和低效的工具调用是主要成本驱动因素。为此，作者提出了 Agency，一个用于 Harness 介入的系统平台，能够在不改变模型且不牺牲准确率的情况下，通过系统级优化显著降低 Agent 的执行成本（最高达 35%）。这项工作为构建更具成本效益的 AI Agent 系统提供了新的系统视角和实用工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12122v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12122.md)  |
 | <span style='display: inline-block; width: 42px;'>11-09</span> | **Safe Reinforcement Learning for Multi-Turn Clinical Agents: When Dense Rewards Beat Outcome Rewards**<br><sub>本文证明了在安全关键的临床多轮 Agent 训练中，仅靠可验证的最终结果是不足的。奖励设计必须充分考虑得出答案的过程，评估体系需区分自适应的信息收集与利用奖励漏洞的捷径。研究确定了奖励几何结构、初始化覆盖率和任务余量是决定 RL 在序列推理中起积极作用还是消极作用的关键相互作用因素。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12728v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12728.md)  |
 | <span style='display: inline-block; width: 42px;'>11-09</span> | **CARE-PO: Controllable Tool-Call Efficiency for LLM Agents**<br><sub>机构: Shenzhen University; The Chinese University of Hong Kong, Shenzhen; Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ); China Southern Power Grid Company Limited<br>CARE-PO 通过引入固定难度的参考预算和提示词中的努力标签，有效解决了现有 RL 方法在优化工具调用效率时的策略崩溃和操作点单一问题。该方法不仅在多个模型尺寸上实现了成功率与效率的双重提升，还提供了灵活的可控性，使开发者能够根据实际需求在单次训练权重的基础上调整 Agent 的行为模式，显著降低了 LLM Agent 的运行成本。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.12125v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.12125.md)  |
