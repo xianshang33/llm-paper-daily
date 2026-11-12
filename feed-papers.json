@@ -1,42 +1,43 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-12T08:35:28.489371+00:00",
-  "run_date": "2026-11-08",
+  "generated_at": "2026-11-12T13:57:11.384322+00:00",
+  "run_date": "2026-11-07",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.11541",
-      "date": "2026-11-08",
-      "title": "Safeguarding Agentic AI in Radiology Workflows: A Multimodel Evaluation of Rule-based and Large Language Model-based Verification",
+      "id": "arxiv:2611.10884",
+      "date": "2026-11-07",
+      "title": "Keeping LLM Agents on Procedure: Executable Finite-State Control for Long-Horizon Instruction Fidelity",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Semil Eminovic",
-        "Robin Schmidt",
-        "Bogdan Levita",
-        "Maximilian Lindholz",
-        "Tobias Penzkofer",
-        "Jawed Nawabi"
+        "Yutao Sun",
+        "Haokun Li",
+        "Mingshuai Chen",
+        "Guanyan Li",
+        "Zhongyi Wang",
+        "Shengchao Qin",
+        "Jianwei Yin"
       ],
-      "institution": "Charité – Universitätsmedizin Berlin, Humboldt-Universität zu Berlin, Freie Universität Berlin, Berlin Institute of Health",
+      "institution": "Zhejiang University, China; University of Oxford, UK; Xidian University, China",
       "summary": {
-        "zh": "本文通过大规模模拟实验评估了放射学工作流中智能体AI的安全性。研究表明，虽然分层安全防护（特别是结合本地LLM校验器）能显著减少高严重性违规事件，但并不能完全防止错误。特别是在面对误导性信息时，智能体的错误主要源于对信息的误判而非未能获取信息。这提示未来的安全机制需要更侧重于增强智能体对信息来源可信度的判断能力，而不仅仅是依赖外部的规则阻断，同时需平衡安全性与操作效率，减少不必要的误拦截。",
-        "en": "- **Background**: Large Language Models (LLMs) are evolving from passive Q&A systems into autonomous agents capable of planning, tool use, and executing actions within clinical systems. In high-stakes fields like..."
+        "zh": "本文揭示了 LLM 代理在长程程序性任务中固有的指令偏离问题，并指出传统的提示优化策略无法根本解决此问题。作者提出了一种可执行的有限状态机（FSM）框架，通过将工作流状态外置并在关键节点强制执行，实现了高度的长程指令忠实度。实验证明，该方法不仅显著提升了任务完成率，还使得低成本的小模型能够超越高成本大模型的表现，强调了“强执行控制”在构建可靠 AI 代理系统中的重要性，为降低自动化成本提供了新路径。",
+        "en": "This paper addresses the inherent instruction drift in LLM agents during long-horizon procedural tasks, demonstrating that traditional prompt optimization is insufficient. The authors propose an Executable FSM framework..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.11541v1",
-        "pdf": "https://arxiv.org/pdf/2611.11541v1",
+        "abs": "http://arxiv.org/abs/2611.10884v1",
+        "pdf": "https://arxiv.org/pdf/2611.10884v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.11541.md",
-        "summary_en_path": "summary_en/2026-11/2611.11541.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11541.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11541.md"
+        "summary_zh_path": "summary/2026-11/2611.10884.md",
+        "summary_en_path": "summary_en/2026-11/2611.10884.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.10884.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.10884.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -53,35 +54,41 @@
       }
     },
     {
-      "id": "arxiv:2611.11657",
-      "date": "2026-11-08",
-      "title": "Inside the Trading Loop: Markets, Models, and Moves with LLM Agents",
+      "id": "arxiv:2611.12966",
+      "date": "2026-11-07",
+      "title": "BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Renee Jia",
-        "Di Mu",
-        "Yao Yu",
-        "Tianrui Liu"
+        "Dong Bo",
+        "Fanjin Zhang",
+        "Ke Cheng",
+        "Xinxin Zhao",
+        "Xiaowei Su",
+        "Yang Wang",
+        "Jinghang Xu",
+        "Cuiping Li",
+        "Hong Chen",
+        "Jing Zhang"
       ],
-      "institution": "Cornell University, Carnegie Mellon University, Shanghai Jiao Tong University, University of California San Diego",
+      "institution": "lable at",
       "summary": {
-        "zh": "本文提出并验证了一种将LLM语义分析与传统动量策略及规则执行相结合的混合交易架构。通过明确定义分析报告到资本分配的映射规则，系统在特定测试窗口内显著跑赢了大盘指数，尽管承担了更高的波动风险。研究强调了在LLM交易系统中，明确的集成策略（如现金管理、报告结构约束）对于稳定性能和可解释性的关键作用，为后续研究提供了关于LLM在金融决策闭环中实际价值的实证参考。",
-        "en": "- **Background**: Building an automated portfolio requires a policy that connects market information to positions and orders, considering stock selection, cash reserves, and rebalancing jointly. While Large Language..."
+        "zh": "BuySideFlow 填补了金融 LLM 代理评估中时间点有效性验证的空白。通过引入基于真实买方实践的复杂任务和严格的时间审计机制，文章揭示了当前 LLM 代理在历史投资研究模拟中普遍存在的时间穿越问题。该基准强调，可靠的金融自动化不仅需要准确的计算结果，更需要严格的历史数据隔离机制，为未来开发具备时间感知能力的金融代理提供了重要评估标准。",
+        "en": "BuySideFlow fills the gap in validating point-in-time effectiveness for financial LLM agents. By introducing complex tasks based on real buy-side practices and strict temporal audit mechanisms, the paper reveals..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.11657v1",
-        "pdf": "https://arxiv.org/pdf/2611.11657v1",
+        "abs": "http://arxiv.org/abs/2611.12966v1",
+        "pdf": "https://arxiv.org/pdf/2611.12966v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.11657.md",
-        "summary_en_path": "summary_en/2026-11/2611.11657.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11657.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11657.md"
+        "summary_zh_path": "summary/2026-11/2611.12966.md",
+        "summary_en_path": "summary_en/2026-11/2611.12966.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.12966.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.12966.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,34 +105,37 @@
       }
     },
     {
-      "id": "arxiv:2611.11581",
-      "date": "2026-11-08",
-      "title": "Same Error, Different Recovery: How Delivery Changes LLM Agent Behavior",
+      "id": "arxiv:2611.11023",
+      "date": "2026-11-07",
+      "title": "Where Should Models Run? A Collaborative Inference Framework for Embodied Intelligence in 6G",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Sunghyeun Woo",
-        "Javier Conde",
-        "Pedro Reviriego"
+        "Wanlu Sun",
+        "Zhenhui Yuan",
+        "Xiang Ji",
+        "Yi Han",
+        "Qing Li",
+        "Gan Zheng"
       ],
-      "institution": "Universidad Politécnica de Madrid",
+      "institution": "University of Warwick",
       "summary": {
-        "zh": "本文揭示了“错误交付方式”是影响 LLM Agent 工具调用恢复行为的关键独立因素。通过系统性地改变错误信息在对话中的呈现形式，作者提出了一种轻量级的推理引擎恢复层。实验表明，该方法在特定基准（如 ToolMaze）上能显著提升中小规模及大规模模型的错误处理成功率，尤其是在避免因上下文缺失导致的过早停止方面表现优异。研究强调，错误恢复不应仅依赖引擎-exclusive 解决方案或通用重试策略，而应结合具体的交付形式进行优化。",
-        "en": "This paper reveals that \"error delivery method\" is a key independent factor influencing error recovery behavior in LLM agents. By systematically varying how error information is presented in the dialogue, the authors..."
+        "zh": "本文综述了具身智能协同推理的现状，并提出了一种以边缘为中心的协同推理框架，以应对6G时代具身智能面临的资源受限和网络动态性问题。通过在真实硬件和网络环境下的广泛实验，验证了动态模型分割的有效性，并为ResNet、Qwen2.5-VL和OpenVLA等主流模型提供了具体的部署指导。文章最后展望了6G赋能的具身智能协同推理的未来研究方向，强调了网络与AI深度融合的重要性。",
+        "en": "- **Background**: Embodied intelligence systems require fast and reliable inference for real-time perception, reasoning, and control. Advances in Large Language Models (LLMs) and Vision-Language-Action (VLA) models have..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.11581v1",
-        "pdf": "https://arxiv.org/pdf/2611.11581v1",
+        "abs": "http://arxiv.org/abs/2611.11023v1",
+        "pdf": "https://arxiv.org/pdf/2611.11023v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.11581.md",
-        "summary_en_path": "summary_en/2026-11/2611.11581.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11581.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11581.md"
+        "summary_zh_path": "summary/2026-11/2611.11023.md",
+        "summary_en_path": "summary_en/2026-11/2611.11023.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11023.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11023.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -142,32 +152,34 @@
       }
     },
     {
-      "id": "arxiv:2611.11506",
-      "date": "2026-11-08",
-      "title": "On the Relative Security of Prompt Injection: Mechanised Definitions, Defences and Verdicts for LLM Agents",
+      "id": "arxiv:2611.11009",
+      "date": "2026-11-07",
+      "title": "PIA: Agentic Physics-Informed Runtime Anomaly Detection",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Brijesh Dongol"
+        "Ali Mohammadi Ruzbahani",
+        "Abbas Yazdinejad",
+        "Hadis Karimipour"
       ],
-      "institution": "University of Surrey",
+      "institution": "University of Calgary; University of Regina",
       "summary": {
-        "zh": "本文针对 LLM 代理的提示注入安全问题，提出了基于“相对安全性”的形式化框架 PlanTERS。通过引入参考代理对比机制，解决了传统绝对安全标准不适用于 LLM 代理的难题。利用 Isabelle/HOL 进行的机械化证明表明，通过在读取不可信内容时实施严格的工具权限撤销（围栏机制），可以在理论上保证代理的安全性。这项工作为设计和验证安全的 LLM 代理提供了坚实的理论基础和形式化验证方法。",
-        "en": "This paper addresses prompt injection in LLM agents by proposing PlanTERS, a framework based on \"Relative Security.\" By introducing a reference agent comparison, it overcomes the impracticality of absolute security..."
+        "zh": "PIA通过结合LLM的物理知识推理能力与数据驱动的验证机制，成功解决了CPS异常检测中黑盒模型不可解释、漏报隐蔽攻击以及物理模型构建成本高的问题。该方法实现了自动化、可解释且高效的运行时异常检测，显著优于现有的统计和深度学习基线，为工业控制系统的安全监控提供了新的范式。",
+        "en": "- **Background**: Runtime anomaly detectors for Cyber-Physical Systems (CPS) are typically either black-box models learned from normal data or hand-derived from physical models. The former misses stealthy attacks that..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.11506v1",
-        "pdf": "https://arxiv.org/pdf/2611.11506v1",
+        "abs": "http://arxiv.org/abs/2611.11009v1",
+        "pdf": "https://arxiv.org/pdf/2611.11009v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.11506.md",
-        "summary_en_path": "summary_en/2026-11/2611.11506.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11506.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11506.md"
+        "summary_zh_path": "summary/2026-11/2611.11009.md",
+        "summary_en_path": "summary_en/2026-11/2611.11009.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11009.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11009.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -184,33 +196,37 @@
       }
     },
     {
-      "id": "arxiv:2611.11216",
-      "date": "2026-11-08",
-      "title": "Replay Fidelity in LLM Agent Evaluation: Randomness, Hidden State, and Test Oracles in AppWorld",
+      "id": "arxiv:2611.10629",
+      "date": "2026-11-07",
+      "title": "DFT-Agent Bench: Scaffold Effects and Execution Provenance in Autonomous DFT",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "You Liu",
-        "Quanchao Lu"
+        "Shijie Liu",
+        "Jin Yang",
+        "Weilin Wan",
+        "Jingtao Han",
+        "Jia LI",
+        "Tianqi Deng"
       ],
-      "institution": null,
+      "institution": "Shanghai Jiao Tong University, Zhejiang University, Fudan University",
       "summary": {
-        "zh": "本文通过对 AppWorld 中失败案例的细致审计，揭示了 LLM 智能体评估中重放保真度的复杂性。研究表明，控制随机数和深入检查底层物质化状态（如数据库行和凭证）对于准确评估重放成功与否至关重要。文章贡献在于提供了一个经验性的边界特征化，明确了在何种条件下重放是可信的，以及隐藏状态如何影响评估结果，为未来的智能体调试和反事实评估提供了重要的基础洞察。",
-        "en": "- **Background**: Reproducibility in Large Language Model (LLM) agent evaluation hinges on \"replay fidelity\"—determining which parts of an execution trace are reconstructed, controlled, and compared. This is critical..."
+        "zh": "- **背景**：大型语言模型（LLM）正日益被部署为自主代理，用于执行从头算材料模拟（如密度泛函理论 DFT）。现有的系统通常将模型包裹在复杂的脚手架中（包括结构化 API、检索领域知识、验证循环等），并仅通过最终报告的评分来评估性能。 -...",
+        "en": "- **Background**: Large Language Models (LLMs) are increasingly deployed as autonomous agents for first-principles materials simulations, such as Density Functional Theory (DFT). Existing systems typically wrap models..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.11216v1",
-        "pdf": "https://arxiv.org/pdf/2611.11216v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.10629v1",
+        "pdf": "https://arxiv.org/pdf/2611.10629v1",
+        "github": "https://anonymous.4open.science/r/231e31re91287h/README.md"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.11216.md",
-        "summary_en_path": "summary_en/2026-11/2611.11216.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.11216.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.11216.md"
+        "summary_zh_path": "summary/2026-11/2611.10629.md",
+        "summary_en_path": "summary_en/2026-11/2611.10629.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.10629.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.10629.md"
       },
       "signals": {
         "priority_keyword": "Agent"
