@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.11_07:57-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.13_08:20-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月11日 07:57</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月13日 08:20</sub></summary>
 <br>
 
-- Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI Traffic, Evaluated from Simulation to Real-Kernel Adversarial Testing 
-- OpenRE-Bench: A Benchmark Harness for Multi-Agent Requirements Engineering with Mined GitHub Issues 
-- Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents 
-- When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents 
-- Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents 
+- Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon 
+- Scalable Conversational Assessment: Chat-Based Exams with a Two-Agent LLM Pipeline 
+- Discovering Effective Agent Memory Designs through Program Evolution 
+- Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination 
+- CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-12</span> | **Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon**<br><sub>机构: Shanghai Jiaotong University, Beijing Zhongguancun Academy, StepFun<br>Metal Sandbox通过细粒度的命令级调度和跨节点负载均衡，有效解决了Apple Silicon环境下GPU编码Agent的资源利用率低和等待延迟高的问题。它不仅提升了硬件资源的利用效率，还加速了模型训练数据的收集过程，为端侧AI内核的自动化生成与优化提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17294v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17294.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/WangHaoZhe/metal-sandbox)</div> |
+| <span style='display: inline-block; width: 42px;'>11-12</span> | **Scalable Conversational Assessment: Chat-Based Exams with a Two-Agent LLM Pipeline**<br><sub>机构: University of Illinois Urbana-Champaign<br>本文提出了一种基于双Agent LLM管道的可扩展对话式评估系统，旨在结合口试的深度交互优势与自动化系统的可扩展性。通过分离‘面试’与‘评估’职能，有效解决了答案泄露问题，并在模拟对抗环境和真实课堂部署中验证了其可行性。研究指出未来需进一步优化追问生成机制及确保评分归因的准确性，为大规模个性化口语/论证能力评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17220v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17220.md)  |
+| <span style='display: inline-block; width: 42px;'>11-12</span> | **Discovering Effective Agent Memory Designs through Program Evolution**<br><sub>机构: University of Minnesota<br>本文介绍了 MAPE 框架，通过从极简种子开始的整程序进化，自动发现高效的代理记忆设计。研究不仅在准确率和成本效率上显著优于人工设计的基线，还通过实证分析揭示了保留原始对话证据和基于意图组合证据的重要性。此外，研究证明了优化目标会直接影响计算资源的分配，为未来的代理记忆系统设计提供了重要的经验教训和指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17068.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ash-ding/MAPE)</div> |
+| <span style='display: inline-block; width: 42px;'>11-12</span> | **Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination**<br><sub>机构: Ant Group<br>本文针对 LLM Agent 工作流中批量执行效率低下的问题，提出了一套推理与环境协同优化的解决方案。通过工作负载感知的资源建模、轨迹感知路由以及链推进动作调度（CAAS），有效解决了混合模型资源分配和环境受限下的调度难题。实验证明该方法能大幅降低批次完成时间，已成功应用于实际模型开发流程，显著提升了研发效率。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.16661v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.16661.md)  |
+| <span style='display: inline-block; width: 42px;'>11-12</span> | **CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts**<br><sub>机构: University of Tokyo<br>CapLite 证明了在不依赖小型语言模型生成安全工件的情况下，依然可以实现对提示注入攻击的有效防御。通过从工具模式直接推导策略并严格执行基于用户请求参数的写入完整性检查，CapLite 不仅在安全性上达到了零攻击成功率，还在资源效率和任务效用上超越了现有的最先进方法。这项工作为在资源受限环境下部署安全的 LLM 智能体提供了新的方向，强调了将安全逻辑从模型生成转移到结构化验证的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17115v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17115.md)  |
 | <span style='display: inline-block; width: 42px;'>11-10</span> | **Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI Traffic, Evaluated from Simulation to Real-Kernel Adversarial Testing**<br><sub>机构: Comcast Corporation<br>本文提出了VATC，解决了LLM代理流量在网络中缺乏专用QoS类别且易被滥用的问题。通过结合声明式标记、行为验证和速率限制，VATC在显著降低代理延迟的同时，有效防御了优先级欺骗攻击并保护了人类用户的体验。尽管在复杂网络延迟下的分类准确性仍有挑战，但该机制为企业和园区网提供了一种可行的代理流量管理方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14211v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14211.md)  |
 | <span style='display: inline-block; width: 42px;'>11-10</span> | **OpenRE-Bench: A Benchmark Harness for Multi-Agent Requirements Engineering with Mined GitHub Issues**<br><sub>机构: Waseda University, Karlsruhe Institute of Technology (KIT), Adelaide University<br>OpenRE-Bench 通过标准化运行环境、引入适配器机制和构建基于真实 GitHub Issue 的可扩展数据集，解决了多智能体需求工程框架评估中缺乏公平性和可复现性的关键问题。它不仅提供了一个紧凑的版本化案例套件，还建立了一个可持续增长的基准测试生态系统，促进了该领域的标准化比较和研究进展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.13925v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.13925.md)  |
 | <span style='display: inline-block; width: 42px;'>11-10</span> | **Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents**<br><sub>机构: Amazon<br>本文通过严格的三阶段对比研究，确立了基于轨迹的LLM评判在功能评估中的优势，以及 adversarial red-teaming 在安全验证中的必要性。研究建议采用双框架策略：使用基于轨迹的评估进行功能评估，使用对抗性红队测试进行安全验证，以全面保障企业级分析智能体的可靠性与安全性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.14493v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.14493.md)  |
