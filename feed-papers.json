@@ -1,87 +1,44 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-13T08:20:37.016317+00:00",
-  "run_date": "2026-11-12",
+  "generated_at": "2026-11-14T07:46:40.127006+00:00",
+  "run_date": "2026-11-11",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.17294",
-      "date": "2026-11-12",
-      "title": "Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon",
+      "id": "arxiv:2611.16028",
+      "date": "2026-11-11",
+      "title": "Scaling public input on AI policy with pluralistic agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Haozhe Wang",
-        "Lina Chen",
-        "Fanqi Wan",
-        "Qi Han",
-        "Yinmin Zhang",
-        "Zheng Ge",
-        "Daxin Jiang",
-        "Junchi Yan"
+        "Jacy Reese Anthis",
+        "Ken Burke",
+        "David Madras",
+        "Crystal Qian",
+        "Meredith Ringel Morris",
+        "Logan Cross",
+        "Caroline Pantofaru",
+        "Utsav Prabhu"
       ],
-      "institution": "Shanghai Jiaotong University, Beijing Zhongguancun Academy, StepFun",
+      "institution": "University of Chicago, Google DeepMind",
       "summary": {
-        "zh": "Metal Sandbox通过细粒度的命令级调度和跨节点负载均衡，有效解决了Apple Silicon环境下GPU编码Agent的资源利用率低和等待延迟高的问题。它不仅提升了硬件资源的利用效率，还加速了模型训练数据的收集过程，为端侧AI内核的自动化生成与优化提供了高效的基础设施支持。",
-        "en": "- **Background**: With the rise of Apple Silicon (M-series chips) for on-device inference, efficiently generating and evaluating kernels using local accelerators is critical. Language model Agents are employed to..."
+        "zh": "本文提出并验证了“多元智能体”作为一种扩展 AI 政策制定中公众输入的新范式。通过让 AI 代理代表多样化的人类角色进行审议，该方法有效解决了直接参与规模受限和专业知识门槛高的问题。实验结果显示，该方法在保持较高公平性和满意度的同时，能够可靠地反映多元价值观。作者建议谨慎探索此方法，将其定位为人类输入的放大器，为大规模 AI 安全政策开发提供了有前景的工具。",
+        "en": "- **Background**: AI is being deployed across diverse domains and cultures, requiring safe development that accounts for varied perspectives. Traditional democratic participation faces challenges such as low engagement,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.17294v1",
-        "pdf": "https://arxiv.org/pdf/2611.17294v1",
-        "github": "https://github.com/WangHaoZhe/metal-sandbox"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17294.md",
-        "summary_en_path": "summary_en/2026-11/2611.17294.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17294.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17294.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.17220",
-      "date": "2026-11-12",
-      "title": "Scalable Conversational Assessment: Chat-Based Exams with a Two-Agent LLM Pipeline",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Geoffrey Challen",
-        "Craig Zilles"
-      ],
-      "institution": "University of Illinois Urbana-Champaign",
-      "summary": {
-        "zh": "本文提出了一种基于双Agent LLM管道的可扩展对话式评估系统，旨在结合口试的深度交互优势与自动化系统的可扩展性。通过分离‘面试’与‘评估’职能，有效解决了答案泄露问题，并在模拟对抗环境和真实课堂部署中验证了其可行性。研究指出未来需进一步优化追问生成机制及确保评分归因的准确性，为大规模个性化口语/论证能力评估提供了新范式。",
-        "en": "- **Background**: Oral exams are effective for assessing students' reasoning and clarifying ambiguities through follow-up questions, and they are resistant to LLM-based cheating. However, traditional oral exams suffer..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.17220v1",
-        "pdf": "https://arxiv.org/pdf/2611.17220v1",
+        "abs": "http://arxiv.org/abs/2611.16028v1",
+        "pdf": "https://arxiv.org/pdf/2611.16028v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17220.md",
-        "summary_en_path": "summary_en/2026-11/2611.17220.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17220.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17220.md"
+        "summary_zh_path": "summary/2026-11/2611.16028.md",
+        "summary_en_path": "summary_en/2026-11/2611.16028.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.16028.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.16028.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,89 +55,35 @@
       }
     },
     {
-      "id": "arxiv:2611.17068",
-      "date": "2026-11-12",
-      "title": "Discovering Effective Agent Memory Designs through Program Evolution",
+      "id": "arxiv:2611.15268",
+      "date": "2026-11-11",
+      "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xinheng Ding",
-        "Seyyed Saeid Cheshmi",
-        "Ziyang Zhang",
-        "Tairan Chen",
-        "Wenya Xie",
-        "Yu Hou",
-        "Rui Zhang",
-        "Zirui Liu"
+        "Yujia Zhang",
+        "Xinqi Ren",
+        "Shixiong Zhou",
+        "Jia Meng"
       ],
-      "institution": "University of Minnesota",
+      "institution": "Brightendata",
       "summary": {
-        "zh": "本文介绍了 MAPE 框架，通过从极简种子开始的整程序进化，自动发现高效的代理记忆设计。研究不仅在准确率和成本效率上显著优于人工设计的基线，还通过实证分析揭示了保留原始对话证据和基于意图组合证据的重要性。此外，研究证明了优化目标会直接影响计算资源的分配，为未来的代理记忆系统设计提供了重要的经验教训和指导方向。",
-        "en": "- **Background**: As LLM-powered agents become prevalent in applications like personal assistants, persistent memory systems are crucial for maintaining conversational continuity. Currently, these systems rely heavily..."
+        "zh": "该论文证明了小型开源模型可以在没有更强教师模型指导的情况下，通过“知识在 Harness，可靠性在权重”的协同进化机制，有效利用自身部署日志提升性能。该方法通过自动规则生成解决知识缺失问题，通过强化学习解决行为不一致问题，在保持数据隐私的同时显著缩小了与前沿模型的差距，为私有化部署的小模型自我迭代提供了可行路径。",
+        "en": "This paper demonstrates that small open-source models can effectively leverage their own deployment logs to improve performance through a \"Knowledge in the Harness, Reliability in the Weights\" co-evolution mechanism,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.17068v1",
-        "pdf": "https://arxiv.org/pdf/2611.17068v1",
-        "github": "https://github.com/ash-ding/MAPE"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17068.md",
-        "summary_en_path": "summary_en/2026-11/2611.17068.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17068.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17068.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.16661",
-      "date": "2026-11-12",
-      "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Wei Feng",
-        "Meiling Chen",
-        "Boxiao Chen",
-        "Lu Liu",
-        "Bin Zi",
-        "Libin Ye",
-        "Xingyu Lu",
-        "Lei Xu",
-        "Jun Zhou"
-      ],
-      "institution": "Ant Group",
-      "summary": {
-        "zh": "本文针对 LLM Agent 工作流中批量执行效率低下的问题，提出了一套推理与环境协同优化的解决方案。通过工作负载感知的资源建模、轨迹感知路由以及链推进动作调度（CAAS），有效解决了混合模型资源分配和环境受限下的调度难题。实验证明该方法能大幅降低批次完成时间，已成功应用于实际模型开发流程，显著提升了研发效率。",
-        "en": "- **Background**: Efficient batch execution of agent tasks is critical for LLM training and development workflows, such as benchmark evaluation, synthetic data generation, and RL rollouts. These tasks alternate between..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.16661v1",
-        "pdf": "https://arxiv.org/pdf/2611.16661v1",
+        "abs": "http://arxiv.org/abs/2611.15268v1",
+        "pdf": "https://arxiv.org/pdf/2611.15268v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.16661.md",
-        "summary_en_path": "summary_en/2026-11/2611.16661.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.16661.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.16661.md"
+        "summary_zh_path": "summary/2026-11/2611.15268.md",
+        "summary_en_path": "summary_en/2026-11/2611.15268.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15268.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15268.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -197,34 +100,128 @@
       }
     },
     {
-      "id": "arxiv:2611.17115",
-      "date": "2026-11-12",
-      "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+      "id": "arxiv:2611.15729",
+      "date": "2026-11-11",
+      "title": "DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zimo Xu",
-        "Wenzhuo Liu",
-        "Hideki Nakayama"
+        "Chirag Ahuja",
+        "Vladislav Tanov",
+        "Ramcharan Kakarla",
+        "Jonathan Taws"
       ],
-      "institution": "University of Tokyo",
+      "institution": "Amazon",
       "summary": {
-        "zh": "CapLite 证明了在不依赖小型语言模型生成安全工件的情况下，依然可以实现对提示注入攻击的有效防御。通过从工具模式直接推导策略并严格执行基于用户请求参数的写入完整性检查，CapLite 不仅在安全性上达到了零攻击成功率，还在资源效率和任务效用上超越了现有的最先进方法。这项工作为在资源受限环境下部署安全的 LLM 智能体提供了新的方向，强调了将安全逻辑从模型生成转移到结构化验证的重要性。",
-        "en": "- **Background**: Prompt injection is a critical threat to tool-using Small Language Model (SLM) agents. Existing strong defenses (e.g., CaMeL, Progent, IPIGuard, DRIFT) rely on the agent's own model to generate..."
+        "zh": "DISCERN 证明了持久化智能体记忆的核心挑战已从检索转向解析。通过构建双时序溯源图并引入基于智能体循环的读取解析机制，DISCERN 有效解决了实体消歧和不确定性下的弃权问题，在多个基准测试中显著超越了现有的 RAG 和记忆系统，为企业级智能体提供了更可靠、校准更好的记忆解决方案。",
+        "en": "- **Background**: Enterprise agents accumulate memory across dozens of sessions, facing contradictory facts, superseded information, and confusion among similarly named entities in embedding space. - **Limitations of..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.17115v1",
-        "pdf": "https://arxiv.org/pdf/2611.17115v1",
+        "abs": "http://arxiv.org/abs/2611.15729v1",
+        "pdf": "https://arxiv.org/pdf/2611.15729v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17115.md",
-        "summary_en_path": "summary_en/2026-11/2611.17115.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17115.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17115.md"
+        "summary_zh_path": "summary/2026-11/2611.15729.md",
+        "summary_en_path": "summary_en/2026-11/2611.15729.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15729.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15729.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.15543",
+      "date": "2026-11-11",
+      "title": "Testing Conversation Preservation Across LLM APIs: A Rule-Based Oracle for Detecting Silent Information Loss",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Xin Liu",
+        "Xu Han",
+        "Yuxin Wang",
+        "Haoran Song",
+        "Mingjian Zhao",
+        "Lei Wang"
+      ],
+      "institution": "Griffith University",
+      "summary": {
+        "zh": "本文揭示了 LLM API 翻译中普遍存在的静默信息丢失问题，并提出了 isloss 这一轻量级、确定性的检测工具。研究证明，成功的 API 翻译不等于对话信息的完整保留。isloss 为提升 LLM 互操作性、Agent 执行可靠性及模型评估的准确性提供了实用的基础保障。",
+        "en": "- **Background**: LLM applications increasingly rely on translators and compatibility layers to move conversations across different provider APIs. However, API compatibility does not guarantee that the original..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.15543v1",
+        "pdf": "https://arxiv.org/pdf/2611.15543v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.15543.md",
+        "summary_en_path": "summary_en/2026-11/2611.15543.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15543.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15543.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.15521",
+      "date": "2026-11-11",
+      "title": "DecArena: Evaluating Large-Scale Decentralized Multi-Agent Collaboration",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jiali Cheng",
+        "Oleg Rokhlenko",
+        "Joo-Kyung Kim",
+        "Hadi Amiri",
+        "Xingzhi Guo"
+      ],
+      "institution": "University of Massachusetts Lowell, Amazon Alexa AI",
+      "summary": {
+        "zh": "本文针对去中心化多智能体协作中的扩展性、隐私和主动协作难题，引入了 DecArena 基准测试，揭示了现有 LLM 和 RL 方法在图约束通信下的局限性。提出的 GraphHarness 方法通过拓扑感知预热和自改进路由，有效解决了非本地资源发现和协作问题，在成功率、协作质量和成本效率上均优于现有基线，为大规模去中心化 MAS 提供了新的解决方案方向。",
+        "en": "This paper addresses scalability, privacy, and proactive collaboration challenges in decentralized MAS by introducing the DecArena benchmark. It reveals the limitations of existing LLM and RL methods under..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.15521v1",
+        "pdf": "https://arxiv.org/pdf/2611.15521v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.15521.md",
+        "summary_en_path": "summary_en/2026-11/2611.15521.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15521.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15521.md"
       },
       "signals": {
         "priority_keyword": "Agent"
