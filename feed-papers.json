@@ -1,44 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-14T07:46:40.127006+00:00",
-  "run_date": "2026-11-11",
+  "generated_at": "2026-11-16T08:12:29.489787+00:00",
+  "run_date": "2026-11-13",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.16028",
-      "date": "2026-11-11",
-      "title": "Scaling public input on AI policy with pluralistic agents",
+      "id": "arxiv:2611.18471",
+      "date": "2026-11-13",
+      "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jacy Reese Anthis",
-        "Ken Burke",
-        "David Madras",
-        "Crystal Qian",
-        "Meredith Ringel Morris",
-        "Logan Cross",
-        "Caroline Pantofaru",
-        "Utsav Prabhu"
+        "Disha Sheshanarayana",
+        "Sai Linisha Reddy Goli"
       ],
-      "institution": "University of Chicago, Google DeepMind",
+      "institution": "Manipal University Jaipur",
       "summary": {
-        "zh": "本文提出并验证了“多元智能体”作为一种扩展 AI 政策制定中公众输入的新范式。通过让 AI 代理代表多样化的人类角色进行审议，该方法有效解决了直接参与规模受限和专业知识门槛高的问题。实验结果显示，该方法在保持较高公平性和满意度的同时，能够可靠地反映多元价值观。作者建议谨慎探索此方法，将其定位为人类输入的放大器，为大规模 AI 安全政策开发提供了有前景的工具。",
-        "en": "- **Background**: AI is being deployed across diverse domains and cultures, requiring safe development that accounts for varied perspectives. Traditional democratic participation faces challenges such as low engagement,..."
+        "zh": "",
+        "en": "-based verifiers are increasingly used to evaluate agent trajectories, providing process-level feedback beyond final outcomes. However, in deployed systems, execution traces are often abstracted through composed tools..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.16028v1",
-        "pdf": "https://arxiv.org/pdf/2611.16028v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.18471v1",
+        "pdf": "https://arxiv.org/pdf/2611.18471v1",
+        "github": "https://github.com/Disha1001/Verification-Transport"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.16028.md",
-        "summary_en_path": "summary_en/2026-11/2611.16028.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.16028.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.16028.md"
+        "summary_zh_path": "summary/2026-11/2611.18471.md",
+        "summary_en_path": "summary_en/2026-11/2611.18471.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18471.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18471.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -55,35 +49,42 @@
       }
     },
     {
-      "id": "arxiv:2611.15268",
-      "date": "2026-11-11",
-      "title": "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent",
+      "id": "arxiv:2611.17931",
+      "date": "2026-11-13",
+      "title": "MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yujia Zhang",
-        "Xinqi Ren",
-        "Shixiong Zhou",
-        "Jia Meng"
+        "Bing Wang",
+        "Mingyang Wang",
+        "Yuanhang Mi",
+        "Yue Xu",
+        "Kaibo Su",
+        "Li'ang Xiao",
+        "Chunguo Wu",
+        "Changchun Li",
+        "Ximing Li",
+        "Kun-Feng Qiu",
+        "Bo Yang"
       ],
-      "institution": "Brightendata",
+      "institution": "Jilin University, China University of Geosciences (Beijing)",
       "summary": {
-        "zh": "该论文证明了小型开源模型可以在没有更强教师模型指导的情况下，通过“知识在 Harness，可靠性在权重”的协同进化机制，有效利用自身部署日志提升性能。该方法通过自动规则生成解决知识缺失问题，通过强化学习解决行为不一致问题，在保持数据隐私的同时显著缩小了与前沿模型的差距，为私有化部署的小模型自我迭代提供了可行路径。",
-        "en": "This paper demonstrates that small open-source models can effectively leverage their own deployment logs to improve performance through a \"Knowledge in the Harness, Reliability in the Weights\" co-evolution mechanism,..."
+        "zh": "MineralExp 通过引入共享分类法，成功解决了地球化学实验设计中主观性强和难以量化的评估难题。它不仅提供了一个标准化的评估平台，还揭示了当前LLM智能体在矿产勘探实验设计中的主要缺陷（低精确率），为未来开发更精准、更具成本效益的科学AI智能体指明了方向。",
+        "en": "- **Background**: In mineral exploration, verifying geological hypotheses relies on designing various geochemical experiments. While LLM agents increasingly automate downstream geoscientific data analysis, the crucial..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.15268v1",
-        "pdf": "https://arxiv.org/pdf/2611.15268v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.17931v1",
+        "pdf": "https://arxiv.org/pdf/2611.17931v1",
+        "github": "https://github.com/wangbing1416/MineralExp"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.15268.md",
-        "summary_en_path": "summary_en/2026-11/2611.15268.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15268.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15268.md"
+        "summary_zh_path": "summary/2026-11/2611.17931.md",
+        "summary_en_path": "summary_en/2026-11/2611.17931.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17931.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17931.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,35 +101,53 @@
       }
     },
     {
-      "id": "arxiv:2611.15729",
-      "date": "2026-11-11",
-      "title": "DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory",
+      "id": "arxiv:2611.17955",
+      "date": "2026-11-13",
+      "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chirag Ahuja",
-        "Vladislav Tanov",
-        "Ramcharan Kakarla",
-        "Jonathan Taws"
+        "Imene Kerboua",
+        "Fatemeh Pesaran Zadeh",
+        "Xing Han Lù",
+        "Weijian Qi",
+        "Alexander Miller",
+        "Junyi Song",
+        "Yunjia Tian",
+        "Dongjin Kang",
+        "Seyeon Choi",
+        "Marzia Nouri",
+        "Ewen Gueguen",
+        "Matteo Boglioni",
+        "Fengyuan Liu",
+        "Zeyi Liao",
+        "Mengqi Yuan",
+        "Yue Li",
+        "Alexandre Lacoste",
+        "Alexandre Drouin",
+        "Spandana Gella",
+        "Huan Sun",
+        "Gunhee Kim",
+        "Siva Reddy"
       ],
-      "institution": "Amazon",
+      "institution": "McGill University, Mila – Quebec AI Institute, Seoul National University, The Ohio State University, INSA Lyon, ServiceNow AI Research, Université Laval, University of Hong Kong, Esker",
       "summary": {
-        "zh": "DISCERN 证明了持久化智能体记忆的核心挑战已从检索转向解析。通过构建双时序溯源图并引入基于智能体循环的读取解析机制，DISCERN 有效解决了实体消歧和不确定性下的弃权问题，在多个基准测试中显著超越了现有的 RAG 和记忆系统，为企业级智能体提供了更可靠、校准更好的记忆解决方案。",
-        "en": "- **Background**: Enterprise agents accumulate memory across dozens of sessions, facing contradictory facts, superseded information, and confusion among similarly named entities in embedding space. - **Limitations of..."
+        "zh": "WebArena-Pro 填补了当前 Web 智能体基准测试在异构应用覆盖、多模态（特别是音视频）支持以及可复现性方面的空白。通过构建包含 20 个自托管应用的多样化环境和 300 个精心策划的任务，它为评估下一代多模态 Web 智能体提供了高标准、可复现的测试平台，推动了智能体在复杂真实世界场景中的能力评估。",
+        "en": "- **Background**: Web agents powered by large language and vision-language models are increasingly applied to realistic browser tasks spanning heterogeneous applications, multimodal content, and stateful workflows. -..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.15729v1",
-        "pdf": "https://arxiv.org/pdf/2611.15729v1",
+        "abs": "http://arxiv.org/abs/2611.17955v1",
+        "pdf": "https://arxiv.org/pdf/2611.17955v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.15729.md",
-        "summary_en_path": "summary_en/2026-11/2611.15729.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15729.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15729.md"
+        "summary_zh_path": "summary/2026-11/2611.17955.md",
+        "summary_en_path": "summary_en/2026-11/2611.17955.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17955.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17955.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -145,37 +164,58 @@
       }
     },
     {
-      "id": "arxiv:2611.15543",
-      "date": "2026-11-11",
-      "title": "Testing Conversation Preservation Across LLM APIs: A Rule-Based Oracle for Detecting Silent Information Loss",
+      "id": "arxiv:2611.18397",
+      "date": "2026-11-13",
+      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Xin Liu",
-        "Xu Han",
-        "Yuxin Wang",
-        "Haoran Song",
-        "Mingjian Zhao",
-        "Lei Wang"
+        "Run Luo",
+        "Kuan Zhang",
+        "Qi Deng",
+        "Yukun Chen",
+        "Zhihao Yang",
+        "Yufei Zhang",
+        "Renrong Hu",
+        "Yi Zhang",
+        "Guiyu Ma",
+        "Tianyu Fan",
+        "Longze Chen",
+        "Hao Sun",
+        "Jiaming Li",
+        "Jiaming Yang",
+        "Xiaohao Liu",
+        "Tao Tan",
+        "Minzheng Wang",
+        "Hangtian Jia",
+        "Shuai Yuan",
+        "Lvdi Wang",
+        "Xiao Liu",
+        "Chao Ma",
+        "Yuting Zou",
+        "Yinhe Zheng",
+        "Xiaobo Xia",
+        "Dawei Jiang",
+        "Shaoqing Ren"
       ],
-      "institution": "Griffith University",
+      "institution": "miHoYo Honkai AI R&D Team",
       "summary": {
-        "zh": "本文揭示了 LLM API 翻译中普遍存在的静默信息丢失问题，并提出了 isloss 这一轻量级、确定性的检测工具。研究证明，成功的 API 翻译不等于对话信息的完整保留。isloss 为提升 LLM 互操作性、Agent 执行可靠性及模型评估的准确性提供了实用的基础保障。",
-        "en": "- **Background**: LLM applications increasingly rely on translators and compatibility layers to move conversations across different provider APIs. However, API compatibility does not guarantee that the original..."
+        "zh": "Gamer 是一个面向长视野实时游戏任务的通用 VLA 基础模型。它通过持续预训练和稀疏思维指令微调，有效利用了大规模设备级交互数据。结合稳定的多轮强化学习和高效的云边推理引擎，Gamer 解决了长序列交互中的上下文限制、误差累积和实时性难题。实验表明，Gamer 在多种2D和3D游戏中均表现出接近人类熟练玩家的水平，为构建能跨越数字与物理世界交互的通用智能体提供了可行路径。",
+        "en": "- **Background**: Multimodal Large Language Models (MLLMs) are evolving into interactive agents capable of operating in digital and physical environments. Vision-Language-Action (VLA) models are a promising path toward..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.15543v1",
-        "pdf": "https://arxiv.org/pdf/2611.15543v1",
+        "abs": "http://arxiv.org/abs/2611.18397v1",
+        "pdf": "https://arxiv.org/pdf/2611.18397v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.15543.md",
-        "summary_en_path": "summary_en/2026-11/2611.15543.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15543.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15543.md"
+        "summary_zh_path": "summary/2026-11/2611.18397.md",
+        "summary_en_path": "summary_en/2026-11/2611.18397.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18397.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18397.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -192,36 +232,45 @@
       }
     },
     {
-      "id": "arxiv:2611.15521",
-      "date": "2026-11-11",
-      "title": "DecArena: Evaluating Large-Scale Decentralized Multi-Agent Collaboration",
+      "id": "arxiv:2611.18359",
+      "date": "2026-11-13",
+      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jiali Cheng",
-        "Oleg Rokhlenko",
-        "Joo-Kyung Kim",
-        "Hadi Amiri",
-        "Xingzhi Guo"
+        "Grid Robotics",
+        ":",
+        "Qingfeng Lan",
+        "Duo Li",
+        "Siyao Li",
+        "Yiheng Lyu",
+        "Shijian Lu",
+        "Zhenghao Qi",
+        "Shizun Wang",
+        "Xinchao Wang",
+        "Ming Yang",
+        "Zhiqin Yang",
+        "Zuhao Yang",
+        "Tao Yu"
       ],
-      "institution": "University of Massachusetts Lowell, Amazon Alexa AI",
+      "institution": "Grid Robotics",
       "summary": {
-        "zh": "本文针对去中心化多智能体协作中的扩展性、隐私和主动协作难题，引入了 DecArena 基准测试，揭示了现有 LLM 和 RL 方法在图约束通信下的局限性。提出的 GraphHarness 方法通过拓扑感知预热和自改进路由，有效解决了非本地资源发现和协作问题，在成功率、协作质量和成本效率上均优于现有基线，为大规模去中心化 MAS 提供了新的解决方案方向。",
-        "en": "This paper addresses scalability, privacy, and proactive collaboration challenges in decentralized MAS by introducing the DecArena benchmark. It reveals the limitations of existing LLM and RL methods under..."
+        "zh": "本文展望了代理机器人的新时代，确立了“具身系统2”作为决策核心的地位。通过区分数字与物理代理的本质差异，文章指出了将通用推理转化为物理行动的核心挑战，并提供了相应的评估框架和从简单原语到复杂角色的四级发展路线图，为实现安全、可靠且具备广泛责任的持续物理自主指明了方向。",
+        "en": "- **Background**: The release of models like GPT-6 Astra marks the emergence of \"Agentic Robotics.\" Unlike traditional methods that train dedicated policies for specific tasks, agentic robotic systems use foundation..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.15521v1",
-        "pdf": "https://arxiv.org/pdf/2611.15521v1",
+        "abs": "http://arxiv.org/abs/2611.18359v1",
+        "pdf": "https://arxiv.org/pdf/2611.18359v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.15521.md",
-        "summary_en_path": "summary_en/2026-11/2611.15521.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.15521.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.15521.md"
+        "summary_zh_path": "summary/2026-11/2611.18359.md",
+        "summary_en_path": "summary_en/2026-11/2611.18359.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18359.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18359.md"
       },
       "signals": {
         "priority_keyword": "Agent"

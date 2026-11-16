@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.13_08:20-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.16_08:12-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月13日 08:20</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月16日 08:12</sub></summary>
 <br>
 
-- Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon 
-- Scalable Conversational Assessment: Chat-Based Exams with a Two-Agent LLM Pipeline 
-- Discovering Effective Agent Memory Designs through Program Evolution 
-- Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination 
-- CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts 
+- Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation 
+- MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration 
+- WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents 
+- Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent 
+- Envisioning Agentic Robotics: A New Era of Robotic Systems 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-13</span> | **Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation**<br><sub>机构: Manipal University Jaipur<br>## 文章做了什么 ### 背景 随着大语言模型（LLM）智能体在复杂任务中的广泛应用，基于轨迹的验证器被广泛用于评估智能体的执行过程，而不仅仅是最终结果。然而，在实际部署的智能体系统中，执行轨迹往往不会以原始的、细粒度的形式呈现给验证器，而是经过抽象处理，例如通过组合工具形成宏操作、跨越委托边界或历史记录的压缩。 ### 已有的工作为什么解决不了 现有的验证器可靠性研究通常假设验证器能够访问固定且完整的原始轨迹表示。这种假设忽略了现实系统中普遍存在的“抽象边界”，即执行证据的可观测性会因系统架构设计而发生改变。因此，仅衡量验证器在原生视图下的准确性不足以反映其在真实部署环境中的可靠性，目前尚不清楚正确的验证判断是否能在这些抽象边界之间保持稳定性。 ## 文章的核心贡献点 ### 提出了一个 Verification Transport（验证传输）框架 文章引入了“验证传输”这一概念，作为一种可靠性测试方法，用于衡量验证器判断在因抽象导致的执行可观测性变化下的稳定性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.18471v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.18471.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Disha1001/Verification-Transport)</div> |
+| <span style='display: inline-block; width: 42px;'>11-13</span> | **MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration**<br><sub>机构: Jilin University, China University of Geosciences (Beijing)<br>MineralExp 通过引入共享分类法，成功解决了地球化学实验设计中主观性强和难以量化的评估难题。它不仅提供了一个标准化的评估平台，还揭示了当前LLM智能体在矿产勘探实验设计中的主要缺陷（低精确率），为未来开发更精准、更具成本效益的科学AI智能体指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17931v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17931.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/wangbing1416/MineralExp)</div> |
+| <span style='display: inline-block; width: 42px;'>11-13</span> | **WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents**<br><sub>机构: McGill University, Mila – Quebec AI Institute, Seoul National University, The Ohio State University, INSA Lyon, ServiceNow AI Research, Université Laval, University of Hong Kong, Esker<br>WebArena-Pro 填补了当前 Web 智能体基准测试在异构应用覆盖、多模态（特别是音视频）支持以及可复现性方面的空白。通过构建包含 20 个自托管应用的多样化环境和 300 个精心策划的任务，它为评估下一代多模态 Web 智能体提供了高标准、可复现的测试平台，推动了智能体在复杂真实世界场景中的能力评估。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17955v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17955.md)  |
+| <span style='display: inline-block; width: 42px;'>11-13</span> | **Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent**<br><sub>机构: miHoYo Honkai AI R&D Team<br>Gamer 是一个面向长视野实时游戏任务的通用 VLA 基础模型。它通过持续预训练和稀疏思维指令微调，有效利用了大规模设备级交互数据。结合稳定的多轮强化学习和高效的云边推理引擎，Gamer 解决了长序列交互中的上下文限制、误差累积和实时性难题。实验表明，Gamer 在多种2D和3D游戏中均表现出接近人类熟练玩家的水平，为构建能跨越数字与物理世界交互的通用智能体提供了可行路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.18397v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.18397.md)  |
+| <span style='display: inline-block; width: 42px;'>11-13</span> | **Envisioning Agentic Robotics: A New Era of Robotic Systems**<br><sub>机构: Grid Robotics<br>本文展望了代理机器人的新时代，确立了“具身系统2”作为决策核心的地位。通过区分数字与物理代理的本质差异，文章指出了将通用推理转化为物理行动的核心挑战，并提供了相应的评估框架和从简单原语到复杂角色的四级发展路线图，为实现安全、可靠且具备广泛责任的持续物理自主指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.18359v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.18359.md)  |
 | <span style='display: inline-block; width: 42px;'>11-12</span> | **Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon**<br><sub>机构: Shanghai Jiaotong University, Beijing Zhongguancun Academy, StepFun<br>Metal Sandbox通过细粒度的命令级调度和跨节点负载均衡，有效解决了Apple Silicon环境下GPU编码Agent的资源利用率低和等待延迟高的问题。它不仅提升了硬件资源的利用效率，还加速了模型训练数据的收集过程，为端侧AI内核的自动化生成与优化提供了高效的基础设施支持。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17294v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17294.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/WangHaoZhe/metal-sandbox)</div> |
 | <span style='display: inline-block; width: 42px;'>11-12</span> | **Scalable Conversational Assessment: Chat-Based Exams with a Two-Agent LLM Pipeline**<br><sub>机构: University of Illinois Urbana-Champaign<br>本文提出了一种基于双Agent LLM管道的可扩展对话式评估系统，旨在结合口试的深度交互优势与自动化系统的可扩展性。通过分离‘面试’与‘评估’职能，有效解决了答案泄露问题，并在模拟对抗环境和真实课堂部署中验证了其可行性。研究指出未来需进一步优化追问生成机制及确保评分归因的准确性，为大规模个性化口语/论证能力评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17220v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17220.md)  |
 | <span style='display: inline-block; width: 42px;'>11-12</span> | **Discovering Effective Agent Memory Designs through Program Evolution**<br><sub>机构: University of Minnesota<br>本文介绍了 MAPE 框架，通过从极简种子开始的整程序进化，自动发现高效的代理记忆设计。研究不仅在准确率和成本效率上显著优于人工设计的基线，还通过实证分析揭示了保留原始对话证据和基于意图组合证据的重要性。此外，研究证明了优化目标会直接影响计算资源的分配，为未来的代理记忆系统设计提供了重要的经验教训和指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17068.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/ash-ding/MAPE)</div> |
