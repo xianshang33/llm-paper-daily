@@ -1,153 +1,52 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-16T08:12:29.489787+00:00",
-  "run_date": "2026-11-13",
+  "generated_at": "2026-11-17T09:27:28.621076+00:00",
+  "run_date": "2026-11-16",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.18471",
-      "date": "2026-11-13",
-      "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
+      "id": "arxiv:2611.21299",
+      "date": "2026-11-16",
+      "title": "Turing Agent: Agentic Formal Verification for Mathematical Research",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Disha Sheshanarayana",
-        "Sai Linisha Reddy Goli"
+        "Yang Chen",
+        "Qianyi Wang",
+        "Ronghui Yang",
+        "Zhanhao Li",
+        "Yu Cong",
+        "Chen Zhang",
+        "Hangfan Zhang",
+        "Shao Zhang",
+        "Shuai Li",
+        "Toru Takisaka",
+        "Chao Xu",
+        "Yi Zhou",
+        "Zhihao Tang",
+        "Xiao Wang",
+        "Bo Zhang",
+        "Shuyue Hu"
       ],
-      "institution": "Manipal University Jaipur",
+      "institution": "Shanghai Artificial Intelligence Laboratory",
       "summary": {
-        "zh": "",
-        "en": "-based verifiers are increasingly used to evaluate agent trajectories, providing process-level feedback beyond final outcomes. However, in deployed systems, execution traces are often abstracted through composed tools..."
+        "zh": "Turing Agent 通过双尺度智能体架构和结构化验证策略，有效解决了 AI 生成数学证明在忠实性、有效性和完整性方面的核心挑战。它不仅实现了研究级 TCS 问题的高成功率形式验证，还展示了发现更简证明和优化原有证明结构的能力，为“证明过剩”时代提供了可信的自动化验证解决方案。",
+        "en": "- **Background**: Large Language Models (LLMs) are advancing mathematical discovery from benchmark problems to frontier research, leading to an era of \"proof abundance.\" The fundamental challenge is ensuring the..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.18471v1",
-        "pdf": "https://arxiv.org/pdf/2611.18471v1",
-        "github": "https://github.com/Disha1001/Verification-Transport"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.18471.md",
-        "summary_en_path": "summary_en/2026-11/2611.18471.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18471.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18471.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.17931",
-      "date": "2026-11-13",
-      "title": "MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Bing Wang",
-        "Mingyang Wang",
-        "Yuanhang Mi",
-        "Yue Xu",
-        "Kaibo Su",
-        "Li'ang Xiao",
-        "Chunguo Wu",
-        "Changchun Li",
-        "Ximing Li",
-        "Kun-Feng Qiu",
-        "Bo Yang"
-      ],
-      "institution": "Jilin University, China University of Geosciences (Beijing)",
-      "summary": {
-        "zh": "MineralExp 通过引入共享分类法，成功解决了地球化学实验设计中主观性强和难以量化的评估难题。它不仅提供了一个标准化的评估平台，还揭示了当前LLM智能体在矿产勘探实验设计中的主要缺陷（低精确率），为未来开发更精准、更具成本效益的科学AI智能体指明了方向。",
-        "en": "- **Background**: In mineral exploration, verifying geological hypotheses relies on designing various geochemical experiments. While LLM agents increasingly automate downstream geoscientific data analysis, the crucial..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.17931v1",
-        "pdf": "https://arxiv.org/pdf/2611.17931v1",
-        "github": "https://github.com/wangbing1416/MineralExp"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17931.md",
-        "summary_en_path": "summary_en/2026-11/2611.17931.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17931.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17931.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.17955",
-      "date": "2026-11-13",
-      "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Imene Kerboua",
-        "Fatemeh Pesaran Zadeh",
-        "Xing Han Lù",
-        "Weijian Qi",
-        "Alexander Miller",
-        "Junyi Song",
-        "Yunjia Tian",
-        "Dongjin Kang",
-        "Seyeon Choi",
-        "Marzia Nouri",
-        "Ewen Gueguen",
-        "Matteo Boglioni",
-        "Fengyuan Liu",
-        "Zeyi Liao",
-        "Mengqi Yuan",
-        "Yue Li",
-        "Alexandre Lacoste",
-        "Alexandre Drouin",
-        "Spandana Gella",
-        "Huan Sun",
-        "Gunhee Kim",
-        "Siva Reddy"
-      ],
-      "institution": "McGill University, Mila – Quebec AI Institute, Seoul National University, The Ohio State University, INSA Lyon, ServiceNow AI Research, Université Laval, University of Hong Kong, Esker",
-      "summary": {
-        "zh": "WebArena-Pro 填补了当前 Web 智能体基准测试在异构应用覆盖、多模态（特别是音视频）支持以及可复现性方面的空白。通过构建包含 20 个自托管应用的多样化环境和 300 个精心策划的任务，它为评估下一代多模态 Web 智能体提供了高标准、可复现的测试平台，推动了智能体在复杂真实世界场景中的能力评估。",
-        "en": "- **Background**: Web agents powered by large language and vision-language models are increasingly applied to realistic browser tasks spanning heterogeneous applications, multimodal content, and stateful workflows. -..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.17955v1",
-        "pdf": "https://arxiv.org/pdf/2611.17955v1",
+        "abs": "http://arxiv.org/abs/2611.21299v1",
+        "pdf": "https://arxiv.org/pdf/2611.21299v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.17955.md",
-        "summary_en_path": "summary_en/2026-11/2611.17955.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.17955.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.17955.md"
+        "summary_zh_path": "summary/2026-11/2611.21299.md",
+        "summary_en_path": "summary_en/2026-11/2611.21299.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21299.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21299.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -164,58 +63,38 @@
       }
     },
     {
-      "id": "arxiv:2611.18397",
-      "date": "2026-11-13",
-      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+      "id": "arxiv:2611.21298",
+      "date": "2026-11-16",
+      "title": "Agent-Native by Design: A Programming Language for Agentic Applications",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Run Luo",
-        "Kuan Zhang",
-        "Qi Deng",
-        "Yukun Chen",
-        "Zhihao Yang",
-        "Yufei Zhang",
-        "Renrong Hu",
-        "Yi Zhang",
-        "Guiyu Ma",
-        "Tianyu Fan",
-        "Longze Chen",
-        "Hao Sun",
-        "Jiaming Li",
-        "Jiaming Yang",
-        "Xiaohao Liu",
-        "Tao Tan",
-        "Minzheng Wang",
-        "Hangtian Jia",
-        "Shuai Yuan",
-        "Lvdi Wang",
-        "Xiao Liu",
-        "Chao Ma",
-        "Yuting Zou",
-        "Yinhe Zheng",
-        "Xiaobo Xia",
-        "Dawei Jiang",
-        "Shaoqing Ren"
+        "Jayanaka Dantanarayana",
+        "Savini Kashmira",
+        "Xiaoyu Ma",
+        "Malitha",
+        "Malitha Prabhashana",
+        "Lingjia Tang",
+        "Jason Mars"
       ],
-      "institution": "miHoYo Honkai AI R&D Team",
+      "institution": "University of Michigan",
       "summary": {
-        "zh": "Gamer 是一个面向长视野实时游戏任务的通用 VLA 基础模型。它通过持续预训练和稀疏思维指令微调，有效利用了大规模设备级交互数据。结合稳定的多轮强化学习和高效的云边推理引擎，Gamer 解决了长序列交互中的上下文限制、误差累积和实时性难题。实验表明，Gamer 在多种2D和3D游戏中均表现出接近人类熟练玩家的水平，为构建能跨越数字与物理世界交互的通用智能体提供了可行路径。",
-        "en": "- **Background**: Multimodal Large Language Models (MLLMs) are evolving into interactive agents capable of operating in digital and physical environments. Vision-Language-Action (VLA) models are a promising path toward..."
+        "zh": "本文针对当前智能体应用开发中存在的代码冗余和优化困难问题，提出了 Agent-Native Programming 范式及 Jac 语言。通过统一 LLM 操作、工作流和路由的执行语义，Jac 不仅大幅减少了开发所需的胶水代码，还通过增强编译器对控制流和状态依赖的可见性，开启了自动优化的可能性。实验表明，该方法在保证任务质量的同时，显著提升了开发效率和系统性能潜力。",
+        "en": "- **Background**: Building agentic applications requires integrating Large Language Model (LLM) operations, workflow structures with application state, and model-guided routing. Developers currently rely on SDKs or..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.18397v1",
-        "pdf": "https://arxiv.org/pdf/2611.18397v1",
+        "abs": "http://arxiv.org/abs/2611.21298v1",
+        "pdf": "https://arxiv.org/pdf/2611.21298v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.18397.md",
-        "summary_en_path": "summary_en/2026-11/2611.18397.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18397.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18397.md"
+        "summary_zh_path": "summary/2026-11/2611.21298.md",
+        "summary_en_path": "summary_en/2026-11/2611.21298.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21298.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21298.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -232,45 +111,123 @@
       }
     },
     {
-      "id": "arxiv:2611.18359",
-      "date": "2026-11-13",
-      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+      "id": "arxiv:2611.21095",
+      "date": "2026-11-16",
+      "title": "SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Grid Robotics",
-        ":",
-        "Qingfeng Lan",
-        "Duo Li",
-        "Siyao Li",
-        "Yiheng Lyu",
-        "Shijian Lu",
-        "Zhenghao Qi",
-        "Shizun Wang",
-        "Xinchao Wang",
-        "Ming Yang",
-        "Zhiqin Yang",
-        "Zuhao Yang",
-        "Tao Yu"
+        "Tae Soo Kim",
+        "Tongshuang Wu",
+        "Juho Kim"
       ],
-      "institution": "Grid Robotics",
+      "institution": "KAIST, Carnegie Mellon University",
       "summary": {
-        "zh": "本文展望了代理机器人的新时代，确立了“具身系统2”作为决策核心的地位。通过区分数字与物理代理的本质差异，文章指出了将通用推理转化为物理行动的核心挑战，并提供了相应的评估框架和从简单原语到复杂角色的四级发展路线图，为实现安全、可靠且具备广泛责任的持续物理自主指明了方向。",
-        "en": "- **Background**: The release of models like GPT-6 Astra marks the emergence of \"Agentic Robotics.\" Unlike traditional methods that train dedicated policies for specific tasks, agentic robotic systems use foundation..."
+        "zh": "SWE-WhatIf 解决了利用真实会话数据评估编码智能体的核心难题——轨迹依赖性。通过构建细粒度的用户意图模型，它成功模拟了真实用户在面对不同智能体行为时的动态反应。实验证明，该方法不仅在生成回复的真实性和适应性上优于现有基线，还能帮助开发者根据个人工作风格选择和优化最适合的编码智能体，为个性化智能体评估提供了新范式。",
+        "en": "- **Background**: With the increasing use of coding agents in real-world development, datasets recording interactions between users and agents have emerged. These sessions capture valuable insights into how users..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.18359v1",
-        "pdf": "https://arxiv.org/pdf/2611.18359v1",
+        "abs": "http://arxiv.org/abs/2611.21095v1",
+        "pdf": "https://arxiv.org/pdf/2611.21095v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.18359.md",
-        "summary_en_path": "summary_en/2026-11/2611.18359.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.18359.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.18359.md"
+        "summary_zh_path": "summary/2026-11/2611.21095.md",
+        "summary_en_path": "summary_en/2026-11/2611.21095.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21095.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21095.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.21053",
+      "date": "2026-11-16",
+      "title": "System 1 agents: a method for local, reliable and fast agentic AI",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Eleftherios Tzanis",
+        "Michail E. Klontzas"
+      ],
+      "institution": "University of Crete; Karolinska Institute; University Hospital of Heraklion",
+      "summary": {
+        "zh": "本文提出了一种名为 System 1 Agents 的新方法，通过将工具调用转化为多项选择决策问题，避免了传统 LLM 基于文本生成的幻觉问题。该方法在保持数据本地化以保护隐私的同时，实现了比现有本地 LLM 代理更高的准确性、可靠性和速度，特别适用于对隐私和可靠性要求极高的临床数据分析场景。",
+        "en": "This paper introduces System 1 Agents, a novel approach that transforms tool calling into a multiple-choice decision problem, bypassing the hallucination issues inherent in text-generating LLMs. By ensuring data..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.21053v1",
+        "pdf": "https://arxiv.org/pdf/2611.21053v1",
+        "github": "https://github.com/eltzanis/SystemOneAgents"
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.21053.md",
+        "summary_en_path": "summary_en/2026-11/2611.21053.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21053.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21053.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.21376",
+      "date": "2026-11-16",
+      "title": "A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Jason Alexander",
+        "Yuxuan Li",
+        "Michael Licamele",
+        "Wesley Hanwen Deng",
+        "Sauvik Das"
+      ],
+      "institution": "University of Massachusetts Amherst",
+      "summary": {
+        "zh": "本文通过构建大规模的日常决策偏见图谱并结合众包审计，深入探讨了LLM驱动代理在日常任务中的隐性偏见问题。研究不仅揭示了偏见在日常场景中的广泛存在，还发现了公众在审计偏见时的认知偏差，即倾向于用内部刻板印象来合理化观察到的差异。这对构建个性化AI代理、数字孪生和社会模拟具有重要意义，提示我们在设计偏见审计工具时需考虑用户的认知背景。",
+        "en": "- **Background**: As people increasingly employ autonomous, LLM-powered AI agents for daily tasks, it is critical to understand how implicit biases based on sociodemographic assumptions emerge across a broad range of..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.21376v1",
+        "pdf": "https://arxiv.org/pdf/2611.21376v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.21376.md",
+        "summary_en_path": "summary_en/2026-11/2611.21376.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21376.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21376.md"
       },
       "signals": {
         "priority_keyword": "Agent"

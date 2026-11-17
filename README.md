@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.16_08:12-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.17_09:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月16日 08:12</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月17日 09:27</sub></summary>
 <br>
 
-- Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation 
-- MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration 
-- WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents 
-- Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent 
-- Envisioning Agentic Robotics: A New Era of Robotic Systems 
+- Turing Agent: Agentic Formal Verification for Mathematical Research 
+- Agent-Native by Design: A Programming Language for Agentic Applications 
+- SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session 
+- System 1 agents: a method for local, reliable and fast agentic AI 
+- A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-16</span> | **Turing Agent: Agentic Formal Verification for Mathematical Research**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>Turing Agent 通过双尺度智能体架构和结构化验证策略，有效解决了 AI 生成数学证明在忠实性、有效性和完整性方面的核心挑战。它不仅实现了研究级 TCS 问题的高成功率形式验证，还展示了发现更简证明和优化原有证明结构的能力，为“证明过剩”时代提供了可信的自动化验证解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21299v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21299.md)  |
+| <span style='display: inline-block; width: 42px;'>11-16</span> | **Agent-Native by Design: A Programming Language for Agentic Applications**<br><sub>机构: University of Michigan<br>本文针对当前智能体应用开发中存在的代码冗余和优化困难问题，提出了 Agent-Native Programming 范式及 Jac 语言。通过统一 LLM 操作、工作流和路由的执行语义，Jac 不仅大幅减少了开发所需的胶水代码，还通过增强编译器对控制流和状态依赖的可见性，开启了自动优化的可能性。实验表明，该方法在保证任务质量的同时，显著提升了开发效率和系统性能潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21298v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21298.md)  |
+| <span style='display: inline-block; width: 42px;'>11-16</span> | **SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session**<br><sub>机构: KAIST, Carnegie Mellon University<br>SWE-WhatIf 解决了利用真实会话数据评估编码智能体的核心难题——轨迹依赖性。通过构建细粒度的用户意图模型，它成功模拟了真实用户在面对不同智能体行为时的动态反应。实验证明，该方法不仅在生成回复的真实性和适应性上优于现有基线，还能帮助开发者根据个人工作风格选择和优化最适合的编码智能体，为个性化智能体评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21095v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21095.md)  |
+| <span style='display: inline-block; width: 42px;'>11-16</span> | **System 1 agents: a method for local, reliable and fast agentic AI**<br><sub>机构: University of Crete; Karolinska Institute; University Hospital of Heraklion<br>本文提出了一种名为 System 1 Agents 的新方法，通过将工具调用转化为多项选择决策问题，避免了传统 LLM 基于文本生成的幻觉问题。该方法在保持数据本地化以保护隐私的同时，实现了比现有本地 LLM 代理更高的准确性、可靠性和速度，特别适用于对隐私和可靠性要求极高的临床数据分析场景。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21053v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21053.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/eltzanis/SystemOneAgents)</div> |
+| <span style='display: inline-block; width: 42px;'>11-16</span> | **A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents**<br><sub>机构: University of Massachusetts Amherst<br>本文通过构建大规模的日常决策偏见图谱并结合众包审计，深入探讨了LLM驱动代理在日常任务中的隐性偏见问题。研究不仅揭示了偏见在日常场景中的广泛存在，还发现了公众在审计偏见时的认知偏差，即倾向于用内部刻板印象来合理化观察到的差异。这对构建个性化AI代理、数字孪生和社会模拟具有重要意义，提示我们在设计偏见审计工具时需考虑用户的认知背景。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21376v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21376.md)  |
 | <span style='display: inline-block; width: 42px;'>11-13</span> | **Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation**<br><sub>机构: Manipal University Jaipur<br>## 文章做了什么 ### 背景 随着大语言模型（LLM）智能体在复杂任务中的广泛应用，基于轨迹的验证器被广泛用于评估智能体的执行过程，而不仅仅是最终结果。然而，在实际部署的智能体系统中，执行轨迹往往不会以原始的、细粒度的形式呈现给验证器，而是经过抽象处理，例如通过组合工具形成宏操作、跨越委托边界或历史记录的压缩。 ### 已有的工作为什么解决不了 现有的验证器可靠性研究通常假设验证器能够访问固定且完整的原始轨迹表示。这种假设忽略了现实系统中普遍存在的“抽象边界”，即执行证据的可观测性会因系统架构设计而发生改变。因此，仅衡量验证器在原生视图下的准确性不足以反映其在真实部署环境中的可靠性，目前尚不清楚正确的验证判断是否能在这些抽象边界之间保持稳定性。 ## 文章的核心贡献点 ### 提出了一个 Verification Transport（验证传输）框架 文章引入了“验证传输”这一概念，作为一种可靠性测试方法，用于衡量验证器判断在因抽象导致的执行可观测性变化下的稳定性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.18471v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.18471.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/Disha1001/Verification-Transport)</div> |
 | <span style='display: inline-block; width: 42px;'>11-13</span> | **MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration**<br><sub>机构: Jilin University, China University of Geosciences (Beijing)<br>MineralExp 通过引入共享分类法，成功解决了地球化学实验设计中主观性强和难以量化的评估难题。它不仅提供了一个标准化的评估平台，还揭示了当前LLM智能体在矿产勘探实验设计中的主要缺陷（低精确率），为未来开发更精准、更具成本效益的科学AI智能体指明了方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17931v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17931.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/wangbing1416/MineralExp)</div> |
 | <span style='display: inline-block; width: 42px;'>11-13</span> | **WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents**<br><sub>机构: McGill University, Mila – Quebec AI Institute, Seoul National University, The Ohio State University, INSA Lyon, ServiceNow AI Research, Université Laval, University of Hong Kong, Esker<br>WebArena-Pro 填补了当前 Web 智能体基准测试在异构应用覆盖、多模态（特别是音视频）支持以及可复现性方面的空白。通过构建包含 20 个自托管应用的多样化环境和 300 个精心策划的任务，它为评估下一代多模态 Web 智能体提供了高标准、可复现的测试平台，推动了智能体在复杂真实世界场景中的能力评估。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.17955v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.17955.md)  |
