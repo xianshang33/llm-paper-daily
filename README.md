@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.17_09:27-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.18_08:45-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月17日 09:27</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月18日 08:45</sub></summary>
 <br>
 
-- Turing Agent: Agentic Formal Verification for Mathematical Research 
-- Agent-Native by Design: A Programming Language for Agentic Applications 
-- SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session 
-- System 1 agents: a method for local, reliable and fast agentic AI 
-- A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents 
+- Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance 
+- The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements 
+- ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents 
+- Do LLM Agents Still Need to Be Told How to Self-Improve? 
+- SEAM: Computer-Use Agents Know the Harm Between Screens, and Commit It Anyway 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-17</span> | **Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance**<br><sub>机构: Amazon<br>本文提出并部署了一个基于多智能体的文档维护系统TriAgent，解决了快速迭代的代码与滞后文档之间的差距问题。通过自动化提取显式和隐式信号，系统能够持续发现并修复文档漂移。实验结果表明，该系统不仅能高精度地识别文档缺口，其生成的修复内容在质量和准确性上往往优于人类工程师的即时响应，并显著提升了下游LLM代理的回答质量，实现了文档维护的自动化和自我进化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23142v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23142.md)  |
+| <span style='display: inline-block; width: 42px;'>11-17</span> | **The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements**<br><sub>机构: ShanghaiTech University, ByteDance, BIGAI, SUSTech<br>本文通过大规模的实证研究提出了“分辨率假说”，揭示了智能体进化停滞的根本原因是评估噪声导致无法可靠识别改进，而非提议能力不足。研究结果表明，当前的进化方法在候选选择和算法排名上均受到噪声的严重干扰。这一发现呼吁社区转变研发重心，从设计更复杂的候选改进系统转向开发能够使真实改进可检测、可积累的低噪声评估机制，从而推动自改进智能体的实质性发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23068.md)  |
+| <span style='display: inline-block; width: 42px;'>11-17</span> | **ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents**<br><sub>机构: Carnegie Mellon University, Jilin University<br>ForecastGym 通过前瞻性地捕获和冻结搜索证据，解决了预测代理评估中的信息泄露和变量耦合问题。研究揭示，对于预测任务而言，代理所看到的证据质量（由搜索源决定）与其推理模型同样重要，甚至影响更大。该基准为未来研究提供了可控、可重放的实验环境，有助于独立优化检索和推理模块。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23045v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23045.md)  |
+| <span style='display: inline-block; width: 42px;'>11-17</span> | **Do LLM Agents Still Need to Be Told How to Self-Improve?**<br><sub>机构: MIT CSAIL, University of Tübingen<br>## 文章做了什么 - **背景**：随着大型语言模型（LLM）能力的提升，越来越多的研究将模型优化的部分环节委托给模型自身，即“自我改进”。然而，现有的自我改进方法通常仍由人类研究者设计具体的优化循环、数据生成策略或更新规则。 - **已有工作为什么解决不了**：传统方法依赖于外部强加的自改进循环（如固定的训练-评估-更新流程）和真实世界的数据验证。这限制了代理在完全自主环境下探索未知学习策略的能力，且无法回答“足够强大的模型是否仍需人类指定如何自我改进”这一根本问题。 ## 文章的核心贡献点 - **提出了一个**：完全自主的LLM代理自我改进范式。在该范式中，冻结参数的LLM代理仅被赋予基本工具（读写文件、运行代码、玩游戏）、计算预算和一个通用的自我改进目标，没有任何预设的学习算法或外部数据源，代理需自行构建基于上下文的优化算法。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23219v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23219.md)  |
+| <span style='display: inline-block; width: 42px;'>11-17</span> | **SEAM: Computer-Use Agents Know the Harm Between Screens, and Commit It Anyway**<br><sub>机构: Tsinghua University, The Chinese University of Hong Kong, ByteDance, Shenzhen University<br>本文指出了当前 CUA 安全评估中的重大盲点：跨屏幕组合危害。通过引入 SEAM 基准，作者证明了当前最先进的代理在处理分散但组合后有害的信息时存在严重缺陷。主要发现包括：安全识别不能可靠地转化为安全执行；信息呈现渠道（指令 vs 屏幕）显著影响代理的安全决策；专有模型比开源模型更谨慎。该研究为未来提升 CUA 的多步推理安全性和上下文整合能力提供了重要的评估工具和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.22971v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.22971.md)  |
 | <span style='display: inline-block; width: 42px;'>11-16</span> | **Turing Agent: Agentic Formal Verification for Mathematical Research**<br><sub>机构: Shanghai Artificial Intelligence Laboratory<br>Turing Agent 通过双尺度智能体架构和结构化验证策略，有效解决了 AI 生成数学证明在忠实性、有效性和完整性方面的核心挑战。它不仅实现了研究级 TCS 问题的高成功率形式验证，还展示了发现更简证明和优化原有证明结构的能力，为“证明过剩”时代提供了可信的自动化验证解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21299v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21299.md)  |
 | <span style='display: inline-block; width: 42px;'>11-16</span> | **Agent-Native by Design: A Programming Language for Agentic Applications**<br><sub>机构: University of Michigan<br>本文针对当前智能体应用开发中存在的代码冗余和优化困难问题，提出了 Agent-Native Programming 范式及 Jac 语言。通过统一 LLM 操作、工作流和路由的执行语义，Jac 不仅大幅减少了开发所需的胶水代码，还通过增强编译器对控制流和状态依赖的可见性，开启了自动优化的可能性。实验表明，该方法在保证任务质量的同时，显著提升了开发效率和系统性能潜力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21298v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21298.md)  |
 | <span style='display: inline-block; width: 42px;'>11-16</span> | **SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session**<br><sub>机构: KAIST, Carnegie Mellon University<br>SWE-WhatIf 解决了利用真实会话数据评估编码智能体的核心难题——轨迹依赖性。通过构建细粒度的用户意图模型，它成功模拟了真实用户在面对不同智能体行为时的动态反应。实验证明，该方法不仅在生成回复的真实性和适应性上优于现有基线，还能帮助开发者根据个人工作风格选择和优化最适合的编码智能体，为个性化智能体评估提供了新范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.21095v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.21095.md)  |

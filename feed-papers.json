@@ -1,52 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-17T09:27:28.621076+00:00",
-  "run_date": "2026-11-16",
+  "generated_at": "2026-11-18T08:45:46.147898+00:00",
+  "run_date": "2026-11-17",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.21299",
-      "date": "2026-11-16",
-      "title": "Turing Agent: Agentic Formal Verification for Mathematical Research",
+      "id": "arxiv:2611.23142",
+      "date": "2026-11-17",
+      "title": "Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yang Chen",
-        "Qianyi Wang",
-        "Ronghui Yang",
-        "Zhanhao Li",
-        "Yu Cong",
-        "Chen Zhang",
-        "Hangfan Zhang",
-        "Shao Zhang",
-        "Shuai Li",
-        "Toru Takisaka",
-        "Chao Xu",
-        "Yi Zhou",
-        "Zhihao Tang",
-        "Xiao Wang",
-        "Bo Zhang",
-        "Shuyue Hu"
+        "Lorenzo Masoero"
       ],
-      "institution": "Shanghai Artificial Intelligence Laboratory",
+      "institution": "Amazon",
       "summary": {
-        "zh": "Turing Agent 通过双尺度智能体架构和结构化验证策略，有效解决了 AI 生成数学证明在忠实性、有效性和完整性方面的核心挑战。它不仅实现了研究级 TCS 问题的高成功率形式验证，还展示了发现更简证明和优化原有证明结构的能力，为“证明过剩”时代提供了可信的自动化验证解决方案。",
-        "en": "- **Background**: Large Language Models (LLMs) are advancing mathematical discovery from benchmark problems to frontier research, leading to an era of \"proof abundance.\" The fundamental challenge is ensuring the..."
+        "zh": "本文提出并部署了一个基于多智能体的文档维护系统TriAgent，解决了快速迭代的代码与滞后文档之间的差距问题。通过自动化提取显式和隐式信号，系统能够持续发现并修复文档漂移。实验结果表明，该系统不仅能高精度地识别文档缺口，其生成的修复内容在质量和准确性上往往优于人类工程师的即时响应，并显著提升了下游LLM代理的回答质量，实现了文档维护的自动化和自我进化。",
+        "en": "- **Background**: The \"AI revolution\" has accelerated software code delivery, but customer-facing documentation often fails to keep pace. As users increasingly rely on LLM agents that use documentation as their primary..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.21299v1",
-        "pdf": "https://arxiv.org/pdf/2611.21299v1",
+        "abs": "http://arxiv.org/abs/2611.23142v1",
+        "pdf": "https://arxiv.org/pdf/2611.23142v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.21299.md",
-        "summary_en_path": "summary_en/2026-11/2611.21299.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21299.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21299.md"
+        "summary_zh_path": "summary/2026-11/2611.23142.md",
+        "summary_en_path": "summary_en/2026-11/2611.23142.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23142.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23142.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -63,38 +48,42 @@
       }
     },
     {
-      "id": "arxiv:2611.21298",
-      "date": "2026-11-16",
-      "title": "Agent-Native by Design: A Programming Language for Agentic Applications",
+      "id": "arxiv:2611.23068",
+      "date": "2026-11-17",
+      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jayanaka Dantanarayana",
-        "Savini Kashmira",
-        "Xiaoyu Ma",
-        "Malitha",
-        "Malitha Prabhashana",
-        "Lingjia Tang",
-        "Jason Mars"
+        "Yuanhao Zeng",
+        "Shaocheng Lan",
+        "Ao Lu",
+        "Kuang Yan",
+        "Heng Lin",
+        "Xinang Xu",
+        "Yuan Luo",
+        "Yueting Wang",
+        "Yexin Li",
+        "Ruo Shan",
+        "Kan Ren"
       ],
-      "institution": "University of Michigan",
+      "institution": "ShanghaiTech University, ByteDance, BIGAI, SUSTech",
       "summary": {
-        "zh": "本文针对当前智能体应用开发中存在的代码冗余和优化困难问题，提出了 Agent-Native Programming 范式及 Jac 语言。通过统一 LLM 操作、工作流和路由的执行语义，Jac 不仅大幅减少了开发所需的胶水代码，还通过增强编译器对控制流和状态依赖的可见性，开启了自动优化的可能性。实验表明，该方法在保证任务质量的同时，显著提升了开发效率和系统性能潜力。",
-        "en": "- **Background**: Building agentic applications requires integrating Large Language Model (LLM) operations, workflow structures with application state, and model-guided routing. Developers currently rely on SDKs or..."
+        "zh": "本文通过大规模的实证研究提出了“分辨率假说”，揭示了智能体进化停滞的根本原因是评估噪声导致无法可靠识别改进，而非提议能力不足。研究结果表明，当前的进化方法在候选选择和算法排名上均受到噪声的严重干扰。这一发现呼吁社区转变研发重心，从设计更复杂的候选改进系统转向开发能够使真实改进可检测、可积累的低噪声评估机制，从而推动自改进智能体的实质性发展。",
+        "en": "This paper presents the \"Resolution Hypothesis\" through extensive empirical research, revealing that the root cause of agent evolution stagnation is the inability of noisy evaluations to reliably identify improvements,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.21298v1",
-        "pdf": "https://arxiv.org/pdf/2611.21298v1",
+        "abs": "http://arxiv.org/abs/2611.23068v1",
+        "pdf": "https://arxiv.org/pdf/2611.23068v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.21298.md",
-        "summary_en_path": "summary_en/2026-11/2611.21298.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21298.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21298.md"
+        "summary_zh_path": "summary/2026-11/2611.23068.md",
+        "summary_en_path": "summary_en/2026-11/2611.23068.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23068.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23068.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -111,34 +100,34 @@
       }
     },
     {
-      "id": "arxiv:2611.21095",
-      "date": "2026-11-16",
-      "title": "SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session",
+      "id": "arxiv:2611.23045",
+      "date": "2026-11-17",
+      "title": "ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Tae Soo Kim",
-        "Tongshuang Wu",
-        "Juho Kim"
+        "Yicheng Tao",
+        "Yuante Li",
+        "Zipei Fan"
       ],
-      "institution": "KAIST, Carnegie Mellon University",
+      "institution": "Carnegie Mellon University, Jilin University",
       "summary": {
-        "zh": "SWE-WhatIf 解决了利用真实会话数据评估编码智能体的核心难题——轨迹依赖性。通过构建细粒度的用户意图模型，它成功模拟了真实用户在面对不同智能体行为时的动态反应。实验证明，该方法不仅在生成回复的真实性和适应性上优于现有基线，还能帮助开发者根据个人工作风格选择和优化最适合的编码智能体，为个性化智能体评估提供了新范式。",
-        "en": "- **Background**: With the increasing use of coding agents in real-world development, datasets recording interactions between users and agents have emerged. These sessions capture valuable insights into how users..."
+        "zh": "ForecastGym 通过前瞻性地捕获和冻结搜索证据，解决了预测代理评估中的信息泄露和变量耦合问题。研究揭示，对于预测任务而言，代理所看到的证据质量（由搜索源决定）与其推理模型同样重要，甚至影响更大。该基准为未来研究提供了可控、可重放的实验环境，有助于独立优化检索和推理模块。",
+        "en": "- **Background**: Agents built on Large Language Models (LLMs) increasingly forecast real-world events by searching the web and reasoning over retrieved evidence. Performance depends on both the quality of retrieved..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.21095v1",
-        "pdf": "https://arxiv.org/pdf/2611.21095v1",
+        "abs": "http://arxiv.org/abs/2611.23045v1",
+        "pdf": "https://arxiv.org/pdf/2611.23045v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.21095.md",
-        "summary_en_path": "summary_en/2026-11/2611.21095.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21095.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21095.md"
+        "summary_zh_path": "summary/2026-11/2611.23045.md",
+        "summary_en_path": "summary_en/2026-11/2611.23045.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23045.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23045.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -155,33 +144,34 @@
       }
     },
     {
-      "id": "arxiv:2611.21053",
-      "date": "2026-11-16",
-      "title": "System 1 agents: a method for local, reliable and fast agentic AI",
+      "id": "arxiv:2611.23219",
+      "date": "2026-11-17",
+      "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Eleftherios Tzanis",
-        "Michail E. Klontzas"
+        "Shobhita Sundaram",
+        "Cansu Sancaktar",
+        "Phillip Isola"
       ],
-      "institution": "University of Crete; Karolinska Institute; University Hospital of Heraklion",
+      "institution": "MIT CSAIL, University of Tübingen",
       "summary": {
-        "zh": "本文提出了一种名为 System 1 Agents 的新方法，通过将工具调用转化为多项选择决策问题，避免了传统 LLM 基于文本生成的幻觉问题。该方法在保持数据本地化以保护隐私的同时，实现了比现有本地 LLM 代理更高的准确性、可靠性和速度，特别适用于对隐私和可靠性要求极高的临床数据分析场景。",
-        "en": "This paper introduces System 1 Agents, a novel approach that transforms tool calling into a multiple-choice decision problem, bypassing the hallucination issues inherent in text-generating LLMs. By ensuring data..."
+        "zh": "- **背景**：随着大型语言模型（LLM）能力的提升，越来越多的研究将模型优化的部分环节委托给模型自身，即“自我改进”。然而，现有的自我改进方法通常仍由人类研究者设计具体的优化循环、数据生成策略或更新规则。 -...",
+        "en": "- **Background**: As Large Language Models (LLMs) become more capable, there is a growing trend to delegate parts of model optimization to the models themselves, known as \"self-improvement.\" However, existing methods..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.21053v1",
-        "pdf": "https://arxiv.org/pdf/2611.21053v1",
-        "github": "https://github.com/eltzanis/SystemOneAgents"
+        "abs": "http://arxiv.org/abs/2611.23219v1",
+        "pdf": "https://arxiv.org/pdf/2611.23219v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.21053.md",
-        "summary_en_path": "summary_en/2026-11/2611.21053.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21053.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21053.md"
+        "summary_zh_path": "summary/2026-11/2611.23219.md",
+        "summary_en_path": "summary_en/2026-11/2611.23219.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23219.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23219.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -198,36 +188,39 @@
       }
     },
     {
-      "id": "arxiv:2611.21376",
-      "date": "2026-11-16",
-      "title": "A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents",
+      "id": "arxiv:2611.22971",
+      "date": "2026-11-17",
+      "title": "SEAM: Computer-Use Agents Know the Harm Between Screens, and Commit It Anyway",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jason Alexander",
-        "Yuxuan Li",
-        "Michael Licamele",
-        "Wesley Hanwen Deng",
-        "Sauvik Das"
+        "Yuxuan Zhou",
+        "Chen Xiong",
+        "Haitong Liu",
+        "Kuofeng Gao",
+        "Yang Bai",
+        "Zhiyuan He",
+        "Tao Dai",
+        "Shu-Tao Xia"
       ],
-      "institution": "University of Massachusetts Amherst",
+      "institution": "Tsinghua University, The Chinese University of Hong Kong, ByteDance, Shenzhen University",
       "summary": {
-        "zh": "本文通过构建大规模的日常决策偏见图谱并结合众包审计，深入探讨了LLM驱动代理在日常任务中的隐性偏见问题。研究不仅揭示了偏见在日常场景中的广泛存在，还发现了公众在审计偏见时的认知偏差，即倾向于用内部刻板印象来合理化观察到的差异。这对构建个性化AI代理、数字孪生和社会模拟具有重要意义，提示我们在设计偏见审计工具时需考虑用户的认知背景。",
-        "en": "- **Background**: As people increasingly employ autonomous, LLM-powered AI agents for daily tasks, it is critical to understand how implicit biases based on sociodemographic assumptions emerge across a broad range of..."
+        "zh": "本文指出了当前 CUA 安全评估中的重大盲点：跨屏幕组合危害。通过引入 SEAM 基准，作者证明了当前最先进的代理在处理分散但组合后有害的信息时存在严重缺陷。主要发现包括：安全识别不能可靠地转化为安全执行；信息呈现渠道（指令 vs 屏幕）显著影响代理的安全决策；专有模型比开源模型更谨慎。该研究为未来提升 CUA 的多步推理安全性和上下文整合能力提供了重要的评估工具和洞察。",
+        "en": "This paper identifies a critical blind spot in CUA safety evaluation: cross-screen compositional harm. By introducing the SEAM benchmark, the authors demonstrate that state-of-the-art agents severely struggle to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.21376v1",
-        "pdf": "https://arxiv.org/pdf/2611.21376v1",
+        "abs": "http://arxiv.org/abs/2611.22971v1",
+        "pdf": "https://arxiv.org/pdf/2611.22971v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.21376.md",
-        "summary_en_path": "summary_en/2026-11/2611.21376.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.21376.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.21376.md"
+        "summary_zh_path": "summary/2026-11/2611.22971.md",
+        "summary_en_path": "summary_en/2026-11/2611.22971.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.22971.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.22971.md"
       },
       "signals": {
         "priority_keyword": "Agent"
