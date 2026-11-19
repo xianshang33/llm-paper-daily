@@ -1,37 +1,37 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-18T08:45:46.147898+00:00",
-  "run_date": "2026-11-17",
+  "generated_at": "2026-11-19T09:01:07.123759+00:00",
+  "run_date": "2026-11-18",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.23142",
-      "date": "2026-11-17",
-      "title": "Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance",
+      "id": "arxiv:2611.24636",
+      "date": "2026-11-18",
+      "title": "Clover-35B-A3B-Preview Technical Report",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Lorenzo Masoero"
+        "DiffuSpace Technical Team"
       ],
-      "institution": "Amazon",
+      "institution": "DiffuSpace Technical Team",
       "summary": {
-        "zh": "本文提出并部署了一个基于多智能体的文档维护系统TriAgent，解决了快速迭代的代码与滞后文档之间的差距问题。通过自动化提取显式和隐式信号，系统能够持续发现并修复文档漂移。实验结果表明，该系统不仅能高精度地识别文档缺口，其生成的修复内容在质量和准确性上往往优于人类工程师的即时响应，并显著提升了下游LLM代理的回答质量，实现了文档维护的自动化和自我进化。",
-        "en": "- **Background**: The \"AI revolution\" has accelerated software code delivery, but customer-facing documentation often fails to keep pace. As users increasingly rely on LLM agents that use documentation as their primary..."
+        "zh": "Clover-35B-A3B-Preview通过创新性地结合门控Delta网络与块扩散机制，成功解决了扩散语言模型在长上下文记忆融合与高效并行生成之间的平衡难题。其MoE架构不仅实现了350亿参数规模下的高效推理，还在SWE-bench等高难度Agent基准上取得了领先成绩。此外，其联合决策机制进一步证明了扩散模型在处理关联任务时的独特优势，为未来高效、强大的通用Agent模型部署提供了新的技术路径。",
+        "en": "- **Background**: Diffusion Language Models (DLMs) offer an alternative to autoregressive generation by reconstructing sequences through iterative denoising, allowing for parallel token prediction and flexible..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.23142v1",
-        "pdf": "https://arxiv.org/pdf/2611.23142v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.24636v1",
+        "pdf": "https://arxiv.org/pdf/2611.24636v1",
+        "github": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.23142.md",
-        "summary_en_path": "summary_en/2026-11/2611.23142.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23142.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23142.md"
+        "summary_zh_path": "summary/2026-11/2611.24636.md",
+        "summary_en_path": "summary_en/2026-11/2611.24636.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.24636.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.24636.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -48,42 +48,33 @@
       }
     },
     {
-      "id": "arxiv:2611.23068",
-      "date": "2026-11-17",
-      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+      "id": "arxiv:2611.24313",
+      "date": "2026-11-18",
+      "title": "AutoPI: Taxonomy-Guided Adaptive Red Teaming for Prompt Injection in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuanhao Zeng",
-        "Shaocheng Lan",
-        "Ao Lu",
-        "Kuang Yan",
-        "Heng Lin",
-        "Xinang Xu",
-        "Yuan Luo",
-        "Yueting Wang",
-        "Yexin Li",
-        "Ruo Shan",
-        "Kan Ren"
+        "Stavros Damianakis",
+        "Konstantinos Psounis"
       ],
-      "institution": "ShanghaiTech University, ByteDance, BIGAI, SUSTech",
+      "institution": "University of Southern California",
       "summary": {
-        "zh": "本文通过大规模的实证研究提出了“分辨率假说”，揭示了智能体进化停滞的根本原因是评估噪声导致无法可靠识别改进，而非提议能力不足。研究结果表明，当前的进化方法在候选选择和算法排名上均受到噪声的严重干扰。这一发现呼吁社区转变研发重心，从设计更复杂的候选改进系统转向开发能够使真实改进可检测、可积累的低噪声评估机制，从而推动自改进智能体的实质性发展。",
-        "en": "This paper presents the \"Resolution Hypothesis\" through extensive empirical research, revealing that the root cause of agent evolution stagnation is the inability of noisy evaluations to reliably identify improvements,..."
+        "zh": "AutoPI 通过引入基于分类法（PIAtlas）的指导机制，解决了现有自适应红队工具在攻击多样性上的不足。它不仅追求高攻击成功率，更强调对潜在漏洞空间的全面覆盖。实验表明，AutoPI 在黑盒、免训练的设置下，显著优于现有的最先进方法，为 LLM Agent 的安全性评估提供了更全面、更具覆盖意识的基准。",
+        "en": "- **Background**: Prompt injection is the dominant unsolved security risk for LLM agents. The community agrees that robustness must be measured against adaptive attackers rather than fixed benchmarks."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.23068v1",
-        "pdf": "https://arxiv.org/pdf/2611.23068v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.24313v1",
+        "pdf": "https://arxiv.org/pdf/2611.24313v1",
+        "github": "https://github.com/stevendamianakis/autopi"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.23068.md",
-        "summary_en_path": "summary_en/2026-11/2611.23068.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23068.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23068.md"
+        "summary_zh_path": "summary/2026-11/2611.24313.md",
+        "summary_en_path": "summary_en/2026-11/2611.24313.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.24313.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.24313.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -100,34 +91,35 @@
       }
     },
     {
-      "id": "arxiv:2611.23045",
-      "date": "2026-11-17",
-      "title": "ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents",
+      "id": "arxiv:2611.24362",
+      "date": "2026-11-18",
+      "title": "PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yicheng Tao",
-        "Yuante Li",
-        "Zipei Fan"
+        "Lipeng He",
+        "Yihan Wang",
+        "Jiawen Zhang",
+        "N. Asokan"
       ],
-      "institution": "Carnegie Mellon University, Jilin University",
+      "institution": "University of Waterloo, Zhejiang University, KTH Royal Institute of Technology",
       "summary": {
-        "zh": "ForecastGym 通过前瞻性地捕获和冻结搜索证据，解决了预测代理评估中的信息泄露和变量耦合问题。研究揭示，对于预测任务而言，代理所看到的证据质量（由搜索源决定）与其推理模型同样重要，甚至影响更大。该基准为未来研究提供了可控、可重放的实验环境，有助于独立优化检索和推理模块。",
-        "en": "- **Background**: Agents built on Large Language Models (LLMs) increasingly forecast real-world events by searching the web and reasoning over retrieved evidence. Performance depends on both the quality of retrieved..."
+        "zh": "PIPETTE 揭示了当前自动化红队测试中高攻击成功率与最终模型鲁棒性之间的脱节问题，并通过引入基于字典学习的多样化奖励机制和专用的在线对抗训练流水线，构建了一个高效的紫队框架。该方法不仅生成了多样化的对抗样本，还确保了防御模型在抵御间接提示注入攻击的同时不损失正常任务性能，为 LLM 代理的安全部署提供了切实可行的解决方案。",
+        "en": "- **Background**: Large Language Model (LLM) agents frequently interact with untrusted external data, making them vulnerable to Indirect Prompt Injection (IPI) attacks. To enhance robustness before deployment,..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.23045v1",
-        "pdf": "https://arxiv.org/pdf/2611.23045v1",
+        "abs": "http://arxiv.org/abs/2611.24362v1",
+        "pdf": "https://arxiv.org/pdf/2611.24362v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.23045.md",
-        "summary_en_path": "summary_en/2026-11/2611.23045.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23045.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23045.md"
+        "summary_zh_path": "summary/2026-11/2611.24362.md",
+        "summary_en_path": "summary_en/2026-11/2611.24362.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.24362.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.24362.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,34 +136,39 @@
       }
     },
     {
-      "id": "arxiv:2611.23219",
-      "date": "2026-11-17",
-      "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+      "id": "arxiv:2611.24395",
+      "date": "2026-11-18",
+      "title": "RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Shobhita Sundaram",
-        "Cansu Sancaktar",
-        "Phillip Isola"
+        "Hanlin Wu",
+        "Yifei Wang",
+        "Zhicheng Cai",
+        "Huan-ang Gao",
+        "Wei-Ying Ma",
+        "Ya-Qin Zhang",
+        "Jingjing Liu",
+        "Hao Zhou"
       ],
-      "institution": "MIT CSAIL, University of Tübingen",
+      "institution": "Institute for AI Industry Research (AIR), Tsinghua University; ByteDance Seed",
       "summary": {
-        "zh": "- **背景**：随着大型语言模型（LLM）能力的提升，越来越多的研究将模型优化的部分环节委托给模型自身，即“自我改进”。然而，现有的自我改进方法通常仍由人类研究者设计具体的优化循环、数据生成策略或更新规则。 -...",
-        "en": "- **Background**: As Large Language Models (LLMs) become more capable, there is a growing trend to delegate parts of model optimization to the models themselves, known as \"self-improvement.\" However, existing methods..."
+        "zh": "RSIBench-Infra首次系统地评估了Agent在生产规模下优化训练和推理基础设施的能力。通过引入跨层级的优化任务和严格的OCI-based评估协议，证明了当前Agent能够实现显著的端到端加速（66.2%的任务加速超过1.1倍）。然而，研究也指出，如何更有效地搜索优化策略并确保持续的端到端收益，仍是未来需要解决的关键问题。该工作为递归自我改进中的基础设施效率提升提供了重要的基准和洞察。",
+        "en": "- **Background**: As global AI infrastructure spending surges, improving the efficiency of training and inference infrastructure is crucial for Recursive Self-Improvement (RSI). Current LLM serving engines achieve only..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.23219v1",
-        "pdf": "https://arxiv.org/pdf/2611.23219v1",
+        "abs": "http://arxiv.org/abs/2611.24395v1",
+        "pdf": "https://arxiv.org/pdf/2611.24395v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.23219.md",
-        "summary_en_path": "summary_en/2026-11/2611.23219.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23219.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23219.md"
+        "summary_zh_path": "summary/2026-11/2611.24395.md",
+        "summary_en_path": "summary_en/2026-11/2611.24395.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.24395.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.24395.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -188,39 +185,33 @@
       }
     },
     {
-      "id": "arxiv:2611.22971",
-      "date": "2026-11-17",
-      "title": "SEAM: Computer-Use Agents Know the Harm Between Screens, and Commit It Anyway",
+      "id": "arxiv:2611.24406",
+      "date": "2026-11-18",
+      "title": "CaDO: Formal Verification-Guided Multi-Agent Framework for Causal Dataset Repair and Generation",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yuxuan Zhou",
-        "Chen Xiong",
-        "Haitong Liu",
-        "Kuofeng Gao",
-        "Yang Bai",
-        "Zhiyuan He",
-        "Tao Dai",
-        "Shu-Tao Xia"
+        "Songli Yu",
+        "Qi Luo"
       ],
-      "institution": "Tsinghua University, The Chinese University of Hong Kong, ByteDance, Shenzhen University",
+      "institution": "Shandong University",
       "summary": {
-        "zh": "本文指出了当前 CUA 安全评估中的重大盲点：跨屏幕组合危害。通过引入 SEAM 基准，作者证明了当前最先进的代理在处理分散但组合后有害的信息时存在严重缺陷。主要发现包括：安全识别不能可靠地转化为安全执行；信息呈现渠道（指令 vs 屏幕）显著影响代理的安全决策；专有模型比开源模型更谨慎。该研究为未来提升 CUA 的多步推理安全性和上下文整合能力提供了重要的评估工具和洞察。",
-        "en": "This paper identifies a critical blind spot in CUA safety evaluation: cross-screen compositional harm. By introducing the SEAM benchmark, the authors demonstrate that state-of-the-art agents severely struggle to..."
+        "zh": "CaDO 通过结合形式化因果引擎的精确性与多智能体系统的灵活性，有效解决了因果数据集中的标注错误和结构不平衡问题。该方法不仅提高了数据质量，还显著提升了下游因果推理模型的性能，为构建高可靠性因果数据集提供了一套自动化、可验证的解决方案。",
+        "en": "CaDO effectively addresses annotation errors and structural imbalances in causal datasets by combining the precision of formal causal engines with the flexibility of multi-agent systems. This method not only improves..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.22971v1",
-        "pdf": "https://arxiv.org/pdf/2611.22971v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.24406v1",
+        "pdf": "https://arxiv.org/pdf/2611.24406v1",
+        "github": "https://github.com/thisissyu/cado"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.22971.md",
-        "summary_en_path": "summary_en/2026-11/2611.22971.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.22971.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.22971.md"
+        "summary_zh_path": "summary/2026-11/2611.24406.md",
+        "summary_en_path": "summary_en/2026-11/2611.24406.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.24406.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.24406.md"
       },
       "signals": {
         "priority_keyword": "Agent"

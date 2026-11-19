@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.18_08:45-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.19_09:01-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月18日 08:45</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月19日 09:01</sub></summary>
 <br>
 
-- Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance 
-- The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements 
-- ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents 
-- Do LLM Agents Still Need to Be Told How to Self-Improve? 
-- SEAM: Computer-Use Agents Know the Harm Between Screens, and Commit It Anyway 
+- Clover-35B-A3B-Preview Technical Report 
+- AutoPI: Taxonomy-Guided Adaptive Red Teaming for Prompt Injection in LLM Agents 
+- PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents 
+- RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale? 
+- CaDO: Formal Verification-Guided Multi-Agent Framework for Causal Dataset Repair and Generation 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-18</span> | **Clover-35B-A3B-Preview Technical Report**<br><sub>机构: DiffuSpace Technical Team<br>Clover-35B-A3B-Preview通过创新性地结合门控Delta网络与块扩散机制，成功解决了扩散语言模型在长上下文记忆融合与高效并行生成之间的平衡难题。其MoE架构不仅实现了350亿参数规模下的高效推理，还在SWE-bench等高难度Agent基准上取得了领先成绩。此外，其联合决策机制进一步证明了扩散模型在处理关联任务时的独特优势，为未来高效、强大的通用Agent模型部署提供了新的技术路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.24636v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.24636.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/DiffuSpace/Clover-35B-A3B-Preview)</div> |
+| <span style='display: inline-block; width: 42px;'>11-18</span> | **AutoPI: Taxonomy-Guided Adaptive Red Teaming for Prompt Injection in LLM Agents**<br><sub>机构: University of Southern California<br>AutoPI 通过引入基于分类法（PIAtlas）的指导机制，解决了现有自适应红队工具在攻击多样性上的不足。它不仅追求高攻击成功率，更强调对潜在漏洞空间的全面覆盖。实验表明，AutoPI 在黑盒、免训练的设置下，显著优于现有的最先进方法，为 LLM Agent 的安全性评估提供了更全面、更具覆盖意识的基准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.24313v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.24313.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/stevendamianakis/autopi)</div> |
+| <span style='display: inline-block; width: 42px;'>11-18</span> | **PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents**<br><sub>机构: University of Waterloo, Zhejiang University, KTH Royal Institute of Technology<br>PIPETTE 揭示了当前自动化红队测试中高攻击成功率与最终模型鲁棒性之间的脱节问题，并通过引入基于字典学习的多样化奖励机制和专用的在线对抗训练流水线，构建了一个高效的紫队框架。该方法不仅生成了多样化的对抗样本，还确保了防御模型在抵御间接提示注入攻击的同时不损失正常任务性能，为 LLM 代理的安全部署提供了切实可行的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.24362v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.24362.md)  |
+| <span style='display: inline-block; width: 42px;'>11-18</span> | **RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?**<br><sub>机构: Institute for AI Industry Research (AIR), Tsinghua University; ByteDance Seed<br>RSIBench-Infra首次系统地评估了Agent在生产规模下优化训练和推理基础设施的能力。通过引入跨层级的优化任务和严格的OCI-based评估协议，证明了当前Agent能够实现显著的端到端加速（66.2%的任务加速超过1.1倍）。然而，研究也指出，如何更有效地搜索优化策略并确保持续的端到端收益，仍是未来需要解决的关键问题。该工作为递归自我改进中的基础设施效率提升提供了重要的基准和洞察。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.24395v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.24395.md)  |
+| <span style='display: inline-block; width: 42px;'>11-18</span> | **CaDO: Formal Verification-Guided Multi-Agent Framework for Causal Dataset Repair and Generation**<br><sub>机构: Shandong University<br>CaDO 通过结合形式化因果引擎的精确性与多智能体系统的灵活性，有效解决了因果数据集中的标注错误和结构不平衡问题。该方法不仅提高了数据质量，还显著提升了下游因果推理模型的性能，为构建高可靠性因果数据集提供了一套自动化、可验证的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.24406v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.24406.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/thisissyu/cado)</div> |
 | <span style='display: inline-block; width: 42px;'>11-17</span> | **Mind the Gap: A Deployed Multi-Agent System for Documentation Maintenance**<br><sub>机构: Amazon<br>本文提出并部署了一个基于多智能体的文档维护系统TriAgent，解决了快速迭代的代码与滞后文档之间的差距问题。通过自动化提取显式和隐式信号，系统能够持续发现并修复文档漂移。实验结果表明，该系统不仅能高精度地识别文档缺口，其生成的修复内容在质量和准确性上往往优于人类工程师的即时响应，并显著提升了下游LLM代理的回答质量，实现了文档维护的自动化和自我进化。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23142v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23142.md)  |
 | <span style='display: inline-block; width: 42px;'>11-17</span> | **The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements**<br><sub>机构: ShanghaiTech University, ByteDance, BIGAI, SUSTech<br>本文通过大规模的实证研究提出了“分辨率假说”，揭示了智能体进化停滞的根本原因是评估噪声导致无法可靠识别改进，而非提议能力不足。研究结果表明，当前的进化方法在候选选择和算法排名上均受到噪声的严重干扰。这一发现呼吁社区转变研发重心，从设计更复杂的候选改进系统转向开发能够使真实改进可检测、可积累的低噪声评估机制，从而推动自改进智能体的实质性发展。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23068v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23068.md)  |
 | <span style='display: inline-block; width: 42px;'>11-17</span> | **ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents**<br><sub>机构: Carnegie Mellon University, Jilin University<br>ForecastGym 通过前瞻性地捕获和冻结搜索证据，解决了预测代理评估中的信息泄露和变量耦合问题。研究揭示，对于预测任务而言，代理所看到的证据质量（由搜索源决定）与其推理模型同样重要，甚至影响更大。该基准为未来研究提供了可控、可重放的实验环境，有助于独立优化检索和推理模块。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.23045v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.23045.md)  |
