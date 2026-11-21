@@ -1,38 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-20T08:48:09.876819+00:00",
-  "run_date": "2026-11-19",
+  "generated_at": "2026-11-21T08:30:06.124385+00:00",
+  "run_date": "2026-11-15",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.26248",
-      "date": "2026-11-19",
-      "title": "TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs",
+      "id": "arxiv:2611.19823",
+      "date": "2026-11-15",
+      "title": "EfficientSkill: Learning Skills for Token-Efficient Multi-Turn Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yang Wan",
-        "Linchao Zhu"
+        "Deep Shah",
+        "Sanket Badhe",
+        "Nehal Kathrotia",
+        "Priyanka Tiwari"
       ],
-      "institution": "Zhejiang University",
+      "institution": "Google LLC, Purdue University",
       "summary": {
-        "zh": "TwinLab-Bench 通过引入基于真实实验室记录的“数字孪生”代理（TwinLab Agent），解决了评估 AI 科学家自主设计实验能力的难题。它在保持低成本和高可重复性的同时，提供了接近真实实验室的复杂环境和反馈机制。基准测试结果显示，当前最先进的 AI 模型在这一领域仍有巨大提升空间，平均得分不足一半，突显了该基准的挑战性和对未来 AI 科学代理研发的指导意义。",
-        "en": "- **Background**: AI agents are increasingly expected to act as \"AI scientists,\" requiring three progressively open-ended abilities: correctly executing given computational workflows, selecting the next measurements..."
+        "zh": "EfficientSkill 通过解耦“准确率发现”和“效率优化”两个阶段，有效解决了多轮 Agent 中提示词膨胀和推理冗余的问题。该方法不仅大幅降低了 Token 消耗和服务成本，还通过消除无效循环提升了复杂任务（如电子表格操作）的执行准确率，为构建高效、低成本的多轮 LLM 代理提供了新的范式。",
+        "en": "EfficientSkill effectively addresses prompt bloat and reasoning redundancy in multi-turn agents by decoupling accuracy discovery from efficiency optimization. It significantly lowers token consumption and serving costs..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.26248v1",
-        "pdf": "https://arxiv.org/pdf/2611.26248v1",
+        "abs": "http://arxiv.org/abs/2611.19823v1",
+        "pdf": "https://arxiv.org/pdf/2611.19823v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.26248.md",
-        "summary_en_path": "summary_en/2026-11/2611.26248.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.26248.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.26248.md"
+        "summary_zh_path": "summary/2026-11/2611.19823.md",
+        "summary_en_path": "summary_en/2026-11/2611.19823.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19823.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19823.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -49,40 +51,37 @@
       }
     },
     {
-      "id": "arxiv:2611.26361",
-      "date": "2026-11-19",
-      "title": "How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents",
+      "id": "arxiv:2611.19886",
+      "date": "2026-11-15",
+      "title": "Recovery Gone Too Far: Understanding and Repairing Risky Fallback in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "K. R. Jayaram",
-        "Vatche Isahagian",
-        "Aswath Vaithinathan Aravindan",
-        "Vinod Muthusamy",
-        "Punleuk Oum",
-        "Gaodan Fang",
-        "Michal Ulewicz",
-        "Gegi Thomas",
-        "Evelyn Duesterwald"
+        "Liwen Wang",
+        "Jiangrong Wu",
+        "Zongjie Li",
+        "Zongyi Lyu",
+        "Shuai Wang",
+        "Shing-Chi Cheung"
       ],
-      "institution": "IBM",
+      "institution": "The Hong Kong University of Science and Technology",
       "summary": {
-        "zh": "本文重点不在于提出全新的算法，而在于分享将自蒸馏记忆系统产品化过程中的实战经验。核心结论是：记忆的最佳用量取决于模型本身的能力。强模型能从更多记忆中受益，而弱模型则需要精简的记忆子集以避免干扰。此外，文章详细列举了部署过程中遇到的典型错误（如来源丢失、错误吞没等），为后续团队部署代理记忆系统提供了宝贵的工程建议。",
-        "en": "This paper focuses on practical lessons from productizing a self-distilled memory system rather than proposing a novel algorithm. The key finding is that optimal memory volume depends on model capability: strong models..."
+        "zh": "本文揭示了LLM智能体在工具失败回退过程中存在的严重安全隐患——“风险回退”，即为了完成任务而跨越动作边界造成意外破坏。通过大规模实证研究证明了该问题的普遍性及现有方法的无效性。提出的 nrepair 框架通过基于正常行为校准的上下文监控机制，有效地在运行时识别并拦截危险回退，显著降低了安全风险，同时保持了较高的任务成功率，为LLM智能体的安全部署提供了重要的运行时保障方案。",
+        "en": "- **Background**: Large Language Model (LLM) agents interact with environments via tools (e.g., reading repos, pushing code). When primary tools fail due to common errors like rate limits, agents fall back to substitute..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.26361v1",
-        "pdf": "https://arxiv.org/pdf/2611.26361v1",
-        "github": "https://github.com/AgentToolkit/altk-evolve"
+        "abs": "http://arxiv.org/abs/2611.19886v1",
+        "pdf": "https://arxiv.org/pdf/2611.19886v1",
+        "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.26361.md",
-        "summary_en_path": "summary_en/2026-11/2611.26361.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.26361.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.26361.md"
+        "summary_zh_path": "summary/2026-11/2611.19886.md",
+        "summary_en_path": "summary_en/2026-11/2611.19886.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19886.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19886.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -99,40 +98,35 @@
       }
     },
     {
-      "id": "arxiv:2611.26531",
-      "date": "2026-11-19",
-      "title": "Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models",
+      "id": "arxiv:2611.23323",
+      "date": "2026-11-15",
+      "title": "HydroMind: A Checkable Agent for Autonomous Hydrological Research",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chang Yang",
-        "Yao Xuan",
-        "Wendan Yan",
-        "Nhat Le",
-        "Jiang Liu",
-        "Longhao Jin",
-        "Zhen Peggy Yao",
-        "Alireza Vahdatpour",
-        "Djordje Gligorijevic"
+        "Zheng Fang",
+        "Yiqun Sun",
+        "Simin Qu",
+        "Shijie Jiang"
       ],
-      "institution": "Meta, Inc.",
+      "institution": "Hohai University",
       "summary": {
-        "zh": "本文提出了一种创新的端到端代理系统，解决了大规模排序模型集群中的特征优化难题。通过结合LLM的智能推理与确定性实验工具，并利用集群级别的知识共享和成本感知机制，该系统不仅自动化了特征工程流程，还在保证模型性能提升的同时有效控制了计算和存储成本，为大型Web平台的推荐系统优化提供了可行的规模化解决方案。",
-        "en": "- **Background**: Large web platforms operate massive fleets of ranking models, each selecting features from a shared pool of tens of thousands. Feature selection involves a trade-off between prediction accuracy and..."
+        "zh": "本文指出了当前通用AI代理在水文科学研究中因缺乏领域专用工具和规范流程而导致的可靠性与可验证性问题。作者开发了 HydroMind 系统，通过标准化模型执行接口和强制性的研究设计流程，构建了一个“可核查的代理”。实验证明，该方法能有效抑制代理的幻觉，确保结论有数据支撑，并提供充分的统计证据供人类研究者审查，为自主科学发现提供了更可靠的基础设施。",
+        "en": "This paper addresses the reliability and verifiability issues of general-purpose AI agents in hydrological research due to the lack of domain-specific tools and norms. The authors developed HydroMind, creating a..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.26531v1",
-        "pdf": "https://arxiv.org/pdf/2611.26531v1",
+        "abs": "http://arxiv.org/abs/2611.23323v1",
+        "pdf": "https://arxiv.org/pdf/2611.23323v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.26531.md",
-        "summary_en_path": "summary_en/2026-11/2611.26531.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.26531.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.26531.md"
+        "summary_zh_path": "summary/2026-11/2611.23323.md",
+        "summary_en_path": "summary_en/2026-11/2611.23323.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.23323.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.23323.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -149,38 +143,35 @@
       }
     },
     {
-      "id": "arxiv:2611.26349",
-      "date": "2026-11-19",
-      "title": "Perfumer: A Large Language Model-based Agentic Framework Accelerating Structural Relaxation and Electronic Band Prediction for First-Principle Calculation",
+      "id": "arxiv:2611.19871",
+      "date": "2026-11-15",
+      "title": "Interactive Structured Environment Scaling for Large Language Model Agentic Reasoning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhiwei Li",
-        "Yuhao Zhou",
-        "Yikai Yang",
-        "Haonan Wang",
-        "Qing Ye",
-        "Jiancheng Lv",
-        "Kazunari Matsuda"
+        "Peng Yu",
+        "Luoyi Fu",
+        "Xinbing Wang",
+        "Ying Wen"
       ],
-      "institution": "Kyoto University, Sichuan University",
+      "institution": "Shanghai Jiao Tong University",
       "summary": {
-        "zh": "Perfumer 是一个创新的 LLM 代理框架，通过集成专用的机器学习加速模型（用于结构弛豫和能带预测）与传统 DFT 软件（Quantum ESPRESSO），显著降低了第一性原理计算的成本和门槛。它不仅实现了 2.75 倍的计算加速和高精度的能带预测（MAE 0.157 eV），还通过自然语言接口自动化了从结构上传到属性预测的全流程，特别适用于包含复杂元素的大规模材料筛选任务。",
-        "en": "- **Background**: First-principles calculations, such as structural relaxation and band structure calculations, are crucial for predicting material properties but demand substantial computational resources and..."
+        "zh": "本文指出了当前 LLM 代理强化学习环境中存在的预过滤导致的能力评估偏差问题，提出了 RISE 框架。通过决策空间缩放和学习前沿缩放两个核心机制，RISE 成功地将训练环境从静态子图扩展到全规模交互式数据库，解决了答案泄露和训练方差崩溃的挑战。实验表明，该方法不仅提升了知识图谱推理性能，还实现了向开放域检索及数理逻辑任务的零样本迁移和增强，为构建真正具备自主探索和推理能力的 LLM 智能体提供了新的范式。",
+        "en": "- **Background**: Reinforcement learning (RL) via environmental interaction is a cornerstone post-training paradigm for evolving Large Language Models (LLMs) into autonomous agents capable of multi-turn tool use and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.26349v1",
-        "pdf": "https://arxiv.org/pdf/2611.26349v1",
+        "abs": "http://arxiv.org/abs/2611.19871v1",
+        "pdf": "https://arxiv.org/pdf/2611.19871v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.26349.md",
-        "summary_en_path": "summary_en/2026-11/2611.26349.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.26349.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.26349.md"
+        "summary_zh_path": "summary/2026-11/2611.19871.md",
+        "summary_en_path": "summary_en/2026-11/2611.19871.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19871.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19871.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -197,35 +188,34 @@
       }
     },
     {
-      "id": "arxiv:2611.26553",
-      "date": "2026-11-19",
-      "title": "Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI)",
+      "id": "arxiv:2611.20031",
+      "date": "2026-11-15",
+      "title": "Towards Agentic Scientific Discovery in Distributed Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Mengxiao Wang",
-        "Mahbub Alam",
-        "Kalyan Nakka",
-        "Nitesh Saxena"
+        "Rashmita Soni",
+        "Abhirup Ghosh",
+        "Soumya Banerjee"
       ],
-      "institution": "Texas A&M University",
+      "institution": "Indian Institute of Technology Delhi",
       "summary": {
-        "zh": "ROGUE-AI 填补了 LLM 智能体安全事故分析与验证之间的空白。通过自动化复现和对照实验，该研究证实了大多数智能体事故源于非对抗性的设计疏忽而非恶意攻击，且现有的提示词注入防御对此无能为力。研究提出了一种基于具体隐患警告的有效缓解措施，并为行业提供了一套可在发布前运行的标准化审计框架，以提升智能体系统的安全性。",
-        "en": "- **Background**: LLM-based agents can now perform high-risk actions like deleting files and making payments. Media reports frequently describe agent failures (e.g., Replit's coding agent deleting a production..."
+        "zh": "本文探讨了在分布式观测条件下，自适应工具选择是否有助于识别共享方程。提出的 Query-ATLAS 框架通过 LLM...",
+        "en": "- **Background**: In distributed systems, different clients (e.g., laboratories) may measure the same unknown physical law but cannot pool raw observations, and each covers different input ranges. The goal is to recover..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.26553v1",
-        "pdf": "https://arxiv.org/pdf/2611.26553v1",
+        "abs": "http://arxiv.org/abs/2611.20031v1",
+        "pdf": "https://arxiv.org/pdf/2611.20031v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.26553.md",
-        "summary_en_path": "summary_en/2026-11/2611.26553.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.26553.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.26553.md"
+        "summary_zh_path": "summary/2026-11/2611.20031.md",
+        "summary_en_path": "summary_en/2026-11/2611.20031.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.20031.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.20031.md"
       },
       "signals": {
         "priority_keyword": "Agent"
