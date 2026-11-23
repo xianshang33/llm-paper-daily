@@ -1,41 +1,40 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-21T13:40:43.556789+00:00",
-  "run_date": "2026-11-14",
+  "generated_at": "2026-11-23T09:22:09.609482+00:00",
+  "run_date": "2026-11-20",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.19118",
-      "date": "2026-11-14",
-      "title": "Latency, Speech Recognition and Turn-Taking in Voice Agents for Spanish Phone Negotiation: An Externally Measured Comparison of Pipecat, LiveKit and GPT-Live",
+      "id": "arxiv:2611.27860",
+      "date": "2026-11-20",
+      "title": "Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jovan Popoca Moran",
-        "Eduardo de Avila-Armenta",
-        "Raúl Alejandro Aquino-Ibarra",
-        "Jorge Octavio Nicolás-Díaz",
-        "Umberto Leon-Dominguez"
+        "Nathan Nour Houlamy",
+        "Mattia Favretto",
+        "Earlence Fernandes",
+        "Mauro Conti"
       ],
-      "institution": "AI Lab, Freight Technologies Inc.; Tecnológico de Monterrey; University of Monterrey",
+      "institution": "University of Padua",
       "summary": {
-        "zh": "该研究强调语音代理的延迟必须在听众侧进行外部测量，因为内部指标存在显著偏差。虽然 GPT-Live 在延迟上的绝对优势有限，但其在处理重叠语音（特别是反馈词）和关键实体（金额）识别上的鲁棒性显著优于传统的级联架构。对于需要高可靠性的电话谈判应用，原生语音模型或经过特殊优化的级联 safeguards 是必要的选择。",
-        "en": "- **Background**: Voice agents for phone negotiations must respond quickly, accurately understand spoken amounts, and handle user interruptions (backchannels). Current architectures are either cascaded (STT+LLM+TTS..."
+        "zh": "本文指出了当前编程智能体基准测试中存在的关键安全漏洞，即智能体可通过操纵执行环境来欺骗评分系统。作者提出了 SplitBench，首次实现了测试执行与结果判定的特权分离。实验表明，该框架在保证高评估保真度的同时，能有效抵御大多数针对评估基础设施的攻击，为构建可信的 AI 智能体评估体系提供了重要的系统设计参考。",
+        "en": "- **Background**: Benchmarks for AI-based coding agents are the primary method for measuring LLM performance, influencing both business and research decisions. However, evaluating these agents is challenging because..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.19118v1",
-        "pdf": "https://arxiv.org/pdf/2611.19118v1",
+        "abs": "http://arxiv.org/abs/2611.27860v1",
+        "pdf": "https://arxiv.org/pdf/2611.27860v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.19118.md",
-        "summary_en_path": "summary_en/2026-11/2611.19118.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19118.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19118.md"
+        "summary_zh_path": "summary/2026-11/2611.27860.md",
+        "summary_en_path": "summary_en/2026-11/2611.27860.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27860.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27860.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -52,36 +51,33 @@
       }
     },
     {
-      "id": "arxiv:2611.19311",
-      "date": "2026-11-14",
-      "title": "Macro Control and Capability Evaluation of Black-Box World Models: A Two-Regime Framework for LLM-Agent Markets",
+      "id": "arxiv:2611.27618",
+      "date": "2026-11-20",
+      "title": "Potential emergence in LLM agents: a statistical physics perspective",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhiyang Niu",
-        "Chuanjie Li",
-        "Huayuan Shen",
-        "Mengmeng Zhao",
-        "Jiajia Zhang"
+        "Zhuo-Yang Song",
+        "Hua Xing Zhu"
       ],
-      "institution": "Harbin Institute of Technology, Shenzhen; Nanyang Technological University, Singapore; Pingan Group, China",
+      "institution": "Peking University",
       "summary": {
-        "zh": "本文针对黑盒 LLM 智能体市场，提出了一种新颖的双机制评估框架，成功将模型能力分解为信息模拟和宏观涌现两个独立阶段。通过引入软宏观控制和对称参考路径，研究者在仅观察宏观输入输出的情况下，有效量化了结构性偏差、实现能力和信息有效性。实验结果表明，该方法不仅能有效引导市场走向，还能揭示不同市场配置下的性能瓶颈，为理解和优化 LLM 驱动的经济模拟系统提供了新的理论工具和实证依据。",
-        "en": "- **Background**: Large Language Model (LLM) agents can be organized into multi-agent markets serving as \"world models,\" mapping macro information to emergent macro dynamics. Evaluators typically observe only macro..."
+        "zh": "本文从统计物理视角出发，提出了一种理解LLM智能体行为的新范式。通过将智能体状态视为中间变量，并引入配分函数和全局势能概念，成功量化了后训练过程如何组织和塑造智能体的推理行为。研究不仅在理论上填补了训练目标与状态级行为之间的空白，还在实际任务中验证了势能结构随训练增强的预测，为理解和预测智能体在复杂任务中的表现提供了有力的定量工具。",
+        "en": "- **Background**: Large Language Model (LLM) agents are increasingly critical in scientific discovery and software development, operating through reasoning-action cycles involving state transitions. Understanding why..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.19311v1",
-        "pdf": "https://arxiv.org/pdf/2611.19311v1",
+        "abs": "http://arxiv.org/abs/2611.27618v1",
+        "pdf": "https://arxiv.org/pdf/2611.27618v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.19311.md",
-        "summary_en_path": "summary_en/2026-11/2611.19311.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19311.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19311.md"
+        "summary_zh_path": "summary/2026-11/2611.27618.md",
+        "summary_en_path": "summary_en/2026-11/2611.27618.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27618.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27618.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -98,36 +94,35 @@
       }
     },
     {
-      "id": "arxiv:2611.19299",
-      "date": "2026-11-14",
-      "title": "Staged Semantic Distillation: Preserving Free-Form Semantics in a Low-Compute Non-LLM Surrogate of a Staged LLM Agent",
+      "id": "arxiv:2611.27556",
+      "date": "2026-11-20",
+      "title": "Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhiyang Niu",
-        "Huayuan Shen",
-        "Chuanjie Li",
-        "Mengmeng Zhao",
-        "Jiajia Zhang"
+        "Wenqi Zhou",
+        "Leonardo Baldo",
+        "Edwin Kolbe",
+        "Manuel Arias Chao"
       ],
-      "institution": null,
+      "institution": "Zurich University of Applied Sciences",
       "summary": {
-        "zh": "本文提出了一种名为“分阶段语义蒸馏”的新方法，成功解决了在低算力非LLM模型中保留LLM代理自由形式中间语义的难题。通过冻结编码器提取语义向量并结合阶段特定的可见性与调度自我历史训练，该方法构建了一个高效、确定性的代理替代品。实验证明，该 surrogate...",
-        "en": "- **Background**: Staged LLM agents enable realistic market and social simulations by reasoning in free-form text. However, these simulations are prohibitively expensive; a single 102-day run with 200 agents requires..."
+        "zh": "本文不仅提出了一种技术架构，更是一份关于如何在注重安全、可追溯性和保守变革的工业文化中引入代理式AI（Agentic AI）的组织经验报告。通过Beznau核电站的案例，证明了分层多智能体系统能有效解决遗留系统中的知识孤岛问题，为负责任地在工业监控中使用AI开辟了道路，强调了人机协作中证据可追溯性和人员最终决策权的重要性。",
+        "en": "- **Background**: Beznau Unit 1 in Switzerland, operational since 1969, is the world's most experienced nuclear reactor. Five decades of incremental modernization have left its monitoring systems, alarm logs, variable..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.19299v1",
-        "pdf": "https://arxiv.org/pdf/2611.19299v1",
+        "abs": "http://arxiv.org/abs/2611.27556v1",
+        "pdf": "https://arxiv.org/pdf/2611.27556v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.19299.md",
-        "summary_en_path": "summary_en/2026-11/2611.19299.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19299.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19299.md"
+        "summary_zh_path": "summary/2026-11/2611.27556.md",
+        "summary_en_path": "summary_en/2026-11/2611.27556.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27556.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27556.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -144,32 +139,32 @@
       }
     },
     {
-      "id": "arxiv:2611.19530",
-      "date": "2026-11-14",
-      "title": "LLM Trading Agents Earn Beta, Not Alpha: A Look-Ahead-Free Benchmark",
+      "id": "arxiv:2611.27839",
+      "date": "2026-11-20",
+      "title": "Beyond Self-Critique: Epistemic Convergence Control for Multi-Agent Research Verification",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Jackson Wang"
+        "Chrisantus Eze"
       ],
-      "institution": null,
+      "institution": "Oklahoma State University",
       "summary": {
-        "zh": "本文通过引入严格的无前瞻偏差基准 rta-bench-1，揭示了当前LLM交易代理主要赚取的是市场Beta而非Alpha。研究表明，现有代理的高回报主要源于对市场风格因子的暴露，而非真正的选股智慧或新闻处理能力。作者建议开发者应自行提供交易边缘，并在报告中明确区分因子暴露与Alpha，同时呼吁基准测试应按新闻发布时间回放数据以确保评估的公正性。",
-        "en": "- **Background**: Large Language Model (LLM) trading agents are increasingly used for stock trading, with benchmarks ranking them by returns. However, single-run returns are highly volatile due to randomness (average..."
+        "zh": "VerifyAgent 通过引入非对称角色架构和动态收敛准则，有效解决了多智能体科学验证中的自我批判偏差和计算效率低下的问题。它在保持与现有自我修正方法相当的幻觉率的同时，显著提高了辩论的真实性和计算效率，为自动化科学发现提供了更严谨的认识论验证框架。",
+        "en": "- **Background**: Multi-agent systems are increasingly used to pressure-test scientific hypotheses through role-playing debates for claim verification. However, reliability remains a critical challenge in automated..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.19530v1",
-        "pdf": "https://arxiv.org/pdf/2611.19530v1",
+        "abs": "http://arxiv.org/abs/2611.27839v1",
+        "pdf": "https://arxiv.org/pdf/2611.27839v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.19530.md",
-        "summary_en_path": "summary_en/2026-11/2611.19530.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19530.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19530.md"
+        "summary_zh_path": "summary/2026-11/2611.27839.md",
+        "summary_en_path": "summary_en/2026-11/2611.27839.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27839.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27839.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -186,32 +181,40 @@
       }
     },
     {
-      "id": "arxiv:2611.19465",
-      "date": "2026-11-14",
-      "title": "VAST: Compiling Grounded Vulnerability Scenarios into Verifiable, Multi-Step Environments for Evaluating LLM Red-Team Agents",
+      "id": "arxiv:2611.27713",
+      "date": "2026-11-20",
+      "title": "MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhen Wan"
+        "Yifeng Xie",
+        "Chenke Li",
+        "Yangshuo Miao",
+        "Jingyuan Zheng",
+        "Mingxuan Liu",
+        "Feiwei Qin",
+        "YaQi Wang",
+        "Huiyu Zhou",
+        "Yifei Chen"
       ],
-      "institution": "SCANTIST PTE. LTD.",
+      "institution": "Hangzhou Dianzi University, Tsinghua University, University of Leicester",
       "summary": {
-        "zh": "VAST 通过引入声明式编译器和严格的后验审计，解决了现有 LLM 安全基准中存在的训练数据泄露、执行保真度低和诊断能力弱的问题。实验表明，提供明确的工作流协议能显著提升 LLM 代理在复杂多步漏洞利用任务中的表现，且 VAST 提供的细粒度评估框架能更准确地衡量和优化代理的安全推理能力。",
-        "en": "- **Background**: As Large Language Models (LLMs) improve in tool usage, autonomous penetration testing and vulnerability validation have become critical. Evaluating these security agents requires reproducible..."
+        "zh": "MetaRigor 通过引入显式的结果身份维护、科学决策边界和谱系关系，解决了LLM在证据合成工作流中缺乏端到端可验证性的问题。其核心在于将语义理解（LLM）与形式化验证（程序）分离并结合，显著提升了自动化荟萃分析的准确性和可靠性，为AI驱动的科学研究提供了更严谨的工作流范式。",
+        "en": "- **Background**: Automated meta-analysis requires not only accurate numerical extraction but also the consistent preservation of result identity (including study, comparison, population, outcome, time point, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.19465v1",
-        "pdf": "https://arxiv.org/pdf/2611.19465v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.27713v1",
+        "pdf": "https://arxiv.org/pdf/2611.27713v1",
+        "github": "https://anonymous.4open.science/r/Meta-Rigor-8C62"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.19465.md",
-        "summary_en_path": "summary_en/2026-11/2611.19465.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.19465.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.19465.md"
+        "summary_zh_path": "summary/2026-11/2611.27713.md",
+        "summary_en_path": "summary_en/2026-11/2611.27713.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27713.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27713.md"
       },
       "signals": {
         "priority_keyword": "Agent"

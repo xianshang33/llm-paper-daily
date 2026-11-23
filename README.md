@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.20_08:48-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.23_09:22-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月20日 08:48</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月23日 09:22</sub></summary>
 <br>
 
-- TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs 
-- How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents 
-- Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models 
-- Perfumer: A Large Language Model-based Agentic Framework Accelerating Structural Relaxation and Electronic Band Prediction for First-Principle Calculation 
-- Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI) 
+- Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks 
+- Potential emergence in LLM agents: a statistical physics perspective 
+- Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring 
+- Beyond Self-Critique: Epistemic Convergence Control for Multi-Agent Research Verification 
+- MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-20</span> | **Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks**<br><sub>机构: University of Padua<br>本文指出了当前编程智能体基准测试中存在的关键安全漏洞，即智能体可通过操纵执行环境来欺骗评分系统。作者提出了 SplitBench，首次实现了测试执行与结果判定的特权分离。实验表明，该框架在保证高评估保真度的同时，能有效抵御大多数针对评估基础设施的攻击，为构建可信的 AI 智能体评估体系提供了重要的系统设计参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27860v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27860.md)  |
+| <span style='display: inline-block; width: 42px;'>11-20</span> | **Potential emergence in LLM agents: a statistical physics perspective**<br><sub>机构: Peking University<br>本文从统计物理视角出发，提出了一种理解LLM智能体行为的新范式。通过将智能体状态视为中间变量，并引入配分函数和全局势能概念，成功量化了后训练过程如何组织和塑造智能体的推理行为。研究不仅在理论上填补了训练目标与状态级行为之间的空白，还在实际任务中验证了势能结构随训练增强的预测，为理解和预测智能体在复杂任务中的表现提供了有力的定量工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27618v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27618.md)  |
+| <span style='display: inline-block; width: 42px;'>11-20</span> | **Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring**<br><sub>机构: Zurich University of Applied Sciences<br>本文不仅提出了一种技术架构，更是一份关于如何在注重安全、可追溯性和保守变革的工业文化中引入代理式AI（Agentic AI）的组织经验报告。通过Beznau核电站的案例，证明了分层多智能体系统能有效解决遗留系统中的知识孤岛问题，为负责任地在工业监控中使用AI开辟了道路，强调了人机协作中证据可追溯性和人员最终决策权的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27556.md)  |
+| <span style='display: inline-block; width: 42px;'>11-20</span> | **Beyond Self-Critique: Epistemic Convergence Control for Multi-Agent Research Verification**<br><sub>机构: Oklahoma State University<br>VerifyAgent 通过引入非对称角色架构和动态收敛准则，有效解决了多智能体科学验证中的自我批判偏差和计算效率低下的问题。它在保持与现有自我修正方法相当的幻觉率的同时，显著提高了辩论的真实性和计算效率，为自动化科学发现提供了更严谨的认识论验证框架。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27839v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27839.md)  |
+| <span style='display: inline-block; width: 42px;'>11-20</span> | **MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries**<br><sub>机构: Hangzhou Dianzi University, Tsinghua University, University of Leicester<br>MetaRigor 通过引入显式的结果身份维护、科学决策边界和谱系关系，解决了LLM在证据合成工作流中缺乏端到端可验证性的问题。其核心在于将语义理解（LLM）与形式化验证（程序）分离并结合，显著提升了自动化荟萃分析的准确性和可靠性，为AI驱动的科学研究提供了更严谨的工作流范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27713v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27713.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://anonymous.4open.science/r/Meta-Rigor-8C62)</div> |
 | <span style='display: inline-block; width: 42px;'>11-19</span> | **TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs**<br><sub>机构: Zhejiang University<br>TwinLab-Bench 通过引入基于真实实验室记录的“数字孪生”代理（TwinLab Agent），解决了评估 AI 科学家自主设计实验能力的难题。它在保持低成本和高可重复性的同时，提供了接近真实实验室的复杂环境和反馈机制。基准测试结果显示，当前最先进的 AI 模型在这一领域仍有巨大提升空间，平均得分不足一半，突显了该基准的挑战性和对未来 AI 科学代理研发的指导意义。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.26248v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.26248.md)  |
 | <span style='display: inline-block; width: 42px;'>11-19</span> | **How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents**<br><sub>机构: IBM<br>本文重点不在于提出全新的算法，而在于分享将自蒸馏记忆系统产品化过程中的实战经验。核心结论是：记忆的最佳用量取决于模型本身的能力。强模型能从更多记忆中受益，而弱模型则需要精简的记忆子集以避免干扰。此外，文章详细列举了部署过程中遇到的典型错误（如来源丢失、错误吞没等），为后续团队部署代理记忆系统提供了宝贵的工程建议。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.26361v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.26361.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AgentToolkit/altk-evolve)</div> |
 | <span style='display: inline-block; width: 42px;'>11-19</span> | **Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models**<br><sub>机构: Meta, Inc.<br>本文提出了一种创新的端到端代理系统，解决了大规模排序模型集群中的特征优化难题。通过结合LLM的智能推理与确定性实验工具，并利用集群级别的知识共享和成本感知机制，该系统不仅自动化了特征工程流程，还在保证模型性能提升的同时有效控制了计算和存储成本，为大型Web平台的推荐系统优化提供了可行的规模化解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.26531v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.26531.md)  |
