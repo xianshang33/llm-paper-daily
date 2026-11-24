@@ -1,40 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-23T09:22:09.609482+00:00",
-  "run_date": "2026-11-20",
+  "generated_at": "2026-11-24T11:16:31.538960+00:00",
+  "run_date": "2026-11-23",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.27860",
-      "date": "2026-11-20",
-      "title": "Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks",
+      "id": "arxiv:2611.31185",
+      "date": "2026-11-23",
+      "title": "CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nathan Nour Houlamy",
-        "Mattia Favretto",
-        "Earlence Fernandes",
-        "Mauro Conti"
+        "Ramraj Chandradevan",
+        "Sayontan Ghosh",
+        "Vinoth Selvendran"
       ],
-      "institution": "University of Padua",
+      "institution": null,
       "summary": {
-        "zh": "本文指出了当前编程智能体基准测试中存在的关键安全漏洞，即智能体可通过操纵执行环境来欺骗评分系统。作者提出了 SplitBench，首次实现了测试执行与结果判定的特权分离。实验表明，该框架在保证高评估保真度的同时，能有效抵御大多数针对评估基础设施的攻击，为构建可信的 AI 智能体评估体系提供了重要的系统设计参考。",
-        "en": "- **Background**: Benchmarks for AI-based coding agents are the primary method for measuring LLM performance, influencing both business and research decisions. However, evaluating these agents is challenging because..."
+        "zh": "本文提出了CO-GRAFT框架，解决了RL提升搜索代理性能背后的黑盒归因问题。通过合作博弈论方法，作者证明了RL带来的性能增益主要来源于答案提取能力的提升以及推理与决策的耦合，而非搜索查询生成的优化。这一发现挑战了以往对搜索代理优化重点的认知，为未来针对特定功能角色的精细化训练提供了理论依据和指导方向。",
+        "en": "- **Background**: Reinforcement Learning (RL) significantly improves the performance of Large Language Model (LLM) search agents (up to 32 exact-match points), but overall accuracy gains do not reveal which underlying..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.27860v1",
-        "pdf": "https://arxiv.org/pdf/2611.27860v1",
+        "abs": "http://arxiv.org/abs/2611.31185v1",
+        "pdf": "https://arxiv.org/pdf/2611.31185v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.27860.md",
-        "summary_en_path": "summary_en/2026-11/2611.27860.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27860.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27860.md"
+        "summary_zh_path": "summary/2026-11/2611.31185.md",
+        "summary_en_path": "summary_en/2026-11/2611.31185.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.31185.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.31185.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -51,33 +50,37 @@
       }
     },
     {
-      "id": "arxiv:2611.27618",
-      "date": "2026-11-20",
-      "title": "Potential emergence in LLM agents: a statistical physics perspective",
+      "id": "arxiv:2611.31082",
+      "date": "2026-11-23",
+      "title": "ChiProgramBench: Can LLM Agents Rebuild Efficient Circuits from Pin-Level Experiments?",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Zhuo-Yang Song",
-        "Hua Xing Zhu"
+        "Tianrun Gou",
+        "Qingyao Yang",
+        "Wendong Xu",
+        "Liang Chen",
+        "Kuan Li",
+        "Ngai Wong"
       ],
-      "institution": "Peking University",
+      "institution": "The University of Hong Kong",
       "summary": {
-        "zh": "本文从统计物理视角出发，提出了一种理解LLM智能体行为的新范式。通过将智能体状态视为中间变量，并引入配分函数和全局势能概念，成功量化了后训练过程如何组织和塑造智能体的推理行为。研究不仅在理论上填补了训练目标与状态级行为之间的空白，还在实际任务中验证了势能结构随训练增强的预测，为理解和预测智能体在复杂任务中的表现提供了有力的定量工具。",
-        "en": "- **Background**: Large Language Model (LLM) agents are increasingly critical in scientific discovery and software development, operating through reasoning-action cycles involving state transitions. Understanding why..."
+        "zh": "ChiProgramBench填补了硬件领域Agent基准测试的空白，强调了从黑盒实验中恢复行为与实现高效电路之间的巨大差距。结果显示，虽然LLM Agent具备一定的算法恢复能力，但在处理复杂的硬件状态交互和优化PPA方面仍有显著不足，函数引导虽有帮助但提升有限，未来需针对硬件特有的时序和状态管理进行更深入的Agent能力增强。",
+        "en": "- **Background**: Understanding a system that can be run but not inspected is a core engineering skill, involving designing experiments, forming hypotheses about hidden state and timing, refuting incorrect ones, and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.27618v1",
-        "pdf": "https://arxiv.org/pdf/2611.27618v1",
+        "abs": "http://arxiv.org/abs/2611.31082v1",
+        "pdf": "https://arxiv.org/pdf/2611.31082v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.27618.md",
-        "summary_en_path": "summary_en/2026-11/2611.27618.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27618.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27618.md"
+        "summary_zh_path": "summary/2026-11/2611.31082.md",
+        "summary_en_path": "summary_en/2026-11/2611.31082.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.31082.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.31082.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -94,35 +97,36 @@
       }
     },
     {
-      "id": "arxiv:2611.27556",
-      "date": "2026-11-20",
-      "title": "Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring",
+      "id": "arxiv:2611.31063",
+      "date": "2026-11-23",
+      "title": "From Local Errors to System Failures: Modeling and Benchmarking Error Propagation in Multi-Agent LLM Systems",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wenqi Zhou",
-        "Leonardo Baldo",
-        "Edwin Kolbe",
-        "Manuel Arias Chao"
+        "Wenlong Yu",
+        "Bingxu Lu",
+        "Qilong Wang",
+        "Qinghua Hu",
+        "Qianru Sun"
       ],
-      "institution": "Zurich University of Applied Sciences",
+      "institution": "Singapore Management University, Nankai University, Tianjin University",
       "summary": {
-        "zh": "本文不仅提出了一种技术架构，更是一份关于如何在注重安全、可追溯性和保守变革的工业文化中引入代理式AI（Agentic AI）的组织经验报告。通过Beznau核电站的案例，证明了分层多智能体系统能有效解决遗留系统中的知识孤岛问题，为负责任地在工业监控中使用AI开辟了道路，强调了人机协作中证据可追溯性和人员最终决策权的重要性。",
-        "en": "- **Background**: Beznau Unit 1 in Switzerland, operational since 1969, is the world's most experienced nuclear reactor. Five decades of incremental modernization have left its monitoring systems, alarm logs, variable..."
+        "zh": "本文针对多智能体系统中错误传播机制不透明的问题，提出了 REPA 模型。通过解耦局部智能体的输入组装和处理过程，并建立其与系统级误差的理论联系，REPA 不仅实现了高精度的错误传播预测（Spearman 相关系数 0.84），还为针对性的系统优化（如高效 RAG）提供了可解释的基础。该研究填补了从局部行为到系统可靠性之间的分析空白。",
+        "en": "This paper addresses the opacity of error propagation mechanisms in Multi-Agent Systems by proposing the REPA model. By decoupling local agent input assembly and processing, and establishing a theoretical link to..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.27556v1",
-        "pdf": "https://arxiv.org/pdf/2611.27556v1",
+        "abs": "http://arxiv.org/abs/2611.31063v1",
+        "pdf": "https://arxiv.org/pdf/2611.31063v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.27556.md",
-        "summary_en_path": "summary_en/2026-11/2611.27556.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27556.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27556.md"
+        "summary_zh_path": "summary/2026-11/2611.31063.md",
+        "summary_en_path": "summary_en/2026-11/2611.31063.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.31063.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.31063.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -139,32 +143,36 @@
       }
     },
     {
-      "id": "arxiv:2611.27839",
-      "date": "2026-11-20",
-      "title": "Beyond Self-Critique: Epistemic Convergence Control for Multi-Agent Research Verification",
+      "id": "arxiv:2611.30894",
+      "date": "2026-11-23",
+      "title": "Useful but Unwieldy: How Software Engineers Perceive the Design of Chain-of-Thought Explanations in Coding Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Chrisantus Eze"
+        "Carlos Rafael Catalan",
+        "Lheane Marie Dizon",
+        "Patricia Nicole Monderin",
+        "Hyo Jin Do",
+        "Qiaosi Wang"
       ],
-      "institution": "Oklahoma State University",
+      "institution": "Samsung R&D Institute Philippines, Hanyang University ERICA, University of California, Berkeley",
       "summary": {
-        "zh": "VerifyAgent 通过引入非对称角色架构和动态收敛准则，有效解决了多智能体科学验证中的自我批判偏差和计算效率低下的问题。它在保持与现有自我修正方法相当的幻觉率的同时，显著提高了辩论的真实性和计算效率，为自动化科学发现提供了更严谨的认识论验证框架。",
-        "en": "- **Background**: Multi-agent systems are increasingly used to pressure-test scientific hypotheses through role-playing debates for claim verification. However, reliability remains a critical challenge in automated..."
+        "zh": "本文通过实证研究揭示了编码智能体中思维链（CoT）解释的双重性质：既是有用的透明度工具，又是因设计不当而显得笨拙（Unwieldy）的负担。研究强调，虽然 CoT 能增强信任，但其当前的呈现方式往往因冗长、不相关或交互脱节而增加认知负荷。文章最终综合这些洞察，为设计更符合软件工程师可解释性需求的 CoT 消息提供了指导方向，呼吁未来的 CA 设计应注重信息的适切性和交互的连贯性。",
+        "en": "- **Background**: Coding Agents (CAs) powered by Large Language Models (LLMs) are increasingly integrated into software engineering workflows. To provide transparency and explainability, some CAs expose their..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.27839v1",
-        "pdf": "https://arxiv.org/pdf/2611.27839v1",
+        "abs": "http://arxiv.org/abs/2611.30894v1",
+        "pdf": "https://arxiv.org/pdf/2611.30894v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.27839.md",
-        "summary_en_path": "summary_en/2026-11/2611.27839.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27839.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27839.md"
+        "summary_zh_path": "summary/2026-11/2611.30894.md",
+        "summary_en_path": "summary_en/2026-11/2611.30894.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.30894.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.30894.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -181,40 +189,34 @@
       }
     },
     {
-      "id": "arxiv:2611.27713",
-      "date": "2026-11-20",
-      "title": "MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries",
+      "id": "arxiv:2611.30745",
+      "date": "2026-11-23",
+      "title": "Intent-Conditioned Argument Mediation for Tool-Using LLM Agents: Blocking Trusted-but-Unauthorized Arguments",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Yifeng Xie",
-        "Chenke Li",
-        "Yangshuo Miao",
-        "Jingyuan Zheng",
-        "Mingxuan Liu",
-        "Feiwei Qin",
-        "YaQi Wang",
-        "Huiyu Zhou",
-        "Yifei Chen"
+        "Yulliwas Ameur",
+        "Miqeas Pedro Mendes",
+        "Samia Bouzefrane"
       ],
-      "institution": "Hangzhou Dianzi University, Tsinghua University, University of Leicester",
+      "institution": "Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Conservatoire National des Arts et Métiers (Cnam)",
       "summary": {
-        "zh": "MetaRigor 通过引入显式的结果身份维护、科学决策边界和谱系关系，解决了LLM在证据合成工作流中缺乏端到端可验证性的问题。其核心在于将语义理解（LLM）与形式化验证（程序）分离并结合，显著提升了自动化荟萃分析的准确性和可靠性，为AI驱动的科学研究提供了更严谨的工作流范式。",
-        "en": "- **Background**: Automated meta-analysis requires not only accurate numerical extraction but also the consistent preservation of result identity (including study, comparison, population, outcome, time point, and..."
+        "zh": "本文针对 LLM 代理中“可信但未授权”参数的安全隐患，提出了 IntentFlow 调解层。通过引入意图合约，IntentFlow 能够有效识别并阻断那些来源可信但不符合用户意图的参数，显著降低了间接提示注入等攻击的成功率，同时在保持较低误报率方面优于现有的 CaMeL 等检查机制，为 LLM 代理的工具调用安全提供了新的运行时防御思路。",
+        "en": "This paper addresses the security risk of \"Trusted-but-Unauthorized\" parameters in LLM agents by proposing IntentFlow. By introducing intent contracts, IntentFlow effectively identifies and blocks parameters that are..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.27713v1",
-        "pdf": "https://arxiv.org/pdf/2611.27713v1",
-        "github": "https://anonymous.4open.science/r/Meta-Rigor-8C62"
+        "abs": "http://arxiv.org/abs/2611.30745v1",
+        "pdf": "https://arxiv.org/pdf/2611.30745v1",
+        "github": "https://github.com/pm-mendes/intentflow"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.27713.md",
-        "summary_en_path": "summary_en/2026-11/2611.27713.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.27713.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.27713.md"
+        "summary_zh_path": "summary/2026-11/2611.30745.md",
+        "summary_en_path": "summary_en/2026-11/2611.30745.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.30745.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.30745.md"
       },
       "signals": {
         "priority_keyword": "Agent"

@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.23_09:22-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.24_11:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月23日 09:22</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月24日 11:16</sub></summary>
 <br>
 
-- Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks 
-- Potential emergence in LLM agents: a statistical physics perspective 
-- Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring 
-- Beyond Self-Critique: Epistemic Convergence Control for Multi-Agent Research Verification 
-- MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries 
+- CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting 
+- ChiProgramBench: Can LLM Agents Rebuild Efficient Circuits from Pin-Level Experiments? 
+- From Local Errors to System Failures: Modeling and Benchmarking Error Propagation in Multi-Agent LLM Systems 
+- Useful but Unwieldy: How Software Engineers Perceive the Design of Chain-of-Thought Explanations in Coding Agents 
+- Intent-Conditioned Argument Mediation for Tool-Using LLM Agents: Blocking Trusted-but-Unauthorized Arguments 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-23</span> | **CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting**<br><sub>本文提出了CO-GRAFT框架，解决了RL提升搜索代理性能背后的黑盒归因问题。通过合作博弈论方法，作者证明了RL带来的性能增益主要来源于答案提取能力的提升以及推理与决策的耦合，而非搜索查询生成的优化。这一发现挑战了以往对搜索代理优化重点的认知，为未来针对特定功能角色的精细化训练提供了理论依据和指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31185v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31185.md)  |
+| <span style='display: inline-block; width: 42px;'>11-23</span> | **ChiProgramBench: Can LLM Agents Rebuild Efficient Circuits from Pin-Level Experiments?**<br><sub>机构: The University of Hong Kong<br>ChiProgramBench填补了硬件领域Agent基准测试的空白，强调了从黑盒实验中恢复行为与实现高效电路之间的巨大差距。结果显示，虽然LLM Agent具备一定的算法恢复能力，但在处理复杂的硬件状态交互和优化PPA方面仍有显著不足，函数引导虽有帮助但提升有限，未来需针对硬件特有的时序和状态管理进行更深入的Agent能力增强。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31082v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31082.md)  |
+| <span style='display: inline-block; width: 42px;'>11-23</span> | **From Local Errors to System Failures: Modeling and Benchmarking Error Propagation in Multi-Agent LLM Systems**<br><sub>机构: Singapore Management University, Nankai University, Tianjin University<br>本文针对多智能体系统中错误传播机制不透明的问题，提出了 REPA 模型。通过解耦局部智能体的输入组装和处理过程，并建立其与系统级误差的理论联系，REPA 不仅实现了高精度的错误传播预测（Spearman 相关系数 0.84），还为针对性的系统优化（如高效 RAG）提供了可解释的基础。该研究填补了从局部行为到系统可靠性之间的分析空白。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31063v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31063.md)  |
+| <span style='display: inline-block; width: 42px;'>11-23</span> | **Useful but Unwieldy: How Software Engineers Perceive the Design of Chain-of-Thought Explanations in Coding Agents**<br><sub>机构: Samsung R&D Institute Philippines, Hanyang University ERICA, University of California, Berkeley<br>本文通过实证研究揭示了编码智能体中思维链（CoT）解释的双重性质：既是有用的透明度工具，又是因设计不当而显得笨拙（Unwieldy）的负担。研究强调，虽然 CoT 能增强信任，但其当前的呈现方式往往因冗长、不相关或交互脱节而增加认知负荷。文章最终综合这些洞察，为设计更符合软件工程师可解释性需求的 CoT 消息提供了指导方向，呼吁未来的 CA 设计应注重信息的适切性和交互的连贯性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.30894v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.30894.md)  |
+| <span style='display: inline-block; width: 42px;'>11-23</span> | **Intent-Conditioned Argument Mediation for Tool-Using LLM Agents: Blocking Trusted-but-Unauthorized Arguments**<br><sub>机构: Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Conservatoire National des Arts et Métiers (Cnam)<br>本文针对 LLM 代理中“可信但未授权”参数的安全隐患，提出了 IntentFlow 调解层。通过引入意图合约，IntentFlow 能够有效识别并阻断那些来源可信但不符合用户意图的参数，显著降低了间接提示注入等攻击的成功率，同时在保持较低误报率方面优于现有的 CaMeL 等检查机制，为 LLM 代理的工具调用安全提供了新的运行时防御思路。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.30745v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.30745.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/pm-mendes/intentflow)</div> |
 | <span style='display: inline-block; width: 42px;'>11-20</span> | **Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks**<br><sub>机构: University of Padua<br>本文指出了当前编程智能体基准测试中存在的关键安全漏洞，即智能体可通过操纵执行环境来欺骗评分系统。作者提出了 SplitBench，首次实现了测试执行与结果判定的特权分离。实验表明，该框架在保证高评估保真度的同时，能有效抵御大多数针对评估基础设施的攻击，为构建可信的 AI 智能体评估体系提供了重要的系统设计参考。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27860v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27860.md)  |
 | <span style='display: inline-block; width: 42px;'>11-20</span> | **Potential emergence in LLM agents: a statistical physics perspective**<br><sub>机构: Peking University<br>本文从统计物理视角出发，提出了一种理解LLM智能体行为的新范式。通过将智能体状态视为中间变量，并引入配分函数和全局势能概念，成功量化了后训练过程如何组织和塑造智能体的推理行为。研究不仅在理论上填补了训练目标与状态级行为之间的空白，还在实际任务中验证了势能结构随训练增强的预测，为理解和预测智能体在复杂任务中的表现提供了有力的定量工具。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27618v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27618.md)  |
 | <span style='display: inline-block; width: 42px;'>11-20</span> | **Bringing AI Assistance to the Beznau Nuclear Power Plant: A Hierarchical System of LLM Agents for Reactor Monitoring**<br><sub>机构: Zurich University of Applied Sciences<br>本文不仅提出了一种技术架构，更是一份关于如何在注重安全、可追溯性和保守变革的工业文化中引入代理式AI（Agentic AI）的组织经验报告。通过Beznau核电站的案例，证明了分层多智能体系统能有效解决遗留系统中的知识孤岛问题，为负责任地在工业监控中使用AI开辟了道路，强调了人机协作中证据可追溯性和人员最终决策权的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.27556v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.27556.md)  |
