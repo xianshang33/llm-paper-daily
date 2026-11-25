@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.24_11:16-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.25_10:02-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月24日 11:16</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月25日 10:02</sub></summary>
 <br>
 
-- CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting 
-- ChiProgramBench: Can LLM Agents Rebuild Efficient Circuits from Pin-Level Experiments? 
-- From Local Errors to System Failures: Modeling and Benchmarking Error Propagation in Multi-Agent LLM Systems 
-- Useful but Unwieldy: How Software Engineers Perceive the Design of Chain-of-Thought Explanations in Coding Agents 
-- Intent-Conditioned Argument Mediation for Tool-Using LLM Agents: Blocking Trusted-but-Unauthorized Arguments 
+- CAPTA: Identifying LLMs Behind AI Agents 
+- AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design 
+- Attestation is All You Need: Toward a Zero-Trust Architecture for HPC AI Agents 
+- Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe 
+- Leto: Utility-Centric Agent Memory 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-24</span> | **CAPTA: Identifying LLMs Behind AI Agents**<br><sub>机构: Tsinghua University<br>本文针对远程服务难以识别AI智能体背后LLM的问题，提出了CAPTA方法。该方法巧妙地将模型识别转化为类似CAPTCHA的多选题偏好测试，通过LLM引导搜索生成高区分度的题目，利用模型间的选择偏好差异进行指纹识别。实验表明，CAPTA在极少交互次数下即可实现接近完美的识别准确率，为防御针对特定模型的攻击和实施差异化内容策略提供了强有力的技术手段。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.32686v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.32686.md)  |
+| <span style='display: inline-block; width: 42px;'>11-24</span> | **AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design**<br><sub>机构: Mila, McGill University, Erised Labs, Princeton University, University of Pennsylvania<br>AIChipBench 揭示了 LLM Agent 在设计具有状态依赖性的硬件（如 LLM 解码器）时面临的主要困难在于内部状态的正确维护。文章证明，传统的仅基于输出的测试是不够的，必须引入能够指出具体状态不匹配位置的调试反馈，并使用远超开发规模的严格保留测试集进行最终评估。Sol 5.6 和 Fable 5.1 在此类复杂硬件设计任务中表现最佳，但整体成功率仍有提升空间，强调了未来基准测试需要更关注状态完整性和泛化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.33093v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.33093.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/frontiereval/AIChipBench)</div> |
+| <span style='display: inline-block; width: 42px;'>11-24</span> | **Attestation is All You Need: Toward a Zero-Trust Architecture for HPC AI Agents**<br><sub>机构: Texas Tech University<br>本文针对 HPC 环境中 AI Agent 面临的“被劫持授权 Agent”威胁，提出了 AEGIS 系统。通过引入行为证明机制，利用 eBPF 监控和 Slurm 集成，AEGIS 能够在不依赖解密流量的情况下，以低延迟和低开销实时检测并遏制多种复杂的注入和协同攻击，填补了 HPC 零信任架构在 AI Agent 安全领域的空白。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.32958v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.32958.md)  |
+| <span style='display: inline-block; width: 42px;'>11-24</span> | **Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe**<br><sub>机构: Nanyang Technological University<br>本文揭示了AI智能体在长程任务中的“懒惰”问题，即过早提交答案且言行不一。作者提出了RLVB方法，通过在训练阶段利用模拟器提供的可验证后验概率作为奖励信号，教会智能体在证据不足时继续探索，在证据充分时提交答案。该方法无需昂贵的LLM裁判或奖励模型，不仅显著提升了准确率（平均+17.1%），还大幅降低了训练成本。实验证明，RLVB能有效促使智能体根据其内部信念状态采取行动，解决了传统强化学习在时序决策和证据积累方面的局限性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.32884v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.32884.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/declare-lab/RLVB)</div> |
+| <span style='display: inline-block; width: 42px;'>11-24</span> | **Leto: Utility-Centric Agent Memory**<br><sub>机构: DigitalOcean<br>Leto 颠覆了传统记忆系统以“过去保真度”为核心的设计理念，转而强调记忆对“未来响应”的实用价值。通过保留细节索引和基于响应结果的效用反馈循环，Leto 有效解决了记忆缺失和服务不匹配的问题。实验结果表明，Leto 在个性化、长程任务和效率方面均显著优于现有最先进的方法，为 LLM 智能体的记忆管理提供了新的范式。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.33005v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.33005.md)  |
 | <span style='display: inline-block; width: 42px;'>11-23</span> | **CO-GRAFT: Attributing Reinforcement Learning Gains in Search Agents via Role-Level Policy Grafting**<br><sub>本文提出了CO-GRAFT框架，解决了RL提升搜索代理性能背后的黑盒归因问题。通过合作博弈论方法，作者证明了RL带来的性能增益主要来源于答案提取能力的提升以及推理与决策的耦合，而非搜索查询生成的优化。这一发现挑战了以往对搜索代理优化重点的认知，为未来针对特定功能角色的精细化训练提供了理论依据和指导方向。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31185v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31185.md)  |
 | <span style='display: inline-block; width: 42px;'>11-23</span> | **ChiProgramBench: Can LLM Agents Rebuild Efficient Circuits from Pin-Level Experiments?**<br><sub>机构: The University of Hong Kong<br>ChiProgramBench填补了硬件领域Agent基准测试的空白，强调了从黑盒实验中恢复行为与实现高效电路之间的巨大差距。结果显示，虽然LLM Agent具备一定的算法恢复能力，但在处理复杂的硬件状态交互和优化PPA方面仍有显著不足，函数引导虽有帮助但提升有限，未来需针对硬件特有的时序和状态管理进行更深入的Agent能力增强。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31082v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31082.md)  |
 | <span style='display: inline-block; width: 42px;'>11-23</span> | **From Local Errors to System Failures: Modeling and Benchmarking Error Propagation in Multi-Agent LLM Systems**<br><sub>机构: Singapore Management University, Nankai University, Tianjin University<br>本文针对多智能体系统中错误传播机制不透明的问题，提出了 REPA 模型。通过解耦局部智能体的输入组装和处理过程，并建立其与系统级误差的理论联系，REPA 不仅实现了高精度的错误传播预测（Spearman 相关系数 0.84），还为针对性的系统优化（如高效 RAG）提供了可解释的基础。该研究填补了从局部行为到系统可靠性之间的分析空白。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.31063v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.31063.md)  |
