@@ -1,7 +1,7 @@
 <h2 align='center'>llm-paper-daily 日常论文精选</h2>
 <div align='center'>
 
-[![Status](https://img.shields.io/badge/status-Update_11.25_10:02-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
+[![Status](https://img.shields.io/badge/status-Update_11.26_09:46-success.svg)]() [![简体中文 badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-Simplified%20Chinese-blue)](./README.md) [![English badge](https://img.shields.io/badge/%E8%8B%B1%E6%96%87-English-blue)](./README_en.md) 
 
 </div>
 
@@ -11,14 +11,14 @@
 
 <!-- paper-daily:readme:updates:start -->
 <details>
-  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月25日 10:02</sub></summary>
+  <summary>查看更新文章 &nbsp;&nbsp;<sub>更新时间: 2026年11月26日 09:46</sub></summary>
 <br>
 
-- CAPTA: Identifying LLMs Behind AI Agents 
-- AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design 
-- Attestation is All You Need: Toward a Zero-Trust Architecture for HPC AI Agents 
-- Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe 
-- Leto: Utility-Centric Agent Memory 
+- vSFT: Learning to Verbally Tune Agents at Test Time 
+- Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments 
+- ZeroHero: Training Small Language Agents from Scratch 
+- EvoLink-Bench: A Benchmark for Evaluating Self-Evolving Agents in Long-Horizon Interdependent Task Streams 
+- MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems 
 </details>
 <!-- paper-daily:readme:updates:end -->
 
@@ -42,6 +42,11 @@ Agent 会使用仓库里的 `paper-subscribe` skill，只读取公开的 `feed-p
 
 | &nbsp;Date&nbsp;&nbsp; | Paper | Links & Summary |
 | --- | --- | --- |
+| <span style='display: inline-block; width: 42px;'>11-25</span> | **vSFT: Learning to Verbally Tune Agents at Test Time**<br><sub>机构: AMAP, Alibaba Group<br>vSFT 提出了一种“学习如何适应模型”而非仅仅“使用已适应模型”的新范式。通过超网络将自然语言反馈转化为测试时的低秩权重更新，vSFT 有效解决了传统 RL 成本高、奖励稀疏的问题，实现了智能体在测试阶段的高效自我进化和性能提升，为构建更强大的自主智能体提供了新路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.34440v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.34440.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/AMAP-ML/vSFT)</div> |
+| <span style='display: inline-block; width: 42px;'>11-25</span> | **Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments**<br><sub>机构: Mohamed bin Zayed University of Artificial Intelligence<br>Crucible Bench 填补了LLM在化学研究中实际应用能力评估的空白。通过模拟真实的DMTA工作流程并引入严格的沙盒验证机制，该基准不仅评估了Agent的工具使用能力，更强调了科学结果的有效性。研究发现，尽管最强模型表现优于平均水平，但在合成规划和闭环优化等关键领域仍面临严峻挑战，且工具使用的成功率与科学正确性之间存在显著差距。该基准为跟踪和提升LLM在科学发现中的可靠性提供了重要标准。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.34254v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.34254.md)  |
+| <span style='display: inline-block; width: 42px;'>11-25</span> | **ZeroHero: Training Small Language Agents from Scratch**<br><sub>机构: Cognitive AI Systems Lab, Moscow Independent Research Institute of Artificial Intelligence<br>ZeroHero 框架成功验证了参数量极少（<50M）的语言模型可以从头训练成为高效的专用语言代理。通过结合专家轨迹预训练和带有推理对齐的 PPO 后训练，该方法解决了小模型在复杂交互环境中语言与决策协同的难题。实验表明，这些小型代理在多个基准测试中达到了接近或超越专家的性能，为资源受限环境下的高效语言代理部署提供了新的可行路径。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.34635v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.34635.md)  |
+| <span style='display: inline-block; width: 42px;'>11-25</span> | **EvoLink-Bench: A Benchmark for Evaluating Self-Evolving Agents in Long-Horizon Interdependent Task Streams**<br><sub>机构: Beihang University<br>EvoLink-Bench 填补了评估自进化智能体在长视界、相互依赖任务流中表现的空白。通过区分知识进化和能力进化，并引入持久化状态评估，该研究指出当前智能体在经验复用和跨任务泛化方面仍存在显著局限，强调了开发针对不同类型进化的特定学习机制的重要性。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.34400v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.34400.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/BUAA-Self-Evolving/EvoLink-Bench)</div> |
+| <span style='display: inline-block; width: 42px;'>11-25</span> | **MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems**<br><sub>机构: University of Minnesota<br>MeterRouter 解决了多智能体系统中通信成本高企且缺乏细粒度预算控制的问题。通过引入显式的货币预算约束和基于 GRPO 的动态路由机制，它能够在保证高性能的同时显著降低推理成本（降低 82%），并实现了精度与成本之间的灵活权衡，为多智能体系统的实际部署提供了高效、可控的解决方案。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.34327v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.34327.md)  |
 | <span style='display: inline-block; width: 42px;'>11-24</span> | **CAPTA: Identifying LLMs Behind AI Agents**<br><sub>机构: Tsinghua University<br>本文针对远程服务难以识别AI智能体背后LLM的问题，提出了CAPTA方法。该方法巧妙地将模型识别转化为类似CAPTCHA的多选题偏好测试，通过LLM引导搜索生成高区分度的题目，利用模型间的选择偏好差异进行指纹识别。实验表明，CAPTA在极少交互次数下即可实现接近完美的识别准确率，为防御针对特定模型的攻击和实施差异化内容策略提供了强有力的技术手段。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.32686v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.32686.md)  |
 | <span style='display: inline-block; width: 42px;'>11-24</span> | **AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design**<br><sub>机构: Mila, McGill University, Erised Labs, Princeton University, University of Pennsylvania<br>AIChipBench 揭示了 LLM Agent 在设计具有状态依赖性的硬件（如 LLM 解码器）时面临的主要困难在于内部状态的正确维护。文章证明，传统的仅基于输出的测试是不够的，必须引入能够指出具体状态不匹配位置的调试反馈，并使用远超开发规模的严格保留测试集进行最终评估。Sol 5.6 和 Fable 5.1 在此类复杂硬件设计任务中表现最佳，但整体成功率仍有提升空间，强调了未来基准测试需要更关注状态完整性和泛化能力。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.33093v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.33093.md) <div style='min-width:85px;'>[![GitHub](https://img.shields.io/badge/GitHub-View-brightgreen?logo=github)](https://github.com/frontiereval/AIChipBench)</div> |
 | <span style='display: inline-block; width: 42px;'>11-24</span> | **Attestation is All You Need: Toward a Zero-Trust Architecture for HPC AI Agents**<br><sub>机构: Texas Tech University<br>本文针对 HPC 环境中 AI Agent 面临的“被劫持授权 Agent”威胁，提出了 AEGIS 系统。通过引入行为证明机制，利用 eBPF 监控和 Slurm 集成，AEGIS 能够在不依赖解密流量的情况下，以低延迟和低开销实时检测并遏制多种复杂的注入和协同攻击，填补了 HPC 零信任架构在 AI Agent 安全领域的空白。</sub>| <div style='min-width:85px;'>[![arXiv](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/pdf/2611.32958v1)</div><div style='min-width:85px;'>[![Summary](https://img.shields.io/badge/Sum.-Read-blue?logo=dependabot)](summary/2026-11/2611.32958.md)  |
