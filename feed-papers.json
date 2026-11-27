@@ -1,39 +1,38 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-27T09:52:19.386779+00:00",
-  "run_date": "2026-11-22",
+  "generated_at": "2026-11-27T15:28:47.749060+00:00",
+  "run_date": "2026-11-21",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.29467",
-      "date": "2026-11-22",
-      "title": "Beyond Accuracy: A Diagnostic Benchmark for Hypothesis-Driven Experiment Planning in LLM Agents",
+      "id": "arxiv:2611.28787",
+      "date": "2026-11-21",
+      "title": "DiscernBench: Evaluating Cooperative Discernment of LLM Agents in Institutional Settings",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Ryo Kuroki",
-        "Amin Mansouri",
-        "Philippe Schwaller"
+        "Disha Sheshanarayana",
+        "Tanishka Magar"
       ],
-      "institution": "EPFL, Lausanne, Switzerland; Asahi Kasei Corporation, Tokyo, Japan",
+      "institution": "Manipal University Jaipur",
       "summary": {
-        "zh": "该论文引入了一个超越最终准确率的诊断性基准，通过分解推理步骤和量化探索行为，深入揭示了LLM代理在科学实验规划中的能力边界。研究发现，当前LLM的主要瓶颈在于将理论假设转化为具体的、具有判别力的实验设计和预测，而非单纯的假设识别。这一框架为未来改进科学AI代理的推理能力提供了明确的优化方向。",
-        "en": "This paper introduces a diagnostic benchmark that goes beyond final accuracy by decomposing reasoning steps and quantifying exploration behavior, revealing the capability boundaries of LLM agents in scientific..."
+        "zh": "- **背景**：随着大语言模型（LLM）在航空、执法和应急管理等实际操作工作流中的部署，模型不仅需要生成内容，还需在制度约束下做出关键决策。这要求模型具备“合作辨别力”（Cooperative Discernment），即判断是遵从、拒绝还是升级处理来自上级或同事的请求。 - **已有工作的不足**：现有的评估方法主要关注最终答案的准确性，忽略了在制度约束环境下，多智能体如何通过...",
+        "en": "- **Background**: As Large Language Models (LLMs) are deployed in operational workflows such as aviation, law enforcement, and emergency management, they must make critical decisions under institutional constraints...."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.29467v1",
-        "pdf": "https://arxiv.org/pdf/2611.29467v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.28787v1",
+        "pdf": "https://arxiv.org/pdf/2611.28787v1",
+        "github": "https://github.com/Disha1001/DiscernBench"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.29467.md",
-        "summary_en_path": "summary_en/2026-11/2611.29467.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29467.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29467.md"
+        "summary_zh_path": "summary/2026-11/2611.28787.md",
+        "summary_en_path": "summary_en/2026-11/2611.28787.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.28787.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.28787.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -50,37 +49,37 @@
       }
     },
     {
-      "id": "arxiv:2611.29613",
-      "date": "2026-11-22",
-      "title": "Weight Coding: Evolving Web-Scale Recommenders through Direct Weight Edits with LLM Agents",
+      "id": "arxiv:2611.28706",
+      "date": "2026-11-21",
+      "title": "SkillLens: An Interactive Human-LLM System for Diagnosing and Refining Agent Skills",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Junpeng Hou",
-        "Jiaxing Qu",
-        "Derek Cheng",
-        "Jaewon Yang",
-        "Abhinav Naikawadi",
-        "Karthik Subbian"
+        "Shuo Yan",
+        "Rui Sheng",
+        "Xiaoyan Gu",
+        "Lian Lian",
+        "Chengran Xu",
+        "Yifang Wang"
       ],
-      "institution": "Pinterest, Inc.",
+      "institution": "Florida State University, The Hong Kong University of Science and Technology, Zhejiang University, Washington University in St. Louis, University of Wisconsin–Madison",
       "summary": {
-        "zh": "本文提出的Weight Coding是一种利用LLM智能体直接编辑模型权重的新方法，突破了传统基于梯度的训练范式。它在Pinterest的大规模生产系统中证明了其有效性，不仅大幅降低了模型演进的计算成本和时间，还提供了对模型行为的显式控制能力，为推荐系统的预训练和后训练阶段提供了新的优化工具。",
-        "en": "- **Background**: Web-scale recommender models typically evolve through retraining or fine-tuning to adapt to changing user interests and business goals. This conventional approach relies on modifying data, loss..."
+        "zh": "SkillLens 解决了 LLM 智能体技能维护中证据碎片化和上下文丢失的问题。通过构建一个连接版本比较、案例证据和人工审查优化的交互式系统，它显著降低了开发者诊断和 refine 技能的难度。研究结果表明，将技术追踪能力与人类判断相结合，是提升 LLM 智能体可维护性和可靠性的有效途径。",
+        "en": "- **Background**: As LLM agents are increasingly used for complex, multi-step workflows, developers externalize procedural knowledge into reusable \"Skills\" (packages of instructions, scripts, and examples). Maintaining..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.29613v1",
-        "pdf": "https://arxiv.org/pdf/2611.29613v1",
+        "abs": "http://arxiv.org/abs/2611.28706v1",
+        "pdf": "https://arxiv.org/pdf/2611.28706v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.29613.md",
-        "summary_en_path": "summary_en/2026-11/2611.29613.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29613.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29613.md"
+        "summary_zh_path": "summary/2026-11/2611.28706.md",
+        "summary_en_path": "summary_en/2026-11/2611.28706.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.28706.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.28706.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -97,39 +96,35 @@
       }
     },
     {
-      "id": "arxiv:2611.29829",
-      "date": "2026-11-22",
-      "title": "Who Makes the Decision? Auditing an Agentic LLM Pipeline for Illicit Cryptocurrency Transaction Monitoring",
+      "id": "arxiv:2611.28660",
+      "date": "2026-11-21",
+      "title": "Persuasion from Within: Model-Based Insider Attacks in Multi-Agent LLM Debate and Consensus",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Vaishnavi Chaughule",
-        "Yuchen Zhang",
-        "Mohammed Ahnaf Tajwar",
-        "Sai Akshay Menta",
-        "Saanidhya Vats",
-        "Vinija Jain",
-        "Aman Chadha",
-        "Divya Chaudhary"
+        "Bangyan Ju",
+        "Xiaolin Sun",
+        "Yibin Hu",
+        "Zizhan Zheng"
       ],
-      "institution": "Northeastern University",
+      "institution": "Tulane University",
       "summary": {
-        "zh": "本文指出在非法活动监控中，LLM 生成的理由不应被视为决策来源的证据。通过细粒度的归因分析，揭示了代理管道中确定性规则往往主导决策，而 LLM 法官存在依赖上游偏差、引用幻觉等问题。这对构建可问责的 AI 金融合规系统具有重要警示意义。",
-        "en": "- **Background**: Agentic pipelines combining graph detectors, deterministic rules, Retrieval-Augmented Generation (RAG), and LLM judges are increasingly used to monitor illicit cryptocurrency flows and generate..."
+        "zh": "本文揭示了多智能体LLM系统中内部威胁的严重性，指出仅假设所有参与者目标一致是不安全的。通过引入基于世界模型的内部攻击方法，作者展示了恶意智能体如何利用对群体动态的理解进行高效且隐蔽的操纵。研究不仅证明了当前系统在面临此类高级内部攻击时的脆弱性，还提供了一种通过对抗性训练来增强系统鲁棒性的可行方案，为未来构建更安全的多智能体协作系统提供了重要启示。",
+        "en": "-agent systems for collective decision-making tasks, such as multi-agent debates and consensus games. In these systems, agents exchange messages over multiple rounds to update their views, with a resolution mechanism..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.29829v1",
-        "pdf": "https://arxiv.org/pdf/2611.29829v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.28660v1",
+        "pdf": "https://arxiv.org/pdf/2611.28660v1",
+        "github": "https://anonymous.4open.science/r/Insider-InMAS-4265/"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.29829.md",
-        "summary_en_path": "summary_en/2026-11/2611.29829.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29829.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29829.md"
+        "summary_zh_path": "summary/2026-11/2611.28660.md",
+        "summary_en_path": "summary_en/2026-11/2611.28660.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.28660.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.28660.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -146,36 +141,44 @@
       }
     },
     {
-      "id": "arxiv:2611.29822",
-      "date": "2026-11-22",
-      "title": "Can Vibe Coding Produce Accessible Websites: An Empirical Study on LLM Coding Agents and Skills",
+      "id": "arxiv:2611.28671",
+      "date": "2026-11-21",
+      "title": "The Evaluation Substrate Matters: Benchmarking Multi-Agent Serving Substrates",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Syed Fatiul Huq",
-        "Md. Asif Haider",
-        "Abu Jafar Saifullah",
-        "Thomas Zimmermann",
-        "Sam Malek"
+        "Haoyuan Zheng",
+        "Dongting Li",
+        "Hancheng Ye",
+        "Qinsi Wang",
+        "Mingyuan Ma",
+        "Yuncheng Yao",
+        "Yifei Wang",
+        "Baijun Zhou",
+        "Zishan Shao",
+        "Tingjun Chen",
+        "Hai Helen Li",
+        "Danyang Zhuo",
+        "Yiran Chen"
       ],
-      "institution": "University of California, Irvine",
+      "institution": "Duke University",
       "summary": {
-        "zh": "本文通过大规模实证研究揭示，当前的“Vibe Coding”工作流无法可靠地产生符合无障碍标准的网站。尽管引入专门的无障碍技能可以显著改善部分指标，但无法彻底消除缺陷，且可能导致功能回归。研究表明，自动化代理在提升可访问性方面具有潜力，但也引入了新的风险，未来需要在工具设计中更好地平衡无障碍性与功能正确性。",
-        "en": "- **Background**: The rise of Large Language Model (LLM) coding agents has popularized \"Vibe Coding,\" a paradigm where software is created via natural language prompts with minimal source code inspection. This lowers..."
+        "zh": "本文指出了当前多智能体系统评估中忽视服务基底影响的重大缺陷，并提出了 MASSys 基准测试框架。通过跨不同服务环境和负载条件的系统性评估，论文证明了多智能体工作流的性能高度依赖于执行环境，存在排名反转和有效质量下降等现象。MASSys 通过记录全面的运行时指标和失败证据，为设计和评估更具鲁棒性的多智能体系统提供了新的视角和方法论，强调了在明确操作条件下评估 MAS 设计的重要性。",
+        "en": "This paper identifies a critical flaw in current MAS evaluation: the neglect of serving substrate effects. It proposes MASSys, a benchmark framework that systematically evaluates MAS across different serving..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.29822v1",
-        "pdf": "https://arxiv.org/pdf/2611.29822v1",
-        "github": null
+        "abs": "http://arxiv.org/abs/2611.28671v1",
+        "pdf": "https://arxiv.org/pdf/2611.28671v1",
+        "github": "https://github.com/MAS-Sys-Bench/MAS-Sys"
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.29822.md",
-        "summary_en_path": "summary_en/2026-11/2611.29822.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29822.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29822.md"
+        "summary_zh_path": "summary/2026-11/2611.28671.md",
+        "summary_en_path": "summary_en/2026-11/2611.28671.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.28671.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.28671.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -192,62 +195,38 @@
       }
     },
     {
-      "id": "arxiv:2611.29716",
-      "date": "2026-11-22",
-      "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
+      "id": "arxiv:2611.28907",
+      "date": "2026-11-21",
+      "title": "STRIDE: Strategy-to-Tactics Retrieval-Guided Skill Disclosure and Evolution for Agentic Reinforcement Learning",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wanghao Ye",
-        "Shwai He",
-        "Sihan Chen",
-        "Yiting Wang",
-        "Bowei Tian",
-        "Guoheng Sun",
-        "Ziyi Wang",
-        "Ziyao Wang",
-        "Yexiao He",
-        "Zheyu Shen",
-        "Meng Liu",
-        "Yuning Zhang",
-        "Meng Feng",
-        "Yifei Dong",
-        "Yanhong Qian",
-        "Yang Wang",
-        "Siyuan Peng",
-        "Yilong Dai",
-        "Zhenle Duan",
-        "Joshua Liu",
-        "Lang Xiong",
-        "Aarosh Das",
-        "Zhaoyi Liu",
-        "Daeun Jung",
-        "Aditya Sarkar",
-        "Parastoo Pilevar",
-        "Xiaochuan Gong",
-        "Yancheng Zhu",
-        "Yingying Fan",
-        "Qiong Wang",
-        "Ang Li"
+        "Shixin Hong",
+        "Wanqing Cui",
+        "Yibo Hu",
+        "Naen Xu",
+        "Zhiwei Huang",
+        "Meiguang Jin",
+        "Junfeng Ma"
       ],
-      "institution": "University of Maryland, College Park; Carnegie Mellon University; Texas A&M University, College Station; University of Washington; Northeastern University; The University of Alabama; Stanford University",
+      "institution": "Taobao & Tmall Group of Alibaba; Zhejiang University",
       "summary": {
-        "zh": "Fin-RSI 通过提供统一的金融工具接口、严格的检查机制和递归自我改进能力，有效解决了 LLM 金融智能体在工具发现、代码正确性和工作流可靠性方面的痛点。实验证明其能显著提升智能体生成有效金融程序的能力，为社区提供了一个可扩展的共享资源，推动了金融智能体技术的发展。",
-        "en": "- **Background**: As Large Language Models (LLMs) become more capable, financial agents require tools they can easily discover and utilize. However, financial software is fragmented across various libraries with..."
+        "zh": "STRIDE 通过引入渐进式技能披露机制，成功解决了代理强化学习中策略与战术混淆的问题。它通过将策略作为持久上下文、战术按需检索的方式，不仅优化了上下文窗口的使用，还通过事件级信用分配提升了技能检索和进化的效率。在多个基准测试中的优异表现证明了该方法在提升 LLM 智能体复杂任务处理能力方面的有效性。",
+        "en": "STRIDE successfully addresses the confusion between strategies and tactics in agentic reinforcement learning by introducing a progressive skill disclosure mechanism. By treating strategies as persistent context and..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.29716v1",
-        "pdf": "https://arxiv.org/pdf/2611.29716v1",
+        "abs": "http://arxiv.org/abs/2611.28907v1",
+        "pdf": "https://arxiv.org/pdf/2611.28907v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.29716.md",
-        "summary_en_path": "summary_en/2026-11/2611.29716.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29716.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29716.md"
+        "summary_zh_path": "summary/2026-11/2611.28907.md",
+        "summary_en_path": "summary_en/2026-11/2611.28907.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.28907.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.28907.md"
       },
       "signals": {
         "priority_keyword": "Agent"
