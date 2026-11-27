@@ -1,94 +1,39 @@
 {
   "schema_version": "v1",
   "feed_id": "paper-daily",
-  "generated_at": "2026-11-26T09:46:48.203088+00:00",
-  "run_date": "2026-11-25",
+  "generated_at": "2026-11-27T09:52:19.386779+00:00",
+  "run_date": "2026-11-22",
   "source_repo": "xianshang33/llm-paper-daily",
   "items": [
     {
-      "id": "arxiv:2611.34440",
-      "date": "2026-11-25",
-      "title": "vSFT: Learning to Verbally Tune Agents at Test Time",
+      "id": "arxiv:2611.29467",
+      "date": "2026-11-22",
+      "title": "Beyond Accuracy: A Diagnostic Benchmark for Hypothesis-Driven Experiment Planning in LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Qishuai Wen",
-        "Rui Chen",
-        "Haiwen Li",
-        "Zhiyuan Huang",
-        "Qiwen Gu",
-        "Bingjie Gao",
-        "Geng Li",
-        "Jing Tang",
-        "Xiangxiang Chu",
-        "Chun-Guang Li"
+        "Ryo Kuroki",
+        "Amin Mansouri",
+        "Philippe Schwaller"
       ],
-      "institution": "AMAP, Alibaba Group",
+      "institution": "EPFL, Lausanne, Switzerland; Asahi Kasei Corporation, Tokyo, Japan",
       "summary": {
-        "zh": "vSFT 提出了一种“学习如何适应模型”而非仅仅“使用已适应模型”的新范式。通过超网络将自然语言反馈转化为测试时的低秩权重更新，vSFT 有效解决了传统 RL 成本高、奖励稀疏的问题，实现了智能体在测试阶段的高效自我进化和性能提升，为构建更强大的自主智能体提供了新路径。",
-        "en": "- **Background**: Large Language Model (LLM) agents are typically improved via agentic reinforcement learning for interactive decision-making. However, existing post-training methods face limitations at test time."
+        "zh": "该论文引入了一个超越最终准确率的诊断性基准，通过分解推理步骤和量化探索行为，深入揭示了LLM代理在科学实验规划中的能力边界。研究发现，当前LLM的主要瓶颈在于将理论假设转化为具体的、具有判别力的实验设计和预测，而非单纯的假设识别。这一框架为未来改进科学AI代理的推理能力提供了明确的优化方向。",
+        "en": "This paper introduces a diagnostic benchmark that goes beyond final accuracy by decomposing reasoning steps and quantifying exploration behavior, revealing the capability boundaries of LLM agents in scientific..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34440v1",
-        "pdf": "https://arxiv.org/pdf/2611.34440v1",
-        "github": "https://github.com/AMAP-ML/vSFT"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.34440.md",
-        "summary_en_path": "summary_en/2026-11/2611.34440.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.34440.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.34440.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.34254",
-      "date": "2026-11-25",
-      "title": "Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yinjun Liu",
-        "Xinye Li",
-        "Ruisen Peng",
-        "Lang Gao",
-        "Zixiang Xu",
-        "Zirui Song",
-        "Xiuying Chen"
-      ],
-      "institution": "Mohamed bin Zayed University of Artificial Intelligence",
-      "summary": {
-        "zh": "Crucible Bench 填补了LLM在化学研究中实际应用能力评估的空白。通过模拟真实的DMTA工作流程并引入严格的沙盒验证机制，该基准不仅评估了Agent的工具使用能力，更强调了科学结果的有效性。研究发现，尽管最强模型表现优于平均水平，但在合成规划和闭环优化等关键领域仍面临严峻挑战，且工具使用的成功率与科学正确性之间存在显著差距。该基准为跟踪和提升LLM在科学发现中的可靠性提供了重要标准。",
-        "en": "Crucible Bench fills the gap in evaluating the practical application capabilities of LLMs in chemical research. By simulating real-world DMTA workflows and introducing strict sandbox verification, it emphasizes the..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.34254v1",
-        "pdf": "https://arxiv.org/pdf/2611.34254v1",
+        "abs": "http://arxiv.org/abs/2611.29467v1",
+        "pdf": "https://arxiv.org/pdf/2611.29467v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.34254.md",
-        "summary_en_path": "summary_en/2026-11/2611.34254.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.34254.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.34254.md"
+        "summary_zh_path": "summary/2026-11/2611.29467.md",
+        "summary_en_path": "summary_en/2026-11/2611.29467.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29467.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29467.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -105,35 +50,37 @@
       }
     },
     {
-      "id": "arxiv:2611.34635",
-      "date": "2026-11-25",
-      "title": "ZeroHero: Training Small Language Agents from Scratch",
+      "id": "arxiv:2611.29613",
+      "date": "2026-11-22",
+      "title": "Weight Coding: Evolving Web-Scale Recommenders through Direct Weight Edits with LLM Agents",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Nikita Sorokin",
-        "Zoya Volovikova",
-        "Alexey Skrynnik",
-        "Aleksandr Panov"
+        "Junpeng Hou",
+        "Jiaxing Qu",
+        "Derek Cheng",
+        "Jaewon Yang",
+        "Abhinav Naikawadi",
+        "Karthik Subbian"
       ],
-      "institution": "Cognitive AI Systems Lab, Moscow Independent Research Institute of Artificial Intelligence",
+      "institution": "Pinterest, Inc.",
       "summary": {
-        "zh": "ZeroHero 框架成功验证了参数量极少（<50M）的语言模型可以从头训练成为高效的专用语言代理。通过结合专家轨迹预训练和带有推理对齐的 PPO 后训练，该方法解决了小模型在复杂交互环境中语言与决策协同的难题。实验表明，这些小型代理在多个基准测试中达到了接近或超越专家的性能，为资源受限环境下的高效语言代理部署提供了新的可行路径。",
-        "en": "- **Background**: Large pretrained language models (LLMs) excel in interactive tasks but are limited by high computational and memory requirements, hindering deployment in local or privacy-sensitive environments. The..."
+        "zh": "本文提出的Weight Coding是一种利用LLM智能体直接编辑模型权重的新方法，突破了传统基于梯度的训练范式。它在Pinterest的大规模生产系统中证明了其有效性，不仅大幅降低了模型演进的计算成本和时间，还提供了对模型行为的显式控制能力，为推荐系统的预训练和后训练阶段提供了新的优化工具。",
+        "en": "- **Background**: Web-scale recommender models typically evolve through retraining or fine-tuning to adapt to changing user interests and business goals. This conventional approach relies on modifying data, loss..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34635v1",
-        "pdf": "https://arxiv.org/pdf/2611.34635v1",
+        "abs": "http://arxiv.org/abs/2611.29613v1",
+        "pdf": "https://arxiv.org/pdf/2611.29613v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.34635.md",
-        "summary_en_path": "summary_en/2026-11/2611.34635.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.34635.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.34635.md"
+        "summary_zh_path": "summary/2026-11/2611.29613.md",
+        "summary_en_path": "summary_en/2026-11/2611.29613.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29613.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29613.md"
       },
       "signals": {
         "priority_keyword": "Agent"
@@ -150,91 +97,157 @@
       }
     },
     {
-      "id": "arxiv:2611.34400",
-      "date": "2026-11-25",
-      "title": "EvoLink-Bench: A Benchmark for Evaluating Self-Evolving Agents in Long-Horizon Interdependent Task Streams",
+      "id": "arxiv:2611.29829",
+      "date": "2026-11-22",
+      "title": "Who Makes the Decision? Auditing an Agentic LLM Pipeline for Illicit Cryptocurrency Transaction Monitoring",
       "topic": "agent",
       "language": [
         "zh",
         "en"
       ],
       "authors": [
-        "Wei Chen",
-        "Xiaodong Lu",
-        "Weihao Shen",
-        "Gongxun Li",
-        "Xingyu Guo",
-        "Qihang Sun",
-        "Fuwei Zhang",
-        "Zhao Zhang",
-        "Yikun Ban",
-        "Shuang Li",
-        "Deqing Wang",
-        "Fuzhen Zhuang"
+        "Vaishnavi Chaughule",
+        "Yuchen Zhang",
+        "Mohammed Ahnaf Tajwar",
+        "Sai Akshay Menta",
+        "Saanidhya Vats",
+        "Vinija Jain",
+        "Aman Chadha",
+        "Divya Chaudhary"
       ],
-      "institution": "Beihang University",
+      "institution": "Northeastern University",
       "summary": {
-        "zh": "EvoLink-Bench 填补了评估自进化智能体在长视界、相互依赖任务流中表现的空白。通过区分知识进化和能力进化，并引入持久化状态评估，该研究指出当前智能体在经验复用和跨任务泛化方面仍存在显著局限，强调了开发针对不同类型进化的特定学习机制的重要性。",
-        "en": "EvoLink-Bench fills the gap in evaluating self-evolving agents in long-horizon, interdependent task streams. By distinguishing between knowledge and capability evolution and introducing persistent state evaluation, the..."
+        "zh": "本文指出在非法活动监控中，LLM 生成的理由不应被视为决策来源的证据。通过细粒度的归因分析，揭示了代理管道中确定性规则往往主导决策，而 LLM 法官存在依赖上游偏差、引用幻觉等问题。这对构建可问责的 AI 金融合规系统具有重要警示意义。",
+        "en": "- **Background**: Agentic pipelines combining graph detectors, deterministic rules, Retrieval-Augmented Generation (RAG), and LLM judges are increasingly used to monitor illicit cryptocurrency flows and generate..."
       },
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34400v1",
-        "pdf": "https://arxiv.org/pdf/2611.34400v1",
-        "github": "https://github.com/BUAA-Self-Evolving/EvoLink-Bench"
-      },
-      "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.34400.md",
-        "summary_en_path": "summary_en/2026-11/2611.34400.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.34400.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.34400.md"
-      },
-      "signals": {
-        "priority_keyword": "Agent"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "id": "arxiv:2611.34327",
-      "date": "2026-11-25",
-      "title": "MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems",
-      "topic": "agent",
-      "language": [
-        "zh",
-        "en"
-      ],
-      "authors": [
-        "Yue Xu",
-        "Leikun Yin",
-        "Ruiming Min",
-        "Yufeng Lai",
-        "Justin Andrew Johnson",
-        "Sitao Luan",
-        "Xiaotong Shen"
-      ],
-      "institution": "University of Minnesota",
-      "summary": {
-        "zh": "MeterRouter 解决了多智能体系统中通信成本高企且缺乏细粒度预算控制的问题。通过引入显式的货币预算约束和基于 GRPO 的动态路由机制，它能够在保证高性能的同时显著降低推理成本（降低 82%），并实现了精度与成本之间的灵活权衡，为多智能体系统的实际部署提供了高效、可控的解决方案。",
-        "en": "- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) outperform single-agent systems in complex tasks but incur substantial token overhead due to inter-agent communication. Assigning large..."
-      },
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.34327v1",
-        "pdf": "https://arxiv.org/pdf/2611.34327v1",
+        "abs": "http://arxiv.org/abs/2611.29829v1",
+        "pdf": "https://arxiv.org/pdf/2611.29829v1",
         "github": null
       },
       "artifacts": {
-        "summary_zh_path": "summary/2026-11/2611.34327.md",
-        "summary_en_path": "summary_en/2026-11/2611.34327.md",
-        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.34327.md",
-        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.34327.md"
+        "summary_zh_path": "summary/2026-11/2611.29829.md",
+        "summary_en_path": "summary_en/2026-11/2611.29829.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29829.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29829.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.29822",
+      "date": "2026-11-22",
+      "title": "Can Vibe Coding Produce Accessible Websites: An Empirical Study on LLM Coding Agents and Skills",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Syed Fatiul Huq",
+        "Md. Asif Haider",
+        "Abu Jafar Saifullah",
+        "Thomas Zimmermann",
+        "Sam Malek"
+      ],
+      "institution": "University of California, Irvine",
+      "summary": {
+        "zh": "本文通过大规模实证研究揭示，当前的“Vibe Coding”工作流无法可靠地产生符合无障碍标准的网站。尽管引入专门的无障碍技能可以显著改善部分指标，但无法彻底消除缺陷，且可能导致功能回归。研究表明，自动化代理在提升可访问性方面具有潜力，但也引入了新的风险，未来需要在工具设计中更好地平衡无障碍性与功能正确性。",
+        "en": "- **Background**: The rise of Large Language Model (LLM) coding agents has popularized \"Vibe Coding,\" a paradigm where software is created via natural language prompts with minimal source code inspection. This lowers..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.29822v1",
+        "pdf": "https://arxiv.org/pdf/2611.29822v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.29822.md",
+        "summary_en_path": "summary_en/2026-11/2611.29822.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29822.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29822.md"
+      },
+      "signals": {
+        "priority_keyword": "Agent"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "id": "arxiv:2611.29716",
+      "date": "2026-11-22",
+      "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
+      "topic": "agent",
+      "language": [
+        "zh",
+        "en"
+      ],
+      "authors": [
+        "Wanghao Ye",
+        "Shwai He",
+        "Sihan Chen",
+        "Yiting Wang",
+        "Bowei Tian",
+        "Guoheng Sun",
+        "Ziyi Wang",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Meng Liu",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Yifei Dong",
+        "Yanhong Qian",
+        "Yang Wang",
+        "Siyuan Peng",
+        "Yilong Dai",
+        "Zhenle Duan",
+        "Joshua Liu",
+        "Lang Xiong",
+        "Aarosh Das",
+        "Zhaoyi Liu",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Ang Li"
+      ],
+      "institution": "University of Maryland, College Park; Carnegie Mellon University; Texas A&M University, College Station; University of Washington; Northeastern University; The University of Alabama; Stanford University",
+      "summary": {
+        "zh": "Fin-RSI 通过提供统一的金融工具接口、严格的检查机制和递归自我改进能力，有效解决了 LLM 金融智能体在工具发现、代码正确性和工作流可靠性方面的痛点。实验证明其能显著提升智能体生成有效金融程序的能力，为社区提供了一个可扩展的共享资源，推动了金融智能体技术的发展。",
+        "en": "- **Background**: As Large Language Models (LLMs) become more capable, financial agents require tools they can easily discover and utilize. However, financial software is fragmented across various libraries with..."
+      },
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.29716v1",
+        "pdf": "https://arxiv.org/pdf/2611.29716v1",
+        "github": null
+      },
+      "artifacts": {
+        "summary_zh_path": "summary/2026-11/2611.29716.md",
+        "summary_en_path": "summary_en/2026-11/2611.29716.md",
+        "summary_zh_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary/2026-11/2611.29716.md",
+        "summary_en_url": "https://github.com/xianshang33/llm-paper-daily/blob/main/summary_en/2026-11/2611.29716.md"
       },
       "signals": {
         "priority_keyword": "Agent"

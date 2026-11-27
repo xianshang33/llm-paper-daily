@@ -1,52 +1,45 @@
 {
   "schema_version": "v1",
-  "generated_at": "2026-11-26T09:46:48.203088+00:00",
-  "run_date": "2026-11-25",
+  "generated_at": "2026-11-27T09:52:19.386779+00:00",
+  "run_date": "2026-11-22",
   "items": [
     {
       "schema_version": "v1",
-      "paper_id": "2611.34440",
-      "date": "2026-11-25",
-      "title": "vSFT: Learning to Verbally Tune Agents at Test Time",
+      "paper_id": "2611.29467",
+      "date": "2026-11-22",
+      "title": "Beyond Accuracy: A Diagnostic Benchmark for Hypothesis-Driven Experiment Planning in LLM Agents",
       "authors": [
-        "Qishuai Wen",
-        "Rui Chen",
-        "Haiwen Li",
-        "Zhiyuan Huang",
-        "Qiwen Gu",
-        "Bingjie Gao",
-        "Geng Li",
-        "Jing Tang",
-        "Xiangxiang Chu",
-        "Chun-Guang Li"
+        "Ryo Kuroki",
+        "Amin Mansouri",
+        "Philippe Schwaller"
       ],
-      "abstract": "Large language model agents are increasingly improved via agentic reinforcement learning, which can be on-policy but suffers from expensive rollouts and sparse rewards, limiting its application at test time. In this paper, we present a verbally Supervised Fine-Tuning (vSFT) framework that enables the conjunction of dense feedback in natural language and weight updates at test time. Specifically, our vSFT forms a closed loop between an agent and a supervisor via a hypernetwork, in which the supervisor generates verbal supervision from the agent's failed trajectories, and the hypernetwork converts that supervision into low-rank weight updates to tune the agent. We validate that this test-time in-parameter evolving process outperforms both its in-context counterparts and prevalent reinforcement learning methods. In particular, our vSFT using Qwen3-4B outperforms GRPO and Reflexion by 8.7% and 13.9% in success rate on ALFWorld, and by 4.8% and 18.2% on WebShop, respectively. We believe that learning how to adapt a model, rather than an adapted model, offers a promising path towards more capable agents that improve themselves.",
+      "abstract": "Evaluating large language model (LLM) agents on scientific tasks typically reduces to final-task accuracy, which obscures where reasoning succeeds or breaks down. We introduce a benchmark and diagnostic evaluation framework for hypothesis-driven adaptive experimental planning in closed-world system identification, instantiated in kinetic mechanism identification. The framework goes beyond final accuracy in two ways. First, we evaluate exploration behavior by quantifying the extent to which agents exhibit space-filling or corner-seeking patterns in the experimental design space. Second, we decompose the reasoning process into four interpretable steps: belief update, hypothesis discrimination, discriminative experiment design, and predictive reasoning under interventions, each scored separately on reasoning traces. Across ten LLM agents, we find that stronger agents outperform both adaptive (Bayesian optimization) and non-adaptive (Latin hypercube) baselines and exhibit exploration patterns inconsistent with naive heuristics. Decomposing reasoning reveals that the stronger agents score consistently well across all four steps, whereas weaker agents often succeed at belief update and hypothesis discrimination but are less reliable at translating them into actionable designs and sharp contrastive predictions. Independent expert annotations support predictive reasoning under our stated validation criteria, while evidence for discriminative experiment design is positive but less consistent. The results suggest a gap between recognizing plausible hypotheses and translating them into contrastive predictions, with more tentative evidence for a corresponding experiment-design bottleneck. The benchmark website is available at https://schwallergroup.github.io/beyond-accuracy/.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34440v1",
-        "pdf": "https://arxiv.org/pdf/2611.34440v1",
-        "github": "https://github.com/AMAP-ML/vSFT",
-        "blog": null
+        "abs": "http://arxiv.org/abs/2611.29467v1",
+        "pdf": "https://arxiv.org/pdf/2611.29467v1",
+        "github": null,
+        "blog": "https://schwallergroup.github.io/beyond-accuracy/"
       },
-      "institution": "AMAP, Alibaba Group",
+      "institution": "EPFL, Lausanne, Switzerland; Asahi Kasei Corporation, Tokyo, Japan",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体通常通过代理强化学习（Agentic RL）进行改进，以实现交互式决策。然而，现有的后训练方法在测试时面临局限性。\n- **已有工作为什么解决不了**：监督微调（SFT）虽然数据效率高，但属于离线策略，容易受到分布偏移的影响，且难以收集开放世界任务的黄金轨迹；强化学习（RL）虽然是在线策略，但依赖稀疏的轨迹级奖励，且 rollout 成本高昂，限制了其在测试时的实时应用。\n\n## 文章的核心贡献点\n- **提出了一个 verbally Supervised Fine-Tuning (vSFT) 框架**：该框架能够在测试时将自然语言形式的密集反馈与模型权重更新相结合，实现智能体的自我进化。\n- **挑战1：如何在测试时利用非结构化的自然语言反馈进行有效的参数更新？**\n  - **难点**：传统方法难以直接将文本反馈转化为具体的模型权重调整，且测试时无法进行昂贵的反向传播训练。\n  - **解决方法**：引入超网络（Hypernetwork），将主管生成的口头监督（如技能总结和反思）直接转换为低秩适配器（LoRA）的权重更新，无需反向传播即可实现参数内演化。\n- **挑战2：如何克服强化学习中奖励稀疏和探索成本高的问题？**\n  - **难点**：RL 需要大量试错才能获得稀疏奖励，导致收敛慢且计算资源消耗大。\n  - **解决方法**：构建智能体与主管之间的闭环，主管从失败轨迹中提取密集的口头反馈（技能与反思），通过超网络逐步累积并更新 LoRA，使智能体在少量试错中快速适应任务。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：vSFT 形成一个闭环，首先将系统提示和少样本示例初始化为 LoRA，随后在每次失败尝试后，主管生成口头监督，超网络将其转化为新的 LoRA 权重并附加到智能体上，整个过程无反向传播。\n- **评估结果**：在 ALFWorld 和 WebShop 基准测试中，基于 Qwen3-4B 的 vSFT 显著优于现有方法。\n- **对比相关工作**：\n  - 在 ALFWorld 上，vSFT 的成功率比 GRPO 高 8.7%，比 Reflexion 高 13.9%。\n  - 在 WebShop 上，vSFT 的成功率比 GRPO 高 4.8%，比 Reflexion 高 18.2%。\n  - 证明了测试时参数内演化过程优于上下文学习（In-context） counterparts 和主流的强化学习方法。\n\n#### 总结\nvSFT 提出了一种“学习如何适应模型”而非仅仅“使用已适应模型”的新范式。通过超网络将自然语言反馈转化为测试时的低秩权重更新，vSFT 有效解决了传统 RL 成本高、奖励稀疏的问题，实现了智能体在测试阶段的高效自我进化和性能提升，为构建更强大的自主智能体提供了新路径。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large Language Model (LLM) agents are typically improved via agentic reinforcement learning for interactive decision-making. However, existing post-training methods face limitations at test time.\n- **Why Existing Work Falls Short**: Supervised Fine-Tuning (SFT) is data-efficient but off-policy, suffering from distribution shift and difficulty in collecting golden trajectories for open-world tasks. Reinforcement Learning (RL) is on-policy but relies on sparse trajectory-level rewards and expensive rollouts, limiting its real-time application during testing.\n\n## Core Contributions\n- **Proposed a verbally Supervised Fine-Tuning (vSFT) framework**: This framework enables the combination of dense natural language feedback with weight updates at test time, allowing for agent self-evolution.\n- **Challenge 1: How to effectively perform parameter updates using unstructured natural language feedback at test time?**\n  - **Difficulty**: Traditional methods struggle to translate text feedback into specific model weight adjustments, and test-time backpropagation is computationally prohibitive.\n  - **Solution**: Introduces a Hypernetwork that converts verbal supervision (skills and reflections) generated by a supervisor directly into Low-Rank Adapter (LoRA) weight updates, enabling parameter-in evolution without backpropagation.\n- **Challenge 2: How to overcome the high cost of exploration and sparse rewards in Reinforcement Learning?**\n  - **Difficulty**: RL requires extensive trial-and-error to receive sparse rewards, leading to slow convergence and high computational costs.\n  - **Solution**: Establishes a closed loop between the agent and a supervisor. The supervisor extracts dense verbal feedback from failed trajectories, which the hypernetwork uses to progressively update the LoRA, allowing the agent to adapt quickly with fewer trials.\n\n## Implementation and Evaluation\n- **Implementation Details**: vSFT forms a closed loop where system prompts and few-shot examples are initialized into a LoRA. After each failed attempt, the supervisor generates verbal supervision, which the hypernetwork converts into new LoRA weights attached to the agent, all without backpropagation.\n- **Evaluation Results**: vSFT based on Qwen3-4B significantly outperforms existing methods on ALFWorld and WebShop benchmarks.\n- **Comparison with Related Work**:\n  - On ALFWorld, vSFT achieves an 8.7% higher success rate than GRPO and 13.9% higher than Reflexion.\n  - On WebShop, vSFT achieves a 4.8% higher success rate than GRPO and 18.2% higher than Reflexion.\n  - Demonstrates that test-time parameter-in evolution outperforms both in-context learning counterparts and prevalent reinforcement learning methods.\n\n## 4. Conclusion\nvSFT proposes a new paradigm of \"learning how to adapt a model\" rather than just \"using an adapted model.\" By converting natural language feedback into test-time low-rank weight updates via a hypernetwork, vSFT effectively addresses the high cost and sparse reward issues of traditional RL. It enables efficient self-evolution and performance improvement of agents during the testing phase, offering a promising path towards more capable autonomous agents.",
-      "render_excerpt": "机构: AMAP, Alibaba Group<br>vSFT 提出了一种“学习如何适应模型”而非仅仅“使用已适应模型”的新范式。通过超网络将自然语言反馈转化为测试时的低秩权重更新，vSFT 有效解决了传统 RL 成本高、奖励稀疏的问题，实现了智能体在测试阶段的高效自我进化和性能提升，为构建更强大的自主智能体提供了新路径。",
-      "render_excerpt_en": "Institution: AMAP, Alibaba Group<br>## 1. What the Paper Does - **Background**: Large Language Model (LLM) agents are typically improved via agentic reinforcement learning for interactive decision-making. However, existing post-training methods face limitations at test time.",
+      "summary_cn": "## 文章做了什么\n- **背景**：在科学发现（如化学动力学机制识别）中，研究人员需要通过一系列自适应实验来区分竞争性的动态模型。目前评估大型语言模型（LLM）代理在此类任务上的表现通常仅依赖于最终任务的准确性。\n- **已有工作的不足**：仅关注最终准确性掩盖了推理过程中成功或失败的具体环节，无法诊断代理在信念更新、假设区分或实验设计等中间步骤的能力缺陷，也难以揭示其探索行为是否符合科学直觉。\n\n## 文章的核心贡献点\n- **提出了一个**用于闭环系统识别中假设驱动自适应实验规划的诊断性基准和评估框架，具体实例化为动力学机制识别任务。\n- **挑战1：如何量化代理的实验探索策略而非仅看结果？**\n  - **难点**：传统的准确率指标无法反映代理是在进行有效的空间填充探索还是盲目的角落搜索，难以评估其主动学习策略的质量。\n  - **解决方法**：通过量化代理在实验设计空间中的行为模式（如空间填充或角落寻求），评估其探索行为的合理性和多样性，从而超越单一的准确性指标。\n- **挑战2：如何定位推理链条中的具体瓶颈？**\n  - **难点**：复杂的科学推理过程包含多个步骤，整体失败难以归因于特定环节（如是不懂假设还是不会设计实验）。\n  - **解决方法**：将推理过程分解为四个可解释的步骤：信念更新、假设区分、判别性实验设计和干预下的预测推理，并使用LLM裁判对每个步骤的推理轨迹进行单独评分，从而精确定位弱项。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与设置**：基准测试包含200个反应系统，代理需在5轮实验中从20个候选机制中识别出隐藏的真实机制。环境模拟含噪动力学时间序列并返回负对数似然（NLL）反馈。\n- **对比基线**：与自适应基线（贝叶斯优化）和非自适应基线（拉丁超立方采样）进行对比。\n- **评估结果**：\n  - **整体性能**：较强的LLM代理在机制识别准确性上优于贝叶斯优化和拉丁超立方采样基线，且展现出不同于朴素启发式方法的探索模式。\n  - **诊断分析**：强代理在所有四个推理步骤中得分均较高；弱代理通常在“信念更新”和“假设区分”上表现良好，但在将假设转化为“判别性实验设计”和“尖锐的对比预测”时可靠性较低。\n  - **专家验证**：独立专家注释支持关于“预测推理”的评估标准，而对“判别性实验设计”的证据虽为正但一致性较低，表明从识别合理假设到生成对比预测之间存在明显差距。\n\n#### 总结\n该论文引入了一个超越最终准确率的诊断性基准，通过分解推理步骤和量化探索行为，深入揭示了LLM代理在科学实验规划中的能力边界。研究发现，当前LLM的主要瓶颈在于将理论假设转化为具体的、具有判别力的实验设计和预测，而非单纯的假设识别。这一框架为未来改进科学AI代理的推理能力提供了明确的优化方向。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: In scientific discovery (e.g., kinetic mechanism identification), researchers distinguish among competing dynamic models through adaptive experimentation. Current evaluations of Large Language Model (LLM) agents in these tasks typically rely solely on final task accuracy.\n- **Limitations of Existing Work**: Focusing only on final accuracy obscures where reasoning succeeds or fails, making it impossible to diagnose specific deficits in intermediate steps like belief updating, hypothesis discrimination, or experimental design, and failing to reveal whether exploration behaviors align with scientific intuition.\n\n## Core Contributions\n- **Proposed a** diagnostic benchmark and evaluation framework for hypothesis-driven adaptive experimental planning in closed-world system identification, instantiated as kinetic mechanism identification.\n- **Challenge 1: How to quantify the agent's experimental exploration strategy beyond just results?**\n  - **Difficulty**: Traditional accuracy metrics do not reflect whether an agent is performing effective space-filling exploration or blind corner-seeking, making it hard to assess the quality of its active learning strategy.\n  - **Solution**: The framework quantifies behavior patterns in the experimental design space (e.g., space-filling vs. corner-seeking) to evaluate the rationality and diversity of exploration, going beyond single-metric accuracy.\n- **Challenge 2: How to pinpoint specific bottlenecks in the reasoning chain?**\n  - **Difficulty**: Complex scientific reasoning involves multiple steps; overall failure makes it difficult to attribute errors to specific stages (e.g., misunderstanding hypotheses vs. poor experiment design).\n  - **Solution**: The reasoning process is decomposed into four interpretable steps: belief update, hypothesis discrimination, discriminative experiment design, and predictive reasoning under interventions. Each step is scored separately using LLM judges on reasoning traces to precisely locate weaknesses.\n\n## Implementation and Evaluation\n- **Implementation & Setup**: The benchmark includes 200 reaction systems where agents must identify the hidden ground-truth mechanism from 20 candidates over 5 experimental rounds. The environment simulates noisy kinetic time-series data and returns negative log-likelihood (NLL) feedback.\n- **Baselines**: Compared against adaptive baselines (Bayesian Optimization) and non-adaptive baselines (Latin Hypercube Sampling).\n- **Evaluation Results**:\n  - **Overall Performance**: Stronger LLM agents outperform both Bayesian Optimization and Latin Hypercube baselines in mechanism identification accuracy and exhibit exploration patterns inconsistent with naive heuristics.\n  - **Diagnostic Analysis**: Strong agents score consistently well across all four reasoning steps. Weaker agents often succeed in \"belief update\" and \"hypothesis discrimination\" but are less reliable in translating these into \"discriminative experiment designs\" and \"sharp contrastive predictions.\"\n  - **Expert Validation**: Independent expert annotations support the evaluation criteria for \"predictive reasoning,\" while evidence for \"discriminative experiment design\" is positive but less consistent, indicating a gap between recognizing plausible hypotheses and generating contrastive predictions.\n\n#### Summary\nThis paper introduces a diagnostic benchmark that goes beyond final accuracy by decomposing reasoning steps and quantifying exploration behavior, revealing the capability boundaries of LLM agents in scientific experimental planning. The study finds that the primary bottleneck for current LLMs lies in translating theoretical hypotheses into concrete, discriminative experimental designs and predictions, rather than in hypothesis identification alone. This framework provides clear directions for optimizing the reasoning capabilities of future scientific AI agents.",
+      "render_excerpt": "机构: EPFL, Lausanne, Switzerland; Asahi Kasei Corporation, Tokyo, Japan<br>该论文引入了一个超越最终准确率的诊断性基准，通过分解推理步骤和量化探索行为，深入揭示了LLM代理在科学实验规划中的能力边界。研究发现，当前LLM的主要瓶颈在于将理论假设转化为具体的、具有判别力的实验设计和预测，而非单纯的假设识别。这一框架为未来改进科学AI代理的推理能力提供了明确的优化方向。",
+      "render_excerpt_en": "Institution: EPFL, Lausanne, Switzerland; Asahi Kasei Corporation, Tokyo, Japan<br>This paper introduces a diagnostic benchmark that goes beyond final accuracy by decomposing reasoning steps and quantifying exploration behavior, revealing the capability boundaries of LLM agents in scientific experimental planning. The study finds that the primary bottleneck for current LLMs lies in translating theoretical hypotheses into concrete, discriminative experimental designs and predictions, rather than in hypothesis identification alone. This framework provides clear directions for optimizing the reasoning capabilities of future scientific AI agents.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-25T14:22:22Z"
+        "captured_at": "2026-11-22T13:13:12Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-25"
+        "captured_at": "2026-11-22"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -61,45 +54,44 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.34254",
-      "date": "2026-11-25",
-      "title": "Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments",
+      "paper_id": "2611.29613",
+      "date": "2026-11-22",
+      "title": "Weight Coding: Evolving Web-Scale Recommenders through Direct Weight Edits with LLM Agents",
       "authors": [
-        "Yinjun Liu",
-        "Xinye Li",
-        "Ruisen Peng",
-        "Lang Gao",
-        "Zixiang Xu",
-        "Zirui Song",
-        "Xiuying Chen"
+        "Junpeng Hou",
+        "Jiaxing Qu",
+        "Derek Cheng",
+        "Jaewon Yang",
+        "Abhinav Naikawadi",
+        "Karthik Subbian"
       ],
-      "abstract": "Large language models (LLMs) perform well on chemistry knowledge benchmarks, which mainly assess question answering and isolated tasks. Chemical research, however, requires using specialized tools and interpreting their outputs to obtain chemically valid results. To address this gap, we introduce Crucible Bench to evaluate this ability across all four stages of the design-make-test-analyze (DMTA) cycle. The benchmark contains 1,078 tasks in 12 task families curated from 18 published datasets, covering molecular design, synthesis planning, experimental execution, closed-loop optimization, simulation, and analytical characterization. Agents access 75 domain-specific tools through the Model Context Protocol in seven isolated environments. Sandboxed graders verify the resulting synthesis routes, experimental protocols, and other outputs. Laboratory tasks use robotic simulators or previously measured experimental data. We evaluate 14 LLMs as agents and find that the best achieves an overall score of 0.545, with synthesis planning and closed-loop optimization emerging as the hardest domains. Overall performance does not predict optimization performance well: the model ranked twelfth overall achieves the highest score in closed-loop optimization. Error analysis also shows that agents often submit chemically invalid results despite running their tools successfully. Stronger models benefit more from tool access, but reliable use of chemical software remains a challenge that Crucible Bench can track as models improve.",
+      "abstract": "Web-scale recommender models evolve primarily through retraining or fine-tuning. We propose \\emph{weight coding}, a methodology for model evolution through direct, executable weight edits. A large language model (LLM) agent inspects model structure and parameters, formulates hypotheses, and implements edits using evaluation feedback. The loop progresses from localized changes to targeted searches and composition, allowing edited components to adapt to one another. A cached engine enables rapid forward evaluation without backpropagation. On Pinterest's 147M-parameter Image Search two-tower retriever, weight coding improves held-out recall@10 of production model by up to 15.0 percentage points (+24\\% relative) with few edits in about 1/4 GPU hours of a full post-training finetune, while a common launch only improves around 1\\%. After reinitializing the entire 13.6M-parameter interaction module randomly while retaining the surrounding trained model, searching 2,448 mixing and normalization parameters yields 9.8 points above production. Offline gains span the full funnel including dense retrieval, generative retrieval and ranking, with up to 1.37B learnable parameters and different edits for each architecture. Steering edits provide explicit control of model performance over segments like freshness and product. Weight coding requires no serving change and online A/B tests increase saves per user from the edited retrieval source by 8.4\\% to 10.7\\%, aligned with the target business objectives. Our results establish weight coding as a practical and useful tool for model development and and behavioral control in a real web-scale production system, with potential to extend to both pre-training and post-training stages across the funnel.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34254v1",
-        "pdf": "https://arxiv.org/pdf/2611.34254v1",
+        "abs": "http://arxiv.org/abs/2611.29613v1",
+        "pdf": "https://arxiv.org/pdf/2611.29613v1",
         "github": null,
         "blog": null
       },
-      "institution": "Mohamed bin Zayed University of Artificial Intelligence",
+      "institution": "Pinterest, Inc.",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）在化学知识基准测试（主要是问答和孤立任务）中表现良好，但实际的化学研究需要利用专业工具并解释其输出以获得化学上有效的结果。\n- **已有工作的不足**：现有的评估方法主要关注工具是否成功执行或输出格式是否正确，而忽略了科学有效性。例如，密度泛函理论计算即使自旋多重度错误也能收敛并返回看似合理的能量；合成的路线可能格式正确但化学步骤无效。这种“工具成功不等于任务成功”的现象导致现有基准无法真实反映Agent在完整科研流程中的能力。\n\n## 文章的核心贡献点\n- **提出了一个名为 Crucible Bench 的基准测试**：旨在评估LLM Agent在设计-制造-测试-分析（DMTA）循环所有四个阶段的能力。\n- **挑战1：如何确保评估覆盖完整的科研闭环而非孤立任务？**\n  - **难点**：化学研究是一个复杂的迭代过程，涉及分子设计、合成规划、实验执行和分析表征等多个环节，单一任务难以衡量整体能力。\n  - **解决方案**：Crucible Bench 包含从18个已发布数据集中精选的1078个任务，涵盖12个任务家族，全面覆盖DMTA循环的四个阶段，并在7个隔离环境中通过模型上下文协议（MCP）提供75种领域专用工具。\n- **挑战2：如何验证Agent输出的化学有效性而非仅仅是格式正确性？**\n  - **难点**：Agent可能生成格式完美但化学上无效的结果（如错误的自旋态、不存在的官能团），传统的基于规则或LLM判断的评分容易受到欺骗。\n  - **解决方案**：引入沙盒评分器（Sandboxed graders），利用机器人模拟器或先前测量的实验数据，对合成路线、实验协议和其他输出进行严格的化学、物理和执行约束验证，确保结果的科学真实性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：构建了7个隔离环境，Agent通过MCP访问75种化学领域工具。评估了14种LLM作为Agent的表现。\n- **Evaluation 结果**：\n  - 最佳模型的整体得分为0.545，表明当前LLM在复杂化学任务中仍有巨大提升空间。\n  - 合成规划和闭环优化是最困难的领域。\n  - 整体性能并不能很好地预测优化性能：总体排名第12的模型在闭环优化中得分最高。\n  - 错误分析显示，Agent经常在工具运行成功的情况下提交化学上无效的结果。\n- **对比**：与传统仅评估问答或孤立任务的基准不同，Crucible Bench 揭示了强模型更能从工具访问中受益，但也指出了可靠使用化学软件仍然是一个挑战，这是现有基准未能捕捉到的细微差别。\n\n#### 总结\nCrucible Bench 填补了LLM在化学研究中实际应用能力评估的空白。通过模拟真实的DMTA工作流程并引入严格的沙盒验证机制，该基准不仅评估了Agent的工具使用能力，更强调了科学结果的有效性。研究发现，尽管最强模型表现优于平均水平，但在合成规划和闭环优化等关键领域仍面临严峻挑战，且工具使用的成功率与科学正确性之间存在显著差距。该基准为跟踪和提升LLM在科学发现中的可靠性提供了重要标准。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large Language Models (LLMs) perform well on chemistry knowledge benchmarks, which primarily assess question answering and isolated tasks. However, actual chemical research requires using specialized tools and interpreting their outputs to obtain chemically valid results.\n- **Limitations of Existing Work**: Current evaluation methods focus mainly on whether tools execute successfully or if outputs are formatted correctly, ignoring scientific validity. For instance, a density functional theory calculation can converge and return plausible energy even with incorrect spin multiplicity, or a synthesis route may be format-compliant but chemically invalid. This \"tool success ≠ task success\" gap means existing benchmarks fail to reflect an Agent's true capability in the full research workflow.\n\n## Core Contributions\n- **Proposed Crucible Bench**: A benchmark designed to evaluate LLM Agents across all four stages of the Design-Make-Test-Analyze (DMTA) cycle.\n- **Challenge 1: How to ensure evaluation covers the complete research loop rather than isolated tasks?**\n  - **Difficulty**: Chemical research is a complex iterative process involving molecular design, synthesis planning, experimental execution, and analysis, making it hard to measure overall capability with single tasks.\n  - **Solution**: Crucible Bench includes 1,078 tasks from 12 task families curated from 18 published datasets, covering all DMTA stages. It provides access to 75 domain-specific tools via the Model Context Protocol (MCP) in seven isolated environments.\n- **Challenge 2: How to verify the chemical validity of Agent outputs rather than just format correctness?**\n  - **Difficulty**: Agents may generate perfectly formatted but chemically invalid results (e.g., wrong spin states, non-existent functional groups), and traditional scoring can be easily exploited.\n  - **Solution**: Introduces sandboxed graders that use robotic simulators or previously measured experimental data to strictly verify synthesis routes, experimental protocols, and other outputs against chemical, physical, and execution constraints.\n\n## Implementation and Evaluation\n- **Implementation**: Built seven isolated environments where Agents access 75 chemical tools via MCP. Evaluated 14 LLMs as Agents.\n- **Evaluation Results**:\n  - The best model achieved an overall score of 0.545, indicating significant room for improvement.\n  - Synthesis planning and closed-loop optimization emerged as the hardest domains.\n  - Overall performance did not predict optimization performance well; the model ranked 12th overall achieved the highest score in closed-loop optimization.\n  - Error analysis showed that agents often submit chemically invalid results despite successful tool execution.\n- **Comparison**: Unlike traditional benchmarks focusing on QA or isolated tasks, Crucible Bench reveals that while stronger models benefit more from tool access, reliable use of chemical software remains a challenge, a nuance missed by existing evaluations.\n\n#### Summary\nCrucible Bench fills the gap in evaluating the practical application capabilities of LLMs in chemical research. By simulating real-world DMTA workflows and introducing strict sandbox verification, it emphasizes the validity of scientific results over mere tool usage. The study finds that while top models outperform the average, they still face severe challenges in key areas like synthesis planning and closed-loop optimization, highlighting a significant discrepancy between tool execution success and scientific correctness. This benchmark provides a crucial standard for tracking and improving the reliability of LLMs in scientific discovery.",
-      "render_excerpt": "机构: Mohamed bin Zayed University of Artificial Intelligence<br>Crucible Bench 填补了LLM在化学研究中实际应用能力评估的空白。通过模拟真实的DMTA工作流程并引入严格的沙盒验证机制，该基准不仅评估了Agent的工具使用能力，更强调了科学结果的有效性。研究发现，尽管最强模型表现优于平均水平，但在合成规划和闭环优化等关键领域仍面临严峻挑战，且工具使用的成功率与科学正确性之间存在显著差距。该基准为跟踪和提升LLM在科学发现中的可靠性提供了重要标准。",
-      "render_excerpt_en": "Institution: Mohamed bin Zayed University of Artificial Intelligence<br>Crucible Bench fills the gap in evaluating the practical application capabilities of LLMs in chemical research. By simulating real-world DMTA workflows and introducing strict sandbox verification, it emphasizes the validity of scientific results over mere tool usage. The study finds that while top models outperform the average, they still face severe challenges in key areas like synthesis planning and closed-loop optimization, highlighting a significant discrepancy between tool execution success and scientific correctness.",
+      "summary_cn": "## 文章做了什么\n- **背景**：Web规模的推荐系统模型通常通过重新训练或微调来适应变化的用户兴趣、内容库存和业务目标。传统的模型演进依赖于改变数据、损失函数或超参数，然后进行耗时的梯度反向传播训练。\n- **已有工作的局限性**：传统方法迭代周期长（每次迭代需数天），计算成本高，且通过梯度间接调整权重往往导致大量权重发生不可控的微小变化，难以实现对模型特定行为（如新鲜度、特定品类）的精确控制。\n\n## 文章的核心贡献点\n- **提出了一个名为“Weight Coding”的方法论**：这是一种通过LLM智能体直接编辑可执行权重来实现模型演进的方法，无需反向传播。\n- **挑战1：如何在没有梯度信息的情况下高效搜索巨大的参数空间？**\n  - **难点**：推荐模型参数量巨大（如1.47亿参数），盲目搜索效率极低且容易陷入局部最优。\n  - **解决方法**：引入LLM智能体检查模型结构和参数，形成假设并实施编辑。通过从局部修改到针对性搜索再到组合的循环，让编辑后的组件相互适应，并利用缓存引擎实现无需反向传播的快速前向评估。\n- **挑战2：如何确保直接权重编辑在工业级生产环境中的有效性和安全性？**\n  - **难点**：直接修改权重可能导致模型性能崩溃或产生不可预测的偏差，且需在不改变线上服务架构的前提下部署。\n  - **解决方法**：采用小步快跑的迭代策略，结合离线评估反馈闭环。实验证明该方法在Pinterest的图像搜索检索器上，仅需约1/4个完整微调所需的GPU时间，即可将召回率提升15个百分点（相对提升24%），且无需更改线上服务代码，在线A/B测试显著提升了用户保存率。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：系统在Pinterest的1.47亿参数图像搜索双塔检索器上实现。使用缓存引擎加速评估，LLM智能体负责生成和执行权重编辑脚本。该方法不需要更改线上服务架构（No serving change）。\n- **评估结果**：\n  - **离线指标**：在生产模型基础上，Weight Coding将Hold-out Recall@10提高了15.0个百分点（相对提升24%），而常见的发布仅提升约1%。即使随机重置1360万参数的交互模块，仅搜索2448个混合和归一化参数，也能获得比生产模型高9.8个百分点的收益。\n  - **泛化性**：收益覆盖整个推荐漏斗，包括密集检索、生成式检索和排序，涉及高达13.7亿可学习参数。\n  - **在线A/B测试**：编辑后的检索源使用户每次保存（saves per user）增加了8.4%至10.7%，符合业务目标。\n- **对比**：相比传统微调需要数天迭代和高昂算力，Weight Coding在约1/4的微调GPU时间内完成，且能提供更细粒度的行为控制（如针对新鲜度和产品类别的导向编辑）。\n\n#### 总结\n本文提出的Weight Coding是一种利用LLM智能体直接编辑模型权重的新方法，突破了传统基于梯度的训练范式。它在Pinterest的大规模生产系统中证明了其有效性，不仅大幅降低了模型演进的计算成本和时间，还提供了对模型行为的显式控制能力，为推荐系统的预训练和后训练阶段提供了新的优化工具。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: Web-scale recommender models typically evolve through retraining or fine-tuning to adapt to changing user interests and business goals. This conventional approach relies on modifying data, loss functions, or hyperparameters followed by gradient-based optimization.\n- **Limitations of Existing Work**: Traditional methods suffer from long iteration cycles (days per iteration) and high computational costs. Gradient-based updates indirectly adjust weights, often resulting in uncontrollable, widespread minor changes that make it difficult to precisely control specific model behaviors (e.g., freshness, specific categories).\n\n## Core Contributions\n- **Proposed \"Weight Coding\"**: A methodology for model evolution through direct, executable weight edits driven by LLM agents, eliminating the need for backpropagation.\n- **Challenge 1: How to efficiently search the vast parameter space without gradient information?**\n  - **Difficulty**: Recommender models have massive parameter counts (e.g., 147M), making blind search inefficient and prone to local optima.\n  - **Solution**: An LLM agent inspects model structure and parameters, formulates hypotheses, and implements edits. The process evolves from localized changes to targeted searches and composition, allowing edited components to adapt. A cached engine enables rapid forward evaluation without backpropagation.\n- **Challenge 2: How to ensure the effectiveness and safety of direct weight edits in industrial production environments?**\n  - **Difficulty**: Direct weight modification risks model performance collapse or unpredictable biases, and must be deployed without altering serving infrastructure.\n  - **Solution**: An iterative strategy with offline evaluation feedback loops is used. Experiments on Pinterest's image search retriever show a 15.0 percentage point increase in Recall@10 (24% relative) using only ~1/4 of the GPU hours required for full fine-tuning. No serving changes are needed, and online A/B tests showed significant gains in user saves.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Implemented on Pinterest's 147M-parameter two-tower image search retriever. A cached engine accelerates evaluation, and LLM agents generate/execute weight edit scripts. The method requires no changes to the serving architecture.\n- **Evaluation Results**:\n  - **Offline Metrics**: Weight Coding improved Hold-out Recall@10 by 15.0 percentage points (24% relative) over the production model, whereas common launches improve by only ~1%. Even after randomly reinitializing the 13.6M-parameter interaction module, searching just 2,448 mixing/normalization parameters yielded a 9.8-point gain over production.\n  - **Generalizability**: Gains span the full funnel (dense retrieval, generative retrieval, ranking) with up to 1.37B learnable parameters.\n  - **Online A/B Tests**: Edited retrieval sources increased saves per user by 8.4% to 10.7%, aligning with business objectives.\n- **Comparison**: Compared to traditional fine-tuning which takes days and high compute, Weight Coding completes in ~1/4 of the GPU time and offers finer-grained behavioral control (e.g., steering edits for freshness).\n\n## 4. Conclusion\nThe paper introduces Weight Coding, a novel approach using LLM agents to directly edit model weights, breaking away from traditional gradient-based training paradigms. It demonstrates practical effectiveness in Pinterest's large-scale production system, significantly reducing computational cost and time for model evolution while providing explicit control over model behavior, offering a new tool for both pre-training and post-training stages.",
+      "render_excerpt": "机构: Pinterest, Inc.<br>本文提出的Weight Coding是一种利用LLM智能体直接编辑模型权重的新方法，突破了传统基于梯度的训练范式。它在Pinterest的大规模生产系统中证明了其有效性，不仅大幅降低了模型演进的计算成本和时间，还提供了对模型行为的显式控制能力，为推荐系统的预训练和后训练阶段提供了新的优化工具。",
+      "render_excerpt_en": "Institution: Pinterest, Inc.<br>## 1. What the Paper Does - **Background**: Web-scale recommender models typically evolve through retraining or fine-tuning to adapt to changing user interests and business goals. This conventional approach relies on modifying data, loss functions, or hyperparameters followed by gradient-based optimization.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-25T12:18:29Z"
+        "captured_at": "2026-11-22T17:11:38Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-25"
+        "captured_at": "2026-11-22"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
@@ -114,153 +106,174 @@
     },
     {
       "schema_version": "v1",
-      "paper_id": "2611.34635",
-      "date": "2026-11-25",
-      "title": "ZeroHero: Training Small Language Agents from Scratch",
+      "paper_id": "2611.29829",
+      "date": "2026-11-22",
+      "title": "Who Makes the Decision? Auditing an Agentic LLM Pipeline for Illicit Cryptocurrency Transaction Monitoring",
       "authors": [
-        "Nikita Sorokin",
-        "Zoya Volovikova",
-        "Alexey Skrynnik",
-        "Aleksandr Panov"
+        "Vaishnavi Chaughule",
+        "Yuchen Zhang",
+        "Mohammed Ahnaf Tajwar",
+        "Sai Akshay Menta",
+        "Saanidhya Vats",
+        "Vinija Jain",
+        "Aman Chadha",
+        "Divya Chaudhary"
       ],
-      "abstract": "Large pretrained language models provide capable policies for interactive tasks, but how much model capacity is necessary for a specialized language agent? We introduce ZeroHero, a framework for training small language agents (SLAs) from scratch. In each environment, a large language model acts as the expert, and we collect its successful trajectories. We pretrain each SLA, which has fewer than 50 million parameters, to predict the expert's responses given the interaction history. We then post-train the agent on its own interactions using proximal policy optimization (PPO). During post-training, reasoning alignment supplements environment rewards with expert supervision on the language the agent generates alongside its actions. We evaluate the agents in three multistep environments where acting requires both understanding and generating language. In Crafter, agents interpret textual observations and generate reasoning before acting. In WebShop, they translate shopping instructions into search queries. In Alfworld-Dialogue, they ask clarifying questions and use the answers to guide household actions. The agents approach expert performance on WebShop and surpass their respective demonstration experts on Crafter training rollouts and held-out Alfworld-Dialogue tasks. An interactive demo is available at https://zoyav.github.io/-ZoyaV-zerohero-demo.",
+      "abstract": "Agentic pipelines that combine graph detectors, deterministic rules, retrieval-augmented generation and an LLM judge are being proposed to monitor illicit cryptocurrency flows and to write regulation-citing justifications for analysts. They are evaluated on end-to-end accuracy or on the quality of those justifications, and neither shows which component made a decision. We audit such a pipeline on the Elliptic++ Bitcoin dataset with decision-source attribution, a trace-level protocol with three layers: per-case actual causation, interventional Shapley credit, and mediation of upstream risk scores. A deterministic wallet-score override carries about 94% of the credit for flags, and a verification gate cancels most of the judge's own flags, which fall on licit transactions. Testing the judge alone over 76 evidence bundles, four backbones and two prompts, we find that it follows an injected risk score on the anonymous transaction features it is given, although stronger models decide correctly when the facts are explicit; that a context too short for the system prompt leaves it with no verdict at all; and that it cites regulatory clauses that do not apply, which a substring-based citation check accepts. Hiding the score does not fix the judge, because evidence gathered with the score visible still encodes it. For illicit-activity monitoring, an LLM's justification should therefore not be read as evidence of which component flagged a transaction.",
       "links": {
-        "abs": "http://arxiv.org/abs/2611.34635v1",
-        "pdf": "https://arxiv.org/pdf/2611.34635v1",
-        "github": null,
-        "blog": "https://zoyav.github.io/-ZoyaV-zerohero-demo"
-      },
-      "institution": "Cognitive AI Systems Lab, Moscow Independent Research Institute of Artificial Intelligence",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型预训练语言模型（LLM）在交互式任务中表现出色，但其高昂的计算资源和内存需求限制了在本地设备或隐私敏感场景下的部署。研究旨在探索专用语言代理所需的最小模型容量。\n- **已有工作为什么解决不了**：现有的小型模型研究（如TinyStories, MAPF-GPT, DART）要么仅专注于自然语言生成而不涉及决策，要么专注于序列决策但不依赖自然语言理解与生成。目前缺乏能够从头训练、参数量极小且能同时结合自然语言能力与复杂多步决策能力的智能体框架。\n\n## 文章的核心贡献点\n- **提出了一个 ZeroHero 框架**：用于从头训练参数量少于 5000 万的小型语言代理（SLAs），通过两阶段训练实现高效的多步交互任务处理。\n- **挑战1：小模型如何从零开始掌握复杂的语言推理与决策能力？**\n  - **难点**：小模型缺乏预训练知识，难以直接理解环境观察并生成合理的行动策略。\n  - **解决方法**：采用专家蒸馏策略，首先让大语言模型（LLM）作为专家收集成功轨迹，然后对小模型进行预训练，使其根据交互历史预测专家的响应，从而注入基础的语言理解和决策模式。\n- **挑战2：如何在强化学习微调中保持语言生成的质量与逻辑一致性？**\n  - **难点**：仅依靠环境奖励信号容易导致小模型在探索过程中产生无意义或逻辑混乱的语言输出，影响长期任务完成。\n  - **解决方法**：在近端策略优化（PPO）后训练阶段引入“推理对齐”机制，除了环境奖励外，还利用专家对代理生成的语言内容进行监督，确保语言生成的合理性与行动的一致性。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现细节**：代理参数量小于 5000 万。在三个需要语言理解与生成的多步环境中进行评估：Crafter（文本观察与推理）、WebShop（指令转搜索查询）、Alfworld-Dialogue（澄清性问答与家务操作）。\n- **评估结果**：\n  - 在 WebShop 环境中，ZeroHero 代理的性能接近专家水平。\n  - 在 Crafter 的训练 rollout 中，代理表现超过了其演示专家。\n  - 在 Alfworld-Dialogue 的保留测试任务中，代理同样超越了各自的演示专家。\n- **对比优势**：相比于依赖庞大预训练权重的 LLM 代理，ZeroHero 证明了极小参数模型在特定领域经过专门训练后，不仅能胜任复杂交互，甚至在某些指标上超越提供示范的大模型专家，显著降低了部署门槛。\n\n#### 总结\nZeroHero 框架成功验证了参数量极少（<50M）的语言模型可以从头训练成为高效的专用语言代理。通过结合专家轨迹预训练和带有推理对齐的 PPO 后训练，该方法解决了小模型在复杂交互环境中语言与决策协同的难题。实验表明，这些小型代理在多个基准测试中达到了接近或超越专家的性能，为资源受限环境下的高效语言代理部署提供了新的可行路径。",
-      "summary_en": "## 1. What the Paper Did\n- **Background**: Large pretrained language models (LLMs) excel in interactive tasks but are limited by high computational and memory requirements, hindering deployment in local or privacy-sensitive environments. The study investigates the minimum model capacity required for specialized language agents.\n- **Why Existing Work Falls Short**: Previous studies on small models (e.g., TinyStories, MAPF-GPT, DART) either focus solely on natural language generation without decision-making or on sequential decision-making without relying on natural language understanding. There is a lack of frameworks that train compact models from scratch to combine natural language capabilities with complex multi-step decision-making.\n\n## Core Contributions\n- **Proposed ZeroHero Framework**: A framework for training Small Language Agents (SLAs) with fewer than 50 million parameters from scratch, utilizing a two-stage training process for efficient multi-step interactive task handling.\n- **Challenge 1: How can small models master complex language reasoning and decision-making from scratch?**\n  - **Difficulty**: Small models lack pretrained knowledge, making it difficult to directly understand environmental observations and generate reasonable action policies.\n  - **Solution**: Employed expert distillation by using a Large Language Model (LLM) as an expert to collect successful trajectories. The SLA is then pretrained to predict the expert's responses based on interaction history, injecting foundational language understanding and decision patterns.\n- **Challenge 2: How to maintain language generation quality and logical consistency during RL fine-tuning?**\n  - **Difficulty**: Relying solely on environment rewards can lead to nonsensical or logically inconsistent language outputs during exploration, harming long-term task completion.\n  - **Solution**: Introduced \"reasoning alignment\" during Proximal Policy Optimization (PPO) post-training. This supplements environment rewards with expert supervision on the generated language, ensuring linguistic rationality and consistency with actions.\n\n## Implementation and Evaluation\n- **Implementation**: Agents have fewer than 50 million parameters. Evaluated in three environments requiring language understanding and generation: Crafter (textual observation and reasoning), WebShop (translating instructions to search queries), and Alfworld-Dialogue (clarifying Q&A and household actions).\n- **Evaluation Results**:\n  - In WebShop, ZeroHero agents approached expert-level performance.\n  - In Crafter training rollouts, agents surpassed their demonstration experts.\n  - In held-out Alfworld-Dialogue tasks, agents also outperformed their respective demonstration experts.\n- **Comparison Advantage**: Unlike LLM agents relying on massive pretrained weights, ZeroHero demonstrates that specifically trained, extremely compact models can not only handle complex interactions but even surpass the large model experts providing demonstrations in certain metrics, significantly lowering deployment barriers.\n\n## 4. Conclusion\nThe ZeroHero framework successfully validates that language models with very few parameters (<50M) can be trained from scratch into efficient specialized language agents. By combining expert trajectory pretraining with PPO post-training featuring reasoning alignment, the method addresses the challenge of coordinating language and decision-making in complex interactive environments for small models. Experiments show these small agents achieve near-expert or superior performance across multiple benchmarks, offering a viable path for deploying efficient language agents in resource-constrained settings.",
-      "render_excerpt": "机构: Cognitive AI Systems Lab, Moscow Independent Research Institute of Artificial Intelligence<br>ZeroHero 框架成功验证了参数量极少（<50M）的语言模型可以从头训练成为高效的专用语言代理。通过结合专家轨迹预训练和带有推理对齐的 PPO 后训练，该方法解决了小模型在复杂交互环境中语言与决策协同的难题。实验表明，这些小型代理在多个基准测试中达到了接近或超越专家的性能，为资源受限环境下的高效语言代理部署提供了新的可行路径。",
-      "render_excerpt_en": "Institution: Cognitive AI Systems Lab, Moscow Independent Research Institute of Artificial Intelligence<br>## 1. What the Paper Did - **Background**: Large pretrained language models (LLMs) excel in interactive tasks but are limited by high computational and memory requirements, hindering deployment in local or privacy-sensitive environments. The study investigates the minimum model capacity required for specialized language agents.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-25T16:20:13Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.34400",
-      "date": "2026-11-25",
-      "title": "EvoLink-Bench: A Benchmark for Evaluating Self-Evolving Agents in Long-Horizon Interdependent Task Streams",
-      "authors": [
-        "Wei Chen",
-        "Xiaodong Lu",
-        "Weihao Shen",
-        "Gongxun Li",
-        "Xingyu Guo",
-        "Qihang Sun",
-        "Fuwei Zhang",
-        "Zhao Zhang",
-        "Yikun Ban",
-        "Shuang Li",
-        "Deqing Wang",
-        "Fuzhen Zhuang"
-      ],
-      "abstract": "Large language model (LLM) agents are evolving from passive chatbots into autonomous systems that operate continuously in dynamic environments. Such agents need not only solve current tasks but also learn from past interactions to improve future performance. However, existing streaming benchmarks often rely on short task sequences or largely independent tasks, providing limited evidence of whether agents can effectively reuse experience when later tasks depend on earlier outcomes. To address this gap, we introduce \\textbf{EvoLink-Bench}, a benchmark for evaluating self-evolving agents in long-horizon, interdependent task streams. It covers daily office work, multi-turn dialogue, and AutoResearch-style workflows, with persistent workspaces and dependencies across tasks. The benchmark includes two complementary levels: \\textbf{L1}, which evaluates the acquisition and revision of language-expressible knowledge, and \\textbf{L2}, which assesses the development of task-level capabilities through execution and feedback. Its evaluation further distinguishes within-task recovery, persistent-state updates, and experience reuse in later tasks. We evaluate five agent frameworks across three backbone configurations under three persistence conditions, covering 19,635 scored task slots from selected evaluation cohorts. Results show that no framework consistently performs best across both levels, retries recover only a limited proportion of failed tasks, and persistent-state updates do not necessarily improve subsequent performance. Furthermore, the effects of evolution differ between knowledge- and capability-level tasks, suggesting that these two forms of evolution require different learning mechanisms. Performance gains also vary across domains and task streams, with improvements on some tasks not necessarily extending to others.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.34400v1",
-        "pdf": "https://arxiv.org/pdf/2611.34400v1",
-        "github": "https://github.com/BUAA-Self-Evolving/EvoLink-Bench",
-        "blog": null
-      },
-      "institution": "Beihang University",
-      "category_key": "agent",
-      "category_alias": "Agent",
-      "category_display": {
-        "zh": "Agent",
-        "en": "Agent"
-      },
-      "summary_cn": "## 文章做了什么\n- **背景**：大型语言模型（LLM）智能体正从被动的聊天机器人演变为在动态环境中持续运行的自主系统。这些智能体不仅需要解决当前任务，还需要从过去的交互中学习以提升未来表现。\n- **已有工作的不足**：现有的流式基准测试通常依赖于短任务序列或 largely independent（ largely 独立）的任务，无法提供充分证据证明智能体在后续任务依赖于早期结果时，能否有效地复用经验。\n\n## 文章的核心贡献点\n- **提出了一个 EvoLink-Bench**：这是一个用于评估长视界、相互依赖任务流中自进化智能体的基准测试。\n- **挑战1：缺乏对长程任务间依赖关系的评估**。难点在于现有基准往往将任务孤立，忽略了前序任务产出对后续任务的影响。EvoLink-Bench 通过构建具有持久工作空间和跨任务依赖的场景（如日常办公、多轮对话、AutoResearch），强制智能体在处理后续任务时必须利用前序任务的状态和成果。\n- **挑战2：难以区分知识获取与能力进化的不同机制**。难点在于传统的评估往往混淆了事实性知识的修正和执行能力的提升。该基准设计了两个互补层级：L1 评估语言可表达知识的获取与修正，L2 评估通过执行和反馈发展的任务级能力，从而揭示这两种进化形式需要不同的学习机制。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：基准涵盖日常办公、多轮对话和 AutoResearch 风格的工作流。评估分为 L1（事实进化）和 L2（能力进化）。实验设置了三种持久化条件（关闭、冻结、进化），并在 19,635 个评分任务槽上评估了五个智能体框架和三个主干配置。\n- **评估结果**：\n    1. 没有哪个框架在 L1 和 L2 两个层级上都 consistently 表现最佳。\n    2. 重试机制仅能恢复有限比例的失败任务。\n    3. 持久状态更新并不一定能提高后续任务的性能。\n    4. 进化效应在知识型和能力型任务之间存在差异，表明两者需要不同的学习机制。\n    5. 性能增益因领域和任务流而异，某些任务的改进不一定能泛化到其他任务。\n- **对比**：与现有短序列或独立任务基准相比，EvoLink-Bench 揭示了智能体在长期依赖场景下的真实弱点，即积累经验不等于能有效应用经验。\n\n#### 总结\nEvoLink-Bench 填补了评估自进化智能体在长视界、相互依赖任务流中表现的空白。通过区分知识进化和能力进化，并引入持久化状态评估，该研究指出当前智能体在经验复用和跨任务泛化方面仍存在显著局限，强调了开发针对不同类型进化的特定学习机制的重要性。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Large language model (LLM) agents are evolving from passive chatbots into autonomous systems operating continuously in dynamic environments. They need to solve current tasks and learn from past interactions to improve future performance.\n- **Limitations of Existing Work**: Existing streaming benchmarks often rely on short task sequences or largely independent tasks, providing limited evidence on whether agents can effectively reuse experience when later tasks depend on earlier outcomes.\n\n## Core Contributions\n- **Proposed EvoLink-Bench**: A benchmark for evaluating self-evolving agents in long-horizon, interdependent task streams.\n- **Challenge 1: Lack of evaluation for long-range inter-task dependencies**. The difficulty lies in existing benchmarks isolating tasks, ignoring how prior outputs affect subsequent ones. EvoLink-Bench addresses this by constructing scenarios with persistent workspaces and cross-task dependencies (e.g., office work, dialogue, AutoResearch), forcing agents to utilize prior states and outcomes for later tasks.\n- **Challenge 2: Difficulty in distinguishing mechanisms between knowledge acquisition and capability evolution**. Traditional evaluations often conflate factual knowledge correction with execution capability improvement. This benchmark designs two complementary levels: L1 for evaluating language-expressible knowledge acquisition/revision, and L2 for assessing task-level capability development through execution and feedback, revealing that these two forms of evolution require different learning mechanisms.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: The benchmark covers daily office work, multi-turn dialogue, and AutoResearch-style workflows. Evaluation is split into L1 (factual evolution) and L2 (capability evolution). Experiments used three persistence conditions (Off, Frozen, Evolving) and evaluated five agent frameworks across three backbone configurations on 19,635 scored task slots.\n- **Evaluation Results**:\n    1. No framework consistently performed best across both L1 and L2 levels.\n    2. Retries recovered only a limited proportion of failed tasks.\n    3. Persistent-state updates did not necessarily improve subsequent performance.\n    4. Evolution effects differed between knowledge-level and capability-level tasks, suggesting distinct learning mechanisms are needed.\n    5. Performance gains varied across domains and task streams; improvements in some tasks did not necessarily extend to others.\n- **Comparison**: Unlike existing short-sequence or independent-task benchmarks, EvoLink-Bench reveals real weaknesses in agents' long-term dependency handling, showing that accumulating experience does not equate to effectively applying it.\n\n#### Summary\nEvoLink-Bench fills the gap in evaluating self-evolving agents in long-horizon, interdependent task streams. By distinguishing between knowledge and capability evolution and introducing persistent state evaluation, the study highlights significant limitations in current agents' experience reuse and cross-task generalization, emphasizing the need for specific learning mechanisms for different types of evolution.",
-      "render_excerpt": "机构: Beihang University<br>EvoLink-Bench 填补了评估自进化智能体在长视界、相互依赖任务流中表现的空白。通过区分知识进化和能力进化，并引入持久化状态评估，该研究指出当前智能体在经验复用和跨任务泛化方面仍存在显著局限，强调了开发针对不同类型进化的特定学习机制的重要性。",
-      "render_excerpt_en": "Institution: Beihang University<br>EvoLink-Bench fills the gap in evaluating self-evolving agents in long-horizon, interdependent task streams. By distinguishing between knowledge and capability evolution and introducing persistent state evaluation, the study highlights significant limitations in current agents' experience reuse and cross-task generalization, emphasizing the need for specific learning mechanisms for different types of evolution.",
-      "source_discovery": {
-        "source": "arxiv",
-        "query": "Agent",
-        "captured_at": "2026-11-25T14:00:22Z"
-      },
-      "source_summary": {
-        "provider": "dashscope-compatible",
-        "model": "qwen3.6-plus",
-        "captured_at": "2026-11-25"
-      },
-      "provenance": {
-        "institution": "dashscope|pdf-first-page-hint",
-        "category_key": "fixed-v1-agent",
-        "summary_cn": "dashscope",
-        "summary_en": "dashscope",
-        "github": "dashscope|none",
-        "blog": "dashscope|none",
-        "pdf_download": "ok",
-        "pdf_extract": "ok"
-      }
-    },
-    {
-      "schema_version": "v1",
-      "paper_id": "2611.34327",
-      "date": "2026-11-25",
-      "title": "MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems",
-      "authors": [
-        "Yue Xu",
-        "Leikun Yin",
-        "Ruiming Min",
-        "Yufeng Lai",
-        "Justin Andrew Johnson",
-        "Sitao Luan",
-        "Xiaotong Shen"
-      ],
-      "abstract": "Multi-agent systems (MAS) built on large language models (LLMs) outperform single-agent systems, but inter-agent communication incurs substantial token overhead. While assigning a large LLM to every agent is common, it results in inefficient resource utilization, leaving the system far from the Pareto frontier. The cost of answering a query is set jointly by how many agents are recruited, the role and LLM assigned to each, and communication topology among them. Most existing routers treat cost only implicitly rather than as an explicit optimization constraint. A fixed accuracy-cost preference also cannot express how much a caller is willing to pay for a particular query. We introduce MeterRouter, a budget-aware dynamic router that incrementally synthesizes a collaboration graph by selecting each agent's role, LLM, incoming connections, and termination conditioned on the query and a per-query monetary budget. We initialize the router by imitating successful execution graphs, then jointly refine its decisions with a variant of Group Relative Policy Optimization (GRPO) whose reward favors correct answers and penalizes spending and budget overruns. Across five benchmarks and a three-tier LLM pool, MeterRouter is (1) accurate, achieving performance comparable to the strongest MAS; (2) economical, reaching that accuracy at 82% lower cost than the strongest MAS router and extending the accuracy-cost frontier beyond the ceiling of single-agent systems; and (3) controllable, adapting its spending to the specified budget while rarely exceeding it.",
-      "links": {
-        "abs": "http://arxiv.org/abs/2611.34327v1",
-        "pdf": "https://arxiv.org/pdf/2611.34327v1",
+        "abs": "http://arxiv.org/abs/2611.29829v1",
+        "pdf": "https://arxiv.org/pdf/2611.29829v1",
         "github": null,
         "blog": null
       },
-      "institution": "University of Minnesota",
+      "institution": "Northeastern University",
       "category_key": "agent",
       "category_alias": "Agent",
       "category_display": {
         "zh": "Agent",
         "en": "Agent"
       },
-      "summary_cn": "## 文章做了什么\n- **背景**：基于大语言模型（LLM）的多智能体系统（MAS）在处理复杂任务时优于单智能体系统，但智能体间的通信会产生巨大的 Token 开销。现有的 MAS 通常为每个智能体分配大型 LLM，导致资源利用效率低下，远离帕累托最优前沿。\n- **已有工作的局限**：大多数现有的路由机制仅隐式地考虑成本，而非将其作为显式的优化约束。此外，固定的精度-成本偏好无法表达调用者针对特定查询愿意支付的具体金额，缺乏对每查询货币预算的动态适应能力。\n\n## 文章的核心贡献点\n- **提出了一个 MeterRouter**：一种具备预算意识的动态路由器，能够根据查询内容和每查询的货币预算，增量式地合成协作图，动态选择每个智能体的角色、分配的 LLM、传入连接以及终止条件。\n- **挑战1：如何在保证精度的同时显式优化成本并适应动态预算？**\n  - **难点**：传统的静态拓扑或固定偏好无法在每次查询中平衡精度与具体的金钱限制，且多智能体协作的搜索空间巨大。\n  - **解决方法**：MeterRouter 将成本作为显式约束，通过模仿成功执行图进行初始化，并利用群组相对策略优化（GRPO）的变体联合优化决策。其奖励函数倾向于正确答案，同时惩罚支出和预算超支，从而在给定预算下动态调整协作结构。\n- **挑战2：如何高效探索庞大的智能体配置空间（角色、模型、拓扑）？**\n  - **难点**：从异构 LLM 池中选择模型、定义角色及构建通信拓扑的组合爆炸使得直接强化学习训练困难且不稳定。\n  - **解决方法**：采用“模仿学习初始化 + GRPO 微调”的两阶段策略。首先通过模仿高质量的历史执行图获得良好的初始策略，随后通过 GRPO 进行联合 refinement，有效引导策略向高回报（高精度、低消耗）区域收敛。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：在五个基准测试数据集上进行评估，使用三层级的 LLM 模型池（涵盖不同能力和成本的模型）。\n- **主要结果**：\n  1. **准确性**：MeterRouter 的性能与最强的多智能体系统相当。\n  2. **经济性**：在达到同等精度的情况下，其成本比最强的 MAS 路由器降低了 82%。\n  3. **前沿扩展**：成功将精度-成本前沿扩展到了单智能体系统的天花板之上。\n  4. **可控性**：能够根据指定的预算自适应调整支出，且极少出现预算超支的情况。\n- **对比**：相比现有隐含成本处理的路由器和固定偏好的系统，MeterRouter 在显式预算约束下实现了更优的性价比和灵活性。\n\n#### 总结\nMeterRouter 解决了多智能体系统中通信成本高企且缺乏细粒度预算控制的问题。通过引入显式的货币预算约束和基于 GRPO 的动态路由机制，它能够在保证高性能的同时显著降低推理成本（降低 82%），并实现了精度与成本之间的灵活权衡，为多智能体系统的实际部署提供了高效、可控的解决方案。",
-      "summary_en": "## 1. What the Paper Does\n- **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) outperform single-agent systems in complex tasks but incur substantial token overhead due to inter-agent communication. Assigning large LLMs to every agent is common but leads to inefficient resource utilization, far from the Pareto frontier.\n- **Limitations of Existing Work**: Most existing routers treat cost only implicitly rather than as an explicit optimization constraint. Furthermore, fixed accuracy-cost preferences cannot express how much a caller is willing to pay for a specific query, lacking dynamic adaptability to per-query monetary budgets.\n\n## Core Contributions\n- **Proposed MeterRouter**: A budget-aware dynamic router that incrementally synthesizes a collaboration graph by selecting each agent's role, LLM, incoming connections, and termination conditions, conditioned on the query and a per-query monetary budget.\n- **Challenge 1: How to explicitly optimize cost while maintaining accuracy under dynamic budgets?**\n  - **Difficulty**: Traditional static topologies or fixed preferences cannot balance precision with specific monetary limits per query, and the search space for multi-agent collaboration is vast.\n  - **Solution**: MeterRouter treats cost as an explicit constraint. It initializes by imitating successful execution graphs and refines decisions using a variant of Group Relative Policy Optimization (GRPO). The reward function favors correct answers while penalizing spending and budget overruns, dynamically adjusting the collaboration structure within the given budget.\n- **Challenge 2: How to efficiently explore the huge configuration space of agent roles, models, and topologies?**\n  - **Difficulty**: The combinatorial explosion of selecting models from a heterogeneous pool, defining roles, and constructing communication topologies makes direct reinforcement learning training difficult and unstable.\n  - **Solution**: Adopts a two-stage strategy: \"Imitation Learning Initialization + GRPO Fine-tuning.\" It first obtains a good initial policy by imitating high-quality historical execution graphs, then uses GRPO for joint refinement, effectively guiding the policy towards high-reward regions (high accuracy, low consumption).\n\n## Implementation and Evaluation\n- **Experimental Setup**: Evaluated across five benchmarks using a three-tier LLM pool (covering models of varying capabilities and costs).\n- **Key Results**:\n  1. **Accuracy**: MeterRouter achieves performance comparable to the strongest MAS.\n  2. **Economical**: It reaches this accuracy at 82% lower cost than the strongest MAS router.\n  3. **Frontier Extension**: Successfully extends the accuracy-cost frontier beyond the ceiling of single-agent systems.\n  4. **Controllability**: Adapts spending to the specified budget and rarely exceeds it.\n- **Comparison**: Compared to existing routers that handle cost implicitly or use fixed preferences, MeterRouter achieves superior cost-efficiency and flexibility under explicit budget constraints.\n\n## 4. Conclusion\nMeterRouter addresses the issues of high communication costs and lack of fine-grained budget control in multi-agent systems. By introducing explicit monetary budget constraints and a GRPO-based dynamic routing mechanism, it significantly reduces inference costs (by 82%) while ensuring high performance. It enables a flexible trade-off between accuracy and cost, providing an efficient and controllable solution for the practical deployment of multi-agent systems.",
-      "render_excerpt": "机构: University of Minnesota<br>MeterRouter 解决了多智能体系统中通信成本高企且缺乏细粒度预算控制的问题。通过引入显式的货币预算约束和基于 GRPO 的动态路由机制，它能够在保证高性能的同时显著降低推理成本（降低 82%），并实现了精度与成本之间的灵活权衡，为多智能体系统的实际部署提供了高效、可控的解决方案。",
-      "render_excerpt_en": "Institution: University of Minnesota<br>## 1. What the Paper Does - **Background**: Multi-Agent Systems (MAS) built on Large Language Models (LLMs) outperform single-agent systems in complex tasks but incur substantial token overhead due to inter-agent communication. Assigning large LLMs to every agent is common but leads to inefficient resource utilization, far from the Pareto frontier.",
+      "summary_cn": "## 文章做了什么\n- **背景**：随着金融犯罪合规从单一检测模型转向协作代理管道，结合图检测器、确定性规则、检索增强生成（RAG）和 LLM 法官的代理管道被用于监控非法加密货币流动并撰写引用法规的理由。\n- **已有工作为什么解决不了**：现有评估仅关注端到端准确率或理由生成的质量，无法揭示究竟是哪个组件做出了最终决策。流畅的理由可能由未参与决策的组件生成，导致责任归属不清，即“解释”不等于“决策者”。\n\n## 文章的核心贡献点\n- **提出了一个决策源归因审计框架**：在 Elliptic++ 比特币数据集上，通过包含每案例实际因果关系、干预性 Shapley 信用分配和上游风险分数中介分析的三层追踪级协议，对代理管道进行审计。\n- **挑战1：确定多代理系统中真正的决策主体**。难点在于多个组件（图模型、规则、检索器、验证器、LLM）交互，难以区分谁起决定性作用。论文方法发现，确定性钱包分数覆盖承担了约 94% 的标记信用，而验证门取消了法官大部分针对合法交易的错误标记，表明 LLM 法官并非主要决策者。\n- **挑战2：评估 LLM 法官是依据证据还是上游偏差做出判断**。难点在于隐藏风险分数后，收集的证据仍可能编码该分数信息。论文测试发现，LLM 法官倾向于遵循注入的风险分数，且在上下文过短时无法给出裁决，甚至引用不适用的法规条款，证明其理由不能作为决策来源的证据。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与评估**：在 Elliptic++ 数据集上测试了包含调查员代理、合规代理、LLM 法官、蕴含门和确定性覆盖的管道。单独测试法官时，使用了 76 个证据包、4 种骨干模型和 2 种提示词。\n- **结果**：\n    1. 确定性钱包分数覆盖主导了决策（约 94% 信用）。\n    2. LLM 法官严重依赖上游风险分数，即使事实明确，较弱模型仍受偏差影响；强模型在事实明确时表现较好。\n    3. 上下文不足会导致无裁决。\n    4. 基于子串的检查无法识别引用的法规是否真正适用。\n- **对比**：与传统仅看端到端准确率或理由流畅度的评估不同，本研究揭示了高准确率背后 LLM 可能缺乏因果作用，指出了现有评估方法在问责制上的盲区。\n\n#### 总结\n本文指出在非法活动监控中，LLM 生成的理由不应被视为决策来源的证据。通过细粒度的归因分析，揭示了代理管道中确定性规则往往主导决策，而 LLM 法官存在依赖上游偏差、引用幻觉等问题。这对构建可问责的 AI 金融合规系统具有重要警示意义。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: Agentic pipelines combining graph detectors, deterministic rules, Retrieval-Augmented Generation (RAG), and LLM judges are increasingly used to monitor illicit cryptocurrency flows and generate regulation-citing justifications.\n- **Why Existing Work Falls Short**: Current evaluations focus on end-to-end accuracy or justification quality, failing to identify which component actually made the decision. A fluent justification does not imply the explaining component was the decision-maker, creating an accountability gap.\n\n## Core Contributions\n- **Proposed a Decision-Source Attribution Audit Framework**: Applied a trace-level protocol with three layers (per-case actual causation, interventional Shapley credit, and mediation of upstream risk scores) to audit an agentic pipeline on the Elliptic++ Bitcoin dataset.\n- **Challenge 1: Identifying the true decision-maker in multi-agent systems**. Difficulty lies in disentangling the roles of interacting components (graph models, rules, retrievers, verifiers, LLM). The method reveals that a deterministic wallet-score override carries ~94% of the credit for flags, while a verification gate cancels most of the judge's erroneous flags on licit transactions, showing the LLM judge is not the primary decider.\n- **Challenge 2: Determining if the LLM judge decides based on evidence or upstream bias**. Difficulty arises because evidence gathered with visible scores may still encode those scores even if hidden later. Tests show the LLM judge follows injected risk scores, fails to verdict with insufficient context, and cites inapplicable regulations, proving its justification is not evidence of its decision source.\n\n## Implementation and Evaluation\n- **Implementation & Evaluation**: Audited a pipeline with investigator agent, compliance agent, LLM judge, entailment gate, and deterministic override on Elliptic++. The judge was tested alone across 76 evidence bundles, 4 backbones, and 2 prompts.\n- **Results**:\n    1. Deterministic wallet-score override dominates decisions (~94% credit).\n    2. LLM judges heavily rely on upstream risk scores; weaker models remain biased even with explicit facts, while stronger models perform better when facts are clear.\n    3. Short contexts lead to no verdict.\n    4. Substring-based checks fail to detect inapplicable regulatory citations.\n- **Comparison**: Unlike traditional metrics focusing on accuracy or fluency, this study exposes that high performance can mask the LLM's lack of causal role, highlighting blind spots in current accountability assessments.\n\n## 4. Conclusion\nThe paper argues that an LLM's justification in illicit activity monitoring should not be interpreted as evidence of which component flagged a transaction. Fine-grained attribution reveals that deterministic rules often drive decisions, while LLM judges suffer from bias dependency and citation hallucinations. This has significant implications for building accountable AI systems in financial compliance.",
+      "render_excerpt": "机构: Northeastern University<br>本文指出在非法活动监控中，LLM 生成的理由不应被视为决策来源的证据。通过细粒度的归因分析，揭示了代理管道中确定性规则往往主导决策，而 LLM 法官存在依赖上游偏差、引用幻觉等问题。这对构建可问责的 AI 金融合规系统具有重要警示意义。",
+      "render_excerpt_en": "Institution: Northeastern University<br>## 1. What the Paper Did - **Background**: Agentic pipelines combining graph detectors, deterministic rules, Retrieval-Augmented Generation (RAG), and LLM judges are increasingly used to monitor illicit cryptocurrency flows and generate regulation-citing justifications. - **Why Existing Work Falls Short**: Current evaluations focus on end-to-end accuracy or justification quality, failing to identify which component actually made the decision.",
       "source_discovery": {
         "source": "arxiv",
         "query": "Agent",
-        "captured_at": "2026-11-25T13:09:13Z"
+        "captured_at": "2026-11-22T23:16:50Z"
       },
       "source_summary": {
         "provider": "dashscope-compatible",
         "model": "qwen3.6-plus",
-        "captured_at": "2026-11-25"
+        "captured_at": "2026-11-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.29822",
+      "date": "2026-11-22",
+      "title": "Can Vibe Coding Produce Accessible Websites: An Empirical Study on LLM Coding Agents and Skills",
+      "authors": [
+        "Syed Fatiul Huq",
+        "Md. Asif Haider",
+        "Abu Jafar Saifullah",
+        "Thomas Zimmermann",
+        "Sam Malek"
+      ],
+      "abstract": "Large language model (LLM) coding agents increasingly allow developers and non-professionals to create websites through natural-language instructions, with limited inspection of the generated source code. Although this ``vibe coding'' workflow lowers barriers to software creation, it may also propagate accessibility defects at scale. We investigate the accessibility of websites generated end-to-end by contemporary coding agents and whether agent-level accessibility interventions improve their output. We generated 90 websites for three projects using combinations of three coding agents, four language models, and multiple reasoning-effort levels. We evaluated complete interaction journeys using axe-core, IBM Equal Access Accessibility Checker, and QualWeb, and converged reports to observe violation prevalence and violated WCAG Success Criterion (SC). None of the 90 baseline websites was fully accessible, with an average of 80.43 violated interface elements. 13 WCAG SCs were violated at least once across the runs. Color contrast was the most prevalent issue, followed by labeling, semantic-structure, keyboard, and visualization failures. We reran 24 matched configurations with a general accessibility Skill and a contrast-specific Skill. Both significantly improved accessibility scores, but neither eliminated violations. User testing with blind individuals corroborated the experiential effects of the detected inaccessibilities. Moreover, functional correctness decreased with the inclusion of Skills. Our findings show that accessibility does not reliably emerge from vibe coding, and agentic interventions can both improve some accessibility issues and introduce new functional ones.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.29822v1",
+        "pdf": "https://arxiv.org/pdf/2611.29822v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of California, Irvine",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大型语言模型（LLM）编码代理的兴起，“Vibe Coding”（即仅通过自然语言指令生成代码，几乎不检查源代码）成为一种新兴的开发范式。这种模式降低了软件创建的门槛，使非专业人士也能构建网站。\n- **已有工作的不足**：现有的研究多关注代码的功能正确性或安全性，但缺乏对 LLM 生成的端到端网站在无障碍性（Accessibility）方面的系统性评估。目前尚不清楚在缺乏人工审查的情况下，Vibe Coding 是否会产生符合无障碍标准（如 WCAG）的网站，以及现有的代理级干预措施是否有效。\n\n## 文章的核心贡献点\n- **提出了一个针对 LLM 编码代理生成网站无障碍性的实证研究框架**：系统评估了不同代理、模型和推理努力水平下生成网站的无障碍缺陷分布，并测试了特定“技能”（Skills）干预的效果。\n- **挑战1：量化 Vibe Coding 产生的无障碍缺陷规模与类型**。难点在于需要模拟完整的用户交互路径并综合多种检测工具的结果，以反映真实用户体验。论文通过结合 axe-core、IBM Equal Access 和 QualWeb 三种工具，对 90 个生成的网站进行全旅程评估，发现所有基线网站均存在缺陷，平均每个网站有 80.43 个违规元素，其中颜色对比度问题最为普遍。\n- **挑战2：评估代理级无障碍干预的有效性及副作用**。难点在于平衡无障碍改进与功能正确性之间的关系，因为优化非功能性需求可能损害核心功能。论文引入了通用无障碍技能和特定对比度技能进行重测，结果显示虽然无障碍评分显著提升，但并未消除所有违规，且功能正确性有所下降，揭示了干预措施的双刃剑效应。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实验设置**：使用 3 种编码代理、4 种语言模型和多种推理努力级别，为 3 个项目生成了 90 个网站。随后选取 24 个匹配配置，分别应用通用无障碍技能和对比度专用技能进行重新生成。\n- **评估结果**：\n    - **基线表现**：90 个基线网站中没有一个完全符合无障碍标准。共观察到 13 种 WCAG 成功准则被违反。主要问题依次为：颜色对比度、标签缺失、语义结构错误、键盘导航失败和可视化问题。\n    - **干预效果**：引入无障碍技能后，无障碍评分显著提高，但仍有残留违规。盲人用户的实际测试证实了这些缺陷对用户体验的负面影响。\n    - **副作用**：随着技能的加入，网站的功能正确性出现下降。\n- **对比分析**：与以往仅关注代码片段或单一属性的研究不同，本研究强调了端到端生成过程中的系统性无障碍缺失，并指出了当前代理干预在提升无障碍性的同时可能牺牲功能稳定性的权衡关系。\n\n#### 总结\n本文通过大规模实证研究揭示，当前的“Vibe Coding”工作流无法可靠地产生符合无障碍标准的网站。尽管引入专门的无障碍技能可以显著改善部分指标，但无法彻底消除缺陷，且可能导致功能回归。研究表明，自动化代理在提升可访问性方面具有潜力，但也引入了新的风险，未来需要在工具设计中更好地平衡无障碍性与功能正确性。",
+      "summary_en": "## 1. What the Paper Did\n- **Background**: The rise of Large Language Model (LLM) coding agents has popularized \"Vibe Coding,\" a paradigm where software is created via natural language prompts with minimal source code inspection. This lowers barriers for non-professionals but reduces human oversight.\n- **Gap in Existing Work**: Prior research largely focuses on functional correctness or security, lacking a systematic evaluation of accessibility in end-to-end LLM-generated websites. It remains unclear whether Vibe Coding inherently produces accessible outputs and if agent-level interventions can effectively mitigate accessibility defects without compromising functionality.\n\n## Core Contributions\n- **Proposed an empirical study framework** to evaluate the accessibility of websites generated by LLM coding agents and assess the impact of agent-level accessibility \"Skills.\"\n- **Challenge 1: Quantifying the scale and nature of accessibility defects in Vibe Coding.** The difficulty lies in capturing real-world user interaction issues rather than static code errors. The paper addressed this by evaluating complete interaction journeys of 90 generated websites using three converging tools (axe-core, IBM Equal Access, QualWeb). It found that none of the baseline websites were fully accessible, with an average of 80.43 violated interface elements per site, primarily due to color contrast issues.\n- **Challenge 2: Assessing the efficacy and trade-offs of accessibility interventions.** The challenge is improving accessibility without degrading functional correctness. The paper reran 24 configurations with general and contrast-specific accessibility Skills. Results showed significant improvement in accessibility scores but not total elimination of violations, while functional correctness decreased, highlighting a trade-off between accessibility enhancements and functional stability.\n\n## Implementation and Evaluation\n- **Experimental Setup**: Generated 90 websites across 3 projects using 3 coding agents, 4 LLMs, and varying reasoning efforts. Evaluated using automated tools and corroborated with user testing involving blind individuals. Re-evaluated 24 matched configurations with added accessibility Skills.\n- **Results**:\n    - **Baseline**: 100% of baseline sites had accessibility violations. 13 WCAG Success Criteria were violated, with color contrast being the most prevalent issue.\n    - **Intervention**: Accessibility Skills significantly improved scores but did not eliminate all violations. User testing confirmed the negative experiential impact of remaining defects.\n    - **Trade-off**: Functional correctness declined when accessibility Skills were applied.\n- **Comparison**: Unlike previous works focusing on code snippets, this study demonstrates systemic accessibility failures in end-to-end generation and identifies the critical trade-off where agentic interventions improve accessibility at the cost of functional reliability.\n\n## 4. Conclusion\nThe study concludes that accessibility does not reliably emerge from current Vibe Coding workflows. While agent-level accessibility interventions can significantly improve compliance, they do not guarantee full accessibility and may introduce functional regressions. Future developments must address the balance between automated accessibility improvements and maintaining core functional correctness.",
+      "render_excerpt": "机构: University of California, Irvine<br>本文通过大规模实证研究揭示，当前的“Vibe Coding”工作流无法可靠地产生符合无障碍标准的网站。尽管引入专门的无障碍技能可以显著改善部分指标，但无法彻底消除缺陷，且可能导致功能回归。研究表明，自动化代理在提升可访问性方面具有潜力，但也引入了新的风险，未来需要在工具设计中更好地平衡无障碍性与功能正确性。",
+      "render_excerpt_en": "Institution: University of California, Irvine<br>## 1. What the Paper Did - **Background**: The rise of Large Language Model (LLM) coding agents has popularized \"Vibe Coding,\" a paradigm where software is created via natural language prompts with minimal source code inspection. This lowers barriers for non-professionals but reduces human oversight.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-11-22T23:00:38Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-11-22"
+      },
+      "provenance": {
+        "institution": "dashscope|pdf-first-page-hint",
+        "category_key": "fixed-v1-agent",
+        "summary_cn": "dashscope",
+        "summary_en": "dashscope",
+        "github": "dashscope|none",
+        "blog": "dashscope|none",
+        "pdf_download": "ok",
+        "pdf_extract": "ok"
+      }
+    },
+    {
+      "schema_version": "v1",
+      "paper_id": "2611.29716",
+      "date": "2026-11-22",
+      "title": "Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents",
+      "authors": [
+        "Wanghao Ye",
+        "Shwai He",
+        "Sihan Chen",
+        "Yiting Wang",
+        "Bowei Tian",
+        "Guoheng Sun",
+        "Ziyi Wang",
+        "Ziyao Wang",
+        "Yexiao He",
+        "Zheyu Shen",
+        "Meng Liu",
+        "Yuning Zhang",
+        "Meng Feng",
+        "Yifei Dong",
+        "Yanhong Qian",
+        "Yang Wang",
+        "Siyuan Peng",
+        "Yilong Dai",
+        "Zhenle Duan",
+        "Joshua Liu",
+        "Lang Xiong",
+        "Aarosh Das",
+        "Zhaoyi Liu",
+        "Daeun Jung",
+        "Aditya Sarkar",
+        "Parastoo Pilevar",
+        "Xiaochuan Gong",
+        "Yancheng Zhu",
+        "Yingying Fan",
+        "Qiong Wang",
+        "Ang Li"
+      ],
+      "abstract": "As large language models (LLMs) become more capable, financial agents need tools they can readily discover and use. Yet financial software is fragmented across libraries with different interfaces and conventions, making it difficult to build reliable agent workflows. We present Fin-RSI, a unified Python library of financial skills, checks, and self-improvement designed for LLM agents. It brings together tools for market analysis, forecasting, portfolio construction, and trading research through shared interfaces across models and agent frameworks. Agents can find suitable tools from natural-language requests, reuse tested implementations, and improve generated programs through checking and feedback. Developers can extend the library with new tools without rebuilding integrations for each model. Across 20 open-weight models on six trading-position tasks, tool discovery increased the proportion of episodes producing valid programs from 9.7% to 29.2%; for models with at least 14 billion parameters, it rose from 23.6% to 64.6%. We release the library and benchmark as a shared resource for the community and plan to expand its tools and task coverage as financial agents evolve.",
+      "links": {
+        "abs": "http://arxiv.org/abs/2611.29716v1",
+        "pdf": "https://arxiv.org/pdf/2611.29716v1",
+        "github": null,
+        "blog": null
+      },
+      "institution": "University of Maryland, College Park; Carnegie Mellon University; Texas A&M University, College Station; University of Washington; Northeastern University; The University of Alabama; Stanford University",
+      "category_key": "agent",
+      "category_alias": "Agent",
+      "category_display": {
+        "zh": "Agent",
+        "en": "Agent"
+      },
+      "summary_cn": "## 文章做了什么\n- **背景**：随着大语言模型（LLM）能力的提升，金融智能体需要能够轻松发现和使用工具。然而，现有的金融软件分散在不同的库中，接口和约定各异，导致构建可靠的智能体工作流非常困难。\n- **已有工作的不足**：现有方法缺乏统一的接口，导致智能体在处理复杂的金融惯例（如股票拆分、前视偏差等）时容易出错。此外，缺乏有效的自我检查和改进机制，使得生成的代码往往无法通过验证或存在逻辑错误，且开发者需要为每个模型重新构建集成，效率低下。\n\n## 文章的核心贡献点\n- **提出了一个名为 Fin-RSI 的统一 Python 库**：该库集成了金融技能、检查机制和自我改进功能，专为 LLM 智能体设计，提供了跨模型和智能体框架的共享接口。\n- **挑战1：金融工具的碎片化与发现难**。由于金融库接口不统一，智能体难以从自然语言请求中找到合适的工具。**解决方法**：Fin-RSI 通过统一的接口整合了市场分析、预测、投资组合构建等工具，使智能体能够基于自然语言请求自动发现并复用经过测试的实现，无需为每个模型重新集成。\n- **挑战2：生成代码的正确性与自我改进难**。金融任务对准确性要求极高，且存在隐蔽的错误（如前视偏差），单纯的推理修正往往无效。**解决方法**：引入了基于属性和 metamorphic 的检查机制，以及通过反馈进行程序修复的自我改进流程，确保智能体能识别并纠正违反金融惯例的代码，提高程序的_validity_。\n\n## 实现与部署，evaluation 结果，要有和相关工作对比\n- **实现与部署**：Fin-RSI 作为一个开源库发布，支持开发者扩展新工具而无需重建集成。它包含了一套基准测试，用于评估智能体在交易头寸任务上的表现。\n- **评估结果**：在 6 个交易头寸任务上，对 20 个开源权重模型进行了评估。结果显示，使用 Fin-RSI 的工具发现功能后，生成有效程序的比例从 9.7% 提升至 29.2%。对于参数量至少为 140 亿的模型，这一比例从 23.6% 显著提升至 64.6%。\n- **对比**：相比于传统的独立库调用方式，Fin-RSI 通过统一接口和自我改进机制，显著提高了代码生成的成功率和可靠性，解决了现有基准测试中缺乏独立参考验证的问题。\n\n#### 总结\nFin-RSI 通过提供统一的金融工具接口、严格的检查机制和递归自我改进能力，有效解决了 LLM 金融智能体在工具发现、代码正确性和工作流可靠性方面的痛点。实验证明其能显著提升智能体生成有效金融程序的能力，为社区提供了一个可扩展的共享资源，推动了金融智能体技术的发展。",
+      "summary_en": "## 1. What the Paper Does\n- **Background**: As Large Language Models (LLMs) become more capable, financial agents require tools they can easily discover and utilize. However, financial software is fragmented across various libraries with inconsistent interfaces and conventions, making it difficult to build reliable agent workflows.\n- **Limitations of Existing Work**: Current methods lack unified interfaces, causing agents to make errors when handling complex financial conventions (e.g., stock splits, look-ahead bias). Furthermore, the absence of effective self-checking and improvement mechanisms leads to generated code that often fails validation or contains logical errors, requiring developers to rebuild integrations for each model inefficiently.\n\n## Core Contributions\n- **Proposed Fin-RSI**: A unified Python library of financial skills, checks, and self-improvement designed specifically for LLM agents, offering shared interfaces across models and agent frameworks.\n- **Challenge 1: Fragmentation and Difficulty in Tool Discovery**. Financial libraries have disparate interfaces, making it hard for agents to find suitable tools from natural language requests. **Solution**: Fin-RSI integrates tools for market analysis, forecasting, and portfolio construction under a unified interface, allowing agents to automatically discover and reuse tested implementations without rebuilding integrations for each model.\n- **Challenge 2: Correctness of Generated Code and Self-Improvement**. Financial tasks demand high accuracy, and subtle errors (like look-ahead bias) are common; pure reasoning correction is often ineffective. **Solution**: The library introduces property-based and metamorphic checks, along with a self-improvement workflow that uses feedback to repair programs, ensuring agents can identify and correct code violating financial conventions.\n\n## Implementation and Evaluation\n- **Implementation & Deployment**: Fin-RSI is released as an open-source library, allowing developers to extend tools without re-integrating for every model. It includes a benchmark suite for evaluating agent performance on trading position tasks.\n- **Evaluation Results**: Evaluated on 20 open-weight models across six trading-position tasks. The proportion of episodes producing valid programs increased from 9.7% to 29.2% with Fin-RSI's tool discovery. For models with at least 14 billion parameters, this rate rose significantly from 23.6% to 64.6%.\n- **Comparison**: Compared to traditional disjointed library usage, Fin-RSI significantly improves code generation success rates and reliability through its unified interface and self-improvement mechanisms, addressing the lack of independent reference validation in existing benchmarks.\n\n## 4. Conclusion\nFin-RSI effectively addresses pain points in tool discovery, code correctness, and workflow reliability for LLM financial agents by providing unified interfaces, rigorous checks, and recursive self-improvement capabilities. Experiments demonstrate its ability to significantly enhance the generation of valid financial programs, offering a scalable shared resource for the community and advancing the development of financial agents.",
+      "render_excerpt": "机构: University of Maryland, College Park; Carnegie Mellon University; Texas A&M University, College Station; University of Washington; Northeastern University; The University of Alabama; Stanford University<br>Fin-RSI 通过提供统一的金融工具接口、严格的检查机制和递归自我改进能力，有效解决了 LLM 金融智能体在工具发现、代码正确性和工作流可靠性方面的痛点。实验证明其能显著提升智能体生成有效金融程序的能力，为社区提供了一个可扩展的共享资源，推动了金融智能体技术的发展。",
+      "render_excerpt_en": "Institution: University of Maryland, College Park; Carnegie Mellon University; Texas A&M University, College Station; University of Washington; Northeastern University; The University of Alabama; Stanford University<br>## 1. What the Paper Does - **Background**: As Large Language Models (LLMs) become more capable, financial agents require tools they can easily discover and utilize. However, financial software is fragmented across various libraries with inconsistent interfaces and conventions, making it difficult to build reliable agent workflows.",
+      "source_discovery": {
+        "source": "arxiv",
+        "query": "Agent",
+        "captured_at": "2026-11-22T19:28:28Z"
+      },
+      "source_summary": {
+        "provider": "dashscope-compatible",
+        "model": "qwen3.6-plus",
+        "captured_at": "2026-11-22"
       },
       "provenance": {
         "institution": "dashscope|pdf-first-page-hint",
